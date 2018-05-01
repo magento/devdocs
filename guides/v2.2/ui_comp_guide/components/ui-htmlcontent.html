@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -8,46 +8,51 @@
 	<title>HtmlContent component | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="" />
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html">
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
 
-    <!-- WebUI popover css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
-
-  <script>
-    var baseUrl = "";
-  </script>
-
-	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
 	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:806243,hjsv:6};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
-	
-	<!-- crazyegg -->
-	<script type="text/javascript">
-	setTimeout(function(){var a=document.createElement("script");
-	var b=document.getElementsByTagName("script")[0];
-	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
-	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-	</script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
 
-    <!-- heap analytics -->
-    <script type="text/javascript">
-        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-        heap.load("2619540280");
-    </script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+<!-- crazyegg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+	<link rel="canonical" href="/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -61,22 +66,28 @@
 	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
 
 </head>
-<body>
+<body class="layout-default">
 
-<header class="site-header">
+	<header class="site-header">
 
-	<nav id="global-nav">
+		<nav class="site-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
 
-		<div class="container">
+  <div class="nav-container">
 
-			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+    <a class="logo" href="/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
 
-			
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
 <div class="version-switcher dropdown" data-version="2.2">
-	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.2
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.2
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -94,11 +105,11 @@
 </div>
 
 
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
 
-			<nav class="nav-main" role="menubar">
-
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -116,11 +127,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
 
@@ -163,11 +174,11 @@
       </div>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -183,14 +194,14 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-separator"></div>
+  <li class="nav-main-separator"></li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -208,11 +219,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -225,57 +236,53 @@
       </ul>
     </div>
 
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.2/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
   </div>
 
-</nav><!-- /.nav-main -->
-
-
-			<div class="search-btn">
-				<a class="search-trigger search-icon" href="/search.html"></a>
-			</div>
-
-			<form class="quick-search" action="/guides/v2.2/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" autocomplete="off" />
-				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
-			</form>
-
-		</div>
-
-	</nav><!-- #global-nav -->
-
-</header>
+</nav><!-- #site-nav -->
 <div class="nav-main-fader"></div>
 
 
-<div id="gl-wrapper">
+	</header>
 
-	<!-- .main-container -->
-	<div class="main-container">
-		<a id="main-content"></a>
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
 
 
-<div class="container">
-
-    
-
-    
+<div class="content-container">
 
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+		
 
-
-<h4>UI Components Guide</h4>
-<div class="left-navigation">
-    <ul>
-    
-    
+		<h4 class="guide-title">UI Components Guide</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
 
 <li class="nav-level1  " id="overview-of-ui-components">
     
-    
+
     
     <a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">Overview of UI components</a>
     
@@ -284,12 +291,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="a-list-of-magento-ui-components">
     
-    
+
     
     <a href="/guides/v2.2/ui_comp_guide/ui_comp_list_concept.html">A list of Magento UI components</a>
     
@@ -298,12 +305,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="ui-components-guide-outline-(proposed)">
     
-    
+
     
     <a href="/guides/v2.2/ui_comp_guide/ui_comp_outline_proposed.html">UI Components Guide outline (proposed)</a>
     
@@ -312,14 +319,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="components">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Components</span>
     
@@ -330,9 +335,9 @@
         
         
         <li class="nav-level2  " id="actionscolumn-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-actionscolumn.html">ActionsColumn component</a>
             
@@ -344,9 +349,9 @@
         
         
         <li class="nav-level2  " id="bookmarks-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-bookmarks.html">Bookmarks component</a>
             
@@ -358,9 +363,9 @@
         
         
         <li class="nav-level2  " id="button-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-button.html">Button component</a>
             
@@ -372,9 +377,9 @@
         
         
         <li class="nav-level2  " id="checkbox-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-checkbox.html">Checkbox component</a>
             
@@ -386,9 +391,9 @@
         
         
         <li class="nav-level2  " id="checkboxset-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-checkboxset.html">Checkboxset component</a>
             
@@ -400,9 +405,9 @@
         
         
         <li class="nav-level2  " id="column-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-column.html">Column component</a>
             
@@ -414,9 +419,9 @@
         
         
         <li class="nav-level2  " id="columns-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-columns.html">Columns component</a>
             
@@ -428,9 +433,9 @@
         
         
         <li class="nav-level2  " id="columnscontrols-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>
             
@@ -442,9 +447,9 @@
         
         
         <li class="nav-level2  " id="date-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-date.html">Date component</a>
             
@@ -456,9 +461,9 @@
         
         
         <li class="nav-level2  " id="datecolumn-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-datecolumn.html">DateColumn component</a>
             
@@ -470,9 +475,9 @@
         
         
         <li class="nav-level2  " id="draganddrop-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-draganddrop.html">DragAndDrop component</a>
             
@@ -484,9 +489,9 @@
         
         
         <li class="nav-level2  " id="dynamicrows-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-dynamicrows.html">DynamicRows component</a>
             
@@ -498,9 +503,9 @@
         
         
         <li class="nav-level2  " id="email-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-email.html">Email component</a>
             
@@ -512,9 +517,9 @@
         
         
         <li class="nav-level2  " id="exportbutton-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-exportbutton.html">ExportButton component</a>
             
@@ -526,9 +531,9 @@
         
         
         <li class="nav-level2  " id="fieldset-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-fieldset.html">Fieldset component</a>
             
@@ -540,9 +545,9 @@
         
         
         <li class="nav-level2  " id="file-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-file.html">File component</a>
             
@@ -554,9 +559,9 @@
         
         
         <li class="nav-level2  " id="fileuploader-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-fileuploader.html">FileUploader component</a>
             
@@ -568,9 +573,9 @@
         
         
         <li class="nav-level2  " id="filters-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-filters.html">Filters component</a>
             
@@ -582,9 +587,9 @@
         
         
         <li class="nav-level2  " id="filterschips-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>
             
@@ -596,9 +601,9 @@
         
         
         <li class="nav-level2  " id="form-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-form.html">Form component</a>
             
@@ -610,9 +615,9 @@
         
         
         <li class="nav-level2  " id="hidden-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-hidden.html">Hidden component</a>
             
@@ -624,9 +629,9 @@
         
         
         <li class="nav-level2 active " id="htmlcontent-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html">HtmlContent component</a>
             
@@ -638,9 +643,9 @@
         
         
         <li class="nav-level2  " id="input-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-input.html">Input component</a>
             
@@ -652,9 +657,9 @@
         
         
         <li class="nav-level2  " id="insertform-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-insertform.html">InsertForm component</a>
             
@@ -666,9 +671,9 @@
         
         
         <li class="nav-level2  " id="insertlisting-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
             
@@ -680,9 +685,9 @@
         
         
         <li class="nav-level2  " id="listing-(grid)-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html">Listing (grid) component</a>
             
@@ -694,9 +699,9 @@
         
         
         <li class="nav-level2  " id="massactions-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-massactions.html">MassActions component</a>
             
@@ -708,9 +713,9 @@
         
         
         <li class="nav-level2  " id="modal-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-modal.html">Modal component</a>
             
@@ -722,9 +727,9 @@
         
         
         <li class="nav-level2  " id="multiline-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-multiline.html">Multiline component</a>
             
@@ -736,9 +741,9 @@
         
         
         <li class="nav-level2  " id="multiselect-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-multiselect.html">Multiselect component</a>
             
@@ -750,9 +755,9 @@
         
         
         <li class="nav-level2  " id="multiselectcolumn-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-multiselectcolumn.html">MultiselectColumn component</a>
             
@@ -764,9 +769,9 @@
         
         
         <li class="nav-level2  " id="nav-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-nav.html">Nav component</a>
             
@@ -778,9 +783,9 @@
         
         
         <li class="nav-level2  " id="onoffcolumn-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-onoffcolumn.html">OnOffColumn component</a>
             
@@ -792,9 +797,9 @@
         
         
         <li class="nav-level2  " id="paging-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-paging.html">Paging component</a>
             
@@ -806,9 +811,9 @@
         
         
         <li class="nav-level2  " id="radioset-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-radioset.html">Radioset component</a>
             
@@ -820,9 +825,9 @@
         
         
         <li class="nav-level2  " id="range-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-range.html">Range component</a>
             
@@ -834,9 +839,9 @@
         
         
         <li class="nav-level2  " id="search-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-search.html">Search component</a>
             
@@ -848,9 +853,9 @@
         
         
         <li class="nav-level2  " id="select-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-select.html">Select component</a>
             
@@ -862,9 +867,9 @@
         
         
         <li class="nav-level2  " id="selectcolumn-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-selectcolumn.html">SelectColumn component</a>
             
@@ -876,9 +881,9 @@
         
         
         <li class="nav-level2  " id="sizes-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-sizes.html">Sizes component</a>
             
@@ -890,9 +895,9 @@
         
         
         <li class="nav-level2  " id="tab-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-tab.html">Tab component</a>
             
@@ -904,9 +909,9 @@
         
         
         <li class="nav-level2  " id="text-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-text.html">Text component</a>
             
@@ -918,9 +923,9 @@
         
         
         <li class="nav-level2  " id="textarea-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-textarea.html">Textarea component</a>
             
@@ -932,9 +937,9 @@
         
         
         <li class="nav-level2  " id="thumbnailcolumn-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-thumbnailcolumn.html">ThumbnailColumn component</a>
             
@@ -946,9 +951,9 @@
         
         
         <li class="nav-level2  " id="toolbar-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-toolbar.html">Toolbar component</a>
             
@@ -960,9 +965,9 @@
         
         
         <li class="nav-level2  " id="treemassactions-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-treemassactions.html">TreeMassActions component</a>
             
@@ -974,9 +979,9 @@
         
         
         <li class="nav-level2  " id="wysiwyg-component">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/components/ui-wysiwyg.html">WYSIWYG component</a>
             
@@ -990,14 +995,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="concepts">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Concepts</span>
     
@@ -1008,9 +1011,9 @@
         
         
         <li class="nav-level2  " id="configuration-flow-of-ui-components">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration flow of UI components</a>
             
@@ -1022,9 +1025,9 @@
         
         
         <li class="nav-level2  " id="about-xml-сonfiguration-of-ui-сomponents">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a>
             
@@ -1036,9 +1039,9 @@
         
         
         <li class="nav-level2  " id="providing-data-to-ui-components">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html">Providing Data to UI Components</a>
             
@@ -1050,9 +1053,9 @@
         
         
         <li class="nav-level2  " id="about-php-modifiers-in-ui-components">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a>
             
@@ -1064,9 +1067,9 @@
         
         
         <li class="nav-level2  " id="template-literals">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_template_literals.html">Template Literals</a>
             
@@ -1078,9 +1081,9 @@
         
         
         <li class="nav-level2  " id="magento-custom-knockout.js-bindings">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/knockout-bindings.html">Magento custom Knockout.js bindings</a>
             
@@ -1092,9 +1095,9 @@
         
         
         <li class="nav-level2  " id="about-the-uiclass-library">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">About the uiClass library</a>
             
@@ -1106,9 +1109,9 @@
         
         
         <li class="nav-level2  " id="about-the-uielement-class">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a>
             
@@ -1120,9 +1123,9 @@
         
         
         <li class="nav-level2  " id="about-the-uicollection-class">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a>
             
@@ -1134,9 +1137,9 @@
         
         
         <li class="nav-level2  " id="the-uilayout-service-object">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">The uiLayout service object</a>
             
@@ -1148,9 +1151,9 @@
         
         
         <li class="nav-level2  " id="linking-properties-of-ui-components">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a>
             
@@ -1162,9 +1165,9 @@
         
         
         <li class="nav-level2  " id="uiregistry">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uiregistry.html">uiRegistry</a>
             
@@ -1178,14 +1181,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="how-tos">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>How Tos</span>
     
@@ -1196,9 +1197,9 @@
         
         
         <li class="nav-level2  " id="creating-and-displaying-a-category-attribute-with-ui-components">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/howto/add_category_attribute.html">Creating and displaying a category attribute with UI Components</a>
             
@@ -1212,14 +1213,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="troubleshoot">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Troubleshoot</span>
     
@@ -1230,9 +1229,9 @@
         
         
         <li class="nav-level2  " id="debug-ui-components-javascript">
+
             
-            
-        
+
             
             <a href="/guides/v2.2/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html">Debug UI components JavaScript</a>
             
@@ -1246,15 +1245,13 @@
 </li>
 
 
-    
-    </ul>
-</div>
+		    
+		    </ul>
+		</div>
 
 	</div>
 
 </aside>
-
-
 <!-- /sidebar -->
 
 
@@ -1266,9 +1263,9 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href=""><span>Home</span></a>
-
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/"><span>Home</span></a></li>
 
     <!-- Iteration breadcrumb item -->
     
@@ -1322,10 +1319,6 @@
 
     
 
-    
-
-
-
     </ol>
 
   </nav>
@@ -1342,7 +1335,6 @@
 
 
 </section>
-
 
 			<h2 id="overview">Overview</h2>
 
@@ -1429,6 +1421,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
 
+			
 		</div>
 		<!-- /.content-wrap -->
 
@@ -1437,30 +1430,26 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
   
 
   
-    
-      <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.md" target="_blank">
-          Edit this page on GitHub
-        </a>
-      </div>
-    
+  <div class="github-link">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.md" target="_blank">
+      Edit this page on GitHub
+    </a>
+  </div>
   
 
   
-    
-      <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html" target="_blank">Give us feedback</a>
-      </div>
-    
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html" target="_blank">Give us feedback</a>
+  </div>
   
-  
+
 </div>
 
 
 	</section>
 	<!-- /.content -->
 
-</div> <!-- /.container -->
+</div> <!-- /.content-container -->
 
 
 	</div>
@@ -1470,19 +1459,20 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 <!-- /#gl-wrapper -->
 
 <!-- footer-->
-<div id="footer">
+<div class="page-footer">
   <div class="container">
 
     <div class="copyright-links">
-      <ul class="nav">
-        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
-        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
-        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
-        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
-        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
-      </ul>
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
     </div>
 
 		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
@@ -1491,19 +1481,27 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 </div>
 <!-- / #footer -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="/common/js/app.min.js"></script>
 
-<!-- Glossary integration -->
-<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-<script src="/common/js/glossary.tooltip.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
 <script>
-    $(document).ready(function(){
-      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
-      });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
+
+
+
 
 <script type="text/javascript">
     (function() {
@@ -1528,17 +1526,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
     })();
 </script>
 
-
-
-<!--Google Analytics-->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-66243208-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<script src="/common/js/devdocs.min.js"></script>
 
 
 </body>

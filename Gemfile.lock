@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/magento-devdocs/devdocs-theme.git
+  revision: 3b4c6cebf4d265590b71c3cc86fa4ae41a691d6a
+  branch: devdocs-stable
+  specs:
+    devdocs (0.0.1)
+      jekyll (~> 3.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -228,9 +236,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  devdocs!
   github-pages (= 167)
   html-proofer
   launchy
 
 BUNDLED WITH
-   1.15.4
+   1.16.0

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -8,46 +8,51 @@
 	<title>Sorry, we can't take that action right now | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="" />
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.3/comp-mgr/trouble/cman/were-sorry.html">
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
 
-    <!-- WebUI popover css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
-
-  <script>
-    var baseUrl = "";
-  </script>
-
-	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
 	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:806243,hjsv:6};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
-	
-	<!-- crazyegg -->
-	<script type="text/javascript">
-	setTimeout(function(){var a=document.createElement("script");
-	var b=document.getElementsByTagName("script")[0];
-	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
-	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-	</script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
 
-    <!-- heap analytics -->
-    <script type="text/javascript">
-        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-        heap.load("2619540280");
-    </script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+<!-- crazyegg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+	<link rel="canonical" href="/guides/v2.3/comp-mgr/trouble/cman/were-sorry.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -61,22 +66,28 @@
 	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
 
 </head>
-<body>
+<body class="layout-default">
 
-<header class="site-header">
+	<header class="site-header">
 
-	<nav id="global-nav">
+		<nav class="site-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
 
-		<div class="container">
+  <div class="nav-container">
 
-			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
 
-			
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
 <div class="version-switcher dropdown" data-version="2.3">
-	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.3 Pre-release
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Pre-release
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -94,11 +105,11 @@
 </div>
 
 
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
 
-			<nav class="nav-main" role="menubar">
-
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -114,11 +125,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
 
@@ -163,11 +174,11 @@
       </div>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -183,14 +194,14 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-separator"></div>
+  <li class="nav-main-separator"></li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -208,11 +219,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -225,62 +236,53 @@
       </ul>
     </div>
 
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
   </div>
 
-</nav><!-- /.nav-main -->
-
-
-			<div class="search-btn">
-				<a class="search-trigger search-icon" href="/search.html"></a>
-			</div>
-
-			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" autocomplete="off" />
-				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
-			</form>
-
-		</div>
-
-	</nav><!-- #global-nav -->
-
-</header>
+</nav><!-- #site-nav -->
 <div class="nav-main-fader"></div>
 
 
-<div id="gl-wrapper">
+	</header>
 
-	<!-- .main-container -->
-	<div class="main-container">
-		<a id="main-content"></a>
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
 
 
-<div class="container">
-
-    
-    <div class="message-banner">
-        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
-	</div>
-
-    
-
-    
+<div class="content-container">
 
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+		
 
-
-<h4>Software Update Guide</h4>
-<div class="left-navigation">
-    <ul>
-    
-    
+		<h4 class="guide-title">Software Update Guide</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
 
 <li class="nav-level1  " id="upgrade-the-magento-application-and-modules">
     
-    
+
     
     <a href="/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html">Upgrade the Magento application and modules</a>
     
@@ -289,14 +291,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="prerequisites">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>
     
@@ -309,9 +309,9 @@
         
         
         <li class="nav-level2  " id="set-ulimit-for-the-web-server-user">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a>
             
@@ -323,9 +323,9 @@
         
         
         <li class="nav-level2  " id="set-up-cron-for-update-and-upgrade">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/prereq/prereq_cron.html">Set up cron for update and upgrade</a>
             
@@ -337,9 +337,9 @@
         
         
         <li class="nav-level2  " id="update-and-upgrade-checklist">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/prereq/prereq_compman-checklist.html">Update and upgrade checklist</a>
             
@@ -353,12 +353,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="magento-marketplace-example">
     
-    
+
     
     <a href="/guides/v2.3/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a>
     
@@ -367,17 +367,15 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="run-the-module-manager">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/module-man/compman-checklist.html">Run the Module Manager</a>
     
@@ -388,9 +386,9 @@
         
         
         <li class="nav-level2  " id="start-the-module-manager">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/module-man/compman-start.html">Start the Module Manager</a>
             
@@ -402,9 +400,9 @@
         
         
         <li class="nav-level2  " id="step-1.-readiness-check">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/module-man/compman-readiness.html">Step 1. Readiness check</a>
             
@@ -416,9 +414,9 @@
         
         
         <li class="nav-level2  " id="step-2.-back-up-the-file-system-and-database">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/module-man/compman-backup.html">Step 2. Back up the file system and database</a>
             
@@ -430,9 +428,9 @@
         
         
         <li class="nav-level2  " id="enable/disable">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/module-man/modman-enable-disable.html">Enable/Disable</a>
             
@@ -446,14 +444,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="run-the-extension-manager">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/extens-man/extensman-checklist.html">Run the Extension Manager</a>
     
@@ -464,9 +460,9 @@
         
         
         <li class="nav-level2  " id="start-the-extension-manager">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/extens-man/extensman-main-pg.html">Start the Extension Manager</a>
             
@@ -478,11 +474,9 @@
         
         
         <li class="nav-level2  " id="step-1.-readiness-check">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Step 1. Readiness check</span>
             
@@ -540,9 +534,9 @@
         
         
         <li class="nav-level2  " id="step-2.-back-up-the-file-system-and-database">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/extens-man/extensman-backup.html">Step 2. Back up the file system and database</a>
             
@@ -554,11 +548,9 @@
         
         
         <li class="nav-level2  " id="step-3">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Step 3</span>
             
@@ -616,9 +608,9 @@
         
         
         <li class="nav-level2  " id="step-4.-uninstall">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/extens-man/extensman-uninst-final.html">Step 4. Uninstall</a>
             
@@ -632,14 +624,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="install-extensions-from-the-command-line">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/install-extensions.html">Install extensions from the command line</a>
     
@@ -650,9 +640,9 @@
         
         
         <li class="nav-level2  " id="install-the-b2b-extension">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/install-extensions/b2b-installation.html">Install the B2B extension</a>
             
@@ -666,12 +656,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="upgrade-from-magento-open-source-to-magento-commerce">
     
-    
+
     
     <a href="/guides/v2.3/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from Magento Open Source to Magento Commerce</a>
     
@@ -680,14 +670,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="command-line-upgrade">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a>
     
@@ -698,9 +686,9 @@
         
         
         <li class="nav-level2  " id="command-line-upgrade-to-magento-2.1-with-sample-data">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a>
             
@@ -714,14 +702,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="run-system-upgrade">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-checklist.html">Run System Upgrade</a>
     
@@ -732,9 +718,9 @@
         
         
         <li class="nav-level2  " id="start-system-upgrade">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>
             
@@ -746,9 +732,9 @@
         
         
         <li class="nav-level2  " id="step-1.-select-versions-to-upgrade">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>
             
@@ -760,9 +746,9 @@
         
         
         <li class="nav-level2  " id="step-2.-readiness-check">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>
             
@@ -774,9 +760,9 @@
         
         
         <li class="nav-level2  " id="step-3.-back-up-the-file-system-and-database">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a>
             
@@ -788,9 +774,9 @@
         
         
         <li class="nav-level2  " id="step-4.-upgrade">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>
             
@@ -804,14 +790,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="update-the-updater-application">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/updater/update-updater.html">Update the updater application</a>
     
@@ -822,9 +806,9 @@
         
         
         <li class="nav-level2  " id="updater-application">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/updater/updater.html">Updater application</a>
             
@@ -838,14 +822,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="troubleshooting-suggestions">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a>
     
@@ -856,9 +838,9 @@
         
         
         <li class="nav-level2 active " id="sorry,-we-can't-take-that-action-right-now">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/were-sorry.html">Sorry, we can't take that action right now</a>
             
@@ -870,9 +852,9 @@
         
         
         <li class="nav-level2  " id="out-of-memory-errors">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a>
             
@@ -884,9 +866,9 @@
         
         
         <li class="nav-level2  " id="missing-.gitignore-files">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a>
             
@@ -898,9 +880,9 @@
         
         
         <li class="nav-level2  " id="troubleshoot-upgrade-issues">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/upgrade_51431.html">Troubleshoot upgrade issues</a>
             
@@ -912,9 +894,9 @@
         
         
         <li class="nav-level2  " id="troubleshoot-cron">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a>
             
@@ -926,9 +908,9 @@
         
         
         <li class="nav-level2  " id="troubleshoot-the-updater-application">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a>
             
@@ -940,9 +922,9 @@
         
         
         <li class="nav-level2  " id="php-version-readiness-check-issues">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
             
@@ -956,9 +938,9 @@
         
         
         <li class="nav-level2  " id="roll-back-after-update-failure">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a>
             
@@ -970,9 +952,9 @@
         
         
         <li class="nav-level2  " id="resolve-component-dependency-readiness-check-issues">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/component-depend.html">Resolve component dependency readiness check issues</a>
             
@@ -984,9 +966,9 @@
         
         
         <li class="nav-level2  " id="maintenance-mode-options-for-upgrade">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a>
             
@@ -998,9 +980,9 @@
         
         
         <li class="nav-level2  " id="troubleshoot-backups">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>
             
@@ -1012,9 +994,9 @@
         
         
         <li class="nav-level2  " id="error-upgrading-from-magento-open-source-to-magento-commerce">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from Magento Open Source to Magento Commerce</a>
             
@@ -1026,9 +1008,9 @@
         
         
         <li class="nav-level2  " id="magento/theme-doc-blank-failure">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a>
             
@@ -1042,15 +1024,13 @@
 </li>
 
 
-    
-    </ul>
-</div>
+		    
+		    </ul>
+		</div>
 
 	</div>
 
 </aside>
-
-
 <!-- /sidebar -->
 
 
@@ -1062,9 +1042,9 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.3"><span>Home</span></a>
-
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a></li>
 
     <!-- Iteration breadcrumb item -->
     
@@ -1118,10 +1098,6 @@
 
     
 
-    
-
-
-
     </ol>
 
   </nav>
@@ -1138,7 +1114,6 @@
 
 
 </section>
-
 
 			<p>The following error might display at the start of your upgrade:</p>
 
@@ -1213,6 +1188,7 @@
 
 <p>Instead, see one of the options discussed in <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</p>
 
+			
 		</div>
 		<!-- /.content-wrap -->
 
@@ -1221,30 +1197,26 @@
   
 
   
-    
-      <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/comp-mgr/trouble/cman/were-sorry.md" target="_blank">
-          Edit this page on GitHub
-        </a>
-      </div>
-    
+  <div class="github-link">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/comp-mgr/trouble/cman/were-sorry.md" target="_blank">
+      Edit this page on GitHub
+    </a>
+  </div>
   
 
   
-    
-      <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/comp-mgr/trouble/cman/were-sorry.html" target="_blank">Give us feedback</a>
-      </div>
-    
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/comp-mgr/trouble/cman/were-sorry.html" target="_blank">Give us feedback</a>
+  </div>
   
-  
+
 </div>
 
 
 	</section>
 	<!-- /.content -->
 
-</div> <!-- /.container -->
+</div> <!-- /.content-container -->
 
 
 	</div>
@@ -1254,19 +1226,20 @@
 <!-- /#gl-wrapper -->
 
 <!-- footer-->
-<div id="footer">
+<div class="page-footer">
   <div class="container">
 
     <div class="copyright-links">
-      <ul class="nav">
-        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
-        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
-        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
-        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
-        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
-      </ul>
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
     </div>
 
 		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
@@ -1275,19 +1248,27 @@
 </div>
 <!-- / #footer -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="/common/js/app.min.js"></script>
 
-<!-- Glossary integration -->
-<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-<script src="/common/js/glossary.tooltip.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
 <script>
-    $(document).ready(function(){
-      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
-      });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
+
+
+
 
 <script type="text/javascript">
     (function() {
@@ -1312,17 +1293,7 @@
     })();
 </script>
 
-
-
-<!--Google Analytics-->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-66243208-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<script src="/common/js/devdocs.min.js"></script>
 
 
 </body>

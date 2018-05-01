@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -8,46 +8,51 @@
 	<title>Configure product video | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="" />
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.3/frontend-dev-guide/themes/product-video.html">
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
 
-    <!-- WebUI popover css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
-
-  <script>
-    var baseUrl = "";
-  </script>
-
-	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
 	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:806243,hjsv:6};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
-	
-	<!-- crazyegg -->
-	<script type="text/javascript">
-	setTimeout(function(){var a=document.createElement("script");
-	var b=document.getElementsByTagName("script")[0];
-	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
-	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-	</script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
 
-    <!-- heap analytics -->
-    <script type="text/javascript">
-        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-        heap.load("2619540280");
-    </script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+<!-- crazyegg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+	<link rel="canonical" href="/guides/v2.3/frontend-dev-guide/themes/product-video.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -61,22 +66,28 @@
 	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
 
 </head>
-<body>
+<body class="layout-default">
 
-<header class="site-header">
+	<header class="site-header">
 
-	<nav id="global-nav">
+		<nav class="site-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
 
-		<div class="container">
+  <div class="nav-container">
 
-			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
 
-			
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
 <div class="version-switcher dropdown" data-version="2.3">
-	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.3 Pre-release
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Pre-release
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -94,11 +105,11 @@
 </div>
 
 
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
 
-			<nav class="nav-main" role="menubar">
-
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -114,11 +125,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
 
@@ -163,11 +174,11 @@
       </div>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -183,14 +194,14 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-separator"></div>
+  <li class="nav-main-separator"></li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -208,11 +219,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -225,62 +236,53 @@
       </ul>
     </div>
 
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
   </div>
 
-</nav><!-- /.nav-main -->
-
-
-			<div class="search-btn">
-				<a class="search-trigger search-icon" href="/search.html"></a>
-			</div>
-
-			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" autocomplete="off" />
-				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
-			</form>
-
-		</div>
-
-	</nav><!-- #global-nav -->
-
-</header>
+</nav><!-- #site-nav -->
 <div class="nav-main-fader"></div>
 
 
-<div id="gl-wrapper">
+	</header>
 
-	<!-- .main-container -->
-	<div class="main-container">
-		<a id="main-content"></a>
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
 
 
-<div class="container">
-
-    
-    <div class="message-banner">
-        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
-	</div>
-
-    
-
-    
+<div class="content-container">
 
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+		
 
-
-<h4>Frontend Developer Guide</h4>
-<div class="left-navigation">
-    <ul>
-    
-    
+		<h4 class="guide-title">Frontend Developer Guide</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
 
 <li class="nav-level1  " id="introduction">
     
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a>
     
@@ -289,12 +291,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="conventional-notations-used-in-this-guide">
     
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a>
     
@@ -303,12 +305,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="magento-cache-overview">
     
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html">Magento cache overview</a>
     
@@ -317,12 +319,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="theme-development-best-practices">
     
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/theme-best-practice.html">Theme development best practices</a>
     
@@ -331,14 +333,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="themes">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/themes/theme-general.html">Themes</a>
     
@@ -349,9 +349,9 @@
         
         
         <li class="nav-level2  " id="themes-overview">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-overview.html">Themes overview</a>
             
@@ -363,9 +363,9 @@
         
         
         <li class="nav-level2  " id="install-a-third-party-storefront-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-install.html">Install a third-party storefront theme</a>
             
@@ -377,9 +377,9 @@
         
         
         <li class="nav-level2  " id="uninstall-a-storefront-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-uninstall.html">Uninstall a storefront theme</a>
             
@@ -391,9 +391,9 @@
         
         
         <li class="nav-level2  " id="create-an-admin-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/admin_theme_create.html">Create an Admin theme</a>
             
@@ -405,9 +405,9 @@
         
         
         <li class="nav-level2  " id="apply-an-admin-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/admin_theme_apply.html">Apply an Admin theme</a>
             
@@ -419,9 +419,9 @@
         
         
         <li class="nav-level2  " id="create-a-new-storefront-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a>
             
@@ -433,9 +433,9 @@
         
         
         <li class="nav-level2  " id="apply-and-configure-a-storefront-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-apply.html">Apply and configure a storefront theme</a>
             
@@ -447,9 +447,9 @@
         
         
         <li class="nav-level2  " id="locate-templates,-layouts,-and-styles">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a>
             
@@ -461,9 +461,9 @@
         
         
         <li class="nav-level2  " id="magento-theme-structure">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>
             
@@ -475,9 +475,9 @@
         
         
         <li class="nav-level2  " id="theme-inheritance">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a>
             
@@ -489,9 +489,9 @@
         
         
         <li class="nav-level2  " id="adding-custom-favicons">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/favicon.html">Adding custom favicons</a>
             
@@ -503,9 +503,9 @@
         
         
         <li class="nav-level2  " id="configure-images-properties-for-a-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a>
             
@@ -517,9 +517,9 @@
         
         
         <li class="nav-level2 active " id="configure-product-video">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/product-video.html">Configure product video</a>
             
@@ -531,9 +531,9 @@
         
         
         <li class="nav-level2  " id="javascript-bundling">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/themes/js-bundling.html">JavaScript Bundling</a>
             
@@ -547,14 +547,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="layout">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-overview.html">Layout</a>
     
@@ -565,9 +563,9 @@
         
         
         <li class="nav-level2  " id="layout-instructions">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a>
             
@@ -579,9 +577,9 @@
         
         
         <li class="nav-level2  " id="layout-file-types">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-types.html">Layout file types</a>
             
@@ -593,9 +591,9 @@
         
         
         <li class="nav-level2  " id="extend-a-layout">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
             
@@ -607,9 +605,9 @@
         
         
         <li class="nav-level2  " id="override-a-layout">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
             
@@ -621,9 +619,9 @@
         
         
         <li class="nav-level2  " id="common-layout-customization-tasks">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a>
             
@@ -635,9 +633,9 @@
         
         
         <li class="nav-level2  " id="customizing-layout-illustration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a>
             
@@ -651,14 +649,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="templates">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/templates/template-overview.html">Templates</a>
     
@@ -669,9 +665,9 @@
         
         
         <li class="nav-level2  " id="templates-customization-walkthrough">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a>
             
@@ -683,9 +679,9 @@
         
         
         <li class="nav-level2  " id="templates-basic-concepts">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a>
             
@@ -697,9 +693,9 @@
         
         
         <li class="nav-level2  " id="illustration-of-customizing-templates">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a>
             
@@ -711,9 +707,9 @@
         
         
         <li class="nav-level2  " id="customize-email-templates">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/templates/template-email.html">Customize email templates</a>
             
@@ -725,9 +721,9 @@
         
         
         <li class="nav-level2  " id="templates-xss-security">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/templates/template-security.html">Templates XSS security</a>
             
@@ -741,14 +737,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="cascading-style-sheets-(css)">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a>
     
@@ -759,9 +753,9 @@
         
         
         <li class="nav-level2  " id="include-css">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a>
             
@@ -773,9 +767,9 @@
         
         
         <li class="nav-level2  " id="css-and-less-preprocessing">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html">CSS and LESS preprocessing</a>
             
@@ -787,9 +781,9 @@
         
         
         <li class="nav-level2  " id="compile-less-using-grunt">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html">Compile LESS using Grunt</a>
             
@@ -801,9 +795,9 @@
         
         
         <li class="nav-level2  " id="magento-ui-library">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
             
@@ -815,9 +809,9 @@
         
         
         <li class="nav-level2  " id="using-jquery-ui-styles">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-jquery.html">Using jQuery UI styles</a>
             
@@ -829,9 +823,9 @@
         
         
         <li class="nav-level2  " id="customizing-styles-illustration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a>
             
@@ -843,9 +837,9 @@
         
         
         <li class="nav-level2  " id="using-custom-fonts">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a>
             
@@ -857,11 +851,9 @@
         
         
         <li class="nav-level2  " id="using-custom-css-preprocessor">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Using custom CSS preprocessor</span>
             
@@ -907,14 +899,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="quick-start-guide-to-styles">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to styles</a>
     
@@ -925,9 +915,9 @@
         
         
         <li class="nav-level2  " id="simple-ways-to-customize-a-theme's-styles">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
             
@@ -939,9 +929,9 @@
         
         
         <li class="nav-level2  " id="simple-style-changes-with-client-side-less-compilation-vs.-server-side">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
             
@@ -955,14 +945,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="how-to-make-your-theme-responsive-and-mobile">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a>
     
@@ -973,9 +961,9 @@
         
         
         <li class="nav-level2  " id="css-in-responsive-design">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a>
             
@@ -987,9 +975,9 @@
         
         
         <li class="nav-level2  " id="javascript-in-magento-responsive-design">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a>
             
@@ -1001,9 +989,9 @@
         
         
         <li class="nav-level2  " id="create-a-responsive-mobile-theme-based-on-a-default-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a>
             
@@ -1015,9 +1003,9 @@
         
         
         <li class="nav-level2  " id="customizing-rwd-illustration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a>
             
@@ -1029,9 +1017,9 @@
         
         
         <li class="nav-level2  " id="add-a-custom-breakpoint">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a>
             
@@ -1045,14 +1033,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="translations">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/translations/xlate.html">Translations</a>
     
@@ -1063,9 +1049,9 @@
         
         
         <li class="nav-level2  " id="use-translation-dictionary-to-customize-strings">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/translations/theme_dictionary.html">Use translation dictionary to customize strings</a>
             
@@ -1077,9 +1063,9 @@
         
         
         <li class="nav-level2  " id="translate-theme-strings">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/translations/translate_theory.html">Translate theme strings</a>
             
@@ -1091,9 +1077,9 @@
         
         
         <li class="nav-level2  " id="create-a-translation-dictionary-for-a-theme,-illustration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme, illustration</a>
             
@@ -1107,14 +1093,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="tools">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/frontend-dev-guide/tools/tools_overview.html">Tools</a>
     
@@ -1125,9 +1109,9 @@
         
         
         <li class="nav-level2  " id="using-grunt-for-magento-tasks">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/frontend-dev-guide/tools/using_grunt.html">Using Grunt for Magento tasks</a>
             
@@ -1141,15 +1125,13 @@
 </li>
 
 
-    
-    </ul>
-</div>
+		    
+		    </ul>
+		</div>
 
 	</div>
 
 </aside>
-
-
 <!-- /sidebar -->
 
 
@@ -1161,9 +1143,9 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.3"><span>Home</span></a>
-
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a></li>
 
     <!-- Iteration breadcrumb item -->
     
@@ -1217,10 +1199,6 @@
 
     
 
-    
-
-
-
     </ol>
 
   </nav>
@@ -1237,7 +1215,6 @@
 
 
 </section>
-
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
@@ -1318,6 +1295,7 @@ Boolean
 
 <p>For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.</p>
 
+			
 		</div>
 		<!-- /.content-wrap -->
 
@@ -1326,30 +1304,26 @@ Boolean
   
 
   
-    
-      <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/product-video.md" target="_blank">
-          Edit this page on GitHub
-        </a>
-      </div>
-    
+  <div class="github-link">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/frontend-dev-guide/themes/product-video.md" target="_blank">
+      Edit this page on GitHub
+    </a>
+  </div>
   
 
   
-    
-      <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/frontend-dev-guide/themes/product-video.html" target="_blank">Give us feedback</a>
-      </div>
-    
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/frontend-dev-guide/themes/product-video.html" target="_blank">Give us feedback</a>
+  </div>
   
-  
+
 </div>
 
 
 	</section>
 	<!-- /.content -->
 
-</div> <!-- /.container -->
+</div> <!-- /.content-container -->
 
 
 	</div>
@@ -1359,19 +1333,20 @@ Boolean
 <!-- /#gl-wrapper -->
 
 <!-- footer-->
-<div id="footer">
+<div class="page-footer">
   <div class="container">
 
     <div class="copyright-links">
-      <ul class="nav">
-        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
-        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
-        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
-        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
-        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
-      </ul>
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
     </div>
 
 		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
@@ -1380,19 +1355,27 @@ Boolean
 </div>
 <!-- / #footer -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="/common/js/app.min.js"></script>
 
-<!-- Glossary integration -->
-<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-<script src="/common/js/glossary.tooltip.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
 <script>
-    $(document).ready(function(){
-      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
-      });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
+
+
+
 
 <script type="text/javascript">
     (function() {
@@ -1417,17 +1400,7 @@ Boolean
     })();
 </script>
 
-
-
-<!--Google Analytics-->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-66243208-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<script src="/common/js/devdocs.min.js"></script>
 
 
 </body>

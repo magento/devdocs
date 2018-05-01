@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -8,46 +8,51 @@
 	<title>Step 5. Create Admin Account | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="" />
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.0/install-gde/install/web/install-web_5-create-admin.html">
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
 
-    <!-- WebUI popover css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
-
-  <script>
-    var baseUrl = "";
-  </script>
-
-	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
 	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:806243,hjsv:6};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
-	
-	<!-- crazyegg -->
-	<script type="text/javascript">
-	setTimeout(function(){var a=document.createElement("script");
-	var b=document.getElementsByTagName("script")[0];
-	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
-	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-	</script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
 
-    <!-- heap analytics -->
-    <script type="text/javascript">
-        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-        heap.load("2619540280");
-    </script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+<!-- crazyegg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+	<link rel="canonical" href="/guides/v2.0/install-gde/install/web/install-web_5-create-admin.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -61,22 +66,28 @@
 	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
 
 </head>
-<body>
+<body class="layout-default">
 
-<header class="site-header">
+	<header class="site-header">
 
-	<nav id="global-nav">
+		<nav class="site-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
 
-		<div class="container">
+  <div class="nav-container">
 
-			<a class="logo" href="/guides/v2.0/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+    <a class="logo" href="/guides/v2.0/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
 
-			
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
 <div class="version-switcher dropdown" data-version="2.0">
-	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.0
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.0
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -94,11 +105,11 @@
 </div>
 
 
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
 
-			<nav class="nav-main" role="menubar">
-
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -114,11 +125,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
 
@@ -159,11 +170,11 @@
       </div>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -177,14 +188,14 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-separator"></div>
+  <li class="nav-main-separator"></li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -196,11 +207,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -211,61 +222,53 @@
       </ul>
     </div>
 
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.0/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
   </div>
 
-</nav><!-- /.nav-main -->
-
-
-			<div class="search-btn">
-				<a class="search-trigger search-icon" href="/search.html"></a>
-			</div>
-
-			<form class="quick-search" action="/guides/v2.0/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" autocomplete="off" />
-				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
-			</form>
-
-		</div>
-
-	</nav><!-- #global-nav -->
-
-</header>
+</nav><!-- #site-nav -->
 <div class="nav-main-fader"></div>
 
 
-<div id="gl-wrapper">
+	</header>
 
-	<!-- .main-container -->
-	<div class="main-container">
-		<a id="main-content"></a>
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
 
 
-<div class="container">
-
-    
-
-    
-    <div class="message-banner">
-		<a href="http://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html" target="_blank">Magento 2.0.18</a> is the final 2.0.x release. After March 2018, Magento 2.0.x will no longer receive security patches, quality fixes, or documentation updates.</br> To maintain your site's performance, security, and PCI compliance, upgrade to the latest version of Magento.</a>
-    </div>
-    
+<div class="content-container">
 
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+		
 
-
-<h4>Installation Guide</h4>
-<div class="left-navigation">
-    <ul>
-    
-    
+		<h4 class="guide-title">Installation Guide</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
 
 <li class="nav-level1  " id="how-to-get-the-magento-software">
     
-    
+
     
     <a href="/guides/v2.0/install-gde/bk-install-guide.html">How to get the Magento software</a>
     
@@ -274,12 +277,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="installation-flow-diagram">
     
-    
+
     
     <a href="/guides/v2.0/install-gde/install-flow-diagram.html">Installation flow diagram</a>
     
@@ -288,14 +291,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="just-the-basics">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Just the basics</span>
     
@@ -306,9 +307,9 @@
         
         
         <li class="nav-level2  " id="is-the-magento-software-installed-already?">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
             
@@ -320,9 +321,9 @@
         
         
         <li class="nav-level2  " id="what-operating-system-is-my-server-running?">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
             
@@ -334,9 +335,9 @@
         
         
         <li class="nav-level2  " id="how-do-i-log-in-to-my-magento-server-using-a-terminal,-command-prompt,-or-ssh?">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
             
@@ -348,9 +349,9 @@
         
         
         <li class="nav-level2  " id="what's-the-difference-between-a-module-and-a-component?">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/basics/basics_module.html">What's the difference between a module and a component?</a>
             
@@ -362,9 +363,9 @@
         
         
         <li class="nav-level2  " id="what-is-the-software-that-the-magento-server-needs-to-run?">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
             
@@ -376,9 +377,9 @@
         
         
         <li class="nav-level2  " id="what-is-a-docroot?">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">What is a docroot?</a>
             
@@ -392,14 +393,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="getting-started">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Getting Started</span>
     
@@ -410,11 +409,9 @@
         
         
         <li class="nav-level2  " id="helpful-resources">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install-resources-parent.html">Helpful resources</a>
             
@@ -472,11 +469,9 @@
         
         
         <li class="nav-level2  " id="magento-system-requirements">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/system-requirements2.html">Magento system requirements</a>
             
@@ -517,8 +512,6 @@
                 
                 <li class="nav-level3  " id="transport-layer-security-(tls)-requirements">
                     
-                    <div class="toggle closed">&nbsp;</div>
-                    
 
                     
                     <span>Transport Layer Security (TLS) requirements</span>
@@ -548,8 +541,8 @@
 
                         </li>
                         
-                         
-                    </ul> 
+                        
+                    </ul>
                     
                 </li>
                 
@@ -562,11 +555,9 @@
         
         
         <li class="nav-level2  " id="prerequisites">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>
             
@@ -606,8 +597,6 @@
                 
                 
                 <li class="nav-level3  " id="php">
-                    
-                    <div class="toggle closed">&nbsp;</div>
                     
 
                     
@@ -649,8 +638,8 @@
 
                         </li>
                         
-                         
-                    </ul> 
+                        
+                    </ul>
                     
                 </li>
                 
@@ -688,8 +677,6 @@
                 
                 <li class="nav-level3  " id="magento-file-system-ownership-and-permissions">
                     
-                    <div class="toggle closed">&nbsp;</div>
-                    
 
                     
                     <span>Magento file system ownership and permissions</span>
@@ -719,8 +706,8 @@
 
                         </li>
                         
-                         
-                    </ul> 
+                        
+                    </ul>
                     
                 </li>
                 
@@ -803,9 +790,9 @@
         
         
         <li class="nav-level2  " id="get-the-magento-software">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/get-software.html">Get the Magento software</a>
             
@@ -817,9 +804,9 @@
         
         
         <li class="nav-level2  " id="(easy)-install-the-magento-archive-on-your-server">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a>
             
@@ -831,11 +818,9 @@
         
         
         <li class="nav-level2  " id="(integrator)-integrator-installation">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">(Integrator) Integrator installation</a>
             
@@ -893,11 +878,9 @@
         
         
         <li class="nav-level2  " id="(contributor)-clone-the-magento-repository">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>
             
@@ -927,9 +910,9 @@
         
         
         <li class="nav-level2  " id="get-help-with-your-installation">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/get-help.html">Get help with your installation</a>
             
@@ -941,9 +924,9 @@
         
         
         <li class="nav-level2  " id="install-options">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/continue-to-install.html">Install options</a>
             
@@ -957,14 +940,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="setup-wizard-install">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Setup Wizard Install</span>
     
@@ -975,9 +956,9 @@
         
         
         <li class="nav-level2  " id="installation-roadmap-(reference)">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install-roadmap_web.html">Installation roadmap (reference)</a>
             
@@ -989,11 +970,9 @@
         
         
         <li class="nav-level2  " id="install-optional-sample-data-modules">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/web/install-web-sample-data.html">Install optional sample data modules</a>
             
@@ -1037,11 +1016,9 @@
         
         
         <li class="nav-level2  " id="setup-wizard-installation">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard installation</a>
             
@@ -1141,9 +1118,9 @@
         
         
         <li class="nav-level2  " id="post-installation">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/continue-to-verify.html">Post-installation</a>
             
@@ -1157,14 +1134,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="command-line-installation">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Command Line Installation</span>
     
@@ -1175,9 +1150,9 @@
         
         
         <li class="nav-level2  " id="installation-roadmap-(reference)">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install-roadmap_cli.html">Installation roadmap (reference)</a>
             
@@ -1189,11 +1164,9 @@
         
         
         <li class="nav-level2  " id="install-optional-sample-data-modules">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data.html">Install optional sample data modules</a>
             
@@ -1237,11 +1210,9 @@
         
         
         <li class="nav-level2  " id="install-the-magento-software-using-the-command-line">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a>
             
@@ -1481,11 +1452,9 @@
         
         
         <li class="nav-level2  " id="contributing-developers—update,-reinstall-magento">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>
             
@@ -1557,9 +1526,9 @@
         
         
         <li class="nav-level2  " id="post-installation">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/continue-to-verify_cli.html">Post-installation</a>
             
@@ -1573,14 +1542,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="post-installation">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Post Installation</span>
     
@@ -1591,9 +1558,9 @@
         
         
         <li class="nav-level2  " id="verify-the-installation">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a>
             
@@ -1605,9 +1572,9 @@
         
         
         <li class="nav-level2  " id="configure-the-magento-application">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/post-install-config.html">Configure the Magento application</a>
             
@@ -1619,9 +1586,9 @@
         
         
         <li class="nav-level2  " id="optionally-set-a-umask">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/post-install-umask.html">Optionally set a umask</a>
             
@@ -1633,9 +1600,9 @@
         
         
         <li class="nav-level2  " id="appendix—magento-file-system-ownership-and-appendix-(legacy)">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/legacy-file-system-perms.html">Appendix—Magento file system ownership and appendix (legacy)</a>
             
@@ -1647,11 +1614,9 @@
         
         
         <li class="nav-level2  " id="install-sample-data-after-magento">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/install/sample-data-after-magento.html">Install sample data after Magento</a>
             
@@ -1697,14 +1662,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="troubleshooting">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>Troubleshooting</span>
     
@@ -1715,11 +1678,9 @@
         
         
         <li class="nav-level2  " id="access-issues">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Access issues</span>
             
@@ -1833,11 +1794,9 @@
         
         
         <li class="nav-level2  " id="errors-during-installation">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Errors during installation</span>
             
@@ -1993,11 +1952,9 @@
         
         
         <li class="nav-level2  " id="readiness-check-issues">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Readiness check issues</span>
             
@@ -2069,11 +2026,9 @@
         
         
         <li class="nav-level2  " id="github-errors">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>GitHub errors</span>
             
@@ -2117,11 +2072,9 @@
         
         
         <li class="nav-level2  " id="php-errors">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>PHP errors</span>
             
@@ -2193,11 +2146,9 @@
         
         
         <li class="nav-level2  " id="other-issues">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <span>Other issues</span>
             
@@ -2285,14 +2236,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="how-tos">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <span>How Tos</span>
     
@@ -2303,9 +2252,9 @@
         
         
         <li class="nav-level2  " id="modify-docroot-to-improve-security">
+
             
-            
-        
+
             
             <a href="/guides/v2.0/install-gde/tutorials/change-docroot-to-pub.html">Modify docroot to improve security</a>
             
@@ -2319,15 +2268,13 @@
 </li>
 
 
-    
-    </ul>
-</div>
+		    
+		    </ul>
+		</div>
 
 	</div>
 
 </aside>
-
-
 <!-- /sidebar -->
 
 
@@ -2339,9 +2286,9 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.0"><span>Home</span></a>
-
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.0/"><span>Home</span></a></li>
 
     <!-- Iteration breadcrumb item -->
     
@@ -2373,10 +2320,6 @@
 
     
 
-    
-
-
-
     </ol>
 
   </nav>
@@ -2393,7 +2336,6 @@
 
 
 </section>
-
 
 			
 <h2 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h2>
@@ -2435,6 +2377,7 @@
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.0/install-gde/install/web/install-web_6-install.html">Step 6. Install</a></p>
 
+			
 		</div>
 		<!-- /.content-wrap -->
 
@@ -2443,20 +2386,26 @@
   
 
   
-    
+  <div class="github-link">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/web/install-web_5-create-admin.md" target="_blank">
+      Edit this page on GitHub
+    </a>
+  </div>
   
 
   
-    
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/install/web/install-web_5-create-admin.html" target="_blank">Give us feedback</a>
+  </div>
   
-  
+
 </div>
 
 
 	</section>
 	<!-- /.content -->
 
-</div> <!-- /.container -->
+</div> <!-- /.content-container -->
 
 
 	</div>
@@ -2466,19 +2415,20 @@
 <!-- /#gl-wrapper -->
 
 <!-- footer-->
-<div id="footer">
+<div class="page-footer">
   <div class="container">
 
     <div class="copyright-links">
-      <ul class="nav">
-        <li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
-        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
-        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
-        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
-        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-        <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
-      </ul>
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.0/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
     </div>
 
 		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
@@ -2487,19 +2437,27 @@
 </div>
 <!-- / #footer -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="/common/js/app.min.js"></script>
 
-<!-- Glossary integration -->
-<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-<script src="/common/js/glossary.tooltip.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
 <script>
-    $(document).ready(function(){
-      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
-      });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
+
+
+
 
 <script type="text/javascript">
     (function() {
@@ -2524,17 +2482,7 @@
     })();
 </script>
 
-
-
-<!--Google Analytics-->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-66243208-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<script src="/common/js/devdocs.min.js"></script>
 
 
 </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="no-js">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width initial-scale=1" />
@@ -8,46 +8,51 @@
 	<title>Custom blacklist VCL | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
-	<meta http-equiv="last-modified" content="" />
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
 
-	<link rel="stylesheet" href="/css/app.css" />
-	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="/guides/v2.3/cloud/configure/fastly-vcl-blacklist.html">
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
 
-    <!-- WebUI popover css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
-
-  <script>
-    var baseUrl = "";
-  </script>
-
-	<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
 	<script>
-	    (function(h,o,t,j,a,r){
-	        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-	        h._hjSettings={hjid:806243,hjsv:6};
-	        a=o.getElementsByTagName('head')[0];
-	        r=o.createElement('script');r.async=1;
-	        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-	        a.appendChild(r);
-	    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-	</script>
-	
-	<!-- crazyegg -->
-	<script type="text/javascript">
-	setTimeout(function(){var a=document.createElement("script");
-	var b=document.getElementsByTagName("script")[0];
-	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
-	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
-	</script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
 
-    <!-- heap analytics -->
-    <script type="text/javascript">
-        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
-        heap.load("2619540280");
-    </script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+<!-- crazyegg -->
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+	<link rel="canonical" href="/guides/v2.3/cloud/configure/fastly-vcl-blacklist.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -61,22 +66,28 @@
 	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
 
 </head>
-<body>
+<body class="layout-default">
 
-<header class="site-header">
+	<header class="site-header">
 
-	<nav id="global-nav">
+		<nav class="site-nav">
 
-		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#" data-proofer-ignore></a></div>
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
 
-		<div class="container">
+  <div class="nav-container">
 
-			<a class="logo" href="/guides/v2.3/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
 
-			
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
 <div class="version-switcher dropdown" data-version="2.3">
-	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Magento 2.3 Pre-release
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Pre-release
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
@@ -94,11 +105,11 @@
 </div>
 
 
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
 
-			<nav class="nav-main" role="menubar">
-
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Setup</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -114,11 +125,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Development</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
 
@@ -163,11 +174,11 @@
       </div>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Testing</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -183,14 +194,14 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-separator"></div>
+  <li class="nav-main-separator"></li>
 
 
-  <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Functional Areas</a>
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -208,11 +219,11 @@
       </ul>
     </div>
 
-  </div>
+  </li>
 
 
-  <div class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" data-proofer-ignore tabindex="-1">Tutorials</a>
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
@@ -225,64 +236,53 @@
       </ul>
     </div>
 
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
   </div>
 
-</nav><!-- /.nav-main -->
-
-
-			<div class="search-btn">
-				<a class="search-trigger search-icon" href="/search.html"></a>
-			</div>
-
-			<form class="quick-search" action="/guides/v2.3/search.html" method="get">
-				<input type="search" name="q" placeholder="Search" autocomplete="off" />
-				<a href="#" data-proofer-ignore class="quick-search-close">&times;</a>
-			</form>
-
-		</div>
-
-	</nav><!-- #global-nav -->
-
-</header>
+</nav><!-- #site-nav -->
 <div class="nav-main-fader"></div>
 
 
-<div id="gl-wrapper">
+	</header>
 
-	<!-- .main-container -->
-	<div class="main-container">
-		<a id="main-content"></a>
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
 
 
-<div class="container">
-
-    
-    <div class="message-banner">
-        This is the 2.3 pre-release version of Magento documentation. Content in this version is subject to change.
-	</div>
-
-    
-
-    
+<div class="content-container">
 
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
 	<div class="sidebar-wrapper">
 
+		
 
-
-<h4></h4>
-<div class="left-navigation">
-    <ul>
-    
-    
+		<h4 class="guide-title"></h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
 
 <li class="nav-level1  " id="welcome-to-magento-commerce-(cloud)">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/bk-cloud.html">Welcome to Magento Commerce (Cloud)</a>
     
@@ -293,9 +293,9 @@
         
         
         <li class="nav-level2  " id="subscriptions-and-plans">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>
             
@@ -307,9 +307,9 @@
         
         
         <li class="nav-level2  " id="onboarding-tasks">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a>
             
@@ -323,14 +323,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="architecture">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/architecture/cloud-architecture.html">Architecture</a>
     
@@ -341,9 +339,9 @@
         
         
         <li class="nav-level2  " id="starter-architecture">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter architecture</a>
             
@@ -355,9 +353,9 @@
         
         
         <li class="nav-level2  " id="starter-develop-and-deploy-workflow">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/basic-information/starter-develop-deploy-workflow.html">Starter develop and deploy workflow</a>
             
@@ -369,9 +367,9 @@
         
         
         <li class="nav-level2  " id="pro-architecture">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/architecture/pro-architecture.html">Pro architecture</a>
             
@@ -383,9 +381,9 @@
         
         
         <li class="nav-level2  " id="pro-develop-and-deploy-workflow">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro develop and deploy workflow</a>
             
@@ -397,9 +395,9 @@
         
         
         <li class="nav-level2  " id="pro-architecture-(legacy)">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>
             
@@ -411,9 +409,9 @@
         
         
         <li class="nav-level2  " id="add-staging-and-production-to-pro-projects-ui">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>
             
@@ -427,14 +425,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="technologies-and-requirements">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/requirements/cloud-requirements.html">Technologies and requirements</a>
     
@@ -445,9 +441,9 @@
         
         
         <li class="nav-level2  " id="composer">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/reference/cloud-composer.html">Composer</a>
             
@@ -459,9 +455,9 @@
         
         
         <li class="nav-level2  " id="magento-cloud-cli">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/reference/cli-ref-topic.html">Magento Cloud CLI</a>
             
@@ -473,9 +469,9 @@
         
         
         <li class="nav-level2  " id="git">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/reference/git-integration.html">Git</a>
             
@@ -487,9 +483,9 @@
         
         
         <li class="nav-level2  " id="bitbucket-integration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/bitbucket-integration.html">Bitbucket integration</a>
             
@@ -501,9 +497,9 @@
         
         
         <li class="nav-level2  " id="github-integration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-integrate-github.html">GitHub integration</a>
             
@@ -515,9 +511,9 @@
         
         
         <li class="nav-level2  " id="ssh-and-sftp">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH and sFTP</a>
             
@@ -529,9 +525,9 @@
         
         
         <li class="nav-level2  " id="new-relic-apm">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/new-relic.html">New Relic APM</a>
             
@@ -543,9 +539,9 @@
         
         
         <li class="nav-level2  " id="blackfire.io">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-integrate-blackfire.html">Blackfire.io</a>
             
@@ -559,14 +555,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="local-environment-setup">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/access-acct/first-time-setup.html">Local environment setup</a>
     
@@ -577,9 +571,9 @@
         
         
         <li class="nav-level2  " id="prepare-for-local-environment-setup">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/before/before-workspace.html">Prepare for local environment setup</a>
             
@@ -591,9 +585,9 @@
         
         
         <li class="nav-level2  " id="install-magento-prerequisites">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a>
             
@@ -605,9 +599,9 @@
         
         
         <li class="nav-level2  " id="enable-ssh-keys">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/before/before-workspace-ssh.html">Enable SSH keys</a>
             
@@ -619,9 +613,9 @@
         
         
         <li class="nav-level2  " id="set-up-the-magento-file-system-owner">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a>
             
@@ -633,9 +627,9 @@
         
         
         <li class="nav-level2  " id="clone-and-branch-the-project">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/before/before-setup-env-2_clone.html">Clone and branch the project</a>
             
@@ -647,9 +641,9 @@
         
         
         <li class="nav-level2  " id="install-magento">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/before/before-setup-env-install.html">Install Magento</a>
             
@@ -661,9 +655,9 @@
         
         
         <li class="nav-level2  " id="first-time-deployment">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/access-acct/first-time-deploy.html">First time deployment</a>
             
@@ -675,9 +669,9 @@
         
         
         <li class="nav-level2  " id="optional---install-sample-data">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/howtos/sample-data.html">Optional - Install sample data</a>
             
@@ -689,9 +683,9 @@
         
         
         <li class="nav-level2  " id="optional---configure-xdebug">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/howtos/debug.html">Optional - Configure Xdebug</a>
             
@@ -705,14 +699,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="import-existing-code-into-a-project">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html">Import existing code into a project</a>
     
@@ -723,9 +715,9 @@
         
         
         <li class="nav-level2  " id="prepare-your-existing-magento-commerce-system">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your existing Magento Commerce system</a>
             
@@ -737,9 +729,9 @@
         
         
         <li class="nav-level2  " id="import-magento-commerce-into-magento-commerce-(cloud)">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-import.html">Import Magento Commerce into Magento Commerce (Cloud)</a>
             
@@ -753,14 +745,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="configure-your-store">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/configure/configuration-overview.html">Configure your store</a>
     
@@ -771,9 +761,9 @@
         
         
         <li class="nav-level2  " id="best-practices-for-store-configuration">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/configure-best-practices.html">Best practices for store configuration</a>
             
@@ -785,9 +775,9 @@
         
         
         <li class="nav-level2  " id="set-up-paypal">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/paypal-onboarding.html">Set up PayPal</a>
             
@@ -799,9 +789,9 @@
         
         
         <li class="nav-level2  " id="set-up-magento-b2b">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/setup-b2b.html">Set up Magento B2B</a>
             
@@ -813,9 +803,9 @@
         
         
         <li class="nav-level2  " id="set-up-cron-jobs">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>
             
@@ -827,9 +817,9 @@
         
         
         <li class="nav-level2  " id="set-up-multiple-cloud-websites-or-stores">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a>
             
@@ -841,9 +831,9 @@
         
         
         <li class="nav-level2  " id="install,-manage,-and-upgrade-modules">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>
             
@@ -855,9 +845,9 @@
         
         
         <li class="nav-level2  " id="install-a-theme">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/howtos/custom-theme.html">Install a theme</a>
             
@@ -871,14 +861,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="configure-fastly">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Configure Fastly</a>
     
@@ -889,9 +877,9 @@
         
         
         <li class="nav-level2  " id="set-up-fastly">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/access-acct/fastly.html">Set up Fastly</a>
             
@@ -903,9 +891,9 @@
         
         
         <li class="nav-level2  " id="custom-fastly-vcl-snippets">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>
             
@@ -917,9 +905,9 @@
         
         
         <li class="nav-level2  " id="custom-whitelist-vcl">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/fastly-vcl-whitelist.html">Custom whitelist VCL</a>
             
@@ -931,9 +919,9 @@
         
         
         <li class="nav-level2 active " id="custom-blacklist-vcl">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/fastly-vcl-blacklist.html">Custom blacklist VCL</a>
             
@@ -945,9 +933,9 @@
         
         
         <li class="nav-level2  " id="custom-extend-admin-timeout-vcl">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/fastly-vcl-extend-timeout.html">Custom extend Admin timeout VCL</a>
             
@@ -959,9 +947,9 @@
         
         
         <li class="nav-level2  " id="custom-redirect-to-wordpress-vcl">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Custom redirect to WordPress VCL</a>
             
@@ -973,9 +961,9 @@
         
         
         <li class="nav-level2  " id="custom-block-bad-referer-vcl">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/configure/fastly-vcl-badreferer.html">Custom block bad referer VCL</a>
             
@@ -987,9 +975,9 @@
         
         
         <li class="nav-level2  " id="fastly-troubleshooting">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble_fastly.html">Fastly troubleshooting</a>
             
@@ -1003,14 +991,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="configure-environments">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/env/environments.html">Configure environments</a>
     
@@ -1021,9 +1007,9 @@
         
         
         <li class="nav-level2  " id="application">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html">Application</a>
             
@@ -1035,11 +1021,9 @@
         
         
         <li class="nav-level2  " id="build-and-deploy">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/magento-env-yaml.html">Build and deploy</a>
             
@@ -1097,11 +1081,9 @@
         
         
         <li class="nav-level2  " id="environment-variables">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.3/cloud/env/variables-intro.html">Environment variables</a>
             
@@ -1201,11 +1183,9 @@
         
         
         <li class="nav-level2  " id="routes">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-conf-files_routes.html">Routes</a>
             
@@ -1263,11 +1243,9 @@
         
         
         <li class="nav-level2  " id="services">
+
             
-            
-            <div class="toggle closed">&nbsp;</div>
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-conf-files_services.html">Services</a>
             
@@ -1344,14 +1322,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="configuration-management-for-store-settings">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration management for store settings</a>
     
@@ -1362,9 +1338,9 @@
         
         
         <li class="nav-level2  " id="example-of-managing-system-specific-settings">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>
             
@@ -1378,14 +1354,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="manage-your-project">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/project/projects.html">Manage your project</a>
     
@@ -1396,9 +1370,9 @@
         
         
         <li class="nav-level2  " id="configure-your-project">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-webint-basic.html">Configure your project</a>
             
@@ -1410,9 +1384,9 @@
         
         
         <li class="nav-level2  " id="project-structure">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-start.html">Project structure</a>
             
@@ -1424,9 +1398,9 @@
         
         
         <li class="nav-level2  " id="create-and-manage-users">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/user-admin.html">Create and manage users</a>
             
@@ -1438,9 +1412,9 @@
         
         
         <li class="nav-level2  " id="manage-branches-with-the-interface">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-webint-branch.html">Manage branches with the Interface</a>
             
@@ -1452,9 +1426,9 @@
         
         
         <li class="nav-level2  " id="manage-branches-with-the-cli">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/env/environments-start.html">Manage branches with the CLI</a>
             
@@ -1466,9 +1440,9 @@
         
         
         <li class="nav-level2  " id="snapshots-and-backup-management">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-webint-snap.html">Snapshots and backup management</a>
             
@@ -1482,14 +1456,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="deploy-your-store">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy your store</a>
     
@@ -1500,9 +1472,9 @@
         
         
         <li class="nav-level2  " id="deployment-process">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a>
             
@@ -1514,9 +1486,9 @@
         
         
         <li class="nav-level2  " id="continuous-deployment">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/deploy/continuous-deployment.html">Continuous deployment</a>
             
@@ -1528,9 +1500,9 @@
         
         
         <li class="nav-level2  " id="protective-block">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/live-prot.html">Protective block</a>
             
@@ -1542,9 +1514,9 @@
         
         
         <li class="nav-level2  " id="build-and-deploy-on-local">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/live-sanity-check.html">Build and deploy on local</a>
             
@@ -1556,9 +1528,9 @@
         
         
         <li class="nav-level2  " id="prepare-to-deploy-to-staging-and-production">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a>
             
@@ -1570,9 +1542,9 @@
         
         
         <li class="nav-level2  " id="deploy-code-and-migrate-static-files-and-data">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">Deploy code and migrate static files and data</a>
             
@@ -1584,9 +1556,9 @@
         
         
         <li class="nav-level2  " id="test-deployment">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/stage-prod-test.html">Test deployment</a>
             
@@ -1600,14 +1572,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="go-live-and-launch">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/live/live.html">Go live and launch</a>
     
@@ -1618,9 +1588,9 @@
         
         
         <li class="nav-level2  " id="go-live-checklist">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a>
             
@@ -1632,9 +1602,9 @@
         
         
         <li class="nav-level2  " id="launch-steps">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/live/launch-steps.html">Launch steps</a>
             
@@ -1648,14 +1618,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="troubleshooting">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/trouble/trouble.html">Troubleshooting</a>
     
@@ -1666,9 +1634,9 @@
         
         
         <li class="nav-level2  " id="troubleshoot-deployment">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/access-acct/trouble.html">Troubleshoot deployment</a>
             
@@ -1680,9 +1648,9 @@
         
         
         <li class="nav-level2  " id="view-logs-for-troubleshooting">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/environments-logs.html">View logs for troubleshooting</a>
             
@@ -1694,9 +1662,9 @@
         
         
         <li class="nav-level2  " id="incorrect-credentials">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble_ce-creds.html">Incorrect credentials</a>
             
@@ -1708,9 +1676,9 @@
         
         
         <li class="nav-level2  " id="resolve-issues-with-a-new-project">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a>
             
@@ -1722,9 +1690,9 @@
         
         
         <li class="nav-level2  " id="component-deployment-failure">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble_comp-deploy-fail.html">Component deployment failure</a>
             
@@ -1736,9 +1704,9 @@
         
         
         <li class="nav-level2  " id="redis-troubleshooting">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/redis-troubleshooting.html">Redis troubleshooting</a>
             
@@ -1750,9 +1718,9 @@
         
         
         <li class="nav-level2  " id="reset-cron-jobs">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/reset-cron-jobs.html">Reset cron jobs</a>
             
@@ -1764,9 +1732,9 @@
         
         
         <li class="nav-level2  " id="resolve-issues-with-encryption-key">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a>
             
@@ -1778,9 +1746,9 @@
         
         
         <li class="nav-level2  " id="resolve-issues-with-html-minification">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a>
             
@@ -1792,9 +1760,9 @@
         
         
         <li class="nav-level2  " id="resolve-issues-with-google-analytics-during-deployment">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a>
             
@@ -1806,9 +1774,9 @@
         
         
         <li class="nav-level2  " id="restore-configuration-files">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/restore-configuration-files.html">Restore configuration files</a>
             
@@ -1820,9 +1788,9 @@
         
         
         <li class="nav-level2  " id="site-availability">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/site-availability.html">Site availability</a>
             
@@ -1834,9 +1802,9 @@
         
         
         <li class="nav-level2  " id="add-site-map-and-search-engine-robots">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/robots-sitemap.html">Add site map and search engine robots</a>
             
@@ -1848,9 +1816,9 @@
         
         
         <li class="nav-level2  " id="theme-troubleshooting">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/theme-troubleshooting.html">Theme troubleshooting</a>
             
@@ -1862,9 +1830,9 @@
         
         
         <li class="nav-level2  " id="message-queues">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/trouble/message-queues.html">Message queues</a>
             
@@ -1878,14 +1846,12 @@
 </li>
 
 
-    
-    
+		    
+		    	
 
 <li class="nav-level1  " id="upgrades-and-patches">
     
-    <div class="toggle closed">&nbsp;</div>
-    
-    
+
     
     <a href="/guides/v2.3/cloud/project/project-upgrade-parent.html">Upgrades and Patches</a>
     
@@ -1896,9 +1862,9 @@
         
         
         <li class="nav-level2  " id="patch-cloud-tools">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
             
@@ -1910,9 +1876,9 @@
         
         
         <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
             
@@ -1924,9 +1890,9 @@
         
         
         <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+
             
-            
-        
+
             
             <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
             
@@ -1942,15 +1908,13 @@
 </li>
 
 
-    
-    </ul>
-</div>
+		    
+		    </ul>
+		</div>
 
 	</div>
 
 </aside>
-
-
 <!-- /sidebar -->
 
 
@@ -1962,9 +1926,9 @@
 
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="/guides/v2.3"><span>Home</span></a>
-
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a></li>
 
     <!-- Iteration breadcrumb item -->
     
@@ -2018,10 +1982,6 @@
 
     
 
-    
-
-
-
     </ol>
 
   </nav>
@@ -2038,7 +1998,6 @@
 
 
 </section>
-
 
 			<p>You may want to create a blacklist of IPs to block from accessing your site. You can create an Edge ACL list of the blacklisted IPs with a VCL snippet. The code checks the IP of the incoming IP address. If it matches a member of the ACL, it is blocked with a 403 Forbidden error from accessing your entire website. All other client IPs are allowed access.</p>
 
@@ -2098,6 +2057,7 @@
 <h2 id="complete">Finish adding the VCL</h2>
 <p>When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
+			
 		</div>
 		<!-- /.content-wrap -->
 
@@ -2106,30 +2066,26 @@
   
 
   
-    
-      <div class="github-link">
-        <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/configure/fastly-vcl-blacklist.md" target="_blank">
-          Edit this page on GitHub
-        </a>
-      </div>
-    
+  <div class="github-link">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/cloud/configure/fastly-vcl-blacklist.md" target="_blank">
+      Edit this page on GitHub
+    </a>
+  </div>
   
 
   
-    
-      <div class="new-issue">
-        <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/cloud/configure/fastly-vcl-blacklist.html" target="_blank">Give us feedback</a>
-      </div>
-    
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/cloud/configure/fastly-vcl-blacklist.html" target="_blank">Give us feedback</a>
+  </div>
   
-  
+
 </div>
 
 
 	</section>
 	<!-- /.content -->
 
-</div> <!-- /.container -->
+</div> <!-- /.content-container -->
 
 
 	</div>
@@ -2139,19 +2095,20 @@
 <!-- /#gl-wrapper -->
 
 <!-- footer-->
-<div id="footer">
+<div class="page-footer">
   <div class="container">
 
     <div class="copyright-links">
-      <ul class="nav">
-        <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
-        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
-        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
-        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
-        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-        <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
-        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
-      </ul>
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
     </div>
 
 		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
@@ -2160,19 +2117,27 @@
 </div>
 <!-- / #footer -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-<script src="/common/js/app.min.js"></script>
 
-<!-- Glossary integration -->
-<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
-<script src="/common/js/glossary.tooltip.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+
 <script>
-    $(document).ready(function(){
-      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
-      });
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+
 </script>
+
+
+
 
 <script type="text/javascript">
     (function() {
@@ -2197,17 +2162,7 @@
     })();
 </script>
 
-
-
-<!--Google Analytics-->
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-66243208-1', 'auto');
-    ga('send', 'pageview');
-</script>
+<script src="/common/js/devdocs.min.js"></script>
 
 
 </body>
