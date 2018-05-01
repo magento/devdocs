@@ -80,7 +80,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-81841 -->* You can now enable or disable the Magento Profiler from the command line. [GitHub-9277](https://github.com/magento/magento2/issues/9277)
 
-<!--- MAGETWO-81740 -->* The icons for Extension Manager and Module Manager are now consistent with the main content area and left-hand menu of the Web Setup Wizard. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 11388*. [GitHub-11236](https://github.com/magento/magento2/issues/11236)
+<!--- MAGETWO-81740 -->* The icons for Extension Manager and Module Manager are now consistent with the main content area and left-hand menu of the Web Setup Wizard. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 11388*. [GitHub-11236](https://github.com/magento/magento2/issues/11236)
 
 <!--- MAGETWO-80111 -->* Magento now continues operating in maintenance mode if it was previously enabled. Previously, Magento disabled maintenance mode  when you used one of these commands: 
     * `bin\magento module:uninstall`
@@ -446,6 +446,9 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85538 -->* `SearchCriteriaBuilder` now has a check to determine if sort order should be applied. Previously, `SearchCriteriaBuilder` built wrong criteria (`ORDER BY part`). *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 1003*. [GitHub-5738](https://github.com/magento/magento2/issues/5738)
 
+<!--- MAGETWO-84666 -->* Anonymous Web API access to the Admin now unlocks REST catalog calls without requiring `auth` tokens. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 904*. [GitHub-9468](https://github.com/magento/magento2/issues/9468)
+
+
 #### Zend framework
 
 <!--- MAGETWO-86654 -->* `vendor/magento/framework/composer.json` now declares a dependency on `magento/zendframework1`. Previously, packages depending on `magento/framework` packages failed to execute. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12990*. 
@@ -665,10 +668,13 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 <!--- MAGETWO-87291 -->* The Shipment Tracking REST API now throws an error as expected if the specified order doesn't exist. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1162*. 
 
 
+<!--- MAGETWO-83868 -->* Invoices now display the exact quantity of a product ordered, even if it is a fractional unit (for example,  6.5). Previously, when Magento tried to invoice an order that had products with quantity decimals, it rounded down the quantity to the nearest whole number in the invoice. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 11997*.  [GitHub-11941](https://github.com/magento/magento2/issues/11941)
 
 
 
 ### Payment methods
+
+<!--- MAGETWO-84588,MAGETWO-84587, MAGETWO-84590 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. However, merchants running Magento Open Source 2.2.4 or Magento Commerce 2.2.4 installations without  the CyberSource extension can still benefit from the enhancements that were made to the multishipping module to support this payment method. 
 
 
 <!--- MAGETWO-75497 -->* Logged-out customers can no longer see previously saved credit cards. Previously, users logged in as guest could see some payment information from an earlier, canceled order. 
@@ -721,9 +727,9 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 ### Quote
 <!--- MAGETWO-86439 -->* If a customer changes the currency type of his order-in-progress while viewing the shopping cart, Magento displays a message that shows the minimum order necessary in the new currency. Previously, this minimum was calculated incorrectly. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request 13039*.
 
-<!--- MAGETWO-86434 -->* Magento no longers truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 13015*. [GitHub-10869](https://github.com/magento/magento2/issues/10869)
+<!--- MAGETWO-86434 -->* Magento no longers truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 13015*. [GitHub-10869](https://github.com/magento/magento2/issues/10869)
 
-<!--- MAGETWO-86430 -->* You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal to **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade - Cream](https://github.com/dverkade) in pull request 13019*.
+<!--- MAGETWO-86430 -->* You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal to **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 13019*.
 [GitHub-12393](https://github.com/magento/magento2/issues/12393)
 
 <!--- MAGETWO-85518 -->* When a customer is on the payment page and tries to reorder or retrace her steps backward through the checkout process, Magento now displays all the relevant shipping methods. Previously, Magento displayed only one shipping method under these circumstances.  
@@ -1088,7 +1094,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11388">11388</a></td>
     <td><a href="https://github.com/magento/magento2/issues/11236" target="_blank">11236</a></td>
-    <td><a target="_blank" href="https://github.com/dverkade">Danny Verkade - Cream</a></td>
+    <td><a target="_blank" href="https://github.com/dverkade">Danny Verkade</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11485">11485</a></td>
