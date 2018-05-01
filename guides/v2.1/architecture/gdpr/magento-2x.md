@@ -13,6 +13,7 @@ We are publishing this GDPR compliance information to help our merchants and the
 * A shopper asks for a copy of the data the merchant has stored about her
 * A shopper requests that all information about him be deleted
 
+See the main [Magento webiste](https://magento.com/gdpr) page for more information about how Magento helps merchants comply with GDPR.
 
 ## Data flow diagrams
 
@@ -20,25 +21,25 @@ The data flow diagrams show the types of data that customers and administrators 
 
 ### Frontend data entry points
 
-A user can enter customer data, address data, and payment data when registering for an account, during checkout, and similar events.
+A user can enter customer, address, and payment information when registering for an account, during checkout, and similar events.
 
 ![Frontend data entry points](frontend-data-entry-points.svg)
 
 ### Frontend data access points
 
-Magento loads customer data when the customer logs in and views several different pages or checks out.
+Magento loads customer information when the customer logs in and views several different pages or checks out.
 
 ![Frontend data access points](frontend-data-access-points.svg)
 
 ### Backend data entry points
 
-A merchant can enter customer data, address data, and payment data when using Admin to create a customer or order.
+A merchant can enter customer information, address data, and payment data when using Admin to create a customer or order.
 
 ![Backend data entry points](backend-data-entry-points.svg)
 
 ### Backend data access points
 
-Magento loads customer data when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
+Magento loads customer information when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
 
 ![Backend data access points](backend-data-access-points.svg)
 
@@ -84,9 +85,9 @@ Table | Column | Data type
 `customer_entity_text` | `value` | text
 `customer_entity_varchar` | `value` | varchar(255)
 
-#### `customer_grid_list` table
+#### `customer_grid_flat` table
 
-The following columns in the `customer_grid_list`table contain customer information:
+The following columns in the `customer_grid_flat`table contain customer information:
 
 Column | Data type
 --- | ---
@@ -224,7 +225,7 @@ Column | Data type
 
 ### Quote data
 
-Quotes contain a customer's name, email, address, and related data.
+Quotes contain a customer's name, email, address, and related information.
 
 #### `quote` table
 
@@ -268,7 +269,7 @@ Column | Data type
 
 ### Payment data
 
-The `sales_order_payment` table includes credit card information and other transactional data.
+The `sales_order_payment` table includes credit card information and other transactional information.
 
 Column | Data type
 --- | ---
@@ -285,8 +286,6 @@ Column | Data type
 `additional_information` | text
 
 ### Invitation data
-
-**Question to reviewer:** My 2.3 DB does not contain a `magento_invitation` or `magento_invitation_track` table. (I haven't issued any invitations.) Is this OK? Also, I moved the `magento_invitation_track` table from the "Miscellaneous tables that reference customer" section to here.
 
 Magento can be configured so that customers can send invitations to private sales and events.
 
@@ -310,8 +309,6 @@ Column | Data type
 `referral_id` | int(10)
 
 ### Miscellaneous tables that reference customer
-
-**Question to reviewer:** My 2.3 (lightly used) DB does not contain any of the tables that begin with `magento`. Is this OK?
 
 The following tables contain a `customer_id` column:
 

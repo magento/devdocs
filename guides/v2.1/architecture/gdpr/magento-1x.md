@@ -8,11 +8,12 @@ github_link: architecture/gdpr/magento-1x.md
 
 The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
 
-We are publishing this GDPR compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
+We are publishing this compliance information to help our merchants and their system integrators with GDPR compliance. A system integrator can use the data flow diagrams and database information to build scripts to resolve use cases similar to the following:
 
 * A shopper asks for a copy of the data the merchant has stored about her
 * A shopper requests that all information about him be deleted
 
+See the main [Magento webiste](https://magento.com/gdpr) page for more information about how Magento helps merchants comply with GDPR.
 
 ## Dataflow diagrams
 
@@ -20,35 +21,35 @@ The data flow diagrams show the types of data that customers and administrators 
 
 ### Frontend data entry points
 
-A user can enter customer data, address data, and payment data when registering for an account, during checkout, and similar events.
+A user can enter customer, address, and payment information when registering for an account, during checkout, and similar events.
 
 ![Frontend data entry points](frontend-data-entry-points.svg)
 
 ### Frontend data access points
 
-Magento loads customer data when the customer logs in and views several different pages or checks out.
+Magento loads customer information when the customer logs in and views several different pages or checks out.
 
 ![Frontend data access points](frontend-data-access-points.svg)
 
 ### Backend data entry points
 
-A merchant can enter customer data, address data, and payment data when using Admin to create a customer or order.
+A merchant can enter customer, address, and payment information when using Admin to create a customer or order.
 
 ![Backend data entry points](backend-data-entry-points.svg)
 
 ### Backend data access points
 
-Magento loads customer data when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
+Magento loads customer information when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
 
 ![Backend data access points](backend-data-access-points.svg)
 
 ## Database entities
 
-Magento 2 stores customer information in customer, sales, and other databae tables.
+Magento 1 stores customer information in customer, sales, and other database tables.
 
 ### Customer data {#customer-data}
 
-Magento 1 stores customer data in the `customer_entity` and `customer_address_entity` tables. Both of these tables have several reference tables that can contain custom customer attributes.
+Magento 1 stores customer information in the `customer_entity` and `customer_address_entity` tables. Both of these tables have several reference tables that can contain custom customer attributes.
 
 #### `customer_entity` and reference tables
 
@@ -82,7 +83,7 @@ Table | Column | Data type
 
 ### Order data
 
-The `sales_flat_order` and related tables contain the customer's name, billing and shipping addresses, and related data.
+The `sales_flat_order` and related tables contain the customer's name, billing and shipping addresses, and related information.
 
 #### `sales_flat_order` table
 
@@ -152,7 +153,7 @@ Column | Data type
 
 ### Quote data
 
-Quotes contain a customer's name, email, address, and related data.
+Quotes contain a customer's name, email, address, and related information.
 
 #### `sales_flat_quote` table
 
@@ -195,7 +196,7 @@ Column | Data type
 
 #### `sales_flat_quote_payment` table
 
-The `sales_flat_quote_payment` table includes credit card information and other transactional data.
+The `sales_flat_quote_payment` table includes credit card information and other transactional information.
 
 Column | Data type
 --- | ---
@@ -209,7 +210,7 @@ Column | Data type
 
 ### Archive data
 
-The following tables and columns contain customer data:
+The following tables and columns contain customer information:
 
 Table | Column | Data type
 --- | --- | ---
@@ -222,7 +223,7 @@ Table | Column | Data type
 
 ### Sales data
 
-The following tables and columns contain customer data:
+The following tables and columns contain customer information:
 
 Table | Column | Data type
 --- | --- | ---
@@ -231,7 +232,7 @@ Table | Column | Data type
 
 ### RMA data
 
-The following RMA tables and columns contain customer data:
+The following RMA tables and columns contain customer information:
 
 Table | Column | Data type
 --- | --- | ---
@@ -241,7 +242,7 @@ Table | Column | Data type
 
 ### Miscellaneous data
 
-The following tables and columns contain customer data:
+The following tables and columns contain customer information:
 
 Table | Column | Data type
 --- | --- | ---
