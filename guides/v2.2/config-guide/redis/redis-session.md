@@ -187,6 +187,38 @@ where
 </td>
 <td>2592000 (720 hours)</td>
 </tr>
+<tr>
+<td>session-save-redis-sentinel-master</td>
+<td>sentinel_master</td>
+<td>
+<p>Redis Sentinel master name</p>
+</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>session-save-redis-sentinel-servers</td>
+<td>sentinel_servers</td>
+<td>
+<p>List of Redis Sentinel servers, comma separated</p>
+</td>
+<td>empty</td>
+</tr>
+<tr>
+<td>session-save-redis-sentinel-verify-master</td>
+<td>sentinel_verify_master</td>
+<td>
+<p>Verify Redis Sentinel master status flag</p>
+</td>
+<td>0 (false)</td>
+</tr>
+<tr>
+<td>session-save-redis-sentinel-connect-retires</td>
+<td>sentinel_connect_retries</td>
+<td>
+<p>Connection retries for sentinels</p>
+</td>
+<td>5</td>
+</tr>
 </tbody>
 </table>
 
