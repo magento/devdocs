@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Command line configuration | Magento 2 Developer Documentation</title>
+	<title>Development environment recommendations | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -52,7 +52,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </script>
 
 
-	<link rel="canonical" href="/guides/v2.1/config-guide/cli/config-cli.html">
+	<link rel="canonical" href="/guides/v2.1/config-guide/prod/development-environment.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -92,13 +92,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/config-guide/cli/config-cli.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/development-environment.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/config-guide/cli/config-cli.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/development-environment.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/config-guide/cli/config-cli.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/development-environment.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/config-guide/cli/config-cli.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/development-environment.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -426,7 +426,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 		    
 		    	
 
-<li class="nav-level1 active " id="command-line-configuration">
+<li class="nav-level1  " id="command-line-configuration">
     
 
     
@@ -1591,7 +1591,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         
         
         
-        <li class="nav-level2  " id="development-environment-recommendations">
+        <li class="nav-level2 active " id="development-environment-recommendations">
 
             
 
@@ -1673,7 +1673,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
           
 
-          <span property="name">Command line configuration</span>
+          <span property="name">Development environment recommendations</span>
 
         
 
@@ -1692,84 +1692,52 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 	
 
-	<h1 class="page-heading">Command line configuration</h1>
+	<h1 class="page-heading">Development environment recommendations</h1>
 
   
 
 
 </section>
 
-			<h2 id="config-new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
-<p>Magento has one command-line interface that performs both installation and configuration tasks: <code>&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
-<ul><li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on)</li>
-	<li>Clearing the cache</li>
-	<li>Managing indexes, including reindexing</li>
-	<li>Creating translation dictionaries and translation packages</li>
-	<li>Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.</li>
-	<li>Deploying static view files</li>
-	<li>Creating CSS from LESS</li></ul>
-<p>Other benefits:</p>
-<ul><li>A single command (php <code>&lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands</li>
-<li>Consistent user interface based on Symfony</li>
-<li>The CLI is extensible so third party developers can "plug in" to it<br />
-This has the additional benefit of eliminating users' learning curve</li>
-<li>Commands for disabled modules do not display.</li></ul>
+			<h2 id="clean-the-caches-instead-of-disabling">Clean the caches instead of disabling</h2>
 
-<p>This topic discusses configuring the Magento software using the CLI. For information about installing Magento, see <a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation overview</a>.</p>
+<p>Many developers tend to disable all caches on their developer instances.
+We recommend only cleaning caches, without disabling all caches.
+Magento runs more efficiently when you <a target="_blank" href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">clean the caches</a> instead of disabling them completely.
+Most types of caches are rarely invalidated during development.</p>
 
-<h2 id="config-install-cli-prereq">Before you start configuring Magento</h2>
-<p>Before you begin, make sure that:</p>
-<ol><li>Your system meets the requirements discussed in <a href="/guides/v2.1/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
-<li>You completed all prerequisite tasks discussed in <a href="/guides/v2.1/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
-<li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</li></ol>
+<p>If you <a target="_blank" href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">disable the caches</a>, we recommend only disabling Page and Block caches in development instances.
+Remember to enable all caches during testing.</p>
 
-<!-- <div class="bs-callout bs-callout-warning">
-	<span class="glyphicon-class">
-		<p>The Magento command-line installer now uses a new syntax. You must install the Magento software from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. </p>
-  		<p>The new syntax replaces <code>setup/php -f index.php</code>.</p></span>
-</div> -->
+<h2 id="commands-to-avoid-in-the-development-mode">Commands to avoid in the development mode</h2>
 
-<h2 id="config-install-cli-first">First steps</h2>
-<div>
+<p>In the development mode, do not run commands for compilation, code generation and static content deployment.
+These commands were built for use in production mode only.</p>
 
-  <ol>
-    <li>
-      <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+<p><strong>Do not run</strong> production commands in development mode:</p>
 
-      <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+<ul>
+  <li>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile
+</code></pre></div>    </div>
+    <p><code class="highlighter-rouge">setup:di:compile</code> generates auto-generated classes and optimized configuration caches.
+In development mode, Magento performs the generation on-demand; you do not need to run it. 
+If you modified a signature of a class and need to re-generate its auto-generated factories/proxies/interceptors, remove those classes or the <em>generated</em> folder.</p>
+  </li>
+  <li>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy
+</code></pre></div>    </div>
+    <p><code class="highlighter-rouge">setup:static-content:deploy</code> deploys static content for a store.
+In development mode, Magento performs it on-demand; you do not need to run it.</p>
+  </li>
+</ul>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
-</code></pre></div>      </div>
+<h2 id="normal-page-load-time-on-a-virtual-machine">Normal page load time on a virtual machine</h2>
 
-      <p>If the Magento file system owner does not allow logins you can do the following:</p>
+<p>If you develop on a VM and it takes longer than 2 seconds to load a Magento page, review your environment settings.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>To run Magento commands from any directory, add <code class="highlighter-rouge">&lt;your Magento install dir&gt;/bin</code> to your system <code class="highlighter-rouge">PATH</code>.</p>
+<!-- Link definitions -->
 
-      <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-      <p>bash shell example for CentOS:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-  <h4 id="next-step">Next step</h4>
-
-  <p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></p>
-</div>
 
 			
 		</div>
@@ -1781,7 +1749,7 @@ This has the additional benefit of eliminating users' learning curve</li>
 
   
   <div class="github-link">
-    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.1/config-guide/cli/config-cli.md" target="_blank">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.1/config-guide/prod/development-environment.md" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
@@ -1789,7 +1757,7 @@ This has the additional benefit of eliminating users' learning curve</li>
 
   
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/config-guide/cli/config-cli.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/config-guide/prod/development-environment.html" target="_blank">Give us feedback</a>
   </div>
   
 

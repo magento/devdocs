@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Performance Best Practices | Magento 2 Developer Documentation</title>
+	<title>Development environment recommendations | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -52,7 +52,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 </script>
 
 
-	<link rel="canonical" href="/guides/v2.2/performance-best-practices/">
+	<link rel="canonical" href="/guides/v2.2/performance-best-practices/development-environment.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -92,13 +92,13 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/index.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/development-environment.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/index.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/development-environment.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/index.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/development-environment.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/index.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/development-environment.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -322,7 +322,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 		    
 		    	
 
-<li class="nav-level1  " id="development-environment-recommendations">
+<li class="nav-level1 active " id="development-environment-recommendations">
     
 
     
@@ -440,7 +440,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
           
 
-          <span property="name">Performance Best Practices</span>
+          <span property="name">Development environment recommendations</span>
 
         
 
@@ -459,21 +459,52 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
 	
 
-	<h1 class="page-heading">Performance Best Practices</h1>
+	<h1 class="page-heading">Development environment recommendations</h1>
 
   
 
 
 </section>
 
-			<p><em>Performance Best Practices</em> provides recommendations and instructions for optimizing the performance of your production deployment. Technical users who are responsible for maintaining stores in production mode should use the best practices described in this guide to help ensure your stores are running at peak efficiency at all times.</p>
+			<h2 id="clean-the-caches-instead-of-disabling">Clean the caches instead of disabling</h2>
 
-<h3 id="assumptions">Assumptions</h3>
+<p>Many developers tend to disable all caches on their developer instances.
+We recommend only cleaning caches, without disabling all caches.
+Magento runs more efficiently when you <a target="_blank" href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">clean the caches</a> instead of disabling them completely.
+Most types of caches are rarely invalidated during development.</p>
+
+<p>If you <a target="_blank" href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">disable the caches</a>, we recommend only disabling Page and Block caches in development instances.
+Remember to enable all caches during testing.</p>
+
+<h2 id="commands-to-avoid-in-the-development-mode">Commands to avoid in the development mode</h2>
+
+<p>In the development mode, do not run commands for compilation, code generation and static content deployment.
+These commands were built for use in production mode only.</p>
+
+<p><strong>Do not run</strong> production commands in development mode:</p>
 
 <ul>
-  <li>You installed Magento using <a href="/guides/v2.2/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.2/install-gde/prereq/zip_install.html">compressed archive</a>.</li>
-  <li>You will be using this installation to run your live production instance of Magento 2.</li>
+  <li>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:di:compile
+</code></pre></div>    </div>
+    <p><code class="highlighter-rouge">setup:di:compile</code> generates auto-generated classes and optimized configuration caches.
+In development mode, Magento performs the generation on-demand; you do not need to run it. 
+If you modified a signature of a class and need to re-generate its auto-generated factories/proxies/interceptors, remove those classes or the <em>generated</em> folder.</p>
+  </li>
+  <li>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:static-content:deploy
+</code></pre></div>    </div>
+    <p><code class="highlighter-rouge">setup:static-content:deploy</code> deploys static content for a store.
+In development mode, Magento performs it on-demand; you do not need to run it.</p>
+  </li>
 </ul>
+
+<h2 id="normal-page-load-time-on-a-virtual-machine">Normal page load time on a virtual machine</h2>
+
+<p>If you develop on a VM and it takes longer than 2 seconds to load a Magento page, review your environment settings.</p>
+
+<!-- Link definitions -->
+
 
 			
 		</div>
@@ -485,7 +516,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
   
   <div class="github-link">
-    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/performance-best-practices/index.md" target="_blank">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/performance-best-practices/development-environment.md" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
@@ -493,7 +524,7 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
 
   
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/performance-best-practices/" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/performance-best-practices/development-environment.html" target="_blank">Give us feedback</a>
   </div>
   
 
