@@ -221,6 +221,47 @@ The `LogInAsAdminTest` result corresponds to:
 </test>
 ```
 
+### Add several test steps
+
+**Use case**: Add several actions after the `click` (`stepKey="clickLogin"`) in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file) while merging with the `.../Foo/Test/LogInAsAdminTest.xml` file:
+
+```xml
+<tests ...>
+    <test name="LogInAsAdminTest">
+        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+    </test>
+</tests>
+```
+
+Create the `.../Foo/Test/LogInAsAdminTest.xml` file:
+
+```xml
+<tests ...>
+    <test name="LogInAsAdminTest" after="clickLogin">
+        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
+        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
+    </test>
+</tests>
+```
+
+The `LogInAsAdminTest` result corresponds to:
+
+```xml
+<test name="LogInAsAdminTest">
+        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
+        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
+        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+</test>
+```
+
 ## Merge pages
 
 Use [page](./page.html) merging to add or remove [sections](./section.html) in your module.

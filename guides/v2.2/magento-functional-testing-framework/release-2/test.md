@@ -38,7 +38,7 @@ The format of `<tests>` is:
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-        <test name="">
+        <test name="" before="" after="">
             <annotations>
                 <!-- TEST ANNOTATIONS -->
             </annotations>
@@ -87,6 +87,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|optional| A test identifier used while merging.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
+`before`|string|optional| StepKey reference that all test actions should be inserted before. See [merging](./merging.html) for details.
+`after`|string|optional| StepKey reference that all test actions should be inserted after. See [merging](./merging.html) for details.
 
 `<test>` may also contain [`<annotations>`](#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
 
