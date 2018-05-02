@@ -96,9 +96,9 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85744 -->*  Composer now checks the availability of the `bcmath` PHP module. *Fix submitted by [Mobecls](https://github.com/Mobecls) in pull request 12768*.
 
-<!--- MAGETWO-88149 -->* The `cache_lifetime` default setting for the `Magento\Theme\Block\Html\Footer` block is no longer set to **false**, and the new default setting is **3600**. *Fix submitted by [Barry vd. Heuvel](https://github.com/zolat) in pull request 13762*.
+<!--- MAGETWO-88149 -->* The `cache_lifetime` default setting for the `Magento\Theme\Block\Html\Footer` block is no longer set to **false**, and the new default setting is **3600**. *Fix submitted by [zolat](https://github.com/zolat) in pull request 13762*.
 
-<!--- MAGETWO-87975 -->* The `magento maintenance:allow-ips` command now has the `--add` flag, which appends a new IP address to the list of allowed IP addresses. Previously, when you added a new IP address, you had to copy the existing addresses. *Fix submitted by [zolat](https://github.com/barryvdh) in pull request 13586*.
+<!--- MAGETWO-87975 -->* The `magento maintenance:allow-ips` command now has the `--add` flag, which appends a new IP address to the list of allowed IP addresses. Previously, when you added a new IP address, you had to copy the existing addresses. *Fix submitted by [Barry vd. Heuvel](https://github.com/barryvdh) in pull request 13586*.
 
 <!--- MAGETWO-87900 -->*  The `config:set` command now has a `lock-config` option, and configuration values are always stored in `app/etc/config.php` instead of `app/etc/env.php`. *Fix submitted by [Andreas von Studnitz](https://github.com/avstudnitz) in pull request 13280*.
 
