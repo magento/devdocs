@@ -521,6 +521,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <td>[public] Method parameter typing removed.</td>
     </tr>
     <tr>
+        <td>Magento\Theme\Block\Html\Topmenu::_getHtml</td>
+        <td>[protected] Method parameter typing added.</td>
+    </tr>
+    <tr>
         <td>Magento\Search\Model\AdapterFactory::__construct</td>
         <td>[public] Method parameter typing added.</td>
     </tr>
@@ -579,6 +583,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <tr>
         <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::getSearchableProducts</td>
         <td>[public] Method parameter name changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Indexer\Category\Product\AbstractAction::prepareSelectsByRange</td>
+        <td>[protected] Method parameter typing added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Filesystem::getDirectoryReadByPath</td>
@@ -725,6 +733,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Catalog\Product::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Sitemap\Model\ResourceModel\Catalog\Product::prepareSelectStatement</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -749,12 +761,20 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Payment\Gateway\Command\GatewayCommand::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Newsletter\Model\Subscriber::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
         <td>Magento\Newsletter\Model\Subscriber::beforeSave</td>
         <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Multishipping\Model\Checkout\Type\Multishipping::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
         <td>Magento\ImportExport\Model\Export::FILTER_TYPE_MULTISELECT</td>
@@ -985,6 +1005,14 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Product\Option\Value::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Indexer\Category\Product\AbstractAction::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\Category\DataProvider::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -994,6 +1022,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     </tr>
     <tr>
         <td>Magento\Catalog\Block\Product\View\Gallery::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Pricing\Price\ConfiguredPrice::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -1026,6 +1058,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     </tr>
     <tr>
         <td>Magento\Framework\Validation\ValidationResult</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\Declaration\Schema\Diff\Diff</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1145,6 +1181,22 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\SalesInventory\Model\Order\ReturnProcessor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\ShipmentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Block\Adminhtml\Order\View</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\MysqlMq\Model\Message</td>
         <td>Class was added.</td>
     </tr>
@@ -1162,6 +1214,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     </tr>
     <tr>
         <td>Magento\MysqlMq\Model\ResourceModel\MessageStatusCollection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Multishipping\Block\Checkout\Results</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1377,6 +1433,14 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
         <th>What Changed</th>
     </tr>
     <tr>
+        <td>Magento\Framework\CurrencyInterface::getService</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\CurrencyInterface::setService</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Store\Api\Data\StoreInterface::setIsActive</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -1427,6 +1491,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     <tr>
         <td>Magento\Payment\Model\MethodInterface::GROUP_OFFLINE</td>
         <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\ResultInterface::getErrorCodes</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Eav\Api\Data\AttributeInterface::setExtensionAttributes</td>
@@ -1502,6 +1570,10 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     </tr>
     <tr>
         <td>Magento\Framework\View\Element\Block\ArgumentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\Declaration\Schema\Dto\ElementInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1674,6 +1746,18 @@ a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
     </tr>
     <tr>
         <td>Magento\Signifyd\Api\Data\CaseSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Shipping\Model\ShipmentProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapperInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Multishipping\Model\Checkout\Type\Multishipping\PlaceOrderInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
