@@ -92,7 +92,7 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 * [User Guide: Web Setup Wizard][3]
 * [Running the System Upgrade][9]
 
-[0]: {{page.baseurl}}
+[0]: {{page.baseurl}}/
 [1]: {{page.baseurl}}/comp-mgr/cli/cli-upgrade.html
 [2]: {{page.baseurl}}/install-gde/install/cli/dev_update-magento.html
 [3]: http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
