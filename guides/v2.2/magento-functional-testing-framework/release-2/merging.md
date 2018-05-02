@@ -241,7 +241,7 @@ Create the `.../Foo/Test/LogInAsAdminTest.xml` file:
 
 ```xml
 <tests ...>
-    <test name="LogInAsAdminTest" after="clickLogin">
+    <test name="LogInAsAdminTest" insertAfter="clickLogin">
         <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
         <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
     </test>
