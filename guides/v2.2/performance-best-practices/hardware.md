@@ -27,13 +27,13 @@ Magento 2 has differing PHP memory requirements, based on how your system is dep
 Scenerios and expected PHP memory requirements:
 * Webnode serving only store front pages: 256 MB
 * Webnode serving admin pages with a large catalog: 1 GB
-* Magento 2 cron indexing a site with a large catalog: >256 MB (See [advanced-setup](./advanced-setup.md) to tune for optimal performance.)
+* Magento 2 cron indexing a site with a large catalog: >256 MB (See [advanced-setup]({{page.baseurl}}performance-best-practices/advanced-setup.md) to tune for optimal performance.)
 * Magento 2 compile and deploy of static assets: 756 MB
 * Magento 2 using the web setup wizard to install or upgrade a store with several 3rd party extensions: 2 GB
 * Magento 2 performance toolkit profile generation: >1 GB PHP RAM, >16 MB MySQL TMP_TABLE_SIZE & MAX_HEAP_TABLE_SIZE settings
 
 ### MySQL
-The Magento 2 database (as well as any other database) is sensitive to the amount of the memory available for storing data and indexes. To effectively leverage MySQL data indexation, the amount of memory available should be, at minimum, close to half the size of the data stored in the database.  
+The Magento 2 database (as well as any other database) is sensitive to the amount of the memory available for storing data and indexes. To effectively leverage MySQL data indexation, the amount of memory available should be, at minimum, close to half the size of the data stored in the database.
 
 ### Caches
 

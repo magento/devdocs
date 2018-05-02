@@ -10,11 +10,11 @@ functional_areas:
   - Setup
 ---
 
-The Magento Reference Architecture diagram represents the best practice approach to setup a scalable Magento site.
+The Magento Reference Architecture diagram represents the best practice approach to set up a scalable Magento site.
 
 ## Reference Architecture Diagram
 
-![alt text](./m2-deployment-architecture.png "reference architecture")
+![alt text]({{page.baseurl}}/performance-best-practices/images/m2-deployment-architecture.png "reference architecture")
 
 ### Notes
 * Grey boxes are optional elements
@@ -26,9 +26,8 @@ Magento supports several full page caching engines (File, Memcache, Redis, Varni
 
 For sites that don't require high availability, we recommend using a simple Varnish setup with Nginx SSL termination.
 
-![alt text](./single-varnish-with-ssl-termination.png "Simple Varnish Configuration with SSL Termination")
+![alt text]({{page.baseurl}}/performance-best-practices/images/single-varnish-with-ssl-termination.png "Simple Varnish Configuration with SSL Termination")
 
 For sites that require high availability, we recommend using a 2-tier Varnish configuration with an SSL terminating load balancer.
 
-![alt text](./ha-2-tier-varnish-with-ssl-load-balancer.png "High Availability 2 tier Varnish configuration with SSL terminating load balancer")
-
+![alt text]({{page.baseurl}}/performance-best-practices/images/ha-2-tier-varnish-with-ssl-term-load-balancer.png "High Availability 2 tier Varnish configuration with SSL terminating load balancer")
