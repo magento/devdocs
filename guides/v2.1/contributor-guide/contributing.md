@@ -61,7 +61,7 @@ Submit feature requests or enhancement suggestions to the new <a href="https://c
 4. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 3. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed <a href="{{page.baseurl}}/contributor-guide/contributing_docs.html" target="_blank">documentation</a> updates. <a href="{{ site.baseurl }}" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
+  * Proposed <a href="{{page.baseurl}}/contributor-guide/contributing_docs.html" target="_blank">documentation</a> updates. <a href="{{ site.baseurl }}/" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
 4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 
@@ -116,7 +116,7 @@ If you find a bug in Magento 2 code, you can report it by creating an issue in t
 Before creating an issue:
 
  1. Read the [issue reporting guidelines](https://github.com/magento/magento2/wiki/Issue-reporting-guidelines) to learn how to create an issue that can be processed in a timely manner.
- 2. Check the <a href="{{ site.baseurl }}">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
+ 2. Check the <a href="{{ site.baseurl }}/">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
  3. Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody's work.
 
 
