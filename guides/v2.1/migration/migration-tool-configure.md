@@ -64,9 +64,9 @@ The `<crypt_key>` tag is mandatory to fill. It can be found in `local.xml` file 
 
 Optional parameters:
 
-*	Database user password: `password=<password>`
-
-*	Table prefix: `<source_prefix>`, `<dest_prefix>`
+* Database user password: `password=<password>`
+* Database custom port: `port=<port>`
+* Table prefix: `<source_prefix>`, `<dest_prefix>`
 
 For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
