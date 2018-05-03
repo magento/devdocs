@@ -43,7 +43,7 @@ Recommended use cases of the annotation types:
 </annotations>
 ```
 
-## Elements reference
+## Reference
 
 ### description
 
@@ -168,20 +168,6 @@ Attribute|Type|Use
 <testCaseId value="#"/>
 ```
 
-### useCaseId
-
-The `<useCaseId>` element is an implementation of a `@UseCaseId` custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.
-
-Attribute|Type|Use
----|---|--
-`value`|string|required
-
-#### Example
-
-```xml
-<useCaseId value="USECASE-1"/>
-```
-
 ### title
 
 The `<title>` element is an implementation of [`@Title`] Allure tag; Metadata for report.
@@ -194,6 +180,20 @@ Attribute|Type|Use
 
 ```xml
 <title value="Add Catalog"/>
+```
+
+### useCaseId
+
+The `<useCaseId>` element is an implementation of a `@UseCaseId` custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.
+
+Attribute|Type|Use
+---|---|--
+`value`|string|required
+
+#### Example
+
+```xml
+<useCaseId value="USECASE-1"/>
 ```
 
 <!-- Link definitions -->
