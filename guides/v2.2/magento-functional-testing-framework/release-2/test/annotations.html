@@ -988,7 +988,7 @@ If multiple annotation values are supported and required each value requires a s
 <span class="nt">&lt;/annotations&gt;</span>
 </code></pre></div></div>
 
-<h2 id="elements-reference">Elements reference</h2>
+<h2 id="reference">Reference</h2>
 
 <h3 id="description">description</h3>
 
@@ -1202,32 +1202,6 @@ It has the same functionality as <a href="#features">features</a>, within the St
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;testCaseId</span> <span class="na">value=</span><span class="s">"#"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h3 id="usecaseid">useCaseId</h3>
-
-<p>The <code class="highlighter-rouge">&lt;useCaseId&gt;</code> element is an implementation of a <code class="highlighter-rouge">@UseCaseId</code> custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Type</th>
-      <th>Use</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">value</code></td>
-      <td>string</td>
-      <td>required</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="example-8">Example</h4>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;useCaseId</span> <span class="na">value=</span><span class="s">"USECASE-1"</span><span class="nt">/&gt;</span>
-</code></pre></div></div>
-
 <h3 id="title">title</h3>
 
 <p>The <code class="highlighter-rouge">&lt;title&gt;</code> element is an implementation of <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title"><code class="highlighter-rouge">@Title</code></a> Allure tag; Metadata for report.</p>
@@ -1249,9 +1223,35 @@ It has the same functionality as <a href="#features">features</a>, within the St
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Add Catalog"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<h3 id="usecaseid">useCaseId</h3>
+
+<p>The <code class="highlighter-rouge">&lt;useCaseId&gt;</code> element is an implementation of a <code class="highlighter-rouge">@UseCaseId</code> custom tag. It specifies the use case ID for a test and is ignored by Allure configuration at the moment, as Allure implementation is not complete.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td>string</td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-9">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;useCaseId</span> <span class="na">value=</span><span class="s">"USECASE-1"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <!-- Link definitions -->
