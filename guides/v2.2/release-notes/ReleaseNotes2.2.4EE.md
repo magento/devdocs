@@ -5,7 +5,10 @@ title: Magento Commerce 2.2.4 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.4EE.md
 ---
-*Patch code and release notes published on May 2, 2018.*
+*Patch code and release notes published on May 2, 2018.* *Release notes revised on May 3, 2018.*
+
+
+
 
 We are pleased to present Magento Commerce 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
 
@@ -97,7 +100,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-85274 -->* The `CrontabManager.php` file has been updated as follows: If `crontab` has already been populated, the `bin/magento cron:install` command adds `#~ MAGENTO START` and the rest of code directly to the last row of crontab without any spaces. *Fix submitted by [Michele Fantetti](https://github.com/WaPoNe) in pull request*.
 
-<!--- MAGETWO-85744 -->*  Composer now checks the availability of the `bcmath` PHP module. *Fix submitted by [Mobecls](https://github.com/Mobecls) in pull request 12768*.
+<!--- MAGETWO-85744 -->*  The `ext-bcmath` PHP extension is now required in Open Source. Previously, it was required for Commerce only. *Fix submitted by [Mobecls](https://github.com/Mobecls) in pull request 12768*.
 
 <!--- MAGETWO-88149 -->* The `cache_lifetime` default setting for the `Magento\Theme\Block\Html\Footer` block is no longer set to **false**, and the new default setting is **3600**. *Fix submitted by [zolat](https://github.com/zolat) in pull request 13762*.
 
