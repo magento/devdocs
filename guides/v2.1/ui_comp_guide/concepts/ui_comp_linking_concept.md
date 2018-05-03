@@ -169,7 +169,7 @@ As a result, if the component's property is the variable for the template string
 
     '${ $.provider }:foo' 
     
-If the string would be built at runtime it would be equivalent to `this.provider + '.foo'`.
+If the string would be built at runtime it would be equivalent to `this.provider + ':foo'`.
 
 We can also build complex templates strings using this syntax, as follows:
 
