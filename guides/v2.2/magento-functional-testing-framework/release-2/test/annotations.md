@@ -27,12 +27,11 @@ The following conventions apply to annotations in the Magento Functional Testing
 If multiple annotation values are supported and required each value requires a separate annotation.
 
 Recommended use cases of the annotation types:
-- **Feature** - Report grouping, a set of tests that verify a feature.
-- **Story** - Report grouping, a set of tests that verify a story.
-- **Group** - General functionality grouping.
-- **Title** - Description of the test purpose.
-- **Description** - Description of how the test achieves the purpose defined in the title.
-- **Severity** - Available labels are `BLOCKER`, `CRITICAL`, `MAJOR`, `AVERAGE`, and `MINOR`.
+- [features] - report grouping, a set of tests that verify a feature.
+- [stories] - report grouping, a set of tests that verify a story.
+- [group] - reneral functionality grouping.
+- [title] - description of the test purpose.
+- [description] - description of how the test achieves the purpose defined in the title.
 
 ## Example
 
@@ -127,7 +126,7 @@ The `<return>` element is an implementation of a [`@Severity`] Allure tag; Metad
 
 Attribute|Type|Use|Acceptable values
 ---|---|---|---
-`value`|string|required|`"BLOCKER"`, `"CRITICAL"`, `"NORMAL"`, `"MINOR"`, `"TRIVIAL"`
+`value`|string|required|`MINOR`, `AVERAGE`, `MAJOR`, `BLOCKER`, `CRITICAL`
 
 #### Example
 
@@ -138,7 +137,7 @@ Attribute|Type|Use|Acceptable values
 ### stories
 
 The `<stories>` element is an implementation of a [`@Stories`] Allure tag.
-It has the same functionality as [`features`], within the Story report group.
+It has the same functionality as [features], within the Story report group.
 
 Attribute|Type|Use
 ---|---|--
@@ -197,10 +196,7 @@ Attribute|Type|Use
 <title value="Add Catalog"/>
 ```
 
-<!-- Link deafinitions -->
-
-[`features`]: #features
-[test methods](../test.html#test-tag)
+<!-- Link definitions -->
 
 [`@Description`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description
 [`@Features`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
@@ -210,6 +206,12 @@ Attribute|Type|Use
 [`@Stories`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories
 [`@TestCaseId`]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
 [`@Title`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#human-readable-test-class-or-test-method-title
+[description]: #description
+[features]: #features
+[group]: #group
 [setup instructions in Allure]: https://github.com/allure-framework/allure1/wiki/Test-Case-ID
+[severity]: #severity
+[stories]: #stories
 [suite]: ../suite.html
 [tests]: ../test.html
+[title]: #title
