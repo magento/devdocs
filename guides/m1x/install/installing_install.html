@@ -575,11 +575,7 @@ The following figure shows an example.<br />
 </ul>
 <div class="msg-box important"><img src="{{ site.baseurl}}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento depends on proper cronjob configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</div>
 
-<p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". The crontab includes multiple cronjobs. Each user has a crontab, and commands in any given crontab are executed as the user who owns the crontab.</p>
-
-<p>For Magento, this user is the web server. To determine your web server's user, enter the following command:
-<pre>ps -o "user group command" -C httpd,apache2</pre>
-<p>In CentOS, the Apache user is typically <code>apache</code>; in Ubuntu, it's typically <code>www-data</code>.</p>
+<p>Crontab files define tasks (cronjobs) that are performed at scheduled dates and times. Each user on a system has its own crontab file, and the cron daemon runs each cronjob as the user who owns the crontab. For Magento, this user is the web server.</p>
 
 <h3>Recommendations for cronjobs</h3>
 <p>Magento recommends splitting your cronjob on two tasks in your crontab for best performance and completing your cronjobs without issues:</p>
@@ -591,33 +587,32 @@ The following figure shows an example.<br />
 <pre>* * * * * /path/to/magento/cron.sh cron.php -mdefault
 * * * * * /path/to/magento/cron.sh cron.php -malways</pre>
 
-<p>To further manage your crons, determine which of your cronjobs may be long-running and move them into separate crontabs. For example, imports, exports, and indexes can run long, blocking other cronjobs in that crontab.</p>
+<p>Determine which of your cronjobs may be long-running and move them into separate crontabs. For example, imports, exports, and indexes can run long, blocking other cronjobs scheduled in that crontab.</p>
 
 <p>Magento recommends running cron every minute for EE and every five minutes for CE.</p>
 
-<h3>Cronjob instructions</h3>
-<p>To create a cronjob as the user that runs Apache, splitting the cronjob between two tasks to prevent the indexer blocking other <code>mdefault</code> jobs or an <code>mdefault</code> job blocking the indexer:</p>
+<h3>Create cronjobs</h3>
+<p>First, determine your web server's user. SSH into the server and enter the following command:
+<pre>ps -o "user group command" -C httpd,apache2</pre>
+<p>In CentOS, the Apache user is typically <code>apache</code>. In Ubuntu, it's typically <code>www-data</code>. Enter this user in the commands for creating the crontabs and cronjobs.</p>
+
+<p>We recommend splitting the cronjob between two tasks to prevent the indexer blocking other <code>mdefault</code> jobs or an <code>mdefault</code> job blocking the indexer. These instructions include these commands.</p>
+
+<p>To create a cronjob as the user that runs Apache:</p>
 <ol>
-<li>Create or edit a crontab for the Apache user. This command opens a text editor. You might need to choose a text editor first.<br />
+<li>Create or edit a crontab for the Apache user. This command opens a vim text editor with the username of the Apache user. You might need to choose a text editor first.<br />
 <pre>crontab -u <em>apache-user-name</em> -e</pre></li>
-<li>Enter the following:
-<pre>* * * * * /path/to/magento/cron.sh cron.php -mdefault
-* * * * * /path/to/magento/cron.sh cron.php -malways</pre><br>
+<li>To split cronjobs for better performance, enter the following:
+<pre>* * * * * /bin/sh /path/to/magento/cron.sh cron.php -mdefault
+* * * * * /bin/sh /path/to/magento/cron.sh cron.php -malways</pre><br>
 For example, for CentOS,<br />
 <pre>* * * * * /bin/sh /var/www/html/magento/cron.sh cron.php -mdefault
 * * * * * /bin/sh /var/www/html/magento/cron.sh cron.php -malways</pre></li>
-<li>Save your changes to the crontab and exit the editor.</li></ol>
-
-<p>To create a cronjob as the user who runs Apache:</p>
-<ol><!-- <li>Set executable permissions on <code>[your Magento install dir]/cron.sh</code>. (This is required to run the <a href="#install-cron">Magento cronjob</a>.)
-<pre>[your Magento install dir]/chmod +x cron.sh</pre></li> -->
-<li>Create or edit a crontab for the Apache user. This command opens a text editor. You might need to choose a text editor first.<br />
-<pre>crontab -u <em>apache-user-name</em> -e</pre></li>
-<li>Enter the following:
+<li>If you do not want to split the cronjob, enter the following:
 <pre>* * * * * /bin/sh /path/to/magento/cron.sh</pre><br>
 For example, for CentOS,<br />
 <pre>* * * * * /bin/sh /var/www/html/magento/cron.sh</pre></li>
-<li>Save your changes to the crontab and exit the editor.</li></ol>
+<li>Save your changes to the crontab and exit the editor. For vim, press <code>:wp</code>.</li></ol>
 
 <p>To check if crons are running, you should see the following log files in the Magento directory about 10 minutes after the scheduled cron runs:</p>
 <pre>./cron.php.log
