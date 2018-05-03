@@ -27,13 +27,13 @@ We are pleased to present Magento Open Source  2.1.14. This release includes bot
 
 <!--- ENGCOM-902 -->*
 
-*Fix submitted by [simpleadm](https://github.com/simpleadm) in pull request 14096*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14096*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
 
 <!--- ENGCOM-707 -->* 
 
 
-*Fix submitted by [simpleadm](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
 
 title: Fix misnamed namespace
@@ -45,12 +45,13 @@ title: Fix misnamed namespace
 
 
 
+
+
 <!--- ENGCOM-949 -->* title: [Backport 2.1-develop] Update Store getConfig() to respect valid false return value
-url: magento/magento2#13654
-contributor name: @JeroenVanLeusden
-contributor link: https://github.com/JeroenVanLeusden
 
 
+
+*Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
 
 
 
@@ -64,15 +65,17 @@ url: magento/magento2#14480
 contributor name: @simpleadm
 contributor link: https://github.com/simpleadm
 
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14480*.
+
+
 
 
 <!--- MAGETWO-87870 -->*  Show redirect_to_base config in store scope
 
  - title: [Backport 2.1-develop] Show redirect_to_base config in store scope
- - url: [magento/magento2#13658|https://github.com/magento/magento2/pull/13658]
- - contributor name: @JeroenVanLeusden
- - contributor link: https://github.com/JeroenVanLeusden
 
+
+*Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13658*.
 
 
 
@@ -80,80 +83,90 @@ contributor link: https://github.com/simpleadm
 
 <!--- ENGCOM-1223 -->* Check if store id is not null instead of empty
 
-Pull Request:
-
 title: [Backport] Check if store id is not null instead of empty
-url: magento/magento2#14505
-contributor name: @quisse
-contributor link: https://github.com/quisse
+
+
+*Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
+
+
 
 
 
 <!--- ENGCOM-1172 -->* Fix HTML tags in meta description
-
-Pull Request:
-
 title: Fix HTML tags in meta description
-url: magento/magento2#14436
-contributor name: @vseager
-contributor link: https://github.com/vseager
+
+
+*Fix submitted by [Victor Seager](https://github.com/vseager) in pull request 14436*.
+
+
 
 
 
 <!--- ENGCOM-820 -->* fix catalog_rule_promo_catalog_edit.xml layout
-Pull Request:
 
 title: fix catalog_rule_promo_catalog_edit.xml layout
-url: magento/magento2#14022
-contributor name: @Karlasa
-contributor link: https://github.com/Karlasa
+
+
+*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
 
 
 
 
-<!--- MAGETWO-87573 -->* - title: Backport of PR-8246 for Magento 2.1: Fixes #7723 - saving multi selec…
- - url: [magento/magento2#13546|https://github.com/magento/magento2/pull/13546]
- - contributor name: @hostep
- - contributor link: https://github.com/hostep
 
-https://github.com/magento/magento2/issues/7723
+
+<!--- MAGETWO-87573 -->*
+
+
 
 Catalog rule contains-condition not saving multiple selection in 2.1.2
+
+
+
+*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13546*. [GitHub-7723](https://github.com/magento/magento2/issues/7723)
+
+
+
 
 
  
 
 ### Cart and checkout
 
-<!--- ENGCOM-780 -->* Pull Request:
+<!--- ENGCOM-780 -->* 
 
 title: Backport of PR-13750 for Magento 2.1: Less clean up
-url: magento/magento2#13987
-contributor name: @Karlasa
-contributor link: https://github.com/Karlasa
+
+
+
+*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
+
+
+
 
 
 
 <!--- ENGCOM-776 -->* 
 
 title: Backport of PR-13777. Mobile 'Payments methods' step looks bad on mobile
-url: magento/magento2#13980
-contributor name: @Frodigo
-contributor link: https://github.com/Frodigo
 
-https://github.com/magento/magento2/issues/13315
 
 Mobile "Payment Methods" step looks bad on mobile
 
 
+*Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13980*. [GitHub-13315](https://github.com/magento/magento2/issues/13315)
+
+
+
+
+
+
 
 <!--- ENGCOM-920 -->* title: [Backport 2.1] MAGETWO-59258: Override module-directory/etc/zip_codes.xml only the last code of a country gets include
-url: magento/magento2#14117
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
 
-https://github.com/magento/magento2/issues/6694
 Override zip_codes.xml
+
+
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14117*. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
 
 
 
@@ -165,16 +178,13 @@ Override zip_codes.xml
 Pull Request:
 
 title: [Backport 2.1] Configurable product price options by store
-url: magento/magento2#14479
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
 
-Sergey P
 
 
 Some modules (e.g. Abandoned Cart, Algolia Search etc.) use store emulation functionality (\Magento\Store\Model\App\Emulation::startEnvironmentEmulation) to get product info (including configurable product price) for each store. Unfortunately LowestPriceOptionsProvider class save linked products collection at the $linkedProductMap property based on requested product id only. That is why configurable product price will be the same for other stores after first emulation.
 
 
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14479*. 
 
 
 
@@ -185,13 +195,12 @@ Some modules (e.g. Abandoned Cart, Algolia Search etc.) use store emulation func
 
 
 <!--- ENGCOM-937 -->* Fix possible bug when saving address with empty street line #14115
-Pull Request:
 
 title: [Backport 2.1] MAGETWO-71697: Fix possible bug when saving address with empty street line
 url: magento/magento2#14115
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
 
+
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14115*. 
 
 
 
@@ -203,16 +212,18 @@ contributor link: https://github.com/simpleadm
 
 
 <!--- ENGCOM-1147 -->* Customer_account.xml file abused
-Pull Request:
 
 title: #7816: Customer_account.xml file abused (2.1)
-url: magento/magento2#14323
-contributor name: @mikewhitby
-contributor link: https://github.com/mikewhitby
+
 
 Customer_account.xml file abused
 
 he initial problem was that the paypal module was setting the customer dashbaord page to "Billing Agreements", a previous commit of 36cac17 fixed that which I have cherry picked, however there is a related issue - the customer account dashboard title was being set in the controller which was not good, so I've fixed that too.
+
+*Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
+
+
+
 
 
 
@@ -220,15 +231,13 @@ he initial problem was that the paypal module was setting the customer dashbaord
 <!--- ENGCOM-1212 -->* 
 
 fix for button color in email template
-
-Pull Request:
-
-title: [backport] fix for button color in email template
-url: magento/magento2#14497
-contributor name: @Karlasa
-contributor link: https://github.com/Karlasa
+=
 
 On hover button should use @button-primary__hover__color not @button-primary__color
+
+*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14497*.
+
+
 
 
 
@@ -237,22 +246,24 @@ On hover button should use @button-primary__hover__color not @button-primary__co
 <!--- ENGCOM-1121 -->* Add json and xml support to the post method in socket client #14348
 
 title: [Backport 2.1] Add json and xml support to the post method in socket client
-url: magento/magento2#14348
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
+
+
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14348*. 
+
 
 
 
 <!--- ENGCOM-1074 -->* Fix for broken navigation menu on IE11 
-Pull Request:
 
 title: Backport: Fix for broken navigation menu on IE11 #14230
-url: magento/magento2#14332
-contributor name: @sergiy-v
-contributor link: https://github.com/sergiy-v
+
 
 
 The navigation without the "display: inline-block" sometimes gets broken on Internet Explorer 11. This happens after some refreshes of the page, both on Luma and Blank theme. The problem is that the A element has no display: inline-block or block but also has padding. IE11 understands that differently sometimes without giving any of the inline block properties to the element like width or padding.
+
+
+*Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request 14332*. 
+
 
 
 
@@ -271,11 +282,12 @@ I inherit the blank theme and i wanted to have the top.links visible in the chec
 
 
 <!--- ENGCOM-947 -->* title: [Backport 2.1] 8373: Fix CURL Json POST
-url: magento/magento2#14151
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
 
-https://github.com/magento/magento2/issues/3489
+
+
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14151*. [GitHub-3489](https://github.com/magento/magento2/issues/3489)
+
+
 
 
 
@@ -283,40 +295,22 @@ https://github.com/magento/magento2/issues/3489
 
 The ability to store passwords using different hashing algorithms is limited
 
-https://github.com/magento/magento2/issues/5463
 The reason for this is that although the version of the hashing algorithm is stored against the hashed password, this is not used for creating the hash for comparison, which always defaults to sha256.
+
+[GitHub-5463](https://github.com/magento/magento2/issues/5463)
 
 
 
 #### Configuration framework
 
 <!--- ENGCOM-1011 -->* title: Backport of PR-8772 for Magento 2.1: magento/magento2#3882
-url: magento/magento2#14219
-contributor name: @hostep
-contributor link: https://github.com/hostep
+
 
 An XML comment node as parameter in widget.xml fails with fatal error 
-https://github.com/magento/magento2/issues/3882
+
+*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14219*. [GitHub-3882](https://github.com/magento/magento2/issues/3882)
 
 
-#### Session framework
-
-<!--- MAGETWO- -->* 
-
-
-
-
-
-
-
-#### Web API framework
-
-<!--- MAGETWO- -->*  
-
-
-
-#### Zend
-<!--- MAGETWO- -->* 
 
 
 
@@ -326,50 +320,50 @@ https://github.com/magento/magento2/issues/3882
 <!--- ENGCOM-1251 -->* Specify the table when adding field to filter
 
 title: Specify the table when adding field to filter
-url: magento/magento2#14596
-contributor name: @PierreLeMaguer
-contributor link: https://github.com/PierreLeMaguer
+
 
 Specify the table when adding field to filter for the collection Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php
-https://github.com/magento/magento2/issues/14572
 About the collection vendor/magento/module-eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php, the method setAttribbuteFilter call the method addFieldToFilter without specify the table.
 So, when we join some tables with a column 'attribute_id' (example: 'catalog_product_entity_int'), we have the error 'ambiguous column name'.
+
+
+*Fix submitted by [Pierre LeMaguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
+
 
 
 
 <!--- ENGCOM-926 -->* Add a CodeTriage badge to magento/magento2
 
-Pull Request:
-
 title: [2.1] Add a CodeTriage badge to magento/magento2
-url: magento-engcom/magento2ce#1454
-contributor name: @ishakhsuvarov
-contributor link: https://github.com/ishakhsuvarov
+
+
+*Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
+
 
 
 
 <!--- ENGCOM-903 -->*  Problem on mobile when catalog gallery allowfullscreen is false
 
 title: [Backport 2.1] MAGETWO-64250 Problem on mobile when catalog gallery allowfullscreen is false
-url: magento/magento2#14098
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
 
- Problem on mobile when catalog gallery allowfullscreen is false
+
+
+*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14098*. 
+
 
 
 
 <!--- ENGCOM-1138 -->* Removed cache backend option which explicitly set file permissions
 title: [BACKPORT 2.1] Removed cache backend option which explicitly set file permissions
-url: magento/magento2#14417
-contributor name: @xtremeperf
-contributor link: https://github.com/xtremeperf
 
-https://github.com/magento/magento2/issues/11930
+
+*Fix submitted by [Doug](https://github.com/xtremeperf) in pull request 14417*. [GitHub-11930](https://github.com/magento/magento2/issues/11930), [GitHub-10700](https://github.com/magento/magento2/issues/10700)
+
 setup:di:compile's generated cache files inaccessible by the web-server user 
 
-https://github.com/magento/magento2/issues/10700
 Magento 2 Admin panel show loading on each page
+
+
 
 
 
@@ -378,12 +372,14 @@ Magento 2 Admin panel show loading on each page
 Pull Request:
 
 title: AdminGws depends on Authorisation tables
-url: magento-partners/magento2ee#58
-contributor name: @ajpevers
-contributor link: https://github.com/ajpevers
 
 
-This module should be installed after Magento_Authorization because of $installer->getTable('authorization_role') in `\Magento\AdminGws\Setup\InstallSchema::install
+*Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 58*. 
+
+This module should be installed after Magento_Authorization because of
+
+
+ $installer->getTable('authorization_role') in `\Magento\AdminGws\Setup\InstallSchema::install
 
 
 
@@ -398,24 +394,21 @@ This module should be installed after Magento_Authorization because of $installe
 
 Pull Request:
  - title: [Backport 2.1] Add RewriteBase directive template in .htaccess file into pub/static folder
- - url: [magento/magento2#13812|https://github.com/magento/magento2/pull/13812]
- - contributor name: @ccasciotti
- - contributor link: https://github.com/ccasciotti
 
+
+*Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 13812*. 
 
 
 
 <!--- MAGETWO-87606 -->* Fix robots.txt content typ… #13550
-Pull Request:
  - title: Backport of MAGETWO-84006 for Magento 2.1: Fix robots.txt content typ…
- - url: [magento/magento2#13550|https://github.com/magento/magento2/pull/13550]
- - contributor name: @hostep
- - contributor link: https://github.com/hostep
+ 
 
- https://github.com/magento/magento2/issues/13214
 
  CHECK IN 2.2.4
 
+
+*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13550*. [GitHub-13214](https://github.com/magento/magento2/issues/13214)
 
 
 
@@ -423,85 +416,25 @@ Pull Request:
 
 Pull Request:
  - title: Backport of PR-5028 for Magento 2.1: Load jquery using requirejs to p…
- - url: [magento/magento2#13545|https://github.com/magento/magento2/pull/13545]
- - contributor name: @hostep
- - contributor link: https://github.com/hostep
+
 
  Load jquery using requirejs to print page
 
  SEE 2.2.0 55217
 
-
-
-### Index
-
-<!--- MAGETWO- -->* 
-
-
-### Newsletter
-
-<!--- MAGETWO- -->* 
-
-
-### Order management
-
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-<!--- MAGETWO- -->* 
-
-
-
-### Payment methods
-
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-
-
-
-### Reports
-
-<!--- MAGETWO- -->*  
-
-<!--- MAGETWO- -->* 
- 
-<!--- MAGETWO- -->*
+*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13545*. 
 
 
 
 
-
-
-### Scope
-<!--- MAGETWO- -->* 
-
-
-
-### Search
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-
-
-### Shipping
-
-<!--- MAGETWO- -->* 
 
 ### Swagger
 <!--- MAGETWO-87607 -->*  Change the store code in Swagger based on a param 
 
 Pull Request:
  - title: [Backport 2.1-develop] Change the store code in Swagger based on a param
- - url: [magento/magento2#13486|https://github.com/magento/magento2/pull/13486]
- - contributor name: @JeroenVanLeusden
- - contributor link: https://github.com/JeroenVanLeusden
+ -
 
- https://github.com/magento/magento2/issues/13474
 
  The problem is, this doesn't work on our stores, Im not sure if magento's routing is expecting our default store's code to be default, or if it's a shortcut to the default store and not functioning for some other reason
 
@@ -511,8 +444,9 @@ http://mikesxs.test/rest/mxs/schema?services=all
 
 but swagger isn't picking up on the default store code.
 
-https://github.com/magento/magento2/issues/13474
 
+
+*Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
 
 
 
@@ -520,12 +454,10 @@ https://github.com/magento/magento2/issues/13474
 
 <!--- MAGETWO-86331 -->* Pull Request:
  - title: Issues #10559 - Extend swatch using mixins (M2.1)
- - url: [magento/magento2#12928|https://github.com/magento/magento2/pull/12928]
- - contributor name: @srenon
- - contributor link: https://github.com/srenon
 
 
- https://github.com/magento/magento2/issues/10559
+
+*Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12928*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 
 
@@ -535,24 +467,21 @@ https://github.com/magento/magento2/issues/13474
 
 <!--- ENGCOM-1231 -->* fix translation issue with rating stars
 title: [backport] fix translation issue with rating stars
-url: magento/magento2#14524
-contributor name: @Karlasa
-contributor link: https://github.com/Karlasa
+
 
 Added possibility to translate "stars" phrase in product reviews
 Extending swatch functionality using javascript mixins does not work in Safari and MS Edge
+
+*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14524*. 
+
+
 
 
 
 
 <!--- ENGCOM-1068 -->* Fix JS translation search
 title: Backport of PR-10445 for Magento 2.1: Fix JS translation search
-url: magento/magento2#14349
-contributor name: @hostep
-contributor link: https://github.com/hostep
 
-
-https://github.com/magento/magento2/issues/7403
 
 JS Translation Regex leads to unexpected results and untranslatable strings
 
@@ -567,33 +496,22 @@ The password error message is not translated
 
 The root cause of this, is the regex that selects JS strings for translation, as found in: /app/code/Magento/Translation/etc/di.xml. It's is very buggy and not fail safe. It skips every string that is not strictly formatted according to this regex. In this case the '+' sign causes the string to be skipped by the regex, but there are many more cases where this regex is skipped in JS files (e.g. iteration over parts of strings to translate them).
 
+*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14349*. [GitHub-7403](https://github.com/magento/magento2/issues/7403)
+
+
+
+
 
 
 <!--- ENGCOM-952 -->* Added mage/translate component to customers's ajax login 
 
-Pull Request:
-
 title: [Backport 2.1] Added mage/translate component to customers's ajax login
-url: magento/magento2#14168
-contributor name: @ccasciotti
-contributor link: https://github.com/ccasciotti
+
 
 Added mage/translate component to customers's ajax login
 
+*Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 14168*. 
 
-
-
-
-### UI
-
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-
-<!--- MAGETWO- -->* 
-
-### Wish list
-<!--- MAGETWO-->* 
 
 
 
