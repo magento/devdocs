@@ -58,6 +58,10 @@ pages:
         - label: Blackfire.io
           url: /cloud/project/project-integrate-blackfire.html
 
+        - label: SendGrid
+          url: /cloud/project/sendgrid.html
+          versions: ["2.1","2.2","2.3"]
+
     - label: Local environment setup
       url: /cloud/access-acct/first-time-setup.html
       children:
