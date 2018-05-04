@@ -173,7 +173,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
     public function getConfig()
     {
         return [
-            // 'key' =&gt; 'value' pairs of configuration
+            // 'key' => 'value' pairs of configuration
         ];
     }
 ...
