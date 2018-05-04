@@ -1914,35 +1914,34 @@
 
 </section>
 
-			<h2 id="examplelogging-database-activity">Example—logging database activity</h2>
-<p>To log database activity, use <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/LoggerInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
+			<p>To log database activity, use <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/LoggerInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
 
 <ul>
-  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/Quiet.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\Quiet</code></a></li>
-  <li>Logs to the Magento <code class="highlighter-rouge">var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/File.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code></a></li>
+  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/Logger/Quiet.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\Quiet</code></a></li>
+  <li>Logs to the Magento <code class="highlighter-rouge">var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/DB/Logger/File.php" target="_blank"><code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code></a></li>
 </ul>
 
-<p>To change the preference to <code class="highlighter-rouge">\Magento\Framework\DB\Logger\File</code>, edit your <code class="highlighter-rouge">app/etc/di.xml</code>.</p>
+<p>To change the default configuration of <code class="highlighter-rouge">\Magento\Framework\DB\Logger\LoggerProxy</code>, edit your <code class="highlighter-rouge">app/etc/di.xml</code>.</p>
 
-<p>First, change the default preference</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;preference for="Magento\Framework\DB\LoggerInterface" type="Magento\Framework\DB\Logger\Quiet"/&gt;
-</code></pre></div></div>
-
-<p>to</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;preference for="Magento\Framework\DB\LoggerInterface" type="Magento\Framework\DB\Logger\File"/&gt;
-</code></pre></div></div>
-
-<p>After that, add the following block to configure file-based logging:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\DB\Logger\File"</span><span class="nt">&gt;</span>
+<p>First, change the default values of <code class="highlighter-rouge">loggerAlias</code> and <code class="highlighter-rouge">logCallStack</code> arguments to:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\DB\Logger\LoggerProxy"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
-        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logAllQueries"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"loggerAlias"</span> <span class="na">xsi:type=</span><span class="s">"const"</span><span class="nt">&gt;</span>Magento\Framework\DB\Logger\LoggerProxy::LOGGER_ALIAS_FILE<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logAllQueries"</span> <span class="na">xsi:type=</span><span class="s">"init_parameter"</span><span class="nt">&gt;</span>Magento\Framework\Config\ConfigOptionsListConstants::CONFIG_PATH_DB_LOGGER_LOG_EVERYTHING<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logQueryTime"</span> <span class="na">xsi:type=</span><span class="s">"init_parameter"</span><span class="nt">&gt;</span>Magento\Framework\Config\ConfigOptionsListConstants::CONFIG_PATH_DB_LOGGER_QUERY_TIME_THRESHOLD<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"logCallStack"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>After that, provide the file path for <code class="highlighter-rouge">Magento\Framework\DB\Logger\File</code>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\DB\Logger\File"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"debugFile"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>log/db.log<span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/arguments&gt;</span>
-<span class="nt">&lt;/type&gt;</span></code></pre></figure>
-
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
 
 			
 		</div>
