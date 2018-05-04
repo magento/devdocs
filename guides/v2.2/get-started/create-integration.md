@@ -16,12 +16,12 @@ An **integration** enables third-party services to call the Magento web APIs. Th
 
 Implementing a simple integration requires little knowledge of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} or Magento internal processes. However, you will need a working knowledge of
 
-* [Magento REST or SOAP Web APIs]({{page.baseurl}}get-started/bk-get-started-api.html)
-* [Web API authentication]({{page.baseurl}}get-started/authentication/gs-authentication.html)
-* [OAuth-based authentication]( {{page.baseurl}}get-started/authentication/gs-authentication-oauth.html )
+* [Magento REST or SOAP Web APIs]({{page.baseurl}}/get-started/bk-get-started-api.html)
+* [Web API authentication]({{page.baseurl}}/get-started/authentication/gs-authentication.html)
+* [OAuth-based authentication]( {{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html )
 
 
-Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{page.baseurl}}install-gde/system-requirements.html).
+Before you begin creating a module, make sure that you have a working installation of Magento 2.0, and the [Magento System Requirements]({{page.baseurl}}/install-gde/system-requirements.html).
 
 To create an integration, follow these general steps:
 
@@ -44,7 +44,7 @@ To develop a module, you must:
     mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc/integration
     mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/Setup
    </pre>
-   For more detailed information, see [Create your component file structure]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html).
+   For more detailed information, see [Create your component file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
 
 2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
 
@@ -109,7 +109,7 @@ To develop a module, you must:
     </pre>
 
 
-    For more information, see [Create a component]({{page.baseurl}}extension-dev-guide/build/create_component.html).
+    For more information, see [Create a component]({{page.baseurl}}/extension-dev-guide/build/create_component.html).
 
 4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
@@ -165,16 +165,16 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
 
         public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
         {
-            $this->integrationManager->processIntegrationConfig(['testIntegration']);
+            $this->integrationManager->processIntegrationConfig(['TestIntegration']);
         }
     }
     </pre>
 
     In the following line
 
-    `$this->integrationManager->processIntegrationConfig(['testIntegration']);`
+    `$this->integrationManager->processIntegrationConfig(['TestIntegration']);`
 
-    `testIntegration` must refer to your `etc/integrations/config.xml` file, and the integration name value must be the same.
+    `testIntegration` must refer to your `etc/integration.xml` file, and the integration name value must be the same.
 
     Also, be sure to change the path after `namespace` for your vendor and module names.
 
@@ -194,58 +194,57 @@ The process for customizing your module includes
 
 
 <h3 id="resources">Define the required resources</h3>
-The `etc/integration/api.xml` file defines which {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources the integration has access to.
-
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
+Also, you can define your own `etc/acl.xml` file with a custom resource.
 
-In the following example, the test integration requires access to the following resources in the Sales module:
-
-{% highlight xml %}
-<integrations>
-    <integration name="testIntegration">
+```xml
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
         <resources>
-            <!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well-->
-            <resource name="Magento_Customer::customer" />
-            <resource name="Magento_Log::online" />
-            <!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared-->
-            <resource name="Magento_Sales::sales" />
-            <resource name="Magento_Sales::sales_operation" />
-            <resource name="Magento_Sales::sales_order" />
-            <resource name="Magento_Sales::actions" />
-            <resource name="Magento_Sales::reorder" />
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_TestIntegration::TestIntegration" title="Test Integration" translate="title" />
+            </resource>
         </resources>
-    </integration>
-</integrations>
-{% endhighlight %}
+    </acl>
+</config> 
+```
 
 <h3 id="preconfig">Pre-configure the integration</h3>
 
-Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
+Your module can optionally provide a configuration file `integration.xml` so that the integration can be automatically pre-configured with default values.
+To enable this feature, create the `integration.xml` file in the `etc` directory.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you pre-configure the integration, the values cannot be edited from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel.</p>
 </div>
 
 The  file defines which API resources the integration has access to.
+In the following example, the test integration requires access to the following resources in the Sales module:
 
-{% highlight xml %}
-<integrations>
-   <integration name="TestIntegration">
-       <email></email>
-       <endpoint_url></endpoint_url>
-       <identity_link_url></identity_link_url>
-   </integration>
-</integrations>
-{% endhighlight %}
+```xml
+<integration name="TestIntegration">
+    <email>Email</email>
+    <endpoint_url>Callback URL</endpoint_url>
+    <identity_link_url>Identity link URL</identity_link_url>
+    <resources>
+        <!-- To grant permission to Magento_Log::online, its parent Magento_Customer::customer needs to be declared as well-->
+        <resource name="Magento_Customer::customer" />
+        <resource name="Magento_Log::online" />
+        <!-- To grant permission to Magento_Sales::reorder, all its parent resources need to be declared-->
+        <resource name="Magento_Sales::sales" />
+        <resource name="Magento_Sales::sales_operation" />
+        <resource name="Magento_Sales::sales_order" />
+        <resource name="Magento_Sales::actions" />
+        <resource name="Magento_Sales::reorder" />
+    </resources>
+</integration>
+```
 
 <table>
 <tr>
 <th>Element</th>
 <th>Description</th>
-</tr>
-<tr>
-<td>integrations</td>
-<td>Contains one or more integration definitions.</td>
 </tr>
 <tr>
 <td>integration name=""</td>
@@ -258,11 +257,19 @@ The  file defines which API resources the integration has access to.
 <tr>
 <td>endpoint_url</td>
 <td><p>Optional. The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
-<p>See <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</p></td>
+<p>See <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</p></td>
 </tr>
 <tr>
 <td>identity_link_url</td>
 <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
+</tr>
+<tr>
+<td>resources</td>
+<td>List of required resources.</td>
+</tr>
+<tr>
+<td>resource</td>
+<td>The name of specific resource like `Magento_Sales::reorder`</td>
 </tr>
 </table>
 <h2 id="install">Install your module</h2>
@@ -315,8 +322,8 @@ The callback page must be able to perform the following tasks:
 * Save the access token and other OAuth parameters. The access token and OAuth parameters must be specified in the `Authorization` header in each call to Magento.
 
 ## Related Topics
-- [Web API authentication]({{page.baseurl}}get-started/authentication/gs-authentication.html)
+- [Web API authentication]({{page.baseurl}}/get-started/authentication/gs-authentication.html)
 - [OAuth-based authentication]( {{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html )
-- [Magento System Requirements]({{page.baseurl}}install-gde/system-requirements.html)
-- [Create the module file structure]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html)
-- [Create a component]({{page.baseurl}}extension-dev-guide/build/create_component.html)
+- [Magento System Requirements]({{page.baseurl}}/install-gde/system-requirements.html)
+- [Create the module file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html)
+- [Create a component]({{page.baseurl}}/extension-dev-guide/build/create_component.html)

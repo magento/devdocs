@@ -162,22 +162,24 @@ Label| Description
 <!-- LINKS DEFINITIONS -->
 
 [fork]: #fork
-[pull]: #pull-request
+[issue]: #issue
 [labels]: #labels
-[issue]: #issue 
-[Magento Contributor Agreement]: http://www.magento.com/legaldocuments/mca
-[Magento coding standards]: {{page.baseurl}}coding-standards/bk-coding-standards.html
-[Definition of Done]: {{page.baseurl}}contributor-guide/contributing_dod.html
-[documentation update]: {{page.baseurl}}contributor-guide/contributing_docs.html
-[issue reporting]: https://github.com/magento/magento2-functional-testing-framework/wiki/Issue-reporting-guidelines
-[MFTF repository]: https://github.com/magento/magento2-functional-testing-framework
-[GitHub documentation]: https://help.github.com/articles/syncing-a-fork
-[existing PRs]: https://github.com/magento/magento2-functional-testing-framework/pulls?q=is%3Aopen+is%3Apr
-[existing issues]: https://github.com/magento/magento2-functional-testing-framework/issues?q=is%3Aopen+is%3Aissue
+[pull]: #pull-request
+
+[Definition of Done]: {{page.baseurl}}/contributor-guide/contributing_dod.html
+[documentation update]: {{page.baseurl}}/contributor-guide/contributing_docs.html
+[Magento coding standards]: {{page.baseurl}}/coding-standards/bk-coding-standards.html
+
 [devdocs mftf]: https://github.com/magento/devdocs/tree/develop/guides/v2.3/magento-functional-testing-framework
+[existing issues]: https://github.com/magento/magento2-functional-testing-framework/issues?q=is%3Aopen+is%3Aissue
+[existing PRs]: https://github.com/magento/magento2-functional-testing-framework/pulls?q=is%3Aopen+is%3Apr
+[GitHub documentation]: https://help.github.com/articles/syncing-a-fork
+[issue reporting]: https://github.com/magento/magento2-functional-testing-framework/wiki/Issue-reporting-guidelines
+[Magento Contributor Agreement]: http://www.magento.com/legaldocuments/mca
+[MFTF repository]: https://github.com/magento/magento2-functional-testing-framework
 [Travis CI]: https://travis-ci.com/magento/magento2-functional-testing-framework/pull_requests
 
 <!-- Abbreviataion -->
 
-*[MFTF]: Magento Functional Testing Framework
 *[FIFO]: first-in, first-out
+*[MFTF]: Magento Functional Testing Framework

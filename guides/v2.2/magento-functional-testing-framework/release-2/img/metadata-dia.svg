@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="561"
+   height="478"
+   version="1.1"
+   id="svg318"
+   sodipodi:docname="metadata-dia.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata324">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs322" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview320"
+     showgrid="false"
+     inkscape:zoom="1.3964619"
+     inkscape:cx="235.1642"
+     inkscape:cy="256.75664"
+     inkscape:window-x="3278"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg318" />
+  <a
+     id="a4301"
+     href="#field-tag"
+     title="zero or more &lt;field&gt; elements">
+    <g
+       id="g417">
+      <rect
+         x="491"
+         y="28"
+         width="44"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect2" />
+      <rect
+         x="488"
+         y="25"
+         width="44"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect4" />
+      <text
+         x="510"
+         y="36"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text6">field</text>
+      <text
+         x="522"
+         y="57"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text8">0..∞</text>
+    </g>
+  </a>
+  <a
+     id="a4308"
+     title="zero or more &lt;array&gt; elements"
+     href="#array-tag">
+    <g
+       id="g442">
+      <rect
+         x="491"
+         y="80"
+         width="53"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect18" />
+      <rect
+         x="488"
+         y="77"
+         width="53"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect20" />
+      <text
+         x="514.5"
+         y="88"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text22">array</text>
+      <text
+         x="536"
+         y="109"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text24">0..∞</text>
+      <rect
+         x="536"
+         y="83"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect26" />
+      <line
+         x1="538"
+         y1="88"
+         x2="544"
+         y2="88"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line28" />
+      <line
+         x1="541"
+         y1="85"
+         x2="541"
+         y2="91"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line30" />
+    </g>
+  </a>
+  <line
+     x1="478"
+     y1="36"
+     x2="488"
+     y2="36"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line46" />
+  <line
+     x1="478"
+     y1="88"
+     x2="488"
+     y2="88"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line48" />
+  <a
+     id="a4318"
+     href="#object-tag"
+     title="zero or more &lt;object&gt; elements">
+    <g
+       id="g452">
+      <rect
+         x="491"
+         y="132"
+         width="58"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect32" />
+      <rect
+         x="488"
+         y="129"
+         width="58"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect34" />
+      <text
+         x="517"
+         y="140"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text36">object</text>
+      <text
+         x="541"
+         y="161"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text38">0..∞</text>
+      <rect
+         x="541"
+         y="135"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect40" />
+      <line
+         x1="543"
+         y1="140"
+         x2="549"
+         y2="140"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line42" />
+      <line
+         x1="546"
+         y1="137"
+         x2="546"
+         y2="143"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line44" />
+      <line
+         x1="478"
+         y1="140"
+         x2="488"
+         y2="140"
+         style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+         id="line50" />
+    </g>
+  </a>
+  <line
+     x1="478"
+     y1="36"
+     x2="478"
+     y2="140"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line52" />
+  <line
+     x1="468"
+     y1="88"
+     x2="478"
+     y2="88"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line54" />
+  <a
+     id="a4284"
+     title="that may contain zero or more times one of the following nodes">
+    <g
+       id="g433">
+      <path
+         d="M437 81 L460 81 L466 87 L466 95 L460 101 L437 101 L431 95 L431 87 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="path56" />
+      <path
+         d="M434 78 L457 78 L463 84 L463 92 L457 98 L434 98 L428 92 L428 84 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="path58" />
+      <line
+         x1="433"
+         y1="88"
+         x2="437"
+         y2="88"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line60" />
+      <line
+         x1="437"
+         y1="88"
+         x2="441"
+         y2="84"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line62" />
+      <line
+         x1="449"
+         y1="84"
+         x2="453"
+         y2="84"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line64" />
+      <line
+         x1="449"
+         y1="88"
+         x2="457"
+         y2="88"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line66" />
+      <line
+         x1="449"
+         y1="92"
+         x2="453"
+         y2="92"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line68" />
+      <line
+         x1="453"
+         y1="84"
+         x2="453"
+         y2="92"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line70" />
+      <ellipse
+         cx="445"
+         cy="84"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse72" />
+      <ellipse
+         cx="445"
+         cy="88"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse74" />
+      <ellipse
+         cx="445"
+         cy="92"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse76" />
+      <text
+         x="458"
+         y="108"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text78">0..∞</text>
+      <rect
+         x="458"
+         y="83"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect80" />
+      <line
+         x1="460"
+         y1="88"
+         x2="466"
+         y2="88"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line82" />
+    </g>
+  </a>
+  <line
+     x1="408"
+     y1="88"
+     x2="428"
+     y2="88"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line84" />
+  <a
+     id="a4227"
+     title="zero or more &lt;field&gt; elements"
+     href="#field-tag">
+    <g
+       id="g387">
+      <rect
+         x="348"
+         y="184"
+         width="44"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect98" />
+      <rect
+         x="345"
+         y="181"
+         width="44"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect100" />
+      <text
+         x="367"
+         y="192"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text102">field</text>
+      <text
+         x="379"
+         y="213"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text104">0..∞</text>
+    </g>
+  </a>
+  <a
+     id="a4262"
+     title="zero or one &lt;value&gt; element"
+     href="#value-tag">
+    <g
+       id="g466">
+      <rect
+         x="483"
+         y="285"
+         width="49"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect128" />
+      <text
+         x="507.5"
+         y="296"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text130">value</text>
+    </g>
+  </a>
+  <a
+     id="a4329"
+     title="zero or more &lt;object&gt; elements"
+     href="#object-tag">
+    <g
+       id="g462">
+      <rect
+         x="486"
+         y="236"
+         width="58"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect114" />
+      <rect
+         x="483"
+         y="233"
+         width="58"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect116" />
+      <text
+         x="512"
+         y="244"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text118">object</text>
+      <text
+         x="536"
+         y="265"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text120">0..∞</text>
+      <rect
+         x="536"
+         y="239"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect122" />
+      <line
+         x1="538"
+         y1="244"
+         x2="544"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line124" />
+      <line
+         x1="541"
+         y1="241"
+         x2="541"
+         y2="247"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line126" />
+      <line
+         x1="473"
+         y1="244"
+         x2="483"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+         id="line140" />
+    </g>
+  </a>
+  <line
+     x1="473"
+     y1="296"
+     x2="483"
+     y2="296"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line142" />
+  <line
+     x1="473"
+     y1="244"
+     x2="473"
+     y2="296"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line144" />
+  <line
+     x1="463"
+     y1="270"
+     x2="473"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line146" />
+  <a
+     id="a4267"
+     title="that may contain zero or more times one of the following nodes">
+    <g
+       id="g482">
+      <path
+         d="M432 263 L455 263 L461 269 L461 277 L455 283 L432 283 L426 277 L426 269 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="path148" />
+      <path
+         d="M429 260 L452 260 L458 266 L458 274 L452 280 L429 280 L423 274 L423 266 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="path150" />
+      <line
+         x1="428"
+         y1="270"
+         x2="432"
+         y2="270"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line152" />
+      <line
+         x1="432"
+         y1="270"
+         x2="436"
+         y2="266"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line154" />
+      <line
+         x1="444"
+         y1="266"
+         x2="448"
+         y2="266"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line156" />
+      <line
+         x1="444"
+         y1="270"
+         x2="452"
+         y2="270"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line158" />
+      <line
+         x1="444"
+         y1="274"
+         x2="448"
+         y2="274"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line160" />
+      <line
+         x1="448"
+         y1="266"
+         x2="448"
+         y2="274"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line162" />
+      <ellipse
+         cx="440"
+         cy="266"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse164" />
+      <ellipse
+         cx="440"
+         cy="270"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse166" />
+      <ellipse
+         cx="440"
+         cy="274"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse168" />
+      <text
+         x="453"
+         y="290"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text170">0..∞</text>
+      <rect
+         x="453"
+         y="265"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect172" />
+      <line
+         x1="455"
+         y1="270"
+         x2="461"
+         y2="270"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line174" />
+    </g>
+  </a>
+  <line
+     x1="403"
+     y1="270"
+     x2="423"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line176" />
+  <a
+     id="a4234"
+     title="zero or more &lt;array&gt; elements"
+     href="#array-tag">
+    <g
+       id="g395">
+      <rect
+         x="348"
+         y="262"
+         width="53"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect178" />
+      <rect
+         x="345"
+         y="259"
+         width="53"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect180" />
+      <text
+         x="371.5"
+         y="270"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text182">array</text>
+      <text
+         x="393"
+         y="291"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text184">0..∞</text>
+      <rect
+         x="393"
+         y="265"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect186" />
+      <line
+         x1="395"
+         y1="270"
+         x2="401"
+         y2="270"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line188" />
+    </g>
+  </a>
+  <a
+     id="a4243"
+     href="#header-tag"
+     title="zero or more &lt;header&gt; elements">
+    <g
+       id="g400">
+      <rect
+         x="348"
+         y="340"
+         width="57"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect190" />
+      <rect
+         x="345"
+         y="337"
+         width="57"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect192" />
+      <text
+         x="373.5"
+         y="348"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text194">header</text>
+    </g>
+  </a>
+  <text
+     x="392"
+     y="369"
+     style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+     id="text196">0..∞</text>
+  <a
+     id="a4249"
+     title="zero or more &lt;param&gt; elements"
+     href="#param-tag">
+    <g
+       id="g406">
+      <rect
+         x="348"
+         y="392"
+         width="54"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect206" />
+      <rect
+         x="345"
+         y="389"
+         width="54"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect208" />
+      <text
+         x="372"
+         y="400"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text210">param</text>
+      <text
+         x="389"
+         y="421"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text212">0..∞</text>
+    </g>
+  </a>
+  <a
+     id="a4216"
+     href="#object-tag"
+     title="zero or more &lt;object&gt; elements">
+    <g
+       id="g381">
+      <g
+         id="g346">
+        <rect
+           id="rect86"
+           style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+           height="22"
+           width="58"
+           y="80"
+           x="348" />
+        <rect
+           id="rect88"
+           style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+           height="22"
+           width="58"
+           y="77"
+           x="345" />
+        <text
+           id="text90"
+           style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+           y="88"
+           x="374">object</text>
+        <text
+           id="text92"
+           style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+           y="109"
+           x="398">0..∞</text>
+        <rect
+           id="rect94"
+           style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+           height="10"
+           width="10"
+           y="83"
+           x="398" />
+        <line
+           id="line96"
+           style="stroke:rgb(0,0,0);stroke-width:1"
+           y2="88"
+           x2="406"
+           y1="88"
+           x1="400" />
+      </g>
+      <line
+         x1="335"
+         y1="88"
+         x2="345"
+         y2="88"
+         style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+         id="line234" />
+    </g>
+  </a>
+  <line
+     x1="335"
+     y1="192"
+     x2="345"
+     y2="192"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line236" />
+  <line
+     x1="335"
+     y1="270"
+     x2="345"
+     y2="270"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line238" />
+  <line
+     x1="335"
+     y1="348"
+     x2="345"
+     y2="348"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line240" />
+  <line
+     x1="335"
+     y1="400"
+     x2="345"
+     y2="400"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line242" />
+  <a
+     id="a4256"
+     title="one &lt;contentType&gt; element"
+     href="#contentType-tag">
+    <g
+       id="g411">
+      <rect
+         x="345"
+         y="441"
+         width="84"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect222" />
+      <text
+         x="387"
+         y="452"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text224">contentType</text>
+      <line
+         x1="335"
+         y1="452"
+         x2="345"
+         y2="452"
+         style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+         id="line244" />
+    </g>
+  </a>
+  <line
+     x1="335"
+     y1="88"
+     x2="335"
+     y2="452"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line246" />
+  <line
+     x1="325"
+     y1="244"
+     x2="335"
+     y2="244"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line248" />
+  <a
+     id="a4199"
+     title="that may contain zero or more times one of the following nodes">
+    <g
+       id="g371">
+      <path
+         d="M294 237 L317 237 L323 243 L323 251 L317 257 L294 257 L288 251 L288 243 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="path250" />
+      <path
+         d="M291 234 L314 234 L320 240 L320 248 L314 254 L291 254 L285 248 L285 240 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="path252" />
+      <line
+         x1="290"
+         y1="244"
+         x2="294"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line254" />
+      <line
+         x1="294"
+         y1="244"
+         x2="298"
+         y2="240"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line256" />
+      <line
+         x1="306"
+         y1="240"
+         x2="310"
+         y2="240"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line258" />
+      <line
+         x1="306"
+         y1="244"
+         x2="314"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line260" />
+      <line
+         x1="306"
+         y1="248"
+         x2="310"
+         y2="248"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line262" />
+      <line
+         x1="310"
+         y1="240"
+         x2="310"
+         y2="248"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line264" />
+      <ellipse
+         cx="302"
+         cy="240"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse266" />
+      <ellipse
+         cx="302"
+         cy="244"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse268" />
+      <ellipse
+         cx="302"
+         cy="248"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse270" />
+      <text
+         x="315"
+         y="264"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text272">0..∞</text>
+      <rect
+         x="315"
+         y="239"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect274" />
+      <line
+         x1="317"
+         y1="244"
+         x2="323"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line276" />
+    </g>
+  </a>
+  <line
+     x1="265"
+     y1="244"
+     x2="285"
+     y2="244"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line278" />
+  <a
+     id="a4190"
+     title="zero or more &lt;operation&gt; elements"
+     href="#operation-tag">
+    <g
+       id="g338">
+      <rect
+         x="188"
+         y="236"
+         width="75"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect280" />
+      <rect
+         x="185"
+         y="233"
+         width="75"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
+         id="rect282" />
+      <text
+         x="222.5"
+         y="244"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text284">operation</text>
+      <text
+         x="255"
+         y="265"
+         style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central"
+         id="text286">0..∞</text>
+      <rect
+         x="255"
+         y="239"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect288" />
+      <line
+         x1="257"
+         y1="244"
+         x2="263"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line290" />
+    </g>
+  </a>
+  <line
+     x1="165"
+     y1="244"
+     x2="185"
+     y2="244"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line292" />
+  <a
+     id="a4180"
+     title="that contains a sequence of">
+    <g
+       id="g355">
+      <path
+         d="M131 234 L154 234 L160 240 L160 248 L154 254 L131 254 L125 248 L125 240 Z"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="path294" />
+      <line
+         x1="128"
+         y1="244"
+         x2="157"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line296" />
+      <ellipse
+         cx="137"
+         cy="244"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse298" />
+      <ellipse
+         cx="142"
+         cy="244"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse300" />
+      <ellipse
+         cx="147"
+         cy="244"
+         rx="2"
+         ry="2"
+         style="rgb(0,0,0)"
+         id="ellipse302" />
+      <rect
+         x="155"
+         y="239"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect304" />
+      <line
+         x1="157"
+         y1="244"
+         x2="163"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line306" />
+    </g>
+  </a>
+  <line
+     x1="105"
+     y1="244"
+     x2="125"
+     y2="244"
+     style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"
+     id="line308" />
+  <a
+     id="a484"
+     href="#operations-tag"
+     xlink:arcrole="The &lt;operations&gt; element">
+    <g
+       id="g330">
+      <rect
+         x="20"
+         y="233"
+         width="80"
+         height="22"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect310" />
+      <text
+         x="60"
+         y="244"
+         style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central"
+         id="text312">operations</text>
+      <rect
+         x="95"
+         y="239"
+         width="10"
+         height="10"
+         style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
+         id="rect314" />
+      <line
+         x1="97"
+         y1="244"
+         x2="103"
+         y2="244"
+         style="stroke:rgb(0,0,0);stroke-width:1"
+         id="line316" />
+    </g>
+  </a>
+</svg>

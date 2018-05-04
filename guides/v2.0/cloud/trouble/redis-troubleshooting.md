@@ -21,12 +21,12 @@ You may receive the following error when deploying your Git branch:
 
     Redis::pipeline(): Already in pipeline mode in /var/www/html/magento2ce/vendor/colinmollenhour/credis/Client.php on line 1037
 
-Your Cloud systems and services have been updated to the latest Redis and PHP-Redis 3.1.3. Due to the upgrade, we have provided a patch to upgrade your PHP-Redis code to 3.1.3. You just need to [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) this general patch according to your {{site.data.var.ece}} version.
+Your Cloud systems and services have been updated to the latest Redis and PHP-Redis 3.1.3. Due to the upgrade, we have provided a patch to upgrade your PHP-Redis code to 3.1.3. You just need to [patch and test]({{ page.baseurl}}/cloud/project/project-patch.html) this general patch according to your {{site.data.var.ece}} version.
 
 * Use an Integration branch to add the code through your local.
 * Patch using the CLI command `composer update` in a terminal.
 * Push your code to deploy and test in an Intergration environment.
-* After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see [Deploy your store]({{ page.baseurl }}cloud/live/stage-prod-live.html).
+* After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see [Deploy your store]({{ page.baseurl}}/cloud/live/stage-prod-live.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We strongly recommend patching to update your PHP-Redis version. Your build and deploy will continue to encounter issues until updated to PHP-Redis 3.1.3.
@@ -34,9 +34,9 @@ We strongly recommend patching to update your PHP-Redis version. Your build and 
 
 See the following instructions based on your {{site.data.var.ece}} version:
 
-* 2.0.x: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.
-* 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}cloud/project/project-patch.html) the deployment in your Integration environment.
-* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
+* 2.0.x: Apply the [patch and test]({{ page.baseurl}}/cloud/project/project-patch.html) the deployment in your Integration environment.
+* 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl}}/cloud/project/project-patch.html) the deployment in your Integration environment.
+* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl}}/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
 
   If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update complees, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
 
@@ -47,7 +47,7 @@ See the following instructions based on your {{site.data.var.ece}} version:
   * 2.1.8: `magento/magento-cloud-configuration 101.8.1` or later
 * 2.2: This PHP-Redis upgrade is already included. v2.2 is coming soon for {{site.data.var.ece}}.
 
-For details on MCC and the update command, see [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+For details on MCC and the update command, see [Composer]({{ page.baseurl}}/cloud/reference/cloud-composer.html).
 
 ## Redis and static-content deployment {#static-content}
 This information helps if you receive a number of Redis connection errors in your production logs during static content deployment.
@@ -66,8 +66,3 @@ If you continue to encounter these issues after using this method of deployment,
 3. Run the following command to reduce deployment threads: `php bin/magento setup:static-content:deploy -j 1`
 
 You can also set an environment variable for single thread deployment by default: `STATIC_CONTENT_THREADS = 1`.
-
-#### Related topics
-* [Set up the Redis service]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)
-* [Patch and test Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-patch.html)
-* [Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html)

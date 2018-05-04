@@ -21,7 +21,7 @@ You must have the following information to complete this VCL code snippet:
 * Account access and URL to the Magento Admin for the Staging or Production environment
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).
 </div>
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
@@ -38,17 +38,18 @@ If you want to allow access to Staging and Production, create the Edge ACL in bo
 
 You will use the Edge ACL by name in your VCL snippet code.
 
-## Create blocklist.vcl {#vcl}
+## Create blocklist.json {#vcl}
 To block blacklisted IPs from access to Staging and Production environments, you can use the same VCL snippet file without edits.
 
-Create an `blocklist.vcl` file with the following JSON content:
+Create an `blocklist.json` file with the following JSON content:
 
 {% highlight json %}
 {
   "name": "blocklist",
-  "priority": "5",
+  "dynamic": "0",
   "type": "recv",
-  "content": "if ( client.ip ~ blocklist) { error 403 "Forbidden"; }",
+  "priority": "5",
+  "content": "if ( client.ip ~ blocklist) { error 403 \"Forbidden\"; }"
 }
 {% endhighlight %}
 
@@ -64,18 +65,4 @@ The default VCL snippets you uploaded included a prepended name of `magentomodul
 </div>
 
 ## Finish adding the VCL {#complete}
-When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
-
-#### Related VCL snippet examples
-
-* [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
-* [Custom extend Admin timeout VCL]({{page.baseurl}}cloud/configure/fastly-vcl-extend-timeout.html)
-* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
-* [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
-
-#### Related topics
-
-* [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html)
-* [Set up Fastly]({{page.baseurl}}cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
-* [Troubleshoot Fastly]({{page.baseurl}}cloud/trouble/trouble_fastly.html)
+When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).

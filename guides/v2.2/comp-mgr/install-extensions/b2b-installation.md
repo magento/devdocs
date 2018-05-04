@@ -21,7 +21,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     composer require magento/extension-b2b
     ```
 
-2.  When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
+2.  When prompted, enter your <a href="{{page.baseurl}}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
 3.  Run the following commands after Composer finishes updating modules:
 
@@ -30,7 +30,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
     bin/magento setup:di:compile
 
-    bin/magento setup:static-content:deploy
+    bin/magento setup:static-content:deploy -f
     ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
@@ -72,7 +72,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
 Append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`).
 </div>
 
-Refer to [Manage message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
+Refer to [Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information.
 
 ### Add message consumers to cron
 You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:
@@ -100,8 +100,8 @@ If you enable the **Shared Catalog** module, you must also enable the **Company*
 
 2.  Select **Yes** from the drop-down menus to enable B2B features:
 
-    ![Enable B2B features]({{site.baseurl}}common/images/enable_b2b_features.png)
+    ![Enable B2B features]({{site.baseurl}}/common/images/enable_b2b_features.png)
 
 3.  Click **Save Config**.
 
-Looking for more documentation? Checkout the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html) and [User Guide](//docs.magento.com/m2/b2b/user_guide/getting-started.html).
+Looking for more documentation? Checkout the [B2B Developer Guide]({{page.baseurl}}/b2b/bk-b2b.html) and [User Guide](//docs.magento.com/m2/b2b/user_guide/getting-started.html).

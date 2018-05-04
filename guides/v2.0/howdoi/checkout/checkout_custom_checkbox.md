@@ -15,7 +15,7 @@ This topic describes how to add a custom field that influences other fields on t
 
 Let's consider a case where you need to add a check box whose state (selected or cleared) changes the state of other fields: when the check box is selected, the Shipping Address fields get prepopulated with a certain address. To implement such a check box, take the following steps:
 
-1. Create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the process method of the `<Magento_Checkout_module_dir>/Block/Checkout/LayoutProcessor.php` class.
+1. Create a [plugin]({{page.baseurl}}/extension-dev-guide/plugins.html) for the process method of the `<Magento_Checkout_module_dir>/Block/Checkout/LayoutProcessor.php` class.
 2. Declare the plugin in your module's `di.xml`.
 2. Create a JS component for the check box with custom logic.
 

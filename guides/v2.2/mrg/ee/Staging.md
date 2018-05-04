@@ -245,7 +245,7 @@ You can find the list of modules that have dependencies on the Magento_Staging m
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}extension-dev-guide/plugins.html).
+Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}/extension-dev-guide/plugins.html).
 
 ### Public API
 
@@ -253,15 +253,15 @@ You can use public API defined in the `Api` directory.
 
 ### UI components
 
-You can extend the UI components in the `view/adminhtml/ui_component` directory. For more information, see [UI Listing/Grid Component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
+You can extend the UI components in the `view/adminhtml/ui_component` directory. For more information, see [UI Listing/Grid Component]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
-You can extend and override layouts in the `view/adminhtml/layout` directory. For more information about layouts, see the [Layout documentation]({{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html).
+You can extend and override layouts in the `view/adminhtml/layout` directory. For more information about layouts, see the [Layout documentation]({{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
 
 ### cron options
 
@@ -273,13 +273,13 @@ cron group configuration is set in `etc/crontab.xml`.
 
 -   `staging_synchronize_entities_period` – each period of time checks if start or end dates of a campaign have been changed. If it finds any changes, it applies same changes to all updates dependent from the campaign.
 
-[Learn how to configure and run cron in Magento.]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html)
+[Learn how to configure and run cron in Magento.]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html)
 
 ### Indexes and indexing modes
 
 When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
 
-[Learn more about indexing in Magento.]({{page.baseurl}}mrg/indexing.html)
+[Learn more about indexing in Magento.]({{page.baseurl}}/mrg/indexing.html)
 
 ### Data migration
 

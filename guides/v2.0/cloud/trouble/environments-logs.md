@@ -13,7 +13,7 @@ functional_areas:
   - Configuration
 ---
 
-This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
+This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
 
 You may need to SSH into the environments to locate and view logs. To locate the SSH command to access your environments, see the following:
 
@@ -37,8 +37,8 @@ For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the 
 Logs from the deploy hook are located on the server in the following locations:
 
 *	Integration: `/var/log/deploy.log`
-*	Staging: `/var/log/platform/<prodject ID>_stg/post_deploy.log`
-*	Production: `/var/log/platform/<prodject ID>/post_deploy.log`
+*	Staging: `/var/log/platform/<project ID>_stg/post_deploy.log`
+*	Production: `/var/log/platform/<project ID>/post_deploy.log`
 
 The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 

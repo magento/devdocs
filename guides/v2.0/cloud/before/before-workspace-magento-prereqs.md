@@ -22,13 +22,13 @@ functional_areas:
 ---
 
 #### Previous step:
-[Prepare for local environment setup]({{ page.baseurl }}cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ page.baseurl}}/cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
 To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-based system). A VM gives you an environment to install a different Operating System, tools, software, a database, and Magento without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.
 
-When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, nginx, and database on the VM via SSH.
+When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, Nginx, and database on the VM via SSH.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
@@ -45,16 +45,16 @@ For your VM, we recommend installing one of the following:
 When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager){:target="_blank"} and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation){:target="_blank"} to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.ee}} and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
-	For more information, see [How Cloud uses Git]({{ page.baseurl }}cloud/reference/git-integration.html).
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
+	For more information, see [How Cloud uses Git]({{ page.baseurl}}/cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
-	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+	For more information, see [How Cloud uses Composer]({{ page.baseurl}}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
-We strongly recommend installing [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}install-gde/prereq/apache.html), {{site.data.var.ece}} uses nginx. To have your local as close to cloud installations as possible, install and configure nginx.
+We strongly recommend installing [Nginx]({{ page.baseurl}}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl}}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
-Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
+Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl}}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl}}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
 
 The following packages may also be helpful for your PHP installation:
 
@@ -91,11 +91,11 @@ Before working with your {{site.data.var.ece}} project, make sure you set the PH
 	*	Apache:
 		*	CentOS: `service httpd restart`
 		*	Ubuntu: `service apache2 restart`
-	*	nginx: `service nginx restart`
+	*	Nginx: `service nginx restart`
 
 ## Database (local) {#database}
 
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.ee}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple redundancy in the Production environment.
 
 Regardless of database, for **Pro plans** you need to modify the `auto_increment_increment` value.
 
@@ -156,13 +156,13 @@ If necessary, set `auto_increment_increment` to 3:
 		service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
-The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl}}/cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
 
 To install the Magento Cloud CLI:
 
-1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 
 2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access, such as the home directory.
 
@@ -188,26 +188,14 @@ To install the Magento Cloud CLI:
 
 		magento-cloud list
 
-<!-- ## Platform.sh CLI (local) {#platformcli}
-All {{site.data.var.ece}} project environments are hosted by [Platform.sh](https://platform.sh/){:target="_blank"} on AWS instances. For additional environment management features, you can optionally install the Platform.sh CLI on your local. This CLI is entirely optional, but does include helpful commands for your environment management.
-
-All features available in the [Project Web Interface]({{ page.baseurl }}cloud/project/projects.html) and additional options including [Health Notifications](https://docs.platform.sh/administration/integrations/notifications.html#health-notifications){:target="_blank"}. You can use these commands for PaaS environments, including Pro Integration environments and all Starter environments.
-
-1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
-2.	In a terminal, enter the command:
-
-		curl -sS https://platform.sh/cli/installer | php
-
-For full installation and usage information, see Platform.sh [CLI (Command Line Interface)](https://docs.platform.sh/gettingstarted/cli.html){:target="_blank"} and their [GitHub content](https://github.com/platformsh/platformsh-cli/blob/master/README.md#installation){:target="_blank"}. -->
-
 ## Additional requirements for Magento Commerce {#commerce}
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-* [{{site.data.var.ee}} requirements]({{ page.baseurl }}install-gde/system-requirements2.html)
-* [(Integrator) Integrator installation]({{ page.baseurl }}install-gde/prereq/integrator_install.html)
+* [{{site.data.var.ee}} requirements]({{ page.baseurl}}/install-gde/system-requirements2.html)
+* [(Integrator) Integrator installation]({{ page.baseurl}}/install-gde/prereq/integrator_install.html)
 
 ## Additional options
-You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.
+You can also install additional [optional software]({{ page.baseurl}}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
 #### Next step:
-[Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+[Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html)

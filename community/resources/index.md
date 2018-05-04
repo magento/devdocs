@@ -61,7 +61,7 @@ They are listed here because the content has been well received within the Magen
 *  *Presentation:* [Premium performance with PHP 7 and Varnish][15]{:target="_blank"} by Miguel Balparda 
 
 [0]: https://github.com/DavidLambauer/awesome-magento2 
-[1]: {{page.baseurl}}contributor-guide/contributing_docs.html
+[1]: {{page.baseurl}}/contributor-guide/contributing_docs.html
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
 [3]: http://www.slideshare.net/vrann/mage-titans-usa-2016-magentofacebookrabbitmq
 [4]: http://www.slideshare.net/OlgaKopylova2/m2-deployment

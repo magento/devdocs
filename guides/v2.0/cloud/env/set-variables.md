@@ -73,7 +73,7 @@ ADMIN_USERNAME|meister_x2U8|Yes|No
 ADMIN_URL|magento_A8v10|Yes|No
 
 #### Related topic
-* [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*	[Example setting variables]({{page.baseurl}}cloud/env/set-variables.html)
+* [Overview of environment variables]({{page.baseurl}}/cloud/env/environment-vars_over.html)
+*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}/cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html)
+*	[Example setting variables]({{page.baseurl}}/cloud/env/set-variables.html)

@@ -15,11 +15,11 @@ functional_areas:
   - Upgrade
 ---
 
-This information details how to upgrade {{site.data.var.ece}} from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4]({{page.baseurl}}cloud/upgrade/upgrade-from-2-0-4.html).
+This information details how to upgrade {{site.data.var.ece}} from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4]({{page.baseurl}}/cloud/upgrade/upgrade-from-2-0-4.html).
 
 When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
-Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{page.baseurl}}cloud/reference/cloud-composer.html).
+Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{page.baseurl}}/cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.
@@ -28,7 +28,7 @@ Always apply and test a patch your local system in an active branch. You can pus
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. To set, see [Add admin variables for Admin access]({{page.baseurl}}cloud/before/before-project-owner.html#variables).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ## Back up the database {#backup-db}
 Back up your integration system database and code:
@@ -44,7 +44,7 @@ Back up your integration system database and code:
 
 Back up your staging or production system database:
 
-1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html).
 2.  Find the database login information:
 
     ```
@@ -95,7 +95,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -103,7 +103,7 @@ To verify the upgrade in your integration, staging, or production system:
 ## Verify and upgrade your extensions {#extensions}
 You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{page.baseurl}}cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+We recommend [backing up your database]({{page.baseurl}}/cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
@@ -123,7 +123,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
-To view the error in your integration system, [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -136,8 +136,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{page.baseurl}}cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{page.baseurl}}cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{page.baseurl}}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:
@@ -145,7 +145,7 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
-* [Composer]({{page.baseurl}}cloud/reference/cloud-composer.html)
-* [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
-* [Install optional sample data]({{page.baseurl}}cloud/howtos/sample-data.html)
-* [Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+* [Composer]({{page.baseurl}}/cloud/reference/cloud-composer.html)
+* [Install, manage, and upgrade modules]({{page.baseurl}}/cloud/howtos/install-components.html)
+* [Install optional sample data]({{page.baseurl}}/cloud/howtos/sample-data.html)
+* [Merge and delete an environment]({{page.baseurl}}/cloud/howtos/environment-tutorial-env-merge.html)

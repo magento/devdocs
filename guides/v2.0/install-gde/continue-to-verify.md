@@ -18,22 +18,21 @@ functional_areas:
 ## Now that you've finished your installation
 We suggest the following:
 
-*	<a href="{{page.baseurl}}install-gde/install/verify.html">Verify the installation</a>
-*	<a href="{{page.baseurl}}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>
+*	<a href="{{page.baseurl}}/install-gde/install/verify.html">Verify the installation</a>
 
 ## Other options
 You can also do any of the following:
 
 ### Install optional sample data
-If you haven't already installed optional sample data, you can [install it now]({{ page.baseurl }}install-gde/install/sample-data-after-magento.html).
+If you haven't already installed optional sample data, you can [install it now]({{ page.baseurl}}/install-gde/install/sample-data-after-magento.html).
 
 ### Manage and upgrade components
-*	<a href="{{page.baseurl}}comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>
-*	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
-*	*Contributing developers only*: <a href="{{page.baseurl}}install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
+*	<a href="{{page.baseurl}}/comp-mgr/compman-start.html">Component management (install, uninstall, enable, disable, update)</a>
+*	<a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">System upgrade (upgrade the Magento software)</a>
+*	*Contributing developers only*: <a href="{{page.baseurl}}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>
 
 ### Configure
-<a href="{{page.baseurl}}install-gde/install/post-install-config.html">Configure the Magento application</a>.
+<a href="{{page.baseurl}}/install-gde/install/post-install-config.html">Configure the Magento application</a>.
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

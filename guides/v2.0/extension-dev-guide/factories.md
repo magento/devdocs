@@ -57,8 +57,8 @@ class BaseFactory
 
 ## Writing factories
 
-Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{page.baseurl}}extension-dev-guide/code-generation.html) class type.
-When you reference a factory in a class constructor, Magento's [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) generates the factory class if it does not exist.
+Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{page.baseurl}}/extension-dev-guide/code-generation.html) class type.
+When you reference a factory in a class constructor, Magento's [object manager]({{page.baseurl}}/extension-dev-guide/object-manager.html) generates the factory class if it does not exist.
 
 Factories follow the naming convention `<class-type>Factory` where `<class-type>` is the name of the class the factory instantiates.
 
@@ -67,7 +67,7 @@ For example the automatically generated `Magento\Cms\Model\BlockFactory` class i
 
 ## Using factories
 
-You can get the singleton instance of a factory for a specific model using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html##dep-inj-preview-cons){:target="_blank"}.
+You can get the singleton instance of a factory for a specific model using [dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html){:target="_blank"}.
 
 The following example shows a class getting the `BlockFactory` instance through the constructor:
 

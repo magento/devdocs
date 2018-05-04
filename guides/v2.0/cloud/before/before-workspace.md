@@ -33,14 +33,10 @@ When logged in, your project should open with a `master` branch to work with.
 
 If your Cloud account has access to multiple projects, you should see a list of projects. Select the specific project you are preparing to access and work on.
 
-If the project has no code, the Project Owner or Technical Lead needs to complete creating the project. The project must be set up prior to cloning and branching the Git code. For instructions, see [Prepare project environments]({{ page.baseurl }}cloud/before/before-project-owner.html).
-
-![Project not created]({{ site.baseurl }}common/images/cloud_project_empty.png){:width="440px"}
-
 ## Magento specific tools
-When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} for the store UI and configurations.
+When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl}}/cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} for the store UI and configurations.
 
-You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 ## Recommended tools
 This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/){:target="_blank"}, [Putty](http://www.putty.org/){:target="_blank"}, or Git Bash.
@@ -53,7 +49,7 @@ Developing code for {{site.data.var.ee}} requires working in Git branches. Not e
 Have the following prepared to complete your initial workspace and project setup:
 
  * {{site.data.var.ece}} account with an added user account
- * Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
+ * Magento authentication keys from Magento Marketplace. If the Project Owner or Technical Lead created the project according to these instructions, the [Magento authentication keys]({{ page.baseurl}}/install-gde/prereq/connect-auth.html) should already be installed and available in the auth.json file in the code repository.
 
 ## Get started
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
@@ -70,4 +66,4 @@ You should be ready to go! The following sections provide a link to the previous
 For Pro projects, you also should deploy across to Staging and Production as part of your set up.
 
 #### Next step:
-[Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
+[Install Magento prerequisites]({{ page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html)

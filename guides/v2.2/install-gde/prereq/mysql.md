@@ -13,15 +13,16 @@ redirect_from: /guides/v1.0/install-gde/prereq/mysql.html
 ## Help if you're just starting out {#mysql-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{page.baseurl}}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 ## General guidelines {#instgde-prereq-mysql-intro}
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento application requires MySQL 5.6.x.</p>
   <p>Magention versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
+  <p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies. </p>
 </div>
 
 Magento _strongly_ recommends you observe the following standard when you set up your Magento database:
@@ -32,7 +33,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{page.baseurl}}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
+  <p>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{page.baseurl}}/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</p></span>
 </div>
 
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
@@ -277,7 +278,9 @@ To configure a MySQL database instance:
 4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
 
 		create database magento;
+		create user magento IDENTIFIED BY 'magento';
 		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
+		flush privileges;
 
 5.	Enter `exit` to quit the command prompt.
 
@@ -287,21 +290,21 @@ To configure a MySQL database instance:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{page.baseurl}}install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
+7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="{{page.baseurl}}/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:
 
--   Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl}}config-guide/prod/prod_perf-optimize.html) for more information.
+-   Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  [Performance Best Practices]({{page.baseurl}}/performance-best-practices/index.html) for more information.
 
 -   For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 </div>
 
 #### Related topics
-*	[Set up a remote MySQL database connection]({{page.baseurl}}install-gde/prereq/mysql_remote.html)
-*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
-*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
-*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html)
-*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html)
-*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	[Set up a remote MySQL database connection]({{page.baseurl}}/install-gde/prereq/mysql_remote.html)
+*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-ubuntu.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
+*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)

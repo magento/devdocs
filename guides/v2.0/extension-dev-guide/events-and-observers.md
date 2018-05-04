@@ -19,7 +19,7 @@ Events are dispatched by modules when certain actions are triggered. In addition
 
 #### Dispatching events
 
-Events can be dispatched using the [`Magento\Framework\Event\Manager`]({{site.mage2000url}}lib/internal/Magento/Framework/Event/Manager.php){:target="_self"} class. This class can be obtained through [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
+Events can be dispatched using the [`Magento\Framework\Event\Manager`]({{site.mage2000url}}lib/internal/Magento/Framework/Event/Manager.php){:target="_self"} class. This class can be obtained through [dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
 
 To dispatch an event, call the `dispatch` function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.
 
@@ -118,7 +118,7 @@ The `observer` {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% e
 * `name` (required) - The name of the observer for the event definition.
 * `instance` (required) - The fully qualified class name of the observer.
 * `disabled` - Determines whether this observer is active or not. Default value is false.
-* `shared` - Determines the [lifestyle]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is false.
+* `shared` - Determines the [lifestyle]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is false.
 
 
 Below is an example of how to assign observers to watch certain events:
@@ -140,4 +140,4 @@ Observer names must be unique per event definition. This means that you cannot h
 
 ### Recommended Reading
 
-* [Observers best practices]({{page.baseurl}}ext-best-practices/extension-coding/observers-bp.html)
+* [Observers best practices]({{page.baseurl}}/ext-best-practices/extension-coding/observers-bp.html)

@@ -1,5 +1,3 @@
-_site/
-
 # OS generated files #
 ######################
 .DS_Store
@@ -11,23 +9,19 @@ _site/
 ehthumbs.db
 Thumbs.db
 .idea
+.ruby-version
 
 # Config and output files #
 ###########################
-/_site/
+_site/
 .jekyll-metadata
 CNAME
-_config.yml
-/Readme.md
 ignore
-/*.yml
-!_config.devdocs.yml
-/gen_public.bat
-/jk.bat
+*.yml
+!_config.yml
 *.bat
 *.sh
 tmp/
-/vendor/
-/Gemfile.lock
-/node_modules/
+vendor/
+node_modules/
 _algolia_api_key

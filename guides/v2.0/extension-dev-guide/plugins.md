@@ -23,14 +23,14 @@ This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% en
 
 Plugins cannot be used with any of the following:
 
-* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 * Final methods
 * Final classes
-* Any class that contains at least one final public method
 * Non-public methods
 * Static methods
 * `__construct`
 * Virtual types
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
+* Objects that are not instantiated by the ObjectManager (e.g. by using `new` directly).
 
 ### Declaring a plugin
 
@@ -230,8 +230,8 @@ For example, the developer can disable a global plugin in the {% glossarytooltip
 
 ### Related topics
 
-*  [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
-*  [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html)
+*  [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html)
 
 ### Related information
 

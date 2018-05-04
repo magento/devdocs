@@ -12,9 +12,11 @@ redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
+  -  /guides/v2.3/config-guide/database/database.html
   -  /guides/v2.0/config-guide/cache/caching-database.html
   -  /guides/v2.1/config-guide/cache/caching-database.html
   -  /guides/v2.2/config-guide/cache/caching-database.html
+  -  /guides/v2.3/config-guide/cache/caching-database.html
 ---
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>
@@ -26,12 +28,12 @@ This topic discusses how to set up database caching and how to verify database c
 *	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
 
 <div class="bs-callout bs-callout-warning">
-    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
+    <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="{{page.baseurl}}/config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
     <p>Varnish is designed to accelerate the HTTP protocol.</p>
 </div>
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
-Before you continue, if you're using your own frontend cache, make sure you <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
+Before you continue, if you're using your own frontend cache, make sure you <a href="{{page.baseurl}}/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
 
 We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.
 
@@ -40,7 +42,7 @@ To enable database caching using the `default` frontend, you must modify `<your 
 
 To modify `di.xml`:
 
-1.	Log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+1.	Log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Enter the following commands to make a copy of `di.xml`:
 
 		cd <your Magento install dir>/app/etc
@@ -109,7 +111,7 @@ This section discusses how to set up database caching with a custom {% glossaryt
 
 To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
 
-1.	Log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+1.	Log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Enter the following commands to make a copy of `env.php`:
 
 		cd <your Magento install dir>/app/etc
@@ -145,14 +147,14 @@ To verify database caching is working, clear the current cache directories, go t
 
 Use the following steps:
 
-1.	If you haven't done so already, log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+1.	If you haven't done so already, log in to the Magento server as, or switch to, the <a href="{{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Clear the current cache directories:
 
 		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
 
 3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
 
-	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)
+	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode">enable developer mode</a>.)
 4.	Enter the following commands:
 
 		ls <your Magento install dir>/var/cache/*
@@ -164,17 +166,17 @@ Use the following steps:
       <p>If you use the <code>default</code> cache frontend, you don't have this issue.</p></span>
     </div>
 3.	Verify both directories are empty; if not, edit `di.xml` again and correct any issues.
-4.	Use a database tool such as <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the `cache` and `cache_tag` tables.
+4.	Use a database tool such as <a href="{{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpmyadmin">phpMyAdmin</a> to verify there is data in the `cache` and `cache_tag` tables.
 
 	The following figures show examples. The important thing is that there are rows in the tables. *The data in your tables will be different than the following*.
 
 	`cache` table example.
 
-	<img src="{{ site.baseurl }}common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled">
+	<img src="{{ site.baseurl}}/common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled">
 
 	`cache_tag` table example.
 
-	<img src="{{ site.baseurl }}common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled">
+	<img src="{{ site.baseurl}}/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled">
 
 
 <h2 id="mage-cache-db-config">Configuration examples</h2>

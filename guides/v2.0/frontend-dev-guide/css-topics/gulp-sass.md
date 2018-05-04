@@ -1,12 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: D_CSS
-title: Use Sass and Gulp preprocessor
-menu_order: 8
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: custom-preprocess
+title: Use Sass preprocessor and Gulp task runner
 version: 2.0
 github_link: frontend-dev-guide/css-topics/gulp-sass.md
 functional_areas:
@@ -16,13 +11,13 @@ functional_areas:
 
 By default, Magento uses [Less](http://lesscss.org/) for themes styling. But you can use other stylesheet languages that can be compiled (processed) to CSS. For example, Sass is a popular alternative.
 
-If you decide not to use Less and default [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. You can write a custom pre-processor or use an existing one. This topic describes how to configure and use [Gulp](http://gulpjs.com/) preprocessor for Sass.
+If you decide not to use Less and the default [Magento UI library]({{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html), you need to create your own theme from scratch and use an alternative preprocessor. This topic describes how to configure and use the [Gulp](http://gulpjs.com/) task runner and the gulp-sass package for the Sass preprocessor.
 
-For details about adding a custom preprocessor, see the [Add custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topics/custom_preprocess.html) topic.
+For details about adding a custom preprocessor, see [Add custom CSS preprocessor]({{page.baseurl}}/frontend-dev-guide/css-topics/custom_preprocess.html).
 
 ## Install Gulp and its Sass preprocessor
 
-2. In the root of theme directory, create an empty `package.json` and copy-paste the following code:
+2. In the root of the theme directory, create an empty `package.json` and copy-paste the following code:
 
    ```json
     {
@@ -49,16 +44,15 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 
    `npm install --save gulp-install`
 
-3. Add Gulp Sass preprocessor by running the following command:
+3. Add the gulp-sass package for the Sass preprocessor by running the following command:
 
    `npm install gulp-sass`
 
 ## Create a theme and add Sass styles
 
-1. Create a theme as described in [Create a new storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-create.html).
+1. Create a theme, as described in [Create a new storefront theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html).
 
-4. Set up a Gulp task for Sass compilation. For this, put the file with the task code   to the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). You can use the following code sample (no changes needed, create an empty `app/code/frontend/<Vendor>/<theme>/gulp.js` and copy-paste this code):
- `package.json`:
+2. Set up a Gulp task for Sass compilation by placing the file with the task code in the root of your theme directory (`app/code/frontend/<Vendor>/<theme>`). Create an empty `app/code/frontend/<Vendor>/<theme>/gulpfile.js` file and copy-paste this `package.json` code into it (no changes needed):
 
    ```js
 
@@ -85,21 +79,21 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
     };
 
     // Compile CSS
-	gulp.task('styles', function () {
-    	var stream = gulp
-    	    .src([config.src])
-    	    .pipe(plumber({errorHandler: onError}))
-    	    .pipe(sass().on('error', sass.logError));
+  gulp.task('styles', function () {
+      var stream = gulp
+          .src([config.src])
+          .pipe(plumber({errorHandler: onError}))
+          .pipe(sass().on('error', sass.logError));
 
-    	return stream
-    	    .pipe(gulp.dest('./web/css/'));
-	});
+      return stream
+          .pipe(gulp.dest('./web/css/'));
+  });
    ```
-   This task uses `styles.scss` stored in `app/design/frontend/<Vendor>/<theme>/web/css/` as source of SASS. And it stores the generated CSS in `styles.css` in the `app/code/frontend/<Vendor>/<theme>` directory.
+   This task uses `styles.scss`, stored in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory, as the source of Sass. It stores the generated CSS in `styles.css` in the `app/code/frontend/<Vendor>/<theme>` directory.
 
-5. Put the source `styles.scss` file to the `app/design/frontend/<Vendor>/<theme>/web/css/` directory.
+5. Put the source `styles.scss` file in the `app/design/frontend/<Vendor>/<theme>/web/css/` directory.
 
-5. For your theme to start using the generated CSS, declare the resulting CSS file in the `default_head_blocks.xml` in the `app/design/frontend/<Vendor>/<theme/Magento_Theme/layout/` directory. You can create an empty `default_head_blocks.xml` file and copy the following code:
+5. Declare the resulting CSS file in the `default_head_blocks.xml` file in the `app/design/frontend/<Vendor>/<theme/Magento_Theme/layout/` directory to enable your theme to use the generated CSS. You can create an empty `default_head_blocks.xml` file and copy the following code:
 
    ```xml
 	<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -109,7 +103,7 @@ For details about adding a custom preprocessor, see the [Add custom CSS preproce
 	</page>
    ```
 6. To generate CSS, run
-    `gulp styles`
+    `gulp styles`.
 
 ## Using the @import directive in Sass
 

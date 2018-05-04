@@ -81,7 +81,7 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-#### Declarative notation using the `<script type="text/x-magento-init" />` tag {decl_tag}
+#### Declarative notation using the `<script type="text/x-magento-init" />` tag
 
 To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
 
@@ -150,7 +150,7 @@ require([
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html) widget is initialized on the `[data-role=example]` element as illustration):
 
 {%highlight js%}
 
@@ -193,7 +193,7 @@ define ([
                         img: 'https://c2.staticflickr.com/8/7077/27935031965_facd03b4cb_b_d.jpg'
                     }],
                     fullscreen: {}
-                }, element);  // 'element' is simgle DOM node.
+                }, element);  // 'element' is single DOM node.
             });
     });
 });

@@ -23,11 +23,11 @@ Incremental migration enables you to migrate only the changes made in Magento 1 
 
 ## Before you start: routine preparations
 
-1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1. Log in to Magento server as [the file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 
 2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
-See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
+See the [First steps]({{page.baseurl}}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the incremental migration command {#migrate-data-cmd}
 
@@ -60,4 +60,6 @@ If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endg
 
 ## Related topics
 
-* <a href="{{page.baseurl}}migration/migration-manually.html">Data that needs to be migrated manually</a>
+* <a href="{{page.baseurl}}/migration/migration-manually.html">Data that needs to be migrated manually</a>
+
+* <a href="{{page.baseurl}}/migration/migration-migrate-after.html">End migration</a>

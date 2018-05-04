@@ -44,10 +44,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
-            <a href="{{page.baseurl}}cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
+            <a href="{{page.baseurl}}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>
-            <a href="{{page.baseurl}}cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            <a href="{{page.baseurl}}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
         </ul>
       </td>
@@ -58,10 +58,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
-            <a href="{{page.baseurl}}cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
+            <a href="{{page.baseurl}}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
           </li>
           <li>
-            <a href="{{page.baseurl}}cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            <a href="{{page.baseurl}}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
         </ul>
       </td>
@@ -101,8 +101,3 @@ To further customize your {{site.data.var.ece}} project and account, you can pur
 If you don't want to use the shared SSL certificate, you can purchase this option as part of your subscription. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
 
 This service is an additional cost for your contract.
-
-### AWS Managed VPN Connection Service access {#vpn}
-If you need access to your own Virtual Private Network (VPN) to access your {{site.data.var.ee}} environment, you can purchase this option to gain access to the AWS Managed VPN Connection Service. We will provide information required for configurations including the required IPs and modes.
-
-This service is an additional cost for your contract. VPN configurations require technical resources and requirements for configuring. For information on the AWS service, see their [AWS Managed VPN Connections](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html){:target="\_blank"} and  [VPN Connections](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpn-connections.html){:target="\_blank"}.

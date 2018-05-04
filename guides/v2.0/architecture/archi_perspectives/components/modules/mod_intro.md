@@ -28,11 +28,11 @@ The purpose of each module is to provide specific product features by implementi
 
 ## Module components
 
-A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-overview.html">themes</a>, <a href="{{page.baseurl}}architecture/archi_perspectives/third-party-libs.html">libraries</a>, and <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">language packages</a>.
+A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-overview.html">themes</a>, <a href="{{page.baseurl}}/architecture/archi_perspectives/third-party-libs.html">libraries</a>, and <a href="{{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">language packages</a>.
 
 ## Where do modules live?
 
-Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-mame>`, where `<type>` can be one of the following values:
+Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-name>`, where `<type>` can be one of the following values:
  - **`module`** - for modules (`module-customer-import-export`)
  - **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
  - **`language`** - for language packs (`language-de_de`)
@@ -47,15 +47,15 @@ Inside this folder, you will find all the code related to this module, including
 
 Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
 
-See <a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for specific instructions on extending modules.
+See <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for specific instructions on extending modules.
 
 See
-<a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on implementing themes and other components.
+<a href="{{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on implementing themes and other components.
 
 ## Related topics {#arch-modules-related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_conventions.html">Module location and naming conventions</a>
+<a href="{{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_conventions.html">Module location and naming conventions</a>

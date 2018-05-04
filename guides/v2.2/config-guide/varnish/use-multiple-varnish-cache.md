@@ -22,7 +22,7 @@ This topic shows the basics of configuring multiple Varnish instances with Magen
 
 ## Configuration to purge multiple Varnish instances {#configure-multiple-varnish-magento-purge}
 
-Magento purges Varnish hosts after you configure Varnish hosts using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
+Magento purges Varnish hosts after you configure Varnish hosts using the <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
 
 You should use the `--http-cache-hosts` parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)
 
@@ -36,6 +36,6 @@ You can then purge all Varnish hosts when you refresh the Magento cache (also re
 
 To refresh the cache using the Admin, click **SYSTEM** > Tools > **Cache Management**, then click **Flush Magento Cache** at the top of the page. (You can also refresh individual cache types.)
 
-To refresh the cache of multiple Varnish instances from cli use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+To refresh the cache of multiple Varnish instances from cli use the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean [type]`</a> command as the <a href="{{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 
 

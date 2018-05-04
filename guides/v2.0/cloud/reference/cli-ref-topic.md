@@ -15,18 +15,17 @@ redirect_from:
   - /guides/v2.1/cloud/cli-ref/cli-ref-topic.html
 ---
 
-The Magento Cloud CLI is a cloud-specific verion of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.
+The Magento Cloud CLI is a cloud-specific version of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.
 
 This reference lists all available commands, and a list of commonly used commands, for {{site.data.var.ece}}. You can also use Magento CLI commands as needed, using `bin/magento` for entering commands.
 
-You will [install]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
-
+You will [install]({{ page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You must install the Magento Cloud CLI to your local workspace to issue commands. For details, see:
 
-* [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+* [Install Magento prerequisites]({{ page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html)
+* [Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html)
 </div>
 
 The following Magento Cloud CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Integration environments.
@@ -315,14 +314,14 @@ The following table lists all commands for interacting with your environments an
 	 				<tr>
 	 				<td>local:build (build)</td>
 	 				<td><p>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</p>
-          <p>You should only use this command to <a href="{{page.baseurl}}cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
+          <p>You should only use this command to <a href="{{page.baseurl}}/cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>
 	 				<td>Locates the root directory. Use the command with a subdirectory argument of <code>local</code>, <code>web</code>, or <code>shared</code> to locate those directories.</td>
 	 				</tr>
 					<tr>
-	 				<td>prohect:get (get)</td>
+	 				<td>project:get (get)</td>
 	 				<td>Clones a project locally</td>
 	 				</tr>
 	 				<tr>
@@ -436,29 +435,5 @@ The following table lists all commands for interacting with your environments an
 	 		</tbody>
 </table>
 
-For a changelog, see the next section.
-
 ## Upgrade Magento Cloud CLI {#upgrade}
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.
-
-### Changelog for Magento Cloud CLI {#changelog}
-Currently, we do not have a changelist of changes for this feature. We will add a changelist for current and future updates. For a general changelog, you can review the [Platform.sh CLI changelog](https://github.com/platformsh/platformsh-cli/releases){:target="_blank"}.
-
-<table>
-	     <thead>
-	         <tr>
-	             <th style="width: 200px;">Version</th>
-	             <th>Change</th>
-	         </tr>
-		</thead>
-			<tbody>
-	 				<tr>
-	 				<td>1.11.X</td>
-	 				<td>
-					<ul>
-					<li>local:clean command has been changed to clean. Enter <code>magento-cloud clean --help</code> for more information. You may not find the command on the list.</li>
-					<li>Added local:dir to locate the root directory. You should enter a sub-directory arguement to locate specific information for local, web, or shared.</li>
-					</ul></td>
-	 				</tr>
-			</tbody>
-</table>

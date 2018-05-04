@@ -21,14 +21,14 @@ Composer is a dependency manager for PHP. Composer manages the dependencies you 
 
 The following sections detail the specifics of {{site.data.var.ece}} composer packages, how they work, and what they do within the code base.
 
-For information on what files should and shouldn't be in source control, see [Project structure]({{page.baseurl}}cloud/project/project-start.html). We provide a `.gitignore` file to aid.
+For information on what files should and shouldn't be in source control, see [Project structure]({{page.baseurl}}/cloud/project/project-start.html). We provide a `.gitignore` file to aid.
 
 For {{site.data.var.ece}} 2.2, the `magento/magento-cloud-configuration (MCC)` has been replaced by `vendor/magento/ece-patches` and `vendor/magento/ece-tools`. These packages decouple a patch update from a full product upgrade, allowing you to fully apply a patch without a full product installation or upgrade.
 
 ## Your project's Composer files {#files}
 Your project root directory contains `composer.json` and `composer.lock`.
 
-You edit `composer.json` to specify dependencies for your {{site.data.var.ece}} project. For example, when you [install an extension or module]({{page.baseurl}}cloud/howtos/install-components.html), you update `composer.json` to add the extension to the list. You can either edit it manually or the [Component Manager]({{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html) can do it for you.
+You edit `composer.json` to specify dependencies for your {{site.data.var.ece}} project. For example, when you [install an extension or module]({{page.baseurl}}/cloud/howtos/install-components.html), you update `composer.json` to add the extension to the list. You can either edit it manually or the [Component Manager]({{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html) can do it for you.
 
 The file `composer.lock` stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
@@ -44,7 +44,7 @@ The workflow is as follows:
 3.	Add `composer.lock` to or update it in your Cloud Git repository.
 4.	Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.
 
-During the [build phase]({{page.baseurl}}cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
+During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## Magento composer commands {#commands}
 We use the following commands for Magento:
@@ -61,7 +61,7 @@ The following sections discuss the Composer packages used by {{site.data.var.ece
 *	[`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/patch-notes.html) for release information.
+Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html) for release information.
 </div>
 
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
@@ -100,10 +100,6 @@ Therefore, when upgrading to a new Cloud version or adding, removing, or changin
 2.	Add and commit these updated files to your Cloud Git repository.
 3.	Push the changes to your Cloud Integration environment.
 
-For more information, see [Patch Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-patch.html).
+For more information, see [Patch Magento Commerce (Cloud)]({{page.baseurl}}/cloud/project/project-patch.html).
 
 This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.
-
-#### Related topics
-* [Patch Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-patch.html)
-* [Upgrade Magento Commerce (Cloud)]({{page.baseurl}}cloud/project/project-upgrade.html)

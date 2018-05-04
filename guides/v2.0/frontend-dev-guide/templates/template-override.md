@@ -44,11 +44,11 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 
 <h2 id="override">Templates overriding</h2>
 For template files with the same name, the following is true: 
-theme templates override module templates, and those of a <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
+theme templates override module templates, and those of a <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to override one in your custom theme.
 
-Overriding templates is described with more details in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
+Overriding templates is described with more details in the <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
 
 
 <h2 id="root">Root template</h2>
@@ -61,8 +61,8 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 <h2 id="getter">Getting argument values from layout</h2>
 
-Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.
+Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.
 
 ## Related reading
 
-[Set a block's template]({{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#set_template)
+[Set a block's template]({{page.baseurl}}/frontend-dev-guide/layouts/xml-manage.html#set_template)

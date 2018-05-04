@@ -49,7 +49,7 @@ Optional stack components include:
 
 Magento also provides an automated testing suite that includes - amongst others - unit, integration, functional and performance test scripts. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.
 
-This framework is included in `dev/tests`. The functional testing framework `mtaf` can be found in the separate repository https://github.com/magento/mtf. For more information, see the [Functional Testing Framework]({{page.baseurl}}mtf/mtf_introduction.html) guide.
+This framework is included in `dev/tests`. The functional testing framework `mtaf` can be found in the separate repository https://github.com/magento/mtf. For more information, see the [Functional Testing Framework]({{page.baseurl}}/mtf/mtf_introduction.html) guide.
 
 ### Stack basics
 

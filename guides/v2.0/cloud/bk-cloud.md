@@ -27,36 +27,17 @@ functional_areas:
 
 Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.
 
-For full release notes, see [Release Information]({{page.baseurl}}release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}release-notes/thirdparty-mccloud.html).
+For full release notes, see [Release Information]({{page.baseurl}}/release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{page.baseurl}}/release-notes/thirdparty-mccloud.html).
 
 ## {{site.data.var.ece}} plans and subscriptions {#plans}
 {{site.data.var.ece}} provides plan options based on the size of your business. Each plan includes {{site.data.var.ece}}, support, and Cloud-based hosting and infrastructure on a subscription basis. Want to sign up? We encourage starting with a free 30-day trial to begin working with Magento.
 
-For a list of our plans and breakdown of features, see [Subscriptions and plans]({{page.baseurl}}cloud/basic-information/cloud-plans.html).
+For a list of our plans and breakdown of features, see [Subscriptions and plans]({{page.baseurl}}/cloud/basic-information/cloud-plans.html).
 
 To start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}. You can select a plan that fits your business and start a trial with a newly provisioned project and code-base with the latest version of {{site.data.var.ece}}.
 
-## Direct access to your environments {#environments}
-Fully access your Magento development and deployment through the Project Web Interface (a UI console) and CLI commands via SSH access. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
-
-We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.
-
-### Starter environments {#starter}
-For Starter plan subscriptions, you receive four [environments]({{page.baseurl}}cloud/basic-information/starter-architecture.html) including the following:
-
-* **Integration**: The ultimate developer environments, Integration provides three testable environments. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations.
-* **Staging**: We highly recommend you create an active `staging` branch as one of the three Integration environments. Create this branch directly from `master`. As code and extensions pass your tests, you can merge your Integration branches to `staging`. This Staging environment becomes your pre-Production testing environment. It includes the `staging` active branch, database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
-* **Production**: When code is ready and tested, all code merges to `master` for deployment to the Production live site. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This environment includes additional services like Fastly.
-
-### Pro environments {#pro}
-For Pro subscriptions, you receive the following [environments]({{page.baseurl}}cloud/reference/discover-arch.html):
-
-* **Integration**: The ultimate developer environment, Integration provides eight testable environments including a `master`. Each environment includes an active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test your code before merging to `master` to push to Staging.
-* **Staging**: As code and extensions pass your tests, deploy the Integration `master` Git branch to Staging for pre-Production testing. This environment includes a database, web server, caching, services, environment variables, configurations, and Production services like Fastly and New Relic.
-* **Production**: When code is ready and testing complete, deploy the Integration `master` Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
-
 ### Details about the cloud {#details}
-* Each plan includes Integration _active_ environments for development, testing, and integrating services. Additional active environments are available at additional cost.
+* Each plan includes Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.
 * All environments run with active Git branches of code.
 * You have an unlimited number of *inactive* Git branches.
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
@@ -68,36 +49,35 @@ You should become familiar with the following technologies:
 
 * [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	[Composer](https://getcomposer.org/doc){:target="_blank"}
-*	[Secure Shell]({{page.baseurl}}cloud/env/environments-ssh.html) (SSH)
+*	[Secure Shell]({{page.baseurl}}/cloud/env/environments-ssh.html) (SSH)
 * MySQL (including command-line interaction)
 * Basic linux shell usage
 
-See [Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html), [Pro architechture]({{page.baseurl}}cloud/reference/discover-arch.html), and [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html) for details and additional technologies.
+See [Technologies and requirements]({{page.baseurl}}/cloud/requirements/cloud-requirements.html), [Pro architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html), and [Starter architecture]({{page.baseurl}}/cloud/basic-information/starter-architecture.html) for details and additional technologies.
 
 ## Where do I get started? {#getstarted}
-If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, settng up your local, continuous deployment across environments, and going live.
+If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects from building a project, setting up your local, continuous deployment across environments, and going live.
 
 If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as a base template.
 
 To get started, see:
 
-* [Onboarding tasks]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html) of first things to do right after signing up.
-* Sign up for [status updates]({{page.baseurl}}cloud/onboarding/onboarding-tasks.html#status) for components and services.
-* For new non-trial projects, see [prepare your project environments]({{page.baseurl}}cloud/before/before-project-owner.html) to give your technical staff and solution experts access, create your project, and get started.
+* [Onboarding tasks]({{page.baseurl}}/cloud/onboarding/onboarding-tasks.html) of first things to do right after signing up.
+* Sign up for [status updates]({{page.baseurl}}/cloud/onboarding/onboarding-tasks.html#status) for components and services.
 
 To better understand {{site.data.var.ee}}, your plan, architecture, and workflows, see the following starting points:
 
-*	[Technologies and requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Technologies and requirements]({{page.baseurl}}/cloud/requirements/cloud-requirements.html)
 *	Starter information:
 
-	* [Starter architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
-	*	[Starter develop and deploy workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
+	* [Starter architecture]({{page.baseurl}}/cloud/basic-information/starter-architecture.html)
+	*	[Starter develop and deploy workflow]({{page.baseurl}}/cloud/basic-information/starter-develop-deploy-workflow.html)
 *	Pro information:
 
-	* [Pro architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-	*	[Pro develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
-*	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [Local environment setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
+	* [Pro architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html)
+	*	[Pro develop and deploy workflow]({{page.baseurl}}/cloud/architecture/pro-develop-deploy-workflow.html)
+*	[Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html)
+* [Local environment setup]({{page.baseurl}}/cloud/access-acct/first-time-setup.html)
 
 ## Learn more about Magento 2 {#magento2}
 If you would like to learn more about Magento 2, see the following resources:
@@ -110,11 +90,11 @@ If you would like to learn more about Magento 2, see the following resources:
   *	[Magento 2.2.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}
 *	Developer documentation
 
-	*	[Magento 2 Architecture guide]({{page.baseurl}}architecture/bk-architecture.html){:target="_blank"}
-  *	[Front end development]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
-	*	[Customizing the Magento software]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}
-	*	[Installation]({{page.baseurl}}install-gde/bk-install-guide.html), though we recommend following [Prepare for local environment setup]({{page.baseurl}}cloud/before/before-workspace.html){:target="_blank"}
-	*	[Configuration]({{page.baseurl}}config-guide/bk-config-guide.html){:target="_blank"}
+	*	[Magento 2 Architecture guide]({{page.baseurl}}/architecture/bk-architecture.html){:target="_blank"}
+  *	[Front end development]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
+	*	[Customizing the Magento software]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}
+	*	[Installation]({{page.baseurl}}/install-gde/bk-install-guide.html), though we recommend following [Prepare for local environment setup]({{page.baseurl}}/cloud/before/before-workspace.html){:target="_blank"}
+	*	[Configuration]({{page.baseurl}}/config-guide/bk-config-guide.html){:target="_blank"}
   *	[B2B user guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}
 
 ## Helpful terms {#terms}
@@ -124,24 +104,13 @@ If you would like to learn more about Magento 2, see the following resources:
 * **Active Environment**: An active environment is a fully accessible environment in the Integration enviornment. Each active environment provides a database, environment variables, routes, configurations, and one associated Git branch of code. You can access the Magento Admin and store to test as a merchant and customer for each of these environments, allowing you to develop custom code, add extensions, and integrate 3rd party systems in multiple environments for testing.
 * **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for {{site.data.var.ee}}. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
 * **Branch**: {{site.data.var.ee}} is a Git-driven code base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
-* **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl }}cloud/before/before-workspace.html).
-* **Module or Extension**: Modules and extensions enhance Magento's core functionality through custom code. Develop your own modules and extensions or purchase them directly from developers on the [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}. We recommend [developing custom code as a module]({{ page.baseurl }}mrg/intro.html) to extend Magento functionality.
-* **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your project environments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for [managing your project]({{ page.baseurl }}cloud/project/projects.html). The following environments are available through this interface:
+* **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl}}/cloud/before/before-workspace.html).
+* **Module or Extension**: Modules and extensions enhance Magento's core functionality through custom code. Develop your own modules and extensions or purchase them directly from developers on the [Magento Marketplace](https://marketplace.magento.com/){:target="_blank"}. We recommend [developing custom code as a module]({{ page.baseurl}}/mrg/intro.html) to extend Magento functionality.
+* **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your project environments. You can modify environment settings, environment variables, routes, and manage environments. Access links (store URL, SSH, Git) are provided for active environments through the active Git branches. You use this interface for [managing your project]({{ page.baseurl}}/cloud/project/projects.html). The following environments are available through this interface:
 
   * Starter: Master and all environments branched from it
-  * Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your [interface updated]({{ page.baseurl }}cloud/trouble/pro-env-management.html) to manage all environments.
+  * Pro: Integration and all environments branched from it. You may also have Staging and Production. For existing Pro merchants, you may need to have your [interface updated]({{ page.baseurl}}/cloud/trouble/pro-env-management.html) to manage all environments.
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
     **New projects provisioned starting October 23, 2017** will already have Staging and Production in their Project Web Interface. Any existing projects created before this date will need to enter a ticket to be converted.
     </div>
-
-## Technical support {#gethelp}
-You can enter a support ticket through the Project Web Interface:
-
-1.	Log in to your [Magento Cloud account](https://accounts.magento.cloud/){:target="_blank"}.
-2.	Click **Support** > **Submit ticket** from the top menu.
-
-	The following figure shows an example.
-
-	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png)
-3.	Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.

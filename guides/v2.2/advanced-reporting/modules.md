@@ -36,13 +36,13 @@ Advanced reporting functionality is implemented in the following Magento modules
 
 <!-- LINK DEFINITIONS -->
 
-[Analytics]: {{page.baseurl}}mrg/ce/Analytics.html
-[CatalogAnalytics]: {{page.baseurl}}mrg/ce/CatalogAnalytics.html
-[CustomerAnalytics]: {{page.baseurl}}mrg/ce/CustomerAnalytics.html
-[QuoteAnalytics]: {{page.baseurl}}mrg/ce/QuoteAnalytics.html
-[ReviewAnalytics]: {{page.baseurl}}mrg/ce/ReviewAnalytics.html
-[SalesAnalytics]: {{page.baseurl}}mrg/ce/SalesAnalytics.html
-[WishlistAnalytics]: {{page.baseurl}}mrg/ce/WishlistAnalytics.html
+[Analytics]: {{page.baseurl}}/mrg/ce/Analytics.html
+[CatalogAnalytics]: {{page.baseurl}}/mrg/ce/CatalogAnalytics.html
+[CustomerAnalytics]: {{page.baseurl}}/mrg/ce/CustomerAnalytics.html
+[QuoteAnalytics]: {{page.baseurl}}/mrg/ce/QuoteAnalytics.html
+[ReviewAnalytics]: {{page.baseurl}}/mrg/ce/ReviewAnalytics.html
+[SalesAnalytics]: {{page.baseurl}}/mrg/ce/SalesAnalytics.html
+[WishlistAnalytics]: {{page.baseurl}}/mrg/ce/WishlistAnalytics.html
 
 [report data collection]: ./data-collection.html
 

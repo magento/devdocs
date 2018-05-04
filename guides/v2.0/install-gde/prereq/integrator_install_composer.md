@@ -19,5 +19,5 @@ functional_areas:
 {% include install/composer-clone.md %}
 
 #### Next step
-*	[Get the {{site.data.var.ce}} metapackage]({{ page.baseurl }}install-gde/prereq/integrator_install_ce.html)
-*	[Get the {{site.data.var.ee}} metapackage]({{ page.baseurl }}install-gde/prereq/integrator_install_ee.html)
+*	[Get the {{site.data.var.ce}} metapackage]({{ page.baseurl}}/install-gde/prereq/integrator_install_ce.html)
+*	[Get the {{site.data.var.ee}} metapackage]({{ page.baseurl}}/install-gde/prereq/integrator_install_ee.html)

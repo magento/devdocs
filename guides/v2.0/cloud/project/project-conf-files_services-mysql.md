@@ -20,7 +20,7 @@ engine (equivalent to MySQL with InnoDB).
 
 We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.
 
-To access the MariaDB database directly, [open an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and use the
+To access the MariaDB database directly, [open an SSH tunnel]({{page.baseurl}}/cloud/env/environments-start.html#env-start-tunn) and use the
 following command:
 
     mysql -h database.internal -u user
@@ -89,15 +89,15 @@ relationships:
     database: "mydatabase:mysql"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 * If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
-* MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
+* MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
 </div>
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
 
@@ -128,6 +128,6 @@ The response includes all relationships for services and configuration data for 
 {% endhighlight %}
 
 #### Related topics
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-* [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-* [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+*	[`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html)
+* [`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)
+* [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html)

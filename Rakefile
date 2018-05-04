@@ -44,9 +44,9 @@ task :check_links => :build do
     allow_hash_ref: true,
     alt_ignore: [/.*/],
     file_ignore: [/videos/, /swagger/, /guides\/m1x/, /search.html/, /404.html/, /codelinks/, /magento-third-party.html/, /magento-techbull.html/, /magento-release-notes.html/, /magento-release-information.html/, /index.html/, /template.html/, /magento-devdocs-whatsnew.html/],
-    url_ignore: [/guides\/v2.3/],
+    url_ignore: [/guides\/v2.0/],
     error_sort: :desc, # Sort by invalid link instead of affected file path (default). This makes it easier to see how many files the bad link affects.
-    parallel: { :in_processes => 3 },
+    parallel: { :in_processes => 6 },
     typhoeus: { :followlocation => true, :connecttimeout => 10, :timeout => 30 },
     hydra: { :max_concurrency => 50 },
     cache: { :timeframe => '30d' }
@@ -137,4 +137,40 @@ end
 desc "generate link validation html report"
 task :link_report => [:check_links, :transform] do
   puts "generating link validation HTML report..."
+end
+
+
+###   Preview
+
+desc "Previewing the devdocs locally"
+task :preview => :cleanup do
+    print "Generating devdocs locally ... "
+    preview unless File.exists?('_config.local.yml')
+    puts "enabled additional configuration parameters from _config.local.yml"
+    preview_local
+end
+
+desc "Removing the _site directory"
+task :cleanup do
+    print "Removing '_site' ... "
+    system("rm -rf _site")
+    puts "Done"
+end
+
+
+## General methods
+
+# Run Jekyll
+def jekyll(options = '')
+    system("bin/jekyll #{options}")
+end
+
+# Jekyll preview
+def preview(options = '')
+    jekyll('serve -I -o --strict_front_matter ' + options)
+end
+
+# Include local config to preview
+def preview_local
+    preview('--config _config.yml,_config.local.yml')
 end

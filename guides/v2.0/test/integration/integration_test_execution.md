@@ -143,7 +143,7 @@ The integration test framework creates the temporary test files beneath the dire
 To force the test framework to regenerate the cache and the other files, it is enough to remove the directory.
 
 ```bash
-$ rm -r dev/tests/integration/tmp/sandbox-*
+rm -r dev/tests/integration/tmp/sandbox-*
 ```
 
 #### The PHP memory_limit
@@ -183,7 +183,7 @@ A testsuite configuration like the following can be added to the `<testsuites>` 
 Such a test suite configuration can then be executed using the `--testsuite <name>` command option, for example if you are in the `dev/tests/integration` directory:
 
 ```bash
-$ php ../../../vendor/bin/phpunit --testsuite "Third Party Integration Tests"
+php ../../../vendor/bin/phpunit --testsuite "Third Party Integration Tests"
 ```
 
 ## Running Integration Tests in the CLI {#cli-run}
@@ -200,8 +200,15 @@ The test configuration resides in that directory and will be picked up by `phpun
 By default, if no additional arguments are specified, the test configuration executes all integration tests in the directory `dev/tests/integration/testsuite`.
 
 ```bash
-$ cd dev/tests/integration
-$ ../../../vendor/bin/phpunit
+cd dev/tests/integration
+```
+```bash
+../../../vendor/bin/phpunit
+```
+
+>Expected log
+
+```terminal
 PHPUnit 4.1.0 by Sebastian Bergmann.
 
 Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
@@ -217,8 +224,10 @@ PHPUnit offers several ways to only execute a subset of tests.
 For example, it is common to only execute a single testsuite from the `phpunit.xml` configuration.
 
 ```bash
-$ cd dev/tests/integration
-$ ../../../vendor/bin/phpunit --testsuite "Memory Usage Tests"
+cd dev/tests/integration
+```
+```bash
+../../../vendor/bin/phpunit --testsuite "Memory Usage Tests"
 ```
 
 ### Running a tests from a specific directory tree
@@ -226,8 +235,10 @@ $ ../../../vendor/bin/phpunit --testsuite "Memory Usage Tests"
 To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to `phpunit`.
 
 ```bash
-$ cd dev/tests/integration
-$ ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration
+cd dev/tests/integration
+```
+```bash
+../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration
 ```
 
 ### Running a single test class
@@ -236,8 +247,10 @@ When developing a new integration test class, it is common to run only that sing
 Pass the path to the file containing the test class as an argument to `phpunit`.
 
 ```bash
-$ cd dev/tests/integration
-$ ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
+cd dev/tests/integration
+```
+```bash
+../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
 
 ### Running a single test within a test class
@@ -245,8 +258,10 @@ $ ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/Ex
 Running only a single test within a test class can be done by specifying the test class together with the `--filter` argument and the name to select the test currently being developed.
 
 ```bash
-$ cd dev/tests/integration
-$ ../../../vendor/bin/phpunit --filter 'testOnlyThisOneIsExecuted' ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
+cd dev/tests/integration
+```
+```bash
+../../../vendor/bin/phpunit --filter 'testOnlyThisOneIsExecuted' ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
 
 ### Common mistakes
@@ -268,7 +283,9 @@ If the tests then are executed using a PHP interpreter on the host system, the d
 
 The error usually looks something like this.
 ```bash
-$ phpunit
+phpunit
+```
+```terminal
 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
 ```
 
@@ -291,12 +308,12 @@ Then configure the integration test configuration file to be used.
 
 The only difference in the run configuration is the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.
 
-<img src="{{ site.baseurl }}common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
+<img src="{{ site.baseurl}}/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
 
 <!-- LINK DEFINITIONS -->
 
 [setup]: #setup
 [cli run]: #cli-run
-[phpstorm run]: {{page.baseurl}}test/unit/unit_test_execution_phpstorm.html
+[phpstorm run]: {{page.baseurl}}/test/unit/unit_test_execution_phpstorm.html
 
 [PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html
