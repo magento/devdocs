@@ -1,11 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 165_live
 title: Go live checklist
-menu_title: Go live checklist
-menu_order: 10
-menu_node:
 version: 2.2
 github_link: cloud/live/go-live-checklist.md
 functional_areas:
@@ -14,7 +10,7 @@ functional_areas:
 ---
 
 ## Pre-Launch Checklist {#checklist}
-Prior to go live and switching the DNS, you should download and complete [this](https://magento-my.sharepoint.com/:w:/p/mkostohryz/ESSaFXHn3hdOvgGKmGPXt3oBr5DG5qzSegdg1zcWktD5kA?e=U1Ty2e) checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment. 
+Prior to go live and switching the DNS, you should download and complete the [Checklist]({{site.baseurl}}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. Deploy your `master` branch to the Production environment. 
 
 ## Completely test in Production {#test}
 See [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.
@@ -22,9 +18,9 @@ See [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html) for tes
 ## DNS configurations {#dns}
 You need to complete configurations for your DNS including:
 
-* Set all necessary redirects, especially if you are migrating from an existing site
-*	Set the zone’s root resource record to address the hostname
-*	Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store
+*  Set all necessary redirects, especially if you are migrating from an existing site
+*  Set the zone’s root resource record to address the hostname
+*  Lower the value for the Time-to-Live (TTL) to refresh DNS information to correctly point customers faster to the Production store
 
   We recommend a significantly lower TTL value when switching the DNS record. This value tells the DNS how long to cache the DNS record. When shortened, it refreshes the DNS faster. For example, changing this value from 3 days to 10 minutes. Be advised, this adds load to the web server.
 
@@ -83,7 +79,7 @@ You can also test using the following 3rd party options:
 * [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simiulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * [New Relic](https://support.newrelic.com/){:target="_blank"} (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
-* [Blackfire]({{ page.baseurl}}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
+* [Blackfire]({{ page.baseurl}}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks in depth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
 #### Next step:
