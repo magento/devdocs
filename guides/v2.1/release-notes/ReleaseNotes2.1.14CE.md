@@ -20,17 +20,11 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
-Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
 
 * **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 ## Fixed issues
-
-
-*Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12959*. [GitHub-10812](https://github.com/magento/magento2/issues/10812)
-
-
-
 
 ### Setup
 
@@ -50,10 +44,7 @@ Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the follow
 
 ### Catalog
 
-<!--- ENGCOM-1223 -->* 
-
-Check if store id is not null instead of empty
-Previously, Store id 0 is_empty returns true so a cms page for all store views can’t be created
+<!--- ENGCOM-1223 -->* Magento now checks if `storeId` is not null rather than checking if it's empty. Previously, when `storeId 0 is_empty` returned `true`, Magento could not create a CMS page for all store views.
 
 *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
 
@@ -61,38 +52,11 @@ Previously, Store id 0 is_empty returns true so a cms page for all store views c
 
 
 
-<!--- ENGCOM-1172 -->* Magento no longer displays HTML tags  in product meta descriptions. *Fix submitted by [Victor Seager](https://github.com/vseager) in pull request 14436*.
+<!--- ENGCOM-1172 -->* Magento no longer displays HTML tags in product meta descriptions. *Fix submitted by [Victor Seager](https://github.com/vseager) in pull request 14436*.
 
 <!--- ENGCOM-820 -->* The layout of `catalog_rule_promo_catalog_edit.xml` has been changed to adjust sidebar settings. Specifically, he tlayout attribute value has been changed from  `admin-2columns-left` to `admin-1column`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
 
-
-
-
-
-
-<!--- MAGETWO-87573 -->*
-
-
-
-Catalog rule contains-condition not saving multiple selection in 2.1.2
-
-Steps to reproduce
-Add new catalog price rule
-General information doesn't seem to matter
-Add contains-condition with multiple options
-Example: Climate contains Spring, Warm
-Save the rule
-
-expected result: 
-Rule should be saved and condition should state: Climate contains Spring, Warm
-POST should contain both values for example
-
-actual result:
-POST contains only first selected value
-Rule is saved and condition is: Climate contains Spring
-
-
-
+<!--- MAGETWO-87573 -->* The Catalog Price rule's `contains` condition now works as expected when the `contains` condition allows multiple options. 
 
 *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13546*. [GitHub-7723](https://github.com/magento/magento2/issues/7723)
 
