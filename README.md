@@ -52,6 +52,10 @@ For local builds, you need to install [Bundler](http://bundler.io/), and [Ruby](
 
 1. Run `bundle install` the first time you are in the `devdocs` directory or when you need to pick up theme changes.
 
+### To prepare your Linux environment:
+
+After installling [Ruby](https://www.ruby-lang.org) version manager and [Bundler](http://bundler.io/) run `bundle install` the first time you are in the `devdocs` directory or when you need to pick up theme changes.
+
 ### To build locally:
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
 
