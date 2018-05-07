@@ -14,7 +14,7 @@ You can build this site locally in the following ways:
 
 ## Build using Jekyll
 
-For local builds, you need to install [Bundler](http://bundler.io/), and [Ruby](https://www.ruby-lang.org) version manager.
+For local builds, you need to install [Ruby](https://www.ruby-lang.org) version manager and [Bundler](http://bundler.io/).
 
 ### To prepare your MacOS environment:
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
