@@ -37,10 +37,9 @@ We strongly recommend testing in these environments due to the complexity of you
 * Integration environments may only have databases populated with test data, not matching a production-like environment
 
 ## Set up Magento Security Scan Tool {#security-scan}
-The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for security risks, malware, and unauthorized access. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
+The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out of date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
 
-* Monitor your sites security status
-* Increase your security monitoring with an optional SSH scan
+* Monitor your sites security status and applied security updates
 * Receive security updates and site specific notifications
 
 For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html){:target="_blank"}. Typically, you want to start using this tool as you enter UAT testing.

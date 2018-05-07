@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-title: Develop declarative data and schema patches
+title: Develop data and schema patches
 version: 2.3
 github_link: extension-dev-guide/declarative-schema/data-patches.md
 ---

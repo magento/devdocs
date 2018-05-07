@@ -334,7 +334,7 @@ Attribute|Type|Use|Description
 `name`|string|optional|Name of the operation.
 `dataType`|string|required|Data type of the operation. It refers to a `type` attribute of data entity that will be used as a source of input data.
 `type`|Possible values: `create`, `delete`, `update`, `get`.|required|Type of operation.
-`url`|string|optional |A routing URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + [/rest/]() + `url`.
+`url`|string|optional |A routing URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + /rest/ + `url`.
 `auth`|Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` |optional|Type of authorization of the operation.
 `method`|string|optional|HTTP method of the operation. Possible values: `POST`, `DELETE`, `PUT`, `GET`.
 `successRegex`|string|optional|Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the `successRegex` exists.
@@ -428,7 +428,7 @@ Example:
 {:target="_blank"}
 [catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
 [catalogCategoryRepositoryV1SavePostBody]: #catalogCategoryRepositoryV1SavePostBody
-[contentType]: #contenttype-tag
+[contentType]: #contentType-tag
 [Create a new category]: #create-object-as-adminOauth
 [createData]: test/actions.html#createdata
 [delete a category by its ID]: #delete-object-as-adminOauth

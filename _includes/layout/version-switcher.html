@@ -1,0 +1,14 @@
+{% if site.versions %}
+<div class="version-switcher dropdown" data-version="{{ page.guide_version }}">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento {{ page.guide_version }}{% if page.guide_version == "2.3" %} Pre-release{% endif %}
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	{% for version in site.versions %}
+		<li><a class="dropdown-item" data-proofer-ignore href="{{ site.baseurl }}{{ version.url }}{{ page.github_link | replace: ".md",".html" }}">Magento {{ version.name }}</a></li>
+	{% endfor %}
+  </ul>
+
+</div>
+{% endif %}

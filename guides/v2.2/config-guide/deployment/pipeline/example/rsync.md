@@ -17,8 +17,6 @@ functional_areas:
   - Setup
 ---
 
-NOT STARTED TBD
-
 This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and Magento CLI commands.
 
 These configuration settings can be shared between the development and production systems:
