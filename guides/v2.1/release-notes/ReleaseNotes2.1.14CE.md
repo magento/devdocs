@@ -13,7 +13,16 @@ github_link: release-notes/ReleaseNotes2.1.14CE.md
 *Patch code and release notes were published on  2018.*
 
 
-We are pleased to present Magento Open Source  2.1.14. This release includes both bug fixes and enhancements. Check out the many community-contributed fixes!
+We are pleased to present Magento Open Source  2.1.14. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
+
+Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
+
+## Highlights
+Magento 2.1.12 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
+
+* **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
 ## Fixed issues
 
@@ -25,66 +34,26 @@ We are pleased to present Magento Open Source  2.1.14. This release includes bot
 
 ### Setup
 
-<!--- ENGCOM-902 -->*
+<!--- ENGCOM-902 -->* The `magento cron:run` command now runs scheduled jobs as expected. Previously, cron generated only one job, no matter how many jobs were scheduled. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14096*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14096*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
+<!--- ENGCOM-707 -->* The misspelling in the name of the namespace in `Magento\Cron\Observer\ProcessCronQueueObserver.php` has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
+<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan3600](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
-<!--- ENGCOM-707 -->* 
+<!--- ENGCOM-949 -->* `Store getConfig()` now respects  valid false return values. Previously, this method fetched the default configuration values when a configuration value was set to **no** because  **no** setting IS represented by the system as a string value of 0 (and 0 equals false). *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
 
+<!--- ENGCOM-1200 -->* All console commands now return status. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14480*.
 
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
-
-
-title: Fix misnamed namespace
-
-
-<!--- ENGCOM-846 -->* Add quoting for base path in DI compile command
-
-*Fix submitted by [Ethan3600](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
-
-
-
-
-
-<!--- ENGCOM-949 -->* title: [Backport 2.1-develop] Update Store getConfig() to respect valid false return value
-
-
-
-*Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
-
-
-
-<!--- ENGCOM-1200 -->*
-Task is created on request: larsroettig
-
-Pull Request:
-
-title: [Backport 2.1] Return status in console commands
-url: magento/magento2#14480
-contributor name: @simpleadm
-contributor link: https://github.com/simpleadm
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14480*.
-
-
-
-
-<!--- MAGETWO-87870 -->*  Show redirect_to_base config in store scope
-
- - title: [Backport 2.1-develop] Show redirect_to_base config in store scope
-
-
-*Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13658*.
+<!--- MAGETWO-87870 -->*  We've added the `web/unsecure/base_url` config to both website and store scopes. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13658*.
 
 
 
 ### Catalog
 
-<!--- ENGCOM-1223 -->* Check if store id is not null instead of empty
+<!--- ENGCOM-1223 -->* 
 
-title: [Backport] Check if store id is not null instead of empty
-
+Check if store id is not null instead of empty
+Previously, Store id 0 is_empty returns true so a cms page for all store views can’t be created
 
 *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
 
@@ -92,22 +61,9 @@ title: [Backport] Check if store id is not null instead of empty
 
 
 
-<!--- ENGCOM-1172 -->* Fix HTML tags in meta description
-title: Fix HTML tags in meta description
+<!--- ENGCOM-1172 -->* Magento no longer displays HTML tags  in product meta descriptions. *Fix submitted by [Victor Seager](https://github.com/vseager) in pull request 14436*.
 
-
-*Fix submitted by [Victor Seager](https://github.com/vseager) in pull request 14436*.
-
-
-
-
-
-<!--- ENGCOM-820 -->* fix catalog_rule_promo_catalog_edit.xml layout
-
-title: fix catalog_rule_promo_catalog_edit.xml layout
-
-
-*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
+<!--- ENGCOM-820 -->* The layout of `catalog_rule_promo_catalog_edit.xml` has been changed to adjust sidebar settings. Specifically, he tlayout attribute value has been changed from  `admin-2columns-left` to `admin-1column`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
 
 
 
@@ -119,6 +75,22 @@ title: fix catalog_rule_promo_catalog_edit.xml layout
 
 
 Catalog rule contains-condition not saving multiple selection in 2.1.2
+
+Steps to reproduce
+Add new catalog price rule
+General information doesn't seem to matter
+Add contains-condition with multiple options
+Example: Climate contains Spring, Warm
+Save the rule
+
+expected result: 
+Rule should be saved and condition should state: Climate contains Spring, Warm
+POST should contain both values for example
+
+actual result:
+POST contains only first selected value
+Rule is saved and condition is: Climate contains Spring
+
 
 
 
@@ -134,26 +106,23 @@ Catalog rule contains-condition not saving multiple selection in 2.1.2
 
 <!--- ENGCOM-780 -->* 
 
+Clean up some less code.
+
+Description
+Moved some less under .lib-dropdown() variables and added font-weight variable into navigtion.less
+
 title: Backport of PR-13750 for Magento 2.1: Less clean up
 
 
 
 *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
 
+SEE previous releases
 
 
 
 
-
-<!--- ENGCOM-776 -->* 
-
-title: Backport of PR-13777. Mobile 'Payments methods' step looks bad on mobile
-
-
-Mobile "Payment Methods" step looks bad on mobile
-
-
-*Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13980*. [GitHub-13315](https://github.com/magento/magento2/issues/13315)
+<!--- ENGCOM-776 -->* We’ve improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page elements was not correctly spaced. *Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13980*. [GitHub-13315](https://github.com/magento/magento2/issues/13315)
 
 
 
@@ -162,6 +131,15 @@ Mobile "Payment Methods" step looks bad on mobile
 
 
 <!--- ENGCOM-920 -->* title: [Backport 2.1] MAGETWO-59258: Override module-directory/etc/zip_codes.xml only the last code of a country gets include
+
+
+When trying to override module-directory/etc/zip_codes.xml from a local module, only the last code of a country gets included.
+
+
+Expected result
+All patterns should be included on the check-out page.
+Actual result
+Only the last pattern from Module's zip_codes.xml is shown
 
 Override zip_codes.xml
 
@@ -194,33 +172,27 @@ Some modules (e.g. Abandoned Cart, Algolia Search etc.) use store emulation func
 ### Customers
 
 
-<!--- ENGCOM-937 -->* Fix possible bug when saving address with empty street line #14115
-
-title: [Backport 2.1] MAGETWO-71697: Fix possible bug when saving address with empty street line
-url: magento/magento2#14115
-
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14115*. 
-
-
-
-<!--- MAGETWO-89253 -->* Test, not bug
-
-
+<!--- ENGCOM-937 -->* You can now successfully save an address with a blank address field. Previously, when you saved an address that contained no text in an optional address field, Magento threw this error, `'Exception' with message 'Notice: Array to string conversion on line 2903 in lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php will be raised`. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14115*. 
 
 
 
 
 <!--- ENGCOM-1147 -->* Customer_account.xml file abused
 
-title: #7816: Customer_account.xml file abused (2.1)
 
-
-Customer_account.xml file abused
 
 he initial problem was that the paypal module was setting the customer dashbaord page to "Billing Agreements", a previous commit of 36cac17 fixed that which I have cherry picked, however there is a related issue - the customer account dashboard title was being set in the controller which was not good, so I've fixed that too.
 
 *Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
+
+From the Magento Paypal module, this is added in its customer_account.xml file:
+
+<head>
+    <title>Billing Agreements</title>
+</head>
+This is very unwise since the benefit of having the customer_account is that all the pages on there use it to update for the convenience of getting all of the dashboard links and updates.
+
+After adding another page to the route, we now have to awkwardly remove what isn't even page.main.title.
 
 
 
@@ -228,70 +200,30 @@ he initial problem was that the paypal module was setting the customer dashbaord
 
 
 ### Email
-<!--- ENGCOM-1212 -->* 
-
-fix for button color in email template
-=
-
-On hover button should use @button-primary__hover__color not @button-primary__color
-
-*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14497*.
-
+<!--- ENGCOM-1212 -->* The color of the button on the email template when a user hovers over it has been changed from `@button-primary__color` to `@button-primary__hover__color`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14497*.
 
 
 
 
 ### Framework
 
-<!--- ENGCOM-1121 -->* Add json and xml support to the post method in socket client #14348
+<!--- ENGCOM-1121 -->* We've added JSON and XML support to the post method in `\Magento\Framework\HTTP\Client\Socket` class. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14348*. 
 
-title: [Backport 2.1] Add json and xml support to the post method in socket client
-
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14348*. 
+<!--- ENGCOM-1074 -->* Navigation menus without the `display: inline-block` setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work.*Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request 14332*. 
 
 
+<!--- ENGCOM-1062 -->* You can now successfully prevent the removal of a block or container by setting the `remove` attribute to **false**. Previously, setting this attribute to **false** did not cancel the removal of a block or container. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14198*. [GitHub-1931](https://github.com/magento/magento2/issues/1931)
 
-
-<!--- ENGCOM-1074 -->* Fix for broken navigation menu on IE11 
-
-title: Backport: Fix for broken navigation menu on IE11 #14230
-
-
-
-The navigation without the "display: inline-block" sometimes gets broken on Internet Explorer 11. This happens after some refreshes of the page, both on Luma and Blank theme. The problem is that the A element has no display: inline-block or block but also has padding. IE11 understands that differently sometimes without giving any of the inline block properties to the element like width or padding.
-
-
-*Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request 14332*. 
+<!--- ENGCOM-947 -->* `String` type was added to `\Magento\Framework\HTTP\Client\Curl`  to support sending JSON or XML requests. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14151*. [GitHub-3489](https://github.com/magento/magento2/issues/3489)
 
 
 
 
-
-<!--- ENGCOM-1062 -->* Can't cancel removal of a block or container in layout by setting remove attribute value to false
-
-title: [Backport] Can't cancel removal of a block or container in layout by setting remove attribute value to false
-url: magento/magento2#14198
-contributor name: @quisse
-contributor link: https://github.com/quisse
-
-https://github.com/magento/magento2/issues/1931
-
-I inherit the blank theme and i wanted to have the top.links visible in the checkout so i created this file:
+<!--- ENGCOM-944 -->* 
 
 
 
-<!--- ENGCOM-947 -->* title: [Backport 2.1] 8373: Fix CURL Json POST
-
-
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14151*. [GitHub-3489](https://github.com/magento/magento2/issues/3489)
-
-
-
-
-
-<!--- ENGCOM-944 -->* Use specified hashing algo in \Magento\Framework\Encryption\Encryptor::getHash
+Use specified hashing algo in \Magento\Framework\Encryption\Encryptor::getHash
 
 The ability to store passwords using different hashing algorithms is limited
 
@@ -299,11 +231,35 @@ The reason for this is that although the version of the hashing algorithm is sto
 
 [GitHub-5463](https://github.com/magento/magento2/issues/5463)
 
+Steps to reproduce
+Create passwords for users hashed using different hashing algorithms (e.g. md5 and sha256)
+Attempt to login against these
+Expected result
+Both would log in
+Actual result
+1.Those created with sha256 work
+2. Those created with anything else (e.g. md5) fail incorrectly
+
+
 
 
 #### Configuration framework
 
 <!--- ENGCOM-1011 -->* title: Backport of PR-8772 for Magento 2.1: magento/magento2#3882
+
+
+Steps to reproduce
+Add a new widget declaration in some widget.xml, but add a comment as a parameter:
+<parameters>
+    <parameter name="title_text" xsi:type="text" visible="true" required="true" sort_order="20">
+        <label translate="true">Title text</label>
+    </parameter>
+    <!-- it's a comment; what can go wrong? -->
+</parameters>
+Expected result
+When creating a new widget through admin, a single param should appear.
+Actual result
+Nothing appears: the ajax grabbing the widgets responds with 500 (stack trace below).
 
 
 An XML comment node as parameter in widget.xml fails with fatal error 
@@ -332,90 +288,40 @@ So, when we join some tables with a column 'attribute_id' (example: 'catalog_pro
 
 
 
-<!--- ENGCOM-926 -->* Add a CodeTriage badge to magento/magento2
+<!--- ENGCOM-926 -->* We've added a CodeTriage badge to the `magento/magento2` GitHub repository. See [CodeTriage](https://www.codetriage.com/magento/magento2 ) for more information. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
 
-title: [2.1] Add a CodeTriage badge to magento/magento2
-
-
-*Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
+<!--- ENGCOM-903 -->*  The catalog gallery `allowfullscreen` setting In the theme's `view.xml` file now works as expected. Previously, when you set the gallery's `allowfullscreen` variable to **false**, Magento displayed a white page (instead of the product page) when a customer tapped on a product image on a mobile device. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14098*. [GitHub-5808](https://github.com/magento/magento2/issues/5808)
 
 
 
 
-<!--- ENGCOM-903 -->*  Problem on mobile when catalog gallery allowfullscreen is false
-
-title: [Backport 2.1] MAGETWO-64250 Problem on mobile when catalog gallery allowfullscreen is false
-
-
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14098*. 
-
-
-
-
-<!--- ENGCOM-1138 -->* Removed cache backend option which explicitly set file permissions
-title: [BACKPORT 2.1] Removed cache backend option which explicitly set file permissions
-
+<!--- ENGCOM-1138 -->* We've removed the ability of the Magento Framework to explicitly set file and directory permissions from the default cache backend. Removing this functionality allows permissions to be inherited properly from the file system, and respects SETGID bit and Magento umask settings. 
 
 *Fix submitted by [Doug](https://github.com/xtremeperf) in pull request 14417*. [GitHub-11930](https://github.com/magento/magento2/issues/11930), [GitHub-10700](https://github.com/magento/magento2/issues/10700)
 
-setup:di:compile's generated cache files inaccessible by the web-server user 
 
-Magento 2 Admin panel show loading on each page
-
-
-
-
-
-<!--- ENGCOM-1145 -->* AdminGws depends on Authorisation tables
-
-Pull Request:
-
-title: AdminGws depends on Authorisation tables
-
-
+<!--- ENGCOM-1145 -->* Magento now installs the AdminGws module after it installs `Magento_Authorization`. 
 *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 58*. 
 
-This module should be installed after Magento_Authorization because of
-
-
- $installer->getTable('authorization_role') in `\Magento\AdminGws\Setup\InstallSchema::install
-
-
-
-
-
-<!--- MAGETWO-88277 -->* Add RewriteBase directive template in .htaccess file into pub/static folder
-
-
- this PR adds RewriteBase directive into .htaccess file into pub/static folder, in case the need is to install Magento code under a directory inside the web root. Setting this directive into .htaccess file in Magento root and without setting it into .htaccess under pub/static folder cause a file missing (js and css) by Apache Web Server
-
-
-
-Pull Request:
- - title: [Backport 2.1] Add RewriteBase directive template in .htaccess file into pub/static folder
-
+<!--- MAGETWO-88277 -->* We added a RewriteBase directive template to the `.htaccess` file in the  `pub/static` folder. Previously, if you set this directive in the `.htaccess` file in your Magento root directory, the Apache web server would miss files. 
 
 *Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 13812*. 
 
 
-
-<!--- MAGETWO-87606 -->* Fix robots.txt content typ… #13550
- - title: Backport of MAGETWO-84006 for Magento 2.1: Fix robots.txt content typ…
- 
-
-
- CHECK IN 2.2.4
-
+<!--- MAGETWO-87606 -->* The `robots.txt` response header content type is now plain text.
 
 *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13550*. [GitHub-13214](https://github.com/magento/magento2/issues/13214)
 
 
 
-<!--- MAGETWO-87571 -->* 
+
+
+<!--- MAGETWO-87571 -->* We’ve corrected a problem with _requirejs asset retrieval via static.php in static content versioning.
 
 Pull Request:
  - title: Backport of PR-5028 for Magento 2.1: Load jquery using requirejs to p…
+
+Magento now uses requirejs to loads jquery when printing pages. 
 
 
  Load jquery using requirejs to print page
@@ -429,22 +335,7 @@ Pull Request:
 
 
 ### Swagger
-<!--- MAGETWO-87607 -->*  Change the store code in Swagger based on a param 
-
-Pull Request:
- - title: [Backport 2.1-develop] Change the store code in Swagger based on a param
- -
-
-
- The problem is, this doesn't work on our stores, Im not sure if magento's routing is expecting our default store's code to be default, or if it's a shortcut to the default store and not functioning for some other reason
-
-For example, our store code for our default view is mxs, so our URL should be
-
-http://mikesxs.test/rest/mxs/schema?services=all
-
-but swagger isn't picking up on the default store code.
-
-
+<!--- MAGETWO-87607 -->*  You can now use a parameter to change the store code in Swagger, which makes it paossible to test API calls in Swagger for different storeviews.
 
 *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
 
@@ -452,10 +343,7 @@ but swagger isn't picking up on the default store code.
 
 ### Swatches
 
-<!--- MAGETWO-86331 -->* Pull Request:
- - title: Issues #10559 - Extend swatch using mixins (M2.1)
-
-
+<!--- MAGETWO-86331 -->* You can now use JavaScript mixins to extend swatch functionality in all supported browsers.
 
 *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12928*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
@@ -465,57 +353,23 @@ but swagger isn't picking up on the default store code.
 
 ### Translations
 
-<!--- ENGCOM-1231 -->* fix translation issue with rating stars
-title: [backport] fix translation issue with rating stars
-
-
-Added possibility to translate "stars" phrase in product reviews
-Extending swatch functionality using javascript mixins does not work in Safari and MS Edge
+<!--- ENGCOM-1231 -->* You can now translate the text associated with rating stars in product reviews. 
 
 *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14524*. 
 
 
 
-
-
-
-<!--- ENGCOM-1068 -->* Fix JS translation search
-title: Backport of PR-10445 for Magento 2.1: Fix JS translation search
-
-
-JS Translation Regex leads to unexpected results and untranslatable strings
-
-Steps to reproduce
-Look up the page where the translated string should appear (in this case: the register account page)
-
-Expected result
-The password error message is translated
-
-Actual result
-The password error message is not translated
-
-The root cause of this, is the regex that selects JS strings for translation, as found in: /app/code/Magento/Translation/etc/di.xml. It's is very buggy and not fail safe. It skips every string that is not strictly formatted according to this regex. In this case the '+' sign causes the string to be skipped by the regex, but there are many more cases where this regex is skipped in JS files (e.g. iteration over parts of strings to translate them).
-
+<!--- ENGCOM-1068 -->* We've fixed issues with the JavaScript translation regex file that previously led to untranslatable strings or parts of strings. 
 *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14349*. [GitHub-7403](https://github.com/magento/magento2/issues/7403)
 
 
-
-
-
-
-<!--- ENGCOM-952 -->* Added mage/translate component to customers's ajax login 
-
-title: [Backport 2.1] Added mage/translate component to customers's ajax login
-
-
-Added mage/translate component to customers's ajax login
-
+<!--- ENGCOM-952 -->* We've added a `mage/translate` component to the customer AJAX login action component, which enables the translation of the  message that Magento displays if an AJAX call fails (`Could not authenticate. Please try again later`). Previously, Magento printed that message in English only, regardless of the storefront's language setting. 
 *Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 14168*. 
 
 
 
 
-<!--- NOT NEEDED  MAGETWO-90963 MAGETWO-90925 MAGETWO-90841  MAGETWO-90394 MAGETWO-90072 MAGETWO-90069 MAGETWO-90068 MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->
+<!--- NOT NEEDED  MAGETWO-90963 MAGETWO-89253 MAGETWO-90925 MAGETWO-90841  MAGETWO-90394 MAGETWO-90072 MAGETWO-90069 MAGETWO-90068 MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->
 
 <!--WON'T FIX MAGETWO-58038 MAGETWO-90075 -->
 
