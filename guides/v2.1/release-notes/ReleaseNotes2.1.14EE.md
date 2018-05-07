@@ -229,7 +229,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13658" target="_blank">13658</a></td>
     <td>N/A</td>
-     <td><a href="https://github.com/Jeroen" target="_blank">JeroenVanLeusden</a></td>
+     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13980" target="_blank">13980</a></td>
@@ -340,4 +340,4 @@ An updated version of this toolkit is typically available several days after the
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
-Dear community members, thank you for your su
+Dear community members, thank you for your suggestions,  bug reports and code contributions. 
