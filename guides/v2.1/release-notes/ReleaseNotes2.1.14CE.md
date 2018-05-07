@@ -44,9 +44,7 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 ### Catalog
 
-<!--- ENGCOM-1223 -->* Magento now checks if `storeId` is not null rather than checking if it's empty. Previously, when `storeId 0 is_empty` returned `true`, Magento could not create a CMS page for all store views.
-
-*Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
+<!--- ENGCOM-1223 -->* Magento now checks if `storeId` is not null rather than checking if it's empty. Previously, when `storeId 0 is_empty` returned `true`, Magento could not create a CMS page for all store views. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
 
 
 
@@ -56,9 +54,7 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 <!--- ENGCOM-820 -->* The layout of `catalog_rule_promo_catalog_edit.xml` has been changed to adjust sidebar settings. Specifically, he tlayout attribute value has been changed from  `admin-2columns-left` to `admin-1column`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14022*.
 
-<!--- MAGETWO-87573 -->* The Catalog Price rule's `contains` condition now works as expected when the `contains` condition allows multiple options. 
-
-*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13546*. [GitHub-7723](https://github.com/magento/magento2/issues/7723)
+<!--- MAGETWO-87573 -->* The Catalog Price rule's `contains` condition now works as expected when the `contains` condition allows multiple options. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13546*. [GitHub-7723](https://github.com/magento/magento2/issues/7723)
 
 
 
@@ -66,67 +62,21 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
  
 
-### Cart and checkout
-
-<!--- ENGCOM-780 -->* 
-
-Clean up some less code.
-
-Description
-Moved some less under .lib-dropdown() variables and added font-weight variable into navigtion.less
-
-title: Backport of PR-13750 for Magento 2.1: Less clean up
-
-
-
-*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
-
-SEE previous releases
-
-
+### Cart and checkoutE
+<!--- ENGCOM-780 -->* enhancements to LESS code include moving several LESS variables  to `.lib-dropdown()` variables and adding `font-weight` variable to `navigation.less`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
 
 
 <!--- ENGCOM-776 -->* We’ve improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page elements was not correctly spaced. *Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13980*. [GitHub-13315](https://github.com/magento/magento2/issues/13315)
 
 
-
-
-
-
-
-<!--- ENGCOM-920 -->* title: [Backport 2.1] MAGETWO-59258: Override module-directory/etc/zip_codes.xml only the last code of a country gets include
-
-
-When trying to override module-directory/etc/zip_codes.xml from a local module, only the last code of a country gets included.
-
-
-Expected result
-All patterns should be included on the check-out page.
-Actual result
-Only the last pattern from Module's zip_codes.xml is shown
-
-Override zip_codes.xml
-
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14117*. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
+<!--- ENGCOM-920 -->* You can now successfully override settings in `module-directory/etc/zip_codes.xml`. Previously, when you tried to override these settings, Magento displayed only the last pattern from the module's `zip_codes.xml`. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14117*. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
 
 
 
 
 ### Configurable products
 
-<!--- ENGCOM-1204 -->* Configurable product price options by store #14479
-
-Pull Request:
-
-title: [Backport 2.1] Configurable product price options by store
-
-
-
-Some modules (e.g. Abandoned Cart, Algolia Search etc.) use store emulation functionality (\Magento\Store\Model\App\Emulation::startEnvironmentEmulation) to get product info (including configurable product price) for each store. Unfortunately LowestPriceOptionsProvider class save linked products collection at the $linkedProductMap property based on requested product id only. That is why configurable product price will be the same for other stores after first emulation.
-
-
-*Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14479*. 
+<!--- ENGCOM-1204 -->* Magento now displays accurate configurable product prices in multi-store environments. Previously, Magento displayed the same configurable product prices for all stores after the first store emulation. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14479*. 
 
 
 
@@ -135,31 +85,9 @@ Some modules (e.g. Abandoned Cart, Algolia Search etc.) use store emulation func
 
 ### Customers
 
-
 <!--- ENGCOM-937 -->* You can now successfully save an address with a blank address field. Previously, when you saved an address that contained no text in an optional address field, Magento threw this error, `'Exception' with message 'Notice: Array to string conversion on line 2903 in lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php will be raised`. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14115*. 
 
-
-
-
-<!--- ENGCOM-1147 -->* Customer_account.xml file abused
-
-
-
-he initial problem was that the paypal module was setting the customer dashbaord page to "Billing Agreements", a previous commit of 36cac17 fixed that which I have cherry picked, however there is a related issue - the customer account dashboard title was being set in the controller which was not good, so I've fixed that too.
-
-*Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
-
-From the Magento Paypal module, this is added in its customer_account.xml file:
-
-<head>
-    <title>Billing Agreements</title>
-</head>
-This is very unwise since the benefit of having the customer_account is that all the pages on there use it to update for the convenience of getting all of the dashboard links and updates.
-
-After adding another page to the route, we now have to awkwardly remove what isn't even page.main.title.
-
-
-
+<!--- ENGCOM-1147 -->* We've removed <title>Billing Agreements</title> from the `customer_account.xml` file in the PayPal module. *Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
 
 
 
@@ -175,61 +103,18 @@ After adding another page to the route, we now have to awkwardly remove what isn
 
 <!--- ENGCOM-1074 -->* Navigation menus without the `display: inline-block` setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work.*Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request 14332*. 
 
-
 <!--- ENGCOM-1062 -->* You can now successfully prevent the removal of a block or container by setting the `remove` attribute to **false**. Previously, setting this attribute to **false** did not cancel the removal of a block or container. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14198*. [GitHub-1931](https://github.com/magento/magento2/issues/1931)
 
 <!--- ENGCOM-947 -->* `String` type was added to `\Magento\Framework\HTTP\Client\Curl`  to support sending JSON or XML requests. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14151*. [GitHub-3489](https://github.com/magento/magento2/issues/3489)
 
-
-
-
-<!--- ENGCOM-944 -->* 
-
-
-
-Use specified hashing algo in \Magento\Framework\Encryption\Encryptor::getHash
-
-The ability to store passwords using different hashing algorithms is limited
-
-The reason for this is that although the version of the hashing algorithm is stored against the hashed password, this is not used for creating the hash for comparison, which always defaults to sha256.
-
-[GitHub-5463](https://github.com/magento/magento2/issues/5463)
-
-Steps to reproduce
-Create passwords for users hashed using different hashing algorithms (e.g. md5 and sha256)
-Attempt to login against these
-Expected result
-Both would log in
-Actual result
-1.Those created with sha256 work
-2. Those created with anything else (e.g. md5) fail incorrectly
-
+<!--- ENGCOM-944 -->* We've improved the ability to store passwords using different hashing algorithms. These improvements include changes to `\Magento\Framework\Encryption\Encryptor::getHash`, which previously ignored the specified hashing algorithm version that was supplied. 
+*Fix submitted by [Mads Nielsen](https://github.com/k4emic) in pull request 13886*. [GitHub-5463](https://github.com/magento/magento2/issues/5463)
 
 
 
 #### Configuration framework
 
-<!--- ENGCOM-1011 -->* title: Backport of PR-8772 for Magento 2.1: magento/magento2#3882
-
-
-Steps to reproduce
-Add a new widget declaration in some widget.xml, but add a comment as a parameter:
-<parameters>
-    <parameter name="title_text" xsi:type="text" visible="true" required="true" sort_order="20">
-        <label translate="true">Title text</label>
-    </parameter>
-    <!-- it's a comment; what can go wrong? -->
-</parameters>
-Expected result
-When creating a new widget through admin, a single param should appear.
-Actual result
-Nothing appears: the ajax grabbing the widgets responds with 500 (stack trace below).
-
-
-An XML comment node as parameter in widget.xml fails with fatal error 
-
-*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14219*. [GitHub-3882](https://github.com/magento/magento2/issues/3882)
-
+<!--- ENGCOM-1011 -->* You can now add an XML comment node as a parameter when adding a new widget declaration to widget.xml. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14219*. [GitHub-3882](https://github.com/magento/magento2/issues/3882)
 
 
 
@@ -237,79 +122,40 @@ An XML comment node as parameter in widget.xml fails with fatal error
 ### General
 
 
-<!--- ENGCOM-1251 -->* Specify the table when adding field to filter
-
-title: Specify the table when adding field to filter
-
-
-Specify the table when adding field to filter for the collection Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php
-About the collection vendor/magento/module-eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php, the method setAttribbuteFilter call the method addFieldToFilter without specify the table.
-So, when we join some tables with a column 'attribute_id' (example: 'catalog_product_entity_int'), we have the error 'ambiguous column name'.
-
-
+<!--- ENGCOM-1251 -->*  The  `setAttributeFilter` method now specifies the relevant table when calling the `addFieldToFilter` method. This method is called as part of the process of adding a field to filter for the collection `Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php`. Previously, Magento displayed an error (`ambiguous column name`) when you joined tables containing column 'attribute_id'.  
 *Fix submitted by [Pierre LeMaguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
-
-
-
 
 <!--- ENGCOM-926 -->* We've added a CodeTriage badge to the `magento/magento2` GitHub repository. See [CodeTriage](https://www.codetriage.com/magento/magento2 ) for more information. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
 
 <!--- ENGCOM-903 -->*  The catalog gallery `allowfullscreen` setting In the theme's `view.xml` file now works as expected. Previously, when you set the gallery's `allowfullscreen` variable to **false**, Magento displayed a white page (instead of the product page) when a customer tapped on a product image on a mobile device. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14098*. [GitHub-5808](https://github.com/magento/magento2/issues/5808)
 
 
+<!--- ENGCOM-1138 -->* We've removed the ability of the Magento Framework to explicitly set file and directory permissions from the default cache backend. Removing this functionality allows permissions to be inherited properly from the file system, and respects SETGID bit and Magento umask settings. *Fix submitted by [Doug](https://github.com/xtremeperf) in pull request 14417*. [GitHub-11930](https://github.com/magento/magento2/issues/11930), [GitHub-10700](https://github.com/magento/magento2/issues/10700)
 
 
-<!--- ENGCOM-1138 -->* We've removed the ability of the Magento Framework to explicitly set file and directory permissions from the default cache backend. Removing this functionality allows permissions to be inherited properly from the file system, and respects SETGID bit and Magento umask settings. 
+<!--- ENGCOM-1145 -->* Magento now installs the AdminGws module after it installs `Magento_Authorization`. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 58*. 
 
-*Fix submitted by [Doug](https://github.com/xtremeperf) in pull request 14417*. [GitHub-11930](https://github.com/magento/magento2/issues/11930), [GitHub-10700](https://github.com/magento/magento2/issues/10700)
-
-
-<!--- ENGCOM-1145 -->* Magento now installs the AdminGws module after it installs `Magento_Authorization`. 
-*Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 58*. 
-
-<!--- MAGETWO-88277 -->* We added a RewriteBase directive template to the `.htaccess` file in the  `pub/static` folder. Previously, if you set this directive in the `.htaccess` file in your Magento root directory, the Apache web server would miss files. 
-
-*Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 13812*. 
+<!--- MAGETWO-88277 -->* We added a RewriteBase directive template to the `.htaccess` file in the  `pub/static` folder. Previously, if you set this directive in the `.htaccess` file in your Magento root directory, the Apache web server would miss files.  *Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 13812*. 
 
 
-<!--- MAGETWO-87606 -->* The `robots.txt` response header content type is now plain text.
-
-*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13550*. [GitHub-13214](https://github.com/magento/magento2/issues/13214)
+<!--- MAGETWO-87606 -->* The `robots.txt` response header content type is now plain text. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13550*. [GitHub-13214](https://github.com/magento/magento2/issues/13214)
 
 
 
-
-
-<!--- MAGETWO-87571 -->* We’ve corrected a problem with _requirejs asset retrieval via static.php in static content versioning.
-
-Pull Request:
- - title: Backport of PR-5028 for Magento 2.1: Load jquery using requirejs to p…
-
-Magento now uses requirejs to loads jquery when printing pages. 
-
-
- Load jquery using requirejs to print page
-
- SEE 2.2.0 55217
-
-*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13545*. 
+<!--- MAGETWO-87571 -->* Load query no longer uses requireJS to print. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13545*. 
 
 
 
 
 
 ### Swagger
-<!--- MAGETWO-87607 -->*  You can now use a parameter to change the store code in Swagger, which makes it paossible to test API calls in Swagger for different storeviews.
-
-*Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
+<!--- MAGETWO-87607 -->*  You can now use a parameter to change the store code in Swagger, which makes it paossible to test API calls in Swagger for different storeviews. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
 
 
 
 ### Swatches
 
-<!--- MAGETWO-86331 -->* You can now use JavaScript mixins to extend swatch functionality in all supported browsers.
-
-*Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12928*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-86331 -->* You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12928*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 
 
@@ -317,18 +163,14 @@ Magento now uses requirejs to loads jquery when printing pages.
 
 ### Translations
 
-<!--- ENGCOM-1231 -->* You can now translate the text associated with rating stars in product reviews. 
-
-*Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14524*. 
+<!--- ENGCOM-1231 -->* You can now translate the text associated with rating stars in product reviews. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14524*. 
 
 
 
-<!--- ENGCOM-1068 -->* We've fixed issues with the JavaScript translation regex file that previously led to untranslatable strings or parts of strings. 
-*Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14349*. [GitHub-7403](https://github.com/magento/magento2/issues/7403)
+<!--- ENGCOM-1068 -->* We've fixed issues with the JavaScript translation regex file that previously led to untranslatable strings or parts of strings. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14349*. [GitHub-7403](https://github.com/magento/magento2/issues/7403)
 
 
-<!--- ENGCOM-952 -->* We've added a `mage/translate` component to the customer AJAX login action component, which enables the translation of the  message that Magento displays if an AJAX call fails (`Could not authenticate. Please try again later`). Previously, Magento printed that message in English only, regardless of the storefront's language setting. 
-*Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 14168*. 
+<!--- ENGCOM-952 -->* We've added a `mage/translate` component to the customer AJAX login action component, which enables the translation of the  message that Magento displays if an AJAX call fails (`Could not authenticate. Please try again later`). Previously, Magento printed that message in English only, regardless of the storefront's language setting. *Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request 14168*. 
 
 
 
