@@ -23,7 +23,9 @@ Blackfire includes the following [environments](https://blackfire.io/docs/refere
 -  `Magento Cloud (<your instance reference>)`—Staging
 -  `Magento Cloud (<your instance reference>)`—Production
 
-{% include note.html type="info" content="For Pro, you must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire." %}
+**For Pro**:
+-  You must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire.
+-  You must bypass the Fastly service in your Production environment when profiling with Blackfire. See [Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)](https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn){:target="_blank"}.
 
 ## Get your Blackfire credentials
 The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with {{site.data.var.ece}} and to log in to the Blackfire website. An invitation email is sent to the Project Owner's e-mail address to complete activation.
@@ -71,14 +73,6 @@ These instructions assume you have set up your [local workspace]({{page.baseurl}
 1.  In the _Magento Cloud Integration_ page, follow the additional steps to complete the integration. The redacted content is the **Project ID**.
 
 	![Blackfire Magento Cloud integration]({{ site.baseurl}}/common/images/cloud_blackfire-integration.png)
-
-The following sections include instructions for completing this list of integration tasks.
-
--  [Add Blackfire to .magento.app.yaml](#magentoappyaml)
--  [Add project variables](#variables)
--  [Add Blackfire integration to the project](#integration)
--  [Add a default route](#route)
--  [Save changes in Blackfire](#save)
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
 By default, the `.magento.app.yaml` file includes the Blackfire module. If the module is not present, use the following instructions to update your `.magento.app.yaml` file, push the updated file to your remote branch, merge, and deploy across all environments.
@@ -274,7 +268,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 1.  Checkout an active Integration branch.
 1.  Run the profiler.
 
-    ```
+    ```bash
 	php --ri blackfire
     ```
 
@@ -318,23 +312,21 @@ You can easily write tests and scenarios for Blackfire to execute. Create a `.bl
 
 Try adding the following scenarios in the file:
 
-```
-    # .blackfire.yml
-    scenarios:
-        Home:
-            - /index.php
+> .blackfire.yml
 
-        Product list:
-            - /index.php/women/tops-women/jackets-women.html
-
-        Checkout:
-            - /index.php/checkout
-
-        Payment:
-            - /index.php/checkout/payment
+```yaml
+scenarios:
+  Home:
+    - /index.php
+  Product list:
+    - /index.php/women/tops-women/jackets-women.html
+  Checkout:
+    - /index.php/checkout
+  Payment:
+    - /index.php/checkout/payment
 ```
 
-See the Blackfire documentation on how to write [tests](https://blackfire.io/docs/cookbooks/tests) and [scenarios](https://blackfire.io/docs/cookbooks/scenarios).
+See the Blackfire documentation on [Writing tests](https://blackfire.io/docs/cookbooks/tests){:target="_blank"} and [Writing scenarios](https://blackfire.io/docs/cookbooks/scenarios){:target="_blank"}.
 
 ### Running your tests automatically
 Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire to run your tests automatically in various ways:
