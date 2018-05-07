@@ -61,8 +61,8 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
  
 
-### Cart and checkoutE
-<!--- ENGCOM-780 -->* enhancements to LESS code include moving several LESS variables  to `.lib-dropdown()` variables and adding `font-weight` variable to `navigation.less`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
+### Cart and checkout
+<!--- ENGCOM-780 -->* Enhancements to LESS code include moving several LESS variables  to `.lib-dropdown()` variables and adding `font-weight` variable to `navigation.less`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
 
 
 <!--- ENGCOM-776 -->* We’ve improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page elements was not correctly spaced. *Fix submitted by [Marcin Kwiatkowski](https://github.com/Frodigo) in pull request 13980*. [GitHub-13315](https://github.com/magento/magento2/issues/13315)
@@ -86,7 +86,7 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 <!--- ENGCOM-937 -->* You can now successfully save an address with a blank address field. Previously, when you saved an address that contained no text in an optional address field, Magento threw this error, `'Exception' with message 'Notice: Array to string conversion on line 2903 in lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php will be raised`. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14115*. 
 
-<!--- ENGCOM-1147 -->* We've removed <title>Billing Agreements</title> from the `customer_account.xml` file in the PayPal module. *Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
+<!--- ENGCOM-1147 -->* We've removed `<title>Billing Agreements</title>` from the `customer_account.xml` file in the PayPal module. *Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
 
 
 
@@ -98,9 +98,9 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 ### Framework
 
-<!--- ENGCOM-1121 -->* We've added JSON and XML support to the post method in `\Magento\Framework\HTTP\Client\Socket` class. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14348*. 
+<!--- ENGCOM-1121 -->* We've added JSON and XML support to the post method in the `\Magento\Framework\HTTP\Client\Socket` class. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14348*. 
 
-<!--- ENGCOM-1074 -->* Navigation menus without the `display: inline-block` setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work.*Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request 14332*. 
+<!--- ENGCOM-1074 -->* Navigation menus without the `display: inline-block` setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work. *Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request 14332*. 
 
 <!--- ENGCOM-1062 -->* You can now successfully prevent the removal of a block or container by setting the `remove` attribute to **false**. Previously, setting this attribute to **false** did not cancel the removal of a block or container. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14198*. [GitHub-1931](https://github.com/magento/magento2/issues/1931)
 
@@ -113,7 +113,7 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 #### Configuration framework
 
-<!--- ENGCOM-1011 -->* You can now add an XML comment node as a parameter when adding a new widget declaration to widget.xml. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14219*. [GitHub-3882](https://github.com/magento/magento2/issues/3882)
+<!--- ENGCOM-1011 -->* You can now add an XML comment node as a parameter when adding a new widget declaration to `widget.xml`. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14219*. [GitHub-3882](https://github.com/magento/magento2/issues/3882)
 
 
 
@@ -121,12 +121,12 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 ### General
 
 
-<!--- ENGCOM-1251 -->*  The  `setAttributeFilter` method now specifies the relevant table when calling the `addFieldToFilter` method. This method is called as part of the process of adding a field to filter for the collection `Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php`. Previously, Magento displayed an error (`ambiguous column name`) when you joined tables containing column 'attribute_id'.  
+<!--- ENGCOM-1251 -->*  The  `setAttributeFilter` method now specifies the relevant table when calling the `addFieldToFilter` method. This method is called as part of the process of adding a field to the filter for the collection `Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php`. Previously, Magento displayed an error (`ambiguous column name`) when you joined tables containing column `attribute_id`.  
 *Fix submitted by [Pierre LeMaguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
 
 <!--- ENGCOM-926 -->* We've added a CodeTriage badge to the `magento/magento2` GitHub repository. See [CodeTriage](https://www.codetriage.com/magento/magento2 ) for more information. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
 
-<!--- ENGCOM-903 -->*  The catalog gallery `allowfullscreen` setting In the theme's `view.xml` file now works as expected. Previously, when you set the gallery's `allowfullscreen` variable to **false**, Magento displayed a white page (instead of the product page) when a customer tapped on a product image on a mobile device. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14098*. [GitHub-5808](https://github.com/magento/magento2/issues/5808)
+<!--- ENGCOM-903 -->*  The catalog gallery `allowfullscreen` setting In the theme's `view.xml` file now works as expected. Previously, when you set the gallery's `allowfullscreen` variable to **false**, Magento displayed a white page (instead of the product page) when a customer tapped on a product image while using a mobile device. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14098*. [GitHub-5808](https://github.com/magento/magento2/issues/5808)
 
 
 <!--- ENGCOM-1138 -->* We've removed the ability of the Magento Framework to explicitly set file and directory permissions from the default cache backend. Removing this functionality allows permissions to be inherited properly from the file system, and respects SETGID bit and Magento umask settings. *Fix submitted by [Doug](https://github.com/xtremeperf) in pull request 14417*. [GitHub-11930](https://github.com/magento/magento2/issues/11930), [GitHub-10700](https://github.com/magento/magento2/issues/10700)
@@ -148,7 +148,7 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 
 ### Swagger
-<!--- MAGETWO-87607 -->*  You can now use a parameter to change the store code in Swagger, which makes it paossible to test API calls in Swagger for different storeviews. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
+<!--- MAGETWO-87607 -->*  You can now use a parameter to change the store code in Swagger, which makes it possible to test API calls in Swagger for different storeviews. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
 
 
 
