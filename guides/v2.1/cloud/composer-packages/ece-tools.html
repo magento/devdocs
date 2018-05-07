@@ -2000,6 +2000,12 @@
 
   <h2 id="v2002011">v2002.0.11</h2>
 
+  <!-- Available note types: "info", "warning", "tip" -->
+
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>The Cloud tools version 2002.0.11 now supports Magento 2.1.13.</p>
+  </div>
+
   <h4 id="new-features">New features</h4>
 
   <ul>
@@ -2026,16 +2032,44 @@
       <p>Deployment validation fails if an <code class="highlighter-rouge">ADMIN_EMAIL</code> or <code class="highlighter-rouge">ADMIN_USERNAME</code> value is the same as an existing Magento administrator account.</p>
     </li>
     <li>
+      <!-- MAGECLOUD-1282 -->
+      <p>Removed SOLR support for 2.2.x versions. 2.1.x versions retain the ability to enable SOLR.</p>
+    </li>
+    <li>
       <!-- MAGECLOUD-1489 -->
       <p>The first installation of the Staging &amp; Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.</p>
     </li>
     <li>
-      <!-- MAGECLOUD-1819 -->
-      <p>You can now use the <code class="highlighter-rouge">VERBOSE_COMMANDS</code> environment variable during both <em>build</em> and <em>deploy</em> phases.</p>
-    </li>
-    <li>
       <!-- MAGECLOUD-2021 -->
-      <p>Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.</p>
+      <p>Fixed an issue that interrupted the build phase for legacy architecture during static content deployment.</p>
+    </li>
+    <li><strong>Cron-specific Improvements</strong>—<!-- MAGECLOUD-1607 -->Re-worked the cron implementation:
+      <ul>
+        <li>Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.</li>
+        <li>Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.</li>
+        <li>Improved logging to better assist in debugging cron issues.</li>
+        <li><strong>NOTE</strong>—This release addresses many cron-related issues. If you currently use some cron-related patches in <em>m2-hotfixes</em>, remove them.</li>
+      </ul>
+    </li>
+    <li><strong>SCD-specific improvements</strong>
+      <ul>
+        <li>
+          <!-- MAGECLOUD-1819 -->
+          <p>You can now use the <code class="highlighter-rouge">VERBOSE_COMMANDS</code> and the <code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variables during both <em>build</em> and <em>deploy</em> phases.</p>
+        </li>
+        <li>
+          <!-- MAGECLOUD-2043 -->
+          <p>Fixed an issue that caused deployment to fail with a random error when encountering an unexpected value for the <code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variable. Improved the configuration validation to provide meaningful notifications. See <a href="/guides/v2.1/cloud/env/variables-build.html#scdcompressionlevel"><code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code></a> for acceptable values.</p>
+        </li>
+        <li>
+          <!-- MAGECLOUD-2044 -->
+          <p>Fixed the behavior of the <code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variable configuration flow so the overrides work as expected.</p>
+        </li>
+        <li>
+          <!-- MAGECLOUD-2046 -->
+          <p>Fixed an issue that prevented the configuration of the <code class="highlighter-rouge">SCD_THREADS</code> environment variable in the <code class="highlighter-rouge">.magento.env.yaml</code> file <em>deploy</em> stage.</p>
+        </li>
+      </ul>
     </li>
   </ul>
 

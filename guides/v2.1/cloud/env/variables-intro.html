@@ -2015,7 +2015,7 @@
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Enable generation of static content when requested by a user. Pre-loading the cache using the <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#hooks"><code class="highlighter-rouge">post_deploy</code> hook</a> reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable to the <code class="highlighter-rouge">global</code> stage in the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
+<p>Enable generation of static content when requested by a user. Pre-loading the cache using the <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#hooks"><code class="highlighter-rouge">post_deploy</code> hook</a> reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable to the <code class="highlighter-rouge">global</code> stage in the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">global</span><span class="pi">:</span>
