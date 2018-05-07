@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configuration best practices | Magento 2 Developer Documentation</title>
+	<title>Reference architecture | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -57,7 +57,7 @@
 
 
 
-	<link rel="canonical" href="/guides/v2.3/performance-best-practices/configuration.html">
+	<link rel="canonical" href="/guides/v2.3/performance-best-practices/reference-architecture.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -97,13 +97,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/configuration.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/reference-architecture.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/configuration.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/reference-architecture.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/configuration.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/reference-architecture.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/configuration.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/reference-architecture.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -328,7 +328,7 @@
 		    
 		    	
 
-<li class="nav-level1  " id="reference-architecture">
+<li class="nav-level1 active " id="reference-architecture">
     
 
     
@@ -356,7 +356,7 @@
 		    
 		    	
 
-<li class="nav-level1 active " id="configuration-best-practices">
+<li class="nav-level1  " id="configuration-best-practices">
     
 
     
@@ -460,7 +460,7 @@
 
           
 
-          <span property="name">Configuration best practices</span>
+          <span property="name">Reference architecture</span>
 
         
 
@@ -479,95 +479,90 @@
 
 	
 
-	<h1 class="page-heading">Configuration best practices</h1>
+	<h1 class="page-heading">Reference architecture</h1>
 
   
 
 
 </section>
 
-			<p>Magento 2 provides many settings and tools that you can use to improve response time on the pages as well as provide higher throughput.</p>
+			<p>This topic describes a generic recommended setup for Magento Commerce and Magento Open Source instances using plain servers hosted physically in a data center (not virtualized) in which resources are not shared with other users. Your hosting provider, especially if it specializes in Magento high performance hosting, might recommend a different setup that is equally or more effective for your requirements.</p>
 
-<h2 id="cron-jobs">Cron Jobs</h2>
+<p>For Magento Commerce (Cloud) environments, see <a href="/guides/v2.3/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
 
-<p>All asynchronous operations in Magento Open Source are performed using the Linux <code class="highlighter-rouge">cron</code> command. See <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> to configure it correctly.</p>
+<h2 id="magento-reference-architecture-diagram">Magento Reference Architecture diagram</h2>
 
-<h2 id="indexers">Indexers</h2>
+<p>The Magento Reference Architecture diagram represents the best practice approach to set up a scalable Magento site.</p>
 
-<p>An indexer can run in either <strong>Update on Save</strong> or <strong>Update on Schedule</strong> mode. The <strong>Update on Save</strong> mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using <strong>Update on Schedule</strong> mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  <strong>System &gt; Index Management</strong> configuration page.</p>
+<p>The color of each element in the diagram indicates whether the element is part of Magento Open Source or Magento Commerce and if it is required.</p>
 
-<h2 id="caches">Caches</h2>
+<ul>
+  <li>Orange elements are required for Magento Open Source</li>
+  <li>Grey elements are optional for Magento Open Source</li>
+  <li>Blue elements are optional for Magento Commerce</li>
+</ul>
 
-<p>When you launch your store in production, activate all the caches from the <strong>System &gt; Cache Management</strong> page. We highly recommend using Varnish, as it is an efficient production page cache solution.</p>
+<p><img src="/guides/v2.3/performance-best-practices/images/ref-architecture-2.3.png" alt="alt text" title="reference architecture" /></p>
 
-<h2 id="asynchronous-email-notifications">Asynchronous email notifications</h2>
+<p>The following sections provide recommendations and considerations for each section of the Magento Reference Architecture diagram.</p>
 
-<p>Enabling the “Asynchronous email notifications” setting moves processes that handle checkout and order processing email notifications to the background. To enable this feature, go to <strong>Stores &gt; Configuration &gt; Sales &gt; Sales Emails &gt; General Settings &gt; Asynchronous Sending</strong>. See <a href="http://docs.magento.com/m2/ce/user_guide/configuration/sales/sales-emails.html">Sales Emails</a> in the <em>Magento Open Source User Guide</em> for more information.</p>
+<h3 id="varnish">Varnish</h3>
 
-<h2 id="asynchronous-order-data-processing">Asynchronous order data processing</h2>
+<ul>
+  <li>A Varnish cluster can scale to the traffic of a site</li>
+  <li>Tune the instance size based on the number of cache pages needed</li>
+  <li>On a high-traffic site, use a Varnish Master to ensure on-cache flush one request (at most) per web tier</li>
+</ul>
 
-<p>There can be times when intensive sales on a storefront occur at the same time that Magento is performing intensive order processing. You can configure Magento to distinguish these two traffic patterns on the database level to avoid conflicts between read and write operations in the corresponding tables. You can store and index order data asynchronously. Orders are placed in temporary storage and moved in bulk to the Order Management grid without any collisions. You can activate this option from <strong>Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Grid Settings &gt; Asynchronous indexing</strong>. See <a href="http://docs.magento.com/m2/ce/user_guide/sales/order-grid-updates-schedule.html">Scheduled Grid Updates</a> in the <em>Magento Open Source User Guide</em> for more information.</p>
+<h3 id="web">Web</h3>
 
-<h2 id="deferred-stock-update">Deferred stock update</h2>
+<ul>
+  <li>Enable scale of nodes for traffic and redundancy</li>
+  <li>One node is master and runs cron</li>
+  <li>Alternatively, use a dedicated Admin and worker nodes</li>
+</ul>
 
-<p>In times of intensive sales,  Magento can defer stock updates related to orders. This minimizes the number of operations and speeds up the order placement process. However, this option is risky and can only be used when Backorders are activated in the store, because this option can lead to negative stock quantities. This option can bring significant performance improvement on Checkout flows for stores that can easily re-fill their stock on demand. To activate deferred stock updates, go to <strong>Stores &gt; Configuration &gt; Catalog &gt; Inventory &gt; Product Stock Options &gt; Use Deferred Stock Update</strong>. See <a href="http://docs.magento.com/m2/ee/user_guide/catalog/inventory.html">Managing Inventory</a> in the <em>Magento CommerceUser Guide</em> for more information.</p>
+<h3 id="cache">Cache</h3>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This option is available only if <strong>Backorder with any mode</strong> is activated.</p>
-</div>
+<ul>
+  <li>Consider implementing a separate Redis instance for sessions</li>
+  <li>You can have a Redis instance per cache</li>
+  <li>Size your instance to contain the largest expected cache size</li>
+</ul>
 
-<h2 id="client-side-optimization-settings">Client side optimization settings</h2>
+<h3 id="database-and-queues">Database and queues</h3>
 
-<p>To improve the storefront responsiveness of your Magento instance, go to the Admin in Default or Developer mode and change the following settings:</p>
+<ul>
+  <li>High-traffic sites can tune DB performance with slave DBs and split DBs for orders/carts (in Magento Commerce)</li>
+  <li>Consider using a slave DB to enable quick recovery and for data backups</li>
+  <li>Low-traffic sites can store images in the DB</li>
+</ul>
 
-<p><strong>Stores -&gt; Configuration -&gt; Advanced -&gt; Developer</strong></p>
+<h3 id="search">Search</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Settings Group</th>
-      <th>Setting</th>
-      <th>Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Grid Settings</td>
-      <td>Asynchronous indexing</td>
-      <td>Enable</td>
-    </tr>
-    <tr>
-      <td>CSS Settings</td>
-      <td>Minify CSS Files</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Javascript Settings</td>
-      <td>Minify JavaScript Files</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Javascript Settings</td>
-      <td>Enable JavaScript Bundling</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Template Settings</td>
-      <td>Minify HTML</td>
-      <td>Yes</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li>Consider using Elasticsearch to perform searches</li>
+  <li>Tune the number of instances based on search traffic</li>
+</ul>
 
-<p>When you activate the <strong>Enable Javascript Bundling</strong> option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse it for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will will be loaded on the first call.</p>
+<h3 id="storage">Storage</h3>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <ul>
-    <li>Magento recommendeds that you use third-party tools for minification and bundling (like <a href="http://requirejs.org/">r.js</a>). Magento built-in mechanisms are not optimal and are shipped as fallback alternatives.</li>
-    <li>Activating the HTTP2 protocol can be a good alternative to using JS bundling. The protocol provides pretty much the same benefits.</li>
-    <li>We do not recommend using deprecated settings like merging JS and CSS files, as they were designed only for synchronously-loaded JS in the HEAD section of the page. Using this technique can cause bundling and requireJS logic to work incorrectly.</li>
-  </ul>
-</div>
+<ul>
+  <li>Consider using GFS or GlusterFS for pub/media storage</li>
+  <li>Alternatively, use DB storage for low-traffic sites</li>
+</ul>
+
+<h3 id="recommended-varnish-reference-architcture">Recommended Varnish Reference Architcture</h3>
+
+<p>Magento supports several full page caching engines (File, Memcache, Redis, Varnish) out of the box, along with expanded coverage through extensions. Varnish is the recommended full page cache engine.  Magento supports many different Varnish configurations.</p>
+
+<p>For sites that do not require high availability, we recommend using a simple Varnish setup with Nginx SSL termination.</p>
+
+<p><img src="/guides/v2.3/performance-best-practices/images/single-varnish-with-ssl-termination.png" alt="alt text" title="Simple Varnish Configuration with SSL Termination" /></p>
+
+<p>For sites that require high availability, we recommend using a 2-tier Varnish configuration with an SSL terminating load balancer.</p>
+
+<p><img src="/guides/v2.3/performance-best-practices/images/ha-2-tier-varnish-with-ssl-term-load-balancer.png" alt="alt text" title="High Availability 2 tier Varnish configuration with SSL terminating load balancer" /></p>
 
 			
 		</div>
@@ -579,7 +574,7 @@
 
   
   <div class="github-link">
-    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/performance-best-practices/configuration.md" target="_blank">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/performance-best-practices/reference-architecture.md" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
@@ -587,7 +582,7 @@
 
   
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/performance-best-practices/configuration.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.3/performance-best-practices/reference-architecture.html" target="_blank">Give us feedback</a>
   </div>
   
 

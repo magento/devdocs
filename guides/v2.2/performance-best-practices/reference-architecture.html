@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Advanced setup | Magento 2 Developer Documentation</title>
+	<title>Reference architecture | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -57,7 +57,7 @@
 
 
 
-	<link rel="canonical" href="/guides/v2.2/performance-best-practices/advanced-setup.html">
+	<link rel="canonical" href="/guides/v2.2/performance-best-practices/reference-architecture.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -97,13 +97,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/advanced-setup.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/reference-architecture.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/advanced-setup.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/reference-architecture.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/advanced-setup.html">Magento 2.2</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/reference-architecture.html">Magento 2.2</a></li>
 	
-		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/advanced-setup.html">Magento 2.3 Pre-release</a></li>
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/reference-architecture.html">Magento 2.3 Pre-release</a></li>
 	
   </ul>
 
@@ -328,7 +328,7 @@
 		    
 		    	
 
-<li class="nav-level1  " id="reference-architecture">
+<li class="nav-level1 active " id="reference-architecture">
     
 
     
@@ -384,7 +384,7 @@
 		    
 		    	
 
-<li class="nav-level1 active " id="advanced-setup">
+<li class="nav-level1  " id="advanced-setup">
     
 
     
@@ -460,7 +460,7 @@
 
           
 
-          <span property="name">Advanced setup</span>
+          <span property="name">Reference architecture</span>
 
         
 
@@ -479,101 +479,90 @@
 
 	
 
-	<h1 class="page-heading">Advanced setup</h1>
+	<h1 class="page-heading">Reference architecture</h1>
 
   
 
 
 </section>
 
-			<p>Magento 2 is a highly flexible and scalable product containing solutions for merchants of all sizes. This section covers best practices and recommendations on configuring Magento to work with large amounts of data, extreme load, and other enterprise cases.</p>
+			<p>This topic describes a generic recommended setup for Magento Commerce and Magento Open Source instances using plain servers hosted physically in a data center (not virtualized) in which resources are not shared with other users. Your hosting provider, especially if it specializes in Magento high performance hosting, might recommend a different setup that is equally or more effective for your requirements.</p>
 
-<h2 id="search-with-elasticsearch">Search with Elasticsearch</h2>
+<p>For Magento Commerce (Cloud) environments, see <a href="/guides/v2.2/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
 
-<p>By default, Magento uses MySQL for all search operations. Magento Commerce allows you to use Elasticsearch as a more optimized search solution. With Elasticsearch, the time on query processing will not change with the growth of search results (the way it does with MySQL). Elasticsearch can provide scaling opportunities when you experience increased loads on your store.</p>
+<h2 id="magento-reference-architecture-diagram">Magento Reference Architecture diagram</h2>
 
-<p>To run Magento with Elasticsearch, you don’t need any specific configuration–just install the server and select the Elasticsearch search engine option in Magento admin.</p>
+<p>The Magento Reference Architecture diagram represents the best practice approach to set up a scalable Magento site.</p>
 
-<h2 id="calibrate-index-performance">Calibrate index performance</h2>
-
-<p>When dealing with large amounts of data, re-indexing can become a concern. The Magento team selected the most loaded indexes and enabled batch indexing, which  allows you to set a portion of data to be processed on each iteration. This way, the user can tune batch sizes based on the type and size of data in the database.</p>
-
-<p>To manage this setting, edit the <code class="highlighter-rouge">batchRowsCount</code> parameter in the <code class="highlighter-rouge">di.xml</code> file of the corresponding module. The following indexes support this feature:</p>
+<p>The color of each element in the diagram indicates whether the element is part of Magento Open Source or Magento Commerce and if it is required.</p>
 
 <ul>
-  <li>Category Product Index (Catalog Module)</li>
-  <li>Price Index (Catalog Module)</li>
-  <li>EAV Index (Catalog Module)</li>
-  <li>Stock Index (CatalogInventory Module)</li>
+  <li>Orange elements are required for Magento Open Source</li>
+  <li>Grey elements are optional for Magento Open Source</li>
+  <li>Blue elements are optional for Magento Commerce</li>
 </ul>
 
-<p>You can tune indexer performance by adjusting the index batching size variables. This controls how many entities are processed at a time by the indexer. In some situations, we have seen significant decreases in indexing time.</p>
+<p><img src="/guides/v2.2/performance-best-practices/images/ref-architecture-2.2.png" alt="alt text" title="reference architecture" /></p>
 
-<p>For example, if you are running a profile similar to B2B Medium, you can override the configuration value <code class="highlighter-rouge">batchRowsCount</code> in <code class="highlighter-rouge">app/code/Magento/catalog/etc/di.xml</code> and override the default value of <code class="highlighter-rouge">5000</code> to <code class="highlighter-rouge">1000</code>. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration.</p>
+<p>The following sections provide recommendations and considerations for each section of the Magento Reference Architecture diagram.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.</p>
-</div>
-
-<h2 id="set-up-redis">Set up Redis</h2>
-
-<p>Sometimes one Redis instance is not enough to serve incoming requests. There are several solutions that we can recommend to address this situation.</p>
-
-<p>First, Magento allows you to configure separate cache storage for each cache type. This allows you to install as many separate Redis instances as the number of types of cache that are registered in Magento. Realistically, you might want Redis instances for the most actively used caches, such as configuration, layout, and blocks.</p>
-
-<p>Another solution can be to place the configuration cache on the file system and move the other caches to the Redis server. With this solution, you need a separate tool for centralized invalidation of configuration cache on all your web nodes.</p>
-
-<p>You could also use a Redis cluster that performs parallel read/write operations with an automatically-increasing number of nodes. Magento does not provide configuration for this case, but it can be launched with minor customizations.</p>
-
-<h2 id="set-up-rabbitmq">Set up RabbitMQ</h2>
-
-<p>Magento Commerce supports message queues implemented through RabbitMQ. Magento uses this service for executing numerous asynchronous operations, including B2B catalog operations and asynchronous stock updates. All interfaces for adding more jobs to the job server are distributed with the product and are available for custom asynchronous logic implementation in the scope of third-party extensions. As with any other integration, Magento provides a sample configuration file for RabbitMQ that contains all recommended settings and is fully ready for production usage.</p>
-
-<h2 id="split-the-database">Split the database</h2>
-
-<p>Magento Commerce allows you to configure scalable database storage to meet the needs of a growing business. You can set up three separate master databases that serve specific domains:</p>
+<h3 id="varnish">Varnish</h3>
 
 <ul>
-  <li>Main (Catalog) Database</li>
-  <li>Checkout Database</li>
-  <li>Order Management System (OMS) Database</li>
+  <li>A Varnish cluster can scale to the traffic of a site</li>
+  <li>Tune the instance size based on the number of cache pages needed</li>
+  <li>On a high-traffic site, use a Varnish Master to ensure on-cache flush one request (at most) per web tier</li>
 </ul>
 
-<p>To configure additional databases, you must create an empty database and run one of the following commands:</p>
+<h3 id="web">Web</h3>
 
-<p><code class="highlighter-rouge">bin/magento setup:db-schema:split-quote</code> (for Checkout Master DB)</p>
+<ul>
+  <li>Enable scale of nodes for traffic and redundancy</li>
+  <li>One node is master and runs cron</li>
+  <li>Alternatively, use a dedicated Admin and worker nodes</li>
+</ul>
 
-<p><code class="highlighter-rouge">bin/magento setup:db-schema:split-sales</code> (for OMS Master DB)</p>
+<h3 id="cache">Cache</h3>
 
-<p>These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.</p>
+<ul>
+  <li>Consider implementing a separate Redis instance for sessions</li>
+  <li>You can have a Redis instance per cache</li>
+  <li>Size your instance to contain the largest expected cache size</li>
+</ul>
 
-<p>By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your сatalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high-load projects. Migration of present data between databases should be executed under the supervision of your system administrator.  Do not split databases while in Production mode.</p>
+<h3 id="database-and-queues">Database and queues</h3>
 
-<p>In addition to master databases, Magento allows you to configure a number of slave databases (one for each data resource declared in the system). A slave database serves as a full replica of your main database, or one of your domain master databases. It is issued for read operations on a specific resource.</p>
+<ul>
+  <li>High-traffic sites can tune DB performance with slave DBs and split DBs for orders/carts (in Magento Commerce)</li>
+  <li>Consider using a slave DB to enable quick recovery and for data backups</li>
+  <li>Low-traffic sites can store images in the DB</li>
+</ul>
 
-<p>You can add a slave database by running the following command:</p>
+<h3 id="search">Search</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:db-schema:add-slave
-</code></pre></div></div>
+<ul>
+  <li>Consider using Elasticsearch to perform searches</li>
+  <li>Tune the number of instances based on search traffic</li>
+</ul>
 
-<p>This command performs configuration changes but does not configure replication itself. That should be done manually.</p>
+<h3 id="storage">Storage</h3>
 
-<p>After splitting your master database and setting slave databases, Magento automatically regulates connections to a specific database, making decisions based on the type of request (POST, PUT, GET, etc) and data resource. If Magento or its extensions performs write operations on a GET request, the system automatically switches the connection from slave to master database. It works the same way with master databases: as soon as you work with a checkout-related table, the system redirects all the queries to a specific database. Meanwhile, all catalog-related queries will go to the main database.</p>
+<ul>
+  <li>Consider using GFS or GlusterFS for pub/media storage</li>
+  <li>Alternatively, use DB storage for low-traffic sites</li>
+</ul>
 
-<p>For more details on the configuration and the benefits of multiple master/slave configuration, see
-<a href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution</a>.</p>
+<h3 id="recommended-varnish-reference-architcture">Recommended Varnish Reference Architcture</h3>
 
-<h2 id="serve-media-content">Serve media content</h2>
+<p>Magento supports several full page caching engines (File, Memcache, Redis, Varnish) out of the box, along with expanded coverage through extensions. Varnish is the recommended full page cache engine.  Magento supports many different Varnish configurations.</p>
 
-<p>Magento does not provide any specific integration to serve and deliver media content. All common approaches can be used together in Magento.</p>
+<p>For sites that do not require high availability, we recommend using a simple Varnish setup with Nginx SSL termination.</p>
 
-<p>The easiest way of serving media content is delivering and caching it on a Varnish server. This approach assumes either a shared file system for storing media content or a dedicated server pointing to Varnish.</p>
+<p><img src="/guides/v2.2/performance-best-practices/images/single-varnish-with-ssl-termination.png" alt="alt text" title="Simple Varnish Configuration with SSL Termination" /></p>
 
-<p>For medium- and high-load environments, we recommend using Content Delivery Network (CDN) services like Fastly, Akamai, and others. When working with these services, Magento uses the classic pull approach for content updates. You must configure Magento URLs to work with the corresponding CDN service. By moving media content to a CDN, you will significantly lessen the load on your instances.</p>
+<p>For sites that require high availability, we recommend using a 2-tier Varnish configuration with an SSL terminating load balancer.</p>
 
-<h2 id="configure-log-storage">Configure log storage</h2>
-
-<p>The storage of logs and their influence on other disk operations affects the availability of your web nodes, especially in high-load situations. We recommend that you minimize logging if you don’t need it. You can also configure logging so that it writes on a separate storage system that has high-access speeds. Note that any bottleneck on accessing log storage can directly affect the processing of incoming requests that log write or read operations as part of their flow.</p>
+<p><img src="/guides/v2.2/performance-best-practices/images/ha-2-tier-varnish-with-ssl-term-load-balancer.png" alt="alt text" title="High Availability 2 tier Varnish configuration with SSL terminating load balancer" /></p>
 
 			
 		</div>
@@ -585,7 +574,7 @@
 
   
   <div class="github-link">
-    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/performance-best-practices/advanced-setup.md" target="_blank">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/performance-best-practices/reference-architecture.md" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
@@ -593,7 +582,7 @@
 
   
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/performance-best-practices/advanced-setup.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/performance-best-practices/reference-architecture.html" target="_blank">Give us feedback</a>
   </div>
   
 
