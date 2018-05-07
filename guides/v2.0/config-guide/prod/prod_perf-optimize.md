@@ -7,6 +7,10 @@ menu_title: Magento Optimization Guide
 menu_order: 100
 version: 2.0
 github_link: config-guide/prod/prod_perf-optimize.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic provides instructions for optimizing the performance of your production deployment.
@@ -107,11 +111,11 @@ Run the following commands to switch to production mode:
 bin/magento deploy:mode:set production
 ~~~
 
-[composer-install]: {{page.baseurl}}install-gde/prereq/integrator_install.html
-[zip-install]: {{page.baseurl}}install-gde/prereq/zip_install.html
-[config-varnish]: {{page.baseurl}}config-guide/varnish/config-varnish.html
-[solr]: {{page.baseurl}}config-guide/solr/solr-overview.html
+[composer-install]: {{page.baseurl}}/install-gde/prereq/integrator_install.html
+[zip-install]: {{page.baseurl}}/install-gde/prereq/zip_install.html
+[config-varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
+[solr]: {{page.baseurl}}/config-guide/solr/solr-overview.html
 [php-fpm]: https://php-fpm.org/
-[redis-session]: {{page.baseurl}}config-guide/redis/redis-session.html
-[redis-default-cache]: {{page.baseurl}}config-guide/redis/redis-pg-cache.html
+[redis-session]: {{page.baseurl}}/config-guide/redis/redis-session.html
+[redis-default-cache]: {{page.baseurl}}/config-guide/redis/redis-pg-cache.html
 [composer-dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload

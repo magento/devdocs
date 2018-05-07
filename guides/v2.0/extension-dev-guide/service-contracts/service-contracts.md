@@ -8,6 +8,8 @@ menu_order: 2
 version: 2.0
 github_link: extension-dev-guide/service-contracts/service-contracts.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html
+functional_areas:
+  - Services
 ---
 
 <p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
@@ -22,10 +24,10 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contra
 </p>
 <p>If developers define data and service interfaces according to a set of <a href="{{page.baseurl}}/extension-dev-guide/service-contracts/design-patterns.html">design patterns</a>, the result is a well-defined, durable {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} that other modules and third-party extensions can implement through Magento models and resource models.
 </p>
-<p><img src="{{ site.baseurl }}common/images/msc.jpg"/></p>
+<p><img src="{{ site.baseurl}}/common/images/msc.jpg"/></p>
 <h2 id="msc-benefits">Service contract benefits</h2>
 <p>Service contracts enhance the modularity of Magento. They enable Magento and third-party developers to report system dependencies through <b>composer.json</b> files and, consequently, guarantee compatibility among Magento versions. This compatibility ensures that merchants can easily upgrade Magento.</p>
-<p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to <a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>.
+<p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to <a href="{{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>.
 </p>
 <p>Data entities are a side benefit of service contracts.
    The database tables that normally support these entities can be complicated.
@@ -36,11 +38,11 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contra
 
 ## Using the @api tag
 
-Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="{{page.baseurl}}extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.
+Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="{{page.baseurl}}/extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.
 
 <h3 id="related-topics">Related topics</h3>
 <ul>
-   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
-   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+   <li><a href="{{page.baseurl}}/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+   <li><a href="{{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
    </li>
 </ul>

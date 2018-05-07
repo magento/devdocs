@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 40_Approach
 title: Create a test in the Functional Testing Framework
-menu_title: Out-of-the-box test
-menu_order: 1
 version: 2.0
 github_link: mtf/create_test/out-of-the-box.md
 ---
@@ -33,4 +30,4 @@ See [Run the test][] topic.
 
 <!-- LINK DEFINITIONS -->
 
-[Run the test]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html
+[Run the test]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_runtest.html

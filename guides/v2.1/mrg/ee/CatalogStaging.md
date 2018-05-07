@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Commerce
 title: Magento_CatalogStaging module
-menu_title: CatalogStaging
-menu_order: 2
 version: 2.1
 ee_only: true
 github_link: mrg/ee/CatalogStaging.md
@@ -109,7 +106,7 @@ You can find the list of modules that have dependencies on the Magento_CatalogSt
 
 ### UI components
 
-You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
@@ -129,4 +126,4 @@ You can use the following events:
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

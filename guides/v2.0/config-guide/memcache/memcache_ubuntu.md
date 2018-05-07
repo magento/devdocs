@@ -5,9 +5,13 @@ subgroup: 10_mem
 title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/memcache/memcache_ubuntu.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 
@@ -66,7 +70,7 @@ To verify memcached is recognized by the web server:
 
 2.  Make sure memcached displays as follows:
 
-    <img src="{{ site.baseurl }}common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server">
+    <img src="{{ site.baseurl}}/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server">
 
     Verify you're using memcached version 3.0.5 or later.
 
@@ -137,4 +141,4 @@ Flush memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+<a href="{{page.baseurl}}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

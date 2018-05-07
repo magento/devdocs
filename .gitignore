@@ -11,31 +11,24 @@ _site/
 ehthumbs.db
 Thumbs.db
 .idea
+.ruby-version
 
 # Config and output files #
 ###########################
 /_site/
 .jekyll-metadata
 CNAME
-_config.yml
 /Readme.md
 ignore
-/_config.yml
-/_config.brad.yml
-/_config.sasha.yml
-/_config.tana.yml
-/_config.public.yml
-/_config.local.yml
 /*.yml
+!_config.yml
 !_config.devdocs.yml
 /gen_public.bat
 /jk.bat
 *.bat
 *.sh
-!/vagrant/bootstrap.sh
-Rakefile
-/vagrant/.vagrant/
+tmp/
 /vendor/
 /Gemfile.lock
 /node_modules/
-/package-lock.json
+_algolia_api_key

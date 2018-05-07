@@ -13,13 +13,13 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-header.html
 
 <h2 id="filter">Overview</h2>
 
-The sticky header component is responsible for rendering additional <a href="{{page.baseurl}}ui-library/ui-listing-grid.html">grid</a> header and grid toolbar.
+The sticky header component is responsible for rendering additional <a href="{{page.baseurl}}/ui-library/ui-listing-grid.html">grid</a> header and grid toolbar.
 
 Sticky header is displayed when the persistent header gets hidden during vertical scrolling. The persistent header reactivates when you scroll back up:
 
 The following image is an illustration of a grid with a sticky header:
 
-<img src="{{page.baseurl}}pattern-library/displaying-data/datatable/img/datatable13.jpg" alt="a grid with a sticky header">
+<img src="{{page.baseurl}}/pattern-library/displaying-data/datatable/img/datatable13.jpg" alt="a grid with a sticky header">
 
 <h2 id="enable_header">Enable sticky header for a grid</h2>
 
@@ -106,12 +106,12 @@ It also works both with and without the following components, preserving their f
 
 - Listing child components:
 	- Dnd
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-resize.html">Resize</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-resize.html">Resize</a>
 	- Bulk Edit
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-resize.html">Inline Edit</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-resize.html">Inline Edit</a>
 - Toolbar child components:
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-pagination.html">Pagination</a>
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-filter.html">Filter</a>
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-column.html">Column</a>
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-massaction.html">Mass Action</a>
-	- <a href="{{page.baseurl}}ui-library/ui-secondary-bookmark.html">Bookmark</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-pagination.html">Pagination</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-filter.html">Filter</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-column.html">Column</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-massaction.html">Mass Action</a>
+	- <a href="{{page.baseurl}}/ui-library/ui-secondary-bookmark.html">Bookmark</a>

@@ -10,6 +10,8 @@ menu_node: parent
 version: 2.0
 github_link: get-started/bk-get-started-api.md
 redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
+functional_areas:
+  - Integration
 ---
 <h2 id="whatare">What are the Magento web APIs?</h2>
 
@@ -17,7 +19,7 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 * Support for both <a href="{{page.baseurl}}/rest/bk-rest.html">REST</a> (Representational State Transfer) and <a href="{{page.baseurl}}/soap/bk-soap.html">SOAP</a> (Simple Object Access Protocol). In Magento 2, the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} coverage is the same for both REST and SOAP.
 
-* Three types of <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">authentication</a>:
+* Three types of <a href="{{page.baseurl}}/get-started/authentication/gs-authentication.html">authentication</a>:
 	* Third-party applications authenticate with <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html">OAuth 1.0a</a>.
 	* Mobile applications authenticate using <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-token.html">tokens</a>.
 	* Administrators and customers are authenticated with <a href="{{page.baseurl}}/get-started/authentication/gs-authentication-token.html">login credentials</a>.
@@ -29,9 +31,9 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 	 To configure a web API, you define XML elements and attributes in a `webapi.xml` configuration file. If a service is not defined in a configuration file, it will not be exposed at all.
 * The framework is based on the CRUD (create, read, update, delete) & search model. The system does not currently support web hooks.
 
-* The framework supports field filtering of web api responses to conserve mobile bandwidth.
+* The framework supports field filtering of web API responses to conserve mobile bandwidth.
 
-* Integration style web API’s enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be seen in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} where one web API call can create a product; if your payload includes the inventory object and media object then the framework will also create the product’s inventory & media in that one API call.
+* Integration style web APIs enable a single web API call to run multiple services at once for a more efficient integration.  An example of this behavior can be seen in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} where one web API call can create a product. If your payload includes the `stock_item` and `media_gallery_entries` objects, then the framework will also create the product’s inventory & media in that one API call.
 
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>

@@ -8,6 +8,10 @@ menu_order: 16
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-advanced.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -33,7 +37,7 @@ Every 5 seconds, this health check calls the `pub/health_check.php` script. This
 
 The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `health_check.php`.
 
-For more information, see the <a href="https://www.varnish-cache.org/docs/4.1/usrs-guide/vcl-backends.html#health-checks" target="_blank">Varnish health checks</a> documentation.
+For more information, see the <a href="https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks" target="_blank">Varnish health checks</a> documentation.
 
 ## Grace mode {#grace}
 
@@ -47,7 +51,7 @@ The `vcl_hit` subroutine defines how Varnish responds to a request for objects t
 ### When the Magento backend is healthy {#grace-healthy}
 
 
-When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} as described in [Configure Magento to use Varnish]({{page.baseurl}}config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
+When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} as described in [Configure Magento to use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
 
 The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).
 
@@ -103,7 +107,7 @@ See [Varnish module collection](https://github.com/varnish/varnish-modules) for 
 
 ### Sample `vcl` file {#saint-sample}
 
-The following code example shows the code that must be added to your `.vcl` file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
+The following code example shows the code that must be added to your VCL file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
 
 {% collapsible Click to show/hide %}
 {% highlight cpp %}
@@ -173,4 +177,4 @@ sub vcl_backend_response {
 {% endcollapsible %}
 
 #### Final step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
+<a href="{{page.baseurl}}/config-guide/varnish/config-varnish-final.html">Final verification</a>

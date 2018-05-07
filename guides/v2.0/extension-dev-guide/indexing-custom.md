@@ -16,9 +16,9 @@ This topic discusses how to create a custom indexer. We've recently made a perfo
 
 To implement your own indexer, add the following code in your module:
 
-*	[Indexer logic](#m2devgde-indexing-customlogic)
-*	[Indexer configuration](#m2devgde-indexing-customconfiguration)
-*	[MView configuration](#m2devgde-indexing-mview)
+*	[Indexer logic](#custom-indexer-logic)
+*	[Indexer configuration](#indexer-configuration)
+*	[MView configuration](#mview-configuration)
 
 
 ### Custom indexer logic

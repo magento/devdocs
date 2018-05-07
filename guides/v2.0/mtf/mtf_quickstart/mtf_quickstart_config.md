@@ -1,13 +1,9 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start. Adjust configuration
-menu_title: Adjust configuration
-menu_order: 1
 version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.html
 ---
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
@@ -91,4 +87,4 @@ Enter actual data in `value` attribute of corresponding `field` element.
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
-[Prepare Magento application &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html)
+[Prepare Magento application &gt;&gt;]({{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_magento.html)

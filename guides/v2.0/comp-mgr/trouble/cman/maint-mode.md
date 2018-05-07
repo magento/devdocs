@@ -4,10 +4,12 @@ group: compman
 subgroup: 50_trouble
 title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
-menu_node: 
+menu_node:
 menu_order: 200
 version: 2.0
 github_link: comp-mgr/trouble/cman/maint-mode.md
+functional_areas:
+  - Upgrade
 ---
 
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
@@ -90,7 +92,7 @@ To redirect traffic to a custom maintenance page:
 4. Enter the following command:
 
 		touch <web server docroot>/maintenance.enable
-5.	[Upgrade your system]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+5.	[Upgrade your system]({{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete `maintenance.enable`.
 
@@ -139,7 +141,7 @@ To redirect traffic to a custom maintenance page:
 3. Reload the nginx configuration:
 
 		service nginx reload
-5.	[Upgrade your system]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+5.	[Upgrade your system]({{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete or rename `maintenance.enable`
 5.	Reload the nginx configuration:

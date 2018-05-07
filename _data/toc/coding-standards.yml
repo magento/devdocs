@@ -1,0 +1,41 @@
+label: Coding Standards
+pages:
+    - label: Coding Standards
+      url: /coding-standards/bk-coding-standards.html
+      children:
+
+        - label: Code demarcation standard
+          url: /coding-standards/code-standard-demarcation.html
+
+        - label: PHP coding standard
+          url: /coding-standards/code-standard-php.html
+
+        - label: PHP code sniffers
+          url: /coding-standards/code-standard-sniffers.html
+
+        - label: DocBlock standard
+          url: /coding-standards/docblock-standard-general.html
+
+        - label: JavaScript coding standard
+          url: /coding-standards/code-standard-javascript.html
+
+        - label: JavaScript DocBlock standard
+          url: /coding-standards/docblock-standard-javascript.html
+
+        - label: jQuery widget coding standard
+          url: /coding-standards/code-standard-jquery-widgets.html
+
+        - label: LESS coding standard
+          url: /coding-standards/code-standard-less.html
+
+        - label: HTML style guide
+          url: /coding-standards/code-standard-html.html
+
+    - label: Technical guidelines
+      url: /coding-standards/technical-guidelines.html
+
+    - label: Technical vision
+      children:
+
+        - label: Web Api
+          url: /coding-standards/technical-vision/webapi.html

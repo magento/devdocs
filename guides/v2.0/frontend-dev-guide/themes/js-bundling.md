@@ -7,6 +7,9 @@ menu_title: JavaScript Bundling
 menu_order: 9000
 version: 2.0
 github_link: frontend-dev-guide/themes/js-bundling.md
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 JavaScript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.
@@ -124,5 +127,5 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 2. Compare the JavaScript files loaded in the pages with the JavaScript files in Magento.
 3. Use the results of that comparison to build your exclude list.
 
-[production-mode]:{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production
-[luma-view-xml]:https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/etc/view.xml
+[production-mode]:{{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode
+[luma-view-xml]:https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/etc/view.xml

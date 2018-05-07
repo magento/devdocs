@@ -11,6 +11,10 @@ level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_magento-installed.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_magento-installed.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 To determine if the Magento software is installed already, you can access the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} (administration console) or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using a web browser.
@@ -29,20 +33,20 @@ If Magento is installed, you should see something like the following after you l
 
 Magento Admin:
 
-<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl}}/common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
 
 
 Magento storefront:
 
-<p><img src="{{ site.baseurl }}common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl}}/common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
 
 ## What if Magento is installed?
 
 If Magento *is* installed and you want to manage or upgrade components, see the following guides instead:
 
-*	<a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
+*	<a href="{{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
 
 	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
-*	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
+*	<a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
 
 	Upgrade the Magento software or components.

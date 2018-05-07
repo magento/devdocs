@@ -9,6 +9,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-over.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 {% include install/docker/deprecated-note.html %}
@@ -30,5 +34,5 @@ Optional sample data takes a few additional minutes.
 </div>
 
 #### Next steps
-*   [DevBox (Beta) reference]({{ page.baseurl }}install-gde/docker/docker-ref.html)
-*   [Troubleshoot issues with Magento DevBox]({{ page.baseurl }}install-gde/docker/docker-trouble.html)
+*   [DevBox (Beta) reference]({{ page.baseurl}}/install-gde/docker/docker-ref.html)
+*   [Troubleshoot issues with Magento DevBox]({{ page.baseurl}}/install-gde/docker/docker-trouble.html)

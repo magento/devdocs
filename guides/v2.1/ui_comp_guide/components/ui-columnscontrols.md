@@ -5,7 +5,7 @@ subgroup: components
 title: ColumnsControls component
 menu_title: ColumnsControls component
 version: 2.1
-github_link: ui_comp_guide/components/ui-сolumnsсontrols.md
+github_link: ui_comp_guide/components/ui-columnscontrols.md
 ---
 
 ## Overview
@@ -19,7 +19,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{s
 
 ## ColumnsControls configuration
 
-Extends all [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Extends all [uiCollection]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 ColumnsControls-specific configuration:
 

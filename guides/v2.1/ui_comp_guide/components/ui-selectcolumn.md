@@ -5,7 +5,7 @@ subgroup: components
 title: SelectColumn component
 menu_title: SelectColumn component
 version: 2.1
-github_link: ui_comp_guide/components/ui-selectсolumn.md
+github_link: ui_comp_guide/components/ui-selectcolumn.md
 ---
 
 ## Overview
@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js]({{sit
 
 ## SelectColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
+Extends all [Column]({{page.baseurl}}/ui_comp_guide/components/ui-column.html) configuration.
 
 SelectColumn-specific configuration:
 

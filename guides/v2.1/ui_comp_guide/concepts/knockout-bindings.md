@@ -7,6 +7,8 @@ menu_title: Magento custom Knockout.js bindings
 menu_order: 60
 version: 2.1
 github_link: ui_comp_guide/concepts/knockout-bindings.md
+functional_areas:
+  - Tools
 ---
 
 This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files. These bindings can also be used by third-party developers.
@@ -176,7 +178,7 @@ Binding's configuration that may include the following properties:
 
 ### `datepicker`
 
-The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}javascript-dev-guide/widgets/widget_calendar.html) widget.
+The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}/javascript-dev-guide/widgets/widget_calendar.html) widget.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`. [See on Github]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js)
 

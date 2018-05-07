@@ -9,7 +9,7 @@ These instructions apply to Magento Community Edition (CE) and Magento Enterpris
 
 To upgrade to Magento 2.1 sample data using the command line:
 
-1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 2.	Change to the Magento installation directory.
 3.	Back up your current `composer.json`:
 
@@ -19,7 +19,7 @@ To upgrade to Magento 2.1 sample data using the command line:
 		composer require <product> <version> --no-update
 		composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
 
-	*	Magento CE:
+	*	{{site.data.var.ce}}:
 
 			composer require magento/product-community-edition 2.1.0 --no-update
 
@@ -37,7 +37,7 @@ To upgrade to Magento 2.1 sample data using the command line:
 5.	Update dependencies:
 	
 		composer update
-6.	If prompted, enter your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
+6.	If prompted, enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html).
 7.	Wait for dependencies to update.
 
 ### Finish your upgrade

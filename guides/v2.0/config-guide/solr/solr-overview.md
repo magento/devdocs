@@ -7,10 +7,14 @@ menu_title: Install and configure Solr (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.0
+ee_only: True
 github_link: config-guide/solr/solr-overview.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
@@ -211,4 +215,4 @@ To install Solr and Jetty:
 		tar -xvf solr-4.10.4.tgz
 
 #### Next step
-[Configure Solr to work with Magento]({{page.baseurl}}config-guide/solr/solr-magento.html){:target="_blank"}
+[Configure Solr to work with Magento]({{page.baseurl}}/config-guide/solr/solr-magento.html){:target="_blank"}

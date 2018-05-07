@@ -7,20 +7,23 @@ menu_title: Install and configure Elasticsearch (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.1
+ee_only: True
 github_link: config-guide/elasticsearch/es-overview.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to {{site.data.var.ee}} only">
-
 
 #### Contents
 
 *	[Overview of Elasticsearch](#overview){:target="_blank"}
 *	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
 *	[Additional resources](#es-resources){:target="_blank"}
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)
+*	[Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
 
 <h2 id="overview">Overview of Elasticsearch</h2>
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
@@ -50,7 +53,7 @@ We also support version 1.7 but recommend you use a later version.
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-<img src="{{ site.baseurl }}common/images/elastic_config.png" width="500px">
+<img src="{{ site.baseurl}}/common/images/elastic_config.png" width="500px">
 
 The preceding diagram shows:
 
@@ -133,7 +136,7 @@ To install Elasticsearch:
 	For example, it might be located in `/etc/elasticsearch` or `<elasticsearch install dir>/config`.
 5.	Add the following parameter to the `Memory` section:
 
-		index.query.bool.max_clause_count: 10024
+		indices.query.bool.max_clause_count: 10024
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.
@@ -155,6 +158,6 @@ For additional information, see [Elasticsearch documentation](https://www.elasti
 
 #### Next
 
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Magento to use Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html)
+*	[Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)

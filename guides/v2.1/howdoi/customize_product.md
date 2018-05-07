@@ -3,7 +3,7 @@ layout: default
 group: howdoi
 subgroup: product-create-page
 title: Customize product creation form
-menu_title: Customize product creation form 
+menu_title: Customize product creation form
 menu_node: parent
 menu_order: 1
 version: 2.1
@@ -12,36 +12,36 @@ github_link: howdoi/customize_product.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. 
+This topic describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
-<img src="{{site.baseurl}}common/images/product_pmg.png" alt="The product creation page in Admin">
+<img src="{{site.baseurl}}/common/images/product_pmg.png" alt="The product creation page in Admin">
 
 ## Overview
 
-In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component]({{page.baseurl}}ui-components/ui-form.html). 
+In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html). 
 
 Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 
 ## Prerequisites
 
-[Set Magento to developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+[Set Magento to developer mode]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. 
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.
 
 ## Customize the form configuration
 
 Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.
 
-To customize the product creation form, take the following steps: 
+To customize the product creation form, take the following steps:
 
 1. In your custom module, add an empty `product_form.xml` in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
 
 2. In this file, add content similar to the following:
 
-{%highlight xml%} 
+{%highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
 
 ...
@@ -53,7 +53,7 @@ To customize the product creation form, take the following steps:
                 <item name="sortOrder" xsi:type="number">%order for displaying%</item>
             </item>
          </argument>
-        <!--field sets can be nested --> 
+        <!--field sets can be nested -->
         <fieldset name="%nested_fieldset_name%">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -78,14 +78,14 @@ To customize the product creation form, take the following steps:
 
 ### Adding new elements
 
-By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}. 
+By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %}.
 
 In the [modifier class described further](#modifier), you can set the conditions for displaying certain elements for certain product types.
 
 ### Customizing existing fields and field sets
 Your `product_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.
 
-To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. 
+To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration.
 
 To delete an existing field, or field set, in your `product_form.xml` use the following construction:
 
@@ -95,7 +95,7 @@ To delete an existing field, or field set, in your `product_form.xml` use the fo
         <argument name="data" xsi:type="array">
             <item name="disabled" xsi:type="boolean">true</item>
         </argument>
-    </fieldset> 
+    </fieldset>
 ...
 {%endhighlight%}
 
@@ -108,7 +108,7 @@ For reference, view the product form configuration files of the Magento modules:
 
 ## Customize using a modifier class {#modifier}
 
-[Modifier classes]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.
+[Modifier classes]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.
 
 In the run time, the form structure set in the modifier is merged with the configuration that comes from the `product_form.xml` configuration.
 
@@ -207,7 +207,7 @@ Following is an example of such definition:
     </virtualType>
 {%endhighlight%}
 
-The `sortOrder` parameter defines the order of invocation for your `modifyData()` and `modifyMeta()` methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its `modifyData()` and `modifyMeta()` are invoked with empty arguments. 
+The `sortOrder` parameter defines the order of invocation for your `modifyData()` and `modifyMeta()` methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its `modifyData()` and `modifyMeta()` are invoked with empty arguments.
 
 To access product model within your modifier, it's recommended to use an instance of `Magento\Catalog\Model\Locator\LocatorInterface`.
 
@@ -224,6 +224,6 @@ For reference about setting conditions for displaying certain elements for certa
 
 ## Recommended reading:
 
- - [Form UI component]({{page.baseurl}}ui_comp_guide/components/ui-form.html)
- - [About PHP modifiers in UI components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html)
- - [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
+ - [Form UI component]({{page.baseurl}}/ui_comp_guide/components/ui-form.html)
+ - [About PHP modifiers in UI components]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)
+ - [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)

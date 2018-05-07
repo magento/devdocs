@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Commerce
 title: Magento_CatalogRuleStaging module
-menu_title: CatalogRuleStaging
-menu_order: 2
 version: 2.1
 ee_only: true
 github_link: mrg/ee/CatalogRuleStaging.md
@@ -53,4 +50,4 @@ For more information about layouts, see the [Layout documentation](http://devdoc
 
 ## Additional Information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

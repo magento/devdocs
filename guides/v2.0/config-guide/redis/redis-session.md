@@ -8,10 +8,14 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: config-guide/redis/redis-session.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
-Before you continue, [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install).
+Before you continue, [install Redis]({{page.baseurl}}/config-guide/redis/config-redis.html#config-redis-install).
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -166,5 +170,5 @@ where
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{page.baseurl}}/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{page.baseurl}}/config-guide/config/config-php.html">Magento's deployment configuration</a>

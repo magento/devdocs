@@ -7,6 +7,8 @@ menu_title: Payment method module configuration
 menu_order: 1
 version: 2.1
 github_link: payments-integrations/base-integration/module-configuration.md
+functional_areas:
+  - Integration
 ---
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
@@ -43,7 +45,7 @@ In your `%Vendor_Module%/composer.json` file, specify the dependencies like in t
 }
 {% endhighlight %}
 
-For details about composer.json see [The composer.json]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) file topic.
+For details about composer.json see [The composer.json]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html) file topic.
 
 ### `module.xml`
 
@@ -67,6 +69,6 @@ Your payment method implementation might require adding more dependencies.
 
 ## What's next
 
-[Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html).
+[Payment method configuration]({{page.baseurl}}/payments-integrations/base-integration/payment-option-config.html).
 
 

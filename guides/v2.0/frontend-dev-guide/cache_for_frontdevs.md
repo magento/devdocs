@@ -6,6 +6,8 @@ menu_title: Magento cache overview
 menu_order: 10
 version: 2.0
 github_link: frontend-dev-guide/cache_for_frontdevs.md
+functional_areas:
+  - Frontend
 ---
 
 {% include cache/page-cache-overview.md%}
@@ -36,8 +38,8 @@ To view the status of the cache, run:
 
 	`php bin/magento cache:status`
 
-For more details about working with cache, see [Manage the cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html)
+For more details about working with cache, see [Manage the cache]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html)
 
 ## Clean static files {#clean_static}
 
-Besides the cached files, inn theme development process developers also deal with other saved files - static view files that are preprocessed and published to the `var/view_preprocessed` and `pub/static` directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories.
+Besides the cached files, in theme development process developers also deal with other saved files - static view files that are preprocessed and published to the `var/view_preprocessed` and `pub/static` directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories.

@@ -1,10 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Commerce
-title: Module Reference Guide
-menu_title: Magento_CatalogInventoryStaging module
-menu_order: 2
+title: Magento_CatalogInventoryStaging module
 version: 2.1
 ee_only: true
 github_link: mrg/ee/CatalogInventoryStaging.md
@@ -28,4 +25,4 @@ You can interact with the Magento_CatalogInventoryStaging module using the Magen
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

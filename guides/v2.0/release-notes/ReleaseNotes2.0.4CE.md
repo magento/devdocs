@@ -73,7 +73,7 @@ We recommend that you review Magento's <a href="http://merch.docs.magento.com/ce
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+[System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
 
 <h3>Installation instructions</h3>
 
@@ -94,7 +94,7 @@ New users can now complete a full installation of Magento Open Source 2.0.4 from
 
 2.	Under **Download with Composer**, click **Download**.
 
-3.	Follow the instructions to download Composer, and get the Magento CE {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
+3.	Follow the instructions to download Composer, and get the {{site.data.var.ce}} {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 
 <h4><b>Upgrade existing installations</b></h4>

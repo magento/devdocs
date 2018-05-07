@@ -7,6 +7,8 @@ menu_title: Copying fieldsets
 menu_order: 1000
 version: 2.0
 github_link: ext-best-practices/tutorials/copy-fieldsets.md
+functional_areas:
+  - Standards
 ---
 
 ## Overview
@@ -81,9 +83,9 @@ public function __construct(
 
 /**
  * @param $quote \Magento\Quote\Api\Data\CartInterface
- * @param $order Magento\Sales\Api\Data\Order
+ * @param $order \Magento\Sales\Api\Data\Order
  */
-private function copyQuoteToOrder($quote,$order)
+private function copyQuoteToOrder($quote, $order)
 {
   ...
   $copy->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
@@ -97,6 +99,6 @@ private function copyQuoteToOrder($quote,$order)
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].
 The `copyFieldsetToTarget` function call with the `$quote` and `$order` parameters copies the fieldset for the two objects..
 
-[0]:https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/DataObject/Copy.php
-[1]:{{page.baseurl}}extension-dev-guide/attributes.html
-[2]:{{page.baseurl}}extension-dev-guide/depend-inj.html
+[0]:https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/Copy.php
+[1]:{{page.baseurl}}/extension-dev-guide/attributes.html
+[2]:{{page.baseurl}}/extension-dev-guide/depend-inj.html

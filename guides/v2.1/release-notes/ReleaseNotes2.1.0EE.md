@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.0EE.md
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl}}/release-notes/backward-incompatible-changes/index.html).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
@@ -42,7 +42,7 @@ This release includes enhancements to improve the security of your Magento appli
 ### Known issues
 Magento 2.1.0 GA includes the following known issues:
 
-<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
+<!--- 54447-->* A developer who attempts to upgrade the {{site.data.var.ee}} software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
 
 To work around this issue, run the following commands in the order shown:
 
@@ -1122,7 +1122,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48079-->* Resolved issues with shipping providers for one-page checkout.
 
-<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between Magento CE and EE components.
+<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between {{site.data.var.ce}} and {{site.data.var.ee}} components.
 
 <!--- 48171-->* User notifications work as expected.
 
@@ -1264,11 +1264,11 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html)
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 
@@ -1278,6 +1278,6 @@ You can install Magento Magento Commerce 2.1 General Availability (GA) using Com
 {% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
