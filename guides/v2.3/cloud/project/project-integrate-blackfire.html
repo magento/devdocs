@@ -2033,11 +2033,11 @@
   <li><code class="highlighter-rouge">Magento Cloud (&lt;your instance reference&gt;)</code>—Production</li>
 </ul>
 
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For Pro, you must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire.</p>
-</div>
+<p><strong>For Pro</strong>:</p>
+<ul>
+  <li>You must enter a Support ticket with your Blackfire credentials to configure your Staging and Production environments with Blackfire.</li>
+  <li>You must bypass the Fastly service in your Production environment when profiling with Blackfire. See <a href="https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn" target="_blank">Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)</a>.</li>
+</ul>
 
 <h2 id="get-your-blackfire-credentials">Get your Blackfire credentials</h2>
 <p>The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with Magento Commerce (Cloud) and to log in to the Blackfire website. An invitation email is sent to the Project Owner’s e-mail address to complete activation.</p>
@@ -2100,16 +2100,6 @@
     <p><img src="/common/images/cloud_blackfire-integration.png" alt="Blackfire Magento Cloud integration" /></p>
   </li>
 </ol>
-
-<p>The following sections include instructions for completing this list of integration tasks.</p>
-
-<ul>
-  <li><a href="#magentoappyaml">Add Blackfire to .magento.app.yaml</a></li>
-  <li><a href="#variables">Add project variables</a></li>
-  <li><a href="#integration">Add Blackfire integration to the project</a></li>
-  <li><a href="#route">Add a default route</a></li>
-  <li><a href="#save">Save changes in Blackfire</a></li>
-</ul>
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
 <p>By default, the <code class="highlighter-rouge">.magento.app.yaml</code> file includes the Blackfire module. If the module is not present, use the following instructions to update your <code class="highlighter-rouge">.magento.app.yaml</code> file, push the updated file to your remote branch, merge, and deploy across all environments.</p>
@@ -2335,7 +2325,7 @@ git push origin
   <li>
     <p>Run the profiler.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php --ri blackfire
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">--ri</span> blackfire
 </code></pre></div>    </div>
 
     <p>A sample result follows:</p>
@@ -2379,22 +2369,22 @@ blackfire.log_file <span class="o">=&gt;</span> no value <span class="o">=&gt;</
 
 <p>Try adding the following scenarios in the file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    # .blackfire.yml
-    scenarios:
-        Home:
-            - /index.php
+<blockquote>
+  <p>.blackfire.yml</p>
+</blockquote>
 
-        Product list:
-            - /index.php/women/tops-women/jackets-women.html
-
-        Checkout:
-            - /index.php/checkout
-
-        Payment:
-            - /index.php/checkout/payment
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">scenarios</span><span class="pi">:</span>
+  <span class="na">Home</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/index.php</span>
+  <span class="na">Product list</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/index.php/women/tops-women/jackets-women.html</span>
+  <span class="na">Checkout</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/index.php/checkout</span>
+  <span class="na">Payment</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/index.php/checkout/payment</span>
 </code></pre></div></div>
 
-<p>See the Blackfire documentation on how to write <a href="https://blackfire.io/docs/cookbooks/tests">tests</a> and <a href="https://blackfire.io/docs/cookbooks/scenarios">scenarios</a>.</p>
+<p>See the Blackfire documentation on <a href="https://blackfire.io/docs/cookbooks/tests" target="_blank">Writing tests</a> and <a href="https://blackfire.io/docs/cookbooks/scenarios" target="_blank">Writing scenarios</a>.</p>
 
 <h3 id="running-your-tests-automatically">Running your tests automatically</h3>
 <p>Once you create and deploy your <code class="highlighter-rouge">.blackfire.yml</code> file, you can enable Blackfire to run your tests automatically in various ways:</p>
