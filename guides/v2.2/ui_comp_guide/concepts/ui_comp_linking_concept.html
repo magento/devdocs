@@ -1360,11 +1360,12 @@
 
 <h3 id="exports"><code class="highlighter-rouge">exports</code></h3>
 
-<p>The <code class="highlighter-rouge">exports</code> property is used to notify some external entity that a property has changed. <code class="highlighter-rouge">exports</code>’s value is an object, composed of the following:</p>
+<p>The <code class="highlighter-rouge">exports</code> property is used to copy a local value to some external entity. If the external entity property is anything but a function, it will be set to the value of the local property. If the external property is a function, it will be called with the local properties value as an argument.
+If the local value is a ko of io-es5 observable, the external entity will also be updated whenever the local property changes. <code class="highlighter-rouge">exports</code>’s value is an object, composed of the following:</p>
 
 <ul>
   <li><code class="highlighter-rouge">key</code>: name of the internal property or method that is tracked for changes.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the property or method that receives the notification. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="highlighter-rouge">value</code>: name of the property or method that receives the value. Can use <a href="#string_templ">string templates</a>.</li>
 </ul>
 
 <p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
@@ -1375,7 +1376,7 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here <code class="highlighter-rouge">visible</code> is the <code class="highlighter-rouge">key</code>, <code class="highlighter-rouge">${ $.provider }:visibility</code> is the <code class="highlighter-rouge">value</code>. The value of the local <code class="highlighter-rouge">visible</code> property is assigned to the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component. The latter is changed automatically if the value of <code class="highlighter-rouge">visible</code> changes.</p>
+<p>Here <code class="highlighter-rouge">visible</code> is the <code class="highlighter-rouge">key</code>, <code class="highlighter-rouge">${ $.provider }:visibility</code> is the <code class="highlighter-rouge">value</code>. The value of the local <code class="highlighter-rouge">visible</code> property is assigned to the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component. The latter is changed automatically if the value of <code class="highlighter-rouge">visible</code> changes if the local <code class="highlighter-rouge">visible</code> property is observable (which it isn’t given only the code example above).</p>
 
 <p>Example of setting <code class="highlighter-rouge">exports</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
 
@@ -1393,7 +1394,7 @@
 <p>The <code class="highlighter-rouge">imports</code> property is used for tracking changes of an external entity property. <code class="highlighter-rouge">imports</code>’s value is an object, composed of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">key</code>: name of the internal property or method that receives the notifications.</li>
+  <li><code class="highlighter-rouge">key</code>: name of the internal property or method that receives the value.</li>
   <li><code class="highlighter-rouge">value</code>: name of the property or method that is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
 </ul>
 
@@ -1405,7 +1406,7 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here the value of the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component is assigned to the local <code class="highlighter-rouge">visible</code> property. The latter is automatically updated if <code class="highlighter-rouge">visibility</code> changes.</p>
+<p>Here the value of the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component is assigned to the local <code class="highlighter-rouge">visible</code> property. If the latter is a ko or ko-es5 observable, the local property is automatically updated if <code class="highlighter-rouge">visibility</code> changes.</p>
 
 <p>Example of using <code class="highlighter-rouge">imports</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
 
@@ -1425,7 +1426,7 @@
 
 <ul>
   <li><code class="highlighter-rouge">key</code>: name of the internal property or method that sends and receives the notifications.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the property or method that sends and receives the notifications. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="highlighter-rouge">value</code>: name of the property or method that sends and receives the value. Can use <a href="#string_templ">string templates</a>.</li>
 </ul>
 
 <p>Example of using <code class="highlighter-rouge">links</code> in a component’s <code class="highlighter-rouge">.js</code> file:</p>
@@ -1436,7 +1437,7 @@
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here the local <code class="highlighter-rouge">visible</code> property is linked with the <code class="highlighter-rouge">visibility</code>  property of the provider component. Once any of them changes, the other is changed automatically.</p>
+<p>Here the local <code class="highlighter-rouge">visible</code> property is linked with the <code class="highlighter-rouge">visibility</code>  property of the provider component. If any of them is a ko or ko-es5 observable and changes, the other is changed automatically. If a non-observable linked property is changed the other is not updated automatically.</p>
 
 <p>Example of using <code class="highlighter-rouge">links</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
 
@@ -1454,26 +1455,27 @@
 <p>The <code class="highlighter-rouge">listens</code> property is used to track the changes of a component’s property. <code class="highlighter-rouge">listens</code>’s value is an object, composed of the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">key</code>: name of the internal property which listens to the changes.</li>
-  <li><code class="highlighter-rouge">value</code>: name of the property or method which is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="highlighter-rouge">key</code>: name of the observable property or method which is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code class="highlighter-rouge">value</code>: name of the internal method or property which listens to the changes.</li>
 </ul>
 
 <p>Example of using <code class="highlighter-rouge">listens</code> in a component’s <code class="highlighter-rouge">.js</code> file :</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
   <span class="s1">'listens'</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s1">'visible'</span><span class="p">:</span> <span class="s1">'${ $.provider }:visibility'</span>
+   <span class="s1">'${ $.provider }:visibility'</span><span class="p">:</span> <span class="s1">'visibilityChanged'</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Here the value of the local <code class="highlighter-rouge">visible</code> property is assigned to the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component. The latter is changed automatically if the value of <code class="highlighter-rouge">visible</code> changes.</p>
+<p>Here the local <code class="highlighter-rouge">visibilityChanged</code> property is a method that will be called when the <code class="highlighter-rouge">visibility</code> property of the <code class="highlighter-rouge">provider</code> component changes. It recieves the new value as an argument. If the local property is not a function, it will be set to the new value.
+The external property has to be an observable in order for <code class="highlighter-rouge">listens</code> to have any effect.</p>
 
 <p>Example of using <code class="highlighter-rouge">listens</code> in a component’s configuration <code class="highlighter-rouge">.xml</code> file:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"listens"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"visible"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sample_config.sample_provider:visibility"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>visibilityChanged<span class="nt">&lt;/item&gt;</span>
         <span class="nt">&lt;/item&gt;</span>
     <span class="nt">&lt;/item&gt;</span>
 <span class="nt">&lt;/argument&gt;</span></code></pre></figure>
@@ -1482,7 +1484,7 @@
 
 <h2 id="string_templ">Template strings usage</h2>
 
-<p>The <code class="highlighter-rouge">value</code> options of linking properties can contain template strings in the <code class="highlighter-rouge">'${...}'</code> format. During component’s initialization, values in this format are processed as template strings using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">ES6 templates</a>. In browsers that do not support ES6 templates, these values are processed as underscore templates.</p>
+<p>The options of linking properties can contain template strings in the <code class="highlighter-rouge">'${...}'</code> format. During the component’s initialization, values in this format are processed as template strings using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">ES6 templates</a>. In browsers that do not support ES6 templates, these values are processed as underscore templates.</p>
 
 <p>So if we put a variable name in <code class="highlighter-rouge">'${...}'</code>, it is processed into a string representation of the variable’s value.</p>
 
@@ -1490,8 +1492,10 @@
 
 <p>As a result, if the component’s property is the variable for the template string, we get notation similar to the following:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'${ $.provider }' 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'${ $.provider }:foo' 
 </code></pre></div></div>
+
+<p>If the string would be built at runtime it would be equivalent to <code class="highlighter-rouge">this.provider + ':foo'</code>.</p>
 
 <p>We can also build complex templates strings using this syntax, as follows:</p>
 
