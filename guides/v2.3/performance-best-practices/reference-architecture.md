@@ -67,7 +67,7 @@ The following sections provide recommendations and considerations for each secti
 
 Magento supports several full page caching engines (File, Memcache, Redis, Varnish) out of the box, along with expanded coverage through extensions. Varnish is the recommended full page cache engine.  Magento supports many different Varnish configurations.
 
-For sites that don't require high availability, we recommend using a simple Varnish setup with Nginx SSL termination.
+For sites that do not require high availability, we recommend using a simple Varnish setup with Nginx SSL termination.
 
 ![alt text]({{page.baseurl}}/performance-best-practices/images/single-varnish-with-ssl-termination.png "Simple Varnish Configuration with SSL Termination")
 
