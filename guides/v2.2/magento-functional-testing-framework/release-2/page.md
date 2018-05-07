@@ -16,6 +16,8 @@ The MFTF uses a modified concept of [PageObjects](https://github.com/SeleniumHQ/
 
 The `pageObject` lists the URL of the `page` and the `sections` that it contains. You can reuse `sections` to define the elements on a page that are exercisable, while also ensuring a single source of truth to help maintain consistency.
 
+The `.url` attribute is required when using the page for actions that require the URL argument.
+
 <div class="bs-callout bs-callout-tip" markdown="1">
 Avoid hard-coded location selectors from tests to increase the maintainability and readability of the tests, as well as improve the test execution output and logging.
 </div>
