@@ -20,6 +20,11 @@ type="warning"
 content="**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_."
 %}
 
+## 2.2.3 - 2.2.4 {#releases-2_2_3-2_2_4}
+
+{% include backward-incompatible-changes/open-source/2.2.3-2.2.4.html %}
+
+
 ## 2.2.2 - 2.2.3 {#releases-2_2_2-2_2_3}
 
 {% include backward-incompatible-changes/open-source/2.2.2-2.2.3.html %}
@@ -48,4 +53,4 @@ content="**Temporary issue**: Added docblock tags like [@deprecated] are defined
 
 [magento/magento2]: https://github.com/magento/magento2
 
-[@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated

@@ -20,12 +20,12 @@ This topic describes how to customize (add, delete, change) the configuration op
 
 In Magento out of the box, when you navigate to **CONTENT** > **Design** > **Configuration** in Admin, the first page that opens displays a grid with the available configuration scopes and assigned themes. It looks like following:
 
-<img src="{{site.baseurl}}common/images/design_conf1.png">
+<img src="{{site.baseurl}}/common/images/design_conf1.png">
 
 When you click **Edit** in any of the scope records, the page with available design options is displayed.
 For example, the default set of design options for the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level is the following:
 
-<img src="{{site.baseurl}}common/images/design_conf2.png" alt="Design Configuration page">
+<img src="{{site.baseurl}}/common/images/design_conf2.png" alt="Design Configuration page">
 
 Both the grid and the configuration form are implemented using UI components.
 
@@ -37,7 +37,7 @@ View the following sections for details.
 
 ## Customize the grid {#customize_grid}
 
-The grid containing the configuration scopes is implemented using the [grid UI component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
+The grid containing the configuration scopes is implemented using the [grid UI component]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html).
 
 To customize the grid view, take the following steps:
 

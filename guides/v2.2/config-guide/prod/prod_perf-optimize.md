@@ -33,7 +33,7 @@ The following is a list of recommended software for production instances in orde
 For multi-server deployments or for merchants planning on scaling their business we recommend the following:
 
 *	[Redis][redis-session] for sessions (from 2.0.6+)
-*	A separate Redis instance as your [default cache][redis-default-cache] 
+*	A separate Redis instance as your [default cache][redis-default-cache]
   *	Do not use this instance for page cache
 
 ### Server - Composer Optimization
@@ -56,7 +56,7 @@ Edit your `opcache.ini` file to include the following:
 	opcache.consistency_checks=0
 
 When you fine tune the memory allocation for opcache, take into account the size of Magento's code base and all your extensions.
-Magento's performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.  
+Magento's performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.
 
 If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
@@ -80,19 +80,6 @@ Enable these performance optimizations to improve the store front responsiveness
 
 Go to the Admin in default of developer mode and change the following settings for store front asset optimization:
 
-### Server - MySQL Configuration & Tuning for Indexing Performance
-
-In Magento 2.2.0, you can tune indexers performance by adjusting the index batching size variables.
-This controls how many entities are processed at a time by the indexer.
-In some situations we've seen significant decreases in indexing time.
-
-For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of 5000 to 1000.
-This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration!  
-
-Please note that we have not enabled batching for the catalog rules indexer.
-Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time.
-In this case editing your MySQL configuration file and allocating more memory to TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration value (default is 16M for both) will improve performance for this indexer but will result in MySQL consuming more RAM.
-
 #### Stores -> Configuration -> Advanced -> Developer
 
 | Settings Group      | Setting                    | Value  |
@@ -113,6 +100,18 @@ In this case editing your MySQL configuration file and allocating more memory to
 
 Set all indexers to "Update on Schedule" mode.
 
+### Server - MySQL Configuration & Tuning for Indexing Performance
+
+In Magento 2.2.0, you can tune indexers performance by adjusting the index batching size variables.
+This controls how many entities are processed at a time by the indexer.
+In some situations we've seen significant decreases in indexing time.
+
+For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of 5000 to 1000.
+This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration!
+
+Please note that we have not enabled batching for the catalog rules indexer.
+Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time.
+In this case editing your MySQL configuration file and allocating more memory to TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration value (default is 16M for both) will improve performance for this indexer but will result in MySQL consuming more RAM.
 
 ### Production Mode
 
@@ -162,11 +161,11 @@ if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg
 
 Restart the Varnish server to flush cached assets whenever you upgrade your site or deploy/update assets.
 
-[composer-install]: {{page.baseurl}}install-gde/prereq/integrator_install.html
-[zip-install]: {{page.baseurl}}install-gde/prereq/zip_install.html
-[config-varnish]: {{page.baseurl}}config-guide/varnish/config-varnish.html
-[elasticsearch]: {{page.baseurl}}config-guide/elasticsearch/es-overview.html
+[composer-install]: {{page.baseurl}}/install-gde/prereq/integrator_install.html
+[zip-install]: {{page.baseurl}}/install-gde/prereq/zip_install.html
+[config-varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
+[elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
 [php-fpm]: https://php-fpm.org/
-[redis-session]: {{page.baseurl}}config-guide/redis/redis-session.html
-[redis-default-cache]: {{page.baseurl}}config-guide/redis/redis-pg-cache.html
+[redis-session]: {{page.baseurl}}/config-guide/redis/redis-session.html
+[redis-default-cache]: {{page.baseurl}}/config-guide/redis/redis-pg-cache.html
 [composer-dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload

@@ -10,7 +10,7 @@ The Functional Testing Framework (FTF) provides a reporting tool, which logs fai
 
 The following image demonstrates example of a general flow.  
 
-<a href="{{site.baseurl}}common/images/ftf/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{site.baseurl}}common/images/ftf/ftf-reporting-diagram.png" /></a>
+<a href="{{site.baseurl}}/common/images/ftf/ftf-reporting-diagram.png" alt="Reporting mechanism diagram" target="_blank"><img src="{{site.baseurl}}/common/images/ftf/ftf-reporting-diagram.png" /></a>
 
 The {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} manager is a core component which:
 
@@ -380,10 +380,10 @@ In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `
 [create preset]: #create-preset
 [configuration]: #configuration
 [dispatch]: #dispatch-event
-[event]: {{page.baseurl}}extension-dev-guide/events-and-observers.html#events
+[event]: {{page.baseurl}}/extension-dev-guide/events-and-observers.html#events
 [event manager]: #event-manger
 [event preset]: #event-presets
-[handler]: {{page.baseurl}}mtf/mtf_entities/mtf_handler.html
+[handler]: {{page.baseurl}}/mtf/mtf_entities/mtf_handler.html
 [observer]: #observers
 [preset]: #event-presets
 [report directory]: #report-directory

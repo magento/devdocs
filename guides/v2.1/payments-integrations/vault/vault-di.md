@@ -15,7 +15,7 @@ This section describes how to configure vault {% glossarytooltip 422b0fa8-b181-4
 
 ## Add vault payment facade
 
-To add a payment facade for the vault payment, create a [virtual type]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html#virtual-types). In the most cases, it will extend [`Magento\Vault\Model\Method\Vault`]({{site.mage2100url}}app/code/Magento/Vault/Model/Method/Vault.php) that is the default implementation of [`Magento\Vault\Model\VaultPaymentInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/VaultPaymentInterface.php):
+To add a payment facade for the vault payment, create a [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types). In the most cases, it will extend [`Magento\Vault\Model\Method\Vault`]({{site.mage2100url}}app/code/Magento/Vault/Model/Method/Vault.php) that is the default implementation of [`Magento\Vault\Model\VaultPaymentInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/VaultPaymentInterface.php):
 
 Example of the vault payment facade configuration for Braintree:
 
@@ -30,11 +30,11 @@ Example of the vault payment facade configuration for Braintree:
 </virtualType>
 {% endhighlight %}
 
-This {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} is similar to the [payment method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
+This {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} is similar to the [payment method facade]({{page.baseurl}}/payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
 
 ## Extend payment method configuration
 
-To enable vault usage for the payment method, set the `can_authorize_vault` option in the [method's configuration]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html). 
+To enable vault usage for the payment method, set the `can_authorize_vault` option in the [method's configuration]({{page.baseurl}}/payments-integrations/base-integration/payment-option-config.html). 
 
 Following is an example from Braintree configuration:
 
@@ -53,7 +53,7 @@ Following is an example from Braintree configuration:
 
 ## Add a gateway command for vault
 
-For payment actions, you need to create gateway commands for vault, and update the payment provider [command pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html). 
+For payment actions, you need to create gateway commands for vault, and update the payment provider [command pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html). 
 
 All available commands you can find in the [VaultPaymentInterface]({{site.mage2100url}}app/code/Magento/Vault/Model/VaultPaymentInterface.php)
 
@@ -72,7 +72,7 @@ Example: a gateway command for the authorize action is added for the Braintree v
 {% endhighlight %}
 
 
-This command is similar to the payment provider authorize command. But it uses own [request builders]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html) and [response handlers]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html).
+This command is similar to the payment provider authorize command. But it uses own [request builders]({{page.baseurl}}/payments-integrations/payment-gateway/request-builder.html) and [response handlers]({{page.baseurl}}/payments-integrations/payment-gateway/response-handler.html).
 
 The following sample from Braintree configuration illustrates how to add the `authorize` payment action to command pool:
 

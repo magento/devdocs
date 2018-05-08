@@ -15,5 +15,5 @@ functional_areas:
 {% include comp-man/backup.md %}
 
 #### Next step
-After your backup is complete, continue with [Step 4. Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade.html).
+After your backup is complete, continue with [Step 4. Upgrade]({{ page.baseurl}}/comp-mgr/upgrader/upgrade.html).
 

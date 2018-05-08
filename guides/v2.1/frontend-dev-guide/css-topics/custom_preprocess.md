@@ -30,7 +30,7 @@ You can view it as example when adding your custom preprocessor. Or install the 
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Create a new custom module for your customizations.
 
-For details about creating a module refer to the [Magento PHP Developer Guide]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html).
+For details about creating a module refer to the [Magento PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html).
 
 ### Step by step instruction
 
@@ -39,7 +39,7 @@ To add a custom preprocessor, take the following steps:
 1. In your module directory, add the {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class. It must implement the `Magento\Framework\View\Asset\ContentProcessorInterface` interface. 
 For illustration, see the adapter for Sass in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
 
-2. If the browser compilation is possible for your file types, that is, if the corresponding {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
+2. If the browser compilation is possible for your file types, that is, if the corresponding {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
 You can use the default Magento renderer for reference: [app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php]({{site.mage2000url}}app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php)
 
 2. If in your custom preprocessor, the syntax of the importing directives is different from `@import` and `@magento_import`, you must implement custom processor classes. 
@@ -100,5 +100,5 @@ The content of your `di.xml` will be similar to the following:
 
 ## Related reading
 
-- [Magento PHP Developer Guide]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html)
+- [Magento PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html)
 

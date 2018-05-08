@@ -127,5 +127,5 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 2. Compare the JavaScript files loaded in the pages with the JavaScript files in Magento.
 3. Use the results of that comparison to build your exclude list.
 
-[production-mode]:{{page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode
+[production-mode]:{{page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode
 [luma-view-xml]:https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/etc/view.xml

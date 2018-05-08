@@ -42,7 +42,7 @@ For more number formats, use the Associated Press (AP) Stylebook on first refere
 
 ## Addresses
 
-See [Addresses]({{page.baseurl}}design-styleguide/content-formats/content-formats.html#addresses) section in Content Formats.
+See [Addresses]({{page.baseurl}}/design-styleguide/content-formats/content-formats.html#addresses) section in Content Formats.
 
 ## Percentages
 

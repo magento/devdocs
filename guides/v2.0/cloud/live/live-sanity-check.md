@@ -13,7 +13,7 @@ functional_areas:
   - Testing
 ---
 
-Before pushing your code to your [Starter]({{ page.baseurl}}cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl}}cloud/architecture/pro-architecture.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
+Before pushing your code to your [Starter]({{ page.baseurl}}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl}}/cloud/architecture/pro-architecture.html) Staging and Production environments, you should fully build on your local. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays for your final site deployment, and expose any issues early for debugging.
 
 These tasks walk through:
 
@@ -21,24 +21,24 @@ These tasks walk through:
 * Complete a full build and deploy process on your local (deploys to the associated active development environment)
 * Test fully before continuing deployment to Staging
 
-For more information on the full five step process, see the [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
+For more information on the full five step process, see the [Deployment process]({{ page.baseurl}}/cloud/reference/discover-deploy.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.
 </div>
 
 ## Update composer if you add extensions {#composer}
-If you modified your [composer.json]({{ page.baseurl }}cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
+If you modified your [composer.json]({{ page.baseurl}}/cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
 
 ## Verify all required files in Git {#files}
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
-* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}cloud/access-acct/trouble.html).
+* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl}}/cloud/access-acct/trouble.html).
 * `config.local.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
 * `config.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
-* [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
-* [`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
-* [`routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
+* [`.magento.app.yaml`]({{ page.baseurl}}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
+* [`services.yaml`]({{ page.baseurl}}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
+* [`routes.yaml`]({{ page.baseurl}}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
 ## Test build your code locally before pushing {#test-build}
 Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. The generated build files from this test build **should not be pushed** into Git. This is just a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins.
@@ -73,7 +73,7 @@ To push code to your remote environment:
 3.	The build and deploy phases begin. Wait for the deployment to complete.
 
 ## Build phase {#build}
-During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
+During the [build phase]({{ page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Commerce (Cloud) accounts
 *	Apply patches we provided specifically to you
@@ -141,35 +141,35 @@ To build your site:
 		... more ...
 		Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
 
-If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/trouble/trouble.html) to get additional assistance.
+If errors display, debug them if possible or open a [support ticket]({{ page.baseurl}}/cloud/trouble/trouble.html) to get additional assistance.
 
 We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
 
 ## Deploy phase {#deploy}
-We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
+We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
 *	Install the Magento application if needed
 *	If the Magento application is installed, upgrade components
 *	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
-*	Set the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#production-mode) mode
+*	Set the Magento application for [`production`]({{ page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 To deploy your site:
 
-1.	If you haven't already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.	If you haven't already, log in as or switch to the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to your project root directory.
 3.	Enter the following command:
 
 		php bin/magento setup:upgrade
 
-	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html). If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl}}/cloud/access-acct/first-time-deploy.html). If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl}}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean
-5.	Set the Magento application for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#production-mode):
+5.	Set the Magento application for [production mode]({{ page.baseurl}}/config-guide/bootstrap/magento-modes.html#production-mode):
 
 		php bin/magento deploy:mode:set production
 
-If errors display, debug them if possible, [review logs]({{ page.baseurl }}cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl }}cloud/trouble/trouble.html) to get additional assistance.
+If errors display, debug them if possible, [review logs]({{ page.baseurl}}/cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl}}/cloud/trouble/trouble.html) to get additional assistance.
 
 #### Next step
-[Prepare to deploy to Staging and Production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
+[Prepare to deploy to Staging and Production]({{ page.baseurl}}/cloud/live/stage-prod-migrate-prereq.html)

@@ -35,7 +35,7 @@ Together, `config.php` and `env.php` are referred to as Magento's _deployment co
 The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 </div>
 
-Unlike other [module configuration files]({{page.baseurl}}config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
+Unlike other [module configuration files]({{page.baseurl}}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
 
 ## Details about the deployment configuration {#config-php-contents}
@@ -57,8 +57,8 @@ The following sections discusses the structure and contents of the deployment co
 
 Examples:
 
-* Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
-* Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
+* Uninstall components: <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
+* Enable or disable components: <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
 * Component Manager: coming soon
 * System Upgrade: coming soon
 
@@ -138,7 +138,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{page.baseurl}}config-guide/cache/cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{page.baseurl}}/config-guide/cache/cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>
@@ -175,4 +175,4 @@ The following table provides details about each `env.php` segment and its struct
 </table>
 
 ## Related topic
-<a href="{{page.baseurl}}config-guide/config/config-files.html">Module configuration files</a>
+<a href="{{page.baseurl}}/config-guide/config/config-files.html">Module configuration files</a>

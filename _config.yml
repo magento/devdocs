@@ -1,13 +1,15 @@
 # Site settings
 encoding: "utf-8"
 title: Magento 2 Developer Documentation
+logo: DevDocs
 email: mailto:DL-Magento-Doc-Feedback@magento.com
 description: > # this means to ignore newlines until "baseurl:"
   Magento 2 Developer Documentation.
-baseurl: "/"
+baseurl: ""
 # url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
 # twitter_username: magento
 # github_username:  magento
+theme: devdocs
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
@@ -16,19 +18,22 @@ version: "2.2"
 versions:
    -
       name: "2.0"
-      url: guides/v2.0/
+      url: /guides/v2.0/
    -
       name: "2.1"
-      url: guides/v2.1/
+      url: /guides/v2.1/
    -
       name: "2.2"
-      url: guides/v2.2/
+      url: /guides/v2.2/
    -
       name: "2.3 Pre-release"
-      url: guides/v2.3/
+      url: /guides/v2.3/
 
 # GitHub variables
+github_repo: "https://github.com/magento/devdocs/"
 github: "https://github.com/magento/devdocs/tree/develop/guides/"
+github_link: true
+feedback_link: true
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
@@ -99,5 +104,8 @@ algolia:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md
     - swagger
+
+google:
+  analytics: 'UA-66243208-1'
 
 exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]

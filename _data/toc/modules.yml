@@ -4,4 +4,4 @@ pages:
       children:
 
         - label: Iconography
-          url: modules/bluefoot-cms/iconography.html
+          url: /modules/bluefoot-cms/iconography.html

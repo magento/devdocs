@@ -38,7 +38,7 @@ If you need to be able to save the expanded/collapsed state, the element must ha
 The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
 
-Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
+Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
 
 <h3>Initialize collapsible with header only</h3>
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
@@ -48,7 +48,7 @@ $("#header").collapsible();
 
 
 <h2>Initialize collapsible in a template</h2>
-The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
+The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 <h2>Options</h2>
 
@@ -90,7 +90,7 @@ Get or set the active option, after initialization:
 
 <pre>
 //getter
-var active = $("#element).collapsible("option","active");
+var active = $("#element").collapsible("option","active");
 
 //setter
 $("#element").collapsible("option","active",false);
@@ -145,7 +145,7 @@ Get or set the animate option, after initialization:
 
 <pre>
 //getter
-var animate = $("#element).collapsible("option","animate");
+var animate = $("#element").collapsible("option","animate");
 
 //setter 
 $("#element").collapsible("option","animate",false);
@@ -168,7 +168,7 @@ Get or set the `collapsible` option after initialization:
 
 <pre>
 //getter
-var collapsible = $("#element).collapsible("option","collapsible");
+var collapsible = $("#element").collapsible("option","collapsible");
 
 //setter
 $("#element").collapsible("option","collapsible",false);
@@ -212,7 +212,7 @@ Get or set the content option, after initialization:
 
 <pre>
 //getter
-var content = $("#element).collapsible("option","content");
+var content = $("#element").collapsible("option","content");
 
 //setter
 $("#element").collapsible("option","content",".content");
@@ -234,7 +234,7 @@ Get or set the `contentClass` option after initialization:
 
 <pre>
 //getter
-var contentClass = $("#element).collapsible("option","contentClass");
+var contentClass = $("#element").collapsible("option","contentClass");
 
 //setter
 $("#element").collapsible("option","contentClass","collapsible-content");
@@ -255,7 +255,7 @@ Get or set the `disabled` option after initialization:
 
 <pre>
 //getter
-var disabled = $("#element).collapsible("option","disabled");
+var disabled = $("#element").collapsible("option","disabled");
 
 //setter
 $("#element").collapsible("option","disabled",false);
@@ -277,7 +277,7 @@ Get or set the disabledState option after initialization:
 
 <pre>
 //getter
-var disabledState = $("#element).collapsible("option","disabledState");
+var disabledState = $("#element").collapsible("option","disabledState");
 
 //setter
 $("#element").collapsible("option","disabledState","disabled");
@@ -306,7 +306,7 @@ Get or set the header option, after initialization:
 
 <pre>
 //getter
-var header = $("#element).collapsible("option","header");
+var header = $("#element").collapsible("option","header");
 
 //setter
 $("#element").collapsible("option","header",".header");
@@ -329,7 +329,7 @@ Get or set the icons option, after initialization:
 
 <pre>
 //getter
-var icons = $("#element).collapsible("option","icons");
+var icons = $("#element").collapsible("option","icons");
 
 //setter
 $("#element").collapsible("option","icons",{"header": "plus", "activeHeader": "minus" });
@@ -351,7 +351,7 @@ Get or set the `loadingClass` option after initialization:
 
 <pre>
 //getter
-var loadingClass = $("#element).collapsible("option","loadingClass");
+var loadingClass = $("#element").collapsible("option","loadingClass");
 
 //setter
 $("#element").collapsible("option","loadingClass","loading");
@@ -366,7 +366,7 @@ Get or set the <code>loadingClass</code> option, after initialization:
 
 <pre>
 //getter
-var content = $("#element).collapsible("option","loadingClass");
+var content = $("#element").collapsible("option","loadingClass");
 
 //setter
 $("#element").collapsible("option","loadingClass","ajax");
@@ -382,7 +382,7 @@ Get or set the ajaxContent option after initialization:
 
 <pre>
 //getter
-var active = $("#element).collapsible("option","ajaxContent");
+var active = $("#element").collapsible("option","ajaxContent");
 
 //setter
 $("#element").collapsible("option","ajaxContent",true);
@@ -404,7 +404,7 @@ Get or set the `openedState` option after initialization:
 
 <pre>
 //getter
-var openedState = $("#element).collapsible("option","openedState");
+var openedState = $("#element").collapsible("option","openedState");
 
 //setter
 $("#element").collapsible("option","openedState","opened");
@@ -426,7 +426,7 @@ Get or set the `saveState` option after initialization:
 
 <pre>
 //getter
-var active = $("#element).collapsible("option","saveState");
+var active = $("#element").collapsible("option","saveState");
 
 //setter
 $("#element").collapsible("option","saveState",true);
@@ -452,7 +452,7 @@ Get or set the trigger option after initialization:
 
 <pre>
 //getter
-var trigger = $("#element).collapsible("option","trigger");
+var trigger = $("#element").collapsible("option","trigger");
 
 //setter
 $("#element").collapsible("option","trigger",".trigger");
@@ -479,7 +479,7 @@ This method does not accept any arguments.
 
 Invoke the activate method:
 <pre>
-$("#element" ).collapsible("activate");
+$("#element").collapsible("activate");
 </pre>
 
 <h3 id="collaps_deactivate"><code>deactivate()</code></h3>
@@ -490,7 +490,7 @@ This method does not accept any arguments.
 
 Invoke the deactivate method:
 <pre>
-$( "#element" ).collapsible("deactivate");
+$("#element").collapsible("deactivate");
 </pre>
 
 <h3 id="collaps_disable"><code>disable()</code></h3>
@@ -500,7 +500,7 @@ This method does not accept any arguments.
 
 Invoke the disable method:
 <pre>
-$( "#element" ).collapsible("disable");
+$("#element").collapsible("disable");
 </pre>
 
 <h3 id="collaps_enable"><code>enable()</code></h3>
@@ -510,7 +510,7 @@ This method does not accept any arguments.
 
 Invoke the enable method:
 <pre>
-$( "#element" ).collapsible("enable");
+$("#element").collapsible("enable");
 </pre>
 
 <h3 id="collaps_forceActivate"><code>forceActivate()</code></h3>
@@ -530,7 +530,7 @@ This method does not accept any arguments.
 
 Invoke the <code>forceDeactivate</code> method:
 <pre>
-$( "#element" ).collapsible("forceDeactivate");
+$("#element").collapsible("forceDeactivate");
 </pre>
 
 

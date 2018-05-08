@@ -21,8 +21,8 @@ This bulletin informs you of the following issues:
 ### Issue: Upgrade failures {#gitignore}
 Magento Open Source (formerly Community Edition) and Commerce (formerly Enterprise Edition) upgrades failed in any of the following circumstances:
 
-*	If you got the Magento software <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, or `.bz2`).
-*	If your server runs {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 and you installed the Magento software using *either* a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.
+*	If you got the Magento software <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, or `.bz2`).
+*	If your server runs {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 and you installed the Magento software using *either* a <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.
 
 We addressed the following issues:
 
@@ -59,7 +59,7 @@ The following table summarizes what you need to do.
 <tr>
 	<td>Any of the preceding <em>and</em> your Magento server runs PHP 7</td>
 	<td><p>Apply the patch <em>and</em> the fix</p>
-		<p><strong>Note</strong>: You must apply the PHP 7 patch whether you installed the Magento software using a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
+		<p><strong>Note</strong>: You must apply the PHP 7 patch whether you installed the Magento software using a <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -127,7 +127,7 @@ To apply the patch:
 
 2.	Extract the patch in your Magento installation directory.
 
-	Log in as or change to the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
+	Log in as or change to the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
 
 	<table>
 	<tbody>
@@ -149,7 +149,7 @@ To apply the patch:
 	</tr>
 	</tbody>
 	</table>
-3.	We recommend you <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
+3.	We recommend you <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 1 (using version 2.0.0 or 2.0.1) {#resolution1}
 To resolve the missing `.gitignore` files issue using this method, all of the following must be true:
@@ -161,13 +161,13 @@ To resolve the missing `.gitignore` files issue using this method, all of the fo
 
 To resolve the issue:
 
-1.	Log in to your Magento server as the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
 3.	Run the following command:
 
 		composer update magento/magento-composer-installer
 
-4.	If prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>.
+4.	If prompted, enter your <a href="{{page.baseurl}}/install-gde/prereq/connect-auth.html">authentication keys</a>.
 4.	Make sure `magento/magento-composer-installer` is version 0.1.6
 5.	Run the following commands in the order shown:
 
@@ -181,7 +181,7 @@ To resolve the issue:
 
 		php bin/magento setup:upgrade
 6.	Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.
-<!-- 7.	We recommend you <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
+<!-- 7.	We recommend you <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2. -->
 
 
 #### Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed) {#resolution2}
@@ -194,9 +194,9 @@ You must run `composer update` twice to update components and then delete two fi
 
 To resolve the issue:
 
-1.	Log in to your Magento server as the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Change to your Magento installation directory.
-4.	If prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>.
+4.	If prompted, enter your <a href="{{page.baseurl}}/install-gde/prereq/connect-auth.html">authentication keys</a>.
 5.	Enter the following command:
 
 		composer update
@@ -221,14 +221,14 @@ To resolve the issue:
 
 	*	Using the `php <your Magento install dir>/bin/magento --version` command
 	*	Log in to the Magento Admin. The version displays in the lower right corner of the page.
-7.	We recommend you <a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
+7.	We recommend you <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">upgrade</a> to version 2.0.2.
 
 #### Resolution 3 (does not require command line access) {#resolution3}
-To resolve the missing `.gitignore` files issue if you have no command-line access to your Magento server, <a href="{{page.baseurl}}install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.
+To resolve the missing `.gitignore` files issue if you have no command-line access to your Magento server, <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.
 
 ### Error during upgrade: "We're sorry, we can't take that action right now" {#sorry}
 If this message displays during your upgrade, it can mean any of the following:
 
-*	<a href="{{page.baseurl}}comp-mgr/trouble/cman/were-sorry.html#not-auth">You didn't authenticate</a> with the System Upgrade utility
-*	<a href="{{page.baseurl}}comp-mgr/trouble/cman/were-sorry.html#updater">The updater application isn't initialized</a>
-*	<a href="{{page.baseurl}}comp-mgr/trouble/cman/were-sorry.html#git-clone">You cloned the Magento GitHub repository</a>
+*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/were-sorry.html#not-auth">You didn't authenticate</a> with the System Upgrade utility
+*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/were-sorry.html#updater">The updater application isn't initialized</a>
+*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/were-sorry.html#git-clone">You cloned the Magento GitHub repository</a>

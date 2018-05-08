@@ -33,20 +33,20 @@ If Magento is installed, you should see something like the following after you l
 
 Magento Admin:
 
-<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl}}/common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
 
 
 Magento storefront:
 
-<p><img src="{{ site.baseurl }}common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl}}/common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
 
 ## What if Magento is installed?
 
 If Magento *is* installed and you want to manage or upgrade components, see the following guides instead:
 
-*	<a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
+*	<a href="{{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
 
 	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
-*	<a href="{{page.baseurl}}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
+*	<a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
 
 	Upgrade the Magento software or components.

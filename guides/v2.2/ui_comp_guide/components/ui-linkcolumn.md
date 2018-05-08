@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{site.
 
 ## LinkColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
+Extends all [Column]({{page.baseurl}}/ui_comp_guide/components/ui-column.html) configuration.
 
 LinkColumn-specific configuration:
 

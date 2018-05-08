@@ -14,7 +14,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Go live checklist]({{ page.baseurl }}cloud/live/go-live-checklist.html)
+[Go live checklist]({{ page.baseurl}}/cloud/live/go-live-checklist.html)
 
 After testing and completing your launch checklist, you can start the final steps to launch. These steps include entering tickets, cutting over access, and finally testing your store(s) when live.
 
@@ -24,7 +24,7 @@ Magento support staff work with you through the process, checking status, and he
 Contact Magento support and update any go live tickets with the intended date and time to switch over and launch your store(s).
 
 ## Switch DNS to the new site {#dns}
-The Time-to-Live changed value is important for checking your changed domain. When you modify the A and CNAME records, the update will take the TTL configured time to update correctly. For details on DNS settings, see [DNS configurations]({{ page.baseurl }}cloud/live/go-live-checklist.html#dns).
+The Time-to-Live changed value is important for checking your changed domain. When you modify the A and CNAME records, the update will take the TTL configured time to update correctly. For details on DNS settings, see [DNS configurations]({{ page.baseurl}}/cloud/live/go-live-checklist.html#dns).
 
 To cut over to the new site:
 
@@ -34,7 +34,7 @@ To cut over to the new site:
 4. Access your store using the storefront domain.
 
 ## Test the live store {#test}
-Complete a few UAT tests in your live store to make sure everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html).
+Complete a few UAT tests in your live store to make sure everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html).
 
 ## Post-Launch {#postlaunch}
 Magento will activate checks and monitor the site to ensure all services and access are in the green. We remain on hand as needed to walk-through and check all system logs, services, caching, and functions are working as you and your customers need.

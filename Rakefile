@@ -138,3 +138,39 @@ desc "generate link validation html report"
 task :link_report => [:check_links, :transform] do
   puts "generating link validation HTML report..."
 end
+
+
+###   Preview
+
+desc "Previewing the devdocs locally"
+task :preview => :cleanup do
+    print "Generating devdocs locally ... "
+    preview unless File.exists?('_config.local.yml')
+    puts "enabled additional configuration parameters from _config.local.yml"
+    preview_local
+end
+
+desc "Removing the _site directory"
+task :cleanup do
+    print "Removing '_site' ... "
+    system("rm -rf _site")
+    puts "Done"
+end
+
+
+## General methods
+
+# Run Jekyll
+def jekyll(options = '')
+    system("bin/jekyll #{options}")
+end
+
+# Jekyll preview
+def preview(options = '')
+    jekyll('serve -I -o --strict_front_matter ' + options)
+end
+
+# Include local config to preview
+def preview_local
+    preview('--config _config.yml,_config.local.yml')
+end

@@ -56,8 +56,8 @@
      id="rect2" />
   <a
      id="a3803"
-     xlink:href="#element-ref"
-     xlink:title="Go to the &lt;element&gt; description">
+     href="#element-tag"
+     title="Go to the &lt;element&gt; description">
     <g
        id="g88">
       <rect
@@ -148,8 +148,8 @@
      id="rect32" />
   <a
      id="a109"
-     xlink:href="#section-ref"
-     xlink:title="Go to the &lt;section&gt; description">
+     href="#section-tag"
+     title="Go to the &lt;section&gt; description">
     <g
        id="g84">
       <path
