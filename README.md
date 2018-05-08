@@ -83,25 +83,25 @@ Once you have completed preparing your environment, you can build locally and re
 1. Create __config.local.yml_, and exclude all versions except the one that you want to preview.
 The following example demonstrates configuration to preview the Magento 2.2 documentation only.
 
-```yaml
-exclude:
- - community/
- - swagger/
- - vagrant/
- - guides/m1x/
- - guides/v2.0/
- - guides/v2.1/
-# - guides/v2.2/
- - guides/v2.3/
-
-# Excluded in config.yml
- - scss/
- - bin/
- - node_modules/
- - vendor/
- - .*
- - Rakefile
-```
+   ```yaml
+    exclude:
+     - community/
+     - swagger/
+     - vagrant/
+     - guides/m1x/
+     - guides/v2.0/
+     - guides/v2.1/
+    # - guides/v2.2/
+     - guides/v2.3/
+    
+    # Excluded in config.yml
+     - scss/
+     - bin/
+     - node_modules/
+     - vendor/
+     - .*
+     - Rakefile
+   ```
 
 1. Run the preview command:
 
@@ -111,7 +111,7 @@ exclude:
    This command:
    * Runs `bundle install` to update your environment with recent changes in _Gemfile.lock_.
    * Removes `_site` with previously generated preview files.
-   * Generates new preview, and opens the preview on your default browsers when finished.
+   * Generates new preview, and opens the landing page on your default browsers when finished.
    
 If you don't have __config.local.yml_ in the root of your _devdocs_ directory, you'll get documentation for all the versions generated.
 
