@@ -81,7 +81,7 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-#### Declarative notation using the `<script type="text/x-magento-init />` tag
+#### Declarative notation using the `<script type="text/x-magento-init" />` tag
 
 To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
 
