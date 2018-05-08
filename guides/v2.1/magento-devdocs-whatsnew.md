@@ -7,7 +7,12 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## April 2018
+## May 2018
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+
+{% collapsibleh2 April 2018 %}
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
@@ -35,6 +40,7 @@ Added the `SKIP_HTML_MINIFICATION` environment variable to the Cloud [Environmen
 Added the new CRYPT_KEY environment variable to the [Deploy variables reference](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html) as a way to supply cryptographic key to another environment when moving a database.|2.1.x, 2.2.x|Updated|Apr 02
 Reorganized the Cloud [Configure environments](http://devdocs.magento.com/guides/v2.2/cloud/env/environments.html) section of the Cloud documentation. It is easier to distinguish the Application, Cloud, Build, and Deploy variables. The variable names also appear in each right-side page navigation for easier selection.<br/>Added the `SCD_ON_DEMAND` environment variable to generate static content when requested.|2.1.x, 2.2.x|Updated|Apr 02
 Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 March 2018 %}
 
