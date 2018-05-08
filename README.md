@@ -78,6 +78,43 @@ Once you have completed preparing your environment, you can build locally and re
 > ***TIP***  
 > Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file requires a fresh build. Using the `--incremental` option limits re-builds to posts and pages that have changed.
 
+### To minimize build time locally:
+
+1. Create __config.local.yml_, and exclude all versions except the one that you want to preview.
+The following example demonstrates configuration to preview the Magento 2.2 documentation only.
+
+```yaml
+exclude:
+ - community/
+ - swagger/
+ - vagrant/
+ - guides/m1x/
+ - guides/v2.0/
+ - guides/v2.1/
+# - guides/v2.2/
+ - guides/v2.3/
+
+# Excluded in config.yml
+ - scss/
+ - bin/
+ - node_modules/
+ - vendor/
+ - .*
+ - Rakefile
+```
+
+1. Run the preview command:
+
+   ```
+   $ rake preview
+   ```
+   This command:
+   * Runs `bundle install` to update your environment with recent changes in _Gemfile.lock_.
+   * Removes `_site` with previously generated preview files.
+   * Generates new preview, and opens the preview on your default browsers when finished.
+   
+If you don't have __config.local.yml_ in the root of your _devdocs_ directory, you'll get documentation for all the versions generated.
+
 ## Build using Docker
 This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
 
