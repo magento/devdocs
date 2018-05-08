@@ -29,7 +29,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
         @font-path: '@{baseDir}fonts/<path_to_font_file>',
         @font-weight: <a href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank"><font_weight></a>,
         @font-style: <a href="http://www.w3schools.com/cssref/pr_font_font-style.asp" target="_blank"><font_style></a>
-    )
+    );
     ```
 
     Where:
