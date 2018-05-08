@@ -22,7 +22,7 @@ Variables are _hierarchical_, which means that if a variable is not overridden, 
 You use the [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
-The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage.  Insert these variables in the `global` stage of the `.magento.env.yaml` file:
+The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage. Insert these variables in the `global` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -43,7 +43,7 @@ stage:
     SCD_ON_DEMAND: true
 ```
 
-The `SCD_ON_DEMAND` variable skips the SCD and the  `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
+The `SCD_ON_DEMAND` variable skips the SCD and the `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
 
 ```php
 return array(
