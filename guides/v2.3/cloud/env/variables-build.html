@@ -2046,22 +2046,6 @@
   <li><code class="highlighter-rouge">skip_di_compilation</code></li>
 </ul>
 
-<h3 id="exclude_themes"><code class="highlighter-rouge">EXCLUDE_THEMES</code></h3>
-
-<ul>
-  <li><strong>Default</strong>— <em>Not set</em></li>
-  <li><strong>Version</strong>—Magento 2.1.4 and later</li>
-</ul>
-
-<p>When enabled, this option does not generate static content for the specified theme location(s). This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations.</p>
-
-<p>For example, the Luma theme is included with all Magento Commerce (Cloud) projects. You may not need to constantly generate static content for this theme, which adds time to your build. To exclude the theme, use the following:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
-  <span class="na">build</span><span class="pi">:</span>
-    <span class="s">exclude_themes=magento/luma,magento/my-theme</span>
-</code></pre></div></div>
-
 <h3 id="scd_compression_level"><code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code></h3>
 
 <ul>
@@ -2071,22 +2055,46 @@
 
 <p>Specifies which <a href="https://www.gnu.org/software/gzip" target="\_blank">gzip</a> compression level (<code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>) to use when compressing static content; <code class="highlighter-rouge">0</code> disables compression.</p>
 
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">SCD_COMPRESSION_LEVEL</span><span class="pi">:</span> <span class="s">4</span>
+</code></pre></div></div>
+
+<h3 id="scd_exclude_themes"><code class="highlighter-rouge">SCD_EXCLUDE_THEMES</code></h3>
+
+<ul>
+  <li><strong>Default</strong>—<em>Not set</em></li>
+  <li><strong>Version</strong>—Magento 2.1.4 and later</li>
+</ul>
+
+<p>Themes include numerous files. Set this variable to <code class="highlighter-rouge">true</code> if you want to skip copying over theme files during build. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations. For example, the Luma theme is included with Magento Commerce (Cloud). You may not need to constantly deploy this theme with your code updates and deployments. To exclude the <code class="highlighter-rouge">magento/luma</code> theme:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">SCD_EXCLUDE_THEMES</span><span class="pi">:</span> <span class="s2">"</span><span class="s">magento/luma,</span><span class="nv"> </span><span class="s">magento/my-theme"</span> 
+</code></pre></div></div>
+
 <h3 id="scd_strategy"><code class="highlighter-rouge">SCD_STRATEGY</code></h3>
 
 <ul>
-  <li><strong>Default</strong>— <em>Not set</em></li>
-  <li><strong>Version</strong>—Magento 2.1 supports the <code class="highlighter-rouge">standard</code> strategy only</li>
+  <li><strong>Default</strong>—<code class="highlighter-rouge">quick</code></li>
+  <li><strong>Version</strong>—Magento 2.2.0 and later</li>
 </ul>
 
-<p>Allows you to customize the <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">deployment strategy</a> for static content. Refer to <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a> for more information.</p>
+<p>Customize the <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">deployment strategy</a> for static content. See <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>.</p>
 
 <p>Use these options <em>only</em> if you have more than one locale:</p>
 
 <ul>
   <li><code class="highlighter-rouge">standard</code>—deploys all static view files for all packages.</li>
-  <li><code class="highlighter-rouge">quick</code>—minimizes deployment time. This is the default command option if not specified.</li>
-  <li><code class="highlighter-rouge">compact</code>—conserves disk space on the server. If you use <code class="highlighter-rouge">compact</code>, it overrides the value for <code class="highlighter-rouge">scd_threads</code> with a value of <code class="highlighter-rouge">1</code>. This strategy does not work with multi-threads.</li>
+  <li><code class="highlighter-rouge">quick</code>—minimizes deployment time. This is the default command option, if not specified.</li>
+  <li><code class="highlighter-rouge">compact</code>—conserves disk space on the server and overrides the value for <code class="highlighter-rouge">scd_threads</code> with a value of <code class="highlighter-rouge">1</code>. This strategy does not work with multi-threads.</li>
 </ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">SCD_STRATEGY</span><span class="pi">:</span> <span class="s2">"</span><span class="s">compact"</span>
+</code></pre></div></div>
 
 <h3 id="scd_threads"><code class="highlighter-rouge">SCD_THREADS</code></h3>
 
@@ -2102,7 +2110,12 @@
 
 <p>Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.</p>
 
-<p>To further decrease deployment time, we recommend using <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration Management</a> with the <code class="highlighter-rouge">scd-dump</code> command to move static deployment into the build phase.</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">SCD_THREADS</span><span class="pi">:</span> <span class="s">2</span>
+</code></pre></div></div>
+
+<p>To further reduce deployment time, we recommend using <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration Management</a> with the <code class="highlighter-rouge">scd-dump</code> command to move static deployment into the build phase.</p>
 
 <h3 id="skip_scd"><code class="highlighter-rouge">SKIP_SCD</code></h3>
 
@@ -2111,20 +2124,30 @@
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Skips static content deployment during the build phase.</p>
+<p>Set to <code class="highlighter-rouge">true</code> to skip static content deployment during the build phase.</p>
 
 <p>If you are already deploying static content during the build phase with <a href="/guides/v2.3/cloud/live/sens-data-over.html">Configuration Management</a>, you may want to turn it off for a quick build test.</p>
 
 <p>We do not recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.</p>
 
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">SKIP_SCD</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
 <h3 id="verbose_commands"><code class="highlighter-rouge">VERBOSE_COMMANDS</code></h3>
 
 <ul>
-  <li><strong>Default</strong>—<code class="highlighter-rouge">disabled</code></li>
+  <li><strong>Default</strong>—<em>Not set</em></li>
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html" target="\_blank">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed.</p>
+<p>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html" target="\_blank">Symfony</a> debug verbosity level for your logs. Choose the level of detail provided in the logs: <code class="highlighter-rouge">-v</code>, <code class="highlighter-rouge">-vv</code>, or <code class="highlighter-rouge">-vvv</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span>
+    <span class="na">VERBOSE_COMMANDS</span><span class="pi">:</span> <span class="s2">"</span><span class="s">-vv"</span>
+</code></pre></div></div>
 
 			
 		</div>
