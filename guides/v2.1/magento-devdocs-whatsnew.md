@@ -14,7 +14,7 @@ Description  | Versions applied to  | New or Updated | Date
 Updated the Cloud build and deploy [environment variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-intro.html) descriptions and samples.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 08
 Added the [Reference architecture](https://devdocs.magento.com/guides/v2.2/performance-best-practices/reference-architecture.html) topic|2.2.x, 2.3.x|New topic|May 07
 Contributed to [Linking properties of UI components]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html).|2.x|Technical changes|May 07
-You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production environment.||Technical changes|May 07
+You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production environment.|2.1.x, 2.2.x|Technical changes|May 07
 You can trigger a [redeploy]({{page.baseurl}}/cloud/reference/cli-ref-topic.html) of your Cloud environment.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 05
 Updated the example in [Example_logging database activity](https://devdocs.magento.com/guides/v2.2/config-guide/log/log-db.html)|2.2.x|Technical changes|May 04
 Updated the backward incompatible changes between _2.2.0_ and _2.3-develop_ for [OpenSource](http://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html) and [Commerce](http://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html).|2.3.x|Technical changes|May 02
