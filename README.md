@@ -80,7 +80,7 @@ Once you have completed preparing your environment, you can build locally and re
 
 ### To minimize build time locally:
 
-1. Create __config.local.yml_, and exclude all versions except the one that you want to preview.
+1. Create *_config.local.yml*, and exclude all versions except the one that you want to preview.
 The following example demonstrates configuration to preview the Magento 2.2 documentation only.
 
    ```yaml
@@ -113,7 +113,7 @@ The following example demonstrates configuration to preview the Magento 2.2 docu
    * Removes `_site` with previously generated preview files.
    * Generates new preview, and opens the landing page on your default browsers when finished.
    
-If you don't have __config.local.yml_ in the root of your _devdocs_ directory, you'll get documentation for all the versions generated.
+If you don't have *_config.local.yml* in the root of your _devdocs_ directory, you'll get documentation for all the versions generated.
 
 ## Build using Docker
 This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
