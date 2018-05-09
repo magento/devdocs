@@ -64,20 +64,22 @@ If module context is not defined for a file:
 
 1. Current theme {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
 2. Current theme static files: `<theme_dir>/web/`
-2. Ancestor's static files, recursively, until a theme with no parent is reached:
+3. Ancestor's static files, recursively, until a theme with no parent is reached:
 - `<parent_theme_dir>/web/i18n/<locale>`
 - `<parent_theme_dir>/web/`
-3. Library static view files: `lib/web/`
+4. Library static view files: `lib/web/`
 
 If module context is defined for a file:
 
-1. Current theme and current locale module static files:`<theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+1. Current theme and current locale module static files:`<theme_dir>/<Namespace>_<Module>/web/i18n/<locale>/`
 2. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
-- `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+- `<parent_theme_dir>/<Namespace>_<Module>/web/i18n/<locale>/`
 - `<parent_theme_dir>/<Namespace>_<Module>/web/`
-3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
-4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
+4. Module static view files for the current locale and `frontend` area: `<module_dir>/view/frontend/web/i18n/<locale>/`
+5. Module static view files for the current locale and `base` area: `<module_dir>/view/base/web/i18n/<locale>/`
+6. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
+7. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
 
 <u>Example</u>
