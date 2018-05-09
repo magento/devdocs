@@ -81,7 +81,7 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-#### Declarative notation using the `<script type="text/x-magento-init />` tag {decl_tag}
+#### Declarative notation using the `<script type="text/x-magento-init" />` tag {decl_tag}
 
 To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
 
@@ -126,7 +126,7 @@ The following is a working code sample of a widget call using `<script>`. Here t
 
 ### Imperative notation {#init_script}
 
-Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init` attribute, is the imperative notation. The syntax is following:
+Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init"` attribute, is the imperative notation. The syntax is following:
 
 {%highlight html%}
 <script>
