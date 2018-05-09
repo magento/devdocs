@@ -14,52 +14,68 @@ You can build this site locally in the following ways:
 
 ## Build using Jekyll
 
-For local builds, you need to install [Ruby](https://www.ruby-lang.org) version manager and [Bundler](http://bundler.io/).
+For local builds, you need to install Ruby 2.4 or later.
 
-### To prepare your MacOS environment:
+To check the Ruby version on your environment, run in your terminal:
+
+```shell
+$ ruby -v
+```
+
+### Install the latest Ruby (if the Ruby version is less than 2.4)
+
+**MacOS users**
+
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
-1. Use Homebrew to install a Ruby version manager.
-
-   ```
-   $ brew install rbenv ruby-build
-   ```
-
-1. Add rbenv to bash so that it loads every time you open a terminal.
-
-   ```
-   $ echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+1. Use Homebrew to install the latest stable version of Ruby:
+ 
+   ```shell
+   $ brew install ruby
    ```
 
-1. Source your `.bash_profile` file.
+**Unix, Windows and other OS users**
 
-   ```
-   $ source ~/.bash_profile
-   ```
+See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for instructions.
 
-1. Install a specific version of Ruby.
+### Install Bundler
 
-   ```
-   $ rbenv install 2.4.x
-   $ rbenv global 2.4.x
-   $ ruby -v
-   ```
+Install the [Bundler](http://bundler.io/) gem, which helps with Ruby dependencies:
 
-1. Install the Bundler gem, which helps with Ruby dependencies.
+```
+$ gem install bundler
+```
 
-   ```
-   $ gem install bundler
-   ```
-
-1. Run `bundle install` the first time you are in the `devdocs` directory or when you need to pick up theme changes.
-
-### To build locally:
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
 
-1. Run the serve command.
+### To build locally:
+
+#### Using rake
+
+[rake](https://github.com/ruby/rake) is a native Ruby tool that helps to automate tasks.
+
+1. Run the rake task that installs all required dependencies and starts the [Jekyll](https://jekyllrb.com/) server:
+
+   ```shell
+   $ rake preview
+   ```
+
+1. Press `Ctrl+C` in the serve terminal to stop the server.
+
+If rake fails on your environment, generate the preview [using jekyll](#using-jekyll).
+
+#### Using jekyll
+
+1. The first time you are at the `devdocs` directory or when you need to pick up changes in `Gemfile.lock` dependencies (for example, theme changes), run:
+
+   ```
+   $ bundle install
+   ```
+
+2. To generate the local preview, run:
 
    ```
    $ bundle exec jekyll serve --incremental
-
+    
     Configuration file: /Users/username/Github/devdocs/_config.yml
                 Source: /Users/username/Github/devdocs
            Destination: /Users/username/Github/devdocs/_site
