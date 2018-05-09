@@ -1,6 +1,7 @@
 # OS generated files #
 ######################
 /*.db
+.DS_Store
 
 # Config and output files #
 ###########################
