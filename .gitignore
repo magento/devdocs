@@ -6,7 +6,8 @@
 # Config and output files #
 ###########################
 /_site/
-/.*
+/.git
+/.jekyll-metadata
 CNAME
 ignore
 /*.yml
