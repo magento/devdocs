@@ -1235,7 +1235,9 @@
 <p>Magento has built-in Grunt tasks configured, but there are still several steps you need to take to be able to use it:</p>
 
 <ol>
-  <li>Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">node.js</a> to any location on your machine.</li>
+  <li>
+    <p>Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager">node.js</a> to any location on your machine.</p>
+  </li>
   <li>
     <p>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:</p>
 
@@ -1248,10 +1250,6 @@
       <li><code class="highlighter-rouge">Gruntfile.js.sample</code> to <code class="highlighter-rouge">Gruntfile.js</code></li>
       <li><code class="highlighter-rouge">grunt-config.json.sample</code> to <code class="highlighter-rouge">grunt-config.json</code></li>
     </ul>
-  </li>
-  <li>Provide path to grunt themes configuration in <code class="highlighter-rouge">grunt-config.json</code>:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "themes": "dev/tools/grunt/configs/themes"
-</code></pre></div>    </div>
   </li>
   <li>
     <p>Install (or refresh) the <code class="highlighter-rouge">node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:</p>
@@ -1286,11 +1284,11 @@ npm update
     </ul>
 
     <p>Example:
-If your custom configuration file <code class="highlighter-rouge">themes.js</code> is located in the  custom <code class="highlighter-rouge">&lt;magento_root&gt;/dev/tools/grunt/configs/local-themes/</code> directory, add the following to <code class="highlighter-rouge">grunt-config.json</code>:</p>
+If your custom configuration file <code class="highlighter-rouge">local-themes.js</code> is located in the <code class="highlighter-rouge">&lt;magento_root&gt;/dev/tools/grunt/configs</code> directory, the following is already set in your <code class="highlighter-rouge">grunt-config.json</code>:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
     "themes": "dev/tools/grunt/configs/local-themes/themes"
-}
+} This path is also added to your .gitignore by default
 </code></pre></div>    </div>
   </li>
 </ol>

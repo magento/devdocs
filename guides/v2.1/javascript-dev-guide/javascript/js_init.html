@@ -824,7 +824,7 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decl_tag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init /&gt;</code> tag {decl_tag}</h4>
+<h4 id="declarative-notation-using-the-script-typetextx-magento-init--tag-decl_tag">Declarative notation using the <code class="highlighter-rouge">&lt;script type="text/x-magento-init" /&gt;</code> tag {decl_tag}</h4>
 
 <p>To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code class="highlighter-rouge">&lt;script type="text/x-magento-init"&gt;</code> tag and attribute. The syntax is following:</p>
 
@@ -865,7 +865,7 @@ Such a component does not require either <code>config</code> or <code>element</c
 
 <h3 id="init_script">Imperative notation</h3>
 
-<p>Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the <code class="highlighter-rouge">&lt;script&gt;</code> tag, without the <code class="highlighter-rouge">type="text/x-magento-init</code> attribute, is the imperative notation. The syntax is following:</p>
+<p>Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the <code class="highlighter-rouge">&lt;script&gt;</code> tag, without the <code class="highlighter-rouge">type="text/x-magento-init"</code> attribute, is the imperative notation. The syntax is following:</p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script&gt;</span>
 <span class="nx">require</span><span class="p">([</span>

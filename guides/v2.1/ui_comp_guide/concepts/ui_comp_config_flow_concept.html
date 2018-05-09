@@ -1371,7 +1371,7 @@
 
 <ol>
   <li>Determines which UI components are used in this particular layout. In the example, the UI components that are used are defined in the <code class="highlighter-rouge">my_form</code> component’s <code class="highlighter-rouge">.xml</code> declaration file.</li>
-  <li>Searches the <code class="highlighter-rouge">.xml</code> files with name <code class="highlighter-rouge">my_form</code> among all modules. The server and then merges the <code class="highlighter-rouge">my_form .xml</code> file(s) into a single configuration object, thus overriding the common properties, so that the latest <code class="highlighter-rouge">my_form .xml</code> file always has the highest priority.</li>
+  <li>Searches the <code class="highlighter-rouge">.xml</code> files with name <code class="highlighter-rouge">my_form</code> among all modules. The server then merges all the <code class="highlighter-rouge">my_form .xml</code> file(s) into a single configuration object, thus overriding the common properties, so that the latest <code class="highlighter-rouge">my_form .xml</code> file always has the highest priority.</li>
   <li>Merges the resulting configuration (from Step 2 above) with the configuration from the UI module <code class="highlighter-rouge">definition.xml</code>. The UI module <code class="highlighter-rouge">definition.xml</code> configuration file has the lowest priority, and is overwritten by the merged configuration of all <code class="highlighter-rouge">my_form.xml</code> files.</li>
   <li>Translates the resulting configuration into JSON format and adds it to response body the following way:</li>
 </ol>

@@ -1240,14 +1240,16 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 <p>If module context is defined for a file:</p>
 
 <ol>
-  <li>Current theme and current locale module static files:<code class="highlighter-rouge">&lt;theme_dir&gt;/web/i18n/&lt;locale&gt;/&lt;Namespace&gt;_&lt;Module&gt;</code></li>
+  <li>Current theme and current locale module static files:<code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/i18n/&lt;locale&gt;/</code></li>
   <li>Current theme module static files <code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code>. Example: <code class="highlighter-rouge">app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/</code></li>
   <li>Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
     <ul>
-      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/web/i18n/&lt;locale&gt;/&lt;Namespace&gt;_&lt;Module&gt;</code></li>
+      <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/i18n/&lt;locale&gt;/</code></li>
       <li><code class="highlighter-rouge">&lt;parent_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code></li>
     </ul>
   </li>
+  <li>Module static view files for the current locale and <code class="highlighter-rouge">frontend</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/web/i18n/&lt;locale&gt;/</code></li>
+  <li>Module static view files for the current locale and <code class="highlighter-rouge">base</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/base/web/i18n/&lt;locale&gt;/</code></li>
   <li>Module static view files for the <code class="highlighter-rouge">frontend</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/web/</code></li>
   <li>Module static view files for the <code class="highlighter-rouge">base</code> area: <code class="highlighter-rouge">&lt;module_dir&gt;/view/base/web/</code></li>
 </ol>
