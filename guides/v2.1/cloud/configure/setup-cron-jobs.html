@@ -2011,11 +2011,11 @@
 
 <p>The following example is the default cron included for Magento Commerce (Cloud).</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Default Magento 2 cron jobs</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Default Magento 2 cron job</span>
 <span class="na">crons</span><span class="pi">:</span>
     <span class="na">cronrun</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
-        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
 </code></pre></div></div>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -2074,8 +2074,8 @@
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Default Magento 2 cron jobs</span>
 <span class="na">crons</span><span class="pi">:</span>
     <span class="na">cronrun</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
-        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
 </code></pre></div></div>
 
 <ol>
@@ -2087,8 +2087,8 @@
 
     <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">crons</span><span class="pi">:</span>
     <span class="na">magento</span><span class="pi">:</span>
-        <span class="na">spec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
-        <span class="na">cmd</span><span class="pi">:</span> <span class="s1">'</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run</span><span class="nv"> </span><span class="s">&amp;&amp;</span><span class="nv"> </span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run'</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s1">'</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run'</span>
     <span class="na">productcatalog</span><span class="pi">:</span>
         <span class="na">spec</span><span class="pi">:</span> <span class="s1">'</span><span class="s">20</span><span class="nv"> </span><span class="s">*/3</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*'</span>
         <span class="na">cmd</span><span class="pi">:</span> <span class="s1">'</span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">indexer:reindex</span><span class="nv"> </span><span class="s">catalog_product_category'</span>
