@@ -80,8 +80,8 @@ Once you have completed preparing your environment, you can build locally and re
 
 ### To minimize build time locally:
 
-1. Create *_config.local.yml*, and exclude all versions except the one that you want to preview.
-The following example demonstrates configuration to preview the Magento 2.2 documentation only.
+1. Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
+The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
@@ -109,11 +109,11 @@ The following example demonstrates configuration to preview the Magento 2.2 docu
    $ rake preview
    ```
    This command:
-   * Runs `bundle install` to update your environment with recent changes in _Gemfile.lock_.
-   * Removes `_site` with previously generated preview files.
-   * Generates new preview, and opens the landing page on your default browsers when finished.
+   * Checks your environment according to the dependencies in `Gemfile.lock`.
+   * Removes the `_site/` directory, which contains previously generated preview files.
+   * Generates a new preview and opens the landing page in a web browsers.
    
-If you don't have *_config.local.yml* in the root of your _devdocs_ directory, you'll get documentation for all the versions generated.
+If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
 
 ## Build using Docker
 This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
