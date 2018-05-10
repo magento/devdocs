@@ -707,21 +707,26 @@
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
 
-<p>The MFTF uses a modified concept of <a href="https://github.com/SeleniumHQ/selenium/wiki/PageObjects">PageObjects</a>, which models the testing areas of your page as objects within the code. This reduces occurrences of duplicated code and enables you to fix things quickly, in one place, when things change. You define the contents of a page, for reference in a <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a>, at both the <a href="#page-tag"><code class="highlighter-rouge">&lt;page&gt;</code></a> and <a href="#section-tag"><code class="highlighter-rouge">&lt;section&gt;</code></a> level.</p>
+<p>The MFTF uses a modified concept of [PageObjects], which models the testing areas of your page as objects within the code.
+This reduces occurrences of duplicated code and enables you to fix things quickly, in one place, when things change.
+You define the contents of a page, for reference in a <a href="test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a>, at both the <a href="#page-tag"><code class="highlighter-rouge">&lt;page&gt;</code></a> and <a href="#section-tag"><code class="highlighter-rouge">&lt;section&gt;</code></a> level.</p>
 
-<p>The <code class="highlighter-rouge">pageObject</code> lists the URL of the <code class="highlighter-rouge">page</code> and the <code class="highlighter-rouge">sections</code> that it contains. You can reuse <code class="highlighter-rouge">sections</code> to define the elements on a page that are exercisable, while also ensuring a single source of truth to help maintain consistency.</p>
+<p>The <code class="highlighter-rouge">pageObject</code> lists the URL of the <code class="highlighter-rouge">page</code> and the <code class="highlighter-rouge">sections</code> that it contains. 
+You can reuse <code class="highlighter-rouge">sections</code> to define the elements on a page that are exercisable, while also ensuring a single source of truth to help maintain consistency.</p>
 
-<div class="bs-callout bs-callout-tip">
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-tip" id="tip">
   <p>Avoid hard-coded location selectors from tests to increase the maintainability and readability of the tests, as well as improve the test execution output and logging.</p>
 </div>
 
 <p>Two types of pages are available:</p>
 
 <ul>
-  <li>Page with <code class="highlighter-rouge">url</code> declared as a constant string or <a href="#explicit-page">explicit page</a> - In a test it is called in a format like <code class="highlighter-rouge">{{NameOfPage.url}}</code>, where <code class="highlighter-rouge">NameOfPage</code> is a value of <code class="highlighter-rouge">name</code> in the corresponding page declaration <code class="highlighter-rouge">*.xml</code> file.</li>
-  <li>Page with <code class="highlighter-rouge">url</code> declared as a string with one or more variables or <a href="#parameterized-page">parameterized page</a> - In a test it is called using a format like <code class="highlighter-rouge">{{NameOfPage.url(var1, var2, ...)}}</code>, where <code class="highlighter-rouge">var1, var2</code> etc. are parameters that will be substituted in the <code class="highlighter-rouge">url</code> of the corresponding <code class="highlighter-rouge">&lt;page&gt;</code> declaration.</li>
+  <li>Page with <code class="highlighter-rouge">url</code> declared as a constant string or [explicit page] - In a test it is called in a format like <code class="highlighter-rouge">{{NameOfPage.url}}</code>, where <code class="highlighter-rouge">NameOfPage</code> is a value of <code class="highlighter-rouge">name</code> in the corresponding page declaration <code class="highlighter-rouge">*.xml</code> file.</li>
+  <li>Page with <code class="highlighter-rouge">url</code> declared as a string with one or more variables or [parameterized page] - In a test it is called using a format like <code class="highlighter-rouge">{{NameOfPage.url(var1, var2, ...)}}</code>, where <code class="highlighter-rouge">var1, var2</code> etc. are parameters that will be substituted in the <code class="highlighter-rouge">url</code> of the corresponding <code class="highlighter-rouge">&lt;page&gt;</code> declaration.</li>
 </ul>
 
 <p>The following diagram shows the XML structure of an MFTF page:</p>
@@ -814,13 +819,15 @@
   <li>The name format is <code class="highlighter-rouge">{Admin|Storefront}{PageDescription}Page.xml</code>.</li>
 </ul>
 
+<p>The <code class="highlighter-rouge">.url</code> attribute is required when using the page for <a href="test/actions.html">actions</a> that require the URL argument.</p>
+
 <h2 id="page-examples">Page examples</h2>
 
 <p>These examples demonstrate explicit and parameterized pages and include informative explanations.</p>
 
 <h3 id="explicit-page">Explicit page</h3>
 
-<p>Example (<code class="highlighter-rouge">Catalog/Page/AdminCategoryPage.xml</code> file):</p>
+<p>Example (<em>Catalog/Page/AdminCategoryPage.xml</em> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -835,11 +842,12 @@
 <span class="nt">&lt;/pages&gt;</span>
 </code></pre></div></div>
 
-<p>In this example, the <code class="highlighter-rouge">Catalog/Page/AdminCategoryPage.xml</code> file declares a page with the name <code class="highlighter-rouge">AdminCategoryPage</code>. It will be merged with the other <code class="highlighter-rouge">AdminCategoryPage</code> pages from other modules.</p>
+<p>In this example, the <em>Catalog/Page/AdminCategoryPage.xml</em> file declares a page with the name <code class="highlighter-rouge">AdminCategoryPage</code>.
+It will be merged with the other <code class="highlighter-rouge">AdminCategoryPage</code> pages from other modules.</p>
 
 <p>The corresponding web page is generated by the Magento Catalog module and is called by the <code class="highlighter-rouge">baseUrl</code> + <code class="highlighter-rouge">backendName</code> + <code class="highlighter-rouge">catalog/category/</code> URl.</p>
 
-<p>The <code class="highlighter-rouge">AdminCategoryPage</code> declares four <a href="./section.html">sections</a>:</p>
+<p>The <code class="highlighter-rouge">AdminCategoryPage</code> declares four [sections][section]:</p>
 
 <ul>
   <li><code class="highlighter-rouge">AdminCategorySidebarActionSection</code> - located in the <code class="highlighter-rouge">Catalog/Section/AdminCategorySidebarActionSection.xml</code> file</li>
@@ -855,7 +863,7 @@
 
 <h3 id="parameterized-page">Parameterized page</h3>
 
-<p>Example (<code class="highlighter-rouge">Catalog/Page/StorefrontCategoryPage.xml</code> file):</p>
+<p>Example (<em>Catalog/Page/StorefrontCategoryPage.xml</em> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
@@ -867,7 +875,8 @@
 <span class="nt">&lt;/pages&gt;</span>
 </code></pre></div></div>
 
-<p>This example shows the page with the name <code class="highlighter-rouge">StorefrontCategoryPage</code>. It will be merged with the other <code class="highlighter-rouge">StorefrontCategoryPage</code> pages from other modules.</p>
+<p>This example shows the page with the name <code class="highlighter-rouge">StorefrontCategoryPage</code>.
+It will be merged with the other <code class="highlighter-rouge">StorefrontCategoryPage</code> pages from other modules.</p>
 
 <p>The following is an example of a call in test:</p>
 
@@ -880,11 +889,11 @@
 
 <p><code class="highlighter-rouge">{{var1}}</code> is substituted with the <code class="highlighter-rouge">name</code> of the previously created category in the <code class="highlighter-rouge">createPreReqCategory</code> action.</p>
 
-<p>See also <a href="./test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a>.</p>
+<p>See also <a href="test/actions.html#createdata"><code class="highlighter-rouge">&lt;createData&gt;</code></a>.</p>
 
 <hr />
 
-<p>The <code class="highlighter-rouge">StorefrontCategoryPage</code> page declares only the <code class="highlighter-rouge">StorefrontCategoryMainSection</code> <a href="./section.html">section</a>, which is located in the <code class="highlighter-rouge">Catalog/Section/StorefrontCategoryMainSection.xml</code> file.</p>
+<p>The <code class="highlighter-rouge">StorefrontCategoryPage</code> page declares only the <code class="highlighter-rouge">StorefrontCategoryMainSection</code> [section], which is located in the <code class="highlighter-rouge">Catalog/Section/StorefrontCategoryMainSection.xml</code> file.</p>
 
 <h2 id="elements-reference">Elements reference</h2>
 
@@ -892,7 +901,8 @@
 
 <h3 id="pages-tag">pages</h3>
 
-<p><code class="highlighter-rouge">&lt;pages&gt;</code> are elements that point to the corresponding XML Schema location. It contains one or more <code class="highlighter-rouge">&lt;page&gt;</code> elements.</p>
+<p><code class="highlighter-rouge">&lt;pages&gt;</code> are elements that point to the corresponding XML Schema location.
+It contains one or more <code class="highlighter-rouge">&lt;page&gt;</code> elements.</p>
 
 <h3 id="page-tag">page</h3>
 
@@ -947,11 +957,12 @@
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">&lt;page&gt;</code> may contain several <a href="#section-tag">&lt;section&gt;</a> elements.</p>
+<p><code class="highlighter-rouge">&lt;page&gt;</code> may contain several <a href="#section-tag"><code class="highlighter-rouge">&lt;section&gt;</code></a> elements.</p>
 
 <h3 id="section-tag">section</h3>
 
-<p><code class="highlighter-rouge">&lt;section&gt;</code> contains the sequence of UI elements. A section is a reusable piece or part of a page.</p>
+<p><code class="highlighter-rouge">&lt;section&gt;</code> contains the sequence of UI elements.
+A section is a reusable piece or part of a page.</p>
 
 <table>
   <thead>
@@ -978,6 +989,11 @@
   </tbody>
 </table>
 
+<!-- Link definitions -->
+<p>[explicit page: #explicit-page
+[PageObjects]: https://github.com/SeleniumHQ/selenium/wiki/PageObjects
+[parameterized page]: #parameterized-page
+[section]: section.html</p>
 
 			
 		</div>

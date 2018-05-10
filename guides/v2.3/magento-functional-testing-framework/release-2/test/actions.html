@@ -774,7 +774,7 @@ Some actions drive browser elements, while others use REST APIs.</p>
   <li>
     <p><a href="#example-step4">Click the Sign In button</a>.</p>
 
-    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">"{{StorefrontCustomerSignInPage.url}}"</span> <span class="na">stepKey=</span><span class="s">"amOnSignInPage"</span><span class="nt">/&gt;</span>
  <span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.email$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.emailField}}"</span> <span class="na">stepKey=</span><span class="s">"fillEmail"</span><span class="nt">/&gt;</span>
  <span class="nt">&lt;fillField</span>  <span class="na">userInput=</span><span class="s">"$$customer.password$$"</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.passwordField}}"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
  <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">"{{StorefrontCustomerSignInFormSection.signInAccountButton}}"</span> <span class="na">stepKey=</span><span class="s">"clickSignInAccountButton"</span><span class="nt">/&gt;</span>
