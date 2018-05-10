@@ -5,13 +5,16 @@
 
 # Config and output files #
 ###########################
+
 /_site/
-/.git
-/.jekyll-metadata
-CNAME
-ignore
+
+/.*
+!/.github
+!/.github/**
+
 /*.yml
-/!_config.yml
+!/_config.yml
+
 *.bat
 *.sh
 /tmp/
