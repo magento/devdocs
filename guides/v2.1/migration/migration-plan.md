@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: B_Creating a migration plan
 title: Creating a migration plan

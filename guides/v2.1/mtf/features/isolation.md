@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Isolation management
 version: 2.1

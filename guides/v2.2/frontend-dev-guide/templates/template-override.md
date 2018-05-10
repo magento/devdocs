@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Templates basic concepts
 version: 2.1

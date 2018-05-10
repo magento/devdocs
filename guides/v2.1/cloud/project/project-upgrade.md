@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 130_upgrades
 title: Upgrade Magento Commerce (Cloud)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Configure the store
 version: 2.1

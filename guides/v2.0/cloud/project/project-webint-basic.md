@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 100_project
 title: Configure your project

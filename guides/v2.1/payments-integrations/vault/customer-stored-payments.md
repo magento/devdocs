@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Display the stored information

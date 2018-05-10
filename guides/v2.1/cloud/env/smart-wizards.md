@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Smart wizards
 version: 2.1

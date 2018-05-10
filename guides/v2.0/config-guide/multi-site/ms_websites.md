@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 11_sites
 title: Set up multiple websites, stores, and store views in the Admin

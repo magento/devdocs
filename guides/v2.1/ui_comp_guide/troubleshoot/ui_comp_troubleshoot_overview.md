@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components
 subgroup: troubleshoot
 title: Troubleshooting UI components

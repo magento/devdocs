@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS
 title: Compile LESS with Grunt

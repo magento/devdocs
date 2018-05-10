@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Example&mdash;logging database activity
 version: 2.2

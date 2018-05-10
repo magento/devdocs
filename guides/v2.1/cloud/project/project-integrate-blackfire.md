@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Blackfire.io for Magento Cloud
 version: 2.1

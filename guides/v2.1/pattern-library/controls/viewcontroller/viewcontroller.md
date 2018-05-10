@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Controls
 title: Magento Admin Pattern Library

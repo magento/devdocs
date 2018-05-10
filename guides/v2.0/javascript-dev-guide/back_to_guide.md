@@ -1,5 +1,4 @@
 ---
-layout: default
 group: javascript
 subgroup: Back to JavaScript section
 title: Modal widget

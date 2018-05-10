@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 title: Payment Token
 github_link: payments-integrations/vault/payment-token.md

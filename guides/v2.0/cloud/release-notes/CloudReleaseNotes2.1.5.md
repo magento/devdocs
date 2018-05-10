@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: Magento Commerce (Cloud) 2.1.5 and 2.0.13 Release Notes

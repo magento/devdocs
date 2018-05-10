@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Install, manage, and upgrade modules
 version: 2.0

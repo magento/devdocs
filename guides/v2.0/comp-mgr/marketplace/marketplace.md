@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 03_market
 title: Magento Marketplace example

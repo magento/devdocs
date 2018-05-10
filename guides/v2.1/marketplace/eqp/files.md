@@ -1,5 +1,4 @@
 ---
-layout: default
 group: marketplace-api
 title: Files
 version: 2.1

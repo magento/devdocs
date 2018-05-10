@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: best practices
 title: Using the new structure in UI components XML configuration

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: BB
 title: Contributor sign-up sheet

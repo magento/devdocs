@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: Web APIs
 title: Create an integration

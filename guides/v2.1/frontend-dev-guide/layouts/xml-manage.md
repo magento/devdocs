@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: B_Layouts
 title: Common layout customization tasks

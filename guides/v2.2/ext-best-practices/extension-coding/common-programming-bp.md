@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 title: Programming Best Practices
 version: 2.2

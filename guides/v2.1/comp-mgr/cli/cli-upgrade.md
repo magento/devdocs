@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 28_cli-upgr
 title: Command-line upgrade

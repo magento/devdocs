@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: clear-static-files
 title: Clean static files cache

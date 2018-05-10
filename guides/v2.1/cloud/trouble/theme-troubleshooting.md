@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Theme troubleshooting
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Codeception commands
 version: 2.2

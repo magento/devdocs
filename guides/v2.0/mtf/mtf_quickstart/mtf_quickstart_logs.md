@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Quick start. See logs for failed tests
 version: 2.0

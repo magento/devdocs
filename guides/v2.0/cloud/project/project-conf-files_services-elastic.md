@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Set up Elasticsearch service
 version: 2.0

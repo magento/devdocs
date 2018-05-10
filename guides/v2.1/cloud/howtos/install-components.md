@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Install, manage, and upgrade extensions
 version: 2.1

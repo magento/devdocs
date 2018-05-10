@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jstf
 title: JavaScript unit testing with Jasmine
 version: 2.1

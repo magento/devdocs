@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 20_other
 title: SQLSTATE[HY000] [2002] No such file or directory

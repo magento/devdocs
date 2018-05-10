@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 40_update-updater
 title: Updater application

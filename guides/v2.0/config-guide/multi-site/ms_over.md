@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 11_sites
 title: Multiple websites or stores

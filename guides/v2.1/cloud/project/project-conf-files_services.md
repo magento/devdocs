@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Services
 version: 2.1

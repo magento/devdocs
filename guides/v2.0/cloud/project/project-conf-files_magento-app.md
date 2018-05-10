@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Application
 version: 2.0

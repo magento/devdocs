@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Add vault to module dependencies

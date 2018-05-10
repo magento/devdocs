@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Get payment information from frontend to backend

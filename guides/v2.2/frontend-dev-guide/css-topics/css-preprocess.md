@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS
 title: How CSS and LESS files are preprocessed and how to debug them

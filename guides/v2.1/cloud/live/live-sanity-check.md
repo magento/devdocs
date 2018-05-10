@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Build and deploy on local

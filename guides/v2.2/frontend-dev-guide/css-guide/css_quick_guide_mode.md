@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Simple style changes with client-side LESS compilation vs. server-side
 version: 2.2

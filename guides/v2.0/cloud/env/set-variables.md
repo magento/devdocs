@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 120_env
 title: Example setting variables

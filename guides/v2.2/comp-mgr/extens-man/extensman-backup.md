@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Step 2. Back up the file system and database

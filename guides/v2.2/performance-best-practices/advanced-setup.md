@@ -1,5 +1,4 @@
 ---
-layout: default
 group: perf-best-practices
 title: Advanced setup
 version: 2.2

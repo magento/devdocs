@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Troubleshoot the Functional Testing Framework issues
 version: 2.0

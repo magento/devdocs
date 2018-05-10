@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Getting Started
 title: System 2.1.x requirements

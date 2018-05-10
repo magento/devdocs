@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install
 subgroup: 99_app
 title: Appendix&mdash;Magento file system ownership and appendix (legacy)

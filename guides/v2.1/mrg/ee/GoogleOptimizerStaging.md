@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_GoogleOptimizerStaging module
 version: 2.1

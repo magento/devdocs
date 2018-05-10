@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Deploy variables
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 15_Solr
 title: Install and configure Solr

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: Release Notes
 title: Magento Commerce (Cloud) 2.2.1 Release Notes

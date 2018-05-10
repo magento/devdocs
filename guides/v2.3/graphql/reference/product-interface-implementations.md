@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Product interface implementations
 version: 2.3

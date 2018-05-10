@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: JavaScript Logger

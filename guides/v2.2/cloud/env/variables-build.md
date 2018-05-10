@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Build variables
 version: 2.2

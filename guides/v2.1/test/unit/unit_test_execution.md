@@ -1,5 +1,4 @@
 ---
-layout: default
 group: unit-testing
 title: Running Unit Tests
 contributor_name: Vinai Kopp

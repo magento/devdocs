@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Site availability
 version: 2.1

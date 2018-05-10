@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true

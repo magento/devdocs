@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Serialize Library
 subgroup: Framework

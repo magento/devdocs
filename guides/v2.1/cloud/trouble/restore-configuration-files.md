@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title:  Restore configuration files
 version: 2.1

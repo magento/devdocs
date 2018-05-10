@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Magento Commerce (Cloud) architecture
 version: 2.0

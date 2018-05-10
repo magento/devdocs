@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Scenario test
 version: 2.1

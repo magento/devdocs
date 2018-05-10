@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Set up notifications
 version: 2.1

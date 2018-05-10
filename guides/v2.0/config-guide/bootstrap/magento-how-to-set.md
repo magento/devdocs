@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 03_Bootstrap
 title: Set the value of bootstrap parameters

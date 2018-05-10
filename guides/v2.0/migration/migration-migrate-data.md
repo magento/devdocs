@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: D_Migrate using the data migration tool
 title: Migrate data

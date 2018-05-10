@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 999_prod
 title: Single machine deployment

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: How To
 title: Optional - Install sample data

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 title: Technical guidelines
 github_link: coding-standards/technical-guidelines.md

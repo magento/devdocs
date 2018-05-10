@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 02_config-hosted
 title: Transfer the Magento software to your hosted system

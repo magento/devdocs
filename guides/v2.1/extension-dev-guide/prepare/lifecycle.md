@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle

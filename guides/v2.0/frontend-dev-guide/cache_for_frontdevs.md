@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Magento cache overview
 menu_title: Magento cache overview

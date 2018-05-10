@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 05_UseCompMan
 title: Run the Component Manager

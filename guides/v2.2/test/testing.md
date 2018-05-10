@@ -1,5 +1,4 @@
 ---
-layout: default
 group: testing
 title: Magento Testing Guide
 landing-page: Testing Guide

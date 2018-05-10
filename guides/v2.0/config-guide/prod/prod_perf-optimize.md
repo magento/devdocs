@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: Optimization
 title: Magento Optimization Guide

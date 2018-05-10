@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Components
 title: Modules and areas

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Getting Started
 title: Magento 2.0.x system requirements

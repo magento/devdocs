@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install
 subgroup: 01_Verify
 title: Verify the installation
