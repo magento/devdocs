@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Test actions
 version: 2.2

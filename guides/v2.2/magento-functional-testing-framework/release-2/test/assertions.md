@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Assertions
 version: 2.2

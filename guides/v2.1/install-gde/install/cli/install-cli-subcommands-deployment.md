@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Create or update the deployment configuration
 version: 2.1

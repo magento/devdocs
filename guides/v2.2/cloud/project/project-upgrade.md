@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Upgrade Magento Commerce (Cloud)
 version: 2.2

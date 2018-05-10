@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup:
 title: Customize the view of a checkout step

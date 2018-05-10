@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
@@ -142,7 +141,7 @@ class \VendorName\ModuleName\Setup\UpgradeData implements \Magento\Framework\Set
     /**
      * {@inheritdoc}
      */
-    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context);
+    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         // Data upgrade logic
     }

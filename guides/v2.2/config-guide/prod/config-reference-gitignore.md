@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 07_conf
 title: .gitignore reference

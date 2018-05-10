@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: A_Using_UI
 title: Using UI components' client-side

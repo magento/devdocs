@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: _after
 title: After Migration

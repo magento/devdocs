@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 title: JavaScript mixins
 version: 2.0

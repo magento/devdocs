@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento Commerce 2.2.3 Release Notes
 version: 2.2

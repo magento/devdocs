@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 20_cqrs
 title: Manually configure master databases

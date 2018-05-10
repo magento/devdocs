@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Admin Style Guide
 title: Admin Style Guide

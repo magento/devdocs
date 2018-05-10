@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 title: Web API technical vision
 version: 2.0

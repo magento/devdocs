@@ -1,5 +1,4 @@
 ---
-layout: default
 group: reporting
 title: Advanced Reporting
 version: 2.2

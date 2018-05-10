@@ -1,5 +1,4 @@
 ---
-layout: default
 group: marketplace-api
 title: Users
 version: 2.1

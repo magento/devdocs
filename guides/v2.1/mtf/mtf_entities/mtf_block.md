@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Block
 version: 2.1

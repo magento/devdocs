@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 version: 2.2
 title: Backward incompatible changes in Magento Open Source

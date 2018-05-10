@@ -1,5 +1,4 @@
 ---
-layout: default
 group: unit-testing
 title: Writing Testable Code
 contributor_name: Vinai Kopp

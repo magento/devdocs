@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup:
 title: UI Components Guide outline (proposed)

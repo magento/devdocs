@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: product-create-page
 title: Customize product creation form

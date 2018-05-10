@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: Locate JavaScript components
@@ -47,6 +46,7 @@ To find the source file of the used script:
 </ul>
 </li>
 </ol>
+</li>
 </ol>
 
 
@@ -90,3 +90,4 @@ This means we should check for <code>mage/menu.js</code> the following locations
 <li><code>lib/web</code> (library files)</li>
 </ol>
 There is no <code>mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
+</ol>

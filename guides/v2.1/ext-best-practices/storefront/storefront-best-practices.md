@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: 03_Storefront
 title: Storefront UI best practices

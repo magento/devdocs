@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: troubleshoot
 title: Debug UI components JavaScript

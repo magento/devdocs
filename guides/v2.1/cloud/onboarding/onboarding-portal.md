@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Onboarding Portal management
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Go live checklist
 version: 2.2

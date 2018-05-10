@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Working with variables
 version: 2.1

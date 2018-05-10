@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Cloud variables
 version: 2.1

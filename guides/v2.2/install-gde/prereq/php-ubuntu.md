@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: PHP 7.0 or 7.1 &mdash;Ubuntu

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Web Driver Replacement in the Functional Testing Framework
 version: 2.1

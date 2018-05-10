@@ -1,5 +1,4 @@
 ---
-layout: default
 group: integration-testing
 title: Running Integration Tests
 version: 2.0

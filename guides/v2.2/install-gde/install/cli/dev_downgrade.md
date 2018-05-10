@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: 99_contrib
 title: Change to a released version

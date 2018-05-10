@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started-magento
 title: Getting started with Magento
 menu_title: Getting started with Magento

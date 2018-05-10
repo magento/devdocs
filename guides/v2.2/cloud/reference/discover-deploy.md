@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Deployment process
 version: 2.2

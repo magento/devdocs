@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Best practices
 version: 2.2

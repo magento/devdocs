@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 14_Elastic
 title: Configure Magento to use Elasticsearch

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Upgrades and Patches
 version: 2.1

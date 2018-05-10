@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: Wizard
 title: Setup Wizard installation

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install2
 title: What operating system is my server running?
 version: 2.1

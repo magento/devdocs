@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 130_upgrades
 title: Upgrades and Patches

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Deploy code and migrate static files and data

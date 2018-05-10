@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: 02_Extension-Coding
 title: Extension Coding

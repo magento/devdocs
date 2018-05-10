@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Robo commands in the Magento Functional Testing Framework
 version: 2.2

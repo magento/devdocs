@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 04_CLI
 title: Translation dictionaries and language packages

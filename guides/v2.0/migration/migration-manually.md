@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: E_manually
 title: Data that needs to be migrated manually

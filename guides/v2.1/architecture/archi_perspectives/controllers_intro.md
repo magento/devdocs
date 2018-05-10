@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: Architectural Layers
 title: Magento Blocks and Controllers

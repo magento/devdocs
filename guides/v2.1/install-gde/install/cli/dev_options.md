@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: 99_contrib
 title: Contributing developers&mdash;update, reinstall Magento

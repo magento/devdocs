@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 11_sites
 title: Tutorial&mdash;Set up multiple websites or stores with nginx
@@ -26,7 +25,7 @@ We assume the following:
 
 	Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl}}/cloud/project/project-multi-sites.html).
 *	You use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`
-*	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
+*	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial, and two line configurations.
 *	The Magento software is installed in `/var/www/html/magento2`
 *	You have two websites other than the default:
 
@@ -61,6 +60,9 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
 		map $http_host $MAGE_RUN_CODE {
            french.mysite.mg french;
 		}
+		map $http_host $MAGE_RUN_TYPE {
+		    french.mysite.mg store
+		}
 
 		server {
            listen 80;
@@ -74,6 +76,9 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
 		map $http_host $MAGE_RUN_CODE {
            german.mysite.mg german;
 		}
+		map $http_host $MAGE_RUN_TYPE {
+		    german.mysite.mg store
+		}
 
 		server {
            listen 80;
@@ -83,6 +88,41 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
            include /var/www/html/magento2/nginx.conf;
 		}
 4.	Save your changes to the files and exit the text editor.
+5.  Change `nginx.conf.sample` content 
+		
+		location ~ (index|get|static|report|404|503|health_check)\.php$ {
+			try_files $uri =404;
+			fastcgi_pass   fastcgi_backend;
+			fastcgi_buffers 1024 4k;
+
+			fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+			fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+			fastcgi_read_timeout 600s;
+			fastcgi_connect_timeout 600s;
+
+			fastcgi_index  index.php;
+			fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+			include        fastcgi_params;
+		}
+		
+	to
+	
+		location ~ (index|get|static|report|404|503|health_check)\.php$ {
+		    try_files $uri =404;
+		    fastcgi_pass   fastcgi_backend;
+		    fastcgi_buffers 1024 4k;
+
+		    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+		    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+		    fastcgi_param  MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+    		    fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
+		    fastcgi_read_timeout 600s;
+		    fastcgi_connect_timeout 600s;
+
+		    fastcgi_index  index.php;
+		    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		    include        fastcgi_params;
+		}
 5.	Verify the server configuration:
 
 		nginx -t

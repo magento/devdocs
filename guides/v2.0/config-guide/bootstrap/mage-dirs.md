@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 03_Bootstrap
 title: Customize base directory paths (MAGE_DIRS)

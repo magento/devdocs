@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 04_CLI
 title: Import data from configuration files

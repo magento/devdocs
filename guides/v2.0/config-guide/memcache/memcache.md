@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Use memcached for session storage
 version: 2.0

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 03_install
 title: Errors during installation

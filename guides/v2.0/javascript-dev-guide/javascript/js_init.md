@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
@@ -126,7 +125,7 @@ The following is a working code sample of a widget call using `<script>`. Here t
 
 ### Imperative notation {#init_script}
 
-Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init` attribute, is the imperative notation. The syntax is following:
+Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init"` attribute, is the imperative notation. The syntax is following:
 
 {%highlight html%}
 <script>

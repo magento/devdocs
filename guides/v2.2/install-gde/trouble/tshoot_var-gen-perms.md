@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 02_access
 title: Cannot write to the generated/code directory

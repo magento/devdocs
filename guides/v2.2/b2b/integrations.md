@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Integrate with B2B using REST

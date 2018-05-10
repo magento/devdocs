@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 02_prereq
 title: Enter your authentication keys in the Admin

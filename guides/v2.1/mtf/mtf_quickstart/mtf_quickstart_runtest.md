@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Quick start. Test run
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 subgroup: templates
 title: Basic template

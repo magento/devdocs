@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide

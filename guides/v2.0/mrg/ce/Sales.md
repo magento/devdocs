@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_Sales module
 version: 2.0

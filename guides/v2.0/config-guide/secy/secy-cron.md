@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 02_Security
 title: Secure cron.php to run in a browser

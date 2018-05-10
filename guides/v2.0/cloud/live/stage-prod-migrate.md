@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Deploy code and migrate static files and data
 version: 2.0

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI Components
 subgroup: Concepts
 title: your page title

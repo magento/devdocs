@@ -1,15 +1,20 @@
 # OS generated files #
 ######################
 /*.db
+.DS_Store
 
 # Config and output files #
 ###########################
+
 /_site/
+
 /.*
-CNAME
-ignore
+!/.github
+!/.github/**
+
 /*.yml
-/!_config.yml
+!/_config.yml
+
 *.bat
 *.sh
 /tmp/

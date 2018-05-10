@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: A_gateway
 title: Gateway Client

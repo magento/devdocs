@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 title: Suggested topics for contribution
 version: 2.1

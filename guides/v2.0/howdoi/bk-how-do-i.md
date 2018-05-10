@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: AA_Top
 title: How To

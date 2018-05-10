@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 99_third
 menu_title: Magento Open Source third-party licenses

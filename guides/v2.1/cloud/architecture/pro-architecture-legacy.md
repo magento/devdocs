@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Pro architecture (legacy)
 version: 2.1

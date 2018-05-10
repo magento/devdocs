@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: Restricting access to anonymous web APIs

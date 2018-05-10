@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Snapshots and backup management
 version: 2.1

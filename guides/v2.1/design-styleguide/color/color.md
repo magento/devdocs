@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Design
 title: Admin Color

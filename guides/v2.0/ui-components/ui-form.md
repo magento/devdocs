@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: D_UI Library Form Component
 title: Form Component

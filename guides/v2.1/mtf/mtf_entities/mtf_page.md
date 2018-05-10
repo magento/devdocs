@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Page
 version: 2.1

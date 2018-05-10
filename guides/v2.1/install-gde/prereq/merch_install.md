@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_merch
 subgroup: R_Merchant
 title: Newbie installation first steps

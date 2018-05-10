@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento Shipping Release Notes
 version: 2.2

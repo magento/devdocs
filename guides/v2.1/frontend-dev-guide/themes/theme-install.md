@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Install a third-party storefront theme

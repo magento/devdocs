@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 subgroup: contributor
 title: Backward compatible development
