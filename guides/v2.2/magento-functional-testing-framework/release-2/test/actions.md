@@ -74,7 +74,7 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4).
 
     ```xml
-    <amOnPage url="{{StorefrontCustomerSignInPage}}" stepKey="amOnSignInPage"/>
+    <amOnPage url="{{StorefrontCustomerSignInPage.url}}" stepKey="amOnSignInPage"/>
     <fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
     <fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
     <click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
