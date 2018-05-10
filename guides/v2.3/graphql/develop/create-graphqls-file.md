@@ -4,6 +4,7 @@ group: graphql
 version: 2.3
 title: Define the GraphQL schema for a module
 github_link: graphql/develop/create-graphqls-file.md
+redirect_from: graphql/develop/configure-graphql-xml.html
 ---
 
 Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds GraphQl modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.

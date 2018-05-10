@@ -117,6 +117,22 @@ Attribute |  Description
 `total_count` | The number of products returned
 `filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
 
+
+When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
+
+``` xml
+<type name="Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst" >
+  <arguments>
+    <argument name="additionalAttributes" xsi:type="array">
+      <item name="field_to_sort" xsi:type="string">field</item>
+      <item name="other_field_to_sort" xsi:type="string">other_field</item>
+    </argument>
+  </arguments>
+</type>
+```
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array, which is defined in the `ProductEntityAttributesForAst` class. The array automatically contains the `min_price`, `max_price`, and `category_ids`attributes. 
+
+
 ## ProductInterface {#ProductInterface}
 
 Any type that implements `ProductInterface` contains all the base attributes necessary for the frontend of the product model.
