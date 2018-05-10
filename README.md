@@ -49,9 +49,10 @@ Once you have completed preparing your environment, you can build locally and re
 
 ### Install devdocs
 
-The first time you are at the `devdocs` directory, run:
+Clone or download the repository. The first time you are at the `devdocs` directory, run:
 
 ```
+$ cd devdocs
 $ bundle install
 ```
 
