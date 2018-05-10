@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: Release Notes
 title: Magento Open Source 2.2.0 Release Notes

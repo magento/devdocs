@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: 02_sample
 title: Install using Composer

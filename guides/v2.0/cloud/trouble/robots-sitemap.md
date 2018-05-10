@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 170_trouble
 title: Add site map and search engine robots

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Using custom fonts
 version: 2.1

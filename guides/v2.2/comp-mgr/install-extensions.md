@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 10_Install extensions from the command line
 title: Install extensions from the command line

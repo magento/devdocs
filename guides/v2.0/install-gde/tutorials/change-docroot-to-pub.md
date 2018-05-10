@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install2
 title: Modify docroot to improve security
 version: 2.0

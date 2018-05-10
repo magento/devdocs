@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 title: JavaScript Developer Guide
 landing-page: JavaScript Developer Guide

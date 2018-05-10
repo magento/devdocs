@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: Template Literals in UI Components

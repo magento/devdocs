@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: 02_config-hosted
 title: Set up scheduled tasks (cron)

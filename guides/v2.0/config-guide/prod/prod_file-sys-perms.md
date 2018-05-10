@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 999_prod
 title: Magento ownership and permissions in development and production

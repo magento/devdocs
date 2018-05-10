@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 01_Introduction
 title: Upgrade the Magento application and components

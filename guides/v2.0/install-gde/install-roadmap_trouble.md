@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: AA
 title: Installation roadmap (reference)

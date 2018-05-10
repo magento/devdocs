@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs

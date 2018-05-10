@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup:
 title: magento-cloud-configuration release 101.7.x Release Notes

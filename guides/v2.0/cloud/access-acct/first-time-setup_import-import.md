@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 080_setup
 title: Import Magento EE into Magento Commerce (Cloud)

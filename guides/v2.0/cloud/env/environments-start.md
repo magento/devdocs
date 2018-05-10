@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 120_env
 title: Manage branches with the CLI

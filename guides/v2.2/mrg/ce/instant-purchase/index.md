@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Instant Purchase module
 github_link: mrg/ce/instant-purchase/index.md

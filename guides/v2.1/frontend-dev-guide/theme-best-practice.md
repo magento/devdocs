@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Theme development best practices
 menu_title: Theme development best practices

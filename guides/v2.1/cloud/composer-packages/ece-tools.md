@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Patch Cloud tools
 version: 2.1

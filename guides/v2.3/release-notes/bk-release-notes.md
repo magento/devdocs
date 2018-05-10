@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: 2.3.x Release Information
 version: 2.3

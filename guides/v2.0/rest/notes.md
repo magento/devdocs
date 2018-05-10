@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: Notes
 title: REST usage notes

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup:
 title: Payments Integrations

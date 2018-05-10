@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Magento Cloud CLI reference
 version: 2.1

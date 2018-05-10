@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Apply an Admin theme

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: A_intro
 title: Go back to the Magento installation overview

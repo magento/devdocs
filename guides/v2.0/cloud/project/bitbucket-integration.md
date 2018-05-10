@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Bitbucket integration
 version: 2.0

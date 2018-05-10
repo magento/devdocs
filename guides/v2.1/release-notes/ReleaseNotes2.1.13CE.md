@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento Open Source 2.1.13 Release Notes
 version: 2.1

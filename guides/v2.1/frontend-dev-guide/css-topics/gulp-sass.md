@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Use Sass preprocessor and Gulp task runner
 version: 2.1

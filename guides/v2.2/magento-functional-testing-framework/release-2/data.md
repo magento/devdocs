@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Input testing data
 version: 2.2

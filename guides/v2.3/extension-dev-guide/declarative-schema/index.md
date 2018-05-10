@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Declarative Schema Overview
 version: 2.3

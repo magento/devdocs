@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  migration
 subgroup: C_DMTool
 title: Install Data Migration Tool

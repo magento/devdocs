@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Page structure
 version: 2.2

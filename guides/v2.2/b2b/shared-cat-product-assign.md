@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Assign categories and products to a shared catalog

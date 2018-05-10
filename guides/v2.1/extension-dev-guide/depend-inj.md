@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Dependency injection
 menu_title: Dependency injection

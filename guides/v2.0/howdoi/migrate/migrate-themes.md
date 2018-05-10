@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Migration
 title: Migrate themes

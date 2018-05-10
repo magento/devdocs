@@ -1,5 +1,4 @@
 ---
-layout: default
 group: modules
 title: Iconography
 version: 2.3

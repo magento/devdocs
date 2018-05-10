@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Patch Magento Commerce (Cloud)
 version: 2.0

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Searches and pagination in GraphQL
 version: 2.3

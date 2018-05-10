@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Troubleshooting
 version: 2.1

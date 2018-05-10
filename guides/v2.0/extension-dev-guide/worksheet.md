@@ -1,5 +1,4 @@
 ---
-layout: default
 group: 
 subgroup: 
 title: Module Worksheet

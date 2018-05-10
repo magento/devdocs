@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 06_UseExtMan
 title: Start the Extension Manager

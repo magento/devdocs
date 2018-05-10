@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: E_rwd
 title: JavaScript in Magento responsive design

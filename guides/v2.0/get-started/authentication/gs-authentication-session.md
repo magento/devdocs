@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 40_Authentication
 title: Session-based authentication

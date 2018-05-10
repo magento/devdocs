@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 title: Best Practices for Extension Developers
 landing-page: Best Practices for Extension Developers

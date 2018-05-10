@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 01_Introduction
 title: Glossary of common terms

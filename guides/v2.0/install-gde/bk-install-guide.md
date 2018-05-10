@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install2
 subgroup: Getting Started
 title: How to get the Magento software

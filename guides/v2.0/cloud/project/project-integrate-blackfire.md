@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Blackfire Profiler
 version: 2.0

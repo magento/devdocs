@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: F_troubleshooting
 title: Troubleshooting

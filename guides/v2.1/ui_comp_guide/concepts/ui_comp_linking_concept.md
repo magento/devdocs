@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: Linking properties of UI components

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Functional Testing Framework Configuration
 version: 2.0

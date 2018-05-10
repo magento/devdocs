@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Overview
 version: 2.3

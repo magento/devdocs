@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 080_setup
 title: Enable SSH keys

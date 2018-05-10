@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: 02_sample
 title: Install optional sample data modules

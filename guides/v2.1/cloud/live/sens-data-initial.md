@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Example of managing system-specific settings
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Enable or disable maintenance mode
 version: 2.1

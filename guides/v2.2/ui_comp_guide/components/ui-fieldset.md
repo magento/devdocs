@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 title: Fieldset сomponent
 version: 2.2

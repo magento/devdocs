@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 title: Technical guidelines
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Uninstall themes Composer packages
 version: 2.1

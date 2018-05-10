@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 title: Magento 1.x GDPR compliance
 version: 2.1

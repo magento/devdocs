@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 047_single-machine
 title: Single machine deployment

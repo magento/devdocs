@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 20_REST
 title: Status codes and responses

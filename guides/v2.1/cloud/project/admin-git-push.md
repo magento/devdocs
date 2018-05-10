@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: 100_project
 title: git push details

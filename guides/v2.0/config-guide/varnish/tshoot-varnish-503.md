@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors

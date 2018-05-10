@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Annotations
 version: 2.2

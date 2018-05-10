@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 65_CLI
 title: Command naming guidelines

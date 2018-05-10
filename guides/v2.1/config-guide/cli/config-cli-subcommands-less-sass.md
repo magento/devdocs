@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 04_CLI
 title: Create symlinks to LESS files

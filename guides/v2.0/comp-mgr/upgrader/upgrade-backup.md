@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Step 3. Back up the file system and database

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Message queues
 version: 2.1

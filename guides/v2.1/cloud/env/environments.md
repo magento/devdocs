@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Configure environments
 version: 2.1

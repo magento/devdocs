@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 subgroup: contributor_docs
 title: Magento Definition of Done

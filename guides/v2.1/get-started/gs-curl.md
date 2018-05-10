@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 20_REST
 title: Use cURL to run the request

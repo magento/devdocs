@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 title: Error Code Mapping
 github_link: payments-integrations/payment-gateway/error-code-mapper.md
