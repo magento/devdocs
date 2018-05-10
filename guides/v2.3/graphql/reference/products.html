@@ -883,6 +883,19 @@ weight
   </tbody>
 </table>
 
+<p>When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module’s <code class="highlighter-rouge">di.xml</code> file.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst"</span> <span class="nt">&gt;</span>
+  <span class="nt">&lt;arguments&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"additionalAttributes"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"field_to_sort"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>field<span class="nt">&lt;/item&gt;</span>
+      <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"other_field_to_sort"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>other_field<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+  <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+<p>This example adds <code class="highlighter-rouge">field_to_sort</code> and <code class="highlighter-rouge">other_field_to_sort</code> attributes to the <code class="highlighter-rouge">additionalAttributes</code> array, which is defined in the <code class="highlighter-rouge">ProductEntityAttributesForAst</code> class. The array automatically contains the <code class="highlighter-rouge">min_price</code>, <code class="highlighter-rouge">max_price</code>, and <code class="highlighter-rouge">category_ids</code>attributes.</p>
+
 <h2 id="ProductInterface">ProductInterface</h2>
 
 <p>Any type that implements <code class="highlighter-rouge">ProductInterface</code> contains all the base attributes necessary for the frontend of the product model.
