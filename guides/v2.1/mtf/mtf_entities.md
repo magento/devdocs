@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Functional Testing Framework Entities
 version: 2.1

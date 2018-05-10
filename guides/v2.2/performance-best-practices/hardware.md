@@ -1,5 +1,4 @@
 ---
-layout: default
 group: perf-best-practices
 title: Hardware recommendations
 version: 2.2

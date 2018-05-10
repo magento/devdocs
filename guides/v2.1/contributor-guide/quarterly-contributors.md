@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 title: DevDocs Contributors
 version: 2.1

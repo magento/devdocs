@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  migration
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification

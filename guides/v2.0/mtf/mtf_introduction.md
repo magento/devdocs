@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide

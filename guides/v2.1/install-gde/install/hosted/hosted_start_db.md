@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 02_config-hosted
 title: Configure a database and a database user

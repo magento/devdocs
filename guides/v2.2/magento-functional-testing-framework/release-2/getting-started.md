@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Getting started
 version: 2.2

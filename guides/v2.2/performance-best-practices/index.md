@@ -1,5 +1,4 @@
 ---
-layout: default
 group: perf-best-practices
 title: Performance Best Practices
 version: 2.2

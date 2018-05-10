@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Code compiler
 version: 2.2

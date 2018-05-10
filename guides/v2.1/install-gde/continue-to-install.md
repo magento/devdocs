@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Z_continue
 title:

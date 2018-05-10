@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: ZZ_continue
 title:

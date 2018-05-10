@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Data set
 version: 2.1

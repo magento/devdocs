@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Reset cron jobs
 version: 2.2

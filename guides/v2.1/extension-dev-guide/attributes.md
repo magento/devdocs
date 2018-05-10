@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: EAV and extension attributes
 version: 2.1

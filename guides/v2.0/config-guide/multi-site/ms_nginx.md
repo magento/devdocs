@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 11_sites
 title: Tutorial&mdash;Set up multiple websites or stores with nginx

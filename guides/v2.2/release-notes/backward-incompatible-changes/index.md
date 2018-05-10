@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento 2.2 backward incompatible changes
 version: 2.2

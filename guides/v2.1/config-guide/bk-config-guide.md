@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 01_Introduction
 title: Configuration Guide

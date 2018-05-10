@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS_G
 title: Quick start guide to working with styles for a new theme

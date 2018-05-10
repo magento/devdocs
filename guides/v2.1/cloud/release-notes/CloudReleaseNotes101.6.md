@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: magento-cloud-configuration release 101.6.x Release Notes

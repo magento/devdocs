@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Suites
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Create the Magento database schema
 version: 2.1

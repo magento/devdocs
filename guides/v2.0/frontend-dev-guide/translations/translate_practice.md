@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: G_Translate
 title: Create a translation dictionary for a theme

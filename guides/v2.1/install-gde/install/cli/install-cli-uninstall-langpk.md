@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Uninstall language packages
 version: 2.1

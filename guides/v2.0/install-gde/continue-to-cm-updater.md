@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_web
 subgroup: Z_continue
 title: Manage and upgrade components

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Staging (Magento Commerce only)
 version: 2.1

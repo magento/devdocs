@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 08_Configure caching
 title: Associate cache frontends with cache types

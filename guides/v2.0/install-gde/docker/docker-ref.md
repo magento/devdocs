@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install-dock
 subgroup: 02_ref
 title: DevBox reference

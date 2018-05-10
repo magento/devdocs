@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Migration
 title: Migrate from Magento 1 to Magento 2

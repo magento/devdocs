@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Modularity in the Functional Testing Framework
 version: 2.0

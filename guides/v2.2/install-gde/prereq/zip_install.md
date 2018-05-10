@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: R_General
 title: (Easy) Install the Magento archive on your server

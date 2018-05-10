@@ -1,5 +1,4 @@
 ---
-layout: default
 group: perf-best-practices
 title: Deployment flow
 version: 2.2

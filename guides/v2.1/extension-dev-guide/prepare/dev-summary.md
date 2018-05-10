@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 02_Prepare
 title: Roadmap for developing and packaging components

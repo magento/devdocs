@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 05_readiness
 title: File permissions readiness check issues

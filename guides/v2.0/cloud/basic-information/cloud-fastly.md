@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 020_tech
 title: Fastly

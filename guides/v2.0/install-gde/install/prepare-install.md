@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: T_Developer
 title: Update installation dependencies

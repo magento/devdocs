@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)

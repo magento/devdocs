@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Migrate install/upgrade scripts to declarative schema
 version: 2.3

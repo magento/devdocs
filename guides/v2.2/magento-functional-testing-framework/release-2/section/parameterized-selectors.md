@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Create and use parameterized selectors
 version: 2.2

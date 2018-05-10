@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS_G
 title: Simple ways to customize a theme's styles

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Set up cron jobs
 version: 2.1

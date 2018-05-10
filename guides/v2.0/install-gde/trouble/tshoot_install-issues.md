@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 20_other
 title: Known issues that affect installation

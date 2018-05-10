@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: 01_Admin
 title: Admin FAQ

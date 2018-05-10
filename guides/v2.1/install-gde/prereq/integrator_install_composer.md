@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: S_Integrator
 title: Install Composer

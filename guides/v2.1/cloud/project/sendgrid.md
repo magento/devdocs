@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: SendGrid
 version: 2.1

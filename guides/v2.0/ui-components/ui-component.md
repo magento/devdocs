@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: A_Overview
 title: Overview

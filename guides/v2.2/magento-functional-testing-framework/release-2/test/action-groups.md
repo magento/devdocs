@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Action groups
 version: 2.2

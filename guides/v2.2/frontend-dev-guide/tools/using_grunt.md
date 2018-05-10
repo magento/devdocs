@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: I_TOOLS
 title: Using Grunt for Magento tasks

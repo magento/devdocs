@@ -1,6 +1,5 @@
 ---
 
-layout: default
 group: rest
 subgroup: Web APIs
 title: Search using REST APIs

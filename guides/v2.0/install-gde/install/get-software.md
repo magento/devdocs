@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: QA_Get
 title: Get the Magento software

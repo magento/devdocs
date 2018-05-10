@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 title: DevDocs Contributions
 contributor_name: Staffan Palopää from Vaimo
@@ -103,7 +102,6 @@ The Markdown (.md) file's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d7
 
 ```yaml
 ---
-layout: default
 group: install2
 title: Continue with your installation
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install-dock
 subgroup: 05_PhpStorm
 title: Debug in PhpStorm and browser

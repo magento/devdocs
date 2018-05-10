@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 10_php
 title: The PHP mcrypt extension is not installed properly

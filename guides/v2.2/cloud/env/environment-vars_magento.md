@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Application variables
 version: 2.2

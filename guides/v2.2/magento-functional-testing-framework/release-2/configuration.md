@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Configuration
 version: 2.2

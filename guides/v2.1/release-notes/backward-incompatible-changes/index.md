@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento 2.1 backward incompatible changes
 github_link: release-notes/backward-incompatible-changes/index.md

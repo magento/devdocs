@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 24_RabbitMQ
 title: Manage message queues

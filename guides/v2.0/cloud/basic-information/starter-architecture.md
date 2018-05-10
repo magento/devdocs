@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 010_welcome
 title: Starter architecture

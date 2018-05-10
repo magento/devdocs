@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Server side includes
 version: 2.0

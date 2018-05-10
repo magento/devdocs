@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Onboarding tasks
 version: 2.1

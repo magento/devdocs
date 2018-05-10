@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Pro develop and deploy workflow
 version: 2.1

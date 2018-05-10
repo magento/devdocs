@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 version: 2.3
 title: Define the GraphQL schema for a module

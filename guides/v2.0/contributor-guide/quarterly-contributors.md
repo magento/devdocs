@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 title: DevDocs Contributors
 menu_order: 1000

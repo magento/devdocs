@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: W_continue
 title:

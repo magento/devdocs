@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Backward incompatible changes in Magento Commerce
 version: 2.0

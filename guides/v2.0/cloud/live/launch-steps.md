@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 165_live
 title: Launch steps

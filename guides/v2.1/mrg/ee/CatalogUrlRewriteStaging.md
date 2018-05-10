@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_CatalogUrlRewriteStaging module
 version: 2.1

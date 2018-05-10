@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Test case
 version: 2.0

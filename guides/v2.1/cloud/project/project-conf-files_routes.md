@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Configure routes
 version: 2.1
