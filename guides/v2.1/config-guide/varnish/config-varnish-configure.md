@@ -42,6 +42,7 @@ To modify the Varnish system configuration:
 
 	*	CentOS 6: `/etc/sysconfig/varnish`
 	*	CentOS 7: `/etc/varnish/varnish.params`
+	*	Debian: `/etc/default/varnish`
 	*	Ubuntu: `/etc/default/varnish`
 
 2.	Set the Varnish listen port to 80:
