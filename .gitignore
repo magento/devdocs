@@ -18,3 +18,4 @@ ignore
 /vendor/
 /node_modules/
 _algolia_api_key
+.idea
