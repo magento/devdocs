@@ -1,5 +1,4 @@
 ---
-layout: default
 subgroup: howtos
 group: UI_Components_guide
 title: Update the page URL type

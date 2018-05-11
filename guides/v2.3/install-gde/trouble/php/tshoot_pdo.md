@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 03_install
 title: During installation, fatal PDO error displays

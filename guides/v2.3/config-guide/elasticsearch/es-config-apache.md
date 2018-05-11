@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Configure Apache and Elasticsearch
 version: 2.3

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 title: RabbitMQ
 version: 2.3

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Bulk Operations
 version: 2.3

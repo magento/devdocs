@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration

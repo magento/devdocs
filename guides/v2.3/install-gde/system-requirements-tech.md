@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 title: Magento 2.3.x technology stack requirements
 version: 2.3

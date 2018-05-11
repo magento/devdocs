@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Configure nginx and Elasticsearch
 version: 2.3

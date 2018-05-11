@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Variable Pool
 github_link: extension-dev-guide/variable-pool/index.md

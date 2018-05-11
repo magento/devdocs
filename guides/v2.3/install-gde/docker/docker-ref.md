@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install-dock
 title: DevBox reference
 landing-page: DevBox Quick Installation (Beta)

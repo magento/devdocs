@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Configure Elasticsearch stopwords
 version: 2.3

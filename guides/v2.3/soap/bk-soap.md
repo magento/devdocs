@@ -1,5 +1,4 @@
 ---
-layout: default
 group: soap
 subgroup: A_soap
 title: SOAP Reference

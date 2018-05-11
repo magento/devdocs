@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 title: ImageUploader component
 github_link: ui_comp_guide/components/image-uploader/index.md

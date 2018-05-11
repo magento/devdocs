@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: Release Notes
 title: Magento Commerce 2.3.0 Release Notes

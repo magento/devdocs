@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Message Queues
 version: 2.3

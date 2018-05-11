@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Sensitive and system-specific
 version: 2.3

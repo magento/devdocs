@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 title: Required PHP settings
 version: 2.3

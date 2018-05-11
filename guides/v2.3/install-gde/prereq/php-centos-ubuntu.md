@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 title: PHP
 version: 2.3

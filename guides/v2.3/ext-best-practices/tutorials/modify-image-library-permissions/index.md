@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 title: Modify Media Library folder permissions
 github_link: ext-best-practices/tutorials/modify-image-library-folder-permissions/index.md

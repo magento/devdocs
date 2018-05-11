@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Example bulk operations implementation
 version: 2.3

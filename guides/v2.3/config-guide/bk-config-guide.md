@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Configuration Guide
 landing-page: Configuration Guide

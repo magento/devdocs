@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Install and configure Elasticsearch
 version: 2.3

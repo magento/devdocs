@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Message Queues Overview
 version: 2.3

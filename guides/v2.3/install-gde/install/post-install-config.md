@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install
 title: Configure the Magento application
 version: 2.3

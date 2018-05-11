@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 title: Technology stack
 version: 2.3
