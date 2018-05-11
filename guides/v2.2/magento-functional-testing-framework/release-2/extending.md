@@ -1,12 +1,12 @@
 ---
 layout: default
 group: mftf
-title: Merging
+title: Extending
 version: 2.2
-github_link: magento-functional-testing-framework/release-2/merging.md
+github_link: magento-functional-testing-framework/release-2/extending.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
