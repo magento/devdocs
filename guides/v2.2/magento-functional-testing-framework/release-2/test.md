@@ -6,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -87,6 +87,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|optional| A test identifier used while merging.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
+`extends`|string|optional|Identifies test to extend.
 
 `<test>` may also contain [`<annotations>`](#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
 
