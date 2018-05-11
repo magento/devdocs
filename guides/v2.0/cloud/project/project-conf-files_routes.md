@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Routes
 version: 2.0

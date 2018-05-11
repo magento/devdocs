@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 10_php
 title: PHP errors

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Install a third-party storefront theme
@@ -48,4 +47,4 @@ If a theme is distributed on [Magento Marketplace](https://marketplace.magento.c
 
 After you create or install a theme, open the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or reload any Magento Admin page. This way the theme gets registered and added to the database.
 
-To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
+To verify the theme is registered navigate to **Content** > **Design** > **Configuration** in the Magento Admin. If a theme is registered, it is displayed in the list of available themes.

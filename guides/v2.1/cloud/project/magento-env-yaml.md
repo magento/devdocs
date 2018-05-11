@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Build and deploy
 version: 2.1

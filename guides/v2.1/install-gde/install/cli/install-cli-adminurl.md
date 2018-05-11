@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Display or change the Admin URI
 version: 2.1

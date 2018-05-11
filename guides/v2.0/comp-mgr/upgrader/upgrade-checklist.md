@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Run System Upgrade

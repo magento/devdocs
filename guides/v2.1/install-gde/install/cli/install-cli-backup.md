@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Back up and roll back the file system, media, and database
 version: 2.1

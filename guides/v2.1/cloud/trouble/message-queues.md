@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Message queues
 version: 2.1
@@ -16,6 +15,4 @@ If you use cron jobs—or some other external process manager—to manage messag
 Message queue consumers fail to restart after you deploy code to an environment.
 
 ## Solution
-Use the `CRON_CONSUMERS_RUNNER` environment variable to ensure that consumers are retrieving messages from the message queue.
-
-{% include cloud/cron-consumers-runner.md %}
+Use the [`CRON_CONSUMERS_RUNNER` environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner) to ensure that consumers are retrieving messages from the message queue.

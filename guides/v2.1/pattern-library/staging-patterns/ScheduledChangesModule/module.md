@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Staging Patterns
 title: Magento Admin Pattern Library

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install
 subgroup: 02_config
 title: Configure the Magento application

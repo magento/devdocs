@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 13_DBProfiler
 title: Configure the database profiler

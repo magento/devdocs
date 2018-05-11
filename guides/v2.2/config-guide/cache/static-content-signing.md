@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 08_Configure caching
 title: Static content signing

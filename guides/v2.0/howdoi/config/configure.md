@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Configure
 title: Configure Magento

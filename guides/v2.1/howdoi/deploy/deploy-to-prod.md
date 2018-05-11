@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Deploy
 title: Deploy Magento to production

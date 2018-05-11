@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 50_trouble
 title: Sorry, we can't take that action right now

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: GroupedProduct endpoint
 version: 2.3

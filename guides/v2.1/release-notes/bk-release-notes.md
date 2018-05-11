@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 01_2.1.x_Release_Information
 title: 2.1.x Release Information
@@ -15,6 +14,9 @@ Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-note
 
 
 ## Magento 2.1.0 Release Notes
+
+* [{{site.data.var.ce}} 2.1.13 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.13CE.html)
+* [{{site.data.var.ee}} 2.1.13 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.13EE.html)
 
 * [{{site.data.var.ce}} 2.1.12 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.12CE.html)
 * [{{site.data.var.ee}} 2.1.12 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.12EE.html)

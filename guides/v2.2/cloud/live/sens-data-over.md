@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Configuration management for store settings
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 045_pipeline
 title: Production System Setup
@@ -96,7 +95,7 @@ To set sensitive values:
 	![Sensitive setting in Admin]({{ site.baseurl}}/common/images/config_sensitive-set.png)
 
 #### Related topics
-*	[`magento deploy:mode:set` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
+*	[`magento deploy:mode:set` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html)
 *	[`magento config:sensitive:set` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 *	[`magento app:config:import` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
 *	[Example of setting configuration values using environment variables]({{ page.baseurl}}/config-guide/deployment/pipeline/example/environment-variables.html)

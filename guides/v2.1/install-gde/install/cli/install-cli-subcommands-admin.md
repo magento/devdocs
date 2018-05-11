@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Create, edit, or unlock a Magento administrator account
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: Tutorials
 title: Serialized to JSON data upgrade

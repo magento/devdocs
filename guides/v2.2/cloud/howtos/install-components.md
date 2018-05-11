@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Install, manage, and upgrade extensions
 version: 2.0
@@ -70,7 +69,7 @@ To update `composer.json`:
     ```bash
     git add -A
     git commit -m "<message>"
-    git push origin <environment ID>
+    git push magento <environment ID>
     ```
 
 If there are errors, see [extension deployment failure]({{page.baseurl}}/cloud/trouble/trouble_comp-deploy-fail.html).

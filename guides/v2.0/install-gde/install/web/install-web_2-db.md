@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: Wizard
 title: Step 2. Add a Database

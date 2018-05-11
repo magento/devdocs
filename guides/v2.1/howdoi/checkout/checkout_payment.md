@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup:
 title: Add a custom payment method to checkout
@@ -173,18 +172,18 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
     public function getConfig()
     {
         return [
-            // 'key' =&gt; 'value' pairs of configuration
+            // 'key' => 'value' pairs of configuration
         ];
     }
 ...
 }
 ```
 
-A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`:
+A sample DI configuration file of a custom module `<your_module_dir>/etc/frontend/di.xml`:
 
 {%highlight xml%}
 ...
-<type name="Magento\Checkout\Modерel\CompositeConfigProvider">
+<type name="Magento\Checkout\Model\CompositeConfigProvider">
     <arguments>
         <argument name="configProviders" xsi:type="array">
             ...

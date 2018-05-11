@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup:
 title: Add a new field in address form

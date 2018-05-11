@@ -1,7 +1,6 @@
 ---
-layout: default
 group: graphql
-title: Price field
+title: Product interface implementations
 version: 2.3
 github_link: graphql/reference/product-interface-implementations.md
 ---

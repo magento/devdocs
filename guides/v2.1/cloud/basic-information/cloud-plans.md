@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Subscriptions and plans
 version: 2.1

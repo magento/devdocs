@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Layout development
 title: Layout development

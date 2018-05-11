@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Troubleshooting
 title: Reset the theme to default

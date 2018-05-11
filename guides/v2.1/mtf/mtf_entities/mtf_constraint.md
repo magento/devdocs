@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Constraint
 version: 2.1

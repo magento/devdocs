@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install-dock
 subgroup: 100_trouble
 title: Troubleshoot issues with Magento DevBox

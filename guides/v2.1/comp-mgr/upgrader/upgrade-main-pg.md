@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 32_UseUpgrade
 title: Step 1. Select versions to upgrade

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: Magento 2.1 Release Notes

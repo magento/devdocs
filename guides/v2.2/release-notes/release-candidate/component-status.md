@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 2.2.x_Release_Information
 title: Component Status

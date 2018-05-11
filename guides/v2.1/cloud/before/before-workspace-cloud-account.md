@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup:
 title: Set up an account and project

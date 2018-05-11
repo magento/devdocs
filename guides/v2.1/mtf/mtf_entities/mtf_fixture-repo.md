@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Fixture repository
 version: 2.1

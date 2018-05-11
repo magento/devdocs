@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 title: JavaScript mixins
 version: 2.1
@@ -79,9 +78,9 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 ### Example
 
-The following is an example of a `require-config.js` file that adds the `columns-mixins`, defined in the previous example, to the [grid column component].
+The following is an example of a `requirejs-config.js` file that adds the `columns-mixins`, defined in the previous example, to the [grid column component].
 
-**File:** `OrangeCompany/Sample/view/base/require-config.js`
+**File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
 ``` javascript
 var config = {

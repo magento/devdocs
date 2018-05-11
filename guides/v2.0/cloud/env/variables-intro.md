@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Manage variables
 version: 2.0

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Installation and configuration
 title: Magento mode switch

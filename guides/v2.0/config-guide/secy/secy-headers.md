@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 02_Security
 title: Prevent cache poisoning

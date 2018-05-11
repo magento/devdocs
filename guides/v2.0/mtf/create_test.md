@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
 version: 2.0

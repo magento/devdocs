@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 03_install
 title: Installation stops at about 70%

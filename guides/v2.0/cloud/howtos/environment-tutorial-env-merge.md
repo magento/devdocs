@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup:
 title: Merge and delete an environment (tutorial)

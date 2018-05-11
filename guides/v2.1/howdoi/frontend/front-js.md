@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: JavaScript development
 title: JavaScript development

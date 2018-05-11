@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 02_prereq
 title: Set up cron for update and upgrade

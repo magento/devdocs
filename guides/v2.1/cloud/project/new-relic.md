@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: New Relic APM
 version: 2.1

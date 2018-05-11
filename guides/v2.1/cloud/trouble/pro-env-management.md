@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Add Staging and Production to Pro projects UI
 version: 2.1

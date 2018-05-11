@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: 02_sample
 title: Install by cloning repositories

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup:
 title: Overview of UI components
@@ -18,12 +17,6 @@ redirect_from:
   - /guides/v2.1/ui_comp_guide/concepts/ui_comp_architecture_concept.html
   - /guides/v2.1/ui_comp_guide/ui_component_explained.html
 ---
-
-## Welcome to the new UI components Guide
-
-This document started as a [week-long doc sprint in Kyiv](http://bhmarks.com/blog/ui-components-doc-sprint-hello-kyiv/){:target="_blank"} with core Magento developers writing documentation about the UI Components. We will add additional topics to this book as we continue our work.
-
-In the meantime, until we have completed this new book, you can also still [access the former (v2.0) UI Components docs](http://devdocs.magento.com/guides/v2.0/ui-components/ui-component.html).
 
 ## Overview of UI components
 *Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others*.
@@ -111,7 +104,7 @@ A UI component can be bound to one or more {% glossarytooltip a2aff425-07dd-4bd6
 
 A particular instance of a UI component is defined primarily by the following:
 
-1. `<Magento_Ui_module_dir>/view/base/ui_component/etc/definition.xml`: default components' configuration. Can be extended in custom modules.
+1. [definition.xml]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml): default components' configuration. Can be extended in custom modules.
 2. [UI component's XML declaration]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
 3. [Backend/PHP modifiers]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.

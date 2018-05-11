@@ -1,5 +1,4 @@
 ---
-layout: default
 group: reporting
 title: Data collection for advanced reporting
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 01_Introduction
 title: Getting Started with Magento Web APIs

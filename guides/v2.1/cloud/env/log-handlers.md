@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Logging handlers
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 100_project
 title: Manage branches with the Project Web Interface

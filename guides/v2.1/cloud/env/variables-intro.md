@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Environment variables
 version: 2.1
@@ -22,7 +21,7 @@ Variables are _hierarchical_, which means that if a variable is not overridden, 
 You use the [`.magento.env.yaml`](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
-The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage.  Insert these variables in the `global` stage of the `.magento.env.yaml` file:
+The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage. Insert these variables in the `global` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -35,7 +34,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Enable generation of static content when requested by a user. Pre-loading the cache using the [`post_deploy` hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is not available when using the Starter plan architecture. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
+Enable generation of static content when requested by a user. Pre-loading the cache using the [`post_deploy` hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -43,7 +42,7 @@ stage:
     SCD_ON_DEMAND: true
 ```
 
-The `SCD_ON_DEMAND` variable skips the SCD and the  `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
+The `SCD_ON_DEMAND` variable skips the SCD and the `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
 
 ```php
 return array(

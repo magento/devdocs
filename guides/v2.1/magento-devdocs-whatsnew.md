@@ -7,10 +7,34 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## April 2018
+## May 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Updated the Cloud build and deploy [environment variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-intro.html) descriptions and samples.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 08
+Added the [Reference architecture](https://devdocs.magento.com/guides/v2.2/performance-best-practices/reference-architecture.html) topic|2.2.x, 2.3.x|New topic|May 07
+Contributed to [Linking properties of UI components]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html).|2.x|Technical changes|May 07
+You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production environment.|2.1.x, 2.2.x|Technical changes|May 07
+You can trigger a [redeploy]({{page.baseurl}}/cloud/reference/cli-ref-topic.html) of your Cloud environment.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 05
+Updated the example in [Example_logging database activity](https://devdocs.magento.com/guides/v2.2/config-guide/log/log-db.html)|2.2.x|Technical changes|May 04
+Updated the backward incompatible changes between _2.2.0_ and _2.3-develop_ for [OpenSource](http://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html) and [Commerce](http://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html).|2.3.x|Technical changes|May 02
+Fixed the severity values in [MFTF annotations]({{page.baseurl}}/magento-functional-testing-framework/release-2/test/annotations.html).|2.2.x, 2.3.x|Technical changes|May 02
+Describes the highlights, fixed issues, and community contributions for Magento Open Source and Commerce 2.2.4. See [Magento Open Source 2.2.4 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.4CE.html) and [Magento Commerce 2.2.4 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.4EE.html) for more information.|2.2.x|New topic|May 02
+Contributed a section about [Using PHP short tags in template PHTML files](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-override.html#short-tags).|2.2.x|Technical changes|May 02
+Added "custom database port" to the optional parameters section in the [Migration Guide](http://devdocs.magento.com/guides/v2.2/migration/migration-tool-configure.html#migration-configure).|2.x|Technical changes|May 02
+Describes the highlights, fixed issues, and community contributions for Magento Open Source and Commerce 2.1.13. See [Magento Open Source 2.1.13 Release Notes](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.13CE.html) and [Magento Commerce 2.1.13 Release Notes](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.13EE.html) for more information.|2.1.x|New topic|May 02
+[Magento 2.x GDPR compliance](http://devdocs.magento.com/guides/v2.2/architecture/gdpr/magento-2x.html)<br/>[Magento 1.x GDPR compliance](http://devdocs.magento.com/guides/v2.2/architecture/gdpr/magento-1x.html)|2.x|New topic|May 01
+Added the [development environment recommendations]({{page.baseurl}}/performance-best-practices/development-environment.html).|2.1.x, 2.2.x, 2.3.x|New topic|May 01
+Documented the [Redis Sentinel settings](http://devdocs.magento.com/guides/v2.2/config-guide/redis/redis-session.html).|2.3.x|Technical changes|May 01
+
+
+{% collapsibleh2 April 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Added a new topic [Suite](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/suite.html) to the MFTF Guide along with documentation updates related to the 2.2.0 release of the framework.|2.2.x, 2.3.x|New topic|Apr 28
+Updates from the 2018 Imagine Docathon.|2.x|Technical changes|Apr 27
+Added [Error code mapping](http://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html)|2.3.x|New topic|Apr 25
 Added the ability to configure a read-only connection to a non-master node to receive read-only traffic for [Redis](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection) and for [MariaDB](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection).|2.1.x, 2.2.x, 2.3.x|New|Apr 24
 New [Smart wizards](http://devdocs.magento.com/guides/v2.2/cloud/env/smart-wizards.html) help you to verify your Cloud configuration follows best practices.|2.1.x, 2.2.x, 2.3.x|New|Apr 24
 Added [Marketplace EQP API](http://devdocs.magento.com/guides/v2.2/marketplace/eqp/api.html) reference documentation.|2.x|New topic|Apr 21
@@ -32,6 +56,7 @@ Added the `SKIP_HTML_MINIFICATION` environment variable to the Cloud [Environmen
 Added the new CRYPT_KEY environment variable to the [Deploy variables reference](http://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html) as a way to supply cryptographic key to another environment when moving a database.|2.1.x, 2.2.x|Updated|Apr 02
 Reorganized the Cloud [Configure environments](http://devdocs.magento.com/guides/v2.2/cloud/env/environments.html) section of the Cloud documentation. It is easier to distinguish the Application, Cloud, Build, and Deploy variables. The variable names also appear in each right-side page navigation for easier selection.<br/>Added the `SCD_ON_DEMAND` environment variable to generate static content when requested.|2.1.x, 2.2.x|Updated|Apr 02
 Added a new topic for [extending the Data Migration Tool](http://devdocs.magento.com/guides/v2.2/migration/extend-the-tool.html).|2.x|New|Apr 02
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 March 2018 %}
 

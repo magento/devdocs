@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: E_rwd
 title: Overview of responsive web design in Magento
@@ -39,7 +38,7 @@ The articles in this chapter describe the particular approaches used in the Blan
 </li>
 
 <li>
-<a href="{{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_overview.html" target="_blank">Create a responsive mobile theme based on Blank</a>
+<a href="{{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_mobile.html" target="_blank">Create a responsive mobile theme based on Blank</a>
 </li>
 
 </ul>

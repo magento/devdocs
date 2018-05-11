@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: 05_Command-line installation
 title: Enable or disable modules

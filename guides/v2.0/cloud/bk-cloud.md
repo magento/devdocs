@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 010_welcome
 title: Welcome to Magento Commerce (Cloud)

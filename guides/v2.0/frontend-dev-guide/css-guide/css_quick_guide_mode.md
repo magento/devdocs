@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS_G
 title: Simple style changes with client-side LESS compilation vs. server-side

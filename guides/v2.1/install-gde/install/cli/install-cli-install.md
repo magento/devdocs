@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Install the Magento software
 version: 2.1

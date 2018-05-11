@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Adding a new payment integration (payment method)

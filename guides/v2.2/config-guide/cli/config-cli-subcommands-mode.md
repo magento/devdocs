@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Set the Magento mode
 version: 2.2

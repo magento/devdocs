@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Typified element
 version: 2.0

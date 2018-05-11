@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 05_techbull
 title: Magento 2.1 technical bulletins

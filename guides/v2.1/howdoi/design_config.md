@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Customize Design Configuration
 title: Customize Design Configuration

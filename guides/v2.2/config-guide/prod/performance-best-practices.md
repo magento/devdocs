@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Performance Configuration Best Practices
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: G_Translate
 title: Translations overview

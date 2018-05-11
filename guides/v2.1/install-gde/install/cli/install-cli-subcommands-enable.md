@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Enable or disable modules
 version: 2.1

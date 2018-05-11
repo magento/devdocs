@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Quick start. Prepare environment for test run
 version: 2.0

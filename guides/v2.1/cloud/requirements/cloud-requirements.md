@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Technologies and requirements
 version: 2.1

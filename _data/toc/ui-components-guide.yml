@@ -3,12 +3,6 @@ pages:
     - label: Overview of UI components
       url: /ui_comp_guide/bk-ui_comps.html
 
-    - label: A list of Magento UI components
-      url: /ui_comp_guide/ui_comp_list_concept.html
-
-    - label: UI Components Guide outline (proposed)
-      url: /ui_comp_guide/ui_comp_outline_proposed.html
-
     - label: Components
       children:
 

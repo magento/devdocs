@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Magento Commerce (Cloud) package updates
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Handler
 version: 2.0

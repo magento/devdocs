@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Input testing data
 version: 2.2
@@ -212,7 +211,7 @@ Attributes|Type|Use|Description
 `entityKey`|string|optional|Key attribute of the referenced entity from which to get a value.
 `unique`|--|--|*This attribute hasn't been implemented yet.*
 
-### requiredEntity {#requiredentities-tag}
+### requiredEntity {#requiredentity-tag}
 
 `<requiredEntity>` is an element that specifies the parent/child relationship between complex types.
 

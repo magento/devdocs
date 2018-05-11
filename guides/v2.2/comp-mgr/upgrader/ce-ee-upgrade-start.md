@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 26_CE-EEUpgrade
 title: Upgrade from Open Source to Commerce

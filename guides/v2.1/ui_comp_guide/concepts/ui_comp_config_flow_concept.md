@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: Configuration flow of UI components
@@ -41,7 +40,7 @@ Keep in mind that the Magento_UI module contains these important files:
 When the request for my_page comes, the server does the following:
 
 1. Determines which UI components are used in this particular layout. In the example, the UI components that are used are defined in the `my_form` component’s `.xml` declaration file.
-2. Searches the `.xml` files with name `my_form` among all modules. The server and then merges the `my_form .xml` file(s) into a single configuration object, thus overriding the common properties, so that the latest `my_form .xml` file always has the highest priority.
+2. Searches the `.xml` files with name `my_form` among all modules. The server then merges all the `my_form .xml` file(s) into a single configuration object, thus overriding the common properties, so that the latest `my_form .xml` file always has the highest priority.
 1. Merges the resulting configuration (from Step 2 above) with the configuration from the UI module `definition.xml`. The UI module `definition.xml` configuration file has the lowest priority, and is overwritten by the merged configuration of all `my_form.xml` files.
 2. Translates the resulting configuration into JSON format and adds it to response body the following way:
 

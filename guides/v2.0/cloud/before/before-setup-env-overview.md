@@ -1,5 +1,4 @@
 ---
-layout: default
 group: 
 subgroup:
 title: Overview of a Magento Developer Environment

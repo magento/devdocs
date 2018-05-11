@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 03_install
 title: Step 2. Add a database

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Post-deploy variables
 version: 2.1

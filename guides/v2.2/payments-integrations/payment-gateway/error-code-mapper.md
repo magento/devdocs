@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 title: Error Code Mapping
 github_link: payments-integrations/payment-gateway/error-code-mapper.md
@@ -99,10 +98,14 @@ The payment integration should now retrieve error codes from the payment gateway
 
 ## Retrieve error codes from the response validator {#retrieve-errors}
 
-You can perform the same tasks programmatically using a [response validator]({{page.baseurl}}/payments-integrations/payment-gateway/response-validator.html). A response validator verifies response codes from the payment gateway. It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway. It is the responsibility of a gateway command to call an appropriate service.
+You can retrieve errors codes using a [response validator]({{page.baseurl}}/payments-integrations/payment-gateway/response-validator.html).
+A response validator verifies response codes from the payment gateway.
+It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
+It is the responsibility of a gateway command to call an appropriate service.
 
 
-For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{site.mage2200url}}app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php). Its implementation allows you to add additional validators.
+For example, Magento provides a response validator for Braintree: [`\Magento\Braintree\Gateway\Validator\GeneralResponseValidator`]({{site.mage2200url}}app/code/Magento/Braintree/Gateway/Validator/GeneralResponseValidator.php).
+Its implementation allows to add additional validators.
 
 First, create a new validator. It can be a simple class with the `__invoke` method, because `GeneralResponseValidator` calls the validator as a function:
 

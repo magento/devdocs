@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Configure payment method by area

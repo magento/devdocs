@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 045_pipeline
 title: Using rsync
@@ -16,8 +15,6 @@ functional_areas:
   - System
   - Setup
 ---
-
-NOT STARTED TBD
 
 This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and Magento CLI commands.
 

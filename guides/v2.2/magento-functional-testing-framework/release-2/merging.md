@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Merging
 version: 2.2
@@ -34,7 +33,7 @@ You cannot add another [`<test>`](./test.html) using merging functionality. To a
 
 Tests cannot be removed while merging. If a [`<test>`](./test.html) must be skipped due to a module completely invalidating a function, you can add the test to the `skip` group.
 
-Learn more about running tests with different options using [robo](./commands/robo.html#run-all-functional-tests-excluding-group-skip) or [codecept](./commands/codeception.html) commands.
+Learn more about running tests with different options using [robo](./commands/robo.html#run-all-generated-tests) or [codecept](./commands/codeception.html) commands.
 
 **Example**
 

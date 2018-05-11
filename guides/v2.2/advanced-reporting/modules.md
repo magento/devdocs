@@ -1,5 +1,4 @@
 ---
-layout: default
 group: reporting
 title: Modules providing advanced reporting
 version: 2.2

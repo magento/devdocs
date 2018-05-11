@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 20_PHP
 title: Develop B2B extensions

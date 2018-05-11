@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Patch Cloud tools
 version: 2.2
@@ -14,7 +13,7 @@ functional_areas:
 
 ## v2002.0.11
 
-{% include note.html type="info" content="The Cloud tools version 2002.0.11 is required for 2.2.4 compatibility." %}
+{% include note.html type="info" content="The Cloud tools version 2002.0.11 is required for 2.2.4 compatibility. " %}
 
 #### New features
 
@@ -26,9 +25,21 @@ functional_areas:
 #### Fixed issues
 
 -  <!-- MAGECLOUD-1221 -->Deployment validation fails if an `ADMIN_EMAIL` or `ADMIN_USERNAME` value is the same as an existing Magento administrator account.
+-  <!-- MAGECLOUD-1282 -->Removed SOLR support for 2.2.x versions. 2.1.x versions retain the ability to enable SOLR.
 -  <!-- MAGECLOUD-1489 -->The first installation of the Staging & Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.
--  <!-- MAGECLOUD-1819 -->You can now use the `VERBOSE_COMMANDS` environment variable during both _build_ and _deploy_ phases.
--  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture when using static content deployment.
+-  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture during static content deployment.
+
+-  **Cron-specific Improvements**—<!-- MAGECLOUD-1607 -->Re-worked the cron implementation: 
+    - Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.
+    - Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.
+    - Improved logging to better assist in debugging cron issues. 
+    - **NOTE**—This release addresses many cron-related issues. If you currently use some cron-related patches in _m2-hotfixes_, remove them.
+
+-  **SCD-specific improvements**
+    -  <!-- MAGECLOUD-1819 -->You can now use the `VERBOSE_COMMANDS` and the `SCD_COMPRESSION_LEVEL` environment variables during both _build_ and _deploy_ phases.
+    -  <!-- MAGECLOUD-2043 -->Fixed an issue that caused deployment to fail with a random error when encountering an unexpected value for the `SCD_COMPRESSION_LEVEL` environment variable. Improved the configuration validation to provide meaningful notifications. See [`SCD_COMPRESSION_LEVEL`]({{page.baseurl}}/cloud/env/variables-build.html#scdcompressionlevel) for acceptable values.
+    -  <!-- MAGECLOUD-2044 -->Fixed the behavior of the `SCD_COMPRESSION_LEVEL` environment variable configuration flow so the overrides work as expected.
+    -  <!-- MAGECLOUD-2046 -->Fixed an issue that prevented the configuration of the `SCD_THREADS` environment variable in the `.magento.env.yaml` file _deploy_ stage.
 
 ## v2002.0.10
 

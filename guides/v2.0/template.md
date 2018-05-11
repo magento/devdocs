@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: A_Introduction
 title: template (generic)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Functional Testing Framework Features
 version: 2.1

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: CustomizableOptionInterface
 version: 2.3

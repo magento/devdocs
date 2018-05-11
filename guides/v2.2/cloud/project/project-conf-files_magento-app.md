@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Application
 version: 2.2
@@ -201,7 +200,7 @@ hooks:
     deploy: |
         php ./vendor/bin/m2-ece-deploy
         php ./bin/magento <custom-command>
-    # We run post deploy hook to clean and warm the cache.
+    # We run post deploy hook to clean and warm the cache.  Available with Cloud Tools 2002.0.10.
     post_deploy: |
         php ./vendor/bin/ece-tools post-deploy
 ```

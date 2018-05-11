@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Getting Started
 title: Supported browsers

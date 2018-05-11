@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Add a payment action
