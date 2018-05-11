@@ -27,6 +27,7 @@ ignore
 /jk.bat
 *.bat
 *.sh
+!/**/samples/*.sh
 tmp/
 /vendor/
 /Gemfile.lock
