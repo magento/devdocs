@@ -179,7 +179,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
 }
 ```
 
-A sample DI configuration file of a custom module `<your_module_dir>/etc/di.xml`:
+A sample DI configuration file of a custom module `<your_module_dir>/etc/frontend/di.xml`:
 
 {%highlight xml%}
 ...
