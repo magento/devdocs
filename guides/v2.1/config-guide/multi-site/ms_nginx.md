@@ -56,31 +56,35 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
 {% collapsible To create virtual hosts: %}
 
 1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg.conf`:
+    ```
+    map $http_host $MAGE_RUN_CODE {
+        french.mysite.mg french;
+    }
 
-		map $http_host $MAGE_RUN_CODE {
-           french.mysite.mg french;
-		}
-
-		server {
-           listen 80;
-           server_name french.mysite.mg;
-           set $MAGE_ROOT /var/www/html/magento2;
-           set $MAGE_MODE developer;
-           include /var/www/html/magento2/nginx.conf;
-		}
+    server {
+        listen 80;
+        server_name french.mysite.mg;
+        set $MAGE_ROOT /var/www/html/magento2;
+        set $MAGE_MODE developer;
+        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+        include /var/www/html/magento2/nginx.conf;
+    }
+    ```
 3.	Create another file named `german.mysite.mg.conf` in the same directory with the following contents:
+    ```
+    map $http_host $MAGE_RUN_CODE {
+        german.mysite.mg german;
+    }
 
-		map $http_host $MAGE_RUN_CODE {
-           german.mysite.mg german;
-		}
-
-		server {
-           listen 80;
-           server_name german.mysite.mg;
-           set $MAGE_ROOT /var/www/html/magento2;
-           set $MAGE_MODE developer;
-           include /var/www/html/magento2/nginx.conf;
-		}
+    server {
+        listen 80;
+        server_name german.mysite.mg;
+        set $MAGE_ROOT /var/www/html/magento2;
+        set $MAGE_MODE developer;
+        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+        include /var/www/html/magento2/nginx.conf;
+    }
+    ```
 4.	Save your changes to the files and exit the text editor.
 5.	Verify the server configuration:
 
@@ -99,6 +103,59 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
+
+{% endcollapsible %}
+
+## Step 3: Modify nginx.conf.sample {#ms-nginx-conf-sample}
+{% collapsible To Edit PHP entry point for main application: %}
+1.	Open a text editor and review the file named nginx.conf.sample `<magento2_installation_directory>/nginx.conf.sample`. Specifically look for the following section:
+
+```
+# PHP entry point for main application
+location ~ (index|get|static|report|404|503|health_check)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+    fastcgi_buffers 1024 4k;
+
+    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+```
+
+2. Update the nginx.conf.sample file with the following two lines before the include statement:
+```
+    fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+    fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+```
+3. An example updated PHP entry point for main application:
+```
+# PHP entry point for main application
+location ~ (index|get|static|report|404|503|health_check)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+    fastcgi_buffers 1024 4k;
+
+    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    # START - Multisite customization
+    fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+    fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+    # END - Multisite customization
+    include        fastcgi_params;
+}
+```
+Note: The `nginx.conf.sample` file is considered a core file, so to avoid potential conflicts with updates to this file in future Magento 2 releases, formulating a strategy that doesn't directly edit this file is preferred. One approach would be to copy the `nginx.conf.sample` file, rename it, and edit the copied file versus the actual `nginx.conf.sample`.
 
 {% endcollapsible %}
 
