@@ -18,7 +18,7 @@ Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %
 <li>clicking outside the area closes the drop-down</li>
 </ul>
 
-The dropdownDialog widget source is located in <a href="{{site.mage2000url}}lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.
+The dropdownDialog widget source is located in <a href="{{ site.mage2000url }}lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 

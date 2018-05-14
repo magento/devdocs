@@ -141,7 +141,7 @@ To register your theme in the system, in your theme directory add a `registratio
 
 Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
 
-For illustration, see the <a href="{{site.mage2000url}}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
+For illustration, see the <a href="{{ site.mage2000url }}app/design/frontend/Magento/luma/registration.php">registration.php</a> file of the Magento Luma theme.
 
 
 ## Configure images {#fedg_create_theme_how-to-images}

@@ -86,12 +86,12 @@ The toolbar component should use the `ui/grid/sticky/toolbar` template for the s
 <h2 id="sticky_elements">Component elements</h2>
 The sticky header component consists of the following elements:
 
-- Constructor: <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`</a>
-- Main template: <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
+- Constructor: <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js">`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`</a>
+- Main template: <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
 - Elements' templates:
-	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/listing.html`</a>
-	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/filters.html`</a>
-	- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
+	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/listing.html`</a>
+	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/filters.html`</a>
+	- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html">`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`</a>
 	
 
 <h2 id="sticky_dependencies">Dependencies</h2>

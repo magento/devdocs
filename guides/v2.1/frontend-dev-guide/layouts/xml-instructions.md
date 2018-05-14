@@ -493,7 +493,7 @@ To pass an argument that is an array use the following construction:
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
 
 Example:
-Setting a value of <code>css_class</code> in the <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
 
 {%highlight xml%}
 ...
@@ -504,7 +504,7 @@ Setting a value of <code>css_class</code> in the <code><a href="{{site.mage2000u
 {%endhighlight xml%}
 
 
-Using the value of <code>css_class</code> in <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+Using the value of <code>css_class</code> in <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
 
 {%highlight php%}
 ...

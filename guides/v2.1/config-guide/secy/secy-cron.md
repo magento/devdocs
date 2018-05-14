@@ -115,7 +115,7 @@ Consult one of the following resources to create a password file before continui
 ### Secure cron in `nginx.conf.sample`
 Magento provides an optimized sample nginx configuration file out of the box. We recommend modifying it to secure cron.
 
-1.  Add the following to your Magento [`nginx.sample.conf`]({{site.mage2000url}}nginx.conf.sample){:target="&#95;blank"} file:
+1.  Add the following to your Magento [`nginx.sample.conf`]({{ site.mage2000url }}nginx.conf.sample){:target="&#95;blank"} file:
 
     ``` shell
     #Securing cron

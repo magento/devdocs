@@ -21,7 +21,7 @@ To "bind" several instances of collapsible widget, the <a href="#fedg_collaps_co
 
 Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
 
-The collapsible widget source is <a href="{{site.mage2000url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
+The collapsible widget source is <a href="{{ site.mage2000url }}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
 
 
 <h2 id="collaps_init_js">Initialize collapsible in JS</h2>

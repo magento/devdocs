@@ -17,7 +17,7 @@ Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
-The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
+The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 

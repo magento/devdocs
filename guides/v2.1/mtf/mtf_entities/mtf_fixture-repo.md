@@ -307,9 +307,9 @@ The repository code for these cases follows:
 
 ## Configuration repository {#mtf_repository_config}
 
-The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="{{site.mage2000url}}app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
+The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="{{ site.mage2000url }}app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
 
-Let's see the following example of configuration settings for <a href="{{site.mage2000url}}app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+Let's see the following example of configuration settings for <a href="{{ site.mage2000url }}app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
 {% highlight xml %}
 
@@ -415,7 +415,7 @@ Modules that require configuration adjustment store `ConfigData.xml` in their `R
 
 <a href="{{ site.baseurl }}/common/images/ftf/mtf_repo_merge_ex.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_repo_merge_ex.png" /></a>
 
-As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{site.mage2000url}}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{site.mage2000url}}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
+As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{ site.mage2000url }}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{ site.mage2000url }}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 
 `ConfigData.php` will be generated in `<magento2>/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
@@ -502,7 +502,7 @@ As you can see, a repository with the name `default` contains data from the `cus
 
 Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
 
-You can find a template for credentials in [`<magento2>/dev/tests/functional/credentials.xml.dist`]({{site.mage2000url}}dev/tests/functional/credentials.xml.dist).
+You can find a template for credentials in [`<magento2>/dev/tests/functional/credentials.xml.dist`]({{ site.mage2000url }}dev/tests/functional/credentials.xml.dist).
 
 Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:

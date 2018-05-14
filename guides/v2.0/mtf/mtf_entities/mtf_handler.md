@@ -29,7 +29,7 @@ One fixture can have various handlers. When we create an {% glossarytooltip a902
 
 ### `config.xml` {#mtf_handler_configxml}
 
-The default configuration for handlers is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
+The default configuration for handlers is set in <a href="{{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>.  Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
     cp config.xml.dist config.xml
 

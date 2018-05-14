@@ -13,7 +13,7 @@ Gateway Command is a component of the Magento {% glossarytooltip 5b963536-8f03-4
 For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.
 
 ## Interface
-Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
+Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
 
 ## Basic implementation
 

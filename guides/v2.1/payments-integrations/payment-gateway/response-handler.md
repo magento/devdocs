@@ -19,7 +19,7 @@ The response handler only modifies the order state, based on the {% glossarytool
 
 ## Interface
 
-Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Response/HandlerInterface.php)
+Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Response/HandlerInterface.php)
 
 
 ### Useful implementations
