@@ -184,7 +184,7 @@ $('#modal_content').modal({
     &lt;option2&gt;: &lt;value2&gt;,
     ...
 });
-$( "#modal_content" ).on( "close", function() {
+$( "#modal_content" ).on( "modalclosed", function() {
   foo(bar);
 });
 </pre>
@@ -196,7 +196,7 @@ $('#modal_content').modal({
     &lt;option1&gt;: &lt;value1&gt;,
     &lt;option2&gt;: &lt;value2&gt;,
     ...
-    close: function(){
+    closed: function(){
        foo(bar);
     }
 });
