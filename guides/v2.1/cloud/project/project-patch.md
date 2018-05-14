@@ -227,12 +227,15 @@ After you've successfully tested a custom patch locally and on your Integration 
 
     ```yaml
     hooks:
-      # We run build hooks before your application has been packaged.
-      build: |
-              php ./vendor/bin/m2-ece-build
-      # We run deploy hook after your application has been deployed and started.
-      deploy: |
-              php ./vendor/bin/m2-ece-deploy
+        # We run build hooks before your application has been packaged.
+        build: |
+            php ./vendor/bin/ece-tools build
+        # We run deploy hook after your application has been deployed and started.
+        deploy: |
+            php ./vendor/bin/ece-tools build
+        # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
+        post_deploy: |
+            php ./vendor/bin/ece-tools post-deploy
     ```
 
 1.  Update the metapackage version constraint in the `composer.json` file. See [Update the metapackage]({{page.baseurl}}/cloud/project/project-upgrade-parent.html#metapackage).

@@ -41,7 +41,7 @@ type: php:7.0
 
 The `build` property determines what happens by default when building the project. The only value currently supported is `composer`.
 
-```
+```yaml
 type: php:7.0
 build:
     flavor: composer
@@ -95,8 +95,8 @@ Our default configuration allows the following:
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
-```
-# The configuration of app when it is exposed to the web.
+```yaml
+ # The configuration of app when it is exposed to the web.
 web:
 locations:
     "/":
@@ -139,8 +139,8 @@ An object whose keys are paths relative to the root of the application. The moun
 
 The following is a default list of mounts configured in `magento.app.yaml`:
 
-```
-# The mounts that will be performed when the package is deployed.
+```yaml
+ # The mounts that will be performed when the package is deployed.
 mounts:
     "var": "shared:files/var"
     "app/etc": "shared:files/etc"
@@ -191,17 +191,15 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 Add CLI commands under the `build` or `deploy` sections:
 
-```
+```yaml
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
-        php ./bin/magento <custom-command>
-        php ./vendor/bin/m2-ece-build
+        php ./vendor/bin/ece-tools build
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendor/bin/m2-ece-deploy
-        php ./bin/magento <custom-command>
-    # We run post deploy hook to clean and warm the cache.  Available with Cloud Tools 2002.0.10.
+        php ./vendor/bin/ece-tools deploy
+    # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
     post_deploy: |
         php ./vendor/bin/ece-tools post-deploy
 ```
@@ -210,7 +208,7 @@ The commands run from the application (`/app`) directory. You can use the `cd` c
 
 #### To compile SASS files using grunt:
 
-```
+```yaml
 dependencies:
   ruby:
     sass: "3.4.7"
@@ -240,11 +238,11 @@ More information about crons:
 
 A sample Magento cron job follows:
 
-```
+```yaml
 crons:
   cronrun:
-      spec: "*/5 * * * *"
-      cmd: "php bin/magento cron:run"
+    spec: "*/5 * * * *"
+    cmd: "php bin/magento cron:run"
 ```
 
 ## Configure PHP options
@@ -260,15 +258,16 @@ type: php:5.6
 ### PHP extensions
 You can define additional PHP extensions you want to enable or disable. Example:
 
-```
-# .magento.app.yaml
+> .magento.app.yaml
+
+```yaml
 runtime:
-    extensions:
-        - xdebug
-        - redis
-        - ssh2
-    disabled_extensions:
-        - sqlite3
+  extensions:
+    - xdebug
+    - redis
+    - ssh2
+  disabled_extensions:
+    - sqlite3
 ```
 
 To view the current list of PHP extensions:
