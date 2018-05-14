@@ -89,7 +89,7 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
     <td><code>mage_mode</code></td>
     <td>Magento mode (<a href="{{page.baseurl}}/config-guide/bootstrap/magento-modes.html" target="_blank">About Magento modes</a>).</td>
     <td><code>"default", "developer", "production"</code></td>
-    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it. <a href="{{site.mage2100url}}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php">Open an example</a></td>
+    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it. <a href="{{ site.mage2100url }}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php">Open an example</a></td>
 </tr>
 <tr>
     <td><code>module_filter</code></td>
@@ -235,7 +235,7 @@ Set of parameters to be used for [installation test case].
 [desiredCapabilities]: https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
 [Open Selenium code]: https://github.com/giorgiosironi/phpunit-selenium/blob/master/PHPUnit/Extensions/Selenium2TestCase.php#L233-L238
 [PHPUnit documentation]: https://phpunit.de/manual/current/en/appendixes.configuration.html
-[installation test case]: {{site.mage2100url}}dev/tests/functional/tests/app/Magento/Install/Test/TestCase/InstallTest.php#L60-L77
+[installation test case]: {{ site.mage2100url }}dev/tests/functional/tests/app/Magento/Install/Test/TestCase/InstallTest.php#L60-L77
 
 <!-- Internal -->
 [handler]: {{page.baseurl}}/mtf/mtf_entities/mtf_handler.html

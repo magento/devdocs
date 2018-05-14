@@ -25,7 +25,7 @@ The following paragraphs describe these points in details.
 
 Add the vault enabling controls to the payment form. In the following example, a check box bound to the Vault enabler is added.
 
-Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
+Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
 {% highlight html %}
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
@@ -55,9 +55,9 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site
 
 The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %}. 
 
-Magento has a default vault enabler {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{site.mage2100url}}app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
+Magento has a default vault enabler {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2100url }}app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
 
-Example: [the Braintree payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
+Example: [the Braintree payment UI component]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
 
 {% highlight javascript %}
 define([

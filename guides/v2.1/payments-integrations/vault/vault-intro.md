@@ -13,7 +13,7 @@ functional_areas:
 
 Vault as a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} provides store customers with ability to use the previously saved credit card information for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the [PCI compliance](https://www.pcisecuritystandards.org/)  requirements.
 
-The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) is implemented using the Magento [payment gateway]({{page.baseurl}}/payments-integrations/payment-gateway/payment-gateway-intro.html). It is used in the out-of-the-box vault implementation for the Braintree payment method. Third party developers can use it to add vault to their custom payment provider integration.
+The [Magento Vault]({{ site.mage2100url }}app/code/Magento/Vault) is implemented using the Magento [payment gateway]({{page.baseurl}}/payments-integrations/payment-gateway/payment-gateway-intro.html). It is used in the out-of-the-box vault implementation for the Braintree payment method. Third party developers can use it to add vault to their custom payment provider integration.
 
 The following diagram shows a simplified interaction flow between Magento sales management, vault, payment integration and external payment service provider.
 

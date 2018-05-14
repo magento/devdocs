@@ -66,7 +66,7 @@ In most cases, customers fill all required information (credit card, expiration 
 So our {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation should provide the ability to display and process payment form on checkout step. 
 
 We can send to {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} any specific data, just need to override `getData()` method in
-[payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
+[payment UI component]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
  
 {% highlight javascript %}
 define(
@@ -116,7 +116,7 @@ mechanisms called [Observers]({{ site.gdeurl21 }}extension-dev-guide/events-and-
 
 You need to add an observer to retrieve additional data from payment form and store it
 in the payment additional information. In most cases it will be enough to extend
-[AbstractDataAssignObserver]({{site.mage2100url}}app/code/Magento/Payment/Observer/AbstractDataAssignObserver.php) and add custom behavior.
+[AbstractDataAssignObserver]({{ site.mage2100url }}app/code/Magento/Payment/Observer/AbstractDataAssignObserver.php) and add custom behavior.
 
 That's how observer might looks:
 
@@ -169,7 +169,7 @@ And this observer should be added to list of events (`Module_Name/etc/events.xml
 </config>
 {% endhighlight %}
 
-This {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} will be triggered in [Adapter::assignData()]({{site.mage2100url}}app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
+This {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} will be triggered in [Adapter::assignData()]({{ site.mage2100url }}app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
 
 ``` php?start_inline=1
 public function assignData(\Magento\Framework\DataObject $data)

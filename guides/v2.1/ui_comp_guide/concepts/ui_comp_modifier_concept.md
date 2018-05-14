@@ -24,7 +24,7 @@ To add a PHP modifier for a UI component, take the following steps:
 
 **Step 1**
 
-In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Modifier\ModifierInterface`]({{site.mage2100url}}app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php) with the following methods:
+In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Modifier\ModifierInterface`]({{ site.mage2100url }}app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php) with the following methods:
 
 - `modifyData()`: for modifying UI component's data (for example, the list of options for a select element)
 - `modifyMeta()`: for modifying UI component's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} (for example, name, label, description, type)
@@ -109,7 +109,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 
 **Step 3**
 
-To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{site.mage2100url}}app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
+To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2100url }}app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2100url }}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 
 
 ## Related reading

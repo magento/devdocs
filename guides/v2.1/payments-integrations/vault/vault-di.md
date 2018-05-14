@@ -14,7 +14,7 @@ This section describes how to configure vault {% glossarytooltip 422b0fa8-b181-4
 
 ## Add vault payment facade
 
-To add a payment facade for the vault payment, create a [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types). In the most cases, it will extend [`Magento\Vault\Model\Method\Vault`]({{site.mage2100url}}app/code/Magento/Vault/Model/Method/Vault.php) that is the default implementation of [`Magento\Vault\Model\VaultPaymentInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/VaultPaymentInterface.php):
+To add a payment facade for the vault payment, create a [virtual type]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#virtual-types). In the most cases, it will extend [`Magento\Vault\Model\Method\Vault`]({{ site.mage2100url }}app/code/Magento/Vault/Model/Method/Vault.php) that is the default implementation of [`Magento\Vault\Model\VaultPaymentInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Model/VaultPaymentInterface.php):
 
 Example of the vault payment facade configuration for Braintree:
 
@@ -54,7 +54,7 @@ Following is an example from Braintree configuration:
 
 For payment actions, you need to create gateway commands for vault, and update the payment provider [command pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html). 
 
-All available commands you can find in the [VaultPaymentInterface]({{site.mage2100url}}app/code/Magento/Vault/Model/VaultPaymentInterface.php)
+All available commands you can find in the [VaultPaymentInterface]({{ site.mage2100url }}app/code/Magento/Vault/Model/VaultPaymentInterface.php)
 
 Example: a gateway command for the authorize action is added for the Braintree vault 
 

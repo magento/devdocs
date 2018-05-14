@@ -20,7 +20,7 @@ You can create integration with other payment providers, using [Magento payment 
 </div>
 
 The topics of this chapter explain how to add an integration with a custom payment service provider (in other words, add a new payment method) and implement the authorize payment action for this {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}. For illustration we use code 
-samples from the [Braintree]({{site.mage2100url}}app/code/Magento/Braintree) payment integration.
+samples from the [Braintree]({{ site.mage2100url }}app/code/Magento/Braintree) payment integration.
 
 To simplify the development of a new payment integration, Magento developed the [Payment sample module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway).
 It contains all required infrastructure and you can use it as starting point.

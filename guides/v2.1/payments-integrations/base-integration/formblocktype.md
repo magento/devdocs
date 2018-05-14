@@ -68,11 +68,11 @@ class Form extends Cc
 
 ## Template
 
-For creating a template for the payment information rendering class, you can use the default [cc.phtml]({{site.mage2100url}}app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml) as example.
+For creating a template for the payment information rendering class, you can use the default [cc.phtml]({{ site.mage2100url }}app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml) as example.
 
 Then add the the template to the billing form layout `sales_order_create_index.xml`.
 
-The following example adds the Braintree-specific template [`app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml`]({{site.mage2100url}}app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml) to the [billing form layout in the Braintree module]({{site.mage2100url}}app/code/Magento/Braintree/view/adminhtml/layout/sales_order_create_index.xml).
+The following example adds the Braintree-specific template [`app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml`]({{ site.mage2100url }}app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml) to the [billing form layout in the Braintree module]({{ site.mage2100url }}app/code/Magento/Braintree/view/adminhtml/layout/sales_order_create_index.xml).
 
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
