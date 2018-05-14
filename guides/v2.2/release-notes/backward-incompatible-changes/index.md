@@ -21,24 +21,24 @@ Magento 2.2 introduces changes in several {% glossarytooltip 786086f2-622b-4007-
 
 Magento no longer supports custom config file pools
 
-**Class:** [`Magento\Framework\App\DeploymentConfig\Reader`]({{site.mage2200url}}lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php){:target="_blank"}<br/>
+**Class:** [`Magento\Framework\App\DeploymentConfig\Reader`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php){:target="_blank"}<br/>
 **Action:** Deprecated the method `loadConfigFile`<br/>
 
 ### Store module
 
 The Store {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} management has been updated to allow the retrieval of a store by its {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} id.
 
-**Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{site.mage2200url}}app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{ site.mage2200url }}app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
 **Action:** New interface added with method `getStoreByWebsiteId($websiteId)`
 
-**Class:** [`Magento\Store\Model\StoreManager`]({{site.mage2200url}}app/code/Magento/Store/Model/StoreManager.php){:target="_blank"}<br/>
+**Class:** [`Magento\Store\Model\StoreManager`]({{ site.mage2200url }}app/code/Magento/Store/Model/StoreManager.php){:target="_blank"}<br/>
 **Action:** Implemented `StoreWebsiteRelationInterface` and added the inherited method `getStoreByWebsiteId($websiteId)`<br/>
 
 **Description:** Retrieves a store by website id<br/>
 
 New unique and required field `code` was added to the Store Group.
 
-**Class:** [`Magento\Store\Api\Data\GroupInterface`]({{site.mage2200url}}app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
+**Class:** [`Magento\Store\Api\Data\GroupInterface`]({{ site.mage2200url }}app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
 **Action:** Added two methods `getCode()` and `setCode($code)`<br/>
 
 
@@ -46,10 +46,10 @@ New unique and required field `code` was added to the Store Group.
 
 Change was done in order to add default values to customer attributes.
 
-**Class:** [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]({{site.mage2200url}}app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]({{ site.mage2200url }}app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php){:target="_blank"}<br/>
 **Action:** New interface added with methods `getDefaultValue()` and `setDefaultValue($defaultValue)`<br/>
 
-**Class:** [`Magento\Customer\Model\Data\AttributeMetadata`]({{site.mage2200url}}app/code/Magento/Customer/Model/Data/AttributeMetadata.php){:target="_blank"}<br/>
+**Class:** [`Magento\Customer\Model\Data\AttributeMetadata`]({{ site.mage2200url }}app/code/Magento/Customer/Model/Data/AttributeMetadata.php){:target="_blank"}<br/>
 **Action:** Implemented `AttributeDefaultValueInterface` and added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` methods<br/>
 
 **Description:** Retrieve and set default values to customer attributes<br/>
@@ -57,7 +57,7 @@ Change was done in order to add default values to customer attributes.
 
 ### Wishlist module
 
-**Class:** [`Magento\Wishlist\Model\Wishlist`]({{site.mage2200url}}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
+**Class:** [`Magento\Wishlist\Model\Wishlist`]({{ site.mage2200url }}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
 **Action:** The format of the string for the `buyRequest` parameter in the `addNewItem` method changed from serialized to JSON.<br/>
 
 
@@ -105,13 +105,13 @@ Deprecated method | Use instead | Subsequent calls
 
 ### Braintree module
 
-**Class:** [`Magento\Braintree\Model\Ui\ConfigProvider`]({{site.mage2200url}}app/code/Magento/Braintree/Model/Ui/ConfigProvider.php){:target="_blank"}<br/>
+**Class:** [`Magento\Braintree\Model\Ui\ConfigProvider`]({{ site.mage2200url }}app/code/Magento/Braintree/Model/Ui/ConfigProvider.php){:target="_blank"}<br/>
 **Action:** The deprecated constant `PAYPAL_CODE` has been removed<br/>
 **Description** Use `\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE` instead.<br/>
 
 ### PayPal module
 
-**Class:** [`Magento\Paypal\Cron\FetchReports`]({{site.mage2200url}}app/code/Magento/Paypal/Cron/FetchReports.php){:target="_blank"}<br/>
+**Class:** [`Magento\Paypal\Cron\FetchReports`]({{ site.mage2200url }}app/code/Magento/Paypal/Cron/FetchReports.php){:target="_blank"}<br/>
 **Action:**
 
   * Method `execute` has been reworked and now throws an `\Exception` instead of logging it

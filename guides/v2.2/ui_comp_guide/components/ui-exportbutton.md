@@ -13,7 +13,7 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ## Structure
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/export.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)
 
 ## ExportButton configuration
 

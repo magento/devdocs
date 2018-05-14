@@ -11,7 +11,7 @@ github_link: ui_comp_guide/components/ui-treemassactions.md
 
 The TreeMassActions component is a decorator for [MassActions]({{page.baseurl}}/ui_comp_guide/components/ui-massactions.html) that adds the support of nested actions.
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js)
 
 ## TreeMassActions configuration
 

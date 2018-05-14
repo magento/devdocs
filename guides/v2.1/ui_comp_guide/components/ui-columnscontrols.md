@@ -14,7 +14,7 @@ The ColumnsControls component is a collection of columns. It provides an interfa
 * total number of all available columns in a grid
 * number of columns currently active/displayed
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 
 ## ColumnsControls configuration
 

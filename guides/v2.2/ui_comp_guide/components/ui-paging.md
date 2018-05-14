@@ -11,7 +11,7 @@ github_link: ui_comp_guide/components/ui-paging.md
 
 The Paging component implements pagination in grids implemented using [Listing]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html). It also creates an instance of the child Sizes component which allows to define the number of records displayed in the associated table.
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)
 
 ## Paging configuration
 

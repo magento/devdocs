@@ -17,7 +17,7 @@ Form is a [basic component]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html#gene
 
 ## Structure
 
-{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
+{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ## Component options
 
