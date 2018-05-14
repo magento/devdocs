@@ -390,9 +390,9 @@ These backward incompatible changes do not need manual documentation:
 * Adding/removing a class/interface constant
 * Adding removing a class property
 
-Auto-generated [{{site.data.var.ce}} changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/open-source.html)
+Auto-generated [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
 
-Auto-generated [{{site.data.var.ee}} changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/commerce.html)
+Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html)
 
 ### Where to document
 
@@ -410,6 +410,6 @@ For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 
 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
-[versioning]: {{page.baseurl}}/extension-dev-guide/versioning/index.html
+[versioning]: {{ page.baseurl }}/extension-dev-guide/versioning/index.html
 [devdocs-repo]: https://github.com/magento/devdocs
 [2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md

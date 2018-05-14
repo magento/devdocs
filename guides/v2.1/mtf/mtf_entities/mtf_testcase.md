@@ -151,13 +151,13 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
-[variation]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[variation]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [Mtf\TestCase\Injectable]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php
-[Scenario test]: {{page.baseurl}}/mtf/mtf_entities/mtf_scenariotest.html
-[processAssert()]:{{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
-[constraints]: {{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
+[Scenario test]: {{ page.baseurl }}/mtf/mtf_entities/mtf_scenariotest.html
+[processAssert()]:{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
+[constraints]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
 [Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->

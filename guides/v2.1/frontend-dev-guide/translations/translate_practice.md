@@ -12,7 +12,7 @@ functional_areas:
 
 <h2>What's in this topic</h2>
 
-This topic is a step-by-step illustration of creating a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} <a href="{{page.baseurl}}/frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
+This topic is a step-by-step illustration of creating a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
 <h2 id="theme">Changing default strings</h2>
 OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme.
@@ -44,7 +44,7 @@ So OrangeCo take the following steps:
 <ol>
 
 <li>
-Run the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code>orange</code> theme:
+Run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code>orange</code> theme:
 <pre>
 {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}php{% endglossarytooltip %} magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
 </pre>
@@ -78,7 +78,7 @@ For example:
 <h2> Recommended reading </h2>
 
 <ul>
-<li><a href="{{page.baseurl}}/frontend-dev-guide/translations/xlate.html">Translations overview</a></li>
-<li><a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a></li>
-<li><a href="{{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
+<li><a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a></li>
+<li><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a></li>
+<li><a href="{{ page.baseurl }}/frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
 </ul>

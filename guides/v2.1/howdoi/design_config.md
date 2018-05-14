@@ -36,7 +36,7 @@ View the following sections for details.
 
 ## Customize the grid {#customize_grid}
 
-The grid containing the configuration scopes is implemented using the [grid UI component]({{page.baseurl}}/ui_comp_guide/components/ui-listing-grid.html).
+The grid containing the configuration scopes is implemented using the [grid UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 To customize the grid view, take the following steps:
 

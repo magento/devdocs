@@ -28,7 +28,7 @@ PROVIDE TEXT HERE FOR FIRST SECTION.
 <h3 id="H3">HEADING 3</h3>
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
+TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
 
 
 
@@ -39,8 +39,8 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_O
 
 <h2 id="book-related">Related topics</h2>
 
-* <a href="{{page.baseurl}}/_____/_____.html">Title of related topic</a>
-* <a href="{{page.baseurl}}/_____/_____.html">Title of related topic</a>
+* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
+* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
 
 ## Collapsible Content
 

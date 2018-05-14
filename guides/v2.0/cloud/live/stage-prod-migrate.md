@@ -9,7 +9,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Prepare to deploy to Staging and Production]({{ page.baseurl}}/cloud/live/stage-prod-migrate-prereq.html)
+[Prepare to deploy to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html)
 
 To migrate your database and static files to Staging and Production:
 
@@ -17,7 +17,7 @@ To migrate your database and static files to Staging and Production:
 *	[Migrate static files](#cloud-live-migrate-static)
 *	[Migrate the database](#cloud-live-migrate-db)
 
-If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl}}/cloud/live/stage-prod-migrate.html).
+If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 ## Deploy code to Staging and Production {#code}
 You can also use the [Project Web Interface](#interface) or [SSH and CLI commands](#ssh) to deploy your code to Staging and Production.
@@ -25,7 +25,7 @@ You can also use the [Project Web Interface](#interface) or [SSH and CLI command
 ### Deploy code with the Project Web Interface {#interface}
 The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans.
 
-For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl}}/cloud/trouble/pro-env-management.html), deploy the Integration `master` branch you created to Staging and Production:
+For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), deploy the Integration `master` branch you created to Staging and Production:
 
 1. [Log in](https://accounts.magento.cloud) to your project.
 2. Select the Integration branch.
@@ -51,7 +51,7 @@ If you prefer to use CLI for deploying, you will need to configure additional SS
 You'll need the SSH and Git access information for your project.
 
 * For Starter projects, locate the SSH and Git information through the Project Web Interface.
-* For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl}}/cloud/trouble/pro-env-management.html), locate the SSH and Git information through the Project Web Interface.
+* For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), locate the SSH and Git information through the Project Web Interface.
 * For Pro projects created **before October 23, 2017**, the formats are as follows:
 
   *	Git URL format:
@@ -65,7 +65,7 @@ You'll need the SSH and Git access information for your project.
   	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
 #### Deploy to Pro: updated or created after October 23, 2017
-To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl}}/cloud/trouble/pro-env-management.html):
+To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html):
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Checkout your Staging or Production branch:
@@ -83,7 +83,7 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 
 
 #### Deploy to Pro: created before October 23, 2017 {#classic}
-For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl}}/cloud/live/stage-prod-migrate-prereq.html) prior to deployment.
+For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html) prior to deployment.
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Pull the `master` branch to the server.
@@ -204,4 +204,4 @@ After migrating the database, you can set up your stored procedures or views in 
 </div>
 
 #### Next step
-[Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html)
+[Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)

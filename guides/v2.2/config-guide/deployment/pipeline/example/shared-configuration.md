@@ -25,12 +25,12 @@ These settings are available in the Magento Admin in **Stores** > Settings > **C
 
 You can use the same procedure to configure any non-sensitive, non-system-specific settings in the following references:
 
-*	[Other configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-payment.html)
-*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-b2b.html)
+*	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
-Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl}}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
+Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Assumptions
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
@@ -84,5 +84,5 @@ To verify these settings are not editable in the Magento Admin:
 	![Configuration options not editable in the Admin]({{ site.baseurl }}/common/images/config_split-deploy_not-editable.png){:width="650px"}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To change a setting that is locked in the Admin, use the [`magento config:set --lock` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
+To change a setting that is locked in the Admin, use the [`magento config:set --lock` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
 </div>

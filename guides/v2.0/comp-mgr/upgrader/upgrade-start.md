@@ -12,7 +12,7 @@ functional_areas:
 ---
 
 <h2 id="compman-prereq">Prerequisites</h2>
-Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <div class="bs-callout bs-callout-warning">
    	<p>If you're upgrading to version 2.1, see <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
@@ -21,7 +21,7 @@ Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}/com
 ## Optional custom maintenance page
 During the time you're upgrading, your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} is partially available. Users can see a list of files and so on but cannot shop or check out.
 
-To avoid the appearance of a disabled site and to set up a custom maintenance page that displays during the upgrade, see [Maintenance mode options for upgrade]({{page.baseurl}}/comp-mgr/trouble/cman/maint-mode.html).
+To avoid the appearance of a disabled site and to set up a custom maintenance page that displays during the upgrade, see [Maintenance mode options for upgrade]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
 To run System Upgrade:
@@ -31,7 +31,7 @@ To run System Upgrade:
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **System Configuration**.
-4.	If you haven't already done so, enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) in the provided fields.
+4.	If you haven't already done so, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the provided fields.
 
 	The following figure shows an example if you *have* already entered your keys.
 
@@ -51,17 +51,17 @@ To run System Upgrade:
 
 	The page displays similar to the following when we find components to upgrade.<br><br>
 	<img src="{{ site.baseurl }}/common/images/upgr_stuff-2-upgrade.png" width="650px" alt="Magento finds software to upgrade"><br><br>
-4. 	Continue with <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+4. 	Continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
 
 #### Error
-The following error can indicate one of several issues, including that you haven't entered your <a href="{{page.baseurl}}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
+The following error can indicate one of several issues, including that you haven't entered your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
 <img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
 
-For suggested solutions to other causes indicated by this message, see <a href="{{page.baseurl}}/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
+For suggested solutions to other causes indicated by this message, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
 
 #### Sample data
 The System Upgrade utility installs sample data for you but doesn't display it, if you:
 
-*	Used the [`magento sampledata:deploy`]({{page.baseurl}}/install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
+*	Used the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command to download, but not installed sample data
 *	You chose to update components at the same time as the Magento system software

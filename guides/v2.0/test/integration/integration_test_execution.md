@@ -313,6 +313,6 @@ The only difference in the run configuration is the integration test `phpunit.xm
 
 [setup]: #setup
 [cli run]: #cli-run
-[phpstorm run]: {{page.baseurl}}/test/unit/unit_test_execution_phpstorm.html
+[phpstorm run]: {{ page.baseurl }}/test/unit/unit_test_execution_phpstorm.html
 
 [PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html

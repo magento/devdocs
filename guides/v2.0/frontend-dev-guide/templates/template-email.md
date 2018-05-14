@@ -23,7 +23,7 @@ You can add custom templates as physical files in your custom {% glossarytooltip
 
 Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
 
-<a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
+<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
  
 ### Customize email templates using the Magento Admin {#customize-email-admin}
 
@@ -233,7 +233,7 @@ Here is an overview of how the font structure for emails works:
 
 If you want to change the font used for emails, do the following:
 
-1. Refer to the documentation on [using fonts]({{page.baseurl}}/frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
+1. Refer to the documentation on [using fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
 2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should automatically use the specified font.
 
 <h2 id="email-logo">Email logo</h2>

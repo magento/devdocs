@@ -69,7 +69,7 @@ location ~* ^/dev/tests/functional/utils($|/) {
 {% endhighlight %}
 
 
-[&lt;&lt; Adjust configuration]({{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_environment.html)
+[&lt;&lt; Adjust configuration]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html)
 
 
 

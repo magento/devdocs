@@ -30,5 +30,5 @@ A basic message queue system can also be set up without using RabbitMQ. In this 
 
 #### Related Topics
 
-*	[Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html)
-*	[Install RabbitMQ]({{page.baseurl}}/install-gde/prereq/install-rabbitmq.html)
+*	[Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*	[Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

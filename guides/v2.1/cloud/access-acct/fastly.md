@@ -13,7 +13,7 @@ functional_areas:
   - Configuration
 ---
 
-[Fastly]({{page.baseurl}}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
+[Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
 
 This information gets you started with installing and configuring Fastly. We provide additional information for backends and Origin shields, and error/maintenance page, and VCL snippets.
 
@@ -34,14 +34,14 @@ Fastly only allows one apex domain and all subdomains assigned to a single Fastl
 For details, review your Fastly accounts and [documentation](https://docs.fastly.com/) to remove the domains. This may include removing and updating CNAME records and more.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html). You must provide your fully-qualified domain name.
+To get Fastly credentials, open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html). You must provide your fully-qualified domain name.
 
 We'll provide you with the following credentials for your Staging and Production services:
 
 *	Fastly Service ID
 *	Fastly API token
 
-You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]({{page.baseurl}}/cloud/trouble/trouble.html) asking to have the file added. We can help provide this credentials file.
+You can also locate these credentials in your Staging and Production systems in `/mnt/shared/fastly_tokens.txt`. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for [Support]({{ page.baseurl }}/cloud/trouble/trouble.html) asking to have the file added. We can help provide this credentials file.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you'll encounter issues with Fastly.
@@ -88,7 +88,7 @@ We provide Fastly services only for your Staging and Production environments. Yo
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
 4. Merge the branch code with the `master` Integration branch.
-5. [Deploy]({{page.baseurl}}/cloud/live/stage-prod-live.html) the code to Staging and Production.
+5. [Deploy]({{ page.baseurl }}/cloud/live/stage-prod-live.html) the code to Staging and Production.
 
 After deployment, you can log into the Admin in Staging and Production to configure Fastly credentials and settings. This gives you the flexibility to have different caching features as needed in both environments, including VCL snippets.
 
@@ -150,7 +150,7 @@ Backend settings provide fine tuning for Fastly performance with Origin shieldin
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
 
-You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [Wordpress]({{page.baseurl}}/cloud/configure/fastly-vcl-wordpress.html) to handle your blog.
+You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [Wordpress]({{ page.baseurl }}/cloud/configure/fastly-vcl-wordpress.html) to handle your blog.
 
 1. Access and expand **Fastly Configuration**.
 2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.
@@ -220,7 +220,7 @@ To create a custom error/maintenance page:
 5.	Click **Save Config** at the top of the page.
 
 ## Create custom VCL snippets {#custom-vcl}
-For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html)
+For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html)
 
 ## Extend Fastly timeout for the Magento Admin {#bulkaction}
 Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you may encounter timeouts if you need to complete bulk actions that take longer than 3 minutes. You can manage timeouts using Fastly 1.2.41.
@@ -267,10 +267,10 @@ Many other DNS providers also offer workarounds to accomplish this goal. The mos
 
 Another option for apex domain is to add an A record, which maps a domain name to the Fastly IP address: `150.101.113.124`.
 
-Refer to [Go live checklist]({{page.baseurl}}/cloud/live/go-live-checklist.html) for more information.
+Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) for more information.
 
 ### TLS and Fastly {#fastly-tls}
-If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]{{page.baseurl}}/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
+If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]{{ page.baseurl }}/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see Fastly's [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="\_blank"}.
 
@@ -284,6 +284,6 @@ When you upgrade Fastly, you get the upgraded subset of default VCL snippets. Wh
 
 When you upgrade, the default VCL snippets you uploaded should not be affected or require any additional steps.
 
-For information on upgrading modules, refer to [Install, manage, and upgrade modules]({{page.baseurl}}/cloud/howtos/install-components.html).
+For information on upgrading modules, refer to [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html).
 
-If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).
+If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

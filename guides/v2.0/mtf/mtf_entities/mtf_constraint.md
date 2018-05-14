@@ -264,6 +264,6 @@ in the order that it must be performed.
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
-[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
-[test case]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html

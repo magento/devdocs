@@ -16,7 +16,7 @@ In this topic you will learn how to create, use, and merge a repository.
 
 Let's create a repository for the Widget fixture `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
-<a href="{{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
+<a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
 
 Assume that we have the following fixture:
 
@@ -124,7 +124,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
 
-In brief, we reference another repository `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
+In brief, we reference another repository `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
 
 The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
 

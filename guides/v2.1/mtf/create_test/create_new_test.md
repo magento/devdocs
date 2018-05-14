@@ -1062,38 +1062,38 @@ That's it!
 
 <!-- LINK DEFINITIONS -->
 
-[install one]: {{page.baseurl}}/install-gde/prereq/dev_install.html
+[install one]: {{ page.baseurl }}/install-gde/prereq/dev_install.html
 [concrete Magento commit]: https://github.com/magento/magento2/tree/a9797cd9c7bc7ac8460dba3fea8548741be1cccd
 
 
-[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
-[data set]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
-[data source]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
-[fixture repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
-[test case topic]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
-[injectable test]: {{page.baseurl}}/mtf/mtf_entities/mtf_testcase.html
-[block]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html
-[blocks]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html
-[block mapping]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[Learn about form mapping.]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[define a locator]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#define-a-selector
-[nodes description table]: {{page.baseurl}}/mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
-[page]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
-[pages]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
-[Page topic]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
-[constraint]: {{page.baseurl}}/mtf/mtf_entities/mtf_constraint.html
-[custom typified element]: {{page.baseurl}}/mtf/mtf_entities/mtf_typified-element.html#magento_class
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[data source]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[fixture repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[test case topic]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[injectable test]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[block]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html
+[blocks]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html
+[block mapping]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[Learn about form mapping.]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[define a locator]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#define-a-selector
+[nodes description table]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
+[page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
+[pages]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
+[Page topic]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
+[constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[custom typified element]: {{ page.baseurl }}/mtf/mtf_entities/mtf_typified-element.html#magento_class
 
 
-[adjust a configuration]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_config.html
-[prepare Magento application]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_magento.html
-[prepare environment for test run]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_environment.html
+[adjust a configuration]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html
+[prepare Magento application]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html
+[prepare environment for test run]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html
 
-[`generateFixtureXml.php`]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
-[set data to a fixture field]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html#fixture_field
-[set data to a fixture field from a repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html#fixture_field_repository
-[`%isolation%` placeholder]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
+[`generateFixtureXml.php`]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create
+[set data to a fixture field]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html#fixture_field
+[set data to a fixture field from a repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html#fixture_field_repository
+[`%isolation%` placeholder]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation
 
 [manual testing]: #manual-test
 [test description]: #auto-test
@@ -1111,7 +1111,7 @@ That's it!
 [`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
 [`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
 [`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
-[up and running]: {{page.baseurl}}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
+[up and running]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->
 

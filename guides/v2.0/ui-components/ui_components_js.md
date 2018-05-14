@@ -10,7 +10,7 @@ redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 
 ## What's in this topic
-This topic is aimed for developers, who need to reuse the [Magento UI Components]({{page.baseurl}}/ui-library/ui-library-component.html). 
+This topic is aimed for developers, who need to reuse the [Magento UI Components]({{ page.baseurl }}/ui-library/ui-library-component.html). 
 
 The topic covers the following:
 

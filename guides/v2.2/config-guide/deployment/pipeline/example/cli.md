@@ -29,13 +29,13 @@ These configuration settings are either system-specific or sensitive, as indicat
 
 You can use the same procedure to configure any settings in the following references:
 
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html)
-*	[Payment configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-payment.html)
-*	[Other configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-most.html)
-*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-b2b.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
-Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl}}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
+Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Assumptions
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
@@ -99,7 +99,7 @@ To set the sensitive and system-specific settings using environment variables, y
 
 	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is website and the scope for Default Email Domain is global (that is, the Default Config scope). 
 
-	You must know the website's code to set the Send Emails To configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl}}/config-guide/prod/config-reference-var-name.html) for more information on finding it.
+	You must know the website's code to set the Send Emails To configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html) for more information on finding it.
 *	Each setting's configuration path
 
 	The configuration paths used in this example follow:
@@ -109,7 +109,7 @@ To set the sensitive and system-specific settings using environment variables, y
 	| Send Emails To | `contact/email/recipient_email` |
 	| Default Email Domain | `customer/create_account/email_domain` |
 
-	You can find all sensitive and system-specific configuration paths in [Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html).
+	You can find all sensitive and system-specific configuration paths in [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 
 ### Set the variables using CLI commands
 This section discusses how to the following commands to set system-specific and sensitive configuration settings:

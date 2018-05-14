@@ -22,10 +22,10 @@ It is achieved due to the FTF capabilities like:
 
 <!-- LINK DEFINITIONS -->
 
-[entities]: {{page.baseurl}}/mtf/mtf_entities.html
-[scenario tests]: {{page.baseurl}}/mtf/mtf_entities/mtf_scenariotest.html
-[fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html
-[extending a fixture]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_extend
-[data set]: {{page.baseurl}}/mtf/mtf_entities/mtf_dataset.html
-[page]: {{page.baseurl}}/mtf/mtf_entities/mtf_page.html
-[fixture repository]: {{page.baseurl}}/mtf/mtf_entities/mtf_fixture-repo.html
+[entities]: {{ page.baseurl }}/mtf/mtf_entities.html
+[scenario tests]: {{ page.baseurl }}/mtf/mtf_entities/mtf_scenariotest.html
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[extending a fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_extend
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
+[fixture repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html

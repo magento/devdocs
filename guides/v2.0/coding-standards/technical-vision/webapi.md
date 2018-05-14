@@ -28,7 +28,7 @@ The following image provides an overview of how Web APIs are processed.
 
 #### Declare a new REST and SOAP endpoint
 
-Any [service contract]({{page.baseurl}}/extension-dev-guide/service-contracts/service-contracts.html) can be [exposed as REST and SOAP]({{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html) endpoints via configuration in a module's `webapi.xml` file.
+Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html) can be [exposed as REST and SOAP]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html) endpoints via configuration in a module's `webapi.xml` file.
 
 #### Declare a new GraphQL query
 
@@ -62,7 +62,7 @@ See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/i
 
 The recommended approach for modifying an interface is to define a new endpoint. If you simply modify the schema, you might break existing integrations or extensions.
 
-To extend an interface, use [extension attributes]({{page.baseurl}}/extension-dev-guide/attributes.html).
+To extend an interface, use [extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html).
 
 #### Modify the schema of an existing GraphQL query
 

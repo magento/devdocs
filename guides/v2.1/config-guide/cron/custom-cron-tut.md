@@ -23,7 +23,7 @@ In this tutorial, we assume the following:
 
 *   The Magento application is installed in `/var/www/html/magento2`
 *   Your Magento database user name and password are both `magento`
-*   You perform all actions as the [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html)
+*   You perform all actions as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 
 ## Step 1: Get a sample module {#cron-tut-get}
 To set up a custom cron job, you need a sample module. We suggest the `magento-module-minimal` module.
@@ -32,7 +32,7 @@ If you already have a sample module, you can use it; skip this step and the next
 
 {% collapsible To get a sample module: %}
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to a directory that is not in your Magento application root (for example, your home directory).
 2.  Clone the [`magento2-samples` repository](https://github.com/magento/magento2-samples){:target="_blank"}.
 
@@ -214,7 +214,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
 </config>
 {% endhighlight %}
 
-For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl}}/config-guide/cron/custom-cron-ref.html).
+For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl }}/config-guide/cron/custom-cron-ref.html).
 
 {% endcollapsible %}
 

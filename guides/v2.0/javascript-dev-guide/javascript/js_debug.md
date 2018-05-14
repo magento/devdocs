@@ -39,7 +39,7 @@ To find the source file of the used script:
 </li>
 <li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} reference:
 <ul>
-<li>If the module context is not specified, the path is relative to <code>&lt;theme_dir&gt;/web</code> (current theme). If the file is not found there, according to the <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code>web</code> directory, and then <code>lib/web</code>(library) directory.</li>
+<li>If the module context is not specified, the path is relative to <code>&lt;theme_dir&gt;/web</code> (current theme). If the file is not found there, according to the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code>web</code> directory, and then <code>lib/web</code>(library) directory.</li>
 
 <li>If the module context is specified, the path is relative to  <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the <code>&lt;module_dir&gt;</code> (module) directory.</li>
 
@@ -83,7 +83,7 @@ According to the JS components initialization notation, this means that this cod
 "menu":                   "mage/menu",
 </pre>
 
-This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order (according to the <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):
+This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order (according to the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):
 <ol>
 <li><code>&lt;Magento_Luma_theme_dir&gt;/web/js</code> (current theme JS files)</li>
 <li><code>&lt;Magento_Blank_theme_dir&gt;/web/js</code> (parent theme JS files)</li>

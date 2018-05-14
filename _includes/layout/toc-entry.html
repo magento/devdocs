@@ -6,7 +6,7 @@
     {% endif %}
 
     {% if entry.url %}
-    <a href="{% if entry.url contains 'http' %}{{entry.url}}{% else %}{{page.baseurl}}{{entry.url}}{% endif %}">{{ entry.label }}</a>
+    <a href="{% if entry.url contains 'http' %}{{entry.url}}{% else %}{{ page.baseurl }}{{entry.url}}{% endif %}">{{ entry.label }}</a>
     {% else %}
     <span>{{ entry.label }}</span>
     {% endif %}
@@ -23,7 +23,7 @@
             {% endif %}
 
             {% if child.url %}
-            <a href="{% if child.url contains 'http' %}{{child.url}}{% else %}{{page.baseurl}}{{child.url}}{% endif %}">{{ child.label }}</a>
+            <a href="{% if child.url contains 'http' %}{{child.url}}{% else %}{{ page.baseurl }}{{child.url}}{% endif %}">{{ child.label }}</a>
             {% else %}
             <span>{{ child.label }}</span>
             {% endif %}
@@ -40,7 +40,7 @@
                     {% endif %}
 
                     {% if child2.url %}
-                    <a  href="{% if child2.url contains 'http' %}{{child2.url}}{% else %}{{page.baseurl}}{{child2.url}}{% endif %}">{{ child2.label }}</a>
+                    <a  href="{% if child2.url contains 'http' %}{{child2.url}}{% else %}{{ page.baseurl }}{{child2.url}}{% endif %}">{{ child2.label }}</a>
                     {% else %}
                     <span>{{ child2.label }}</span>
                     {% endif %}
@@ -53,7 +53,7 @@
                         <li class="nav-level4 {% if page.url == entry_url %}active{% endif %} {{child3.class}}" id="{{child3.label | replace: ' ','-' | downcase }}">
 
                         {% if child3.url %}
-                        <a  href="{% if child3.url contains 'http' %}{{child3.url}}{% else %}{{page.baseurl}}{{child3.url}}{% endif %}">{{ child3.label }}</a>
+                        <a  href="{% if child3.url contains 'http' %}{{child3.url}}{% else %}{{ page.baseurl }}{{child3.url}}{% endif %}">{{ child3.label }}</a>
                         {% else %}
                         <span>{{ child3.label }}</span>
                         {% endif %}

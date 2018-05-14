@@ -14,7 +14,7 @@ functional_areas:
 ## Start the Extension Manager from the Magento Admin
 To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager:
 
-1.	If you haven't done so already, create or get your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html).
+1.	If you haven't done so already, create or get your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 2.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 3.	Click **System** > **Web Setup Wizard**.
 4.	Click **Extension Manager** as the following figure shows.
@@ -180,7 +180,7 @@ The following sections discuss your options.
 To get more information about an extension, click ![Get information about an extension]({{ site.baseurl }}/common/images/extensman_icon_question.png).
 
 ### Install one extension
-To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
+To install one extension, click the **Install** link at the end of its row and continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness.html).
 
 ### Install more than one extension
 To install more than one extension:
@@ -191,7 +191,7 @@ To install more than one extension:
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
 
 	![Install your purchases]({{ site.baseurl }}/common/images/extensman_ready-to-install.png){:width="550px"}
-3.	Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
 
@@ -204,7 +204,7 @@ To install more than one extension:
 	![Uninstall extensions]({{ site.baseurl }}/common/images/extensman_uninstall.png){:width="600px"}
 
 	If no **Uninstall** option is available, the vendor did not provide an uninstallation script. Contact the vendor for uninstallation instructions.
-3.	Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
+3.	Continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}
 
@@ -226,6 +226,6 @@ You have the following options:
 
 	![Update all extensions]({{ site.baseurl }}/common/images/extensman_update-all.png)
 
-Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/extens-man/extensman-readiness.html).
+Continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/extens-man/extensman-readiness.html).
 
 {% endcollapsible %}

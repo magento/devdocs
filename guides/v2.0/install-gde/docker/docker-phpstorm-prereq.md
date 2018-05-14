@@ -35,7 +35,7 @@ The command displays the listen ports. An example follows:
 To use Xdebug with {% glossarytooltip 57f1b0dc-1341-466d-a685-e0dbf5a3b713 %}Docker{% endglossarytooltip %} on Windows, you must set up an SSH tunnel because Windows doesn't have a native SSH client.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You don't need to use a third-party SSH client on Mac OS because it has a native client. Instead, run the `m2devbox-debug.sh` script before you need to create a tunnel to DevBox. One example of doing this is to run [Xdebug]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-debug.html).
+You don't need to use a third-party SSH client on Mac OS because it has a native client. Instead, run the `m2devbox-debug.sh` script before you need to create a tunnel to DevBox. One example of doing this is to run [Xdebug]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-debug.html).
 </div>
 
 The following procedure shows an example of creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}. You can use other applications (such as Cygwin); for more information, consult the documentation provided with those applications.
@@ -48,7 +48,7 @@ To set up an SSH tunnel on Windows using Putty:
 4.	Enter the following information:
 
 	*	**Host Name (or IP address)** field: Enter `127.0.0.1`
-	*	**Port** field: Enter the [SSH listen port]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html)
+	*	**Port** field: Enter the [SSH listen port]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html)
 
 	![Set up Putty]({{ site.baseurl }}/common/images/install_docker_putty-session.png){:width="350px"}
 
@@ -101,4 +101,4 @@ To set the user's bash profile:
 7.	Enter `exit` to exit the SSH shell and return to your command prompt.
 
 #### Next step
-[Set up your PhpStorm project]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-project.html)
+[Set up your PhpStorm project]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-project.html)

@@ -26,7 +26,7 @@ If you joined us with a 30-day free trial {{site.data.var.ece}} account, we comp
 -   Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 -   Created an environment for the `master` branch with a web server, database, and services
 -   Added Magento authentication keys for the Project Owner
--   Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var) for the default admin account to access the Magento Admin panel.
+-   Add the `ADMIN_EMAIL` variable. You can [add additional variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var) for the default admin account to access the Magento Admin panel.
 </div>
 
 ## Project access and users {#users}
@@ -47,7 +47,7 @@ You can also access your project by [logging in to your account](https://account
 ## Get started with the Project Web Interface {#project-setup}
 When you sign up for a Trial Pro or Starter subscription plan, we provision your initial environment with a template {{site.data.var.ece}} repository.
 
-We provide a [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html) for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.
+We provide a [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
@@ -69,7 +69,7 @@ When you initially create your project, you can access the Magento Admin panel t
 
     -   We send an email to the Project Owner with the link to your Magento Admin panel with instructions to click the Forgot Password link.
 
-    -   Or you can access a store URL available through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html). For the store URL, add /admin at the end. A login panel displays.
+    -   Or you can access a store URL available through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html). For the store URL, add /admin at the end. A login panel displays.
 
 1.  Click the forgot Password link and complete the process to change the password.
 1.  Login to the Admin panel using the username Admin and newly changed password.

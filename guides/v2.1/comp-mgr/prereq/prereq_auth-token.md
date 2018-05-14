@@ -15,7 +15,7 @@ functional_areas:
 	<p>To upgrade your {{site.data.var.ee}} version or to upgrade from {{site.data.var.ce}} to {{site.data.var.ee}}, you must be authorized to access the  {{site.data.var.ee}} repository. Contact <a href="http://support.magentocommerce.com" target="&#95;blank">Magento Support</a> if you have questions.</p>
 </div>
 
-To enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html):
+To enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html):
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **System** > Tools > **Web Setup Wizard**.

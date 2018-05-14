@@ -53,14 +53,14 @@ Submit feature requests or enhancement suggestions to the new <a href="https://c
 
 <h2 id="requirements">Contribution requirements</h2>
 
-1. Contributions must adhere to <a href="{{page.baseurl}}/coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
-2. Refer to the Magento development team's <a href="{{page.baseurl}}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
+1. Contributions must adhere to <a href="{{ page.baseurl }}/coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
+2. Refer to the Magento development team's <a href="{{ page.baseurl }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!
 2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 3. Commits must be accompanied by meaningful commit messages.
 4. PRs that include bug fixes must be accompanied by a step-by-step description of how to reproduce the bug.
 3. PRs that include new logic or new features must be submitted along with:
   * Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).
-  * Proposed <a href="{{page.baseurl}}/contributor-guide/contributing_docs.html" target="_blank">documentation</a> updates. <a href="{{ site.baseurl }}/" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
+  * Proposed <a href="{{ page.baseurl }}/contributor-guide/contributing_docs.html" target="_blank">documentation</a> updates. <a href="{{ site.baseurl }}/" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.
 4. For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.
 5. To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.
 

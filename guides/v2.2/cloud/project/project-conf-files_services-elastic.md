@@ -43,7 +43,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ### Add Elasticsearch plugins {#addplugins}
 Optionally, you can add the plugins through the `.magento/services.yaml` file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
@@ -93,7 +93,7 @@ If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target=
 For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You will use this information to [complete Elasticsearch configuration](#configure) in the Admin Panel.

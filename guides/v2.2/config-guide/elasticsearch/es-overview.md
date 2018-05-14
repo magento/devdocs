@@ -15,9 +15,9 @@ functional_areas:
   - Setup
 ---
 
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
+*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
 
 ## Elasticsearch overview {#overview}
 
@@ -206,6 +206,6 @@ For additional information, see [Elasticsearch documentation](https://www.elasti
 
 #### Next
 
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
+*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Magento to use Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html)

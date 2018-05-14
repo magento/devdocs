@@ -18,7 +18,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{ 
 
 ## ColumnsControls configuration
 
-Extends all [uiCollection]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 ColumnsControls-specific configuration:
 

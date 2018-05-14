@@ -93,7 +93,7 @@ In the Orange theme there is a footer background image located at `app/design/fr
 
 OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
 
-Once the Orange Winter theme is [applied]({{page.baseurl}}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
+Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
 
 <img src="{{ site.baseurl }}/common/images/inh-background2.jpg"/>
 
@@ -122,7 +122,7 @@ To do this, they need to add an overriding template for the corresponding module
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
 <p><img src="{{ site.baseurl }}/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{page.baseurl}}/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
+You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
 
 ## Extend layouts {#theme-inherit-layout}
 
@@ -154,7 +154,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
 ## Override layouts {#theme-inherit-layout-over}
 

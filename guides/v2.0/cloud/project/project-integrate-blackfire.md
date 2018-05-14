@@ -29,7 +29,7 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 ## Get your Blackfire credentials {#cloud-int-black}
 The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
 
-For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{page.baseurl}}/cloud/project/projects.html#integrations).
+For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{ page.baseurl }}/cloud/project/projects.html#integrations).
 
 ## Add collaborator accounts {#collaborators}
 After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
@@ -62,7 +62,7 @@ We recommend enabling Blackfire in all of your environments including Integratio
 For Starter plans, pushing your code and `.magento.app.yaml` file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.
 </div>
 
-These instructions assume you have fully set up your [local workspace]({{page.baseurl}}/cloud/before/before-workspace.html).
+These instructions assume you have fully set up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html).
 
 1. Log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
 2. Select the Integration and Development environment in the **Current Environment** list.
@@ -172,7 +172,7 @@ Add project variables for Blackfire for the server ID and token. You can add the
 	```
 
 ### Add Blackfire integration to the project {#integration}
-Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{page.baseurl}}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
+Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
 
 1.  Log in to your {{site.data.var.ece}} project.
 
@@ -240,7 +240,7 @@ If adding a route to Blackfire, make sure to add the default route to `routes.ya
 	```
 
 1.	Use a text editor to locate and edit `<project root dir>/magento/routes.yaml` in your branch.
-1.	Add the route the file. For details, see [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html). Here's an example:
+1.	Add the route the file. For details, see [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html). Here's an example:
 
 	```yaml
 	"http://{default}/":
@@ -282,7 +282,7 @@ To profile using the browser:
 To profile using the CLI:
 
 1.  Open a terminal.
-1.  [Checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  [Checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.	Run the profiler:
 
 	```bash

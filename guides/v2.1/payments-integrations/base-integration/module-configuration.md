@@ -44,7 +44,7 @@ In your `%Vendor_Module%/composer.json` file, specify the dependencies like in t
 }
 {% endhighlight %}
 
-For details about composer.json see [The composer.json]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html) file topic.
+For details about composer.json see [The composer.json]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) file topic.
 
 ### `module.xml`
 
@@ -68,6 +68,6 @@ Your payment method implementation might require adding more dependencies.
 
 ## What's next
 
-[Payment method configuration]({{page.baseurl}}/payments-integrations/base-integration/payment-option-config.html).
+[Payment method configuration]({{ page.baseurl }}/payments-integrations/base-integration/payment-option-config.html).
 
 

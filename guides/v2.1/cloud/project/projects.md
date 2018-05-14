@@ -22,26 +22,26 @@ We provide a Project Web Interface and CLI commands to fully manage all aspects 
 
 To manage your project, environment, and branches, see:
 
-* [Configure your project]({{page.baseurl}}/cloud/project/project-webint-basic.html)
-* [Project structure]({{page.baseurl}}/cloud/project/project-start.html)
-* [Create and manage users]({{page.baseurl}}/cloud/project/user-admin.html)
-*	Manage branches with the [Project Web Interface]({{page.baseurl}}/cloud/project/project-webint-branch.html) or [CLI commands]({{page.baseurl}}/cloud/env/environments-start.html)
-*	[Snapshots and backup management]({{page.baseurl}}/cloud/project/project-webint-snap.html)
+* [Configure your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html)
+* [Project structure]({{ page.baseurl }}/cloud/project/project-start.html)
+* [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html)
+*	Manage branches with the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html) or [CLI commands]({{ page.baseurl }}/cloud/env/environments-start.html)
+*	[Snapshots and backup management]({{ page.baseurl }}/cloud/project/project-webint-snap.html)
 
 ### Project and environment variables {#variables}
 The following sections detail more about project and environment variables:
 
-*	[Overview of environment variables]({{page.baseurl}}/cloud/env/variables-intro.html)
-*	[Magento Commerce (Cloud) environment variables]({{page.baseurl}}/cloud/env/environment-vars_cloud.html)
-*	[Magento application environment variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html)
-*	[Configuration management]({{page.baseurl}}/cloud/live/sens-data-over.html)
-*	[Example of configuration management]({{page.baseurl}}/cloud/live/sens-data-initial.html)
+*	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
+*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
+*	[Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
+*	[Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
+*	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
 
 ### Upgrade and patch {#upgrade}
 To upgrade and patch Magento, see:
 
-*	[Upgrade and test Magento Commerce]({{page.baseurl}}/cloud/project/project-upgrade.html)
-*	[Patch and test Magento Commerce]({{page.baseurl}}/cloud/project/project-patch.html)
+*	[Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html)
+*	[Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html)
 
 ## Access the Project Web Interface {#login}
 With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="\_blank"}.
@@ -49,7 +49,7 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 ![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
 
 ## Blackfire and New Relic credentials {#integrations}
-Your project includes [Blackfire]({{page.baseurl}}/cloud/project/project-integrate-blackfire.html) and [New Relic]({{page.baseurl}}/cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 * [New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
@@ -72,11 +72,11 @@ When you first login, a list of projects you have access to displays. As a Proje
 
 Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.
 
-For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{page.baseurl}}/cloud/basic-information/starter-architecture.html).
+For **Starter**, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html).
 
 ![Starter branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-starter.png)
 
-For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}/common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html).
+For **Pro**, you will see a hierarchy of branches starting from Production to Staging to Integration. The ![Enterprise icon]({{ site.baseurl }}/common/images/cloud_icon-enterprise.png) icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
 ![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)
 
@@ -114,7 +114,7 @@ The following table details the branches for Pro:
 </tbody>
 </table>
 
-If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{page.baseurl}}/cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
+If you are an existing Pro merchant, and have not ticketed to [add Staging and Production]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) to your UI, you will see only Integration `master` and any created branches.
 
 ![Pro branch hierarchy (original)]({{ site.baseurl }}/common/images/cloud_project-pro-old.png)
 
@@ -134,11 +134,11 @@ If you have inactive Git branches of code, you can toggle displaying the branche
 ![Show or hide inactive branches]({{ site.baseurl }}/common/images/cloud_show-inactive.png)
 
 ## Configure environments {#configure}
-You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{page.baseurl}}/cloud/env/environments.html), each of which corresponds to a Git branch.
+You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click **Configure environment** to create and manage [*environments*]({{ page.baseurl }}/cloud/env/environments.html), each of which corresponds to a Git branch.
 
 ![Access your project]({{ site.baseurl }}/common/images/cloud_project-env.png)
 
-This displays the following page, which enables you to configure settings, [variables]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html, [routes]({{page.baseurl}}/cloud/project/project-conf-files_routes.html), and [users]({{page.baseurl}}/cloud/project/user-admin.html).
+This displays the following page, which enables you to configure settings, [variables]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html, [routes]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ page.baseurl }}/cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 

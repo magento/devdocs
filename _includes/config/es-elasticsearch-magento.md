@@ -21,12 +21,12 @@ To configure Magento to use Elasticsearch:
 	<tr>
 		<td>Elasticsearch Server Hostname</td>
 		<td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
-		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl}}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
+		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Port</td>
 		<td><p>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</p>
-		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl}}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
+		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
 	</tr>
 	<tr>
 		<td>Elasticsearch Index Prefix</td>
@@ -81,11 +81,11 @@ To refresh the cache using the Admin:
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">
 
-To clean the cache using the command line, use the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+To clean the cache using the command line, use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
 To reindex using the command line:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
 2.	Enter any of the following commands:
 
 	Enter the following command to reindex the catalog search index only:
@@ -99,5 +99,5 @@ To reindex using the command line:
 3.	Wait while the reindexing completes.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
 </div>

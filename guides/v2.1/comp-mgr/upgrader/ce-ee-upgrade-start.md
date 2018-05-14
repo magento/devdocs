@@ -19,7 +19,7 @@ This section discusses how to upgrade {{site.data.var.ce}} to {{site.data.var.ee
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>
-Before continuing, complete all tasks discussed in <a href="{{page.baseurl}}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
+Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} <a href="http://php.net/manual/en/book.bc.php" target="_blank">`bcmath`</a> extension, which is required by {{site.data.var.ee}}. Examples follow:
 
@@ -53,11 +53,11 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 	service varnish restart
 
 #### Errors
-*	The following error can indicate one of several issues, including that you haven't entered your <a href="{{page.baseurl}}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
+*	The following error can indicate one of several issues, including that you haven't entered your <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Magento Admin:
 
 	<img src="{{ site.baseurl }}/common/images/upgr-sorry.png" width="600px">
 
-	For suggested solutions to other causes indicated by this message, see <a href="{{page.baseurl}}/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
+	For suggested solutions to other causes indicated by this message, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.
 
 *	The following error might display:
 
@@ -66,9 +66,9 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 		setup:upgrade {"command":"setup:upgrade"} successfully: Source 
 		class "\Cybersource" for "CybersourceLogger" generation does not exist.
 
-	For more information, see <a href="{{page.baseurl}}/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a>.
+	For more information, see <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a>.
 
 
 
 <h2 id="ce-ee-continue">Continue your upgrade</h2>
-From here, your upgrade is the same as any other upgrade. Continue with <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.

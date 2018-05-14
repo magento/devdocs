@@ -25,7 +25,7 @@ Icons should not be used in any of the navigation submenu panels to bring attent
 
 Your extension's settings and configuration area is an appropriate place to use icons.
 
-For more information about icon design and Magento's icon library, see the article about  [Iconography]({{page.baseurl}}/design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
+For more information about icon design and Magento's icon library, see the article about  [Iconography]({{ page.baseurl }}/design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
 
 ### Advertising in Navigation
 It is not appropriate to use the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} navigation for marketing or to {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.

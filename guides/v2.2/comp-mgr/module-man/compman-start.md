@@ -20,7 +20,7 @@ To run the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% en
 
 	![]({{ site.baseurl }}/common/images/modman_select.png){:width="550px"}
 
-To upgrade Magento system software instead, see <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
+To upgrade Magento system software instead, see <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
 
 See one of the following sections:
 
@@ -61,4 +61,4 @@ To disable a module:
 1.	Click **Disable** from the **Action** column, as the following figure shows.
 
 	![Disable a module]({{ site.baseurl }}/common/images/modman_disable.png)
-2.	Continue with [Step 1. Readiness check]({{ page.baseurl}}/comp-mgr/module-man/compman-readiness.html).
+2.	Continue with [Step 1. Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-readiness.html).

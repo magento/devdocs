@@ -126,5 +126,5 @@ To verify the integration works:
 
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}/cloud/project/project-start.html)
-*	[`.magento.app.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html)
+*	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)
+*	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)

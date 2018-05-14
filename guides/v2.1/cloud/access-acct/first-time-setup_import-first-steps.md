@@ -28,20 +28,20 @@ You cannot create trial projects by importing existing code.
 ## Prerequisites for importing code {#prereqs}
 Before you begin, do the following:
 
--   Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{page.baseurl}}/cloud/project/project-integrate-github.html).
--   Set up your [local development environment]({{page.baseurl}}/cloud/access-acct/first-time-setup.html).
+-   Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/project/project-integrate-github.html).
+-   Set up your [local development environment]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
 -   Gather required information:
 
     -    [SSH access link](#ssh) to the target environment
     -    [Database credentials](#db-creds)
 
 ### SSH access to cloud environments {#ssh}
-To transfer the database dump and files to {{site.data.var.ece}}, you must know the SSH access link. You can locate the SSH access link using the [`magento-cloud`] CLI tool({{page.baseurl}}/cloud/reference/cli-ref-topic.html):
+To transfer the database dump and files to {{site.data.var.ece}}, you must know the SSH access link. You can locate the SSH access link using the [`magento-cloud`] CLI tool({{ page.baseurl }}/cloud/reference/cli-ref-topic.html):
 
   magento-cloud environment:ssh --pipe
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Enable SSH keys]({{page.baseurl}}/cloud/before/before-workspace-ssh.html) and [SSH and sFTP]({{page.baseurl}}/cloud/env/environments-ssh.html).
+You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) and [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 </div>
 
 ### Database credentials {#db-creds}
@@ -49,7 +49,7 @@ You need your {{site.data.var.ece}} database name and credentials so that you ca
 
 To find {{site.data.var.ece}} database access information:
 
-1.  Log in to your remote repository using  [SSH]({{page.baseurl}}/cloud/env/environments-ssh.html#ssh).
+1.  Log in to your remote repository using  [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
         magento-cloud ssh -p <project ID> -e <environment ID>
 
@@ -85,10 +85,10 @@ Use the magento-cloud CLI tool to locate the base URL:
 The complete workflow for importing existing code includes the following steps:
 
 1.  If you do not have a project, create a new [project from a template](#cloud-import-proj). This new project has files and directories specific to {{site.data.var.ece}}.
-1.  [Replace the contents]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
-1.  [Import your Magento database]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
-1.  [Import your static files]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-import.html#media) into your {{site.data.var.ece}} project.
-1.  Copy your {{site.data.var.ee}} [encryption key]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-import.html#encryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
+1.  [Replace the contents]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
+1.  [Import your Magento database]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
+1.  [Import your static files]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#media) into your {{site.data.var.ece}} project.
+1.  Copy your {{site.data.var.ee}} [encryption key]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#encryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
 1.  Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and verify the project imported successfully.
 
 ## Create a new {{site.data.var.ece}} project {#cloud-import-proj}
@@ -107,7 +107,7 @@ The complete workflow for importing existing code includes the following steps:
 
 	![Create a site using the sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template.png){:width="650px"}
 
-1. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
+1. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
 
 	![Enter your authentication keys]({{ site.baseurl }}/common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
@@ -120,4 +120,4 @@ The complete workflow for importing existing code includes the following steps:
 1.  After the project deploys, **Success** displays next to the name of your project.
 
 #### Next step
-[Prepare your existing Magento Commerce install]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html)
+[Prepare your existing Magento Commerce install]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html)

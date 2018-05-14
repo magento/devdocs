@@ -111,7 +111,7 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{page.baseurl}}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see <a href="{{ page.baseurl }}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
 {% highlight xml %}
@@ -440,7 +440,7 @@ Some of the tables that are processed in the step:
 
 ### Delta migration mode
 
-After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see [Migrate data created by 3rd party extensions]({{page.baseurl}}/migration/migration-migrate-delta.html#migrate-delta-external-extensions).
+After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see [Migrate data created by 3rd party extensions]({{ page.baseurl }}/migration/migration-migrate-delta.html#migrate-delta-external-extensions).
 
 ## Data Sources {#data-sources}
 

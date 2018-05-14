@@ -151,7 +151,7 @@ Not applicable
 
 The following call returns information for all companies whose credit balance is 0.
 
-See [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -330,7 +330,7 @@ This call updates the credit history to specify a purchase order number.
 
 The following call returns a list instances in which the credit limit was set to a value higher than $500.
 
-See [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 
 **Sample Usage**
@@ -400,4 +400,4 @@ Not applicable
 
 ## Related information
 
-[Integrate with the CompanyCredit module]({{page.baseurl}}/b2b/company-credit.html)
+[Integrate with the CompanyCredit module]({{ page.baseurl }}/b2b/company-credit.html)

@@ -58,7 +58,7 @@ Add the extension's name and version to your `composer.json` file:
 
 		composer require j2t/module-payplug:2.0.2
 
-2.  Enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html). Your public key is your username; your private key is your password.
+2.  Enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your public key is your username; your private key is your password.
 
 3.  Wait for Composer to finish updating your project dependencies and make sure there aren't any errors:
 

@@ -379,10 +379,10 @@ In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `
 [create preset]: #create-preset
 [configuration]: #configuration
 [dispatch]: #dispatch-event
-[event]: {{page.baseurl}}/extension-dev-guide/events-and-observers.html#events
+[event]: {{ page.baseurl }}/extension-dev-guide/events-and-observers.html#events
 [event manager]: #event-manger
 [event preset]: #event-presets
-[handler]: {{page.baseurl}}/mtf/mtf_entities/mtf_handler.html
+[handler]: {{ page.baseurl }}/mtf/mtf_entities/mtf_handler.html
 [observer]: #observers
 [preset]: #event-presets
 [report directory]: #report-directory

@@ -80,7 +80,7 @@ Then customize the default `ErrorMessageMapper` via virtual type and specify the
 ```
 
 Because Braintree integration uses the default [`Magento\Payment\Gateway\Command\GatewayCommand`]({{ site.mage2300url }}app/code/Magento/Payment/Gateway/Command/GatewayCommand.php),
-inject the created mapper pool to the required [gateway command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html) as an argument:
+inject the created mapper pool to the required [gateway command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html) as an argument:
 
 ``` xml
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
@@ -98,7 +98,7 @@ The payment integration should now retrieve error codes from the payment gateway
 
 ## Retrieve error codes from the response validator {#retrieve-errors}
 
-You can retrieve errors codes using a [response validator]({{page.baseurl}}/payments-integrations/payment-gateway/response-validator.html).
+You can retrieve errors codes using a [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html).
 A response validator verifies response codes from the payment gateway.
 It has different responsibilities and should not map messages, because it works on the lower layer of communication between Magento and the payment gateway.
 It is the responsibility of a gateway command to call an appropriate service.

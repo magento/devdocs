@@ -112,4 +112,4 @@ vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 
 <!-- LINK DEFINITIONS -->
 
-[test suites]: {{page.baseurl}}/mtf/features/test_suite.html
+[test suites]: {{ page.baseurl }}/mtf/features/test_suite.html

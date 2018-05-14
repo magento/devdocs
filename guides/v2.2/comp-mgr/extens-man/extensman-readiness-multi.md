@@ -24,7 +24,7 @@ If you're updating multiple extensions, the readiness check displays success and
 
 You have the following options:
 
-*	Click **Update** or **Next** to continue to [Step 2. Backup]({{ page.baseurl}}/comp-mgr/extens-man/extensman-backup.html) with no changes
+*	Click **Update** or **Next** to continue to [Step 2. Backup]({{ page.baseurl }}/comp-mgr/extens-man/extensman-backup.html) with no changes
 *	To update the extension to a different version, select the desired version from the list 
 *	To remove the extension from the list and *not* update it, click ![Remove extension from the list]({{ site.baseurl }}/common/images/extensman_delete.png) (delete)
 
@@ -60,14 +60,14 @@ Messages similar to the following display if a readiness check fails.
 
 In the event of failure, see one of the following sections:
 
-*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/updater.html">Updater check failure</a>
-*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
-*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
-*	<a href="{{page.baseurl}}/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
-*	<a href="{{page.baseurl}}/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
-*	<a href="{{page.baseurl}}/install-gde/system-requirements.html">PHP extensions check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/updater.html">Updater check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
+*	<a href="{{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
+*	<a href="{{ page.baseurl }}/install-gde/system-requirements.html">PHP extensions check failure</a>
 
 {% endcollapsible %}
 
 #### Next step
-[Step 2. Backup]({{ page.baseurl}}/comp-mgr/extens-man/extensman-backup.html)
+[Step 2. Backup]({{ page.baseurl }}/comp-mgr/extens-man/extensman-backup.html)

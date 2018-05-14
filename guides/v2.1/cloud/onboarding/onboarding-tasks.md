@@ -24,11 +24,11 @@ If you joined us with a 30-day free trial {{site.data.var.ece}} account, we comp
 -   Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 -   Created an environment for the `master` branch with a web server, database, and services
 -   Added Magento authentication keys for the Project Owner
--   Add the `ADMIN_EMAIL` variable. See [Set environment and project variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
+-   Add the `ADMIN_EMAIL` variable. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 </div>
 
 ## Project access and users {#users}
-The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can [add user accounts]({{page.baseurl}}/cloud/project/user-admin.html#cloud-user-webinterface) to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+The _Project Owner_ is typically a "business user" in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can [add user accounts]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface) to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
 
 Typically, the only user the Project Owner must create is the _Technical Admin_. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a [Magento Solution Partner](https://magento.com/find-a-partner){:target="\_blank"}, or yourself.
 
@@ -45,7 +45,7 @@ You can also access your project by [logging in to your account](https://account
 ## Get started with the Project Web Interface {#project-setup}
 When you sign up for a Trial Pro or Starter subscription plan, we provision your initial environment with a template {{site.data.var.ece}} repository.
 
-We provide a [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html) for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.
+We provide a [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html) for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
@@ -67,7 +67,7 @@ When you initially create your project, you can access the Magento Admin panel t
 
     -   We send an email to the Project Owner with the link to your Magento Admin panel with instructions to click the Forgot Password link.
 
-    -   Or you can access a store URL available through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html). For the store URL, add /admin at the end. A login panel displays.
+    -   Or you can access a store URL available through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html). For the store URL, add /admin at the end. A login panel displays.
 
 1.  Click the forgot Password link and complete the process to change the password.
 1.  Login to the Admin panel using the username Admin and newly changed password.

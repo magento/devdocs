@@ -26,8 +26,8 @@ The tasks discussed in this topic provide one way to set up multiple stores. For
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:
 
-*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl}}/config-guide/multi-site/ms_apache.html)
-*	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl}}/config-guide/multi-site/ms_nginx.html)
+*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
+*	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 </div>
 
@@ -183,9 +183,9 @@ You must perform this step last because after it's done, you'll lose access to t
 {% endcollapsible %}
 
 #### Next step
-*	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl}}/cloud/project/project-multi-sites.html)
-*	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl}}/config-guide/multi-site/ms_nginx.html)
-*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl}}/config-guide/multi-site/ms_apache.html)
+*	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
+*	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
 
 #### Related information
 [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}

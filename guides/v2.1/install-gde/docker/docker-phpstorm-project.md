@@ -21,11 +21,11 @@ This topic discusses how to set up a PhpStorm project to work with Magento DevBo
 
 If you have already set up a PhpStorm project, you can skip this topic and continue with:
 
-*	[Debug in PhpStorm and browser]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-debug.html)
-*	[Run PHPUnit]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-test.html)
+*	[Debug in PhpStorm and browser]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-debug.html)
+*	[Run PHPUnit]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-test.html)
 
 ## Prerequisites
-Before you continue, complete the tasks discussed in [PhpStorm prerequisites]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html).
+Before you continue, complete the tasks discussed in [PhpStorm prerequisites]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html).
 
 ## Set up your PhpStorm project {#devbox-PhpStorm-project}
 This section discusses how to set up a new PhpStorm project to work with Magento DevBox.
@@ -79,7 +79,7 @@ This section discusses how to add a remote {% glossarytooltip bf703ab1-ca4b-48f9
 8.	Enter the following information:
 
 	*	**Host**: Enter `127.0.0.1 `
-	*	**Port**: Enter the web container's [SSH listen port]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html).
+	*	**Port**: Enter the web container's [SSH listen port]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html).
 	*	**Username**: Enter `magento2`
 	*	**Password**: Leave blank
 	*	**Save password**: Select the check box
@@ -185,7 +185,7 @@ To set up a PHP server for debugging:
 
 	*	**Name**: Enter a name to identify your server
 	*	**Host**: `127.0.0.1`
-	*	**Port**: Enter the [SSH listen port]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html)
+	*	**Port**: Enter the [SSH listen port]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html)
 	*	Select the **Use path mappings** check box.
 	*	**Debugger**: Click **Xdebug**
 5.	Specify path mappings:
@@ -196,7 +196,7 @@ To set up a PHP server for debugging:
 
 #### Next steps
 
-*	[Run PHPUnit]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-test.html)
-*	[Debug in PhpStorm and browser]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-debug.html)
+*	[Run PHPUnit]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-test.html)
+*	[Debug in PhpStorm and browser]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-debug.html)
 
 

@@ -25,7 +25,7 @@ Before you run Xdebug, you must create an SSH tunnel to the DevBox container.
 ### SSH tunnel: Windows
 To use an SSH tunnel on Windows:
 
-1.	See [Create an SSH tunnel on Windows]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html#devbox-ssh-windows).
+1.	See [Create an SSH tunnel on Windows]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html#devbox-ssh-windows).
 2.	Start Putty.
 3.	From the **Saved Sessions** list, click the name of your DevBox SSH session and click **Load**.
 4.	Click **Open**.

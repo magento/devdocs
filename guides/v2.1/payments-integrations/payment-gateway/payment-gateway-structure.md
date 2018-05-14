@@ -19,12 +19,12 @@ The interaction between the {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4e
 
 Each component from this scheme is described in the corresponding topic:
 
-* [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html)
-* [Gateway Command Pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html)
-* [Request Builder]({{page.baseurl}}/payments-integrations/payment-gateway/request-builder.html)
-* [Gateway Client]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-client.html)
-* [Response Validator]({{page.baseurl}}/payments-integrations/payment-gateway/response-validator.html)
-* [Response Handler]({{page.baseurl}}/payments-integrations/payment-gateway/response-handler.html)
+* [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html)
+* [Gateway Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html)
+* [Request Builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html)
+* [Gateway Client]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-client.html)
+* [Response Validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html)
+* [Response Handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html)
 
 
 

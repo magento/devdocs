@@ -422,7 +422,7 @@ Example:
 <!-- LINK DEFINITIONS -->
 
 [actions]: test/actions.html
-[api reference]: {{page.baseurl}}/rest/bk-rest.html
+[api reference]: {{ page.baseurl }}/rest/bk-rest.html
 [application/x-www-form-urlencoded]: https://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.1
 {:target="_blank"}
 [catalogCategoryRepositoryV1 image]: img/catalogCategoryRepository-operations.png
@@ -437,7 +437,7 @@ Example:
 [getData]: test/actions.html#getdata
 [HTML forms]: https://www.w3.org/TR/html401/interact/forms.html
 {:target="_blank"}
-[oauth]: {{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html
+[oauth]: {{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html
 {:target="_blank"}
 [operation]: #operation-tag
 [reference]: #reference

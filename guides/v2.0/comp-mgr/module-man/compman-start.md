@@ -24,7 +24,7 @@ To run the Component Manager:
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento"><br><br>
 3.	Click **System Configuration**.
-4.	If you haven't already done so, enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) in the provided fields.
+4.	If you haven't already done so, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the provided fields.
 
 	The following figure shows an example if you *have* already entered your keys.
 
@@ -36,6 +36,6 @@ To run the Component Manager:
     	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
 	</div>
 5.	Click **Save Config**.
-3.	Click **Component Manager** and continue with <a href="{{page.baseurl}}/comp-mgr/module-man/compman-main-pg.html">Manage your components</a>.
+3.	Click **Component Manager** and continue with <a href="{{ page.baseurl }}/comp-mgr/module-man/compman-main-pg.html">Manage your components</a>.
 
-	To upgrade Magento system software instead, see <a href="{{page.baseurl}}/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
+	To upgrade Magento system software instead, see <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.

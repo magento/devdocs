@@ -15,7 +15,7 @@ functional_areas:
 
 The properties of product images used on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
-The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} `view.xml` as well. For more details, view the [Gallery widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_gallery.html) topic.
+The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} `view.xml` as well. For more details, view the [Gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) topic.
 
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
@@ -245,7 +245,7 @@ Generally, product images are cached while saving the product. However, the `mag
 * After you import products, which might have images of various sizes
 * If images were resized or deleted manually from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} 
 
-Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
+Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
 
 Command usage:
 

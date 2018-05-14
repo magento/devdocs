@@ -14,7 +14,7 @@ The following list of best practices addresses commonly reported issues in third
 ### Follow a set of coding standards
 Coding standards are a set of guidelines that describe how code should be written. These standards define coding practices that determine the style of the code. Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.
 
-[Magento's Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) are based on the following:
+[Magento's Coding Standards]({{ page.baseurl }}/coding-standards/bk-coding-standards.html) are based on the following:
 
 * [Zend Coding standards](http://framework.zend.com/manual/1.12/en/coding-standard.html){:target="_blank"}
 * [PSR2](http://www.php-fig.org/psr/psr-2/){:target="_blank"}
@@ -54,16 +54,16 @@ Not following this practice is a code standards violation and impacts your exten
 For Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} development, we encourage the use of object composition over class inheritance. Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.
 
 ### Using around plugins
-Avoid using [around method plugins]({{page.baseurl}}/extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance. The only use case for around method plugins is when you need to terminate the execution of all further plugins and original methods.
+Avoid using [around method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html) when they are not required because they increase stack traces and affect performance. The only use case for around method plugins is when you need to terminate the execution of all further plugins and original methods.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Access to method parameters was the primary justification for using **around** method plugins instead of **after** method plugins. 
 
-Since 2.2, [after method plugins]({{page.baseurl}}/extension-dev-guide/plugins.html#after-methods) give you access to method parameters. Use **after** method plugins if you need to replace or modify function results using arguments. 
+Since 2.2, [after method plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html#after-methods) give you access to method parameters. Use **after** method plugins if you need to replace or modify function results using arguments. 
 </div>
 
 ### Test your code
 
-Write testable code and follow the [Magento Testing Guide]({{page.baseurl}}/test/testing.html) to create tests for your code.
+Write testable code and follow the [Magento Testing Guide]({{ page.baseurl }}/test/testing.html) to create tests for your code.
 
 Tests help describe what your code does under different conditions and define its functionality. Make sure your tests cover a variety of conditions to prevent the introduction of bugs when you add new code.

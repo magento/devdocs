@@ -15,14 +15,14 @@ functional_areas:
   - Setup
 ---
 
-This topic lists payment-related configuration paths that are neither sensitive nor system-specific. The [`magento app:config:dump` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
+This topic lists payment-related configuration paths that are neither sensitive nor system-specific. The [`magento app:config:dump` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
 
 For a list of other configuration paths, see:
 
-*	[All configuration paths except payments]({{ page.baseurl}}/config-guide/prod/config-reference-most.html)
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html)
+*	[All configuration paths except payments]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 
-To optionally override any configuration settings or to set sensitive settings, see [Use environment variables to override configuration settings]({{ page.baseurl}}/config-guide/prod/config-reference-var-name.html).
+To optionally override any configuration settings or to set sensitive settings, see [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
 ## Payment methods paths
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
@@ -107,7 +107,7 @@ Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bm
 
 
 ### Payments Pro Hosted Solution (United Kingdom)
-These options are available only if you chose the United Kingdom as the [merchant country]({{page.baseurl}}/config-guide/prod/config-reference-sens.html#vars-merch-country).
+These options are available only if you chose the United Kingdom as the [merchant country]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html#vars-merch-country).
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
@@ -355,7 +355,7 @@ Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}/common/im
 ### International paths {#vars-intl-list}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The available paths are determined by your choice of [Merchant country]({{page.baseurl}}/config-guide/prod/config-reference-sens.html#vars-merch-country).
+The available paths are determined by your choice of [Merchant country]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html#vars-merch-country).
 </div>
 
 Name  | Config path | EE only? | Encrypted? |
