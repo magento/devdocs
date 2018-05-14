@@ -11,7 +11,10 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)|2.3.x|Technical changes|May 10
+Added configuration info for [creating nginx virtual hosts](https://devdocs.magento.com/guides/v2.0/config-guide/multi-site/ms_nginx.html#ms-nginx-vhosts) on Tutorial—Set up multiple websites or stores with nginx page.|2.x|Technical changes|May 10
 Updated the Cloud build and deploy [environment variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-intro.html) descriptions and samples.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 08
+You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production environment.|2.1.x, 2.2.x|Technical changes|May 07
 Added the [Reference architecture](https://devdocs.magento.com/guides/v2.2/performance-best-practices/reference-architecture.html) topic|2.2.x, 2.3.x|New topic|May 07
 Contributed to [Linking properties of UI components]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html).|2.x|Technical changes|May 07
 You must bypass Fastly when profiling with [Blackfire](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production environment.|2.1.x, 2.2.x|Technical changes|May 07
