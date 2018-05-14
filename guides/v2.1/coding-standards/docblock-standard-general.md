@@ -108,7 +108,7 @@ If description or short description happens to be the first one after DocBlock o
 
 
 {% highlight xml %}
-
+<!--
 /**
  * Short description...
  *
