@@ -37,15 +37,15 @@ To access projects and environments through the Project Web Interface:
 1.	[Log in to your project](https://accounts.magento.cloud).
 2.	Click **Access Project** for a list of URLs and SSH.
 
-	![Access your project by URL or SSH]({{ site.baseurl}}/common/images/cloud_project-access.png){:width="600px"}
+	![Access your project by URL or SSH]({{ site.baseurl }}/common/images/cloud_project-access.png){:width="600px"}
 
 For more information about using SSH, see [SSH to an environment]({{page.baseurl}}/cloud/env/environments-ssh.html#magento-cli). To clone the project using either the {{site.data.var.ece}} CLI or Git, use the links in the field under the branch name.
 
 The following figure shows an example.
 
-![Clone the project]({{ site.baseurl}}/common/images/cloud_project-clone.png){:width="600px"}
+![Clone the project]({{ site.baseurl }}/common/images/cloud_project-clone.png){:width="600px"}
 
-Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl}}/common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
+Click either **CLI** or **Git** to display the appropriate clone command. Use the ![Copy to clipboard]({{ site.baseurl }}/common/images/cloud_copy-to-clipboard.png) (Copy to clipboard) button to copy the command to the clipboard.
 
 ## Configure environment settings {#project-conf-env-set}
 You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html).
@@ -76,7 +76,7 @@ One of these environment variables enables or disables outgoing emails for the e
 2. Select the Settings tab.
 3. For the **Outgoing emails** option, select the toggle to On.
 
-	![Set outgoing emails]({{ site.baseurl}}/common/images/cloud_project-conf-env.png)
+	![Set outgoing emails]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
 Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html).
 
@@ -100,13 +100,13 @@ To set environment specific variables in the Project Web Interface:
 4. In the **Name** field, enter a variable name. For example, to set the Magento Admin default account password, enter `ADMIN_PASSWORD`.
 5. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-	![Set environment variables]({{ site.baseurl}}/common/images/cloud_env-var.png)
+	![Set environment variables]({{ site.baseurl }}/common/images/cloud_env-var.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
-![Environment variable example]({{site.baseurl}}/common/images/cloud_env_var_example.png)
+![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 </div>
 
 ### Project variable {#project}
@@ -118,7 +118,7 @@ To set project variables in the Project Web Interface:
 4. In the **Name** field, enter a variable name. For example, to set the Magento Admin email for the default account, enter `ADMIN_EMAIL`.
 5. In the **Value** field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.
 
-	![Set project variables]({{ site.baseurl}}/common/images/cloud_project_variable.png)
+	![Set project variables]({{ site.baseurl }}/common/images/cloud_project_variable.png)
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
@@ -141,7 +141,7 @@ Routes allow you to set redirects or upstream settings for applications for your
 7. To configure a Redirect, enter a URL to **Redirect to**. You can use `{default}` in the URL, which is a placeholder for the default domain.
 8. Click **Add Route** to save. The setting is saved and deployed to the environment.
 
-![Configure a route]({{ site.baseurl}}/common/images/cloud_routes.png)
+![Configure a route]({{ site.baseurl }}/common/images/cloud_routes.png)
 
 ## View environment history {#project-conf-hist}
 An environment's history includes:
@@ -155,7 +155,7 @@ To view an environment's history, log into your project and select an environmen
 
 The following figure shows a sample history.
 
-![Sample environment history]({{ site.baseurl}}/common/images/cloud_environment-history.png)
+![Sample environment history]({{ site.baseurl }}/common/images/cloud_environment-history.png)
 
 The history shows, from oldest to newest:
 

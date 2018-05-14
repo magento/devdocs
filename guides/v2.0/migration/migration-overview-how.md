@@ -54,4 +54,4 @@ Mapping files are discussed in more detail in <a href="{{page.baseurl}}/migratio
 
 ## Migration flow diagram
 
-<p><img src="{{ site.baseurl}}/common/images/migration_flow.png" alt="Migration Flow"></p>
+<p><img src="{{ site.baseurl }}/common/images/migration_flow.png" alt="Migration Flow"></p>

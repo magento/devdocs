@@ -171,11 +171,11 @@ Use the following steps:
 
 	`cache` table example.
 
-	<img src="{{ site.baseurl}}/common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled">
+	<img src="{{ site.baseurl }}/common/images/config-db_cache-table.png" alt="Sample contents of the cache table with database caching enabled">
 
 	`cache_tag` table example.
 
-	<img src="{{ site.baseurl}}/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled">
+	<img src="{{ site.baseurl }}/common/images/config-db_cache-tag-table.png" alt="Sample contents of the cache tag table with database caching enabled">
 
 
 <h2 id="mage-cache-db-config">Configuration examples</h2>

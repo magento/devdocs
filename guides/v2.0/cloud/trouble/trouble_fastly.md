@@ -36,14 +36,14 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 3.	In the right pane, expand **Full Page Cache**.
 4.	In the **Fastly Configuration** section, expand **Error/Maintenance Page** as the following figure shows.
 
-	![Custom Fastly error page]({{ site.baseurl}}/common/images/cloud_fastly-503-page.png)
+	![Custom Fastly error page]({{ site.baseurl }}/common/images/cloud_fastly-503-page.png)
 5.	Click **Set HTML**.
 3.	Remove the custom code. You can save it in a text program to add back later.
 4.	When you're done, click **Upload** to send your updates to Fastly.
 5.	Click **Save Config** at the top of the page.
 6.	Reopen the URL that caused the 503 error. Fastly returns an error page with the reason. The following image is an example.
 
-	![Fastly error]({{ site.baseurl}}/common/images/cloud_fastly-503-example.png)
+	![Fastly error]({{ site.baseurl }}/common/images/cloud_fastly-503-example.png)
 
 ### Apex and subdomains already in Fastly {#domains}
 If your apex domain and subdomains are already managed by a Fastly account with an assigned Service ID, you cannot launch until you do the following:

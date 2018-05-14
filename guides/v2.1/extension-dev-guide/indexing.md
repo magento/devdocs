@@ -91,7 +91,7 @@ The type of reindex performed in each particular case depends on the type of cha
 
 The following figure shows the logic for partial reindexing.
 
-![Partial indexing workflow]({{ site.baseurl}}/common/images/index_indexers_flow.png){:width="300px"}
+![Partial indexing workflow]({{ site.baseurl }}/common/images/index_indexers_flow.png){:width="300px"}
 
 ### Indexer status {#m2devgde-indexing-status}
 Depending on whether an index data is up to date, an indexer status value is one of the following:
@@ -120,7 +120,7 @@ You can also reindex from the [command line]({{page.baseurl}}/config-guide/cli/c
 
 The following figure shows an example of setting indexers to Update by Schedule.
 
-![Changing indexer modes]({{ site.baseurl}}/common/images/index_index-modes.png){:width="600px"}
+![Changing indexer modes]({{ site.baseurl }}/common/images/index_index-modes.png){:width="600px"}
 
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
 You can reindex in any of the following ways:

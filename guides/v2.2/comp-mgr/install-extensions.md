@@ -36,13 +36,13 @@ To get the extension's Composer name and version from the Magento Marketplace:
 
 2.  In the upper-right corner, click **Your name** > **My Profile**.
 
-	![Access your Marketplace account]({{ site.baseurl}}/common/images/marketplace-my-profile.png){:width="200px"}
+	![Access your Marketplace account]({{ site.baseurl }}/common/images/marketplace-my-profile.png){:width="200px"}
 3.  Click **My Purchases**.
 
-	![Marketplace purchase history]({{ site.baseurl}}/common/images/marketplace-my-purchases.png){:width="650px"}
+	![Marketplace purchase history]({{ site.baseurl }}/common/images/marketplace-my-purchases.png){:width="650px"}
 4.  Find the extension you want to install and click **Technical Details**.
 
-	![Technical details shows the extension's Composer name]({{ site.baseurl}}/common/images/marketplace-extension-technical-details.png){:width="200px"}
+	![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 <div class="bs-callout bs-callout-tip" markdown="1">
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
 </div>

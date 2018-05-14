@@ -49,7 +49,7 @@ We provide a [Project Web Interface]({{page.baseurl}}/cloud/project/projects.htm
 
 We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.
 
-![Use the Project Web Interface to manage environments]({{site.baseurl}}/common/images/cloud_project-access.png)
+![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud_project-access.png)
 
 ## Sign up for Magento status {#status}
 We provide an {{site.data.var.ece}} environment and service status site. Anyone working on your site and project can subscribe on the site for email notifications and updates. We recommend subscribing and adding a bookmark to check the page daily or as needed.
@@ -58,7 +58,7 @@ The site location is [https://status.magento.cloud/](https://status.magento.clou
 
 The page lists all component and service status. Any issues, updates, and notices are displayed below these status tables by date. For example, any slow issues, outages, or upgraded services are listed with important information and any updates as available.
 
-![All status on the page]({{site.baseurl}}/common/images/cloud_status.png)
+![All status on the page]({{ site.baseurl }}/common/images/cloud_status.png)
 
 ## Access your Magento Admin panel {#admin}
 When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. To initially access the Magento Admin, you have a couple of options.

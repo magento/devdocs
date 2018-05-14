@@ -72,7 +72,7 @@ You can find the scope code either in the Magento database or in the Magento {% 
 
     The following figure shows a sample website code.
 
-    ![Get a website or store view code from the Admin]({{ site.baseurl}}/common/images/config_configset_website-code.png){:width="450px"}
+    ![Get a website or store view code from the Admin]({{ site.baseurl }}/common/images/config_configset_website-code.png){:width="450px"}
 4.  Continue with [Set configuration values](#config-cli-config-set).
 
 {% endcollapsible %}

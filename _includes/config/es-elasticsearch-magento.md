@@ -8,7 +8,7 @@ To configure Magento to use Elasticsearch:
 2.	Click **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search**.
 3.	From the **Search Engine** list, click **Elasticsearch** or **Elasticsearch 5.0+** as the following figure shows. (The **Elasticsearch 5.0+** option is not available for Magento 2.1.)
 
-	<img src="{{ site.baseurl}}/common/images/elastic_choose-in-admin.png" width="650px">
+	<img src="{{ site.baseurl }}/common/images/elastic_choose-in-admin.png" width="650px">
 4.	The following table discusses only the configuration options required to test the connection with Magento.
 
 	Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.
@@ -48,11 +48,11 @@ One of the following displays:
 	<th>Meaning</th>
 	</tr>
 	<tr>
-		<td><img src="{{ site.baseurl}}/common/images/elastic_test-success.png"></td>
+		<td><img src="{{ site.baseurl }}/common/images/elastic_test-success.png"></td>
 		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="{{site.gdeurl21}}config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a> or <a href="{{site.gdeurl21}}config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a>.</td>
 	</tr>
 	<tr>
-		<td><img src="{{ site.baseurl}}/common/images/elastic_test-fail.png"></td>
+		<td><img src="{{ site.baseurl }}/common/images/elastic_test-fail.png"></td>
 		<td><p>Try the following:</p>
 			<ul>
 				<li>Make sure the Elasticsearch server is running.</li>
@@ -79,7 +79,7 @@ To refresh the cache using the Admin:
 2.  Select the check box next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
-		<img src="{{ site.baseurl}}/common/images/solr_refresh-cache.png" width="600px">
+		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">
 
 To clean the cache using the command line, use the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 

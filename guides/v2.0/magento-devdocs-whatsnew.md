@@ -525,15 +525,15 @@ Description  | Versions applied to  | New or Updated | Date
 | [MECE how to upgrade the Magento software]({{ page.baseurl}}/cloud/howtos/upgrade-magento.html){:target="_blank"} | 2.x | New | Oct 28 |
 | [Magento Functional Test Framework (FTF) create a report]({{ page.baseurl}}/mtf/features/reporting.html){:target="_blank"} | 2.x | New | Oct 28 |
 | [DataSource UI component]({{ site.gdeurl21 }}ui_comp_guide/concepts/ui_comp_data_source.html){:target="_blank"} | 2.1.x | New | Oct 28 |
-| [Home page for Magento 2.x system requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"} | 2.x | New | Oct 28 |
-| [Home page for Magento 2.x technical bulletins]({{ site.baseurl}}/magento-techbull.html){:target="_blank"} | 2.x | New | Oct 28 |
-| [Home page for Magento 2.x third-party license agreements]({{ site.baseurl}}/magento-third-party.html){:target="_blank"} | 2.x | New | Oct 28 |
+| [Home page for Magento 2.x system requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"} | 2.x | New | Oct 28 |
+| [Home page for Magento 2.x technical bulletins]({{ site.baseurl }}/magento-techbull.html){:target="_blank"} | 2.x | New | Oct 28 |
+| [Home page for Magento 2.x third-party license agreements]({{ site.baseurl }}/magento-third-party.html){:target="_blank"} | 2.x | New | Oct 28 |
 | [Using code sniffers]({{ page.baseurl}}/coding-standards/code-standard-sniffers.html){:target="_blank"} | 2.x | New | Oct 28 |
 | [Updated cron group options]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html){:target="_blank"} (`use_separate_process` applies to 2.1.x only)  | 2.x  |  Updated | Oct 21 |
 | [{{site.data.var.ece}} (MECE) Release Notes home page]({{ page.baseurl}}/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"} | 2.x  | New  | Oct 21 |
 | [MECE 2.1.2 and 2.0.10 Release Notes]({{ page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.1.2.html){:target="_blank"}  | 2.0.10, 2.1.2  |  New | Oct 21 |
 | [Added HTTP response codes to Web API topic]({{ page.baseurl}}/get-started/gs-web-api-response.html){:target="_blank"}  | 2.x |  Updated | Oct 21 |
-| [System requirements home page]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"} | 2.x  | New  | Oct 21 |
+| [System requirements home page]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"} | 2.x  | New  | Oct 21 |
 | [How to apply the SUPEE-8788 security patch]({{ site.m1xgdeurl }}other/ht_install-patches.html#apply-8788) | 1.x  | Updated  |Oct 21 |
 | [Magento CE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10CE.html){:target="_blank"}  | 2.0.x  | New| Oct 14 |
 | [Magento EE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html){:target="_blank"} | 2.0.x  | New| Oct 14 |

@@ -37,7 +37,7 @@ A simple example:
 1. Launch {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
 3. Right-click on the **Product Name** field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
-![Image Example]({{site.baseurl}}/common/images/ui_comp_troubleshoot_chrome1.png)
+![Image Example]({{ site.baseurl }}/common/images/ui_comp_troubleshoot_chrome1.png)
 
 ## Debugging using pure Knockout
 

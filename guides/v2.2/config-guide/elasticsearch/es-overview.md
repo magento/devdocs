@@ -49,7 +49,7 @@ Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elastic
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-<img src="{{ site.baseurl}}/common/images/elastic_config.png" width="500px">
+<img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
 
 The preceding diagram shows:
 

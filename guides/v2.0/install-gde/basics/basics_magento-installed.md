@@ -32,12 +32,12 @@ If Magento is installed, you should see something like the following after you l
 
 Magento Admin:
 
-<p><img src="{{ site.baseurl}}/common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}/common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
 
 
 Magento storefront:
 
-<p><img src="{{ site.baseurl}}/common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}/common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
 
 ## What if Magento is installed?
 

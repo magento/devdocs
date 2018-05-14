@@ -70,7 +70,7 @@ To export a Varnish configuration file from the Admin panel:
 	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
 	The following figure shows an example.<br><br>
-	<img src="{{ site.baseurl}}/common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin">
+	<img src="{{ site.baseurl }}/common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin">
 
 8.	Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
 

@@ -25,7 +25,7 @@ Every active environment gives you the Magento and branch code installed and dep
 
 The following diagram details the branch and environment relationships:
 
-![High-level view of Starter project]({{ site.baseurl}}/common/images/cloud_arch-starter.png)
+![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
 
 You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl}}/cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl}}/cloud/reference/cli-ref-topic.html).
 
@@ -57,7 +57,7 @@ The full process involves:
 * [Generate configuration](#config-management) management files
 * [Push code](#push-code) and configuration to build and deploy to an environment
 
-![Develop and deploy workflow]({{ site.baseurl}}/common/images/cloud_workflow-starter.png)
+![Develop and deploy workflow]({{ site.baseurl }}/common/images/cloud_workflow-starter.png)
 
 You also have a few optional steps to help develop and test your code and store data:
 
@@ -89,7 +89,7 @@ The format of the Magento Cloud CLI branch command is:
     magento-cloud environment:branch <environment name> <parent environment ID>
 
 
-![Branch from Master]({{ site.baseurl}}/common/images/cloud_workflow-branching.png)
+![Branch from Master]({{ site.baseurl }}/common/images/cloud_workflow-branching.png)
 
 ### Develop code {#dev-code}
 It's the time you have been waiting for...writing code. Using this base branch of {{site.data.var.ece}} code, you can start installing extensions, developing custom code, adding themes, and much more.
@@ -109,7 +109,7 @@ And so on until you have your store fully built, configured, and ready to go liv
 Do not complete any configurations on your local yet.
 </div>
 
-![Develop code and push to deploy]({{ site.baseurl}}/common/images/cloud_workflow-push-code.png)
+![Develop code and push to deploy]({{ site.baseurl }}/common/images/cloud_workflow-push-code.png)
 
 ### Configure store {#configure-store}
 When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.
@@ -145,11 +145,11 @@ You will generate the file in the Integration environment where you configured M
   For example, we will have you install a module for Fastly in your development environment. You will only configure this module in Staging and Production. Using `scd-dump` keeps those default fields editable.
 * This file can be long depending on the size of your deployment. The `scd-dump` command generates a far small file than `app:config:dump`.
 
-![Generate configuration management file]({{ site.baseurl}}/common/images/cloud_workflow-config-mgmt.png)
+![Generate configuration management file]({{ site.baseurl }}/common/images/cloud_workflow-config-mgmt.png)
 
 An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository. You can also create environment variables with CLI commands in all {{site.data.var.ece}} versions.
 
-![Environment variables generate]({{ site.baseurl}}/common/images/cloud_workflow-env-variables.png)
+![Environment variables generate]({{ site.baseurl }}/common/images/cloud_workflow-env-variables.png)
 
 For more information, see [Configuration Management]({{ page.baseurl}}/cloud/live/sens-data-over.html).
 
@@ -169,7 +169,7 @@ We recommend installing sample data in your local installation and Integration e
 
 For instructions, see [Install optional sample data]({{page.baseurl}}/cloud/howtos/sample-data.html).
 
-![Install optional sample data]({{ site.baseurl}}/common/images/cloud_workflow-sample-data.png)
+![Install optional sample data]({{ site.baseurl }}/common/images/cloud_workflow-sample-data.png)
 
 ### Optional: Pull production data {#prod-data}
 We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
@@ -178,7 +178,7 @@ As you develop features, add extensions, and design themes, having real data to 
 
 {% include cloud/data-collection.md %}
 
-![Pull and sanitize production data]({{ site.baseurl}}/common/images/cloud_workflow-data-code-process.png)
+![Pull and sanitize production data]({{ site.baseurl }}/common/images/cloud_workflow-data-code-process.png)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.

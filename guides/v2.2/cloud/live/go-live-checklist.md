@@ -9,7 +9,7 @@ functional_areas:
 ---
 
 ## Pre-Launch Checklist {#checklist}
-Prior to go live and switching the DNS, you should download and complete the [Checklist]({{site.baseurl}}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. Deploy your `master` branch to the Production environment. 
+Prior to go live and switching the DNS, you should download and complete the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. Deploy your `master` branch to the Production environment. 
 
 ## Completely test in Production {#test}
 See [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.

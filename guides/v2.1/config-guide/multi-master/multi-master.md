@@ -37,7 +37,7 @@ MySQL databases replicate asynchronously, which means slaves do not need to be c
 
 The following figure shows how this feature works.
 
-<img src="{{ site.baseurl}}/common/images/ee_split-db-diagram.png" alt="{{site.data.var.ee}} uses different databases to store tables">
+<img src="{{ site.baseurl }}/common/images/ee_split-db-diagram.png" alt="{{site.data.var.ee}} uses different databases to store tables">
 
 In {{site.data.var.ce}}, only one master database is used.
 

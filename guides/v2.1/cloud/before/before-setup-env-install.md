@@ -61,7 +61,7 @@ To create authentication keys through the Magento Marketplace:
 2. Click your account name in the top-right of the page and select **My Profile**.
 3. Click **Access Keys** in the Marketplace tab.
 
-	![Click Access Keys]({{ site.baseurl}}/common/images/cloud_access-key.png)
+	![Click Access Keys]({{ site.baseurl }}/common/images/cloud_access-key.png)
 4. Click **Create A New Access Key**. Enter a specific name for the keys, for example CloudProductOwner or the name of the developer receiving the keys.
 5. The keys generate a Public and Private key you can click to copy. Save this information or keep the page open when installing {{site.data.var.ee}}.
 
@@ -152,7 +152,7 @@ To verify the local, access the store using the URL you passed in the install co
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 
-![Click Access for list of URLs]({{ site.baseurl}}/common/images/cloud-project-master-access.png){:width="297px"}
+![Click Access for list of URLs]({{ site.baseurl }}/common/images/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
 

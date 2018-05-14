@@ -36,7 +36,7 @@ For more information about backward compatibility, see [Magento’s backward com
 |---
 | Setup version 2.0.0  | Setup version 2.0.1
 |-|:-
-| ![OLD - Adding a new catalog price rule]({{site.baseurl}}/common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{site.baseurl}}/common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
+| ![OLD - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
 
 ### Flow changes
 

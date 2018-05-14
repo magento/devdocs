@@ -118,7 +118,7 @@ For example, to find a website or store view scope value in the Admin:
 
 	The right pane is displayed similar to the following.
 
-	![Find a website code]({{ site.baseurl}}/common/images/cloud_vars_website-code.png){:width="300px"}
+	![Find a website code]({{ site.baseurl }}/common/images/cloud_vars_website-code.png){:width="300px"}
 3.	The scope name is displayed in the **Code** field.
 4.	Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
@@ -220,7 +220,7 @@ A step-by-step example is shown in [Set configuration values using environment v
 <div class="bs-callout bs-callout-warning" markdown="1">
 -   To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order){:target="\_blank"}.
 -   For {{site.data.var.ece}}, if you're attempting to override Magento configuration settings using the [Project Web Interface]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
-![Environment variable example]({{site.baseurl}}/common/images/cloud_env_var_example.png)
+![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 </div>
 
 #### Related information

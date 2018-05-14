@@ -118,7 +118,7 @@ The file is located in `<magento2_root_dir>dev/tests/functional/vendor/magento/m
 {% remote_markdown https://raw.githubusercontent.com/magento/mtf/develop/etc/config.xml.dist%}
 {% endhighlight %}
 
-![image]({{site.baseurl}}/common/images/ftf/ftf_mtf-config-xsd-dia.svg)
+![image]({{ site.baseurl }}/common/images/ftf/ftf_mtf-config-xsd-dia.svg)
 
 Figure 1. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
 
@@ -132,7 +132,7 @@ The file is located in `<magento2_root_dir>dev/tests/functional/`
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/dev/tests/functional/etc/config.xml.dist %}
 {% endhighlight %}
 
-![image]({{site.baseurl}}/common/images/ftf/ftf_config-xsd-dia.svg)
+![image]({{ site.baseurl }}/common/images/ftf/ftf_config-xsd-dia.svg)
 
 Figure 2. - XML Schema for the `<magento2_root_dir>dev/tests/functional/vendor/magento/mtf/etc/config.xml`.
 

@@ -35,7 +35,7 @@ TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{page.baseurl}}/extensio
 <h2 id="H2">HEADING 2</h2>
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl}}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
+ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
 
 <h2 id="book-related">Related topics</h2>
 
@@ -52,7 +52,7 @@ See the markdown version of this file for examples.
 {% endcollapsible %}
 
 {% collapsible Click to show/hide image %}
-![This is an image]({{ site.baseurl}}/common/images/connect_keys2.png)
+![This is an image]({{ site.baseurl }}/common/images/connect_keys2.png)
 {% endcollapsible %}
 
 {% collapsible HTML Table %}

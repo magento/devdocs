@@ -136,7 +136,7 @@ To configure Magento to work with Solr:
 </table>
 
 The following figure shows an example.
-<img src="{{ site.baseurl}}/common/images/solr_config-admin.png" alt="Configure Magento to use Solr">
+<img src="{{ site.baseurl }}/common/images/solr_config-admin.png" alt="Configure Magento to use Solr">
 
 Click <strong>Test Connection</strong>.
 
@@ -151,11 +151,11 @@ The button changes as follows.
 	<th>Meaning</th>
 </tr>
 <tr>
-	<td><img src="{{ site.baseurl}}/common/images/solr_test-success.png" width="140px" height="17px"></td>
+	<td><img src="{{ site.baseurl }}/common/images/solr_test-success.png" width="140px" height="17px"></td>
 	<td>The test connection succeeded. Click <strong>Save Config</strong> and continue with the next section.</td>
 </tr>
 <tr>
- <td><img src="{{ site.baseurl}}/common/images/solr_test-fail.png" width="160px" height="16px"></td>
+ <td><img src="{{ site.baseurl }}/common/images/solr_test-fail.png" width="160px" height="16px"></td>
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
@@ -185,7 +185,7 @@ To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{%
 2.  Select the check box next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
-		<img src="{{ site.baseurl}}/common/images/solr_refresh-cache.png" width="600px">
+		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">
 
 To clean the cache using the command line, use the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
 
@@ -211,7 +211,7 @@ To verify Solr works, go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80c
 
 The following figure shows an example of a storefront search.
 
-<img src="{{ site.baseurl}}/common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront">
+<img src="{{ site.baseurl }}/common/images/solr_verify.png" width="750px" alt="Verify Solr works by searching the storefront">
 
 The following excerpt from the Solr command window shows the same search:
 

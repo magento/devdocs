@@ -42,7 +42,7 @@ We recommend adding at least one account through Blackfire to manage all access,
 4. Enter an e-mail address and click Add Member.
 5. For one account, click the menu by Revoke and select **Promote as an admin**.
 
-	![Promote an admin]({{ site.baseurl}}/common/images/cloud_blackfire-member.png)
+	![Promote an admin]({{ site.baseurl }}/common/images/cloud_blackfire-member.png)
 
 ## Enable Blackfire on your local {#cloud-int-black-en}
 You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You don't need to run these installations directly on the hosted environments, only on your local.
@@ -68,11 +68,11 @@ These instructions assume you have fully set up your [local workspace]({{page.ba
 2. Select the Integration and Development environment in the **Current Environment** list.
 3. Select the Builds tab. In the Builds side panel, click the info icon next to Magento Cloud. This opens a list of commands you will need to execute in order to enable the Blackfire integration.
 
-	![Click info icon]({{ site.baseurl}}/common/images/cloud_blackfire-builds.png)
+	![Click info icon]({{ site.baseurl }}/common/images/cloud_blackfire-builds.png)
 
 	A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.
 
-	![Blackfire Magento Cloud integragtion]({{ site.baseurl}}/common/images/cloud_blackfire-integration.png)
+	![Blackfire Magento Cloud integragtion]({{ site.baseurl }}/common/images/cloud_blackfire-integration.png)
 
 The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.
 
@@ -276,7 +276,7 @@ To profile using the browser:
 2. Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
 3. Click the Blackfire icon to profile. For Compare with, select No Reference.
 
-	![Start profiling]({{ site.baseurl}}/common/images/cloud_blackfire.png)
+	![Start profiling]({{ site.baseurl }}/common/images/cloud_blackfire.png)
 4. Click **Profile** to start.
 
 To profile using the CLI:

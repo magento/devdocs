@@ -16,7 +16,7 @@ If you downloaded a compressed archive, there might have been missing `.gitignor
 
 The following figure shows an example of this issue when using the Setup Wizard.
 
-<img src="{{ site.baseurl}}/common/images/upgr_gitignore-err.png" width="700px">
+<img src="{{ site.baseurl }}/common/images/upgr_gitignore-err.png" width="700px">
 
 #### Solution
 To solve this issue:

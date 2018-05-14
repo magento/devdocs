@@ -39,7 +39,7 @@ Magento enables this feature by default, and we recommend keeping this feature e
 
 You can find the configuration for this feature in [**Stores > System > Configuration > Advanced > Developer > Static Files Settings**](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
 
-![Static Files Settings]({{ site.baseurl}}/common/images/static-files-settings.png)
+![Static Files Settings]({{ site.baseurl }}/common/images/static-files-settings.png)
 
 #### Version signatures
 

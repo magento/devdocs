@@ -103,10 +103,10 @@ Complete the following configuration steps in Staging and Production environment
 2.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 3.	In the right pane, expand **Full Page Cache**.
 
-	![Expand to select Fastly]({{ site.baseurl}}/common/images/cloud_fastly_menu.png){:width="650px"}
+	![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud_fastly_menu.png){:width="650px"}
 4.	For **Caching Application**, uncheck the **Use system value** check box and select **Fastly CDN** from the drop-down list.
 
-	![Choose Fastly]({{ site.baseurl}}/common/images/cloud-fastly_enable-admin.png){:width="550px"}
+	![Choose Fastly]({{ site.baseurl }}/common/images/cloud-fastly_enable-admin.png){:width="550px"}
 5.	Expand **Fastly Configuration**. You can then [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="\_blank"}.
 6.	When you're done, click **Save Config** at the top of the page.
 7.	Clear the cache according to the notification. After you have cleared the cache, navigate back to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration** and continue your configurations.
@@ -133,7 +133,7 @@ To use snippets, you must upload the Fastly VCL using the Magento Admin as follo
 
 1.	In the **Fastly Configuration** section, click **Upload VCL to Fastly** as the following figure shows.
 
-	![Upload a Magento VCL to Fastly]({{ site.baseurl}}/common/images/cloud_upload-vcl-to-fastly.png)
+	![Upload a Magento VCL to Fastly]({{ site.baseurl }}/common/images/cloud_upload-vcl-to-fastly.png)
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
   		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. For details, see [Update extensions]({{page.baseurl}}/cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
@@ -155,7 +155,7 @@ You can add multiple backends. Repeat these instructions to create multiple back
 1. Access and expand **Fastly Configuration**.
 2. Expand **Backend settings** and click the gear to configure the default backend. A modal opens with options to select and configure.
 
-	![Modify the backend]({{ site.baseurl}}/common/images/cloud_fastly-backend.png){:width="600px"}
+	![Modify the backend]({{ site.baseurl }}/common/images/cloud_fastly-backend.png){:width="600px"}
 3. Select a **Shield** location (or datacenter) closest to your server region. For example, if Staging is on the West Coast of the United States (US - Oregon), you may want to select a shield in US, Los Angeles, CA. This is the POP accessed for providing caching services. For example, we have cloud hosting in the following AWS locations:
 
     * US - Oregon
@@ -178,7 +178,7 @@ The options include:
 * **Purge CMS page**: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.
 * **Soft purge**: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.
 
-![Configure purge options]({{ site.baseurl}}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
+![Configure purge options]({{ site.baseurl }}/common/images/cloud_fastly-purgeoptions.png){:width="650px"}
 
 To configure Fastly purge options:
 
@@ -196,7 +196,7 @@ To create a custom error/maintenance page:
 
 1.	In the **Fastly Configuration** section, expand **Error/Maintenance Page** as the following figure shows.
 
-	![Custom Fastly error page]({{ site.baseurl}}/common/images/cloud-fastly_err-pg.png){:width="650px"}
+	![Custom Fastly error page]({{ site.baseurl }}/common/images/cloud-fastly_err-pg.png){:width="650px"}
 2.	Click **Set HTML**.
 3.	In the provided field, enter your HTML code.	The HTML you enter can be a maximum of 65,535 bytes in length.
 
@@ -227,7 +227,7 @@ The Fastly module includes GeoIP handling to automatically redirect visitors or 
 3. For GeoIP Action, select if the visitor is automatically redirected with **Redirect** or provided a list of stores to select from with **Dialog**.
 4. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2){:target="\_blank"}.
 
-	![Add GeoIP country maps]({{ site.baseurl}}/common/images/cloud_fastly-geo-code.png)
+	![Add GeoIP country maps]({{ site.baseurl }}/common/images/cloud_fastly-geo-code.png)
 5. Click **Save Config** at the top of the page.
 6. After page reload, click *Upload VCL to Fastly* in the *Fastly Configuration* section.
 

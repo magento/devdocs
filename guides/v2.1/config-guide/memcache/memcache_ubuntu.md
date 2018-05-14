@@ -69,7 +69,7 @@ To verify memcached is recognized by the web server:
 
 2.  Make sure memcached displays as follows:
 
-    <img src="{{ site.baseurl}}/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server">
+    <img src="{{ site.baseurl }}/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server">
 
     Verify you're using memcached version 3.0.5 or later.
 

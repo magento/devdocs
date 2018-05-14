@@ -179,7 +179,7 @@ To verify cron is secure:
 
 5.  When prompted, enter an authorized user's name and password. The following figure shows an example.
 
-    ![Authorizing cron using HTTP Basic]({{site.baseurl}}/common/images/cron_auth.png)
+    ![Authorizing cron using HTTP Basic]({{ site.baseurl }}/common/images/cron_auth.png)
 
 6.  Verify that rows were added to the table:
 

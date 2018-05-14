@@ -99,7 +99,7 @@ If you enable the **Shared Catalog** module, you must also enable the **Company*
 
 2.  Select **Yes** from the drop-down menus to enable B2B features:
 
-    ![Enable B2B features]({{site.baseurl}}/common/images/enable_b2b_features.png)
+    ![Enable B2B features]({{ site.baseurl }}/common/images/enable_b2b_features.png)
 
 3.  Click **Save Config**.
 

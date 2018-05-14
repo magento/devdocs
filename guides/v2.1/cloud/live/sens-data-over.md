@@ -126,11 +126,11 @@ To fully understand the process, please see [our extensive example]({{ page.base
 
 The **Starter plan** environment high-level overview of this process:
 
-![Overview of Starter configuration management]({{ site.baseurl}}/common/images/cloud_configmgmt-starter-2-1.png)
+![Overview of Starter configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-starter-2-1.png)
 
 The **Pro plan** environment high-level overview of this process:
 
-![Overview of Pro configuration management]({{ site.baseurl}}/common/images/cloud_configmgmt-pro-2-1.png)
+![Overview of Pro configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-pro-2-1.png)
 
 ### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:

@@ -15,7 +15,7 @@ The Magento payment provider gateway is a mechanism that allows you to integrate
 
 The following diagram shows a simplified interaction flow between Magento sales management and external payment service provider using Magento payment provider gateway: 
 
-![Payment Gateway Interaction]({{site.baseurl}}/common/images/payments-integrations/pg_interaction_flow.png)
+![Payment Gateway Interaction]({{ site.baseurl }}/common/images/payments-integrations/pg_interaction_flow.png)
 
 Magento payment provider supports the following payment operations:
 

@@ -94,7 +94,7 @@ An instance of UI component is usually based on the hierarchy of child UI compon
 
 The picture below shows how the JavaScript class of a UI component is implemented.
 
-![JavaScript class implementation of a UI component]({{site.baseurl}}/common/images/ui_comp_js_class.png)
+![JavaScript class implementation of a UI component]({{ site.baseurl }}/common/images/ui_comp_js_class.png)
 
 ### Templates
 

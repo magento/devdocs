@@ -16,7 +16,7 @@ functional_areas:
 <h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
 If you're upgrading the Magento 2 software, the following error can display during the readiness check:
 
-<img src="{{ site.baseurl}}/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
+<img src="{{ site.baseurl }}/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
 
 To resolve the error:
 

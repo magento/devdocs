@@ -32,10 +32,12 @@ GEM
     ethon (0.11.0)
       ffi (>= 1.3.0)
     eventmachine (1.2.6)
+    eventmachine (1.2.6-x64-mingw32)
     execjs (2.7.0)
     faraday (0.15.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
+    ffi (1.9.23-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.0)
     github-pages (183)
@@ -229,6 +231,8 @@ GEM
     multipart-post (2.0.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    nokogiri (1.8.2-x64-mingw32)
+      mini_portile2 (~> 2.3.0)
     octokit (4.8.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     parallel (1.12.1)
@@ -260,16 +264,19 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.3.2)
+    wdm (0.1.1)
     yell (2.0.7)
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   devdocs!
   github-pages (= 183)
   html-proofer
   launchy
+  wdm
 
 BUNDLED WITH
    1.16.1

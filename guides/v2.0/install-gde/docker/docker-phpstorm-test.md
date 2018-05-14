@@ -87,7 +87,7 @@ To run PHPUnit tests from PhpStorm:
 
 	For example, the following figure shows how to run the SearchDataTest.
 
-	![Run a sample unit test]({{ site.baseurl}}/common/images/install_docker_php-storm_unit-searchdata.png)
+	![Run a sample unit test]({{ site.baseurl }}/common/images/install_docker_php-storm_unit-searchdata.png)
 
 Test results are displayed in the right pane.
 If errors display, see the next section.

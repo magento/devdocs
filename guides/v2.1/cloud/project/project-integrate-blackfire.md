@@ -42,7 +42,7 @@ We recommend adding at least one account through Blackfire to manage all access,
 1.  Enter an e-mail address and click **Add Member**.
 1.  In the _Revoke_ drop-down list of an account, click **Promote as an admin**.
 
-	![Promote an admin]({{ site.baseurl}}/common/images/cloud_blackfire-member.png)
+	![Promote an admin]({{ site.baseurl }}/common/images/cloud_blackfire-member.png)
 
 ## Enable Blackfire on local workspace
 You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You do _not_ need to run these installations directly on the hosted environments; only on your local.
@@ -67,11 +67,11 @@ These instructions assume you have set up your [local workspace]({{page.baseurl}
 1.  Click the **Builds** tab.
 1.  Click the info icon next to Magento Cloud.
 
-	![Click info icon]({{ site.baseurl}}/common/images/cloud_blackfire-builds.png)
+	![Click info icon]({{ site.baseurl }}/common/images/cloud_blackfire-builds.png)
 
 1.  In the _Magento Cloud Integration_ page, follow the additional steps to complete the integration. The redacted content is the **Project ID**.
 
-	![Blackfire Magento Cloud integration]({{ site.baseurl}}/common/images/cloud_blackfire-integration.png)
+	![Blackfire Magento Cloud integration]({{ site.baseurl }}/common/images/cloud_blackfire-integration.png)
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
 By default, the `.magento.app.yaml` file includes the Blackfire module. If the module is not present, use the following instructions to update your `.magento.app.yaml` file, push the updated file to your remote branch, merge, and deploy across all environments.
@@ -255,7 +255,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 1.  Visit the store or site URL for your specific environment, such as the URL for your Integration environment. If you need this URL, you can find it through the Project Web Interface. Select the environment branch and copy the link from the _Access_ section.
 1.  Click the Blackfire icon.
 
-	![Start profiling]({{ site.baseurl}}/common/images/cloud_blackfire.png)
+	![Start profiling]({{ site.baseurl }}/common/images/cloud_blackfire.png)
 
 1.  Click **Profile** to start.
 
@@ -304,7 +304,7 @@ After completing the [Blackfire Integration](#dev), you can define events for th
 
 By simply defining a set of key requests for Blackfire to profile— `/home`, `/checkout`, `/checkout/payment`—Blackfire can notify you if your code complies with established [code performance recommendations](https://blackfire.io/docs/reference-guide/recommendations){:target="_blank"}. The following is a sample build report with recommendations:
 
-![Blackfire build report]({{ site.baseurl}}/common/images/cloud_blackfire-recommendations.png)
+![Blackfire build report]({{ site.baseurl }}/common/images/cloud_blackfire-recommendations.png)
 
 ### Writing your first automated tests and scenarios
 You can easily write tests and scenarios for Blackfire to execute. Create a `.blackfire.yml` file and store it at your project root directory.

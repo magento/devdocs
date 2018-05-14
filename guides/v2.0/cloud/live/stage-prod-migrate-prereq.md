@@ -37,7 +37,7 @@ You can locate your URLs through the Project Web Interface. For each selected en
 2. Select an environment.
 3. Click **Access site** to display the URL and SSH information.
 
-	![Access your project]({{ site.baseurl}}/common/images/cloud_project-access-starter.png)
+	![Access your project]({{ site.baseurl }}/common/images/cloud_project-access-starter.png)
 
 ## Pro plan projects {#pro}
 For Pro plan projects, make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
@@ -62,7 +62,7 @@ If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl
 ### Get your Pro access URLs  {#pro-urls}
 For Pro projects created **after October 23, 2017**, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.
 
-![Access your project]({{ site.baseurl}}/common/images/cloud_project-access.png)
+![Access your project]({{ site.baseurl }}/common/images/cloud_project-access.png)
 
 For Pro projects created **before October 23, 2017**, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You'll use this information for accessing the environments.
 

@@ -26,7 +26,7 @@ To locate scripts used for a certain element:
 <li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools, such as Firebug (Firefox) or Inspect Element (Chrome).</li>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.baseurl}}/videos/fundamentals/add-a-javascript-module/" target="_blank">JavaScript initialization</a>. 
+<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{ site.baseurl }}/videos/fundamentals/add-a-javascript-module/" target="_blank">JavaScript initialization</a>. 
 </li>
 <li>
 To find the source file of the used script:
@@ -59,7 +59,7 @@ To find what JS components are used for displaying the main navigation menu in t
 <li>Using the Inspect Element feature of the browser, define that the menu section <code>id</code> is <code>store.menu</code>:
 
 <p>
-<img src="{{site.baseurl}}/common/images/fdg_js_debug1.png" alt="Using the Inspect Element define the id">
+<img src="{{ site.baseurl }}/common/images/fdg_js_debug1.png" alt="Using the Inspect Element define the id">
 </p>
 
 
@@ -67,7 +67,7 @@ To find what JS components are used for displaying the main navigation menu in t
 <br>
 <li>Search the page source for <code>store.menu</code> (illustration follows):
 <p>
-<img src="{{site.baseurl}}/common/images/fdg_js_debug2.png" alt="Search the page source for the store.menu string">
+<img src="{{ site.baseurl }}/common/images/fdg_js_debug2.png" alt="Search the page source for the store.menu string">
 </p>
 
 We can see that there's a <code>data-mage-init</code> attribute in the scope of the <code>&lt;div id= &quot;store.menu&quot;&gt;&lt;/div&gt;</code>

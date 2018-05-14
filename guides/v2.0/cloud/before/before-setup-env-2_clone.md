@@ -90,7 +90,7 @@ To set Admin variables, you will use this command format:
 
 	magento-cloud variable:set <name> <value> -e <environment ID>
 
-You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl}}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
+You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -140,15 +140,15 @@ To set variables using the CLI (with example values used):
 To set variables using the Project Web Interface:
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
-2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl}}/common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
+2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
 
-	![Project without code]({{ site.baseurl}}/common/images/cloud_project_empty.png)
+	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
 
 4. Select the **Variables** tab.
 5. Click **Add Variable**.
 6. For the **Name**, enter `ADMIN_EMAIL`. For the **Value**, enter your Project Owner email address or another accessible email for resetting the password for the default admin account.
 
-	![Project variable]({{ site.baseurl}}/common/images/cloud_project_variable.png)
+	![Project variable]({{ site.baseurl }}/common/images/cloud_project_variable.png)
 
 7. Click **Add variable**. After you add the variable, the environment will deploy. Wait until deployment completes.
 

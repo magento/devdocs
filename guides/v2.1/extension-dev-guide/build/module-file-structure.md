@@ -17,7 +17,7 @@ In this section, we go over the different file structures for the component type
 ### Module file structure
 A typical file structure for a Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can look like the following:
 
-![Module File Structure]({{ site.baseurl}}/common/images/pdg-config-file-structure.png){:width="300px"}
+![Module File Structure]({{ site.baseurl }}/common/images/pdg-config-file-structure.png){:width="300px"}
 
 #### Common directories
 {:.no_toc}

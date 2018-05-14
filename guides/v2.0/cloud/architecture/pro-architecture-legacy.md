@@ -17,7 +17,7 @@ Each _Pro_ plan project supports a total of eight environments that you can use 
 To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{page.baseurl}}/cloud/trouble/pro-env-management.html). If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.
 </div>
 
-![High-level view of Pro architecture (legacy) flow]({{site.baseurl}}/common/images/cloud_pro-branch-architecture-legacy.png)  
+![High-level view of Pro architecture (legacy) flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-legacy.png)  
 
 The following table summarizes the differences between environments:
 
@@ -152,7 +152,7 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
 
 The following figure shows the technology used in the Production environment:
 
-![Production technology stack]({{ site.baseurl}}/common/images/cloud_stack-diagram.png)
+![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
 {{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 

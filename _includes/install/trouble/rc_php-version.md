@@ -13,7 +13,7 @@ You might encounter the following issues with the PHP version readiness check:
 
 *	The PHP readiness check doesn't display the PHP version as the following figure shows.
 
-	<img src="{{ site.baseurl}}/common/images/upgr-tshoot-no-cron.png">
+	<img src="{{ site.baseurl }}/common/images/upgr-tshoot-no-cron.png">
 
 	This is a symptom of incorrect cron job setup. For more information, see [Set up cron jobs]({{page.baseurl}}/install-gde/install/post-install-config.html#post-install-cron).
 

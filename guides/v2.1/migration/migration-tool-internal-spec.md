@@ -430,7 +430,7 @@ To reach to the data sources of Magento 1 and Magento 2 and operate with its dat
 
 Here is a class diagram of these classes:
 
-<p><img src="{{ site.baseurl}}/common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
+<p><img src="{{ site.baseurl }}/common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
 
 ## Logging {#logging}
 

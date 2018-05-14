@@ -46,7 +46,7 @@ To transfer the Magento software archive to your server:
 
 	The following figure shows an example.
 
-	<img src="{{ site.baseurl}}/common/images/install-merch_ftp-transfer.png">
+	<img src="{{ site.baseurl }}/common/images/install-merch_ftp-transfer.png">
 
 4.	Transfer the archive from your local system to the web server docroot directory.
 

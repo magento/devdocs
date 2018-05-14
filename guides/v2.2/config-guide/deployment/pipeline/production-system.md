@@ -92,7 +92,7 @@ To set sensitive values:
 
 	The setting is displayed in the Admin and cannot be edited. The following figure shows an example.
 
-	![Sensitive setting in Admin]({{ site.baseurl}}/common/images/config_sensitive-set.png)
+	![Sensitive setting in Admin]({{ site.baseurl }}/common/images/config_sensitive-set.png)
 
 #### Related topics
 *	[`magento deploy:mode:set` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html)

@@ -78,7 +78,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <h3>System requirements</h3>
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-[System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
+[System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 <h3>Installation instructions</h3>
 

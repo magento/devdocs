@@ -98,4 +98,4 @@ To uninstall a theme extension using the Component Manager:
 1. In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} Panel, navigate to **System** > **Web Setup Wizard** > **Component Manager**.
 2. In the **Actions** column, click **Select** > **Uninstall** in the theme record. See the following image for illustration.
 
-![extension_manager_uninstall_theme]({{site.baseurl}}/common/images/fdg/uninstall_extension.png){:width="630px"}
+![extension_manager_uninstall_theme]({{ site.baseurl }}/common/images/fdg/uninstall_extension.png){:width="630px"}

@@ -39,7 +39,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 If not, see the <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Installation overview</a>.
 
 ## Installation part 1: Getting started
-1.	See the [system requirements]({{ site.baseurl}}/magento-system-requirements.html).
+1.	See the [system requirements]({{ site.baseurl }}/magento-system-requirements.html).
 2.	If your system lacks any requirements, see the prerequisites documentation:
 
 	*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
@@ -131,27 +131,27 @@ To run the Web Setup Wizard:
 		http://192.0.2.5/magento2/setup
 2.	At the welcome page, click **Agree and Setup Magento**.
 
-	![You must accept the license agreement to install the Magento software]({{ site.baseurl}}/common/images/install_qr_wizard-welcome.png){:width="200px"}
+	![You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}
 3.	Step 1: Readiness Check verifies your system is ready to install the Magento software.
 
 	Click **Start Readiness Check**
 
-	![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl}}/common/images/install_qr_readiness.png){:width="400px"}
+	![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
 
 	*	If the readiness check passes, click **Next** and continue with the next step.
 	*	If the readiness check fails, see [Readiness check issues]({{ page.baseurl}}/install-gde/trouble/readiness/tshoot_rc_main.html)
 4.	Step 2: Add a Database enables you to set up your Magento database.
 
-	![Set up your Magento database]({{ site.baseurl}}/common/images/install_qr_database.png){:width="400px"}
+	![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
 5.	Step 3: Web Configuration enables you to enter the storefront and Magento Admin URLs.
 
-	![Enter your storefront and Magento Admin URLs]({{ site.baseurl}}/common/images/install_qr_web.png){:width="400px"}
+	![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install_qr_web.png){:width="400px"}
 6.	Step 4: Customize Your Store enables you to enter a default store currency, time zone, and language.
 
-	![Customize the store's language, time zone, currency]({{ site.baseurl}}/common/images/install_qr_store.png){:width="400px"}
+	![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install_qr_store.png){:width="400px"}
 7.	Step 5: Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
 
-	![Create a Magento administrator account]({{ site.baseurl}}/common/images/install_qr_admin.png){:width="400px"}
+	![Create a Magento administrator account]({{ site.baseurl }}/common/images/install_qr_admin.png){:width="400px"}
 8.	Step 6: Install starts the installation when you click **Install Now**.
 
 	You can optionally expand **Console Log** to see installation messages while the installation is in progress.

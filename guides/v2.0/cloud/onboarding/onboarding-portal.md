@@ -43,7 +43,7 @@ The main page is Getting Started. It lists a series of suggested tasks from star
 
 The focus of this portal is for business users who may need a bit more planning and high level information to get started. For developers and the Technical Admin, deeper technical information and settings are available through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html).
 
-![Onboarding Portal getting started]({{ site.baseurl}}/common/images/cloud_portal-getstarted1.png)
+![Onboarding Portal getting started]({{ site.baseurl }}/common/images/cloud_portal-getstarted1.png)
 
 ## Set a Technical Admin {#tech-admin}
 **Important:** This step is required for the Project Owner.
@@ -57,7 +57,7 @@ This user can help you create developer accounts with access to the Magento envi
 1. In the Onboarding Portal, select Technical Admin from the left nav.
 2. Enter the full name and email for your Technical Admin. This creates a super user account with full permissions and access across the entire project and all environments.
 
-	![Add Technical Admin]({{ site.baseurl}}/common/images/cloud_portal-techadmin.png)
+	![Add Technical Admin]({{ site.baseurl }}/common/images/cloud_portal-techadmin.png)
 3. Click **Add admin to project**.
 
 ## Magento project ready for development {#provision}

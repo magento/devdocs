@@ -120,7 +120,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
     The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-    <img src="{{site.baseurl}}/common/images/install-success_store.png" width="450px" alt="Magento storefront which verifies a successful installation">
+    <img src="{{ site.baseurl }}/common/images/install-success_store.png" width="450px" alt="Magento storefront which verifies a successful installation">
 
     Refer to the [troubleshooting section]({{page.baseurl}}/install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
@@ -128,7 +128,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
     If you see a 404 or the "Access denied" message, you've successfully restricted access to the Magento file system.
 
-    <img src="{{site.baseurl}}/common/images/access-denied.png" alt="Access denied">
+    <img src="{{ site.baseurl }}/common/images/access-denied.png" alt="Access denied">
 
 ## Congratulations! You're finished.
 {:.no_toc}

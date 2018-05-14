@@ -13,7 +13,7 @@ Each variation has constraints that are called at the end of the test flow.
 
 Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl}}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl}}/common/images/ftf/mtf_dataset_dir.png"/></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"/></a>
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 

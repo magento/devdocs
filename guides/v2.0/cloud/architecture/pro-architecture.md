@@ -81,7 +81,7 @@ The following table summarizes the differences between environments:
 
 Your project is a single Git repository with three, main environment branches for Integration, Staging, and Production. The following diagram shows the hierarchical relationship of the environments:
 
-![High-level view of Pro Environment architecture]({{site.baseurl}}/common/images/cloud_pro-branch-architecture-wings.png)
+![High-level view of Pro Environment architecture]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-wings.png)
 
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test:
@@ -163,7 +163,7 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
 
 The following figure shows the technologies used in the Production environment:
 
-![Production technology stack]({{site.baseurl}}/common/images/cloud_stack-diagram.png)
+![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
 {{site.data.var.ee}} scales seamlessly from the smallest 6-CPU cluster with 11.25GB of RAM to the largest 96-CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 

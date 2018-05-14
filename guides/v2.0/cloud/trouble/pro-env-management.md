@@ -93,7 +93,7 @@ After the conversion, the three repositories are merged into a single repository
 
 In the Project Web Interface, you will see the following environments and branches:
 
-![Pro branch hierarchy]({{ site.baseurl}}/common/images/cloud_project-pro.png)
+![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)
 
 Be aware, the following actions will trigger a redeploy of the environment. This redeploy is much shorter, not pushing code or data changes.
 
@@ -126,7 +126,7 @@ We recommend verifying your user account access and permissions set in the Maste
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
 3. Click Master to open the environment information and settings.
-4. Click ![configure your project]({{ site.baseurl}}/common/images/cloud_edit-project.png) **Configure environment**.
+4. Click ![configure your project]({{ site.baseurl }}/common/images/cloud_edit-project.png) **Configure environment**.
 5. Click the **Users** tab to review the user accounts and permission configurations.
 6. You can add users if needed. Click **Add User**, enter an email address, and select a permission. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only).
 7. To modify the environment permissions for a user, select Edit for the account and change the permissions. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). Select a permission and save.
@@ -170,4 +170,4 @@ After conversion, you can manually migrate specific environment variables for St
 
 When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children of Integration `master`. For more information, see [Pro architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html).
 
-![Pro branch hierarchy]({{ site.baseurl}}/common/images/cloud_project-pro.png)
+![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)

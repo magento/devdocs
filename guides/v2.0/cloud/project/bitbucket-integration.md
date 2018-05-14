@@ -66,7 +66,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 1.  Click **Settings** > **Access Management** > **OAuth**.
 1.  Click **Add consumer** and configure it as follows:
 
-    ![Bitbucket OAuth consumer configuration]({{site.baseurl}}/common/images/cloud_oauth_consumer_config.png)
+    ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png)
 
     <div class="bs-callout bs-callout-warning" markdown="1">
     A valid **Callback URL** isn't required, but you must enter a value in this field to successfully complete the integration.
@@ -137,7 +137,7 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
 
 1.  Log in to the [Project Web Interface]({{page.baseurl}}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project is being deployed.
 
-    ![Testing the Bitbucket integration]({{site.baseurl}}/common/images/cloud_test_bitbucket_integration.png)
+    ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
 
 
 ## Branching

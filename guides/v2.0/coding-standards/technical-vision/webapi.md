@@ -16,13 +16,13 @@ See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of we
 
 The following diagram shows Web API component dependencies.
 
-![Web API components dependencies]({{site.baseurl}}/common/images/coding-standards/webapi-components-dependencies.png)
+![Web API components dependencies]({{ site.baseurl }}/common/images/coding-standards/webapi-components-dependencies.png)
 
 ### High-level Architecture
 
 The following image provides an overview of how Web APIs are processed.
 
-![Web API request processing overview]({{site.baseurl}}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
+![Web API request processing overview]({{ site.baseurl }}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
 
 ### Extension Scenarios
 

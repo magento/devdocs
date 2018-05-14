@@ -86,7 +86,7 @@ You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properl
     * **Port**: enter 80
     * **Debugger**: set to Xdebug in the drop-down
 6. Select the **Use path mappings** option. In the files/directories, the root of the project displays that you opened for the added server.
-7. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl}}/common/images/install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
+7. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} (**Edit**) and add a setting based on the environment:
 
     * For all Starter environments and Pro Integration environments, the remote path is `/app`.
     * For Pro Staging and Production environments:
@@ -150,7 +150,7 @@ To set up an SSH tunnel on Windows using Putty:
     *	**Host Name (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl}}/cloud/env/environments-ssh.html)
     *	**Port** field: Enter `22`
 
-    ![Set up Putty]({{ site.baseurl}}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
+    ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
 3.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
 4.	Enter the following information:
 
@@ -159,12 +159,12 @@ To set up an SSH tunnel on Windows using Putty:
     *	Click **Remote**
 5.	Click **Add**.
 
-    ![Create an SSH tunnel in Putty]({{ site.baseurl}}/common/images/cloud-xdebug_putty-tunnels.png){:width="350px"}
+    ![Create an SSH tunnel in Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-tunnels.png){:width="350px"}
 6.	In the Category pane, click **Session**.
 7.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
 8.	Click **Save**.
 
-    ![Save your SSH tunnel]({{ site.baseurl}}/common/images/cloud-xdebug_putty-session-save.png){:width="350px"}
+    ![Save your SSH tunnel]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session-save.png){:width="350px"}
 9.	To test the SSH tunnel, click **Load**, then click **Open**.
 
 If an "unable to connect" error displays, verify all of the following:
@@ -255,15 +255,15 @@ To use Xdebug Helper with Chrome:
 2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en){:target="_blank"} from the Chrome store.
 3.	Enable the extension in Chrome as shown in the following figure.
 
-	![Enable the Xdebug extension in Chrome]({{ site.baseurl}}/common/images/install_docker_php-storm_xdebug-chrome.png)
-4.	In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl}}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
+	![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
+4.	In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
 5.	From the pop-up menu, click **Options**.
 6.	From the **IDE Key** list, click **PhpStorm**.
 7.	Click **Save**.
 
-	![Xdebug Helper options]({{ site.baseurl}}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
+	![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
 8.	Open your PhpStorm project.
-9.	In the top navigation bar, click ![Start listening for connections]({{ site.baseurl}}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
+9.	In the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**).
 
 	If the navigation bar isn't displayed, click **View** > **Navigation Bar**.
 10.	In the PhpStorm navigation pane, double-click the PHP file to test.

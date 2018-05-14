@@ -17,7 +17,7 @@ This article features a step-by-step illustration of how a real-life layout cust
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl}}/common/images/layout_transform21.png">
+<img src="{{ site.baseurl }}/common/images/layout_transform21.png">
 </div>
 
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.
@@ -229,7 +229,7 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 Now the customer links look like following:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl}}/common/images/layout_screen221.png">
+<img src="{{ site.baseurl }}/common/images/layout_screen221.png">
 </div>
 
 Clicking the **Change** button toggles the `active` CSS class:
@@ -296,5 +296,5 @@ To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo 
 As a result, the customer links look like following:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl}}/common/images/fdg/layout_screen321.png">
+<img src="{{ site.baseurl }}/common/images/fdg/layout_screen321.png">
 </div>

@@ -72,7 +72,7 @@ You can run these operations from the Admin panel.
 
 
 ### System requirements
-Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For details, see [Technology stack requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}

@@ -39,7 +39,7 @@ A product can have more than one price shown and taxes may or may not apply to a
 
 Example of pricing strategy for bundled products:
 <br/>
-![]({{ site.baseurl}}/common/images/bundle_prices.png)
+![]({{ site.baseurl }}/common/images/bundle_prices.png)
 
 ## How to render prices with UI Components
 

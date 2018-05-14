@@ -21,9 +21,9 @@ To enter your [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-
 2.	Click **System** > Tools > **Web Setup Wizard**.
 3.	Click **System Configuration**.
 
-	<img src="{{ site.baseurl}}/common/images/cman_system-config.png" width="550px">
+	<img src="{{ site.baseurl }}/common/images/cman_system-config.png" width="550px">
 
 4.	Enter your public and private authentication keys in the provided fields.
 5.	Click **Save Config**.
 
-	<img src="{{ site.baseurl}}/common/images/cman_keys.png" width="550px">
+	<img src="{{ site.baseurl }}/common/images/cman_keys.png" width="550px">

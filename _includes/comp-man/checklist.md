@@ -32,11 +32,11 @@ Results similar to the following should display:
 
 Another symptom of cron not running is the following error in the Magento Admin:
 
-![cron isn't running]({{ site.baseurl}}/common/images/compman-cron-not-running.png){:width="500px"}
+![cron isn't running]({{ site.baseurl }}/common/images/compman-cron-not-running.png){:width="500px"}
 
 To see the error, you might need to click **System Messages** at the top of the window as follows:
 
-![System Messages]({{ site.baseurl}}/common/images/compman_sys-messages.png)
+![System Messages]({{ site.baseurl }}/common/images/compman_sys-messages.png)
 
 For details, see [Set up cron]({{page.baseurl}}/install-gde/install/post-install-config.html#post-install-cron).
 

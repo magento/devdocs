@@ -16,7 +16,7 @@ functional_areas:
 To choose whether to upgrade or uninstall components:
 
 1.	After you <a href="{{page.baseurl}}/comp-mgr/module-man/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
-	<img src="{{ site.baseurl}}/common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Marketplace to see if updates are available">
+	<img src="{{ site.baseurl }}/common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Marketplace to see if updates are available">
 2.	You have the following options:
 	<table>
 	<tbody>
@@ -39,9 +39,9 @@ To choose whether to upgrade or uninstall components:
 	<tr>
 		<td><p>List of components</p></td>
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
-			<ul><li><img src="{{ site.baseurl}}/common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Magento Marketplace.</li>
-				<li><img src="{{ site.baseurl}}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
-				<li><img src="{{ site.baseurl}}/common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> </ul>
+			<ul><li><img src="{{ site.baseurl }}/common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Magento Marketplace.</li>
+				<li><img src="{{ site.baseurl }}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
+				<li><img src="{{ site.baseurl }}/common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> </ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
 				<p>The right column displays available actions for each component. </p></td>
 	</tr>
@@ -49,13 +49,13 @@ To choose whether to upgrade or uninstall components:
 		<td><p>Actions</p></td>
 		<td><p>Displays a list of actions available for that component type. <a href="#compman-access-types">Details about available actions</a>.</p>
 			<p>The following figure shows an example.</p>
-			<img src="{{ site.baseurl}}/common/images/cman_actions.png" alt="You can enable, disable, or update components">
+			<img src="{{ site.baseurl }}/common/images/cman_actions.png" alt="You can enable, disable, or update components">
 			
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
-			<p><img src="{{ site.baseurl}}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
-			<p><img src="{{ site.baseurl}}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
+			<p><img src="{{ site.baseurl }}/common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	</tbody>
 	</table>
@@ -74,7 +74,7 @@ To install a new purchase:
 
 1.	Click **Install** under the number of new purchases as the following figure shows.
 
-	<img src="{{ site.baseurl}}/common/images/compman_new-purchases1.png" width="450px">
+	<img src="{{ site.baseurl }}/common/images/compman_new-purchases1.png" width="450px">
 
 2.	On the next page, select the components to install.
 
@@ -84,7 +84,7 @@ To install a new purchase:
 
 	The following figure shows an example of selecting all components.
 
-	<img src="{{ site.baseurl}}/common/images/compman_new-purchases2.png" width="700px">
+	<img src="{{ site.baseurl }}/common/images/compman_new-purchases2.png" width="700px">
 3.	Click **Install**.
 4.	Continue with <a href="{{page.baseurl}}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
@@ -93,15 +93,15 @@ To install a new purchase:
 <h2 id="compman-access-sync">Update a component</h2>
 To see if any of your components can be updated, click **Sync**.
 
-<img src="{{ site.baseurl}}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available"> displays in the left column of each component that you can update. 
+<img src="{{ site.baseurl }}/common/images/cman_comp-status-info.png" alt="An info icon means there is an update available"> displays in the left column of each component that you can update. 
 
 The following figure shows an example.
 
-<img src="{{ site.baseurl}}/common/images/cman_component-needs-update.png" width="650px" alt="Example showing components that need updating">
+<img src="{{ site.baseurl }}/common/images/cman_component-needs-update.png" width="650px" alt="Example showing components that need updating">
 
 To update the component, click **Update** from the **Actions** list. A sample follows.
 
-<img src="{{ site.baseurl}}/common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
+<img src="{{ site.baseurl }}/common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
 
 Continue with <a href="{{page.baseurl}}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
@@ -110,14 +110,14 @@ To enable or disable a component, click the appropriate choice from the **Action
 
 The following figure shows an example of disabling a component.
 
-<img src="{{ site.baseurl}}/common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
+<img src="{{ site.baseurl }}/common/images/cman_actions-disable.png" alt="Click Disable from the Actions menu">
 
 Continue with <a href="{{page.baseurl}}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 
 <h2 id="compman-uninst">Uninstall a component</h2>
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
-<img src="{{ site.baseurl}}/common/images/cman_uninstall1.png" alt="Uninstall a component">
+<img src="{{ site.baseurl }}/common/images/cman_uninstall1.png" alt="Uninstall a component">
 
 Continue with <a href="{{page.baseurl}}/comp-mgr/module-man/compman-readiness.html">Readiness check</a>.
 

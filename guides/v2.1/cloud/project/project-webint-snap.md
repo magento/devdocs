@@ -31,7 +31,7 @@ We provide two methods for creating and managing snapshots:
 
 1.  Log in to your project.
 1.  In the left pane, click the name of the environment to back up.
-1.  In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl}}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
+1.  In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
 1.  Click **Create**.
 
 #### To create a snapshot using the Magento CLI:

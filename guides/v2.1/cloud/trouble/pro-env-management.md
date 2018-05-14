@@ -43,7 +43,7 @@ Before converting your project, the branches include a repository for Integratio
 
 After converting your project, the hierarchical relationships appear in your Project Web Interface with three, main environment branches for Integration, Staging, and Production:
 
-![Pro branch hierarchy]({{site.baseurl}}/common/images/cloud_project-pro.png)
+![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)
 
 For more information on each branch, see [Pro architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html).
 
@@ -66,7 +66,7 @@ We recommend verifying your user account access and permissions set in the Integ
 
 1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 1.  From your project, click **Master** to view the environment information and settings.
-1.  Click ![configure your project]({{ site.baseurl}}/common/images/cloud_edit-project.png) **Configure environment**.
+1.  Click ![configure your project]({{ site.baseurl }}/common/images/cloud_edit-project.png) **Configure environment**.
 1.  Click the **Users** tab to review the user accounts and permission configurations.
 1.  Add, delete, or update users, if needed.
 

@@ -15,7 +15,7 @@ This topic describes how developers can customize the product creation form used
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
-<img src="{{site.baseurl}}/common/images/product_pmg.png" alt="The product creation page in Admin">
+<img src="{{ site.baseurl }}/common/images/product_pmg.png" alt="The product creation page in Admin">
 
 ## Overview
 
