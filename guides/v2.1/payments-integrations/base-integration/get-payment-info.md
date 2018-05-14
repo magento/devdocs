@@ -110,7 +110,7 @@ define(
  
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
 complicated. we need last step to retrieve data from {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in the backend. Magento provides some
-mechanisms called [Observers]({{ site.gdeurl21}}extension-dev-guide/events-and-observers.html).
+mechanisms called [Observers]({{ site.gdeurl21 }}extension-dev-guide/events-and-observers.html).
  
 #### Read additional data
 
