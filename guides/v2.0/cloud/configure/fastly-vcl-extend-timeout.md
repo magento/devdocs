@@ -19,7 +19,7 @@ To build the new command, we took the default code and revised it with a new nam
 The important code that sets the timeout is the `first_byte_timeout` value of 100. For this snippet, you can extend this time to 300s for five minutes or 600s for ten minutes. Ten minutes is the hard cap for Fastly timeouts. In this code example, we extend the timeout to ten minutes.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).
+This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 </div>
 
 ## Create extendtimeout.json {#vcl}
@@ -49,4 +49,4 @@ The default VCL snippets you uploaded included a prepended name of `magentomodul
 </div>
 
 ## Finish adding the VCL {#complete}
-When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).
+When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

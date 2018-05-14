@@ -25,10 +25,10 @@ This topic discusses advanced configuration commands you can use to:
 
 You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:
 
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html)
-*   [Payment configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-payment.html)
-*   [Other configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-most.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-b2b.html)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*   [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*   [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 You can set values at the following times:
 
@@ -54,10 +54,10 @@ To set a configuration value, you must know at least one of the following:
 ### Find the configuration path
 See the following references:
 
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html)
-*   [Payment configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-payment.html)
-*   [Other configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-most.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-b2b.html)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*   [Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
+*   [Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ### Find the scope code
 You can find the scope code either in the Magento database or in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. See one of the following sections for more information.
@@ -72,7 +72,7 @@ You can find the scope code either in the Magento database or in the Magento {% 
 
     The following figure shows a sample website code.
 
-    ![Get a website or store view code from the Admin]({{ site.baseurl}}/common/images/config_configset_website-code.png){:width="450px"}
+    ![Get a website or store view code from the Admin]({{ site.baseurl }}/common/images/config_configset_website-code.png){:width="450px"}
 4.  Continue with [Set configuration values](#config-cli-config-set).
 
 {% endcollapsible %}
@@ -171,7 +171,7 @@ If you enter an incorrect configuration path, this command returns an error
     The "wrong/config/path" does not exist
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you use the `--lock` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
+If you use the `--lock` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
 </div>
 
 ## Display the value of configuration settings {#config-cli-config-show}
@@ -186,7 +186,7 @@ where
 * `path` is the configuration path in format first_part/second_part/third_part/etc *(required)*
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The `bin/magento config:show` command displays the values of any [encrypted values]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
+The `bin/magento config:show` command displays the values of any [encrypted values]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
 </div>
 
 ### Examples
@@ -238,4 +238,4 @@ Result:
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
 
 #### Related topic
-[Deployment general overview]({{ page.baseurl}}/config-guide/deployment/pipeline/)
+[Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)

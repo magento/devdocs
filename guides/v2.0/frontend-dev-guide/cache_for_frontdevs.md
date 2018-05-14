@@ -23,7 +23,7 @@ The following cache types mostly have impact on frontend development process:
 
 <div class="bs-callout bs-callout-info" id="info" markdown ="1">
 <span class="glyphicon-class">
-The full list of cache types can be found in the [Overview of cache types]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
+The full list of cache types can be found in the [Overview of cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
 </span>
 </div>
 
@@ -37,7 +37,7 @@ To view the status of the cache, run:
 
 	`php bin/magento cache:status`
 
-For more details about working with cache, see [Manage the cache]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html)
+For more details about working with cache, see [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
 
 ## Clean static files {#clean_static}
 
