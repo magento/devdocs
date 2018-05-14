@@ -2049,9 +2049,9 @@
 
 <p>The <code class="highlighter-rouge">build</code> property determines what happens by default when building the project. The only value currently supported is <code class="highlighter-rouge">composer</code>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: php:7.0
-build:
-    flavor: composer
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">php:7.0</span>
+<span class="na">build</span><span class="pi">:</span>
+    <span class="na">flavor</span><span class="pi">:</span> <span class="s">composer</span>
 </code></pre></div></div>
 
 <h3 id="access"><code class="highlighter-rouge">access</code></h3>
@@ -2104,37 +2104,37 @@ search: "searchengine:solr"
 
 <p>The following displays the default set of web accessible locations associated with an entry in <a href="#mounts"><code class="highlighter-rouge">mounts</code></a>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># The configuration of app when it is exposed to the web.
-web:
-locations:
-"/":
-    # The public directory of the app, relative to its root.
-    root: "pub"
-    # The front-controller script to send non-static requests to.
-    passthru: "/index.php"
-    index:
-        - index.php
-    expires: -1
-    scripts: true
-    allow: false
-    rules:
-        \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
-            allow: true
-        /robots\.txt$:
-            allow: true
-"/media":
-    root: "pub/media"
-    allow: true
-    scripts: false
-    passthru: "/index.php"
-"/static":
-    root: "pub/static"
-    allow: true
-    scripts: false
-    passthru: "/front-static.php"
-    rules:
-        ^/static/version\d+/(?&lt;resource&gt;.*)$:
-              passthru: "/static/$resource"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># The configuration of app when it is exposed to the web.</span>
+<span class="na">web</span><span class="pi">:</span>
+<span class="na">locations</span><span class="pi">:</span>
+<span class="s2">"</span><span class="s">/"</span><span class="pi">:</span>
+    <span class="c1"># The public directory of the app, relative to its root.</span>
+    <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub"</span>
+    <span class="c1"># The front-controller script to send non-static requests to.</span>
+    <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
+    <span class="na">index</span><span class="pi">:</span>
+        <span class="pi">-</span> <span class="s">index.php</span>
+    <span class="na">expires</span><span class="pi">:</span> <span class="s">-1</span>
+    <span class="na">scripts</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">allow</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">rules</span><span class="pi">:</span>
+        <span class="s">\.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$</span><span class="pi">:</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="s">/robots\.txt$</span><span class="pi">:</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+<span class="s2">"</span><span class="s">/media"</span><span class="pi">:</span>
+    <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/media"</span>
+    <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
+<span class="s2">"</span><span class="s">/static"</span><span class="pi">:</span>
+    <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/static"</span>
+    <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
+    <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/front-static.php"</span>
+    <span class="na">rules</span><span class="pi">:</span>
+        <span class="s">^/static/version\d+/(?&lt;resource&gt;.*)$</span><span class="pi">:</span>
+              <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/static/$resource"</span>
 </code></pre></div></div>
 
 <h3 id="disk"><code class="highlighter-rouge">disk</code></h3>
@@ -2152,12 +2152,12 @@ application in MB.</p>
 
 <p>The following is a default list of mounts configured in <code class="highlighter-rouge">magento.app.yaml</code>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># The mounts that will be performed when the package is deployed.
-mounts:
-    "var": "shared:files/var"
-    "app/etc": "shared:files/etc"
-    "pub/media": "shared:files/media"
-    "pub/static": "shared:files/static"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># The mounts that will be performed when the package is deployed.</span>
+<span class="na">mounts</span><span class="pi">:</span>
+    <span class="s2">"</span><span class="s">var"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/var"</span>
+    <span class="s2">"</span><span class="s">app/etc"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/etc"</span>
+    <span class="s2">"</span><span class="s">pub/media"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/media"</span>
+    <span class="s2">"</span><span class="s">pub/static"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/static"</span>
 </code></pre></div></div>
 
 <p>The format for adding your mount to this list is as follows:</p>
@@ -2209,37 +2209,35 @@ nodejs:
 
 <p>Add CLI commands under the <code class="highlighter-rouge">build</code> or <code class="highlighter-rouge">deploy</code> sections:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        php ./bin/magento &lt;custom-command&gt;
-        php ./vendor/bin/m2-ece-build
-    # We run deploy hook after your application has been deployed and started.
-    deploy: |
-        php ./vendor/bin/m2-ece-deploy
-        php ./bin/magento &lt;custom-command&gt;
-    # We run post deploy hook to clean and warm the cache.  Available with Cloud Tools 2002.0.10.
-    post_deploy: |
-        php ./vendor/bin/ece-tools post-deploy
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools build</span>
+    <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
+    <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools deploy</span>
+    <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
+    <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div></div>
 
 <p>The commands run from the application (<code class="highlighter-rouge">/app</code>) directory. You can use the <code class="highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning of the hook.</p>
 
 <h4 id="to-compile-sass-files-using-grunt">To compile SASS files using grunt:</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dependencies:
-  ruby:
-    sass: "3.4.7"
-  nodejs:
-    grunt-cli: "~0.1.13"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
+  <span class="na">ruby</span><span class="pi">:</span>
+    <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4.7"</span>
+  <span class="na">nodejs</span><span class="pi">:</span>
+    <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.1.13"</span>
 
-hooks:
-  build: |
-    cd public/profiles/project_name/themes/custom/theme_name
-    npm install
-    grunt
-    cd
-    php ./vendor/bin/m2-ece-build
+<span class="na">hooks</span><span class="pi">:</span>
+  <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="no">cd public/profiles/project_name/themes/custom/theme_name</span>
+    <span class="no">npm install</span>
+    <span class="no">grunt</span>
+    <span class="no">cd</span>
+    <span class="no">php ./vendor/bin/m2-ece-build</span>
 </code></pre></div></div>
 
 <p>You must compile SASS files using <code class="highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="highlighter-rouge">grunt</code> command before the <code class="highlighter-rouge">build</code> command.</p>
@@ -2265,10 +2263,10 @@ hooks:
 
 <p>A sample Magento cron job follows:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
-  cronrun:
-      spec: "*/5 * * * *"
-      cmd: "php bin/magento cron:run"
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">crons</span><span class="pi">:</span>
+  <span class="na">cronrun</span><span class="pi">:</span>
+      <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+      <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
 </code></pre></div></div>
 
 <p>For Magento Commerce (Cloud) 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce (Cloud) 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.</p>
@@ -2278,11 +2276,11 @@ hooks:
 <h2 id="variables">Variables</h2>
 <p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce (Cloud) 2.2.X.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">variables</span><span class="pi">:</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN</span><span class="pi">:</span> <span class="s1">'</span><span class="s">payment-broker.magento.com'</span>
+    <span class="na">CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud_BT'</span>
+    <span class="na">CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud'</span>
 </code></pre></div></div>
 
 <h2 id="configure-php-options">Configure PHP options</h2>
@@ -2299,14 +2297,17 @@ type: php:7.0
 <h3 id="php-extensions">PHP extensions</h3>
 <p>You can define additional PHP extensions to enable or disable:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .magento.app.yaml
-runtime:
-    extensions:
-        - xdebug
-        - redis
-        - ssh2
-    disabled_extensions:
-        - sqlite3
+<blockquote>
+  <p>.magento.app.yaml</p>
+</blockquote>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">runtime</span><span class="pi">:</span>
+  <span class="na">extensions</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">xdebug</span>
+    <span class="pi">-</span> <span class="s">redis</span>
+    <span class="pi">-</span> <span class="s">ssh2</span>
+  <span class="na">disabled_extensions</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">sqlite3</span>
 </code></pre></div></div>
 
 <p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>

@@ -2456,12 +2456,15 @@ git push origin &lt;branch name&gt;
           <p>Modify the build and deploy hook commands in your <code class="highlighter-rouge">magento.app.yaml</code> file.</p>
 
           <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
-  <span class="c1"># We run build hooks before your application has been packaged.</span>
-  <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="no">php ./vendor/bin/m2-ece-build</span>
-  <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
-  <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
-          <span class="no">php ./vendor/bin/m2-ece-deploy</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools build</span>
+    <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
+    <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools build</span>
+    <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
+    <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div>          </div>
         </li>
         <li>
