@@ -1975,35 +1975,33 @@
 <p>This section discusses how to load websites on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
 <div class="collapsible"><b class="collapsible-title">To create virtual hosts: </b><div class="collapsible-content"><ol>
-  <li>
-    <p>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg.conf</code>:</p>
-
+  <li>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg.conf</code>:
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
-   french.mysite.mg french;
+    french.mysite.mg french;
 }
 
 server {
-   listen 80;
-   server_name french.mysite.mg;
-   set $MAGE_ROOT /var/www/html/magento2;
-   set $MAGE_MODE developer;
-   include /var/www/html/magento2/nginx.conf;
+    listen 80;
+    server_name french.mysite.mg;
+    set $MAGE_ROOT /var/www/html/magento2;
+    set $MAGE_MODE developer;
+    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+    include /var/www/html/magento2/nginx.conf;
 }
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Create another file named <code class="highlighter-rouge">german.mysite.mg.conf</code> in the same directory with the following contents:</p>
-
+  <li>Create another file named <code class="highlighter-rouge">german.mysite.mg.conf</code> in the same directory with the following contents:
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
-   german.mysite.mg german;
+    german.mysite.mg german;
 }
 
 server {
-   listen 80;
-   server_name german.mysite.mg;
-   set $MAGE_ROOT /var/www/html/magento2;
-   set $MAGE_MODE developer;
-   include /var/www/html/magento2/nginx.conf;
+    listen 80;
+    server_name german.mysite.mg;
+    set $MAGE_ROOT /var/www/html/magento2;
+    set $MAGE_MODE developer;
+    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+    include /var/www/html/magento2/nginx.conf;
 }
 </code></pre></div>    </div>
   </li>
@@ -2033,6 +2031,60 @@ ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 </ol>
 
 <p>For more detail about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
+</div></div>
+
+<h2 id="ms-nginx-conf-sample">Step 3: Modify nginx.conf.sample</h2>
+<div class="collapsible"><b class="collapsible-title">To Edit PHP entry point for main application: </b><div class="collapsible-content"><ol>
+  <li>Open a text editor and review the file named nginx.conf.sample <code class="highlighter-rouge">&lt;magento2_installation_directory&gt;/nginx.conf.sample</code>. Specifically look for the following section:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
+location ~ (index|get|static|report|404|503|health_check)\.php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+    fastcgi_buffers 1024 4k;
+
+    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+    fastcgi_read_timeout 600s;
+    fastcgi_connect_timeout 600s;
+
+    fastcgi_index  index.php;
+    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+</code></pre></div></div>
+
+<ol>
+  <li>Update the nginx.conf.sample file with the following two lines before the include statement:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+ fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+</code></pre></div>    </div>
+  </li>
+  <li>An example updated PHP entry point for main application:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
+location ~ (index|get|static|report|404|503|health_check)\.php$ {
+ try_files $uri =404;
+ fastcgi_pass   fastcgi_backend;
+ fastcgi_buffers 1024 4k;
+
+ fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+ fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+ fastcgi_read_timeout 600s;
+ fastcgi_connect_timeout 600s;
+
+ fastcgi_index  index.php;
+ fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+ # START - Multisite customization
+ fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+ fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+ # END - Multisite customization
+ include        fastcgi_params;
+}
+</code></pre></div>    </div>
+    <p>Note: The <code class="highlighter-rouge">nginx.conf.sample</code> file is considered a core file, so to avoid potential conflicts with updates to this file in future Magento 2 releases, formulating a strategy that doesn’t directly edit this file is preferred. One approach would be to copy the <code class="highlighter-rouge">nginx.conf.sample</code> file, rename it, and edit the copied file versus the actual <code class="highlighter-rouge">nginx.conf.sample</code>.</p>
+  </li>
+</ol>
 </div></div>
 
 <h2 id="ms-nginx-verify">Verify your site</h2>
