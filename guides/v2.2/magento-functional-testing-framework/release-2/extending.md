@@ -62,7 +62,7 @@ The result corresponds to both tests as listed below:
         <amOnPage url="{{AdminCategoryPage.url}}" stepKey="navigateToAdminCategory"/>
         ...(several steps)
     </test>
-    <test name="OtherCategoryTest" extends="AdminCategoryTest">
+    <test name="OtherCategoryTest">
             <annotations>
                 ...
             </annotations>
@@ -86,7 +86,7 @@ The result corresponds to both tests as listed below:
         <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
         <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
     </test>
-    <test name="AlternativeLogInAsAdminTest">
+    <test name="AlternativeLogInAsAdminTest" extends="LogInAsAdminTest">
         <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe" before="clickLogin"/>
         <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl" after="clickLogin"/>
     </test>
@@ -131,7 +131,7 @@ The result corresponds to both tests as listed below:
         </before>
         <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
     </test>
-    <test name="AlternativeLogInAsAdminTest">
+    <test name="AlternativeLogInAsAdminTest" extends="LogInAsAdminTest">
         <before>
             <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe" before="clickLogin"/>
             <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl" after="clickLogin"/>      
@@ -212,7 +212,7 @@ The new action groups correspond to:
         </assertCount>
     </actionGroup>
 
-    <actionGroup name="CountProductB" extends="CountProductA">
+    <actionGroup name="CountProductB">
         <arguments>
             <argument name="count" type="string"/>
         </arguments>
@@ -262,7 +262,7 @@ The new action groups correspond to:
         <grabMultiple selector="{{productSelector}}" stepKey="grabProducts"/>
     </actionGroup>
 
-    <actionGroup name="VerifyProductCount" extends="GetProductCount">
+    <actionGroup name="VerifyProductCount">
         <arguments>
             <argument name="count" type="string"/>
             <argument name="productSelector" type="string"/>
