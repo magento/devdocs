@@ -27,28 +27,24 @@ You can set `MAGE_DIRS` in any of the following ways:
 *	Use a custom entry point script such as the following:
 
 	{% highlight php startinline=true %}
+	```
 	use Magento\Framework\App\Filesystem\DirectoryList;
 	use Magento\Framework\App\Bootstrap;
  
 	require __DIR__ . '/app/bootstrap.php';
 	$params = $_SERVER;
 	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS] = [
-	DirectoryList::PUB => [DirectoryList::URL_PATH => ''],	
-	DirectoryList::MEDIA => [DirectoryList::URL_PATH => 'media'],
-	DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
-	DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'media/upload'],
-	];
-	
-	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][DirectoryList::CACHE] = [
-	    DirectoryList::PATH => '/mnt/nfs/cache'
-	];
-	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS][DirectoryList::MEDIA] = [
-	    DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => ''
+ 	    DirectoryList::PUB => [DirectoryList::URL_PATH => '',
+ 	    DirectoryList::MEDIA => [DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => ''],
+ 	    DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
+ 	    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'media/upload'],
+ 	    DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
 	];
 	$bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
 	/** @var \Magento\Framework\App\Http $app */
 	$app = $bootstrap->createApplication('Magento\Framework\App\Http');
 	$bootstrap->run($app);
+	```
 	{% endhighlight %}
-
+	
 The preceding example sets paths for `[cache]` and `[media]` directories to `/mnt/nfs/cache` and `/mnt/nfs/media`, respectively.
