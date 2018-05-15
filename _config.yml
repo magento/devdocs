@@ -86,6 +86,11 @@ defaults:
       guide_version: "2.2"
   -
     scope:
+      path: "guides/m1x"
+    values:
+      layout: null
+  -
+    scope:
       type: videos
     values:
       layout: video

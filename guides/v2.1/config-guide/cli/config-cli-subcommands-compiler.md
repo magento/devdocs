@@ -49,7 +49,7 @@ The following command enables all modules:
 
 Use the optional `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you've previously enabled or disabled modules and you must clear static content previously generated for them.
 
-[More information about enabling modules]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html).
+[More information about enabling modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 ## Compile code {#config-cli-subcommands-single}
 Use this command to compile code.

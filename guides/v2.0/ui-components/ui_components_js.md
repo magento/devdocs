@@ -10,7 +10,7 @@ redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 
 ## What's in this topic
-This topic is aimed for developers, who need to reuse the [Magento UI Components]({{page.baseurl}}/ui-library/ui-library-component.html). 
+This topic is aimed for developers, who need to reuse the [Magento UI Components]({{ page.baseurl }}/ui-library/ui-library-component.html). 
 
 The topic covers the following:
 
@@ -37,7 +37,7 @@ The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-
  - `component`: the path to the component's `.js` file in terms of RequireJS.
 
 Example:
-The `.js` file of the bookmark component is [Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
+The `.js` file of the bookmark component is [Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
 
 So the `component` property is set in the `.xml` configuration file like following:
 
@@ -51,7 +51,7 @@ So the `component` property is set in the `.xml` configuration file like followi
 
 Example:
 
-The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
+The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -62,7 +62,7 @@ The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/tem
  - children: is a general name for the nested components of a certain component. Children can be specified in the `.xml` configuration of the parent component (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
  - `name`: the name of the component specified in the `.xml` configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
-For example, [`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`]({{site.mage2000url}}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57):
+For example, [`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`]({{ site.mage2000url }}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57):
 
 {%highlight xml%} 
 <component name="columns_controls">
@@ -213,7 +213,7 @@ Extends `uiClass`. Adds the following:
 Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
-- by default uses the <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
+- by default uses the <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
 
 ### `uiRegistry`
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
@@ -255,28 +255,28 @@ To define the UI components used on a page, you can use browser built-in develop
 For illustration, let's find out what UI components are used on the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}/common/images/ui_debug1.png" alt="The catalog page"> 
+<img src="{{ site.baseurl }}/common/images/ui_debug1.png" alt="The catalog page"> 
 </div>
 
 
 According to the described procedure, open the page source and search for "`data-bind="scope:`"
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}/common/images/ui_debug2.png" alt="searching for data-bind=scope:">
+<img src="{{ site.baseurl }}/common/images/ui_debug2.png" alt="searching for data-bind=scope:">
 </div>
 
 
 So we find out that the main UI component used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}/common/images/ui_debug3.png" alt="run the command in Console">
+<img src="{{ site.baseurl }}/common/images/ui_debug3.png" alt="run the command in Console">
 </div>
 
 
 And we get the component's configuration:
 
 <div style="border: 1px solid #ABABAB">
-<img src="{{site.baseurl}}/common/images/ui_debug4.png" alt="view the configuration">
+<img src="{{ site.baseurl }}/common/images/ui_debug4.png" alt="view the configuration">
 </div>
 
 ### Debug using a Google Chrome plug-in

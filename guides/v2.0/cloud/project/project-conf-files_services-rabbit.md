@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-The [Message Queue Framework (MQF)]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
+The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="\_blank"} as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
@@ -40,10 +40,10 @@ relationships:
     rabbitmq: "rabbitmq:rabbitmq"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
 
@@ -77,7 +77,7 @@ For debugging purposes, it's sometimes useful to directly connect to a service i
 *   [Connect from your PHP application](#cloud-rabbitmq-conn-php)
 
 ### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
-You can do this using [SSH tunneling]({{page.baseurl}}/cloud/env/environments-start.html#env-start-tunn):
+You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn):
 
 1. SSH into the Integration environment with RabbitMQ installed and configured.
 2. Login to the Magento Cloud CLI and project:

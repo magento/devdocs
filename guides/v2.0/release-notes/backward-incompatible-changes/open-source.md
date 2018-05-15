@@ -94,4 +94,4 @@ The changes are aggregated into two tables:
 
 [magento/magento2]: https://github.com/magento/magento2/releases
 
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

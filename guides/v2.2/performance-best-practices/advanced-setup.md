@@ -83,7 +83,7 @@ This command performs configuration changes but does not configure replication i
 After splitting your master database and setting slave databases, Magento automatically regulates connections to a specific database, making decisions based on the type of request (POST, PUT, GET, etc) and data resource. If Magento or its extensions performs write operations on a GET request, the system automatically switches the connection from slave to master database. It works the same way with master databases: as soon as you work with a checkout-related table, the system redirects all the queries to a specific database. Meanwhile, all catalog-related queries will go to the main database.
 
 For more details on the configuration and the benefits of multiple master/slave configuration, see
-[Split database performance solution]({{page.baseurl}}/config-guide/multi-master/multi-master.html).
+[Split database performance solution]({{ page.baseurl }}/config-guide/multi-master/multi-master.html).
 
 ## Serve media content
 

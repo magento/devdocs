@@ -772,7 +772,7 @@ the invoice ID was not included.  *Fix submitted by [Anton Evers](https://github
 
 ### Shipping
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
+You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 
 

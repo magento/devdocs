@@ -37,4 +37,4 @@ The [Coding standards overview]{:target="_blank"} introduces Magento-specific pr
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
 [Coding standards overview]: http://devdocs.magento.com/guides/v2.0/coding-standards/bk-coding-standards.html
 [ruleset]: http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php
-[ruleset.xml]: {{site.mage2200url}}dev/tests/static/framework/Magento/ruleset.xml
+[ruleset.xml]: {{ site.mage2200url }}dev/tests/static/framework/Magento/ruleset.xml

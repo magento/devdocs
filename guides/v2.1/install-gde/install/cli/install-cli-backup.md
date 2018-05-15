@@ -20,13 +20,13 @@ This command enables you to back up:
 *	The <code>pub/media</code> directory
 *	The Magento 2 database
 
-Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
 After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a later time.
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Set ulimit for the web server user {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
@@ -115,5 +115,5 @@ Messages similar to the following display:
 	Disabling maintenance mode
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If the command results in a <code>Segmentation fault</code> message, see <a href="{{page.baseurl}}/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
+  <p>If the command results in a <code>Segmentation fault</code> message, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
 </div>
