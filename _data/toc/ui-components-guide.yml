@@ -149,14 +149,14 @@ pages:
           url: /ui_comp_guide/components/ui-treemassactions.html
 
         - label: UrlInput component
-          url: ui_comp_guide/components/ui-urlinput.html
+          url: /ui_comp_guide/components/ui-urlinput.html
 
         - label: UI-select component
-          url: ui_comp_guide/components/ui-secondary-uiselect.html
+          url: /ui_comp_guide/components/ui-secondary-uiselect.html
 
         - label: WYSIWYG component
           versions: ["2.0","2.1","2.2"]
-          url: ui_comp_guide/components/ui-wysiwyg.html
+          url: /ui_comp_guide/components/ui-wysiwyg.html
 
         - label: WYSIWYG component
           versions: "2.3"
@@ -167,10 +167,10 @@ pages:
               url: /ui_comp_guide/components/wysiwyg/add-custom-editor/
 
             - label: Configure the TinyMCE editor
-              url: ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html
+              url: /ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html
 
             - label: Extension Points
-              url: ui_comp_guide/components/wysiwyg/extension-points/
+              url: /ui_comp_guide/components/wysiwyg/extension-points/
 
     - label: Concepts
       children:

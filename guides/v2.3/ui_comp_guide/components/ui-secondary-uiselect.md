@@ -44,7 +44,7 @@ Example 2:
 
 The following is an example of the configuration of a select component. It is used as a column filter with three levels of options, with no selectable label for every level, without checkboxes:
 
-<img src="{{site.baseurl}}common/images/ui-select21.jpg" alt="view the configuration">
+<img src="{{site.baseurl}}/common/images/ui-select21.jpg" alt="view the configuration">
 
 ### Configuration
 
