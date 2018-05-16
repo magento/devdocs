@@ -37,7 +37,7 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
-* <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 *  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
@@ -418,11 +418,12 @@ Example of usage:
         <remove src="my-js.js"/>
         <remove src="Magento_Catalog::js/compare.js" />
 								
-	<!-- Remove external resources -->
+        <!-- Remove external resources -->
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
         <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
+</page>
 {%endhighlight xml%}
 
 <h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
@@ -466,7 +467,6 @@ Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&
          <td>true|false</td>
          <td>no</td>
       </tr>
-
    </tbody>
 </table>
 
