@@ -10,7 +10,7 @@ github_link: release-notes/bk-release-notes.md
 ---
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Magento 2.3.0 is currently in pre-release. Check out [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html) for information on participating in our pre-release evaluation program.
+Magento 2.3.0 is currently in pre-release. Check out <a href="{{ page.baseurl }}/release-notes/2.3.0-quick-start.html" target="_blank">Magento 2.3.0 Alpha Quick Start Guide</a> for information on participating in our pre-release evaluation program.
 </div>
 
 
@@ -25,7 +25,7 @@ Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x](http:/
 
 ## Backward-incompatible changes
 
-*	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes.html) between the 2.2 and 2.3 releases
+*	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
 
 
 
