@@ -913,6 +913,27 @@ buttons: [{
 <li><a href="#modal_opened">opened</a></li>
 </ul>
 
+<p>You can listen to these events in two ways:</p>
+
+<p>Use jQuery’s <a href="http://api.jquery.com/on/"><code class="highlighter-rouge">on</code></a> function:</p>
+
+<pre>
+var modal = $( "#modal_content").modal({...});
+modal.on( "modalclosed", function() {
+    // Do some action when modal closed
+});
+</pre>
+
+<p>Or assign a callback as a property when creating a modal instance:</p>
+<pre>
+$('#modal_content').modal({
+    ...
+    closed: function(){
+       // Do some action when modal closed
+    }
+});
+</pre>
+
 <h3 id="modal_closed"><code>closed</code></h3>
 <p>Called when the modal window is closed.</p>
 
