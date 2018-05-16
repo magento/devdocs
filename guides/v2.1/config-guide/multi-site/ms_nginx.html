@@ -1713,15 +1713,15 @@
 
 <ul>
   <li>
-    <p>You’re working on a development machine (laptop, virtual machine, and so on)</p>
+    <p>You are working on a development machine (laptop, virtual machine, or similar).</p>
 
     <p>Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.</p>
 
     <p>Additional tasks are required to set up Magento Commerce (Cloud). After you complete the tasks discussed in this topic, see <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Magento Commerce (Cloud) websites or stores</a>.</p>
   </li>
-  <li>You use one virtual host per website; the virtual host configuration files are located in <code class="highlighter-rouge">/etc/nginx/sites-available</code></li>
-  <li>You use <code class="highlighter-rouge">nginx.conf.sample</code> provided by Magento with only the modifications discussed in this tutorial</li>
-  <li>The Magento software is installed in <code class="highlighter-rouge">/var/www/html/magento2</code></li>
+  <li>You use one virtual host per website; the virtual host configuration files are located in <code class="highlighter-rouge">/etc/nginx/sites-available</code>.</li>
+  <li>You use the <code class="highlighter-rouge">nginx.conf.sample</code> provided by Magento with only the modifications discussed in this tutorial.</li>
+  <li>The Magento software is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>.</li>
   <li>
     <p>You have two websites other than the default:</p>
 
@@ -1741,13 +1741,13 @@
 
 <ol>
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</li>
-  <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>.</li>
+  <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> (steps detailed below).</li>
   <li>
-    <p>Pass the values of the <a href="/guides/v2.1/config-guide/multi-site/ms_over.html">Magento variables</a> <code class="highlighter-rouge">$MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code class="highlighter-rouge">nginx.conf.sample</code>.</p>
+    <p>Pass the values of the <a href="/guides/v2.1/config-guide/multi-site/ms_over.html">Magento variables</a> <code class="highlighter-rouge">$MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code class="highlighter-rouge">nginx.conf.sample</code> (steps detailed below).</p>
 
     <ul>
       <li>
-        <p><code class="highlighter-rouge">$MAGE_RUN_TYPE</code> can be either <code class="highlighter-rouge">store</code> or <code class="highlighter-rouge">website</code></p>
+        <p><code class="highlighter-rouge">$MAGE_RUN_TYPE</code> can be either <code class="highlighter-rouge">store</code> or <code class="highlighter-rouge">website</code>:</p>
 
         <ul>
           <li>Use <code class="highlighter-rouge">website</code> to load your website in your storefront.</li>
@@ -1755,7 +1755,7 @@
         </ul>
       </li>
       <li>
-        <p><code class="highlighter-rouge">$MAGE_RUN_CODE</code> is the unique website or store view code that corresponds to <code class="highlighter-rouge">$MAGE_RUN_TYPE</code></p>
+        <p><code class="highlighter-rouge">$MAGE_RUN_CODE</code> is the unique website or store view code that corresponds to <code class="highlighter-rouge">$MAGE_RUN_TYPE</code>.</p>
       </li>
     </ul>
   </li>
@@ -1824,11 +1824,11 @@ ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 </div></div>
 
 <h2 id="ms-nginx-conf-sample">Step 3: Modify nginx.conf.sample</h2>
-<div class="collapsible"><b class="collapsible-title">To Edit PHP entry point for main application: </b><div class="collapsible-content"><ol>
-  <li>Open a text editor and review the file named nginx.conf.sample <code class="highlighter-rouge">&lt;magento2_installation_directory&gt;/nginx.conf.sample</code>. Specifically look for the following section:</li>
-</ol>
+<div class="collapsible"><b class="collapsible-title">To edit the PHP entry point for the main application: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>Open a text editor and review the nginx.conf.sample file ,<code class="highlighter-rouge">&lt;magento2_installation_directory&gt;/nginx.conf.sample</code>. Look for the following section:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
 location ~ (index|get|static|report|404|503|health_check)\.php$ {
     try_files $uri =404;
     fastcgi_pass   fastcgi_backend;
@@ -1843,15 +1843,14 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
     fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
     include        fastcgi_params;
 }
-</code></pre></div></div>
-
-<ol>
-  <li>Update the nginx.conf.sample file with the following two lines before the include statement:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
- fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
 </code></pre></div>    </div>
   </li>
-  <li>An example updated PHP entry point for main application:
+  <li>
+    <p>Update the <code class="highlighter-rouge">nginx.conf.sample</code> file with the following two lines before the include statement:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+     fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+</code></pre></div>    </div>
+    <p>An example updated PHP entry point for main application looks like:</p>
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
 location ~ (index|get|static|report|404|503|health_check)\.php$ {
  try_files $uri =404;
@@ -1872,9 +1871,14 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
  include        fastcgi_params;
 }
 </code></pre></div>    </div>
-    <p>Note: The <code class="highlighter-rouge">nginx.conf.sample</code> file is considered a core file, so to avoid potential conflicts with updates to this file in future Magento 2 releases, formulating a strategy that doesn’t directly edit this file is preferred. One approach would be to copy the <code class="highlighter-rouge">nginx.conf.sample</code> file, rename it, and edit the copied file versus the actual <code class="highlighter-rouge">nginx.conf.sample</code>.</p>
   </li>
 </ol>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>Do not edit the <code class="highlighter-rouge">nginx.conf.sample</code> file; it is a core Magento file that may be updated with each new release. Instead, copy the <code class="highlighter-rouge">nginx.conf.sample</code> file, rename it, and then edit the copied file.</p>
+</div>
 </div></div>
 
 <h2 id="ms-nginx-verify">Verify your site</h2>
