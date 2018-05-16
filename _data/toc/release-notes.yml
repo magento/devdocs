@@ -9,6 +9,12 @@ pages:
         - label: Component Status
           url: release-notes/component-status.html
 
+        - label: Magento Open Source 2.3.0 Alpha Release Notes
+          url: /release-notes/ReleaseNotes2.3.0OpenSource.html
+
+        - label: Magento Commerce 2.3.0 Alpha Release Notes
+          url: /release-notes/ReleaseNotes2.3.0Commerce.html
+
     - label: 2.2 Release Notes
       versions: ["2.2"]
       children:
