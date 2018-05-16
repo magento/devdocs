@@ -23,7 +23,7 @@ Provide unique values for the `name` parameter and the `value` and `label` entri
 
 If you are also extending or overriding the configuration for Variable, Widget, or Gallery, you must use the same string as the `value` entry.
 
-**Example:** CKEditor registration in app/code/CKEditor/CKEditor4/etc/adminhtml/di.xml
+> CKEditor registration in `app/code/CKEditor/CKEditor4/etc/adminhtml/di.xml`
 
 ``` xml
 <type name="Magento\Cms\Model\Config\Source\Wysiwyg\Editor">
@@ -36,6 +36,22 @@ If you are also extending or overriding the configuration for Variable, Widget, 
         </argument>
     </arguments>
 </type>
+```
+
+To avoid issues in the case that we remove or disable the adapter module, add this configuration to the `di.xml` file:
+
+> Configuration in `di.xml`
+
+``` xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Ui\Block\Wysiwyg\ActiveEditor">
+        <arguments>
+            <argument name="availableAdapterPaths" xsi:type="array">
+                <item name="CKEditor_CKEditor4/ckeditor4Adapter" xsi:type="string"/>
+            </argument>
+        </arguments>
+    </type>
+</config>
 ```
 
 ## Step 3. Create editor adapter
