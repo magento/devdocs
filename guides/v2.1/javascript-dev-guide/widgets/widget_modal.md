@@ -176,28 +176,23 @@ The modal widget is subscribed to the following events:
 <li><a href="#modal_opened">opened</a></li>
 </ul>
 
-These can be listened to a couple of different ways, the primary being listening to it with jQuery's [`on`](http://api.jquery.com/on/) function, or creating a property with the name of the event that you want to listen to, like so:
+You can listen to these events in two ways:
+
+Use jQuery's [`on`](http://api.jquery.com/on/) function:
 
 <pre>
-$('#modal_content').modal({
-    &lt;option1&gt;: &lt;value1&gt;,
-    &lt;option2&gt;: &lt;value2&gt;,
-    ...
-});
-$( "#modal_content" ).on( "modalclosed", function() {
-  foo(bar);
+var modal = $( "#modal_content").modal({...});
+modal.on( "modalclosed", function() {
+    // Do some action when modal closed
 });
 </pre>
 
-Which is functionally equivalent to the following:
-
+Or assign a callback as a property when creating a modal instance:
 <pre>
 $('#modal_content').modal({
-    &lt;option1&gt;: &lt;value1&gt;,
-    &lt;option2&gt;: &lt;value2&gt;,
     ...
     closed: function(){
-       foo(bar);
+       // Do some action when modal closed
     }
 });
 </pre>
