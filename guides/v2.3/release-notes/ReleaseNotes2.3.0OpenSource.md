@@ -12,13 +12,13 @@ github_link: release-notes/ReleaseNotes2.3.0OpenSource.md
 *Beta code and release notes were released on*
 
 
-We are pleased to present Magento Open Source 2.3.0 Beta. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Open Source 2.3.0 Alpha. This release includes numerous functional fixes and enhancements.
 
-For information about signing up for the Magento 2.3 Beta Evaluation program, see Magento 2.3.0 Quick Start guide. 
+For information about signing up for the Magento 2.3 Alpha Evaluation program, see Magento 2.3.0 Quick Start guide. 
 
-## About Magento 2.3.0 Beta release
+## About Magento 2.3.0 Alpha release
 
-We welcome all feedback from registered participants on this Beta release, but would especially like feedback on the following features:  
+We welcome all feedback from registered participants on this Alpha release, but would especially like feedback on the following features:  
 
 <table>
 
@@ -79,6 +79,8 @@ This release introduces significant tools to improve the developer experience: P
 
 * **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. 
 
+
+
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schemas reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database scheme changes in patch releases (not currently possible). This feature supports split and sharded database structures and database structure validation. 
 
 
@@ -117,7 +119,7 @@ This release introduces significant tools to improve the developer experience: P
 
 ## Known issues
 
-Magento 2.3.0 Beta includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future.
+Magento 2.3.0 Alpha includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future.
 
 
 ## Fixed issues
@@ -1148,9 +1150,8 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.3 Beta  using Composer.
+You can install Magento Open Source 2.3 Alpha  using Composer.
 
-{% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

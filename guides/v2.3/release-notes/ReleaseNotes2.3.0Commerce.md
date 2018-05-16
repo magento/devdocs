@@ -12,13 +12,13 @@ github_link: release-notes/ReleaseNotes2.3.0Commerce.md
 *Beta code and release notes were released on*
 
 
-We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Commerce 2.3.0 Alpha. This release includes numerous functional fixes and enhancements.
 
-For information about signing up for the Magento 2.3 Beta Evaluation program, see Magento 2.3.0 Quick Start guide. 
+For information about signing up for the Magento 2.3 Alpha Evaluation program, see Magento 2.3.0 Quick Start guide. 
 
 ## About Magento 2.3.0 Beta release
 
-We welcome all feedback from registered participants on this Beta release, but would especially like feedback on the following features:  
+We welcome all feedback from registered participants on this Alpha release, but would especially like feedback on the following features:  
 
 <table>
 
@@ -114,10 +114,6 @@ This release introduces significant tools to improve the developer experience: P
 
 * **change in versioning for B2B product** to match the versioning of the core product. 
 
-
-## Known issues
-
-Magento 2.3.0 Beta includes the following known issues. Fixes for these issues are scheduled for patch releases in the near future.
 
 
 ## Fixed issues
