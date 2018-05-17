@@ -13,57 +13,11 @@ github_link: release-notes/ReleaseNotes2.3.0Commerce.md
 
 We are pleased to present Magento Commerce 2.3.0 Alpha. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 prerelease code is a work in progress.
 
-For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide](page.baseurl}}/release-notes/2.3.0-quick-start.html). 
+For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide]({{ page.baseurl }}/release-notes/2.3.0-quick-start.html). 
 
-## About Magento 2.3.0 Beta release
+## About Magento 2.3.0 Alpha release
 
-We welcome all feedback from registered participants on this Alpha release, but would especially like feedback on the following features:  
-
-<table>
-
- <tr>
-    <td><bold>Feature</bold></td>
-    <td><bold>Explore by</bold></td>
- </tr>
-  <tr>
-    <td>GraphQL</td>
-    <td> 
-    	<ul>
-    <li>Constructing and running queries that fetch the data that’s needed to render storefront pages. For example, queries to emulate a product detail page, category page, and search result page. </li>
-    <li>Evaluating whether our query nesting limits are too loose or aggressive (in production mode)</li>
-    <li>Declaring custom GraphQL fields for extensions</li>
-       </ul>
-    </td>
-</tr>
-
-
-<tr>
-    <td>Declarative Schema</td>
-<td>
-    	<ul>
-    		<li>Converting extensions from DB scripts to declarative format</li>
-    		<li>Upgrading to Magento 2.3 with all extensions (whether you’ve  migrated to Declarative Schema or not)</li>
-    	</ul>
-    </td>
-
-</tr>
-
-
-<tr>
-    <td>Core CMS</td>
-<td>
-    	<ul>
-    		<li>Creating and localizing dynamic blocks (for example, banners)</li>
-    	</ul>
-    	</td>
-</tr>
-
-<tr>
-    <td>Bundled extensions</td>
-</tr>
- 
-</table>
-
+We welcome all feedback from registered participants on this Alpha release, but would especially appreciate feedback on PageBuilder, our new drag-and-drop visual content editing tool. 
 
 
 ## Highlights
@@ -74,10 +28,10 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 This release introduces significant tools to improve the developer experience: PWA Studio, alternatives to SOAP and REST, and a flexible frontend  API for front-end, headless, and mobile development.
 
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. 
+* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. No official documentation is available yet, but you can access the [magento2-page-builder repository](https://github.com/magento/magento2-page-builder) once you have completed signing up for our Alpha program. 
 
 
-* **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation]( https://magento-research.github.io/pwa-devdocs/) for information about this toolset as well as information about contributing to this ongoing project.  
+* **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-devdocs/) for information about this toolset as well as information about contributing to this ongoing project.  
 
 
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schemas reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database scheme changes in patch releases (not currently possible). This feature supports split and sharded database structures and database structure validation. 
@@ -89,13 +43,13 @@ This release introduces significant tools to improve the developer experience: P
 * **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Create and manage sources that can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that help merchants customize inventory actions or third party order management system to perform the same actions in an automated way. 
 
 
-* **Amazon Sales Channel**, a new bundled extension 
+* **Amazon Sales Channel**
 
 
 
 ### Core product improvements
 
-* **Updates to Magento's tech stack, including upgraded PHP support** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. For more information on our upgraded tech stack, see xxx. 
+* **Updates to Magento's tech stack, including upgraded PHP support** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. 
 
 * **Improvements to import and export**  focus on enhancements to fixes to existing processes, including the  addition of new object types. 
 
@@ -113,7 +67,7 @@ This release introduces significant tools to improve the developer experience: P
 
     * 2FA/CAPTCHA protects the Admin panel against against stolen password and protects stores against bots.
 
-* **change in versioning for B2B product** to match the versioning of the core product. 
+* **Change in versioning for B2B product** to match the versioning of the core product. 
 
 
 ## Known issues
@@ -1147,9 +1101,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3 Beta  using Composer.
-
-{% include install/releasenotes/ee_install_21.md %}
+You can install Magento Commerce 2.3 Alpha  using Composer.
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

@@ -13,56 +13,11 @@ github_link: release-notes/ReleaseNotes2.3.0OpenSource.md
 
 We are pleased to present Magento Open Source 2.3.0 Alpha. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 prerelease code is a work in progress.
 
-For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html). 
+For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide]({{ page.baseurl }}/release-notes/2.3.0-quick-start.html). 
 
 ## About Magento 2.3.0 Alpha release
 
-We welcome all feedback from registered participants on this Alpha release, but would especially like feedback on the following features:  
-
-<table>
-
- <tr>
-    <td><bold>Feature</bold></td>
-    <td><bold>Explore by</bold></td>
- </tr>
-  <tr>
-    <td>GraphQL</td>
-    <td> 
-    	<ul>
-    <li>Constructing and running queries that fetch the data that’s needed to render storefront pages. For example, queries to emulate a product detail page, category page, and search result page. </li>
-    <li>Evaluating whether our query nesting limits are too loose or aggressive (in production mode)</li>
-    <li>Declaring custom GraphQL fields for extensions</li>
-       </ul>
-    </td>
-</tr>
-
-
-<tr>
-    <td>Declarative Schema</td>
-<td>
-    	<ul>
-    		<li>Converting extensions from DB scripts to declarative format</li>
-    		<li>Upgrading to Magento 2.3 with all extensions (whether you’ve  migrated to Declarative Schema or not)</li>
-    	</ul>
-    </td>
-
-</tr>
-
-
-<tr>
-    <td>Core CMS</td>
-<td>
-    	<ul>
-    		<li>Creating and localizing dynamic blocks (for example, banners)</li>
-    	</ul>
-    	</td>
-</tr>
-
-<tr>
-    <td>Bundled extensions</td>
-</tr>
- 
-</table>
+We welcome all feedback from registered participants on this Alpha release, but would especially appreciate feedback on PageBuilder, our new drag-and-drop visual content editing tool. 
 
 
 
@@ -75,7 +30,7 @@ Magento Open Source 2.3.0 includes a wealth of new features as well as hundreds 
 This release introduces significant tools to improve the developer experience: PWA Studio, alternatives to SOAP and REST, and a flexible frontend  API for front-end, headless, and mobile development.
 
 
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. 
+* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. No official documentation is available yet, but you can access the [magento2-page-builder repository](https://github.com/magento/magento2-page-builder) once you have completed signing up for our Alpha program. 
 
 
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation]( https://magento-research.github.io/pwa-devdocs/) for information about this toolset as well as information about contributing to this ongoing project.  
@@ -116,7 +71,7 @@ This release introduces significant tools to improve the developer experience: P
 
     * 2FA/CAPTCHA protects the Admin panel against against stolen password and protects stores against bots. 
 
-* **change in versioning for B2B product** to match the versioning of the core product.
+* **Change in versioning for B2B product** to match the versioning of the core product.
 
 
 ## Known issues
