@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: Tutorials
 title: Serialized to JSON data upgrade
@@ -446,5 +445,5 @@ $this->aggregatedFieldConverter->convert($fieldsToUpdate, $salesSetup->getConnec
 * [Extension Lifecycle][1]
 
 
-[0]: {{page.baseurl}}/extension-dev-guide/framework/serializer.html "Serialize Library"
-[1]: {{page.baseurl}}/extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"
+[0]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"
+[1]: {{ page.baseurl }}/extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"

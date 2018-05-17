@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Architectural Basics
 title: Architectural diagrams
@@ -18,8 +17,8 @@ Depending upon your role and purpose for learning more about Magento, there are 
 
 The following diagram illustrates the components of Magento, and shows the "layers" or tiers, for all components, as well as the Magento framework, 3rd party libraries, the supported database, and other technologies.
 
-![Magento architecture layers]({{site.baseurl}}/common/images/archi_diagrams_layers_alt4.jpg)
+![Magento architecture layers]({{ site.baseurl }}/common/images/archi_diagrams_layers_alt4.jpg)
 
 ## Related topics
 
-* <a href="{{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>
+* <a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>

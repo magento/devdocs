@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 03_Build
 title: Define your configuration files
@@ -80,4 +79,4 @@ Keep in mind that you might be able to handle your module's configuration solely
 
 #### Next
 
-[Create your component file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html)
+[Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)

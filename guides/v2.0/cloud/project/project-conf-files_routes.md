@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Routes
 version: 2.0
@@ -54,16 +53,16 @@ For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcs
 -  `http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/`
 -  `https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog`
 
-<!-- {{site.data.var.ece}} also supports [multiple applications]({{page.baseurl}}/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
+<!-- {{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 
 ## Route options {#cloud-yaml-routes-opts}
 Configure each route separately using the following properties:
 
 -  `type: upstream`—serves an application. Also, it has an `upstream` property that specifies the name of the application (as defined in `.magento.app.yaml`) followed by the `:http` endpoint.
 -  `type: redirect`—redirects to another route. It is followed by the `to` property, which is an HTTP redirection to another route identified by its template.
--  `cache`—controls [caching for the route]({{page.baseurl}}/cloud/project/project-routes-more-cache.html).
--  `redirects`—controls [redirect rules]({{page.baseurl}}/cloud/project/project-routes-more-redir.html).
--  `ssi`—controls enabling of [Server Side Includes]({{page.baseurl}}/cloud/project/project-routes-more-ssi.html).
+-  `cache`—controls [caching for the route]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+-  `redirects`—controls [redirect rules]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html).
+-  `ssi`—controls enabling of [Server Side Includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html).
 
 ## Simple routes {#cloud-yaml-routes-sample-simple}
 The following sample routes the naked domain and the `www` subdomain to the `frontend`application. This route does not redirect HTTPS:
@@ -123,10 +122,10 @@ echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 --decode | json_pp
 https://*.add-theme-vmwklxcpbi6zq.us.magentosite.cloud/
 ```
 
-See more information about [caching]({{page.baseurl}}/cloud/project/project-routes-more-cache.html).
+See more information about [caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 ## Redirects {#cloud-yaml-routes-sample-redirects}
-As discussed in more detail in [Redirects]({{page.baseurl}}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*:
+As discussed in more detail in [Redirects]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html), you can manage complex redirection rules, such as *partial redirects*:
 
 ```yaml
 http://www.{default}/:

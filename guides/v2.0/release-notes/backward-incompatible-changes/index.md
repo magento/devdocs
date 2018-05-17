@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento 2.0 Backward Incompatible Changes
 github_link: release-notes/backward-incompatible-changes/index.md
@@ -37,7 +36,7 @@ For more information about backward compatibility, see [Magento’s backward com
 |---
 | Setup version 2.0.0  | Setup version 2.0.1
 |-|:-
-| ![OLD - Adding a new catalog price rule]({{site.baseurl}}/common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{site.baseurl}}/common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
+| ![OLD - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
 
 ### Flow changes
 
@@ -148,10 +147,10 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
 
-[{{site.data.var.ce}} backward incompatible changes]: {{page.baseurl}}/release-notes/backward-incompatible-changes/open-source.html
-[{{site.data.var.ee}} backward incompatible changes]: {{page.baseurl}}/release-notes/backward-incompatible-changes/commerce.html
-[Overview of UI components]: {{page.baseurl}}/ui-components/ui-definition.html
-[more info about a form component]: {{page.baseurl}}/ui-components/ui-form.html
+[{{site.data.var.ce}} backward incompatible changes]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html
+[{{site.data.var.ee}} backward incompatible changes]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html
+[Overview of UI components]: {{ page.baseurl }}/ui-components/ui-definition.html
+[more info about a form component]: {{ page.baseurl }}/ui-components/ui-form.html
 
 <!-- ABBREVIATIONS -->
 

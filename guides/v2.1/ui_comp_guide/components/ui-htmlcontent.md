@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: HtmlContent component
@@ -18,8 +17,8 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 ## Structure
 The HtmlContent UI component comprises the following files:
 
-- JS component: [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
-- template: [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/templates/content/content.html)
+- JS component: [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
+- template: [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/content/content.html)
 
 ## Configuration options
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 10_mem
 title: Install, configure, verify memcached on CentOS
@@ -82,7 +81,7 @@ To verify memcached is recognized by the web server:
 
 2.  Make sure memcache displays as follows:
 
-    <img src="{{ site.baseurl}}/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server">
+    <img src="{{ site.baseurl }}/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server">
 
     Verify you're using memcached version 3.0.5 or later.
 
@@ -176,4 +175,4 @@ Flush the memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
-<a href="{{page.baseurl}}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+<a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

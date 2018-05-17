@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Test actions
 version: 2.2
@@ -75,7 +74,7 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4).
 
     ```xml
-    <amOnPage url="{{StorefrontCustomerSignInPage}}" stepKey="amOnSignInPage"/>
+    <amOnPage url="{{StorefrontCustomerSignInPage.url}}" stepKey="amOnSignInPage"/>
     <fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
     <fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
     <click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
@@ -456,7 +455,7 @@ Delete the entity that was previously created using [`createData`](#createdata) 
 
 #### Example of existing data deletion
 
-Delete an entity using [REST API]({{page.baseurl}}/rest/bk-rest.html) request to the corresponding route:
+Delete an entity using [REST API]({{ page.baseurl }}/rest/bk-rest.html) request to the corresponding route:
 
 ```xml
 <grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>

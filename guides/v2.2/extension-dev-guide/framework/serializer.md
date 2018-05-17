@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Serialize Library
 subgroup: Framework
@@ -50,7 +49,7 @@ Always use the `SerializerInterface` for serializing and unserializing.
 
 ## Usage
 
-Declare `SerializerInterface` as a [constructor dependency]({{page.baseurl}}/extension-dev-guide/depend-inj.html) to get an instance of a serializer class.
+Declare `SerializerInterface` as a [constructor dependency]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get an instance of a serializer class.
 
 {% highlight php startinline %}
 use Magento\Framework\Serialize\SerializerInterface;

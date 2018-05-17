@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Continuous integration
@@ -48,7 +47,7 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 
 ## Data best practices
 
-* Create a backup of your database and snapshot on a schedule or before pushing major updates. We provide snapshots of the Pro Production environment according to a [progressive schedule]({{page.baseurl}}/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery), but you may need to backup your Staging environment for constant iterations.
+* Create a backup of your database and snapshot on a schedule or before pushing major updates. We provide snapshots of the Pro Production environment according to a [progressive schedule]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery), but you may need to backup your Staging environment for constant iterations.
 * Pull a data dump of your Production data into the Staging environment for extensive testing
 * Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging
 

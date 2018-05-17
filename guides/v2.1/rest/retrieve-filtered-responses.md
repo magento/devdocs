@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs
@@ -155,7 +154,7 @@ The following POST operation and payload creates a {% glossarytooltip 8d40d668-4
 
 ## Using with searchCriteria
 
-The [`searchCriteria` query parameter]({{page.baseurl}}/rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
+The [`searchCriteria` query parameter]({{ page.baseurl }}/rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
 
 The following query returns only the `sku` and `name` parameters for product items whose `category_gear` attribute includes the value `86`.
 
@@ -207,4 +206,4 @@ The following query returns only the `sku` and `name` parameters for product ite
 
 ## Related topics
 {:.no_toc}
-* [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html)
+* [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html)

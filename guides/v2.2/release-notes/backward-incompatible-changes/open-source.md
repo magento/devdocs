@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 version: 2.2
 title: Backward incompatible changes in Magento Open Source
@@ -53,4 +52,4 @@ content="**Temporary issue**: Added docblock tags like [@deprecated] are defined
 
 [magento/magento2]: https://github.com/magento/magento2
 
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Subscriptions and plans
 version: 2.1
@@ -44,10 +43,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
-            <a href="{{page.baseurl}}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
+            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>
-            <a href="{{page.baseurl}}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
         </ul>
       </td>
@@ -58,10 +57,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
-            <a href="{{page.baseurl}}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
+            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
           </li>
           <li>
-            <a href="{{page.baseurl}}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
           </li>
         </ul>
       </td>

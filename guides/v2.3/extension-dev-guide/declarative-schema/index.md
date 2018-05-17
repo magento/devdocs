@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Declarative Schema Overview
 version: 2.3
@@ -33,7 +32,7 @@ Once a module is converted to the declarative schema approach, it cannot be reve
 
 * *Data patch* - A class that contains data modification instructions. It can have dependencies on other data or schema patches.
 
-* *Revertable data patch* - A patch that can be reverted as a module or path is uninstalled or deleted. Revertable operations are Data Query Language (DQL) and Data Markup Language (DML) operations: INSERT, UPDATE.
+* *Revertable data patch* - A patch that can be reverted as a module or path is uninstalled or deleted. Revertable operations are Data Query Language (DQL) and Data Manipulation Language (DML) operations: INSERT, UPDATE.
 
 * *Migration* - A type of non-revertable data patch that can be applied, but not reverted. Any complex operation, such as one that contains an application layer (for example, Collections or Serializers) is non-revertable. SQL delete operations are non-revertable because they can cause triggering.
 

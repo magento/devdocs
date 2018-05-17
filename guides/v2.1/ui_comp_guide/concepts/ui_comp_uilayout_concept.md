@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 title: The uiLayout service object
 version: 2.1

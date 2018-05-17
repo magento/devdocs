@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_CatalogStaging module
 version: 2.1

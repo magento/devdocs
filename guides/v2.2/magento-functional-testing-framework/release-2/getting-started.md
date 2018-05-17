@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Getting started
 version: 2.2
@@ -16,7 +15,7 @@ _This topic was updated after {{page.mftf-release}} MFTF release._
 
 Make sure that you've installed and set up the following software:
 
-* [PHP version supported by Magento instance under test]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+* [PHP version supported by Magento instance under test]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
 * [Composer v1.3.x+](https://getcomposer.org/download/)
 * [Java v1.8.x+](https://www.java.com/en/download/)
 * [Selenium Server Standalone v3.6.0+](#selenium-server)

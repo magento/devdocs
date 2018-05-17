@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: 01_resource
 title: Installation roadmap (reference)

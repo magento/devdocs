@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Customer endpoint
 version: 2.3
@@ -8,7 +7,7 @@ github_link: graphql/reference/customer.md
 
 The `Customer` endpoint returns information about a customer account.
 
-Currently, GraphQL relies on [session authentication]({{page.baseurl}}/get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
+Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
 
 ## Query structure
 

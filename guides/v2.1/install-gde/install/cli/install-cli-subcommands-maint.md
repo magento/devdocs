@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Enable or disable maintenance mode
 version: 2.1
@@ -15,10 +14,10 @@ functional_areas:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
-Before you use this command, you must <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
+Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 <h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
 Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site. 

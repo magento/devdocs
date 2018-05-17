@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento Commerce (Cloud) 2.1.6 through 2.1.11 Release Notes
 version: 2.1

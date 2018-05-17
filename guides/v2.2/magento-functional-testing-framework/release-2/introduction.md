@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
@@ -136,7 +135,7 @@ Follow the [MFTF project](https://github.com/magento/magento2-functional-testing
 
 
 <!-- Link definitions -->
-[Functional Testing Framework]: {{page.baseurl}}/mtf/mtf_introduction.html
+[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework
 [contribute on Github]: ../contribution-guidelines.html
 

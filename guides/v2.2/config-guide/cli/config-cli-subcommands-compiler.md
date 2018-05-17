@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Code compiler
 version: 2.2
@@ -46,7 +45,7 @@ In some cases, you might want to compile code before you install the Magento app
 
     Use the `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
 
-    See [Enable modules]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html).
+    See [Enable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 1.  Compile the code.
 
@@ -56,4 +55,4 @@ In some cases, you might want to compile code before you install the Magento app
     Generated code and dependency injection configuration successfully.
     ```
 
-To compile code without a database, see [Deploy static view files without installing Magento]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db).
+To compile code without a database, see [Deploy static view files without installing Magento]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db).

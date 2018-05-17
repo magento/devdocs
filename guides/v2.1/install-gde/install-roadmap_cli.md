@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: 01_roadmap
 title: Installation roadmap (reference)

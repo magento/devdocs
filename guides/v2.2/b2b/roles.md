@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Manage company roles
@@ -698,7 +697,7 @@ None
 
 The following call returns all roles that have been created for a company  (`company_id` = `2`).
 
-See [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -1208,7 +1207,7 @@ None
 
 ## Related information
 
-* [Integrate with the Company module]({{page.baseurl}}/b2b/company.html)
-* [Manage company objects]({{page.baseurl}}/b2b/company-object.html)
-* [Manage company users]({{page.baseurl}}/b2b/company-users.html)
-* [Manage company structures]({{page.baseurl}}/b2b/company-structures.html)
+* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+* [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
+* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

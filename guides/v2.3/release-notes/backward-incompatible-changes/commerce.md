@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 version: 2.3
 title: Backward incompatible changes in Magento Commerce
@@ -32,4 +31,4 @@ content='The following tables are updated when new commits are merged into the "
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./open-source.html
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

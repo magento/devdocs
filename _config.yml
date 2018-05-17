@@ -77,13 +77,23 @@ plugins:
 
 
 defaults:
+
   -
     scope:
       path: ""
+    values:
+      layout: default
+      guide_version: "2.2"
+  -
+    scope:
+      path: "guides/m1x"
+    values:
+      layout: null
+  -
+    scope:
       type: videos
     values:
       layout: video
-      guide_version: "2.2"
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 

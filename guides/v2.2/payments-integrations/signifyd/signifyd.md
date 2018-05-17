@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: D_Signifyd
 title: Signifyd fraud protection

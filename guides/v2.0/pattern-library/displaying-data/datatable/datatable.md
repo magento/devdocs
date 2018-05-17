@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Displaying and Dealing with Data
 title: Admin Design Pattern Library

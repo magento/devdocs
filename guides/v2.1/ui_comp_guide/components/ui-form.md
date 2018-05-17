@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Form component
@@ -13,16 +12,16 @@ redirect_from: /guides/v2.1/ui-components/ui-form.html
 ## Overview
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
-Form is a [basic component]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html#general-structure).
+Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure).
 
 
 ## Structure
 
-{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
+{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ## Component options
 
-Form configuration extends the [`uiCollection`]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Form configuration extends the [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 Form-specific configuration:
 
@@ -124,7 +123,7 @@ Form-specific configuration:
           receives the notification. Can use string templates.
           </li>
         </ul>
-For more details see the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
       </td>
       <td>
         Object
@@ -157,7 +156,7 @@ For more details see the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_com
           tracked for changes. Can use string templates.
           </li>
         </ul>
-For more details see the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
       </td>
       <td>
         Object

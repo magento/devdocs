@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: Versioning
 title: Versioning
@@ -79,13 +78,13 @@ If Magento is installed from GitHub without using Composer, the `version` is not
 
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
 
-[Backward compatible development]({{page.baseurl}}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
+[Backward compatible development]({{ page.baseurl }}/contributor-guide/backward-compatible-development/index.html) - Information about MAJOR and MINOR changes and how they impact extension developers.
 
 
 
-[version-dependencies]: {{page.baseurl}}/extension-dev-guide/versioning/dependencies.html
-[codebase-changes]: {{page.baseurl}}/extension-dev-guide/versioning/codebase-changes.html
+[version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
+[codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
 [semantic-versioning]: http://semver.org/
 [composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
 [php-version-compare]: http://php.net/version_compare
-[composer-json]: {{page.baseurl}}/extension-dev-guide/build/composer-integration.html
+[composer-json]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html

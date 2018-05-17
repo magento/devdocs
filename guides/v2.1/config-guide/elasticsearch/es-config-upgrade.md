@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: 14_Elastic
 title: Upgrade Elasticsearch major version

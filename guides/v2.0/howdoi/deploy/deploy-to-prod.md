@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Deploy
 title: Deploy Magento to production
@@ -12,4 +11,4 @@ functional_areas:
   - Deploy
 ---
 
-See [Deployment steps]({{page.baseurl}}/config-guide/prod/prod_deploy.html).
+See [Deployment steps]({{ page.baseurl }}/config-guide/prod/prod_deploy.html).

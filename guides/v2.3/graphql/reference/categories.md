@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: categories endpoint
 version: 2.3

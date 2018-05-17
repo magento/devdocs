@@ -1,5 +1,4 @@
 ---
-layout: default
 group: marketplace-api
 title: Reports
 version: 2.1

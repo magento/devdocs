@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Use Codeception's Locator functions
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Snapshots and backup management
 version: 2.1
@@ -32,7 +31,7 @@ We provide two methods for creating and managing snapshots:
 
 1.  Log in to your project.
 1.  In the left pane, click the name of the environment to back up.
-1.  In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl}}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
+1.  In the top pane, click ![Take a snapshot of an environment]({{ site.baseurl }}/common/images/cloud_snapshots.png){:width="30px"} (snapshots).
 1.  Click **Create**.
 
 #### To create a snapshot using the Magento CLI:
@@ -122,7 +121,7 @@ You can create a copy of your database using [`magento/ece-tools`](http://devdoc
 
 #### To create a database dump:
 
-1.  [SSH into the environment]({{page.baseurl}}/cloud/env/environments-ssh.html) that contains the database you want to copy:
+1.  [SSH into the environment]({{ page.baseurl }}/cloud/env/environments-ssh.html) that contains the database you want to copy:
 
     -   **Staging:** `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
     -   **Production:** `ssh -A <project ID>@<project ID>.ent.magento.cloud`
@@ -144,7 +143,7 @@ You can create a copy of your database using [`magento/ece-tools`](http://devdoc
 </div>
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-If you want to push this data into an environment, see [Migrate data and static files]({{page.baseurl}}/cloud/live/stage-prod-migrate.html).
+If you want to push this data into an environment, see [Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 </div>
 
 ## Rollbacks to remove code {#rollback-code}
@@ -152,4 +151,4 @@ We recommend creating a snapshot of the environment and a backup of the database
 
 If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
 
-Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the [Deployment Process]({{page.baseurl}}/cloud/reference/discover-deploy.html).
+Specifically for code, you should investigate reverting code changes from your branch before redeploying. If not, every deploy pushes the master branch (code and extensions) again to the target environment. See the [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).

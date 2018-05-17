@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
@@ -230,8 +229,8 @@ For example, the developer can disable a global plugin in the {% glossarytooltip
 
 ### Related topics
 
-*  [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)
-*  [Events and observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
 
 ### Related information
 

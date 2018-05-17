@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 title: Overview of ownership and permissions
 version: 2.2

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: marketplace-api
 title: Users
 version: 2.1
@@ -15,7 +14,7 @@ profile. You must create a new profile on the [Developer Portal](https://develop
 
 ## Profile
 
-You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{page.baseurl}}/marketplace/eqp/auth.html#session-token).
+You must use the `mage_id` associated with the client application in your developer account when making request to these endpoints. You can get this ID when obtaining a [session token]({{ page.baseurl }}/marketplace/eqp/auth.html#session-token).
 
 ```
 GET /rest/v1/users/:mage_id

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 090_configure
 title: Set up Elasticsearch service
@@ -26,7 +25,7 @@ functional_areas:
 We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more. For {{site.data.var.ece}} 2.0.X, you can use [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you're upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{page.baseurl}}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
+If you're upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -49,7 +48,7 @@ relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 {% endhighlight %}
 
-Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_services.html).
+Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ### Add Elasticsearch plugins {#addplugins}
 Optionally, you can add the plugins through the `.magento/services.yaml` file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
@@ -99,7 +98,7 @@ If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target=
 For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
-We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{page.baseurl}}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
+We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You will use this information to [complete Elasticsearch configuration](#configure) in the Admin Panel.

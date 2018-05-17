@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: G_UI definition.xml
 title: definition.xml

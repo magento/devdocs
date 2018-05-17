@@ -58,8 +58,6 @@ The `tracks` array optionally allows you to include one or more tracking numbers
       "qty": 1
     }
   ],
-  "notify": true,
-  "appendComment": false,
   "tracks": [
     {
       "track_number": "1Y-9876543210",
