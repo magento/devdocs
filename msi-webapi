@@ -1,4 +1,0 @@
-The Multisource Inventory (MSI) Application Programming Interfaces (APIs) enable you to customize the inventory functions of your Magento instance. The APIs can be helpful for moving stock, creating reports, synchronizing with external Enterprise Resource Planning (ERP) systems, and so on, expecially if have many products and inventory locations.
-
-MSI) extension of Magento has four groups of Application Programming Interface (API) endpoints.  These are the Source, Stock, StockSourceLink,  and SourceItem groups. 
-
