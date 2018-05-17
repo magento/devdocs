@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.3.0OpenSource.md
 
 We are pleased to present Magento Open Source 2.3.0 Alpha. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 prerelease code is a work in progress.
 
-For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide](page.baseurl}}/release-notes/2.3.0-quick-start.html). 
+For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html). 
 
 ## About Magento 2.3.0 Alpha release
 
