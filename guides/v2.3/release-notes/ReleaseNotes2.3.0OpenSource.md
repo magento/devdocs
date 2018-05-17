@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.3.0OpenSource.md
 
 We are pleased to present Magento Open Source 2.3.0 Alpha. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 prerelease code is a work in progress.
 
-For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide]({{ page.baseurl }}/release-notes/2.3.0-quick-start.html). 
+For information about signing up for the Magento 2.3 Alpha Evaluation program, see [Magento 2.3.0 Alpha Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html). 
 
 ## About Magento 2.3.0 Alpha release
 
@@ -53,7 +53,7 @@ This release introduces significant tools to improve the developer experience: P
 
 ### Core product improvements
 
-* **Updates to Magento's tech stack, including upgraded PHP support** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. For more information on our upgraded tech stack, see xxx. 
+* **Updates to Magento's tech stack, including upgraded PHP support** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2.  
 
 * **Improvements to import and export**  focus on enhancements to fixes to existing processes, including the  addition of new object types. 
 
@@ -407,7 +407,7 @@ The following list of fixed issues is incomplete.
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
-### Community issues to be documented for 2.3 GA
+### Additional community fixes 
 
     * [#9236](https://github.com/magento/magento2/issues/9236) -- Upgrade ZF components. Zend_Json (fixed in [magento/magento2#10259](https://github.com/magento/magento2/pull/10259) and [magento/magento2#10306](https://github.com/magento/magento2/pull/10306) and [magento/magento2#10320](https://github.com/magento/magento2/pull/10320) and [magento/magento2#10329](https://github.com/magento/magento2/pull/10329) and [magento/magento2#10333](https://github.com/magento/magento2/pull/10333) and [magento/magento2#10339](https://github.com/magento/magento2/pull/10339) and [magento/magento2#10340](https://github.com/magento/magento2/pull/10340) and [magento/magento2#10341](https://github.com/magento/magento2/pull/10341) and [magento/magento2#10342](https://github.com/magento/magento2/pull/10342) and [magento/magento2#13137](https://github.com/magento/magento2/pull/13137))
 

@@ -399,7 +399,8 @@ The following list of fixed issues is incomplete.
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
-### Community issues to be documented for 2.3 GA
+
+### Additional community fixes 
 
     * [#9236](https://github.com/magento/magento2/issues/9236) -- Upgrade ZF components. Zend_Json (fixed in [magento/magento2#10259](https://github.com/magento/magento2/pull/10259) and [magento/magento2#10306](https://github.com/magento/magento2/pull/10306) and [magento/magento2#10320](https://github.com/magento/magento2/pull/10320) and [magento/magento2#10329](https://github.com/magento/magento2/pull/10329) and [magento/magento2#10333](https://github.com/magento/magento2/pull/10333) and [magento/magento2#10339](https://github.com/magento/magento2/pull/10339) and [magento/magento2#10340](https://github.com/magento/magento2/pull/10340) and [magento/magento2#10341](https://github.com/magento/magento2/pull/10341) and [magento/magento2#10342](https://github.com/magento/magento2/pull/10342) and [magento/magento2#13137](https://github.com/magento/magento2/pull/13137))
 
