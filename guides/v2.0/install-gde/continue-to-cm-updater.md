@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_web
 subgroup: Z_continue
 title: Manage and upgrade components
@@ -19,5 +18,5 @@ functional_areas:
 ## Need to make changes?
 After installing the Magento software, you might need to:
 
-*	<a href="{{page.baseurl}}comp-mgr/module-man/compman-checklist.html">Component Manager Guide</a>
-*	<a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Upgrade Guide</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html">Component Manager Guide</a>
+*	<a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Upgrade Guide</a>

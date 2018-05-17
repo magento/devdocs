@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Install a third-party storefront theme
@@ -26,19 +25,19 @@ The following sections contain more information about each installation flow.
 
 ## Prerequisites
 
-[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+[Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
 ## Install a theme manually
 
 To install a theme manually:
 
-1. Make sure that the directory structure you are copying is `<VendorName>/<theme>`. And all the [theme files]({{page.baseurl}}frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
+1. Make sure that the directory structure you are copying is `<VendorName>/<theme>`. And all the [theme files]({{ page.baseurl }}/frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
 
 2. Copy this directory to the `<Magento root dir>/app/design/frontend` directory.
 
 ## Install a theme as composer package
 
-To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html) topic.
+To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) topic.
 
 ## Install a theme as an extension
 
@@ -48,4 +47,4 @@ If a theme is distributed on [Magento Marketplace](https://marketplace.magento.c
 
 After you create or install a theme, open the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or reload any Magento Admin page. This way the theme gets registered and added to the database.
 
-To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
+To verify the theme is registered navigate to **Content** > **Design** > **Configuration** in the Magento Admin. If a theme is registered, it is displayed in the list of available themes.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: UI-select Component
@@ -219,4 +218,4 @@ Navigation keys:
 
 Here is an example of configuration of select component. It is used as column filter and has 3 levels of options, with not selectable label for every level, without checkboxes:
 
-<img src="{{site.baseurl}}common/images/ui-select.jpg" alt="view the configuration">
+<img src="{{ site.baseurl }}/common/images/ui-select.jpg" alt="view the configuration">

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: B_UI Library Listing/Grid Component
 title: Grid search indexing

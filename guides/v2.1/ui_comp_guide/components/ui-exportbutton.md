@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: ExportButton component
@@ -14,11 +13,11 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ## Structure
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/export.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)
 
 ## ExportButton configuration
 
-Extends all [UiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [UiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 ExportButton-specific configuration:
 

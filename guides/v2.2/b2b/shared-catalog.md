@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Integrate with the SharedCatalog module
@@ -26,7 +25,7 @@ Custom shared catalogs can be assigned to companies only. They cannot be set for
 
 ## Related information
 
-* [Manage shared catalogs]({{page.baseurl}}b2b/shared-cat-manage.html)
-* [Assign categories and products]({{page.baseurl}}b2b/shared-cat-product-assign.html)
-* [Assign companies]({{page.baseurl}}b2b/shared-cat-company.html)
-* [Manage prices for multiple products]({{page.baseurl}}rest/catalog-pricing.html)
+* [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
+* [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)
+* [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)
+* [Manage prices for multiple products]({{ page.baseurl }}/rest/catalog-pricing.html)

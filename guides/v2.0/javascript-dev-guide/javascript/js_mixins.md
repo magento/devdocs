@@ -1,113 +1,119 @@
 ---
-layout: default
 group: jsdg
-subgroup: 1_Javascript
-title: Using JavaScript mixins
-menu_title: Using JavaScript mixins
-menu_order: 30
+title: JavaScript mixins
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_mixins.md
 ---
 
-{::options syntax_highlighter="rouge" /}
+A [mixin] is a class whose methods are added to, or mixed in, with another class.
 
-This topic describes how to use JavaScript mixins to overwrite [JavaScript components']({{page.baseurl}}javascript-dev-guide/javascript/js_overview.html#js_terms) methods in Magento.
+A base class includes the methods from a mixin instead of inheriting from it.
+This allows you to add to or augment the behavior of the base class by adding different mixins to it.
 
+This topic contains information on how you can use JavaScript mixins to overwrite component methods in Magento.
 
-## Overview of JS mixins
+## Mixin scope
 
-One of the ways to implement {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.
+The scope of a module's mixin depends on its directory location under the `view` directory.
+This allows you to target component instances in specific areas in Magento.
 
-The scope of your {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} usage depends on the [application area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) it is defined for:
+The following table maps a directory location to the [application area] a mixin affects:
 
- - `frontend`: the mixin is applied for all usages of the modified JS component on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
- - `adminhtml`: the mixin is applied for all usages of the modified JS component in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel
- - `base`: the mixin is applied for all all usages of the modified JS component, if nothing else is specified in `frontend` and `adminhtml`
+| Directory        | Scope                                                                |
+| ---------------- | -------------------------------------------------------------------- |
+| `view/frontend`  | Storefront                                                           |
+| `view/adminhtml` | Admin panel                                                          |
+| `view/base`      | All areas (unless a specific `frontend` or `adminhtml` entry exists) |
+{:.style="table-layout: auto;"}
 
-Generally, to add a JS mixin you need to do the following:
+## Mixin files
 
-1. Define a mixin as a separate [AMD module](https://en.wikipedia.org/wiki/Asynchronous_module_definition). It should return a callback function. This function must get the target JS component (module) as an argument.
-2. Declare the AMD {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} you created as a mixin to the target module.
+### Location
 
-There are more details for each step in the following section.
+Mixins are JavaScript files located under the `web/js` directory under an area specific directory. 
+The mixin file can be nested under more directories as long as those directories are under `web/js`.
 
-## Add a JS mixin
+### Format
 
-To add a JS mixin take the following steps:
+A mixin in Magento is written as an [AMD module] that returns a callback function.
+This function accepts a target component(module) as an argument and returns a module.
 
-1. In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/%area%/web` directory. In this notation `%area%` stands for the [application area], and might be one of the following: `frontend`, `backend`, or `base`. There are no strict requirements for the mixin file naming.
+This allows you to return a new instance of the target component with your modifications attached to it before it is used in the application.
 
-   **Sample mixin**
+### Example
 
-   `Orange/Sample/view/base/web/js/columns-mixin.js`:
+The following is an example of a mixin module that extends the `target` component with a function that introduces a new `blockVisibility` property to a column element.
 
-   ``` javascript
+**File:** `OrangeCompany/Sample/view/base/web/js/columns-mixin.js`
+
+``` javascript
+
 define(function () {
-    'use strict';
+ 'use strict';
 
-    var mixin = {
+ var mixin = {
 
-        /**
-         *
-         * @param {Column} elem
-         */
-        isDisabled: function (elem) {
-            return elem.blockVisibility || this._super();
-        }
-    };
+     /**
+      *
+      * @param {Column} elem
+      */
+     isDisabled: function (elem) {
+         return elem.blockVisibility || this._super();
+     }
+ };
 
-    return function (target) { // target == Result that Magento_Ui/.../columns returns.
-        return target.extend(mixin); // new result that all other modules receive
-    };
+ return function (target) { // target == Result that Magento_Ui/.../columns returns.
+     return target.extend(mixin); // new result that all other modules receive
+ };
 });
 
-   ```
-   This sample mixin introduces a new `blockVisibility` property for [Grid](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html) columns.
-2. In the `requirejs-config.js` configuration file in your module, declare the AMD module you created as a mixin to the target module. The file must be located in the `<your_module_dir>/view/%area%` directory. Use the following syntax:
+```
 
-   ``` javascript
+## Declaring a mixin
+
+Mixins are declared in the `mixins` property in the `requirejs-config.js` configuration file.
+This file must be created in the same area specific directory the mixin is defined in.
+
+The mixins configuration in the `requirejs-config.js` associates a target component with a mixin using their paths.
+
+### Example
+
+The following is an example of a `require-config.js` file that adds the `columns-mixins`, defined in the previous example, to the [grid column component].
+
+**File:** `OrangeCompany/Sample/view/base/require-config.js`
+
+``` javascript
 var config = {
-    config: {
-        mixins: {
-            '%path/to/target/component%': {
-                '%path/to/mixin/component%': true
-            }
-        }
-    }
+ config: {
+     mixins: {
+         'Magento_Ui/js/grid/controls/columns': {
+             'OrangeCompany_Sample/js/columns-mixin': true
+         }
+     }
+ }
 };
-   ```
+```
 
-   where:
+## Mixin examples in Magento
 
-   - `%path/to/target/component%` is the RequireJS ID (alias/path) of the target component (module)
-   - `%path/to/mixin/component%` is the RequireJS ID (alias/path) of the mixin
-   - `mixins` is the RequireJS ID (alias/path) for the `mage/requirejs/mixin.js` file
+The following is a list of files in the [`Magento_CheckoutAgreement`] module that declare and define mixins that modify checkout behavior:
 
-   For details about the `config` RequireJS option, see [http://requirejs.org/docs/api.html#config-moduleconfig](http://requirejs.org/docs/api.html#config-moduleconfig).
-
-   **Sample RequireJS configuration file**
-
-   `<Orange_Sample_module_dir>/view/base/web/js/requirejs-config.js`:
-
-   ``` javascript
-var config = {
-    config: {
-        mixins: {
-            'Magento_Ui/js/grid/controls/columns': {
-                'Orange_Sample/js/columns-mixin': true
-            }
-        }
-    }
-};
-   ```
-
-## Example of usage
-For example of using JavaScript mixins, see the Magento_CheckoutAgreement module files:
-
- - [Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js]({{site.mage2100url}}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js)
- - [Magento/CheckoutAgreements/view/frontend/requirejs-config.js]({{site.mage2100url}}app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js)
+* [`view/frontend/requirejs-config.js`]
+* [`view/frontend/web/js/model/place-order-mixin.js`]
+* [`view/frontend/web/js/model/set-payment-information-mixin.js`]
 
 ## Related reading
 
-- [About AMD modules and RequireJS](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/js-resources.html#requirejs-library)
-- [Configure JS resources]({{page.baseurl}}javascript-dev-guide/javascript/js-resources.html)
+* [About AMD modules and RequireJS]
+* [Configure JS resources]
+
+[mixin]: https://en.wikipedia.org/wiki/Mixin
+[application area]: {{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html
+[AMD module]: https://en.wikipedia.org/wiki/Asynchronous_module_definition
+[grid column component]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js
+[`view/frontend/requirejs-config.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js
+[`view/frontend/web/js/model/place-order-mixin.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js
+[`view/frontend/web/js/model/set-payment-information-mixin.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/set-payment-information-mixin.js
+[`Magento_CheckoutAgreement`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements
+[About AMD modules and RequireJS]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html#requirejs-library
+[Configure JS resources]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html

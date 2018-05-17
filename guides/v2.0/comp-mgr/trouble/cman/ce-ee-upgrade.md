@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 50_trouble
 title: Error upgrading from CE to EE

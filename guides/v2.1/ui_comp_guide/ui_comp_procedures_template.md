@@ -1,12 +1,11 @@
 ---
-layout: default
 group: UI Components
 subgroup:
 title:
 menu_title:
 menu_node:
 menu_order: 1
-version: 2.0
+version: 2.1
 github_link: contributor-guide/basic_template.md
 ---
 

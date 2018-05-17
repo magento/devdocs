@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 090_configure
 title: Custom extend Admin timeout VCL
@@ -20,20 +19,21 @@ To build the new command, we took the default code and revised it with a new nam
 The important code that sets the timeout is the `first_byte_timeout` value of 100. For this snippet, you can extend this time to 300s for five minutes or 600s for ten minutes. Ten minutes is the hard cap for Fastly timeouts. In this code example, we extend the timeout to ten minutes.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
+This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 </div>
 
-## Create extendtimeout.vcl {#vcl}
+## Create extendtimeout.json {#vcl}
 To extend the timeout for the Magento Admin to Staging and Production environments, you can use the same VCL snippet file without edits.
 
-Create an `extendtimeout.vcl` file with the following JSON content:
+Create an `extendtimeout.json` file with the following JSON content:
 
 {% highlight json %}
 {
   "name": "extendtimeout",
-  "priority": "100",
+  "dynamic": "0",
   "type": "pass",
-  "content": "if ( req.url ~ "^/(index\.php/)?admin(_.*)?/" ) { set bereq.first_byte_timeout = 600s; }",
+  "priority": "100",
+  "content": "if ( req.url ~ \"^/(index\\.php/)?admin(_.*)?/\" ) { set bereq.first_byte_timeout = 600s; }"
 }
 {% endhighlight %}
 
@@ -49,18 +49,4 @@ The default VCL snippets you uploaded included a prepended name of `magentomodul
 </div>
 
 ## Finish adding the VCL {#complete}
-When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html).
-
-#### Related VCL snippet examples
-
-* [Custom whitelist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-whitelist.html)
-* [Custom blacklist VCL]({{page.baseurl}}cloud/configure/fastly-vcl-blacklist.html)
-* [Custom redirect to Wordpress VCL]({{page.baseurl}}cloud/configure/fastly-vcl-wordpress.html)
-* [Custom block bad referer VCL]({{page.baseurl}}cloud/configure/fastly-vcl-badreferer.html)
-
-#### Related topics
-
-* [Fastly in Cloud]({{page.baseurl}}cloud/basic-information/cloud-fastly.html)
-* [Set up Fastly]({{page.baseurl}}cloud/access-acct/fastly.html)
-* [Custom Fastly VCL snippets]({{page.baseurl}}cloud/configure/cloud-vcl-custom-snippets.html)
-* [Troubleshoot Fastly]({{page.baseurl}}cloud/trouble/trouble_fastly.html)
+When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

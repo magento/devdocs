@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Public interfaces & APIs
@@ -16,7 +15,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see <a href="{{page.baseurl}}contributor-guide/backward-compatible-development/">Backward compatibility</a>.</p></span>
+  <p>Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see <a href="{{ page.baseurl }}/contributor-guide/backward-compatible-development/">Backward compatibility</a>.</p></span>
 </div>
 
 

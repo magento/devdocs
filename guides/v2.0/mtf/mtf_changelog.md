@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Changelog of the Functional Testing Framework
 version: 2.0

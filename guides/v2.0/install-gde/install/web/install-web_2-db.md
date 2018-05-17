@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: Wizard
 title: Step 2. Add a Database
@@ -20,4 +19,4 @@ functional_areas:
 {% include install/web/install-web_2-db.md %}
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/web/install-web_3-web-conf.html">Step 3. Web configuration</a>
+<a href="{{ page.baseurl }}/install-gde/install/web/install-web_3-web-conf.html">Step 3. Web configuration</a>

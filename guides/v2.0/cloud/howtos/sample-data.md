@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: How To
 title: Optional - Install sample data
@@ -43,5 +42,5 @@ To install sample data:
 You can start testing your development with live data!
 
 #### Related topics
-*	[Install, manage, and upgrade modules]({{page.baseurl}}cloud/howtos/install-components.html)
-*	[Merge and delete an environment]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html)
+*	[Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
+*	[Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)

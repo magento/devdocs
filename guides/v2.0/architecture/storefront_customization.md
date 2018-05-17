@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Architectural Basics
 title: Storefront customization strategies
@@ -37,6 +36,6 @@ Delivering a sharply different shopping experience than the default Magento inst
 
 ### Related topics
 
-<a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html" target="_blank">Frontend Developer Guide</a>
+<a href="{{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html" target="_blank">Frontend Developer Guide</a>
 
-<a href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html" target="_blank">JavaScript Developer Guide</a>
+<a href="{{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html" target="_blank">JavaScript Developer Guide</a>

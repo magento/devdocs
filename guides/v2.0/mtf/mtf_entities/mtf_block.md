@@ -1,12 +1,11 @@
 ---
-layout: default
 group: mtf-guide
 title: Block
 version: 2.0
 github_link: mtf/mtf_entities/mtf_block.md
 ---
 
-In functional tests we use Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %}. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{page.baseurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
+In functional tests we use Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %}. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
@@ -220,17 +219,17 @@ This code uses `_rootElement` to search the button element by the `$this->addLay
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">fixture</a>.
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
-Let's see the [Customer Login]({{site.mage2000url}}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
+Let's see the [Customer Login]({{ site.mage2000url }}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
 
-<a href="{{site.baseurl}}common/images/ftf/mtf_block_login_ui.png"><img src="{{site.baseurl}}common/images/ftf/mtf_block_login_ui.png" /></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png" /></a>
 
 The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
-<img src="{{site.baseurl}}common/images/ftf/mtf_block_login_dir.png" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_login_dir.png" />
 
 The mapping file defines the fields from the form.
 
@@ -263,7 +262,7 @@ See a description of the nodes in the following table.
 <tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
 <tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br/> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
 <tr><td><code>strategy</code> </td><td>The strategy of the selection. Available values: <code>css selector</code>, <code>xpath</code>. Default: <code>css selector</code>. </td><td><code>css selector</code> as a default value.</td></tr>
-<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{page.baseurl}}mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
+<tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
 <tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
 </tbody></table>
 
@@ -271,20 +270,20 @@ All nodes are optional. Default value is assigned automatically if a node (`sele
 
 The general structure of the form mapping file:
 
-<img src="{{site.baseurl}}common/images/ftf/mtf_block_map_form_xml.png" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_map_form_xml.png" />
 
 ## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
+To get the block class with form tab mapping, extend your class from <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
-<img src="{{site.baseurl}}common/images/ftf/mtf_block_tabs_ui.png" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_tabs_ui.png" />
 
 Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
 
-<img src="{{site.baseurl}}common/images/ftf/mtf_block_tab_struc.png" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_tab_struc.png" />
 
 The file contains the following mapping:
 
@@ -350,7 +349,7 @@ See the following table to understand the node's purpose.
 </tbody>
 </table>
 
-Example of `composite` field from [ProductForm.xml]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
+Example of `composite` field from [ProductForm.xml]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
 
 In the mapping file: 
 
@@ -368,11 +367,11 @@ In the mapping file:
 
 On the UI:
 
-![Example of `composite` field]({{site.baseurl}}common/images/ftf/mtf_block_tab_composite_ui.png)
+![Example of `composite` field]({{ site.baseurl }}/common/images/ftf/mtf_block_tab_composite_ui.png)
 
 The general structure of the form tab mapping file:
 
-<img src="{{site.baseurl}}common/images/ftf/mtf_block_map_form_tab_xml.png" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_map_form_tab_xml.png" />
 
 ## Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
@@ -382,7 +381,7 @@ The form tab mapping files that have the same name and path inside different mod
 
 Form tab mapping files in the following example will be merged automatically:
 
-<img src="{{site.baseurl}}common/images/ftf/mtf_block_formtab_merge.png" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_formtab_merge.png" />
 
 ## Renders {#mtf_block_render}
 
@@ -419,11 +418,11 @@ To enable this feature follow:
 1. Set **Add Block Name to Hints** to **Yes**
 1. **Save Config**
 
-![]({{site.baseurl}}common/images/ftf/mtf_block_namepath_ui_onoff.png)
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_namepath_ui_onoff.png)
 
 Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
 
 <div class="bs-callout bs-callout-tip">
   <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
@@ -431,7 +430,7 @@ Now each UI block has hint about its name and path. Also, you can see the path t
 
 ##### Get the name and the path of blocks in the code {#mtf_block_path_code}
 
-If you want to change the representation of block details, you can change a <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
+If you want to change the representation of block details, you can change a <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
 
 * Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
 
@@ -470,13 +469,13 @@ protected function _toHtml()
 
 Now you can inspect any element in a browser, and find which block contains it.
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png" /></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png" /></a>
 
 #### Add a block to the page {#mtf_block_to-page}
 
 Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
-For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
+For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
 
 `block` is the node that adds the block to the page:
 
@@ -542,7 +541,7 @@ This page relates to the Magento_Catalog module and contains `ViewBlock`. This b
 
 Let's create render for the bundle product.
 
-**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page [`Catalog/Test/Page/Product/CatalogProductView.xml`]. [Learn more about page merging]({{page.baseurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
+**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page [`Catalog/Test/Page/Product/CatalogProductView.xml`]. [Learn more about page merging]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html#mtf_page_merge).
 
 **Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
 
@@ -640,18 +639,18 @@ There are some rules that should be followed to define a selector:
  
 <!-- LINK DEFINITIONS -->
  
-[page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
-[`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
+[page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
+[`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
 [`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`Magento\Catalog\Test\Block\Product\View`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
+[`Magento\Catalog\Test\Block\Product\View`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
 
-[`Magento\Backend\Test\Block\Widget\Grid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+[`Magento\Backend\Test\Block\Widget\Grid`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
 
 [`Magento\Mtf\Block\Block`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php
-[`Magento\Backend\Test\Block\Widget\Tab`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
-[`Magento\Backend\Test\Block\Widget\FormTabs`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
-[`Magento\Backend\Test\Block\Widget\Grid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
-[`Magento\Ui\Test\Block\Adminhtml\DataGrid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
+[`Magento\Backend\Test\Block\Widget\Tab`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
+[`Magento\Backend\Test\Block\Widget\FormTabs`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
+[`Magento\Backend\Test\Block\Widget\Grid`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+[`Magento\Ui\Test\Block\Adminhtml\DataGrid`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
 [`Magento\Mtf\Client\Element\Locator`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php
 
 <!-- ABBREVIATIONS -->

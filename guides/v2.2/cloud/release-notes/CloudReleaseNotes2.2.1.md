@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: Release Notes
 title: Magento Commerce (Cloud) 2.2.1 Release Notes
@@ -48,7 +47,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 
 * When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks](http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html) and [What is autoprovisioning](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning).
 
-<!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile Build and Deploy actions. The file name and location is `/app/var/log/cloud.log`.
+<!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `app/var/log/cloud.log` file inside the Magento root application directory.
 
 ## Known issues {#known}
 For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html).
@@ -92,12 +91,12 @@ We are grateful to the wider Magento community and would like to acknowledge the
 ## System requirements {#requirements}
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}cloud/access-acct/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.x and 2.1.x.
+To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.x and 2.1.x.
 
 You can directly upgrade to {{site.data.var.ece}} 2.2 from the following versions:
 

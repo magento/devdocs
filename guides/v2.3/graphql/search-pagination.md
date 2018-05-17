@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Searches and pagination in GraphQL
 version: 2.3
@@ -68,7 +67,6 @@ Currently, Magento's GraphQL implementation of pagination uses offsets so that i
 The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
-
 
 ## Sorting instructions
 

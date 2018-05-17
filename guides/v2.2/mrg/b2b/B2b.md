@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 30_B2B
 title: Magento_b2b module
@@ -21,15 +20,15 @@ This module must be installed to use and to configure the other B2B modules. It 
 
 ## Structure
 
-[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
 ## Extensibility
 
-Extension developers can interact with the Magento_B2b module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{page.baseurl}}extension-dev-guide/plugins.html).
+Extension developers can interact with the Magento_B2b module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
 
-[The Magento dependency injection mechanism]({{page.baseurl}}extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_B2b module.
+[The Magento dependency injection mechanism]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_B2b module.
 
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{page.baseurl}}release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{ page.baseurl }}/release-notes/changes/b2b_changes.html).

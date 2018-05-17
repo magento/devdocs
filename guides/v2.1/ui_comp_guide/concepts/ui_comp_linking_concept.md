@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: Linking properties of UI components
@@ -18,18 +17,19 @@ The following properties are used for linking observable properties and methods 
 - `links` 
 - `listens`
 
-These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
+These properties are processed by the `initLinks()` method of the [`uiElement` class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
 
-Linking properties are set in [UI components configuration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
+Linking properties are set in [UI components configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
 
 ## List of linking properties 
 
 ### `exports`
 
-The `exports` property is used to notify some external entity that a property has changed. `exports`'s value is an object, composed of the following:
+The `exports` property is used to copy a local value to some external entity. If the external entity property is anything but a function, it will be set to the value of the local property. If the external property is a function, it will be called with the local properties value as an argument.
+If the local value is a ko of io-es5 observable, the external entity will also be updated whenever the local property changes. `exports`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method that is tracked for changes.
-  - `value`: name of the property or method that receives the notification. Can use [string templates](#string_templ).
+  - `value`: name of the property or method that receives the value. Can use [string templates](#string_templ).
 
 Example of setting `exports` in a component's `.js` file:
 
@@ -41,7 +41,7 @@ Example of setting `exports` in a component's `.js` file:
 }
 {% endhighlight js%}
 
-Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes.
+Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
@@ -55,12 +55,12 @@ Example of setting `exports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{site.mage2100url}}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
+For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
 ### `imports` 
 The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property or method that receives the notifications. 
+  - `key`: name of the internal property or method that receives the value. 
   - `value`: name of the property or method that is tracked for changes. Can use [string templates](#string_templ).
 
 Example of using `imports` in a component's `.js` file:
@@ -73,7 +73,7 @@ Example of using `imports` in a component's `.js` file:
 }
 {% endhighlight js%}
 
-Here the value of the `visibility` property of the `provider` component is assigned to the local `visible` property. The latter is automatically updated if `visibility` changes.
+Here the value of the `visibility` property of the `provider` component is assigned to the local `visible` property. If the latter is a ko or ko-es5 observable, the local property is automatically updated if `visibility` changes.
 
 Example of using `imports` in a component's configuration `.xml` file:
 
@@ -87,14 +87,14 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{site.mage2100url}}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
 
 ### `links`
 
 The `links` property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. `links`'s value is an object, composed of the following:
 
   - `key`: name of the internal property or method that sends and receives the notifications. 
-  - `value`: name of the property or method that sends and receives the notifications. Can use [string templates](#string_templ).
+  - `value`: name of the property or method that sends and receives the value. Can use [string templates](#string_templ).
 
 Example of using `links` in a component's `.js` file:
 
@@ -106,7 +106,7 @@ Example of using `links` in a component's `.js` file:
 }
 {% endhighlight js%}
 
-Here the local `visible` property is linked with the `visibility`  property of the provider component. Once any of them changes, the other is changed automatically.
+Here the local `visible` property is linked with the `visibility`  property of the provider component. If any of them is a ko or ko-es5 observable and changes, the other is changed automatically. If a non-observable linked property is changed the other is not updated automatically.
 
 Example of using `links` in a component's configuration `.xml` file:
 
@@ -120,25 +120,26 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For an example of `links` usage in Magento code see [`text.js`, line 19]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
+For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
 
 ### `listens`
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
 
-  - `key`: name of the internal property which listens to the changes.
-  - `value`: name of the property or method which is tracked for changes. Can use [string templates](#string_templ).
+  - `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
+  - `value`: name of the internal method or property which listens to the changes.
 
 Example of using `listens` in a component's `.js` file :
 
 {% highlight js%}
 {
   'listens': {
-   'visible': '${ $.provider }:visibility'
+   '${ $.provider }:visibility': 'visibilityChanged'
   }
 }
 {% endhighlight js%}
 
-Here the value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes.
+Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It recieves the new value as an argument. If the local property is not a function, it will be set to the new value.
+The external property has to be an observable in order for `listens` to have any effect.
 
 
 Example of using `listens` in a component's configuration `.xml` file:
@@ -147,17 +148,17 @@ Example of using `listens` in a component's configuration `.xml` file:
 <argument name="data" xsi:type="array">
     <item name="config" xsi:type="array">
         <item name="listens" xsi:type="array">
-            <item name="visible" xsi:type="string">sample_config.sample_provider:visibility</item>
+            <item name="sample_config.sample_provider:visibility" xsi:type="string">visibilityChanged</item>
         </item>
     </item>
 </argument>
 {% endhighlight xml%}
 
-For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{site.mage2100url}}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
+For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
 
 ## Template strings usage {#string_templ}
 
-The `value` options of linking properties can contain template strings in the `'${...}'` format. During component’s initialization, values in this format are processed as template strings using [ES6 templates](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals). In browsers that do not support ES6 templates, these values are processed as underscore templates.
+The options of linking properties can contain template strings in the `'${...}'` format. During the component’s initialization, values in this format are processed as template strings using [ES6 templates](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals). In browsers that do not support ES6 templates, these values are processed as underscore templates.
 
 So if we put a variable name in `'${...}'`, it is processed into a string representation of the variable’s value.
 
@@ -165,7 +166,9 @@ When working with UI components, we often need to use the string representation 
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-    '${ $.provider }' 
+    '${ $.provider }:foo' 
+    
+If the string would be built at runtime it would be equivalent to `this.provider + ':foo'`.
 
 We can also build complex templates strings using this syntax, as follows:
 

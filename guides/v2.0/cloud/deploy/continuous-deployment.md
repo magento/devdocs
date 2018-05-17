@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Continuous integration
@@ -53,9 +52,9 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 * Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging
 
 #### Related topics
-* [Starter Architecture]({{page.baseurl}}cloud/basic-information/starter-architecture.html)
-*	[Starter Develop and Deploy Workflow]({{page.baseurl}}cloud/basic-information/starter-develop-deploy-workflow.html)
-* [Pro Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
-*	[Pro Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
-* [Deploy your store]({{page.baseurl}}cloud/live/stage-prod-live.html)
-* [Go live and launch]({{page.baseurl}}cloud/live/live.html)
+* [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
+*	[Starter Develop and Deploy Workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html)
+* [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
+*	[Pro Develop and Deploy Workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
+* [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html)
+* [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 03_install
 title: Download fails because of changes in Composer
@@ -49,7 +48,7 @@ To work around it:
 			composer self-update
 
 2.	Delete your Magento 2 directory and subdirectories.
-3.	Try the download again using either <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">`composer create-project`</a> or <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">`git clone`</a>.
+3.	Try the download again using either <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">`composer create-project`</a> or <a href="{{ page.baseurl }}/install-gde/prereq/dev_install.html">`git clone`</a>.
 4.	After successfully downloading the Magento software, update Composer:
 
 		composer self-update

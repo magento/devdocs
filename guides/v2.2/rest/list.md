@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: List of REST endpoints by module
@@ -17,7 +16,7 @@ The REST endpoints for {{site.data.var.ee}} (formerly Enterprise Edition (EE)) a
 
 Additions since 2.1 are marked with a single asterisk (*).
 
-See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
+See [Integrate with B2B using REST]({{ page.baseurl }}/b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
 
 ### CustomerBalance
 

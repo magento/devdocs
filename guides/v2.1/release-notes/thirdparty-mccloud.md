@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 99_third
 menu_title: Magento Commerce (Cloud) third-party licenses

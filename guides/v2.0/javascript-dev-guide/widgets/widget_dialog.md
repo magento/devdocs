@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 3_Widgets
 title: DropdownDialog widget
@@ -19,11 +18,11 @@ Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %
 <li>clicking outside the area closes the drop-down</li>
 </ul>
 
-The dropdownDialog widget source is located in <a href="{{site.mage2000url}}lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.
+The dropdownDialog widget source is located in <a href="{{ site.mage2000url }}lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="dialog_options">Options</h2>
  

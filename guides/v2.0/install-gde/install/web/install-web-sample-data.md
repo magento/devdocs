@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: 02_sample
 title: Install optional sample data modules
@@ -18,5 +17,5 @@ functional_areas:
 
 For more information, see:
 
-*	[Install using Composer]({{ page.baseurl }}install-gde/install/web/install-web-sample-data-composer.html)
-*	[Install by cloning repositories]({{ page.baseurl }}install-gde/install/web/install-web-sample-data-clone.html)
+*	[Install using Composer]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data-composer.html)
+*	[Install by cloning repositories]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data-clone.html)

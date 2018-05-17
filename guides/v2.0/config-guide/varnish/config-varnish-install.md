@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Install Varnish
@@ -38,4 +37,4 @@ A sample follows:
 Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
+<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

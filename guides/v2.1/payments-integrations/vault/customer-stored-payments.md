@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Display the stored information
@@ -16,12 +15,12 @@ This topic describes how to display stored tokens in the customer account and gi
 ## Token renderer
 To implement the displaying functionality, create a token renderer. Its
 implementation depends on token type (card or account). But both  types of renderers
-implement the common [`TokenRendererInterface`]({{site.mage2100url}}app/code/Magento/Vault/Block/TokenRendererInterface.php)
-and [`IconInterface`]({{site.mage2100url}}app/code/Magento/Vault/Block/Customer/IconInterface.php) interfaces.
+implement the common [`TokenRendererInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Block/TokenRendererInterface.php)
+and [`IconInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Block/Customer/IconInterface.php) interfaces.
 
-If your vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend [`AbstractTokenRenderer`]({{site.mage2100url}}app/code/Magento/Vault/Block/AbstractTokenRenderer.php).
+If your vault integration uses card token type, then you need to extend [AbstractCardRenderer]({{ site.mage2100url }}app/code/Magento/Vault/Block/AbstractCardRenderer.php). In other case extend [`AbstractTokenRenderer`]({{ site.mage2100url }}app/code/Magento/Vault/Block/AbstractTokenRenderer.php).
 
-`AbstractCardRenderer` implements [CardRendererInterface]({{site.mage2100url}}app/code/Magento/Vault/Block/CardRendererInterface.php) and
+`AbstractCardRenderer` implements [CardRendererInterface]({{ site.mage2100url }}app/code/Magento/Vault/Block/CardRendererInterface.php) and
 has additional method to get card details.
 
 The simple card renderer implementation might be like following:
@@ -86,7 +85,7 @@ class CardRenderer extends AbstractCardRenderer
 
 Next, you need to create the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} to be used for displaying token details. In this layout, specify the previously created token renderer.
 
-Example ([vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
+Example ([vault_cards_listaction.xml]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
 
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -103,5 +102,5 @@ Example ([vault_cards_listaction.xml]({{site.mage2100url}}app/code/Magento/Brain
 In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 ## What's next
- [Using stored tokens to place order from Admin panel]({{page.baseurl}}payments-integrations/vault/admin-integration.html).
+ [Using stored tokens to place order from Admin panel]({{ page.baseurl }}/payments-integrations/vault/admin-integration.html).
 

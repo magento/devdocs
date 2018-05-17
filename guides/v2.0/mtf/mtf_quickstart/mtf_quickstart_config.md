@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Quick start. Adjust configuration
 version: 2.0
@@ -32,7 +31,7 @@ Example:
 ### Edit `config.xml` to configure Functional Testing Framework {#mtf_quickstart_config_configxml}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The default configuration is set in <a href="{{site.mage2000url}}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
+  <p>The default configuration is set in <a href="{{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
 </div>
 
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
@@ -87,4 +86,4 @@ Enter actual data in `value` attribute of corresponding `field` element.
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
-[Prepare Magento application &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html)
+[Prepare Magento application &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)

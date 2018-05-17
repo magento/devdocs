@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 03_Build
 title: Define your configuration files
@@ -67,7 +66,7 @@ The exact set of configuration files required for your module depends on what yo
 
 Similarly, if your module changes the UI, you should add the needed configuration files to `~/etc/frontend/`. For example:
 
-*	`<your module root dir>/etc/frontend/.xml`
+*	`<your module root dir>/etc/frontend/di.xml`
 *	`<your module root dir>/etc/frontend/page_types.xml`
 
 If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration directories, like this:
@@ -80,4 +79,4 @@ Keep in mind that you might be able to handle your module's configuration solely
 
 #### Next
 
-[Create your component file structure]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html)
+[Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)

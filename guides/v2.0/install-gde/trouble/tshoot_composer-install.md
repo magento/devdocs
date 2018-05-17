@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 20_other
 title: Cannot run 'composer install'
@@ -22,5 +21,5 @@ Change to the directory in which you installed {% glossarytooltip d85e2d0a-221f-
 
 `mv composer.phar /usr/local/bin/composer`
 
-If you have issues with authenticating with the Magento 2 GitHub repository, see <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">Get your authentication keys</a>.
+If you have issues with authenticating with the Magento 2 GitHub repository, see <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">Get your authentication keys</a>.
 

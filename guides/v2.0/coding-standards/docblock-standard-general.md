@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: DocBlock standard
@@ -140,7 +139,7 @@ Use the following templates for the license notice and copyright blocks:
 {% highlight php %}
 <?php
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -164,7 +163,7 @@ interface MetadataObjectInterface
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -175,7 +174,7 @@ interface MetadataObjectInterface
 {% highlight js %}
 
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 {% endhighlight %}
@@ -558,7 +557,7 @@ Rules for usage of the tag:
 * Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
 * Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
 
-**DocBlock for the Intreface**
+**DocBlock for the Interface**
 {% highlight php startinline=true %}
 /**
  * Interface for mutable value object for integer values
@@ -613,7 +612,7 @@ class LimitedMutableClass implements MutableInterface
 ### @api tag
 {:#api}
 
-The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{page.baseurl}}extension-dev-guide/backward-compatibility.html).
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/extension-dev-guide/backward-compatibility.html).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
  If the `@api` tag is applied at the file level, then all methods within the file are part of the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Isolation management
 version: 2.0
@@ -215,7 +214,7 @@ Example test: `test()`.
 [step 2h]: #step-2h
 [step 2i]: #step-2i
 
-[isolation configuration]: {{page.baseurl}}mtf/configuration.html#isolation
-[test]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html#test-method
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[test suite]: {{page.baseurl}}mtf/features/test_suite.html
+[isolation configuration]: {{ page.baseurl }}/mtf/configuration.html#isolation
+[test]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html#test-method
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[test suite]: {{ page.baseurl }}/mtf/features/test_suite.html

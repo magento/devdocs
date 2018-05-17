@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: GraphQL functional testing
 version: 2.3

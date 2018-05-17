@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: uiRegistry
@@ -13,7 +12,7 @@ github_link: ui_comp_guide/concepts/ui_comp_uiregistry.md
 
 ## JS debugging using uiRegistry {#debug_uiregistry}
 
-To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html) `uiRegistry`.
+To debug the UI component JS, we first need to get a `uiRegistry` instance from the browser console. To do so, use the [RequireJs ID]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html) `uiRegistry`.
 
 In the browser console enter the following:
 

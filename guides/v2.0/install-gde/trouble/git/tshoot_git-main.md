@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 10_github
 title: GitHub errors
@@ -16,5 +15,5 @@ functional_areas:
 
 
 ## GitHub errors
-*	[git pull origin develop fails when updating the Magento software]({{ page.baseurl }}install-gde/trouble/git/tshoot_git-pull-origin.html)
-*	[Cannot clone the Magento GitHub repository]({{ page.baseurl }}install-gde/trouble/git/tshoot_clone.html)
+*	[git pull origin develop fails when updating the Magento software]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html)
+*	[Cannot clone the Magento GitHub repository]({{ page.baseurl }}/install-gde/trouble/git/tshoot_clone.html)

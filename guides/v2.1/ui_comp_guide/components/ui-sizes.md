@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Sizes component
@@ -12,11 +11,11 @@ github_link: ui_comp_guide/components/ui-sizes.md
 
 The Sizes component defines the maximum number of displayed records in a table (grid).
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js)
 
 ## Сonfiguration options
 
-Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 Sizes-specific configuration:
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: C_Templates
 title: Templates XSS security

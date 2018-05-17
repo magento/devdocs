@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: PHP 7.0 or 7.1&mdash;CentOS
@@ -16,7 +15,7 @@ functional_areas:
 ---
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.
+If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.
 </div>
 
 ## PHP versions supported {#php-support}
@@ -25,10 +24,10 @@ If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/pr
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	[Is the Magento software installed already?]({{page.baseurl}}install-gde/basics/basics_magento-installed.html)
-*	[What is the software that the Magento server needs to run?]({{page.baseurl}}install-gde/basics/basics_software.html)
-*	[What operating system is my server running?]({{page.baseurl}}install-gde/basics/basics_os-version.html)
-*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl}}install-gde/basics/basics_login.html)
+*	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+*	[What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
+*	[What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
+*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#centos-verify-php}
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, a message similar to the following displays:
@@ -42,7 +41,7 @@ To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf7
 The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 </div>
 
-If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}install-gde/prereq/mysql.html).
+If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
 If PHP is *not* installed, see one of the following sections:
 
@@ -84,7 +83,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 
 		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 		yum -y update
-3.	Install all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions):
+3.	Install all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions):
 
 		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 
@@ -108,7 +107,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
     The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
     </div>
 
-6.	Verify that all [required PHP extensions]({{ page.baseurl }}install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
@@ -165,7 +164,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
     Zend OPcache
     </pre>
 
-7.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+7.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -186,7 +185,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
 		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 		yum -y update
-3.	Install all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions):
+3.	Install all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions):
 
 		yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 
@@ -210,7 +209,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
     The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
     </div>
 
-6.	Verify that all [required PHP extensions]({{ page.baseurl }}install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
@@ -267,16 +266,16 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
     Zend OPcache
     </pre>
 
-7.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+7.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
 #### Next
-[Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
+[Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
-*	[MySQL]({{page.baseurl}}install-gde/prereq/mysql.html)
-*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
-*	[PHP 7.0&mdash;Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html)
-*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
-*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
+*	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*	[PHP 7.0&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
+*	[Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)

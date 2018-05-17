@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: YY_Help
 title: Get help with your installation

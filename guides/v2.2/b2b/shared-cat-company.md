@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Assign companies to a shared catalog
@@ -113,6 +112,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{page.baseurl}}b2b/shared-catalog.html)
-* [Manage shared catalogs]({{page.baseurl}}b2b/shared-cat-manage.html)
-* [Assign categories and products]({{page.baseurl}}b2b/shared-cat-product-assign.html)
+* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+* [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
+* [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)

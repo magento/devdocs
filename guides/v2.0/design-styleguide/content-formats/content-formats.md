@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Writing and Content
 title: Admin Content Formats
@@ -17,7 +16,7 @@ For more specifics, use the [Magento Glossary](https://magento.github.io/glossar
 
 Avoid the following:
 
-* **Abbreviations for months and URLs.**  For details, see the [Dates]({{page.baseurl}}design-styleguide/number-formats/number-formats.html#dates-and-times) section in Number Formats.
+* **Abbreviations for months and URLs.**  For details, see the [Dates]({{ page.baseurl }}/design-styleguide/number-formats/number-formats.html#dates-and-times) section in Number Formats.
 
 * **Non-English words and abbreviations.** These are difficult to translate, and some users might be unfamiliar with them.
 
@@ -46,7 +45,7 @@ When in doubt, spell it out. If there’s a chance a reader doesn't know an abbr
   <li>Yes – “PDF, TIFF, HTML, JPG, CSS, XML”</li>
 </ul>
 </li>
-<li>Link format: Append the file type in parenthesis after the file name. For more details, see the [Labels Best Practices]({{page.baseurl}}design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html#labels-best-practices) section in Buttons and Links Usage.</li>
+<li>Link format: Append the file type in parenthesis after the file name. For more details, see the [Labels Best Practices]({{ page.baseurl }}/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html#labels-best-practices) section in Buttons and Links Usage.</li>
 </ul>
 
 ## Addresses

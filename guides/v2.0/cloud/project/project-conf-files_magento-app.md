@@ -1,11 +1,6 @@
 ---
-layout: default
 group: cloud
-subgroup: 090_configure
-title: .magento.app.yaml
-menu_title: .magento.app.yaml
-menu_order: 20
-menu_node:
+title: Application
 version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
@@ -22,9 +17,7 @@ functional_areas:
 
 This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="\_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
-</div>
+{% include cloud/note-pro-using-yaml.md %}
 
 The following sections discuss properties in `.magento.app.yaml`.
 
@@ -34,7 +27,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 ## `name` property {#name}
 `name` identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name* in a project.
 
-`name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
+`name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name` is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) to define the HTTP upstream (by default, `php:php`).
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
 
@@ -89,7 +82,7 @@ cache: "arediscache:redis"
 search: "searchengine:solr"
 ```
 
-See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See also [`services.yaml` documentation]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 
 ## `web` {#cloud-yaml-platform-web}
@@ -207,26 +200,23 @@ nodejs:
 ```
 
 ## `hooks` {#cloud-yaml-platform-hooks}
-The `hooks` (also referred to as `deployment hooks`) enable you to define shell commands to run during the deployment process.
+Use the `hooks` section to specify which shell commands to run during the build and deploy phases. For example, you may want to run a CLI command provided by a custom extension during the build phase.
 
-They can be executed at various points in the lifecycle of the application.
+-   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
+-   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 
-Possible hooks are:
-
-* `build`: We run build hooks before your application has been packaged. No other services (such as the database, or redis) are accessible at this time since the application has not been deployed yet.
-* `deploy`: We run deploy hooks after your application has been deployed and started. You can access other services at this point.
-
-To add additional hooks (such as CLI commands that are offered by a custom extension), add them under the `build` or
-`deploy` sections as follows:
+Add CLI commands under the `build` or `deploy` sections:
 
 ```yaml
 hooks:
+    # We run build hooks before your application has been packaged.
     build: |
-        php ./bin/magento magento-cloud:build
-        php ./bin/magento additional:build:hook
+        php ./bin/magento <custom-command>
+        php ./vendor/bin/m2-ece-build
+    # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./bin/magento magento-cloud:deploy
-        php ./bin/magento additional:deploy:hook
+        php ./vendor/bin/m2-ece-deploy
+        php ./bin/magento <custom-command>
 ```
 
 The home directory, where your application is mounted, is `/app`, and that is the directory from which hooks will be run unless you `cd` somewhere else.
@@ -248,10 +238,14 @@ hooks:
     cd public/profiles/project_name/themes/custom/theme_name
     npm install
     grunt
+    cd
+    php ./bin/magento magento-cloud:build
 ```
 
+You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+
 ## `crons` {#cloud-yaml-platform-cron}
-`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
+`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
 
 More information about crons:
 
@@ -270,19 +264,14 @@ crons:
 ```
 
 ## Configure PHP options {#cloud-yaml-platform-php}
-You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
+You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
 name: myphpapp
 type: php:5.6
 ```
 
-For {{site.data.var.ece}} 2.0.X - 2.1.X we support 5.5, 5.6, and 7.0.
-
-See one of the following sections for more information:
-
-*   [PHP extensions](#cloud-yaml-platform-php-ext)
-*   [Customize `php.ini` settings](#cloud-yaml-platform-php-set)
+{{site.data.var.ece}} supports PHP 5.5, 5.6, and 7.0.
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
 You can define additional PHP extensions you want to enable or disable. Example:
@@ -372,13 +361,13 @@ For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 756M
 
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{page.baseurl}}install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 
 #### Related topics
-*	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
-*	[routes.yaml]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[services.yaml]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+*	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)
+*	[routes.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
+*	[services.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)

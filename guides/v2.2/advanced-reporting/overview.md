@@ -1,5 +1,4 @@
 ---
-layout: default
 group: reporting
 title: Advanced Reporting
 version: 2.2
@@ -8,21 +7,20 @@ functional_areas:
     - Reports
 ---
 
-Advanced reporting functionality is provided through integration of a Magento instance with the [Magento Business Intelligence] (MBI).
+[Advanced reporting functionality]{:target="_blank"} is provided through integration of a Magento instance with the [Magento Business Intelligence]{:target="_blank"} (MBI).
 Magento collects data and sends this information to the MBI for analytics.
  
 **Magento Admin > Dashboard > "Go to Advanced Reporting"** button opens reports in  `https://advancedreporting.rjmetrics.com/report` with corresponding authorization.
  
-Learn more about:
-
-- [Magento modules that implement the functionality][modules]
-- [Data collection configuration and settings][collection]
-
 ## Prerequisites
 
-1. A Magento store website has a real domain name.
-2. The website works using HTTPS with a valid certificate.
-3. Successful subscription to the Advanced reporting.
+1. The website must run on a public web server.
+2. The domain must have a valid security (SSL) certificate.
+3. Magento must have been installed or upgraded successfully without error.
+4. In the Magento configuration, the [Base URL (Secure) setting][base url]{:target="_blank"} for the store view must point to the secure URL. For example https://yourdomain.com.
+5. In the Magento configuration, **Use Secure URLs on Storefront**, **and Use Secure URLs in Admin** must be [set to **Yes**]{:target="_blank"}.
+6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
+
 
 <div class="bs-callout bs-callout-info" markdown="1">
 The first synchronization of a Magento instance and the MBI can take up to a day to complete after the successful subscription.
@@ -41,9 +39,9 @@ Though the Analytics module provides API, it is used specifically to interchange
 
 ## Related topics
 
-[Magento modules that implement the functionality][modules]
+[Magento modules that implement the functionality][modules]{:target="_blank"}
 
-[Data collection configuration and settings][collection]
+[Data collection configuration and settings][collection]{:target="_blank"}
 
 
 <!-- LINK DEFINITIONS -->
@@ -51,4 +49,8 @@ Though the Analytics module provides API, it is used specifically to interchange
 [modules]: modules.html
 [collection]: data-collection.html
 
+[Advanced reporting functionality]: http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html
+[base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
+[Magento crontab]: http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
+[set to **Yes**]: http://docs.magento.com/m2/ce/user_guide/Resources/Images/config-general-web-base-urls-secure.png
