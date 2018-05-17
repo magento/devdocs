@@ -582,136 +582,92 @@
 
 <h2 id="request-overview">Overview</h2>
 
-<p>Each Magento <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> call contains of a combination of these elements:</p>
-<ul>
-   <li><a href="#verbs">HTTP verb</a></li>
-   <li><a href="#endpoints">Endpoint</a></li>
-   <li><a href="#http-headers">HTTP headers</a></li>
-   <li><a href="#payload">Call payload</a></li>
-</ul>
-<p>The following table and the sections that follow the table describe these API call elements:</p>
-<table style="width:75%">
-   <tr bgcolor="lightgray">
+<p>The following table and the sections that follow the table describe <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> call elements:</p>
+
+<table>
+  <thead>
+    <tr>
       <th>Element</th>
       <th>Specifies</th>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#verbs">HTTP&nbsp;verb</a></p>
-      </td>
-      <td>
-         <p>The action to perform against the endpoint.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#endpoints">Endpoint</a></p>
-      </td>
-      <td>
-         <p>A combination of the <i>server</i> that fulfills a request, the web service, and the <i>resource</i> against which the request is being made.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#http-headers">HTTP&nbsp;headers</a></p>
-      </td>
-      <td>
-         <p>The authentication token, the call request and response formats,
-            and other information.
-         </p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#payload">Call&nbsp;payload</a></p>
-      </td>
-      <td>
-         <p>A set of input parameters and attributes that you supply with the request.
-            API operations have both
-            <em>required</em> and
-            <em>optional</em> inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.
-         </p>
-      </td>
-   </tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#verbs">HTTP verb</a></td>
+      <td>The action to perform against the endpoint.</td>
+    </tr>
+    <tr>
+      <td><a href="#endpoints">Endpoint</a></td>
+      <td>A combination of the <em>server</em> that fulfills a request, the web service, and the <em>resource</em> against which the request is being made.</td>
+    </tr>
+    <tr>
+      <td><a href="#http-headers">HTTP headers</a></td>
+      <td>The authentication token, the call request and response formats, and other information.</td>
+    </tr>
+    <tr>
+      <td><a href="#payload">Call payload</a></td>
+      <td>A set of input parameters and attributes that you supply with the request. API operations have both <strong>required</strong> and <strong>optional</strong> inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h3 id="verbs">HTTP verb</h3>
+
 <p>Specify one of these HTTP verbs in the request:</p>
+
 <ul>
-   <li><code>GET</code>.
-   Requests transfer of a current representation of the
-      target resource. If you omit the verb, <code>GET</code> is the default.
-   </li>
-   <li><code>PUT</code>.
-   Requests that the state of the target resource be
-      created or replaced with the state defined by the representation
-      enclosed in the request message payload.
-   </li>
-   <li><code>POST</code>.
-   Requests that the origin server accept the
-      representation enclosed in the request as data to be processed by the
-      target resource.
-   </li>
-   <li><code>DELETE</code>.
-   Requests that the origin server delete the target
-      resource.
-   </li>
+  <li><code class="highlighter-rouge">GET</code>. Requests transfer of a current representation of the target resource. If you omit the verb, <code class="highlighter-rouge">GET</code> is the default.</li>
+  <li><code class="highlighter-rouge">PUT</code>. Requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.</li>
+  <li><code class="highlighter-rouge">POST</code>. Requests that the origin server accept the representation enclosed in the request as data to be processed by the target resource.</li>
+  <li><code class="highlighter-rouge">DELETE</code>. Requests that the origin server delete the target resource.</li>
 </ul>
 
 <h3 id="endpoints">Endpoint</h3>
-<p>An endpoint is a combination of the <em>server</em> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
+<p>An endpoint is a combination of the <em>server</em> that fulfills a request, the web service, the store code, the resource against which the request is being made, and any template parameters.</p>
 
-<p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code class="highlighter-rouge">magento.ll/index.php/</code>, the web service is <code class="highlighter-rouge">rest</code>, the resource is <code class="highlighter-rouge">/V1/customerGroups</code>, and the template parameter is <code class="highlighter-rouge">id</code>.</p>
+<p>For example, in the <code class="highlighter-rouge">http://magento.ll/index.php/rest/default/V1/customerGroups/:id</code> endpoint, the server is <code class="highlighter-rouge">magento.ll/index.php/</code>, the web service is <code class="highlighter-rouge">rest</code>, the resource is <code class="highlighter-rouge">/V1/customerGroups</code>, and the template parameter is <code class="highlighter-rouge">id</code>.</p>
+
+<p>A store code can have one of the following values.</p>
+
+<ul>
+  <li>The store’s assigned store code.</li>
+  <li><code class="highlighter-rouge">default</code>. This is the default value when no store code is provided.</li>
+  <li><code class="highlighter-rouge">all</code>. This value only applies to endpoints defined in the <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> and Product modules. If this value is specified, the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> call affects all of the merchant’s stores.</li>
+</ul>
 
 <h3 id="http-headers">HTTP headers</h3>
 
-<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To specify an HTTP header in a cURL command, use the <code class="highlighter-rouge">-H</code> option.</p>
+</div>
+
 <p>Specify one or more of the following HTTP headers in your web API calls:</p>
-<table style="width:100%">
-   <tr bgcolor="lightgray">
+
+<table>
+  <thead>
+    <tr>
       <th>HTTP header</th>
       <th>Description</th>
       <th>Syntax</th>
-   </tr>
-   <tr>
-      <td>
-         <pre>Authorization</pre>
-      </td>
-      <td><p>Required. Specifies the authentication token that proves you as the owner of a Magento
-         account. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.
-         </p>
-      </td>
-      <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
-      <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="/guides/v2.2/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
-   </tr>
-   <tr>
-      <td><pre>Accept</pre>
-      </td>
-      <td><p>Optional. Specifies the format of the response body. Default is <code>JSON</code>.</p></td>
-      <td>
-      <pre>Accept: application/&lt;FORMAT&gt;</pre>
-      <p>Where
-         <code>&lt;FORMAT&gt;</code> is either
-         <code>JSON</code>or
-         <code>XML</code>.</p>
-         <p>If you omit this header, the response is returned in JSON format.</p></td>
-   </tr>
-   <tr>
-      <td>
-         <p>
-            <code>Content-Type</code>
-         </p>
-      </td>
-      <td><p>Required for operations with a request body. Specifies the format of the request body.</p></td>
-      <td>
-     <pre>Content-Type:application/&lt;FORMAT&gt;</pre>
-     <p>Where
-         <code>&lt;FORMAT&gt;</code>is either
-         <code>JSON</code>or
-         <code>XML</code>.
-      </p></td>
-   </tr>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">Authorization</code></td>
+      <td>Required. Specifies the authentication token that proves you as the owner of a Magento account. You specify the token in the <code class="highlighter-rouge">Authorization</code> request header with the <code class="highlighter-rouge">Bearer</code> HTTP authorization scheme.</td>
+      <td><code class="highlighter-rouge">Authorization: Bearer &lt;TOKEN&gt;</code> <br /><br /><code class="highlighter-rouge">&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service. See <a href="/guides/v2.2/get-started/authentication/gs-authentication.html">Authentication</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Accept</code></td>
+      <td>Optional. Specifies the format of the response body. Default is <code class="highlighter-rouge">JSON</code>.</td>
+      <td><code class="highlighter-rouge">Accept: application/&lt;FORMAT&gt;</code> <br /><br /><code class="highlighter-rouge">&lt;FORMAT&gt;</code> is either <code class="highlighter-rouge">JSON</code> or <code class="highlighter-rouge">XML</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Content-Type</code></td>
+      <td>Required for operations with a request body. Specifies the format of the request body.</td>
+      <td><code class="highlighter-rouge">Content-Type:application/&lt;FORMAT&gt;</code> <br /><br /><code class="highlighter-rouge">&lt;FORMAT&gt;</code> is either <code class="highlighter-rouge">JSON</code> or <code class="highlighter-rouge">XML</code>.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h3 id="payload">Call payload</h3>
