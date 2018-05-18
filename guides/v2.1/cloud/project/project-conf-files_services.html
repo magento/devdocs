@@ -1987,23 +1987,13 @@
 
 </section>
 
-			<p>We provide a <code class="highlighter-rouge">services.yaml</code> file to configure all of your services supported and used by Magento Commerce (Cloud). These services include MySQL, PHP, Redis, ElasticSearch (for 2.1.X and later), and so on. You don’t need to subscribe to external service providers.</p>
+			<p>Use the <code class="highlighter-rouge">services.yaml</code> file to configure all of your services supported and used by Magento Commerce (Cloud). These services include MySQL, Redis, ElasticSearch (for 2.1.X and later), and so on. You do not need to subscribe to external service providers.This file is located in the <code class="highlighter-rouge">.magento</code> directory in your project. See the latest sample of the <a href="https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml" target="_blank"><code class="highlighter-rouge">services.yaml</code></a> file.</p>
 
-<p>This file is located at <code class="highlighter-rouge">.magento/services.yaml</code> in your project.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your Git branch, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory. After deployment, the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
-
-<p>To see an example, see this <a href="https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml" target="_blank">sample <code class="highlighter-rouge">services.yaml</code> file</a>.</p>
-
-<p><strong>For Pro:</strong></p>
+<p>When you push your Git branch, our deploy script uses the values defined by configuration files in the <code class="highlighter-rouge">.magento</code> directory. After deployment, the script deletes the directory and its contents. Your local development environment is not affected.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>For Pro projects **created before October 23, 2017**, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+  <p>For Pro projects, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must create a <a href="http://support.magento.com" target="_blank">Support ticket</a>.</p>
 </div>
-
-<p>The following sections discuss properties in <code class="highlighter-rouge">services.yaml</code>.</p>
 
 <h2 id="howitworks">How this file works</h2>
 <p>The <code class="highlighter-rouge">.magento.app.yaml</code> and <code class="highlighter-rouge">services.yaml</code> files set the services, applications, and configurations to build and include in an environment. If you add services with specific versions, the initial push and deployment of your branches with these updated files directs the PaaS environment to provision the environment with those services. When you make changes to the services, the environment updates.</p>
@@ -2018,18 +2008,18 @@
 <p>To install and update services in Pro Staging and Production environments (IaaS), you must enter a <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a>. Indicate the service changes needed and your updated <code class="highlighter-rouge">.magento.app.yaml</code> and <code class="highlighter-rouge">services.yaml</code> files in the ticket.</p>
 
 <h2 id="cloud-yaml-services-default">Default services</h2>
-<p>Your Git branch includes the following default <code class="highlighter-rouge">services.yaml</code> file:</p>
+<p>The following is the default <code class="highlighter-rouge">services.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql:
-   type: mysql:10.0
-   disk: 2048
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mysql</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
+    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
 
-redis:
-   type: redis:3.0
+<span class="na">redis</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">redis:3.0</span>
 
-solr:
-   type: solr:4.10
-   disk: 1024
+<span class="na">solr</span><span class="pi">:</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="s">solr:4.10</span>
+    <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
 </code></pre></div></div>
 
 <p>Modify this file to use specific and additional services in your deployment. See the <a href="#cloud-yaml-services-type"><code class="highlighter-rouge">type</code></a> section to see the services we support and deploy for you if you add them to the file.</p>

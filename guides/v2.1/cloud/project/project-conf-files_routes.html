@@ -1987,12 +1987,10 @@
 
 </section>
 
-			<p>Magento Commerce processes an incoming <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> using a <em>route</em>. The <code class="highlighter-rouge">routes.yaml</code> file—located at <code class="highlighter-rouge">.magento/routes.yaml</code> in your project—defines routes for Integration, Staging, and Production environments.</p>
-
-<p>The deploy script uses values defined in the configuration files in the <code class="highlighter-rouge">.magento</code> directory. The script deletes the directory after deployment. Your local workspace is not affected.</p>
+			<p>Magento Commerce processes an incoming URL using a <em>route</em>. The <code class="highlighter-rouge">routes.yaml</code> file—located at <code class="highlighter-rouge">.magento/routes.yaml</code> in your project—defines routes for the Integration environment. The deploy script uses values defined in the configuration files in the <code class="highlighter-rouge">.magento</code> directory and deletes the directory after deployment. Your local workspace is not affected.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>For Pro projects **created before October 23, 2017**, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+  <p>For Pro projects, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must create a <a href="http://support.magento.com" target="_blank">Support ticket</a>.</p>
 </div>
 
 <p>The following is the default <code class="highlighter-rouge">routes.yaml</code> file:</p>
@@ -2006,12 +2004,12 @@
 
 <h4 id="to-list-the-configured-routes">To list the configured routes:</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:routes
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:routes
 
 +-------------------+----------+---------------+
 | Route             | Type     | To            |
 +-------------------+----------+---------------+
-| http://{default}/ | upstream | mymagento:php |
+| http://<span class="o">{</span>default<span class="o">}</span>/ | upstream | mymagento:php |
 +-------------------+----------+---------------+
 </code></pre></div></div>
 

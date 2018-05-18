@@ -1999,9 +1999,9 @@
 <p>Use the following properties to build your application configuration file. The <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">type</code>, <code class="highlighter-rouge">disk</code>, and one <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">worker</code> block is required.</p>
 
 <h3 id="name"><code class="highlighter-rouge">name</code></h3>
-<p>Magento Commerce supports multiple applications in a project, so you need a unique name that identifies the application in the project.</p>
+<p>Magento Commerce supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as <code class="highlighter-rouge">a</code> to <code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code> for the name.</p>
 
-<p>The <code class="highlighter-rouge">name</code> property can consist only of lower case alphanumeric characters, such as <code class="highlighter-rouge">a</code> to <code class="highlighter-rouge">z</code> and <code class="highlighter-rouge">0</code> to <code class="highlighter-rouge">9</code>. The name is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="highlighter-rouge">php:http</code>). For example, if the value of <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">app</code>, you must use <code class="highlighter-rouge">app:http</code> in the upstream field. You can also use this name in multi-application relationships.</p>
+<p>The name is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="highlighter-rouge">php:http</code>). For example, if the value of <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">app</code>, you must use <code class="highlighter-rouge">app:http</code> in the upstream field. You can also use this name in multi-application relationships.</p>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
@@ -2010,30 +2010,31 @@
 </div>
 
 <h3 id="type-and-build"><code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">build</code></h3>
-<p>The <code class="highlighter-rouge">type</code>  and <code class="highlighter-rouge">build</code> properties are used to build and run the project. The only supported <code class="highlighter-rouge">type</code> currently is <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>.</p>
+<p>The <code class="highlighter-rouge">type</code>  and <code class="highlighter-rouge">build</code> properties provide information about the base container image to build and run the project.</p>
 
-<p>Supported versions for 2.0.X to 2.1.X:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type: php:5.5
-type: php:5.6
-type: php:7.0
-</code></pre></div></div>
-
-<p>The <code class="highlighter-rouge">build</code> property determines what happens by default when building the project. The only value currently supported is <code class="highlighter-rouge">composer</code>.</p>
+<p>The supported <code class="highlighter-rouge">type</code> language is <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>. Specify the PHP version as follows:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">php:7.0</span>
-<span class="na">build</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">build</code> property determines what happens by default when building the project. The <code class="highlighter-rouge">flavor</code> specifies a default set of build tasks to run. The supported flavor is <code class="highlighter-rouge">composer</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">build</span><span class="pi">:</span>
     <span class="na">flavor</span><span class="pi">:</span> <span class="s">composer</span>
 </code></pre></div></div>
 
 <h3 id="access"><code class="highlighter-rouge">access</code></h3>
-<p>Defines the user roles who can log in using SSH to the environments to which they have access.</p>
+<p>The <em>access</em> property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:</p>
 
-<p>Possible values are:</p>
+<ul>
+  <li><code class="highlighter-rouge">admin</code>—Can change settings and execute actions in the environment. Also has <em>contributor</em> and <em>viewer</em> rights.</li>
+  <li><code class="highlighter-rouge">contributor</code>—Can push code to this environment and branch from the environment. Also has <em>viewer</em> rights.</li>
+  <li><code class="highlighter-rouge">viewer</code>—Can view the environment only.</li>
+</ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh: admin
-ssh: contributor
-ssh: viewer
+<p>The default user role is as follows:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">ssh</span><span class="pi">:</span> <span class="s">contributor</span>
 </code></pre></div></div>
 
 <h3 id="relationships"><code class="highlighter-rouge">relationships</code></h3>
@@ -2062,7 +2063,7 @@ search: "searchengine:solr"
   <li><code class="highlighter-rouge">index_files</code>: To use a static file (for example, <code class="highlighter-rouge">index.html</code>) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named <code class="highlighter-rouge">index.html</code> as an index file, your whitelist should include an element that matches the filename, like <code class="highlighter-rouge">- \.html$</code>.</li>
   <li><code class="highlighter-rouge">blacklist</code>: A list of files that should never be executed. Has no effect on static files.</li>
   <li><code class="highlighter-rouge">whitelist</code>: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.</li>
-  <li><code class="highlighter-rouge">expires</code>: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The <code class="highlighter-rouge">expires</code> directive and resulting headers are left out entirely if this isn’t set.</li>
+  <li><code class="highlighter-rouge">expires</code>: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The <code class="highlighter-rouge">expires</code> directive and resulting headers are left out entirely if this is not set.</li>
 </ul>
 
 <p>Contrary to standard <code class="highlighter-rouge">.htaccess</code> approaches, which accept a <em>blacklist</em> and allow everything to be accessed except a specific list, we accept a <em>whitelist</em>, which means that anything not matched will trigger a 404 error and will be passed through to your <code class="highlighter-rouge">passthru</code> URL.</p>
@@ -2078,39 +2079,42 @@ search: "searchengine:solr"
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># The configuration of app when it is exposed to the web.</span>
 <span class="na">web</span><span class="pi">:</span>
-<span class="na">locations</span><span class="pi">:</span>
-    <span class="s2">"</span><span class="s">/"</span><span class="pi">:</span>
-        <span class="c1"># The public directory of the app, relative to its root.</span>
-        <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub"</span>
-        <span class="c1"># The front-controller script to send non-static requests to.</span>
-        <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
-        <span class="na">index</span><span class="pi">:</span>
-            <span class="pi">-</span> <span class="s">index.php</span>
-        <span class="na">expires</span><span class="pi">:</span> <span class="s">-1</span>
-        <span class="na">scripts</span><span class="pi">:</span> <span class="no">true</span>
-        <span class="na">allow</span><span class="pi">:</span> <span class="no">false</span>
-        <span class="na">rules</span><span class="pi">:</span>
-            <span class="s">\.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$</span><span class="pi">:</span>
-                <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
-            <span class="s">/robots\.txt$</span><span class="pi">:</span>
-                <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
-    <span class="s2">"</span><span class="s">/media"</span><span class="pi">:</span>
-        <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/media"</span>
-        <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
-        <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
-        <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
-    <span class="s2">"</span><span class="s">/static"</span><span class="pi">:</span>
-        <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/static"</span>
-        <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
-        <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
-        <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/front-static.php"</span>
-        <span class="na">rules</span><span class="pi">:</span>
-            <span class="s">^/static/version\d+/(?&lt;resource&gt;.*)$</span><span class="pi">:</span>
-                  <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/static/$resource"</span>
+    <span class="na">locations</span><span class="pi">:</span>
+        <span class="s2">"</span><span class="s">/"</span><span class="pi">:</span>
+            <span class="c1"># The public directory of the app, relative to its root.</span>
+            <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub"</span>
+            <span class="c1"># The front-controller script to send non-static requests to.</span>
+            <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
+            <span class="na">index</span><span class="pi">:</span>
+                <span class="pi">-</span> <span class="s">index.php</span>
+            <span class="na">expires</span><span class="pi">:</span> <span class="s">-1</span>
+            <span class="na">scripts</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="na">rules</span><span class="pi">:</span>
+                <span class="s">\.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$</span><span class="pi">:</span>
+                    <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+                <span class="s">/robots\.txt$</span><span class="pi">:</span>
+                    <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+        <span class="s2">"</span><span class="s">/media"</span><span class="pi">:</span>
+            <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/media"</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/index.php"</span>
+        <span class="s2">"</span><span class="s">/static"</span><span class="pi">:</span>
+            <span class="na">root</span><span class="pi">:</span> <span class="s2">"</span><span class="s">pub/static"</span>
+            <span class="na">allow</span><span class="pi">:</span> <span class="no">true</span>
+            <span class="na">scripts</span><span class="pi">:</span> <span class="no">false</span>
+            <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/front-static.php"</span>
+            <span class="na">rules</span><span class="pi">:</span>
+                <span class="s">^/static/version\d+/(?&lt;resource&gt;.*)$</span><span class="pi">:</span>
+                    <span class="na">passthru</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/static/$resource"</span>
 </code></pre></div></div>
 
 <h3 id="disk"><code class="highlighter-rouge">disk</code></h3>
-<p>Defines the size of the persistent disk size of the application in MB.</p>
+<p>Defines the persistent disk size of the application in MB.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">disk</span><span class="pi">:</span> <span class="s">256</span>
+</code></pre></div></div>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
@@ -2119,9 +2123,7 @@ search: "searchengine:solr"
 </div>
 
 <h3 id="mounts"><code class="highlighter-rouge">mounts</code></h3>
-<p>An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It’s in the form <code class="highlighter-rouge">volume_id[/subpath]</code>.</p>
-
-<p>The following is a default list of mounts configured in <code class="highlighter-rouge">magento.app.yaml</code>:</p>
+<p>An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the <code class="highlighter-rouge">magento.app.yaml</code> file using the <code class="highlighter-rouge">volume_id[/subpath]</code> syntax:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c1"># The mounts that will be performed when the package is deployed.</span>
 <span class="na">mounts</span><span class="pi">:</span>
@@ -2137,8 +2139,8 @@ search: "searchengine:solr"
 </code></pre></div></div>
 
 <ul>
-  <li><code class="highlighter-rouge">shared</code> means that the volume is shared between your applications inside an environment.</li>
-  <li><code class="highlighter-rouge">disk</code> key defines the size available for that <code class="highlighter-rouge">shared</code> volume</li>
+  <li><code class="highlighter-rouge">shared</code>—Shares a volume between your applications inside an environment.</li>
+  <li><code class="highlighter-rouge">disk</code>—Defines the size available for the shared volume.</li>
 </ul>
 
 <!-- Available note types: "info", "warning", "tip" -->
@@ -2147,7 +2149,7 @@ search: "searchengine:solr"
   <p>The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.</p>
 </div>
 
-<p>If you also want the mount web accessible, you must add it to the <a href="#web"><code class="highlighter-rouge">web</code></a> block of locations.</p>
+<p>Also, if you want the mount web accessible, you must add it to the <a href="#web"><code class="highlighter-rouge">web</code></a> block of locations.</p>
 
 <h3 id="dependencies"><code class="highlighter-rouge">dependencies</code></h3>
 <p>Enables you to specify dependencies that your application might need during the build process.</p>
@@ -2199,24 +2201,24 @@ nodejs:
 <h4 id="to-compile-sass-files-using-grunt">To compile SASS files using grunt:</h4>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
-  <span class="na">ruby</span><span class="pi">:</span>
-    <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4.7"</span>
-  <span class="na">nodejs</span><span class="pi">:</span>
-    <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.1.13"</span>
+    <span class="na">ruby</span><span class="pi">:</span>
+        <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4.7"</span>
+    <span class="na">nodejs</span><span class="pi">:</span>
+        <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.1.13"</span>
 
 <span class="na">hooks</span><span class="pi">:</span>
-  <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-    <span class="no">cd public/profiles/project_name/themes/custom/theme_name</span>
-    <span class="no">npm install</span>
-    <span class="no">grunt</span>
-    <span class="no">cd</span>
-    <span class="no">php ./bin/magento magento-cloud:build</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">cd public/profiles/project_name/themes/custom/theme_name</span>
+        <span class="no">npm install</span>
+        <span class="no">grunt</span>
+        <span class="no">cd</span>
+        <span class="no">php ./bin/magento magento-cloud:build</span>
 </code></pre></div></div>
 
 <p>You must compile SASS files using <code class="highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="highlighter-rouge">grunt</code> command before the <code class="highlighter-rouge">build</code> command.</p>
 
 <h3 id="crons"><code class="highlighter-rouge">crons</code></h3>
-<p><code class="highlighter-rouge">crons</code> describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do not run cron as <code class="highlighter-rouge">root</code>. We also recommend against running cron as the web server user.</p>
+<p>Describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code>or as the web server user.</p>
 
 <p>More information about crons:</p>
 
