@@ -22,36 +22,39 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
 ### `name`
-{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project.
+{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
 
-The `name` property can consist only of lower case alphanumeric characters, such as `a` to `z` and `0` to `9`. The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
 {% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
 
 ### `type` and `build`
-The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Supported versions:
+The `type`  and `build` properties provide information about the base container image to build and run the project.
 
-```
-type: php:7.0
-```
-
-The `build` property determines what happens by default when building the project. The only value currently supported is `composer`.
+The supported `type` language is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Specify the PHP version as follows:
 
 ```yaml
-type: php:7.0
+type: php:7.1
+```
+
+The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The supported flavor is `composer`.
+
+```yaml
 build:
     flavor: composer
 ```
 
 ### `access`
-Defines the user roles that can log in to the environments.
+The _access_ property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
-Possible values are:
+-  `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
+-  `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
+-  `viewer`—Can view the environment only.
 
-```
-ssh: admin
+The default user role is as follows:
+
+```yaml
 ssh: contributor
-ssh: viewer
 ```
 
 ### `relationships`
@@ -68,7 +71,7 @@ cache: "arediscache:redis"
 search: "searchengine:solr"
 ```
 
-See [Services]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
@@ -94,47 +97,48 @@ The following displays the default set of web accessible locations associated wi
 ```yaml
  # The configuration of app when it is exposed to the web.
 web:
-locations:
-"/":
-    # The public directory of the app, relative to its root.
-    root: "pub"
-    # The front-controller script to send non-static requests to.
-    passthru: "/index.php"
-    index:
-        - index.php
-    expires: -1
-    scripts: true
-    allow: false
-    rules:
-        \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+    locations:
+        "/":
+            # The public directory of the app, relative to its root.
+            root: "pub"
+            # The front-controller script to send non-static requests to.
+            passthru: "/index.php"
+            index:
+                - index.php
+            expires: -1
+            scripts: true
+            allow: false
+            rules:
+                \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+                    allow: true
+                /robots\.txt$:
+                    allow: true
+        "/media":
+            root: "pub/media"
             allow: true
-        /robots\.txt$:
+            scripts: false
+            passthru: "/index.php"
+        "/static":
+            root: "pub/static"
             allow: true
-"/media":
-    root: "pub/media"
-    allow: true
-    scripts: false
-    passthru: "/index.php"
-"/static":
-    root: "pub/static"
-    allow: true
-    scripts: false
-    passthru: "/front-static.php"
-    rules:
-        ^/static/version\d+/(?<resource>.*)$:
-              passthru: "/static/$resource"
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                ^/static/version\d+/(?<resource>.*)$:
+                    passthru: "/static/$resource"
 ```
 
 ### `disk`
-`disk` defines the size of the persistent disk size of the
-application in MB.
+Defines the persistent disk size of the application in MB.
+
+```yaml
+disk: 2048
+```
 
 {% include note.html type="info" content="The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
 
 ### `mounts`
-`mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
-
-The following is a default list of mounts configured in `magento.app.yaml`:
+An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
@@ -151,8 +155,8 @@ The format for adding your mount to this list is as follows:
 "/public/sites/default/files": "shared:files/files"
 ```
 
--  `shared` means that the volume is shared between your applications inside an environment.
--  `disk` key defines the size available for that `shared` volume
+-  `shared`—Shares a volume between your applications inside an environment.
+-  `disk`—Defines the size available for the shared volume.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
@@ -161,7 +165,7 @@ Important: The subpath portion of the mount is the unique identifier of the file
 If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
 
 ### `dependencies`
-`dependencies` enables you to specify dependencies that your application might need during the build process.
+Enables you to specify dependencies that your application might need during the build process.
 
 {{site.data.var.ee}} supports dependencies on the following
 languages:
@@ -209,24 +213,24 @@ The commands run from the application (`/app`) directory. You can use the `cd` c
 
 ```yaml
 dependencies:
-  ruby:
-    sass: "3.4.7"
-  nodejs:
-    grunt-cli: "~0.1.13"
+    ruby:
+      sass: "3.4.7"
+    nodejs:
+      grunt-cli: "~0.1.13"
 
 hooks:
-  build: |
-    cd public/profiles/project_name/themes/custom/theme_name
-    npm install
-    grunt
-    cd
-    php ./vendor/bin/m2-ece-build
+    build: |
+        cd public/profiles/project_name/themes/custom/theme_name
+        npm install
+        grunt
+        cd
+        php ./vendor/bin/m2-ece-build
 ```
 
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
-`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root`or as the web server user.
 
 `crons` support the following:
 
