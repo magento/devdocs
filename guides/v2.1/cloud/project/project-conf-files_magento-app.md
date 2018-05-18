@@ -51,10 +51,11 @@ The _access_ property indicates a minimum user role level that is allowed SSH ac
 -  `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
 -  `viewer`—Can view the environment only.
 
-The default user role is as follows:
+The default user role is `contributor`, which restricts the SSH access from users with only _viewer_ rights. You can change the user role to `viewer` to allow SSH access for users with only _viewer_ rights:
 
 ```yaml
-ssh: contributor
+access:
+    ssh: viewer
 ```
 
 ### `relationships`
