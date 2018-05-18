@@ -3,13 +3,13 @@
 These instructions apply to {{site.data.var.ce}} and {{site.data.var.ee}} users *only* if all of the following are true:
 
 *	You have installed optional sample data
-*	You're upgrading to Magento {{page.version}} (including a Release Candidate) from any earlier version using the command line
+*	You are upgrading to Magento {{page.version}} (including a Release Candidate) from any earlier version using the command line
 
 To upgrade to Magento {{page.version}} sample data using the command line:
 
 1. Log in to your Magento server as, or switch to, the [Magento file system owner].
 1. Change to the Magento installation directory.
-1. Back up your current `composer.json`:
+1. Back up your current `composer.json` file:
    ```bash
    cp composer.json composer.json.bak
    ```
@@ -49,7 +49,7 @@ To upgrade to Magento {{page.version}} sample data using the command line:
 
 ### Finish your upgrade
 
-After you've reset file system permissions:
+After you have reset file system permissions:
 
 1.	If you haven't done so already, log in to your Magento server as, or switch to, the Magento file system owner.
 1.	Change to your Magento installation directory.
@@ -58,7 +58,7 @@ After you've reset file system permissions:
     ```bash
 	rm -rf var/cache/* var/page_cache/* var/generation/*
 	```
-1.	Enter the following command from your Magento installation directory:
+1.	Upgrade Magento:
     ```bash
 	php bin/magento setup:upgrade
 	```
