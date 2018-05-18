@@ -272,7 +272,7 @@ Declaring the logo size is optional.
 To learn more about theme layouts, refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
 ## Troubleshooting {#trouble}  
-When your theme changes aren't visible even after clearing the cache, try redeploying your static files with `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
+When your theme changes are not visible even after clearing the cache, try redeploying your static files using `magento setup:static-content:deploy en_US` (replacing the language/locale as appropriate).
 
 ## What's next {#next}
 
