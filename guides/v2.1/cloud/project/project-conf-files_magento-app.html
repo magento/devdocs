@@ -2032,9 +2032,10 @@
   <li><code class="highlighter-rouge">viewer</code>—Can view the environment only.</li>
 </ul>
 
-<p>The default user role is as follows:</p>
+<p>The default user role is <code class="highlighter-rouge">contributor</code>, which restricts the SSH access from users with only <em>viewer</em> rights. You can change the user role to <code class="highlighter-rouge">viewer</code> to allow SSH access for users with only <em>viewer</em> rights:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">ssh</span><span class="pi">:</span> <span class="s">contributor</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">access</span><span class="pi">:</span>
+    <span class="na">ssh</span><span class="pi">:</span> <span class="s">viewer</span>
 </code></pre></div></div>
 
 <h3 id="relationships"><code class="highlighter-rouge">relationships</code></h3>
