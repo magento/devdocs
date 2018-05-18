@@ -124,6 +124,18 @@ where
 
     *   Lock the value so it cannot be edited in the Magento Admin
     *   Change a setting that is already locked in the Magento Admin
+    *   This will write  the value to `<Magento base dir>/app/etc/env.php`
+    *   This switch is deprecated since Magento 2.2.4, use `-le|--lock-env` instead.
+*   `-le|--lock-env` (since Magento 2.2.4) enables you to:
+
+    *   Lock the value so it cannot be edited in the Magento Admin
+    *   Change a setting that is already locked in the Magento Admin
+    *   This will write  the value to `<Magento base dir>/app/etc/env.php`
+*   `-lc|--lock-config` (since Magento 2.2.4) enables you to:
+
+    *   Lock the value so it cannot be edited in the Magento Admin
+    *   Change a setting that is already locked in the Magento Admin
+    *   This will write  the value to `<Magento base dir>/app/etc/config.php`
 *   `path` is configuration path *(required)*
 *   `value` is value of configuration *(required)*
 
@@ -137,7 +149,7 @@ See one of the following sections for more information:
 *   [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
 
 ### Set configuration values that can be edited in the Magento Admin {#config-cli-config-set-edit}
-Use `bin/magento config:set` _without_ `-l|-lock` to write the value to the database. Values you set this way can be edited in the Magento Admin.
+Use `bin/magento config:set` _without_ `-l|-lock` (or `-le|--lock-env` or `-lc|--lock-config`) to write the value to the database. Values you set this way can be edited in the Magento Admin.
 
 Some examples for setting a store base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} follow:
 
@@ -154,24 +166,36 @@ Example to set the base URL for the `test` store view:
     bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
 
 ### Set configuration values that cannot be edited in the Magento Admin {#config-cli-config-file}
-If you use the `-l|--lock` option as follows, the configuration value is saved in `env.php` and the field for editing this value in Admin page is disabled.
+If you use the `-le|--lock-env` (since Magento 2.2.4; or `-l|--lock` up to Magento 2.2.3) option as follows, the configuration value is saved in `env.php` and the field for editing this value in Admin page is disabled.
 
-    bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
+    bin/magento config:set --lock-env --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
 
-If you use the `-l|--lock` option:
+If you use the `-le|--lock-env` (or `-l|--lock` up to Magento 2.2.3) option:
 
 *   Configuration values are saved in `<Magento base dir>/app/etc/env.php`
 
-    Transfer `env.php` to another system to use the same configuration values there. For example, if you have a testing system, using the same `env.php` means you don't have to set the same configuration values again.
+    The `env.php` file is system specific. You shouldn't transfer it to another system. It can be used to overwrite configuration values from the database. For example, you can take a database dump from another system and overwrite the `base_url` and other values so you don't have to modify the database.
 *   Configuration values _cannot_ be edited in the Admin.
-*   You can use `-l|-lock` to set configuration values if Magento is not installed. However, you can set values only for the default scope.
+*   You can use `-le|--lock-env` (or `-l|--lock`) to set configuration values if Magento is not installed. However, you can set values only for the default scope.
+
+If you use the `-lc|--lock-config` option as follows, the configuration value is saved in `config.php` and the field for editing this value in Admin page is disabled.
+
+    bin/magento config:set --lock-config --scope=stores --scope-code=default web/url/use_store 1
+
+If you use the `-lc|--lock-config` (since Magento 2.2.4) option:
+
+*   Configuration values are saved in `<Magento base dir>/app/etc/config.php`
+
+    Transfer `config.php` to another system to use the same configuration values there. For example, if you have a testing system, using the same `config.php` means you don't have to set the same configuration values again.
+*   Configuration values _cannot_ be edited in the Admin.
+*   You can use `-lc|-lock-config` to set configuration values if Magento is not installed. However, you can set values only for the default scope.
 
 If you enter an incorrect configuration path, this command returns an error
 
     The "wrong/config/path" does not exist
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you use the `--lock` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
+If you use the `--lock`, `--lock-env` or `--lock-config` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
 </div>
 
 ## Display the value of configuration settings {#config-cli-config-show}
