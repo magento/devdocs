@@ -117,15 +117,13 @@ For additional options, see the [rsync man page](http://linux.die.net/man/1/rsyn
 
 To migrate static files:
 
-1.	Open an SSH connection to your Staging or Production environment:
+1.	Copy media folder to your local environment:
 
-			*	Staging: ssh -A <project ID>_stg@<project ID>.ent.magento.cloud
-			*	Production: ssh -A <project ID>@<project ID>.ent.magento.cloud
+		rsync -azvP <environment_ssh_link@ssh.region.magento.cloud>:pub/media/ /local_machine/pub/media/ 
+
 2.	rsync the `pub/media` directory from your local Magento server to staging or production:
 
-		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
-
-  The IP is for the Magento Commerce VM or container you created when setting up the local.
+		rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cloud>:pub/media/ 
 
 ## Migrate the database {#cloud-live-migrate-db}
 
@@ -161,26 +159,31 @@ To migrate a database:
 	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and user name):
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
+		
+4. 	Enter `exit` to terminate the SSH connection.
 
-4.	Transfer the database dump to Staging or Production with an `rsync` command:
+5.	Transfer the database dump to local machine with an `rsync` command:
 
-	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`
-	*	Production: `rsync -azvP /tmp/database.sql.gz <project ID>@<project ID>.ent.magento.cloud:/tmp`
-8.	Enter `exit` to terminate the SSH connection.
-9.	Open an SSH connection to the environment you want to migrate the database into:
+		rsync -azvP <environment_ssh_link@ssh.region.magento.cloud>:/tmp/database.sql.gz /local_folder/
+		
+6. 	Transfer the database dump from local machine to remote cloud environment (staging or production):
+
+		rsync  -azvP /local_folder/database.sql.gz <environment_ssh_link@ssh.region.magento.cloud>:/tmp
+	
+7.	Open an SSH connection to the environment you want to migrate the database into:
 
 	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
 	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 	* To SSH into the `master` branch of your Integration environment:
 
 			magento-cloud environment:ssh
-10.	Import the database dump with the following command:
+8.	Import the database dump with the following command:
 
-		zcat database.sql.gz | mysql -u <username> -p<password> <database name>
+		zcat database.sql.gz | mysql -h <database_host> -u <username> -p<password> <database name>
 
 	The following is an example using information from step 2:
 
-		zcat database.sql.gz | mysql -u user main
+		zcat database.sql.gz | mysql -h database.internal -u user main
 
 ### Troubleshooting the database migration
 If you encounter the following error, you can try to create a database dump with the DEFINER replaced:
