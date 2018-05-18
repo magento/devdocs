@@ -24,8 +24,8 @@ You can upgrade Magento from the command line if you installed the software usin
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <ul><li>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
-	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{ page.baseurl }}/release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
+    <ul><li>If you're upgrading to version 2.1, see <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
+	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
 </div>
 
 ## Pre-upgrade checklist
@@ -85,7 +85,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		composer update
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="{{ page.baseurl }}/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
 	</div>
 
 3.	If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
