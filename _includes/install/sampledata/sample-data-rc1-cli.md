@@ -1,6 +1,6 @@
 <div markdown="1">
 
-These instructions apply to Magento Community Edition (CE) and Magento Enterprise Edition (EE) users *only* if all of the following are true:
+These instructions apply to {{site.data.var.ce}} (formerly Community Edition (CE) and {{site.data.var.ce}} (formerly Enterprise Edition (EE) users *only* if all of the following are true:
 
 *	You have installed optional sample data
 *	You're upgrading to Magento 2.1 (including a Release Candidate) from any earlier version using the command line
