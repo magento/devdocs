@@ -46,7 +46,7 @@ Configure it using the following example (replace placeholders with your {% glos
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>%Theme title%</title> <!-- your theme's name -->
      <parent>%vendor_dir%/%parent_theme_dir%</parent> <!-- the parent theme. Example: Magento/backend -->
- </theme>
+</theme>
 {%endhighlight%}
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
