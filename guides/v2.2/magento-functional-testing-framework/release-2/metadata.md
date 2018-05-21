@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/metadata.md
 functional_areas:
  - Testing
-mftf-release: 2.1.2
+mftf-release: 2.2.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -13,7 +13,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the MFTF.
 Using data handling actions like [createData], [deleteData], [updateData], and [getData], you are able to create, delete, update, and read entities for your tests. 
-The framework enables you to handle the data entities:
+The framework enables you to send HTTP requests with the statically defined data entities:
 - [Sending a REST API request][rest request]
 - [Handling a REST API response][rest response]
 - [Sending an HTML form encoded in URL][html form]
