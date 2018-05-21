@@ -8,7 +8,7 @@
 #text-head {
   font-size: 80px;
   font-family: 'Roboto', sans-serif;
-  color: #ffffff;
+  color: #fff;
   float: right;
   margin-right: 20%;
 }
@@ -229,7 +229,7 @@ h2 {
   color: #08b;
 }
 .navbar-default .nav > li .details {
-  color: #000000;
+  color: #000;
   text-transform: none;
   font-size: 15px;
   font-weight: normal;
