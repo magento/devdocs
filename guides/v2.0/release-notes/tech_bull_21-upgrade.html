@@ -1268,60 +1268,55 @@
 
 <h3 id="tb-upgr-samp">Command-line upgrade to Magento Open Source or Commerce version 2.1 with sample data</h3>
 
-<div>
+<h2 id="command-line-upgrade-to-magento-21-with-sample-data">Command-line upgrade to Magento 2.1 with sample data</h2>
 
-  <p>These instructions apply to Magento Open Source (formerly Community Edition (CE) and Magento Open Source (formerly Enterprise Edition (EE) users <em>only</em> if all of the following are true:</p>
+<p>These instructions apply to Magento Open Source (formerly Community Edition (CE) and Magento Open Source (formerly Enterprise Edition (EE) users <em>only</em> if all of the following are true:</p>
 
-  <ul>
-    <li>You have installed optional sample data</li>
-    <li>You’re upgrading to Magento 2.1 (including a Release Candidate) from any earlier version using the command line</li>
-  </ul>
+<ul>
+  <li>You have installed optional sample data</li>
+  <li>You are upgrading to Magento 2.1 (including a Release Candidate) from any earlier version using the command line</li>
+</ul>
 
-  <div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><p>To upgrade to Magento 2.1 sample data using the command line:</p>
+<p>To upgrade to Magento 2.1 sample data using the command line:</p>
 
 <ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>Change to the Magento installation directory.</li>
-  <li>
-    <p>Back up your current <code class="highlighter-rouge">composer.json</code>:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp composer.json composer.json.bak
+  <li>Back up your current <code class="highlighter-rouge">composer.json</code> file:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp composer.json composer.json.bak
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Enter one of the following commands to upgrade the Magento software version to 2.1.0 (GA release):</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;product&gt; &lt;version&gt; --no-update
-composer require &lt;sample data module-1&gt;:&lt;version&gt; ... &lt;sample data module-n&gt;:&lt;version&gt; --no-update
+  <li>Upgrade the Magento software version using commands of the following format:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;product&gt; &lt;version&gt; <span class="nt">--no-update</span>
 </code></pre></div>    </div>
-
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;sample data module-1&gt;:&lt;version&gt; ... &lt;sample data module-n&gt;:&lt;version&gt; <span class="nt">--no-update</span>
+</code></pre></div>    </div>
     <ul>
-      <li>
-        <p>Magento Open Source:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-community-edition 2.1.0 --no-update
-
-composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update 
+      <li>Example for Magento Open Source:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer require magento/product-community-edition 2.1.0 <span class="nt">--no-update</span>
+</code></pre></div>        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 <span class="nt">--no-update</span> 
 </code></pre></div>        </div>
       </li>
-      <li>
-        <p>Magento EE:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-enterprise-edition 2.1.0 --no-update
-
-composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 magento/module-gift-card-sample-data:100.1.0 magento/module-customer-balance-sample-data:100.1.0 magento/module-target-rule-sample-data:100.1.0 magento/module-gift-registry-sample-data:100.1.0 magento/module-multiple-wishlist-sample-data:100.1.0 --no-update
+      <li>Example for Magento Commerce:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/product-enterprise-edition 2.1.0 <span class="nt">--no-update</span>
+</code></pre></div>        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 magento/module-gift-card-sample-data:100.1.0 magento/module-customer-balance-sample-data:100.1.0 magento/module-target-rule-sample-data:100.1.0 magento/module-gift-registry-sample-data:100.1.0 magento/module-multiple-wishlist-sample-data:100.1.0 <span class="nt">--no-update</span>
 </code></pre></div>        </div>
       </li>
     </ul>
 
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>To upgrade to a Release Candidate, append <code>-rc&lt;x&gt;</code> to the version of each module. For example, <code>-rc3</code>.</p>
-</div>
+    <!-- Available note types: "info", "warning", "tip" -->
   </li>
-  <li>
-    <p>Update dependencies:</p>
+</ol>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To upgrade to a Release Candidate, append <code class="highlighter-rouge">-rc&lt;x&gt;</code> to the version of each module. For example, <code class="highlighter-rouge">-rc3</code>.</p>
+</div>
+
+<ol>
+  <li>Update dependencies:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
 </code></pre></div>    </div>
   </li>
   <li>If prompted, enter your <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
@@ -1329,92 +1324,96 @@ composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget
 </ol>
 
 <h3 id="finish-your-upgrade">Finish your upgrade</h3>
-<p>After you’ve reset file system permissions:</p>
+
+<p>After you have reset file system permissions:</p>
 
 <ol>
   <li>If you haven’t done so already, log in to your Magento server as, or switch to, the Magento file system owner.</li>
   <li>Change to your Magento installation directory.</li>
-  <li>
-    <p>Manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
-
-    <p>A sample command follows:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
+  <li>Manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.
+A sample command follows:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
 </code></pre></div>    </div>
   </li>
-  <li>
-    <p>Enter the following command from your Magento installation directory:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
+  <li>Upgrade Magento:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
 </code></pre></div>    </div>
   </li>
 </ol>
 
-<div>
+<h3 id="rc1-samp-ownership">Apply file system permissions and ownership</h3>
 
-  <h3 id="rc1-samp-ownership">Apply file system permissions and ownership</h3>
-  <p>As part of the sample data upgrade process, you must apply current file system permission and ownership as discussed in the following sections. Failure to do so will cause your upgrade to fail.</p>
+<p>As part of the sample data upgrade process, you must apply current file system permission and ownership as discussed in the following sections.
+Failure to do so will cause your upgrade to fail.</p>
 
-  <p>For more information about file system ownership and permissions since the Magento 2.0.6 release, see <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
+<p>For more information about file system ownership and permissions, see <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
 
-  <h4 id="one-user-ownership-and-permissions">One-user ownership and permissions</h4>
-  <p>If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:</p>
+<h4 id="one-user-ownership-and-permissions">One-user ownership and permissions</h4>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
-find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \;
-chmod u+x bin/magento
-</code></pre></div>  </div>
+<p>If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:</p>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod u+x bin/magento
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; &amp;&amp; chmod u+x bin/magento
-</code></pre></div>  </div>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> chmod u+x bin/magento
+</code></pre></div></div>
 
-  <p>After you set file system permissions, manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
+<p>After you set file system permissions, manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
 
-  <p>A sample command follows:</p>
+<p>A sample command follows:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
-</code></pre></div>  </div>
+<h4 id="two-user-ownership-and-permissions">Two-user ownership and permissions</h4>
 
-  <h4 id="two-user-ownership-and-permissions">Two-user ownership and permissions</h4>
-  <p>If you run the Magento application with two users, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>If you run the Magento application with two users, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
-find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-chown -R :&lt;web server group&gt; .
-chmod u+x bin/magento
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+ws <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown <span class="nt">-R</span> :&lt;web server group&gt; <span class="nb">.</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod u+x bin/magento
+</code></pre></div></div>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+ws <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> chown <span class="nt">-R</span> :apache <span class="nb">.</span> <span class="o">&amp;&amp;</span> chmod u+x bin/magento
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
-</code></pre></div>  </div>
-</div>
-</div></div>
+<!-- Link definitions -->
 
-  <h3 id="tb-upgr-samp-wiz">Commerce only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data</h3>
-  <p>Upgrades to Magento Commerce 2.1 with sample data can fail because of the following issues:</p>
+<!-- Link definitions -->
 
-  <ul>
-    <li>
-      <p>An issue with the Magento <code class="highlighter-rouge">composer-installer</code> component. It doesn’t correctly detect code changes and therefore doesn’t update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.</p>
+<h3 id="tb-upgr-samp-wiz">Commerce only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data</h3>
+<p>Upgrades to Magento Commerce 2.1 with sample data can fail because of the following issues:</p>
 
-      <p>We have a patch that resolves this issue.</p>
-    </li>
-    <li>
-      <p>Magento’s <code class="highlighter-rouge">composer.lock</code> file specifies a non-existent component type; this issue prevents the upgrade with sample data from completing successfully.</p>
+<ul>
+  <li>
+    <p>An issue with the Magento <code class="highlighter-rouge">composer-installer</code> component. It doesn’t correctly detect code changes and therefore doesn’t update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.</p>
 
-      <p>You can edit <code class="highlighter-rouge">composer.lock</code> to fix this issue.</p>
-    </li>
-  </ul>
+    <p>We have a patch that resolves this issue.</p>
+  </li>
+  <li>
+    <p>Magento’s <code class="highlighter-rouge">composer.lock</code> file specifies a non-existent component type; this issue prevents the upgrade with sample data from completing successfully.</p>
 
-  <h4 id="get-the-patch">Get the patch</h4>
-  <p>Use the following instructions to get the patch named <code class="highlighter-rouge">MDVA-532.*</code>, then transfer it to your Magento server.</p>
+    <p>You can edit <code class="highlighter-rouge">composer.lock</code> to fix this issue.</p>
+  </li>
+</ul>
 
-  <div class="collapsible"><b class="collapsible-title">To get the patch: </b><div class="collapsible-content"><div>
+<h4 id="get-the-patch-1">Get the patch</h4>
+<p>Use the following instructions to get the patch named <code class="highlighter-rouge">MDVA-532.*</code>, then transfer it to your Magento server.</p>
+
+<div class="collapsible"><b class="collapsible-title">To get the patch: </b><div class="collapsible-content"><div>
 
   <p>You can get a Magento Commerce patch in any of the following ways:</p>
 
@@ -1443,10 +1442,10 @@ chmod u+x bin/magento
 </div>
 </div></div>
 
-  <h4 id="apply-the-patch">Apply the patch</h4>
-  <p>As the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>, extract the patch in your Magento installation directory.</p>
+<h4 id="apply-the-patch-1">Apply the patch</h4>
+<p>As the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>, extract the patch in your Magento installation directory.</p>
 
-  <div class="collapsible"><b class="collapsible-title">To apply the patch: </b><div class="collapsible-content"><div>
+<div class="collapsible"><b class="collapsible-title">To apply the patch: </b><div class="collapsible-content"><div>
 
   <p>To apply a patch:</p>
 
@@ -1484,9 +1483,9 @@ chmod u+x bin/magento
 </div>
 </div></div>
 
-  <h4 id="fix-composerlock">Fix <code class="highlighter-rouge">composer.lock</code></h4>
+<h4 id="fix-composerlock">Fix <code class="highlighter-rouge">composer.lock</code></h4>
 
-  <div class="collapsible"><b class="collapsible-title">To fix composer.lock: </b><div class="collapsible-content"><ol>
+<div class="collapsible"><b class="collapsible-title">To fix composer.lock: </b><div class="collapsible-content"><ol>
   <li>As the Magento file system owner, open <code class="highlighter-rouge">&lt;your Magento install dir&gt;/composer.lock</code> in a text editor.</li>
   <li>
     <p>Change the following entry.</p>
@@ -1505,17 +1504,16 @@ chmod u+x bin/magento
 </ol>
 </div></div>
 
-  <h4 id="manually-clear-directories">Manually clear directories</h4>
-  <p>Manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
+<h4 id="manually-clear-directories">Manually clear directories</h4>
+<p>Manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
 
-  <p>A sample command follows:</p>
+<p>A sample command follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
+</code></pre></div></div>
 
-  <h4 id="start-the-upgrade">Start the upgrade</h4>
-  <p>Start your upgrade as discussed in <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>.</p>
-</div>
+<h4 id="start-the-upgrade">Start the upgrade</h4>
+<p>Start your upgrade as discussed in <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>.</p>
 
 			
 		</div>

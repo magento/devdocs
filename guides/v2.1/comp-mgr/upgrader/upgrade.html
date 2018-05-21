@@ -577,12 +577,12 @@
         
         
         
-        <li class="nav-level2  " id="command-line-upgrade-to-magento-2.1-with-sample-data">
+        <li class="nav-level2  " id="command-line-upgrade-with-sample-data">
 
             
 
             
-            <a href="/guides/v2.1/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a>
+            <a href="/guides/v2.1/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade with sample data</a>
             
 
             
@@ -1068,60 +1068,67 @@ rm -rf &lt;Magento install dir&gt;/var/generation/*
 
 <p>If any of the preceding errors display, perform all of the following tasks.</p>
 
-<div>
+<h3 id="rc1-samp-ownership">Apply file system permissions and ownership</h3>
 
-  <h3 id="rc1-samp-ownership">Apply file system permissions and ownership</h3>
-  <p>As part of the sample data upgrade process, you must apply current file system permission and ownership as discussed in the following sections. Failure to do so will cause your upgrade to fail.</p>
+<p>As part of the sample data upgrade process, you must apply current file system permission and ownership as discussed in the following sections.
+Failure to do so will cause your upgrade to fail.</p>
 
-  <p>For more information about file system ownership and permissions since the Magento 2.0.6 release, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
+<p>For more information about file system ownership and permissions, see <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
 
-  <h4 id="one-user-ownership-and-permissions">One-user ownership and permissions</h4>
-  <p>If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:</p>
+<h4 id="one-user-ownership-and-permissions">One-user ownership and permissions</h4>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
-find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \;
-chmod u+x bin/magento
-</code></pre></div>  </div>
+<p>If you run the Magento application as one user (which is typical of shared hosting environments), change file system permissions and ownership as follows:</p>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod u+x bin/magento
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; &amp;&amp; chmod u+x bin/magento
-</code></pre></div>  </div>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> chmod u+x bin/magento
+</code></pre></div></div>
 
-  <p>After you set file system permissions, manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
+<p>After you set file system permissions, manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>
 
-  <p>A sample command follows:</p>
+<p>A sample command follows:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> var/cache/<span class="k">*</span> var/page_cache/<span class="k">*</span> var/generation/<span class="k">*</span>
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
-</code></pre></div>  </div>
+<h4 id="two-user-ownership-and-permissions">Two-user ownership and permissions</h4>
 
-  <h4 id="two-user-ownership-and-permissions">Two-user ownership and permissions</h4>
-  <p>If you run the Magento application with two users, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
+<p>If you run the Magento application with two users, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
-find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-chown -R :&lt;web server group&gt; .
-chmod u+x bin/magento
-</code></pre></div>  </div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;your Magento install dir&gt;
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+ws <span class="o">{}</span> <span class="se">\;</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chown <span class="nt">-R</span> :&lt;web server group&gt; <span class="nb">.</span>
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod u+x bin/magento
+</code></pre></div></div>
 
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code> and the web server group name is <code class="highlighter-rouge">apache</code>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /var/www/html/magento2 <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> f <span class="nt">-exec</span> chmod g+w <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> find var vendor pub/static pub/media app/etc <span class="nt">-type</span> d <span class="nt">-exec</span> chmod g+ws <span class="o">{}</span> <span class="se">\;</span> <span class="o">&amp;&amp;</span> chown <span class="nt">-R</span> :apache <span class="nb">.</span> <span class="o">&amp;&amp;</span> chmod u+x bin/magento
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
-</code></pre></div>  </div>
+<!-- Link definitions -->
 
-  <h3 id="clear-var-directories">Clear <code class="highlighter-rouge">var</code> directories</h3>
-  <p>Clear the <code class="highlighter-rouge">var/cache</code>, 	<code class="highlighter-rouge">var/page_cache</code>, <code class="highlighter-rouge">var/generation</code></p>
+<h3 id="clear-var-directories">Clear <code class="highlighter-rouge">var</code> directories</h3>
+<p>Clear the <code class="highlighter-rouge">var/cache</code>, 	<code class="highlighter-rouge">var/page_cache</code>, <code class="highlighter-rouge">var/generation</code></p>
 
-  <p>A sample command follows:</p>
+<p>A sample command follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf var/cache/* var/page_cache/* var/generation/*
+</code></pre></div></div>
 
-  <h3 id="access-your-storefront-again">Access your storefront again</h3>
-  <p>After performing the preceding tasks, access your storefront again. If necessary, press Control+R to force the page to reload.</p>
-</div>
+<h3 id="access-your-storefront-again">Access your storefront again</h3>
+<p>After performing the preceding tasks, access your storefront again. If necessary, press Control+R to force the page to reload.</p>
 
 			
 		</div>
