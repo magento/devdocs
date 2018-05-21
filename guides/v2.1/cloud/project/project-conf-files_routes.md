@@ -8,11 +8,9 @@ functional_areas:
   - Setup
 ---
 
-{{site.data.var.ee}} processes an incoming {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} using a *route*. The `routes.yaml` file—located at `.magento/routes.yaml` in your project—defines routes for Integration, Staging, and Production environments.
+{{site.data.var.ee}} processes an incoming URL using a *route*. The `routes.yaml` file—located at `.magento/routes.yaml` in your project—defines routes for the Integration environment. The deploy script uses values defined in the configuration files in the `.magento` directory and deletes the directory after deployment. Your local workspace is not affected.
 
-The deploy script uses values defined in the configuration files in the `.magento` directory. The script deletes the directory after deployment. Your local workspace is not affected.
-
-{% include cloud/note-pro-using-yaml.md %}
+{% include cloud/note-pro-using-yaml-support.md %}
 
 The following is the default `routes.yaml` file:
 
@@ -26,7 +24,7 @@ If you do not create a custom `routes.yaml` file, the automated deployment uses 
 
 #### To list the configured routes:
 
-```
+```bash
 magento-cloud environment:routes
 
 +-------------------+----------+---------------+
