@@ -12,9 +12,9 @@ mftf-release: 2.3.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The MFTF allows you to extend test components defined in XML files such as [tests](./test.html) and [action groups](./test/action-groups.html). You can create or update the actions and hooks included. It is useful for supporting rapid test creation for extensions and customizations.
+The MFTF allows you to extend test components defined in XML files such as [tests](./test.html), [data](data.md), and [action groups](./test/action-groups.html). You can create or update the actions and hooks included. It is useful for supporting rapid test creation for extensions and customizations.
 
-You can specify needed variations for an existing test or action group to produce a copy of the original that incorporates the specified changes (the "delta").
+You can specify needed variations for an existing object to produce a copy of the original that incorporates the specified changes (the "delta").
 
 **Unlike merging the original test or action group will still exist when tests are generated.**
 
@@ -23,7 +23,10 @@ Extending operates at the XML attribute level, triggered by our parser when an e
 For example:
 * A test with `<test name="SampleTest" extends"ParentTest">` will create a second test with the changes listed in `SampleTest`.
 * An action group with `<actionGroup name="SampleActionGroup" extends"ParentActionGroup">` will create a second Action Group with the changes listed in `SampleActionGroup`.
+* An entity with `<entity name="SampleEntity" extends"ParentEntity">` will create a second Entity with the changes listed in `SampleEntity`.
 
+
+## Extend Tests
 
 ### Update a test step
 
@@ -274,4 +277,80 @@ The new action groups correspond to:
         </assertCount>
     </actionGroup>
 </actionGroups>
+```
+
+## Extend Data
+
+### Update a data entry
+
+**Example**
+
+Create another entity in which one value has been changed for a color.
+
+```xml
+<entities >
+    <entity name="DivPanel">
+        <data key="divColor">Red</data>
+        <data key="divSize">80px</data>
+        <data key="divWidth">100%</data>
+    </entity>
+    <entity name="DivPanelGreen" extends="DivPanel">
+        <data key="divColor">Green</data>
+    </entity>
+</entities>
+```
+
+The result corresponds to both entities as listed below:
+
+```xml
+<entities >
+    <entity name="DivPanel">
+        <data key="divColor">Red</data>
+        <data key="divSize">80px</data>
+        <data key="divWidth">100%</data>
+    </entity>
+    <entity name="DivPanelGreen" extends="DivPanel">
+        <data key="divColor">Green</data>
+        <data key="divSize">80px</data>
+        <data key="divWidth">100%</data>
+    </entity>
+</entities>
+```
+
+### Add a data entry
+
+**Example**
+
+Add another attribute for specific panel color
+
+```xml
+<entities >
+    <entity name="DivPanel">
+        <data key="divColor">Red</data>
+        <data key="divSize">80px</data>
+        <data key="divWidth">100%</data>
+    </entity>
+    <entity name="DivPanelGreen" extends="DivPanel">
+        <data key="divColor">#000000</data>
+        <data key="AttributeHidden">True</data>
+    </entity>
+</entities>
+```
+
+The result corresponds to both entities as listed below:
+
+```xml
+<entities >
+    <entity name="DivPanel">
+        <data key="divColor">Red</data>
+        <data key="divSize">80px</data>
+        <data key="divWidth">100%</data>
+    </entity>
+    <entity name="DivPanelGreen" extends="DivPanel">
+        <data key="divColor">#000000</data>
+        <data key="divSize">80px</data>
+        <data key="divWidth">100%</data>
+        <data key="AttributeHidden">True</data>
+    </entity>
+</entities>
 ```
