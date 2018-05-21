@@ -1,6 +1,6 @@
 # Author: jcalcaben@magento.com
 #
-# This custom plugin adds a block tag that wraps the content in a jquery-ui accordian
+# This custom plugin adds a block tag that wraps the content in a jquery-ui accordion
 # widget.
 #
 
