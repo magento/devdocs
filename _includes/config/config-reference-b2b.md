@@ -1,6 +1,6 @@
 <div markdown="1">
 
-This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Community Edition (CE) and Magento Enterprise Edition (EE) as well.
+This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for {{site.data.var.ce}} (formerly Community Edition (CE) and {{site.data.var.ee}} (formerly Enterprise Edition (EE) as well.
 
 ## General category
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
