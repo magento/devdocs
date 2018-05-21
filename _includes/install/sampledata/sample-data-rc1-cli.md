@@ -13,21 +13,21 @@ To upgrade to Magento {{page.version}} sample data using the command line:
    ```bash
    cp composer.json composer.json.bak
    ```
-1. Enter one of the following commands to upgrade the Magento software version:
+1. Upgrade the Magento software version using commands of the following format:
    ```bash
    composer require <product> <version> --no-update
    ```
    ```bash
    composer require <sample data module-1>:<version> ... <sample data module-n>:<version> --no-update
    ```
-   - {{site.data.var.ce}}:
+   - Example for {{site.data.var.ce}}:
      ```bash
       composer require magento/product-community-edition {{page.version}}.0 --no-update
       ```
       ```bash
       composer require magento/module-bundle-sample-data:100.1.0 magento/module-widget-sample-data:100.1.0 magento/module-theme-sample-data:100.1.0 magento/module-catalog-sample-data:100.1.0 magento/module-customer-sample-data:100.1.0 magento/module-cms-sample-data:100.1.0  magento/module-catalog-rule-sample-data:100.1.0 magento/module-sales-rule-sample-data:100.1.0 magento/module-review-sample-data:100.1.0 magento/module-tax-sample-data:100.1.0 magento/module-sales-sample-data:100.1.0 magento/module-grouped-product-sample-data:100.1.0 magento/module-downloadable-sample-data:100.1.0 magento/module-msrp-sample-data:100.1.0 magento/module-configurable-sample-data:100.1.0 magento/module-product-links-sample-data:100.1.0 magento/module-wishlist-sample-data:100.1.0 magento/module-swatches-sample-data:100.1.0 magento/sample-data-media:100.1.0 magento/module-offline-shipping-sample-data:100.1.0 --no-update 
       ```
-   - {{site.data.var.ee}}:
+   - Example for {{site.data.var.ee}}:
      ```bash
      composer require magento/product-enterprise-edition {{page.version}}.0 --no-update
      ```
