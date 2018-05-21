@@ -130,29 +130,31 @@ To be available for the entire Magento instance, RequireJS library is included i
         <title>Magento Admin</title>
         <meta name="viewport" content="width=1024"/>
         <meta name="format-detection" content="telephone=no"/>
-  <!-- Here's the library included -->       
-		<link src="requirejs/require.js"/>
+    <!-- Here's the library included -->
+  <link src="requirejs/require.js"/>
         <css src="extjs/resources/css/ext-all.css"/>
         <css src="extjs/resources/css/ytheme-magento.css"/>
     </head>
     <body>
         <attribute name="id" value="html-body"/>
-       <!-- Here's the basic configuration file require_js.phtml specified -->   
-	 <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
+        <!-- Here's the basic configuration file require_js.phtml specified -->
+  <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
         <referenceContainer name="global.notices">
             <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="page/notices.phtml"/>
         </referenceContainer>
         <referenceContainer name="header">
             ...
+  </referenceContainer>
         <referenceContainer name="after.body.start">
             <!-- Here's the main configuration file requirejs-config.js specified -->
-			<block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
+      <block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
             <block class="Magento\Translation\Block\Html\Head\Config" name="translate-config"/>
             <block class="Magento\Translation\Block\Js" name="translate" template="Magento_Translation::translate.phtml"/>
             <block class="Magento\Framework\View\Element\Js\Components" name="head.components" as="components" template="Magento_Backend::page/js/components.phtml"/>
             <block class="Magento\Framework\View\Element\Html\Calendar" name="head.calendar" as="calendar" template="Magento_Backend::page/js/calendar.phtml"/>
         </referenceContainer>
     </body>
+</page>
 {%endhighlight%}
 
 * For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml).
