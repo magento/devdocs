@@ -45,9 +45,9 @@ Modules with a *soft dependency* on another module can function properly without
 
 Magento installs modules in the following order:
 
-1) the module serving as a dependency for another module
+1) The module serving as a dependency for another module.
 
-2) the module dependent on it
+2) The module dependent on it.
 
 ## Inappropriate dependencies {#m2devgde-moddep-inapp-dep}
 

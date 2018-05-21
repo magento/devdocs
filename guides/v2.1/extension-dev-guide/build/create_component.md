@@ -51,9 +51,8 @@ In particular:
 
 A sample follows:
 
-{% highlight JSON %}
-
-	{
+{% highlight json %}
+{
     "name": "your-name/module-Acme",
     "description": "Test component for Magento 2",
     "require": {
@@ -79,8 +78,7 @@ A sample follows:
             "Magento\\CatalogImportExport\\": ""
         }
     }
-    }
-
+}
 {% endhighlight %}
 
 where:
