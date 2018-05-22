@@ -960,14 +960,15 @@
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.1.2 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 <abbr title="Magento Functional Testing Framework">MFTF</abbr> release.</em></p>
 
 <p>In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the <abbr title="Magento Functional Testing Framework">MFTF</abbr>.
 Using data handling actions like <a href="test/actions.html#createdata">createData</a>, <a href="test/actions.html#deletedata">deleteData</a>, <a href="test/actions.html#updatedata">updateData</a>, and <a href="test/actions.html#getdata">getData</a>, you are able to create, delete, update, and read entities for your tests. 
-The framework uses two approaches to handle data entities:</p>
+The framework enables you to send HTTP requests with these statically defined data entities:</p>
 <ul>
-  <li><a href="#handlinh-with-api">Use REST API requests</a></li>
-  <li><a href="#using-html-forms">Use HTML forms encoded in URL</a></li>
+  <li><a href="#handling-with-api">Sending a REST API request</a></li>
+  <li><a href="#rest-response">Handling a REST API response</a></li>
+  <li><a href="#using-html-forms">Sending an HTML form encoded in URL</a></li>
 </ul>
 
 <p>You have probably noticed that some modules in acceptance functional tests contain a directory, which is called <code class="highlighter-rouge">Metadata</code> .</p>
@@ -984,8 +985,8 @@ The framework uses two approaches to handle data entities:</p>
 └── Test
 </code></pre>
 
-<p>This directory contains XML files with metadata required to handle an entity defined in <code class="highlighter-rouge">dataType</code>.
-A metadata file contains a list of operations of different <code class="highlighter-rouge">type</code>.
+<p>This directory contains XML files with metadata required to create a valid request to handle an entity defined in <code class="highlighter-rouge">dataType</code>.
+A metadata file contains a list of operations with different types (defined in <code class="highlighter-rouge">type</code>).
 Each <a href="#operation-tag">operation</a> includes:</p>
 <ul>
   <li>The set of adjustments for processing a request in <a href="#operation-tag">attributes</a>, and in some cases, a response  (see <code class="highlighter-rouge">successRegex</code> and <code class="highlighter-rouge">returnRegex</code> in <a href="#operation-tag">reference details</a>).</li>
@@ -996,8 +997,9 @@ Each <a href="#operation-tag">operation</a> includes:</p>
 <p>When a test step requires handling the specified data entity, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> performs the following steps:</p>
 <ul>
   <li>Reads input data (<code class="highlighter-rouge">&lt;data/&gt;</code>) and the type (the <code class="highlighter-rouge">type</code> attribute) of the specified <a href="data.html#entity-tag">entity</a>.</li>
-  <li>Searches the metadata operation for the <code class="highlighter-rouge">dataType</code> that matches entity’s <code class="highlighter-rouge">type</code> (for example, <code class="highlighter-rouge">&lt;entity type="product"&gt;</code> matches <code class="highlighter-rouge">&lt;operation dataType="product"</code>) .</li>
+  <li>Searches the metadata operation for the <code class="highlighter-rouge">dataType</code> that matches the entity’s <code class="highlighter-rouge">type</code>. For example, <code class="highlighter-rouge">&lt;entity type="product"&gt;</code> matches <code class="highlighter-rouge">&lt;operation dataType="product"</code>.</li>
   <li>Forms a request of the operation and the input data of the entity according to matching metadata.</li>
+  <li>Stores a response and provides access to its data using <abbr title="Magento Functional Testing Framework">MFTF</abbr> variables syntax in XML.</li>
 </ul>
 
 <p>The following diagram demonstrates the XML structure of a metadata file:
@@ -1268,10 +1270,12 @@ Example:
   </li>
 </ul>
 
-<h2 id="handlinh-with-api">Handling entities using REST API</h2>
+<h2 id="handling-with-api">Handling entities using REST API</h2>
+
+<h3 id="sending-a-rest-api-request">Sending a REST API request</h3>
 
 <p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> allows you to handle basic <abbr title="Create Read Update Delete">CRUD</abbr> operations with an object using <a href="/guides/v2.2/rest/bk-rest.html">Magento REST API</a> requests.
-Just wrap the corresponding REST API request into XML tags according to the <a href="#reference">Reference documentation</a>.</p>
+To convert a request to the <abbr title="Magento Functional Testing Framework">MFTF</abbr> format, wrap the corresponding REST API request into XML tags according to the <a href="#reference">Reference documentation</a>.</p>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
@@ -1296,10 +1300,15 @@ DELETE is used for deleting objects.<br /></p>
 
 <p>We assume that our <code class="highlighter-rouge">.env</code> file sets <code class="highlighter-rouge">MAGENTO_BASE_URL=https://example.com/</code> and <code class="highlighter-rouge">MAGENTO_BACKEND_NAME=admin</code>.</p>
 
-<h3 id="create-object-as-adminOauth">Create a simple category</h3>
+<h4 id="create-object-as-adminOauth">Create a simple category</h4>
 
-<p>Let’s see what happens when you use the <code class="highlighter-rouge">&lt;createData entity="_defaultCategory" stepKey="..."/&gt;</code> test step.
-The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="_defaultCategory"&gt;</code> (in case of more than one entity with the same name, all entities are merged) and reads <code class="highlighter-rouge">type</code> of the entity.</p>
+<p>Let’s see what happens when you create a category:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"_defaultCategory"</span> <span class="na">stepKey=</span><span class="s">"createPreReqCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="_defaultCategory"&gt;</code> and reads <code class="highlighter-rouge">type</code> of the entity.
+If there are more than one entity with the same name, all of the entities are merged.</p>
 
 <blockquote>
   <p><em>Catalog/Data/CategoryData.xml</em></p>
@@ -1362,7 +1371,7 @@ Using the <a href="#reference">Reference</a>, we can trace how the JSON request 
 <!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Note that comments in the example below are used to demonstrate relation between JSON request and <abbr title="Magento Functional Testing Framework">MFTF</abbr> metadata in XML.
+  <p>Comments in the example below are used to demonstrate relation between JSON request and <abbr title="Magento Functional Testing Framework">MFTF</abbr> metadata in XML.
 JSON does not support comments.</p>
 </div>
 
@@ -1406,11 +1415,11 @@ JSON does not support comments.</p>
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
 
-<h3 id="create-object-as-anonymous">Create an object as a guest</h3>
+<h4 id="create-object-as-anonymous">Create an object as a guest</h4>
 
 <p>The corresponding test step is:</p>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"guestCart"</span> <span class="na">stepKey=</span><span class="s">"..."</span><span class="nt">/&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"guestCart"</span> <span class="na">stepKey=</span><span class="s">"createGuestCart"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
 <p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> searches in the <em>Data</em> directory an entity with <code class="highlighter-rouge">&lt;entity name="guestCart"&gt;</code> and reads <code class="highlighter-rouge">type</code>:</p>
@@ -1436,9 +1445,75 @@ JSON does not support comments.</p>
 
 <p>As a result, the <abbr title="Magento Functional Testing Framework">MFTF</abbr> sends an unauthorized POST request with an empty body to the <a href="">https://example.com/rest/V1/guest-carts</a> and stores the single string response that the endpoint returns.</p>
 
+<h3 id="rest-response">Handling a REST API response</h3>
+
+<p>There are cases when you need to reuse the data that Magento responded with to your POST request.</p>
+
+<p>Let’s see how to handle data after you created a category with custom attributes:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;createData</span> <span class="na">entity=</span><span class="s">"customizedCategory"</span> <span class="na">stepKey=</span><span class="s">"createPreReqCategory"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>The <abbr title="Magento Functional Testing Framework">MFTF</abbr> receives the corresponding JSON response and enables you to reference its data using a variable of format:</p>
+
+<p><strong>$</strong> <em>stepKey</em> <strong>.</strong> <em>JsonKey</em> <strong>$</strong></p>
+
+<p>Example:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$createPreReqCategory.id$
+</code></pre></div></div>
+
+<p>And for a custom attribute:</p>
+
+<p><strong>$</strong> <em>stepKey</em>  <strong>.custom_attributes[</strong> <em>attribute key</em> <strong>]$</strong></p>
+
+<p>Example:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$createPreReqCategory.custom_attributes[is_anchor]$
+</code></pre></div></div>
+
+<p>The following example of response in JSON demonstrates how to reference data on the root level and as data in custom attributes:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">                                          </span><span class="err">//$createPreReqCategory.id$</span><span class="w">
+    </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">                                   </span><span class="err">//$createPreReqCategory.parent_id$</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simpleCategory_0986576456"</span><span class="p">,</span><span class="w">              </span><span class="err">//$createPreReqCategory.is_active$</span><span class="w">
+    </span><span class="s2">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-05-08 14:27:18"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"available_sort_by"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"include_in_menu"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"custom_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is_anchor"</span><span class="p">,</span><span class="w"> 
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">                              </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">is_anchor</span><span class="p">]</span><span class="err">$</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"path"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2/7"</span><span class="w">                          </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">path</span><span class="p">]</span><span class="err">$</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"children_count"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_key"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">   </span><span class="err">//$createPreReqCategory.custom_attributes</span><span class="p">[</span><span class="err">url_key</span><span class="p">]</span><span class="err">$</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"attribute_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"url_path"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"simplecategory5af1b41cd58fb4"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
 <h2 id="using-html-forms">Handling entities using HTML forms</h2>
 
-<p>For cases when REST API is not applicable, you may use persisting with <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html">HTML forms</a> (when all object parameters are encoded in a URL as <code class="highlighter-rouge">key=name</code> attributes).
+<p>For cases when REST API is not applicable, you may use <a target="_blank" href="https://www.w3.org/TR/html401/interact/forms.html">HTML forms</a> (when all object parameters are encoded in a URL as <code class="highlighter-rouge">key=name</code> attributes).
 There are two different attributes to split access to different areas:</p>
 <ul>
   <li><code class="highlighter-rouge">auth="adminFormKey"</code> is used for objects in an Admin area.</li>
