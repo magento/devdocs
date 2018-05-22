@@ -166,6 +166,17 @@ The following test actions return a variable:
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
 
+## Actions handling data entities
+
+The following test actions handle data entities using [metadata](../metadata.html):
+
+* [createData](#createData)
+* [deleteData](#deleteData)
+* [updateData](#updateData)
+* [getData](#getData)
+
+Learn more in [Handling a REST API response](../metadata.html#rest-response).
+
 ## Reference
 
 The following list contains reference documentation about all action elements available in the MFTF.
