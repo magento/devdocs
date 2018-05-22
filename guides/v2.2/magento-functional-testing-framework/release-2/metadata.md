@@ -13,7 +13,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the MFTF.
 Using data handling actions like [createData], [deleteData], [updateData], and [getData], you are able to create, delete, update, and read entities for your tests. 
-The framework enables you to send HTTP requests with the statically defined data entities:
+The framework enables you to send HTTP requests with these statically defined data entities:
 - [Sending a REST API request][rest request]
 - [Handling a REST API response][rest response]
 - [Sending an HTML form encoded in URL][html form]
@@ -32,7 +32,7 @@ Wishlist
 ```
 
 This directory contains XML files with metadata required to create a valid request to handle an entity defined in `dataType`.
-A metadata file contains a list of operations of different `type`.
+A metadata file contains a list of operations with different types (defined in `type`).
 Each [operation] includes:
 - The set of adjustments for processing a request in [attributes][operation], and in some cases, a response  (see `successRegex` and `returnRegex` in [reference details][operation]).
 - The type of body content encoding in [contentType].
@@ -40,9 +40,9 @@ Each [operation] includes:
 
 When a test step requires handling the specified data entity, the MFTF performs the following steps:
 - Reads input data (`<data/>`) and the type (the `type` attribute) of the specified [entity].
-- Searches the metadata operation for the `dataType` that matches entity's `type` (for example, `<entity type="product">` matches `<operation dataType="product"`) .
+- Searches the metadata operation for the `dataType` that matches the entity's `type`. For example, `<entity type="product">` matches `<operation dataType="product"`.
 - Forms a request of the operation and the input data of the entity according to matching metadata.
-- Stores a response and provides an access to its data using MFTF variables syntax in XML.
+- Stores a response and provides access to its data using MFTF variables syntax in XML.
 
 The following diagram demonstrates the XML structure of a metadata file:
 {% include_relative img/metadata-dia.svg %}
@@ -99,8 +99,8 @@ Example:
 
 ### Sending a REST API request
 
-The MFTF allows you to handle basic CRUD operations with an object using [Magento REST API][api reference] requests.
-Just wrap the corresponding REST API request into XML tags according to the [Reference documentation][reference].
+The MFTF allows you to handle basic [CRUD] operations with an object using [Magento REST API][api reference] requests.
+To convert a request to the MFTF format, wrap the corresponding REST API request into XML tags according to the [Reference documentation][reference].
 
 {% include note.html
 type="info"
@@ -129,7 +129,8 @@ Let's see what happens when you create a category:
 <createData entity="_defaultCategory" stepKey="createPreReqCategory"/>
 ```
 
-The MFTF searches in the _Data_ directory an entity with `<entity name="_defaultCategory">` (in case of more than one entity with the same name, all entities are merged) and reads `type` of the entity.
+The MFTF searches in the _Data_ directory an entity with `<entity name="_defaultCategory">` and reads `type` of the entity.
+If there are more than one entity with the same name, all of the entities are merged.
 
 > _Catalog/Data/CategoryData.xml_
 
@@ -187,7 +188,7 @@ Using the [Reference], we can trace how the JSON request was converted into XML 
 
 {% include note.html
 type="info"
-content="Note that comments in the example below are used to demonstrate relation between JSON request and MFTF metadata in XML.
+content="Comments in the example below are used to demonstrate relation between JSON request and MFTF metadata in XML.
 JSON does not support comments."%}
 
 > Model schema for _catalogCategoryRepositoryV1SavePostBody_ with XML representation of _Catalog/Metadata/category-meta.xml_ in comments
@@ -262,7 +263,7 @@ As a result, the MFTF sends an unauthorized POST request with an empty body to t
 
 ### Handling a REST API response {#rest-response}
 
-There are cases when you need to reuse the data that Magento responded to your POST request.
+There are cases when you need to reuse the data that Magento responded with to your POST request.
 
 Let's see how to handle data after you created a category with custom attributes: 
 
@@ -270,7 +271,7 @@ Let's see how to handle data after you created a category with custom attributes
 <createData entity="customizedCategory" stepKey="createPreReqCategory"/>
 ```
 
-The MFTF receives the corresponding JSON respond and enables you to reference to its data using a variable of format:
+The MFTF receives the corresponding JSON response and enables you to reference its data using a variable of format:
 
 **$** _stepKey_ **.** _JsonKey_ **$**
 
@@ -279,7 +280,7 @@ Example:
 $createPreReqCategory.id$
 ```
 
-and for a custom attribute:
+And for a custom attribute:
 
 **$** _stepKey_  **.custom_attributes[** _attribute key_ **]$**
 
@@ -288,7 +289,7 @@ Example:
 $createPreReqCategory.custom_attributes[is_anchor]$
 ```
 
-The following example of respond in JSON demonstrates how to reference data on the root level as well as data in custom attributes:
+The following example of response in JSON demonstrates how to reference data on the root level and as data in custom attributes:
 
 ```json
 {
@@ -332,7 +333,7 @@ The following example of respond in JSON demonstrates how to reference data on t
 
 ## Handling entities using HTML forms {#using-html-forms}
 
-For cases when REST API is not applicable, you may use persisting with [HTML forms] (when all object parameters are encoded in a URL as `key=name` attributes).
+For cases when REST API is not applicable, you may use [HTML forms] (when all object parameters are encoded in a URL as `key=name` attributes).
 There are two different attributes to split access to different areas:
 * `auth="adminFormKey"` is used for objects in an Admin area.
 * `auth="customerFormKey"` is used for objects in a store front.
