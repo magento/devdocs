@@ -24,7 +24,7 @@ Use the following properties to build your application configuration file. The `
 ### `name`
 {{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project.
 
-The `name` property can consist only of lower case alphanumeric characters, such as `a` to `z` and `0` to `9`. The name is used in the [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The `name` property can consist only of lower case alphanumeric characters, such as `a` to `z` and `0` to `9`. The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
 {% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
 
@@ -37,7 +37,7 @@ type: php:7.0
 
 The `build` property determines what happens by default when building the project. The only value currently supported is `composer`.
 
-```
+```yaml
 type: php:7.0
 build:
     flavor: composer
@@ -68,7 +68,7 @@ cache: "arediscache:redis"
 search: "searchengine:solr"
 ```
 
-See [Services]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
+See [Services]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
@@ -91,8 +91,8 @@ Our default configuration allows the following:
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
-```
-# The configuration of app when it is exposed to the web.
+```yaml
+ # The configuration of app when it is exposed to the web.
 web:
 locations:
 "/":
@@ -136,8 +136,8 @@ application in MB.
 
 The following is a default list of mounts configured in `magento.app.yaml`:
 
-```
-# The mounts that will be performed when the package is deployed.
+```yaml
+ # The mounts that will be performed when the package is deployed.
 mounts:
     "var": "shared:files/var"
     "app/etc": "shared:files/etc"
@@ -186,21 +186,19 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build` or `deploy` sections:
 
-```
+```yaml
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
-        php ./bin/magento <custom-command>
-        php ./vendor/bin/m2-ece-build
+        php ./vendor/bin/ece-tools build
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendor/bin/m2-ece-deploy
-        php ./bin/magento <custom-command>
-    # We run post deploy hook to clean and warm the cache.  Available with Cloud Tools 2002.0.10.
+        php ./vendor/bin/ece-tools deploy
+    # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
     post_deploy: |
         php ./vendor/bin/ece-tools post-deploy
 ```
@@ -209,7 +207,7 @@ The commands run from the application (`/app`) directory. You can use the `cd` c
 
 #### To compile SASS files using grunt:
 
-```
+```yaml
 dependencies:
   ruby:
     sass: "3.4.7"
@@ -228,11 +226,11 @@ hooks:
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
-`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
+`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
 
 `crons` support the following:
 
--  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{page.baseurl}}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
+-  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
 A Cron job is well suited for the following tasks:
@@ -244,7 +242,7 @@ A Cron job is well suited for the following tasks:
 
 A sample Magento cron job follows:
 
-```
+```yaml
 crons:
   cronrun:
       spec: "*/5 * * * *"
@@ -253,17 +251,17 @@ crons:
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-For more information, see [Set up cron jobs]({{page.baseurl}}/cloud/configure/setup-cron-jobs.html).
+For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
 
-```
+```yaml
 variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+  env:
+    CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+    CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+    CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 ```
 
 ## Configure PHP options
@@ -275,21 +273,22 @@ type: php:7.0
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
+{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 </div>
 
 ### PHP extensions
 You can define additional PHP extensions to enable or disable:
 
-```
-# .magento.app.yaml
+> .magento.app.yaml
+
+```yaml
 runtime:
-    extensions:
-        - xdebug
-        - redis
-        - ssh2
-    disabled_extensions:
-        - sqlite3
+  extensions:
+    - xdebug
+    - redis
+    - ssh2
+  disabled_extensions:
+    - sqlite3
 ```
 
 To view the current list of PHP extensions, SSH into your environment and enter the following command:
@@ -362,9 +361,9 @@ For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 756M
 
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 

@@ -55,4 +55,4 @@ content="**Temporary issue**: Added docblock tags like [@deprecated] are defined
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./open-source.html
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

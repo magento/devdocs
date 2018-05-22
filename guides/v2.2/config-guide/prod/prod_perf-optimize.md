@@ -160,11 +160,11 @@ if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg
 
 Restart the Varnish server to flush cached assets whenever you upgrade your site or deploy/update assets.
 
-[composer-install]: {{page.baseurl}}/install-gde/prereq/integrator_install.html
-[zip-install]: {{page.baseurl}}/install-gde/prereq/zip_install.html
-[config-varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
-[elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
+[composer-install]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
+[config-varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
+[elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-overview.html
 [php-fpm]: https://php-fpm.org/
-[redis-session]: {{page.baseurl}}/config-guide/redis/redis-session.html
-[redis-default-cache]: {{page.baseurl}}/config-guide/redis/redis-pg-cache.html
+[redis-session]: {{ page.baseurl }}/config-guide/redis/redis-session.html
+[redis-default-cache]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [composer-dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload

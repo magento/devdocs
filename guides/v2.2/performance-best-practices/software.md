@@ -13,18 +13,18 @@ functional_areas:
 
 We recommend using the following software for production instances of Magento:
 
-* [PHP]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+* [PHP]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
 *	Nginx and [PHP-FPM](https://php-fpm.org/)
-*	[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-* [Varnish cache]({{page.baseurl}}/config-guide/varnish/config-varnish.html)
-* ({{site.data.var.ee}} only) Use the [Elasticsearch & Elasticsearch Search Adapter]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
+*	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+* [Varnish cache]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
+* ({{site.data.var.ee}} only) Use the [Elasticsearch & Elasticsearch Search Adapter]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html)
 
 For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:
 
-*	[Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
-*	A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
+*	[Redis]({{ page.baseurl }}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
+*	A separate Redis instance as your [default cache]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
 
-See [Magento 2.2.x technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
+See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
 
 ## Operating system
 
@@ -134,7 +134,7 @@ Magento distributes a sample configuration file for Varnish (versions 4 and 5) t
 * **Grace mode** allows you to instruct Varnish to keep an object in cache beyond its Time to Live (TTL) period and serve this stale content if Magento is not healthy or if fresh content hasn’t been fetched yet.
 * **Saint mode** blacklists unhealthy Magento servers for a configurable amount of time. As a result, unhealthy backends cannot serve traffic when using Varnish as a load balancer.
 
-See [Advanced Varnish configuration]({{page.baseurl}}/config-guide/varnish/config-varnish-advanced.html) for more information about implementing these features.
+See [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html) for more information about implementing these features.
 
 ### Optimize asset performance
 

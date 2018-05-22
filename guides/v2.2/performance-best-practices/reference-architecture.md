@@ -12,7 +12,7 @@ functional_areas:
 
 This topic describes a generic recommended setup for {{site.data.var.ee}} and {{site.data.var.ce}} instances using plain servers hosted physically in a data center (not virtualized) in which resources are not shared with other users. Your hosting provider, especially if it specializes in Magento high performance hosting, might recommend a different setup that is equally or more effective for your requirements.
 
-For {{site.data.var.ece}} environments, see [Starter architecture]({{page.baseurl}}/cloud/basic-information/starter-architecture.html).
+For {{site.data.var.ece}} environments, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html).
 
 ## Magento Reference Architecture diagram
 
@@ -24,7 +24,7 @@ The color of each element in the diagram indicates whether the element is part o
 * Grey elements are optional for {{site.data.var.ce}}
 * Blue elements are optional for {{site.data.var.ee}}
 
-![alt text]({{page.baseurl}}/performance-best-practices/images/ref-architecture-2.2.png "reference architecture")
+![alt text]({{ page.baseurl }}/performance-best-practices/images/ref-architecture-2.2.png "reference architecture")
 
 The following sections provide recommendations and considerations for each section of the Magento Reference Architecture diagram.
 
@@ -68,8 +68,8 @@ Magento supports several full page caching engines (File, Memcache, Redis, Varni
 
 For sites that do not require high availability, we recommend using a simple Varnish setup with Nginx SSL termination.
 
-![alt text]({{page.baseurl}}/performance-best-practices/images/single-varnish-with-ssl-termination.png "Simple Varnish Configuration with SSL Termination")
+![alt text]({{ page.baseurl }}/performance-best-practices/images/single-varnish-with-ssl-termination.png "Simple Varnish Configuration with SSL Termination")
 
 For sites that require high availability, we recommend using a 2-tier Varnish configuration with an SSL terminating load balancer.
 
-![alt text]({{page.baseurl}}/performance-best-practices/images/ha-2-tier-varnish-with-ssl-term-load-balancer.png "High Availability 2 tier Varnish configuration with SSL terminating load balancer")
+![alt text]({{ page.baseurl }}/performance-best-practices/images/ha-2-tier-varnish-with-ssl-term-load-balancer.png "High Availability 2 tier Varnish configuration with SSL terminating load balancer")

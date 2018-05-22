@@ -27,7 +27,7 @@ For example, during initial development you may prefer email notifications that 
 ## Configure notifications
 To configure notifications:
 
-1.  Open a terminal and [checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  Open a terminal and [checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  Locate the `.magento.env.yaml.sample` file in your project root and rename it `.magento.env.yaml`. The code in this file is commented out by default.
 1.  Remove the code comments and add your messaging system settings, including preferred notification [log level](#log-levels).
 

@@ -30,6 +30,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 	*	CentOS 6: `/etc/sysconfig/varnish`
 	*	CentOS 7: `/etc/varnish/varnish.params`
+	*	Debian: `/etc/default/varnish`
 	*	Ubuntu: `/etc/default/varnish`
 
 2.	Search for the `http_resp_hdr_len` parameter.
@@ -72,4 +73,4 @@ Because Admin is accessed through Varnish, you cannot log in to Admin to enable 
 
 `bin/magento cache:enable`
 
-For more information about using the command line, see <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.
+For more information about using the command line, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.

@@ -11,4 +11,4 @@ functional_areas:
   - Deploy
 ---
 
-See [Deployment steps]({{page.baseurl}}/config-guide/prod/prod_deploy.html).
+See [Deployment steps]({{ page.baseurl }}/config-guide/prod/prod_deploy.html).

@@ -40,7 +40,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you have enabled [URN highlighting]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
+If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 </div>
 
 ### Top-level node
@@ -190,13 +190,13 @@ This section shows how to perform common database operations using declarative s
 
 The following example creates the `table_name` table with five columns. The `id` column is the primary key.
 
-![Create Table]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/declaration-create-table.png)
+![Create Table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/declaration-create-table.png)
 
 ### Drop a table
 
 In the following example, the `table_name` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
-![Drop Table]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/drop-declarative-table.png)
+![Drop Table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/drop-declarative-table.png)
 
 ### Rename a table
 
@@ -206,31 +206,31 @@ Table renaming is not supported. However, you can remove an unneeded table decla
 
 In the following example, the selected `constraint` node defines the characteristics of the `FL_ALLOWED_SEVERITIES` foreign key.
 
-![Create Foreign Key]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/create-fk.png)
+![Create Foreign Key]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/create-fk.png)
 
 ### Drop a foreign key
 
 The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleting its `constraint` node. To drop a constraint declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
-![Drop Foreign Key]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/drop-fk.png)
+![Drop Foreign Key]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/drop-fk.png)
 
 ### Add a column to table
 
 The following example adds the `date_closed` column.
 
-![Add column to table]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/add-column.png)
+![Add column to table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/add-column.png)
 
 ### Drop a column from a table
 
 The following example removes the  `date_closed` column by deleting its `column` node. To drop a column declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
-![Drop column from table]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/remove-column.png)
+![Drop column from table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/remove-column.png)
 
 ### Change the column type
 
 The following example changes the `type` of the `title` column from `varchar` to  `tinytext`.
 
-![Change column type]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/change-column-type.png)
+![Change column type]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/change-column-type.png)
 
 ### Rename a column
 
@@ -250,7 +250,7 @@ onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
 
 The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
 
-![Add index]({{page.baseurl}}/extension-dev-guide/declarative-schema/images/add-index.png)
+![Add index]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/add-index.png)
 
 
 ## Other tasks
@@ -266,5 +266,5 @@ When a module is disabled from the Admin console, its database schema configurat
 
 -->
 
-[How to generate urns?]:{{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html
-[Db Schema Autocomplete]:{{page.baseurl}}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png
+[How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
+[Db Schema Autocomplete]:{{ page.baseurl }}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png
