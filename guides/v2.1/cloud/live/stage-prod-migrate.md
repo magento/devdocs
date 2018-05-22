@@ -1,6 +1,10 @@
 ---
 group: cloud
+subgroup: 160_deploy
 title: Deploy code and migrate static files and data
+menu_title: Deploy code and migrate static files and data
+menu_order: 50
+menu_node:
 version: 2.1
 github_link: cloud/live/stage-prod-migrate.md
 functional_areas:
@@ -64,23 +68,23 @@ You'll need the SSH and Git access information for your project.
   	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
   	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
-#### Deploy to Pro: updated or created after October 23, 2017
+#### Deploy to Pro: updated or created after October 23, 2017 {#classic}
 To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html):
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Checkout your Staging or Production branch:
 
-  * Staging: `git checkout staging`
-  * Production: `git checkout production`
+    * Staging: `git checkout staging`
+    * Production: `git checkout production`
 3. Pull the `master` branch from Integration. Remember, a pull performs a fetch and a merge in one step.
 
-        git pull origin master
+          git pull origin master
 
-  You merge this code as `staging` and `production` are branches of `master`.
+    You merge this code as `staging` and `production` are branches of `master`.
+
 4. To fully update all code, then perform a push:
 
-        git push origin
-
+          git push origin
 
 #### Deploy to Pro: created before October 23, 2017 {#classic}
 For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html) prior to deployment.
@@ -88,19 +92,19 @@ For these environments, you are pushing code from repository to repository: Inte
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
 2. Pull the `master` branch to the server.
 
-        git pull origin master
+          git pull origin master
 
 3. Merge changes to Staging or Production:
 
-  * Staging: `git push staging master:master`
-  * Production: `git push production master:master`
+    * Staging: `git push staging master:master`
+    * Production: `git push production master:master`
 
-  You must force push for these branches as they are separate repositories with a master branch.
+    You must force push for these branches as they are separate repositories with a `master` branch.
 
 ## Migrate static files {#cloud-live-migrate-static}
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="\_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
 
@@ -113,7 +117,7 @@ Options:
 	v verbose
 	P partial progress
 
-For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
+For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
 
 
 To migrate static files from your local machine:
