@@ -99,7 +99,7 @@ Example:
 
 ### Sending a REST API request
 
-The MFTF allows you to handle basic [CRUD] operations with an object using [Magento REST API][api reference] requests.
+The MFTF allows you to handle basic CRUD operations with an object using [Magento REST API][api reference] requests.
 To convert a request to the MFTF format, wrap the corresponding REST API request into XML tags according to the [Reference documentation][reference].
 
 {% include note.html
@@ -521,10 +521,11 @@ Example:
 {:target="_blank"}
 [operation]: #operation-tag
 [reference]: #reference
-[rest requests]: #handling-with-api
+[rest request]: #handling-with-api
 [html form]: #using-html-forms
 [update category data by its ID]: #update-object-as-adminOauth
 [updateData]: test/actions.html#updatedata
+[rest response]: #rest-response
 
 *[CRUD]: Create Read Update Delete
 *[MFTF]: Magento Functional Testing Framework
