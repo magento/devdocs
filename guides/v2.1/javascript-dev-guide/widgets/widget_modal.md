@@ -176,6 +176,27 @@ The modal widget is subscribed to the following events:
 <li><a href="#modal_opened">opened</a></li>
 </ul>
 
+You can listen to these events in two ways:
+
+Use jQuery's [`on`](http://api.jquery.com/on/) function:
+
+<pre>
+var modal = $( "#modal_content").modal({...});
+modal.on( "modalclosed", function() {
+    // Do some action when modal closed
+});
+</pre>
+
+Or assign a callback as a property when creating a modal instance:
+<pre>
+$('#modal_content').modal({
+    ...
+    closed: function(){
+       // Do some action when modal closed
+    }
+});
+</pre>
+
 <h3 id="modal_closed"><code>closed</code></h3>
 Called when the modal window is closed.
 
@@ -184,6 +205,8 @@ Called when the modal window is opened.
 
 <h3 id="modal_opened"><code>always</code></h3>
 ....
+
+
 
 <h2 id="key_navigation">Keyboard navigation</h2>
 - the ESC key: close the current modal window
