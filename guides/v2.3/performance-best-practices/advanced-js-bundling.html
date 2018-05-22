@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Advanced JavaScript bundling | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="/guides/v2.3/performance-best-practices/advanced-js-bundling.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/performance-best-practices/advanced-js-bundling.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/performance-best-practices/advanced-js-bundling.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/performance-best-practices/advanced-js-bundling.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/performance-best-practices/advanced-js-bundling.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="https://magento-research.github.io/pwa-devdocs/">PWA Studios</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+          
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Performance Best Practices</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+<li class="nav-level1  " id="introduction">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/index.html">Introduction</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="hardware-recommendations">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/hardware.html">Hardware recommendations</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="software-recommendations">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/software.html">Software recommendations</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="reference-architecture">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/reference-architecture.html">Reference architecture</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="development-environment-recommendations">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/development-environment.html">Development environment recommendations</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="configuration-best-practices">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/configuration.html">Configuration best practices</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="deployment-flow">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/deployment-flow.html">Deployment flow</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="advanced-setup">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/advanced-setup.html">Advanced setup</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1 active " id="advanced-javascript-bundling">
+    
+
+    
+    <a href="/guides/v2.3/performance-best-practices/advanced-js-bundling.html">Advanced JavaScript bundling</a>
+    
+
+    
+</li>
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a></li>
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/performance-best-practices/index.html">
+            <span property="name">Performance Best Practices</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Advanced JavaScript bundling</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Advanced JavaScript bundling</h1>
+
+  
+
+
+</section>
+
+			<h2 id="introduction">Introduction</h2>
+<p>Bundling JavaScript modules for better performance is about reducing two things:</p>
+
+<ol>
+  <li>The number of server requests.</li>
+  <li>The size of those server requests.</li>
+</ol>
+
+<p>In a modular application, the number of server requests can reach into the hundreds. For example, the following screen shot shows only the start of the list of JavaScript modules loaded on the home page of a clean Magento installation.</p>
+
+<p><img src="images/noBundling.png" alt="noBundling" /></p>
+
+<h3 id="magento-merging-and-bundling">Magento merging and bundling</h3>
+<p>Out of the box, Magento provides two ways to reduce the number of server requests: merging and bundling. These settings are turned off by default. You can turn them on within Magento’s Admin UI in Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; JavaScript Settings, or from the command line.</p>
+
+<p><img src="images/bundlingImage.png" alt="bundlingImage" /></p>
+
+<h4 id="basic-bundling">Basic bundling</h4>
+<p>To enable Magento’s built-in bundling from the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-f</span> bin/magento config:set dev/js/enable_js_bundling 1
+</code></pre></div></div>
+
+<p>This is a native Magento mechanism that combines all assets present in the system and distributes them among same-sized bundles (bundle_0.js, bundle_1.js … bundle_x.js):</p>
+
+<p><img src="images/magentoBundling.png" alt="magentoBundling" /></p>
+
+<p>Better, but the browser still loads ALL the JavaScript bundles, not just the ones needed.</p>
+
+<p>Magento bundling reduces the number of connections per page, but for each page request it loads all bundles, even when the requested page may only depend on files within one or two of the bundles. Performance improves after the browser caches the bundles. But, because the browser loads these bundles synchronously, the user’s first visit to a Magento storefront could take a while to render and hurt the user experience.</p>
+
+<h4 id="basic-merging">Basic merging</h4>
+<p>To enable Magento’s built-in merging from the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-f</span> bin/magento config:set dev/js/merge_files 1
+</code></pre></div></div>
+
+<p>This command merges all synchronous JavaScript files into one file. Enabling merging without also enabling bundling is not useful because Magento uses RequireJS. If you don’t enable bundling, Magento only merges RequireJS and its configuration. When you enable both bundling and merging, Magento creates a single JavaScript file:</p>
+
+<p><img src="images/magentoMergingDevWorld.png" alt="magentoMergingRealWorld" /></p>
+
+<h3 id="real-world-render-times">Real-world render times</h3>
+<p>The previous bundled and merged load times look great in a development environment. But in the real world, many things can slow down rendering: slow connections, large connection thresholds, limited networks. In addition, mobile devices do not render as fast as desktops.</p>
+
+<p>To test and prepare your storefront deployment for the real world, we recommend you test with Chrome’s native throttling profile of “Slow 3G.” With Slow 3G, our previous bundled output times now reflect many users’ connection realities:</p>
+
+<p><img src="images/magentoBundlingRealWorld.png" alt="magentoBundlingRealWorld" /></p>
+
+<p>At Slow 3G connectivity, it takes about 44 seconds to load all the bundles for the homepage of a clean Magento installation.</p>
+
+<p>The same is true when merging the bundles into a single file. Users could still wait around 42 seconds for the initial page load as shown here:</p>
+
+<p><img src="images/magentoMergingRealWorld.png" alt="magentoMergingRealWorld" /></p>
+
+<p>With a more advanced approach to JavaScript bundling, we can improve these load times.</p>
+
+<h2 id="advanced-bundling">Advanced bundling</h2>
+<p>Remember, the goal of JavaScript bundling is to reduce the number and size of requested assets for each page loaded in the browser. To do that, we want to build our bundles so that each page in our store will only need to download a common bundle and a page-specific bundle for each page accessed.</p>
+
+<p>One way to achieve this is to define your bundles by page types. You can categorize Magento’s pages into several page types, including Category, Product, CMS, Customer, Cart, and Checkout. Each page categorized into one of these page types has a different set of RequireJS module dependencies. When you bundle your RequireJS modules by page type, you will end up with only a handful of bundles that cover the dependencies of any page in your store.</p>
+
+<p>For example, you might end up with a bundle for the dependencies common to all pages, a bundle for CMS-only pages, a bundle for Catalog-only pages, another bundle for Search-only pages, and a bundle for Checkout pages.</p>
+
+<p>You could also create bundles by purpose:  for common features, product-related features, shipping features, checkout features, taxes, and form validations. How you define your bundles is up to you and the structure of your Magento store. You may find that some bundling strategies will work better than others.</p>
+
+<p>A clean Magento installation allows reaching enough good performance by splitting bundles by page types, but some customizations may require deeper analysis and other asset distributions.</p>
+
+<h4 id="required-tools">Required tools</h4>
+
+<p>The following steps require you to install and have familiarity with the following tools:</p>
+<ul>
+  <li><a href="https://nodejs.org/en/download/">nodejs</a></li>
+  <li><a href="http://requirejs.org/docs/optimization.html#download">r.js</a></li>
+  <li><a href="http://phantomjs.org/">PhantomJS</a> (optional)</li>
+</ul>
+
+<h4 id="sample-code">Sample code</h4>
+
+<p>Full versions of the sample code used in this article are available here:</p>
+<ul>
+  <li><a href="samples/build.js" target="_blank">build.js</a></li>
+  <li><a href="samples/deps.js" target="_blank">deps.js</a></li>
+  <li><a href="samples/deps-map.sh" target="_blank">deps-map.sh</a></li>
+</ul>
+
+<h3 id="part-1-create-a-bundling-configuration">Part 1: Create a bundling configuration</h3>
+
+<h4 id="1-add-a-buildjs-file">1. Add a build.js file</h4>
+
+<p>Create a <code class="highlighter-rouge">build.js</code> file in the Magento root directory. This file will contain the entire build configuration for your bundles.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">({</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+    <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>Later, we will change the <code class="highlighter-rouge">optimize:</code> setting from_ <code class="highlighter-rouge">none</code> to <code class="highlighter-rouge">uglify2</code> to minify bundle output. But for now, during development, you can leave it set to <code class="highlighter-rouge">none</code> to  ensure faster builds.</p>
+
+<h4 id="2-add-requirejs-dependencies-shims-paths-and-map">2. Add RequireJS dependencies, shims, paths, and map</h4>
+
+<p>Add the following RequireJS build configuration nodes, <code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, <code class="highlighter-rouge">paths</code>, and <code class="highlighter-rouge">map</code>, to your build file:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">({</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+    <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    
+    <span class="na">deps</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="na">shim</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">paths</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">map</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"*"</span><span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="3-aggregate-the-requirejs-configjs-instance-values">3. Aggregate the requirejs-config.js instance values</h4>
+
+<p>In this step, you will need to aggregate all of the multiple <code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, <code class="highlighter-rouge">paths</code>, and <code class="highlighter-rouge">map </code> configuration nodes from your store’s <code class="highlighter-rouge">requirejs-config.js</code> file into the corresponding nodes in your <code class="highlighter-rouge">build.js</code> file. To do this, you can open the <strong>Network</strong> tab in your browser’s Developer Tools panel and navigate to any page in your store, such as the homepage. In the Network tab, you will see your store’s instance of the <code class="highlighter-rouge">requirejs-config.js</code> file near the top, highlighted here:</p>
+
+<p><img src="images/RequireJSConfig.png" alt="RequireJSConfig" /></p>
+
+<p>Within this file, you will find multiple entries for each of the configuration nodes (<code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, <code class="highlighter-rouge">paths</code>, <code class="highlighter-rouge">map</code>). You need to aggregate these multiple node values into your build.js file’s single configuration node. For example, if your store’s <code class="highlighter-rouge">requirejs-config.js</code> instance has entries for 15 separate <code class="highlighter-rouge">map</code> nodes, you will need to merge the entries for all 15 nodes into the single <code class="highlighter-rouge">map</code> node in your <code class="highlighter-rouge">build.js</code> file. The same will be true for the <code class="highlighter-rouge">deps</code>, <code class="highlighter-rouge">shim</code>, and <code class="highlighter-rouge">paths</code> nodes. Without a script to automate this process, it may take time.</p>
+
+<h4 id="4-add-a-modules-node">4. Add a modules node</h4>
+
+<p>At the end of the <code class="highlighter-rouge">build.js</code> file, add the modules[] array as a placeholder for the bundles you will define for your storefront later.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">({</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'none'</span><span class="p">,</span>
+    <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    
+    <span class="na">deps</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="na">shim</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">paths</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="na">map</span><span class="p">:</span> <span class="p">{</span> <span class="s2">"*"</span><span class="p">:</span> <span class="p">{}</span> <span class="p">},</span>
+    
+    <span class="na">modules</span><span class="p">:</span> <span class="p">[],</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h4 id="5-retrieve-requirejs-dependencies">5. Retrieve RequireJS dependencies</h4>
+
+<p>You can retrieve all the RequireJS module dependencies from your store’s page types by using:</p>
+<ol>
+  <li>PhantomJS from the command line (assuming you have PhantomJS installed).</li>
+  <li>RequireJS command in your browser’s console.</li>
+</ol>
+
+<h4 id="to-use-phantomjs">To use PhantomJS:</h4>
+
+<p>In the Magento root directory, create a new file called <code class="highlighter-rouge">deps.js</code> and copy in the code below. This code uses PhantomJS to open a page and wait for the browser to load all page assets. It then outputs all the RequireJS dependencies for a given page.</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"use strict"</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">page</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'webpage'</span><span class="p">).</span><span class="nx">create</span><span class="p">(),</span>
+    <span class="nx">system</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'system'</span><span class="p">),</span>
+    <span class="nx">address</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">system</span><span class="p">.</span><span class="nx">args</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Usage: $phantomjs deps.js url'</span><span class="p">);</span>
+    <span class="nx">phantom</span><span class="p">.</span><span class="nx">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">address</span> <span class="o">=</span> <span class="nx">system</span><span class="p">.</span><span class="nx">args</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="nx">page</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">address</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">status</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">status</span> <span class="o">!==</span> <span class="s1">'success'</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'FAIL to load the address'</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">page</span><span class="p">.</span><span class="nx">evaluate</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="k">return</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">require</span><span class="p">.</span><span class="nx">s</span><span class="p">.</span><span class="nx">contexts</span><span class="p">.</span><span class="nx">_</span><span class="p">.</span><span class="nx">defined</span><span class="p">);</span>
+                <span class="p">}));</span>
+                <span class="nx">phantom</span><span class="p">.</span><span class="nx">exit</span><span class="p">();</span>
+            <span class="p">},</span> <span class="mi">5000</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Open a terminal inside the Magento root directory and run the script against each page in your Magento store that represents a specific page type:</p>
+<pre>
+phantomjs deps.js <i>url-to-specific-page</i> &gt; <i>text-file-representing-pagetype-dependencies</i> 
+</pre>
+<p>For example, here are four pages from the Luma themed sample Magento store that represent the four page types we will use to create our four bundles (homepage, category, product, cart):</p>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">phantomjs deps.js http://m2.loc/ &gt;</span> bundle/homepage.txt
+<span class="gp">phantomjs deps.js http://m2.loc/women/tops-women/jackets-women.html &gt;</span> bundle/category.txt
+<span class="gp">phantomjs deps.js http://m2.loc/beaumont-summit-kit.html &gt;</span> bundle/product.txt
+<span class="gp">phantomjs deps.js http://m2.loc/checkout/cart/?SID=m2tjdt7ipvep9g0h8pmsgie975 &gt;</span> bundle/cart.txt <span class="o">(</span>prepare a shopping cart<span class="o">)</span>
+<span class="c">..............
+</span></code></pre></div></div>
+
+<h4 id="to-use-the-browser-console">To use the browser console:</h4>
+
+<p>If you don’t want to use PhantomJS, you can run the following command from your browser’s console while viewing each page type in your storefront:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Object.keys<span class="o">(</span>window.require.s.contexts._.defined<span class="o">)</span>
+</code></pre></div></div>
+<p>This command (used within the PhantomJS script) creates the same list of RequireJS dependencies and displays them within the browser’s console. The disadvantage of this approach is that you will have to create your own bundle/page-type text files.</p>
+
+<h4 id="6-format-and-filter-the-output">6. Format and filter the output</h4>
+
+<p>After you merge the RequireJS dependencies into page-type text files, you can use the following command on each page-type dependency file to replace the commas in your files with newlines:</p>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">sed -i -e $</span><span class="s1">'s/,/\\\n/g'</span> bundle/category.txt
+<span class="gp">sed -i -e $</span><span class="s1">'s/,/\\\n/g'</span> bundle/homepage.txt
+<span class="gp">sed -i -e $</span><span class="s1">'s/,/\\\n/g'</span> bundle/product.txt
+<span class="c">....
+</span></code></pre></div></div>
+
+<p>You should also remove all the mixins for each file because mixins duplicate dependencies. Use the following command on each dependency file:</p>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">sed -i -e 's/mixins\!.*$</span>//g<span class="s1">' bundle/homepage.txt
+</span><span class="gp">sed -i -e 's/mixins\!.*$</span><span class="s1">//g'</span> bundle/category.txt
+<span class="gp">sed -i -e 's/mixins\!.*$</span>//g<span class="s1">' bundle/product.txt
+</span><span class="c">...
+</span></code></pre></div></div>
+
+<h4 id="7-identify-unique-and-common-bundles">7. Identify unique and common bundles</h4>
+
+<p>The goal is to create a common bundle of JavaScript files needed by all pages. That way the browser only needs to load the common bundle along with one or more specific page types.</p>
+
+<p>Open a terminal in the Magento root directory and use the following command to verify that you have dependencies you can split into separate bundles:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sort bundle/<span class="k">*</span>.txt |uniq <span class="nt">-c</span> |sort <span class="nt">-n</span>
+</code></pre></div></div>
+
+<p>This command merges and sorts the dependencies found in the <code class="highlighter-rouge">bundle/*.txt</code> files.  The output also shows the number of files that contain each dependency:</p>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">1 buildTools,
+1 jquery/jquery.parsequery,
+1 jsbuild,
+2 jquery/jquery.metadata,
+2 jquery/validate,
+2 mage/bootstrap,
+3 jquery
+3 jquery/ui
+3 knockoutjs/knockout
+</span><span class="c">...
+</span></code></pre></div></div>
+
+<p>This output shows that <code class="highlighter-rouge">buildTools</code> is a dependency in only one of the bundle/*.txt files. The <code class="highlighter-rouge">jquery/jquery.metadata</code> dependency is in two (2) files and <code class="highlighter-rouge">es6-collections</code> is in three (3) files.</p>
+
+<p>Our output shows only three page types (homepage, category, and product), which tells us:</p>
+<ul>
+  <li>Three dependencies are unique to only one page type (shown by the number 1).</li>
+  <li>Three more dependencies occur on two page types (shown by the number 2).</li>
+  <li>The last three dependencies are common to all three of our page types (shown by the number 3).</li>
+</ul>
+
+<p>This tells us that we can likely improve our store’s page-loading speeds by splitting our dependencies into different bundle, once we know which page types need which dependencies.</p>
+
+<h4 id="8-create-a-dependencies-distribution-file">8. Create a dependencies distribution file</h4>
+
+<p>To find out which page types need which dependencies, create a new file in the Magento root directory called <code class="highlighter-rouge">deps-map.sh</code> and copy in the code below:</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>awk <span class="s1">'END {
+ for (R in rec) {
+   n = split(rec[R], t, "/")
+   if (n &gt; 1)
+     dup[n] = dup[n] ? dup[n] RS sprintf("\t%-20s --&gt;\t%s", rec[R], R) : \
+       sprintf("\t%-20s --&gt;\t%s", rec[R], R)
+   }
+ for (D in dup) {
+   printf "records found in %d files:\n\n", D
+   printf "%s\n\n", dup[D]
+   }
+ }
+{
+ rec[$0] = rec[$0] ? rec[$0] "/" FILENAME : FILENAME
+}'</span> bundle/<span class="k">*</span>.txt
+</code></pre></div></div>
+<p>You can also find the script at <a href="https://www.unix.com/shell-programming-and-scripting/140390-get-common-lines-multiple-files.html">https://www.unix.com/shell-programming-and-scripting/140390-get-common-lines-multiple-files.html</a></p>
+
+<p>Open a terminal in the Magento root directory and run the file:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash deps-map.sh
+</code></pre></div></div>
+
+<p>The output from this script, applied to our three example page types, should look something like this (but much longer):</p>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">bundle/product.txt   --&gt;</span>   buildTools,
+<span class="gp">bundle/category.txt  --&gt;</span>   jquery/jquery.parsequery,
+<span class="gp">bundle/product.txt   --&gt;</span>   jsbuild,
+<span class="go">
+</span><span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span>    jquery/jquery.metadata,
+<span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span>    jquery/validate,
+<span class="gp">bundle/category.txt/bundle/homepage.txt --&gt;</span>    mage/bootstrap,
+<span class="go">
+</span><span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span> jquery,
+<span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span> jquery/ui,
+<span class="gp">bundle/category.txt/bundle/homepage.txt/bundle/product.txt --&gt;</span> knockoutjs/knockout,
+</code></pre></div></div>
+
+<p>This is enough information to build a bundles configuration.</p>
+
+<h4 id="9-create-bundles-in-your-buildjs-file">9. Create bundles in your build.js file</h4>
+
+<p>Open the <code class="highlighter-rouge">build.js</code> configuration file and add your bundles to the <code class="highlighter-rouge">modules</code> node. Each bundle should define the following properties:</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">name</code>— the name of the bundle. For example, a name of <code class="highlighter-rouge">bundles/cart</code> generates a <code class="highlighter-rouge">cart.js</code> bundle in a <code class="highlighter-rouge">bundles</code> subdirectory.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">create</code>— a boolean flag to create the bundle (values: <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">include</code>— an array of assets (strings) included as dependencies for the page. RequireJS traces all dependencies and includes them in the bundle unless excluded.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">exclude</code>— an array of bundles or assets to exclude from the bundle.</p>
+  </li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+    <span class="nl">name</span><span class="p">:</span> <span class="s1">'bundles/catalog'</span><span class="p">,</span>
+    <span class="nx">create</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">include</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s1">'addToWishlist'</span><span class="p">,</span>
+        <span class="s1">'priceBundle'</span><span class="p">,</span>
+        <span class="s1">'priceUtils'</span><span class="p">,</span>
+        <span class="s1">'priceOptions'</span><span class="p">,</span>
+        <span class="s1">'sticky'</span><span class="p">,</span>
+        <span class="s1">'productSummary'</span><span class="p">,</span>
+        <span class="s1">'slide'</span>
+    <span class="p">],</span>
+    <span class="nx">exclude</span><span class="p">:</span> <span class="p">[</span> 
+        <span class="s1">'requirejs/require'</span><span class="p">,</span>
+        <span class="s1">'bundles/default'</span><span class="p">,</span>
+        <span class="s1">'mage/bootstrap'</span>
+    <span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This example reuses <code class="highlighter-rouge">mage/bootstrap</code> and <code class="highlighter-rouge">requirejs/require</code> assets, placing higher priority on their most important components and components that have to be loaded syncronously. The bundles that are present are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">requirejs/require</code>—the only synchronously loaded bundle</li>
+  <li><code class="highlighter-rouge">mage/bootstrap</code>—the bootstrap bundle with UI components</li>
+  <li><code class="highlighter-rouge">bundles/default</code>—default bundle required for all pages</li>
+  <li><code class="highlighter-rouge">bundles/cart</code>—a bundle required for cart page</li>
+  <li><code class="highlighter-rouge">bundles/shipping</code>—common bundle for shopping cart and checkout page (assuming that checkout is never opened directly the checkout page loads even faster if cart page was opened previously and the shipping bundle was already loaded)</li>
+  <li><code class="highlighter-rouge">bundles/checkout</code>—everything for checkout</li>
+  <li><code class="highlighter-rouge">bundles/catalog</code>—everything for product and category pages</li>
+</ul>
+
+<h3 id="part-2-generate-bundles">Part 2: Generate bundles</h3>
+
+<p>The steps below describe the basic process for generating more efficient Magento bundles. You can automate this process any way you want, but you will still need to use <code class="highlighter-rouge">nodejs</code> and <code class="highlighter-rouge">r.js</code> to actually generate your bundles. And if your themes have JavaScript-related customizations and cannot reuse the same <code class="highlighter-rouge">build.js</code> file, you may need to create several <code class="highlighter-rouge">build.js</code> configurations per theme.</p>
+
+<h4 id="1-generate-static-store-sites">1. Generate static store sites</h4>
+
+<p>Before generating bundles in Magento, run the static deployment command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-f</span> bin/magento setup:static-content:deploy <span class="nt">-f</span> <span class="nt">-a</span> frontend
+</code></pre></div></div>
+
+<p>This command generates static store deployments for each theme and locale you have set up. For example, if you use the Luma theme and a custom theme with locales in English and French, you would generate four static deployments:</p>
+
+<ul>
+  <li>…luma/en_US</li>
+  <li>…luma/fr_FR</li>
+  <li>…custom/en_US</li>
+  <li>…custom/fr_FR</li>
+</ul>
+
+<p>To generate bundles for all store themes and locales, repeat the steps below for each store theme and locale.</p>
+
+<h4 id="2-move-the-static-store-content-to-a-temp-directory">2. Move the static store content to a temp directory</h4>
+
+<p>First, you need to move the static content from the target directory to some temporary directory because RequireJS replaces all the content within the target directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv pub/static/frontend/Magento/<span class="o">{</span>theme<span class="o">}</span>/<span class="o">{</span>locale<span class="o">}</span> pub/static/frontend/Magento/<span class="o">{</span>theme<span class="o">}</span>/<span class="o">{</span>locale<span class="o">}</span>_tmp
+</code></pre></div></div>
+
+<p>For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv pub/static/frontend/Magento/luma/en_US pub/static/frontend/Magento/luma/en_US_tmp
+</code></pre></div></div>
+
+<h4 id="3-run-the-rjs-optimizer">3. Run the r.js optimizer</h4>
+
+<p>Then run the r.js optimizer on the <code class="highlighter-rouge">build.js</code> file from Magento’s root directory. Paths to all directories and files are relative to the working directory.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r.js <span class="nt">-o</span> build.js <span class="nv">baseUrl</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US_tmp <span class="nv">dir</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US
+</code></pre></div></div>
+
+<p>This command generates bundles in a <code class="highlighter-rouge">bundles</code> subdirectory of the target directory, which in this case results in <code class="highlighter-rouge">pub/static/frontend/Magento/luma/en_US/bundles</code>.</p>
+
+<p>Listing the contents of the new bundle directory might look like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ll pub/static/frontend/Magento/luma/en_US/bundles
+</code></pre></div></div>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">total 1900
+drwxr-xr-x  2 root root    4096 Mar 28 11:24 ./
+drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
+-rw-r--r--  1 root root  116417 Mar 28 11:24 cart.js
+-rw-r--r--  1 root root  187090 Mar 28 11:24 catalog.js
+-rw-r--r--  1 root root  307619 Mar 28 11:24 checkout.js
+-rw-r--r--  1 root root 1240608 Mar 28 11:24 default.js
+-rw-r--r--  1 root root   74233 Mar 28 11:24 shipping.js
+</span></code></pre></div></div>
+
+<h4 id="4-configure-requirejs-to-use-bundles">4. Configure RequireJS to use bundles</h4>
+<p>To get RequireJS to use your bundles, add a <code class="highlighter-rouge">onModuleBundleComplete</code>callback after the <code class="highlighter-rouge">modules</code> node in the <code class="highlighter-rouge">build.js</code> file:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
+    <span class="p">{</span>
+       <span class="c1">//...</span>
+       <span class="na">exclude</span><span class="p">:</span> <span class="p">[</span> 
+           <span class="s1">'requirejs/require'</span><span class="p">,</span>
+           <span class="s1">'bundles/default'</span><span class="p">,</span>
+           <span class="s1">'bundles/checkout'</span><span class="p">,</span>
+           <span class="s1">'bundles/cart'</span><span class="p">,</span>
+           <span class="s1">'bundles/shipping'</span><span class="p">,</span>
+           <span class="s1">'mage/bootstrap'</span>
+       <span class="p">],</span>
+   <span class="p">},</span>
+<span class="p">]</span>
+
+<span class="nx">onModuleBundleComplete</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+   <span class="kd">function</span> <span class="nx">onBundleComplete</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+       <span class="kd">const</span> <span class="nx">fileName</span> <span class="o">=</span> <span class="s2">`</span><span class="p">${</span><span class="nx">config</span><span class="p">.</span><span class="nx">dir</span><span class="p">}</span><span class="s2">/requirejs-config.js`</span><span class="p">;</span>
+       <span class="kd">const</span> <span class="nx">bundleConfig</span> <span class="o">=</span> <span class="p">{};</span>
+       <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">included</span><span class="p">;</span>
+       <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="nx">bundleConfig</span><span class="p">[</span><span class="nx">data</span><span class="p">.</span><span class="nx">name</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">bundle</span> <span class="o">=&gt;</span> <span class="nx">bundle</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\.</span><span class="sr">js$/</span><span class="p">,</span> <span class="s1">''</span><span class="p">));</span>
+       <span class="kd">const</span> <span class="nx">contents</span> <span class="o">=</span> <span class="s2">`require.config({
+           bundles: </span><span class="p">${</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">bundleConfig</span><span class="p">)}</span><span class="s2">,
+       });`</span><span class="p">;</span>
+       <span class="nx">fs</span><span class="p">.</span><span class="nx">appendFile</span><span class="p">(</span><span class="nx">fileName</span><span class="p">,</span> <span class="nx">contents</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="nx">onBundleComplete</span><span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="5-rerun-deploy-command">5. Rerun deploy command</h4>
+
+<p>Run the following command to deploy:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>r.js <span class="nt">-o</span> app/design/frontend/Magento/luma/build.js <span class="nv">baseUrl</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US_tmp <span class="nv">dir</span><span class="o">=</span>pub/static/frontend/Magento/luma/en_US
+</code></pre></div></div>
+<p>Open <code class="highlighter-rouge">requirejs-config.js</code> in the <code class="highlighter-rouge">pub/static/frontend/Magento/luma/en_US</code> directory to verify that RequireJS appended the file with bundling configuration calls:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+                <span class="na">bundles</span><span class="p">:</span> <span class="p">{</span><span class="s2">"bundles/default"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"mage/template"</span><span class="p">,</span><span class="s2">"mage/apply/scripts"</span><span class="p">,</span><span class="s2">"mage/apply/main"</span><span class="p">,</span><span class="s2">"mage/mage"</span><span class="p">,</span><span class="s2">"mage/translate"</span><span class="p">,</span><span class="s2">"mage/loader"</span><span class="p">]</span>
+            <span class="p">}});</span>
+<span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+                <span class="na">bundles</span><span class="p">:</span> <span class="p">{</span><span class="s2">"bundles/cart"</span><span class="p">:[</span><span class="s2">"Magento_Ui/js/lib/validation/utils"</span><span class="p">,</span><span class="s2">"Magento_Ui/js/lib/validation/rules"</span><span class="p">,</span><span class="s2">"Magento_Ui/js/lib/validation/validation"</span><span class="p">]</span>
+            <span class="p">}});</span>
+</code></pre></div></div>
+
+<div class="bs-callout bs-callout-info">
+  <p>When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, because the calls are executed in the sequential order they appear.</p>
+</div>
+
+<h4 id="6-test-the-results">6. Test the results</h4>
+
+<p>After the page loads, you should notice the browser loading different dependencies and bundles. For example, here are the results for ‘Slow 3G’ profile:</p>
+
+<p><img src="images/TwiceAsFast.png" alt="TwiceAsFast" /></p>
+
+<p>The the page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.</p>
+
+<h4 id="7-optimize-the-bundles">7. Optimize the bundles</h4>
+
+<p>Even if gzipped, the JavaScript files are still large. Minify them with RequireJS, which uses uglifier for minifying JavaScript to good result.</p>
+
+<p>To enable the optimizer in your <code class="highlighter-rouge">build.js</code> file, add <code class="highlighter-rouge">uglify2</code> as the value for the optimize property at the top of the <code class="highlighter-rouge">build.js</code> file:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">({</span>
+    <span class="na">optimize</span><span class="p">:</span> <span class="s1">'uglify2'</span><span class="p">,</span>
+    <span class="na">inlineText</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<p>The results can be significant:
+<img src="images/ThreeTimesFaster.png" alt="ThreeTimesFaster" /></p>
+
+<p>The load times are now three times faster than with native Magento bundling.</p>
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+    
+  
+    
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/performance-best-practices/advanced-js-bundling.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+    
+  
+    
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/performance-best-practices/advanced-js-bundling.html" target="_blank">Give us feedback</a>
+    </div>
+    
+  
+  </div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+
+</body>
+</html>

@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -620,6 +626,20 @@
         
         
         
+        <li class="nav-level2  " id="imageuploader-component">
+
+            
+
+            
+            <a href="/guides/v2.3ui_comp_guide/components/image-uploader/">ImageUploader component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="input-component">
 
             
@@ -956,6 +976,36 @@
         
         
         
+        <li class="nav-level2  " id="urlinput-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-urlinput.html">UrlInput component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="ui-select-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-secondary-uiselect.html">UI-select component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
         <li class="nav-level2 active " id="wysiwyg-component">
 
             
@@ -964,6 +1014,52 @@
             <a href="/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html">WYSIWYG component</a>
             
 
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="add-custom-editor">
+                    
+
+                    
+                    <a  href="/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/">Add Custom Editor</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-the-tinymce-editor">
+                    
+
+                    
+                    <a  href="/guides/v2.3/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html">Configure the TinyMCE editor</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="extension-points">
+                    
+
+                    
+                    <a  href="/guides/v2.3/ui_comp_guide/components/wysiwyg/extension-points/">Extension Points</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
             
         </li>
         
@@ -1174,12 +1270,26 @@
         
         
         
-        <li class="nav-level2  " id="creating-and-displaying-a-category-attribute-with-ui-components">
+        <li class="nav-level2  " id="create-and-display-a-category-attribute-with-ui-components">
 
             
 
             
-            <a href="/guides/v2.3/ui_comp_guide/howto/add_category_attribute.html">Creating and displaying a category attribute with UI Components</a>
+            <a href="/guides/v2.3/ui_comp_guide/howto/add_category_attribute.html">Create and display a category attribute with UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="update-the-page-url-type">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/howto/update-url-type.html">Update the page URL type</a>
             
 
             
@@ -1641,343 +1751,6 @@
   <p>If your form already uses the <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_modifier_concept.html">ModifierPool</a>, you can continue using it to control the configuration of your WYSIWYG components.</p>
 </div>
 
-<h2 id="add-a-custom-editor">Add a custom editor</h2>
-<p>The following example shows how to integrate your own WYSIWYG editor with Magento as a UI component.</p>
-
-<p>First, add your editor name to the CMS module’s <code class="highlighter-rouge">system.xml</code> file to extend the list of available editors in the store configuration. By default, TinyMCE is the only option.</p>
-
-<h4 class="no_toc" id="testmodulemodelconfigsourcewysiwygeditorpluginphp"><code class="highlighter-rouge">Test\Module\Model\Config\Source\Wysiwyg\EditorPlugin.php</code></h4>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
-<span class="sd">/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */</span>
-
-<span class="k">namespace</span> <span class="nx">CKEditor\CKEditor4\Model\Config\Source\Wysiwyg</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">EditorPlugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterToOptionArray</span><span class="p">(</span><span class="nx">\Magento\Cms\Model\Config\Source\Wysiwyg\Editor</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$optionArray</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$optionArray</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'value'</span> <span class="o">=&gt;</span> <span class="s1">'ckeditor'</span><span class="p">,</span> <span class="s1">'label'</span> <span class="o">=&gt;</span> <span class="s1">'CKEditor 4'</span><span class="p">];</span>
-
-        <span class="k">return</span> <span class="nv">$optionArray</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<p>Next, add a <code class="highlighter-rouge">di.xml</code> file to your <code class="highlighter-rouge">Test\Module\etc\adminhtml</code> directory to inject the plugin into the system configuration and configure the plugin accordingly.</p>
-
-<h4 class="no_toc" id="ckeditorckeditor4etcadminhtmldixml"><code class="highlighter-rouge">CKEditor\CKEditor4\etc\adminhtml\di.xml</code></h4>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="c">&lt;!--
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
---&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Config\Source\Wysiwyg\Editor"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"add_ckeditor_to_editor_list"</span> <span class="na">type=</span><span class="s">"CKEditor\CKEditor4\Model\Config\Source\Wysiwyg\EditorPlugin"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-<span class="nt">&lt;/config&gt;</span>
-</code></pre></div></div>
-
-<p>After loading, modifying, and merging all configurations, Magento uses JSON to serialize the result and pass it to the UI component.</p>
-
-<p>Inside the <code class="highlighter-rouge">lib\mage\adminhtml\wysiwyg\tiny_mce</code> directory, you will find a JavaScript file called <code class="highlighter-rouge">setup.js</code>. This code contains the extension points necessary for integrating your editor’s JavaScript library with Magento. At the top of this file you will see that <code class="highlighter-rouge">RequireJS</code> passes in an object named <code class="highlighter-rouge">wysiwygAdapter</code>.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'jquery'</span><span class="p">,</span>
-    <span class="s1">'underscore'</span><span class="p">,</span>
-    <span class="s1">'wysiwygAdapter'</span><span class="p">,</span>
-    <span class="s1">'mage/translate'</span><span class="p">,</span>
-    <span class="s1">'prototype'</span><span class="p">,</span>
-    <span class="s1">'mage/adminhtml/events'</span><span class="p">,</span>
-    <span class="s1">'mage/adminhtml/browser'</span>
-<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">wysiwygAdapter</span><span class="p">)</span> <span class="p">{</span>
-</code></pre></div></div>
-
-<p>You can override this object and pass in your own adapter class that serves as a wrapper for your editor’s JavaScript library. The following is an example of setting up the override in your module’s <code class="highlighter-rouge">requirejs-config.php</code> file.</p>
-
-<h4 class="no_toc" id="ckeditorckeditor4viewbaserequirejs-configphp"><code class="highlighter-rouge">CKEditor\CKEditor4\view\base\requirejs-config.php</code></h4>
-
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sd">/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */</span>
-
-<span class="k">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"shim"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"CKEditor_CKEditor4/js/ckeditor4/ckeditor"</span><span class="o">:</span> <span class="p">{</span> <span class="s2">"exports"</span><span class="o">:</span> <span class="s2">"CKEDITOR"</span> <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s1">'map'</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s1">'*'</span><span class="o">:</span> <span class="p">{</span>
-            <span class="s1">'wysiwygAdapter'</span><span class="o">:</span> <span class="s1">'CKEditor_CKEditor4/ckeditor4Adapter'</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">};</span>
-</code></pre></div></div>
-
-<p>Last, create the adapter for your editor. The <code class="highlighter-rouge">setup.js</code> file contains all the methods and events that can be called or bound to the page that hosts the WYSIWYG editor. Implement the target for these calls in your adapter so that your editor works as designed.</p>
-
-<h4 class="no_toc" id="ckeditorckeditor4viewbasewebckeditor4adapterjs"><code class="highlighter-rouge">CKEditor\CKEditor4\view\base\web\ckeditor4Adapter.js</code></h4>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */</span>
-
-<span class="cm">/* global varienGlobalEvents, tinyMceEditors, MediabrowserUtility, closeEditorPopup, Base64 */</span>
-<span class="cm">/* eslint-disable strict */</span>
-<span class="nx">define</span><span class="p">([</span>
-    <span class="s1">'jquery'</span><span class="p">,</span>
-    <span class="s1">'underscore'</span><span class="p">,</span>
-    <span class="s1">'CKEditor_CKEditor4/js/ckeditor4/ckeditor'</span><span class="p">,</span>
-    <span class="s1">'mage/translate'</span><span class="p">,</span>
-    <span class="s1">'prototype'</span>
-<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ckeditor4</span><span class="p">)</span> <span class="p">{</span>
-
-    <span class="kd">var</span> <span class="nx">ckeditorWysiwyg</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
-
-    <span class="nx">ckeditorWysiwyg</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="na">mediaBrowserOpener</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="na">mediaBrowserTargetElementId</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
-
-        <span class="cm">/**
-         * @param {*} htmlId
-         * @param {Object} config
-         */</span>
-        <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">htmlId</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {*} mode
-         */</span>
-        <span class="na">setup</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">mode</span><span class="p">)</span> <span class="p">{</span>
-            <span class="nx">ckeditor4</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">();</span>
-        <span class="p">},</span>
-
-
-        <span class="cm">/**
-         * @param {Object} editor
-         */</span>
-        <span class="na">applySchema</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">editor</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {String} id
-         */</span>
-        <span class="na">get</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//return tinyMCE3.get(id);</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @return {Object}
-         */</span>
-        <span class="na">activeEditor</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">//return tinyMCE3.activeEditor;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} o
-         */</span>
-        <span class="na">openFileBrowser</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {String} string
-         * @return {String}
-         */</span>
-        <span class="na">translate</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//return jQuery.mage.__ ? jQuery.mage.__(string) : string;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @return {null}
-         */</span>
-        <span class="na">getMediaBrowserOpener</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">//return this.mediaBrowserOpener;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @return {null}
-         */</span>
-        <span class="na">getMediaBrowserTargetElementId</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">//return this.mediaBrowserTargetElementId;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @return {jQuery|*|HTMLElement}
-         */</span>
-        <span class="na">getToggleButton</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">//return $('toggle' + this.id);</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * Get plugins button.
-         */</span>
-        <span class="na">getPluginButtons</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="c1">//return $$('#buttons' + this.id + ' &gt; button.plugin');</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {*} mode
-         * @return {tinyMceWysiwygSetup}
-         */</span>
-        <span class="na">turnOn</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">mode</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @return {tinyMceWysiwygSetup}
-         */</span>
-        <span class="na">turnOff</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * Close popups.
-         */</span>
-        <span class="na">closePopups</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @return {Boolean}
-         */</span>
-        <span class="na">toggle</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * Editor pre-initialise event handler.
-         */</span>
-        <span class="na">onEditorPreInit</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">editor</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @deprecated
-         */</span>
-        <span class="na">onEditorInit</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{},</span>
-
-        <span class="cm">/**
-         * On form validation.
-         */</span>
-        <span class="na">onFormValidation</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * On change content.
-         */</span>
-        <span class="na">onChangeContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * Retrieve directives URL with substituted directive value.
-         *
-         * @param {String} directive
-         */</span>
-        <span class="na">makeDirectiveUrl</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">directive</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} content
-         * @return {*}
-         */</span>
-        <span class="na">encodeDirectives</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} content
-         * @return {*}
-         */</span>
-        <span class="na">encodeWidgets</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} content
-         * @return {*}
-         */</span>
-        <span class="na">decodeDirectives</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} content
-         * @return {*}
-         */</span>
-        <span class="na">decodeWidgets</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} attributes
-         * @return {Object}
-         */</span>
-        <span class="na">parseAttributesString</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attributes</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * Update text area.
-         */</span>
-        <span class="na">updateTextArea</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} content
-         * @return {*}
-         */</span>
-        <span class="na">decodeContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} content
-         * @return {*}
-         */</span>
-        <span class="na">encodeContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} o
-         */</span>
-        <span class="na">beforeSetContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @param {Object} o
-         */</span>
-        <span class="na">saveContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
-
-        <span class="p">},</span>
-
-        <span class="cm">/**
-         * @returns {Object}
-         */</span>
-        <span class="na">getAdapterPrototype</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="nx">ckeditorWysiwyg</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">};</span>
-
-    <span class="k">return</span> <span class="nx">ckeditorWysiwyg</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
-<span class="p">});</span>
-</code></pre></div></div>
 
 			
 		</div>
@@ -2075,4 +1848,3 @@
 
 </body>
 </html>
-

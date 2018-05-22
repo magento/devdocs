@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -620,33 +626,11 @@
                     
 
                     
-                    <span>PHP</span>
+                    <a  href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html">PHP</a>
                     
 
                     
                     <ul>
-                        
-                        
-                        
-                        <li class="nav-level4  " id="php-5.6-or-7.0—centos">
-
-                        
-                        <a  href="/guides/v2.3/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0—CentOS</a>
-                        
-
-                        </li>
-                        
-                        
-                        
-                        
-                        <li class="nav-level4  " id="php-5.6-or-7.0—ubuntu">
-
-                        
-                        <a  href="/guides/v2.3/install-gde/prereq/php-ubuntu.html">PHP 5.6 or 7.0—Ubuntu</a>
-                        
-
-                        </li>
-                        
                         
                         
                         
@@ -662,6 +646,9 @@
                     </ul>
                     
                 </li>
+                
+                
+
                 
                 
 
@@ -2359,17 +2346,14 @@
 
 			<p>This topic discusses how to set required <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> options.</p>
 
-<div class="collapsible"><b class="collapsible-title">About required and recommended PHP options: </b><div class="collapsible-content"><ul>
+<h2 id="requirements-and-recommendations">Requirements and recommendations</h2>
+
+<ul>
   <li>
     <p>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
 </code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank"><code class="highlighter-rouge">always_populate_raw_post_data = -1</code></a></p>
-
-    <p><code class="highlighter-rouge">always_populate_raw_post_data</code> is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate <code class="highlighter-rouge">$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.</p>
   </li>
   <li>
     <p>Set the PHP memory limit.</p>
@@ -2379,7 +2363,7 @@
     <ul>
       <li>Compiling code or deploying static assets, <code class="highlighter-rouge">756M</code></li>
       <li>Installing and updating Magento components from Magento Marketplace, <code class="highlighter-rouge">2G</code></li>
-      <li>Testing, <code class="highlighter-rouge">2G</code></li>
+      <li>Testing, <code class="highlighter-rouge">~3-4G</code></li>
     </ul>
   </li>
   <li>
@@ -2387,26 +2371,27 @@
 
     <p>If <code class="highlighter-rouge">asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
 
-    <p><code class="highlighter-rouge">asp_tags</code> will be removed in PHP 7.</p>
+    <p><code class="highlighter-rouge">asp_tags</code> were removed in PHP 7.</p>
   </li>
   <li>
     <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
 
     <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
 
-    <p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
+    <p>Magento 2.1 and later use PHP code comments for code generation.</p>
   </li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
     <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
 </div>
-</div></div>
 
-<h3 id="php-required-find">Step 1: Find PHP configuration files</h3>
+<h2 id="php-required-find">Step 1: Find PHP configuration files</h2>
 <p>This section discusses how you find the configuration files necesary to update required settings.</p>
 
-<div class="collapsible"><b class="collapsible-title">To find the PHP configuration file, php.ini: </b><div class="collapsible-content"><p>To find the web server configuration, run a <a href="/guides/v2.3/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
+<h3 id="find-phpini-configuration-file">Find <code class="highlighter-rouge">php.ini</code> configuration file</h3>
+
+<p>To find the web server configuration, run a <a href="/guides/v2.3/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
 
 <p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
 
@@ -2420,9 +2405,10 @@
 <div class="bs-callout bs-callout-warning">
     <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
 </div>
-</div></div>
 
-<div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code class="highlighter-rouge">php.ini</code> or <code class="highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="highlighter-rouge">[opcache]</code> section or settings like <code class="highlighter-rouge">opcache.enable</code>.</p>
+<h3 id="find-opcache-configuration-settings">Find OPcache configuration settings</h3>
+
+<p>PHP OPcache settings are typically located either in <code class="highlighter-rouge">php.ini</code> or <code class="highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="highlighter-rouge">[opcache]</code> section or settings like <code class="highlighter-rouge">opcache.enable</code>.</p>
 
 <p>Use the following guidelines to find it:</p>
 
@@ -2445,11 +2431,12 @@
 </ul>
 
 <p>If you have more than one <code class="highlighter-rouge">opcache.ini</code>, modify all of them.</p>
-</div></div>
 
-<h3 id="php-required-set">Step 2: How to set PHP options</h3>
+<h2 id="php-required-set">Step 2: How to set PHP options</h2>
 
-<div class="collapsible"><b class="collapsible-title">To set PHP options: </b><div class="collapsible-content"><ol>
+<p>To set PHP options:</p>
+
+<ol>
   <li>Open a <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
   <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
   <li>
@@ -2468,12 +2455,6 @@
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code class="highlighter-rouge">always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>always_populate_raw_post_data = -1
-</code></pre></div>    </div>
-  </li>
-  <li>
     <p>Locate the following setting:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>asp_tags =
@@ -2483,11 +2464,12 @@
   <li>Save your changes and exit the text editor.</li>
   <li>Open the other <code class="highlighter-rouge">php.ini</code> (if they are different) and make the same changes in it.</li>
 </ol>
-</div></div>
 
-<h3 id="php-required-opcache">Step 3: Set OPcache options</h3>
+<h2 id="php-required-opcache">Step 3: Set OPcache options</h2>
 
-<div class="collapsible"><b class="collapsible-title">To set opcache.ini options: </b><div class="collapsible-content"><ol>
+<p>To set opcache.ini options:</p>
+
+<ol>
   <li>
     <p>Open your OpCache configuration file in a text editor:</p>
 
@@ -2510,18 +2492,6 @@
     </ul>
   </li>
 </ol>
-</div></div>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a></li>
-  <li><a href="/guides/v2.3/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.3/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
-  <li><a href="/guides/v2.3/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v2.3/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
-</ul>
 
 
 			
@@ -2620,4 +2590,3 @@
 
 </body>
 </html>
-

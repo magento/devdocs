@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -1578,11 +1584,14 @@
 		    
 		    	
 
-<li class="nav-level1  " id="install-and-configure-elasticsearch-(magento-commerce-only)">
+		    
+		    	
+
+<li class="nav-level1  " id="install-and-configure-elasticsearch">
     
 
     
-    <a href="/guides/v2.3/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Magento Commerce only)</a>
+    <a href="/guides/v2.3/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch</a>
     
 
     
@@ -1652,11 +1661,14 @@
 		    
 		    	
 
-<li class="nav-level1  " id="message-queues-(magento-commerce-only)">
+		    
+		    	
+
+<li class="nav-level1  " id="message-queues">
     
 
     
-    <a href="/guides/v2.3/config-guide/mq/rabbitmq-overview.html">Message Queues (Magento Commerce only)</a>
+    <a href="/guides/v2.3/config-guide/mq/rabbitmq-overview.html">Message Queues</a>
     
 
     
@@ -1932,7 +1944,7 @@
   </li>
   <li>Must have a compatible PHP version installed</li>
   <li>Must have Composer installed</li>
-  <li>It has Magento file system ownership and permissions set as discussed in <a href="/guides/v2.3/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq">Prerequisite for your development, build, and production systems</a>.</li>
+  <li>It has Magento file system ownership and permissions set as discussed in <a href="/guides/v2.3config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq">Prerequisite for your development, build, and production systems</a>.</li>
 </ul>
 
 <p>The build system does <em>not</em> need any of the following:</p>
@@ -1984,12 +1996,7 @@ mv composer.phar /usr/local/bin/composer
   </ol>
 
   <h3 id="install-php">Install PHP</h3>
-  <p>To install PHP, see one of the following topics:</p>
-
-  <ul>
-    <li><a href="/guides/v2.3/install-gde/prereq/php-centos.html">CentOS</a></li>
-    <li><a href="/guides/v2.3/install-gde/prereq/php-ubuntu.html">Ubuntu</a></li>
-  </ul>
+  <p>To install PHP on CentOS or Ubuntu see <a href="../../../install-gde/prereq/php-centos-ubuntu.html">PHP</a>.</p>
 
   <h3 id="set-up-the-build-system">Set up the build system</h3>
   <p>To set up the build system:</p>
@@ -2041,14 +2048,14 @@ mv composer.phar /usr/local/bin/composer
       <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add .gitignore &amp;&amp; git commit -m "Modify .gitignore for build and production"
 </code></pre></div>      </div>
 
-      <p>See the <a href="/guides/v2.3/config-guide/prod/config-reference-gitignore.html"><code class="highlighter-rouge">.gitignore</code> reference</a> for more information.</p>
+      <p>See the <a href="/guides/v2.3config-guide/prod/config-reference-gitignore.html"><code class="highlighter-rouge">.gitignore</code> reference</a> for more information.</p>
     </li>
   </ol>
 
   <h4 id="related-topics">Related topics</h4>
   <ul>
-    <li><a href="/guides/v2.3/config-guide/deployment/pipeline/development-system.html">Set up your development systems</a></li>
-    <li><a href="/guides/v2.3/config-guide/deployment/pipeline/production-system.html">Set up your production system</a></li>
+    <li><a href="/guides/v2.3config-guide/deployment/pipeline/development-system.html">Set up your development systems</a></li>
+    <li><a href="/guides/v2.3config-guide/deployment/pipeline/production-system.html">Set up your production system</a></li>
   </ul>
 </div>
 
@@ -2148,4 +2155,3 @@ mv composer.phar /usr/local/bin/composer
 
 </body>
 </html>
-

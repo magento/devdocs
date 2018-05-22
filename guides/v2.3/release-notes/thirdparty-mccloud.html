@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento Commerce (Cloud) third-party licenses | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="/guides/v2.3/release-notes/thirdparty-mccloud.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/thirdparty-mccloud.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/thirdparty-mccloud.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/thirdparty-mccloud.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/thirdparty-mccloud.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="https://magento-research.github.io/pwa-devdocs/">PWA Studios</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+          
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">Release Information</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+<li class="nav-level1  " id="introduction">
+    
+
+    
+    <a href="/guides/v2.3/release-notes/bk-release-notes.html">Introduction</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="2.3-release-notes">
+    
+
+    
+    <span>2.3 Release Notes</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="2.3.0-alpha-installation-guide">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/2.3.0-alpha-install.html">2.3.0 Alpha Installation Guide</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="component-status">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/component-status.html">Component Status</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-2.3.0-alpha-release-notes">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html">Magento Open Source 2.3.0 Alpha Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-2.3.0-alpha-release-notes">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html">Magento Commerce 2.3.0 Alpha Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+		    
+		    	
+
+		    
+		    	
+
+		    
+		    	
+
+<li class="nav-level1  " id="backward-incompatible-changes">
+    
+
+    
+    <a href="/guides/v2.3/release-notes/backward-incompatible-changes/index.html">Backward incompatible changes</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-changes">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html">Magento Open Source changes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-changes">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html">Magento Commerce changes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="third-party-licenses">
+    
+
+    
+    <span>Third-party licenses</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-third-party-licenses">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/thirdparty_ce.html">Magento Open Source third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-third-party-licenses">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/thirdparty_ee.html">Magento Commerce third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="magento-commerce-(cloud)-third-party-licenses">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/thirdparty-mccloud.html">Magento Commerce (Cloud) third-party licenses</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a></li>
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Magento Commerce (Cloud) third-party licenses</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Magento Commerce (Cloud) third-party licenses</h1>
+
+  
+
+
+</section>
+
+			<p>This page contains links to license agreements of the third party components used within Magento Commerce (Cloud).  Click the <strong>Name</strong> links to view the repository and the license agreement.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+      <th>License</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/braintree/braintree_php">braintree/braintree_php</a></td>
+      <td>3.22.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_File">colinmollenhour/cache-backend-file</a></td>
+      <td>1.4</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis">colinmollenhour/cache-backend-redis</a></td>
+      <td>1.10.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/colinmollenhour/credis">colinmollenhour/credis</a></td>
+      <td>1.9.1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>MIT</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/colinmollenhour/php-redis-session-abstract">colinmollenhour/php-redis-session-abstract</a></td>
+      <td>v1.3.8</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/composer/ca-bundle">composer/ca-bundle</a></td>
+      <td>1.1.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/composer/composer">composer/composer</a></td>
+      <td>1.4.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/composer/semver">composer/semver</a></td>
+      <td>1.4.2</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/composer/spdx-licenses">composer/spdx-licenses</a></td>
+      <td>1.2.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/container-interop/container-interop">container-interop/container-interop</a></td>
+      <td>1.3.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/doctrine/inflector">doctrine/inflector</a></td>
+      <td>1.3.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/elastic/elasticsearch">elasticsearch/elasticsearch</a></td>
+      <td>v2.3.2</td>
+      <td>Apache-2.0</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/bzikarsky/gelf-php">graylog2/gelf-php</a></td>
+      <td>1.5.5</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/guzzle/guzzle">guzzlehttp/guzzle</a></td>
+      <td>6.3.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/guzzle/promises">guzzlehttp/promises</a></td>
+      <td>v1.3.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/guzzle/psr7">guzzlehttp/psr7</a></td>
+      <td>1.4.2</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/guzzle/RingPHP">guzzlehttp/ringphp</a></td>
+      <td>1.1.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/guzzle/streams">guzzlehttp/streams</a></td>
+      <td>3.0.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/illuminate/config">illuminate/config</a></td>
+      <td>v5.6.12</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/illuminate/container">illuminate/container</a></td>
+      <td>v5.6.12</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/illuminate/contracts">illuminate/contracts</a></td>
+      <td>v5.6.12</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/illuminate/support">illuminate/support</a></td>
+      <td>v5.6.12</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/justinrainbow/json-schema">justinrainbow/json-schema</a></td>
+      <td>5.2.7</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Seldaek/monolog">monolog/monolog</a></td>
+      <td>1.23.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/briannesbitt/Carbon">nesbot/carbon</a></td>
+      <td>1.24.2</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="(https://github.com/oyejorge/less.php)">oyejorge/less.php</a></td>
+      <td>v1.7.0.14</td>
+      <td>Apache-2.0</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/paragonie/random_compat">paragonie/random_compat</a></td>
+      <td>v2.0.11</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/jjriv/emogrifier">pelago/emogrifier</a></td>
+      <td>v2.0.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/php-amqplib/php-amqplib">php-amqplib/php-amqplib</a></td>
+      <td>v2.5.2</td>
+      <td>LGPL-2.1</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/phpseclib/phpseclib">phpseclib/phpseclib</a></td>
+      <td>2.0.10</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/php-fig/container">psr/container</a></td>
+      <td>1.0.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/php-fig/http-message">psr/http-message</a></td>
+      <td>1.0.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/php-fig/log">psr/log</a></td>
+      <td>1.0.2</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/php-fig/simple-cache">psr/simple-cache</a></td>
+      <td>1.0.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ramsey/uuid">ramsey/uuid</a></td>
+      <td>3.6.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/reactphp/promise">react/promise</a></td>
+      <td>v2.5.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Seldaek/cli-prompt">seld/cli-prompt</a></td>
+      <td>1.0.3</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Seldaek/jsonlint">seld/jsonlint</a></td>
+      <td>1.7.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Seldaek/phar-utils">seld/phar-utils</a></td>
+      <td>1.0.1</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/config">symfony/config</a></td>
+      <td>v3.4.3</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/console">symfony/console</a></td>
+      <td>v2.8.36</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/debug">symfony/debug</a></td>
+      <td>v3.0.9</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/event-dispatcher">symfony/event-dispatcher</a></td>
+      <td>v2.8.36</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/filesystem">symfony/filesystem</a></td>
+      <td>v3.4.6</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/finder">symfony/finder</a></td>
+      <td>v3.4.6</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/polyfill-mbstring">symfony/polyfill-mbstring</a></td>
+      <td>v1.7.0</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/process">symfony/process</a></td>
+      <td>v2.8.36</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/translation">symfony/translation</a></td>
+      <td>v3.3.16</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/symfony/yaml">symfony/yaml</a></td>
+      <td>v3.3.16</td>
+      <td>MIT</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tedious/Jshrink">tedivm/jshrink</a></td>
+      <td>v1.1.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port">tubalmartin/cssmin</a></td>
+      <td>v4.1.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/webonyx/graphql-php">webonyx/graphql-php</a></td>
+      <td>v0.11.5</td>
+      <td>BSD</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-captcha">zendframework/zend-captcha</a></td>
+      <td>2.7.1</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-code">zendframework/zend-code</a></td>
+      <td>3.3.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-config">zendframework/zend-config</a></td>
+      <td>2.6.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-console">zendframework/zend-console</a></td>
+      <td>2.6.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-crypt">zendframework/zend-crypt</a></td>
+      <td>2.6.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-db">zendframework/zend-db</a></td>
+      <td>2.9.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-di">zendframework/zend-di</a></td>
+      <td>2.6.1</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-diactoros">zendframework/zend-diactoros</a></td>
+      <td>1.7.1</td>
+      <td>BSD-2-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-escaper">zendframework/zend-escaper</a></td>
+      <td>2.5.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-eventmanager">zendframework/zend-eventmanager</a></td>
+      <td>2.6.4</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-feed">zendframework/zend-feed</a></td>
+      <td>2.9.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-filter">zendframework/zend-filter</a></td>
+      <td>2.7.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-form">zendframework/zend-form</a></td>
+      <td>2.11.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-http">zendframework/zend-http</a></td>
+      <td>2.7.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-hydrator">zendframework/zend-hydrator</a></td>
+      <td>1.1.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-i18n">zendframework/zend-i18n</a></td>
+      <td>2.7.4</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-inputfilter">zendframework/zend-inputfilter</a></td>
+      <td>2.8.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-json">zendframework/zend-json</a></td>
+      <td>2.6.1</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-loader">zendframework/zend-loader</a></td>
+      <td>2.5.1</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-log">zendframework/zend-log</a></td>
+      <td>2.9.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-mail">zendframework/zend-mail</a></td>
+      <td>2.8.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-math">zendframework/zend-math</a></td>
+      <td>2.7.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-mime">zendframework/zend-mime</a></td>
+      <td>2.7.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-modulemanager">zendframework/zend-modulemanager</a></td>
+      <td>2.8.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-mvc">zendframework/zend-mvc</a></td>
+      <td>2.6.3</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-psr7bridge">zendframework/zend-psr7bridge</a></td>
+      <td>0.2.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-serializer">zendframework/zend-serializer</a></td>
+      <td>2.8.1</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-server">zendframework/zend-server</a></td>
+      <td>2.7.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-servicemanager">zendframework/zend-servicemanager</a></td>
+      <td>2.7.10</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-session">zendframework/zend-session</a></td>
+      <td>2.8.3</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-soap">zendframework/zend-soap</a></td>
+      <td>2.6.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-stdlib">zendframework/zend-stdlib</a></td>
+      <td>2.7.7</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-text">zendframework/zend-text</a></td>
+      <td>2.6.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-uri">zendframework/zend-uri</a></td>
+      <td>2.5.2</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-validator">zendframework/zend-validator</a></td>
+      <td>2.10.1</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/zendframework/zend-view">zendframework/zend-view</a></td>
+      <td>2.10.0</td>
+      <td>BSD-3-Clause</td>
+    </tr>
+  </tbody>
+</table>
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+    
+  
+    
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/release-notes/thirdparty-mccloud.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+    
+  
+    
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/release-notes/thirdparty-mccloud.html" target="_blank">Give us feedback</a>
+    </div>
+    
+  
+  </div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+
+</body>
+</html>

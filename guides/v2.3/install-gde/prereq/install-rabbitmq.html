@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -620,33 +626,11 @@
                     
 
                     
-                    <span>PHP</span>
+                    <a  href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html">PHP</a>
                     
 
                     
                     <ul>
-                        
-                        
-                        
-                        <li class="nav-level4  " id="php-5.6-or-7.0—centos">
-
-                        
-                        <a  href="/guides/v2.3/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0—CentOS</a>
-                        
-
-                        </li>
-                        
-                        
-                        
-                        
-                        <li class="nav-level4  " id="php-5.6-or-7.0—ubuntu">
-
-                        
-                        <a  href="/guides/v2.3/install-gde/prereq/php-ubuntu.html">PHP 5.6 or 7.0—Ubuntu</a>
-                        
-
-                        </li>
-                        
                         
                         
                         
@@ -662,6 +646,9 @@
                     </ul>
                     
                 </li>
+                
+                
+
                 
                 
 
@@ -2347,8 +2334,6 @@
 
 
 	
-		<span class="ee-only">Magento Commerce only</span>
-	
 
 	
 
@@ -2360,7 +2345,7 @@
 </section>
 
 			<div class="bs-callout bs-callout-warning">
-  <p>You must install and configure <a href="http://rabbitmq.com" target="&#95;blank">RabbitMQ</a> <em>after</em> installing Magento Open Source or <em>before</em> installing Magento Commerce.</p>
+  <p>You must install and configure <a href="http://rabbitmq.com" target="&#95;blank">RabbitMQ</a> <em>before</em> installing Magento.</p>
 </div>
 
 <h2 id="overview">RabbitMQ Overview</h2>
@@ -2369,7 +2354,7 @@
 
 <p>Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.</p>
 
-<p>Magento Commerce uses RabbitMQ to manage these message queues. RabbitMQ cannot be used with Magento Open Source installations.</p>
+<p>Magento Open Source uses RabbitMQ to manage these message queues. As of Magento release 2.3.0, RabbitMQ can be used on Magento Open Source installations.</p>
 
 <p>The message queue system must be established before you install Magento. The basic sequence is</p>
 
@@ -2379,7 +2364,7 @@
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>A basic message queue system can be implemented on EE without using cron instead of RabbitMQ. See <a href="/guides/v2.3/config-guide/mq/manage-mysql.html">Configure message queues</a> for more information.</p>
+  <p>A basic message queue system can be implemented with using cron instead of RabbitMQ. See <a href="/guides/v2.3/config-guide/mq/manage-mysql.html">Configure message queues</a> for more information.</p>
 </div>
 
 <h2 id="ubuntu-install">Install RabbitMQ on Ubuntu</h2>
@@ -2438,9 +2423,9 @@
   <li>System limits</li>
 </ul>
 
-<h2 id="connect-rabbitmq-to-magento-commerce">Connect RabbitMQ to Magento Commerce</h2>
+<h2 id="connect-rabbitmq-to-magento-open-source-or-magento-commerce">Connect RabbitMQ to Magento Open Source or Magento Commerce</h2>
 
-<p>Add the following command line parameters when you install Magento Magento Commerce:</p>
+<p>Add the following command line parameters when you install Magento Open Source or Magento Commerce:</p>
 
 <p><code class="highlighter-rouge">--amqp-host="&lt;hostname&gt;" --amqp-port="5672" --amqp-user="&lt;user_name&gt;" --amqp-password="&lt;password&gt;" --amqp-virtualhost="/"</code></p>
 
@@ -2505,7 +2490,7 @@
 
 <h2 id="start-the-message-queue-consumers">Start the message queue consumers</h2>
 
-<p>After you have connected Magento Commerce and RabbitMQ, you must start the message queue consumers. See <a href="/guides/v2.3/config-guide/mq/manage-mysql.html">Configure message queues</a> for details.</p>
+<p>After you have connected Magento and RabbitMQ, you must start the message queue consumers. See <a href="/guides/v2.3/config-guide/mq/manage-mysql.html">Configure message queues</a> for details.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
@@ -2615,4 +2600,3 @@
 
 </body>
 </html>
-

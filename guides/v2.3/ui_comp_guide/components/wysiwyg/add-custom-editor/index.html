@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Add Custom Editor | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Pre-release
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html">Magento 2.2</a></li>
+	
+		<li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html">Magento 2.3 Pre-release</a></li>
+	
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="https://magento-research.github.io/pwa-devdocs/">PWA Studios</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+          
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">UI Components Guide</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+<li class="nav-level1  " id="overview-of-ui-components">
+    
+
+    
+    <a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">Overview of UI components</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="components">
+    
+
+    
+    <span>Components</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="actionscolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-actionscolumn.html">ActionsColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="bookmarks-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-bookmarks.html">Bookmarks component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="button-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-button.html">Button component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="checkbox-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-checkbox.html">Checkbox component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="checkboxset-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-checkboxset.html">Checkboxset component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="column-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-column.html">Column component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="columns-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-columns.html">Columns component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="columnscontrols-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="date-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-date.html">Date component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="datecolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-datecolumn.html">DateColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="draganddrop-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-draganddrop.html">DragAndDrop component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="dynamicrows-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-dynamicrows.html">DynamicRows component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="email-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-email.html">Email component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="exportbutton-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-exportbutton.html">ExportButton component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fieldset-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-fieldset.html">Fieldset component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="file-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-file.html">File component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="fileuploader-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-fileuploader.html">FileUploader component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="filters-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-filters.html">Filters component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="filterschips-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="form-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-form.html">Form component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="hidden-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-hidden.html">Hidden component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="htmlcontent-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-htmlcontent.html">HtmlContent component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="imageuploader-component">
+
+            
+
+            
+            <a href="/guides/v2.3ui_comp_guide/components/image-uploader/">ImageUploader component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="input-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-input.html">Input component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="insertform-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-insertform.html">InsertForm component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="insertlisting-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="listing-(grid)-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-listing-grid.html">Listing (grid) component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="massactions-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-massactions.html">MassActions component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="modal-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-modal.html">Modal component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="multiline-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-multiline.html">Multiline component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="multiselect-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-multiselect.html">Multiselect component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="multiselectcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-multiselectcolumn.html">MultiselectColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="nav-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-nav.html">Nav component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="onoffcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-onoffcolumn.html">OnOffColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="paging-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-paging.html">Paging component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="radioset-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-radioset.html">Radioset component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="range-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-range.html">Range component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="search-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-search.html">Search component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="select-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-select.html">Select component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="selectcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-selectcolumn.html">SelectColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="sizes-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-sizes.html">Sizes component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="tab-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-tab.html">Tab component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="text-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-text.html">Text component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="textarea-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-textarea.html">Textarea component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="thumbnailcolumn-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-thumbnailcolumn.html">ThumbnailColumn component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="toolbar-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-toolbar.html">Toolbar component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="treemassactions-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-treemassactions.html">TreeMassActions component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="urlinput-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-urlinput.html">UrlInput component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="ui-select-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-secondary-uiselect.html">UI-select component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        
+        
+        <li class="nav-level2  " id="wysiwyg-component">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html">WYSIWYG component</a>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3 active " id="add-custom-editor">
+                    
+
+                    
+                    <a  href="/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/">Add Custom Editor</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-the-tinymce-editor">
+                    
+
+                    
+                    <a  href="/guides/v2.3/ui_comp_guide/components/wysiwyg/configure-tinymce-editor.html">Configure the TinyMCE editor</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="extension-points">
+                    
+
+                    
+                    <a  href="/guides/v2.3/ui_comp_guide/components/wysiwyg/extension-points/">Extension Points</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="concepts">
+    
+
+    
+    <span>Concepts</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="configuration-flow-of-ui-components">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">Configuration flow of UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-xml-сonfiguration-of-ui-сomponents">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">About XML сonfiguration of UI сomponents</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="providing-data-to-ui-components">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_data_source.html">Providing Data to UI Components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-php-modifiers-in-ui-components">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="template-literals">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_template_literals.html">Template Literals</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-custom-knockout.js-bindings">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/knockout-bindings.html">Magento custom Knockout.js bindings</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uiclass-library">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">About the uiClass library</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uielement-class">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-the-uicollection-class">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">About the uiCollection class</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="the-uilayout-service-object">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uilayout_concept.html">The uiLayout service object</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="linking-properties-of-ui-components">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="uiregistry">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/concepts/ui_comp_uiregistry.html">uiRegistry</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="how-tos">
+    
+
+    
+    <span>How Tos</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="create-and-display-a-category-attribute-with-ui-components">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/howto/add_category_attribute.html">Create and display a category attribute with UI components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="update-the-page-url-type">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/howto/update-url-type.html">Update the page URL type</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="troubleshoot">
+    
+
+    
+    <span>Troubleshoot</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="debug-ui-components-javascript">
+
+            
+
+            
+            <a href="/guides/v2.3/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html">Debug UI components JavaScript</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+      <li class="breadcrumb-item"><a class="breadcrumb-item" href="/guides/v2.3/"><span>Home</span></a></li>
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">
+            <span property="name">Overview of UI components</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Add Custom Editor</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Add Custom Editor</h1>
+
+  
+
+
+</section>
+
+			<h2 class="tutorial-before" id="before-you-begin">Before you begin…</h2>
+
+<p>This tutorial goes through the process of adding <a href="https://ckeditor.com/ckeditor-4/">CKEditor4</a> as an editor that can be used by the WYSIWYG UI component.</p>
+
+<p>As a developer, use this tutorial as a guide for adding your own custom JavaScript editor to Magento.</p>
+
+<h2 id="step-1-make-the-editor-library-available">Step 1. Make the editor library available</h2>
+
+<p>Download and install your editor’s library into your module’s <code class="highlighter-rouge">view/base/web/js</code> directory to have Magento publish it under <code class="highlighter-rouge">pub/static</code>.</p>
+
+<h2 id="step-2-register-editor">Step 2. Register editor</h2>
+
+<p>In your module’s <code class="highlighter-rouge">etc/adminhtml/di.xml</code> file, add your editor to the list of <code class="highlighter-rouge">adapterOptions</code> to include it to the list of available WYSIWYG editors in the Admin.</p>
+
+<p>Provide unique values for the <code class="highlighter-rouge">name</code> parameter and the <code class="highlighter-rouge">value</code> and <code class="highlighter-rouge">label</code> entries for your editor to avoid naming collisions.</p>
+
+<p>If you are also extending or overriding the configuration for Variable, Widget, or Gallery, you must use the same string as the <code class="highlighter-rouge">value</code> entry.</p>
+
+<blockquote>
+  <p>CKEditor registration in <code class="highlighter-rouge">app/code/CKEditor/CKEditor4/etc/adminhtml/di.xml</code></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Cms\Model\Config\Source\Wysiwyg\Editor"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"adapterOptions"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"ckeditor"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"value"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>CKEditor_CKEditor4/ckeditor4Adapter<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"label"</span> <span class="na">xsi:type=</span><span class="s">"string"</span> <span class="na">translatable=</span><span class="s">"true"</span><span class="nt">&gt;</span>ckeditor<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>To avoid issues in the case that we remove or disable the adapter module, add this configuration to the <code class="highlighter-rouge">di.xml</code> file:</p>
+
+<blockquote>
+  <p>Configuration in <code class="highlighter-rouge">di.xml</code></p>
+</blockquote>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:ObjectManager/etc/config.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Ui\Block\Wysiwyg\ActiveEditor"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"availableAdapterPaths"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"CKEditor_CKEditor4/ckeditor4Adapter"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
+
+<h2 id="step-3-create-editor-adapter">Step 3. Create editor adapter</h2>
+
+<p>Create an adapter for your editor in your module’s <code class="highlighter-rouge">view/base/web</code> directory.
+This adapter should implement the extensions points called by <code class="highlighter-rouge">wysiwygInstance</code> in the following file:</p>
+
+<p><code class="highlighter-rouge">lib/mage/adminhtml/wysiwyg/tiny_mce/setup.js</code></p>
+
+<p>At minimum your adapter should implement the following methods:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">getAdapterPrototype()</code></li>
+  <li><code class="highlighter-rouge">setup( mode )</code></li>
+  <li><code class="highlighter-rouge">openFileBrowser( o )</code></li>
+  <li><code class="highlighter-rouge">toggle()</code></li>
+  <li><code class="highlighter-rouge">onFormValidation()</code></li>
+  <li><code class="highlighter-rouge">encodeContent(content)</code></li>
+</ul>
+
+<p>If you are integrating Magento entities such as variable and widget as plugins, your adapter must also implement the following methods:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">get( id )</code> - returns the editor by it element id</li>
+  <li><code class="highlighter-rouge">insertContent( content )</code> - inserts content into the editor</li>
+  <li><code class="highlighter-rouge">setCaretOnElement( targetElement )</code> - sets the caret location in the editor</li>
+  <li><code class="highlighter-rouge">activeEditor()</code> - returns the active editor as an object with a <code class="highlighter-rouge">selection</code> property.
+The <code class="highlighter-rouge">selection</code> property returns an instance of the editor with the following additional methods defined:
+    <ul>
+      <li><code class="highlighter-rouge">getBookmark( type:Number, normalized:Boolean ):Object</code> - returns a bookmark object that has the location for the current selection.
+This is used to restore the selection after content modification in the document.</li>
+      <li><code class="highlighter-rouge">moveToBookmark( bookmark:Object ):Boolean</code> - restores the selection of the specified bookmark.</li>
+      <li><code class="highlighter-rouge">getNode():Element</code> - returns the currently selected element or common ancestor element for both start and end of the selection.</li>
+      <li><code class="highlighter-rouge">select( targetElement )</code> - selects the specified element.
+This places the start and end of the selection range around the element.</li>
+      <li><code class="highlighter-rouge">collapse( to_start:Boolean ):void</code> - collapse the selection to start or end of range.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Example:</strong> CKEditor/CKEditor4/view/base/web/ckeditor4Adapter.js</p>
+
+<div class="collapsible"><b class="collapsible-title">Show file content </b><div class="collapsible-content"><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */</span>
+
+<span class="cm">/* global varienGlobalEvents, tinyMceEditors, MediabrowserUtility, closeEditorPopup, Base64 */</span>
+<span class="cm">/* eslint-disable strict */</span>
+<span class="nx">define</span><span class="p">([</span>
+    <span class="s1">'jquery'</span><span class="p">,</span>
+    <span class="s1">'underscore'</span><span class="p">,</span>
+    <span class="s1">'CKEditor_CKEditor4/js/ckeditor4/ckeditor'</span><span class="p">,</span>
+    <span class="s1">'mage/translate'</span><span class="p">,</span>
+    <span class="s1">'prototype'</span><span class="p">,</span>
+    <span class="s1">'mage/adminhtml/events'</span><span class="p">,</span>
+    <span class="s1">'jquery/ui'</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">jQuery</span><span class="p">,</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ckeditor4</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">ckeditorWysiwyg</span> <span class="o">=</span> <span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+
+    <span class="nx">ckeditorWysiwyg</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="na">mediaBrowserOpener</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="na">mediaBrowserTargetElementId</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+
+        <span class="cm">/**
+         * @param {*} htmlId
+         * @param {Object} config
+         */</span>
+        <span class="na">initialize</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">htmlId</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">htmlId</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">ckeditorWysiwyg</span> <span class="o">===</span> <span class="s1">'undefined'</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">ckeditorWysiwyg</span> <span class="o">=</span> <span class="nx">$H</span><span class="p">({});</span>
+            <span class="p">}</span>
+
+            <span class="kd">var</span> <span class="nx">settings</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
+            <span class="nx">ckeditorWysiwyg</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
+            <span class="nx">settings</span> <span class="o">=</span> <span class="nx">$H</span><span class="p">({});</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">plugins</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">plugins</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">plugin</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">settings</span><span class="p">.</span><span class="kd">set</span><span class="p">(</span><span class="nx">plugin</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">plugin</span><span class="p">.</span><span class="nx">options</span><span class="p">);</span>
+                <span class="p">});</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">magentoPluginsOptions</span> <span class="o">=</span> <span class="nx">settings</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">.</span><span class="nx">elements</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">;</span>
+            <span class="nx">ckeditor4</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">config</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {*} mode
+         */</span>
+        <span class="na">setup</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">mode</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ckeditor4</span><span class="p">.</span><span class="nx">replaceAll</span><span class="p">();</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * Insert content to active editor.
+         *
+         * @param {String} content
+         * @param {Boolean} ui
+         */</span>
+        <span class="na">insertContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">,</span> <span class="nx">ui</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">activeEditor</span><span class="p">().</span><span class="nx">insertText</span><span class="p">(</span><span class="nx">content</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} o
+         */</span>
+        <span class="na">openFileBrowser</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * Encodes the content so it can be inserted into the wysiwyg
+         * @param {String} content - The content to be encoded
+         *
+         * @returns {*} - The encoded content
+         */</span>
+        <span class="na">updateContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * On form validation.
+         */</span>
+        <span class="na">onFormValidation</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">tinyMCE4</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">tinyMCE4</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">id</span><span class="p">).</span><span class="nx">getContent</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="cm">/**
+         * @param {String} id
+         */</span>
+        <span class="na">get</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">ckeditor4</span><span class="p">.</span><span class="nx">instances</span><span class="p">[</span><span class="nx">id</span><span class="p">];</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @return {Object}
+         */</span>
+        <span class="na">activeEditor</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">activeInstance</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="nx">_</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">ckeditor4</span><span class="p">.</span><span class="nx">instances</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">instance</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">instance</span><span class="p">.</span><span class="nx">activeEnterMode</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">activeInstance</span> <span class="o">=</span> <span class="nx">instance</span><span class="p">;</span>
+                    <span class="nx">instance</span><span class="p">.</span><span class="nx">getBookmark</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+                    <span class="p">};</span>
+                    <span class="nx">instance</span><span class="p">.</span><span class="nx">moveToBookmark</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">instance</span><span class="p">;</span>
+                    <span class="p">};</span>
+                    <span class="nx">instance</span><span class="p">.</span><span class="nx">getNode</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">instance</span><span class="p">.</span><span class="nx">getSelection</span><span class="p">();</span>
+                    <span class="p">};</span>
+                    <span class="nx">instance</span><span class="p">.</span><span class="nx">getNode</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="nx">instance</span><span class="p">.</span><span class="nx">getSelection</span><span class="p">();</span>
+                    <span class="p">};</span>
+                    <span class="nx">activeInstance</span><span class="p">.</span><span class="nx">selection</span> <span class="o">=</span> <span class="nx">instance</span><span class="p">;</span>
+
+
+                <span class="p">}</span>
+            <span class="p">});</span>
+            <span class="k">return</span> <span class="nx">activeInstance</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {*} mode
+         * @return {tinyMceWysiwygSetup}
+         */</span>
+        <span class="na">turnOn</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">mode</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @return {tinyMceWysiwygSetup}
+         */</span>
+        <span class="na">turnOff</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+            <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+        <span class="p">},</span>
+
+
+        <span class="cm">/**
+         * Retrieve directives URL with substituted directive value.
+         *
+         * @param {String} directive
+         */</span>
+        <span class="na">makeDirectiveUrl</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">directive</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} content
+         * @return {*}
+         */</span>
+        <span class="na">encodeDirectives</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} content
+         * @return {*}
+         */</span>
+        <span class="na">encodeWidgets</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} content
+         * @return {*}
+         */</span>
+        <span class="na">decodeDirectives</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} content
+         * @return {*}
+         */</span>
+        <span class="na">decodeWidgets</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} attributes
+         * @return {Object}
+         */</span>
+        <span class="na">parseAttributesString</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">attributes</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * Update text area.
+         */</span>
+        <span class="na">updateTextArea</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+        <span class="na">setCaretOnElement</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">targetElement</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">activeEditor</span><span class="p">().</span><span class="nx">selection</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">targetElement</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">activeEditor</span><span class="p">().</span><span class="nx">selection</span><span class="p">.</span><span class="nx">collapse</span><span class="p">();</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} content
+         * @return {*}
+         */</span>
+        <span class="na">decodeContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @return {Boolean}
+         */</span>
+        <span class="na">toggle</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">wysiwygInstance</span><span class="p">.</span><span class="nx">toggle</span><span class="p">();</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} content
+         * @return {*}
+         */</span>
+        <span class="na">encodeContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">content</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} o
+         */</span>
+        <span class="na">beforeSetContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @param {Object} o
+         */</span>
+        <span class="na">saveContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">o</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * @returns {Object}
+         */</span>
+        <span class="na">getAdapterPrototype</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">ckeditorWysiwyg</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**
+         * Return the content stored in the WYSIWYG field
+         * @param {String} id
+         * @return {String}
+         */</span>
+        <span class="na">getContent</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+
+    <span class="k">return</span> <span class="nx">ckeditorWysiwyg</span><span class="p">.</span><span class="nx">prototype</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+</div></div>
+
+<h2 id="step-4-load-editor-library">Step 4. Load editor library</h2>
+
+<p>After loading, modifying, and merging all configurations, Magento serializes the result into a JSON object and passes it to the UI component.</p>
+
+<p>In your module’s <code class="highlighter-rouge">view/base/requirejs-config.php</code> file, add a shim configuration entry for your editor in order to have RequireJS load it correctly.</p>
+
+<p><strong>Example:</strong> CKEditor\CKEditor4\view\base\requirejs-config.php</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"shim"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"CKEditor_CKEditor4/js/ckeditor4/ckeditor"</span><span class="o">:</span> <span class="p">{</span> <span class="s2">"exports"</span><span class="o">:</span> <span class="s2">"CKEDITOR"</span> <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+    
+  
+    
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/index.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+    
+  
+    
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/" target="_blank">Give us feedback</a>
+    </div>
+    
+  
+  </div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+
+</body>
+</html>

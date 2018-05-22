@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -293,6 +299,80 @@
     <a href="/guides/v2.3/release-notes/bk-release-notes.html">Introduction</a>
     
 
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="2.3-release-notes">
+    
+
+    
+    <span>2.3 Release Notes</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="2.3.0-alpha-installation-guide">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/2.3.0-alpha-install.html">2.3.0 Alpha Installation Guide</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="component-status">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/component-status.html">Component Status</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-open-source-2.3.0-alpha-release-notes">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html">Magento Open Source 2.3.0 Alpha Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="magento-commerce-2.3.0-alpha-release-notes">
+
+            
+
+            
+            <a href="/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html">Magento Commerce 2.3.0 Alpha Release Notes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
     
 </li>
 
@@ -492,6 +572,79 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
   <li><a href="/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html">Magento Commerce changes</a></li>
 </ul>
 
+<h2 id="application-framework-libraries">Application framework libraries</h2>
+
+<h3 id="zend-framework">Zend Framework</h3>
+
+<p>With the release of Magento 2.3 we are releasing a new version of Zend Framework 1.</p>
+
+<p><strong>Affected libraries</strong>: <code class="highlighter-rouge">Zend Framework 1</code></p>
+
+<p><strong>Affected modules</strong>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Zend_Application</code></li>
+  <li><code class="highlighter-rouge">Zend_Barcode</code></li>
+  <li><code class="highlighter-rouge">Zend_Captcha</code></li>
+  <li><code class="highlighter-rouge">Zend_Cloud</code></li>
+  <li><code class="highlighter-rouge">Zend_CodeGenerator</code></li>
+  <li><code class="highlighter-rouge">Zend_Controller</code></li>
+  <li><code class="highlighter-rouge">Zend_Debug</code></li>
+  <li><code class="highlighter-rouge">Zend_Dojo</code></li>
+  <li><code class="highlighter-rouge">Zend_Dom</code></li>
+  <li><code class="highlighter-rouge">Zend_EventManager</code></li>
+  <li><code class="highlighter-rouge">Zend_Feed</code></li>
+  <li><code class="highlighter-rouge">Zend_Form</code></li>
+  <li><code class="highlighter-rouge">Zend_Gdata</code></li>
+  <li><code class="highlighter-rouge">Zend_Layout</code></li>
+  <li><code class="highlighter-rouge">Zend_Markup</code></li>
+  <li><code class="highlighter-rouge">Zend_Mobile</code></li>
+  <li><code class="highlighter-rouge">Zend_Navigation</code></li>
+  <li><code class="highlighter-rouge">Zend_Paginator</code></li>
+  <li><code class="highlighter-rouge">Zend_Queue</code></li>
+  <li><code class="highlighter-rouge">Zend_Reflection</code></li>
+  <li><code class="highlighter-rouge">Zend_Rest</code></li>
+  <li><code class="highlighter-rouge">Zend_Search</code></li>
+  <li><code class="highlighter-rouge">Zend_Stdlib</code></li>
+  <li><code class="highlighter-rouge">Zend_Tag</code></li>
+  <li><code class="highlighter-rouge">Zend_Test</code></li>
+  <li><code class="highlighter-rouge">Zend_Tool</code></li>
+  <li><code class="highlighter-rouge">Zend_XmlRpc</code></li>
+  <li><code class="highlighter-rouge">Zend_Amf</code></li>
+  <li><code class="highlighter-rouge">Zend_Auth</code></li>
+  <li><code class="highlighter-rouge">Zend_Ldap</code></li>
+  <li><code class="highlighter-rouge">Zend_OpenId</code></li>
+  <li><code class="highlighter-rouge">Zend_Serializer</code></li>
+  <li><code class="highlighter-rouge">Zend_Version</code></li>
+  <li><code class="highlighter-rouge">Zend_View</code></li>
+  <li><code class="highlighter-rouge">Zend_Wildfire</code></li>
+</ul>
+
+<p><strong>Affected classes</strong>:</p>
+<ul>
+  <li><code class="highlighter-rouge">Zend_Db_Profiler_Firebug</code></li>
+  <li><code class="highlighter-rouge">Zend_Log_Formatter_Firebug</code></li>
+  <li><code class="highlighter-rouge">Zend_Log_Writer_Firebug</code></li>
+  <li><code class="highlighter-rouge">Zend_Log_Writer_Mail</code></li>
+  <li><code class="highlighter-rouge">Zend_Validate_Ldap_Dn</code></li>
+</ul>
+
+<p><strong>Action</strong>: Affected modules and classes were removed.</p>
+
+<p><strong>Reason</strong>: They are no longer used in Magento or Marketplace extensions, are expensive and time-intensive to maintain, and can cause potential security risks if not maintained properly.</p>
+
+<p><strong>Details</strong>:</p>
+<ul>
+  <li>If the functionality previously facilitated by these removed Zend Framework modules and classes is necessary, use existing functionality or modules to suit your needs:
+    <ul>
+      <li>Verify whether the needed functionality exists natively in the Magento framework.</li>
+      <li>Verify whether the needed functionality exists in one of the existing bundled Zend Framework v2 or v3 modules.</li>
+      <li>Look for the needed functionality in existing Symfony components or Zend modules.</li>
+    </ul>
+  </li>
+  <li>In place of the now removed <code class="highlighter-rouge">Zend_Serializer</code> module you can use <code class="highlighter-rouge">Magento\Framework\Serialize\Serializer\Serialize</code>, which facilitates backward-compatibility.</li>
+</ul>
+
 <h2 id="search-and-related-modules">Search and related modules</h2>
 
 <p><strong>Affected modules</strong>: <code class="highlighter-rouge">Search</code>, <code class="highlighter-rouge">CatalogSearch</code>, <code class="highlighter-rouge">AdvancedSearch</code>, <code class="highlighter-rouge">Elasticsearch</code>.</p>
@@ -540,6 +693,28 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
   <li><code class="highlighter-rouge">\Magento\AdvancedSearch\Model\Client\ClientResolver</code></li>
   <li><code class="highlighter-rouge">\Magento\AdvancedSearch\Model\Indexer\Fulltext\Plugin\CustomerGroup</code></li>
   <li><code class="highlighter-rouge">\Magento\AdvancedSearch\Model\SuggestedQueries</code></li>
+</ul>
+
+<h2 id="wysiwyg-editor">WYSIWYG Editor</h2>
+
+<h3 id="banner-module">Banner module</h3>
+
+<ul>
+  <li>The Banner module now uses a UI Component form and no longer uses the <code class="highlighter-rouge">banner_edit_tab_properties_after_prepare_form</code> event in <code class="highlighter-rouge">Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Properties.php</code>.</li>
+  <li>The <code class="highlighter-rouge">Magento/Banner/Block/Adminhtml/Banner/Edit/Tab/Content.php</code> class is no longer used.
+The <code class="highlighter-rouge">adminhtml_banner_edit_tab_content_before_prepare_form</code> that was used in this class is now used in the data provider for the banner form.</li>
+</ul>
+
+<h3 id="magento-banner">Magento Banner</h3>
+
+<ul>
+  <li>The Banner content type has been renamed to <strong>Dynamic Block</strong>.</li>
+</ul>
+
+<h3 id="magento-banner-rotator-widget">Magento Banner Rotator widget</h3>
+
+<ul>
+  <li>The Banner Rotator widget has been renamed to <strong>Dynamic Blocks Rotator</strong>.</li>
 </ul>
 
 			
@@ -638,4 +813,3 @@ The purpose of this document is to highlight major changes between Magento 2.2 a
 
 </body>
 </html>
-

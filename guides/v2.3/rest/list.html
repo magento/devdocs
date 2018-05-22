@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -592,8 +598,6 @@
 
 <p>The REST endpoints for Magento Commerce (formerly Enterprise Edition (EE)) are available on Magento Commerce installations only. Commerce installations automatically have access to all Magento Open Source (formerly Community Edition (CE)) REST APIs.</p>
 
-<p>Additions since 2.1 are marked with a single asterisk (*).</p>
-
 <p>See <a href="/guides/v2.3/b2b/integrations.html">Integrate with B2B using REST</a> for a list of endpoints provided with Magento Commerce for B2B.</p>
 
 <h3 id="customerbalance">CustomerBalance</h3>
@@ -662,11 +666,18 @@ GET    /V1/returns/:id/labels
 
 <p>The Magento Open Source REST APIs are available on all Magento Commerce and Magento Open Source installations.</p>
 
-<p>Additions since 2.1 are marked with asterisks (*). Additions since 2.2 are marked with hash characters (#).</p>
+<p>Additions since 2.2 are marked with hash characters (#).</p>
 
 <h3 id="analytics">Analytics</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#GET    /V1/analytics/link
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET    /V1/analytics/link
+</code></pre></div></div>
+
+<h3 id="asynchronousoperations">AsynchronousOperations</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#GET    /V1/bulk/:bulkUuid/detailed-status
+#GET    /V1/bulk/:bulkUuid/status
+#GET    /V1/bulk/:bulkUuid/operation-status/:status
 </code></pre></div></div>
 
 <h3 id="backend">Backend</h3>
@@ -729,18 +740,18 @@ GET    /V1/products/:sku/media
 GET    /V1/products/:sku/group-prices/:customerGroupId/tiers
 POST   /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty/price/:price
 DELETE /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty
-*POST   /V1/products/tier-prices-information
-*POST   /V1/products/tier-prices
-*PUT    /V1/products/tier-prices
-*POST   /V1/products/tier-prices-delete
-*POST   /V1/products/base-prices-information
-*POST   /V1/products/base-prices
-*POST   /V1/products/cost-information
-*POST   /V1/products/cost
-*POST   /V1/products/cost-delete
-*POST   /V1/products/special-price-information
-*POST   /V1/products/special-price
-*POST   /V1/products/special-price-delete
+POST   /V1/products/tier-prices-information
+POST   /V1/products/tier-prices
+PUT    /V1/products/tier-prices
+POST   /V1/products/tier-prices-delete
+POST   /V1/products/base-prices-information
+POST   /V1/products/base-prices
+POST   /V1/products/cost-information
+POST   /V1/products/cost
+POST   /V1/products/cost-delete
+POST   /V1/products/special-price-information
+POST   /V1/products/special-price
+POST   /V1/products/special-price-delete
 DELETE /V1/categories/:categoryId
 GET    /V1/categories/:categoryId
 POST   /V1/categories
@@ -767,7 +778,7 @@ DELETE /V1/categories/:categoryId/products/:sku
 POST   /V1/products/:sku/websites
 PUT    /V1/products/:sku/websites
 DELETE /V1/products/:sku/websites/:websiteId
-*GET   /V1/products-render-info
+GET   /V1/products-render-info
 </code></pre></div></div>
 
 <h3 id="cataloginventory">CatalogInventory</h3>
@@ -797,6 +808,7 @@ POST   /V1/carts/mine/set-payment-information
 <h3 id="checkoutagreements">CheckoutAgreements</h3>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET    /V1/carts/licence
+*GET    /V1/carts/licence/list
 </code></pre></div></div>
 
 <h3 id="cms">Cms</h3>
@@ -831,7 +843,7 @@ DELETE /V1/configurable-products/:sku/options/:id
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET    /V1/customerGroups/:id
 GET    /V1/customerGroups/default/:storeId
 GET    /V1/customerGroups/default
-*PUT    /V1/customerGroups/default/:id
+PUT    /V1/customerGroups/default/:id
 GET    /V1/customerGroups/:id/permissions
 GET    /V1/customerGroups/search
 POST   /V1/customerGroups
@@ -856,7 +868,7 @@ PUT    /V1/customers/:email/activate
 PUT    /V1/customers/me/password
 GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
 PUT    /V1/customers/password
-#POST  /V1/customers/resetPassword
+POST  /V1/customers/resetPassword
 GET    /V1/customers/:customerId/confirm
 POST   /V1/customers/confirm
 PUT    /V1/customers/validate
@@ -999,7 +1011,7 @@ POST   /V1/orders/:id/hold
 POST   /V1/orders/:id/unhold
 POST   /V1/orders/:id/comments
 GET    /V1/orders/:id/comments
-*PUT    /V1/orders/create
+PUT    /V1/orders/create
 PUT    /V1/orders/:parent_id
 GET    /V1/orders/items/:id
 GET    /V1/orders/items
@@ -1011,16 +1023,16 @@ POST   /V1/invoices/:id/void
 POST   /V1/invoices/:id/capture
 POST   /V1/invoices/comments
 POST   /V1/invoices/
-*POST   /V1/invoice/:invoiceId/refund
+POST   /V1/invoice/:invoiceId/refund
 GET    /V1/creditmemo/:id/comments
 GET    /V1/creditmemos
 GET    /V1/creditmemo/:id
 PUT    /V1/creditmemo/:id
 POST   /V1/creditmemo/:id/emails
-*POST   /V1/creditmemo/refund
+POST   /V1/creditmemo/refund
 POST   /V1/creditmemo/:id/comments
 POST   /V1/creditmemo
-*POST   /V1/order/:orderId/refund
+POST   /V1/order/:orderId/refund
 GET    /V1/shipment/:id
 GET    /V1/shipments
 GET    /V1/shipment/:id/comments
@@ -1030,11 +1042,11 @@ POST   /V1/shipment/track
 DELETE /V1/shipment/track/:id
 POST   /V1/shipment/
 GET    /V1/shipment/:id/label
-*POST   /V1/order/:orderId/ship
-*POST   /V1/orders/
+POST   /V1/order/:orderId/ship
+POST   /V1/orders/
 GET    /V1/transactions/:id
 GET    /V1/transactions
-*POST   /V1/order/:orderId/invoice
+POST   /V1/order/:orderId/invoice
 </code></pre></div></div>
 
 <h3 id="salesrule">SalesRule</h3>
@@ -1182,4 +1194,3 @@ GET    /V1/taxClasses/search
 
 </body>
 </html>
-

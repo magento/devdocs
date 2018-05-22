@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -1578,11 +1584,14 @@
 		    
 		    	
 
-<li class="nav-level1  " id="install-and-configure-elasticsearch-(magento-commerce-only)">
+		    
+		    	
+
+<li class="nav-level1  " id="install-and-configure-elasticsearch">
     
 
     
-    <a href="/guides/v2.3/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Magento Commerce only)</a>
+    <a href="/guides/v2.3/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch</a>
     
 
     
@@ -1652,11 +1661,14 @@
 		    
 		    	
 
-<li class="nav-level1  " id="message-queues-(magento-commerce-only)">
+		    
+		    	
+
+<li class="nav-level1  " id="message-queues">
     
 
     
-    <a href="/guides/v2.3/config-guide/mq/rabbitmq-overview.html">Message Queues (Magento Commerce only)</a>
+    <a href="/guides/v2.3/config-guide/mq/rabbitmq-overview.html">Message Queues</a>
     
 
     
@@ -1905,8 +1917,6 @@
 
 
 	
-		<span class="ee-only">Magento Commerce only</span>
-	
 
 	
 
@@ -1957,7 +1967,7 @@
 <p>To edit stopwords:</p>
 
 <ol>
-  <li>Log in to your Magento server, or switch to the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner">Magento file system owner</a>.</li>
+  <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.3/install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.</li>
   <li>
     <p>Use a text editor to open a stopword file in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory.</p>
 
@@ -1984,14 +1994,14 @@
       </li>
     </ul>
   </li>
-  <li>Check the results by searching for terms on your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.x</li>
+  <li>Check the results by searching for terms on your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</li>
 </ol>
 
 <h3 id="config-create-stopwords">Create stopwords for a new locale</h3>
 <p>To add stopwords for a locale:</p>
 
 <ol>
-  <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner">Magento file system owner</a>.</li>
+  <li>Log in to your Magento server, or switch to, the <a href="/guides/v2.3/install-gde/prereq/apache-user.html#install-update-depend-user-switch">Magento file system owner</a>.</li>
   <li>
     <p>Use a text editor to create a stopword file named <code class="highlighter-rouge">stopwords_&lt;locale_code&gt;.csv</code> in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory.</p>
 
@@ -2159,4 +2169,3 @@
 
 </body>
 </html>
-

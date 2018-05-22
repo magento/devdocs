@@ -273,6 +273,12 @@
 
 <div class="content-container">
 
+    
+    <div class="message-banner">
+        This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+    </div>
+    
+
 	<!-- sidebar -->
 <aside class="sidebar">
 	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
@@ -773,6 +779,12 @@
   <li><span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> (dependency management package for PHP)</li>
 </ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases.</p>
+
+  <p>If you are interested in participating in Magento Community projects we welcome your help! See our <a href="https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902" target="_blank">ZenHub board</a> for a full list of outstanding issues.</p>
+</div>
+
 <h3 id="database">Database</h3>
 
 <ul>
@@ -790,14 +802,12 @@
 
 <ul>
   <li>Redis</li>
-  <li>Memcache</li>
 </ul>
 
 <h3 id="search">Search</h3>
 
 <ul>
-  <li>Solr (Magento Commerce (formerly Enterprise Edition (EE)) only)</li>
-  <li>Elasticsearch (Magento Commerce (formerly Enterprise Edition (EE)) 2.1.x only)</li>
+  <li>Elasticsearch (Magento Commerce versions 2.1.x and 2.2.x, and Magento Open Source version 2.3x)</li>
 </ul>
 
 <h3 id="additional-technologies">Additional technologies</h3>
@@ -817,11 +827,11 @@
 <ul>
   <li>Varnish (caching)</li>
   <li>Redis (used for page caching)</li>
-  <li>Solr (search engine)</li>
   <li>Elasticsearch (search engine)</li>
+  <li>RabbitMQ (message queue)</li>
 </ul>
 
-<p>Magento 2.2 and above only supports PHP7+ and is no longer compatible with HipHop Virtual Machine(HHVM).</p>
+<p>Magento 2.2+ does not support HipHop Virtual Machine (HHVM).</p>
 
 <h3 id="automated-testing">Automated testing</h3>
 
@@ -929,4 +939,3 @@ For more information, see the <a href="/guides/v2.3/mtf/mtf_introduction.html">F
 
 </body>
 </html>
-
