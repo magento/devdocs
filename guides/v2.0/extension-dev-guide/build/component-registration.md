@@ -58,13 +58,15 @@ where &lt;VendorName> is the name of the company providing the package and &lt;p
 ## Invoke `registration.php` in `composer.json` with autoload {#register-autoload}
 After you create your `registration.php` file and you are creating [your component's composer.json file]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
-     {
+{% highlight json %}
+{
     "name": "Acme-vendor/bar-component",
     "autoload": {
         "psr-4": { "AcmeVendor\\BarComponent\\": "" },
         "files": [ "registration.php" ]
     }
 }
+{% endhighlight %}
 
 <p>&nbsp;</p>
 

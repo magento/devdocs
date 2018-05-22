@@ -31,7 +31,7 @@ The smallest working module.xml file would look something like this:
 
 	<?xml version="1.0"?>
 	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    		<module name="Vendor_ComponentName" setup_version="2.0.0"/>
+    	<module name="Vendor_ComponentName" setup_version="2.0.0"/>
 	</config>
 
 ...where `name`  is the name of your component, and `setup_version` is your module's {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} version. Both of these attributes are required.
@@ -51,9 +51,8 @@ In particular:
 
 A sample follows:
 
-{% highlight JSON %}
-
-	{
+{% highlight json %}
+{
     "name": "your-name/module-Acme",
     "description": "Test component for Magento 2",
     "require": {
@@ -79,8 +78,7 @@ A sample follows:
             "Magento\\CatalogImportExport\\": ""
         }
     }
-    }
-
+}
 {% endhighlight %}
 
 where:
