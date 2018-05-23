@@ -115,17 +115,26 @@ Options:
 
 For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
 
-To migrate static files:
 
-1.	Open an SSH connection to your Staging or Production environment:
+To migrate static files from your local machine:
 
-			*	Staging: ssh -A <project ID>_stg@<project ID>.ent.magento.cloud
-			*	Production: ssh -A <project ID>@<project ID>.ent.magento.cloud
-2.	rsync the `pub/media` directory from your local Magento server to staging or production:
+	*	rsync the `pub/media` directory from your local Magento server to staging or production:
 
-		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
+		rsync -azvP local_machine/pub/media/ <environment_ssh_link@ssh.region.magento.cloud>:pub/media/ 
+						
+To migrate static files from remote-to-remote environments directly (fast approach):
 
-  The IP is for the Magento Commerce VM or container you created when setting up the local.
+**Note** In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, please refer to this [github guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
+
+1.	SSH into the environment you want to transfer from (you can find ssh link in your Cloud UI -> select the branch -> Access Site -> SSH access):
+
+		 ssh -A <environment_ssh_link@ssh.region.magento.cloud>
+
+2.	rsync the `pub/media` directory from your environment you have logged into on step #1 to another remote environment:
+
+		rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
+
+**Note**: You can find ssh link of the evnrionment in your Cloud UI -> select the branch -> Access Site -> SSH access.
 
 ## Migrate the database {#cloud-live-migrate-db}
 
@@ -137,15 +146,14 @@ For continuous integration deployments, we **do not recommend** migrating data f
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
+**Note** In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, please refer to this [github guidance](https://developer.github.com/v3/guides/using-ssh-agent-forwarding/)
+
 To migrate a database:
 
 1.	SSH into the environment you want to create a database dump from:
 
-	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-	* To SSH into the `master` branch of your Integration environment:
-
-			magento-cloud environment:ssh
+			ssh -A <environment_ssh_link@ssh.region.magento.cloud>
+			
 2.	Find the database login information with the following command:
 
     ```
@@ -161,26 +169,25 @@ To migrate a database:
 	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and user name):
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
+		
 
-4.	Transfer the database dump to Staging or Production with an `rsync` command:
+4.	Transfer the database dump to another remote emvironment with an `rsync` command:
 
-	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`
-	*	Production: `rsync -azvP /tmp/database.sql.gz <project ID>@<project ID>.ent.magento.cloud:/tmp`
+		rsync -azvP /tmp/database.sql.gz <destination_environment_ssh_link@ssh.region.magento.cloud>:/tmp
+		
 8.	Enter `exit` to terminate the SSH connection.
-9.	Open an SSH connection to the environment you want to migrate the database into:
 
-	*	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
-	* To SSH into the `master` branch of your Integration environment:
+7.	Open an SSH connection to the environment you want to migrate the database into:
 
-			magento-cloud environment:ssh
-10.	Import the database dump with the following command:
+		ssh -A <destination_environment_ssh_link@ssh.region.magento.cloud>
+	
+8.	Import the database dump with the following command:
 
-		zcat database.sql.gz | mysql -u <username> -p<password> <database name>
+		zcat /tmp/database.sql.gz | mysql -h <database_host> -u <username> -p<password> <database name>
 
 	The following is an example using information from step 2:
 
-		zcat database.sql.gz | mysql -u user main
+		zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
 
 ### Troubleshooting the database migration
 If you encounter the following error, you can try to create a database dump with the DEFINER replaced:
