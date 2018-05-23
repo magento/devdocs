@@ -166,6 +166,35 @@ stage:
     SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
 ```
 
+### `SCD_MATRIX`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+
+The following example deploys the `magento/backend` theme with three locales:
+
+```yaml
+stage:
+  deploy:
+    SCD_MATRIX:
+      "magento/backend":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+```
+
+Also, you can choose to _not_ deploy a theme:
+
+```yaml
+stage:
+  deploy:
+    SCD_MATRIX:
+      "magento/backend": [ ]
+```
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
