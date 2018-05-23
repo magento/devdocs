@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 title: Create a GitHub patch for a Composer installation
 version: 2.2
@@ -13,7 +12,7 @@ functional_areas:
 Sometimes it takes a while for us to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the `composer-patches` plugin to apply it to your Composer-based Magento 2 installation.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Be careful applying an unreleased patch. Do comprehensive testing before deploying it.
+Always perform comprehensive testing before deploying any unreleased patch.
 </div>
 
 ## Create a patch
@@ -29,7 +28,7 @@ You must change the paths in the patch file to correspond to the `vendor/***` di
 1. Create a `patches/composer` directory.
 1. Prepare your patch file so that the paths are relative to the `vendor/<VENDOR>/<PACKAGE>` directory. For example `vendor/magento/module-payment`.
 1. Name the patch file appropriately and move it to the `patches/composer` directory.
-2. Add the `composer-patches` plugin to the `composer.json` file.
+2. Add the `cweagans/composer-patches` plugin to the `composer.json` file.
 
    ```bash
    composer require cweagans/composer-patches
