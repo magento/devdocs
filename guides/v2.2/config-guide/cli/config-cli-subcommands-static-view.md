@@ -3,10 +3,6 @@ group: config-guide
 title: Deploy static view files
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
-functional_areas:
-  - Configuration
-  - System
-  - Setup
 ---
 
 {% include config/cli-intro.md %}
