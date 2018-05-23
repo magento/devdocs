@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.5 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.5CE.md
 ---
-*Patch code and release notes published on May 22, 2018.* 
+*Patch code and release notes published on June 12, 2018.* 
 
 This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
 
