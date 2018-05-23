@@ -8,7 +8,7 @@ pages:
 
     - label: Create a GitHub patch for a Composer installation
       versions: ["2.1","2.2", "2.3"]
-      url: howdoi/patch_from_github.html
+      url: /howdoi/patch_from_github.html
 
     - label: Configure Magento
       url: howdoi/config/configure.html
