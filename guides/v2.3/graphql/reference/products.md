@@ -131,7 +131,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
-This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array, which is defined in the `ProductEntityAttributesForAst` class. The array automatically contains the `min_price`, `max_price`, and `category_ids`attributes.
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array also contains the `min_price`, `max_price`, and `category_ids`attributes.
 
 
 ## ProductInterface {#ProductInterface}
@@ -333,7 +333,7 @@ The `SortFields` object contains the default value for sort fields as well as al
 Field | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
-`options` | `SortField` | An array that contains all the possible fields that can be used for sorting
+`options` | `SortField` | An array that contains all the fields you can use for sorting
 
 ### SortField object
 
