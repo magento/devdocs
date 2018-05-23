@@ -24,13 +24,14 @@ We assume the following:
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
 	Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
-*	You use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`.
+*	Accept multiple domains in one virtual host file or you use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`.
 *	You use the `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial.
 *	The Magento software is installed in `/var/www/html/magento2`.
 *	You have two websites other than the default:
 
 	*	`french.mysite.mg` with website code `french` and store view code `fr`
 	*	`german.mysite.mg` with website code `german` and store view code `de`
+    *   `mysite.mg` is the default website and default store view
 
     <div class="bs-callout bs-callout-tip" markdown="1">
 Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
@@ -40,7 +41,7 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
 Setting up multiple stores consists of the following tasks:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
-2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} (steps detailed below).
+2.	Create a [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} (steps detailed below).
 3.  Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`:
@@ -51,11 +52,53 @@ Setting up multiple stores consists of the following tasks:
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`.
 
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
-This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
+This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with at least `sudo` privileges.
 
-{% collapsible To create virtual hosts: %}
+You can use one [nginx virtual host](#ms-nginx-vhosts) to load many websites or many [nginx virtual host](#ms-nginx-vhosts) to load many websites.  Using just 1 virtual host file allows you too keep your [nginx virtual host](#ms-nginx-vhosts) file simple and clean for many websites, and using many [nginx virtual host](#ms-nginx-vhosts) allows customizations for each particular store such as a custom location for `french.mysite.mg`.
 
-1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg.conf`:
+{% collapsible To use one virtual host (simplified): %}
+
+This configuration expands upon [Magento Nginx Configuration]({{ page.baseurl }}/install-gde/prereq/nginx.html).
+
+1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/magento`:
+    ```
+    map $http_host $MAGE_RUN_CODE {
+        default '';
+        french.mysite.mg french;
+        german.mysite.mg german;
+    }
+
+    server {
+        listen 80;
+        server_name mysite.mg french.mysite.mg german.mysite.mg;
+        set $MAGE_ROOT /var/www/html/magento2;
+        set $MAGE_MODE developer;
+        set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+        include /var/www/html/magento2/nginx.conf;
+    }
+    ```
+2.	Save your changes to the files and exit the text editor.
+3.	Verify the server configuration:
+
+		nginx -t
+4.	If successful, the following message displays:
+
+		nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+	If errors display, check the syntax of your virtual host configuration files.
+
+5.	Create symbolic link in the `/etc/nginx/sites-enabled` directory:
+
+		cd /etc/nginx/sites-enabled
+		ln -s /etc/nginx/sites-available/magento magento
+
+For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
+
+{% endcollapsible %}
+
+{% collapsible To create many virtual hosts (customize per website): %}
+
+1.	Open a text editor and add the following contents to a new file named `/etc/nginx/sites-available/french.mysite.mg`:
     ```
     map $http_host $MAGE_RUN_CODE {
         french.mysite.mg french;
@@ -70,7 +113,7 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
         include /var/www/html/magento2/nginx.conf;
     }
     ```
-3.	Create another file named `german.mysite.mg.conf` in the same directory with the following contents:
+2.	Create another file named `german.mysite.mg` in the same directory with the following contents:
     ```
     map $http_host $MAGE_RUN_CODE {
         german.mysite.mg german;
@@ -85,17 +128,17 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
         include /var/www/html/magento2/nginx.conf;
     }
     ```
-4.	Save your changes to the files and exit the text editor.
-5.	Verify the server configuration:
+3.	Save your changes to the files and exit the text editor.
+4.	Verify the server configuration:
 
 		nginx -t
-6.	If successful, the following message displays:
+5.	If successful, the following message displays:
 
 		nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 	If errors display, check the syntax of your virtual host configuration files.
 
-7.	Create symbolic links in the `/etc/nginx/sites-enabled` directory:
+6.	Create symbolic links in the `/etc/nginx/sites-enabled` directory:
 
 		cd /etc/nginx/sites-enabled
 		ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
@@ -103,10 +146,15 @@ This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6
 
 For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
-
 {% endcollapsible %}
 
 ## Step 3: Modify nginx.conf.sample {#ms-nginx-conf-sample}
+{%
+include note.html
+type="tip"
+content="Do not edit the `nginx.conf.sample` file; it is a core Magento file that may be updated with each new release. Instead, copy the `nginx.conf.sample` file, rename it, and then edit the copied file."
+%}
+
 {% collapsible To edit the PHP entry point for the main application: %}
 1.	Open a text editor and review the nginx.conf.sample file ,`<magento2_installation_directory>/nginx.conf.sample`. Look for the following section:
 
@@ -155,12 +203,6 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
     include        fastcgi_params;
 }
 ```
-
-{%
-include note.html
-type="tip"
-content="Do not edit the `nginx.conf.sample` file; it is a core Magento file that may be updated with each new release. Instead, copy the `nginx.conf.sample` file, rename it, and then edit the copied file."
-%}
 
 {% endcollapsible %}
 
