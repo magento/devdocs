@@ -858,7 +858,8 @@ weight
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">items</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">ProductInterface</span><span class="p">]</span><span class="w">
 </span><span class="err">page_info</span><span class="p">:</span><span class="w"> </span><span class="err">SearchResultPageInfo</span><span class="w">
 </span><span class="err">total_count</span><span class="p">:</span><span class="w"> </span><span class="err">Int</span><span class="w">
-</span><span class="err">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">LayerFilter</span><span class="p">]</span></code></pre></figure>
+</span><span class="err">filters</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">LayerFilter</span><span class="p">]</span><span class="w">
+</span><span class="err">sort_fields</span><span class="p">:</span><span class="w"> </span><span class="err">SortFields</span></code></pre></figure>
 
 <p>Each attribute is described below:</p>
 
@@ -886,6 +887,10 @@ weight
       <td><code class="highlighter-rouge">filters</code></td>
       <td>An array of layered navigation filters. These filters can be used to implement layered navigation on your app.</td>
     </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sort_fields</code></td>
+      <td>An object that includes the default sort field and all available sort fields</td>
+    </tr>
   </tbody>
 </table>
 
@@ -900,7 +905,7 @@ weight
   <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span>
 </code></pre></div></div>
-<p>This example adds <code class="highlighter-rouge">field_to_sort</code> and <code class="highlighter-rouge">other_field_to_sort</code> attributes to the <code class="highlighter-rouge">additionalAttributes</code> array, which is defined in the <code class="highlighter-rouge">ProductEntityAttributesForAst</code> class. The array automatically contains the <code class="highlighter-rouge">min_price</code>, <code class="highlighter-rouge">max_price</code>, and <code class="highlighter-rouge">category_ids</code>attributes.</p>
+<p>This example adds <code class="highlighter-rouge">field_to_sort</code> and <code class="highlighter-rouge">other_field_to_sort</code> attributes to the <code class="highlighter-rouge">additionalAttributes</code> array defined in the <code class="highlighter-rouge">ProductEntityAttributesForAst</code> class. The array also contains the <code class="highlighter-rouge">min_price</code>, <code class="highlighter-rouge">max_price</code>, and <code class="highlighter-rouge">category_ids</code>attributes.</p>
 
 <h2 id="ProductInterface">ProductInterface</h2>
 
@@ -935,6 +940,11 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
       <td><code class="highlighter-rouge">attribute_set_id</code></td>
       <td>Int</td>
       <td>The attribute set assigned to the product</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">canonical_url</code></td>
+      <td>String</td>
+      <td>The canonical URL for the product</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">categories</code></td>
@@ -1571,6 +1581,56 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
       <td><code class="highlighter-rouge">items_count</code></td>
       <td>Int</td>
       <td>The number of items the filter returned</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sortfields-object">SortFields object</h2>
+
+<p>The <code class="highlighter-rouge">SortFields</code> object contains the default value for sort fields as well as all possible sort fields.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">default</code></td>
+      <td>String</td>
+      <td>The default sort field</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">options</code></td>
+      <td><code class="highlighter-rouge">SortField</code></td>
+      <td>An array that contains all the fields you can use for sorting</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sortfield-object">SortField object</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td>String</td>
+      <td>The attribute name or code to use as the sort field</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">label</code></td>
+      <td>String</td>
+      <td>The attribute’s label</td>
     </tr>
   </tbody>
 </table>

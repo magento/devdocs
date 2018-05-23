@@ -2082,7 +2082,7 @@ This example shows how you can set and lock configuration values for everything 
     <li>
       <p>On your local system, find the integration server’s SSH URL.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    magento-cloud environment:ssh --pipe
 </code></pre></div>      </div>
     </li>
     <li>
@@ -2106,7 +2106,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
     <li>
       <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
 </code></pre></div>      </div>
     </li>
   </ol>
