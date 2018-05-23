@@ -13,17 +13,16 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 
 ## Prerequisites {#prereq}
 Before you continue, make sure you have completed all of the following tasks:
-.
 *   Create a [file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
 *   Create the the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
 *   [Register]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component.
 
 ## Add the component's `module.xml` file {#module-xml}
-Declare the component itself by adding a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}`module`{% endglossarytooltip %}.xml file in the `/etc` folder of your component.
+Declare the component itself by adding a `module.xml` file in the `/etc` folder of your component.
 
 A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
 
-The smallest working module.xml file would look something like this:
+The smallest working `module.xml` file would look something like this:
 
 ``` xml
 <?xml version="1.0"?>
