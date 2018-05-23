@@ -86,6 +86,20 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
 
+### `DATABASE_CONFIGURATION`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+If you defined a database in the [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_value'
+```
+
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
