@@ -21,7 +21,7 @@ There are two types of Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b14
 
 A module with a *hard dependency* on another module cannot function without the module it depends on. These modules:
 
-* Contain code that directly uses logic from another module, as for the latter module's instances, class constants, static methods, public class properties, interfaces, and traits.
+* Contain code that directly uses logic from another module, such as class constants, static methods, public class properties, interfaces, and traits.
 * Contain strings that include class names, method names, class constants, class properties, interfaces, and traits from another module.
 * Deserializes an object declared in another module.
 * Uses or modifies the database tables used by another module.
