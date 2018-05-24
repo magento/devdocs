@@ -38,7 +38,23 @@ stage:
           backend: file
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file.
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    CACHE_CONFIGURATION:
+      _merge: true
+      frontend:
+        default:
+          backend:
+            database: 10
+        page_cache:
+          backend:
+            database: 11
+```
 
 ### `CLEAN_STATIC_FILES`
 
@@ -124,7 +140,25 @@ stage:
         port: 1234
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file.
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+        QUEUE_CONFIGURATION:
+          _merge: true
+          amqp:
+            host: changed1.host
+            port: 5672
+          amqp2:
+            host: changed2.host2
+            port: 12345
+          mq:
+            host: changedmq.host
+            port: 1234
+```
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
@@ -233,7 +267,18 @@ stage:
       elasticsearch_server_timeout: '15'
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    SEARCH_CONFIGURATION:
+      engine: elasticsearch
+      elasticsearch_server_port: '1234'
+      _merge: true
+```
 
 ### `SESSION_CONFIGURATION`
 
@@ -259,7 +304,18 @@ stage:
       save: redis
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    SESSION_CONFIGURATION:
+      _merge: true
+      redis:
+        max_concurrency: 10
+```
 
 ### `SKIP_SCD`
 
