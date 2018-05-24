@@ -96,11 +96,6 @@ In addition to security enhancements, this release contains the following functi
 <!--- MAGETWO-54740 -->* When you import new products using CVS, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock. 
 
 
-
-### Cart and checkout
-<!--- MAGETWO-87115 -->* Users can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
-
-
 ### CMS content
 <!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there is a validation check that uses `realpath` to test whether the file is outside the media directory base path. Since `realpath` resolves symlinks to actual paths, this check will fail if actual path is outside of base path and will prevent action from being completed.
 
