@@ -2176,35 +2176,45 @@ P partial progress
 
   <p>For additional options, see the <a href="http://linux.die.net/man/1/rsync" target="_blank">rsync man page</a>.</p>
 
-  <p>To migrate static files:</p>
+  <p>To migrate static files from your local machine:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*	rsync the `pub/media` directory from your local Magento server to staging or production:
+
+	rsync -azvP local_machine/pub/media/ &lt;environment_ssh_link@ssh.region.magento.cloud&gt;:pub/media/ 
+</code></pre></div>  </div>
+
+  <p>To migrate static files from remote-to-remote environments directly (fast approach):</p>
+
+  <p><strong>Note</strong> In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, please refer to this <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">github guidance</a></p>
 
   <ol>
     <li>
-      <p>Open an SSH connection to your Staging or Production environment:</p>
+      <p>SSH into the environment you want to transfer from (you can find ssh link in your Cloud UI -&gt; select the branch -&gt; Access Site -&gt; SSH access):</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    *	Staging: ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud
-    *	Production: ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -A &lt;environment_ssh_link@ssh.region.magento.cloud&gt;
 </code></pre></div>      </div>
     </li>
     <li>
-      <p>rsync the <code class="highlighter-rouge">pub/media</code> directory from your local Magento server to staging or production:</p>
+      <p>rsync the <code class="highlighter-rouge">pub/media</code> directory from your environment you have logged into on step #1 to another remote environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -azvP pub/media/ &lt;developmemt machine user name&gt;@&lt;development machine host or IP&gt;:pub/media/
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -azvP pub/media/ &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;:pub/media/
 </code></pre></div>      </div>
     </li>
   </ol>
 
-  <p>The IP is for the Magento Commerce VM or container you created when setting up the local.</p>
+  <p><strong>Note</strong>: You can find ssh link of the evnrionment in your Cloud UI -&gt; select the branch -&gt; Access Site -&gt; SSH access.</p>
 
-  <h2 id="cloud-live-migrate-db">Dump and migrate the database</h2>
+  <h2 id="cloud-live-migrate-db">Migrate the database</h2>
 
-  <p><strong>Prerequisite:</strong> A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the <a href="https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger" target="_blank">TRIGGER privilege</a>.</p>
+  <p><strong>Prerequisite:</strong> A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the <a href="https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger" target="\_blank">TRIGGER privilege</a>.</p>
 
   <p><strong>Important:</strong> The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.</p>
 
-  <p>For continuous integration deployments, we <strong>do not recommend</strong> migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the <a href="/guides/v2.2/cloud/live/sens-data-over.html">configuration file</a> and <code class="highlighter-rouge">setup:upgrade</code> command during build and deploy.</p>
+  <p>For continuous integration deployments, we <strong>do not recommend</strong> migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">configuration file</a> and <code class="highlighter-rouge">setup:upgrade</code> command during build and deploy.</p>
 
   <p>We <strong>do recommend</strong> migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.</p>
+
+  <p><strong>Note</strong> In order to transfer media from remote-to-remote environments directly you need to enable ssh agent forwarding, please refer to this <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">github guidance</a></p>
 
   <p>To migrate a database:</p>
 
@@ -2212,21 +2222,13 @@ P partial progress
     <li>
       <p>SSH into the environment you want to create a database dump from:</p>
 
-      <ul>
-        <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>
-          <p>To SSH into the <code class="highlighter-rouge">master</code> branch of your Integration environment:</p>
-
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  magento-cloud environment:ssh
-</code></pre></div>          </div>
-        </li>
-      </ul>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    ssh -A &lt;environment_ssh_link@ssh.region.magento.cloud&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Find the database login information with the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))-&gt;database);'
 </code></pre></div>      </div>
     </li>
     <li>
@@ -2243,37 +2245,29 @@ P partial progress
 </code></pre></div>      </div>
     </li>
     <li>
-      <p>Transfer the database dump to Staging or Production with an <code class="highlighter-rouge">rsync</code> command:</p>
+      <p>Transfer the database dump to another remote emvironment with an <code class="highlighter-rouge">rsync</code> command:</p>
 
-      <ul>
-        <li>Staging: <code class="highlighter-rouge">rsync -azvP /tmp/database.sql.gz &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud:/tmp</code></li>
-        <li>Production: <code class="highlighter-rouge">rsync -azvP /tmp/database.sql.gz &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud:/tmp</code></li>
-      </ul>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -azvP /tmp/database.sql.gz &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;:/tmp
+</code></pre></div>      </div>
     </li>
-    <li>Enter <code class="highlighter-rouge">exit</code> to terminate the SSH connection.</li>
+    <li>
+      <p>Enter <code class="highlighter-rouge">exit</code> to terminate the SSH connection.</p>
+    </li>
     <li>
       <p>Open an SSH connection to the environment you want to migrate the database into:</p>
 
-      <ul>
-        <li>Staging: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Production: <code class="highlighter-rouge">ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>
-          <p>To SSH into the <code class="highlighter-rouge">master</code> branch of your Integration environment:</p>
-
-          <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  magento-cloud environment:ssh
-</code></pre></div>          </div>
-        </li>
-      </ul>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -A &lt;destination_environment_ssh_link@ssh.region.magento.cloud&gt;
+</code></pre></div>      </div>
     </li>
     <li>
       <p>Import the database dump with the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zcat database.sql.gz | mysql -u &lt;username&gt; -p&lt;password&gt; &lt;database name&gt;
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zcat /tmp/database.sql.gz | mysql -h &lt;database_host&gt; -u &lt;username&gt; -p&lt;password&gt; &lt;database name&gt;
 </code></pre></div>      </div>
 
       <p>The following is an example using information from step 2:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zcat database.sql.gz | mysql -u user main
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zcat /tmp/database.sql.gz | mysql -h database.internal -u user main
 </code></pre></div>      </div>
     </li>
   </ol>
@@ -2294,8 +2288,8 @@ P partial progress
   <p>Use the database dump you just created to <a href="#cloud-live-migrate-db">migrate the database</a>.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
-  <p>After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.</p>
-</div>
+    <p>After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.</p>
+  </div>
 
   <h4 id="next-step">Next step</h4>
   <p><a href="/guides/v2.2/cloud/live/stage-prod-test.html">Test deployment</a></p>
