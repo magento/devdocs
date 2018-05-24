@@ -28,6 +28,30 @@ Look for the following highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
+### Highlights (core code enhancements)
+This release includes significant performance improvements to the core Magento code: 
+
+* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly increase the `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
+
+* <!--- MAGETWO-74154 --> Refactoring of Catalog Fulltext indexer has improved indexing performance up to 15% for very large profiles (600K products) and product catalogs with many configurable options (5K configurable products and 500 options). 
+
+
+* <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable prodict options (for example, 5,000 configurable products and 500 options). 
+
+
+
+### Highlights (community contributions)
+Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
+
+* <!--- MAGETWO-87115 --> Users can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
+
+* <!--- MAGETWO-73479 --> Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected. 
+
+* <!-- MAGETWO-86227 --> When sorting simple products, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.  
+
+* <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
+
+
 
 
 
@@ -79,7 +103,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product ragher than for the selected variant. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
-<!--- MAGETWO-87570 -->* * The **Hide from Product Page** option now works for the child product of a configurable product. 
+<!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product. 
 
 <!--- MAGETWO-71662 -->* The **Update On Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-index from the command line, your changes to configurable product options were not not saved. 
 
