@@ -11,27 +11,28 @@ This release includes multiple enhancements to product security plus bug fixes a
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See Magento Security Center for a comprehensive discussion of these issues.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
 
 
 ## Highlights
 
 Look for the following highlights in this release:
 
-Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities. See Magento Security Center for more information.
+* Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
+* Substantial improvements to indexing performance. 
 
-* Almost 50 **community contributions**. These community contributions include 
+* Over 150 **community contributions**.
+
+* Improvements to our core bundled extensions. 
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
 
 
-<!--- MAGETWO-86496 -->* The `backup` command now works as expected.  *Fix submitted by [Jagriti Joshi](https://github.com/jagritijoshi) in pull request 13066*. [GitHub-12877](https://github.com/magento/magento2/issues/12877)
-
-
 
 ## Fixes
+In addition to security enhancements, this release contains the following functional fixes. 
 
 ### Installation, setup, and deployment
 

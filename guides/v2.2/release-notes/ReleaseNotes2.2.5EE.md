@@ -14,7 +14,7 @@ We are pleased to present Magento Commerce 2.2.5. This release includes multiple
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See Magento Security Center for a comprehensive discussion of these issues.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
 
 
 
@@ -23,7 +23,7 @@ See Magento Security Center for a comprehensive discussion of these issues.
 Look for the following highlights in this release:
 
 
-* Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities. See Magento Security Center for more information.
+* Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
 * Substantial improvements to indexing performance. 
 
@@ -65,6 +65,7 @@ Highlights of community contributions include  fixes that improve checkout flow 
 
 
 ## Fixes
+In addition to security enhancements, this release contains the following functional fixes. 
 
 ### Installation, setup, and deployment
 
