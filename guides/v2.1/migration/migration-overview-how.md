@@ -19,13 +19,15 @@ This document uses the following terminology to discuss the Data Migration Tool:
 
 ## Migration modes (phases)
 
-This guide provides information about migration using the Data Migration Tool that can transfer and adapt data from Magento 1 to Magento 2 stores. The migration in overall is split into three phases (or modes):
+This guide provides information about migration using the Data Migration Tool. This tool transfers and adapts data from Magento 1 to Magento 2 stores by splitting the migration into three phases (or modes):
 
 *	Configuration settings
 *	Data
 *	Delta (changes since the last run)
 
-Each mode is divided into steps, each of which is responsible for transferring particular data, such as the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}, the rewrite step, the EAV step, and the settings step. At the beginning of a run, a step checks the table structures of Magento 1 and Magento 2 for consistency. Then the actual data is transferred to Magento 2 and is verified.
+Each mode is divided into steps, each responsible for transferring particular data, such as the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}, the rewrite step, the EAV step, and the settings step.
+
+At the beginning of a run, a step checks the table structures of Magento 1 and Magento 2 for consistency, then the actual data is transferred to Magento 2 and verified.
 
 This section previews your migration experience by providing a high-level overview of the Data Migration Tool.
 
