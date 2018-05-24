@@ -125,7 +125,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 
-### Gift card EE only
+### Gift card 
 <!--- MAGETWO-85536 -->* Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to their cart. 
 
 
@@ -171,7 +171,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 
-### Staging ee only
+### Staging
 
 <!--- MAGETWO-87855 -->* Magento now correctly renders the dates on a Cart Rule staging update when an Admin uses a locale with a different date and time format. Previously, these dates were corrupted. 
 
