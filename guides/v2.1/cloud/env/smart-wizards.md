@@ -9,10 +9,10 @@ functional_areas:
   - Configuration
 ---
 
-The smart wizards can assist you in determining if your Cloud configuration follows best practices by verifying the following:
+The smart wizards can assist you in determining if your Cloud configuration follows best practices. The available wizards can assist with the following configurations:
 
 -  Ideal state for minimal downtime
--  Enabled SCD for on-demand, the build stage, or the deploy stage
+-  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
 -  Load balancing configuration for database and Redis
 
 Each of the smart wizard commands provides a verification response and, if applicable, a recommendation for the proper configuration.
@@ -47,7 +47,7 @@ SCD on-demand is disabled
 
 ## Verifying an ideal configuration
 
-The "Ideal" configuration for your Cloud project helps to minimize downtime by warming the cache and generating static content when requested by the user. If your Cloud is not configured for this _ideal state_, then you receive a message similar to the following:
+The _ideal_ configuration for your Cloud project helps to minimize downtime by warming the cache and generating static content when requested by the user. If your Cloud is not configured for this _ideal state_, then you receive a message similar to the following:
 
 ```terminal
 - SCD on build is not configured
@@ -78,7 +78,7 @@ Make the following corrections to your configuration:
             php ./vendor/bin/ece-tools post-deploy
     ```
 
-1.  Push your code changes and run the test again. When your configuration is "ideal", you receive the following message:
+1.  Push your code changes and run the test again. When your configuration is _ideal_, you receive the following message:
 
     ```terminal
     Ideal state is configured
