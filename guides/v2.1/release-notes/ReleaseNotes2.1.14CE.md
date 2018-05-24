@@ -17,14 +17,16 @@ We are pleased to present Magento Open Source  2.1.14. This release includes  mu
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for a comprehensive discussion of these issues.
+See [Magento Security Center] for a comprehensive discussion of these issues.In addition to security enhancements, this release contains the following functional fixes. In addition to security enhancements, this release contains the following functional fixes. 
 
 ## Highlights
 Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
 
-* **Enhancements that help close authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
+* **Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center] for more information.
 
 ## Fixed issues
+In addition to security enhancements, this release contains the following functional fixes. 
+
 
 ### Setup
 
@@ -34,17 +36,16 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 <!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan3600](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
-<!--- ENGCOM-949 -->* `Store getConfig()` now respects  valid false return values. Previously, this method fetched the default configuration values when a configuration value was set to **no** because  **no** setting IS represented by the system as a string value of 0 (and 0 equals false). *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
+<!--- ENGCOM-949 -->* `Store getConfig()` now respects  valid false return values. Previously, the system represented the **no** setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to **no**.    *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
 
 <!--- ENGCOM-1200 -->* All console commands now return status. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14480*.
 
 <!--- MAGETWO-87870 -->*  We've added the `web/unsecure/base_url` config to both website and store scopes. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13658*.
 
 
-
 ### Catalog
 
-<!--- ENGCOM-1223 -->* Magento now checks if `storeId` is not null rather than checking if it's empty. Previously, when `storeId 0 is_empty` returned `true`, Magento could not create a CMS page for all store views. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
+<!--- ENGCOM-1223 -->* Magento now checks if `storeId` is not null rather than checking if it is empty. Previously, when `storeId 0 is_empty` returned `true`, Magento could not create a CMS page for all store views. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 14505*.
 
 
 
@@ -109,6 +110,9 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 <!--- ENGCOM-944 -->* We've improved the ability to store passwords using different hashing algorithms. These improvements include changes to `\Magento\Framework\Encryption\Encryptor::getHash`, which previously ignored the specified hashing algorithm version that was supplied. 
 *Fix submitted by [Mads Nielsen](https://github.com/k4emic) in pull request 13886*. [GitHub-5463](https://github.com/magento/magento2/issues/5463)
+
+<!--- MAGETWO-69715 -->* You can now cancel the removal of a block or container from a layout by setting the `remove` attribute value to `false`. [GitHub-1931](https://github.com/magento/magento2/issues/1931)
+
 
 
 
@@ -175,13 +179,7 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the follow
 
 
 
-<!--- NOT NEEDED  MAGETWO-90963 MAGETWO-89253 MAGETWO-90925 MAGETWO-90841  MAGETWO-90394 MAGETWO-90072 MAGETWO-90069 MAGETWO-90068 MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->
-
-<!--WON'T FIX MAGETWO-58038 MAGETWO-90075 -->
-
-<!--CANNOT REPRODUCE MAGETWO-81479 MAGETWO-87720 -->
-
-<!--DUPLICATE MAGETWO-88069 -->
+<!--- NOT NEEDED   MAGETWO-90925   MAGETWO-90394  MAGETWO-90069  MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->
 
 
 ## Community contributions
