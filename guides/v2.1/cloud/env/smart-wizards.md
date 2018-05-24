@@ -11,7 +11,6 @@ functional_areas:
 
 The smart wizards can assist you in determining if your Cloud configuration follows best practices by verifying the following:
 
--  Cloud configuration status
 -  Ideal state for minimal downtime
 -  Enabled SCD for on-demand, the build stage, or the deploy stage
 -  Load balancing configuration for database and Redis
@@ -25,7 +24,6 @@ Command | Description
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
 `wizard:scd-on-build ` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies the `config.php` file contains information for stores, store groups, and websites.
 `wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
-`wizard:status` | Display the complete status of your Cloud, including SCD on-demand, SCD on build, SCD on deploy, and Gzip compression level.
 
 ## Assisting the SCD on-demand configuration
 
