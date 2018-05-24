@@ -71,17 +71,45 @@ To prevent access to your store while it's being upgraded, put your store in mai
 	For example, `cd /var/www/html/magento2`
 2.	Enter the following commands in the order shown:
 
-		composer require <product> <version> --no-update
+		composer require <package> <version> --no-update
+		composer update
+	
+	If you created your project according to <a href="https://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install.html">(Integrator) Integrator installation</a>, following the commands from <a href="https://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install_ce.html">Get the Magento Open Source metapackage</a> or <a href="https://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install_ee.html">Get the Magento Commerce metapackage</a>, then follow next steps.
+
+	For example, to upgrade to {{site.data.var.ce}} version 2.2.2, enter:
+
+		composer require magento/product-community-edition 2.2.2 --no-update
 		composer update
 
-	For example, to upgrade to {{site.data.var.ce}} version 2.0.11, enter:
+	To upgrade to Magento EE version 2.2.2, enter:
 
-		composer require magento/product-community-edition 2.0.11 --no-update
+		composer require magento/product-enterprise-edition 2.2.2 --no-update
+		composer update
+		
+	If you have own *composer.json* where Magento package specified as a dependency. For example:
+		
+		{
+			"name": "your/application",
+			"type": "project",
+			...
+			"minimum-stability": "dev",
+			"require": {
+				"magento/project-enterprise-edition": "2.2.1",
+				...
+			},
+			...
+		}
+	
+	then you should update another package.
+	
+	For example, to upgrade to {{site.data.var.ce}} version 2.2.2, enter:
+
+		composer require magento/project-community-edition 2.2.2 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.11, enter:
+	To upgrade to Magento EE version 2.2.2, enter:
 
-		composer require magento/product-enterprise-edition 2.0.11 --no-update
+		composer require magento/project-enterprise-edition 2.2.2 --no-update
 		composer update
 
 	<div class="bs-callout bs-callout-info" id="info">
