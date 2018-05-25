@@ -107,8 +107,8 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>VERBOSE_COMMANDS</code></td>
-<td>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Be aware, if you enable this verbosity, the logs will be deeply detailed. This is available in all versions.</td>
-<td>disabled</td>
+<td>Enables or disables the <a href="https://symfony.com/doc/current/console/verbosity.html">Symfony</a> debug verbosity level for your logs. Choose the level of detail provided in the logs: <code>-v</code>, <code>-vv</code>, or <code>-vvv</code>. Be aware, if you enable this verbosity, the logs will be deeply detailed. This is available in all versions.</td>
+<td>Not set</td>
 </tr>
 <tr>
 <td><code>ADMIN_USERNAME</code></td>
