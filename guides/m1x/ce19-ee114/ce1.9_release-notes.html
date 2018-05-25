@@ -60,14 +60,14 @@
 
 
 <h2 id="ce19-1939">Magento Open Source 1.9.3.9 Release Notes</h2>
- <p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+ <p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
  <h3>Fixed issues and enhancements</h3>
 <ul>
-<li>Magento no longer performs unnecessary write operations on the core_url_rewrite table. <a href="https://jira.corp.magento.com/browse/MPERF-768" target="_blank">MPERF-768</a></li>	
-<li> Customers can now successfully register during checkout without being unexpectedly logged out. <a href="https://jira.corp.magento.com/browse/MPERF-10065" target="_blank">MPERF-10065</a></li>	
-<li>Incorrect escaping in the cron.sh file no longer prevents cron jobs from running in parallel as expected. <a href="https://jira.corp.magento.com/browse/MPERF-9735" target="_blank">MPERF-9735</a></li>	
-<li>Magento now cleans session data as expected after a customer logs out. <a href="https://jira.corp.magento.com/browse/MPERF-10021" target="_blank">MPERF-10021</a></li>	
+<li>Magento no longer performs unnecessary write operations on the core_url_rewrite table. </li>	
+<li> Customers can now successfully register during checkout without being unexpectedly logged out. </li>	
+<li>Incorrect escaping in the cron.sh file no longer prevents cron jobs from running in parallel as expected. </li>	
+<li>Magento now cleans session data as expected after a customer logs out. </li>	
 </ul>
 
 
