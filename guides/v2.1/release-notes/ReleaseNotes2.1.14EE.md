@@ -21,7 +21,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5
 ## Highlights
 Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
 
-* **Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update)for more information.
+* **Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
 ## Fixed issues  
 In addition to security enhancements, this release contains the following functional fixes. 
