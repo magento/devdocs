@@ -104,7 +104,3 @@ pages:
     - label: Customize product creation form
       versions: ["2.1","2.2", "2.3"]
       url: /howdoi/customize_product.html
-
-    - label: Reindex in parallel mode
-      versions: ["2.2", "2.3"]
-      url: /howdoi/indexer/reindex/reindex-in-parallel-mode.html
