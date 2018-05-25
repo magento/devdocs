@@ -74,6 +74,18 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		composer require <product> <version> --no-update
 		composer update
 
+	If you upggrading from versions **2.0.X** or **2.1.X**, then you shoud run command
+	
+		composer config minimum-stability 'stable'
+			
+	before executing next steps, because **minimum-stability** since **2.2.X** was changed from **alpha** to **stable** and without changing this parameter in your project's *composer.json* you will get the error
+	
+		  Problem 1
+    		    - The requested package magento/project-enterprise-edition 2.0.2 is satisfiable by magento/project-enterprise-edition[2.0.2] but these conflict with your requirements or minimum-stability.
+  		  Problem 2
+    		    - Installation request for magento/project-enterprise-edition 2.2.4 -> satisfiable by magento/project-enterprise-edition[2.2.4].
+    		    - magento/project-enterprise-edition 2.2.4 requires magento/product-enterprise-edition 2.2.4 -> satisfiable by magento/product-enterprise-edition[2.2.4] but these conflict with your requirements or minimum-stability.
+		
 	For example, to upgrade to {{site.data.var.ce}} version 2.0.11, enter:
 
 		composer require magento/product-community-edition 2.0.11 --no-update
