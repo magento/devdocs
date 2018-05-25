@@ -66,13 +66,13 @@
 <ul>
 <li>Magento no longer performs unnecessary write operations on the core_url_rewrite table. </li>	
 <li> Customers can now successfully register during checkout without being unexpectedly logged out. </li>	
-<li>Incorrect escaping in the cron.sh file no longer prevents cron jobs from running in parallel as expected. </li>	
+<li>Incorrect escaping in the <code>cron.sh</code> file no longer prevents cron jobs from running in parallel as expected. </li>	
 <li>Magento now cleans session data as expected after a customer logs out. </li>	
 </ul>
 
 
 <h3>Known issue</h3>
- <p>If your custom code or extension is using <code>Zend/Filter/PregReplace.php</code> with the modifier <code>e</code>, it will now return an error due to possible RCE issues. See APPSEC-2029 in <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for more information.</p>
+ <p>If your custom code or extension is using <code>Zend/Filter/PregReplace.php</code> with the modifier <code>e</code>, it will now return an error due to possible RCE issues. See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for more information.</p>
 
 
 <h2 id="ce19-1938">Magento Open Source 1.9.3.8 Release Notes</h2>
