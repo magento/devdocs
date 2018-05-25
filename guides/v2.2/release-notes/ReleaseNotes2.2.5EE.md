@@ -43,7 +43,7 @@ This release includes significant performance improvements to the core Magento c
 * <!--- MAGETWO-74154 --> Refactoring of Catalog Fulltext indexer has improved indexing performance up to 15% for very large profiles (600K products) and product catalogs with many configurable options (5K configurable products and 500 options). 
 
 
-* <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable prodict options (for example, 5,000 configurable products and 500 options). 
+* <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options). 
 
 
 
@@ -74,7 +74,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Bundle products
-<!--- MAGETWO-86354 -->* You can now successfully delete an option from a bundle prodct. 
+<!--- MAGETWO-86354 -->* You can now successfully delete an option from a bundle product. 
 
 <!--- MAGETWO-73479 -->* Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected. 
 
@@ -105,11 +105,11 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-88925 -->* Magento now displays the correct  status for a backordered configurable product on the order view page. 
 
-<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product ragher than for the selected variant. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
+<!--- MAGETWO-86661 -->* Magento now displays the correct image for a configurable product on the wishlist. Previously, Magento displayed the image for the parent product rather than for the selected variant. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 1031*. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
 <!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product. 
 
-<!--- MAGETWO-71662 -->* The **Update On Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-index from the command line, your changes to configurable product options were not not saved. 
+<!--- MAGETWO-71662 -->* The **Update On Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-indexed from the command line, your changes to configurable product options were not saved. 
 
 
 ### Frameworks
@@ -117,7 +117,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### General
-<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existin product at the default store level. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
+<!--- MAGETWO-85296 -->* The product repository now uses `store_id` (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 967*. [GitHub-7720](https://github.com/magento/magento2/issues/7720), [GitHub-12395](https://github.com/magento/magento2/issues/12395), [GitHub-12186](https://github.com/magento/magento2/issues/12186)
 
 <!--- MAGETWO-82417 -->* The placement of Google Tag Manager code now follows the guidelines in the [Google Tag Manager Developer Guide](https://developers.google.com/tag-manager/devguide). (Previously, the Google Tag Manager code was inserted before the `dataLayer` variable was defined.)
 
