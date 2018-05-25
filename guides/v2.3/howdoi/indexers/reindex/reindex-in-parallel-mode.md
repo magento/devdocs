@@ -1,1 +1,0 @@
-../../../v2.2/howdoi/indexer/reindex/reindex-in-parallel-mode.md
