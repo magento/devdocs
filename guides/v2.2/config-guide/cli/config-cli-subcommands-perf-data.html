@@ -2245,17 +2245,19 @@ Generating simple products...  done in &lt;time&gt;
   <h3 id="config-cli-gen-config">Configs</h3>
   <p>Sets values for config fields. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Config variables and values for change --&gt;
-    &lt;configs&gt;
-        &lt;config&gt;
-            &lt;path&gt;{string}&lt;/path&gt; &lt;!-- e.g. admin/security/use_form_key --&gt;
-            &lt;scope&gt;{string}&lt;/scope&gt; &lt;!-- e.g. default --&gt;
-            &lt;scopeId&gt;{int}&lt;/scopeId&gt;
-            &lt;value&gt;{int|string}&lt;/value&gt;
-        &lt;/config&gt;
+  <pre class="no-copy">
+&lt;!-- Config variables and values for change --&gt;
+&lt;configs&gt;
+    &lt;config&gt;
+        &lt;path&gt;{string}&lt;/path&gt; &lt;!-- e.g. admin/security/use_form_key --&gt;
+        &lt;scope&gt;{string}&lt;/scope&gt; &lt;!-- e.g. default --&gt;
+        &lt;scopeId&gt;{int}&lt;/scopeId&gt;
+        &lt;value&gt;{int|string}&lt;/value&gt;
+    &lt;/config&gt;
 
-        &lt;!-- ... more entries ... --&gt;
-    &lt;/configs&gt;</pre>
+    &lt;!-- ... more entries ... --&gt;
+&lt;/configs&gt;
+</pre>
 
   <h3 id="config-cli-gen-configprod">Configurable products</h3>
   <p>Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products will be assigned to all websites.</p>

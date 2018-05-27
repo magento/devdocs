@@ -2110,14 +2110,15 @@ We recommend making these changes before switching to Production mode.</p>
 
 <p>After you make the change in the Admin, run <code class="highlighter-rouge">php bin/magento app:config:dump</code> to write the value to <code class="highlighter-rouge">config.php</code>. The value is written to the <code class="highlighter-rouge">general</code> array under <code class="highlighter-rouge">locale</code> as the following snippet from <code class="highlighter-rouge">config.php</code> shows:</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="s1">'general'</span> <span class="o">=&gt;</span>
-      <span class="k">array</span> <span class="p">(</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'general'</span> <span class="o">=&gt;</span>
+    <span class="k">array</span> <span class="p">(</span>
         <span class="s1">'locale'</span> <span class="o">=&gt;</span>
         <span class="k">array</span> <span class="p">(</span>
-          <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'en_US'</span><span class="p">,</span>
-          <span class="s1">'timezone'</span> <span class="o">=&gt;</span> <span class="s1">'America/Chicago'</span><span class="p">,</span>
-          <span class="s1">'weight_unit'</span> <span class="o">=&gt;</span> <span class="s1">'kgs'</span><span class="p">,</span>
-        <span class="p">),</span>
+            <span class="s1">'code'</span> <span class="o">=&gt;</span> <span class="s1">'en_US'</span><span class="p">,</span>
+            <span class="s1">'timezone'</span> <span class="o">=&gt;</span> <span class="s1">'America/Chicago'</span><span class="p">,</span>
+            <span class="s1">'weight_unit'</span> <span class="o">=&gt;</span> <span class="s1">'kgs'</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 </code></pre></div></div>
 
 <h3 id="change-several-configuration-settings">Change several configuration settings</h3>
