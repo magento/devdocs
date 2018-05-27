@@ -295,17 +295,19 @@ XML profile node:
 ### Configs {#config-cli-gen-config}
 Sets values for config fields. XML profile node:
 
-<pre class="no-copy">&lt;!-- Config variables and values for change -->
-    &lt;configs>
-        &lt;config>
-            &lt;path>{string}&lt;/path> &lt;!-- e.g. admin/security/use_form_key -->
-            &lt;scope>{string}&lt;/scope> &lt;!-- e.g. default -->
-            &lt;scopeId>{int}&lt;/scopeId>
-            &lt;value>{int|string}&lt;/value>
-        &lt;/config>
+<pre class="no-copy">
+&lt;!-- Config variables and values for change -->
+&lt;configs>
+    &lt;config>
+        &lt;path>{string}&lt;/path> &lt;!-- e.g. admin/security/use_form_key -->
+        &lt;scope>{string}&lt;/scope> &lt;!-- e.g. default -->
+        &lt;scopeId>{int}&lt;/scopeId>
+        &lt;value>{int|string}&lt;/value>
+    &lt;/config>
 
-        &lt;!-- ... more entries ... -->
-    &lt;/configs></pre>
+    &lt;!-- ... more entries ... -->
+&lt;/configs>
+</pre>
 
 ### Configurable products {#config-cli-gen-configprod}
 Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If `assign_entities_to_all_websites` is set to `1`, products will be assigned to all websites.
