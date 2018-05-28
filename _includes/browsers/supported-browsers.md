@@ -11,3 +11,4 @@ Storefront and Admin:
 *	Chrome for mobile latest&ndash;1 (Android 4 or later) for mobile storefront
 
 where _latest&ndash;1_ means one major version earlier than the latest released version.
+</div>
