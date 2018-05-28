@@ -36,7 +36,7 @@ You can set `MAGE_DIRS` in any of the following ways:
  	    DirectoryList::PUB => [DirectoryList::URL_PATH => '',
  	    DirectoryList::MEDIA => [DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => ''],
  	    DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
- 	    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'media/upload'],
+ 	    DirectoryList::UPLOAD => [DirectoryList::URL_PATH => '/mnt/nfs/media/upload'],
  	    DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
 	];
 	$bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
