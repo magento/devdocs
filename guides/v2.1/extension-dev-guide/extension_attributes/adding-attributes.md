@@ -197,8 +197,8 @@ In second one:
     <custom_attributes><!-- Custom Attributes Data --></custom_attributes>
     <extension_attributes>
         <our_custom_data>
-                <first_custom_attribute>1</first_custom_attribute>
-                <second_custom_attribute>2</second_custom_attribute>
+            <first_custom_attribute>1</first_custom_attribute>
+            <second_custom_attribute>2</second_custom_attribute>
         </our_custom_data>
     </extension_attributes>
 </product>
