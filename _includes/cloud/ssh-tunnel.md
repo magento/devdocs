@@ -4,7 +4,7 @@ You can also use SSH tunneling to connect to a service from your local developme
 
 Use a terminal application to log in and issue commands.
 
-  magento-cloud login
+    magento-cloud login
 
 First, you may want to check if any tunnels are already open using the following command:
 
