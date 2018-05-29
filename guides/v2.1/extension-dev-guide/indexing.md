@@ -121,7 +121,7 @@ You can also reindex from the [command line]({{ page.baseurl }}/config-guide/cli
 
 The following figure shows an example of setting indexers to Update by Schedule.
 
-![Changing indexer modes]({{ site.baseurl}}/common/images/index_index-modes.png){:width="600px"}
+![Changing indexer modes]({{ site.baseurl }}/common/images/index_index-modes.png){:width="600px"}
 
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
 You can reindex in any of the following ways:
