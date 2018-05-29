@@ -736,7 +736,7 @@
   <li>Company credit</li>
 </ul>
 
-<p>Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block accesss using web APIs, you must specify each resource individually.</p>
+<p>Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block access using web APIs, you must specify each resource individually.</p>
 
 <p>The following table lists all the resources that are available to the customers defined with a company. To visualize the resource hierarchy, log in to a store as the Company Admin and select <strong>Roles and Permissions</strong>, then click the <strong>Edit</strong> action next to the Default User role.</p>
 
@@ -929,7 +929,7 @@
 
 <p>This example creates a role named “Junior Buyer”. It allows the assignee to access to all Sales resources except “View orders of subordinate users”.</p>
 
-<p>All resouces that are not explicitly allowed are denied. You must specify the <code class="highlighter-rouge">Magento_Company::index</code> resource in all calls.</p>
+<p>All resources that are not explicitly allowed are denied. You must specify the <code class="highlighter-rouge">Magento_Company::index</code> resource in all calls.</p>
 
 <p><strong>Sample Usage</strong></p>
 
