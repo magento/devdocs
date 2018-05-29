@@ -35,13 +35,13 @@ To verify your configuration properly enables the SCD on-demand feature:
 
 A successful configuration returns:
 
-```bash
+```terminal
 SCD on-demand is enabled
 ```
 
 A failed configuration returns:
 
-```bash
+```terminal
 SCD on-demand is disabled
 ```
 
