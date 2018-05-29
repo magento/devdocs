@@ -1,9 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 7_Staging
 title: Magento Content Staging Basics
-menu_title: Basics
 version: 2.1
 github_link: extension-dev-guide/staging/basics.md
 ---
@@ -55,9 +53,9 @@ For read operation we need to specify an exact version we want to receive. For p
 
 To select actual values the application will use the following rule. Creation time of the selected data must be greater or equal to the requested version, and an expiration time must be strictly less than the requested version. It is easy to translate this rule into SQL WHERE condition:
 
-{% highlight sql %}
+```sql
 SELECT * FROM catalog_product_entity WHERE creation_in <= requestedVersion AND updated_in > requestedVersion;
-{% endhighlight %}
+```
 
 Since an entity may have attributes which are stored in other tables. These attributes refer to the main table by `ROW_ID` and only actual data will be selected for particular request.
 

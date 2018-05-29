@@ -111,9 +111,13 @@ pages:
         - label: How to add CLI commands
           url: /extension-dev-guide/cli-cmds/cli-howto.html
 
-    - label: Staging (Magento Commerce only)
+    - label: Content staging (Magento Commerce only)
       versions: ["2.1","2.2", "2.3"]
       url: /extension-dev-guide/staging.html
+      children:
+
+        - label: Basics
+          url: /extension-dev-guide/staging/basics.html
 
     - label: Component development
       url: /extension-dev-guide/module-development.html
