@@ -725,7 +725,7 @@ Users of the CyberSource payment method should note that  that CyberSource uses 
 
 ### Performance
 
-<!--- MAGETWO-84480 -->* The addition of a cache for the `getmagesize()` function has improved product image loading.
+<!--- MAGETWO-84480 -->* The addition of a cache for the `getimagesize()` function has improved product image loading.
 
 <!--- MAGETWO-45775 -->* Each cache type now has its own separate cache storage.
 
