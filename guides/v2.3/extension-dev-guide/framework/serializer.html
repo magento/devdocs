@@ -1661,6 +1661,33 @@ The following example shows how to use a serializer’s <code class="highlighter
 
 <span class="o">...</span></code></pre></figure>
 
+<h2 id="backward-compatibility-note">Backward Compatibility Note</h2>
+
+<p>The <code class="highlighter-rouge">SerializerInterface</code> interface and its implementations only exist since Magento version 2.2.<br />
+Because of this, it is not posssible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.</p>
+
+<p>In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of <code class="highlighter-rouge">SerializerInterface</code>.<br />
+Instead, a runtime check if the <code class="highlighter-rouge">SerializerInterface</code> definition exists can made, and if it does, it can be instantiated by directly accessing the object manager using a static method. Alternatively a check against the Magento 2 version or the <code class="highlighter-rouge">magento/framework</code> composer package version would work, too.  
+If the interface does not exist or an earlier version of Magento 2 is being executed, the appropriate native PHP serialization function has to be called, e.g. <code class="highlighter-rouge">\serialize()</code> or <code class="highlighter-rouge">\json_encode()</code>, depending on the usercase.</p>
+
+<p>Here is an example:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sb">```
+/**
+ * @param mixed $data
+ * @return string
+ */
+ private function serialize($data)
+ {
+    if (class_exists(\Magento\Framework\Serialize\SerializerInterface::class)) {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $serializer = $objectManager-&gt;create(\Magento\Framework\Serialize\SerializerInterface::class);
+        return $serializer-&gt;serialize($data);
+    }
+    return \serialize($data);
+}
+```</span></code></pre></figure>
+
 
 			
 		</div>
