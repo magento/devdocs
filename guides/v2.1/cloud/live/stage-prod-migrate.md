@@ -138,7 +138,7 @@ To migrate static files from remote-to-remote environments directly (fast approa
 
 		rsync -azvP pub/media/ <destination_environment_ssh_link@ssh.region.magento.cloud>:pub/media/
 
-**Note**: You can find ssh link of the evnrionment in your Cloud UI -> select the branch -> Access Site -> SSH access.
+**Note**: You can find ssh link of the environment in your Cloud UI -> select the branch -> Access Site -> SSH access.
 
 ## Migrate the database {#cloud-live-migrate-db}
 
@@ -175,7 +175,7 @@ To migrate a database:
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
 		
 
-4.	Transfer the database dump to another remote emvironment with an `rsync` command:
+4.	Transfer the database dump to another remote environment with an `rsync` command:
 
 		rsync -azvP /tmp/database.sql.gz <destination_environment_ssh_link@ssh.region.magento.cloud>:/tmp
 		
