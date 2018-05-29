@@ -1,1 +1,0 @@
-../../../v2.0/architecture/view/design-abstract.md

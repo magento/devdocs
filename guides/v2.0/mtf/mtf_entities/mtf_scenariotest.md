@@ -1,10 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Scenario test
-menu_title: Scenario test
-menu_order: 10
 version: 2.0
 github_link: mtf/mtf_entities/mtf_scenariotest.md
 ---
@@ -13,7 +9,7 @@ Scenario test is a case of separate test steps where each step is a distinct cla
 
 Scenario test has the following advantages:
 
-- Each step in the scenario is a separate PHP class that is placed in the module it belongs to.
+- Each step in the scenario is a separate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class that is placed in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} it belongs to.
 - Scenario test reduces code duplication because each step can be used multiple times.
 - Scenario tests are flexible and support Magento modularity.
 - New test can be easily created using existing steps.
@@ -27,7 +23,7 @@ Scenario test is split into four logical components:
 
 ## Test case class   {#test-case}
 
-Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Magento/<module>/Test/TestCase` along with corresponding data sets. Each test case is a PHP class that only runs corresponding scenario, it doesn't contain any other logic than that. In general, the difference between scenario test case and injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in XML file.
+Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Magento/<module>/Test/TestCase` along with corresponding data sets. Each test case is a PHP class that only runs corresponding scenario, it doesn't contain any other logic than that. In general, the difference between scenario test case and injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file.
  
 Implementation of a scenario test is always the same. You have to change the name of your test case only.
 
@@ -336,8 +332,8 @@ On the previous example the `clean()` method:
 
 <!-- LINKS DEFINITIONS -->
 
-[injectable test]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
+[injectable test]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
 [test case]: #test-case
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [test scenario]: #test-scenario
 [test step]: #test-step

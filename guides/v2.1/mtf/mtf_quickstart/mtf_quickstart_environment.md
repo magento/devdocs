@@ -1,10 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start. Prepare environment for test run
-menu_title: Prepare environment for test run
-menu_order: 2
 version: 2.1
 github_link: mtf/mtf_quickstart/mtf_quickstart_environment.md
 ---
@@ -32,7 +28,7 @@ Enter in terminal:
 
 If the Selenium Server does not work directly with your browser, find the corresponding [web driver].
 
-In `config.xml` [define the browser that the FTF must use for tests]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser).
+In `config.xml` [define the browser that the FTF must use for tests]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser).
 
 Run the Selenium Server with an additional argument.
 
@@ -55,15 +51,15 @@ Enter in terminal:
 
 <h2 id="mtf_install_pre">Next Steps</h2>
 
-[&lt;&lt; Prepare Magento application]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+[&lt;&lt; Prepare Magento application]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)| <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
 
 
 <!-- LINK DEFINITIONS -->
 
 <!-- Devdocs -->
-[fixtures]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[repositories]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[page objects]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
+[fixtures]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[repositories]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html
+[page objects]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
 
 <!-- Internet -->
 [Selenium project website]: http://www.seleniumhq.org/download/

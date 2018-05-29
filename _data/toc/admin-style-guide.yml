@@ -1,0 +1,46 @@
+label: Admin Style Guide
+pages:
+    - label: Admin Style Guide
+      children:
+
+            - label: Introduction
+              url: /design-styleguide/bk-styleguide.html
+
+    - label: Design
+      children:
+
+            - label: Color
+              url: /design-styleguide/color/color.html
+
+            - label: Iconography
+              url: /design-styleguide/iconography/iconography.html
+
+            - label: Page Grids
+              url: /design-styleguide/pagegrid/pagegrid.html
+
+            - label: Typography
+              url: /design-styleguide/typography/typography.html
+
+    - label: Writing and Content
+      children:
+
+            - label: Voice and Tone
+              url: /design-styleguide/content-voice-tone/content-voice-tone.html
+
+            - label: Errors and Messages Writing
+              url: /design-styleguide/errors-and-messages/errors-and-messages.html
+
+            - label: Buttons and Links Usage
+              url: /design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html
+
+            - label: Capitalization
+              url: /design-styleguide/capitalization/capitalization.html
+
+            - label: Headings and Organization
+              url: /design-styleguide/headings-and-organization/headings-and-organization.html
+
+            - label: Content Formats
+              url: /design-styleguide/content-formats/content-formats.html
+
+            - label: Number Formats
+              url: /design-styleguide/number-formats/number-formats.html

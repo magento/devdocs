@@ -1,5 +1,4 @@
 ---
-layout: default  
 group: fedg
 subgroup: C_Templates
 title: Templates XSS security
@@ -8,15 +7,17 @@ menu_order: 5
 version: 2.0
 github_link: frontend-dev-guide/templates/template-overview.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-security.html
+functional_areas:
+  - Frontend
 ---
 
 <h2>Security measures against XSS attacks</h2>
 
 To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:
 
-* If a method indicates that the contents is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
+* If a method indicates that the contents is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output)
 
-* Type casting and php function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
+* Type casting and {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}php{% endglossarytooltip %} function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
 * Output in single quotes doesn't need escaping (for example `echo 'some text'`)
 
@@ -64,7 +65,7 @@ For the following output cases, use the specified function to generate XSS-safe 
   <span class="label"><?php echo $block->escapeHtml($block->getLabel()) ?></span>
 {% endhighlight %}
 
-**Case:** URL output\\
+**Case:** {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} output\\
 **Function:** `escapeUrl`
 
 {% highlight html %}

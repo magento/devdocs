@@ -1,7 +1,6 @@
 ---
-layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2
@@ -36,7 +35,7 @@ For more information, see [Magento's backward compatibility policy][1].
 All changes, additions, and extensions to the product should be documented by the author.
 The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
-Ideally, the information about the submitted code should be added to the official Magento DevDocs library.
+Ideally, the information about the submitted code should be added to the official Magento DevDocs {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 Contributors are asked to submit the doc as a Pull Request to the [DevDocs Github repo][4].
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message.
@@ -117,7 +116,7 @@ Code to cover:
 
 * Must cover any formal backwards-incompatible changes on code level.
 For more information, see
-<a href="{{page.baseurl}}architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
+<a href="{{ page.baseurl }}/architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 
@@ -145,8 +144,8 @@ The reviewer should check whether the task meets the original acceptance criteri
 The work cannot be considered as complete unless all the criteria are verified.
 
 
-[0]:{{page.baseurl}}coding-standards/docblock-standard-general.html
-[1]:{{page.baseurl}}architecture/back-compatibility.html
-[2]:{{page.baseurl}}test/testing.html
-[3]:{{page.baseurl}}test/integration/integration_test_execution.html
+[0]:{{ page.baseurl }}/coding-standards/docblock-standard-general.html
+[1]:{{ page.baseurl }}/architecture/back-compatibility.html
+[2]:{{ page.baseurl }}/test/testing.html
+[3]:{{ page.baseurl }}/test/integration/integration_test_execution.html
 [4]:https://github.com/magento/devdocs

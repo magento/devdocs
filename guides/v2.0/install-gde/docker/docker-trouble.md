@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install-dock
 subgroup: 100_trouble
 title: Troubleshoot issues with Magento DevBox
@@ -8,7 +7,13 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-trouble.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
+
+{% include install/docker/deprecated-note.html %}
 
 This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.
 
@@ -62,7 +67,7 @@ When you access the Magento Admin, the following error displays in the browser:
 
 However, you can access the Magento storefront.
 
-_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}install-gde/docker/docker-over.html#devbox-download)
+_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}/install-gde/docker/docker-over.html)
 
 {% endcollapsibleh2 %}
 
@@ -99,7 +104,7 @@ Other errors might display in a secondary command window:
 	Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 	Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 
-*Solution*: [Set up file sharing]({{ page.baseurl }}install-gde/docker/docker-ref.html#devbox-docker-file-share).
+*Solution*: [Set up file sharing]({{ page.baseurl }}/install-gde/docker/docker-ref.html#devbox-docker-file-share).
 
 {% endcollapsibleh2 %}
 

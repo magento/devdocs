@@ -1,0 +1,1 @@
+../../../../v2.2/magento-functional-testing-framework/release-2/section/locator-functions.md

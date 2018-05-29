@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Add vault to module dependencies
@@ -7,6 +6,8 @@ menu_title: Add vault to module dependencies
 menu_order: 1
 version: 2.1
 github_link: payments-integrations/vault/module-configuration.md
+functional_areas:
+  - Integration
 ---
 
 You need to add dependencies on the Magento_Vault module in the payment method's `composer.json` and `module.xml` files.
@@ -43,4 +44,4 @@ You need to add dependencies on the Magento_Vault module in the payment method's
 
 ## What's next
 
-[Configure vault general parameters]({{page.baseurl}}payments-integrations/vault/vault-payment-configuration.html).
+[Configure vault general parameters]({{ page.baseurl }}/payments-integrations/vault/vault-payment-configuration.html).

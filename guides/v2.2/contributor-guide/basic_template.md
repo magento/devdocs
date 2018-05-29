@@ -1,1 +1,0 @@
-../../v2.1/contributor-guide/basic_template.md

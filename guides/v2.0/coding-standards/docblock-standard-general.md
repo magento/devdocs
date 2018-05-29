@@ -1,14 +1,17 @@
 ---
-layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: DocBlock standard
+landing-page: Coding standards
 menu_title: DocBlock standard
 menu_order: 4
 version: 2.0
 github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
+functional_areas:
+  - Standards
 ---
+
 
 This standard defines Magento requirements and conventions for adding code inline documentation, known as *DocBlock*s.
 
@@ -131,12 +134,12 @@ If the file contains a structural element (for example, a class), description fo
 
 Use the following templates for the license notice and copyright blocks:
 
-**Template for PHP Files**
+**Template for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Files**
 
 {% highlight php %}
 <?php
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -153,14 +156,14 @@ interface MetadataObjectInterface
 }
 {% endhighlight %}
 
-**Template for XML Files**
+**Template for {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} Files**
 
 {% highlight xml %}
 
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -171,7 +174,7 @@ interface MetadataObjectInterface
 {% highlight js %}
 
 /**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 {% endhighlight %}
@@ -277,7 +280,7 @@ If possible, add use cases where developers can or cannot use the class.
 {:#short-name-form}
 
 It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
-The only exception is in the `Service/DTO` classes due to tooling requirements.
+The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is in the `Service/DTO` classes due to tooling requirements.
 
 **Example of a Method DocBlock**
 
@@ -554,7 +557,7 @@ Rules for usage of the tag:
 * Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
 * Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
 
-**DocBlock for the Intreface**
+**DocBlock for the Interface**
 {% highlight php startinline=true %}
 /**
  * Interface for mutable value object for integer values
@@ -609,10 +612,10 @@ class LimitedMutableClass implements MutableInterface
 ### @api tag
 {:#api}
 
-The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](../extension-dev-guide/backward-compatibility.html).
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/extension-dev-guide/backward-compatibility.html).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
- If the `@api` tag is applied at the file level, then all methods within the file are part of the public API.
+ If the `@api` tag is applied at the file level, then all methods within the file are part of the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 You do not need to annotate each method individually.
 
 See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.

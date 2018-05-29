@@ -1,13 +1,8 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 30_Quickstart
 title: Quick start. See logs for failed tests
-menu_title: See logs for failed tests
-menu_order: 4
 version: 2.0
 github_link: mtf/mtf_quickstart/mtf_quickstart_logs.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_logs.html
 ---
 
 All failed tests are logged in `<magento2_root_dir>/dev/tests/functional/var/log`.

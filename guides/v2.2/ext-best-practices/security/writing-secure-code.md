@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: Security
 title: Writing secure code
@@ -11,7 +10,7 @@ github_link: ext-best-practices/security/writing-secure-code.md
 
 ## Overview
 
-Using PHP features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
+Using {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
 As a developer, you should avoid using features that introduce vulnerabilities in your code.
 
 ## PHP functions to avoid
@@ -51,4 +50,4 @@ Avoid using these functions in your code.
 [9]:http://php.net/manual/en/function.mt-rand.php
 [10]:http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html
 [11]:http://php.net/manual/en/class.arrayobject.php
-[12]: {{page.baseurl}}extension-dev-guide/framework/serializer.html "Serialize Library"
+[12]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"

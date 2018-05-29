@@ -1,0 +1,1 @@
+../../../v2.2/ui_comp_guide/best-practices/semantic_config.md

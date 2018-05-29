@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 40_Authentication
 title: OAuth error codes
@@ -7,6 +6,8 @@ menu_title: OAuth error codes
 menu_order: 3
 version: 2.0
 github_link: get-started/authentication/oauth-errors.md
+functional_areas:
+  - Integration
 ---
 
 When the third-party application makes an invalid request to Magento, the following OAuth-related errors can occur:
@@ -99,4 +100,4 @@ When the third-party application makes an invalid request to Magento, the follow
 </table>
 
 ## Related topic
-<a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+<a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>

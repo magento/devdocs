@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Service contract design patterns
@@ -10,7 +9,7 @@ github_link: extension-dev-guide/service-contracts/design-patterns.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
 
-<p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a design pattern as a best practice with conditions.</p>
+<p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -18,14 +17,14 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 </div>
 
 <h2 id="top-level-msc">Interface types and locations</h2>
-<p>A service contract must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
-<p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a module.</p>
+<p>A {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
+<p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.</p>
 <p>
-   Service interfaces include management, repository, and metadata interfaces.
+   Service interfaces include management, repository, and {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} interfaces.
    You must define the service interfaces for a service contract in the <b>Api</b> subdirectory for a module.<!--  You can substitute another implementation in this directory. -->
 </p>
 <!--
-   <p>For example, the interfaces in the <b>Magento\Customer\Api</b> namespace define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
+   <p>For example, the interfaces in the <b>Magento\Customer\Api</b> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
                   </p>
     -->
 <h2 id="data-interfaces">Data interfaces</h2>
@@ -34,7 +33,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 
 <h3 id="search-results-interfaces">Data search results interfaces</h3>
 <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
-<p>You must define one interface for each data entity for type hinting purposes. That is, the <code>getItems()</code> function in the
+<p>You must define one interface for each data {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} for type hinting purposes. That is, the <code>getItems()</code> function in the
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
    In <code>GroupSearchResultsInterface</code>, the<code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
 </p>
@@ -46,7 +45,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <li>Management interfaces</li>
    <li>Metadata interfaces</li>
 </ul>
-<p>For file names and coding standards, follow the defined <a href="{{page.baseurl}}coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
+<p>For file names and coding standards, follow the defined <a href="{{ page.baseurl }}/coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
 <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
 <h3 id="repository-interfaces">Repository interfaces</h3>
 <p>Repository interfaces provide access to persistent data entities.</p>
@@ -133,7 +132,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 </table>
 <h3 id="related-topics">Related topics</h3>
 <ul>
-   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-   <li><a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
    </li>
 </ul>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 01_Introduction
 title: Introduction to Composer
@@ -17,7 +16,7 @@ redirect_from:
 {% include install/composer-overview.html %}
 
 ## Links to Magento code
-The key to developing any Magento component is its <a href="https://getcomposer.org/doc/04-schema.md" target="_blank">`composer.json`</a>, which specifies version and dependency information for a component, among other things. You can look at Magento 2 code, such as:
+The key to developing any {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} is its <a href="https://getcomposer.org/doc/04-schema.md" target="_blank">`composer.json`</a>, which specifies version and dependency information for a component, among other things. You can look at Magento 2 code, such as:
 
 *	Metapackage, look at `<your Magento install dir>/composer.json`.
 *	<a href="{{ site.mage2000url }}app/code/Magento/Customer/composer.json" target="_blank">Customer module</a>

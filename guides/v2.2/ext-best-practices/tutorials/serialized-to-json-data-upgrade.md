@@ -1,19 +1,18 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: Tutorials
 title: Serialized to JSON data upgrade
 menu_title: Serialized to JSON data upgrade
 menu_order: 1000
 version: 2.2
-github_link: ext-best-practices/tutorials/data-upgrade-script.md
+github_link: ext-best-practices/tutorials/serialized-to-json-data-upgrade.md
 ---
 
 ## Overview
 
-The following tutorial lists the steps needed to create an upgrade script that converts the data stored in the database from the default PHP serialized format to JSON format.
+The following tutorial lists the steps needed to create an upgrade script that converts the data stored in the database from the default {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} serialized format to JSON format.
 
-Use this tutorial to create an upgrade script to update your extension to work with Magento 2.2 and above.
+Use this tutorial to create an upgrade script to update your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} to work with Magento 2.2 and above.
 
 ## Before you begin
 
@@ -21,7 +20,7 @@ Identify the data you need to convert to JSON in the database.
 
 Your extension *must* convert data in the following cases:
 
-1. The extension stores serialized data provided by a core module that now uses the JSON format.
+1. The extension stores serialized data provided by a core {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that now uses the JSON format.
 2. The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares `\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields`).
 
 Your extension will continue working in Magento 2.2 and above in the following cases, but we recommend you switch to using the JSON format for security reasons:
@@ -31,14 +30,18 @@ Your extension will continue working in Magento 2.2 and above in the following c
 
 ### API Overview
 
-This tutorial uses the following framework API in the following ways:
+This tutorial uses the following framework {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} in the following ways:
 
-* `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another. 
-* `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
+* `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another.
+   * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
+   * `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
 * `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
-* `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
-* `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
-* `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
+* `\Magento\Framework\DB\FieldDataConverter` This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+   * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
+   * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
+   * `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
+   * `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds a LIKE condition to a query.
+   * `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows the application of multiple query modifiers.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
@@ -57,31 +60,31 @@ The following is an example of the content for your upgrade script.
 {% collapsible Show upgrade script content%}
 {% highlight php startinline=true %}
 namespace Magento\CustomModule\Setup;
- 
+
 class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {
     /**
      * @var \Magento\Framework\DB\FieldDataConverterFactory
      */
     private $fieldDataConverterFactory;
-   
+
     /**
      * @var \Magento\Framework\DB\Select\QueryModifierFactory
      */
     private $queryModifierFactory;
-   
+
     /**
      * @var \Magento\Framework\DB\Query\Generator
      */
     private $queryGenerator;
-   
+
     /**
      * Constructor
      *
      * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
      * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
      * @param \Magento\Framework\DB\Query\Generator $queryGenerator
-     */ 
+     */
     public function __construct(
         \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory,
         \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory,
@@ -91,7 +94,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
           $this->queryModifierFactory = $queryModifierFactory;
           $this->queryGenerator = $queryGenerator;
     }
-   
+
     /**
      * {@inheritdoc}
      */
@@ -103,14 +106,14 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
               $this->convertSerializedDataToJson($setup);
           }
     }
-   
+
     /**
      * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
      * from serialized to JSON format
      *
      * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
      * @return void
-     */ 
+     */
     private function convertSerializedDataToJson(\Magento\Framework\Setup\ModuleDataSetupInterface $setup)
     {
         // Upgrade logic here
@@ -140,7 +143,7 @@ if ($this->moduleManager->isEnabled('Magento_Sales')) {
 ## Step 3: Write the conversion logic
 {:#step-3}
 
-The conversion logic in your script depends on how your extension stores the serialized data.
+The {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} logic in your script depends on how your extension stores the serialized data.
 
 If your extension stores serialized data in different ways, you will need to use different conversion methods.
 
@@ -154,7 +157,7 @@ You can convert data for a column in a table using the code below.
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 $fieldDataConverter = $this->fieldDataConverterFactory->create(SerializedToJson::class);
-    
+
 $fieldDataConverter->convert(
     $setup->getConnection(),
     $setup->getTable('my_table'),
@@ -182,7 +185,7 @@ The following code sample upgrades the data for options in the `value` column in
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
     \Magento\Framework\DB\DataConverter\SerializedToJson::class
 );
-     
+
 // Convert data for the option with static name in quote_item_option.value
 $queryModifier = $this->queryModifierFactory->create(
     'in',
@@ -265,7 +268,7 @@ foreach ($iterator as $selectByRange) {
         'option_id',
         'value',
         $queryModifier
-    ); 
+    );
 }
 {% endhighlight %}
 {% endcollapsible %}
@@ -284,10 +287,10 @@ Since you cannot assume the format of the data when initially converted, the fol
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 namespace Magento\CustomModule\Setup;
- 
+
 use Magento\Framework\Serialize\Serializer\Serialize;
 use Magento\Framework\Serialize\Serializer\Json;
- 
+
 /**
  * Serializer used to convert data in product_options field
  */
@@ -295,14 +298,14 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 {
     /**
      * @var Serialize
-     */ 
+     */
     private $serialize;
-     
+
     /**
      * @var Json
      */
     private $json;
-     
+
     /**
      * Constructor
      *
@@ -316,7 +319,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
         $this->serialize = $serialize;
         $this->json = $json;
     }
-     
+
     /**
      * Convert from serialized to JSON format
      *
@@ -351,7 +354,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
           ? $this->serialize->serialize($unserialized)
           : $this->json->serialize($unserialized);
     }
-     
+
     /**
      * Check if value is serialized string
      *
@@ -395,7 +398,7 @@ The following code sample gets the Sales module connection and uses it during da
 {% highlight php startinline=true %}
 /** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
 $salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
- 
+
 $fieldDataConverter->convert(
     $salesSetup->getConnection(),
     $salesSetup->getTable('sales_order_item'),
@@ -405,11 +408,42 @@ $fieldDataConverter->convert(
 {% endhighlight %}
 {% endcollapsible %}
 
+### Step 3e: Convert data from multiple fields
+
+Use the `\Magento\Framework\DB\AggregatedFieldDataConverter` class to update multiple files instead of `\Magento\Framework\DB\FieldDataConverter`.
+The following code sample updates two fields in different tables taking into account setup version of the module.
+It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to `\Magento\Framework\DB\AggregatedFieldDataConverter::convert()` must be made.
+{% collapsible Show code %}
+{% highlight php startinline=true %}
+/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
+$salesSetup = $this->salesSetupFactory->create(['setup' => $setup]);
+
+$fieldsToUpdate = [
+    new FieldToConvert(
+        SerializedToJson::class,
+        $salesSetup->getTable('sales_invoice_item'),
+        'entity_id',
+        'tax_ratio'
+    ),
+];
+if (version_compare($setupVersion, '2.0.5', '<')) {
+    $fieldsToUpdate[] = new FieldToConvert(
+        SerializedDataConverter::class,
+        $salesSetup->getTable('sales_order_item'),
+        'item_id',
+        'product_options'
+    );
+}
+$this->aggregatedFieldConverter->convert($fieldsToUpdate, $salesSetup->getConnection());
+{% endhighlight %}
+{% endcollapsible %}
+
+
 ## Related Topics
 
 * [Serialize Library][0]
 * [Extension Lifecycle][1]
 
 
-[0]: {{page.baseurl}}extension-dev-guide/framework/serializer.html "Serialize Library"
-[1]: {{page.baseurl}}extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"
+[0]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"
+[1]: {{ page.baseurl }}/extension-dev-guide/prepare/lifecycle.html "Extension Lifecycle"

@@ -1,19 +1,22 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 02_access
 title: Installation dependencies not met
 menu_title: Installation dependencies not met
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: install-gde/trouble/tshoot_install_depend.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install_depend.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 
 ### Details
-This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}install-gde/prereq/dev_install.html).
+This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 
 Errors similar to the following display when you run the Web Setup Wizard:
 
@@ -23,8 +26,8 @@ Errors similar to the following display when you run the Web Setup Wizard:
 
 [other errors]
 
-Exception
- PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
+{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %}
+ {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
  
 <pre>Dependencies not installed. Please run 'composer install' under /setup directory.</pre>
 
@@ -46,4 +49,4 @@ You must run `composer install` from *both* the `<your Magento install dir>` and
 
 ### Suggestion
 
-<a href="{{page.baseurl}}install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
+<a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.

@@ -1,18 +1,19 @@
 ---
-layout: default
 group: howdoi
-subgroup: checkout
+subgroup:
 title: Add a new input form to checkout
 menu_title: Add a new input form to checkout
 menu_order: 8
 version: 2.0
 github_link: howdoi/checkout/checkout_form.md
+functional_areas:
+  - Checkout
 ---
 ## What's in this topic
 
-This topic describes how to add a custom input form (implemented as a UI component) to the Checkout page.
+This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
 
-Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
+Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
 ## Overview
 
@@ -24,9 +25,9 @@ Magento provides the ability to add a custom form to any of the checkout steps: 
 
 ## Prerequisites
 
-[Set Magento to developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+[Set Magento to developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Create the JS implementation of the form UI component {#component}
 
@@ -105,9 +106,9 @@ If you modify your custom `.html` template after it was applied on the store pag
 
 ## Declare the form in the checkout page layout {#layout}
 
-Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`. 
+Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`.
 
-Also you locate the regions in the `.html` templates of the blocks used in this layout file. 
+Also you locate the regions in the `.html` templates of the blocks used in this {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
 For example, the shipping JS component (see `<Magento_Checkout_module_dir>/view/frontend/web/template/shipping.html`) provides the `before-form` region and corresponding UI container.
 
 Any content added here is rendered before the Shipping Address form on the Shipping Information step. To add content to this region, create a `checkout_index_index.xml` layout update in the `<your_module_dir>/view/frontend/layout/`. It should be similar to the following:
@@ -151,7 +152,7 @@ Any content added here is rendered before the Shipping Address form on the Shipp
 
 ### Static forms
 
-The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the Admin. (compare to [dynamic forms](#dynamic_form))
+The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (compare to [dynamic forms](#dynamic_form))
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 
@@ -253,8 +254,8 @@ The following code sample shows configuration of the form that contains four fie
 
 ### Dynamically defined forms {#dynamic_form}
 
-Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options  
-For such forms, you must implement a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
+Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options
+For such forms, you must implement a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.
 
 For example:
@@ -280,4 +281,4 @@ $textField = [
 ## Illustration
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:
 
-<img src="{{ site.baseurl }}common/images/how_checkout_form.png" alt="The input form with four fields">
+<img src="{{ site.baseurl }}/common/images/how_checkout_form.png" alt="The input form with four fields">

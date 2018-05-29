@@ -1,16 +1,19 @@
 ---
-layout: default
 group: config-guide
 subgroup: 02_Security
 title: Prevent cache poisoning
 menu_title: Prevent cache poisoning
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-headers.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
-This topic discusses how to prevent cache poisoning if you use the Microsoft Internet Information Server (IIS) web server. *Cache poisoning* is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the storefront home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name *page cache poisoning*.
+This topic discusses how to prevent {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} poisoning if you use the Microsoft Internet Information Server (IIS) web server. *Cache poisoning* is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name *page cache poisoning*.
 
 These types of attacks can be difficult to detect because they do not result in errors in web server logs.
 
@@ -24,7 +27,7 @@ This solution applies to the following Magento versions:
 </div>
 
 ### Description
-The issue results if URL rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:
+The issue results if {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:
 
 *	`X-Rewrite-Url`
 *	`X-Original-Url`

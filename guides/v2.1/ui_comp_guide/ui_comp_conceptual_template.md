@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI Components
 subgroup: Concepts
 title: your page title
@@ -35,7 +34,7 @@ Add any diagrams or text that explains core workflows.
 
 
 ### Basic Markdown Syntax
-Below are some basic examples of what you can do with markdown.
+Below are some basic examples of what you can do with {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
 
 #### Text Effects
 

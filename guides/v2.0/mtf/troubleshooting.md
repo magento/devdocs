@@ -1,10 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 65_Troubleshooting
 title: Troubleshoot the Functional Testing Framework issues
-menu_title: TROUBLESHOOTING
-menu_node: parent
 version: 2.0
 github_link: mtf/troubleshooting.md
 ---

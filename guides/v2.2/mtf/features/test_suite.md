@@ -1,9 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Test suite in the Functional Testing Framework
-menu_title: Test suite
 version: 2.2
 github_link: mtf/features/test_suite.md
 ---
@@ -88,10 +85,12 @@ In `phpunit.xml`:
 
 To run a test suite enter the following commands from your terminal:
 
-{% highlight bash %}
-cd phpunit <magento2>/dev/tests/functional
+```bash
+cd <magento2>/dev/tests/functional
+```
+```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
-{% endhighlight %}
+```
 
 ## Rule {#rule}
 
@@ -114,7 +113,7 @@ This scope enables you to filter functional tests using the following criteria:
 | `<module>` | Apply a rule to all test cases from the specified module. Some test cases may refer to other modules using merging functionality of variations, fixtures etc. You can restrict such reference to other modules adding the `strict="1"` argument. The default value is `strict="0"`. |multiple|`<module value = "Magento_Tax" strict="1" />`
 | `<namespace>` | Apply a rule to all test cases with the specified namespace. | multiple | `<namespace value = "Magento\Catalog\Test\TestCase\Product" />`
 
-The namespace filter example:
+The {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} filter example:
 
 {% highlight xml %}
 <?xml version="1.0"?>
@@ -134,7 +133,7 @@ The namespace filter example:
 </config>
 {% endhighlight %}
 
-The module filter example:
+The {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} filter example:
 
 {% highlight xml %}
 <?xml version="1.0"?>
@@ -188,13 +187,13 @@ You can use `group` and `value` parameters in the test case scope. In a test cas
 
 - Any tags that are used in the test case should be added to the beginning of a class definition:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /* tags */
 const TEST_TYPE = '3rd_party_test_deprecated';
 /* end tags */
 
-{% endhighlight %}
+```
 
 - The tag in the rule:
 
@@ -210,7 +209,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 A test case can contain multiple tag groups, and a group can have multiple values. For example:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 /* tags */
 const MVP = 'yes';
@@ -218,7 +217,7 @@ const DOMAIN = 'PS';
 const TEST_TYPE = 'extended_acceptance_test, 3rd_party_test_deprecated';
 /* end tags */
 
-{% endhighlight %}
+```
 
 ### `scope = "variation"` {#scope-variation}
 
@@ -322,7 +321,7 @@ A tag has two parameters: `group` and `value`. In a constraint, they are provide
 
 - Any tags that are used in the constraint should be added to the beginning of a class definition:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 
 class AssertProductView extends AbstractConstraint
 {
@@ -333,7 +332,7 @@ class AssertProductView extends AbstractConstraint
     // ...
 }
 
-{% endhighlight %}
+```
 
 - The rule that allows constraints with this tag only:
 
@@ -357,10 +356,10 @@ class AssertProductView extends AbstractConstraint
 
 <!-- LINKS DEFINITION -->
 
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[variation]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[variation]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 
 [`scope = "testsuite"`]: #scope-testsuite
 [`scope = "testcase"`]: #scope-testcase

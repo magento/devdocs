@@ -1,10 +1,9 @@
 ---
-layout: default
 group: howdoi
 subgroup: Customize Design Configuration
 title: Customize Design Configuration
 menu_title: Customize Design Configuration
-menu_node: parent 
+menu_node: parent
 menu_order: 1
 version: 2.1
 github_link: howdoi/design_config.md
@@ -13,23 +12,23 @@ github_link: howdoi/design_config.md
 
 <h2>What's in this topic</h2>
 
-This topic describes how to customize (add, delete, change) the configuration options available in Magento Admin under **CONTENT** > **Design** > **Configuration**. These options define the various aspects of storefront design. In Magento 2.0.x and earlier these options were set under **STORES** > **Configuration** > **Design**. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.
+This topic describes how to customize (add, delete, change) the configuration options available in {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} under **CONTENT** > **Design** > **Configuration**. These options define the various aspects of {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} design. In Magento 2.0.x and earlier these options were set under **STORES** > **Configuration** > **Design**. But starting from Magento 2.1.0 they were moved to the new location, and the configuration form was refactored.
 
 
 ## Overview
 
 In Magento out of the box, when you navigate to **CONTENT** > **Design** > **Configuration** in Admin, the first page that opens displays a grid with the available configuration scopes and assigned themes. It looks like following:
 
-<img src="{{site.baseurl}}common/images/design_conf1.png">
+<img src="{{ site.baseurl }}/common/images/design_conf1.png">
 
-When you click **Edit** in any of the scope records, the page with available design options is displayed. 
-For example, the default set of design options for the store view level is the following:
+When you click **Edit** in any of the scope records, the page with available design options is displayed.
+For example, the default set of design options for the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} level is the following:
 
-<img src="{{site.baseurl}}common/images/design_conf2.png" alt="Design Configuration page">
+<img src="{{ site.baseurl }}/common/images/design_conf2.png" alt="Design Configuration page">
 
 Both the grid and the configuration form are implemented using UI components.
 
-To change the grid view, you need to customize the grid configuration by adding your custom `design_config_listing.xml` in your module.
+To change the grid view, you need to customize the grid configuration by adding your custom `design_config_listing.xml` in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 To change the available design settings you need to customize the grid configuration by adding your custom `design_config_form.xml` in your module. If you add a new field, you must also declare it in `di.xml` how it is processed and saved.
 
@@ -37,7 +36,7 @@ View the following sections for details.
 
 ## Customize the grid {#customize_grid}
 
-The grid containing the configuration scopes is implemented using the [grid UI component]({{page.baseurl}}ui-components/ui-listing-grid.html). 
+The grid containing the configuration scopes is implemented using the [grid UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 To customize the grid view, take the following steps:
 
@@ -75,12 +74,12 @@ If you add a certain field as additional grid column, you also need to set the f
 ## Customize the design options {#customize_options}
 
 ### Customize the form configuration
-Design configuration form is implemented using the [form UI component]({{page.baseurl}}ui-components/ui-form.html). 
+Design configuration form is implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html).
 
-To customize the form view, take the following steps: 
+To customize the form view, take the following steps:
 
 1. Create an empty `design_config_form.xml` file in the `<your_module_dir>/view/adminhtml/ui_component/` directory.
- 
+
 2. Add content similar to the following:
 
 {%highlight xml%}
@@ -95,7 +94,7 @@ To customize the form view, take the following steps:
                 <item name="sortOrder" xsi:type="number">%order for displaying%</item>
             </item>
          </argument>
-        <!--Field sets can be nested --> 
+        <!--Field sets can be nested -->
         <fieldset name="%nested_fieldset_name%">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -104,7 +103,7 @@ To customize the form view, take the following steps:
                     <!-- Nesting level, the value should correspond to the actual nesting level in the config xml file. For the top field set level = 0 -->
                     <item name="level" xsi:type="number">%level of nesting%</item>
                 </item>
-            </argument>  
+            </argument>
             <field name="%field_name%">
     			<argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array"
@@ -122,7 +121,7 @@ To customize the form view, take the following steps:
 
 Your custom fields and field sets will be available for all configuration scopes (website, store, and store view).
 
-Your `design_config_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations. 
+Your `design_config_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations.
 
 To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. For example, if you only want to rename the **Other Settings** field set, your form configuration must contain the following:
 
@@ -150,7 +149,7 @@ To delete an existing field, or field set, in your `design_config_form.xml` use 
         <argument name="data" xsi:type="array">
             <item name="disabled" xsi:type="boolean">true</item>
         </argument>
-    </fieldset> 
+    </fieldset>
 ...
 {%endhighlight%}
 
@@ -191,7 +190,7 @@ The field declaration in a `di.xml` looks like following:
                         <item name="scope_info" xsi:type="string"></item>
                         <item name="value" xsi:type="string"></item>
                     </item>
-                </item>      
+                </item>
         </argument>
     </arguments>
 </type>

@@ -19,7 +19,7 @@ In the preceding example:
 *	Redis listens on port 6379
 *	In the web container, the following ports are used:
 
-	*	SSH listens on port 32795
+	*	SSH listens on port 32705
 
 		Applications like PhpStorm communicate with DevBox on the SSH listen port. It's very important to know this port.
 	*	Unison synchronization (Windows only) listens on port 32781

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: Inline Edit Component
@@ -21,7 +20,7 @@ The Listing component can use the Inline Edit if it is configured and enabled.
 
 #### Implementation of Inline Edit
 
-Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{page.baseurl}}ui-library/ui-definition.html">definitions.xml</a> if necessary.
+Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="{{ page.baseurl }}/ui-library/ui-definition.html">definitions.xml</a> if necessary.
 
 To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:
 
@@ -59,7 +58,7 @@ The configuration of the component can include:
     
   * bulkConfig - in current implementation on cms_pages, includes Bulk Edit component as a plugin
     
-  * clientConfig - is responsible for editor communication with backend. Contains nodes with url's where requests for storing and validating data are sent:
+  * clientConfig - is responsible for editor communication with {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %}. Contains nodes with url's where requests for storing and validating data are sent:
 
     {% highlight XML%}
     <item name="clientConfig" xsi:type="array">
@@ -187,4 +186,4 @@ Dependencies on other components:
 * dataProvider of the listing
 * multiselect component, which provides information on selected rows.
 
-Currently the Inline Edit component is configured on the cms pages as a plugin for the Listing, its configuration is included into Listing and Column components configuration (described in the above examples).
+Currently the Inline Edit component is configured on the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}cms{% endglossarytooltip %} pages as a plugin for the Listing, its configuration is included into Listing and Column components configuration (described in the above examples).

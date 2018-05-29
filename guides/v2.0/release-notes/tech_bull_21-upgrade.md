@@ -10,16 +10,17 @@ version: 2.1
 github_link: release-notes/tech_bull_21-upgrade.md
 ---
 
-These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1 (including a Release Candidate). 
+
+These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition)  version 2.1 (including a Release Candidate). 
 
 See one of the following sections for more information:
 
-*	[Upgrade to Magento CE or EE version 2.1 *without* sample data](#tb-upgr-nosamp)
-*	[Upgrade to Magento CE or EE version 2.1 with sample data](#tb-upgr-samp)
-*	[Enterprise Edition only: Web Setup Wizard upgrade to Magento EE version 2.1 with sample data](#tb-upgr-samp-wiz)
+*	[Upgrade to Magento Open Source or Commerce version 2.1 *without* sample data](#tb-upgr-nosamp)
+*	[Upgrade to Magento Open Source or Commerce version 2.1 with sample data](#tb-upgr-samp)
+*	[Enterprise Edition only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data](#tb-upgr-samp-wiz)
 
-### Upgrade to Magento CE or EE version 2.1 *without* sample data {#tb-upgr-nosamp}
-Upgrades to version 2.1 without sample data can fail because of an issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
+### Upgrade to Magento Open Source or Commerce version 2.1 *without* sample data {#tb-upgr-nosamp}
+Upgrades to version 2.1 without sample data can fail because of an issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories properly. As a result, fatal errors display during the upgrade.
 
 To address the issue, you must apply a patch.
 
@@ -33,7 +34,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 {% endcollapsible %}
 
 #### Apply the patch
-As the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
+As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
 
@@ -48,15 +49,16 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 #### Complete your upgrade
 After applying the patch, complete your upgrade as follows:
 
-*	[Command-line upgrade]({{page.baseurl}}comp-mgr/cli/cli-upgrade.html)
-*	[Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html)
+*	[Command-line upgrade]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html)
+*	[Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
 
-### Command-line upgrade to Magento CE or EE version 2.1 with sample data {#tb-upgr-samp}
+### Command-line upgrade to Magento Open Source or Commerce version 2.1 with sample data {#tb-upgr-samp}
 
 {%include install/sampledata/sample-data-rc1-cli.md %}
 
-### Enterprise Edition only: Web Setup Wizard upgrade to Magento EE version 2.1 with sample data {#tb-upgr-samp-wiz}
-Upgrades to Magento EE 2.1 with sample data can fail because of the following issues:
+
+### Commerce only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data {#tb-upgr-samp-wiz}
+Upgrades to Magento Commerce 2.1 with sample data can fail because of the following issues:
 
 *	An issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
 
@@ -75,7 +77,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 {% endcollapsible %}
 
 #### Apply the patch
-As the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
+As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
 
@@ -113,4 +115,4 @@ A sample command follows:
 	rm -rf var/cache/* var/page_cache/* var/generation/*
 
 #### Start the upgrade
-Start your upgrade as discussed in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+Start your upgrade as discussed in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).

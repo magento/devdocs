@@ -1,12 +1,14 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Configure product video
 menu_title: Configure product video
-menu_order: 8
+menu_order: 100
 version: 2.0
 github_link: frontend-dev-guide/themes/product-video.md
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 
@@ -71,7 +73,7 @@ Boolean
   </tbody>
 </table>
 
-The options are set in the `config.xml` of you custom module. 
+The options are set in the `config.xml` of your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
 
 Example:
 

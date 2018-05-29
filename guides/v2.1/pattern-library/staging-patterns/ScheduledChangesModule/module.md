@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Staging Patterns
 title: Magento Admin Pattern Library
@@ -7,9 +6,9 @@ menu_title: Scheduled Changes Module
 menu_order: 2
 menu_node: 
 version: 2.1
+ee_only: true
 github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 ---
-<img src="img/ee-only_large.png">
 
 <h2> Scheduled Changes Module </h2>
 
@@ -22,7 +21,7 @@ github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 * <a href="#assets">Assets</a>
 
 <h3 id="overview">Overview</h3>
-For all stage-able entities, a Scheduled Changes Module appears on the top of each entity’s page. An entity’s module provides a quick summary of scheduled updates, as well as controls to view, edit and preview individual updates. 
+For all stage-able entities, a Scheduled Changes {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} appears on the top of each entity’s page. An entity’s module provides a quick summary of scheduled updates, as well as controls to view, edit and preview individual updates. 
 
 
 
@@ -38,7 +37,7 @@ When no updates are available to be displayed on the timeline.
 <img src="img/sc-Module-empty.jpg">
 
 #### Multiple Updates View:
-Shows when several updates are scheduled for a stage-able entity. 
+Shows when several updates are scheduled for a stage-able {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. 
 <img src="img/sc-Module-multiple updates.jpg">
 
 #### Single Update View:

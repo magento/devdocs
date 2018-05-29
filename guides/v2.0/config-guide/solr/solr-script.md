@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 15_Solr
 title: Prepare Solr for production
@@ -7,14 +6,25 @@ menu_title: Prepare Solr for production
 menu_order: 3
 menu_node:
 version: 2.0
+ee_only: True
 github_link: config-guide/solr/solr-script.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
 
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
+<div class="bs-callout bs-callout-warning" markdown="1">
+Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
+In a future release, Solr compatibility will be removed.
+
+If possible, use [Elastic Search](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+</div>
 
 After you've tested the Solr solution, you should perform the following tasks to get it ready for production:
 
-*	See more Solr configuration options in the Magento EE User Guide (available with the Magento 2 EE release)
+*	See more Solr configuration options in the {{site.data.var.ee}} User Guide (available with the {{site.data.var.ee}} release)
 *	Set up <a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">firewall rules</a> to enable Solr and Magento to communicate
 *	Implement a custom web application deployed to a scalable application server
 *	Consider a dedicated Solr server, or at least deploying Solr to a different server than Magento
@@ -165,9 +175,9 @@ To complete the script:
 <!-- <h2 id="next"></a>Next steps</h2>
 For additional information about Solr, see the following:
 
-*	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with Magento Enterprise Edition</a>
+*	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with {{site.data.var.ee}}</a>
 *	<a href="http://wiki.apache.org/solr/#Operations_and_Production" target="_blank">Customize Solr</a> -->
 
 <!-- <h2 id="related">Related Information</h2>
-*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank">Frequently Asked Questions (FAQ) About Using Solr with Magento Enterprise Edition (EE)</a>
-*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and Magento Enterprise Edition (EE) Best Practices</a> -->
+*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank">Frequently Asked Questions (FAQ) About Using Solr with {{site.data.var.ee}}</a>
+*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and {{site.data.var.ee}} Best Practices</a> -->

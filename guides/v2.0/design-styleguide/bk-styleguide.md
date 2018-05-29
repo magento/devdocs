@@ -1,29 +1,48 @@
 ---
-layout: default
 group: styleguide
-subgroup:
+subgroup: Admin Style Guide
 title: Admin Style Guide
 landing-page: Admin Style Guide
 menu_title: Introduction
 menu_order: 1
-menu_node: 
+menu_node:
 version: 2.0
-github_link: design-styleguide/bk-styleguide.md 
+github_link: design-styleguide/bk-styleguide.md
 ---
+The Magento Admin guide sets our foundational design, writing, and content standards for the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} software. For more specific user-interface standards, see the [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html).
 
-<h3>What is a style guide?</h3>
+**Why follow the style guide?** A style guide is the best tool for designers and writers to establish and maintain consistency, which improves communication throughout the application. A seamless look-and-feel and a steady, encouraging writing style make the application usable and engaging.
 
-A style guide is a set of high-level standards governing Magento's Admin software. The color, typography, iconography and page grid standards are used across Magento to ensure a consistent, elegant user experience. 
+**To get started or refresh your knowledge,** read the following documents:
 
-<h3>Why follow the style guide?</h3>
+## Design
 
-A style guide establishes consistency and improves communication throughout the application. A seamless look-and-feel makes the application usable and engaging.
+* **[Color]({{ page.baseurl }}/design-styleguide/color/color.html)** — Reflects our brand personality, meeting accessibility standards.
 
+* **[Iconography]({{ page.baseurl }}/design-styleguide/iconography/iconography.html)** — Provides a visual representation of functionality or content, usually paired and displayed with a label.
 
-<br>
-Find more details about the Admin Style Guide in the following topic:
+* **[Page Grid]({{ page.baseurl }}/design-styleguide/pagegrid/pagegrid.html)** — Establishes global layouts for page templates and how content and design patterns can be placed in the grids' columns.
 
-<a href="color/color.html">Color</a><br>
-<a href="typography/typography.html">Typography</a><br>
-<a href="pagegrid/pagegrid.html">Page Grid</a><br>
-<a href="iconography/iconography.html">Iconography</a><br>
+* **[Typography]({{ page.baseurl }}/design-styleguide/typography/typography.html)** — Sets page hierarchy and content type specifications.
+
+## Writing and Content
+
+* **[Voice and Tone]({{ page.baseurl }}/design-styleguide/content-voice-tone/content-voice-tone.html)** — Outlines a set of ground rules to engage and empower users as they navigate the Magento Admin and perform tasks with confidence and ease.
+
+* **[Errors and Messages Writing]({{ page.baseurl }}/design-styleguide/errors-and-messages/errors-and-messages.html)** — Establishes how to communicate with users when errors occur or important information needs to be communicated.
+
+* **[Buttons and Links Usage]({{ page.baseurl }}/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html)** — Defines the differences between buttons and links and when they can be used as calls to action.
+
+* **[Capitalization]({{ page.baseurl }}/design-styleguide/capitalization/capitalization.html)** — Provides guidance for how we use sentence case, title case, and all caps.
+
+* **[Headings and Organization]({{ page.baseurl }}/design-styleguide/headings-and-organization/headings-and-organization.html)** — Prioritizes content and creates a hierarchy for users to easily navigate Magento Admin.
+
+* **[Punctuation]({{ page.baseurl }}/design-styleguide/punctuation/punctuation.html)** — Surfaces exceptions to the Associated Press (AP) Stylebook’s punctuation standards and summarizes key stylebook advice.
+
+* **[Content Formats]({{ page.baseurl }}/design-styleguide/content-formats/content-formats.html)** — Standardizes abbreviations, acronyms, file-type formats, addresses, and lists.
+
+* **[Number Formats]({{ page.baseurl }}/design-styleguide/number-formats/number-formats.html)** — Lists basic numeric and heading standards and covers percentages, money, and dates and times.
+
+## Related Links
+
+[Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html)

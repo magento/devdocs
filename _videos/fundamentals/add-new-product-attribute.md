@@ -103,6 +103,7 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 
 /**
 * @codeCoverageIgnore
+*/
 class InstallData implements InstallDataInterface
 {
     /**

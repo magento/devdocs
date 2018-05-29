@@ -10,15 +10,19 @@ level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-issue-refund.md
-ee_only: false
+ee_only: False
+functional_areas:
+  - Integration
+  - Orders
+  - Sales
 ---
 
-Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or invoice in one call.
+Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} in one call.
 
 Endpoint | Description
 --- | ---
 `POST /V1/order/<order_ID>/refund` | Issues an offline refund
-`POST /V1/invoice/<order_ID>/refund` | Issue a refund with an online payment system
+`POST /V1/invoice/<invoice_ID>/refund` | Issue a refund with an online payment system
 
 In this example, the customer did not like the fit of the Radiant T-M-Orange shirt and wants a refund.
 
@@ -66,11 +70,11 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Response**
 
-A credit memo id, such as `3`.
+A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}credit memo{% endglossarytooltip %} id, such as `3`.
 
 ### Verify this step {#verify-step}
 
-Log in to Admin. Click **Sales > Credit memos**. The invoice is displayed in the grid.
+Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Credit memos**. The credit memo is displayed in the grid.
 
 
 ## Congratulations! You've finished.
@@ -78,6 +82,7 @@ Log in to Admin. Click **Sales > Credit memos**. The invoice is displayed in the
 
 ## Related topics
 
-* [Getting Started with Magento Web APIs]({{page.baseurl}}get-started/bk-get-started-api.html)
-* [REST API Reference Overview]({{page.baseurl}}rest/bk-rest.html)
+* [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
+* [Create a configurable product Tutorial](http://devdocs.magento.com/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
+* [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
 * [REST API documentation](http://devdocs.magento.com/swagger/){:target="_blank"}

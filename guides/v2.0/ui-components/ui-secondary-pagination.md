@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: Pagination Component
@@ -16,7 +15,7 @@ The UI pagination component is a plugin for the listing component. Responsible f
 
 You can configure pagination in several ways:
 
-* Globally: using any module's <a href="{{page.baseurl}}ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
+* Globally: using any module's <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
 * Locally: using concrete component instance configuration, such as `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
 To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.
@@ -45,9 +44,10 @@ Example:
 
 The configuration of the component can include:
 
-* storageConfig - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks
+* `storageConfig` - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks
 
-* sizesConfig - configuration of sizes component
-  * component - component which manages available page sizes. By default it is `Magento_Ui/js/grid/paging/sizes`
+* `sizesConfig`: configuration of the component that defines available page sizes. By default it is `Magento_Ui/js/grid/paging/sizes`.
+    * `minSize`: minimum number of elements on a page, default: 1
+    * `maxSize`: maximum number of elements on a page, default: 999
  
-* selectProvider - component with selections data
+* `selectProvider`: component with selections data.

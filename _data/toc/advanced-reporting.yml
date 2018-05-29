@@ -1,0 +1,14 @@
+label: Advanced Reporting
+pages:
+  - label: Overview
+    url: /advanced-reporting/overview.html
+    versions: ["2.2", "2.3"]
+  - label: Modules
+    url: /advanced-reporting/modules.html
+    versions: ["2.2", "2.3"]
+  - label: Data collection
+    url: /advanced-reporting/data-collection.html
+    versions: ["2.2", "2.3"]
+  - label: Report XML
+    url: /advanced-reporting/report-xml.html
+    versions: ["2.2", "2.3"]

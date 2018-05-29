@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Components
 title: Module dependency types
@@ -14,7 +13,7 @@ redirect_from: /guides/v1.0/architecture/modules/mod_depend_types.html
 
 ## Two types of dependencies {#m2devgde-moddep-declare-dep}
 
-There are two types of Magento module dependencies: hard and soft dependencies.
+There are two types of Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} dependencies: hard and soft dependencies.
 
 ## Hard dependencies
 
@@ -36,7 +35,7 @@ Modules with a *soft dependency* on another module can function properly without
 
 * The module extends another module's configuration.
 
-* The module extends another module's layout.
+* The module extends another module's {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-warning" id="warning">
   <p>
@@ -76,8 +75,8 @@ Modules belonging to the Magento Framework can be used in the application layer 
 ## Dependencies in the Application layer {#m2devgde-moddep-app-layer}
 Modules belonging to the application layer cannot be used in the Magento Framework.
 
-You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the service contract or the service provider interface (SPI).
+You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} or the service provider interface (SPI).
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>

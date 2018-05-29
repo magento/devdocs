@@ -1,13 +1,16 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 20_other
 title: Segmentation fault during rollback
 menu_title: Segmentation fault during rollback
-menu_node: 
+menu_node:
 menu_order: 510
 version: 2.0
 github_link: install-gde/trouble/tshoot_segfault.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Symptom
@@ -25,7 +28,7 @@ Until a solution is available, we recommend setting the <a href="http://ss64.com
 
 You can do this either on the command line or you can make it a permanent setting for the user by editing their shell script.
 
-If you haven't done so already, switch to the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+If you haven't done so already, switch to the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 
 Command:
 
@@ -39,7 +42,7 @@ You can change this to a larger value if needed.
 
 To optionally set the value in the user's Bash shell:
 
-1.	If you haven't done so already, switch to the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+1.	If you haven't done so already, switch to the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Open `/home/<username>/.bashrc` in a text editor.
 3.	Add the following line:
 

@@ -1,19 +1,22 @@
 ---
-layout: default
 group: install2
-subgroup: Getting Started 
+subgroup: Getting Started
 title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
 menu_title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
-menu_node: 
+menu_node:
 menu_order: 105
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_login.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_login.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- This topic is referred to from Magento 2 code! Don't change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
  
@@ -44,7 +47,7 @@ To use a terminal application to remotely access the Magento server:
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.
 
-<img src="{{ site.baseurl }}common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
+<img src="{{ site.baseurl }}/common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

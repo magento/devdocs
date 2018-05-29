@@ -1,0 +1,1 @@
+../../../v2.2/cloud/env/environment-vars_magento.md

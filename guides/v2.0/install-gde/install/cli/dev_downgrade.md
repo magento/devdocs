@@ -1,13 +1,16 @@
 ---
-layout: default
-group: install_cli 
+group: install_cli
 subgroup: 99_contrib
 title: Change to a released version
 menu_title: Change to a released version
 menu_order: 200
-menu_node: 
+menu_node:
 version: 2.0
 github_link: install-gde/install/cli/dev_downgrade.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 This topic discusses how a contributing developer can change versions of the Magento software after cloning the `develop` branch. This might be necessary to perform some tasks that require a specific Magento version other than `develop`.
@@ -29,11 +32,11 @@ You have the following options:
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
 2.	Use the following command to uninstall the Magento software:
 
 		php <your Magento clone dir>/bin/magento setup:uninstall
-3.	Either remove your old Magento clone directory or <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html">update the Magento software</a>.
+3.	Either remove your old Magento clone directory or <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html">update the Magento software</a>.
 4.	If you haven't already done so, clone the Magento 2 GitHub repository as follows:
 
 		git clone git@github.com:magento/magento2.git
@@ -45,15 +48,15 @@ To change versions after cloning:
 
 		git checkout tags/2.0.6 -b 2.0.6
 
-5.	Install the Magento software using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard</a>.
+5.	Install the Magento software using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>.
 
 ### Change versions by installing the Magento software in a new database instance {#downgrade-db}
 
 To change versions after cloning:
 
-1.	Log in to your Magento server as, or switch to, <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
-2.	Create a <a href="{{page.baseurl}}install-gde/prereq/mysql.html#instgde-prereq-mysql-config">new database instance</a> for your installation.
-2.	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
+1.	Log in to your Magento server as, or switch to, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">the Magento file system owner</a>.
+2.	Create a <a href="{{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config">new database instance</a> for your installation.
+2.	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-back">Back up</a> the Magento file system, database, and media files:
 
 		php <your Magento install dir>/bin/magento setup:backup --code --media --db
 3.	Change to <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:
@@ -70,7 +73,7 @@ To change versions after cloning:
 
 5.	Install the Magento software in your new database instance.
 
-	You can install using either the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard</a>.
+	You can install using either the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>.
 
 <!-- ABBREVIATIONS -->
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: 
 title: 
@@ -10,7 +9,7 @@ version: 2.0
 github_link: howdoi/howdoi_template.md
 ---
 
-<!-- Author in Markdown but HTML also welcome -->
+<!-- Author in {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} also welcome -->
 
 <!-- Start with H2, not H1 -->
 
@@ -39,10 +38,10 @@ Please submit all images to our <a href="https://github.com/magento/devdocs/tree
 
 Format the link as follows:
 
-<img src="{{ site.baseurl }}common/images/FILENAME.png" alt="Alt text for the image">
+<img src="{{ site.baseurl }}/common/images/FILENAME.png" alt="Alt text for the image">
 
 <!-- Sample HTML cross-reference; don't worry too much about these, we can add or edit them -->
-<!-- {{page.baseurl}} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
+<!-- {{ page.baseurl }} is a site variable that is defined in _config.yml; it's the base path to the devdocs guides/v2.0 directory -->
 
 
 <!-- Sample 4 x 3 table -->

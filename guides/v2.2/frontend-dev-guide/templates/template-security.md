@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: C_Templates
 title: Templates XSS security
@@ -7,15 +6,17 @@ menu_title: Templates XSS security
 menu_order: 5
 version: 2.2
 github_link: frontend-dev-guide/templates/template-security.md
+functional_areas:
+  - Frontend
 ---
 
 <h2>Security measures against XSS attacks</h2>
 
 To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:
 
-* If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the HTML output)
+* If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output)
 
-* Type casting and php function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
+* Type casting and {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}php{% endglossarytooltip %} function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 
 * Output in single quotes doesn't need escaping (for example `echo 'some text'`)
 
@@ -72,7 +73,7 @@ If your text contains special characters, they must be encoded as HTML entities,
 {% endhighlight %}
 
 
-**Case:** URL output\\
+**Case:** {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} output\\
 **Function:** `escapeUrl`
 
 
@@ -85,7 +86,7 @@ If your text contains special characters, they must be encoded as HTML entities,
 
 
 **Case:** Strings inside JavaScript\\
-**Function:** In a JavaScript context, use the `escapeJs` function.
+**Function:** In a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} context, use the `escapeJs` function.
 
 In cases where the JavaScript code outputs content onto the page, use the `escapeUrl` or the `escapeHtml` function where appropriate.
 

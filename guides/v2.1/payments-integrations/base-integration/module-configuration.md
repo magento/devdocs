@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Payment method module configuration
@@ -7,9 +6,11 @@ menu_title: Payment method module configuration
 menu_order: 1
 version: 2.1
 github_link: payments-integrations/base-integration/module-configuration.md
+functional_areas:
+  - Integration
 ---
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate module.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files.
 
@@ -19,7 +20,7 @@ Your custom payment integration module must have at least the following dependen
 
 - Magento_Sales module: to be able to get order details
 - Magento_Payment module: to use the Magento payment provider gateway infrastructure
-- Magento_Checkout module: to be able to add the new payment method to checkout. If you do not plan to use it on the storefront checkout, this dependency is not required. 
+- Magento_Checkout module: to be able to add the new {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. If you do not plan to use it on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} checkout, this dependency is not required. 
 
 
 Specify these dependencies in your `composer.json` and `module.xml` files. 
@@ -43,7 +44,7 @@ In your `%Vendor_Module%/composer.json` file, specify the dependencies like in t
 }
 {% endhighlight %}
 
-For details about composer.json see [The composer.json]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) file topic.
+For details about composer.json see [The composer.json]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) file topic.
 
 ### `module.xml`
 
@@ -67,6 +68,6 @@ Your payment method implementation might require adding more dependencies.
 
 ## What's next
 
-[Payment method configuration]({{page.baseurl}}payments-integrations/base-integration/payment-option-config.html).
+[Payment method configuration]({{ page.baseurl }}/payments-integrations/base-integration/payment-option-config.html).
 
 

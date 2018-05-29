@@ -1,16 +1,17 @@
 ---
-layout: default
 group: howdoi
-subgroup: checkout
+subgroup:
 title: Add a custom shipping address renderer
 menu_title: Add a custom shipping address renderer
 menu_order: 10
 version: 2.0
 github_link: howdoi/checkout/checkout_address.md
+functional_areas:
+  - Checkout
 ---
 ## What's in this topic
 
-Out of the box, Magento checkout consists of two steps:
+Out of the box, Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} consists of two steps:
 
 - Shipping Information
 - Review and Payment Information
@@ -34,9 +35,9 @@ All the steps are described further.
 
 ## Create the JS renderer component (shipping address renderer) {#create}
 
-Your shipping address renderer must be implemented as a JavaScript UI component. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
+Your shipping address renderer must be implemented as a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{page.baseurl}}extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 In your custom module directory, create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
@@ -54,7 +55,7 @@ define([
         defaults: {
             template: '%path to your template%'
         },
- 
+
         initProperties: function () {
             this._super();
             this.isSelected = ko.computed(function() {
@@ -65,37 +66,37 @@ define([
                 }
                 return isSelected;
             }, this);
- 
+
             return this;
         },
- 
+
         /** Set selected customer shipping address  */
         selectAddress: function() {
             selectShippingAddressAction(this.address());
         },
- 
+
         /** additional logic required for this renderer  **/
- 
+
     });
 });
 {%endhighlight%}
 
 ## Create a template for the shipping address renderer {#template}
 
-In your custom module directory, create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. 
+In your custom module directory, create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax.
 
 The template should contain a button for setting the address to be used for shipping.
 
-You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{site.mage2000url}}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
+You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
 
 
 ## Create the JS model for the shipping rate processor {#rate_processor}
 
 A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.
 
-In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
+In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory.
 
-Here you need to specify the URL used for calculating the shipping rates for your custom address type.
+Here you need to specify the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} used for calculating the shipping rates for your custom address type.
 
 The following is a sample of the shipping rate processor code:
 
@@ -149,9 +150,9 @@ define(
 
 ## Create the JS model for the shipping address saving processor {#save}
 
-This processor is responsible for sending the shipping address and the selected rate to the server. 
+This processor is responsible for sending the shipping address and the selected rate to the server.
 
-In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory. 
+In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory.
 
 
 Following is a sample of the shipping rate processor code:
@@ -172,11 +173,11 @@ define(
             saveShippingInformation: function() {
                 var shippingAddress = {},
                     payload;
- 
+
                 shippingAddress.extension_attributes = {
                     %address extension attributes%
                 };
- 
+
                 payload = {
                     addressInformation: {
                         shipping_address: shippingAddress,
@@ -184,7 +185,7 @@ define(
                         shipping_carrier_code: quote.shippingMethod().carrier_code
                     }
                 };
- 
+
                 return storage.post(
                     resourceUrlManager.getUrlForSetShippingInformation(quote),
                     JSON.stringify(payload)
@@ -227,13 +228,13 @@ define(
         customShippingSaveProcessor
     ) {
         'use strict';
- 
+
         /** Register rate processor */
         shippingRateService.registerProcessor(%address type%, customShippingRateProcessor);
- 
+
         /** Register save shipping address processor */
         shippingSaveProcessor.registerProcessor(%address type%, custormShippingSaveProcessor);
- 
+
         /** Add view logic here if needed */
         return Component.extend({});
     }
@@ -291,15 +292,15 @@ The <code>address_type</code> you need to specify in the layout, is the value yo
 
 On the Review and Payment Information step of checkout, the shipping address is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
 
-If you want your custom address type to be displayed here as well, you need to create an `.html` template for rendering it, and declare in the corresponding location in layout.
+If you want your custom address type to be displayed here as well, you need to create an `.html` template for rendering it, and declare in the corresponding location in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
 ### Add template for displaying the address in the Ship-To section
 
-In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. 
+In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax.
 
-You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html]({{site.mage2000url}}app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html).
+You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html).
 
-### Declare the address to be used in the Ship-To section in layout 
+### Declare the address to be used in the Ship-To section in layout
 
 In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file add the following:
 
@@ -334,7 +335,7 @@ In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file a
                     </argument>
                 </arguments>
             </block>
-        </referenceContainer> 
+        </referenceContainer>
     </body>
 </page>
 {%endhighlight%}

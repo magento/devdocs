@@ -1,13 +1,13 @@
 ---
-layout: default  
 group: fedg
 subgroup: C_Templates
 title: Customize email templates
 menu_title: Customize email templates
 menu_order: 4
-
 version: 2.1
 github_link: frontend-dev-guide/templates/template-email.md
+functional_areas:
+  - Frontend
 ---
 
 #### Contents
@@ -17,27 +17,27 @@ Email templates are stored in the `<module_dir>/view/<area>/email` directory of 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
-You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.
+You can add custom templates as physical files in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} or create them using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Both approaches are described in the following sections.
  
 <h3 id="customize-email-theme">Customize email templates using a theme</h3>
 Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
 
-<a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
+<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
  
 <h3 id="customize-email-admin">Customize email templates using the Magento Admin</h3>
 
-Any templates configured in the Magento Admin take precedence over default or theme-based templates.
+Any templates configured in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} take precedence over default or theme-based templates.
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Click **Add New Template**.
 3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
-    <br><img src="{{site.baseurl}}common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
+    <br><img src="{{ site.baseurl }}/common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
 5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
 6. Customize template content. For details, see <a href="#customize-content">the section on customizing content</a>.
-7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don't support styles in `<style>` tags.
+7. In **Template Styles**, optionally add {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
 
@@ -45,7 +45,7 @@ Make note of this path because you will need it later when you configure this ne
     2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
     3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
     <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
-    <br><img src="{{site.baseurl}}common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%"/>
+    <br><img src="{{ site.baseurl }}/common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%"/>
     4. Select your newly created template from the list.
     5. Click **Save Config**.
 
@@ -72,7 +72,7 @@ To add a variable to your template content:
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Create a new template or edit an existing template.
 3. Click to place the cursor in the text in which to insert the variable.
-4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br><img src="{{site.baseurl}}common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%">
+4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br><img src="{{ site.baseurl }}/common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%">
 
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
@@ -84,7 +84,7 @@ To add a variable to your template content:
 
 <h2 id="email-styles">Styles for email templates</h2>
 
-Some email clients (for example, Gmail) support only CSS styles that have been applied as "inline" styles on the `style` attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to `style` attributes of the HTML tags.
+Some email clients (for example, Gmail) support only CSS styles that have been applied as "inline" styles on the `style` attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to `style` attributes of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} tags.
 
 <h3 id="inline-styles">Inline styles</h3>
 
@@ -219,7 +219,7 @@ The styles for emails are split into several different files.
 When implementing a custom theme, you should be able to fully customize email templates by copying the `<Magento_Blank_theme_dir>/web/css/source/_email-extend.less` and `<Magento_Blank_theme_dir>/web/css/source/_email-variables.less` files to your custom theme and editing those files.
 
 <h3 id="custom-fonts">Custom fonts</h3>
-Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
+Emails inherit the custom fonts that are defined by the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
 
 Here is an overview of how the font structure for emails works:
 
@@ -232,7 +232,7 @@ Here is an overview of how the font structure for emails works:
 
 If you want to change the font used for emails, do the following:
 
-1. Refer to the documentation on [using fonts]({{page.baseurl}}frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
+1. Refer to the documentation on [using fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
 2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should automatically use the specified font.
 
 <h2 id="email-logo">Email logo</h2>
@@ -279,7 +279,7 @@ To customize your logo using a theme:
 1. In the Magento Admin, navigate to **CONTENT** > Design > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes.
 2. In the configuration record corresponding to your store view, click **Edit**.
 3. Under **Transactional Emails** in the **Logo Image** field upload your logo and specify the alternative text for it.
-<img src="{{site.baseurl}}common/images/email_templ_logo21.png" alt="System configuration">
+<img src="{{ site.baseurl }}/common/images/email_templ_logo21.png" alt="System configuration">
 
 4. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
 

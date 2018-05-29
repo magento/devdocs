@@ -1,19 +1,21 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Configure images properties for a theme
 menu_title: Configure images properties for a theme
-menu_order: 4
+menu_order: 90
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-images.md
+functional_areas:
+  - Frontend
+  - Theme
 ---
 
 ## What's in this topic ##
 
-The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
+The properties of product images used on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
-The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the theme `view.xml` as well. For more details, view the [Gallery widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_gallery.html) topic.
+The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} `view.xml` as well. For more details, view the [Gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) topic.
 
 <h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
@@ -22,7 +24,7 @@ The conventional location of `view.xml` for a theme is:
 	<theme_dir>/etc/view.xml
 {% endraw %}
 
-For example, here is the `view.xml` of the Magento Blank theme: <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+For example, here is the `view.xml` of the Magento Blank theme: <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
 
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
@@ -63,7 +65,7 @@ The following table describes the attributes in detail:
       </td>
       <td>
         <p>Image identifier. Unique in the scope of theme.</p> <p>
-Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
+Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} products displayed in a shopping cart is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
       </td>
     </tr>
     <tr>
@@ -81,7 +83,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
 <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
 <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-<li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the Magento Admin. </li>
+<li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. </li>
 <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
 </ul>
 
@@ -91,7 +93,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 </table>
 
 The following picture illustrates how image roles for product images are specified in the Magento Admin:
-<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
+<img src="{{ site.baseurl }}/common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
 
 Image properties are defined by the corresponding elements, for example:
 
@@ -241,9 +243,9 @@ The following table contains the list of all properties which can be configured:
 Generally, product images are cached while saving the product. However, the `magento catalog:images:resize` command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:
 
 * After you import products, which might have images of various sizes
-* If images were resized or deleted manually from cache 
+* If images were resized or deleted manually from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} 
 
-Each image assigned to a product must be resized in accordance with image metadata defined in a module's <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
+Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
 
 Command usage:
 
