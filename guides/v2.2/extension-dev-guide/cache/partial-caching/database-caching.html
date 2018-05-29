@@ -1556,11 +1556,11 @@ cp di.xml di.xml.bak
 	&lt;arguments&gt;
     	&lt;argument name="frontendSettings" xsi:type="array"&gt;
     	    &lt;item name="page_cache" xsi:type="array"&gt;
-    	      &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
-     	       &lt;/item&gt;
-     	     &lt;item name="&lt;your cache id&gt;" xsi:type="array"&gt;
-     	     &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
-     	     &lt;/item&gt;
+                &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
+            &lt;/item&gt;
+            &lt;item name="&lt;your cache id&gt;" xsi:type="array"&gt;
+                &lt;item name="backend" xsi:type="string"&gt;database&lt;/item&gt;
+            &lt;/item&gt;
    		&lt;/argument&gt;
 	&lt;/arguments&gt;
 &lt;/type&gt;
@@ -1681,25 +1681,26 @@ ls &lt;your Magento install dir&gt;/var/page_cache/*
 <h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
 <p><code class="highlighter-rouge">di.xml</code> snippet:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Frontend\Pool"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"frontendSettings"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"page_cache"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
-                    <span class="nt">&lt;/item&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
-                  <span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
-    <span class="nt">&lt;/type&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Type\FrontendPool"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"typeFrontendMap"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Frontend\Pool"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"frontendSettings"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"page_cache"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
-            <span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
- <span class="nt">&lt;/type&gt;</span></code></pre></figure>
+            <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"default"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\Cache\Type\FrontendPool"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"typeFrontendMap"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"backend"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>database<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
 
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
 <p><code class="highlighter-rouge">env.php</code> snippet that enables all cache types with a custom frontend named <code class="highlighter-rouge">magento_cache</code>:</p>

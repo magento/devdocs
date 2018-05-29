@@ -1615,6 +1615,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
     <span class="p">)</span> <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerSession</span> <span class="o">=</span> <span class="nv">$customerSession</span><span class="p">;</span>
     <span class="p">}</span>
+
     <span class="sd">/**
      * \Magento\Framework\App\Http\Context::getVaryString is used by Magento to retrieve unique identifier for selected context,
      * so this is a best place to declare custom context variables
@@ -1641,12 +1642,14 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 <p>First, your entity <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="&#95;blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
+
 <span class="k">class</span> <span class="nc">Product</span> <span class="k">implements</span> <span class="nx">IdentityInterface</span>
 <span class="p">{</span>
      <span class="sd">/**
       * Product cache tag
       */</span>
      <span class="k">const</span> <span class="no">CACHE_TAG</span> <span class="o">=</span> <span class="s1">'catalog_product'</span><span class="p">;</span>
+
     <span class="sd">/**
      * Get identities
      *
