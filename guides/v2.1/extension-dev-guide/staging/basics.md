@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Magento Content Staging Basics
 version: 2.1
