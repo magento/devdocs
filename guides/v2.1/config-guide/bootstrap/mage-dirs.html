@@ -1723,30 +1723,28 @@
 
 <ul>
   <li><a href="/guides/v2.1/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
-  <li>Use a custom entry point script such as the following:</li>
-</ul>
+  <li>
+    <p>Use a custom entry point script such as the following:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">	<span class="k">use</span> <span class="nx">Magento\Framework\App\Filesystem\DirectoryList</span><span class="p">;</span>
-	<span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Magento\Framework\App\Filesystem\DirectoryList</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
  
-	<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/app/bootstrap.php'</span><span class="p">;</span>
-	<span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
-	<span class="nv">$params</span><span class="p">[</span><span class="nx">Bootstrap</span><span class="o">::</span><span class="na">INIT_PARAM_FILESYSTEM_DIR_PATHS</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-       <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">CACHE</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PATH</span> <span class="o">=&gt;</span> <span class="s1">'/mnt/nfs/cache'</span><span class="p">],</span>
-       <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">MEDIA</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PATH</span> <span class="o">=&gt;</span> <span class="s1">'/mnt/nfs/media'</span><span class="p">,</span> <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">],</span>
-	<span class="p">];</span>
-
-	<span class="nv">$params</span><span class="p">[</span><span class="nx">Bootstrap</span><span class="o">::</span><span class="na">INIT_PARAM_FILESYSTEM_DIR_PATHS</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
-	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PUB</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">],</span>	
-	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">MEDIA</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">'media'</span><span class="p">],</span>
-	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">STATIC_VIEW</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">'static'</span><span class="p">],</span>
-	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">UPLOAD</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">'media/upload'</span><span class="p">],</span>
-	<span class="p">];</span>
-	<span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
-	<span class="sd">/** @var \Magento\Framework\App\Http $app */</span>
-	<span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">'Magento\Framework\App\Http'</span><span class="p">);</span>
-	<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
-	</code></pre></figure>
+<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">'/app/bootstrap.php'</span><span class="p">;</span>
+<span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+<span class="nv">$params</span><span class="p">[</span><span class="nx">Bootstrap</span><span class="o">::</span><span class="na">INIT_PARAM_FILESYSTEM_DIR_PATHS</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+ 	    <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PUB</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">,</span>
+ 	    <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">MEDIA</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PATH</span> <span class="o">=&gt;</span> <span class="s1">'/mnt/nfs/media'</span><span class="p">,</span> <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">''</span><span class="p">],</span>
+ 	    <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">STATIC_VIEW</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">'static'</span><span class="p">],</span>
+ 	    <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">UPLOAD</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">'/mnt/nfs/media/upload'</span><span class="p">],</span>
+ 	    <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">CACHE</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PATH</span> <span class="o">=&gt;</span> <span class="s1">'/mnt/nfs/cache'</span><span class="p">],</span>
+<span class="p">];</span>
+<span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+<span class="sd">/** @var \Magento\Framework\App\Http $app */</span>
+<span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">'Magento\Framework\App\Http'</span><span class="p">);</span>
+<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <p>The preceding example sets paths for <code class="highlighter-rouge">[cache]</code> and <code class="highlighter-rouge">[media]</code> directories to <code class="highlighter-rouge">/mnt/nfs/cache</code> and <code class="highlighter-rouge">/mnt/nfs/media</code>, respectively.</p>
 
