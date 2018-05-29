@@ -1,8 +1,10 @@
 ---
 group: cloud
-title: Patch Cloud tools
+title: Cloud tools release notes
 version: 2.1
-github_link: cloud/composer-packages/ece-tools.md
+github_link: cloud/release-notes/cloud-tools.md
+redirect_from:
+  - guides/v2.1/cloud/composer-packages/ece-tools.md
 functional_areas:
   - Cloud
   - Setup
@@ -10,6 +12,32 @@ functional_areas:
 ---
 
 {% include cloud/ece-tools.md %}
+
+## v2002.0.12
+
+{% include note.html type="info" content="The Cloud tools version 2002.0.11 now supports Magento 2.1.14. " %}
+
+#### New Features
+
+- <!-- MAGECLOUD-1910 -->Added two [new wizards]({{ page.baseurl }}/cloud/env/smart-wizards.html) to assist configuring your Cloud:
+    -  `ideal-state`—configure the ideal state for minimal downtime
+    -  `master-slave`—configure load balancing for database and Redis
+
+- <!-- MAGECLOUD-1908 --> We removed the `.magento.env.yaml` file from the {{site.data.var.ece}} template and added the `.magento.env.yaml.sample` file, which includes a detailed description and possible values for each environment variable.
+
+- <!-- MAGECLOUD-1521 -->Added a new Cloud command—`.vendor/bin/ece-tools module:refresh`—to enable missing modules the same way that it is done automatically during a build. See [Build and deploy on local in Build phase]({{ page.baseurl }}/cloud/live/live-sanity-check.html#build).
+
+-  <!-- MAGECLOUD-2105 -->Added the ability to choose to merge or overwrite configuration for services using the `_merge` option in [CACHE]({{ page.baseurl }}/cloud/env/variables-deploy.html#cache_configuration), [SESSION]({{ page.baseurl }}/cloud/env/variables-deploy.html#session_configuration), [QUEUE]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration), and [SEARCH]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) configurations.
+
+-  Added the following new [**Environment variables**]({{ page.baseurl }}/cloud/env/variables-intro.html):
+    - <!-- MAGECLOUD-1501 -->Now you can define multiple locales for each theme using the new [SCD_MATRIX]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable.
+    -  <!-- MAGECLOUD-2047 --> Added the [DATABASE_CONFIGURATION]({{ page.baseurl }}/cloud/env/variables-deploy.html#database_configuration) environment variable to customize your database connections for deployment.
+
+#### Fixed Issues
+
+-  <!-- MAGECLOUD-2034 -->Fixed an issue when using SCD with multiple locales, which generated the same `js-translation.json` file for each locale.
+
+- <!-- MAGECLOUD-2033  -->Optimized the `support:db:dump` command.
 
 ## v2002.0.11
 

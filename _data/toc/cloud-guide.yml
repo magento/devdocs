@@ -350,8 +350,8 @@ pages:
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Patch Cloud tools
-          url: /cloud/composer-packages/ece-tools.html
+        - label: Cloud tools release notes
+          url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
         - label: Patch Magento Commerce (Cloud)
