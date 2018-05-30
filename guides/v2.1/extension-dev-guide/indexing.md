@@ -1,4 +1,5 @@
 ---
+layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Indexing overview
@@ -140,6 +141,18 @@ The Magento application implements the following indexers:
 			<th>Description</th>
 		</tr>
 	<tr>
+		<td>Design Config Grid</td>
+		<td>design_config_grid</td>
+		<td><a href="{{ site.mage2000url }}app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank">Magento\Theme\Model\Indexer\Design\Config</a></td>
+		<td></td>
+	</tr>
+		<tr>
+		<td>Customer Grid</td>
+		<td>customer_grid</td>
+		<td><a href="{{ site.mage2000url }}app/code/Magento/Framework/Indexer/Action/Entity.php" target="_blank">Magento\Framework\Indexer\Action\Entity</a></td>
+		<td></td>
+	</tr>
+	<tr>
 		<td>Category products</td>
 		<td>catalog_category_product</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
@@ -178,7 +191,7 @@ The Magento application implements the following indexers:
 	<tr>
 		<td>Catalog product rule</td>
 		<td>catalogrule_product</td>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+		<td><a href="{{ site.mage2000url  }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
@@ -187,5 +200,5 @@ The Magento application implements the following indexers:
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
 		<td></td>
 	</tr>
-
-</tbody></table>
+	</tbody>
+</table>
