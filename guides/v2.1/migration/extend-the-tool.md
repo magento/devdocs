@@ -21,7 +21,7 @@ In most cases, the [Map Step]({{ page.baseurl }}/migration/migration-tool-intern
 - Change table or field names with mapping rules
 - Transform data formats with existing handlers or create a custom handler
 
-The following shows an example of using both mapping rules and a handler. This example uses a hyopthetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
+The following shows an example of using both mapping rules and a handler. This example uses a hypothetical Magento 1 extension called "GreatBlog" that has been improved for Magento 2.
 
 ```xml
 <source>
@@ -124,6 +124,6 @@ Refer to [Configuration]({{ page.baseurl }}/migration/migration-tool-internal-sp
 Complex SQL queries can be assembled inside these classes to fetch data from the three tables and migrate into a single table. Also, note that these tables should be "ignored" in the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step) because it scans all existing tables and tries to migrate the data unless it is in the `<ignore>` tag of the `map.xml` file.
 
 ## Prohibited extension methods
-Since the Data Migration Tool and Magento 2 are constantly evolving, existing steps and handlers are subject to change. We highly recommend not overriding the behaviour of steps like the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step), [URL Rewrite Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#url-rewrite-step), and handlers by extending their classes.
+Since the Data Migration Tool and Magento 2 are constantly evolving, existing steps and handlers are subject to change. We highly recommend not overriding the behavior of steps like the [Map Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#map-step), [URL Rewrite Step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#url-rewrite-step), and handlers by extending their classes.
 
 Some steps do not support mapping and cannot be changed without altering the code. You can either write an extra step that changes data at the end of migration or create a [GitHub issue](https://github.com/magento/data-migration-tool/issues){:target="_blank"} and ask for a new extension point on the existing step.

@@ -131,7 +131,7 @@ Parameter | Description | Versions available
 `--scope-code` | The scope code of configuration (website code or store view code) | All
 `-l` or `--lock` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file. | 2.2.0 - 2.2.3
 `-le or --lock-env` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file. | 2.2.4 and higher
-`-lc or --lock-config` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. | 2.2.4 and higher
+`-lc or --lock-config` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. The `--lock-config` option overwrites `--lock-env` if you specify both options. | 2.2.4 and higher
 `path` | *Required*. The configuration path | All
 `value` | *Required*. The value of the configuration | All
 
@@ -150,7 +150,7 @@ See one of the following sections for more information:
 *   [Set configuration values that cannot be edited in the Magento Admin](#config-cli-config-file)
 
 ### Set configuration values that can be edited in the Magento Admin {#config-cli-config-set-edit}
-Use `bin/magento config:set` _without_ `--lock` (or `--lock-env` or ` --lock-config`) to write the value to the database. Values you set this way can be edited in the Magento Admin.
+Use `bin/magento config:set` _without_ `--lock` (or `--lock-env` or `--lock-config`) to write the value to the database. Values you set this way can be edited in the Magento Admin.
 
 Some examples for setting a store base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} follow:
 

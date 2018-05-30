@@ -1,10 +1,10 @@
 <!-- (REQUIRED) What is the nature of this issue? -->
 ## This issue is a:
-[ ] Bug on the website
-[ ] New topic request
-[ ] Topic clarification request
-[ ] New DevDocs feature request
-[ ] Other
+- [ ] Bug on the website
+- [ ] New topic request
+- [ ] Topic clarification request
+- [ ] New DevDocs feature request
+- [ ] Other
  
 <!-- (REQUIRED) What is the issue/current behavior? -->
 ## Description:
