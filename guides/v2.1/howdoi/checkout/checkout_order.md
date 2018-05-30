@@ -1,19 +1,19 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Add custom validations before order placement
-menu_title: Add custom validations before order placement
+title: Step 4. Add custom validations before order placement
+menu_title: Step 4. Add custom validations before order placement
+level3_subgroup: checkout-tutorial
 menu_order: 4
 version: 2.1
 github_link: howdoi/checkout/checkout_order.md
 functional_areas:
   - Checkout
 ---
-<h2>What's in this topic</h2>
 
 This topic describes how to add custom validations to be performed before the order is placed during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. Namely, the validations which are performed after a shopper clicks the **Place Order** button. Writing the validation logic itself is not covered in this topic.
 
-## Overview
 To add custom validations before the order placement action, you must do the following:
 
 1. [Create the validator](#validator).

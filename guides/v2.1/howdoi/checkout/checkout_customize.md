@@ -1,16 +1,16 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Customize the view of a checkout step
-menu_title: Customize the view of a checkout step
+title: Step 2. Customize the view of a checkout step
+menu_title: Step 2. Customize the view of a checkout step
 menu_order: 2
+level3_subgroup: checkout-tutorial
 version: 2.1
 github_link: howdoi/checkout/checkout_customize.md
 functional_areas:
   - Checkout
 ---
-
-<h2> What's in this topic</h2>
 
 This topic contains the basic information about how to customize the view of an existing {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} step. In the Magento application, checkout is implemented using UI components. You can customize each step by changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template for a component, adding, removing or disabling a component.
 
@@ -37,7 +37,7 @@ To change the `.js` implementation and template used for components rendering, y
 </page>
 {%endhighlight xml%}
 
-3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them.
+3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parent nodes, as you are not going to change them.
 
 4. Change the path to the component's `.js` file, template or any other property.
 

@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Customize checkout
-menu_title: Customize checkout
-menu_node: parent
+title: Initial Tasks
+menu_title: Initial Tasks
+menu_node:
+level3_subgroup: checkout-tutorial
 menu_order: 1
 version: 2.1
 github_link: howdoi/checkout/checkout_overview.md
@@ -23,7 +25,7 @@ The checkout totals and the corresponding side-bar are only displayed after the 
 
 The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
-### List of described customizations
+### List of checkout customizations
 You can customize the default checkout in many ways. Here the following customizations are described:
 
  - [Add a new checkout step]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html)

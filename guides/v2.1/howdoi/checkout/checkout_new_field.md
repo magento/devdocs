@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Add a new field in address form
-menu_title: Add a new field in address form
+title: Step 9. Add a new field in address form
+menu_title: Step 9. Add a new field in address form
 menu_order: 9
+level3_subgroup: checkout-tutorial
 version: 2.1
 github_link: howdoi/checkout/checkout_new_field.md
 functional_areas:

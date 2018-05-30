@@ -1,15 +1,16 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Add a new input form to checkout
-menu_title: Add a new input form to checkout
+title: Step 8. Add a new input form to checkout
+menu_title: Step 8. Add a new input form to checkout
 menu_order: 8
+level3_subgroup: checkout-tutorial
 version: 2.1
 github_link: howdoi/checkout/checkout_form.md
 functional_areas:
   - Checkout
 ---
-## What's in this topic
 
 This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
 

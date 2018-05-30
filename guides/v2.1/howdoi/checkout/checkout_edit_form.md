@@ -1,8 +1,9 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Add a custom template for a form field on Checkout page
-menu_title: Add a custom template for a form field on Checkout page
+title: Step 7. Add a custom template for a form field on Checkout page
+menu_title: Step 7. Add a custom template for a form field on Checkout page
 menu_order: 7
 version: 2.1
 github_link: howdoi/checkout/checkout_edit_form.md

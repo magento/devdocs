@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Customize checkout
-menu_title: Customize checkout
-menu_node: parent
+title: Initial Tasks
+menu_title: Initial Tasks
+menu_node: 
+level3_subgroup: checkout-tutorial
 menu_order: 1
 version: 2.0
 github_link: howdoi/checkout/checkout_overview.md

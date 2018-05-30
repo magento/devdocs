@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
-title: Add a custom shipping address renderer
-menu_title: Add a custom shipping address renderer
+title: Step 10. Add a custom shipping address renderer
+menu_title: Step 10. Add a custom shipping address renderer
 menu_order: 10
+level3_subgroup: checkout-tutorial
 version: 2.1
 github_link: howdoi/checkout/checkout_address.md
 functional_areas:
