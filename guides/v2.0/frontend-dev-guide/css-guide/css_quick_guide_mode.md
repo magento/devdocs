@@ -60,7 +60,7 @@ The following is an illustration of how the process of making simple changes loo
 </li>
 </ol>
 
-If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in the [Clean static files cache]({{ page.baseurl }}/howdoi/clean_static_cache.html) topic. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
+If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in [Clean static files cache]({{ page.baseurl }}/Verified with guide writer). You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
 <h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
