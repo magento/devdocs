@@ -1,4 +1,5 @@
 ---
+layout: default
 group: howdoi
 title: Create a GitHub patch for a Composer installation
 version: 2.2
@@ -9,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-Sometimes it takes a while for us to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the `composer-patches` plugin to apply it to your Composer-based Magento 2 installation.
+Sometimes it takes a while for us to include a bug fix made on GitHub in a Magento 2 Composer release. In the meantime, you can create a patch from GitHub and use the [`cweagans/composer-patches`](https://github.com/cweagans/composer-patches/){:target="\_blank"} plugin to apply it to your Composer-based Magento 2 installation.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always perform comprehensive testing before deploying any unreleased patch.
@@ -17,45 +18,69 @@ Always perform comprehensive testing before deploying any unreleased patch.
 
 ## Create a patch
 
-To create a patch file from a GitHub commit or pull request, append `.patch` to the url, [https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch).
+To create a patch file:
 
-<div class="bs-callout bs-callout-info" markdown="1">
-You must change the paths in the patch file to correspond to the `vendor/***` directories.
-</div>
+1. Create a `patches/composer` directory in your local project.
+
+1. Identify the GitHub commit or pull request to use for the patch. For example:
+
+   [`2d31571f1bacd11aa2ec795180abf682e0e9aede`](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede){:target="\_blank"}
+
+1. Append `.patch` or `.diff` to the commit URL. Use `.diff` for a smaller file size. For example:
+
+   [https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch){:target="\_blank"}
+
+1. Save the page as a file in the `patches/composer` directory.
+
+1. Edit the file and change all paths so that they are relative to the `vendor/<VENDOR>/<PACKAGE>` directory. For example, replace all instances of `app/code/Magento/Payment/` with `vendor/magento/module-payment/`.
+
+    <div class="bs-callout bs-callout-warning" markdown="1">
+    Text editors that automatically remove trailing whitespace or add new lines can break the patch. Use a simple text editor to make these changes.
+    </div>
 
 ## Apply a patch
 
-1. Create a `patches/composer` directory.
-1. Prepare your patch file so that the paths are relative to the `vendor/<VENDOR>/<PACKAGE>` directory. For example `vendor/magento/module-payment`.
-1. Name the patch file appropriately and move it to the `patches/composer` directory.
-2. Add the `cweagans/composer-patches` plugin to the `composer.json` file.
+To apply a patch:
+
+1. Open a terminal and navigate to your project directory.
+
+1. Add the `cweagans/composer-patches` plugin to the `composer.json` file.
 
    ```bash
    composer require cweagans/composer-patches
    ```
 
-1. Edit the `composer.json` file and add the following section, specifying the Composer package to apply the patch to, as well as a description of the patch and a reference to the file location:
+1. Edit the `composer.json` file and add the following section to specify:
 
-   ```json
-   "extra": {
-        "magento-force": "override",
+    - **Module**: _"magento/module-payment"_
+    - **Title**: _"MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card"_
+    - **Path to patch**: _"patches/composer/github-issue-6474.patch"_
+
+    For example:
+
+    ```json
+    "extra": {
         "composer-exit-on-patch-failure": true,
         "patches": {
             "magento/module-payment": {
                 "MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card": "patches/composer/github-issue-6474.patch"
             }
         }
-   }
-   ```
+    }
+    ```
 
-2. Apply the patch.
+    <div class="bs-callout bs-callout-info" markdown="1">
+    If a patch affects multiple modules, you must create multiple patch files targeting multiple modules.
+    </div>
+
+1. Apply the patch. Use the `-v` option to show debugging information.
 
    ```bash
-   composer install
+   composer -v install
    ```
 
 1. Update the `composer.lock` file. The lock file tracks which patches have been applied to each Composer package in an `extra > patches_applied` object.
 
    ```bash
-   composer update <PACKAGE NAME>
+   composer update --lock
    ```
