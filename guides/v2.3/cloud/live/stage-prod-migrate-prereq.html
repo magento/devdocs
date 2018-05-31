@@ -2136,7 +2136,7 @@
 
     <p>For Pro projects created <strong>before October 23, 2017</strong>, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.</p>
 
-    <p>When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environements and push code and migrate data and files using Git commands.</p>
+    <p>When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environments and push code and migrate data and files using Git commands.</p>
 
     <p>Using a terminal connection, enter Git commands to add the remote repositories.</p>
 
@@ -2156,7 +2156,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
     <p><strong>How it works!</strong> After you configure the agent and settings, you can migrate files easier using SSH or <code class="highlighter-rouge">scp</code> between servers. The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system, helping you connect using your local private SSH key. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.</p>
 
-    <p>You can use any terminal client you prefer for SSH access, or see our <a href="/guides/v2.3/cloud/before/before-workspace.html#recommended-tools">Recommendeds tools</a>. For these examples, we use the OpenSSH client.</p>
+    <p>You can use any terminal client you prefer for SSH access, or see our <a href="/guides/v2.3/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
 
     <p>To set up an SSH agent:</p>
 

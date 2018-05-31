@@ -1625,6 +1625,12 @@
 <h4 id="around-methods">Around methods</h4>
 <p>Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with ‘around’ as the prefix.</p>
 
+<div class="bs-callout bs-callout-warning">
+    <p>Avoid using around method plugins when they are not required because they increase stack traces and affect performance.</p>
+    <p>The only use case for around method plugins is when the execution of all further plugins and original methods need termination.</p>
+    <p>Use after method plugins if you require arguments for replacing or altering function results.</p>
+</div>
+
 <p>Before the list of the original method’s arguments, around methods receive a <code class="highlighter-rouge">callable</code> that will allow a call to the next method in the chain. When your code executes the <code class="highlighter-rouge">callable</code>, Magento calls the next plugin or the observed function.</p>
 
 <div class="bs-callout bs-callout-warning">
@@ -1639,11 +1645,17 @@
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
-        <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
+        <span class="nv">$someValue</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
+        <span class="nv">$returnValue</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">canCallProceedCallable</span><span class="p">(</span><span class="nv">$someValue</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
+        <span class="p">}</span>
+        
         <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
             <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
         <span class="p">}</span>
+        
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>

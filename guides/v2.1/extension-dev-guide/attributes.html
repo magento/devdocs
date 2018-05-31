@@ -1393,7 +1393,7 @@
 
 <h3 id="customer-eav-attribute">Adding Customer EAV attribute for backend only</h3>
 
-<p>Customer attributes are created inside of <code class="highlighter-rouge">InstallData</code> and <code class="highlighter-rouge">UpgradeData</code> scripts. To add new attributes to the database, you must use the <code class="highlighter-rouge">\Magento\Eav\Setup\EavSetup</code> class as a dependency injection.</p>
+<p>Customer attributes are created inside of <code class="highlighter-rouge">InstallData</code> and <code class="highlighter-rouge">UpgradeData</code> scripts. To add new attributes to the database, you must use the <code class="highlighter-rouge">\Magento\Eav\Setup\EavSetupFactory</code> class as a dependency injection.</p>
 
 <div class="bs-callout bs-callout-warning">
   <p>Both the <code class="highlighter-rouge">save()</code> and <code class="highlighter-rouge">getResource()</code> methods for <code class="highlighter-rouge">Magento\Framework\Model\AbstractModel</code> have been marked as <code class="highlighter-rouge">@deprecated</code> since 2.1 and should no longer be used.</p>
@@ -1407,25 +1407,27 @@
 
 <span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">\Magento\Framework\Setup\InstallDataInterface</span>
 <span class="p">{</span>
-    <span class="k">private</span> <span class="nv">$eavSetup</span><span class="p">;</span>
+    <span class="k">private</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
     
     <span class="k">private</span> <span class="nv">$eavConfig</span><span class="p">;</span>
     
     <span class="k">private</span> <span class="nv">$attributeResource</span><span class="p">;</span>
     
     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">\Magento\Eav\Setup\EavSetup</span> <span class="nv">$eavSetup</span><span class="p">,</span>
+        <span class="nx">\Magento\Eav\Setup\EavSetupFactory</span> <span class="nv">$eavSetupFactory</span><span class="p">,</span>
         <span class="nx">\Magento\Eav\Model\Config</span> <span class="nv">$eavConfig</span><span class="p">,</span>
         <span class="nx">\Magento\Customer\Model\ResourceModel\Attribute</span> <span class="nv">$attributeResource</span>
     <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetup</span> <span class="o">=</span> <span class="nv">$eavSetup</span><span class="p">;</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetupFactory</span> <span class="o">=</span> <span class="nv">$eavSetupFactory</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavConfig</span> <span class="o">=</span> <span class="nv">$eavConfig</span><span class="p">;</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">attributeResource</span> <span class="o">=</span> <span class="nv">$attributeResource</span><span class="p">;</span>
     <span class="p">}</span>
     
     <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
     <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetup</span><span class="o">-&gt;</span><span class="na">addAttribute</span><span class="p">(</span><span class="nx">Customer</span><span class="o">::</span><span class="na">ENTITY</span><span class="p">,</span> <span class="s1">'attribute_code'</span><span class="p">,</span> <span class="p">[</span>
+        <span class="nv">$eavSetup</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eavSetupFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span><span class="s1">'setup'</span> <span class="o">=&gt;</span> <span class="nv">$setup</span><span class="p">]);</span>
+
+        <span class="nv">$eavSetup</span><span class="o">-&gt;</span><span class="na">addAttribute</span><span class="p">(</span><span class="nx">Customer</span><span class="o">::</span><span class="na">ENTITY</span><span class="p">,</span> <span class="s1">'attribute_code'</span><span class="p">,</span> <span class="p">[</span>
             <span class="c1">// Attribute parameters
 </span>        <span class="p">]);</span>
         

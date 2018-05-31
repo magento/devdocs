@@ -2103,7 +2103,7 @@
     <p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for Configuration Management(<a href="https://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.1.X</a>, <a href="https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.2.X</a>). If you use the <code class="highlighter-rouge">app:config:dump</code> command, all configuration options for Fastly will be locked from editing in Staging and Production.</p>
   </div>
 
-  <p>We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Intergration environments.</p>
+  <p>We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Integration environments.</p>
 
   <ol>
     <li>
@@ -2189,7 +2189,7 @@ composer require fastly/magento2
   <h2 id="upload-vcl-snippets">Upload Fastly VCL snippets</h2>
   <p>You don’t have to create or code VCL snippets. We provide a default set of snippets for Fastly. You only need to click <strong>Upload VCL to Fastly</strong> to finish this step.</p>
 
-  <p>The installed Fastly module includes the following default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\blank">VCL snippets</a> that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specificl Service ID and extension.</p>
+  <p>The installed Fastly module includes the following default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\blank">VCL snippets</a> that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specific Service ID and extension.</p>
 
   <p>For VCL snippet developers, these default snippets are prepended with <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. You should not use this prepended name for your own snippets. For full details, see our guide to create and add <a href="#custom-vcl">custom VCL snippets</a>.</p>
 
@@ -2249,9 +2249,9 @@ composer require fastly/magento2
         <li>us-west-2 =&gt; sea-wa-us</li>
       </ul>
     </li>
-    <li>Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.</li>
+    <li>Modify the timeout values (in mimilliseconds for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.</li>
     <li>Optionally, select to Activate the backend and Shield after editing or saving.</li>
-    <li>Click <strong>Upload</strong> to save. The settings are commiunicated to Fastly.</li>
+    <li>Click <strong>Upload</strong> to save. The settings are communicated to Fastly.</li>
     <li>In the Magento Admin, click <strong>Save Config</strong>.</li>
   </ol>
 
@@ -2325,7 +2325,7 @@ composer require fastly/magento2
 
   <ol>
     <li>In the <strong>Fastly Configuration</strong> section, expand <strong>Advanced</strong>.</li>
-    <li>Scroll down and select <strong>Yes</strong> to <strong>Enable GeoIP</strong>. Additional configuration options disply.</li>
+    <li>Scroll down and select <strong>Yes</strong> to <strong>Enable GeoIP</strong>. Additional configuration options display.</li>
     <li>For GeoIP Action, select if the visitor is automatically redirected with <strong>Redirect</strong> or provided a list of stores to select from with <strong>Dialog</strong>.</li>
     <li>
       <p>For <strong>Country Mapping</strong>, click <strong>Add</strong> to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="\_blank">this site</a>.</p>
