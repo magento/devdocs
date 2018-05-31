@@ -1737,7 +1737,22 @@ bin/magento setup:static-content:deploy --theme=Magento/luma de_D
 
     <p><strong>Workaround</strong>: You can reduce processing time and performance by increasing your <a href="/guides/v2.1/install-gde/prereq/php-settings.html">PHP <code class="highlighter-rouge">memory_limit</code> setting</a> to 1 GB.</p>
   </li>
+  <li>
+    <p><strong>Issue</strong> If using Nginx to serve static content you will see 404 responses for CSS/JS. This is due to requirements for a  rewrite which has been added in pub/static/.htaccess</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  # Remove signature of the static files that is used to overcome the browser cache
+  RewriteRule ^version.+?/(.+)$ $1 [L]
+</code></pre></div>    </div>
+  </li>
 </ul>
+
+<p><strong>Workaround</strong> You can add the equivalent Nginx rewrite in your Nginx configuration as below.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	server {
+		...
+		# Needed for M2 2.1.3+
+                rewrite ^/pub/static/version.+?/(.*)$ /pub/static/$1 last;
+		....
+	}
+</code></pre></div></div>
 
 <h2 id="system-requirements">System requirements</h2>
 <p>Our technology stack is built on PHP and MySQL. For more information, see
