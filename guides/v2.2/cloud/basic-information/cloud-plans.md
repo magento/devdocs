@@ -1,1 +1,1 @@
-../../../../guides/v2.1/cloud/basic-information/cloud-plans.md
+../../../v2.1/cloud/basic-information/cloud-plans.md
