@@ -27,7 +27,7 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 </div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
-The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
+The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
 For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{ page.baseurl }}/cloud/project/projects.html#integrations).
 
@@ -72,9 +72,9 @@ These instructions assume you have fully set up your [local workspace]({{ page.b
 
 	A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.
 
-	![Blackfire Magento Cloud integragtion]({{ site.baseurl }}/common/images/cloud_blackfire-integration.png)
+	![Blackfire Magento Cloud integration]({{ site.baseurl }}/common/images/cloud_blackfire-integration.png)
 
-The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.
+The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information directly.
 
 * [Add Blackfire to .magento.app.yaml](#magentoappyaml)
 * [Add project variables](#variables)
@@ -261,7 +261,7 @@ If you leave this field blank, we will try the following keys in this order: `ht
 	If errors display during deployment, open `routes.yaml` and check the syntax. Check indentation and spelling and try again.
 
 ### Save changes in Blackfire {#save}
-With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and conncetions with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
+With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
 
 ## Profile your store {#profile}
 To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).

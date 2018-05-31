@@ -178,7 +178,7 @@ To complete extensive changes:
 
 	You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can't edit it until this file is removed.
 2.	Make configuration changes in the Admin on the Integration environment.
-3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those enviornment specific settings.
+3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 While you can manually edit `config.local.php` in Staging and Production, we don't recommend it. The file helps keep all of your configurations consistent across all of your environments.
