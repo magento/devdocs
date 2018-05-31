@@ -11,7 +11,7 @@ github_link: howdoi/install/mode-switch.md
 
 The Magento application has three *modes* of operation that make it convenient for you to deploy it in a development or production environment.
 
-The two modes you hear the most about are <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">*developer mode*</a> and <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">*production mode*</a>. Aptly named, these modes are intended for development and production use, respectively.
+The two modes you hear the most about are <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">developer mode</a> and <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">production mode</a>. Aptly named, these modes are intended for development and production use, respectively.
 
 <div class="bs-callout bs-callout-info">
 <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
