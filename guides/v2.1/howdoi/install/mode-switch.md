@@ -36,13 +36,13 @@ To switch modes:
 		<td>developer</td>
 		<td><code>magento deploy:mode:set developer</code></td>
 		<td><p>Directories: 770 (owner and group have full control, all others have no access)</p>
-			<p>Files: 660 (owner and group have write access, all others have no access)</td>
+			<p>Files: 660 (owner and group have write access, all others have no access)</p></td>
 	</tr>
 	<tr>
 		<td>production</td>
 		<td><code>magento deploy:mode:set production [--keep-generated]</code></td>
 		<td><p>Directories: 750 (owner has full control, group has read and execute access, all others have no access)</p>
-			<p>Files: 640 (owner has write access, group has read-only access, all others have no access)</td>
+			<p>Files: 640 (owner has write access, group has read-only access, all others have no access)</p></td>
 	</tr>
 	</tbody>
 	</table>
