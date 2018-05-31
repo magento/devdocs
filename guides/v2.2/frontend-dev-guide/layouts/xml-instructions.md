@@ -48,7 +48,7 @@ Defines a block.
 Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.</p>
 
 <div class="bs-callout bs-callout-info" markdown="1">
-  The class attribute is no longer required in version `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1` class is still required.**
+  The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
 </div>
 
 <table>
