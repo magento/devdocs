@@ -1539,8 +1539,27 @@
 </table>
 <h2 id="sample-webapi">Sample webapi.xml file</h2>
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-<script src="https://gist.github.com/keharper/507f485712a496ad079a.js"></script>
-
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+    <span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../app/code/Magento/Webapi/etc/webapi.xsd"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Customer Group Service--&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customerGroups/:id"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Api\GroupRepositoryInterface"</span> <span class="na">method=</span><span class="s">"get"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"Magento_Customer::group"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
+...
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/customers/me/billingAddress"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">"Magento\Customer\Service\V1\CustomerAddressServiceInterface"</span> <span class="na">method=</span><span class="s">"getDefaultBillingAddress"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">"self"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+        <span class="nt">&lt;data&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"customerId"</span> <span class="na">force=</span><span class="s">"true"</span><span class="nt">&gt;</span>%customer_id%<span class="nt">&lt;/parameter&gt;</span>
+        <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
+<span class="nt">&lt;/routes&gt;</span>
+</code></pre></div></div>
 <p>In this <code>webapi.xml</code> example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
