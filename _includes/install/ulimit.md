@@ -28,7 +28,7 @@ To optionally set the value in the user's Bash shell:
 2.	Open `/home/<username>/.bashrc` in a text editor.
 3.	Add the following line:
 
-		ulimit -s 65536
+	ulimit -s 65536
 
 4.	Save your changes to `.bashrc` and exit the text editor.
 	
