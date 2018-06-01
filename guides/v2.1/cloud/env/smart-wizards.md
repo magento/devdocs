@@ -11,7 +11,7 @@ functional_areas:
 
 The smart wizards can assist you in determining if your Cloud configuration follows best practices. The available wizards can assist with the following configurations:
 
--  Ideal state for minimal downtime
+-  Ideal state for minimal deployment downtime
 -  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
 -  Load balancing configuration for database and Redis
 
@@ -47,7 +47,7 @@ SCD on-demand is disabled
 
 ## Verifying an ideal configuration
 
-The _ideal_ configuration for your Cloud project helps to minimize downtime by warming the cache and generating static content when requested by the user. If your Cloud is not configured for this _ideal state_, then you receive a message similar to the following:
+The _ideal_ configuration for your Cloud project helps to minimize deployment downtime by warming the cache and generating static content when requested by the user. If your Cloud is not configured for this _ideal state_, then you receive a message similar to the following:
 
 ```terminal
 - SCD on build is not configured
