@@ -92,6 +92,18 @@ stage:
       some_config: 'some_value'
 ```
 
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_new_value'
+      _merge: true
+```
+
 ### `GENERATED_CODE_SYMLINK`
 
 -  **Default**—`true`
