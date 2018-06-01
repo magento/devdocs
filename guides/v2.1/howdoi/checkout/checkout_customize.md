@@ -37,7 +37,7 @@ To change the `.js` implementation and template used for components rendering, y
 </page>
 {%endhighlight xml%}
 
-3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them.
+3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parent nodes, as you are not going to change them.
 
 4. Change the path to the component's `.js` file, template or any other property.
 
