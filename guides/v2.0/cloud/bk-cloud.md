@@ -81,7 +81,7 @@ To better understand {{site.data.var.ee}}, your plan, architecture, and workflow
 ## Learn more about Magento 2 {#magento2}
 If you would like to learn more about Magento 2, see the following resources:
 
-*	[All documentation home page](https://magento.com/help/documentation){:target="_blank"}
+*	[All documentation home page](https://magento.com/resources/technical){:target="_blank"}
 *	User guides (how to use options in the Magento Admin)
 
 	*	[Magento 2.0.x](http://docs.magento.com/m2/2.0/ee/user_guide/getting-started.html){:target="_blank"}
