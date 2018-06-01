@@ -83,7 +83,7 @@ This software is *not* upgradable but versions for the following software is con
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, 2.4, and 5.2
 
 <div class="bs-callout bs-callout-info" markdown="1">
-Elasticsearch 5.2 is only availble for 2.2.3 and higher.
+Elasticsearch 5.2 is only available for 2.2.3 and higher.
 </div>
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
@@ -97,7 +97,7 @@ For detailed information on supported versions and extensions, see the following
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*	Set up a [local development environment]({{ page.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
+*	Set up a [local development environment]({{ page.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in your account.
 *	Get a [project invitiation]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) from the Project Owner or a super user.
 

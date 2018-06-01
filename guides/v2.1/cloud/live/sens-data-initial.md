@@ -146,7 +146,7 @@ To verify your configuration changes:
 7.	Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}
-If you need to modify any of these settings and update `config.local.php`, you will need to delete the file, update configurations, generate the file, and push it to Git following the previous steps. For an overvidew, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+If you need to modify any of these settings and update `config.local.php`, you will need to delete the file, update configurations, generate the file, and push it to Git following the previous steps. For an overview, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 For this example, we'll modify static file optimization settings.
 
