@@ -10,11 +10,11 @@ github_link: pattern-library/getting-user-input/image_uploader/image_uploader.md
 ---
 
 ## Image uploader
-The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These iamges may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.  
+The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These images may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.  
 
 
 <h3 id="whentouse">When to Use</h3>
-When it is desireable to allow users to upload a single image or multiple images for display within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %}.
+When it is desirable to allow users to upload a single image or multiple images for display within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %}.
 
 
 <h3 id="whennottouse">When Not to Use</h3>
@@ -38,9 +38,9 @@ The Image Uploader allows the user to browse for images to upload to the {% glos
 
 <img src="img/image-uploader-browse.jpg">
 
-**Uploading via Drap and Drop**
+**Uploading via Drag and Drop**
 
-The user may also upload images (single or multiple) by dragging the desired images onto the Image Uplaod target area.
+The user may also upload images (single or multiple) by dragging the desired images onto the Image Upload target area.
 
 <img src="img/image-uploader-drag.jpg">
 

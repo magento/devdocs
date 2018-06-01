@@ -48,18 +48,18 @@ All these elements are optional, depending on the functions needed.
 
 * Each row will have a delete control on the far right, often represented by a _"trash can"_ icon. This will allow the User to remove any unwanted rows, along with any data that has been input into them (prior to saving the form).
 
-* The delete contol _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
+* The delete control _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
 
 * The "Add" link however should always be present to allow the user to add a row, even in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of deleting all rows.     
 
 <img src="img/behavior.png">
 
 <h3 id="pagination">Pagination</h3>
-For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appeneded to allow the user to rearrange the rows.
+For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
 <img src="img/pagination.png">
 
-Once pagination is enabled an "Order" column should be appeneded to allow the user to rearrange the rows.
+Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
 <img src="img/drag.png">
 
