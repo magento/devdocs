@@ -8,7 +8,7 @@ menu_order: 100
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 version: 2.1
-github_link: coding-standards/xml-coding-standard.md
+github_link: coding-standards/layout-coding-standard.md
 ---
 
 # Layout XML Coding Standard
@@ -17,8 +17,8 @@ github_link: coding-standards/xml-coding-standard.md
 
 The `name` attribute should adhere to the guidelines listed below. The `name` attribute should:
 
-- Be unique to the project.
-- Use a namespace approach where each child block's name contains its parent's name as well.
+- Should explain element's purpose rather than its position on the page .
+- Be unique to the module that declares it by prepending it with module's namespace as `<vendor>.<module>`
 - Have segments separated by a `.` (period).
 - Be all lowercase.
 - Never use `_` (underscores).
@@ -26,12 +26,8 @@ The `name` attribute should adhere to the guidelines listed below. The `name` at
 *Example:*
 
 ```xml
-<block name="header">
-  <block name="header.right">
-    <block name="header.right.search">
-      <block name="header.right.search.autocomplete" />
-    </block>
-  </block>
+<block name="magento.catalog.product.preview">
+  <block name="magento.catalog.price"/>
 </block>
 ```
 
@@ -49,11 +45,7 @@ The `as` attribute should follow the guidelines below. The value of `as`:
 *Example:*
 
 ```xml
-<block name="header">
-  <block name="header.right" as="right_actions">
-    <block name="header.right.search" as="search">
-      <block name="header.right.search.autocomplete" as="autocomplete" />
-    </block>
-  </block>
+<block name="magento.catalog.product.preview">
+  <block name="magento.catalog.total.price" as="total_price"/>
 </block>
 ```
