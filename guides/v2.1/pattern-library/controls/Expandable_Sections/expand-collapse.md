@@ -23,7 +23,7 @@ _(AKA Expand-Collapse, Collapsible panels)_
 
 <h3 id="overview">Overview</h3>
 
-Expandable Sections are expandable content areas which are useful in cases where a lot of information must be accommodated in limited space thereby reducing clutter and allowing to focus on primary task.  Typically the information to be accomodated can be separated into various sections and/or sub-sections, or topics.
+Expandable Sections are expandable content areas which are useful in cases where a lot of information must be accommodated in limited space thereby reducing clutter and allowing to focus on primary task.  Typically the information to be accommodated can be separated into various sections and/or sub-sections, or topics.
 
 <img src="img/example_general.png">
 

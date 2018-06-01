@@ -259,7 +259,7 @@ Do not implement keyboard navigation schemes that would place more than one cale
 
 *	Changes in aria states, identified here, as well as focus, should be clearly styled to show the user where their point of regard is and what days are selected.
 
-When the datepicker is active a calender day of the week should always have focus. This can be achieved by setting the tabindex on that day as appropriate and then using script to give it focus. Alternatively, the grid container could set aria-activedescendant to the id of the currently focused gridcell. Keep in mind that older browsers may not support aria-activedescendant.
+When the datepicker is active a calendar day of the week should always have focus. This can be achieved by setting the tabindex on that day as appropriate and then using script to give it focus. Alternatively, the grid container could set aria-activedescendant to the id of the currently focused gridcell. Keep in mind that older browsers may not support aria-activedescendant.
 <br>
 
 **Time Picker Widget**

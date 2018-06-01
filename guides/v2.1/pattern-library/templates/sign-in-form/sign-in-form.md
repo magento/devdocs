@@ -66,7 +66,7 @@ If the user opts to retrieve their password via the hyperlink ("Forgot your pass
 
 #### Confirmation of password retrieval:
 
-Once a user submits their email address to retreive their password, the module will provide a confirmation on the action via text in the module. 
+Once a user submits their email address to retrieve their password, the module will provide a confirmation on the action via text in the module. 
 * the title **Password Help** in the style of the Welcome message from the initial state 
 * text confirming that an email has been sent
 * a link to return to the initial state of the sign-in module – "Back to Sign in"
