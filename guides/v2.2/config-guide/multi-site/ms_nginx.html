@@ -1927,7 +1927,7 @@
 <p>This tutorial shows you step-by-step how to set up multiple websites using <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>.</p>
 
 <h3 id="assumptions">Assumptions</h3>
-<p>We assume the following:</p>
+<p>We assume that:</p>
 
 <ul>
   <li>
@@ -1937,7 +1937,7 @@
 
     <p>Additional tasks are required to set up Magento Commerce (Cloud). After you complete the tasks discussed in this topic, see <a href="/guides/v2.2/cloud/project/project-multi-sites.html">Set up multiple Magento Commerce (Cloud) websites or stores</a>.</p>
   </li>
-  <li>You use one virtual host per website; the virtual host configuration files are located in <code class="highlighter-rouge">/etc/nginx/sites-available</code>.</li>
+  <li>You accept multiple domains in one virtual host file or use one virtual host per website; the virtual host configuration files are located in <code class="highlighter-rouge">/etc/nginx/sites-available</code>.</li>
   <li>You use the <code class="highlighter-rouge">nginx.conf.sample</code> provided by Magento with only the modifications discussed in this tutorial.</li>
   <li>The Magento software is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>.</li>
   <li>
@@ -1946,6 +1946,7 @@
     <ul>
       <li><code class="highlighter-rouge">french.mysite.mg</code> with website code <code class="highlighter-rouge">french</code> and store view code <code class="highlighter-rouge">fr</code></li>
       <li><code class="highlighter-rouge">german.mysite.mg</code> with website code <code class="highlighter-rouge">german</code> and store view code <code class="highlighter-rouge">de</code></li>
+      <li><code class="highlighter-rouge">mysite.mg</code> is the default website and default store view</li>
     </ul>
 
     <div class="bs-callout bs-callout-tip">
@@ -1955,11 +1956,11 @@
 </ul>
 
 <h3 id="roadmap-for-setting-up-multiple-websites-with-nginx">Roadmap for setting up multiple websites with nginx</h3>
-<p>Setting up multiple stores consists of the following tasks:</p>
+<p>To set up multiple stores:</p>
 
 <ol>
   <li><a href="/guides/v2.2/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</li>
-  <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> (steps detailed below).</li>
+  <li>Create an <a href="#ms-nginx-vhosts">nginx virtual host</a> to map many websites or one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> (steps detailed below).</li>
   <li>
     <p>Pass the values of the <a href="/guides/v2.2/config-guide/multi-site/ms_over.html">Magento variables</a> <code class="highlighter-rouge">$MAGE_RUN_TYPE</code> and <code class="highlighter-rouge">$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code class="highlighter-rouge">nginx.conf.sample</code> (steps detailed below).</p>
 
@@ -1980,10 +1981,61 @@
 </ol>
 
 <h2 id="ms-nginx-vhosts">Step 2: Create nginx virtual hosts</h2>
-<p>This section discusses how to load websites on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code class="highlighter-rouge">root</code> privileges.</p>
+<p>This section discusses how to load websites on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code class="highlighter-rouge">sudo</code> privileges.</p>
 
-<div class="collapsible"><b class="collapsible-title">To create virtual hosts: </b><div class="collapsible-content"><ol>
-  <li>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg.conf</code>:
+<p>By using just one <a href="#ms-nginx-vhosts">nginx virtual host file</a>, you can keep your nginx configuration simple and clean. By using several virtual host files, you can customize each store (to use a custom location for <code class="highlighter-rouge">french.mysite.mg</code> for instance).</p>
+
+<div class="collapsible"><b class="collapsible-title">To use one virtual host (simplified): </b><div class="collapsible-content"><p>This configuration expands upon <a href="/guides/v2.2/install-gde/prereq/nginx.html">Magento Nginx Configuration</a>. To create one virtual host:</p>
+
+<ol>
+  <li>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/magento</code>:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
+    default '';
+    french.mysite.mg french;
+    german.mysite.mg german;
+}
+
+server {
+    listen 80;
+    server_name mysite.mg french.mysite.mg german.mysite.mg;
+    set $MAGE_ROOT /var/www/html/magento2;
+    set $MAGE_MODE developer;
+    set $MAGE_RUN_TYPE website; #or set $MAGE_RUN_TYPE store;
+    include /var/www/html/magento2/nginx.conf;
+}
+</code></pre></div>    </div>
+  </li>
+  <li>Save your changes to the files and exit the text editor.</li>
+  <li>
+    <p>Verify the server configuration:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nginx -t
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If successful, the following message displays:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre></div>    </div>
+
+    <p>If errors display, check the syntax of your virtual host configuration files.</p>
+  </li>
+  <li>
+    <p>Create symbolic link in the <code class="highlighter-rouge">/etc/nginx/sites-enabled</code> directory:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /etc/nginx/sites-enabled
+ln -s /etc/nginx/sites-available/magento magento
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>For more detail about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">To create multiple virtual hosts (customize per website): </b><div class="collapsible-content"><p>To create multiple virtual hosts:</p>
+
+<ol>
+  <li>Open a text editor and add the following contents to a new file named <code class="highlighter-rouge">/etc/nginx/sites-available/french.mysite.mg</code>:
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
     french.mysite.mg french;
 }
@@ -1998,7 +2050,7 @@ server {
 }
 </code></pre></div>    </div>
   </li>
-  <li>Create another file named <code class="highlighter-rouge">german.mysite.mg.conf</code> in the same directory with the following contents:
+  <li>Create another file named <code class="highlighter-rouge">german.mysite.mg</code> in the same directory with the following contents:
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>map $http_host $MAGE_RUN_CODE {
     german.mysite.mg german;
 }
@@ -2038,13 +2090,21 @@ ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
   </li>
 </ol>
 
-<p>For more detail about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
+<p>For more details about the map directive, see <a href="http://nginx.org/en/docs/http/ngx_http_map_module.html#map" target="_blank">nginx documentation on the map directive</a>.</p>
 </div></div>
 
 <h2 id="ms-nginx-conf-sample">Step 3: Modify nginx.conf.sample</h2>
-<div class="collapsible"><b class="collapsible-title">To edit the PHP entry point for the main application: </b><div class="collapsible-content"><ol>
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>Do not edit the <code class="highlighter-rouge">nginx.conf.sample</code> file; it is a core Magento file that may be updated with each new release. Instead, copy the <code class="highlighter-rouge">nginx.conf.sample</code> file, rename it, and then edit the copied file.</p>
+</div>
+
+<div class="collapsible"><b class="collapsible-title">To edit the PHP entry point for the main application: </b><div class="collapsible-content"><p>To modify the the <code class="highlighter-rouge">nginx.conf.sample</code> file:</p>
+
+<ol>
   <li>
-    <p>Open a text editor and review the nginx.conf.sample file ,<code class="highlighter-rouge">&lt;magento2_installation_directory&gt;/nginx.conf.sample</code>. Look for the following section:</p>
+    <p>Open a text editor and review the <code class="highlighter-rouge">nginx.conf.sample</code> file ,<code class="highlighter-rouge">&lt;magento2_installation_directory&gt;/nginx.conf.sample</code>. Look for the following section:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
 location ~ (index|get|static|report|404|503|health_check)\.php$ {
@@ -2068,7 +2128,7 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
      fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
 </code></pre></div>    </div>
-    <p>An example updated PHP entry point for main application looks like:</p>
+    <p>An example updated PHP entry point for the main application looks like:</p>
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
 location ~ (index|get|static|report|404|503|health_check)\.php$ {
  try_files $uri =404;
@@ -2091,12 +2151,6 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
 </code></pre></div>    </div>
   </li>
 </ol>
-
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-tip" id="tip">
-  <p>Do not edit the <code class="highlighter-rouge">nginx.conf.sample</code> file; it is a core Magento file that may be updated with each new release. Instead, copy the <code class="highlighter-rouge">nginx.conf.sample</code> file, rename it, and then edit the copied file.</p>
-</div>
 </div></div>
 
 <h2 id="ms-nginx-verify">Verify your site</h2>
