@@ -41,7 +41,7 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
 To set up multiple stores:
 
 1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
-2.	Create a [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} (steps detailed below).
+2.	Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} (steps detailed below).
 3.  Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`:
@@ -52,9 +52,9 @@ To set up multiple stores:
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`.
 
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
-This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with at least `sudo` privileges.
+This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `sudo` privileges.
 
-You can use one [nginx virtual host](#ms-nginx-vhosts) or many [nginx virtual host](#ms-nginx-vhosts) to load multiple websites. Using just one virtual host file allows you too keep your [nginx virtual host](#ms-nginx-vhosts) file simple and clean, and using many [nginx virtual host](#ms-nginx-vhosts) allows customizations for each particular store, such as a custom location for `french.mysite.mg`.
+By using just one [nginx virtual host file](#ms-nginx-vhosts), you can keep your nginx configuration simple and clean. By using several virtual host files, you can customize each store (to use a custom location for `french.mysite.mg` for instance).
 
 {% collapsible To use one virtual host (simplified): %}
 
@@ -145,7 +145,7 @@ To create multiple virtual hosts:
 		ln -s /etc/nginx/sites-available/french.mysite.mg french.mysite.mg
 		ln -s /etc/nginx/sites-available/german.mysite.mg german.mysite.mg
 
-For more detail about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
+For more details about the map directive, see [nginx documentation on the map directive](http://nginx.org/en/docs/http/ngx_http_map_module.html#map){:target="_blank"}.
 
 {% endcollapsible %}
 
