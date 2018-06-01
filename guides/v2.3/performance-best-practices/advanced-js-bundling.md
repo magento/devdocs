@@ -326,7 +326,7 @@ Open the `build.js` configuration file and add your bundles to the `modules` nod
 }
 ```
 
-This example reuses `mage/bootstrap` and `requirejs/require` assets, placing higher priority on their most important components and components that have to be loaded syncronously. The bundles that are present are:
+This example reuses `mage/bootstrap` and `requirejs/require` assets, placing higher priority on their most important components and components that have to be loaded synchronously. The bundles that are present are:
 
 *   `requirejs/require`—the only synchronously loaded bundle
 *   `mage/bootstrap`—the bootstrap bundle with UI components
