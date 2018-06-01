@@ -21,3 +21,4 @@ To install Composer:
 		mv composer.phar /usr/local/bin/composer
 		
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
+</div>
