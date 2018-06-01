@@ -32,7 +32,7 @@
     </ul></div>
     <!--TableOfContents:End-->
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_1"></a><!--TableOfContentsAnchor:End-->Customer Needs and Expectations</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_1"></a><!--TableOfContentsAnchor:End-->Customer Needs and Expectations</h3>
 
     <p>The focus of the Magento Enterprise Edition 1.13 release is performance and scalability. The benchmarking results presented here demonstrate that we have addressed the following concerns:</p>
 
@@ -40,7 +40,7 @@
         <li>The eCommerce landscape is changing, and merchants must provide customers with an online shopping experience that meets their performance expectations</li><li>As merchants grow their businesses and increasingly larger enterprise merchants are adopting Magento, Magento Enterprise Edition must scale to handle increased traffic volume and larger catalogs</li>
     </ol>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_1.1"></a><!--TableOfContentsAnchor:End-->Magento's Plan</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_1.1"></a><!--TableOfContentsAnchor:End-->Magento's Plan</h3>
 
     <p>We identified the following areas for enhancement in Magento Enterprise Edition 1.13:</p>
 
@@ -48,7 +48,7 @@
         <li>Improve indexing for catalogs of all sizes</li><li>Make re-indexing operations invisible to the shopper by executing them in the background</li><li>Improve full page caching support</li><li>Reduce page load times for key shopping flows (checkout)</li><li>Enable merchants to serve heavier traffic volume without need to purchase additional hardware</li>
     </ul>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_1.2"></a><!--TableOfContentsAnchor:End-->What Magento Accomplished</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_1.2"></a><!--TableOfContentsAnchor:End-->What Magento Accomplished</h3>
 
     <p>Magento Enterprise Edition 1.13 delivers the following improvements over Magento Enterprise Edition 1.12:</p>
 
@@ -61,7 +61,7 @@
         <li>33% improvement in orders per day that can be processed on the same hardware configuration as Magento Enterprise Edition 1.12</li><li>31% improvement in page views per day supported on the same hardware configuration on Magento Enterprise Edition 1.12</li>
     </ul>
 
-    <h2><!--TableOfContentsAnchor:Begin--><A NAME="Section_2"></a><!--TableOfContentsAnchor:End-->Multi-Node Deployment Topology</h2>
+    <h2><!--TableOfContentsAnchor:Begin--><a name="Section_2"></a><!--TableOfContentsAnchor:End-->Multi-Node Deployment Topology</h2>
 
     <p>Before we introduce you to the benchmarks, an overview of our multi-node benchmarking facility is in order. We started with a basic multi-node cluster with load balancer and caching and separate DB node, and installed Apache. This is a familiar hardware configuration for the Magento developer community. Once provisioned, we installed both Magento Enterprise Edition 1.13 and Magento Enterprise Edition 1.12 on the cluster to compare their performance.</p>
 
@@ -77,17 +77,17 @@
 
     <p>The cluster resides in our Las Vegas data center, connected to the Internet via a gigabit connection. We tested the cluster using the popular Gatling suite from our engineering offices in Austin, TX.</p>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_2.1"></a><!--TableOfContentsAnchor:End-->Software Components</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_2.1"></a><!--TableOfContentsAnchor:End-->Software Components</h3>
 
     <figure>
         <img src="{{ site.baseurl }}/common/images/m1x/2187-1.13_Benchmark_Report_Software_Component_r1v1.png">
     </figure>
 
-    <h2><!--TableOfContentsAnchor:Begin--><A NAME="Section_3"></a><!--TableOfContentsAnchor:End-->Scenarios</h2>
+    <h2><!--TableOfContentsAnchor:Begin--><a name="Section_3"></a><!--TableOfContentsAnchor:End-->Scenarios</h2>
 
     <p>This section presents the merchant scenarios we simulated for our testing. These scenarios are based on real-world experience and industry standards with respect to shopper flows and catalog sizes. </p>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_3.1"></a><!--TableOfContentsAnchor:End-->Shopper Flows</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_3.1"></a><!--TableOfContentsAnchor:End-->Shopper Flows</h3>
 
     <p>We used real-world, established eCommerce metrics to simulate shopper flows. </p>
 
@@ -99,7 +99,7 @@
         <img src="{{ site.baseurl }}/common/images/m1x/2178-1.13_Benchmark_Report_Shopper_Flows_r1v1.png">
     </figure>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_3.2"></a><!--TableOfContentsAnchor:End-->Catalog</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_3.2"></a><!--TableOfContentsAnchor:End-->Catalog</h3>
 
     <p>The catalogs we simulated also reflect real-world, established eCommerce experience. </p>
 
@@ -111,7 +111,7 @@
         <img src="{{ site.baseurl }}/common/images/m1x/2179-1.13_Benchmark_Report_Catalog_r3v1.png">
     </figure>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_3.3"></a><!--TableOfContentsAnchor:End-->Target Merchant Profile</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_3.3"></a><!--TableOfContentsAnchor:End-->Target Merchant Profile</h3>
 
     <p>The simulated merchant profile we benchmarked against represents the profile of our enterprise customers. We established these metrics based on the day-to-day experience of large merchants operating a successful eCommerce business. Again, we used what we consider to be a typical hardware and software configuration. </p>
 
@@ -119,13 +119,13 @@
         <li>50K visitors / day</li><li>1M Page views / day</li><li>18000 orders / day</li><li>3000 orders during peak 4 hours</li><li>1000 concurrent users</li><li>Standard HW/SW configuration</li>
     </ul>
 
-    <h2><!--TableOfContentsAnchor:Begin--><A NAME="Section_4"></a><!--TableOfContentsAnchor:End-->Benchmarking Results</h2>
+    <h2><!--TableOfContentsAnchor:Begin--><a name="Section_4"></a><!--TableOfContentsAnchor:End-->Benchmarking Results</h2>
 
     <p>These benchmarks were generated during extensive testing of our multi-node configuration running Magento Enterprise Edition 1.13 described above. Our configuration was modeled after what a commercial hosting partner would put into production, and the results reflect accurate gains over Magento Enterprise Edition 1.12.</p>
 
     <p>The duration of the test sessions is 72 seconds, which significantly stresses the multi-node configuration.</p>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.1"></a><!--TableOfContentsAnchor:End-->Incremental Re-indexing</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_4.1"></a><!--TableOfContentsAnchor:End-->Incremental Re-indexing</h3>
 
     <p>In Magento Enterprise Edition 1.12, any change to a product would result in a full re-index. Magento Enterprise Edition 1.13 introduces a new feature--incremental re-indexing. With incremental re-indexing, only those items that were changed or added will be re-indexed, reducing the processing time to a fraction of what was required before.</p>
 
@@ -135,7 +135,7 @@
         <img src="{{ site.baseurl }}/common/images/m1x/2180-1.13_Benchmark_Report_Partial_Reindexingr2v1.png">
     </figure>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.2"></a><!--TableOfContentsAnchor:End-->Full Re-indexing</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_4.2"></a><!--TableOfContentsAnchor:End-->Full Re-indexing</h3>
 
     <p>As part of the benchmarking effort, we also measured the improvements in the full re-indexing feature on Magento Enterprise Edition 1.13, where indexing a 500,000-item catalog was 53% faster than Magento Enterprise Edition 1.12. Faster re-indexing means less load on the system and that changes to the catalog propagate faster to the storefront.</p>
 
@@ -147,7 +147,7 @@
         <li>500,000 products</li><li>2,000 categories</li><li>One store</li><li>One catalog update during test run</li>
     </ul>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.3"></a><!--TableOfContentsAnchor:End-->Individual Re-indexers</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_4.3"></a><!--TableOfContentsAnchor:End-->Individual Re-indexers</h3>
 
     <p>The Magento Enterprise Edition 1.13 indexer component contains a number of individual indexers such as Product Flat Data and Product Price. When a Magento admin changes the price of a product, it is only necessary to execute the Product Price indexer for pricing changes to propagate to the front end. The completion times of these individual indexers were measured in the benchmark environment for Magento Enterprise Edition 1.13 and Magento Enterprise Edition 1.12.</p>
 
@@ -161,13 +161,13 @@
         <li>URL Rewrite failed to run in Magento Enterprise Edition 1.12 but takes only 0.15 sec in Magento Enterprise Edition 1.13</li><li>Catalog description: 500,000 products, 2000 categories, one storefront</li>
     </ul>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.4"></a><!--TableOfContentsAnchor:End-->Page Load Times</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_4.4"></a><!--TableOfContentsAnchor:End-->Page Load Times</h3>
 
     <p>When Magento Enterprise Edition 1.12 and Magento Enterprise Edition 1.13 were compared, with both running on our multi-node benchmarking configuration, Magento Enterprise Edition 1.13 loaded pages 65% faster than Magento Enterprise Edition 1.12.</p>
 
     <p>Guest checkout and registered user checkout are two flows that are crucial to storefront operation. This section presents the results of page load time measurements for these two flows.</p>
 
-    <h4><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.4.1"></a><!--TableOfContentsAnchor:End-->Guest Checkout Flow Page Load Times</h4>
+    <h4><!--TableOfContentsAnchor:Begin--><a name="Section_4.4.1"></a><!--TableOfContentsAnchor:End-->Guest Checkout Flow Page Load Times</h4>
 
     <p>In the guest checkout flow pages, Magento Enterprise Edition 1.13 provides a substantial decrease in load times over its predecessor, most of the time more than twice as fast.</p>
 
@@ -175,7 +175,7 @@
         <img src="{{ site.baseurl }}/common/images/m1x/2184-1.13_Benchmark_Report_Checkout_Flow_r1v1.png">
     </figure>
 
-    <h4><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.4.2"></a><!--TableOfContentsAnchor:End-->Registered Checkout Flow Page Load Times</h4>
+    <h4><!--TableOfContentsAnchor:Begin--><a name="Section_4.4.2"></a><!--TableOfContentsAnchor:End-->Registered Checkout Flow Page Load Times</h4>
 
     <p>The bar chart below presents the improvements in page load times for registered checkout flow.</p>
 
@@ -183,7 +183,7 @@
         <img src="{{ site.baseurl }}/common/images/m1x/2185-1.13_Benchmark_Report_Registered_Checkout_r1v1.png">
     </figure>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.5"></a><!--TableOfContentsAnchor:End-->Page Views and Orders</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_4.5"></a><!--TableOfContentsAnchor:End-->Page Views and Orders</h3>
 
     <p>In addition to page load times, the benchmark also focused on measuring throughput improvements, particularly page views per day and orders per day.</p>
 
@@ -197,7 +197,7 @@
         <li>10 minute session time</li>
     </ul>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.6"></a><!--TableOfContentsAnchor:End-->Observations</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_4.6"></a><!--TableOfContentsAnchor:End-->Observations</h3>
 
     <p>What we noted during the benchmarking tests:</p>
 
@@ -209,7 +209,7 @@
         <li>Redis and Memcached instances did not exceed a CPU load of 10% during the tests. </li><li>Web nodes showed high levels of CPU utilization under high load. </li><li>We anticipate achieving stable scaling by adding additional web nodes to the cluster until the services themselves begin to degrade.</li>
     </ul>
 
-    <h2><!--TableOfContentsAnchor:Begin--><A NAME="Section_5"></a><!--TableOfContentsAnchor:End-->Conclusion</h2>
+    <h2><!--TableOfContentsAnchor:Begin--><a name="Section_5"></a><!--TableOfContentsAnchor:End-->Conclusion</h2>
 
     <p>Magento Enterprise Edition 1.13 was engineered for performance--and clearly delivers on the goal as measured by important metrics. </p>
 
@@ -219,9 +219,9 @@
 
     <p>In addition, we have focused on providing these benefits without the need to upgrade existing hardware, improving your return on assets and investment. </p>
 
-    <h2><!--TableOfContentsAnchor:Begin--><A NAME="Section_6"></a><!--TableOfContentsAnchor:End-->Appendix</h2>
+    <h2><!--TableOfContentsAnchor:Begin--><a name="Section_6"></a><!--TableOfContentsAnchor:End-->Appendix</h2>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_6.1"></a><!--TableOfContentsAnchor:End-->Page Load Times</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_6.1"></a><!--TableOfContentsAnchor:End-->Page Load Times</h3>
 
     This benchmark report presented analysis of the results produced by the Gatling load generator tool. In this appendix, you can see the actual results reported by Gatling. The results were obtained under the following test setup, which was designed to push Magento to its limit.
 
@@ -295,7 +295,7 @@
     </table>
     <hr>
 
-    <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_6.2"></a><!--TableOfContentsAnchor:End-->Estimating the Number of Visitors</h3>
+    <h3><!--TableOfContentsAnchor:Begin--><a name="Section_6.2"></a><!--TableOfContentsAnchor:End-->Estimating the Number of Visitors</h3>
 
     Gatling does not report the number of users that cycled through during the test. However, it is possible to estimate the number using the following formula:
 
