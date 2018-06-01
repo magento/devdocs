@@ -57,7 +57,7 @@ To fork a repository on Github, do the following:
 
 ### Update the fork with the latest changes
 
-As community and Magento writers’ changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts.
+As community and Magento writers’ changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts.
 To see if your fork is outdated, open the fork page in GitHub and if at the top displays the following message:
 
 ``` 

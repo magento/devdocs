@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transfering media files, and migrating data.
+You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.
 
 Before preparing your project and importing code, push all pending changes to Git. Your remote {{site.data.var.ece}} branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.
 

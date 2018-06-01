@@ -172,7 +172,7 @@ The following table lists all commands for interacting with your environments an
 	 				</tr>
 					<tr>
 					<td>auth-info</td>
-					<td>Display yourt account information</td>
+					<td>Display your account information</td>
 					</tr>
 					<tr>
 					<td>auth:login (login)</td>
