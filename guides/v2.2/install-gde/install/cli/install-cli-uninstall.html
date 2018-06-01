@@ -2398,97 +2398,96 @@
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+<h2 id="instgde-install-magento-prereq">Prerequisites</h2>
+<p>Before you use this command, you must <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
 
-  <h2 id="instgde-install-magento-prereq">Prerequisites</h2>
-  <p>Before you use this command, you must <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
+<h2 id="instgde-install-magento-update">Update the Magento software</h2>
+<p>To update the Magento software:</p>
 
-  <h2 id="instgde-install-magento-update">Update the Magento software</h2>
-  <p>To update the Magento software:</p>
+<ul>
+  <li>If you installed the software from an archive or if you used ‘composer-create-project’, use the Component Manager or System Upgrade utilities.</li>
+  <li>If you are a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you used <code class="highlighter-rouge">git clone</code>), see <a href="/guides/v2.2/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+</ul>
 
-  <ul>
-    <li>If you installed the software from an archive or if you used ‘composer-create-project’, use the Component Manager or System Upgrade utilities.</li>
-    <li>If you are a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you used <code class="highlighter-rouge">git clone</code>), see <a href="/guides/v2.2/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
-  </ul>
+<h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
+<p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
 
-  <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
-  <p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
+<p>The way you reinstall the Magento application from the command line depends on your role:</p>
 
-  <p>The way you reinstall the Magento application from the command line depends on your role:</p>
+<ul>
+  <li>If you installed the software from an archive or if you used ‘composer-create-project’, see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
+  <li>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you started using <code class="highlighter-rouge">composer clone</code>), see <a href="/guides/v2.2/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+</ul>
 
-  <ul>
-    <li>If you installed the software from an archive or if you used ‘composer-create-project’, see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
-    <li>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you started using <code class="highlighter-rouge">composer clone</code>), see <a href="/guides/v2.2/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
-  </ul>
+<h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
+<p>To reinstall the Magento software as a system integrator:</p>
 
-  <h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
-  <p>To reinstall the Magento software as a system integrator:</p>
+<ol>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">&gt;switch to the Magento file system owner</a>.</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
 
-  <ol>
-    <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">&gt;switch to the Magento file system owner</a>.</li>
-    <li>
-      <p>Enter the following commands in the order shown:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 git pull origin develop
 php bin/magento setup:uninstall
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   			<ul><li>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.2/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 </div>
-    </li>
-    <li>
-      <p>Install the Magento software:</p>
+  </li>
+  <li>
+    <p>Install the Magento software:</p>
 
-      <ul>
-        <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a></li>
-        <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-      </ul>
-    </li>
-  </ol>
+    <ul>
+      <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
 
-  <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-  <p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code class="highlighter-rouge">var</code>.</p>
+<h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
+<p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code class="highlighter-rouge">var</code>.</p>
 
-  <p>To uninstall the Magento software, enter the following command:</p>
+<p>To uninstall the Magento software, enter the following command:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:uninstall
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:uninstall
+</code></pre></div></div>
 
-  <p>The following message displays to confirm a successful uninstallation:</p>
+<p>The following message displays to confirm a successful uninstallation:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[SUCCESS]: Magento uninstallation complete.
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[SUCCESS]: Magento uninstallation complete.
+</code></pre></div></div>
 
-  <h2 id="instgde-install-keep">Optionally keeping generated files</h2>
-  <p>By default, <code class="highlighter-rouge">magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code class="highlighter-rouge">magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
+<h2 id="instgde-install-keep">Optionally keeping generated files</h2>
+<p>By default, <code class="highlighter-rouge">magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code class="highlighter-rouge">magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
 
-  <p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> is still cleared.) To update the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data <em>without</em> clearing compiled code, enter:</p>
+<p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> is still cleared.) To update the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data <em>without</em> clearing compiled code, enter:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:upgrade --keep-generated
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:upgrade --keep-generated
+</code></pre></div></div>
 
-  <div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning">
     <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
     <p>Improper use of this optional parameter can cause errors during code execution.</p>
 </div>
 
-  <ol>
-    <li>
-      <p>Install the Magento software:</p>
+<ol>
+  <li>
+    <p>Install the Magento software:</p>
 
-      <ul>
-        <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a></li>
-        <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-      </ul>
-    </li>
-  </ol>
+    <ul>
+      <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
 
-</div>
 
 			
 		</div>

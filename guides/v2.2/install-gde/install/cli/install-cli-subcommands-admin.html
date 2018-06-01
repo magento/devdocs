@@ -2398,33 +2398,34 @@
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+</div>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-  <h2 id="prerequisites">Prerequisites</h2>
-  <p>Before you can use this command, you must do all of the following:</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you can use this command, you must do all of the following:</p>
 
-  <ul>
-    <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
-    <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html">Enable at minimum the Magento_Authorization and Magento_User modules</a></li>
-    <li>Create the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span></li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+  <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html">Enable at minimum the Magento_Authorization and Magento_User modules</a></li>
+  <li>Create the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span></li>
+</ul>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>The simplest way to create the database is to use the command <code class="highlighter-rouge">magento setup:upgrade</code>.</p>
-  </div>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The simplest way to create the database is to use the command <code class="highlighter-rouge">magento setup:upgrade</code>.</p>
+</div>
 
-  <h2 id="create-or-edit-an-administrator">Create or edit an administrator</h2>
-  <p>Use this command to create a new administrator or to edit an existing administrator. If you’re editing an administrator, only the first name, last name, and password can be edited.</p>
+<h2 id="create-or-edit-an-administrator">Create or edit an administrator</h2>
+<p>Use this command to create a new administrator or to edit an existing administrator. If you’re editing an administrator, only the first name, last name, and password can be edited.</p>
 
-  <p>Command usage:</p>
+<p>Command usage:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
+</code></pre></div></div>
 
-  <p>Where the following table defines parameters and values:</p>
+<p>Where the following table defines parameters and values:</p>
 
-  <table>
+<table>
   <col width="20%" />
   <col width="55%" />
   <col width="15%" />
@@ -2494,30 +2495,29 @@
   </tbody>
 </table>
 
-  <h2 id="unlock-an-administrator-account">Unlock an administrator account</h2>
-  <p>Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.</p>
+<h2 id="unlock-an-administrator-account">Unlock an administrator account</h2>
+<p>Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:unlock {user name}
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:unlock {user name}
+</code></pre></div></div>
 
-  <p>You must specify the administrator’s user name. Example:</p>
+<p>You must specify the administrator’s user name. Example:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:unlock admin
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento admin:user:unlock admin
 The user account "admin" has been unlocked
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>If the account is either not unlocked or if there was a problem, the following message displays:</p>
+<p>If the account is either not unlocked or if there was a problem, the following message displays:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The user account "admin" was not locked or could not be unlocked
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The user account "admin" was not locked or could not be unlocked
+</code></pre></div></div>
 
-  <p>Verify the user is an administrator, the user is active, and that the account is currently locked. To view the list of locked users in the Admin, log in as an administrator and click <strong>System</strong> &gt; <strong>Permissions</strong> &gt; <strong>Locked Users</strong>.</p>
+<p>Verify the user is an administrator, the user is active, and that the account is currently locked. To view the list of locked users in the Admin, log in as an administrator and click <strong>System</strong> &gt; <strong>Permissions</strong> &gt; <strong>Locked Users</strong>.</p>
 
-  <p>If the account doesn’t exist, the following message displays:</p>
+<p>If the account doesn’t exist, the following message displays:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Couldn't find the user account "bob"
-</code></pre></div>  </div>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Couldn't find the user account "bob"
+</code></pre></div></div>
 
 			
 		</div>

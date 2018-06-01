@@ -1877,34 +1877,35 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre></div>  </div>
+</div>
 
-  <h2 id="install">Install Magento</h2>
-  <p>Prior to installing, you should <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-composer-install">Update installation dependencies</a> using Composer commands.</p>
+<h2 id="install">Install Magento</h2>
+<p>Prior to installing, you should <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-composer-install">Update installation dependencies</a> using Composer commands.</p>
 
-  <p>You should be ready to install Magento using one of the following options:</p>
+<p>You should be ready to install Magento using one of the following options:</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
+</ul>
 
-  <p>The following example installs using the command line method:</p>
+<p>The following example installs using the command line method:</p>
 
-  <ol>
-    <li>
-      <p>Switch to the user:</p>
+<ol>
+  <li>
+    <p>Switch to the user:</p>
 
-      <pre>sudo su - magento</pre>
-    </li>
-    <li>
-      <p>Change directories for the installation:</p>
+    <pre>sudo su - magento</pre>
+  </li>
+  <li>
+    <p>Change directories for the installation:</p>
 
-      <pre>cd /app/bin</pre>
-    </li>
-    <li>
-      <p>Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds">Installer help commands</a>.</p>
+    <pre>cd /app/bin</pre>
+  </li>
+  <li>
+    <p>Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds">Installer help commands</a>.</p>
 
-      <pre>php magento setup:install \
+    <pre>php magento setup:install \
    --admin-firstname=John \
    --admin-lastname=Smith \
    --admin-email=jsmith@mail.com \
@@ -1919,76 +1920,75 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
    --timezone=America/Chicago \
    --language=en_US \
    --use-rewrites=1</pre>
-    </li>
-  </ol>
+  </li>
+</ol>
 
-  <h2 id="post-install-configurations">Post-install configurations</h2>
-  <p>After installing Magento, run the commands for <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">compile</a> and <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">deploy</a> for the code:</p>
+<h2 id="post-install-configurations">Post-install configurations</h2>
+<p>After installing Magento, run the commands for <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler.html">compile</a> and <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">deploy</a> for the code:</p>
 
-  <ol>
-    <li>
-      <p>If you are not in the correct Magento user, switch:</p>
+<ol>
+  <li>
+    <p>If you are not in the correct Magento user, switch:</p>
 
-      <pre>sudo su - magento</pre>
-    </li>
-    <li>Change directory to <code class="highlighter-rouge">app/bin</code>.</li>
-    <li>
-      <p>Run the compile command:</p>
+    <pre>sudo su - magento</pre>
+  </li>
+  <li>Change directory to <code class="highlighter-rouge">app/bin</code>.</li>
+  <li>
+    <p>Run the compile command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php magento setup:di:compile
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>When complete, Run the deploy command:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php magento setup:di:compile
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>When complete, Run the deploy command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php magento setup:static:deploy
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php magento setup:static:deploy
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p>Optionally, if you used Vagrant with the hostmanager plugin, update the hosts file:</p>
+<p>Optionally, if you used Vagrant with the hostmanager plugin, update the hosts file:</p>
 
-  <ol>
-    <li>Access the localdev root for the Vagrant box.</li>
-    <li>Enter the command <code class="highlighter-rouge">vagrant hostmanager</code> to update the hosts file.</li>
-  </ol>
+<ol>
+  <li>Access the localdev root for the Vagrant box.</li>
+  <li>Enter the command <code class="highlighter-rouge">vagrant hostmanager</code> to update the hosts file.</li>
+</ol>
 
-  <h2 id="additional-software-and-services">Additional software and services</h2>
-  <p>For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using <a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
+<h2 id="additional-software-and-services">Additional software and services</h2>
+<p>For development and testing in an environment as close to Integration as possible, you may also want to install additional tools, software, and services. These services are configured using <a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Redis</a></li>
-    <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">ElasticSearch</a></li>
-    <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Additional software</a> for Magento</li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-redis.html">Redis</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-elastic.html">ElasticSearch</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Additional software</a> for Magento</li>
+</ul>
 
-  <h2 id="verify-your-local-workspace">Verify your local workspace</h2>
-  <p>To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:</p>
+<h2 id="verify-your-local-workspace">Verify your local workspace</h2>
+<p>To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento info:adminuri
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento info:adminuri
+</code></pre></div></div>
 
-  <p>To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.</p>
+<p>To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.</p>
 
-  <p><img src="/common/images/cloud-project-master-access.png" alt="Click Access for list of URLs" width="297px" /></p>
+<p><img src="/common/images/cloud-project-master-access.png" alt="Click Access for list of URLs" width="297px" /></p>
 
-  <p>With these steps completed, you should have:</p>
+<p>With these steps completed, you should have:</p>
 
-  <ul>
-    <li>Magento Commerce account and initial project setup and master branch</li>
-    <li>A local workspace configured with installations of required software, Magento Cloud CLI, and Magento</li>
-    <li>SSH keys set up</li>
-    <li>The Magento file system owner configured</li>
-    <li>Your initial code branch</li>
-    <li>Magento authentication keys set up and configured in the project and local</li>
-  </ul>
+<ul>
+  <li>Magento Commerce account and initial project setup and master branch</li>
+  <li>A local workspace configured with installations of required software, Magento Cloud CLI, and Magento</li>
+  <li>SSH keys set up</li>
+  <li>The Magento file system owner configured</li>
+  <li>Your initial code branch</li>
+  <li>Magento authentication keys set up and configured in the project and local</li>
+</ul>
 
-  <h2 id="next-steps">Next steps:</h2>
-  <p>For <strong>Pro projects</strong>, we strongly recommend fully deploying this base Magento template <code class="highlighter-rouge">master</code> branch without any code or configuration changes to Staging and Production. For instructions, see <a href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">First time deployment</a>.</p>
+<h2 id="next-steps">Next steps:</h2>
+<p>For <strong>Pro projects</strong>, we strongly recommend fully deploying this base Magento template <code class="highlighter-rouge">master</code> branch without any code or configuration changes to Staging and Production. For instructions, see <a href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">First time deployment</a>.</p>
 
-  <p>For <strong>Starter projects</strong>, you are ready to start developing.</p>
-</div>
+<p>For <strong>Starter projects</strong>, you are ready to start developing.</p>
 
 			
 		</div>

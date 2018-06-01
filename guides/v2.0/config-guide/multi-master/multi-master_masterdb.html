@@ -1645,42 +1645,42 @@ exit
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
-
-    <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
-    <p>Command syntax:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
-</code></pre></div>    </div>
-
-    <p>For example,</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
-</code></pre></div>    </div>
-
-    <p>The following message displays to confirm a successful setup:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Migration has been finished successfully!
-</code></pre></div>    </div>
-
-    <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
-    <p>Command syntax:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
-</code></pre></div>    </div>
-
-    <p>For example,</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
-</code></pre></div>    </div>
-
-    <p>The following message displays to confirm a successful setup:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Migration has been finished successfully!
-</code></pre></div>    </div>
-
-    <h4 id="next-step">Next step</h4>
-    <p><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
   </div>
+
+  <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
+  <p>Command syntax:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
+</code></pre></div>  </div>
+
+  <p>For example,</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
+</code></pre></div>  </div>
+
+  <p>The following message displays to confirm a successful setup:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Migration has been finished successfully!
+</code></pre></div>  </div>
+
+  <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
+  <p>Command syntax:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
+</code></pre></div>  </div>
+
+  <p>For example,</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
+</code></pre></div>  </div>
+
+  <p>The following message displays to confirm a successful setup:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Migration has been finished successfully!
+</code></pre></div>  </div>
+
+  <h4 id="next-step">Next step</h4>
+  <p><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
 </div>
 
 			

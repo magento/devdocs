@@ -2353,59 +2353,52 @@
     </tbody>
   </table>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>5.4.x</td>
-      </tr>
-      <tr>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
-      </tr>
-    </tbody>
-  </table>
+  <p>| 5.4.x |
+| <img src="/common/images/red-x.png" alt="Not supported" /> |</p>
+</div>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Magento no longer supports <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 5.4.</p></span>
 </div>
 
-  <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
-  <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+<h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
+<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
-    <li><a href="/guides/v2.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
-    <li><a href="/guides/v2.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
-    <li><a href="/guides/v2.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+  <li><a href="/guides/v2.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+  <li><a href="/guides/v2.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+  <li><a href="/guides/v2.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+</ul>
 
-  <h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
-  <p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If PHP is installed, messages similar to the following display:</p>
+<h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
+<p>To verify if PHP is installed already, enter <code class="highlighter-rouge">php -v</code>. If PHP is installed, messages similar to the following display:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="\_blank">PHP OPcache documentation</a>.</p></span>
 </div>
 
-  <p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
+<p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
-  <p>If PHP is <em>not</em> installed, see one of the following sections:</p>
+<p>If PHP is <em>not</em> installed, see one of the following sections:</p>
 
-  <ul>
-    <li><a href="#instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</a></li>
-    <li><a href="#php-56-on-ubuntu-14">PHP 5.6 on Ubuntu 14</a></li>
-    <li><a href="#php-55-on-ubuntu-14">PHP 5.5 on Ubuntu 14</a></li>
-  </ul>
+<ul>
+  <li><a href="#instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</a></li>
+  <li><a href="#php-56-on-ubuntu-14">PHP 5.6 on Ubuntu 14</a></li>
+  <li><a href="#php-55-on-ubuntu-14">PHP 5.5 on Ubuntu 14</a></li>
+</ul>
 
-  <h2 id="instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</h2>
+<h2 id="instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</h2>
 
-  <div class="collapsible"><b class="collapsible-title">To install PHP 7 on Ubuntu 14: </b><div class="collapsible-content"><ol>
+<div class="collapsible"><b class="collapsible-title">To install PHP 7 on Ubuntu 14: </b><div class="collapsible-content"><ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
@@ -2444,9 +2437,9 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 </ol>
 </div></div>
 
-  <h2 id="php-56-on-ubuntu-14">PHP 5.6 on Ubuntu 14</h2>
+<h2 id="php-56-on-ubuntu-14">PHP 5.6 on Ubuntu 14</h2>
 
-  <div class="collapsible"><b class="collapsible-title">To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: </b><div class="collapsible-content"><ol>
+<div class="collapsible"><b class="collapsible-title">To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: </b><div class="collapsible-content"><ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
@@ -2481,9 +2474,9 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </ol>
 </div></div>
 
-  <h2 id="php-55-on-ubuntu-14">PHP 5.5 on Ubuntu 14</h2>
+<h2 id="php-55-on-ubuntu-14">PHP 5.5 on Ubuntu 14</h2>
 
-  <div class="collapsible"><b class="collapsible-title">To install PHP 5.5 on Ubuntu 14: </b><div class="collapsible-content"><ol>
+<div class="collapsible"><b class="collapsible-title">To install PHP 5.5 on Ubuntu 14: </b><div class="collapsible-content"><ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
@@ -2511,17 +2504,16 @@ with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 </ol>
 </div></div>
 
-  <h4 id="related-topics">Related topics</h4>
+<h4 id="related-topics">Related topics</h4>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
-    <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-    <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/security.html">Configuring security options</a></li>
+  <li><a href="/guides/v2.0/install-gde/prereq/optional.html">Installing optional software</a></li>
+  <li><a href="/guides/v2.0/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
+</ul>
 
 			
 		</div>

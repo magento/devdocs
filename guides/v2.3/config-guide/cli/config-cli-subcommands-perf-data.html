@@ -1972,17 +1972,17 @@
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.3/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<h2 id="config-cli-perf-prof">About profiles</h2>
+<p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
-  <h2 id="config-cli-perf-prof">About profiles</h2>
-  <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
+<p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
 
-  <p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
+<p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
 
-  <p>For example, <code class="highlighter-rouge">/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
-
-  <table>
+<table>
 	<tbody>
 		<tr>
 			<th>Parameter</th>
@@ -2116,28 +2116,28 @@
 	</tbody>
 </table>
 
-  <h3 id="config-cli-perf-run">Run the data generator</h3>
-  <div class="bs-callout bs-callout-warning">
-    <p>Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
-  </div>
+<h3 id="config-cli-perf-run">Run the data generator</h3>
+<div class="bs-callout bs-callout-warning">
+  <p>Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
+</div>
 
-  <p>Run the command as discussed in this section. After the command runs, you must <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">reindex all indexers</a>.</p>
+<p>Run the command as discussed in this section. After the command runs, you must <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">reindex all indexers</a>.</p>
 
-  <p>Command options:</p>
+<p>Command options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures {path to profile}
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures {path to profile}
+</code></pre></div></div>
 
-  <p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
+<p>Where <code class="highlighter-rouge">&lt;path to profile&gt;</code> specifies the absolute file system path to, and name of, a profile.</p>
 
-  <p>For example,</p>
+<p>For example,</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+</code></pre></div></div>
 
-  <p>Sample output for the small profile:</p>
+<p>Sample output for the small profile:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generating profile with following params:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Generating profile with following params:
  |- Websites: 1
  |- Store Groups Count: 1
  |- Store Views Count: 1
@@ -2161,43 +2161,43 @@ Generating categories...  done in &lt;time&gt;
 Generating attribute sets...  done in &lt;time&gt;
 Generating simple products...  done in &lt;time&gt;
 ... more ...
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Current supported fixtures:</p>
+<p>Current supported fixtures:</p>
 
-  <ul>
-    <li><a href="#config-cli-gen-admin">Admin users</a></li>
-    <li><a href="#config-cli-gen-attrib">Attribute sets</a></li>
-    <li><a href="#config-cli-gen-bundle">Bundle products</a></li>
-    <li><a href="#config-cli-gen-cartrules">Cart price rules</a></li>
-    <li><a href="#config-cli-gen-pricerules">Catalog price rules</a></li>
-    <li><a href="#config-cli-gen-cat">Categories</a></li>
-    <li><a href="#config-cli-gen-config">Configurations</a></li>
-    <li><a href="#config-cli-gen-configprod">Configurable products</a></li>
-    <li><a href="#config-cli-gen-cust">Customers</a></li>
-    <li><a href="#config-cli-gen-prodimg">Product images</a></li>
-    <li><a href="#config-cli-gen-index">Indexers state</a></li>
-    <li><a href="#config-cli-gen-orders">Orders</a></li>
-    <li><a href="#config-cli-gen-simp">Simple products</a></li>
-    <li><a href="#config-cli-gen-websites">Websites</a></li>
-    <li><a href="#config-cli-gen-stores">Store groups</a></li>
-    <li><a href="#config-cli-gen-storeview">Store views</a></li>
-    <li><a href="#config-cli-gen-taxrate">Tax rates</a></li>
-  </ul>
+<ul>
+  <li><a href="#config-cli-gen-admin">Admin users</a></li>
+  <li><a href="#config-cli-gen-attrib">Attribute sets</a></li>
+  <li><a href="#config-cli-gen-bundle">Bundle products</a></li>
+  <li><a href="#config-cli-gen-cartrules">Cart price rules</a></li>
+  <li><a href="#config-cli-gen-pricerules">Catalog price rules</a></li>
+  <li><a href="#config-cli-gen-cat">Categories</a></li>
+  <li><a href="#config-cli-gen-config">Configurations</a></li>
+  <li><a href="#config-cli-gen-configprod">Configurable products</a></li>
+  <li><a href="#config-cli-gen-cust">Customers</a></li>
+  <li><a href="#config-cli-gen-prodimg">Product images</a></li>
+  <li><a href="#config-cli-gen-index">Indexers state</a></li>
+  <li><a href="#config-cli-gen-orders">Orders</a></li>
+  <li><a href="#config-cli-gen-simp">Simple products</a></li>
+  <li><a href="#config-cli-gen-websites">Websites</a></li>
+  <li><a href="#config-cli-gen-stores">Store groups</a></li>
+  <li><a href="#config-cli-gen-storeview">Store views</a></li>
+  <li><a href="#config-cli-gen-taxrate">Tax rates</a></li>
+</ul>
 
-  <h2 id="detailed-information-about-fixtures">Detailed information about fixtures</h2>
-  <p>The following sections discuss additional details about the performance fixtures.</p>
+<h2 id="detailed-information-about-fixtures">Detailed information about fixtures</h2>
+<p>The following sections discuss additional details about the performance fixtures.</p>
 
-  <h3 id="config-cli-gen-admin">Admin users</h3>
-  <p>Generates <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> users. <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> profile node:</p>
+<h3 id="config-cli-gen-admin">Admin users</h3>
+<p>Generates <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> users. <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of admin users --&gt;
+<pre class="no-copy">&lt;!-- Number of admin users --&gt;
 &lt;admin_users&gt;{int}&lt;/admin_users&gt;</pre>
 
-  <h3 id="config-cli-gen-attrib">Attribute sets</h3>
-  <p>Generates attribute sets with specified configuration. XML profile node:</p>
+<h3 id="config-cli-gen-attrib">Attribute sets</h3>
+<p>Generates attribute sets with specified configuration. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of product attribute sets --&gt;
+<pre class="no-copy">&lt;!-- Number of product attribute sets --&gt;
 &lt;product_attribute_sets&gt;{int}&lt;/product_attribute_sets&gt;
 
 &lt;!-- Number of attributes per set --&gt;
@@ -2206,12 +2206,12 @@ Generating simple products...  done in &lt;time&gt;
  &lt;!-- Number of values per attribute --&gt;
 &lt;product_attribute_sets_attributes_values&gt;{int}&lt;/product_attribute_sets_attributes_values&gt;</pre>
 
-  <h3 id="config-cli-gen-bundle">Bundle products</h3>
-  <p>Generates bundle products. Generated bundle selections are not displayed individually in <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>. Products will be uniformly distributed per categories and websites. If  <code class="highlighter-rouge">assign_entities_to_all_websites</code> from the profile is set to <code class="highlighter-rouge">1</code>. products will be assigned to all websites.</p>
+<h3 id="config-cli-gen-bundle">Bundle products</h3>
+<p>Generates bundle products. Generated bundle selections are not displayed individually in <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>. Products will be uniformly distributed per categories and websites. If  <code class="highlighter-rouge">assign_entities_to_all_websites</code> from the profile is set to <code class="highlighter-rouge">1</code>. products will be assigned to all websites.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of products --&gt;
+<pre class="no-copy">&lt;!-- Number of products --&gt;
 &lt;bundle_products&gt;{int}&lt;/bundle_products&gt;
 
 &lt;!-- Number of options per each product --&gt;
@@ -2220,36 +2220,36 @@ Generating simple products...  done in &lt;time&gt;
 &lt;!-- Number of simple products per each option --&gt;
 &lt;bundle_products_variation&gt;{int}&lt;/bundle_products_variation&gt;</pre>
 
-  <h3 id="config-cli-gen-cartrules">Cart price rules</h3>
-  <p>Generates cart price rules. XML profile node:</p>
+<h3 id="config-cli-gen-cartrules">Cart price rules</h3>
+<p>Generates cart price rules. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of cart price rules --&gt;
+<pre class="no-copy">&lt;!-- Number of cart price rules --&gt;
 &lt;cart_price_rules&gt;{int}&lt;/cart_price_rules&gt;
 
 &lt;!-- Number of conditions per rule --&gt;
 &lt;cart_price_rules_floor&gt;{int}&lt;/cart_price_rules_floor&gt;</pre>
 
-  <h3 id="config-cli-gen-pricerules">Catalog price rules</h3>
-  <p>Generates catalog price rules. XML profile node:</p>
+<h3 id="config-cli-gen-pricerules">Catalog price rules</h3>
+<p>Generates catalog price rules. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of catalog price rules --&gt;
+<pre class="no-copy">&lt;!-- Number of catalog price rules --&gt;
 &lt;catalog_price_rules&gt;{int}&lt;/catalog_price_rules&gt;</pre>
 
-  <h3 id="config-cli-gen-cat">Categories</h3>
-  <p>Generates categories. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>.</p>
+<h3 id="config-cli-gen-cat">Categories</h3>
+<p>Generates categories. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of categories to generate --&gt;
+<pre class="no-copy">&lt;!-- Number of categories to generate --&gt;
 &lt;categories&gt;{int}&lt;/categories&gt;
 
 &lt;!-- Nesting level of categories --&gt;
 &lt;categories_nesting_level&gt;{int}&lt;/categories_nesting_level&gt;</pre>
 
-  <h3 id="config-cli-gen-config">Configs</h3>
-  <p>Sets values for config fields. XML profile node:</p>
+<h3 id="config-cli-gen-config">Configs</h3>
+<p>Sets values for config fields. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Config variables and values for change --&gt;
+<pre class="no-copy">&lt;!-- Config variables and values for change --&gt;
     &lt;configs&gt;
         &lt;config&gt;
             &lt;path&gt;{string}&lt;/path&gt; &lt;!-- e.g. admin/security/use_form_key --&gt;
@@ -2261,22 +2261,22 @@ Generating simple products...  done in &lt;time&gt;
         &lt;!-- ... more entries ... --&gt;
     &lt;/configs&gt;</pre>
 
-  <h3 id="config-cli-gen-configprod">Configurable products</h3>
-  <p>Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products will be assigned to all websites.</p>
+<h3 id="config-cli-gen-configprod">Configurable products</h3>
+<p>Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products will be assigned to all websites.</p>
 
-  <p>We support the following XML node formats:</p>
+<p>We support the following XML node formats:</p>
 
-  <ul>
-    <li>
-      <p>Distribution per Default and pre-defined attribute sets:</p>
+<ul>
+  <li>
+    <p>Distribution per Default and pre-defined attribute sets:</p>
 
-      <pre class="no-copy">&lt;!-- Number of configurable products --&gt;
+    <pre class="no-copy">&lt;!-- Number of configurable products --&gt;
 &lt;configurable_products&gt;{int}&lt;/configurable_products&gt;</pre>
-    </li>
-    <li>
-      <p>Generate products based on an existing attribute set:</p>
+  </li>
+  <li>
+    <p>Generate products based on an existing attribute set:</p>
 
-      <pre class="no-copy">&lt;configurable_products&gt;
+    <pre class="no-copy">&lt;configurable_products&gt;
     <!-- Configurable product configuration -->
     &lt;config&gt;
          &lt;!-- Existing attribute set name --&gt;
@@ -2297,11 +2297,11 @@ Generating simple products...  done in &lt;time&gt;
 
     &lt;!-- ... more entries ... --&gt;
 &lt;/configurable_products&gt;</pre>
-    </li>
-    <li>
-      <p>Generate products based on a dynamically created <span term-uuid="44d60586-b853-40dd-bf82-4a1580450416" class="glossary-term" data-toggle="popover">attribute set</span> with a specified amount of attributes and options:</p>
+  </li>
+  <li>
+    <p>Generate products based on a dynamically created <span term-uuid="44d60586-b853-40dd-bf82-4a1580450416" class="glossary-term" data-toggle="popover">attribute set</span> with a specified amount of attributes and options:</p>
 
-      <pre class="no-copy">&lt;configurable_products&gt;
+    <pre class="no-copy">&lt;configurable_products&gt;
     <!-- Configurable product configuration -->
     &lt;config&gt;
         &lt;!-- Number of attributes in configurable product --&gt;
@@ -2325,11 +2325,11 @@ Generating simple products...  done in &lt;time&gt;
 
     &lt;!-- ... more entries ... --&gt;
 &lt;/configurable_products&gt;</pre>
-    </li>
-    <li>
-      <p>Generate products based on a dynamically created attribute set with a specified configuration per each attribute:</p>
+  </li>
+  <li>
+    <p>Generate products based on a dynamically created attribute set with a specified configuration per each attribute:</p>
 
-      <pre class="no-copy">&lt;configurable_products&gt;
+    <pre class="no-copy">&lt;configurable_products&gt;
     <!-- Configurable product configuration -->
     &lt;config&gt;
         &lt;attributes&gt;
@@ -2361,30 +2361,30 @@ Generating simple products...  done in &lt;time&gt;
 
     &lt;!-- ... more entries ... --&gt;
 &lt;/configurable_products&gt;</pre>
-    </li>
-  </ul>
+  </li>
+</ul>
 
-  <h3 id="config-cli-gen-cust">Customers</h3>
-  <p>Generates customers. Customers have a normal distribution on all available websites. Each customer has the same data except customer email, customer group, and customer addresses.</p>
+<h3 id="config-cli-gen-cust">Customers</h3>
+<p>Generates customers. Customers have a normal distribution on all available websites. Each customer has the same data except customer email, customer group, and customer addresses.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of customers to generate --&gt;
+<pre class="no-copy">&lt;!-- Number of customers to generate --&gt;
 &lt;customers&gt;{int}&lt;/customers&gt;</pre>
 
-  <p>You can also use the following XML to change the customer configuration:</p>
+<p>You can also use the following XML to change the customer configuration:</p>
 
-  <pre class="no-copy">&lt;customer-config&gt;
+<pre class="no-copy">&lt;customer-config&gt;
     &lt;!-- Number of addresses per each customer --&gt;
     &lt;addresses-count&gt;{int}&lt;/addresses-count&gt;
 &lt;/customer-config&gt;</pre>
 
-  <h3 id="config-cli-gen-prodimg">Product images</h3>
-  <p>Generates product images. Generation does not include resizing.</p>
+<h3 id="config-cli-gen-prodimg">Product images</h3>
+<p>Generates product images. Generation does not include resizing.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;product-images&gt;
+<pre class="no-copy">&lt;product-images&gt;
     &lt;!-- Number of images to generate --&gt;
     &lt;images-count&gt;{int}&lt;/images-count&gt;
 
@@ -2392,21 +2392,21 @@ Generating simple products...  done in &lt;time&gt;
     &lt;images-per-product&gt;{int}&lt;/images-per-product&gt;
 &lt;/product-images&gt;</pre>
 
-  <h3 id="config-cli-gen-index">Indexers state</h3>
-  <p>Updates indexers’ state. XML profile node:</p>
+<h3 id="config-cli-gen-index">Indexers state</h3>
+<p>Updates indexers’ state. XML profile node:</p>
 
-  <pre class="no-copy">&lt;indexer&gt;
+<pre class="no-copy">&lt;indexer&gt;
     &lt;!-- Name of indexer (e.g. catalogrule_product) --&gt;
     &lt;id&gt;{string}&lt;/id&gt;
     &lt;set_scheduled&gt;{bool}&lt;/set_scheduled&gt;
 &lt;/indexer&gt;</pre>
 
-  <h3 id="config-cli-gen-orders">Orders</h3>
-  <p>Generates orders with configurable number of different types of order items. Optionally generates inactive quotes for generated orders.</p>
+<h3 id="config-cli-gen-orders">Orders</h3>
+<p>Generates orders with configurable number of different types of order items. Optionally generates inactive quotes for generated orders.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Is is necessary to enable quotes for orders --&gt;
+<pre class="no-copy">&lt;!-- Is is necessary to enable quotes for orders --&gt;
 &lt;order_quotes_enable&gt;{bool}&lt;/order_quotes_enable&gt;
 
 &lt;!-- Min number of simple products per each order --&gt;
@@ -2430,88 +2430,87 @@ Generating simple products...  done in &lt;time&gt;
 &lt;!-- Number of orders to generate --&gt;
 &lt;orders&gt;{int}&lt;/orders&gt;</pre>
 
-  <h3 id="config-cli-gen-simp">Simple products</h3>
-  <p>Generates simple products. Products are distributed per default and pre-defined attribute sets. If extra attribute sets are specified in profile as: <code class="highlighter-rouge">&lt;product_attribute_sets&gt;{int}&lt;/product_attribute_sets&gt;</code>, products are also distributed per additional attribute sets.</p>
+<h3 id="config-cli-gen-simp">Simple products</h3>
+<p>Generates simple products. Products are distributed per default and pre-defined attribute sets. If extra attribute sets are specified in profile as: <code class="highlighter-rouge">&lt;product_attribute_sets&gt;{int}&lt;/product_attribute_sets&gt;</code>, products are also distributed per additional attribute sets.</p>
 
-  <p>Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products are assigned to all websites.</p>
+<p>Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products are assigned to all websites.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of simple products to generate --&gt;
+<pre class="no-copy">&lt;!-- Number of simple products to generate --&gt;
 &lt;simple_products&gt;{int}&lt;/simple_products&gt;</pre>
 
-  <h3 id="config-cli-gen-websites">Websites</h3>
-  <p>Generates websites. XML profile node:</p>
+<h3 id="config-cli-gen-websites">Websites</h3>
+<p>Generates websites. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of websites to be generated --&gt;
+<pre class="no-copy">&lt;!-- Number of websites to be generated --&gt;
 &lt;websites&gt;{int}&lt;/websites&gt;</pre>
 
-  <h3 id="config-cli-gen-stores">Store groups</h3>
-  <p>Generates store groups (referred to in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as <em>stores</em>). Store groups are distributed normally among websites.</p>
+<h3 id="config-cli-gen-stores">Store groups</h3>
+<p>Generates store groups (referred to in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as <em>stores</em>). Store groups are distributed normally among websites.</p>
 
-  <p>XML profile node:</p>
+<p>XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of store groups to be generated --&gt;
+<pre class="no-copy">&lt;!-- Number of store groups to be generated --&gt;
 &lt;store_groups&gt;{int}&lt;/store_groups&gt;</pre>
 
-  <h3 id="config-cli-gen-storeview">Store views</h3>
-  <p>Generates store views. Store views are distributed normally among store groups. XML profile node:</p>
+<h3 id="config-cli-gen-storeview">Store views</h3>
+<p>Generates store views. Store views are distributed normally among store groups. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Number of store views to be generated --&gt;
+<pre class="no-copy">&lt;!-- Number of store views to be generated --&gt;
 &lt;store_views&gt;{int}&lt;/store_views&gt;
 
 &lt;!-- 1 means that all stores will have the same root category, 0 means that all stores will have unique root category --&gt;
 &lt;assign_entities_to_all_websites&gt;{0|1}&lt;assign_entities_to_all_websites/&gt;</pre>
 
-  <h3 id="config-cli-gen-taxrate">Tax rates</h3>
-  <p>Generates tax rates. XML profile node:</p>
+<h3 id="config-cli-gen-taxrate">Tax rates</h3>
+<p>Generates tax rates. XML profile node:</p>
 
-  <pre class="no-copy">&lt;!-- Accepts name of <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">csv</span> file with tax rates (&lt;path to magento folder&gt;/setup/src/Magento/Setup/Fixtures/&#95;files) --&gt;
+<pre class="no-copy">&lt;!-- Accepts name of <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">csv</span> file with tax rates (&lt;path to magento folder&gt;/setup/src/Magento/Setup/Fixtures/&#95;files) --&gt;
 &lt;tax_rates_file&gt;{csv file name}&lt;/tax_rates_file&gt;</pre>
 
-  <h2 id="additional-information">Additional information</h2>
-  <p>Additional configuration information:</p>
+<h2 id="additional-information">Additional information</h2>
+<p>Additional configuration information:</p>
 
-  <ul>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/attributeSets.xml</code>—Default attribute sets</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/customerConfig.xml</code>—Customer configuration</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/description.xml</code>—Product full description configuration</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/shortDescription.xml</code>—Product short description configuration</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchConfig.xml</code>—Configuration for product short and full description. This older implementation is provided for backward compatibility.</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTerms.xml</code>—Small number of search terms to in short and full descriptions</p>
-    </li>
-    <li>
-      <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTermsLarge.xml</code>—Larger number of search terms to use in short and full description.</p>
-    </li>
-  </ul>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/attributeSets.xml</code>—Default attribute sets</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/customerConfig.xml</code>—Customer configuration</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/description.xml</code>—Product full description configuration</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/shortDescription.xml</code>—Product short description configuration</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchConfig.xml</code>—Configuration for product short and full description. This older implementation is provided for backward compatibility.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTerms.xml</code>—Small number of search terms to in short and full descriptions</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;Magento root dir&gt;/setup/performance-toolkit/config/searchTermsLarge.xml</code>—Larger number of search terms to use in short and full description.</p>
+  </li>
+</ul>
 
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-    <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  </ul>
-</div>
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+  <li><a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+</ul>
 
 			
 		</div>

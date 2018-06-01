@@ -2565,15 +2565,15 @@ chmod u+x bin/magento
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre></div>  </div>
-
-  <h3 id="next-step">Next step</h3>
-  <p>After you have set file system ownership and permissions, continue with any of the following:</p>
-
-  <ul>
-    <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Command-line installation</a></li>
-    <li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
-  </ul>
 </div>
+
+<h3 id="next-step">Next step</h3>
+<p>After you have set file system ownership and permissions, continue with any of the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Command-line installation</a></li>
+  <li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
+</ul>
 </div></div>
 
   <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
@@ -2588,7 +2588,6 @@ chmod u+x bin/magento
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user
 </code></pre></div>  </div>
-
 </div>
 
 			

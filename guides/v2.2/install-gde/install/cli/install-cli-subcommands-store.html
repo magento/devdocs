@@ -2398,40 +2398,41 @@
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+<h2 id="instgde-cli-subcommands-store-prereq">Prerequisites</h2>
+<p>Before you run this command, you must do all of the following <em>or</em> you must <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">install the Magento software</a>:</p>
 
-  <h2 id="instgde-cli-subcommands-store-prereq">Prerequisites</h2>
-  <p>Before you run this command, you must do all of the following <em>or</em> you must <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">install the Magento software</a>:</p>
+<ul>
+  <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
+  <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+</ul>
+
+<div>
+
+  <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
+  <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
 
   <ul>
-    <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-    <li><a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+    <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
+    <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
+    <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
+<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
   </ul>
 
-  <div>
+  <p>More details about these parameters can be found later in this topic.</p>
+</div>
 
-    <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
-    <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
+<h2 id="instgde-cli-storeconfig">Configure the store</h2>
+<p>Command usage:</p>
 
-    <ul>
-      <li><code class="highlighter-rouge">--use-secure</code>: Set to <code class="highlighter-rouge">1</code></li>
-      <li><code class="highlighter-rouge">--base-url-secure</code>: Set to a secure URL (that is, starting with <code class="highlighter-rouge">https://</code>)</li>
-      <li><code class="highlighter-rouge">--use-secure-admin</code> Set to <code class="highlighter-rouge">1</code>
-<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
-    </ul>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:store-config:set [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
+</code></pre></div></div>
 
-    <p>More details about these parameters can be found later in this topic.</p>
+<p>where the following table defines parameters and values.</p>
 
-    <h2 id="instgde-cli-storeconfig">Configure the store</h2>
-    <p>Command usage:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:store-config:set [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
-</code></pre></div>    </div>
-
-    <p>where the following table defines parameters and values.</p>
-
-    <table>
+<table>
 	<col width="30%" />
 	<col width="50%" />
 	<col width="20%" />
@@ -2495,8 +2496,6 @@
 	</tr>
 	</tbody>
 </table>
-  </div>
-</div>
 
 			
 		</div>

@@ -2336,31 +2336,31 @@
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+<h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
+<p>There are no prerequisites for using this command.</p>
 
-  <h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
-  <p>There are no prerequisites for using this command.</p>
+<h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
+<p><a href="/guides/v2.0/config-guide/config/config-php.html">Magento’s deployment configuration</a> provides the information Magento needs to initialize and bootstrap.</p>
 
-  <h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
-  <p><a href="/guides/v2.0/config-guide/config/config-php.html">Magento’s deployment configuration</a> provides the information Magento needs to initialize and bootstrap.</p>
+<p>You can use this command if:</p>
 
-  <p>You can use this command if:</p>
+<ul>
+  <li>You previously installed the Magento software and you want to modify the deployment configuration</li>
+  <li>If you want to create only the deployment configuration and continue the Magento installation some other way</li>
+  <li>To update the deployment configuration without affecting anything else</li>
+</ul>
 
-  <ul>
-    <li>You previously installed the Magento software and you want to modify the deployment configuration</li>
-    <li>If you want to create only the deployment configuration and continue the Magento installation some other way</li>
-    <li>To update the deployment configuration without affecting anything else</li>
-  </ul>
+<p>Command options:</p>
 
-  <p>Command options:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:config:set [--&lt;parameter&gt;=&lt;value&gt;, ...]
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:config:set [--&lt;parameter&gt;=&lt;value&gt;, ...]
-</code></pre></div>  </div>
+<p>The following table discusses the meanings of installation parameters and values.</p>
 
-  <p>The following table discusses the meanings of installation parameters and values.</p>
-
-  <table>
+<table>
 	<col width="25%" />
 	<col width="65%" />
 	<col width="10%" />
@@ -2454,34 +2454,35 @@
 	</tbody>
 </table>
 
-  <div>
+<div>
 
-    <h4 id="sens-data">What is sensitive data?</h4>
-    <p>Magento uses your encryption key to encrypt the following:</p>
+  <h4 id="sens-data">What is sensitive data?</h4>
+  <p>Magento uses your encryption key to encrypt the following:</p>
 
-    <ul>
-      <li>Credit card information</li>
-      <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
-      <li>CAPTCHA values sent over the network</li>
-    </ul>
+  <ul>
+    <li>Credit card information</li>
+    <li>User names and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)</li>
+    <li>CAPTCHA values sent over the network</li>
+  </ul>
 
-    <p>Magento does <em>not</em> encrypt:</p>
+  <p>Magento does <em>not</em> encrypt:</p>
 
-    <ul>
-      <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
-      <li>Address</li>
-      <li>Phone number</li>
-      <li>Other types of personally identifiable information except for credit card numbers</li>
-    </ul>
+  <ul>
+    <li>Administrative and customer user names and passwords (these passwords are hashed)</li>
+    <li>Address</li>
+    <li>Phone number</li>
+    <li>Other types of personally identifiable information except for credit card numbers</li>
+  </ul>
+</div>
 
-    <p>If applicable, continue your Magento software installation:</p>
+<p>If applicable, continue your Magento software installation:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Command line installation</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
-    </ul>
+<ul>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Command line installation</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
+</ul>
 
-    <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
+<!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>
 <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
 <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
@@ -2506,28 +2507,26 @@
 </div>
  -->
 
-    <h4 id="related-topics">Related topics</h4>
+<h4 id="related-topics">Related topics</h4>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-    </ul>
-  </div>
-</div>
+<ul>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+</ul>
 
 			
 		</div>

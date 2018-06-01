@@ -584,7 +584,7 @@
     <p><strong>PWA Studio</strong> is a set of tools that support the development, deployment and maintenance of progressive web applications. See <a href="https://magento-research.github.io/pwa-devdocs/">Magento PWA documentation</a> for information about this toolset as well as information about contributing to this ongoing project.</p>
   </li>
   <li>
-    <p><strong>Declarative schema</strong> simplifies installation and upgrade procedures for Magento and extensions. Declarative schemas reduce the need for many database scripts, eliminating the need to maintain these scripts. And here’s a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and sharded database structures and database structure validation.</p>
+    <p><strong>Declarative schema</strong> simplifies installation and upgrade procedures for Magento and extensions. Declarative schemas reduce the need for many database scripts, eliminating the need to maintain these scripts. And here’s a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation.</p>
   </li>
   <li>
     <p><strong>Graph API</strong> provides an alternative to REST and SOAP web APIs for front-end development. See <a href="https://devdocs.magento.com/guides/v2.3/graphql/index.html">GraphQL Developer Guide</a> for more information about Magento’s implementation of this data query language.</p>
@@ -623,7 +623,7 @@
 
     <ul>
       <li>
-        <p>Cache flush ACL privides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches.</p>
+        <p>Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches.</p>
       </li>
       <li>
         <p>2FA/CAPTCHA protects the Admin panel against against stolen passwords and protects stores against bots.</p>
@@ -688,7 +688,7 @@
 
 <!---71359 -->
 <ul>
-  <li>All <code class="highlighter-rouge">cron</code> schedule times are now saved in UTC and then displayed to the user in the expected time zone. Previously, the <code class="highlighter-rouge">cron</code> schedule times in the database were in local date time formats and not UTC, while the other system dates and times were saved as UTC in the database. This resulted in varying and ptoentially confusing <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 10432</em>. <a href="https://github.com/magento/magento2/issues/4237">GitHub-4237</a></li>
+  <li>All <code class="highlighter-rouge">cron</code> schedule times are now saved in UTC and then displayed to the user in the expected time zone. Previously, the <code class="highlighter-rouge">cron</code> schedule times in the database were in local date time formats and not UTC, while the other system dates and times were saved as UTC in the database. This resulted in varying and potentially confusing <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 10432</em>. <a href="https://github.com/magento/magento2/issues/4237">GitHub-4237</a></li>
 </ul>
 
 <h3 id="cart-and-checkout">Cart and checkout</h3>
@@ -886,7 +886,7 @@
 
 <!--- 88973-->
 <ul>
-  <li>You can now successfully close full-screem zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if you chose full screen zoom for any product image, you could not close the full screen zoom.</li>
+  <li>You can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if you chose full screen zoom for any product image, you could not close the full screen zoom.</li>
 </ul>
 
 <!--- 72508-->
@@ -1123,7 +1123,7 @@
 
 <!--- 71372-->
 <ul>
-  <li>It’s now easier to add additional items to a sitemap. Previously, <code class="highlighter-rouge">SitemapPlugin</code> worked inconcistently with large sitemaps. <em>Fix submitted by <a href="https://github.com/piotrkwiecinski">Piotr Kwiecinski</a> in pull request 10442</em>. <a href="https://github.com/magento/magento2/issues/10045">GitHub-10045</a></li>
+  <li>It’s now easier to add additional items to a sitemap. Previously, <code class="highlighter-rouge">SitemapPlugin</code> worked inconsistently with large sitemaps. <em>Fix submitted by <a href="https://github.com/piotrkwiecinski">Piotr Kwiecinski</a> in pull request 10442</em>. <a href="https://github.com/magento/magento2/issues/10045">GitHub-10045</a></li>
 </ul>
 
 <h3 id="swatches">Swatches</h3>
@@ -1198,7 +1198,7 @@
 
 <!--- 82315 -->
 <ul>
-  <li>When you use REST to update an existing product, Magento assisns theupdate only to the websites that the was assigned to pre-update. Previously, updating a product using the REST API (<code class="highlighter-rouge">PUT /rest/all/V1/products/example_sku</code>) assigned the product update to all websites automatically. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 11443</em>. <a href="https://github.com/magento/magento2/issues/11324">GitHub-11324</a></li>
+  <li>When you use REST to update an existing product, Magento assists the update only to the websites that the was assigned to pre-update. Previously, updating a product using the REST API (<code class="highlighter-rouge">PUT /rest/all/V1/products/example_sku</code>) assigned the product update to all websites automatically. <em>Fix submitted by <a href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a> in pull request 11443</em>. <a href="https://github.com/magento/magento2/issues/11324">GitHub-11324</a></li>
 </ul>
 
 <h3 id="wishlist">Wishlist</h3>

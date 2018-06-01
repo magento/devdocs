@@ -2380,35 +2380,34 @@
 <li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
 <p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.3/install-gde/basics/basics_docroot.html">here</a>.</p></span>
 </div>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-  <p>In addition to the command arguments discussed here, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+<h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
+<p>Before you run this command, you must <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.</p>
 
-  <h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
-  <p>Before you run this command, you must <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.</p>
+<h2 id="instgde-cli-displayurl">Display the Admin URI</h2>
+<p>This section discusses how to use the command line to display the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>).</p>
 
-  <h2 id="instgde-cli-displayurl">Display the Admin URI</h2>
-  <p>This section discusses how to use the command line to display the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>).</p>
+<p>Command options:</p>
 
-  <p>Command options:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento info:adminuri
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento info:adminuri
-</code></pre></div>  </div>
+<p>A sample result follows:</p>
 
-  <p>A sample result follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Admin Panel URI: /admin_1wgrah
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Admin Panel URI: /admin_1wgrah
-</code></pre></div>  </div>
+<p>You can also view the Admin URI in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>. A snippet follows:</p>
 
-  <p>You can also view the Admin URI in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>. A snippet follows:</p>
-
-  <figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="s1">'backend'</span> <span class="o">=&gt;</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="s1">'backend'</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
     <span class="s1">'frontName'</span> <span class="o">=&gt;</span> <span class="s1">'admin_1wgrah'</span><span class="p">,</span>
   <span class="p">),</span></code></pre></figure>
 
-  <h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
-  <p>To change the Admin URI, use the <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.</p>
-</div>
+<h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
+<p>To change the Admin URI, use the <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.</p>
 
 			
 		</div>

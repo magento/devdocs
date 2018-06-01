@@ -2030,28 +2030,29 @@
           <li>Phone number</li>
           <li>Other types of personally identifiable information except for credit card numbers</li>
         </ul>
+      </div>
 
-        <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
-        <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> or on the command line:</p>
+      <h2 id="config-cli-spt-utils-trouble">Troubleshooting: display utilities and paths</h2>
+      <p>We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> or on the command line:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Utility lsof not found
-</code></pre></div>        </div>
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Utility lsof not found
+</code></pre></div>      </div>
 
-        <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
+      <p>Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:</p>
 
-        <ol>
-          <li>Change to your Magento installation directory.</li>
-        </ol>
+      <ol>
+        <li>Change to your Magento installation directory.</li>
+      </ol>
 
-        <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
+      <p>For example, <code class="highlighter-rouge">cd /var/www/magento2</code></p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="bs-callout bs-callout-info" id="info" markdown="1"&gt;   The commands run properly _only_ from your Magento installation directory.
 &lt;/div&gt; 2.  `php bin/magento support:utility:paths` creates `&lt;your Magento install dir&gt;/var/support/Paths.php`, which lists the paths to all application used by the utility. 3.  `php bin/magento support:utility:check` displays the file system paths.
-</code></pre></div>        </div>
+</code></pre></div>      </div>
 
-        <p>A sample follows:</p>
+      <p>A sample follows:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip =&gt; /bin/gzip
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gzip =&gt; /bin/gzip
 lsof =&gt; /usr/sbin/lsof
 mysqldump =&gt; /usr/bin/mysqldump
 nice =&gt; /bin/nice
@@ -2060,27 +2061,26 @@ tar =&gt; /bin/tar
 sed =&gt; /bin/sed
 bash =&gt; /bin/bash
 mysql =&gt; /usr/bin/mysql
-</code></pre></div>        </div>
+</code></pre></div>      </div>
 
-        <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
+      <p>To resolve issues with running the tools, make sure these applications are installed and are in the web server user’s <code class="highlighter-rouge">$PATH</code> environment variable.</p>
 
-        <h4 id="related-topics">Related topics</h4>
+      <h4 id="related-topics">Related topics</h4>
 
-        <ul>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-          <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-        </ul>
-      </div>
+      <ul>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+        <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+      </ul>
     </div>
   </div>
 </div>
