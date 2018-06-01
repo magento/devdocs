@@ -50,7 +50,7 @@ Name | Description | Format | Requirements
 
 ### Update a company credit limit
 
-This call changes the company's credit limitto $1000. The `available_limit` parameter is calculated, so you cannot specify the value.
+This call changes the company's credit limit to $1000. The `available_limit` parameter is calculated, so you cannot specify the value.
 
 **Service Name**
 
@@ -231,7 +231,7 @@ POST /V1/companyCredits/:creditId/increaseBalance
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
-`value` | Indicates how much money is involved in this company credit balance operation. | Nuumber | Required
+`value` | Indicates how much money is involved in this company credit balance operation. | Number | Required
 `currency` | The currency of the transaction, such as USD | String | Required
 `operationType` | Must be one of the following: 1 - Allocated; 2 - Updated; 3 - Purchased; 4 - Reimbursed; 5 - Refunded; 6 - Reverted | Integer | Required
 `comment` | Describers the operation | String | Optional

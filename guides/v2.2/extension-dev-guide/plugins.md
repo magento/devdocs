@@ -152,6 +152,12 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 #### Around methods
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
+<div class="bs-callout bs-callout-warning">
+    <p>Avoid using around method plugins when they are not required because they increase stack traces and affect performance.</p>
+    <p>The only use case for around method plugins is when the execution of all further plugins and original methods need termination.</p>
+    <p>Use after method plugins if you require arguments for replacing or altering function results.</p>
+</div>
+
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
 <div class="bs-callout bs-callout-warning">
@@ -167,11 +173,17 @@ class ProductAttributesUpdater
 {
     public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
-        $this->doSmthBeforeProductIsSaved();
-        $returnValue = $proceed();
+        $someValue = $this->doSmthBeforeProductIsSaved();
+        $returnValue = null;
+        
+        if ($this->canCallProceedCallable($someValue)) {
+            $returnValue = $proceed();
+        }
+        
         if ($returnValue) {
             $this->postProductToFacebook();
         }
+        
         return $returnValue;
     }
 }

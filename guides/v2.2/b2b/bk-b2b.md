@@ -25,13 +25,13 @@ The Company component is the key entity within B2B on which all other features a
 
 Companies have an option to Pay on Account, or in other words make purchases in credit. The seller allocates credit for a company account and manages credit settings for a company as well as credit reimbursement.
 
-Shared catalogs are the pricing levels that allow setting custom prices per product for different companies on one or multiple websites. By using shared catalogs, a seller can sell this product with applying different pricing levels for different customer groups.
+Shared catalogs are the pricing levels that allow setting custom prices per product for different companies on one or multiple websites. By using shared catalogs, a seller can sell this product by applying different pricing levels for different customer groups.
 
-The seller and a buyer representing a company can negotiate the price of an order prior to order placement. This functionality is supported within the Negotiable Quote module. It means that before making an order, the buyer can initiate negotiations with the seller on prices and discounts. Negotiations suggest that the created quote may be submitted, reviewed and modified several times before it is converted into order.
+The seller and a buyer representing a company can negotiate the price of an order prior to order placement. This functionality is supported by the Negotiable Quote module. It means that before making an order, the buyer can initiate negotiations with the seller on prices and discounts. Negotiations suggest that the created quote may be submitted, reviewed and modified several times before it is converted into an order.
 
 ## B2B Modules
 
-{{site.data.var.b2b}} is a set of modules that is installed on top of {{site.data.var.ee}}. The following table lists the modules provided with B2B.
+{{site.data.var.b2b}} is a set of modules that are installed on top of {{site.data.var.ee}}. The following table lists the modules provided with B2B.
 
 Name | Description | WebAPI enabled?
 --- | --- | ---

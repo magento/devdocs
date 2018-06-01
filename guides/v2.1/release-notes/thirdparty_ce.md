@@ -34,7 +34,7 @@ symfony/process |2.1| MIT|[Source](https://github.com/symfony/process)|[License]
 symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 phpseclib/phpseclib |2.0| MIT|[Source](https://github.com/phpseclib/phpseclib)|[License](https://github.com/phpseclib/phpseclib/blob/master/LICENSE)
-tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 sjparkinson/static-review |4.1| MIT|[Source](https://github.com/sjparkinson/static-review)|[License](https://github.com/sjparkinson/static-review/blob/master/LICENSE)
 phpunit/phpunit |4.1.0| BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpunit)|[License](https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE)
 squizlabs/php_codesniffer |1.5.3| BSD-3-Clause|[Source](https://github.com/squizlabs/PHP_CodeSniffer)|[License](https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt)

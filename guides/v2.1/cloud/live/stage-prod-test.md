@@ -18,7 +18,7 @@ functional_areas:
 
 When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls) access information.
 
-The following information provides information on verifying logs, testing Fastly configurations, user acceptence testing (UAT), and more.
+The following information provides information on verifying logs, testing Fastly configurations, user acceptance testing (UAT), and more.
 
 ## Log files {#logs}
 If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the `var/log` directory.
@@ -151,7 +151,7 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 <li>Check all themes and assets load correctly</li>
 <li>Verify CSS displays correctly, including responsive media sizes</li>
 <li>Check Terms & Conditions, refund policy, and other policy information</li>
-<li>Check contant information, links, and more about your company</li>
+<li>Check contact information, links, and more about your company</li>
 <li>Search for products and content, check filtering of results</li>
 <li>Verify the footer block and top navigation blocks</li>
 <li>Test the 404 and Maintenance pages</li>
@@ -206,7 +206,7 @@ We recommend that you review the [Magento Performance Toolkit](https://github.co
 
 For best results, we recommend the following tools:
 
-* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simiulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
 * [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
