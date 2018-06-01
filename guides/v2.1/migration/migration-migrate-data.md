@@ -63,7 +63,7 @@ Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} 
 
 ### Fix errors: Ignore entities
 
-You may tell the Data Migration Tool to ignore the problematic entites.
+You may tell the Data Migration Tool to ignore the problematic entities.
 
 To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 

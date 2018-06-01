@@ -185,7 +185,7 @@ To execute a Step class, the class must be defined in config.xml file.
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="mode_name">
         <step title="Step Name">
-            <integrity>Migration\Step\StepName\Inegrity</integrity>  <!-- integrity check stage of the step -->
+            <integrity>Migration\Step\StepName\Integrity</integrity>  <!-- integrity check stage of the step -->
             <data>Migration\Step\StepName\Data</data>
             <volume>Migration\Step\StepName\Volume</volume>
         </step>
