@@ -24,7 +24,7 @@ Your Cloud systems and services have been updated to the latest Redis and PHP-Re
 
 * Use an Integration branch to add the code through your local.
 * Patch using the CLI command `composer update` in a terminal.
-* Push your code to deploy and test in an Intergration environment.
+* Push your code to deploy and test in an Integration environment.
 * After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

@@ -64,7 +64,7 @@ We recommend using the `bin/magento magento-cloud:scd-dump` command for Configur
 </div>
 
 
-We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Intergration environments.
+We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Integration environments.
 
 1.	In your local environment root directory, use a terminal to enter the following commands in the order shown:
 
