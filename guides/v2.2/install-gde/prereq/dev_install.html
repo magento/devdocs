@@ -2406,20 +2406,22 @@ mv composer.phar /usr/local/bin/composer
 </div>
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-<p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either a release branch or the <code class="highlighter-rouge">develop</code> branch:</p>
+<p>This section discusses how to get current code by cloning <a href="https://github.com/magento/magento2" target="\_blank">Magento’s GitHub repository</a> and checking out branches. You can either checkout a release branch or a development branch:</p>
 
 <ul>
   <li>
-    <p>Release branches like <code class="highlighter-rouge">2.1.0</code> are more stable</p>
-
-    <p>You <em>must</em> use a released branch with the <a href="/guides/v2.2/migration/bk-migration-guide.html">Data Migration Tool</a>.</p>
+    <p>Release branches, like <code class="highlighter-rouge">2.1.0</code>, are more stable. You <em>must</em> use a release branch with the <a href="/guides/v2.2/migration/bk-migration-guide.html">Data Migration Tool</a>.</p>
   </li>
   <li>
-    <p>Develop branches like <code class="highlighter-rouge">2.2-develop</code> are more recent</p>
+    <p>Development branches, like <code class="highlighter-rouge">2.2-develop</code>, contain the latest changes.</p>
   </li>
 </ul>
 
-<p>Currently, the <code class="highlighter-rouge">develop</code> branch is the default but you can checkout a release branch like <code class="highlighter-rouge">2.1.0</code> after cloning.</p>
+<p>Currently, the <code class="highlighter-rouge">2.2-develop</code> branch is the default, but you can checkout a release branch, like <code class="highlighter-rouge">2.1.0</code>, after cloning.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>Refer to <a href="https://help.github.com/articles/cloning-a-repository-from-github/" target="\_blank">GitHub’s documentation</a> for instructions on cloning a repository.</p>
+</div>
 
 <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
 <p>The Magento 2 GitHub repository requires you to authenticate. The <code class="highlighter-rouge">composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code class="highlighter-rouge">auth.json</code> file in the home directory of the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</p>
@@ -2454,131 +2456,8 @@ mv composer.phar /usr/local/bin/composer
   </ol>
 </div>
 
-<h3 id="instgde-prereq-compose-clone-ways">How to clone the Magento 2 GitHub repository</h3>
-<p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
-
-<ul>
-  <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">share a public key</a> with GitHub.</li>
-  <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
-</ul>
-
-<p>See one of the following section:</p>
-
-<ul>
-  <li><a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a></li>
-  <li><a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a></li>
-</ul>
-
-<h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
-
-<p>To clone the Magento GitHub repository using the SSH protocol:</p>
-
-<ol>
-  <li>
-    <p>Copy to the clipboard the Magento GitHub repository SSH clone <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
-
-    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="&#95;blank">the Magento GitHub repository</a>.</p>
-
-    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
-
-    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH" /></p>
-  </li>
-  <li>
-    <p>Change to your web server’s docroot directory.
-Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
-
-    <p>Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here.</a></p>
-  </li>
-  <li>
-    <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
-
-    <p>An example follows:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Wait for the repository to clone on your server.</p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">shared your SSH key</a> with GitHub: </p>
-        <pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
-</div>
-  </li>
-  <li>
-    <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="&#95;blank">release tag</a> as follows:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
-</code></pre></div>    </div>
-
-    <p>For example, to check out the 2.1.0 release tag in a new branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Continue with <a href="/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
-  </li>
-</ol>
-
-<h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
-
-<p>To clone the Magento GitHub repository using the HTTPS protocol:</p>
-
-<ol>
-  <li>
-    <p>Copy to the clipboard the Magento GitHub repository HTTPS clone URL.</p>
-
-    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="&#95;blank">the Magento GitHub repository</a>.</p>
-
-    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
-
-    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
-  </li>
-  <li>
-    <p>Change to your web server’s docroot directory.</p>
-
-    <p>Typically, for Ubuntu, it’s <code class="highlighter-rouge">/var/www</code> or <code class="highlighter-rouge">/var/www/html</code> and for CentOS it’s <code class="highlighter-rouge">/var/www/html</code>.</p>
-  </li>
-  <li>
-    <p>Enter <code class="highlighter-rouge">git clone</code> and paste the value you obtained from step 1.</p>
-
-    <p>An example follows</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/magento/magento2.git
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Wait for the repository to clone on your server.</p>
-  </li>
-  <li>
-    <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="&#95;blank">release tag</a> as follows:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
-</code></pre></div>    </div>
-
-    <p>For example, to check out the 2.1.0 release tag in a branch named <code class="highlighter-rouge">2.1.0</code>, enter</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout tags/2.1.0 -b 2.1.0
-</code></pre></div>    </div>
-  </li>
-</ol>
-
 <h4 id="next-step">Next step</h4>
 <p>After completing the tasks discussed on this page, see <a href="/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
-
-<!-- ABBREVIATIONS -->
-
 
 			
 		</div>
