@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add custom input mask for ZIP code
 menu_title: Add custom input mask for ZIP code
 menu_order: 6
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_zip.md
 functional_areas:

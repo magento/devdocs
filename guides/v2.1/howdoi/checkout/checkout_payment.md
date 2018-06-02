@@ -2,8 +2,8 @@
 layout: tutorial
 group: howdoi
 subgroup:
-title: Step 3. Add a custom payment method to checkout
-menu_title: Step 3. Add a custom payment method to checkout
+title: Add a custom payment method to checkout
+menu_title: Add a custom payment method to checkout
 level3_subgroup: checkout-tutorial
 menu_order: 3
 version: 2.1

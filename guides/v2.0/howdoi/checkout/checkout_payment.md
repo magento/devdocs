@@ -1,16 +1,16 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add a custom payment method to checkout
 menu_title: Add a custom payment method to checkout
 menu_order: 3
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_payment.md
 functional_areas:
   - Checkout
 ---
-
-<h2> What's in this topic </h2>
 
 Out of the box, Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} consists of two steps:
 

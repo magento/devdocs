@@ -2,8 +2,8 @@
 layout: tutorial
 group: howdoi
 subgroup:
-title: Step 2. Customize the view of a checkout step
-menu_title: Step 2. Customize the view of a checkout step
+title: Customize the view of a checkout step
+menu_title: Customize the view of a checkout step
 menu_order: 2
 level3_subgroup: checkout-tutorial
 version: 2.1
@@ -14,9 +14,9 @@ functional_areas:
 
 This topic contains the basic information about how to customize the view of an existing {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} step.
 
-In the Magento application, checkout is implemented using UI components. You can customize each step by changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template for a component, adding, removing or disabling a component.
+In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template](#change) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
 
-## Change the component's .js implementation and template
+## Change the component's .js implementation and template (#change)
 
 To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. To do this, take the following steps:
 
@@ -89,14 +89,14 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 {%endhighlight xml%}
 
 
-## Add the new component to the checkout page layout
+## Add the new component to the checkout page layout {#add}
 
 Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
 
-## Disable a component
+## Disable a component {#disable}
 To disable the component in your `checkout_index_index.xml` use the following instructions:
 
 {%highlight xml%}
@@ -107,7 +107,7 @@ To disable the component in your `checkout_index_index.xml` use the following in
 </item>
 {%endhighlight xml%}
 
-## Remove a component
+## Remove a component {#remove}
 
 To remove a component from layout rendering, you need to create a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time.
 
@@ -118,7 +118,7 @@ unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_n
 return $jsLayout;
 {%endhighlight%}
 
-(If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
+If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
 <div class="bs-callout bs-callout-info">
   <p>Disable vs remove a component </p>

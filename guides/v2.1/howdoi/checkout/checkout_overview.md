@@ -13,8 +13,6 @@ functional_areas:
   - Checkout
 ---
 
-## Default checkout overview
-
 Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html).
 
 Out of the box, the checkout consists of two steps:
@@ -38,6 +36,7 @@ You can customize the default checkout in many ways. Here the following customiz
  - [Add a custom template for a form field on Checkout page]({{ page.baseurl }}/howdoi/checkout/checkout_edit_form.html)
  - [Add a new input form to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_form.html)
  - [Add a new field in address form]({{ page.baseurl }}/howdoi/checkout/checkout_new_field.html)
+ - [Add custom fields that influence other Checkout fields]({{ page.baseurl }}/howdoi/checkout/checkout_custom_checkbox.html)
  - [Add custom shipping address renderer]({{ page.baseurl }}/howdoi/checkout/checkout_address.html)
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.

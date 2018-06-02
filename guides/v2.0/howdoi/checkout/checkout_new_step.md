@@ -28,11 +28,9 @@ For the sake of compatibility, upgradability and easy maintenance, do not edit t
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{ page.baseurl }}/extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
-1. Create the `.js` file implementing the view model.
-2. Create an `.html` template for the component.
-
-Each step is described in details in the following paragraphs.
+1. Add a module directory (not covered in this topic). See [Build your module]({{ page.baseurl }}/extension-dev-guide/build/build.html) for details. All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
+2. [Create the `.js` file implementing the view model](#component).
+3. [Create an `.html` template for the component](#add-html).
 
 ### Add the JavaScript file implementing the new step {#component}
 
@@ -129,7 +127,7 @@ define(
 {%endhighlight js%}
 
 
-### Add the .html template
+### Add the .html template for the component {#add-html}
 
 In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
@@ -156,7 +154,7 @@ A sample `mystep.html` follows:
 </li>
 {%endhighlight html%}
 
-## Add your step to the Checkout page layout
+## Add your step to the Checkout page layout {#checkout-step}
 
 For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`.
 

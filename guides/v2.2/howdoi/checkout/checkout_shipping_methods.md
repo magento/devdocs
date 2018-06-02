@@ -1,7 +1,7 @@
 ---
 group: howdoi
 subgroup: checkout
-title: Customize the list of shipping methods
+title: Step 10: Customize the list of shipping methods
 menu_title: Customize the list of shipping methods
 menu_order: 100
 version: 2.2

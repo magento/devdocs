@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add a new field in address form
 menu_title: Add a new field in address form
 menu_order: 9
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_new_field.md
 functional_areas:
@@ -17,9 +19,14 @@ This topic describes how to add new fields to default {% glossarytooltip 278c3ce
 To add your custom field to the checkout address form and access its value on the client side,
 take the steps described further.
 
-**Step 1**
+1. [Add the field to layout](#add-field)
+2. [Add mixin to modify component behavior](#mixin)
+3. [Load the mixin for the component](#mixin-load)
+4. [Add field to address model](#add-field)
 
-Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{ page.baseurl }}/howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
+## Step 1: Add the field to layout {#add-field}
+
+Both shipping address and billing address forms are [generated dynamically]({{ page.baseurl }}/howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 
 Following is a sample logic for a plugin method adding a field named `Custom Attribute` to the shipping address form:
 
@@ -72,8 +79,7 @@ Optionally, instead of adding a plugin, you can use [dependency injection (DI)](
 
 where `%unique_name%` and `%path\to\your\LayoutProcessor%` must be replaced by your real values.
 
-
-**Step 2**
+## Step 2: Add mixin to modify component behavior {#mixin-add}
 
 Add a JS {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} to change the behavior of the component responsible for the data submission to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming.
 
@@ -107,8 +113,7 @@ define([
 
 When adding a field to the billing address form, you need to modify the behavior of one of the following components: `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information`, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the [place-order-mixin.js]({{ site.mage2100url }}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-
-**Step 3**
+## Step 3: Load the mixin for the component {#mixin-load}
 
 Tell Magento to load your mixin for the corresponding JS component. For this, in the `<YourModule_dir>/view/frontend/` directory, add the `requirejs-config.js`.
 
@@ -127,8 +132,7 @@ var config = {
 };
 {%endhighlight%}
 
-
-**Step 4**
+## Step 4: Add field to address model {#add-field}
 
 To add the field to the address model on the server side, add the `extension_attributes.xml` file in the `<YourModule_dir>/etc/` directory.
 
@@ -145,11 +149,11 @@ Following is a sample `extension_attributes.xml`:
 {%endhighlight%}
 
 ## Access the value of the custom field on server side
-If you took all the steps described in the previous paragraphs,
-Magento will generate the interface that includes your custom attribute and you can access your field value like this:
+
+When you complete the steps, Magento generates the interface that includes your custom attribute. You can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();
 
-## Related reading
+## Related information
 
 - [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)
