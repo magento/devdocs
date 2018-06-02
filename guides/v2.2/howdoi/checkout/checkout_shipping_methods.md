@@ -1,8 +1,10 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup: checkout
 title: Customize the list of shipping methods
 menu_title: Customize the list of shipping methods
+level3_subgroup: checkout-tutorial
 menu_order: 100
 version: 2.2
 github_link: howdoi/checkout/checkout_shipping_methods.md
