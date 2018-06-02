@@ -2,8 +2,8 @@
 layout: tutorial
 group: howdoi
 subgroup:
-title: Step 2. Customize the view of a checkout step
-menu_title: Step 2. Customize the view of a checkout step
+title: Customize the view of a checkout step
+menu_title: Customize the view of a checkout step
 menu_order: 2
 level3_subgroup: checkout-tutorial
 version: 2.0

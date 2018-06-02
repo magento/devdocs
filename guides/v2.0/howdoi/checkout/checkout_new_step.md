@@ -2,8 +2,8 @@
 layout: tutorial
 group: howdoi
 subgroup:
-title: Step 1. Add a new checkout step
-menu_title: Step 1. Add a new checkout step
+title: Add a new checkout step
+menu_title: Add a new checkout step
 menu_order: 1
 level3_subgroup: checkout-tutorial
 version: 2.0
