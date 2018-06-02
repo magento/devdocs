@@ -113,7 +113,7 @@ This is an example of how to handle a category using REST API operations provide
 
 ![REST API operations provided by catalogCategoryRepositoryV1][catalogCategoryRepositoryV1 image]
 
-The above screenshot from the [Magento REST API Refrence][api reference] demonstrates a list of available operations to:
+The above screenshot from the [Magento REST API Reference][api reference] demonstrates a list of available operations to:
 - Delete a category by its identifier (`method="DELETE"`)
 - Get information about a category by its ID (`method="GET"`)
 - [Create a new category] (`method="POST"`)

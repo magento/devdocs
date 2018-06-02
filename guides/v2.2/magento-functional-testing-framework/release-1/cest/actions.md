@@ -895,7 +895,7 @@ after|string|optional| `stepKey` of preceding action.
 
 ### parseFloat
 
-Parse float number with thousands seperator.
+Parse float number with thousands separator.
 
 Attribute|Type|Use|Description
 ---|---|---|---
