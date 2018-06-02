@@ -13,7 +13,7 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) to include functionality contributed by community members.|2.3.x|Technical changes|May 23
-Added [Handling a REST API response](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html#rest-response) to the MFTF Metada.|2.2.x, 2.3.x|Technical changes|May 22
+Added [Handling a REST API response](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html#rest-response) to the MFTF Metadata.|2.2.x, 2.3.x|Technical changes|May 22
 Added descriptions for the [new `magento config:set lock-env` and `lock-config` options](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).|2.2.x|Technical changes|May 22
 Removed `setup:cache:{command}` and `setup:indexer:{command}`from [config-cli-subcommands.md](https://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands.html),  as they do not exist. Replaced with `cache:{command}` and `indexer:{command}` commands.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 21
 [Updated](https://devdocs.magento.com/guides/v2.2/config-guide/multi-site/ms_nginx.html) to show a way to pass the MAGE_RUN_TYPE and MAGE_RUN_CODE Nginx variables into PHP, and include the $MAGE_RUN_TYPE in the Nginx vhost files to show how one could specify website vs store.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 15
