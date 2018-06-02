@@ -13,9 +13,10 @@ functional_areas:
   - Checkout
 ---
 
-### Default checkout overview
+## Default checkout overview
 
 Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
+
 Out of the box, the checkout consists of two steps:
 
  - Shipping Information
@@ -25,7 +26,7 @@ The checkout totals and the corresponding side-bar are only displayed after the 
 
 The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
-### List of checkout customizations
+## List of checkout customizations
 You can customize the default checkout in many ways. Here the following customizations are described:
 
  - [Add a new checkout step]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html)
