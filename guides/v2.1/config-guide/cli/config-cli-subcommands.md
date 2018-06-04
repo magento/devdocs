@@ -53,11 +53,11 @@ Before you run any of these commands, you must either [install the Magento appli
 		</tr>
 
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
+		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">magento cache:{enable|disable|clean|flush|status}</a></td>
 		<td><p>Manages the cache</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
+		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html">magento indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td><p>Manages the indexers</p></td>
 	</tr>
 

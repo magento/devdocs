@@ -63,3 +63,4 @@ You have the following options:
 	<div class="bs-callout bs-callout-warning">
     	<p>Installing software from non-recommended repositories can change other system packages and can result in issues. We strongly recommend you upgrade <code>libcurl</code> in a development environment and <em>thoroughly test</em> all payment processors you use as well as any other critical software before putting this into production.</p>
 	</div>
+</div>

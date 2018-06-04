@@ -36,7 +36,7 @@ When developing your theme extension, you should check how it looks using differ
 
 * [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
-### Inherit and customise
+### Inherit and customize
 
 There is a lot of work in building a theme extension for Magento from scratch. This is why we recommend you inherit and customize an existing theme. Magento comes with both Blank and Luma themes after initial install. You can leverage the work already done to make those two themes responsive by setting one of them as your theme's parent.
 
