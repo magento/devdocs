@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>categories endpoint | Magento 2 Developer Documentation</title>
+	<title>category endpoint | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -510,11 +510,11 @@
 
                 
                 
-                <li class="nav-level3 active " id="categories-endpoint">
+                <li class="nav-level3 active " id="category-endpoint">
                     
 
                     
-                    <a  href="/guides/v2.3/graphql/reference/categories.html">Categories endpoint</a>
+                    <a  href="/guides/v2.3/graphql/reference/categories.html">Category endpoint</a>
                     
 
                     
@@ -667,20 +667,20 @@
 
 	
 
-	<h1 class="page-heading">categories endpoint</h1>
+	<h1 class="page-heading">category endpoint</h1>
 
   
 
 
 </section>
 
-			<p>The <code class="highlighter-rouge">categories</code> endpoint allows you to search for a single category definition or the entire category tree.</p>
+			<p>The <code class="highlighter-rouge">category</code> endpoint allows you to search for a single category definition or the entire category tree.</p>
 
 <h2 id="query-structure">Query structure</h2>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">categories</span><span class="w"> </span><span class="err">(</span><span class="w">
-   </span><span class="err">filter</span><span class="p">:</span><span class="w"> </span><span class="err">root_category_id</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w">
-</span><span class="err">)</span><span class="p">:</span><span class="w"> </span><span class="err">Categories</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">category</span><span class="w"> </span><span class="err">(</span><span class="w">
+   </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="err">int</span><span class="w">
+</span><span class="err">)</span><span class="p">:</span><span class="w"> </span><span class="err">CategoryTree</span><span class="w">
 </span></code></pre></div></div>
 
 <h3 id="input-attributes">Input attributes</h3>
@@ -695,16 +695,16 @@
   </thead>
   <tbody>
     <tr>
-      <td><code class="highlighter-rouge">root_category_id</code></td>
+      <td><code class="highlighter-rouge">id</code></td>
       <td>Int</td>
-      <td>The ID in the category tree to use as the starting point of your category search.</td>
+      <td>The category ID to use as the starting point of your category search.</td>
     </tr>
   </tbody>
 </table>
 
 <h3 id="Categories">Output attributes</h3>
 
-<p>The query returns a <code class="highlighter-rouge">Categories</code> object. The top line of the response is <code class="highlighter-rouge">category_tree</code>.</p>
+<p>The query returns a <code class="highlighter-rouge">CategoryTree</code> object, which implements <code class="highlighter-rouge">CategoryInterface</code>. It can contain the following top-level attributes:</p>
 
 <table>
   <thead>
@@ -751,11 +751,6 @@
       <td>The url path assigned to the category</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">is_active</code></td>
-      <td>Boolean</td>
-      <td>Indicates whether the category is enabled</td>
-    </tr>
-    <tr>
       <td><code class="highlighter-rouge">position</code></td>
       <td>Int</td>
       <td>The position of the category relative to other categories at the same level in tree</td>
@@ -785,6 +780,76 @@
       <td>String</td>
       <td>The attribute to use for sorting</td>
     </tr>
+    <tr>
+      <td><code class="highlighter-rouge">products(&lt;attributes&gt;) | </code>CategoryProducts`</td>
+      <td>The list of products assigned to the category</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">children</code></td>
+      <td><code class="highlighter-rouge">CategoryTree</code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The <code class="highlighter-rouge">products</code> attribute can contain the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">pageSize</code></td>
+      <td>Int</td>
+      <td>Specifies the maximum number of results to return at once. This attribute is optional. The default value is 20.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">currentPage</code></td>
+      <td>Int</td>
+      <td>Specifies which page of results to return. The default value is 1.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sort</code></td>
+      <td><code class="highlighter-rouge">ProductSortInput</code> Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See <a href="/guides/v2.3/graphql/search-pagination.html">Searches and pagination in GraphQL</a> for more information.</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="categoryproducts">CategoryProducts</h4>
+
+<p>The <code class="highlighter-rouge">CategoryProducts</code> object contains the following attributes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Data type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">items</code></td>
+      <td>[ProductInterface]</td>
+      <td>An array of products that are assigned to the category. See <a href="/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a> for more information.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">page_info</code></td>
+      <td><code class="highlighter-rouge">SearchResultPageInfo</code></td>
+      <td>An object that includes the <code class="highlighter-rouge">page_info</code> and <code class="highlighter-rouge">currentPage</code> values specified in the query</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">total_count</code></td>
+      <td>Int</td>
+      <td>The number of products returned</td>
+    </tr>
   </tbody>
 </table>
 
@@ -794,53 +859,53 @@
   </span><span class="err">category_tree</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="err">id</span><span class="w">
     </span><span class="err">level</span><span class="w">
-    </span><span class="err">description</span><span class="w">
+    </span><span class="err">name</span><span class="w">
     </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="err">id</span><span class="w">
       </span><span class="err">level</span><span class="w">
-      </span><span class="err">description</span><span class="w">
+      </span><span class="err">name</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 <h2 id="sample-query">Sample Query</h2>
 
-<p>The following query returns information about category ID <code class="highlighter-rouge">20</code> (Women), which is defined in the sample data.</p>
+<p>The following query returns information about category ID <code class="highlighter-rouge">20</code> and four levels of subcategories. In the sample data, category ID <code class="highlighter-rouge">20</code> is assigned to the “Women” category.</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="err">categories(filter</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">root_category_id</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">}</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="err">category_tree</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="err">id</span><span class="w">
-      </span><span class="err">level</span><span class="w">
-      </span><span class="err">is_active</span><span class="w">
-      </span><span class="err">description</span><span class="w">
-      </span><span class="err">all_children</span><span class="w">
-      </span><span class="err">path</span><span class="w">
-      </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="err">category(id</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">products</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="err">total_count</span><span class="w">
+      </span><span class="err">page_info</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">current_page</span><span class="w">
+        </span><span class="err">page_size</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">children_count</span><span class="w">
+    </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="err">id</span><span class="w">
         </span><span class="err">level</span><span class="w">
-        </span><span class="err">is_active</span><span class="w">
-        </span><span class="err">description</span><span class="w">
-        </span><span class="err">all_children</span><span class="w">
+        </span><span class="err">name</span><span class="w">
         </span><span class="err">path</span><span class="w">
         </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="err">id</span><span class="w">
           </span><span class="err">level</span><span class="w">
-          </span><span class="err">is_active</span><span class="w">
-          </span><span class="err">description</span><span class="w">
-          </span><span class="err">all_children</span><span class="w">
+          </span><span class="err">name</span><span class="w">
           </span><span class="err">path</span><span class="w">
           </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="err">id</span><span class="w">
             </span><span class="err">level</span><span class="w">
-            </span><span class="err">is_active</span><span class="w">
-            </span><span class="err">description</span><span class="w">
-            </span><span class="err">all_children</span><span class="w">
+            </span><span class="err">name</span><span class="w">
             </span><span class="err">path</span><span class="w">
+            </span><span class="err">children</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="err">id</span><span class="w">
+              </span><span class="err">level</span><span class="w">
+              </span><span class="err">name</span><span class="w">
+              </span><span class="err">path</span><span class="w">
+            </span><span class="p">}</span><span class="w">
           </span><span class="p">}</span><span class="w">
         </span><span class="p">}</span><span class="w">
       </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
