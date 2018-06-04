@@ -15,7 +15,7 @@ functional_areas:
 
 This document lists the fundamental coding and application design principles that guide Magento 2 developer team members.
 
-Magento core developers use this document as a reference during code reviews; some rules have corresponding code checks in the Magento static tests.
+Magento core developers use this document as a reference to code reviews; some rules have corresponding code checks in the Magento static tests.
 
 These guidelines came from many years of hard work, experience, and discussions. We strongly believe that new technical initiatives should follow these recommendations, and the existing code should be improved to meet them.
 
