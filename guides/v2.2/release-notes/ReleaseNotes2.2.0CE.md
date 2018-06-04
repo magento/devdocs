@@ -6,7 +6,7 @@ version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0CE.md
 ---
 
-*Release notes updated October 10, 2017.* 
+*Release notes updated June 4, 2018.* 
 
 We are pleased to present Magento Open Source 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
 
@@ -1247,7 +1247,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---70255 -->* We've fixed several issues with how Magento processes URLs with trailing slashes. *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/10043" target="_blank">10043</a>.*
 
-!---60037 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
+<!---60037 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.
 
 <!---64295 -->* URL rewrites are now correctly generated for multiple store views during product import.  [GitHub-8396](https://github.com/magento/magento2/issues/8396)
 

@@ -6,7 +6,7 @@ version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
 ---
 
-*Release notes updated October 10, 2017.* 
+*Release notes updated June 4, 2018.* 
 
 
 We are pleased to present Magento Commerce 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
