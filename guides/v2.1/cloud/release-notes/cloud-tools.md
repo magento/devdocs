@@ -32,8 +32,8 @@ functional_areas:
 -  Added the following new [**Environment variables**]({{ page.baseurl }}/cloud/env/variables-intro.html):
     - <!-- MAGECLOUD-1501 -->Now you can define specific locales for each theme using the new [SCD_MATRIX]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
     -  <!-- MAGECLOUD-2047 --> Added the [DATABASE_CONFIGURATION]({{ page.baseurl }}/cloud/env/variables-deploy.html#database_configuration) environment variable to customize your database connections for deployment.
-    -  <!-- MAGECLOUD-2129 -->Now you can set the [MIN_LOGGING_LEVEL]
-    
+    -  <!-- MAGECLOUD-2129 -->The new [MIN_LOGGING_LEVEL]({{ page.baseurl }}/cloud/env/log-handlers.html#min_logging_level) variable overrides the minimum logging level for all output streams without making changes to the code.
+
 
 #### Fixed Issues
 
