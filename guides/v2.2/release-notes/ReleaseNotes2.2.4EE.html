@@ -641,7 +641,7 @@
 
 </section>
 
-			<p><em>Patch code and release notes published on May 2, 2018.</em> <em>Release notes revised on May 3, 2018.</em></p>
+			<p><em>Patch code and release notes published on May 2, 2018.</em> <em>Release notes revised on June 4, 2018.</em></p>
 
 <p>We are pleased to present Magento Commerce 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.</p>
 
@@ -731,6 +731,13 @@
     <p>Enhanced validation for deletion of cron job CSV files</p>
   </li>
 </ul>
+
+<h2 id="known-issue">Known issue</h2>
+<p>Customers have reported the following behavior after upgrading to Magento 2.2.4 in deployments that span multiple websites:</p>
+
+<p>Magento multi-store installations do not use the store view-specific values from the store configuration settings if these settings have different values than the global default configuration settings.  Instead, Magento uses the default configuration for all store views. <a href="https://github.com/magento/magento2/issues/15205">GitHub-15205</a>,  <a href="https://github.com/magento/magento2/issues/15245">GitHub-15245</a></p>
+
+<p>We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple websites. Note that this problem is not triggered if you have only a single website with multiple stores or store views.</p>
 
 <h2 id="fixes">Fixes</h2>
 
@@ -1608,7 +1615,7 @@
 
 <!--- MAGETWO-87899 -->
 <ul>
-  <li>Magento now strips out unnecessary whitespace in the attibute value IDs used on the review form. Previously, rating titles with whitespace resulted in broken ID attributes. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1119</em>. <a href="https://github.com/magento/magento2/issues/5451">GitHub-5451</a></li>
+  <li>Magento now strips out unnecessary whitespace in the attribute value IDs used on the review form. Previously, rating titles with whitespace resulted in broken ID attributes. <em>Fix submitted by <a href="https://github.com/nmalevanec">Nickolas Malyovanets</a> in pull request 1119</em>. <a href="https://github.com/magento/magento2/issues/5451">GitHub-5451</a></li>
 </ul>
 
 <!--- MAGETWO-86723 -->
@@ -1885,7 +1892,7 @@
 
 <!--- MAGETWO-83503 -->
 <ul>
-  <li>You can now view the state of the mview queue in real time, which can be useful when debugging indexing issues. Specificly, you can now view how many items are in the queue pending processing, as well as view information from the <code class="highlighter-rouge">mview_state</code> table. <em>Fix submitted by <a href="https://github.com/convenient">Luke Rodgers</a> in pull request 12122</em>.</li>
+  <li>You can now view the state of the mview queue in real time, which can be useful when debugging indexing issues. Specifically, you can now view how many items are in the queue pending processing, as well as view information from the <code class="highlighter-rouge">mview_state</code> table. <em>Fix submitted by <a href="https://github.com/convenient">Luke Rodgers</a> in pull request 12122</em>.</li>
 </ul>
 
 <h3 id="infrastructure">Infrastructure</h3>
@@ -1939,7 +1946,7 @@
 
 <!--- MAGETWO-86435 -->
 <ul>
-  <li>Magento now uses indexes to retrieve subscriber information during the creation of email to newsletter subscribers. Previously, Magento did notuse  indexes for this task, and performance was poor. <em>Fix submitted by <a href="https://github.com/devamitbera">Amit Bera</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/12787">GitHub-12787</a></li>
+  <li>Magento now uses indexes to retrieve subscriber information during the creation of email to newsletter subscribers. Previously, Magento did not use indexes for this task, and performance was poor. <em>Fix submitted by <a href="https://github.com/devamitbera">Amit Bera</a> in pull request</em>. <a href="https://github.com/magento/magento2/issues/12787">GitHub-12787</a></li>
 </ul>
 
 <!--- MAGETWO-86562 -->
@@ -2140,7 +2147,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-86434 -->
 <ul>
-  <li>Magento no longers truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 13015</em>. <a href="https://github.com/magento/magento2/issues/10869">GitHub-10869</a></li>
+  <li>Magento no longer truncates very long telephone numbers in the order page. Previously, Magento cut off very long phone numbers at 20 digits. <em>Fix submitted by <a href="https://github.com/dverkade">Danny Verkade</a> in pull request 13015</em>. <a href="https://github.com/magento/magento2/issues/10869">GitHub-10869</a></li>
 </ul>
 
 <!--- MAGETWO-86430 -->
@@ -2253,7 +2260,7 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 
 <!--- MAGETWO-85285 -->
 <ul>
-  <li>Sitemaps generated in a multi-store envirnment now include the correct URLs for each store (that is, <code class="highlighter-rouge">http://storename.com/</code> instead of <code class="highlighter-rouge">http://defaultstore.com/</code>). <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 935</em>. <a href="https://github.com/magento/magento2/issues/12482">GitHub-12482</a></li>
+  <li>Sitemaps generated in a multi-store environment now include the correct URLs for each store (that is, <code class="highlighter-rouge">http://storename.com/</code> instead of <code class="highlighter-rouge">http://defaultstore.com/</code>). <em>Fix submitted by <a href="https://github.com/RomaKis">Roman K.</a> in pull request 935</em>. <a href="https://github.com/magento/magento2/issues/12482">GitHub-12482</a></li>
 </ul>
 
 <!--- MAGETWO-81525 -->
