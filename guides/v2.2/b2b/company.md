@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Integrate with the Company module
@@ -15,11 +14,11 @@ functional_areas:
   - Integration
 ---
 
-The `Company` module allows multiple buyers that belong to the same company to view product prices and make purchases based on the shared catalog assigned to this company. A company can contain a hierarchy of users and teams, with roles and permisions assigned at any level.
+The `Company` module allows multiple buyers that belong to the same company to view product prices and make purchases based on the shared catalog assigned to this company. A company can contain a hierarchy of users and teams, with roles and permissions assigned at any level.
 
 ## Related information
 
-* [Manage company objects]({{page.baseurl}}b2b/company-object.html)
-* [Manage company users]({{page.baseurl}}b2b/company-users.html)
-* [Manage company roles]({{page.baseurl}}b2b/roles.html)
-* [Manage company structures]({{page.baseurl}}b2b/company-structures.html)
+* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+* [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
+* [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
+* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

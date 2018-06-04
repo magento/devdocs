@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 02_config-hosted
 title: Configure your hosted system
@@ -17,15 +16,15 @@ functional_areas:
 ## Hosted installation
 Before you can install the Magento software, you must get your hosted system ready.  
 
-If your hosted system is already set up, go to <a href="{{page.baseurl}}install-gde/install/hosted/hosted_get-ftp.html#get-archive">Get the Magento software packages</a>.
+If your hosted system is already set up, go to <a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html#get-archive">Get the Magento software packages</a>.
 
 #### Contents
 *	<a href="#newbie-verify">Verify the software on your system</a>
 <!-- *	<a href="#newbie-cpanel">Start the cPanel configuration utility</a> -->
-*	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
-*	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
-*	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
-*	<a href="{{page.baseurl}}install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
+*	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
+*	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html">Configure PHP</a>
+*	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
+*	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
 
 <h2 id="newbie-verify">Verify the software on your system</h2>
 Magento requires the following software to run:
@@ -38,10 +37,10 @@ Magento requires the following software to run:
   <p>We recommend you contact your shared hosting provider's technical support to verify all of the preceding are installed and get their assistance if any of the software is not installed.</p>
 </div>
 
-For complete details, see <a href="{{page.baseurl}}install-gde/system-requirements.html">System requirements</a>.
+For complete details, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html">System requirements</a>.
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
+<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
 
 <!-- <h2 id="newbie-cpanel">Start the cPanel configuration utility</h2>
 To start configuring your hosted system:

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: JavaScript coding standard
@@ -365,7 +364,7 @@ var foo = 'bar',
 
 [jquery]: https://jquery.com/
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
-[jquery-widget-coding-standard]: {{page.baseurl}}coding-standards/code-standard-jquery-widgets.html
+[jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [jscs]: http://jscs.info/
 [eslint-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento

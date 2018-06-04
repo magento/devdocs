@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: ExportButton Component
@@ -48,6 +47,6 @@ By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea
 
 To add new export format:
 
-* Add configuration data to ExportButton definition <a href="{{page.baseurl}}ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
+* Add configuration data to ExportButton definition <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`

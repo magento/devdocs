@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Troubleshooting
 title: Reset the theme to default
@@ -15,7 +14,7 @@ functional_areas:
 
 If you need to reset the store theme, but cannot access the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel, you can reset it in the database by doing the following:
 
-1. Use a database tool such as [phpMyAdmin]({{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpmyadmin) or access the DB manually from the command line to execute the following SQL query: 
+1. Use a database tool such as [phpMyAdmin]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin) or access the DB manually from the command line to execute the following SQL query: 
 ```
 UPDATE core_config_data SET value=NULL WHERE path='design/theme/theme_id'
 ```
@@ -26,6 +25,6 @@ This way there will be no {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af715801
 
 ### Related topics:
 
-- [Clear directories during development]({{page.baseurl}}howdoi/php/php_clear-dirs.html)
+- [Clear directories during development]({{ page.baseurl }}/howdoi/php/php_clear-dirs.html)
 
 

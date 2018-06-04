@@ -1,11 +1,6 @@
 ---
-layout: default
 group: cloud
-subgroup: 120_env
 title: Configuration management for store settings
-menu_title: Configuration management for store settings
-menu_order: 20
-menu_node:
 version: 2.2
 github_link: cloud/live/sens-data-over.md
 functional_areas:
@@ -13,45 +8,30 @@ functional_areas:
   - Deploy
 ---
 
-Configuration management, or [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/), provides a new way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. With this file, you can add it to your Git commit and push it across all of your environments. to keep consistent settings and reduce downtime.
+Configuration management, or [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/), provides a way to deploy across your environments with minimal downtime. The process extracts all configuration settings from your Magento implementation into a single file. Add this file to your commit and push it across all of your environments to keep consistent settings and reduce downtime. It provides the following benefits:
+
+*  Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
+*  Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
+*  Sensitive data is automatically added into an environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
+
+These methods are optional, but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
+
+To complete configuration management tasks, you must have a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For extended technical information, see [Pipeline Deployment]({{ page.baseurl }}config-guide/deployment/pipeline/) (which is  prepared for on-premises). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy it via Git.
+For extended technical information, see [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/). When configuring and using these features, follow this topic specifically. {{site.data.var.ece}} provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.
 </div>
-
-It provides the following benefits:
-
-*	Better way to [manage and synchronize](#cloud-confman-over) the configuration across your Integration, Staging, and Production environments.
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
-*	Sensitive data is automatically added into and environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
-
-<div class="bs-callout bs-callout-info" markdown="1">
-These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
-</div>
-
-<div class="bs-callout bs-callout-info" markdown="1">
-If you used configuration management in 2.1, this process is similar in 2.2. The name of the file has changed to `config.php` and updating the file changed. You can [migrate](#migrate) your `config.local.php` settings to a new `config.php`. This file includes a number of changes including:
-
-* A list of modules and extensions
-* The scope for deployment
-* Should not be deleted to regenerate
-</div>
-
-## Feature availability {#release}
-Configuration management was released in `magento-cloud-configuration` 101.4.1 on {{site.data.var.ece}} 2.1.4 and later. The options and functions differ in {{site.data.var.ece}} 2.2. We provide recommendations for {{site.data.var.ece}} deployments in this section.
-
-To complete these configuration management tasks, you must have at a minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
 
 ## How it works {#cloud-confman-over}
-Magento's store configurations are stored in the database. When updating configurations in development/Integration, Staging, and Production environments, you would need to make those changes in the Magento Admin per environment. By using these commands, you generate a file, exporting all Magento configuration settings into a single text file: `app/etc/config.php`.
+The database contains default configurations for your Magento store. When you update the configurations in the Integration, Staging, and Production environments using the Magento Admin, you generate a file of all Magento configuration settings into a single text file: `app/etc/config.php`.
 
-After configuring your environment, generate the file using one of the following commands:
+To generate the file, use one of the following:
 
-* `php vendor/bin/m2-ece-scd-dump`: **Recommended**. Exports only modified configuration settings
-* `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default settings
+* `php vendor/bin/m2-ece-scd-dump`—**Recommended** Exports only modified configuration settings
+* `php ./vendor/bin/ece-tools config:dump`—Exports every configuration setting, including modified and default settings
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-For {{site.data.var.ece}}, we **do not recommend** app:config:dump as this command pulls and locks all values as read-only. This will affect Fastly and other important modules.
+For {{site.data.var.ece}}, we **do not recommend** using the `app:config:dump` command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.
 </div>
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.
@@ -61,14 +41,14 @@ By using the `scd-dump` command, you can configure only the settings you want co
 If sensitive data is found in your configurations, it is generated as environment variables to `env.php`. This file remains in the environment and should not be added to your Git environment.
 
 ### Switching between commands {#commands}
-Can you switch between using `php vendor/bin/m2-ece-scd-dump` and `php bin/magento app:config:dump`? Only in one specific way.
+Can you switch between using `php vendor/bin/m2-ece-scd-dump` and `php ./vendor/bin/ece-tools config:dump`? Only in one specific way.
 
 In 2.2 and later, you cannot delete the `config.php` file to regenerate it. You can only edit the file to change or remove a value. This file includes more information than just configuration values.
 
-If you use `php vendor/bin/m2-ece-scd-dump` to generate the file, you can switch to `php bin/magento app:config:dump`. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.
+If you use `php vendor/bin/m2-ece-scd-dump` to generate the file, you can switch to `php ./vendor/bin/ece-tools config:dump`. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.
 
 ### Configuration data {#data}
-System settings refer to the configurations in the Magento Admin in **Stores** > Settings > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
+System settings refer to the configurations in the Magento Admin in **Stores** > **Settings** > **Configuration**. Depending on the command used, all or just modified system configurations save to the file.
 
 This file can include all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to static content deployment (for example, static file optimization) are also stored in `app/etc/config.php`. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.
 
@@ -78,10 +58,10 @@ Sensitive values are _not_ stored in `app/etc/config.php`. Any sensitive configu
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
 </div>
 
-For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
+For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
 ### Static content deployment performance {#cloud-confman-scd-over}
-Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
+Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
 If you generate `config.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
@@ -89,21 +69,15 @@ If you generate `config.php`, the build and deploy hooks identify the file and d
 Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
 </div>
 
-## How we set configurations {#cloud-config-specific-over}
-All system settings are set according to the following override scheme.
+## Configuration selection flow
+All system configurations are set during deployment according to the following override scheme:
 
-![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
-
-As the diagram shows, we get configuration values in the following order:
-
-1.	From an environment variable.	Environment variables, if they exist, override all other values.
-2.	From `config.php`. Values in `config.php` override settings in the database.
-3.	From the database.
-
-If no value exists in any of those sources, we use either the default value or `NULL`. For an example of how this works, see [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
+1. If an environment variable exists, use the custom configuration and ignore the default configuration.
+1. If an environment variable does not exist, use the configuration from a `MAGENTO_CLOUD_RELATIONSHIPS` name-value pair in the `.magento.app.yaml` file. Ignore the default configuration.
+1. If an environment variable does not exist and `MAGENTO_CLOUD_RELATIONSHIPS` does not contain a name-value pair, remove all customized configuration and use the values from the default configuration.
 
 ## Configuration settings you can change {#cloud-clp-settings}
-The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php bin/magento app:config:dump`, all settings are exported including default and modified settings.
+The following table shows the configuration settings affected by the `php vendor/bin/m2-ece-scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported including default and modified settings.
 
 The `config.php` file includes the following settings and configuration values:
 
@@ -153,15 +127,15 @@ Managing store configuration is a complex task that's mostly up to you. What loc
 
 We **strongly recommend** using `scd-dump` to generate `config.php`. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, please see [our extensive example]({{ page.baseurl }}cloud/live/sens-data-initial.html).
+To fully understand the process, please see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
-![Overview of Starter configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-starter-2-2.png)
+![Overview of Starter configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-starter-2-2.png)
 
 The **Pro plan** environment high-level overview of this process:
 
-![Overview of Pro configuration management]({{ site.baseurl }}common/images/cloud_configmgmt-pro-2-2.png)
+![Overview of Pro configuration management]({{ site.baseurl }}/common/images/cloud_configmgmt-pro-2-2.png)
 
 ### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:
@@ -210,7 +184,7 @@ For Starter, when you push, the updated code pushes to the active environment. M
 
 For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
-## Update configuations {#update}
+## Update configurations {#update}
 If you need to modify or remove any existing configuration settings in `config.php`, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.
 
 To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.
@@ -233,6 +207,3 @@ If they differ, you can append content from `config.local.php` to your new `conf
 5. Deploy across your environments.
 
 You only need to complete this migration once. When you need to update the file, you will always update the new `config.php`.
-
-#### Next step
-[Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)

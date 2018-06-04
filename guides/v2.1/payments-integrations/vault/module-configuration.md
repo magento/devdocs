@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Add vault to module dependencies
@@ -45,4 +44,4 @@ You need to add dependencies on the Magento_Vault module in the payment method's
 
 ## What's next
 
-[Configure vault general parameters]({{page.baseurl}}payments-integrations/vault/vault-payment-configuration.html).
+[Configure vault general parameters]({{ page.baseurl }}/payments-integrations/vault/vault-payment-configuration.html).

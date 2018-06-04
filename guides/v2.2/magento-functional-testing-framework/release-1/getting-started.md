@@ -1,7 +1,6 @@
 ---
-layout: default
 group: mftf
-title: Getting started with the Magento Functional Testing Framework (release 1)
+title: Getting started with the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/getting-started.md
 functional_areas:
@@ -9,7 +8,11 @@ functional_areas:
 redirect_from:
     - guides/v2.2/magento-functional-testing-framework/getting-started.html
     - guides/v2.2/magento-functional-testing-framework/1.0/getting-started.html
+mftf-release: 1.0.0
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 ## Prepare environment
 
@@ -20,7 +23,6 @@ Make sure that you've set up the following software:
 * [Java v1.8.x+][java]
 * [Selenium Server Standalone v3.6.0+](#selenium-server)
 * [ChromeDriver v2.33+][chromedriver]
-* [Allure CLI v2.3.x+](#allure)
 
 ### Recommendations
 
@@ -58,20 +60,22 @@ Follow these steps to set up the MFTF on your system.
 ### Step 1. Clone the magento2 source code repository
 
 ```bash
-$ git clone https://github.com/magento/magento2.git
+git clone https://github.com/magento/magento2.git
 ```
 
 or
 
 ```bash
-$ git clone git@github.com:magento/magento2.git
+git clone git@github.com:magento/magento2.git
 ```
 
 ### Step 2. Install dependencies
 
 ```bash
-$ cd magento2/dev/tests/acceptance
-$ composer install
+cd magento2/dev/tests/acceptance
+```
+```bash
+composer install
 ```
 
 ### Step 3. Build the project
@@ -79,7 +83,7 @@ $ composer install
 In `magento2/dev/tests/acceptance`, run the following command:
 
 ```bash
-$ vendor/bin/robo build:project
+vendor/bin/robo build:project
 ```
 
 <div class="bs-callout bs-callout-tip" markdown="1">
@@ -129,7 +133,7 @@ http://127.0.0.1:4444/wd/hub
 In the `magento2/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
-$ vendor/bin/robo generate:tests
+vendor/bin/robo generate:tests
 ```
 
 ### Step 6. Run tests
@@ -147,13 +151,13 @@ To run one or more tests, you need running Selenium server and a [`codecept`] or
 4. Run the Selenium server in the terminal:
 
 ```bash
-$ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
+java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 ```
 
 #### Run all tests
 
 ```bash
-$ vendor/bin/codecept run 
+vendor/bin/codecept run 
 ```
 
 See more commands in [`robo`] and [`codecept`].
@@ -166,7 +170,7 @@ Testing reports are generated in CLI during testing.
 If you want to see the reports in GUI, run:
 
 ```bash
-$ vendor/bin/robo allure2:report
+vendor/bin/robo allure2:report
 ```
 
 [See more Allure commands][allure commands]

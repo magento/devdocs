@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 14_Elastic
 title: Configure Apache and Elasticsearch
@@ -168,4 +167,4 @@ This section discusses how to specify who can access the Apache server.
 {% include config/es-verify-proxy.md %}
 
 #### Next
-<a href="{{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>
+<a href="{{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>

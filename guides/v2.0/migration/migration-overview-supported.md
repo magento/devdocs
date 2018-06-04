@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: A_Overview
 title: Versions supported

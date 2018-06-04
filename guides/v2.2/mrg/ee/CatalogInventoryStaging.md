@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
@@ -29,4 +28,4 @@ You can interact with the Magento_CatalogInventoryStaging module using the Magen
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

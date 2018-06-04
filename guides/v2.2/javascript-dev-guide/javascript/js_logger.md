@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: JavaScript Logger
@@ -13,14 +12,14 @@ github_link: javascript-dev-guide/javascript/js_logger.md
 
 The `Logger` class provides logging functionality for an application. It can be used to  display errors, warnings and debug messages.
 
-**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/logger.js`. [See on GitHub]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/logger.js)
+**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/logger.js`. [See on GitHub]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/logger.js)
 
 
 ## Logger API
 
 ### `new Logger(outputHandler, entryFactory)`
 
-**Parameters**  
+**Parameters**
 
 - `outputHandler: LogOutputHandler`: An instance of `LogOutputHandler` used to display log entries.
 - `entryFactory: LogEntryFactory`: A factory of the `LogEntry` instances.
@@ -28,25 +27,25 @@ The `Logger` class provides logging functionality for an application. It can be 
 ### `setDisplayLevel(level)`
 Sets the boundary entry level. The entries whose level is lower, than the specified one, are not passed to the output.
 
-**Parameters**  
+**Parameters**
 `level: number`: Minimum display level for an entry.
 
 ### `addDisplayCriteria(criteria)`
 Adds a function that is used to define whether newly created entries should be passed to the output.
 
-**Parameters**  
+**Parameters**
 `criteria: Function`: A function that accepts instance of the `LogEntry` and returns a Boolean value.
 
 ### removeDisplayCriteria(criteria)
 Removes the previously added display criteria.
 
-**Parameters**  
+**Parameters**
 `criteria: Function`: The display criteria to be removed.
 
 ### `error(message, [messageData])`
 Creates a `LogEntry` with the `ERROR` level and passes it to the output, if it matches all current display criteria.
 
-**Parameters**  
+**Parameters**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -56,7 +55,7 @@ Creates a `LogEntry` with the `ERROR` level and passes it to the output, if it m
 ### `warn(message, [messageData])`
 Creates a `LogEntry` with the `WARN` level and passes it to the output, if it matches all current display criteria.
 
-**Parameters**  
+**Parameters**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -66,7 +65,7 @@ Creates a `LogEntry` with the `WARN` level and passes it to the output, if it ma
 ### `info(message, [messageData])`
 Creates a `LogEntry` with the `INFO` level and passes it to the output if it matches all current display criteria.
 
-**Parameters**  
+**Parameters**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -76,7 +75,7 @@ Creates a `LogEntry` with the `INFO` level and passes it to the output if it mat
 ### `debug(message, [messageData])`
 Creates a `LogEntry` with the `DEBUG` level and passes it to the output, if it matches all current display criteria.
 
-**Parameters**  
+**Parameters**
 `message: string`: Entry's message.
 
 `messageData?: Object`: Optional data associated with the message.
@@ -86,30 +85,30 @@ Creates a `LogEntry` with the `DEBUG` level and passes it to the output, if it m
 ### `getEntries([criteria])`
 Returns all available log entries. It can additionally filter out the entries that don't match the provided criteria.
 
-**Parameters**  
+**Parameters**
 `criteria?: Function`: Optional function that accepts an instance of `LogEntry` and implements the filter criteria by which the entries are added to the resulting array.
 
 **Returns:** `Array<LogEntry>`: An array of `LogEntry`.
 
 ### `dump(criteria)`
 
-**Parameters**  
+**Parameters**
 `criteria?: Function`: Optional function that accepts an instance of `LogEntry` and implements the filter criteria by which entries are passed to the output handler.
 
 ## `LogEntry`
 `LogEntry` is a class that holds the data of log operations, like `error`, `warn`,  `info` and so on.
 
-**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/entry.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js)
+**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/entry.js`. [See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js)
 
 ### new LogEntry(message, level, [data])
 
-**Parameters**  
+**Parameters**
 
 - `message: string`: Entry's message.
 - `level: number`: Entry's level.
 - `data?: Object`: Additional data associated with the entry.
 
-### Properties
+**Properties**
 - `message: string`: Entry's message.
 
 - `timestamp: number`: The time of entry creation.
@@ -120,29 +119,27 @@ Returns all available log entries. It can additionally filter out the entries th
 
 - `data?: Object`: Additional data associated with the entry.
 
-<p class="q">"Parameters" and "Properties", shouldn't they be heading of one level? or not headings, but of the same level?</p>
-
 ## `LogOutputHandler`
 
 The `LogOutputHandler` class responsible for the output of entries passed by `Logger`. Default implementation uses browser's `console` object and invokes methods that correspond to the `level` of an entry. For instance, entry with the `INFO` level will be displayed using the console's `info` method.
 
-**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-output-handler.js` ([See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js))
+**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-output-handler.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/entry.js))
 
 ### new LogOutputHandler(formatter)
 
-**Parameters**  
+**Parameters**
 `formatter: LogFormatter`: An instance of `LogFormatter` that will be used to create a display message for the  provided entries.
 
 ### show(entry)
 Displays the provided entry.
 
-**Parameters**  
+**Parameters**
 `entry: LogEntry`: The entry to be displayed.
 
 ### dump(entries)
 Displays multiple entries at once.
 
-**Parameters**  
+**Parameters**
 `entries: Array<LogEntry>`: An array of the `LogEntry` instances to be displayed.
 
 ## LogFormatter
@@ -158,11 +155,11 @@ The `LogFormatter` class is responsible for processing the message of the provid
 
 {%endhighlight%}
 
-**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/formatter.js` ([See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/formatter.js))
+**Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/formatter.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/formatter.js))
 
 ### new LogFormatter([dateFormat], [template])
 
-**Parameters**  
+**Parameters**
 
 - `dateFormat = "YYYY-MM-DD hh:mm:ss"`: Date format that is applied to display the entry creation time.
 - `template = "[${ $.date }] [${ $.entry.levelName }] ${ $.message }`: Template used to create the resulting message of an entry.
@@ -170,7 +167,7 @@ The `LogFormatter` class is responsible for processing the message of the provid
 ### `process(entry)`
 Creates a text representation of the provided entry. If default settings are used, the resulting string looks like following: `[2017-04-07 01:36:24] [DEBUG] Log message`.
 
-**Parameters**  
+**Parameters**
 `entry: LogEntry`: An instance of `LogEntry` to be processed.
 
 **Returns:** String
@@ -187,7 +184,7 @@ The following log levels are available (sorted by priority in the descending ord
  - `DEBUG`
  - `ALL` (allows to display all log entries, unless any other display criteria is present)
 
-**Path:** `Magento_Ui_module_dir>/view/base/web/js/lib/logger/levels-pool.js` ([See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js))
+**Path:** `Magento_Ui_module_dir>/view/base/web/js/lib/logger/levels-pool.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/levels-pool.js))
 
 ### `getLevels()`
 Returns a list of available log levels.
@@ -196,7 +193,7 @@ Returns a list of available log levels.
 
 ### `getNameByCode(code)`
 
-**Parameters**  
+**Parameters**
 `code: string`: Level's identifier.
 
 **Returns:** Number
@@ -205,12 +202,12 @@ Returns a list of available log levels.
 
 Implements a collection of predefined messages used by `consoleLogger`.
 
-**Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/message-pool.js` ([See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/message-pool.js))
+**Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/message-pool.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/message-pool.js))
 
 ### `getMessage(code)`
 Returns message that matches the provided code.
 
-**Parameters**  
+**Parameters**
 `code: string`: Message's identifier.
 
 **Returns:** String
@@ -218,7 +215,7 @@ Returns message that matches the provided code.
 ### `addMessage(code, message)`
 Adds a new message to the pool.
 
-**Parameters**  
+**Parameters**
 `code: string`: Message's identifier.
 
 `message: string`: Text of the message.
@@ -226,7 +223,7 @@ Adds a new message to the pool.
 ### `hasMessage(code)`
 Checks whether a message with the provided code exists in the pool.
 
-**Parameters**  
+**Parameters**
 `code: string`: Message's identifier.
 
 **Returns:** Boolean
@@ -241,7 +238,7 @@ An instance of the `Logger` class that is configured to display messages in the 
     // console => [2017-04-07 01:36:24] [INFO] Hello World!
 {%endhighlight%}
 
-**Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-logger.js` ([See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js))
+**Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-logger.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js))
 
 ### Properties
  - `levels: {[name: string]: number}`: Reference to the available log levels.
@@ -252,7 +249,7 @@ By default, Magento uses `consoleLogger` to display logs in browser console.
 
 Example:
 
-![node declaration autocomplete]({{site.baseurl}}common/images/js/logger_error.png)
+![node declaration autocomplete]({{ site.baseurl }}/common/images/js/logger_error.png)
 
 The default level of logs that Magento displays in the console starts from the `WARN` level.
 

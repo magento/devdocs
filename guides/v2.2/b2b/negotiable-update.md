@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Update a negotiable quote
@@ -155,7 +154,7 @@ The buyer can add, update, or delete items from the quote under the following co
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{page.baseurl}}b2b/negotiable-manage.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
-* [Place a negotiable quote order]({{page.baseurl}}b2b/negotiable-order-workflow.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

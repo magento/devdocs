@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
 version: 2.0
@@ -30,4 +29,4 @@ See [Run the test][] topic.
 
 <!-- LINK DEFINITIONS -->
 
-[Run the test]: {{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_runtest.html
+[Run the test]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_runtest.html

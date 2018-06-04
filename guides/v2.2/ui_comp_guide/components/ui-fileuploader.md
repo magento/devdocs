@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: FileUploader component
@@ -211,7 +210,7 @@ Fileuploader-specific configuration:
 
 ## Integration {#example}
 
-Here is an example of how File Uploader component integrates with <a href="{{page.baseurl}}ui-components/ui-form.html">Form</a> component:
+Here is an example of how File Uploader component integrates with <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-form.html">Form</a> component:
 
 {% highlight xml %}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

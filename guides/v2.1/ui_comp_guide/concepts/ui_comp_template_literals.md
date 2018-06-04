@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: Template Literals in UI Components
@@ -90,7 +89,7 @@ In the template, the messages can be displayed like this:
 
 ```html
 <!-- File: app/code/Example/Component/view/frontend/web/template/message-list.html -->
-<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../Ui/etc/ui_template.xsd">
+<div>
   <ul data-bind="foreach: messages" class="message-list">
       <li data-bind="text: content, css: htmlClass"></li>
   </ul>

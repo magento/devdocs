@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Manage company credit
@@ -51,7 +50,7 @@ Name | Description | Format | Requirements
 
 ### Update a company credit limit
 
-This call changes the company's credit limitto $1000. The `available_limit` parameter is calculated, so you cannot specify the value.
+This call changes the company's credit limit to $1000. The `available_limit` parameter is calculated, so you cannot specify the value.
 
 **Service Name**
 
@@ -152,7 +151,7 @@ Not applicable
 
 The following call returns information for all companies whose credit balance is 0.
 
-See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -232,7 +231,7 @@ POST /V1/companyCredits/:creditId/increaseBalance
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
-`value` | Indicates how much money is involved in this company credit balance operation. | Nuumber | Required
+`value` | Indicates how much money is involved in this company credit balance operation. | Number | Required
 `currency` | The currency of the transaction, such as USD | String | Required
 `operationType` | Must be one of the following: 1 - Allocated; 2 - Updated; 3 - Purchased; 4 - Reimbursed; 5 - Refunded; 6 - Reverted | Integer | Required
 `comment` | Describers the operation | String | Optional
@@ -331,7 +330,7 @@ This call updates the credit history to specify a purchase order number.
 
 The following call returns a list instances in which the credit limit was set to a value higher than $500.
 
-See [Search using REST APIs]({{page.baseurl}}rest/performing-searches.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 
 **Sample Usage**
@@ -401,4 +400,4 @@ Not applicable
 
 ## Related information
 
-[Integrate with the CompanyCredit module]({{page.baseurl}}/b2b/company-credit.html)
+[Integrate with the CompanyCredit module]({{ page.baseurl }}/b2b/company-credit.html)

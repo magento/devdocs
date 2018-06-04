@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Architectural Layers
 title: Service layer
@@ -79,9 +78,9 @@ However, if the client code uses the interface definition only, no class change 
 
 ## Related topics {#related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
-[catalog-api]: {{site.mage2000url}}app/code/Magento/Customer/Api
-[catalog-api-data]: {{site.mage2000url}}app/code/Magento/Customer/Api/Data
+[catalog-api]: {{ site.mage2000url }}app/code/Magento/Customer/Api
+[catalog-api-data]: {{ site.mage2000url }}app/code/Magento/Customer/Api/Data

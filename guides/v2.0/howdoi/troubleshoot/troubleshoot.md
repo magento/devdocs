@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: Troubleshooting
 title: Troubleshooting Magento
@@ -12,4 +11,4 @@ github_link: howdoi/troubleshoot/troubleshoot.md
 
 ## Troubleshooting Magento
 
-- [Reset the store theme to default using DB]({{page.baseurl}}howdoi/troubleshoot/reset_theme.html)
+- [Reset the store theme to default using DB]({{ page.baseurl }}/howdoi/troubleshoot/reset_theme.html)

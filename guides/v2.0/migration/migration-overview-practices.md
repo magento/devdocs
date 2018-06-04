@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: A_Overview
 title: Best practices and benchmarking
@@ -25,7 +24,7 @@ This section provides our best information about how to speed up and simplify yo
 
   Such data may include logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, etc.
 
-* **Follow our [General Rules for Successful Migration]({{page.baseurl}}migration/migration-migrate.html)** to avoid issues or conflicts.
+* **Follow our [General Rules for Successful Migration]({{ page.baseurl }}/migration/migration-migrate.html)** to avoid issues or conflicts.
 
 * To boost performance, you may **enable the `direct_document_copy` option** in your `config.xml`:
 

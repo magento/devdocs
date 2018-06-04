@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 03_install
 title: Step 4. Customize your store
@@ -17,4 +16,4 @@ functional_areas:
 {% include install/web/install-web_4-customize-store.md %}
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/hosted/hosted_install_5_create-admin.html">Step 5. Create Admin account</a>
+<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_5_create-admin.html">Step 5. Create Admin account</a>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
@@ -24,12 +23,11 @@ Plugins can not be used on following:
 
 * Final methods
 * Final classes
-* Any class that contains at least one final public method
 * Non-public methods
 * Class methods (such as static methods)
 * `__construct`
 * Virtual types
-* Objects that are instantiated before Interception infrastructure is bootstrapped
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 
 ### Declaring a plugin
 
@@ -41,7 +39,7 @@ You must specify these elements:
 
 * `type name`. A class or interface which the plugin observes.
 * `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
-* `plugin type`. The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ModelName>Plugin`.
+* `plugin type`. The name of a plugin's class or its virtual type. Use the following naming convention when you specify this element: `\Vendor\Module\Plugin\<ClassName>`.
 
 The following elements are optional:
 
@@ -63,7 +61,7 @@ Below is an example of a before method modifying the `$name` argument before pas
 {% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
-class ProductPlugin
+class ProductAttributesUpdater
 {
     public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
     {
@@ -83,7 +81,7 @@ Below is an example of an after method modifying the return value `$result` of a
 
 namespace My\Module\Plugin;
 
-class ProductPlugin
+class ProductAttributesUpdater
 {
     public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
     {
@@ -94,14 +92,14 @@ class ProductPlugin
 
 After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
-Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
+Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2100url }}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
 {% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
-class AuthPlugin
+class AuthLogger
 {
-    private $logger
+    private $logger;
 
     public function __construct(\Psr\Log\LoggerInterface $logger)
     {
@@ -124,12 +122,12 @@ class AuthPlugin
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{site.mage2100url}}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 {% highlight PHP %}
 
-class MyPlugin
+class WebsitesLogger
 {
-    private $logger
+    private $logger;
 
     public function __construct(\Psr\Log\LoggerInterface $logger)
     {
@@ -154,6 +152,12 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 #### Around methods
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
+<div class="bs-callout bs-callout-warning">
+    <p>Avoid using around method plugins when they are not required because they increase stack traces and affect performance.</p>
+    <p>The only use case for around method plugins is when the execution of all further plugins and original methods need termination.</p>
+    <p>Use after method plugins if you require arguments for replacing or altering function results.</p>
+</div>
+
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
 <div class="bs-callout bs-callout-warning">
@@ -165,15 +169,21 @@ Below is an example of an around method adding behavior before and after an obse
 {% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
-class ProductPlugin
+class ProductAttributesUpdater
 {
     public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
-        $this->doSmthBeforeProductIsSaved();
-        $returnValue = $proceed();
+        $someValue = $this->doSmthBeforeProductIsSaved();
+        $returnValue = null;
+        
+        if ($this->canCallProceedCallable($someValue)) {
+            $returnValue = $proceed();
+        }
+        
         if ($returnValue) {
             $this->postProductToFacebook();
         }
+        
         return $returnValue;
     }
 }
@@ -200,7 +210,7 @@ If you wrapped this method with a plugin like below:
 {% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
-class MyUtilityPlugin
+class MyUtilityUpdater
 {
     public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj)
     {
@@ -216,7 +226,7 @@ You are responsible for forwarding the arguments from the plugin to the <code>pr
 {% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
-class MyUtilityPlugin
+class MyUtilityUpdater
 {
     public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, ...$args)
     {
@@ -282,8 +292,8 @@ For example, the developer can disable a global plugin in the {% glossarytooltip
 
 ### Related topics
 
-*  [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
-*  [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
 
 ### Related information
 

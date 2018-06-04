@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mtf-guide
 title: Create a test in the Functional Testing Framework
 version: 2.0
@@ -58,20 +57,20 @@ A test assertion compares the test flow results with the expected ones. Test ass
 
 <!-- LINK DEFINITIONS -->
 
-[test entity]: {{page.baseurl}}mtf/mtf_entities.html
-[variation addition]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html#add_variation
-[variation extension]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html#extend_variation
-[fixture extension]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge
-[repository addition]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
-[block overriding]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html#override-blocks
+[test entity]: {{ page.baseurl }}/mtf/mtf_entities.html
+[variation addition]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html#add_variation
+[variation extension]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html#extend_variation
+[fixture extension]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_merge
+[repository addition]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+[block overriding]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html#override-blocks
 
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[fixture repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[handler]: {{page.baseurl}}mtf/mtf_entities/mtf_handler.html
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[block]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
-[page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
-[constraints]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[fixture repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html
+[handler]: {{ page.baseurl }}/mtf/mtf_entities/mtf_handler.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[block]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html
+[page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
+[constraints]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
 
-[Learn more in the "Create a new test" topic.]: {{page.baseurl}}mtf/create_test/create_new_test.html
+[Learn more in the "Create a new test" topic.]: {{ page.baseurl }}/mtf/create_test/create_new_test.html

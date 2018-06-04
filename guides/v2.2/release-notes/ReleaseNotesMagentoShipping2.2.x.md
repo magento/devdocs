@@ -1,20 +1,51 @@
 ---
-layout: default
 group: release-notes
 title: Magento Shipping Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotesMagentoShipping2.2.x.md
 ---
-*Code and release notes published on January 22, 2018.*
+*Code and release notes updated on May 2, 2018.*
 
 
 
 The release information in this section describes changes to the Magento Shipping extension bundled with Magento 2.2.2.  Fixes and enhancements are listed by availability date.
 
-See the [Magento Commerce 2.2.2 Release Notes]({{page.baseurl}}release-notes/ReleaseNotes2.2.2CE.html) for a comprehensive discussion of 2.2.2 fixes and enhancements.  
+
+See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.2CE.html) and [Magento Commerce 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html) for a comprehensive discussion of 2.2.2 and 2.2.4 fixes and enhancements.  
 
 
-## Changes effective January 22, 2018
+
+## Changes effective May 2, 2018 (Magento 2.2.4)
+Here are the enhancements and  fixes available as of May 2, 2018:
+
+### Enhancements
+
+* Provided validation to prevent merchants from indicating that the  package maximum weight greater that the actual package being shipped. 
+
+* Added international fields to shipment details.
+
+* Added  tool-tips to inform users about the Locations, Carriers and Packages pages.
+
+* Truncated long carrier nickname on Shipping Partners page.
+
+* Improved appearance of  navigation buttons on carrier connection page.
+
+* Provided ad-hoc Return labels with return shipment tracking. This features builds on `Magento_Rma`. 
+
+
+### Fixes
+Resolution of the following issues:
+
+* Incompatibility with Internet Explorer 11.x.
+
+* Magento checkout price not respecting set currency in Portal.
+
+* Currency conversion issues.
+
+* Duplicated navigation menu during carrier connection.
+
+
+## Changes effective January 22, 2018 
 
 Here are the enhancements and fixes available as of January 22, 2018:
 

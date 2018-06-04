@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 40_Authentication
 title: Session-based authentication
@@ -38,4 +37,4 @@ The session based authentication functionality is restricted to only allow for A
 
 ## Related topic
 
-[Configure services as web APIs]({{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html)
+[Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

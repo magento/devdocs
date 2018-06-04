@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: DateColumn component
@@ -12,11 +11,11 @@ github_link: ui_comp_guide/components/ui-datecolumn.md
 
 The DateColumn component implements a table column that displays dates.
 
-DateColumn сonstructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/date.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
+DateColumn сonstructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/date.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
 
 ## Сonfiguration options
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
+Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
 
 DateColumn specific configuration:
 

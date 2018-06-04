@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: Wizard
 title: Step 4. Customize Your Store
@@ -17,4 +16,4 @@ functional_areas:
 {% include install/web/install-web_4-customize-store.md %}
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/web/install-web_5-create-admin.html">Step 5. Create Admin account</a>
+<a href="{{ page.baseurl }}/install-gde/install/web/install-web_5-create-admin.html">Step 5. Create Admin account</a>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Searches and pagination in GraphQL
 version: 2.3
@@ -68,7 +67,6 @@ Currently, Magento's GraphQL implementation of pagination uses offsets so that i
 The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
-
 
 ## Sorting instructions
 
@@ -293,7 +291,7 @@ The query returns 8 items.
 
 ### Logical AND and OR search
 
-This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the prodict is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 {% highlight json %}
 {

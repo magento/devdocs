@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 03_Bootstrap
 title: Enable profiling (MAGE_PROFILER)
@@ -41,6 +40,6 @@ Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/in
 
 	Dependency graphs typically display at the bottom of a page. The following figure shows portion of the output:
 
-	<img src="{{ site.baseurl }}common/images/config_depend-graphs.png" width="650px">
+	<img src="{{ site.baseurl }}/common/images/config_depend-graphs.png" width="650px">
 
-You can set the value of `MAGE_PROFILER` in any of the ways discussed in <a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.
+You can set the value of `MAGE_PROFILER` in any of the ways discussed in <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 05_Package
 title: Package a component
@@ -39,7 +38,7 @@ Element | Description
 --- | ---
 `name` | A fully-qualified component name, in the format `<vendor-name>/<component-name>`. All letters must be in lowercase. Use dashes in the `<component-name>` to separate words.
 `type` | For modules, this value must be set to `magento2-module`. Other possible types are `metapackage`, `magento2-theme`, and `magento2-language`.
-`autoload` | Specify necessary information to be loaded, such as [registration.php]({{page.baseurl}}extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.
+`autoload` | Specify necessary information to be loaded, such as [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html). For more information, see <a href="https://getcomposer.org/doc/01-basic-usage.md#autoloading">Autoloading</a> from Composer.
 
 
 {% include php-dev/composer-types.md %}
@@ -165,10 +164,10 @@ Prerequisite: git must be set up on your machine.
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>If you use the Setup Wizard, you must use the Magento Marketplace repository.
-A private repository can be used for development or private code but installation must be done with a command line interface (you can install a  that specifies a private repository only with a command line installation).</p></span>
+A private repository can be used for development or private code but installation must be done with a command line interface (you can install a package that specifies a private repository only with a command line installation).</p></span>
 </div>
 
-1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Toran](https://toranproxy.com/).
+1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Private Packagist](https://packagist.com/).
 2. Create the package in a way similar to the described above.
 3. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
 4. To use the private packaging repository in a project, add the following to your `composer.json`file:
@@ -187,4 +186,5 @@ A private repository can be used for development or private code but installatio
 
 All packages on the private repository can now be referenced within the `require` field.
 
+Refer to the [official documentation](https://packagist.com/features/private-vcs-packages) for more details on how to configure your project to use Private Packagist.
 <!-- ##Submitting your module to Marketplace -->

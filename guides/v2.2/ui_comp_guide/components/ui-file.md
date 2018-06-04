@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: File component
@@ -70,7 +69,7 @@ Extends all `abstract` configuration.
     </td>
     <td>
       <a href=
-      "{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">
+      "{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">
       Links</a> the component's <code>value</code> property with
       provider using the declared in the <code>dataScope</code>
       property of the parent component.

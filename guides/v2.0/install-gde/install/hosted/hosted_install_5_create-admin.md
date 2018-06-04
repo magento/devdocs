@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 03_install
 title: Step 5. Create Admin account
@@ -17,4 +16,4 @@ functional_areas:
 {% include install/web/install-web_5-create-admin.md %}
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/hosted/hosted_install_6_install.html">Step 6. Install</a>
+<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_6_install.html">Step 6. Install</a>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup:
 title: Add a new input form to checkout
@@ -14,7 +13,7 @@ functional_areas:
 
 This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
 
-Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
+Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
 ## Overview
 
@@ -26,9 +25,9 @@ Magento provides the ability to add a custom form to any of the checkout steps: 
 
 ## Prerequisites
 
-[Set Magento to developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
+[Set Magento to developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Create the JS implementation of the form UI component {#component}
 
@@ -256,7 +255,7 @@ The following code sample shows configuration of the form that contains four fie
 ### Dynamically defined forms {#dynamic_form}
 
 Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options
-For such forms, you must implement a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
+For such forms, you must implement a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.
 
 For example:
@@ -282,4 +281,4 @@ $textField = [
 ## Illustration
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:
 
-<img src="{{ site.baseurl }}common/images/how_checkout_form.png" alt="The input form with four fields">
+<img src="{{ site.baseurl }}/common/images/how_checkout_form.png" alt="The input form with four fields">

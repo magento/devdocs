@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: 02_sample
 title: Install using Composer
@@ -18,4 +17,4 @@ functional_areas:
 {% include install/sampledata/sample-data-composer.md %}
 
 ### Install the Magento software
-After sample data installation is complete, install the Magento software using the [Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html).
+After sample data installation is complete, install the Magento software using the [Web Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).

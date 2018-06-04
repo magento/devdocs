@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Protective block
@@ -42,7 +41,7 @@ Unblocking is automated upon resolution of the security risk. The block is remov
 ## Opt out of the protective block
 The protective block is there to protect you against known vulnerabilities in the software you deploy on Magento Commerce.
 
-However, you can opt out of the protective block by adding the following to [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html):
+However, you can opt out of the protective block by adding the following to [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html):
 
     preflight:
        enabled: false

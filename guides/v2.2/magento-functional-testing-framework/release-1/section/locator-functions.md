@@ -1,13 +1,16 @@
 ---
-layout: default
 group: mftf
-title: Use Codeception's Locator Functions in the Magento Functional Testing Framework (release 1)
+title: Use Codeception's Locator Functions in the Magento Functional Testing Framework
 version: 2.2
 github_link: magento-functional-testing-framework/release-1/section/locator-functions.md
 functional_areas:
  - Testing
 redirect_from: guides/v2.2/magento-functional-testing-framework/section/locator-functions.html
+mftf-release: 1.0.0
 ---
+
+_This topic was updated due to the {{page.mftf-release}} MFTF release._
+{: style="text-align: right"}
 
 {%raw%}
 
@@ -23,7 +26,7 @@ When using the `locatorFunction`, you can also omit `Locator::` for code simplic
 ```xml
 <element name="simpleLocatorShorthand" type="button" locatorFunction="contains('label', 'Name')"/>
 ```
-An element's `locatorFunction` can also be parameterized the same way as [parameterized-selectors].
+An element's `locatorFunction` can also be parameterized the same way as [parameterized selectors].
 ```xml
 <element name="simpleLocatorTwoParam" type="button" locatorFunction="contains({{arg1}}, {{arg2}})" parameterized="true"/>
 ```
@@ -50,7 +53,7 @@ No special reference is required, as you are still just referring to an `element
 <!-- Internal -->
 
 [section]: ../section.html
-[parameterized-selectors]: parameterized-selectors.html
+[parameterized selectors]: parameterized-selectors.html
 
 <!-- External -->
 [Locator Functions]: http://codeception.com/docs/reference/Locator

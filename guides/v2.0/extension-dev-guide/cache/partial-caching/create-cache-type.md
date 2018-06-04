@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 08_Partial caching
 title: Create a cache type
@@ -12,6 +11,7 @@ redirect_from:
   - /guides/v2.0/config-guide/cache/caching-cache-type.html
   - /guides/v2.1/config-guide/cache/caching-cache-type.html
   - /guides/v2.2/config-guide/cache/caching-cache-type.html
+  - /guides/v2.3/config-guide/cache/caching-cache-type.html
 ---
 
 A *cache type* enables you to specify what is cached and enables merchants to clear that {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %} using the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} Management page in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.

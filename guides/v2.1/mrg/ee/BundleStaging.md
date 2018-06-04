@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_BundleStaging module
 version: 2.1
@@ -33,4 +32,4 @@ You can extend Bundle updates product listing using  the grid {% glossarytooltip
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

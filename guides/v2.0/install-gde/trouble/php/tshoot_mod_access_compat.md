@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 02_access
 title: 503 (Service Unavailable) errors accessing Magento software in a web browser
@@ -24,7 +23,7 @@ functional_areas:
 
 When you try to access your {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser, you get HTTP 503 (Service Unavailable) errors.
 
-To confirm this issue is not related to <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp">maintenance mode</a>, look in your Apache `error.log` for messages that include:
+To confirm this issue is not related to <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp">maintenance mode</a>, look in your Apache `error.log` for messages that include:
 
 	"Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration". 
 

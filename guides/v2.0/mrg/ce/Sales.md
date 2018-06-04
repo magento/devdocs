@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_Sales module
 version: 2.0
@@ -63,7 +62,7 @@ With this service you can:
     <tr>
       <td><code>items</code></td>
       <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
-      <td>Array of items with a format according to <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
+      <td>Array of items with a format according to <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
       <td>
       {% highlight json %}
       [
@@ -108,7 +107,7 @@ With this service you can:
     <tr>
       <td><code>comment</code></td>
       <td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
-      <td>A format according to <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
+      <td>A format according to <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
       <td>
       {% highlight json %}
       {
@@ -123,7 +122,7 @@ With this service you can:
     <tr>
       <td><code>arguments</code></td>
       <td>Additional arguments. Reserved for use by extension modules.</td>
-      <td>A format according to <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
+      <td>A format according to <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
       <td>&nbsp;</td>
       <td>Optional</td>
       <td><code>null</code></td>
@@ -281,7 +280,7 @@ With this service you can:
       </td>
       <td>
         Array of items with a format according to <a href=
-        "{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+        "{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
@@ -385,7 +384,7 @@ With this service you can:
       </td>
       <td>
         A format according to the <a href=
-        "{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+        "{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
@@ -413,7 +412,7 @@ With this service you can:
       </td>
       <td>
         A format according to <a href=
-        "{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+        "{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
@@ -585,7 +584,7 @@ With the RefundOrder service you can:
       </td>
       <td>
         Array of items with a format according to <a href=
-        "{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+        "{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
@@ -664,7 +663,7 @@ With the RefundOrder service you can:
       </td>
       <td>
         A format according to the <a href=
-        "{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+        "{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
@@ -692,7 +691,7 @@ With the RefundOrder service you can:
       </td>
       <td>
         A format according to <a href=
-        "{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+        "{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
@@ -831,7 +830,7 @@ With the ShipOrder service you can:
     <tr>
       <td><code>items</code></td>
       <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
-      <td>Array of items with a format according to <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
+      <td>Array of items with a format according to <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
       <td>
         {% highlight json %}
         [
@@ -869,7 +868,7 @@ With the ShipOrder service you can:
       <td><code>comment</code></td>
       <td>A comment about a shipment.</td>
       <td>A format according to the
-        <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
+        <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
         interface.</td>
       <td>
       {% highlight json %}
@@ -886,7 +885,7 @@ With the ShipOrder service you can:
       <td> <code>tracks</code> </td>
       <td> A list of track numbers attached to a shipment. </td>
       <td> Array of objects with a format according to
-        <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
+        <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
       <td>
       {% highlight json %}
       [
@@ -905,7 +904,7 @@ With the ShipOrder service you can:
       <td> <code>packages</code> </td>
       <td> A list of packages attached to a shipment. </td>
       <td> Array of objects with a format according to
-        <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
+        <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
       <td>
       {% highlight json %}
       [
@@ -931,7 +930,7 @@ With the ShipOrder service you can:
       <td>Additional arguments for the service. Can be used by
         extension modules.</td>
       <td>A format according to the
-        <a href="{{site.mage2000url}}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
+        <a href="{{ site.mage2000url }}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
         interface.</td>
       <td>&nbsp;</td>
       <td>Optional</td>
@@ -1019,21 +1018,21 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 <!-- LINK DEFINITIONS -->
 
-[`\Magento\Sales\Api\CreditmemoRepositoryInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php
-[`\Magento\Sales\Api\OrderRepositoryInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Api/OrderRepositoryInterface.php
-[`\Magento\Sales\Model\Order\OrderStateResolverInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php
-[`\Magento\Sales\Api\ShipmentRepositoryInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php
-[`\Magento\Sales\Model\Order\CreditmemoDocumentFactory`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php
-[`\Magento\Sales\Model\Order\ShipmentDocumentFactory`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php
-[`\Magento\Sales\Model\Order\Creditmemo\NotifierInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
-[`\Magento\Sales\Model\Order\Shipment\NotifierInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
-[`\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php
-[`\Magento\Sales\Model\Order\Validation\RefundOrderInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php
-[`\Magento\Sales\Model\Order\Validation\ShipOrderInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php
-[`\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php
-[`\Magento\Sales\Api\InvoiceRepositoryInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php
-[`\Magento\Sales\Model\Order\InvoiceDocumentFactory`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php
-[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php
-[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
-[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
-[`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{site.mage2000url}}app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php
+[`\Magento\Sales\Api\CreditmemoRepositoryInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php
+[`\Magento\Sales\Api\OrderRepositoryInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Api/OrderRepositoryInterface.php
+[`\Magento\Sales\Model\Order\OrderStateResolverInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php
+[`\Magento\Sales\Api\ShipmentRepositoryInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php
+[`\Magento\Sales\Model\Order\CreditmemoDocumentFactory`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php
+[`\Magento\Sales\Model\Order\ShipmentDocumentFactory`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php
+[`\Magento\Sales\Model\Order\Creditmemo\NotifierInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
+[`\Magento\Sales\Model\Order\Shipment\NotifierInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
+[`\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php
+[`\Magento\Sales\Model\Order\Validation\RefundOrderInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php
+[`\Magento\Sales\Model\Order\Validation\ShipOrderInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php
+[`\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php
+[`\Magento\Sales\Api\InvoiceRepositoryInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php
+[`\Magento\Sales\Model\Order\InvoiceDocumentFactory`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php
+[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php
+[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
+[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
+[`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{ site.mage2000url }}app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php

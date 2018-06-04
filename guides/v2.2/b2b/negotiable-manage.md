@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Manage negotiable quotes
@@ -44,7 +43,7 @@ Name | Description | Format | Requirements
 `comment`	| The comment to add to the quote.	| string | Optional
 `files` | An array of files to add to the quote | array | Optional
 
-The buyer or the seller can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
+The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
 
 The `files` array contains the following parameters
 
@@ -137,7 +136,7 @@ When the quote is submitted to the buyer:
 
 ### Update a quote
 
-Use the `PUT /V1/negotiableQuote/:quoteId` call to update a quote. See [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html) for use cases.
+Use the `PUT /V1/negotiableQuote/:quoteId` call to update a quote. See [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html) for use cases.
 
 ### Recalculate prices
 
@@ -339,7 +338,7 @@ Not applicable
 {% endhighlight %}
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
-* [Place a negotiable quote order]({{page.baseurl}}b2b/negotiable-order-workflow.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

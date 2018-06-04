@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_hosted
 subgroup: 03_install
 title: Step 3. Web configuration
@@ -17,4 +16,4 @@ functional_areas:
 {% include install/web/install-web_3-web-conf.md %}
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/hosted/hosted_install_4_customize-store.html">Step 4. Customize your store</a>
+<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_4_customize-store.html">Step 4. Customize your store</a>

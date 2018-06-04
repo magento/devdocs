@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 090_configure
 title: Set up PayPal payment methods
@@ -34,7 +33,7 @@ If you do not have an existing PayPal account, you have an option to create a ne
 
 Please note the [PayPal account limitations](#limitations) for further information.
 
-![Log in to PayPal]({{ site.baseurl }}common/images/cloud_paypal-access.png){:width="336px"}
+![Log in to PayPal]({{ site.baseurl }}/common/images/cloud_paypal-access.png){:width="336px"}
 
 ### PayPal limitations {#limitations}
 
@@ -51,7 +50,7 @@ To configure PayPal Express Checkout:
 
 1. Access the Admin console for the environment you need to configure.
 2. In the left-side navigation, select __Stores__ > __Configuration__, then select __Sales__ > __Payment Methods__.
-3. For PayPal, select __Configure__. Configuration fields display in expandable sections for Express Checkout, Adveritise PayPal Credit, and Basic and Advanced settings.
+3. For PayPal, select __Configure__. Configuration fields display in expandable sections for Express Checkout, Advertise PayPal Credit, and Basic and Advanced settings.
 4. Connect your PayPal account. Until the account is connected, the options to enable are disabled. For details on available and supported accounts to connect and limitations, see [PayPal account](#accounts).
 
     * To connect your PayPal live account, click Connect with PayPal and follow the prompts. Any customer purchases using a live PayPal complete and actively charge customers in a live store.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: howdoi
 subgroup: checkout
 title: Customize the list of shipping methods

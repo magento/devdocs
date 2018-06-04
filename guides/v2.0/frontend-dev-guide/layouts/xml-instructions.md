@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: B_Layouts
 title: Layout instructions
@@ -15,7 +14,7 @@ functional_areas:
 
 
 Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-To change the page wireframe, modify the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
+To change the page wireframe, modify the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
 
 Use {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
 
@@ -25,7 +24,7 @@ Use {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instruction
 *  remove a page element
 <p></p>
 
-The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
+The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
 
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
@@ -38,7 +37,7 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
-* <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 *  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
@@ -419,11 +418,12 @@ Example of usage:
         <remove src="my-js.js"/>
         <remove src="Magento_Catalog::js/compare.js" />
 								
-	<!-- Remove external resources -->
+        <!-- Remove external resources -->
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
         <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
+</page>
 {%endhighlight xml%}
 
 <h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
@@ -436,7 +436,7 @@ Used as follows:
 <update handle="{name_of_handle_to_include}"/>
 {%endhighlight xml%}
 
-The specified <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
+The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
 Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments></code></a>.
@@ -467,7 +467,6 @@ Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&
          <td>true|false</td>
          <td>no</td>
       </tr>
-
    </tbody>
 </table>
 
@@ -490,11 +489,11 @@ To pass an argument that is an array use the following construction:
 </argument>
 {%endhighlight xml%}
 
-<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{page.baseurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
+<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
 
 Example:
-Setting a value of <code>css_class</code> in the <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
 
 {%highlight xml%}
 ...
@@ -505,7 +504,7 @@ Setting a value of <code>css_class</code> in the <code><a href="{{site.mage2000u
 {%endhighlight xml%}
 
 
-Using the value of <code>css_class</code> in <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+Using the value of <code>css_class</code> in <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
 
 {%highlight php%}
 ...

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: migration
 subgroup: B_Creating a migration plan
 title: Creating a migration plan
@@ -13,7 +12,7 @@ functional_areas:
   - Tools
 ---
 
-To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will prove helpful.
+To migrate successfully and avoid issues, you need to thoroughly plan and test your migration. We hope the guidelines below will prove helpful.
 
 ## Before you start: Consider upgrade
 
@@ -120,7 +119,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 
 
 <!-- LINK ADDRESSES -->
-[Magento system requirements]: {{page.baseurl}}install-gde/system-requirements-tech.html
+[Magento system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [Magento Marketplace]: https://marketplace.magento.com
-[Technical Specification]: {{page.baseurl}}migration/migration-tool-internal-spec.html
-[Configuration guide]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html
+[Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
+[Configuration guide]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html

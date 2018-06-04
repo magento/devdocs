@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_wiz
 subgroup: Wizard
 title: Step 1. Readiness check
@@ -20,5 +19,5 @@ functional_areas:
 {% include install/web/install-web_1-readiness.md %}
 
 #### Next step
-<a href="{{page.baseurl}}install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
+<a href="{{ page.baseurl }}/install-gde/install/web/install-web_2-db.html">Step 2. Add a database</a>
 

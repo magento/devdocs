@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Indexer optimization
@@ -139,5 +138,5 @@ The indexer table switching mechanism requires additional database storage.
 ### Related topics
 {:.no_toc}
 
-* [Indexing overview]({{page.baseurl}}extension-dev-guide/indexing.html)
-* [Adding a custom indexer]({{page.baseurl}}extension-dev-guide/indexing-custom.html)
+* [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
+* [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

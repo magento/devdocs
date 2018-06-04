@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install2
 subgroup: Getting Started
 title: How do I log in to my Magento server using a terminal, command prompt, or SSH?
@@ -48,7 +47,7 @@ To use a terminal application to remotely access the Magento server:
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.
 
-<img src="{{ site.baseurl }}common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
+<img src="{{ site.baseurl }}/common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

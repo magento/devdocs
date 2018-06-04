@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: vendor/magento/ece-patches
 version: 2.2
@@ -10,11 +9,19 @@ functional_areas:
   - Configuration
 ---
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
+</div>
+
 {% include cloud/ece-patches.md %}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must [update this package](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html) to get these features and changes.
-</div>
+## v102.0.4
+
+### Fixed issues
+
+-   <!--  MAGECLOUD-1567  -->We fixed an issue preventing you from exporting the configuration files using `app:config:dump` more than once.
+
+-   <!--  MAGECLOUD-1582  -->We fixed a Redis session _locking_ issue that caused an _Admin_ login delay.
 
 ## v102.0.3
 

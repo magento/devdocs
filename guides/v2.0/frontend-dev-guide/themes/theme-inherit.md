@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: A_Themes
 title: Theme inheritance
@@ -41,7 +40,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
      <media>
          <preview_image>media/preview.jpg</preview_image>
      </media>
- </theme>
+</theme>
 {% endhighlight xml %}
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -64,20 +63,22 @@ If module context is not defined for a file:
 
 1. Current theme {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
 2. Current theme static files: `<theme_dir>/web/`
-2. Ancestor's static files, recursively, until a theme with no parent is reached:
+3. Ancestor's static files, recursively, until a theme with no parent is reached:
 - `<parent_theme_dir>/web/i18n/<locale>`
 - `<parent_theme_dir>/web/`
-3. Library static view files: `lib/web/`
+4. Library static view files: `lib/web/`
 
 If module context is defined for a file:
 
-1. Current theme and current locale module static files:`<theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+1. Current theme and current locale module static files:`<theme_dir>/<Namespace>_<Module>/web/i18n/<locale>/`
 2. Current theme module static files `<theme_dir>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
-- `<parent_theme_dir>/web/i18n/<locale>/<Namespace>_<Module>`
+- `<parent_theme_dir>/<Namespace>_<Module>/web/i18n/<locale>/`
 - `<parent_theme_dir>/<Namespace>_<Module>/web/`
-3. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
-4. Module static view files for the `base` area: `<module_dir>/view/base/web/`
+4. Module static view files for the current locale and `frontend` area: `<module_dir>/view/frontend/web/i18n/<locale>/`
+5. Module static view files for the current locale and `base` area: `<module_dir>/view/base/web/i18n/<locale>/`
+6. Module static view files for the `frontend` area: `<module_dir>/view/frontend/web/`
+7. Module static view files for the `base` area: `<module_dir>/view/base/web/`
 
 
 <u>Example</u>
@@ -90,13 +91,13 @@ Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a 
 
 In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 
-<img src="{{ site.baseurl }}common/images/inh-background1.jpg"/>
+<img src="{{ site.baseurl }}/common/images/inh-background1.jpg"/>
 
 OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
 
-Once the Orange Winter theme is [applied]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
+Once the Orange Winter theme is [applied]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html), the new holiday image overrides the one from Orange, so on {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} the holiday background is visible.
 
-<img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
+<img src="{{ site.baseurl }}/common/images/inh-background2.jpg"/>
 
 
 ## Override templates {#theme-inherit-templates}
@@ -114,7 +115,7 @@ For example, if you must override the `<Magento_Catalog_module_dir>/view/fronten
 
 <u>Example</u>
 By default, according to the module template, in the mini {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} products are listed under the Go to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} button:
-<p><img src="{{ site.baseurl }}common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button "></p>
+<p><img src="{{ site.baseurl }}/common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button"/></p>
 
 The order is defined in the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` module template. The Blank theme does not override this template.
 OrangeCo decided they want the product list to be displayed before the Go to Checkout button.
@@ -122,8 +123,8 @@ To do this, they need to add an overriding template for the corresponding module
 `app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml`
 Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
 Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
-<p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
-You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{page.baseurl}}frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
+<p><img src="{{ site.baseurl }}/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button"/></p>
+You can find out what exactly code changes are required to perform this and other tasks in the <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates topic</a>.
 
 ## Extend layouts {#theme-inherit-layout}
 
@@ -155,7 +156,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%endhighlight xml%}
 
 
-For more information about extending layout refer to the <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
 ## Override layouts {#theme-inherit-layout-over}
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Negotiable quote checkout
@@ -23,7 +22,7 @@ The same rule is applied when the quote has the proposed shipping price and the 
 
 The following diagram illustrates the workflow for {{site.data.var.b2b}} negotiable quote checkouts:
 
-![Checkout process]({{page.baseurl}}b2b/images/quote-checkout-process.png)
+![Checkout process]({{ page.baseurl }}/b2b/images/quote-checkout-process.png)
 
 ## Manage shipping addresses
 
@@ -967,7 +966,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{page.baseurl}}b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html)
-* [Place a negotiable quote order]({{page.baseurl}}b2b/negotiable-order-workflow.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

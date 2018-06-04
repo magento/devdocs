@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 30_B2B
 title: Magento B2B modules
