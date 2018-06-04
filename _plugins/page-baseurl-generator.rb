@@ -1,4 +1,4 @@
-# Author: jcalcabenmagento.com
+# Author: jcalcaben@magento.com
 #
 # This custom plugin dynamically sets and injects the page.baseurl variable
 # based on the page's destination.
