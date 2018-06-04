@@ -28,26 +28,15 @@ To create a patch file:
 
 1. Append `.patch` or `.diff` to the commit URL. Use `.diff` for a smaller file size. For example:
 
-   [https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch){:target="\_blank"}
+   [https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.diff](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.diff){:target="\_blank"}
 
-1. Save the page as a file in the `patches/composer` directory. For example, `github-issue-6474.patch`.
+1. Save the page as a file in the `patches/composer` directory. For example, `github-issue-6474.diff`.
 
 1. Edit the file and remove `vendor/<VENDOR>/<PACKAGE>` from all paths so that they are relative to the `vendor/<VENDOR>/<PACKAGE>` directory.
 
-    The following example shows the previously mentioned patch file after removing all instances of `app/code/Magento/Payment`:
+    The following example shows the previously mentioned diff file after removing all instances of `app/code/Magento/Payment`:
 
     ```text
-    From 2d31571f1bacd11aa2ec795180abf682e0e9aede Mon Sep 17 00:00:00 2001
-    From: Ievgen Sentiabov <isentiabov@magento.com>
-    Date: Wed, 31 Aug 2016 18:46:44 +0300
-    Subject: [PATCH] MAGETWO-56934: Checkout page freezes when ordering with
-     Authorize.net with invalid credit card
-
-     - Added fail() method call
-    ---
-     view/frontend/web/js/view/payment/iframe.js | 1 +
-     1 file changed, 1 insertion(+)
-
     diff --git a/view/frontend/web/js/view/payment/iframe.js b/view/frontend/web/js/view/payment/iframe.js
     index c8a6fef58d31..7d01c195791e 100644
     --- a/view/frontend/web/js/view/payment/iframe.js
@@ -82,7 +71,7 @@ To apply a patch:
 
     - **Module**: _"magento/module-payment"_
     - **Title**: _"MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card"_
-    - **Path to patch**: _"patches/composer/github-issue-6474.patch"_
+    - **Path to patch**: _"patches/composer/github-issue-6474.diff"_
 
     For example:
 
@@ -91,7 +80,7 @@ To apply a patch:
         "composer-exit-on-patch-failure": true,
         "patches": {
             "magento/module-payment": {
-                "MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card": "patches/composer/github-issue-6474.patch"
+                "MAGETWO-56934: Checkout page freezes when ordering with Authorize.net with invalid credit card": "patches/composer/github-issue-6474.diff"
             }
         }
     }
