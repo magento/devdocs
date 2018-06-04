@@ -8,10 +8,17 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## May 2018
+## June 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+[These changes](https://devdocs.magento.com/guides/v2.1/config-guide/multi-site/ms_nginx.html) show users how to simplify Nginx configs to host multiple Magento websites and store views with one virtual host file. It allows to that Nginx configuration to stay much cleaner, and more maintainable.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 1
+
+{% collapsibleh2 May 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Contribution with fix to the custom entry point script in [MAGE_DIRS](https://devdocs.magento.com/guides/v2.1/config-guide/bootstrap/mage-dirs.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|May 29
 Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) to include functionality contributed by community members.|2.3.x|Technical changes|May 23
 Added [Handling a REST API response](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html#rest-response) to the MFTF Metada.|2.2.x, 2.3.x|Technical changes|May 22
 Added descriptions for the [new `magento config:set lock-env` and `lock-config` options](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).|2.2.x|Technical changes|May 22
@@ -35,7 +42,7 @@ Describes the highlights, fixed issues, and community contributions for Magento 
 [Magento 2.x GDPR compliance](http://devdocs.magento.com/guides/v2.2/architecture/gdpr/magento-2x.html)<br/>[Magento 1.x GDPR compliance](http://devdocs.magento.com/guides/v2.2/architecture/gdpr/magento-1x.html)|2.x|New topic|May 01
 Added the [development environment recommendations]({{ page.baseurl }}/performance-best-practices/development-environment.html).|2.1.x, 2.2.x, 2.3.x|New topic|May 01
 Documented the [Redis Sentinel settings](http://devdocs.magento.com/guides/v2.2/config-guide/redis/redis-session.html).|2.3.x|Technical changes|May 01
-
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 April 2018 %}
 
