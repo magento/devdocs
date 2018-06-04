@@ -1,26 +1,13 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
 title: Magento Commerce 2.2.0 Release Notes
 menu_title: Magento Commerce 2.2.0 Release Notes
-menu_order: 299
-level3_menu_node:
-level3_subgroup:
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.0EE.md
-redirect_from:
-  - /guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html
-  - /guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html
-  - /guides/v2.2/release-notes/release-notes-2-2-RC3-EE.html
-  - /guides/v2.2/release-notes/release-candidate/install.html
-  - /guides/v2.2/release-notes/release-candidate/quick-start.html
-  - /guides/v2.2/release-notes/release-candidate/submit-PRs.html
-  - /guides/v2.2/release-notes/release-candidate/submit-issues.html
-  - /guides/v2.2/release-notes/release-candidate/testing-environments.html
 ---
 
-*Release notes updated October 10.* 
+*Release notes updated October 10, 2017.* 
 
 
 We are pleased to present Magento Commerce 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
@@ -40,7 +27,7 @@ Magento Commerce 2.2.0 includes a wealth of new, exciting features, and hundreds
 
 * **Integrated Signifyd fraud protection**. You can learn more about this fraud protection service, which can help merchants eliminate liability for any losses or fees from fraudulent orders, in [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html).
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilence against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacks.
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of unserialize calls and protection of this functionality to increase resilience against dangerous code execution attacks. We have also continued to review and improve our protection against Cross-Site Scripting (XSS) attacks.
 
 * **Upgraded technology stack.**  We've dropped support for PHP 5.6, Varnish 3, and Solr.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All third-party libraries have been upgraded to the latest stable version. Note: Although we’ve dropped support for Solr with this release, Solr code will remain in the Magento code base until a later release.
 
@@ -211,7 +198,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 61431-->* The Magento command-line interface now sets the correct exit codes when an upgrade task fails. [GitHub-7576](https://github.com/magento/magento2/issues/7576)
 
-<!--- 58849-->* You can now disable the Review module without incurring an error in the Product Edit page. Previously, if you tired to edit a product after disabling the review module, Magento displayed this error: "Something went wrong". [GitHub-6704](https://github.com/magento/magento2/issues/6704)
+<!--- 58849-->* You can now disable the Review module without incurring an error in the Product Edit page. Previously, if you tried to edit a product after disabling the review module, Magento displayed this error: "Something went wrong". [GitHub-6704](https://github.com/magento/magento2/issues/6704)
 
 <!--- 56816-->* You can now use Component Manager to enable a previously disabled module. Previously, when you ran `bin/magento module:disable Magento_AnyModule`, then tried to re-enable  that module, Magento fails to enable it and any previously enabled cache types, and module installation fails. [GitHub-6078](https://github.com/magento/magento2/issues/6078) 
 
@@ -491,7 +478,7 @@ This release contains hundreds of fixes and enhancements.
 <!---57044-->* A price change to a custom option affects only that option. Previously, changing the price of a custom option also affected the price of related products. [GitHub-4588](https://github.com/magento/magento2/issues/4588),  [GitHub-5798](https://github.com/magento/magento2/issues/5798), [GitHub-6041](https://github.com/magento/magento2/issues/6041), [GitHub-6097](https://github.com/magento/magento2/issues/6097)
 
 
-<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} can be sold (that is, is in a saleable state)).
+<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} can be sold (that is, is in a salable state)).
 
 
 <!--- 65247 -->* Query optimizations have improved the speed of configurable product price calculation.
@@ -608,7 +595,7 @@ This release contains hundreds of fixes and enhancements.
 <!--- 69674 -->* JavaScript mixins now work when you add a `urlArgs` argument to a `require_js` file. *Fix submitted by community member <a href="https://github.com/thelettuce" target="_blank">James Reed</a> in pull request <a href="https://github.com/magento/magento2/pull/9665" target="_blank">9665</a>.*
 
 #### Session framework
-<!--- 57118 -->* The Magento storefront and Admin panel no longer share form keys. Previously if a user were navigating both a storefront and in the Admin simultaneously,  he would be unexpectedly redirected to the Admin dashboard. [GitHub-6201](https://github.com/magento/magento2/issues/6201)
+<!--- 57118 -->* The Magento storefront and Admin panel no longer share form keys. Previously, if a user were navigating both a storefront and  the Admin simultaneously,  he would be unexpectedly redirected to the Admin dashboard. [GitHub-6201](https://github.com/magento/magento2/issues/6201)
 
 
 #### Zend framework
@@ -1328,7 +1315,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!--- 62662-->* Magento now passes the correct object to the  `\Magento\Shipping\Model\Shipping::collectRatesByAddress` method. [GitHub-7309](https://github.com/magento/magento2/issues/7309)
 
-<!--- 60523-->* Magento now displays the checkout page or cart as expected when you try to edit a virtual item from the multi shipping page. Previously, Magento displayed a 404 error page instead of redirecting to checkout age or shopping cart. [GitHub-7257](https://github.com/magento/magento2/issues/7257)
+<!--- 60523-->* Magento now displays the checkout page or cart as expected when you try to edit a virtual item from the multi shipping page. Previously, Magento displayed a 404 error page instead of redirecting to the checkout page or shopping cart. [GitHub-7257](https://github.com/magento/magento2/issues/7257)
 
 <!--- 58730-->* Magento now displays UPS rates on the initial load of the checkout page. Previously, although shipping rates showed up properly at the cart level, the payment page did not load the correct shipping options. [GitHub-6564](https://github.com/magento/magento2/issues/6564)
 
@@ -1518,7 +1505,8 @@ This release includes substantial improvements to Magento caching, image process
 <!---58362-->* We've changed the behavior of the Varnish X-header. Only the parent (meta) SKU is now included in the list -- not the SKUs of all child products. [GitHub-6401](https://github.com/magento/magento2/issues/6401)
 
 
-<!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member <a href="https://github.com/bka" target="_blank">Bernhard</a> in pull request <a href="https://github.com/magento/magento2/pull/9711" target="_blank">9711</a>.*
+<!--- 69372-->* Varnish no longer caches Cookie Restriction Mode Overlay. *Fix submitted by community member [Bernhard](https://github.com/bka) in pull request 9711.* 
+
 
 * Varnish now supports `grace` and `saint` mode to ensure that customers always see cached pages.
 
@@ -1583,18 +1571,12 @@ This release includes substantial improvements to Magento caching, image process
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
-
-
-
-For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
+See [How to get the Magento software](https://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
-
-{% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
