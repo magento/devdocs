@@ -31,7 +31,7 @@ The following diagram represents directory structure of Data Migration Tool:
 <pre>
 
 ├── etc                                    --- all configuration files
-│   ├── opensource-to-opensourc            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
+│   ├── opensource-to-opensource            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 │   │   ├── 1.9.1.1
 │   │   │   ├── config.xml.dist
 │   │   │   └── map.xml.dist
