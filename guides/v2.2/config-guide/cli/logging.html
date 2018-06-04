@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Export the configuration | Magento 2 Developer Documentation</title>
+	<title>Logging | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -57,7 +57,7 @@
 
 
 
-	<link rel="canonical" href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">
+	<link rel="canonical" href="/guides/v2.2/config-guide/cli/logging.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -97,13 +97,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Magento 2.0</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/config-guide/cli/logging.html">Magento 2.0</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Magento 2.1</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/config-guide/cli/logging.html">Magento 2.1</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Magento 2.2</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/config-guide/cli/logging.html">Magento 2.2</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Magento 2.3 Alpha</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/config-guide/cli/logging.html">Magento 2.3 Alpha</a></li>
 	
   </ul>
 
@@ -652,7 +652,7 @@
         
         
         
-        <li class="nav-level2  " id="logging">
+        <li class="nav-level2 active " id="logging">
 
             
 
@@ -778,7 +778,7 @@
 
                 
                 
-                <li class="nav-level3 active " id="export-the-configuration">
+                <li class="nav-level3  " id="export-the-configuration">
                     
 
                     
@@ -1866,46 +1866,82 @@
 
 	
 
-	<h1 class="page-heading">Export the configuration</h1>
+	<h1 class="page-heading">Logging</h1>
 
   
 
 
 </section>
 
-			<p>In Magento 2.2 and later <a href="/guides/v2.2/config-guide/deployment/pipeline/">pipeline deployment model</a>, you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:</p>
+			<div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento app:config:dump
-</code></pre></div></div>
+  <p>In addition to the command arguments described in this topic, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<p>As a result of the command execution, the following configuration files are updated:</p>
+  <div class="bs-callout bs-callout-warning">
+    <p>Run all Magento CLI commands as the <a href="/guides/v2.2/config-guide/cli/config-cli.html#config-install-cli-first">Magento file system owner</a>.</p>
+  </div>
 
-<ul>
-  <li><a href="#app-etc-config-php"><code class="highlighter-rouge">app/etc/config.php</code></a></li>
-  <li><a href="#app-etc-env-php"><code class="highlighter-rouge">app/etc/env.php</code></a></li>
-</ul>
+  <h2 id="debug-logging">Debug logging</h2>
 
-<h2 id="app-etc-config-php"><code class="highlighter-rouge">app/etc/config.php</code></h2>
+  <p>By default, Magento writes debug logs to the <code class="highlighter-rouge">var/log/debug.log</code> file inside the Magento application directory.</p>
 
-<p>This is the shared configuration file for all your Magento instances.
-Include this in your source control so it can be shared between the development, build, and production systems.</p>
+  <p>To enable debug logging:</p>
 
-<p>See: <a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a></p>
+  <ol>
+    <li>
+      <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/debug/debug_logging</code> database value to <code class="highlighter-rouge">1</code>.</p>
 
-<h2 id="app-etc-env-php"><code class="highlighter-rouge">app/etc/env.php</code></h2>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/debug/debug_logging 1
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Flush the cache.</p>
 
-<p>This is the environment-specific configuration file.
-It contains sensitive and system-specific settings for individual environments.</p>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>      </div>
+    </li>
+  </ol>
 
-<p>Do <em>not</em> include this file in source control.</p>
+  <p>To disable debug logging:</p>
 
-<p>See: <a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a></p>
+  <ol>
+    <li>
+      <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/debug/debug_logging</code> database value to <code class="highlighter-rouge">0</code>.</p>
 
-<h3 id="sensitive-or-system-specific-settings">Sensitive or system-specific settings</h3>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/debug/debug_logging 0
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Flush the cache.</p>
 
-<p>To set the sensitive settings written to <code class="highlighter-rouge">env.php</code>, use the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html"><code class="highlighter-rouge">bin/magento config:sensitive:set</code></a> command.</p>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>      </div>
+    </li>
+  </ol>
 
-<p>Configuration values are specified as either sensitive or system-specific by referencing <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Config/Model/Config/TypePool.php" target="\_blank"><code class="highlighter-rouge">Magento\Config\Model\Config\TypePool</code></a> in the module’s <a href="/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific"><code class="highlighter-rouge">di.xml</code></a> file.</p>
+  <h2 id="database-logging">Database logging</h2>
+
+  <p>By default, Magento writes database activity logs to the <code class="highlighter-rouge">var/debug/db.log</code> file inside the Magento application directory.</p>
+
+  <p>To enable database logging:</p>
+
+  <ol>
+    <li>
+      <p>Use the <code class="highlighter-rouge">dev:query-log</code> command to enable or disable database logging.</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:enable
+</code></pre></div>      </div>
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:disable
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Flush the cache.</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>      </div>
+    </li>
+  </ol>
+</div>
 
 			
 		</div>
@@ -1917,7 +1953,7 @@ It contains sensitive and system-specific settings for individual environments.<
   
     
     <div class="github-link">
-      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.md" target="_blank">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/config-guide/cli/logging.md" target="_blank">
         Edit this page on GitHub
       </a>
     </div>
@@ -1925,7 +1961,7 @@ It contains sensitive and system-specific settings for individual environments.<
   
     
     <div class="new-issue">
-      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html" target="_blank">Give us feedback</a>
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.2/config-guide/cli/logging.html" target="_blank">Give us feedback</a>
     </div>
     
   
