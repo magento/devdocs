@@ -4,7 +4,6 @@ subgroup: 03_Build
 title: Create your component file structure
 version: 2.3
 github_link: extension-dev-guide/build/module-file-structure.md
-redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
 
 In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.
@@ -15,7 +14,7 @@ In this section, we go over the different file structures for the component type
 ### Module file structure
 A typical file structure for a Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can look like the following:
 
-![Module File Structure]({{ site.baseurl }}/common/images/pdg-config-file-structure.png){:width="300px"}
+![Module File Structure](../images/pdg-config-file-structure.png){:width="300px"}
 
 #### Common directories
 {:.no_toc}
@@ -32,6 +31,7 @@ Following are some common module directories:
 Additional folders can be added for configuration and other ancillary functions for items like [plugin-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html), localization, and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
+* `Console`: contains files for creating CLI commands.
 * `i18n`: contains localization files.
 * `Plugin`: contains any needed <a href="{{ page.baseurl }}/extension-dev-guide/plugins.html">plug-ins</a>.
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
