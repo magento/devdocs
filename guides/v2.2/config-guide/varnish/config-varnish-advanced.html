@@ -1873,7 +1873,8 @@
 
 </section>
 
-			<p>Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the <code class="highlighter-rouge">default.vcl</code> file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
+			<p>Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the <code class="highlighter-rouge">default.vcl</code> file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+.</p>
 
 <p>See the <a href="https://www.varnish-cache.org/docs/4.1/reference/index.html">Varnish Reference Manual</a> for details about using the Varnish Configuration Language.</p>
 
@@ -1890,7 +1891,8 @@
     </span><span class="err">.threshold</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">5</span><span class="err">;</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<p>Every 5 seconds, this health check calls the <code class="highlighter-rouge">pub/health_check.php</code> script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> is considered unhealthy.</p>
+<p>Every 5 seconds, this health check calls the <code class="highlighter-rouge">pub/health_check.php</code> script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
+ is considered unhealthy.</p>
 
 <p>The <code class="highlighter-rouge">health_check.php</code> script is located in the <code class="highlighter-rouge">pub</code> directory. If your Magento root directory is <code class="highlighter-rouge">pub</code>, then be sure to change the path in the <code class="highlighter-rouge">url</code> parameter from <code class="highlighter-rouge">/pub/health_check.php</code> to <code class="highlighter-rouge">health_check.php</code>.</p>
 
@@ -1898,7 +1900,8 @@
 
 <h2 id="grace">Grace mode</h2>
 
-<p>Grace mode enables Varnish to keep an object in <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> beyond its TTL value. Varnish can then serve the expired (stale) content while it fetches a new version. This improves the flow of traffic and decreases load times. It’s used in the following situations:</p>
+<p>Grace mode enables Varnish to keep an object in   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+ beyond its TTL value. Varnish can then serve the expired (stale) content while it fetches a new version. This improves the flow of traffic and decreases load times. It’s used in the following situations:</p>
 
 <ul>
   <li>When the Magento backend is healthy, but a request is taking longer than normal</li>
@@ -1909,7 +1912,8 @@
 
 <h3 id="grace-healthy">When the Magento backend is healthy</h3>
 
-<p>When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> as described in <a href="/guides/v2.2/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>. If the grace period hasn’t expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.</p>
+<p>When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+ as described in <a href="/guides/v2.2/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>. If the grace period hasn’t expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.</p>
 
 <p>The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).</p>
 
@@ -1932,7 +1936,8 @@
 
 <p>On all other machines, the Magento instance must have access the primary machine’s mySQL database. The secondary machines should also have access to the files of the primary Magento instance.</p>
 
-<p>Alternatively, <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> versioning can be turned off on all machines. This can be accessed from the Admin under <strong>Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Static Files Settings &gt; Sign Static Files</strong> = <strong>No</strong>.</p>
+<p>Alternatively,   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+ versioning can be turned off on all machines. This can be accessed from the Admin under <strong>Stores &gt; Configuration &gt; Advanced &gt; Developer &gt; Static Files Settings &gt; Sign Static Files</strong> = <strong>No</strong>.</p>
 
 <p>Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to <strong>System &gt; Cache Management</strong> and click <strong>Flush Magento Cache</strong>. You can also run the following command to clear the cache:</p>
 
@@ -1948,7 +1953,8 @@
   <li><a href="https://www.varnish-cache.org/docs/4.0/installation/install.html">Installing Varnish 4.0</a></li>
 </ul>
 
-<p>After you’ve recompiled, you can install the Saint mode <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>. In general, follow these steps:</p>
+<p>After you’ve recompiled, you can install the Saint mode   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+. In general, follow these steps:</p>
 
 <ol>
 <li><p>Obtain the source code from <a href="https://github.com/varnish/varnish-modules">Varnish modules</a> . Clone the git version (master version) since the 0.9.x versions contain a source code error.</p></li>
@@ -1969,7 +1975,9 @@
 
 <p>The following code example shows the code that must be added to your VCL file to enable saint mode. Place the <code class="highlighter-rouge">import</code> statements and <code class="highlighter-rouge">backend</code> definitions at the top of the file.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">import</span> <span class="n">saintmode</span><span class="p">;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show/hide </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">import</span> <span class="n">saintmode</span><span class="p">;</span>
 <span class="n">import</span> <span class="n">directors</span><span class="p">;</span>
 
 <span class="n">backend</span> <span class="n">default1</span> <span class="p">{</span>
@@ -2029,7 +2037,8 @@
 </span>        <span class="k">return</span> <span class="p">(</span><span class="n">retry</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h4 id="final-step">Final step</h4>
 <p><a href="/guides/v2.2/config-guide/varnish/config-varnish-final.html">Final verification</a></p>

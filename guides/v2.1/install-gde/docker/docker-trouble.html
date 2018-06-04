@@ -310,7 +310,9 @@
 
 <p>This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.</p>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot install Magento </h2><div class="collapsible-content"><p>This section discusses errors that prevent you from installing DevBox.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: Cannot install Magento </h2>
+    <div class="collapsible-content"><p>This section discusses errors that prevent you from installing DevBox.</p>
 
 <h3 id="directory-not-empty">Directory not empty</h3>
 <p>The following error message might be displayed:</p>
@@ -341,17 +343,23 @@ SQLSTATE[HY000] [2002] Connection refused
 </code></pre></div></div>
 
 <p><em>Solution</em>: Run the Terminal (Mac OS) as <code class="highlighter-rouge">root</code> or run DOS Command Prompt (Windows) as Administrator.</p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error displays in the Magento Admin </h2><div class="collapsible-content"><p>After you log in to the Magento Admin, the following notification error might display:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: Error displays in the Magento Admin </h2>
+    <div class="collapsible-content"><p>After you log in to the Magento Admin, the following notification error might display:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
 </code></pre></div></div>
 
 <p>This error results from the fact that the Magento application is running in developer mode. The message doesn’t indicate any issues. You can ignore it and develop as normal.</p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: 404 error accessing the Magento Admin, storefront is accessible </h2><div class="collapsible-content"><p>When you access the Magento Admin, the following error displays in the browser:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: 404 error accessing the Magento Admin, storefront is accessible </h2>
+    <div class="collapsible-content"><p>When you access the Magento Admin, the following error displays in the browser:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The requested URL /admin was not found on this server.
 </code></pre></div></div>
@@ -359,9 +367,12 @@ SQLSTATE[HY000] [2002] Connection refused
 <p>However, you can access the Magento storefront.</p>
 
 <p><em>Solution</em>: The most likely cause of this error is missing <code class="highlighter-rouge">.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.1/install-gde/docker/docker-over.html">How to download Magento code</a></p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot access the Magento storefront or Admin </h2><div class="collapsible-content"><p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: Cannot access the Magento storefront or Admin </h2>
+    <div class="collapsible-content"><p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
 
 <ol>
   <li>
@@ -391,9 +402,12 @@ SQLSTATE[HY000] [2002] Connection refused
     <p>When you’re finished, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Errors display on Windows </h2><div class="collapsible-content"><p>During installation, errors similar to the following display in your primary command window:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: Errors display on Windows </h2>
+    <div class="collapsible-content"><p>During installation, errors similar to the following display in your primary command window:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
 ERROR: Encountered errors while bringing up the project.
@@ -407,9 +421,12 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 </code></pre></div></div>
 
 <p><em>Solution</em>: <a href="/guides/v2.1/install-gde/docker/docker-ref.html#devbox-docker-file-share">Set up file sharing</a>.</p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error during installation </h2><div class="collapsible-content"><p>During DevBox installation, the following error might display:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: Error during installation </h2>
+    <div class="collapsible-content"><p>During DevBox installation, the following error might display:</p>
 
 <pre class="no-copy">ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network</pre>
 
@@ -433,9 +450,12 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 </ul>
 
 <p>For more information, see the <a href="https://github.com/docker/libnetwork/issues/779" target="_blank">Docker GitHub issue</a>.</p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: You want to start over </h2><div class="collapsible-content"><p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Problem: You want to start over </h2>
+    <div class="collapsible-content"><p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
 
 <ol>
   <li>
@@ -469,7 +489,9 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
     </ul>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
+
 
 			
 		</div>

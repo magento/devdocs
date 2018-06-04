@@ -1289,7 +1289,8 @@
 
 			<h2 id="overview">Overview</h2>
 
-<p>Factories are service classes that instantiate non-injectable classes, that is, models that represent a database <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>.
+<p>Factories are service classes that instantiate non-injectable classes, that is, models that represent a database   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
+.
 They create a layer of abstraction between the <code class="highlighter-rouge">ObjectManager</code> and business code.</p>
 
 <h2 id="relationship-to-objectmanager">Relationship to <code class="highlighter-rouge">ObjectManager</code></h2>
@@ -1297,7 +1298,8 @@ They create a layer of abstraction between the <code class="highlighter-rouge">O
 <p>The <code class="highlighter-rouge">Magento\Framework\ObjectManager</code> is the class responsible for instantiating objects in the Magento application.
 Magento prohibits depending on and directly using the <code class="highlighter-rouge">ObjectManager</code> in your code.</p>
 
-<p>Factories are an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> to this rule because they require the <code class="highlighter-rouge">ObjectManager</code> to instantiate specific models.</p>
+<p>Factories are an   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
+ to this rule because they require the <code class="highlighter-rouge">ObjectManager</code> to instantiate specific models.</p>
 
 <p>The following example illustrates the relationship between a simple factory and the <code class="highlighter-rouge">ObjectManager</code>:</p>
 
@@ -1370,7 +1372,8 @@ When you reference a factory in a class constructor, Magento’s <a href="/guide
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">"Magento\CatalogInventory\Api\Data\StockItemInterface"</span> <span class="na">type=</span><span class="s">"Magento\CatalogInventory\Model\Stock\Item"</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p>It instructs Magento to use the specific <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Model/Stock/Item.php" target="_blank"><code class="highlighter-rouge">Item</code></a> class wherever the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php" target="_blank"><code class="highlighter-rouge">StockItemInterface</code></a> is used.
-When a class in that <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> includes the factory <code class="highlighter-rouge">StockItemInterfaceFactory</code> as a dependency, Magento generates a factory that is capable of creating the specific <code class="highlighter-rouge">Item</code> objects.</p>
+When a class in that   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ includes the factory <code class="highlighter-rouge">StockItemInterfaceFactory</code> as a dependency, Magento generates a factory that is capable of creating the specific <code class="highlighter-rouge">Item</code> objects.</p>
 
 			
 		</div>

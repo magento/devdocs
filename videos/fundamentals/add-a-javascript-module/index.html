@@ -404,25 +404,31 @@ $ mkdir app/code/Learning/Js
 
 <p><code class="highlighter-rouge">app/code/Learning/Js/registration.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show source code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
     <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
     <span class="s1">'Learning_Js'</span><span class="p">,</span>
     <span class="nx">__DIR__</span>
 <span class="p">);</span>
   </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 
 <p><code class="highlighter-rouge">app/code/Learning/Js/etc/module.xml</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code  </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show source code  </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Module/etc/module.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Learning_Js"</span> <span class="na">setup_version=</span><span class="s">"0.0.1"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/config&gt;</span>
   </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-2-create-a-requirejs-configjs-and-a-javascript-module-file">Step 2: Create a requirejs-config.js and a JavaScript module file</h2>
 
@@ -435,7 +441,9 @@ $ mkdir app/code/Learning/Js/view/fronted
 
 <p>Add the file <code class="highlighter-rouge">app/code/Learning/Js/view/frontend/requirejs-config.js</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show source code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">map</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'*'</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">hello</span><span class="p">:</span>           <span class="s1">'Learning_Js/js/hello'</span><span class="p">,</span>
@@ -443,7 +451,8 @@ $ mkdir app/code/Learning/Js/view/fronted
     <span class="p">}</span>
 <span class="p">};</span>
   </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p>Then add the JavaScript module:</p>
 
@@ -453,7 +462,9 @@ $ mkdir app/code/Learning/Js/view/frontend/web/js
 
 <p>And finally, add the file <code class="highlighter-rouge">app/code/Learning/Js/view/frontend/web/js/hello.js</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show source code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="s2">"jquery"</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
         <span class="s2">"use strict"</span><span class="p">;</span>
@@ -463,7 +474,8 @@ $ mkdir app/code/Learning/Js/view/frontend/web/js
     <span class="p">}</span>
 <span class="p">)</span>
   </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-3-create-a-layout-update-to-add-a-template-that-will-enable-the-javascript-module">Step 3: Create a layout update to add a template that will enable the JavaScript module</h2>
 
@@ -476,7 +488,9 @@ $ mkdir app/code/Learning/Js/view/frontend/layout
 
 <p>And the add the file <code class="highlighter-rouge">catalog_product_view.xml</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show source code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="nt">&lt;page</span> <span class="na">layout=</span><span class="s">"1column"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"content"</span><span class="nt">&gt;</span>
@@ -486,7 +500,8 @@ $ mkdir app/code/Learning/Js/view/frontend/layout
 <span class="nt">&lt;/page&gt;</span>
 
   </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-4-create-a-template-file">Step 4: Create a template file</h2>
 
@@ -498,11 +513,14 @@ $ mkdir app/code/Learning/Js/view/frontend/templates
 
 <p>In the templates directory, add the file <code class="highlighter-rouge">app/code/Learning/Js/view/frontend/templates/hello.phtml</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show source code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">data-mage-init=</span><span class="s">'{"hello": {"message": "HELLO WORLD!"}}'</span><span class="nt">&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show source code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">data-mage-init=</span><span class="s">'{"hello": {"message": "HELLO WORLD!"}}'</span><span class="nt">&gt;</span>
     Content
 <span class="nt">&lt;/div&gt;</span>
   </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p>This code enables our module.
 It may look a little strange to those who have used requirejs before.

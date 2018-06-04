@@ -1166,7 +1166,9 @@
 
 			<h2 id="preproc_over">What's in this topic</h2>
 
-<p>The topic describes how stylesheets are preprocessed and compiled to <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> in the Magento application. It provides the theoretical background a <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> developer needs to debug stylesheets effectively.</p>
+<p>The topic describes how stylesheets are preprocessed and compiled to   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
+ in the Magento application. It provides the theoretical background a   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
+ developer needs to debug stylesheets effectively.</p>
 
 <h2 id="css_preprocess_terms">Terms used</h2>
 <table>
@@ -1229,7 +1231,9 @@ When your application is not in the production mode, you can set Magento to comp
 <li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
 <li>To save the settings, click <b>Save Config</b>.</li>
 
-<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> scope first, and then to the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>. Change the option to match the default config if it is different.</li>
+<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+ scope first, and then to the   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
+. Change the option to match the default config if it is different.</li>
 </ol>
 
 <h3 id="server-side">Server-side LESS compilation</h3>
@@ -1239,12 +1243,14 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 <ol>
 <li>Checks if the requested <code>.css</code> file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
-<li>Changes the <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> of the requested file to <code>.less</code> and tries to find the file using the <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
+<li>Changes the   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+ of the requested file to <code>.less</code> and tries to find the file using the <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
 <li>Reads <code>.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code>@magento_import</code></a> and default LESS <code>@import</code> directives.</li>
 
 <li>Resolves all paths in <code>.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to <code>var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
 
-<li id="compile_last">All source files are passed to the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> LESS compiler. The resulting compiled <code>.css</code> files are published to <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code>.</li>
+<li id="compile_last">All source files are passed to the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ LESS compiler. The resulting compiled <code>.css</code> files are published to <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code>.</li>
 
 </ol>
 
@@ -1256,7 +1262,8 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
   <li>Clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system.</li>
   <li>Clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories by deleting the directory in the file system. (if they already existed there).</li>
   <li>
-    <p>Trigger <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> compilation and publication. This can be done in one of the following ways:</p>
+    <p>Trigger   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+ compilation and publication. This can be done in one of the following ways:</p>
 
     <ul>
       <li>Reloading the page where the modified styles are applied.</li>
@@ -1271,7 +1278,8 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 <p>Once you save your changes and run the <code class="highlighter-rouge">magento setup:static-content:deploy</code> cli command from the <code class="highlighter-rouge">&lt;your_Magento_instance&gt;/bin</code> directory, the tool pre-processes (including compilation) and publishes the static view files.</p>
 
-<p>All errors occurring during <code class="highlighter-rouge">.less</code> files compilation are handled by the <a href="https://github.com/oyejorge/less.php"><code class="highlighter-rouge">oyejorge/less.php</code></a> third party <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>.</p>
+<p>All errors occurring during <code class="highlighter-rouge">.less</code> files compilation are handled by the <a href="https://github.com/oyejorge/less.php"><code class="highlighter-rouge">oyejorge/less.php</code></a> third party   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
+.</p>
 
 <p>Errors are caught as exceptions and written to the system log (by default it is <code class="highlighter-rouge">var/log/system.log</code>) and displayed on the screen. For each error, the following information is written:</p>
 
@@ -1360,7 +1368,8 @@ According to the <code class="highlighter-rouge">@import</code> syntax, specifyi
 <p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
 The standard <code>@import</code> directive includes a single file, which is found according to the <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
 
-<p><code>@magento_import</code> can be used in the root source files of a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> only.</p>
+<p><code>@magento_import</code> can be used in the root source files of a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+ only.</p>
 
 <h3 id="magento-import-usage">@magento_import rules of usage</h3>
 

@@ -1060,11 +1060,13 @@
 </section>
 
 			<h2 id="run-the-extension-manager-from-the-magento-admin">Run the Extension Manager from the Magento Admin</h2>
-<p>The <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term <em>extension</em> means:</p>
+<p>The   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span>
+ Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term <em>extension</em> means:</p>
 
 <ul>
   <li>Modules (extend Magento capabilities)</li>
-  <li>Themes (change the look and feel of your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> and Admin)</li>
+  <li>Themes (change the look and feel of your   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+ and Admin)</li>
   <li>Language packages (localize the storefront and Admin)</li>
 </ul>
 
@@ -1100,7 +1102,8 @@ This conversion occurs during the upgrade and it can take a long time, depending
 <p>If you have a large amount of data, you can improve performance by setting the value of an environment variable, <code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code>.
 By default, it’s set to a value of 50,000.</p>
 
-<p>To set the variable, before the upgrade starts enter the following command as the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span> in a bash shell prompt:</p>
+<p>To set the variable, before the upgrade starts enter the following command as the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+ in a bash shell prompt:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span>DATA_CONVERTER_BATCH_SIZE &lt;value&gt;
 </code></pre></div></div>
 
@@ -1118,11 +1121,13 @@ By default, it’s set to a value of 50,000.</p>
 
 <h3 id="magento-owner-group">Magento file system owner and group</h3>
 
-<p>The <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span> group must have write access to Magento directories and files.</p>
+<p>The   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+ group must have write access to Magento directories and files.</p>
 
 <h3 id="magento-cron">Cron jobs are running</h3>
 
-<p>Magento requires three cron jobs, all running as the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</p>
+<p>Magento requires three cron jobs, all running as the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+.</p>
 
 <p>To verify your cron jobs are set up properly, enter the following command as the Magento file system owner:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab <span class="nt">-l</span>

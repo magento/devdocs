@@ -320,13 +320,18 @@
 
 <h2 id="run-cron-populate-the-cache-and-the-storefront">Run cron, populate the cache and the storefront</h2>
 
-<p>Populating the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> causes the storefront, products, and images to load faster. Use this option after you make changes to the product <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> to pre-deploy static assets and put objects in the cache so the storefront loads faster.</p>
+<p>Populating the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+ and   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+ causes the storefront, products, and images to load faster. Use this option after you make changes to the product   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
+ to pre-deploy static assets and put objects in the cache so the storefront loads faster.</p>
 
 <p>You can also start the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Magento cron job</a>.</p>
 
 <p>However, enabling these options consumes resources and might drain your battery.</p>
 
-<div class="collapsible collapsible-h3"><h3 class="collapsible-title">Populate the storefront and cache and run cron (running system) </h3><div class="collapsible-content"><p>This section discusses how to populate the cache and storefront, and run cron, on a running DevBox system.</p>
+<div class="collapsible collapsible-h3">
+    <h3 class="collapsible-title">Populate the storefront and cache and run cron (running system) </h3>
+    <div class="collapsible-content"><p>This section discusses how to populate the cache and storefront, and run cron, on a running DevBox system.</p>
 
 <h4 id="start-the-magento-cron-job-and-populate-the-cache">Start the Magento cron job and populate the cache</h4>
 <p>Use the following command to both start the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Magento cron job</a> and populate the cache and storefront:</p>
@@ -345,9 +350,12 @@
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --no-interaction
 </code></pre></div></div>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure DevBox to always populate the storefront and cache and run cron </h3><div class="collapsible-content"><p>To populate the storefront and cache, and run cron to run every time Magento starts:</p>
+<div class="collapsible collapsible-h3">
+    <h3 class="collapsible-title">Configure DevBox to always populate the storefront and cache and run cron </h3>
+    <div class="collapsible-content"><p>To populate the storefront and cache, and run cron to run every time Magento starts:</p>
 
 <ol>
   <li>
@@ -390,10 +398,13 @@ MAGENTO_WARM_UP_STOREFRONT=1
 </code></pre></div>    </div>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <p id="cloud-docker-cmds-stopstart"></p>
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Stop, start, restart, and view port mappings </h2><div class="collapsible-content"><p>You can use the following commands to start, stop, and restart services; and you can find the ports currently being used by the services.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Stop, start, restart, and view port mappings </h2>
+    <div class="collapsible-content"><p>You can use the following commands to start, stop, and restart services; and you can find the ports currently being used by the services.</p>
 
 <p>Run all commands from your <a href="/guides/v2.2/install-gde/docker/docker-ref.html#devbox-root-dir">DevBox root folder</a>.</p>
 
@@ -458,9 +469,12 @@ docker-compose restart &lt;service&gt;
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose restart web
 </code></pre></div>  </div>
 </div>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">General purpose commands </h2><div class="collapsible-content"><table>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">General purpose commands </h2>
+    <div class="collapsible-content"><table>
   <thead>
     <tr>
       <th>Description</th>
@@ -510,7 +524,8 @@ docker-compose restart &lt;service&gt;
     </tr>
   </tbody>
 </table>
-</div></div>
+</div>
+  </div>
 
 
 			

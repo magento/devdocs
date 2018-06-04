@@ -412,7 +412,9 @@ $ mkdir Learning/ClothingMaterial
 
 <p><code class="highlighter-rouge">etc/module.xml</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -424,13 +426,16 @@ $ mkdir Learning/ClothingMaterial
   <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Learning_ClothingMaterial"</span> <span class="na">setup_version=</span><span class="s">"0.0.1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 
 <p><code class="highlighter-rouge">registration.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -439,7 +444,8 @@ $ mkdir Learning/ClothingMaterial
     <span class="s1">'Learning_ClothingMaterial'</span><span class="p">,</span>
     <span class="nx">__DIR__</span>
 <span class="p">);</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-2-create-an-installdata-script">Step 2 Create an InstallData script</h2>
 
@@ -449,7 +455,9 @@ Therefore we use InstallData instead of InstallSchema.</p>
 
 <p>Create the file <code class="highlighter-rouge">app/code/Learning/ClothingMaterial/Setup/InstallData.php</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -513,7 +521,8 @@ Therefore we use InstallData instead of InstallSchema.</p>
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 
@@ -557,7 +566,9 @@ Note that there is a mapping between the fields in those tables and the properti
 
 <p><code class="highlighter-rouge">app/code/Learning/ClothingMaterial/Model/Attribute/Source/Material.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -585,7 +596,8 @@ Note that there is a mapping between the fields in those tables and the properti
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_options</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 
@@ -597,7 +609,9 @@ Note that there is a mapping between the fields in those tables and the properti
 
 <p><code class="highlighter-rouge">app/code/Learning/ClothingMaterial/Model/Attribute/Backend/Material.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -623,7 +637,8 @@ Note that there is a mapping between the fields in those tables and the properti
         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 
@@ -640,7 +655,9 @@ Make sure to check the <code class="highlighter-rouge">eav_attribute_set</code> 
 
 <p>And finally, we create a frontend model to make our value bold:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Learning\ClothingMaterial\Model\Attribute\Frontend</span><span class="p">;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Learning\ClothingMaterial\Model\Attribute\Frontend</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">Material</span> <span class="k">extends</span> <span class="nx">\Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend</span>
 <span class="p">{</span>
@@ -650,7 +667,8 @@ Make sure to check the <code class="highlighter-rouge">eav_attribute_set</code> 
         <span class="k">return</span> <span class="s2">"&lt;b&gt;</span><span class="nv">$value</span><span class="s2">&lt;/b&gt;"</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 

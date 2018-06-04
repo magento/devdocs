@@ -1907,7 +1907,9 @@
       <p>That’s because before you install Magento, the default scope is the only valid scope.</p>
     </li>
     <li>
-      <p>After you install Magento, you can set configuration values for any <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> or <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> scope.</p>
+      <p>After you install Magento, you can set configuration values for any   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+ or   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
+ scope.</p>
     </li>
   </ul>
 
@@ -1942,11 +1944,14 @@
   </ul>
 
   <h3 id="find-the-scope-code">Find the scope code</h3>
-  <p>You can find the scope code either in the Magento database or in the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. See one of the following sections for more information.</p>
+  <p>You can find the scope code either in the Magento database or in the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+. See one of the following sections for more information.</p>
 
   <h4 id="find-the-scope-code-in-the-admin">Find the scope code in the Admin</h4>
 
-  <div class="collapsible"><b class="collapsible-title">To find the scope code in the Admin: </b><div class="collapsible-content"><ol>
+  <div class="collapsible">
+    <b class="collapsible-title">To find the scope code in the Admin: </b>
+    <div class="collapsible-content"><ol>
   <li>Log in to the Admin as a user who can view websites and store views.</li>
   <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>All Stores</strong>.</li>
   <li>
@@ -1958,11 +1963,14 @@
   </li>
   <li>Continue with <a href="#config-cli-config-set">Set configuration values</a>.</li>
 </ol>
-</div></div>
+</div>
+  </div>
 
   <h4 id="find-the-scope-code-in-the-database">Find the scope code in the database</h4>
 
-  <div class="collapsible"><b class="collapsible-title">To find the scope code in the database: </b><div class="collapsible-content"><p>Scope codes for websites and store views are stored in the Magento database in the <code class="highlighter-rouge">store_website</code> and <code class="highlighter-rouge">store</code> tables, respectively.</p>
+  <div class="collapsible">
+    <b class="collapsible-title">To find the scope code in the database: </b>
+    <div class="collapsible-content"><p>Scope codes for websites and store views are stored in the Magento database in the <code class="highlighter-rouge">store_website</code> and <code class="highlighter-rouge">store</code> tables, respectively.</p>
 
 <p>To find the values in the database:</p>
 
@@ -1999,7 +2007,8 @@ SELECT * FROM store_website;
     <p>Continue with the next section.</p>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
   <h2 id="config-cli-config-set">Set configuration values</h2>
   <p>To set system-specific configuration values on Magento 2.2.0 - 2.2.3, use:</p>
@@ -2084,7 +2093,8 @@ SELECT * FROM store_website;
   <h3 id="config-cli-config-set-edit">Set configuration values that can be edited in the Magento Admin</h3>
   <p>Use <code class="highlighter-rouge">bin/magento config:set</code> <em>without</em> <code class="highlighter-rouge">--lock</code> (or <code class="highlighter-rouge">--lock-env</code> or <code class="highlighter-rouge">--lock-config</code>) to write the value to the database. Values you set this way can be edited in the Magento Admin.</p>
 
-  <p>Some examples for setting a store base <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> follow:</p>
+  <p>Some examples for setting a store base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+ follow:</p>
 
   <p>Set the base URL for the default scope:</p>
 

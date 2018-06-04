@@ -418,7 +418,9 @@ $ mkdir Learning/GreetingMessage
 
 <p><code class="highlighter-rouge">Learning/GreetingMessage/registration.php</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
 */</span>
@@ -428,13 +430,16 @@ $ mkdir Learning/GreetingMessage
   <span class="s1">'Learning_GreetingMessage'</span><span class="p">,</span>
   <span class="nx">__DIR__</span>
 <span class="p">);</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><br /></p>
 
 <p><code class="highlighter-rouge">Learning/GreetingMessage/etc/module.xml</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
 <span class="c">&lt;!--
 /**
 * Copyright © 2016 Magento. All rights reserved.
@@ -445,7 +450,8 @@ $ mkdir Learning/GreetingMessage
   <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"Learning_GreetingMessage"</span> <span class="na">setup_version=</span><span class="s">"0.0.1"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;/module&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-2-create-an-installschema-script">Step 2: Create an InstallSchema script</h2>
 
@@ -457,7 +463,9 @@ $ mkdir Setup
 
 <p>Create the file <code class="highlighter-rouge">Setup/InstallSchema.php</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
 */</span>
@@ -500,7 +508,8 @@ $ mkdir Setup
           <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="nv">$table</span><span class="p">);</span>
       <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p>Let’s take a minute to look at the code.</p>
 
@@ -517,7 +526,9 @@ You can find various examples of DDL in the Magento 2 core code.</p>
 
 <p>Let’s create the <code class="highlighter-rouge">Setup/InstallData.php</code> file:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -555,7 +566,8 @@ You can find various examples of DDL in the Magento 2 core code.</p>
           <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-4-add-a-new-module-and-verify-that-a-table-with-data-was-created">Step 4: Add a new module and verify that a table with data was created</h2>
 
@@ -617,7 +629,9 @@ If the current version is higher, it will run the upgrade scripts (discussed nex
 
 <p>Then create the file <code class="highlighter-rouge">Setup/UpgradeSchema.php</code>:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -655,7 +669,8 @@ If the current version is higher, it will run the upgrade scripts (discussed nex
         <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p>Review the “version_compare” line.
 As described earlier, the UpgradeScript will be executed every time the version in <code class="highlighter-rouge">module.xml</code> has changed.
@@ -666,7 +681,9 @@ That’s why we put upgrades into “if” clauses.</p>
 
 <p>To create the <code class="highlighter-rouge">Setup/UpgradeData.php</code> file:</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */</span>
@@ -703,7 +720,8 @@ That’s why we put upgrades into “if” clauses.</p>
         <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="step-7-run-the-upgrade-scripts-and-verify-that-the-table-has-changed">Step 7: Run the upgrade scripts and verify that the table has changed</h2>
 

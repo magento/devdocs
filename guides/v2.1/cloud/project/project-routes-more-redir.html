@@ -1942,7 +1942,8 @@ Magento Commerce (Cloud) projects.</p>
 </code></pre></div></div>
 
 <h2 id="cloud-route-partial">Partial redirects</h2>
-<p>In the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a> file you can also add partial <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> rules
+<p>In the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">.magento/routes.yaml</code></a> file you can also add partial   <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span>
+ rules
 to existing routes:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://{default}/:
@@ -1989,7 +1990,9 @@ keys:</p>
 <p>Optional, defaults to <code class="highlighter-rouge">false</code>. Specifies whether the path key should be interpreted as
    a PCRE regular expression.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>In the following example, a request to <code class="highlighter-rouge">http://example.com/regexp/a/b/c/match</code> redirects to <code class="highlighter-rouge">http://example.com/a/b/c</code>:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show/hide content </b>
+    <div class="collapsible-content"><p>In the following example, a request to <code class="highlighter-rouge">http://example.com/regexp/a/b/c/match</code> redirects to <code class="highlighter-rouge">http://example.com/a/b/c</code>:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
@@ -1998,12 +2001,15 @@ keys:</p>
           <span class="s2">"</span><span class="s">/regexp/(.*)/match"</span><span class="pi">:</span>
           <span class="na">to</span><span class="pi">:</span> <span class="s2">"</span><span class="s">http://example.com/$1"</span>
           <span class="na">regexp</span><span class="pi">:</span> <span class="no">true</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h3 id="cloud-route-partial-prefix"><code class="highlighter-rouge">prefix</code></h3>
 <p>Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to <code class="highlighter-rouge">true</code>, but is not supported if <code class="highlighter-rouge">regexp</code> is <code class="highlighter-rouge">true</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show/hide content </b>
+    <div class="collapsible-content"><p>For example,</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
@@ -2016,12 +2022,15 @@ keys:</p>
 <p>In the preceding example, if <code class="highlighter-rouge">partial</code> is set to <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">/from</code> redirects to <code class="highlighter-rouge">/to</code> and <code class="highlighter-rouge">/from/another/path</code> will redirect to <code class="highlighter-rouge">/to/another/path</code></p>
 
 <p>If <code class="highlighter-rouge">partial</code> is set to <code class="highlighter-rouge">false</code>, <code class="highlighter-rouge">/from</code> triggers a redirect, but <code class="highlighter-rouge">/from/another/path</code> does not.</p>
-</div></div>
+</div>
+  </div>
 
 <h3 id="cloud-route-partial-append"><code class="highlighter-rouge">append_suffix</code></h3>
 <p>Determines if the suffix is carried over with the redirect. Defaults to <code class="highlighter-rouge">true</code>, but not supported if <code class="highlighter-rouge">regexp</code> is <code class="highlighter-rouge">true</code> <em>or</em> if <code class="highlighter-rouge">prefix</code> is <code class="highlighter-rouge">false</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>For example,</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show/hide content </b>
+    <div class="collapsible-content"><p>For example,</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">http://{default}/</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
@@ -2034,7 +2043,8 @@ keys:</p>
 <p>The preceding example results in <code class="highlighter-rouge">/from/path/suffix</code> redirecting to just <code class="highlighter-rouge">/to</code>.</p>
 
 <p>If <code class="highlighter-rouge">append_suffix</code> is set to its default value of <code class="highlighter-rouge">true</code>, <code class="highlighter-rouge">/from/path/suffix</code> redirects to <code class="highlighter-rouge">/to/path/suffix</code>.</p>
-</div></div>
+</div>
+  </div>
 
 <h3 id="cloud-route-partial-code"><code class="highlighter-rouge">code</code></h3>
 <p>Specifies the HTTP status code. Valid status codes are <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.2" target="_blank"><code class="highlighter-rouge">301</code> (Moved Permanently)</a>, <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.3" target="_blank"><code class="highlighter-rouge">302</code></a>, <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.3.8" target="_blank"><code class="highlighter-rouge">307</code></a>, and <a href="https://tools.ietf.org/html/rfc7238" target="_blank"><code class="highlighter-rouge">308</code></a>. Defaults to <code class="highlighter-rouge">302</code>.</p>

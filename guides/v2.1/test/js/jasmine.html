@@ -484,7 +484,8 @@
 
 </section>
 
-			<p>Magento uses a custom <a target="_blank" href="http://gruntjs.com/">Grunt</a> task named <code class="highlighter-rouge">spec</code> to run Jasmine tests. The task collects the tests from <code class="highlighter-rouge">&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
+			<p>Magento uses a custom <a target="_blank" href="http://gruntjs.com/">Grunt</a> task named <code class="highlighter-rouge">spec</code> to run Jasmine tests. The task collects the tests from <code class="highlighter-rouge">&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+.</p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
@@ -561,7 +562,8 @@ If the command fails with the error message:</p>
 
 <p>For convenience, we can reflect the directory structure of a file to test.</p>
 
-<p>A path to JS <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that we want to cover with tests: <code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></p>
+<p>A path to JS   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ that we want to cover with tests: <code class="highlighter-rouge">app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></p>
 
 <p>A path to a test of the module: <code class="highlighter-rouge">app/code/Magento/Ui/base/js/grid/columns/actions.test.js</code></p>
 
@@ -599,7 +601,9 @@ If the command fails with the error message:</p>
 
 <p>In <code class="highlighter-rouge">describe</code> you can use <code class="highlighter-rouge">beforeEach</code> and <code class="highlighter-rouge">afterEach</code> functions performing a preparation of what must be done before and after every <code class="highlighter-rouge">it</code> test followed.</p>
 
-<div class="collapsible"><b class="collapsible-title">See the full code of the test</b><div class="collapsible-content"><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
+<div class="collapsible">
+    <b class="collapsible-title">See the full code of the test</b>
+    <div class="collapsible-content"><div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
     <span class="s1">'underscore'</span><span class="p">,</span>
     <span class="s1">'Magento_Ui/js/grid/columns/actions'</span>
 <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="nx">Actions</span><span class="p">)</span> <span class="p">{</span>
@@ -681,7 +685,8 @@ If the command fails with the error message:</p>
     <span class="p">});</span>
 <span class="p">});</span>
 </code></pre></div></div>
-</div></div>
+</div>
+  </div>
 
 <p>This topic doesn’t provide Jasmine test writing methodology.</p>
 

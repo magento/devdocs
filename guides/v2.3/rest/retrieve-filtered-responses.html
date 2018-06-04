@@ -530,7 +530,8 @@
 
 </section>
 
-			<p>Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> requests that return partial responses.</p>
+			<p>Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+ requests that return partial responses.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This feature is not available for SOAP, because SOAP does not allow partial responses. </p>
@@ -559,12 +560,15 @@
 
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/products/24-MB01?fields=sku,price,name</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Sample output </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MB01"</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Joust Duffle Bag"</span><span class="w">
   </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.99</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="simple-fields-and-top-level-objects-with-all-fields">Simple fields and top-level objects with all fields</h2>
 
@@ -572,7 +576,9 @@
 
 <p><code class="highlighter-rouge">GET http:/&lt;host&gt;/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Sample output </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 </span><span class="s2">"customer_firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Veronica"</span><span class="w">
 </span><span class="s2">"customer_lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Costello"</span><span class="w">
 </span><span class="s2">"billing_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -593,7 +599,8 @@
   </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(555) 229-3326"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="top-level-object-with-selected-fields">Top-level object with selected fields</h2>
 
@@ -601,7 +608,9 @@
 
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/shipment/2?fields=items[name,qty,sku]</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Sample output </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
    </span><span class="p">{</span><span class="w">
      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Minerva LumaTech&amp;trade; V-Tee-XS-Blue"</span><span class="p">,</span><span class="w">
      </span><span class="s2">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -609,7 +618,8 @@
    </span><span class="p">}</span><span class="w">
  </span><span class="p">]</span><span class="w">
  </span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="nested-objects">Nested objects</h2>
 
@@ -623,7 +633,9 @@
 
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Sample output </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
   </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MT12"</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cassius Sparring Tank"</span><span class="w">
   </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -637,11 +649,13 @@
       </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="post-operation">POST operation</h2>
 
-<p>The following POST operation and payload creates a <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> category named <code class="highlighter-rouge">New Category</code>. Magento returns only the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">parent_id</code>, and <code class="highlighter-rouge">name</code> attributes</p>
+<p>The following POST operation and payload creates a   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
+ category named <code class="highlighter-rouge">New Category</code>. Magento returns only the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">parent_id</code>, and <code class="highlighter-rouge">name</code> attributes</p>
 
 <p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/V1/categories?fields=id,parent_id,name</code></p>
 
@@ -652,12 +666,15 @@
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Sample output </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
 </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Category"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="using-with-searchcriteria">Using with searchCriteria</h2>
 
@@ -667,7 +684,9 @@
 
 <p><code class="highlighter-rouge">GET http://&lt;host&gt;/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&amp;searchCriteria[filter_groups][0][filters][0][value]=86&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=finset&amp;fields=items[sku,name]</code></p>
 
-<div class="collapsible"><b class="collapsible-title">Sample output </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Sample output </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 </span><span class="s2">"items"</span><span class="p">:</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24-MG04"</span><span class="w">
@@ -706,7 +725,8 @@
     </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Didi Sport Watch"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 class="no_toc" id="related-topics">Related topics</h2>
 <ul>

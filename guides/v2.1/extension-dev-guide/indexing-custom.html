@@ -1304,7 +1304,8 @@
 
 <ul>
   <li>Row reindex: processing a single entry from a dictionary; responsibility of <code class="highlighter-rouge">executeRow($id)</code></li>
-  <li>List reindex: processing a set of dictionary entries; responsibility of <code class="highlighter-rouge">executeList($ids)</code>, where <code class="highlighter-rouge">$ids</code> is an array of <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> IDs</li>
+  <li>List reindex: processing a set of dictionary entries; responsibility of <code class="highlighter-rouge">executeList($ids)</code>, where <code class="highlighter-rouge">$ids</code> is an array of   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
+ IDs</li>
   <li>Full reindex: processing all entities from a specific dictionary; responsibility of <code class="highlighter-rouge">executeFull()</code></li>
 </ul>
 
@@ -1321,9 +1322,11 @@
   <li>shared indexes, if any</li>
 </ul>
 
-<p>Use the optional <code class="highlighter-rouge">shared_index=</code> parameter to improve performance if your indexer is related to another indexer. In this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.</p>
+<p>Use the optional <code class="highlighter-rouge">shared_index=</code> parameter to improve performance if your indexer is related to another indexer. In this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
+ rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.</p>
 
-<p>All indexers related to a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> should be declared in one file.</p>
+<p>All indexers related to a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ should be declared in one file.</p>
 
 <h3 id="mview-configuration">MView configuration</h3>
 

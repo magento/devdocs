@@ -1161,7 +1161,8 @@
 </section>
 
 			<h2>What's in this topic</h2>
-<p>This article describes the basic concepts you need to know to create layouts for your custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
+<p>This article describes the basic concepts you need to know to create layouts for your custom   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+.</p>
 
 <h2>Introduction</h2>
 <p>In Magento, the basic components of page design are layouts, containers, and blocks. A <em>layout</em> represents the structure of a web page (1). <em>Containers</em> represent the placeholders within that web page structure (2). And <em>blocks</em> represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.</p>
@@ -1172,11 +1173,14 @@
 
 <p>(2) <em>Containers</em> assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
 
-<p>(3) <em>Blocks</em> render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> to insert into its parent structural block. Examples of blocks include a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> list, a mini cart, product tags, and product listing.</p>
+<p>(3) <em>Blocks</em> render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
+ to insert into its parent structural block. Examples of blocks include a   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+ list, a mini cart, product tags, and product listing.</p>
 
 <h2 id="basic-layouts">Basic layouts</h2>
 
-<p>The basic view of all Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> pages in defined in two page configuration layout files located in the Magento_Theme module:</p>
+<p>The basic view of all Magento   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+ pages in defined in two page configuration layout files located in the Magento_Theme module:</p>
 
 <ul>
   <li><code class="highlighter-rouge">&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout.</li>
@@ -1191,7 +1195,8 @@
 
 <p><span id="handle"></span></p>
 
-<p>A <em>layout handle</em> is a uniquely identified set of <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span> that serves as a name of a layout file.</p>
+<p>A <em>layout handle</em> is a uniquely identified set of   <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span>
+ that serves as a name of a layout file.</p>
 
 <p>There are three kinds of layout handles:</p>
 
@@ -1210,9 +1215,11 @@
 <p>Following are the definitions of each layout file type:</p>
 
 <ul>
-  <li><em>Page layout</em>: an <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
+  <li><em>Page layout</em>: an   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+ file declaring a page wireframe inside the <code class="highlighter-rouge">&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
   <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code>, <code class="highlighter-rouge">&lt;head&gt;</code>, and <code class="highlighter-rouge">&lt;body&gt;</code> sections of the HTML page markup).</li>
-  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code class="highlighter-rouge">body</code> section of the HTML page   <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>
+. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
 </ul>
 
 <p>For details, refer to <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.</p>
@@ -1240,7 +1247,8 @@
 
 <h2 id="layout-custom">Customize layout</h2>
 
-<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme layouts.</p>
+<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ and theme layouts.</p>
 
 <p>To make the necessary changes, create <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme.</p>
 
@@ -1276,7 +1284,8 @@
     <p>developer mode: syntax is validated in <code class="highlighter-rouge">.xml</code> and <code class="highlighter-rouge">.xsd</code> files, and <code class="highlighter-rouge">.xml</code> files are validated according to the xsd schema. If any validation fails, the hard failure with process halt occurs.</p>
   </li>
   <li>
-    <p>production or default modes: syntax is validated in <code class="highlighter-rouge">.xml</code> and <code class="highlighter-rouge">.xsd</code> files. If validation fails, errors are logged to the <code class="highlighter-rouge">var/log</code> directory without throwing <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>. The validation according to the xsd schema is not performed.</p>
+    <p>production or default modes: syntax is validated in <code class="highlighter-rouge">.xml</code> and <code class="highlighter-rouge">.xsd</code> files. If validation fails, errors are logged to the <code class="highlighter-rouge">var/log</code> directory without throwing   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
+. The validation according to the xsd schema is not performed.</p>
   </li>
 </ul>
 

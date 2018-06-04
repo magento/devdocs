@@ -510,63 +510,25 @@
 
 			<h2 id="rest-responses">REST responses</h2>
 
-<p>Each web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> call returns a HTTP status code and a response payload. When an error occcurs, the response body also returns an error message.</p>
+<p>Each web   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+ call returns a HTTP status code and a response payload. When an error occcurs, the response body also returns an error message.</p>
 
 <h3 id="http-status-codes">HTTP status codes</h3>
 
-<p>Each <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> call returns an HTTP status code that reflects the result of a request:</p>
+<p>Each   <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>
+ call returns an HTTP status code that reflects the result of a request:</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>HTTP code</th>
-      <th>Meaning</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>200</td>
-      <td>Success</td>
-      <td>The framework returns HTTP 200 to the caller upon success.</td>
-    </tr>
-    <tr>
-      <td>400</td>
-      <td>Bad Request</td>
-      <td>If service implementation throws either <code class="highlighter-rouge">Magento_Service_Exception</code> or its derivative, the framework returns a HTTP 400 with a error response including the service-specific error code and message. This error code could indicate a problem such as a missing required parameter or the supplied data didn’t pass validation.</td>
-    </tr>
-    <tr>
-      <td>401</td>
-      <td>Unauthorized</td>
-      <td>The caller was not authorized to perform the request. For example, the request included an invalid token or a user with customer permissions attempted to access an object that requires administrator permissions.</td>
-    </tr>
-    <tr>
-      <td>403</td>
-      <td>Forbidden</td>
-      <td>Access is not allowed for reasons that are not covered by error code 401.</td>
-    </tr>
-    <tr>
-      <td>404</td>
-      <td>Not found</td>
-      <td>The specified REST endpoint does not exist. The caller can try again.</td>
-    </tr>
-    <tr>
-      <td>405</td>
-      <td>Not allowed</td>
-      <td>A request was made of a resource using a method that is not supported by that resource. For example, using GET on a form which requires data to be presented via POST, or using PUT on a read-only resource.</td>
-    </tr>
-    <tr>
-      <td>406</td>
-      <td>Not acceptable</td>
-      <td>The requested resource is only capable of generating content that is not acceptable according to the Accept headers sent in the request.</td>
-    </tr>
-    <tr>
-      <td>500</td>
-      <td>System Errors</td>
-      <td>If service implementation throws any other <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> like network errors, database communication, framework returns HTTP 500.</td>
-    </tr>
-  </tbody>
-</table>
+<p>HTTP code | Meaning | Description
+— | — | —
+200 | Success | The framework returns HTTP 200 to the caller upon success.
+400 | Bad Request | If service implementation throws either <code class="highlighter-rouge">Magento_Service_Exception</code> or its derivative, the framework returns a HTTP 400 with a error response including the service-specific error code and message. This error code could indicate a problem such as a missing required parameter or the supplied data didn’t pass validation.
+401 | Unauthorized | The caller was not authorized to perform the request. For example, the request included an invalid token or a user with customer permissions attempted to access an object that requires administrator permissions.
+403 | Forbidden | Access is not allowed for reasons that are not covered by error code 401.
+404 | Not found | The specified REST endpoint does not exist. The caller can try again.
+405 | Not allowed | A request was made of a resource using a method that is not supported by that resource. For example, using GET on a form which requires data to be presented via POST, or using PUT on a read-only resource.
+406 | Not acceptable | The requested resource is only capable of generating content that is not acceptable according to the Accept headers sent in the request.
+500 | System Errors | If service implementation throws any other   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
+ like network errors, database communication, framework returns HTTP 500.</p>
 
 <h3 id="response-payload">Response payload</h3>
 

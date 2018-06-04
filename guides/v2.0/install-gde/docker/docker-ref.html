@@ -315,11 +315,14 @@
 <ul>
   <li>Debian GNU/Linux 8 (jessie)</li>
   <li>Apache 2.4.10</li>
-  <li><span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7.0.12</li>
+  <li><span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ 7.0.12</li>
   <li>MySQL 5.6.34</li>
 </ul>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Prerequisites </h2><div class="collapsible-content"><p>This section discusses prerequisites you must complete before you install the Magento DevBox.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Prerequisites </h2>
+    <div class="collapsible-content"><p>This section discusses prerequisites you must complete before you install the Magento DevBox.</p>
 
 <h3 id="docker-prerequisites">Docker prerequisites</h3>
 <p>Before you continue, make sure you install and configure the following:</p>
@@ -379,7 +382,8 @@
   </li>
   <li>To add additional directories, follow the prompts on your screen or consult Docker documentation.</li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h2 id="get-magento-devbox-now">Get Magento DevBox now</h2>
 <p>To get Magento DevBox now, go to the <a href="https://magento.com/tech-resources/download" target="_blank">Magento download page</a>.</p>
@@ -392,7 +396,9 @@
 </div>
 
 <p id="devbox-fileshare"></p>
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">How DevBox uses file sharing </h2><div class="collapsible-content"><p>DevBox runs in a Docker container, which is also referred to as the <em>guest operating system</em>. The Magento files and folders are located on your <em>host operating system</em> (Windows or Mac OS). To facilitate development, Magento files and directories are shared by the guest and host operating systems.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">How DevBox uses file sharing </h2>
+    <div class="collapsible-content"><p>DevBox runs in a Docker container, which is also referred to as the <em>guest operating system</em>. The Magento files and folders are located on your <em>host operating system</em> (Windows or Mac OS). To facilitate development, Magento files and directories are shared by the guest and host operating systems.</p>
 
 <p>When you make a change to files, the changes are automatically synchronized, regardless of which files you change. (In other words, if you change files on the host operating system, those files are synchronized with the guest operating system and vice versa.)</p>
 
@@ -408,9 +414,12 @@
     <p>If you use an existing Magento installation with DevBox: Files are shared in the location to which you downloaded Magento.</p>
   </li>
 </ul>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Magento authentication prerequisites </h2><div class="collapsible-content"><div>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Magento authentication prerequisites </h2>
+    <div class="collapsible-content"><div>
 
   <p>The <code class="highlighter-rouge">repo.magento.com</code> repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Magento Marketplace account to generate a pair of 32-character <em>authentication keys</em> to access the repository.</p>
 
@@ -454,10 +463,13 @@
     <li>Click <strong>Generate new token</strong> to replace and disable an existing token.</li>
   </ol>
 </div>
-</div></div>
+</div>
+  </div>
 
 <p id="devbox-download"></p>
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">How to download Magento code </h2><div class="collapsible-content"><p>This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> but you don’t <em>install</em> the software.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">How to download Magento code </h2>
+    <div class="collapsible-content"><p>This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> but you don’t <em>install</em> the software.</p>
 
 <p>Downloading a compressed archive has potential issues on the Mac OS, which extracts known compressed file types like <code class="highlighter-rouge">.zip</code> to a folder. The folder contains files that have to be copied in a particular way; otherwise, the Magento DevBox doesn’t perform properly.</p>
 
@@ -504,9 +516,12 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 </pre>
 
 <p>All the files in the preceding list are hidden; if these files exist in the folder, it confirms you copied them correctly.</p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Installation options </h2><div class="collapsible-content"><p>This section discusses options common to creating a new Magento installation or using an existing Magento installation.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Installation options </h2>
+    <div class="collapsible-content"><p>This section discusses options common to creating a new Magento installation or using an existing Magento installation.</p>
 
 <h4 id="new-or-existing-installation">New or existing installation</h4>
 <p>The first question the wizard asks is whether you want to:</p>
@@ -543,9 +558,12 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 <p>Enter your Magento public and private authentication keys in the provided fields.</p>
 
 <p>Click <strong>Take Me to My Access Keys</strong> to log in to <code class="highlighter-rouge">magento.com</code> and get or generate <a href="/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Advanced options for new installations </h2><div class="collapsible-content"><p>To provide you more control over your Magento installation, we enable you to choose the following advanced options:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Advanced options for new installations </h2>
+    <div class="collapsible-content"><p>To provide you more control over your Magento installation, we enable you to choose the following advanced options:</p>
 
 <table>
     <tbody>
@@ -577,9 +595,12 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
     </tr>
 </tbody>
 </table>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Advanced options for existing installations </h2><div class="collapsible-content"><table>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Advanced options for existing installations </h2>
+    <div class="collapsible-content"><table>
     <tbody>
         <tr>
             <th>Option</th>
@@ -604,7 +625,8 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
     </tr>
 </tbody>
 </table>
-</div></div>
+</div>
+  </div>
 
 <h2 id="devbox-root-dir">Run scripts</h2>
 <p>After you finish the DevBox wizard, you’re prompted to download a <code class="highlighter-rouge">.zip</code> file to any folder on your system. When you extract the <code class="highlighter-rouge">.zip</code> file, your operating system might create another folder.</p>
@@ -643,7 +665,8 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
     <p>To set static listen ports so you don’t have to reconfigure PhpStorm every time you start DevBox, see <a href="#devbox-static-port">Set static ports</a>.</p>
   </li>
   <li><em>Windows only</em>: <code class="highlighter-rouge">m2devbox-unison-sync.bat</code>, which runs Unison file synchronization. You should not run this script by itself; one of the other scripts starts it automatically.</li>
-  <li><em>Mac OS only</em>: <code class="highlighter-rouge">m2devbox-debug.sh</code>, which opens an SSH tunnel to the <span term-uuid="57f1b0dc-1341-466d-a685-e0dbf5a3b713" class="glossary-term" data-toggle="popover">Docker</span> container so PhpStorm can connect to it.</li>
+  <li><em>Mac OS only</em>: <code class="highlighter-rouge">m2devbox-debug.sh</code>, which opens an SSH tunnel to the   <span term-uuid="57f1b0dc-1341-466d-a685-e0dbf5a3b713" class="glossary-term" data-toggle="popover">Docker</span>
+ container so PhpStorm can connect to it.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info">

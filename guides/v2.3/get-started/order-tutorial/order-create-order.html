@@ -357,11 +357,14 @@
 
 </section>
 
-			<p>The <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> contains three items totaling $108. The shipping charges are $10, making the grand total $118. We’re now ready to convert the <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> to an order.</p>
+			<p>The   <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span>
+ contains three items totaling $108. The shipping charges are $10, making the grand total $118. We’re now ready to convert the   <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span>
+ to an order.</p>
 
 <h3 id="send-payment">Send payment information</h3>
 
-<p>When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.</p>
+<p>When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
+ in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.</p>
 
 <p><strong>Endpoint</strong></p>
 
@@ -375,7 +378,9 @@
 
 <p><strong>Payload</strong></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Show code sample </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
 	</span><span class="s2">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     	    	</span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"banktransfer"</span><span class="w">
 	 </span><span class="p">},</span><span class="w">
@@ -393,7 +398,8 @@
     	    	</span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
 	 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><strong>Response</strong></p>
 
@@ -421,7 +427,9 @@
 
 <p><strong>Response</strong></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Show code sample </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="s2">"applied_rule_ids"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"base_currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"base_discount_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1901,13 +1909,15 @@
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h3 id="verify-step">Verify this step</h3>
 
 <ol>
   <li>Log in to the Luma store as the customer. The dashboard shows the order.</li>
-  <li>Log in to <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. Click <strong>Sales &gt; Orders</strong>. The order is displayed in the grid. Its status is Pending.</li>
+  <li>Log in to   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+. Click <strong>Sales &gt; Orders</strong>. The order is displayed in the grid. Its status is Pending.</li>
 </ol>
 
 

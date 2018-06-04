@@ -2366,11 +2366,13 @@
     </ul>
   </li>
   <li>Just as importantly, set up the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.</li>
-  <li>Switch to the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
+  <li>Switch to the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+.</li>
 </ol>
 
 <h3 id="get-the-magento-software">Get the Magento software</h3>
-<p>When all prerequisites have been met, get the Magento software using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> as follows:</p>
+<p>When all prerequisites have been met, get the Magento software using   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+ as follows:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;web server docroot directory&gt;
 composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
@@ -2396,7 +2398,9 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
   <h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
   <p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
 
-  <div class="collapsible"><b class="collapsible-title">To set ownership and permissions for a one-user system: </b><div class="collapsible-content"><p>To set permissions before you install the Magento software:</p>
+  <div class="collapsible">
+    <b class="collapsible-title">To set ownership and permissions for a one-user system: </b>
+    <div class="collapsible-content"><p>To set permissions before you install the Magento software:</p>
 
 <ol>
   <li>Log in to your Magento server.</li>
@@ -2449,12 +2453,15 @@ chmod u+x bin/magento
   <p>To further restrict permissions after installing the Magento software, you <a href="/guides/v2.2/install-gde/install/post-install-umask.html">configure a Magento umask</a>.</p>
 </div>
 
-</div></div>
+</div>
+  </div>
 
   <h2 id="perms-private">Set ownership and permissions for two users</h2>
   <p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
 
-  <div class="collapsible"><b class="collapsible-title">To set ownership and permissions for a two-user system: </b><div class="collapsible-content"><p>Complete the following tasks in the order shown:</p>
+  <div class="collapsible">
+    <b class="collapsible-title">To set ownership and permissions for a two-user system: </b>
+    <div class="collapsible-content"><p>Complete the following tasks in the order shown:</p>
 
 <ul>
   <li><a href="#mage-owner-about-group">About the shared group</a></li>
@@ -2603,7 +2610,8 @@ chmod u+x bin/magento
   <li><a href="/guides/v2.2/install-gde/install/cli/install-cli.html">Command-line installation</a></li>
   <li><a href="/guides/v2.2/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
 </ul>
-</div></div>
+</div>
+  </div>
 
   <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
   <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
@@ -2624,7 +2632,9 @@ chmod u+x bin/magento
 
 <h4 id="command-line-installation">Command line installation</h4>
 
-<div class="collapsible"><b class="collapsible-title">Click to view the command-line installation </b><div class="collapsible-content"><p>The following example shows how to install using the command line with the following options:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to view the command-line installation </b>
+    <div class="collapsible-content"><p>The following example shows how to install using the command line with the following options:</p>
 
 <ul>
   <li>
@@ -2666,11 +2676,14 @@ chmod u+x bin/magento
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/bin
 php magento deploy:mode:set developer
 </code></pre></div></div>
-</div></div>
+</div>
+  </div>
 
 <h4 id="web-setup-wizard">Web Setup Wizard</h4>
 
-<div class="collapsible"><b class="collapsible-title">Click to view the Web Setup Wizard installation </b><div class="collapsible-content"><p>The following example shows how to install using the Web Setup Wizard with the following options:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to view the Web Setup Wizard installation </b>
+    <div class="collapsible-content"><p>The following example shows how to install using the Web Setup Wizard with the following options:</p>
 
 <ul>
   <li>
@@ -2746,7 +2759,8 @@ php magento deploy:mode:set developer
     <p>You can optionally expand <strong>Console Log</strong> to see installation messages while the installation is in progress.</p>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h2 id="installation-part-3-post-installation">Installation part 3: Post-installation</h2>
 <ul>

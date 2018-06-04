@@ -2098,7 +2098,9 @@ We recommend making these changes before switching to Production mode.</p>
   <li>Comments that inform you of sensitive settings that were omitted from <code class="highlighter-rouge">config.php</code></li>
 </ul>
 
-<div class="collapsible"><b class="collapsible-title">Show config.php snippets: </b><div class="collapsible-content"><p><code class="highlighter-rouge">websites</code> array:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Show config.php snippets: </b>
+    <div class="collapsible-content"><p><code class="highlighter-rouge">websites</code> array:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="s1">'new'</span> <span class="o">=&gt;</span>
       <span class="k">array</span> <span class="p">(</span>
@@ -2161,7 +2163,8 @@ We recommend making these changes before switching to Production mode.</p>
           <span class="s1">'skip_order_review_step'</span> <span class="o">=&gt;</span> <span class="s1">'1'</span><span class="p">,</span>
         <span class="p">),</span>
 </code></pre></div></div>
-</div></div>
+</div>
+  </div>
 
 <p><br />
 <strong>env.php</strong></p>
@@ -2183,7 +2186,8 @@ php bin/magento config:sensitive:set paypal/wpp/api_password &lt;password&gt;
     <p>All of the following:</p>
 
     <ul>
-      <li>Set up the same <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span> user name on all systems</li>
+      <li>Set up the same   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+ user name on all systems</li>
       <li>Make sure the web server runs as the same user on all systems</li>
       <li>Make sure the Magento file system owner is in the web server group on all systems</li>
     </ul>

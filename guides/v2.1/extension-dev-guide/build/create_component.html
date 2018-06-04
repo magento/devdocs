@@ -1310,7 +1310,8 @@
 <span class="nt">&lt;/config&gt;</span>
 </code></pre></div></div>
 
-<p>Here <code class="highlighter-rouge">name</code>  is the name of your component, and <code class="highlighter-rouge">setup_version</code> is your module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> version. Both of these attributes are required.</p>
+<p>Here <code class="highlighter-rouge">name</code>  is the name of your component, and <code class="highlighter-rouge">setup_version</code> is your module’s   <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span>
+ version. Both of these attributes are required.</p>
 
 <p>Avoid using “Ui” for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
@@ -1320,7 +1321,8 @@
 <p>In addition, the <a href="/guides/v2.1/comp-mgr/compman-start.html">Component Manager</a> looks for a <code class="highlighter-rouge">composer.json</code> in a component’s root directory and can perform actions on the component and its dependencies:</p>
 
 <ul>
-  <li>If a component has <code class="highlighter-rouge">composer.json</code> <em>and</em> the component was installed using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
+  <li>If a component has <code class="highlighter-rouge">composer.json</code> <em>and</em> the component was installed using   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+ (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
   <li>If the component has <code class="highlighter-rouge">composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
   <li>We strongly recommend you include <code class="highlighter-rouge">composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
 </ul>
@@ -1363,7 +1365,8 @@
   <li><code class="highlighter-rouge">description</code> is a concise explanation of your component’s purpose.</li>
   <li><code class="highlighter-rouge">require</code> lists any components your component depends on.</li>
   <li><code class="highlighter-rouge">suggest</code> lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. <code class="highlighter-rouge">Suggest</code> does not affect component load order.</li>
-  <li><code class="highlighter-rouge">type</code> determines what the <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
+  <li><code class="highlighter-rouge">type</code> determines what the   <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span>
+ type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
   <li><code class="highlighter-rouge">version</code> lists the version of the component.</li>
   <li><code class="highlighter-rouge">license</code> lists applicable licenses that apply to your component.</li>
   <li><code class="highlighter-rouge">autoload</code> instructs Composer to load the specified files.</li>

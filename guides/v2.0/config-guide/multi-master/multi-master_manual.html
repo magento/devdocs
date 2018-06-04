@@ -1486,7 +1486,8 @@
 <p>Manually splitting databases involves:</p>
 
 <ul>
-  <li>Create the <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> and order management system (OMS) databases</li>
+  <li>Create the   <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>
+ and order management system (OMS) databases</li>
   <li>
     <p>Run a series of SQL scripts that:</p>
 
@@ -1524,9 +1525,12 @@
 </div>
 
 <h2 id="config-ee-multidb-backup">Back up the Magento system</h2>
-<p>We strongly recommend you back up your current database and file system so you can restore it later in the <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> of issues during the process.</p>
+<p>We strongly recommend you back up your current database and file system so you can restore it later in the   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
+ of issues during the process.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show how to back up Magento </b><div class="collapsible-content"><p>To back up your system:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show how to back up Magento </b>
+    <div class="collapsible-content"><p>To back up your system:</p>
 
 <ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
@@ -1538,12 +1542,16 @@
   </li>
   <li>Continue with the next section.</li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
-<p>This section discusses how to create database instances for sales and <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> tables.</p>
+<p>This section discusses how to create database instances for sales and   <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span>
+ tables.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show how to create database instances </b><div class="collapsible-content"><p>Create sales and OMS quote databases as follows:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show how to create database instances </b>
+    <div class="collapsible-content"><p>Create sales and OMS quote databases as follows:</p>
 
 <ol>
   <li>Log in to your database server as any user.</li>
@@ -1586,7 +1594,8 @@ exit
   </li>
   <li>Continue with the next section.</li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h2 id="config-ee-multidb-oms">Configure the sales database</h2>
 <p>This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.</p>
@@ -1613,7 +1622,9 @@ exit
 
 <h3 id="config-ee-multidb-sql-oms">Create sales database SQL scripts</h3>
 
-<div class="collapsible"><b class="collapsible-title">Click to create and run sales database SQL scripts </b><div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code class="highlighter-rouge">root</code>, you can create the scripts in the <code class="highlighter-rouge">/root/sql-scripts</code> directory.</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to create and run sales database SQL scripts </b>
+    <div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code class="highlighter-rouge">root</code>, you can create the scripts in the <code class="highlighter-rouge">/root/sql-scripts</code> directory.</p>
 
 <h4 id="remove-foreign-keys">Remove foreign keys</h4>
 <p>This script removes foreign keys that refer to non-sales tables from the sales database.</p>
@@ -1692,12 +1703,15 @@ exit
     <p>After the script run, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h3 id="sales-backup">Back up sales data</h3>
 <p>This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to back up and restore sales data </b><div class="collapsible-content"><p>If you’re currently at the <code class="highlighter-rouge">mysql&gt;</code> prompt, enter <code class="highlighter-rouge">exit</code> to return to the command shell.</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to back up and restore sales data </b>
+    <div class="collapsible-content"><p>If you’re currently at the <code class="highlighter-rouge">mysql&gt;</code> prompt, enter <code class="highlighter-rouge">exit</code> to return to the command shell.</p>
 
 <p>Run the following <code class="highlighter-rouge">mysqldump</code> commands, one at a time, from the command shell. In each, substitute the following:</p>
 
@@ -1762,7 +1776,8 @@ exit
   <li><code class="highlighter-rouge">&lt;root user password&gt;</code> with the user’s password</li>
   <li>Verify the location of the backup files you created earlier (for example, <code class="highlighter-rouge">/var/sales.sql</code>)</li>
 </ul>
-</div></div>
+</div>
+  </div>
 
 <h2 id="config-ee-multidb-checkout">Configure the quote database</h2>
 <p>This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.</p>
@@ -1776,7 +1791,9 @@ exit
 <h3 id="drop-foreign-keys-from-quote-tables">Drop foreign keys from quote tables</h3>
 <p>This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main="" magento="" DB="" name=""> with the name of your Magento database.</your></p>
 
-<div class="collapsible"><b class="collapsible-title">Click to drop foreign keys from quote tables </b><div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">2_foreign-key-quote.sql</code>:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to drop foreign keys from quote tables </b>
+    <div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">2_foreign-key-quote.sql</code>:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">quote</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">QUOTE_STORE_ID_STORE_STORE_ID</span><span class="p">;</span>
@@ -1805,12 +1822,15 @@ For example,</script></path></p>
     <p>After the script runs, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h3 id="back-up-quote-tables">Back up quote tables</h3>
 <p>This section discusses how to back up quote tables from the main Magento database and restore them in your quote database.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to back up and restore quote tables </b><div class="collapsible-content"><p>Run the following command from a command prompt:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to back up and restore quote tables </b>
+    <div class="collapsible-content"><p>Run the following command from a command prompt:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -u &lt;your database root user name&gt; -p &lt;your main Magento DB name&gt; magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask &gt; /&lt;path&gt;/quote.sql;
 </code></pre></div></div>
@@ -1834,12 +1854,15 @@ For example,</script></path></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p magento_quote &lt; /&lt;path&gt;/quote.sql
 </code></pre></div></div>
-</div></div>
+</div>
+  </div>
 
 <h2 id="config-ee-multidb-drop">Drop sales and quote tables from the Magento database</h2>
 <p>This script sales and quote tables from the Magento database. Replace <your main="" magento="" DB="" name=""> with the name of your Magento database.</your></p>
 
-<div class="collapsible"><b class="collapsible-title">Click to drop sales and quote tables </b><div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">3_drop-tables.sql</code>:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to drop sales and quote tables </b>
+    <div class="collapsible-content"><p>Create the following script and give it a name like <code class="highlighter-rouge">3_drop-tables.sql</code>:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">Magento</span> <span class="n">main</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="k">SET</span> <span class="n">foreign_key_checks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -1933,12 +1956,15 @@ For example,</script></path></p>
     <p>After the script runs, enter <code class="highlighter-rouge">exit</code>.</p>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h2 id="config-ee-multidb-config">Update your deployment configuration</h2>
 <p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code class="highlighter-rouge">env.php</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to update the Magento deployment configuration </b><div class="collapsible-content"><ol>
+<div class="collapsible">
+    <b class="collapsible-title">Click to update the Magento deployment configuration </b>
+    <div class="collapsible-content"><ol>
   <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
   <li>
     <p>Back up your deployment configuration:</p>
@@ -2005,12 +2031,16 @@ For example,</script></path></p>
     <span class="k">array</span> <span class="p">(</span>
       <span class="s1">'connection'</span> <span class="o">=&gt;</span> <span class="s1">'sales'</span><span class="p">,</span>
     <span class="p">),</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="split-db-ref">Reference scripts</h2>
-<p>This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span>.</p>
+<p>This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento   <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span>
+.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to view reference SQL scripts </b><div class="collapsible-content"><p>To use these scripts:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to view reference SQL scripts </b>
+    <div class="collapsible-content"><p>To use these scripts:</p>
 
 <ol>
   <li>Create a <code class="highlighter-rouge">.sql</code> script with the contents of each script in this section.</li>
@@ -2126,7 +2156,8 @@ For example,</script></path></p>
 
 <h3 id="drop-quote-tables">Drop quote tables</h3>
 <p>Drop all tables that start with <code class="highlighter-rouge">quote_</code>.</p>
-</div></div>
+</div>
+  </div>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.0/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>

@@ -2331,7 +2331,9 @@
 
 <p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show Apache 2.4 instructions </b><div class="collapsible-content"><div>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show Apache 2.4 instructions </b>
+    <div class="collapsible-content"><div>
 
   <p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
   <p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.</p>
@@ -2362,9 +2364,12 @@
 	<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www&gt;</code>.</li></ul></span>
 </div>
 </div>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible"><b class="collapsible-title">Click to show Apache 2.2 instructions </b><div class="collapsible-content"><div>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show Apache 2.2 instructions </b>
+    <div class="collapsible-content"><div>
 
   <p>Use this section to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
 
@@ -2426,7 +2431,8 @@ Allow from all
     </li>
   </ol>
 </div>
-</div></div>
+</div>
+  </div>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -2452,7 +2458,8 @@ Server built:   Jul 22 2014 14:35:32
       <li><a href="#install-prereq-apache-centos">Installing Apache on CentOS</a></li>
     </ul>
   </li>
-  <li>If Apache 2.2 is installed on Ubuntu 12 <em>and</em> you want to use <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 5.6, see the next section</li>
+  <li>If Apache 2.2 is installed on Ubuntu 12 <em>and</em> you want to use   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ 5.6, see the next section</li>
 </ul>
 
 <h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
@@ -2464,7 +2471,9 @@ Server built:   Jul 22 2014 14:35:32
 </ul>
 
 <h3 id="install-prereq-apache-ubuntu-install">Installing Apache on Ubuntu 16, 14, or 12</h3>
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>To install the default version of Apache (Ubuntu 14, 16—Apache 2.4, Ubuntu 12—Apache 2.2):</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show/hide content </b>
+    <div class="collapsible-content"><p>To install the default version of Apache (Ubuntu 14, 16—Apache 2.4, Ubuntu 12—Apache 2.2):</p>
 
 <ol>
   <li>
@@ -2593,10 +2602,13 @@ Allow from all
   <li>Continue with the next prerequisite (<a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
   <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
 </ul>
-</div></div>
+</div>
+  </div>
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to show/hide content </b>
+    <div class="collapsible-content"><p>To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)</p>
 
 <p>To upgrade to Apache 2.4:</p>
 
@@ -2676,11 +2688,14 @@ Server built:   Jul 22 2014 22:46:25
   <li>Continue with the next prerequisite (<a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
   <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
 </ul>
-</div></div>
+</div>
+  </div>
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
 
-<div class="collapsible"><b class="collapsible-title">Click to install Apache on CentOS 6 or 7 </b><div class="collapsible-content"><p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to install Apache on CentOS 6 or 7 </b>
+    <div class="collapsible-content"><p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.</p>
 
 <p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.</p>
 
@@ -2784,11 +2799,14 @@ Allow from all
   <li>Continue with the next prerequisite (<a href="/guides/v2.1/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)</li>
   <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
 </ul>
-</div></div>
+</div>
+  </div>
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
 
-<div class="collapsible"><b class="collapsible-title">Click to install solve 403 errors </b><div class="collapsible-content"><p>If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:</p>
+<div class="collapsible">
+    <b class="collapsible-title">Click to install solve 403 errors </b>
+    <div class="collapsible-content"><p>If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:</p>
 
 <ul>
   <li><a href="#install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</a></li>
@@ -2830,7 +2848,8 @@ Allow from all
 	<span class="glyphicon-class">
 	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
 </div>
-</div></div>
+</div>
+  </div>
 
 <h4 id="related-topics">Related topics:</h4>
 

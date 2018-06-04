@@ -1503,7 +1503,8 @@
 			<h3 id="m2devgde-repository-intro">What is a repository?</h3>
 
 <p>Repositories give service requestors the ability to perform create, read, update, and delete (CRUD) operations on entities or a list of entities.
-A repository is an example of a <a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">service contract</a>, and its implementation is part of the <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span> layer.</p>
+A repository is an example of a <a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">service contract</a>, and its implementation is part of the   <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span>
+ layer.</p>
 
 <h4 id="repository-state">Repository state</h4>
 
@@ -1617,7 +1618,9 @@ It contains a one method process that applies a Search Criteria object to an abs
 <p>Below is the code that applies filters to a collection.
 The method applies custom filters for some fields, otherwise it applies <code class="highlighter-rouge">$collection-&gt;addFieldToFilter($fields, $conditions)</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show Code for addFilterGroupToCollection </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Show Code for addFilterGroupToCollection </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="sd">/**
      * Add FilterGroup to the collection
      *
      * @param FilterGroup $filterGroup
@@ -1647,10 +1650,13 @@ The method applies custom filters for some fields, otherwise it applies <code cl
             <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">addFieldToFilter</span><span class="p">(</span><span class="nv">$fields</span><span class="p">,</span> <span class="nv">$conditions</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p>You can configure this class to use a specific custom field mapping and custom filter in the <code class="highlighter-rouge">di.xml</code> file.
-The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> to create a <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> from a Filter Processor that applies the module-specific <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php" target="_blank"><code class="highlighter-rouge">ProductCategoryFilter</code></a> on a particular field mapping.</p>
+The example below uses   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
+ to create a   <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span>
+ from a Filter Processor that applies the module-specific <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Model/Api/SearchCriteria/CollectionProcessor/FilterProcessor/ProductCategoryFilter.php" target="_blank"><code class="highlighter-rouge">ProductCategoryFilter</code></a> on a particular field mapping.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Customer\Model\Api\SearchCriteria\CollectionProcessor\GroupFilterProcessor"</span> <span class="na">type=</span><span class="s">"Magento\Framework\Api\SearchCriteria\CollectionProcessor\FilterProcessor"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
@@ -1665,7 +1671,9 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
         <span class="nt">&lt;/arguments&gt;</span>
     <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-<div class="collapsible"><b class="collapsible-title">Show code for ProductCategoryFilter </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor</span><span class="p">;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show code for ProductCategoryFilter </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">Magento\Catalog\Model\ResourceModel\Product\Collection</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">Magento\Framework\Api\Filter</span><span class="p">;</span>
@@ -1692,7 +1700,8 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
         <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <table>
   <thead>
@@ -1782,7 +1791,9 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
 
 <p>The Join Processor aggregates Custom Joins objects implementing the interface <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessor/JoinProcessor/CustomJoinInterface.php" target="_blank"><code class="highlighter-rouge">CustomJoinInterface</code></a>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show Custom Join implementation example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="k">namespace</span> <span class="nx">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor</span><span class="p">;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Show Custom Join implementation example </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="k">namespace</span> <span class="nx">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor</span><span class="p">;</span>
 
     <span class="k">use</span> <span class="nx">Magento\Framework\Api\SearchCriteria\CollectionProcessor\JoinProcessor\CustomJoinInterface</span><span class="p">;</span>
     <span class="k">use</span> <span class="nx">Magento\Framework\Data\Collection\AbstractDb</span><span class="p">;</span>
@@ -1803,7 +1814,8 @@ The example below uses <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" cl
             <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h3 id="using-collection-processors-in-repositories">Using Collection Processors in Repositories</h3>
 

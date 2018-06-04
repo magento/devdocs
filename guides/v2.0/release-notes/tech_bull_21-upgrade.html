@@ -1132,14 +1132,17 @@
 </ul>
 
 <h3 id="tb-upgr-nosamp">Upgrade to Magento Open Source or Commerce version 2.1 <em>without</em> sample data</h3>
-<p>Upgrades to version 2.1 without sample data can fail because of an issue with the Magento <code class="highlighter-rouge">composer-installer</code> component. It doesn’t correctly detect code changes and therefore doesn’t update the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and compiled code directories properly. As a result, fatal errors display during the upgrade.</p>
+<p>Upgrades to version 2.1 without sample data can fail because of an issue with the Magento <code class="highlighter-rouge">composer-installer</code> component. It doesn’t correctly detect code changes and therefore doesn’t update the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+ and compiled code directories properly. As a result, fatal errors display during the upgrade.</p>
 
 <p>To address the issue, you must apply a patch.</p>
 
 <h4 id="get-the-patch">Get the patch</h4>
 <p>Use the following instructions to get the patch named <code class="highlighter-rouge">MDVA-532.*</code>, then transfer it to your Magento server.</p>
 
-<div class="collapsible"><b class="collapsible-title">To get the patch: </b><div class="collapsible-content"><div>
+<div class="collapsible">
+    <b class="collapsible-title">To get the patch: </b>
+    <div class="collapsible-content"><div>
 
   <table>
 		
@@ -1178,12 +1181,15 @@
 </tbody>
 </table>
 </div>
-</div></div>
+</div>
+  </div>
 
 <h4 id="apply-the-patch">Apply the patch</h4>
 <p>As the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>, extract the patch in your Magento installation directory.</p>
 
-<div class="collapsible"><b class="collapsible-title">To apply the patch: </b><div class="collapsible-content"><div>
+<div class="collapsible">
+    <b class="collapsible-title">To apply the patch: </b>
+    <div class="collapsible-content"><div>
 
   <p>To apply a patch:</p>
 
@@ -1219,7 +1225,8 @@
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user &amp;&amp; cd /var/www/magento2 &amp;&amp; unzip -o MDVA-532.zip
 </code></pre></div>  </div>
 </div>
-</div></div>
+</div>
+  </div>
 
 <h4 id="complete-your-upgrade">Complete your upgrade</h4>
 <p>After applying the patch, complete your upgrade as follows:</p>
@@ -1376,7 +1383,9 @@ Failure to do so will cause your upgrade to fail.</p>
 <h4 id="get-the-patch-1">Get the patch</h4>
 <p>Use the following instructions to get the patch named <code class="highlighter-rouge">MDVA-532.*</code>, then transfer it to your Magento server.</p>
 
-<div class="collapsible"><b class="collapsible-title">To get the patch: </b><div class="collapsible-content"><div>
+<div class="collapsible">
+    <b class="collapsible-title">To get the patch: </b>
+    <div class="collapsible-content"><div>
 
   <p>You can get a Magento Commerce patch in any of the following ways:</p>
 
@@ -1403,12 +1412,15 @@ Failure to do so will cause your upgrade to fail.</p>
     <li>Transfer the patch to your development system.</li>
   </ol>
 </div>
-</div></div>
+</div>
+  </div>
 
 <h4 id="apply-the-patch-1">Apply the patch</h4>
 <p>As the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>, extract the patch in your Magento installation directory.</p>
 
-<div class="collapsible"><b class="collapsible-title">To apply the patch: </b><div class="collapsible-content"><div>
+<div class="collapsible">
+    <b class="collapsible-title">To apply the patch: </b>
+    <div class="collapsible-content"><div>
 
   <p>To apply a patch:</p>
 
@@ -1444,11 +1456,14 @@ Failure to do so will cause your upgrade to fail.</p>
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su magento_user &amp;&amp; cd /var/www/magento2 &amp;&amp; unzip MDVA-532.zip
 </code></pre></div>  </div>
 </div>
-</div></div>
+</div>
+  </div>
 
 <h4 id="fix-composerlock">Fix <code class="highlighter-rouge">composer.lock</code></h4>
 
-<div class="collapsible"><b class="collapsible-title">To fix composer.lock: </b><div class="collapsible-content"><ol>
+<div class="collapsible">
+    <b class="collapsible-title">To fix composer.lock: </b>
+    <div class="collapsible-content"><ol>
   <li>As the Magento file system owner, open <code class="highlighter-rouge">&lt;your Magento install dir&gt;/composer.lock</code> in a text editor.</li>
   <li>
     <p>Change the following entry.</p>
@@ -1465,7 +1480,8 @@ Failure to do so will cause your upgrade to fail.</p>
   </li>
   <li>Save your changes to <code class="highlighter-rouge">composer.lock</code> and exit the text editor.</li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h4 id="manually-clear-directories">Manually clear directories</h4>
 <p>Manually clear the <code class="highlighter-rouge">var/cache</code>, <code class="highlighter-rouge">var/page_cache</code>, and <code class="highlighter-rouge">var/generation</code> directories.</p>

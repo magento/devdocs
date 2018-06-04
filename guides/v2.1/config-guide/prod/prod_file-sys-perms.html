@@ -1679,7 +1679,9 @@
 </ul>
 
 <p id="mage-owner-one"></p>
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Production file system ownership for shared hosting (one user) </h2><div class="collapsible-content"><p>To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Production file system ownership for shared hosting (one user) </h2>
+    <div class="collapsible-content"><p>To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.</p>
 
 <p>Because having one file system owner is less secure, we recommend you deploy Magento in production on a private server instead of on shared hosting, if possible.</p>
 
@@ -1798,10 +1800,13 @@
     <li>Save your changes to <code class="highlighter-rouge">magento_umask</code> and exit the text editor.</li>
   </ol>
 </div>
-</div></div>
+</div>
+  </div>
 
 <p id="mage-owner-two"></p>
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Production file system ownership for private hosting (two users) </h2><div class="collapsible-content"><p>If you use your own server (including a hosting provider’s private server setup), there are two users:</p>
+<div class="collapsible collapsible-h2">
+    <h2 class="collapsible-title">Production file system ownership for private hosting (two users) </h2>
+    <div class="collapsible-content"><p>If you use your own server (including a hosting provider’s private server setup), there are two users:</p>
 
 <ul>
   <li>
@@ -1910,7 +1915,8 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 </code></pre></div>    </div>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 
 			

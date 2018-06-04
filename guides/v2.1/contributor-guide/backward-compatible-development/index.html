@@ -460,7 +460,8 @@
 
 <h2 id="backward-сompatibility-policy">Backward Сompatibility Policy</h2>
 
-<p>See the <a href="/guides/v2.1/extension-dev-guide/versioning/index.html">versioning</a> documentation for the definitions of MAJOR and MINOR changes and how it impacts <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> developers.</p>
+<p>See the <a href="/guides/v2.1/extension-dev-guide/versioning/index.html">versioning</a> documentation for the definitions of MAJOR and MINOR changes and how it impacts   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+ developers.</p>
 
 <p>The core Magento team and contributing developers work in two release types</p>
 
@@ -491,7 +492,8 @@
 
 <h3 id="php">PHP</h3>
 
-<p>The following is a list of prohibited <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code changes and possible alternative implementations.</p>
+<p>The following is a list of prohibited   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ code changes and possible alternative implementations.</p>
 
 <h4 id="interfaceclass-removal">Interface/class removal</h4>
 
@@ -538,7 +540,9 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
 
 <p>Declare the new method as private if possible.</p>
 
-<div class="collapsible"><b class="collapsible-title">Example Code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
+<div class="collapsible">
+    <b class="collapsible-title">Example Code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**
  * @deprecated This method is not intended for usage in child classes
  * @see updateScopedPrice($price, $storeId)
  */</span>
@@ -551,11 +555,13 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
 <span class="p">{</span>
     <span class="c1">// Updated logic that takes into account $storeId
 </span><span class="p">}</span> </code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h4 id="modifying-the-default-values-of-optional-arguments-in-public-and-protected-methods">Modifying the default values of optional arguments in public and protected methods </h4>
 
-<p>This is forbidden because the default argument values of public or protected methods are part of the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> of the class/interface.</p>
+<p>This is forbidden because the default argument values of public or protected methods are part of the   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+ of the class/interface.</p>
 
 <p>As an alternative, Create a new method with new interface following the alternative implementation for creating a new method for a class or interface.</p>
 
@@ -567,7 +573,8 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
 
 <h4 id="modifying-the-types-of-thrown-exceptions">Modifying the types of thrown exceptions</h4>
 
-<p>Do not modify the types of thrown exceptions unless a new <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> is a sub-type of the old one.</p>
+<p>Do not modify the types of thrown exceptions unless a new   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
+ is a sub-type of the old one.</p>
 
 <h4 id="adding-a-constructor-parameter">Adding a constructor parameter</h4>
 
@@ -575,7 +582,9 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
 
 <p>In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is <code class="highlighter-rouge">null</code>), fetch the dependency using <code class="highlighter-rouge">Magento\Framework\App\ObjectManager::getInstance()</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Example Code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">ExistingClass</span>
+<div class="collapsible">
+    <b class="collapsible-title">Example Code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">ExistingClass</span>
 <span class="p">{</span>
     <span class="sd">/** @var \New\Dependency\Interface */</span>
     <span class="k">private</span> <span class="nv">$newDependency</span><span class="p">;</span>
@@ -631,7 +640,8 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
         <span class="o">...</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h4 id="removing-or-renaming-public-and-protected-properties">Removing or renaming public and protected properties</h4>
 
@@ -644,7 +654,8 @@ Continue storing the value in the property to preserve the old functionality.</p
 
 <h4 id="removing-renaming-or-changing-the-type-of-event-arguments">Removing, renaming, or changing the type of event arguments</h4>
 
-<p>Do not remove or rename <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> arguments.
+<p>Do not remove or rename   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
+ arguments.
 Do not change argument types. 
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding <code class="highlighter-rouge">@deprecated</code> annotation before dispatching the event.</p>
 
@@ -666,7 +677,8 @@ Instead of changing argument name or type, introduce new event argument with new
 
 <h3 id="xml-schema">XML Schema</h3>
 
-<p>The following is a list of prohibited <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> Schema changes:</p>
+<p>The following is a list of prohibited   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+ Schema changes:</p>
 
 <ul>
   <li>Adding an obligatory node</li>
@@ -701,7 +713,8 @@ Instead of changing argument name or type, introduce new event argument with new
 
 <ul>
   <li>Removing or renaming an event</li>
-  <li>Removing or renaming a <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> handle</li>
+  <li>Removing or renaming a   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
+ handle</li>
   <li>Removing or renaming a store configuration path</li>
   <li>Modifying the directory structure</li>
   <li>Removing an @api annotation</li>
@@ -733,7 +746,8 @@ Instead of changing argument name or type, introduce new event argument with new
 <p>Even if client code saves the value in permanent storage or use it as input or output of a method, it is the responsibility of that code to ensure that it is a reliable implementation.</p>
 
 <p>The client code should have enough control over the constant’s value.
-Do not rely on a value of a constant from another <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> or another vendor.</p>
+Do not rely on a value of a constant from another   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ or another vendor.</p>
 
 <h4 id="stop-setting-a-value-to-the-registry">Stop setting a value to the Registry</h4>
 

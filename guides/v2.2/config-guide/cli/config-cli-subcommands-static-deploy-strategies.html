@@ -1879,7 +1879,8 @@
 
 <ul>
   <li><a href="#static-file-standard">Standard</a>: the regular deployment process.</li>
-  <li><a href="#static-file-quick">Quick</a> (<em>default</em>): minimizes the time required for deployment when files for more than one <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> are deployed.</li>
+  <li><a href="#static-file-quick">Quick</a> (<em>default</em>): minimizes the time required for deployment when files for more than one   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span>
+ are deployed.</li>
   <li><a href="#static-file-compact">Compact</a>: minimizes the space taken by the published view files.</li>
 </ul>
 
@@ -1988,7 +1989,9 @@
 </table>
 
 <h3 id="mapping-deployed-files">Mapping deployed files</h3>
-<p>The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> and locale. There are separate map files for <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and JS:</p>
+<p>The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area,   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+ and locale. There are separate map files for   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ and JS:</p>
 
 <ul>
   <li><code class="highlighter-rouge">map.php</code></li>
@@ -2029,7 +2032,9 @@
 <h2 id="tips-for-extension-developers">Tips for extension developers</h2>
 <p>To build URLs to static view files, use <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213" target="\_blank"><code class="highlighter-rouge">\Magento\Framework\View\Asset\Repository::createAsset()</code></a>.</p>
 
-<p>Do not use <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> concatenations to avoid problems with <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> being not found and not displayed during page rendering.</p>
+<p>Do not use   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+ concatenations to avoid problems with   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+ being not found and not displayed during page rendering.</p>
 
 			
 		</div>

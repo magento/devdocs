@@ -1878,7 +1878,8 @@
 
 <p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
 
-<p>The following figure shows how a product is displayed on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> using the small profile:</p>
+<p>The following figure shows how a product is displayed on the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+ using the small profile:</p>
 
 <p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" width="550px" /></p>
 
@@ -2135,7 +2136,9 @@ Generating simple products...  done in &lt;time&gt;
 <p>The following sections discuss additional details about the performance fixtures.</p>
 
 <h3 id="config-cli-gen-admin">Admin users</h3>
-<p>Generates <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> users. <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> profile node:</p>
+<p>Generates   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
+ users.   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+ profile node:</p>
 
 <pre class="no-copy">&lt;!-- Number of admin users --&gt;
 &lt;admin_users&gt;{int}&lt;/admin_users&gt;</pre>
@@ -2153,7 +2156,8 @@ Generating simple products...  done in &lt;time&gt;
 &lt;product_attribute_sets_attributes_values&gt;{int}&lt;/product_attribute_sets_attributes_values&gt;</pre>
 
 <h3 id="config-cli-gen-bundle">Bundle products</h3>
-<p>Generates bundle products. Generated bundle selections are not displayed individually in <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>. Products will be uniformly distributed per categories and websites. If  <code class="highlighter-rouge">assign_entities_to_all_websites</code> from the profile is set to <code class="highlighter-rouge">1</code>. products will be assigned to all websites.</p>
+<p>Generates bundle products. Generated bundle selections are not displayed individually in   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
+. Products will be uniformly distributed per categories and websites. If  <code class="highlighter-rouge">assign_entities_to_all_websites</code> from the profile is set to <code class="highlighter-rouge">1</code>. products will be assigned to all websites.</p>
 
 <p>XML profile node:</p>
 
@@ -2182,7 +2186,8 @@ Generating simple products...  done in &lt;time&gt;
 &lt;catalog_price_rules&gt;{int}&lt;/catalog_price_rules&gt;</pre>
 
 <h3 id="config-cli-gen-cat">Categories</h3>
-<p>Generates categories. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>.</p>
+<p>Generates categories. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+.</p>
 
 <p>XML profile node:</p>
 
@@ -2247,7 +2252,8 @@ Generating simple products...  done in &lt;time&gt;
 &lt;/configurable_products&gt;</pre>
   </li>
   <li>
-    <p>Generate products based on a dynamically created <span term-uuid="44d60586-b853-40dd-bf82-4a1580450416" class="glossary-term" data-toggle="popover">attribute set</span> with a specified amount of attributes and options:</p>
+    <p>Generate products based on a dynamically created   <span term-uuid="44d60586-b853-40dd-bf82-4a1580450416" class="glossary-term" data-toggle="popover">attribute set</span>
+ with a specified amount of attributes and options:</p>
 
     <pre class="no-copy">&lt;configurable_products&gt;
     <!-- Configurable product configuration -->
@@ -2395,7 +2401,8 @@ Generating simple products...  done in &lt;time&gt;
 &lt;websites&gt;{int}&lt;/websites&gt;</pre>
 
 <h3 id="config-cli-gen-stores">Store groups</h3>
-<p>Generates store groups (referred to in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as <em>stores</em>). Store groups are distributed normally among websites.</p>
+<p>Generates store groups (referred to in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+ as <em>stores</em>). Store groups are distributed normally among websites.</p>
 
 <p>XML profile node:</p>
 
@@ -2414,7 +2421,8 @@ Generating simple products...  done in &lt;time&gt;
 <h3 id="config-cli-gen-taxrate">Tax rates</h3>
 <p>Generates tax rates. XML profile node:</p>
 
-<pre class="no-copy">&lt;!-- Accepts name of <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">csv</span> file with tax rates (&lt;path to magento folder&gt;/setup/src/Magento/Setup/Fixtures/&#95;files) --&gt;
+<pre class="no-copy">&lt;!-- Accepts name of   <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">csv</span>
+ file with tax rates (&lt;path to magento folder&gt;/setup/src/Magento/Setup/Fixtures/&#95;files) --&gt;
 &lt;tax_rates_file&gt;{csv file name}&lt;/tax_rates_file&gt;</pre>
 
 <h2 id="additional-information">Additional information</h2>

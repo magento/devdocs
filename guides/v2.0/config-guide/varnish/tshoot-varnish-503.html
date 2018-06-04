@@ -1478,7 +1478,8 @@
 
 </section>
 
-			<p>If the length of <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> tags used by Magento exceed Varnish’s default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
+			<p>If the length of   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+ tags used by Magento exceed Varnish’s default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Error 503 Backend fetch failed
 Backend fetch failed
@@ -1504,7 +1505,8 @@ Backend fetch failed
   <li>Search for the <code class="highlighter-rouge">http_resp_hdr_len</code> parameter.</li>
   <li>If the parameter doesn’t exist, add it after <code class="highlighter-rouge">thread_pool_max</code>.</li>
   <li>
-    <p>Set <code class="highlighter-rouge">http_resp_hdr_len</code> to a value equal to the product count of your largest <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> multiplied by 21. (Each product tag is about 21 characters in length.)</p>
+    <p>Set <code class="highlighter-rouge">http_resp_hdr_len</code> to a value equal to the product count of your largest   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
+ multiplied by 21. (Each product tag is about 21 characters in length.)</p>
 
     <p>For example, setting the value to 65536 bytes should work if your largest category has 3,000 products:</p>
 

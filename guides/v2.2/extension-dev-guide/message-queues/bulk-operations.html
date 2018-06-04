@@ -1428,7 +1428,8 @@
 
 			<p>Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.</p>
 
-<p>For each indvidual task of a bulk operation, the system creates a message that is published in a <a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">message queue</a>. A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.</p>
+<p>For each indvidual task of a bulk operation, the system creates a message that is published in a <a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">message queue</a>. A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+ panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.</p>
 
 <p>The primary Bulk Operation interface is <code class="highlighter-rouge">OperationInterface</code>. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:</p>
 
@@ -1484,7 +1485,8 @@
 <li><p>bulk_uuid -  A bulk identifier </p></li>
 <li><p>status -  The default operation status <code>OperationInterface::STATUS_TYPE_OPEN</code></p></li>
 <li><p>serialized_data - An array of serialized data with the following required keys:</p></li>
-  <ul><li><p>entity_id - Your <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> ID</p></li>
+  <ul><li><p>entity_id - Your   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
+ ID</p></li>
   <li><p>entity_link - Link to your entity</p></li>
   <li><p>meta_info - String that describes your entity. For example, "SKU: Simple_Product"</p></li></ul>
 <p>This data is required to display the results of operations couldn't be executed for any non-recoverable reason. These results are displayed in the failed operations grid.</p>
@@ -1499,7 +1501,8 @@
 <td>The Admin user ID that executes this bulk operation.</td></tr>
 </table>
 
-<p>See <a href="/guides/v2.2/extension-dev-guide/message-queues/implement-bulk.html#createpublisher">Create a publisher</a> for a detailed example of a <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>.</p>
+<p>See <a href="/guides/v2.2/extension-dev-guide/message-queues/implement-bulk.html#createpublisher">Create a publisher</a> for a detailed example of a   <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>
+.</p>
 
 <h3 id="consume-messages">Consume messages</h3>
 
@@ -1511,28 +1514,12 @@
 
 <p>Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is <code class="highlighter-rouge">Magento\Framework\DB\Adapter\&lt;class_name&gt;</code>. These exceptions extend generic <code class="highlighter-rouge">\Zend_Db_Adapter_Exception</code>.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span> class</th>
-      <th>Description of database error(s)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ConnectionException</td>
-      <td>SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <br />SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query</td>
-    </tr>
-    <tr>
-      <td>LockWaitException</td>
-      <td>SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded</td>
-    </tr>
-    <tr>
-      <td>DeadlockException</td>
-      <td>SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock</td>
-    </tr>
-  </tbody>
-</table>
+<p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span>
+ class | Description of database error(s)
+— | —
+ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <br />SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
+LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded
+DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock</p>
 
 <p>The following pseudocode illustrates how to recover from database-related errors.</p>
 

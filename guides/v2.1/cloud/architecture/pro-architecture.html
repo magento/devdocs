@@ -2035,7 +2035,8 @@
 <h3 id="redundant-hardware">Redundant hardware</h3>
 <p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce (Cloud) runs a triple-redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
 
-<p>Because of our unique, triple-redundant hardware, we can provide you with three gateway servers. Most external services enable you to <span term-uuid="34f8f61d-2b48-4628-be06-aaa6e32ddc1f" class="glossary-term" data-toggle="popover">whitelist</span> multiple IP addresses, so having more than one fixed IP address is not a problem.</p>
+<p>Because of our unique, triple-redundant hardware, we can provide you with three gateway servers. Most external services enable you to   <span term-uuid="34f8f61d-2b48-4628-be06-aaa6e32ddc1f" class="glossary-term" data-toggle="popover">whitelist</span>
+ multiple IP addresses, so having more than one fixed IP address is not a problem.</p>
 
 <p>The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:</p>
 
@@ -2115,8 +2116,11 @@
 
 <p>Magento Commerce scales seamlessly from the smallest 6-CPU cluster with 11.25GB of RAM to the largest 96-CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.</p>
 
+<p>level rather than the database level. This provides <em>horizontal scaling</em> to complement the vertical scaling provided by extra CPUs on the database level.)</p>
+
 <h2 id="cloud-arch-software">Software versions</h2>
-<p>Magento Commerce (Cloud) uses the Debian GNU/Linux 8 (jessie) operating system and the <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">NGINX</span> 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:</p>
+<p>Magento Commerce (Cloud) uses the Debian GNU/Linux 8 (jessie) operating system and the   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">NGINX</span>
+ 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:</p>
 
 <ul>
   <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">PHP</a></li>

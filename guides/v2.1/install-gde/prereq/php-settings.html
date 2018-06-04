@@ -2312,9 +2312,12 @@
 
 </section>
 
-			<p>This topic discusses how to set required <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> options.</p>
+			<p>This topic discusses how to set required   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ options.</p>
 
-<div class="collapsible"><b class="collapsible-title">About required and recommended PHP options: </b><div class="collapsible-content"><ul>
+<div class="collapsible">
+    <b class="collapsible-title">About required and recommended PHP options: </b>
+    <div class="collapsible-content"><ul>
   <li>
     <p>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
 
@@ -2356,12 +2359,15 @@
 <div class="bs-callout bs-callout-warning">
     <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
 </div>
-</div></div>
+</div>
+  </div>
 
 <h3 id="php-required-find">Step 1: Find PHP configuration files</h3>
 <p>This section discusses how you find the configuration files necesary to update required settings.</p>
 
-<div class="collapsible"><b class="collapsible-title">To find the PHP configuration file, php.ini: </b><div class="collapsible-content"><p>To find the web server configuration, run a <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
+<div class="collapsible">
+    <b class="collapsible-title">To find the PHP configuration file, php.ini: </b>
+    <div class="collapsible-content"><p>To find the web server configuration, run a <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
 
 <p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
 
@@ -2375,9 +2381,12 @@
 <div class="bs-callout bs-callout-warning">
     <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
 </div>
-</div></div>
+</div>
+  </div>
 
-<div class="collapsible"><b class="collapsible-title">To find OPcache configuration settings: </b><div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code class="highlighter-rouge">php.ini</code> or <code class="highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="highlighter-rouge">[opcache]</code> section or settings like <code class="highlighter-rouge">opcache.enable</code>.</p>
+<div class="collapsible">
+    <b class="collapsible-title">To find OPcache configuration settings: </b>
+    <div class="collapsible-content"><p>PHP OPcache settings are typically located either in <code class="highlighter-rouge">php.ini</code> or <code class="highlighter-rouge">opcache.ini</code>. The location might depend on your operating system and PHP version. The OPcache configuration file might have an <code class="highlighter-rouge">[opcache]</code> section or settings like <code class="highlighter-rouge">opcache.enable</code>.</p>
 
 <p>Use the following guidelines to find it:</p>
 
@@ -2400,11 +2409,14 @@
 </ul>
 
 <p>If you have more than one <code class="highlighter-rouge">opcache.ini</code>, modify all of them.</p>
-</div></div>
+</div>
+  </div>
 
 <h3 id="php-required-set">Step 2: How to set PHP options</h3>
 
-<div class="collapsible"><b class="collapsible-title">To set PHP options: </b><div class="collapsible-content"><ol>
+<div class="collapsible">
+    <b class="collapsible-title">To set PHP options: </b>
+    <div class="collapsible-content"><ol>
   <li>Open a <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
   <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
   <li>
@@ -2438,11 +2450,14 @@
   <li>Save your changes and exit the text editor.</li>
   <li>Open the other <code class="highlighter-rouge">php.ini</code> (if they are different) and make the same changes in it.</li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 <h3 id="php-required-opcache">Step 3: Set OPcache options</h3>
 
-<div class="collapsible"><b class="collapsible-title">To set opcache.ini options: </b><div class="collapsible-content"><ol>
+<div class="collapsible">
+    <b class="collapsible-title">To set opcache.ini options: </b>
+    <div class="collapsible-content"><ol>
   <li>
     <p>Open your OpCache configuration file in a text editor:</p>
 
@@ -2465,7 +2480,8 @@
     </ul>
   </li>
 </ol>
-</div></div>
+</div>
+  </div>
 
 
 			

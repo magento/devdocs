@@ -598,7 +598,8 @@ Please refer to the <a href="https://phpunit.de/manual/4.1/en/appendixes.configu
 
 <p>If this constant is set to <code class="highlighter-rouge">enabled</code>, the integration test framework will clean the test database and re-install Magento on every test run.
 That way any new modules will be automatically picked up, and any cruft that might have been left over from previous test runs will be removed.
-It also causes the test framework to flush the test Magento configuration, the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and the code generation before executing any tests.</p>
+It also causes the test framework to flush the test Magento configuration, the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
+ and the code generation before executing any tests.</p>
 
 <p>The downside of setting <code class="highlighter-rouge">TEST_CLEANUP</code> to <code class="highlighter-rouge">enabled</code> is that the re-installation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
 
@@ -618,7 +619,8 @@ The test execution will start much quicker, but as a consequence the developer h
 <h4 id="the-php-memory_limit">The PHP memory_limit</h4>
 
 <p>The default <code class="highlighter-rouge">phpunit.xml.dist</code> file does not contain any PHP <code class="highlighter-rouge">memory_limit</code> settings.
-However, sometimes the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> configuration restricts the amount of memory PHP may consume.
+However, sometimes the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ configuration restricts the amount of memory PHP may consume.
 This can make it impossible to run the integration tests.</p>
 
 <p>The PHP memory limit can be turned off by adding the following configuration to the <code class="highlighter-rouge">&lt;php&gt;</code> section of the integration test <code class="highlighter-rouge">phpunit.xml</code> file:</p>
@@ -634,7 +636,8 @@ For core tests it makes sense that the integration tests do not reside within in
 <p>Shop implementation specific integration tests could also be placed within a different subdirectory of <code class="highlighter-rouge">dev/tests/integration/testsuite</code> and then would be executed together with the core tests.</p>
 
 <p>However, third party Magento extensions are contained within a single directory, and might supply custom integration tests, too.
-These tests usually are placed in the subdirectory <code class="highlighter-rouge">Test/Integration/</code> within the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> folder.</p>
+These tests usually are placed in the subdirectory <code class="highlighter-rouge">Test/Integration/</code> within the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ folder.</p>
 
 <p>These third party integration tests are not picked up by the default integration test configuration.
 A testsuite configuration like the following can be added to the <code class="highlighter-rouge">&lt;testsuites&gt;</code> section of the <code class="highlighter-rouge">phpunit.xml</code> file so they are included during test execution.</p>
@@ -681,7 +684,8 @@ Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
 </span><span class="c">..........................
 </span></code></pre></div></div>
 
-<p>Note the path to the <code class="highlighter-rouge">phpunit</code> executable installed by <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span> into the vendor directory is used.</p>
+<p>Note the path to the <code class="highlighter-rouge">phpunit</code> executable installed by   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>
+ into the vendor directory is used.</p>
 
 <h3 id="running-only-a-custom-testsuite">Running only a custom testsuite</h3>
 
@@ -734,7 +738,8 @@ To fix the issue, change into the directory <code class="highlighter-rouge">dev/
 
 <h4 id="unable-to-connect-to-mysql">Unable to connect to MySQL</h4>
 
-<p>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interpreter has to be able to connect to the test database. By default this means the tests have to run on the same host as the MySQL server.
+<p>The   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ interpreter has to be able to connect to the test database. By default this means the tests have to run on the same host as the MySQL server.
 This problem most commonly crops up during development with vagrant or docker, where the Magento DB is running on a virtual machine.
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.</p>
 

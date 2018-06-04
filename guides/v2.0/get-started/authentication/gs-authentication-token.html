@@ -490,7 +490,8 @@
 
 </section>
 
-			<p>To make a web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> call from a client such as a mobile application, you must supply an <em>access token</em> on the call. The token acts like an electronic key that lets you access the API.</p>
+			<p>To make a web   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+ call from a client such as a mobile application, you must supply an <em>access token</em> on the call. The token acts like an electronic key that lets you access the API.</p>
 
 <p>Magento issues the following types of access tokens:</p>
 
@@ -570,7 +571,9 @@
   </tbody>
 </table>
 
-<p>For most <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls, you supply this token in the <code class="highlighter-rouge">Authorization</code> request header with the <code class="highlighter-rouge">Bearer</code> HTTP <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting <strong>Configuration &gt; Services &gt; OAuth &gt; Access Token Expiration</strong>.</p>
+<p>For most   <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span>
+ calls, you supply this token in the <code class="highlighter-rouge">Authorization</code> request header with the <code class="highlighter-rouge">Bearer</code> HTTP   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
+ scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting <strong>Configuration &gt; Services &gt; OAuth &gt; Access Token Expiration</strong>.</p>
 
 <p>A cron job that runs hourly removes all expired tokens.</p>
 
@@ -611,7 +614,8 @@
 
 <h4 id="token-example">Examples</h4>
 
-<p>The following image shows a token request for the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> account using a REST client:</p>
+<p>The following image shows a token request for the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
+ account using a REST client:</p>
 
 <p><img src="/guides/v2.0/get-started/authentication/images/gs_auth_token1.png" alt="REST client" /></p>
 
@@ -622,7 +626,8 @@
      -d "{"username":"customer1@example.com", "password":"customer1pw"}"
 </code></pre></div></div>
 
-<p>The following example makes the same request with <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> for a customer account token:</p>
+<p>The following example makes the same request with   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+ for a customer account token:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \

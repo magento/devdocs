@@ -1166,10 +1166,12 @@
 
 <ul>
   <li>
-    <p>If a method indicates that the content is escaped, do not escape: <code class="highlighter-rouge">getTitleHtml()</code>, <code class="highlighter-rouge">getHtmlTitle()</code> (the title is ready for the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> output)</p>
+    <p>If a method indicates that the content is escaped, do not escape: <code class="highlighter-rouge">getTitleHtml()</code>, <code class="highlighter-rouge">getHtmlTitle()</code> (the title is ready for the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
+ output)</p>
   </li>
   <li>
-    <p>Type casting and <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">php</span> function <code class="highlighter-rouge">count()</code> don’t need escaping  (for example <code class="highlighter-rouge">echo (int)$var</code>, <code class="highlighter-rouge">echo (bool)$var</code>, <code class="highlighter-rouge">echo count($var)</code>)</p>
+    <p>Type casting and   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">php</span>
+ function <code class="highlighter-rouge">count()</code> don’t need escaping  (for example <code class="highlighter-rouge">echo (int)$var</code>, <code class="highlighter-rouge">echo (bool)$var</code>, <code class="highlighter-rouge">echo count($var)</code>)</p>
   </li>
   <li>
     <p>Output in single quotes doesn’t need escaping (for example <code class="highlighter-rouge">echo 'some text'</code>)</p>
@@ -1221,7 +1223,8 @@ Any other attribute for that allowed tag will be escaped.</p>
   // Escaping translation
   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">'my-element'</span><span class="nt">&gt;</span><span class="cp">&lt;?php echo $block-&gt;escapeHtml(__('Only registered users can write reviews. Please &lt;a href="%1"&gt;Sign in&lt;/a&gt; or &lt;a href="%2"&gt;create an account&lt;/a&gt;', $block-&gt;getLoginUrl(), $block-&gt;getCreateAccountUrl()), ['a']) ?&gt;</span><span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
-<p><strong>Case:</strong> <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> output<br />
+<p><strong>Case:</strong>   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+ output<br />
 <strong>Function:</strong> <code class="highlighter-rouge">escapeUrl</code></p>
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"&lt;?php echo $block-&gt;escapeUrl($block-&gt;getCategoryUrl()) ?&gt;"</span><span class="nt">&gt;</span>Some Link<span class="nt">&lt;/a&gt;</span>
@@ -1230,7 +1233,8 @@ Any other attribute for that allowed tag will be escaped.</p>
   <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p><strong>Case:</strong> Strings inside JavaScript<br />
-<strong>Function:</strong> In a <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> context, use the <code class="highlighter-rouge">escapeJs</code> function.</p>
+<strong>Function:</strong> In a   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
+ context, use the <code class="highlighter-rouge">escapeJs</code> function.</p>
 
 <p>In cases where the JavaScript code outputs content onto the page, use the <code class="highlighter-rouge">escapeUrl</code> or the <code class="highlighter-rouge">escapeHtml</code> function where appropriate.</p>
 

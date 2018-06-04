@@ -1429,7 +1429,8 @@
 			<p>This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:</p>
 
 <ul>
-  <li>Create a <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span> that sends messages to the message queue</li>
+  <li>Create a   <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>
+ that sends messages to the message queue</li>
   <li>Create a consumer that receives and processes messages</li>
   <li>Configure the message queues</li>
 </ul>
@@ -1440,7 +1441,9 @@
 
 <p>The following code sample shows how these duties can be completed.</p>
 
-<div class="collapsible"><b class="collapsible-title">Code sample: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible">
+    <b class="collapsible-title">Code sample: </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1564,13 +1567,16 @@
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h3 id="createconsumer">Create a consumer</h3>
 
 <p>A consumer class receives messages from the message queue and changes the status after it is processed. The following example defines a consumer that handles price update bulk operations.</p>
 
-<div class="collapsible"><b class="collapsible-title">Code sample: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="collapsible">
+    <b class="collapsible-title">Code sample: </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -1685,7 +1691,8 @@
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h3 id="configmq">Configure message queues</h3>
 
@@ -1703,7 +1710,8 @@
 
 <h4 id="create-communicationxml">Create <code class="highlighter-rouge">communication.xml</code></h4>
 
-<p>The <code class="highlighter-rouge">communication.xml</code> file defines aspects of the message queue system that apply to all topics for the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>. Create this file with the following contents:</p>
+<p>The <code class="highlighter-rouge">communication.xml</code> file defines aspects of the message queue system that apply to all topics for the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+. Create this file with the following contents:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Communication/etc/communication.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">"&lt;your_topic_name&gt;"</span> <span class="na">request=</span><span class="s">"Magento\AsynchronousOperations\Api\Data\OperationInterface"</span><span class="nt">&gt;</span>

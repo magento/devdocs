@@ -652,7 +652,8 @@
 
 <h2 id="api-changes">API changes</h2>
 
-<p>Magento 2.2 introduces changes in several <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> classes. These changes are designed to extend overall API coverage and improve developer experience with new features.</p>
+<p>Magento 2.2 introduces changes in several   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+ classes. These changes are designed to extend overall API coverage and improve developer experience with new features.</p>
 
 <h3 id="framework">Framework</h3>
 
@@ -663,7 +664,9 @@
 
 <h3 id="store-module">Store module</h3>
 
-<p>The Store <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> management has been updated to allow the retrieval of a store by its <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> id.</p>
+<p>The Store   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ management has been updated to allow the retrieval of a store by its   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+ id.</p>
 
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php" target="_blank"><code class="highlighter-rouge">Magento\Store\Api\StoreWebsiteRelationInterface</code></a><br />
 <strong>Action:</strong> New interface added with method <code class="highlighter-rouge">getStoreByWebsiteId($websiteId)</code></p>
@@ -796,7 +799,8 @@ The following table lists the deprecated methods and their replacements.</p>
 
 <h3 id="error-processor-module">Error processor module</h3>
 
-<p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span> report files in <code class="highlighter-rouge">var/report</code> are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.</p>
+<p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span>
+ report files in <code class="highlighter-rouge">var/report</code> are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.</p>
 
 <h3 id="braintree-module">Braintree module</h3>
 
@@ -954,7 +958,8 @@ In oder to adopt custom implementations of these interfaces, please, change meth
 
 <h3 id="advanced-section-in-system-configurations">Advanced section in System Configurations</h3>
 
-<p><strong>Action:</strong> Section <code class="highlighter-rouge">Advanced</code> was removed from <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Interface<br />
+<p><strong>Action:</strong> Section <code class="highlighter-rouge">Advanced</code> was removed from   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
+ Interface<br />
 <strong>Description:</strong> Magento does not support disabling/enabling modules output from the Admin Panel in 2.2.0 version. Module output can still be enabled/disabled in configuration files.</p>
 
 <h2 id="database-schema-changes">Database schema changes</h2>
@@ -970,7 +975,8 @@ In oder to adopt custom implementations of these interfaces, please, change meth
 
 <p>The release also provides upgrade scripts that convert Magento data stored in serialized format.</p>
 
-<p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> developers should review the following cases to see what actions they should take for their extensions:</p>
+<p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span>
+ developers should review the following cases to see what actions they should take for their extensions:</p>
 
 <p><strong>Case 1:</strong><br />
 Your extension declared fields for automatic serialization/unserialization using the <code class="highlighter-rouge">_serializableFields</code> parameter of <code class="highlighter-rouge">\Magento\Framework\Model\ResourceModel\Db\AbstractDb</code>.<br />
@@ -1006,7 +1012,8 @@ Your extension accesses values in the <code class="highlighter-rouge">core_confi
 </ul>
 
 <p><strong>Solution:</strong><br />
-Update your extension to use <code class="highlighter-rouge">\Magento\Framework\Serialize\Serializer\Json</code> for serializing/unserializing data instead of the native <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> serialize/unserialize functions.</p>
+Update your extension to use <code class="highlighter-rouge">\Magento\Framework\Serialize\Serializer\Json</code> for serializing/unserializing data instead of the native   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ serialize/unserialize functions.</p>
 
 <p><strong>Case 6:</strong><br />
 Your extension uses a backend model that extends <code class="highlighter-rouge">\Magento\Config\Model\Config\Backend\Serialized</code> to save/load data to/from the database.</p>
@@ -1025,7 +1032,9 @@ Write an <a href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-d
 
 <p>This is a list of tables and fields where the data format changed from serialized to JSON format.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show table </b><div class="collapsible-content"><table>
+<div class="collapsible">
+    <b class="collapsible-title">Show table </b>
+    <div class="collapsible-content"><table>
   <thead>
     <tr>
       <th>Resource Model</th>
@@ -1251,7 +1260,8 @@ Write an <a href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-d
     </tr>
   </tbody>
 </table>
-</div></div>
+</div>
+  </div>
 
 <h3 id="table-deprecations">Table deprecations</h3>
 
@@ -1259,7 +1269,8 @@ Write an <a href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-d
 
 <h3 id="new-class-fielddataconverter">New Class: <code class="highlighter-rouge">FieldDataConverter</code></h3>
 
-<p>This class supports data <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> from one format to another.
+<p>This class supports data   <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span>
+ from one format to another.
 It can be used to upgrade data in upgrade scripts.</p>
 
 <h4 id="features">Features</h4>
@@ -1277,7 +1288,9 @@ It can be used to upgrade data in upgrade scripts.</p>
 
 <p>The following methods now return JSON instead of a serialized string.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show methods </b><div class="collapsible-content"><ul>
+<div class="collapsible">
+    <b class="collapsible-title">Show methods </b>
+    <div class="collapsible-content"><ul>
   <li><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()</code></li>
   <li><code class="highlighter-rouge">\Magento\CatalogInventory\Helper\Minsaleqty::serializeValue($value)</code>
     <ul>
@@ -1323,11 +1336,14 @@ It can be used to upgrade data in upgrade scripts.</p>
     </ul>
   </li>
 </ul>
-</div></div>
+</div>
+  </div>
 
 <p>The following methods now require JSON as a parameter instead of a serialized string.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show methods </b><div class="collapsible-content"><ul>
+<div class="collapsible">
+    <b class="collapsible-title">Show methods </b>
+    <div class="collapsible-content"><ul>
   <li><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Option\Type\File::getFormattedOptionValue($optionValue)</code></li>
   <li><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Option\Type\File::_unserializeValue($value)</code></li>
   <li><code class="highlighter-rouge">\Magento\Catalog\Model\Product\Option\Type\File::getEditableOptionValue($optionValue)</code></li>
@@ -1389,7 +1405,8 @@ It can be used to upgrade data in upgrade scripts.</p>
     </ul>
   </li>
 </ul>
-</div></div>
+</div>
+  </div>
 
 <h3 id="other-class-changes">Other class changes</h3>
 

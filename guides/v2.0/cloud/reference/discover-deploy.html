@@ -1815,7 +1815,8 @@
   <ul>
     <li>Applies patches located in <code class="highlighter-rouge">vendor/magento/magento-cloud-configuration/patches</code>, as well as optional project-specific patches in <code class="highlighter-rouge">m2-hotfixes</code></li>
     <li>Enables all extensions. To best build all code for deployment, we enable all extensions, build, then disable extensions you had disabled in your configuration.</li>
-    <li>Regenerates code and the <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration (that is, the Magento <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> directories) using <code class="highlighter-rouge">bin/magento setup:di:compile</code>.</li>
+    <li>Regenerates code and the   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
+ configuration (that is, the Magento <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> directories) using <code class="highlighter-rouge">bin/magento setup:di:compile</code>.</li>
   </ul>
 
   <p><strong>Important:</strong> At this point the cluster has not been created yet. So you should not try to connect to a database or imagine anything was daemonized.</p>
@@ -1846,7 +1847,8 @@
   </ul>
 
   <h3 id="cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</h3>
-  <p>Now we provision your applications and all the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> services you need:</p>
+  <p>Now we provision your applications and all the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
+ services you need:</p>
 
   <ul>
     <li>Mounts each service in its own container (web server, Elasticsearch, RabbitMQ and so on)</li>

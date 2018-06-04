@@ -349,7 +349,8 @@
 
 </section>
 
-			<p>Now that all the items have been added to the cart, we can prepare the order for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>. This process includes the following steps:</p>
+			<p>Now that all the items have been added to the cart, we can prepare the order for   <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>
+. This process includes the following steps:</p>
 
 <ul>
   <li>Estimate shipping costs</li>
@@ -374,7 +375,9 @@
 
 <p>The payload contains the shipping address.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Show code sample </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
       </span><span class="s2">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
@@ -392,13 +395,16 @@
       </span><span class="s2">"same_as_billing"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><strong>Response</strong></p>
 
 <p>Note that the cost for the <code class="highlighter-rouge">flatrate</code> shipping method is $15. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates &amp; Yoga item does not have a shipping charge because the customer downloads this item.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Show code sample </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
         </span><span class="s2">"carrier_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flatrate"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"method_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"flatrate"</span><span class="p">,</span><span class="w">
@@ -424,7 +430,8 @@
         </span><span class="s2">"price_incl_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h3 id="set-addresses">Set shipping and billing information</h3>
 
@@ -444,7 +451,9 @@
 
 <p><strong>Payload</strong></p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  </span><span class="s2">"addressInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Show code sample </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">  </span><span class="s2">"addressInformation"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
 	  </span><span class="s2">"shipping_address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
        </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
        </span><span class="s2">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
@@ -479,15 +488,19 @@
   </span><span class="s2">"shipping_method_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bestway"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p><strong>Response</strong></p>
 
 <p>The subtotal of the order is $160, and shipping charges are $5. The grand total is $165.</p>
 
-<p>The available payment methods are <code class="highlighter-rouge">banktransfer</code> and <code class="highlighter-rouge">checkmo</code>. The customer will specify a <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> in the next step.</p>
+<p>The available payment methods are <code class="highlighter-rouge">banktransfer</code> and <code class="highlighter-rouge">checkmo</code>. The customer will specify a   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
+ in the next step.</p>
 
-<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="collapsible">
+    <b class="collapsible-title">Show code sample </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
     </span><span class="s2">"payment_methods"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cashondelivery"</span><span class="p">,</span><span class="w">
@@ -651,7 +664,8 @@
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you tried this call on your own, and the value of the <code class="highlighter-rouge">shipping_amount</code> parameter is <code class="highlighter-rouge">0</code>, then you did not deactivate the “Spend $50 or more - shipping is free!” cart price rule. See <a href="order-config-store.html#price-rule">Deactivate a cart price rule</a> for details.</p>
@@ -659,7 +673,8 @@
 
 <h3 id="verify-step">Verify this step</h3>
 
-<p><span term-uuid="c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2" class="glossary-term" data-toggle="popover">Sign in</span> as the customer and go to the checkout page.</p>
+<p><span term-uuid="c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2" class="glossary-term" data-toggle="popover">Sign in</span>
+ as the customer and go to the checkout page.</p>
 
 <p>The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges have been calculated.</p>
 

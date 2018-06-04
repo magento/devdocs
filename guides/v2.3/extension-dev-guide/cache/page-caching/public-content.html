@@ -1582,7 +1582,8 @@
 </div>
 
 <h2 id="configure-page-variations">Configure page variations</h2>
-<p>Most caching servers and proxies use a <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> as a key for cache records; however, Magento URLs are not unique <em>enough</em> to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:</p>
+<p>Most caching servers and proxies use a   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+ as a key for cache records; however, Magento URLs are not unique <em>enough</em> to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:</p>
 
 <ul>
   <li>Collisions in cache storage</li>
@@ -1647,11 +1648,13 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 <p>For another example of a context class, see <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http/Context.php" target="&#95;blank">Magento/Framework/App/Http/Context</a>.</p>
 
 <h2 id="invalidate-public-content">Invalidate public content</h2>
-<p>You can clear cached content immediately after a entity changes. Magento uses  <code class="highlighter-rouge">IdentityInterface</code> to link entities in the application with cached content and to know what cache to clear when an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> changes.</p>
+<p>You can clear cached content immediately after a entity changes. Magento uses  <code class="highlighter-rouge">IdentityInterface</code> to link entities in the application with cached content and to know what cache to clear when an   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
+ changes.</p>
 
 <p>This section shows you how to tell Magento what cache to clear when you change an entity.</p>
 
-<p>First, your entity <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="&#95;blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
+<p>First, your entity   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="&#95;blank"><code class="highlighter-rouge">Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
 

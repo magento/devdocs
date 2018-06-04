@@ -1300,7 +1300,8 @@
 
 			<p>Magento 2.2.0 introduces a new structure for <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">UI components XML configuration</a>, aimed at improving configuration semantics.</p>
 
-<p>The arbitrary structure, used in UI components <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.</p>
+<p>The arbitrary structure, used in UI components   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
+ configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.</p>
 
 <p>Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old “arbitrary” structure will become deprecated at some point.</p>
 
@@ -1312,7 +1313,9 @@
 
 <h2 id="readability">Readability</h2>
 <p>All components options are separate nodes, and a node’s purpose is defined by its name. The number of abstract-named nodes like <code class="highlighter-rouge">&lt;item&gt;</code> or <code class="highlighter-rouge">&lt;argument&gt;</code> is minimized.</p>
-<div class="collapsible"><b class="collapsible-title">Illustration </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"default_billing"</span> <span class="na">formElement=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Illustration </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">"default_billing"</span> <span class="na">formElement=</span><span class="s">"checkbox"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"config"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"source"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>customer<span class="nt">&lt;/item&gt;</span>
@@ -1354,11 +1357,14 @@
         <span class="nt">&lt;/imports&gt;</span>
     <span class="nt">&lt;/settings&gt;</span>
 <span class="nt">&lt;/field&gt;</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <h2 id="autocomplete">Autocomplete</h2>
 <p>When editing XML configuration files in an IDE, the autocomplete feature prompts the correct spelling and the possible options.</p>
-<div class="collapsible"><b class="collapsible-title">Illustration </b><div class="collapsible-content"><ul>
+<div class="collapsible">
+    <b class="collapsible-title">Illustration </b>
+    <div class="collapsible-content"><ul>
   <li>Node declaration autocomplete:</li>
 </ul>
 
@@ -1375,13 +1381,16 @@
 </ul>
 
 <p><img src="/common/images/ui_comps/no_type.png" alt="no defined interface" width="410px" /></p>
-</div></div>
+</div>
+  </div>
 
 <h2 id="validation">Validation</h2>
 
 <p>When editing XML configuration files in an IDE, you get visual notifications if the name of a node or attribute is misspelled, or a required attribute is missing. You can also validate the complete file, by clicking <strong>Validate</strong> in the context menu.</p>
 
-<div class="collapsible"><b class="collapsible-title">Illustration </b><div class="collapsible-content"><ul>
+<div class="collapsible">
+    <b class="collapsible-title">Illustration </b>
+    <div class="collapsible-content"><ul>
   <li>If the node name is misspelled:</li>
 </ul>
 
@@ -1405,7 +1414,8 @@
 
 <p><img src="/common/images/ui_comps/validation_file.png" alt="first_way_ui_components_declaration" width="520px" />
 <img src="/common/images/ui_comps/validation_messages.png" alt="first_way_ui_components_declaration" /></p>
-</div></div>
+</div>
+  </div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To use the autocomplete and validation features in your IDE, generate the URN as described in the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a> topic.</p>

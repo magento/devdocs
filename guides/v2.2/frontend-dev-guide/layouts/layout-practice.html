@@ -1273,7 +1273,9 @@
 <p>Similar to the way they defined the layout on the previous step, OrangeCo 
 defines the template which is used as the drop-down container : <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">Expand to see the code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span>
+<div class="collapsible">
+    <b class="collapsible-title">Expand to see the code </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">if</span><span class="p">(</span><span class="nv">$block</span><span class="o">-&gt;</span><span class="na">customerLoggedIn</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span>
     <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"customer-welcome"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"customer-name"</span>
               <span class="na">role=</span><span class="s">"link"</span>
@@ -1310,7 +1312,8 @@ defines the template which is used as the drop-down container : <code class="hig
             &lt;?php endif; ?&gt;
         &lt;/li&gt;
     &lt;?php endif; ?&gt;</span></code></pre></figure>
-</div></div>
+</div>
+  </div>
 
 <p>(See <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml">app/code/Magento/Customer/view/frontend/templates/account/customer.phtml</a>)</p>
 
@@ -1367,11 +1370,16 @@ defines the template which is used as the drop-down container : <code class="hig
 
 <ul>
   <li>redundant elements are hidden with CSS</li>
-  <li>the <code class="highlighter-rouge">.lib-dropdown()</code> mixin from <a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a> was applied to the corresponding element</li>
+  <li>
+    <p>the <code class="highlighter-rouge">.lib-dropdown()</code> mixin from <a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a> was applied to the corresponding element</p>
+
+    <div class="collapsible">
+  <b class="collapsible-title">Expand to see the code </b>
+  <div class="collapsible-content"><p><code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/web/css/source/_extend.less</code>:</p>
+
+</div></div>
+  </li>
 </ul>
-
-<div class="collapsible"><b class="collapsible-title">Expand to see the code </b><div class="collapsible-content"><p><code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/web/css/source/_extend.less</code>:</p>
-
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span>
 <span class="o">//</span>  <span class="nt">Common</span>
 <span class="o">//</span>  <span class="nt">_____________________________________________</span>
@@ -1415,7 +1423,8 @@ defines the template which is used as the drop-down container : <code class="hig
         <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
-</div></div>
+<p>&lt;/div&gt;
+  &lt;/div&gt;</p>
 
 <p>As a result, the customer links look like following:</p>
 
