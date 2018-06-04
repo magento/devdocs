@@ -21,24 +21,19 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 
 #### To add a `sitemap.xml` file:
 
-1.  On your local branch, access the Magento Admin panel.
-1.  On the _Marketing_ menu, click **Site Map**.
+1.  On your local branch, create the `/pub/media` directory and add the `sitemap.xml` file in the directory.
+1.  Add the path to the `.gitgnore` file and commit the code changes.
+1.  Log in to the remote environment using SSH.
+1.  Access the Magento Admin panel.
+1.  On the _Marketing_ menu, click **Site Map** in the _SEO & Search_ section.
 1.  In the _Site Map_ view, click **Add Sitemap**.
 1.  In the _New Site Map_ view, enter the following values:
 
     -  **Filename**:`sitemap.xml`
-    -  **Path**:`/pub/media/`
+    -  **Path**:`/media/`
 
-1.  Click **Save & Generate**.
-1.  Import the generated files to the `pub/media` directory on the server.
-1.  Log in to the remote environment using SSH.
-1.  Move the files into the `/pub/media/` directory using the rsync command:
-
-    ```bash
-    rsync -azvP pub/media/ <user_name>@<environment_IP_address>:pub/media/
-    ```
-
-1.  This results in a `www.example.com/media/sitemap.xml` path, so you must submit a Support ticket to apply a redirect for your generated files.
+1.  Click **Save & Generate**. The new sitemap becomes available in the Site Map grid.
+1.  Click the path in the 'Link for Google' column.
 
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
