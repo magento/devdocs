@@ -42,14 +42,16 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
-#### To add a `robots.txt` file:
+#### To create or add a `robots.txt` file:
 
 1.  On your local branch, access the Magento Admin panel.
-1.  On the _Content_ menu, click **Configuration**.
+1.  On the _Content_ menu, click **Configuration** in the _Design_ section.
 1.  In the _Design Configuration_ view, click **Edit** for the Global Website.
 1.  In the _Main Website_ view, click **Search Engine Robots** in the _Other Settings_ section.
 1.  Select options and update the `robots.txt` file.
 1.  Click **Save Configuration**.
+
+You can open the link in your browser: `<domian.your.project>/robots.txt`
 
 ## Rewrite using Fastly VCL snippet
 You can generate the `sitemap.xml` file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
