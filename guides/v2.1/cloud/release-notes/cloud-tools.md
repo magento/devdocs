@@ -37,6 +37,8 @@ functional_areas:
 
 #### Fixed Issues
 
+-  <!-- MAGECLOUD-2113 -->Fixed an issue with the `post_deploy` hook that cleared the cache in the deploy phase instead of the post-deploy phase of the project.
+
 -  <!-- MAGECLOUD-2034 -->Fixed an issue when using SCD with multiple locales, which generated the same `js-translation.json` file for each locale.
 
 - <!-- MAGECLOUD-2033  -->Optimized the `support:db:dump` command.
