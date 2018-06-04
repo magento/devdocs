@@ -28,6 +28,12 @@ stage:
   global:
     GLOBAL_VARIABLE_NAME: value
 ```
+### `MIN_LOGGING_LEVEL`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+Only use the Project Web UI to set this value. Overrides the minimum logging level for all output streams without making changes to the code. This helps to improve troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels).
 
 ### `SCD_ON_DEMAND`
 

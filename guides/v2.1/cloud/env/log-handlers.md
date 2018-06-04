@@ -49,20 +49,3 @@ log:
         port: <udp-port>
         chunk_size: 1024
 ```
-
-### `MIN_LOGGING_LEVEL`
-
--  **Default**—_Not set_
--  **Version**—Magento 2.1.4 and later
-
-Overrides the minimum logging level for all output streams without making changes to the code. This helps to improve troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels).
-
-following sets the logging level to `notice` for all streams (console) and `debug` for all file output
-
-```yaml
-log:
-  stream:
-    min_level: notice
-  file:
-    min_level: debug
-```
