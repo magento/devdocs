@@ -18,21 +18,49 @@ Always perform comprehensive testing before deploying any unreleased patch.
 
 ## Create a patch
 
+There are many ways to create patch files. This example focuses on creating a patch from a known commit.
+
 To create a patch file:
 
 1. Create a `patches/composer` directory in your local project.
 
-1. Identify the GitHub commit or pull request to use for the patch. For example:
-
-   [`2d31571f1bacd11aa2ec795180abf682e0e9aede`](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede){:target="\_blank"}
+1. Identify the GitHub commit or pull request to use for the patch. This example uses the [`2d31571`](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede){:target="\_blank"} commit linked to Magento 2 GitHub issue [#6474](https://github.com/magento/magento2/issues/6474){:target="\_blank"}.
 
 1. Append `.patch` or `.diff` to the commit URL. Use `.diff` for a smaller file size. For example:
 
    [https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch](https://github.com/magento/magento2/commit/2d31571f1bacd11aa2ec795180abf682e0e9aede.patch){:target="\_blank"}
 
-1. Save the page as a file in the `patches/composer` directory.
+1. Save the page as a file in the `patches/composer` directory. For example, `github-issue-6474.patch`.
 
-1. Edit the file and change all paths so that they are relative to the `vendor/<VENDOR>/<PACKAGE>` directory. For example, replace all instances of `app/code/Magento/Payment/` with `vendor/magento/module-payment/`.
+1. Edit the file and remove `vendor/<VENDOR>/<PACKAGE>` from all paths so that they are relative to the `vendor/<VENDOR>/<PACKAGE>` directory.
+
+    The following example shows the previously mentioned patch file after removing all instances of `app/code/Magento/Payment`:
+
+    ```text
+    From 2d31571f1bacd11aa2ec795180abf682e0e9aede Mon Sep 17 00:00:00 2001
+    From: Ievgen Sentiabov <isentiabov@magento.com>
+    Date: Wed, 31 Aug 2016 18:46:44 +0300
+    Subject: [PATCH] MAGETWO-56934: Checkout page freezes when ordering with
+     Authorize.net with invalid credit card
+
+     - Added fail() method call
+    ---
+     view/frontend/web/js/view/payment/iframe.js | 1 +
+     1 file changed, 1 insertion(+)
+
+    diff --git a/view/frontend/web/js/view/payment/iframe.js b/view/frontend/web/js/view/payment/iframe.js
+    index c8a6fef58d31..7d01c195791e 100644
+    --- a/view/frontend/web/js/view/payment/iframe.js
+    +++ b/view/frontend/web/js/view/payment/iframe.js
+    @@ -154,6 +154,7 @@ define(
+                  */
+                 clearTimeout: function () {
+                     clearTimeout(this.timeoutId);
+    +                this.fail();
+
+                     return this;
+                 },
+    ```
 
     <div class="bs-callout bs-callout-warning" markdown="1">
     Text editors that automatically remove trailing whitespace or add new lines can break the patch. Use a simple text editor to make these changes.
@@ -73,7 +101,7 @@ To apply a patch:
     If a patch affects multiple modules, you must create multiple patch files targeting multiple modules.
     </div>
 
-1. Apply the patch. Use the `-v` option to show debugging information.
+1. Apply the patch. Use the `-v` option only if you want to see debugging information.
 
    ```bash
    composer -v install
