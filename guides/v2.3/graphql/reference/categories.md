@@ -81,7 +81,7 @@ The response can contain up to ten nested `children` options that allow you to r
 
 ## Sample Query
 
-The following query returns information about category ID `20` (Women) and four levels of subcategories. These categories are defined in the sample data.
+The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the "Women" category.
 
 {% highlight json %}
 {
