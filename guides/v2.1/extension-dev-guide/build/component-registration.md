@@ -26,7 +26,7 @@ where &lt;VendorName> is the name of the company providing the {% glossarytoolti
 Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
 
 ### Example
-    use \Magento\Framework\Component\ComponentRegistrar;
+    use Magento\Framework\Component\ComponentRegistrar;
     ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 
 ## Register themes {#register-themes}
@@ -73,7 +73,7 @@ After you create your `registration.php` file and you are creating [your compone
 {% highlight php startinline=true %}
 <?php
 
-use \Magento\Framework\Component\ComponentRegistrar;
+use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
 {%endhighlight %}
