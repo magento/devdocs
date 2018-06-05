@@ -5,10 +5,16 @@
 - [ ] Other
 
 <!-- (REQUIRED) What is the Community issue and code PR? -->
-## Community issue link:
+## Community GitHub issue link:
 
-## Community code PR:
+## Community GitHub code PR link:
 
+<!-- (REQUIRED) What is the Magento Open Source/Commerce and version for the PR? Will it be back or forward ported? -->
+## Magento version:
+- [ ] Open Source
+- [ ] Commerce
+
+## Back and Forward porting:
 
 <!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
 ## Content for Community contribution:
