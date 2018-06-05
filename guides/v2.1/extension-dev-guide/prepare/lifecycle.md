@@ -126,7 +126,7 @@ class \VendorName\ModuleName\Setup\InstallData implements \Magento\Framework\Set
 
 ### Data upgrade
 
-Magento executes the data upgrade class when it detects an earlier version in the `schema_version` field for the module in the `setup_module` table.
+Magento executes the data upgrade class when it detects an earlier version in the `data_version` field for the module in the `setup_module` table.
 The purpose of this class is to fix corrupted data or populate a new data field after a schema change.
 
 | **Class name** | `UpgradeData`            |

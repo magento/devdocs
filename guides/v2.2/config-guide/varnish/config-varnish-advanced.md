@@ -29,7 +29,7 @@ Magento defines the following default health check:
     .interval = 5s;
     .window = 10;
     .threshold = 5;
-    }
+}
 {% endhighlight %}
 
 Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} is considered unhealthy.
@@ -118,13 +118,13 @@ backend default1 {
     .host = "192.168.0.1";
     .port = "8080";
     .first_byte_timeout = 600s;
-        .probe = {
-            .url = "/pub/health_check.php";
-            .timeout = 2s;
-            .interval = 5s;
-            .window = 10;
-            .threshold = 5;
-        }
+    .probe = {
+        .url = "/pub/health_check.php";
+        .timeout = 2s;
+        .interval = 5s;
+        .window = 10;
+        .threshold = 5;
+    }
 }
 
 backend default2 {

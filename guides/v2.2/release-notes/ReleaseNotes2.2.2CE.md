@@ -216,7 +216,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-83281 -->* XHTML templates now use schema URNs. [GitHub-6661](https://github.com/magento/magento2/issues/6661)
 
-<!--- MAGETWO-83279 -->* The image size used as a cross-sell product placeholder now equals the size of the image used in product listing placeholder images. Previosuly, the cross-sell product placeholder image was too small. [GitHub-12017](https://github.com/magento/magento2/issues/12017)
+<!--- MAGETWO-83279 -->* The image size used as a cross-sell product placeholder now equals the size of the image used in product listing placeholder images. Previously, the cross-sell product placeholder image was too small. [GitHub-12017](https://github.com/magento/magento2/issues/12017)
 
 <!--- MAGETWO-82710 -->* Magento now downloads the backup `.tgz` file that you select for downloading. Previously, no matter which backup you selected, Magento downloaded the most recent backup. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request 11595*. [GitHub-10032](https://github.com/magento/magento2/issues/10032)
 
@@ -258,7 +258,7 @@ Looking for more information on these new features as well as many others? Check
 <!--- MAGETWO-81675 -->* Magento now displays the State/Province field after you edit the billing address on sales orders.  *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request 11381*. [GitHub-10441](https://github.com/magento/magento2/issues/10441)
 
 
-<!--- MAGETWO-81680 -->* You can now successfully sync billing and shipping addresses on Admin Reorder and Admin Customer Create Order page for selected, exisiting addresses. *Fix submitted by [Ievgen Sentiabov](https://github.com/joni-jones) in pull request 11385*. [GitHub-10856](https://github.com/magento/magento2/issues/10856)
+<!--- MAGETWO-81680 -->* You can now successfully sync billing and shipping addresses on Admin Reorder and Admin Customer Create Order page for selected, existing addresses. *Fix submitted by [Ievgen Sentiabov](https://github.com/joni-jones) in pull request 11385*. [GitHub-10856](https://github.com/magento/magento2/issues/10856)
 
 
 <!--- MAGETWO-82854 -->* The `FixAccountManagementTest` unit test now works as expected. *Fix submitted by [@adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11607*.
@@ -311,7 +311,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Infrastructure
-<!--- MAGETWO-82273 -->* New static block tests  now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11235*. [GitHub-10824](https://github.com/magento/magento2/issues/10824)
+<!--- MAGETWO-82273 -->* New static block tests  now detect blocks without a name attribute. We've also added a missing block name to allow block customization, and added a name for the order items grid default renderer block. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11235*. [GitHub-10824](https://github.com/magento/magento2/issues/10824)
 
 <!--- MAGETWO-82300 -->* We've ported a fix for the Travis CI builds for the  `2.2-develop` branch to the  `2.3-develop` branch. *Fix submitted by [Ievgen Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 11555*.
 
@@ -1150,10 +1150,9 @@ For more information, [System Requirements]({{ site.baseurl }}/magento-system-re
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.2 General Availability (GA) using Composer.
+See [How to get the Magento software](https://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 
-{% include install/releasenotes/ce_install_21.md %}
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

@@ -86,7 +86,7 @@ For Pro projects created **after October 23, 2017**, you do not need to complete
 
 For Pro projects created **before October 23, 2017**, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
 
-When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environements and push code and migrate data and files using Git commands.
+When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environments and push code and migrate data and files using Git commands.
 
 Using a terminal connection, enter Git commands to add the remote repositories.
 
@@ -104,7 +104,7 @@ You only need to set up your SSH agent on these servers once. SSH agent helps co
 
 **How it works!** After you configure the agent and settings, you can migrate files easier using SSH or `scp` between servers. The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system, helping you connect using your local private SSH key. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.
 
-You can use any terminal client you prefer for SSH access, or see our [Recommendeds tools]({{ page.baseurl }}/cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
+You can use any terminal client you prefer for SSH access, or see our [Recommended tools]({{ page.baseurl }}/cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
 To set up an SSH agent:
 

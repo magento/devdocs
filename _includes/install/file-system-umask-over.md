@@ -63,3 +63,4 @@ For more information about `magento_umask`, see [Optionally set a umask]({{ page
 We recommend different permissions and ownership for default mode, developer mode, and production mode.
 
 We discuss these recommendations in [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html).
+</div>

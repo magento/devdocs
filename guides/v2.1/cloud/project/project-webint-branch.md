@@ -16,7 +16,7 @@ functional_areas:
   - Configuration
 ---
 
-Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).
+Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branches, see [Git documentation](https://git-scm.com/doc).
 
 For more information about managing environments using the CLI, see [Manage branches with the CLI]({{ page.baseurl }}/cloud/env/environments-start.html).
 

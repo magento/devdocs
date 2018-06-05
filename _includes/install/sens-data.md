@@ -13,3 +13,4 @@ Magento does *not* encrypt:
 *	Address
 *	Phone number
 *	Other types of personally identifiable information except for credit card numbers
+</div>
