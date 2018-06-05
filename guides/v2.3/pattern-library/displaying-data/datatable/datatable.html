@@ -913,7 +913,7 @@
 <br />
 <br /></p>
 
-<h3>Data-table Visual Architecture</h3>
+<h3 id="data-table-visual-architecture">Data-table Visual Architecture</h3>
 <p>The data-table will contain the following elements where applicable and as needed:</p>
 <ul>
 	<li>Pagination controls</li>
@@ -924,7 +924,7 @@
 	<li>Data</li>
 </ul>
 
-<h2>Modularity</h2>
+<h2 id="modularity">Modularity</h2>
 <p>The data-table will be designed in such a way that any of the above controls can be removed, collapsing the table gracefully.
 <br />
 <img src="img/datatable02.jpg" />
@@ -952,7 +952,7 @@
 <img src="img/datatable04.jpg" />
 <br /></p>
 
-<h3>Pagination Rules</h3>
+<h3 id="pagination-rules">Pagination Rules</h3>
 <ul>
 	<li>The pagination controls will only be present if the number of table items exceeds the lowest increment
 		for number of items per page.</li>
@@ -994,7 +994,7 @@ Actions will be positioned above the table . Each table  will have it’s own se
 <br />
 <br /></p>
 
-<h3>Single Actions</h3>
+<h3 id="single-actions">Single Actions</h3>
 <p>These actions will appear within the data area of the table where applicable. When this action column is applicable, it will always appear on the far right of the table . Single actions will allow users to take action on a record within the table . In most cases, no more than one action will appear here. In the event that additional actions are needed, they will appear in the form of a drop down. These actions are specific to the single record in which they are associated. In the event that a user selects multiple items in the table, these actions will be disabled or hidden.
 <br />
 <br />
@@ -1025,11 +1025,11 @@ Actions will be positioned above the table . Each table  will have it’s own se
 <h2 id="tablecontrol">Table Control</h2>
 <p>This section will cover the ability to set column visibility, save view state, and search. Filters will be covered in the following section.</p>
 
-<h3>Keyword Search</h3>
+<h3 id="keyword-search">Keyword Search</h3>
 <p>A   <span term-uuid="caa46cea-25d7-4e4f-bce1-11430ada59dc" class="glossary-term" data-toggle="popover">keyword</span>
  search will allow users to search on the data that has been loaded into the table  being viewed. This search is a part of the table, and is separate from the global record search in the page header. It will allow for exact phrases(using quotations) and the following boolean operators:</p>
 
-<h3>Placement and Behavior</h3>
+<h3 id="placement-and-behavior">Placement and Behavior</h3>
 <p>The keyword search function and table controls will be:</p>
 <ul>
 	<li>Displayed above the table</li>
@@ -1057,7 +1057,7 @@ The persistent header will reactivate when you scroll back up:
 
 <p>For details about component’s implementation see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.</p>
 
-<h3>Multiple Data-tables on Page</h3>
+<h3 id="multiple-data-tables-on-page">Multiple Data-tables on Page</h3>
 <p>The header will stick to the first table until the user scrolls past the bottom of that table . The header will have the same behavior for each subsequent data-table.
 <br />
 <br />
@@ -1067,7 +1067,7 @@ The persistent header will reactivate when you scroll back up:
 <br />
 <br /></p>
 
-<h3>Interactions</h3>
+<h3 id="interactions">Interactions</h3>
 <p>The data-table will reset to the top of the table  when the user:</p>
 <ul>
 	<li>Submits a search query</li>
@@ -1086,7 +1086,7 @@ The data-table will remain in the current viewport when the user:</p>
 	<li>Edits cells in-line</li>
 </ul>
 
-<h3>Sticky First Column</h3>
+<h3 id="sticky-first-column">Sticky First Column</h3>
 <p>The table can be scrolled horizontally. And to keep the row identifiable, the checkbox column and first column will be sticky. In creating the grid, the first column must always be an identifiable attribute such as name.
 <br />
 <br />
@@ -1126,7 +1126,8 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br />
 <br /></p>
-<h3>Autocomplete</h3>
+
+<h3 id="autocomplete">Autocomplete</h3>
 <p>As text is added to the search field, the system will suggest terms and phrases based on data contained in the table being searched against.</p>
 <ul>
 	<li>No more than 5 suggestions should be displayed at a time</li>
@@ -1138,7 +1139,7 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br /></p>
 
-<h3>Search/Filter Tags</h3>
+<h3 id="searchfilter-tags">Search/Filter Tags</h3>
 <p>Once a search term or filter is applied and results are loaded into the table, the terms or parameters used to filter by are displayed in the minified version of the “filter chip(s)”. If the user removes all the tags, the filters row would disappear.
 <br />
 <br />
@@ -1148,7 +1149,7 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br /></p>
 
-<h3>Error Checking/Validation</h3>
+<h3 id="error-checkingvalidation">Error Checking/Validation</h3>
 <p>There will be no form validation or error checking for search queries since any combination of characters may be searched. Messaging will display in the data area when no results can be returned.
 <br />
 <br />
@@ -1158,10 +1159,10 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br /></p>
 
-<h3>User Flow</h3>
+<h3 id="user-flow">User Flow</h3>
 <p>Upon conducting a query, a result set is returned based on the above rules. Once results are loaded, the keyword search field will be empty, and a chip for the keyword will appear. If a user clears the chip, the table will then refresh, reloading data based on any filters that are applied.</p>
 
-<h3>Columns</h3>
+<h3 id="columns">Columns</h3>
 <p>The user will be able to select which columns are visible from here. Settings will also be contained in a panel that can be activated by clicking on the columns action. Users will also have the ability to cancel out of this prompt, as well as reset (restore) the table back to it’s default column view. These settings will be ‘sticky’ per table, so users returning to any particular table will see the table the way it was last configured. 
 <br />
 <br />
@@ -1173,7 +1174,7 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br /></p>
 
-<h3>Custom Views</h3>
+<h3 id="custom-views">Custom Views</h3>
 <p>Custom views allow the user to save the state of a table. When a view is saved, the table settings will be stored. These settings include column visibility and position, as well as any filter or search that has been applied to the table. Saving a ‘view’ will be done via a dropdown control. Saved views will be available per table.
 <br />
 <br />
@@ -1183,7 +1184,7 @@ This horizontal scroll should still work with page scroll and sticky header.
 <br />
 <br /></p>
 
-<h3>Editing Saved Views</h3>
+<h3 id="editing-saved-views">Editing Saved Views</h3>
 <p>Views can be named or deleted by clicking an edit icon. Refer to “Adding a custom value to drop down list” above for more detailed behavior.
 <br />
 <br />
@@ -1196,15 +1197,20 @@ This horizontal scroll should still work with page scroll and sticky header.
 <h2 id="filters">Filters</h2>
 <p>Filters allow users to customize the display of information in an associated data-table. By entering desired parameters (for example, a date range) in the available filter input sections table returns a modified view, making visible only the records meeting the user-determined criteria.</p>
 
-<h3>Advanced Filters</h3>
+<h3 id="advanced-filters">Advanced Filters</h3>
 <p>To access the Advanced Filters the user may click/tap the “Filters” button found in the table controls area. When activated, the button transforms into a tab and displays the available filters in a ‘drawer’ which opens between the table controls and the table data. The available filters are determined by the columns present in the table; therefore, if the user customizes the column visibility of the table to show some columns and hide others, the corresponding filters for these columns will display or hide in the filter ‘drawer’.
 <br />
 <br />
 <img src="img/filter_init.png" />
 <br />
 <br /> 
-<strong>NOTE:</strong> Not all columns may be filtered (i.e. “Actions” or checkbox select) and therefore will not be presented in the list of filters even though their columns are visible in the data-table.
-<br />
+<!-- Available note types: "info", "warning", "tip" --></p>
+
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>Not all columns may be filtered (such as <strong>Actions</strong> or checkbox select) and therefore will not be presented in the list of filters even though their columns are visible in the data-table.</p>
+</div>
+
+<p><br />
 <br />
 <img src="img/filter_drawer.png" />
 <br />
@@ -1226,7 +1232,7 @@ To apply filters, the user sets the desired parameters in the input fields of th
 <br /></p>
 
 <!---
-<h3>Quick Filters</h3>
+### Quick Filters
 In some instances, pre-determined "quick filters" may be present in the form of links. These are filter shortcuts of common filtering attributes to assist users who may not readily consider filtering the table for results. Quick Filters are perhaps most useful for extracting ‘reports’ from tables.  These filters are elevated above the ‘advanced filters’.
 
 <strong>Step 1:</strong> Starting state. User click on a quick filter link.
@@ -1261,7 +1267,7 @@ Once user click on the quick filters, that quick filter is shown as a chip. The 
 	<li>The only columns which cannot be moved are the checkbox(select) column and the action column. The select column will always appear on the far left while the action column will appear on the far right of the table </li>
 </ul>
 
-<h3>View Stickiness</h3>
+<h3 id="view-stickiness">View Stickiness</h3>
 <p>As a user rearranges, adds, and resizes the columns of a particular table , it’s view state should be saved so that when a user leaves and the returns to the table , it will appear the way the user last viewed it.
 <br />
 The following parameters will be saved:</p>
@@ -1274,7 +1280,7 @@ The following parameters will be saved:</p>
 <p><br />
 <br /></p>
 
-<h3>Resetting the View</h3>
+<h3 id="resetting-the-view">Resetting the View</h3>
 <p>This will be handled by the ‘Reset’ function in the settings drop down button. A modal dialog should appear, allowing the user to confirm the reset.</p>
 
 <h2 id="selectall">Select All</h2>
@@ -1295,7 +1301,7 @@ This drop down will include the following:</p>
 </ul>
 <p>This drop down only needs to appear where more than one page of data is available. In cases where only one page of data is available, only a checkbox allowing the user to select or deselect all is necessary. Options in the drop down select should be dynamic. For instance, deselect options should not be displayed if nothing is selected.</p>
 
-<h3>Number of Records</h3>
+<h3 id="number-of-records">Number of Records</h3>
 <p>The total number of records loaded into the table  will display above the column headers.
 <br />
 <br />
@@ -1330,7 +1336,7 @@ As items are selected on the gird, a count for the number of items selected shou
 <br />
 <br /></p>
 
-<h3>Toggle Switches</h3>
+<h3 id="toggle-switches">Toggle Switches</h3>
 <p>Some data-tables will be used to display “settings” content. In these instances a checkbox is not ideal for the experience, as it can be confusing to the user when pre-selected settings are displayed. Switches make the action and intent more clear to the user for these tasks. Therefore, if switches are present, checkboxes should not; the two should never be used in the same table. Since switches replace the functionality of checkboxes they should be the first column of the data-table. 
 <br />
 <br />
@@ -1339,12 +1345,10 @@ As items are selected on the gird, a count for the number of items selected shou
 <br />
 <br />
 <br /></p>
-<h3>Single Select Button</h3>
-
+<h3 id="single-select-button">Single Select Button</h3>
 <p>The data table can also accommodate buttons in rows, and has a special case in the “Single Select” button.  This button functions not unlike a typical radio button control, but is used instead of the radio button when the task flow or experience in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
- application are better served with the more implicit action of selecting a single choice from a data table. This provides greater visibility and imediate confirmation of the action to the user. The use of this should be carefully considered in the context of the experience to determine if it provides greater understanding to the user than radio buttons.</p>
-
-<p><br />
+ application are better served with the more implicit action of selecting a single choice from a data table. This provides greater visibility and imediate confirmation of the action to the user. The use of this should be carefully considered in the context of the experience to determine if it provides greater understanding to the user than radio buttons.
+<br />
 <br />
 <br />
 <img src="img/single_select_button.png" />
@@ -1354,9 +1358,13 @@ As items are selected on the gird, a count for the number of items selected shou
 
 <h2 id="editing">Editing</h2>
 <p>Single item and multiple item edits are explained below.<br />
-<strong>Note: Not all data-tables will allow for inline editing.</strong></p>
+<!-- Available note types: "info", "warning", "tip" --></p>
 
-<h3>Single Item Select and Edit Interactions</h3>
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>Not all data-tables will allow for inline editing.</p>
+</div>
+
+<h3 id="single-item-select-and-edit-interactions">Single Item Select and Edit Interactions</h3>
 <ul>
 	<li>Inline editing can be instantiated by single clicking on the field to be edited. Once inline editing
 		is instantiated, all appropriate fields within a row will be editable.</li>
@@ -1390,7 +1398,7 @@ Some fields may allow for only a specific set of values. In these instances, a s
 <h2 id="misc">Miscellaneous Features</h2>
 <p>This section will outline additional features which may be needed for some but not all tables in Magento.</p>
 
-<h3>Drag and Drop Columns</h3>
+<h3 id="drag-and-drop-columns">Drag and Drop Columns</h3>
 <p>Some data-tables will allow users to arrange columns in a customized order. A user “picks up” a column by click and hold or touch and hold of the column header, then drags the column into the desired position. A highlight appears between columns in the table to indicate where this column will appear when “dropped”. Columns will not be allowed to precede the column of checkboxes in a table, likewise columns may not be positioned after the “Actions” column.</p>
 
 <p>When dropped on an area that is not highlighted (or off target of the highlighted area) the column will return to it’s original position. If the user wishes to maintain this position for future viewing, they must set a “Saved View”, otherwise the default column order will prevail for following sessions.
@@ -1402,18 +1410,23 @@ Some fields may allow for only a specific set of values. In these instances, a s
 <br />
 <br /></p>
 
-<h3>Drag and Drop Rows</h3>
+<h3 id="drag-and-drop-rows">Drag and Drop Rows</h3>
 <p>Some data-tables will allow users to specify an order for the records within the table. If a position has been assigned to a record, the position number will display in the ‘Position’ column. Changing position order should always shift the greater numbers in an ascending fashion, and lesser numbers in a descending fashion. E.G., if position 5 is changed to 10, the previous position 10 would become position 11, shifting all ascending records up. Position 6 through 9 would then shift down in the same manner. 6 would become 5, 7 would become 6, so on and so forth. If the ‘Position’ column is sorted, users can drag and drop single or multiple(once selected) to a different position on the table.</p>
 
-<p><strong>NOTE: Inline editing functionality should not be available for tables that require drag and drop functionality for table rows.</strong></p>
-<h3>Single rows may be arranged via drag and drop.</h3>
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-tip" id="tip">
+  <p>Inline editing functionality should not be available for tables that require drag and drop functionality for table rows.</p>
+</div>
+
+<h3 id="single-rows-may-be-arranged-via-drag-and-drop">Single rows may be arranged via drag and drop</h3>
 <p><br />
 <br />
 <img src="img/datatable47.jpg" />
 <br />
 <br /></p>
 
-<h3>Multiple rows may also be arranged via drag and drop.</h3>
+<h3 id="multiple-rows-may-also-be-arranged-via-drag-and-drop">Multiple rows may also be arranged via drag and drop</h3>
 <p><br />
 <br />
 <img src="img/datatable48.jpg" />
@@ -1438,7 +1451,7 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 <br />
 <br /></p>
 
-<h3>Parent-Child relationships</h3>
+<h3 id="parent-child-relationships">Parent-Child relationships</h3>
 <p>The data-table will support parent-child relationships. Parent and child records will be delineated via style and/or iconography. Parent nodes will be expandable/collapsable.
 <br />
 <br />
@@ -1451,7 +1464,7 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 <h2 id="interactions">Interactions</h2>
 <p>General interaction should follow standard web conventions. Interaction around dragging and resizing columns will utilize the cursor to indicate when an area can be dragged or resized.</p>
 
-<h3>Viewport Considerations</h3>
+<h3 id="viewport-considerations">Viewport Considerations</h3>
 <ul>
 	<li>The default data-table will display within a 1024px screen resolution without the need for horizontal 
 		scrolling.</li>
@@ -1466,7 +1479,7 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 <br />
 <br /></p>
 
-<h3>Column Headers</h3>
+<h3 id="column-headers">Column Headers</h3>
 <ul>
 	<li>Clicking on a column header sorts the data ascending/descending.</li>
 	<li>Column headers are draggable and can be re-sized.</li>
@@ -1477,7 +1490,7 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 	<li>Can be resized by dragging the edge of the column.</li>
 </ul>
 
-<h3>Cursors</h3>
+<h3 id="cursors">Cursors</h3>
 <p>Cursors will be used to indicate which actions the user can take in any particular situation. While cursors may differ slightly depending on operating system and browser, the below cursors are examples of what should be used per standard web conventions:
 <br />
 <br />
@@ -1485,10 +1498,10 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 <br />
 <br /></p>
 
-<h2 class="summary">Summary</h2>
+<h2 id="summary">Summary</h2>
 <p>This specification proposes a new version of Magento’s administration data-table. Features of the existing data-table have been analyzed to best represent the existing functions of the data-table.</p>
 
-<h3>Backwards Compatibility</h3>
+<h3 id="backwards-compatibility">Backwards Compatibility</h3>
 <p>This new version of the data-table will fully support the existing Magento data-table functionality. Where this document may not be explicit, it should be assumed that any existing function of the table  will be supported with this new version.</p>
 
 <h3 id="assets">Assets</h3>
