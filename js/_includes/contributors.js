@@ -14,7 +14,7 @@
   var pluginName = 'contributorsList';
 
   var defaults = {
-    dataUrl: 'https://s3.amazonaws.com/public.magento.com/devdocs-contributors.js',
+    dataUrl: 'https://s3.us-east-2.amazonaws.com/statistic.engcom.magento.com/magento.com/devdocs-contributors.js',
     periodTypes: 'monthly,quarterly,yearly',
     periodTypesSettings: {
       monthly: {

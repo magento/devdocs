@@ -39,7 +39,7 @@ For more technical users and developers, you can direct them to the Project Web 
 <!-- for future use: http://cloud.magento.com -->
 
 ## About the portal {#overview}
-The main page is Getting Started. It lists a series of suggested tasks from start to launch for your project. The left side navigation includes the links from the Getting Started page. If you need to enter a support ticket or manage your account, use the top nagivation links.
+The main page is Getting Started. It lists a series of suggested tasks from start to launch for your project. The left side navigation includes the links from the Getting Started page. If you need to enter a support ticket or manage your account, use the top navigation links.
 
 The focus of this portal is for business users who may need a bit more planning and high level information to get started. For developers and the Technical Admin, deeper technical information and settings are available through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
 

@@ -20,7 +20,7 @@ The following diagram shows Web API component dependencies.
 
 ### High-level Architecture
 
-The following image provides an overview of how Web APIs are processed.
+The following image provides an overview of how Web API requests are processed.
 
 ![Web API request processing overview]({{ site.baseurl }}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
 

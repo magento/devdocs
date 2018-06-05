@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 03_Bootstrap
 title: About Magento modes
-menu_title: About Magento modes
-menu_order: 3
-menu_node:
 version: 2.1
 github_link: config-guide/bootstrap/magento-modes.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/magento-modes.html
@@ -88,14 +84,14 @@ In developer mode:
 For more information, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
 ## Production mode
-You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
+You should run the Magento software in production mode when it is deployed to a production server. After optimizing the server environment, such as the database and web server, you should run the [static view files deployment tool]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) to write static view files to the Magento `pub/static` directory.
 
-This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
+This improves performance by providing all necessary static files at deployment instead of forcing Magento to dynamically locate and copy (materialize) static files on demand during run time.
 
 In production mode:
 
--   Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} only.)
--   Errors are logged to the file system and are never displayed to the user
+-   Static view files are not materialized and URLs for them are composed on the fly. Static view files are served from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} only.)
+-   Errors are logged to the file system and are never displayed to the user.
 
 #### Next step
 To set a mode, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
