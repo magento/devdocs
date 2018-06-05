@@ -278,7 +278,7 @@ Once a search term or filter is applied and results are loaded into the table, t
 <br />
 <br />
 
-### Error Checking/Validatio
+### Error Checking/Validation
 There will be no form validation or error checking for search queries since any combination of characters may be searched. Messaging will display in the data area when no results can be returned.
 <br />
 <br />
