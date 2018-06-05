@@ -24,7 +24,7 @@ Within a company, customers may have different job roles, levels of responsibili
 * Company user management
 * Company credit
 
-Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block accesss using web APIs, you must specify each resource individually.
+Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block access using web APIs, you must specify each resource individually.
 
 The following table lists all the resources that are available to the customers defined with a company. To visualize the resource hierarchy, log in to a store as the Company Admin and select **Roles and Permissions**, then click the **Edit** action next to the Default User role.
 
@@ -111,7 +111,7 @@ The following table lists the parameters defined in `RoleInterface`.
 
 This example creates a role named "Junior Buyer". It allows the assignee to access to all Sales resources except "View orders of subordinate users".
 
-All resouces that are not explicitly allowed are denied. You must specify the `Magento_Company::index` resource in all calls.
+All resources that are not explicitly allowed are denied. You must specify the `Magento_Company::index` resource in all calls.
 
 **Sample Usage**
 

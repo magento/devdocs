@@ -14,7 +14,7 @@ functional_areas:
 
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-Both Starter and Pro plan environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+Both Starter and Pro plan environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments

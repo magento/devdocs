@@ -11,7 +11,7 @@ github_link: howdoi/install/mode-switch.md
 
 The Magento application has three *modes* of operation that make it convenient for you to deploy it in a development or production environment.
 
-The two modes you hear the most about are <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">*developer mode*</a> and <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">*production mode*</a>. Aptly named, these modes are intended for development and production use, respectively.
+The two modes you hear the most about are <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">developer mode</a> and <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html">production mode</a>. Aptly named, these modes are intended for development and production use, respectively.
 
 <div class="bs-callout bs-callout-info">
 <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
@@ -36,13 +36,13 @@ To switch modes:
 		<td>developer</td>
 		<td><code>magento deploy:mode:set developer</code></td>
 		<td><p>Directories: 770 (owner and group have full control, all others have no access)</p>
-			<p>Files: 660 (owner and group have write access, all others have no access)</td>
+			<p>Files: 660 (owner and group have write access, all others have no access)</p></td>
 	</tr>
 	<tr>
 		<td>production</td>
 		<td><code>magento deploy:mode:set production [--keep-generated]</code></td>
 		<td><p>Directories: 750 (owner has full control, group has read and execute access, all others have no access)</p>
-			<p>Files: 640 (owner has write access, group has read-only access, all others have no access)</td>
+			<p>Files: 640 (owner has write access, group has read-only access, all others have no access)</p></td>
 	</tr>
 	</tbody>
 	</table>

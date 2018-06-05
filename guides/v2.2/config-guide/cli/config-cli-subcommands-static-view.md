@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Deploy static view files
-menu_title: Deploy static view files
-menu_node:
-menu_order: 302
-level3_menu_node: level3child
-level3_subgroup: static_deploy
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 functional_areas:
@@ -54,7 +48,7 @@ To deploy static view files:
 
 Command options:
 
-	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
 
 The following table explains this command's parameters and values.
 

@@ -55,7 +55,7 @@ All these elements are optional, depending on the functions needed.
 <img src="img/behavior.png">
 
 <h3 id="pagination">Pagination</h3>
-For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appended  to allow the user to rearrange the rows.
+For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
 <img src="img/pagination.png">
 
