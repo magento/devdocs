@@ -13,7 +13,7 @@
 <!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
 ## Content for Community contribution:
 
-<!-- (OPTIONAL) Where would you expect this content in DevDocs? -->
+<!-- (OPTIONAL) Where would you expect this content in DevDocs/Merchant guides? -->
 ## Possible location:
 
 <!-- (OPTIONAL) What other information can you provide? -->
