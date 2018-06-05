@@ -119,11 +119,11 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ### Optional but recommended
 *	[php_xdebug 2.5.x](http://xdebug.org/download.php){:target="&#95;blank"} or later (development environments only; can have an adverse effect on performance)
-* [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
 	<p>For details, see <a href="{{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
+* [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="&#95;blank"}
 *	PHPUnit (as a command-line tool) 6.2.0
