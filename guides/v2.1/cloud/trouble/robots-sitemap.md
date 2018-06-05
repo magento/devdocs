@@ -19,7 +19,7 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 -  For Starter, access the `staging` branch
 -  For Pro, access the `integration` branch
 
-#### To add a `sitemap.xml` file:
+#### To generate a `sitemap.xml` file:
 
 1.  On your local branch, access the Magento Admin panel.
 1.  On the _Marketing_ menu, click **Site Map**.
@@ -42,7 +42,7 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
-#### To create or add a `robots.txt` file:
+#### To add a `robots.txt` file:
 
 1.  On your local branch, access the Magento Admin panel.
 1.  On the _Stores_ menu, click **Configuration** in the _Settings_ section.
