@@ -2153,7 +2153,7 @@
 <p>This section provides suggestions for resolving errors you might find using the <code class="highlighter-rouge">curl</code> command.</p>
 
 <h3 id="no-module">Fastly-Module-Enabled is not present</h3>
-<p>If you don’t receive a “yes” for the <code class="highlighter-rouge">Fastly-Module-Enabled</code> in the response headers, you need to verify the Fasty module is installed and selected.</p>
+<p>If you don’t receive a “yes” for the <code class="highlighter-rouge">Fastly-Module-Enabled</code> in the response headers, you need to verify the Fastly module is installed and selected.</p>
 
 <p>To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:</p>
 
@@ -2163,7 +2163,7 @@
   <li>Ensure Fastly CDN is selected.</li>
   <li>Click on <strong>Fastly Configuration</strong>. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click <strong>Test credentials</strong> to help.</li>
   <li>
-    <p>Edit your <code class="highlighter-rouge">composer.json</code> and ensure the Fasty module is included with version. This file has all modules listed with versions.</p>
+    <p>Edit your <code class="highlighter-rouge">composer.json</code> and ensure the Fastly module is included with version. This file has all modules listed with versions.</p>
 
     <ul>
       <li>In the “require” section, you should have <code class="highlighter-rouge">"fastly/magento2": &lt;version number&gt;</code></li>
@@ -2220,7 +2220,7 @@
 <h2 id="purge">Purges do not process</h2>
 <p>If you attempt to use a Fastly purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue. You may receive the error: “The purge request was not processed successfully.”</p>
 
-<h3 id="creds">Check Fasty credentials</h3>
+<h3 id="creds">Check Fastly credentials</h3>
 <p>Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.</p>
 
 <ol>
