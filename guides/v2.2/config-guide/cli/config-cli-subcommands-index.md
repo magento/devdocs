@@ -140,8 +140,8 @@ Only use the environment variable in the indexer command. Do not save the variab
 ## Configure indexers
 Use this command to set the following indexer options:
 
--   **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
--   **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
+*  **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
+* **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
 
 [Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
@@ -160,14 +160,16 @@ bin/magento indexer:show-mode
 
 Sample result:
 
-	Category Products:                                 Update on Save
-	Product Categories:                                Update on Save
-	Product Price:                                     Update on Save
-	Product EAV:                                       Update on Save
-	Stock:                                             Update on Save
-	Catalog Rule Product:                              Update on Save
-	Catalog Product Rule:                              Update on Save
-	Catalog Search:                                    Update on Save
+```
+Category Products:                                 Update on Save
+Product Categories:                                Update on Save
+Product Price:                                     Update on Save
+Product EAV:                                       Update on Save
+Stock:                                             Update on Save
+Catalog Rule Product:                              Update on Save
+Catalog Product Rule:                              Update on Save
+Catalog Search:                                    Update on Save
+```
 
 ### Configure indexers
 To specify the indexer configuration:
@@ -196,20 +198,22 @@ bin/magento indexer:set-mode schedule catalog_category_product catalog_product_c
 
 Sample result:
 
-	Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
-	Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
+```
+Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
+Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
+```
 
 #### Related topics
 
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+* [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
+* [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+* [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
+* [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
+* [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
+* [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
+* [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
+* [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
+* [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
+* [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
+* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html")
+* [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
