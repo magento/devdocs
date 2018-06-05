@@ -7,7 +7,7 @@
 - [ ] Other
 
 <!-- (REQUIRED) What is the Community issue and code PR? -->
-## Community Issue link:
+## Community issue link:
 
 ## Community code PR:
 
