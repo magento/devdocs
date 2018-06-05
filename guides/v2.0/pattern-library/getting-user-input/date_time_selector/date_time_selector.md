@@ -93,7 +93,7 @@ The following applies to ranges only:
 
 (Styles will support a disabled state for areas which depend on sequence for ranges)
 
-**Time SelecTime Selection Behaviors**
+**Time Selection Behaviors**
 
 Within the calendar widget, the following will apply to time fields:	
 
@@ -197,7 +197,7 @@ http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker </a>
 **General**
 <br>
 
-As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are layed out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role="row."
+As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are laid out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role="row."
 <br>
 
 **Keyboard Interactions**
@@ -249,7 +249,7 @@ Do not implement keyboard navigation schemes that would place more than one cale
 
 *	The container for the day of week headers and numeric days of the week should have a role of grid
 
-*	The grid should have an aria-labelledby property with a value equivalent to the id of the label for the grid
+*	The grid should have an aria-labelled by property with a value equivalent to the id of the label for the grid
 
 *	Each name for the day of the week should have a role columnheader and they should not be navigable via the keyboard.
 
