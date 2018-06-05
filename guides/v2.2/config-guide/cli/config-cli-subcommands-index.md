@@ -97,7 +97,7 @@ Reindexing all indexers can take a long time for stores with large numbers of pr
 
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
-In Magento 2.2.5, indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time by parallelizing by the indexer's dimension and executing across multiple threads.
+In Magento 2.2.5, indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
 
 The following indexes can be run in parallel mode:
 - Catalog Search Fulltext can be paralleled by store views.
