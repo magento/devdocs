@@ -1,10 +1,16 @@
 <!-- (REQUIRED) What is the nature of this issue? -->
-## This issue is a:
+## This Community doc request is a:
 - [ ] Bug on the website
 - [ ] New topic request
 - [ ] Topic clarification request
 - [ ] New DevDocs feature request
 - [ ] Other
+
+<!-- (REQUIRED) What is the Community issue and code PR? -->
+## Community Issue link:
+
+## Community code PR:
+
 
 <!-- (REQUIRED) What is the issue/current behavior? -->
 ## Description:
