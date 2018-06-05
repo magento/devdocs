@@ -13,7 +13,7 @@ functional_areas:
 ---
 
 ## Incorrect credentials
-This topic discusses how to resolve issues with incorrect credentials in your `auth.json`. You might have entered Magento Community Edition (CE) credentials or shared keys for Magento Enterprise Edition (EE).
+This topic discusses how to resolve issues with incorrect credentials in your `auth.json`. You might have entered {{site.data.var.ce}} credentials or shared keys for {{site.data.var.ee}}.
 
 ### Symptom
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
