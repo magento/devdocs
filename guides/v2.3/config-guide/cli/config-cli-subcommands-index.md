@@ -114,10 +114,10 @@ Catalog Search index has been rebuilt successfully in <time>
 ```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Add the following in 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. -->
+Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3 / Remove comments:  To reduce processing time, see the next section for reindexing in parallel mode. -->
 </div>
 
-<!-- Add the following in 2.3:
+<!-- Content for 2.3 / Remove comments:
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
 Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
