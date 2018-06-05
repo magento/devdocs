@@ -1970,7 +1970,7 @@
 
 <ol>
   <li>Open a terminal application.</li>
-  <li><a href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html#branch">Checkout the branch</a> that corresponds to the environment the environment where you are experiencing the issue.</li>
+  <li><a href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html#branch">Checkout a branch</a> that corresponds to the environment where you are experiencing the issue.</li>
   <li>
     <p>Regenerate the image cache:</p>
 
@@ -1983,7 +1983,7 @@
 <h2 id="uncache">Locate blocks in themes that make them uncacheable</h2>
 <p>When debugging your themes, you may need to locate blocks in themes that make the pages uncacheable. Use the following command to locate these blocks.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find ./app -type f -name "*.xml" | xargs grep -l cacheable | xargs grep -l false
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find ./app <span class="nt">-type</span> f <span class="nt">-name</span> <span class="s2">"*.xml"</span> | xargs <span class="nb">grep</span> <span class="nt">-l</span> cacheable | xargs <span class="nb">grep</span> <span class="nt">-l</span> <span class="nb">false</span>
 </code></pre></div></div>
 
 			
