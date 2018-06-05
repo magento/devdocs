@@ -1,9 +1,7 @@
 <!-- (REQUIRED) What is the nature of this issue? -->
 ## This Community doc request is a:
-- [ ] Bug on the website
 - [ ] New topic request
-- [ ] Topic clarification request
-- [ ] New DevDocs feature request
+- [ ] Topic content updates
 - [ ] Other
 
 <!-- (REQUIRED) What is the Community issue and code PR? -->
@@ -12,27 +10,17 @@
 ## Community code PR:
 
 
-<!-- (REQUIRED) What is the issue/current behavior? -->
-## Description:
+<!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
+## Content for Community contribution:
 
-<!-- (OPTIONAL) What needs to be done to replicate this issue? (provide Gist if needed) -->
-### Steps to reproduce
+<!-- (OPTIONAL) Where would you expect this content in DevDocs? -->
+## Possible location:
 
-1. First Step
-2. Second Step
-3. Etc.
-
-<!-- (REQUIRED) When this issue is resolved, what is the expected result/behavior? -->
-## Expected result:
-
-<!-- (OPTIONAL) What would a solution for this issue look like? -->
-## Possible solutions:
-
-<!-- (OPTIONAL) What other information can you provide about this issue? -->
+<!-- (OPTIONAL) What other information can you provide? -->
 ## Additional information:
 
 <!--
-Thank you for taking the time to report this issue!
+Thank you for taking the time to request updates for your Community Engineering contribution!
 GitHub Issues should only be created for problems/topics related to this project's codebase.
 
 Before submitting this issue, please make sure you are complying with our Code of Conduct:
