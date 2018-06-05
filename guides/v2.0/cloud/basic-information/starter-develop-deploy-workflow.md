@@ -238,7 +238,7 @@ To learn more, check out [Go live and launch]({{ page.baseurl }}/cloud/live/live
 ## Continuous integration {#continuous-integration}
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-{{site.data.var.ece}} environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+{{site.data.var.ece}} environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments

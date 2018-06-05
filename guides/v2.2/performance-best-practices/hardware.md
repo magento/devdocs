@@ -23,7 +23,7 @@ If you expect a store's load to change, you can manually increase the number of 
 ### PHP
 Magento 2 has differing PHP memory requirements, based on how your system is deployed.  In general, if you are setting up a single server store and plan on using the web setup wizard, we recommend configuring PHP memory for 2G.  If you are setting up a site using pipeline deployment, we recommend 2 GB on your build server and 1 GB on your web nodes.
 
-Scenerios and expected PHP memory requirements:
+Scenarios and expected PHP memory requirements:
 * Webnode serving only store front pages: 256 MB
 * Webnode serving admin pages with a large catalog: 1 GB
 * Magento 2 cron indexing a site with a large catalog: >256 MB (See [advanced-setup]({{ page.baseurl }}performance-best-practices/advanced-setup.md) to tune for optimal performance.)
@@ -38,7 +38,7 @@ The Magento 2 database (as well as any other database) is sensitive to the amoun
 
 If you are deploying multiple Magento 2 and using Redis or Varnish for your caches, please keep the following principles in mind:
 * Varnish full page cache memory invalidation is effective, recommend enough memory allocated to Varnish to hold your most popular pages in memory
-* Session cache is a good canidate to configure for a seperate instance of Redis.  Memory configuration for this cache type should consider the site's cart abandonment strategy and how long a session should expect to remain in the cache
+* Session cache is a good candidate to configure for a separate instance of Redis.  Memory configuration for this cache type should consider the site's cart abandonment strategy and how long a session should expect to remain in the cache
 * Redis should have enough memory allocated to hold all other caches in memory for optimal performance.  Block cache will be the key factor in determining the amount of memory to configure.  Block cache grows relative to number of pages on a site (number of skus x number of store views)
 
 ## Network bandwidth

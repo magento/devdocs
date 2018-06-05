@@ -6,3 +6,4 @@ Before you continue, make sure you've done all of the following:
 
 	For details, see [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)
 *	Created the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
+</div>
