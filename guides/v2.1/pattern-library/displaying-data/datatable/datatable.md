@@ -2,9 +2,6 @@
 group: pattern
 subgroup: Displaying and Dealing with Data
 title: Admin Design Pattern Library
-menu_title: Data Table
-menu_order: 3
-menu_node:
 version: 2.1
 github_link: pattern-library/displaying-data/datatable/datatable.md
 ---
@@ -335,8 +332,8 @@ To access the Advanced Filters the user may click/tap the "Filters" button found
 <br /> 
 {%
 include note.html
-type="tip"
-content="Not all columns may be filtered (such as "Actions" or checkbox select) and therefore will not be presented in the list of filters even though their columns are visible in the data-table."
+type='tip'
+content='Not all columns may be filtered (such as **Actions** or checkbox select) and therefore will not be presented in the list of filters even though their columns are visible in the data-table.'
 %}
 
 <br />
@@ -489,8 +486,8 @@ The data table can also accommodate buttons in rows, and has a special case in t
 Single item and multiple item edits are explained below.<br />
 {%
 include note.html
-type="tip"
-content="Not all data-tables will allow for inline editing."
+type='tip'
+content='Not all data-tables will allow for inline editing.'
 %}
 
 ### Single Item Select and Edit Interactions
@@ -544,8 +541,8 @@ Some data-tables will allow users to specify an order for the records within the
 
 {%
 include note.html
-type="tip"
-content="Inline editing functionality should not be available for tables that require drag and drop functionality for table rows."
+type='tip'
+content='Inline editing functionality should not be available for tables that require drag and drop functionality for table rows.'
 %}
 
 ### Single rows may be arranged via drag and drop
