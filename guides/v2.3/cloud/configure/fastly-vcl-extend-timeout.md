@@ -1,1 +1,1 @@
-../../../v2.1/cloud/configure/fastly-vcl-extend-timeout.md
+../../../v2.2/cloud/configure/fastly-vcl-extend-timeout.md

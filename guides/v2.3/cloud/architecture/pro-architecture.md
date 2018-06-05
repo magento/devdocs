@@ -1,1 +1,1 @@
-../../../v2.1/cloud/architecture/pro-architecture.md
+../../../v2.2/cloud/architecture/pro-architecture.md
