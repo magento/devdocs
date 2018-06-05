@@ -755,7 +755,7 @@
   </tbody>
 </table>
 
-<p>The files placed in the <code class="highlighter-rouge">adminhtml</code> and <code class="highlighter-rouge">frontend</code> directories ensure that customers and store administrators see only audience-specific messages. For example, a customer should see error messages when a credit card fails verfication due to mis-entered data and similar reasons. The store’s administrator should have more detailed descriptions of why an attempt to create an invoice or refund failed.</p>
+<p>The files placed in the <code class="highlighter-rouge">adminhtml</code> and <code class="highlighter-rouge">frontend</code> directories ensure that customers and store administrators see only audience-specific messages. For example, a customer should see error messages when a credit card fails verification due to mis-entered data and similar reasons. The store’s administrator should have more detailed descriptions of why an attempt to create an invoice or refund failed.</p>
 
 <p>The  <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Braintree/etc/braintree_error_mapping.xml">braintree_error_mapping.xml</a> file provides an example  collection:</p>
 
@@ -783,7 +783,7 @@
 
 <h3 id="configure-dependency-injection">Configure dependency injection</h3>
 
-<p>After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a <code class="highlighter-rouge">virtualType</code> defintion for <code class="highlighter-rouge">\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader</code> in the module’s <code class="highlighter-rouge">di.xml</code> file:</p>
+<p>After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a <code class="highlighter-rouge">virtualType</code> definition for <code class="highlighter-rouge">\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader</code> in the module’s <code class="highlighter-rouge">di.xml</code> file:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">"Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader"</span> <span class="na">type=</span><span class="s">"Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;arguments&gt;</span>
