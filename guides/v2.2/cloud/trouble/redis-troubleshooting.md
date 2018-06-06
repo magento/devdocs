@@ -1,1 +1,1 @@
-../../../v2.0/cloud/trouble/redis-troubleshooting.md
+../../../v2.1/cloud/trouble/redis-troubleshooting.md
