@@ -1,1 +1,1 @@
-../../../v2.0/cloud/onboarding/onboarding-portal.md
+../../../v2.1/cloud/onboarding/onboarding-portal.md
