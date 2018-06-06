@@ -5,7 +5,7 @@ To find the version of the Magento software:
 
 *	If you downloaded the Magento software using a Composer metapackage, enter the following command:
 
-	php <your Magento install dir>/bin/magento --version
+php <your Magento install dir>/bin/magento --version
 *	If you cloned the Magento 2 GitHub repository, enter the following commands:
 
 	cd <your Magento 2 clone directory>
