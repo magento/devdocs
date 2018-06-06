@@ -5,22 +5,20 @@
 | Magento 2 GitHub PR | [link](https://github.com/magento/devdocs/pull/link) |
 | Magento 2 version | <ul><li>- [ ] 2.1.X</li><li>- [ ] 2.2.X</li><li>- [ ] 2.3.X</li></ul> |
 | Back/Forward port | <ul><li>- [ ] backport</li><li>- [ ] forward port</li></ul> |
+| Notifications of Changes | <ul><li>- - [ ] Changes to Admin interface?</li><li>- [ ] New software requirements?</li>- [ ] New REST endpoints or updated GraphQL query syntax?</li><li>- [ ] New command line option?</li></ul> |
 
 
 <!-- (REQUIRED) What new information or updates are required for your Community contribution? For content updates, include link to existing DevDoc page. -->
 ## Content:
 
 
-DevDoc page/guide link for updates: 
+DevDoc page/guide link for updates:
 
 <!-- (OPTIONAL) What other information can you provide? -->
 ## Additional information:
 
 
-- [ ] Changes to Admin interface?
-- [ ] New software requirements?
-- [ ] New REST endpoints or updated GraphQL query syntax?
-- [ ] New command line option?
+
 
 <!--
 Thank you for taking the time to request updates for your Community Engineering contribution!
