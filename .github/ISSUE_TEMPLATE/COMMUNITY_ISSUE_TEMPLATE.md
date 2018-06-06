@@ -1,29 +1,22 @@
-<!-- (REQUIRED) What is the nature of this issue? -->
-## This Community doc request is a:
-- [ ] New topic request
-- [ ] Topic content updates
-- [ ] Other
+| Item         | Information        |
+|--------------|--------------------|
+| Type of Doc  | <ul><li>- [ ] New topic</li><li>- [ ] Topic Update</li><li>- [ ] Other</li></ul>|
+| Magento 2 GitHub Issue | [link](https://github.com/magento/devdocs/pull/link) |
+| Magento 2 GitHub PR | [link](https://github.com/magento/devdocs/pull/link) |
+| Magento 2 version | <ul><li>- [ ] 2.1.X</li><li>- [ ] 2.2.X</li><li>- [ ] 2.3.X</li></ul>
 
-<!-- (REQUIRED) What is the Community issue and code PR? -->
-## Community GitHub issue link:
-
-## Community GitHub code PR link:
-
-<!-- (REQUIRED) What is the Magento Open Source/Commerce and version for the PR? Will it be back or forward ported? -->
-## Magento version:
-- [ ] Open Source
-- [ ] Commerce
-
-## Back and Forward porting:
 
 <!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
 ## Content for Community contribution:
 
-<!-- (OPTIONAL) Where would you expect this content in DevDocs/Merchant guides? -->
-## Possible location:
 
 <!-- (OPTIONAL) What other information can you provide? -->
 ## Additional information:
+
+- [ ] Changes to Admin interface?
+- [ ] New software requirements?
+- [ ] New REST endpoints or updated GraphQL query syntax?
+- [ ] New command line option?
 
 <!--
 Thank you for taking the time to request updates for your Community Engineering contribution!
