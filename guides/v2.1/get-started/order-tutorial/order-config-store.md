@@ -38,7 +38,7 @@ Upon clicking **Save**, a notification message states that the {% glossarytoolti
 
 By default, the Luma store includes a promotion where shipping is free if you spend at least $50. Since this tutorial shows shipping calculations, we need to deactivate this promotion. The promotion is defined in a cart price rule, which is also known as a sales rule. When you deactivate the cart price rule, shipping is charged at a flat rate of $5 per item.
 
-To desable this cart price rule, select **Marketing > Cart Price Rules**. Then edit rule ID 2 (Spend $50 or more - shipping is free!), and toggle the **Active** switch to **No**. Be sure to save the change.
+To disable this cart price rule, select **Marketing > Cart Price Rules**. Then edit rule ID 2 (Spend $50 or more - shipping is free!), and toggle the **Active** switch to **No**. Be sure to save the change.
 
 ### Configure supported shipping methods (optional) {#ship-method}
 
