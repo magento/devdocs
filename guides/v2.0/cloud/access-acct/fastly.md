@@ -80,9 +80,11 @@ We provide Fastly services only for your Staging and Production environments. Yo
 	* In the "require" section, you should have `"fastly/magento2": <version number>`
 	* In the "repositories" section, you should have:
 
-		"fastly-magento2": {
-					"url": "https://github.com/fastly/fastly-magento2.git"
-		}
+		
+        "fastly-magento2": {
+                "url": "https://github.com/fastly/fastly-magento2.git"
+        }
+		
 3.	Add, commit, and push the changes to your code repository with the following command:
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
