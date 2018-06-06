@@ -3,15 +3,19 @@
 | Type of Doc  | <ul><li>- [ ] New topic</li><li>- [ ] Topic Update</li><li>- [ ] Other</li></ul>|
 | Magento 2 GitHub Issue | [link](https://github.com/magento/devdocs/pull/link) |
 | Magento 2 GitHub PR | [link](https://github.com/magento/devdocs/pull/link) |
-| Magento 2 version | <ul><li>- [ ] 2.1.X</li><li>- [ ] 2.2.X</li><li>- [ ] 2.3.X</li></ul>
+| Magento 2 version | <ul><li>- [ ] 2.1.X</li><li>- [ ] 2.2.X</li><li>- [ ] 2.3.X</li></ul> |
+| Back/Forward port | <ul><li>- [ ] backport</li><li>- [ ] forward port</li></ul> |
 
 
-<!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
-## Content for Community contribution:
+<!-- (REQUIRED) What new information or updates are required for your Community contribution? For content updates, include link to existing DevDoc page. -->
+## Content:
 
+
+DevDoc page/guide link for updates: 
 
 <!-- (OPTIONAL) What other information can you provide? -->
 ## Additional information:
+
 
 - [ ] Changes to Admin interface?
 - [ ] New software requirements?
