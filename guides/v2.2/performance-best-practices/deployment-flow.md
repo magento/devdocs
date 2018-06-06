@@ -49,7 +49,7 @@ bin/magento setup:di:compile
 After compilation completes, we recommend running the following command:
 
 ``` bash
-composer dump-autoload -o
+composer dump-autoload -o --apcu
 ```
 
 This command allows Composer to rebuild the mapping to project files so that they load faster.

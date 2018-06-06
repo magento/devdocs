@@ -41,7 +41,7 @@ After running `setup:di:compile` to generate classes, use composer to update the
 
 Run the following [composer command][composer-dump-autoload] to generate an optimized composer class map that supports faster auto-loading.
 
-	composer dump-autoload -o
+	composer dump-autoload -o --apcu
 
 ### Server - PHP Configuration
 
@@ -61,6 +61,13 @@ If you are on a low memory machine and you do not have many extensions or custom
 
 	opcache.memory_consumption=64
 	opcache.max_accelerated_files=60000
+
+We recommend enabling PHP APCu extension for maximum performance.
+Edit your `apcu.ini` file to include the following:
+
+	extension=apcu.so
+	[apcu]
+	acp.enabled = 1
 
 ### Server - Redis Configuration & Tuning
 
