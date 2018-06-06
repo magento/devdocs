@@ -18,7 +18,13 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
     -  PHP-FPM - version 7 and later
 -  NGINX:  magento/magento-cloud-docker-nginx
 
-**Prerequisites**—Select your Magento 2 template.
+The Cloud tools provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
+
+-  PHP: `--php`
+-  NGINX: `--nginx`
+-  MariaDB: `--db`
+
+#### To launch the Cloud Docker environment:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 1.  Add your credentials to `auth.json` file.
@@ -28,14 +34,21 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
     composer install
     ```
 
-#### To launch the Cloud Docker environment:
-The Cloud tools provide a command to generate the Docker Compose configuration.
-
 1.  In your local environment, start the Docker configuration generator.
 
     ```bash
     vendor/bin/ece-tools docker:build
     ``` 
+
+1.  Copy the configuration files.
+
+    ```bash
+	cp docker/config.env.dist docker/config.env
+    ```
+
+    ```bash
+	cp docker/global.env.dist docker/global.env
+    ```
 
 1.  Build files to containers and run in the background.
 
@@ -49,16 +62,7 @@ The Cloud tools provide a command to generate the Docker Compose configuration.
     docker-compose run cli magento-installer
     ```
 
-    The installer performs the following Cloud tools operations to launch your project:
-
-    ```terminal
-    Run bin/ece-tools build
-    Run bin/ece-tools deploy
-    Run bin/ece-tools prestart
-    Run bin/ece-tools post-deploy
-    ```
-
-1.  Open the http://localhost:8080 URL in a browser.
+1.  Open the `http://localhost:8080` URL in a browser.
 
 ### Integration testing with Cloud tools
 A dedicated Docker environment provides the opportunity for you to customize and exercise the following advantages:
