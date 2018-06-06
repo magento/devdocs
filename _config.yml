@@ -31,7 +31,7 @@ versions:
 
 # GitHub variables
 github_repo: "https://github.com/magento/devdocs/"
-github: "https://github.com/magento/devdocs/tree/develop/guides/"
+github_files: "https://github.com/magento/devdocs/blob/develop/"
 github_link: true
 feedback_link: true
 

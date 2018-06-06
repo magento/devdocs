@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: fc36c6d0b19e9bfc1feb6fdc3427d70ecf9d4953
+  revision: 7a10620f07fc821ac60237b21633fac3fedb017c
   branch: devdocs-stable
   specs:
     devdocs (0.0.1)

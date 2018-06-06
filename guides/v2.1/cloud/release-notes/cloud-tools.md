@@ -19,6 +19,8 @@ functional_areas:
 
 #### New Features
 
+-  <!-- MAGECLOUD-2250 -->Added a new command—`bin/ece-tools docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration rom the Cloud Tools `ece-tools` repository.
+
 - <!-- MAGECLOUD-1910 -->Added two [new wizards]({{ page.baseurl }}/cloud/env/smart-wizards.html) to assist configuring your Cloud:
     -  `ideal-state`—configure the ideal state for minimal deployment downtime
     -  `master-slave`—configure load balancing for database and Redis
@@ -36,6 +38,8 @@ functional_areas:
 
 
 #### Fixed Issues
+
+-  <!-- MAGECLOUD-2268 -->Fixed an issue that did not clean the successful cron jobs, those with `status = success`, from the schedule.
 
 -  <!-- MAGECLOUD-2113 -->Fixed an issue with the `post_deploy` hook that cleared the cache in the deploy phase instead of the post-deploy phase of the project.
 
