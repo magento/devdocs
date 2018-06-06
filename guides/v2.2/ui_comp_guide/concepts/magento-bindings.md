@@ -6,7 +6,6 @@ version: 2.2
 github_link: ui_comp_guide/concepts/magento-bindings.md
 ---
 
-## Magento binding syntax
 Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.
 
 ### Knockout syntax
@@ -76,3 +75,4 @@ The table below shows how the Knockout bindings map to their Magento binding cou
 |value          |`<input data-bind="value: value"/>`                                            | `<input ko-value="value"/>`                                           |
 |checked        |`<input type="chackbox" data-bind="checked: isChecked"/>`                      | `<input type="chackbox" ko-checked="isChecked"/>`                     |
 |checkedValue   |`<input type="chackbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="chackbox" checkedValue="$data" checked="isChecked"/>`   |
+{:style="table-layout:auto"}
