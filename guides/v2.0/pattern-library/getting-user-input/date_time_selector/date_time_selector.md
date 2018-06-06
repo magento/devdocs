@@ -197,7 +197,7 @@ http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker </a>
 **General**
 <br>
 
-As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are layed out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role="row."
+As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are laid out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role="row."
 <br>
 
 **Keyboard Interactions**
@@ -259,7 +259,7 @@ Do not implement keyboard navigation schemes that would place more than one cale
 
 *	Changes in aria states, identified here, as well as focus, should be clearly styled to show the user where their point of regard is and what days are selected.
 
-When the datepicker is active a calender day of the week should always have focus. This can be achieved by setting the tabindex on that day as appropriate and then using script to give it focus. Alternatively, the grid container could set aria-activedescendant to the id of the currently focused gridcell. Keep in mind that older browsers may not support aria-activedescendant.
+When the datepicker is active a calendar day of the week should always have focus. This can be achieved by setting the tabindex on that day as appropriate and then using script to give it focus. Alternatively, the grid container could set aria-activedescendant to the id of the currently focused gridcell. Keep in mind that older browsers may not support aria-activedescendant.
 <br>
 
 **Time Picker Widget**

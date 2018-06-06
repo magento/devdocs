@@ -29,7 +29,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
   For example:
 
   - Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
-  - Instantiating a database connection can be expensive and unneccessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html))
+  - Instantiating a database connection can be expensive and unnecessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html))
   - Consider using Magento framework conventions instead of low-level or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} functionality.
   - Use the  [`Magento\Framework\Data\Collection`]({{ site.mage2000url }}lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
 

@@ -180,4 +180,4 @@ When complete, merge the code to the `master` Git branch for further deployment.
 ### Deploy to Staging and Production {#deploy-staging-prod}
 Follow the deployment process for [deploying to Staging and Production]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html). For Starter and Pro environments, you use the Project Web Interface to push code across environments. For Pro accounts created before October 23, 2017 and not updated, you can use [SSH and CLI commands]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html#classic).
 
-We recommend fully testing in Staging prior to pushing to Production. If you need to make changes, you should complete those in Integration and beging the process to deploy across environments again.
+We recommend fully testing in Staging prior to pushing to Production. If you need to make changes, you should complete those in Integration and begin the process to deploy across environments again.

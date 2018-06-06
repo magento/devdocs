@@ -299,7 +299,7 @@ Looking for more information on these new features as well as many others? Check
 
 
 ### Infrastructure
-<!--- MAGETWO-82273 -->* New static block tests  now detect blocks without a name attribute. We've also added a missing block name to allow block customisation, and added a name for the order items grid default renderer block. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11235*. [GitHub-10824](https://github.com/magento/magento2/issues/10824)
+<!--- MAGETWO-82273 -->* New static block tests  now detect blocks without a name attribute. We've also added a missing block name to allow block customization, and added a name for the order items grid default renderer block. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 11235*. [GitHub-10824](https://github.com/magento/magento2/issues/10824)
 
 <!--- MAGETWO-82300 -->* We've ported a fix for the Travis CI builds for the  `2.2-develop` branch to the  `2.3-develop` branch. *Fix submitted by [Ievgen Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 11555*.
 
@@ -1137,10 +1137,7 @@ For more information, [System Requirements]({{ site.baseurl }}/magento-system-re
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.2 General Availability (GA) using Composer.
-
-
-{% include install/releasenotes/ee_install_21.md %}
+See [How to get the Magento software](https://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
