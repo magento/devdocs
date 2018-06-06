@@ -34,7 +34,7 @@ MySQL 5.6 (Oracle or Percona)
     
 	Redis can be used for session or cache storage
 
-*   memcached
+*   <a href="{{ page.baseurl }}/config-guide/memcache/memcache.html">Memcached</a>
     
     memcached can be used for session or cache storage
  
