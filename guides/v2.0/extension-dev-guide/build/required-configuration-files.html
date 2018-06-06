@@ -1290,72 +1290,73 @@
     <li><code class="highlighter-rouge">composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
   </ul>
 
-  <h2 id="use-etc-for-your-configuration-files">Use /etc for your configuration files</h2>
+</div>
 
-  <p>Magento 2 looks for configuration information for each module in that module’s <code class="highlighter-rouge">etc</code> directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code class="highlighter-rouge">etc</code> directory:</p>
+<h2 id="use-etc-for-your-configuration-files">Use /etc for your configuration files</h2>
 
-  <ul>
-    <li><code class="highlighter-rouge">acl.xml</code></li>
-    <li><code class="highlighter-rouge">config.xml</code></li>
-    <li><code class="highlighter-rouge">di.xml</code></li>
-    <li><code class="highlighter-rouge">module.xml</code></li>
-    <li><code class="highlighter-rouge">webapi.xml</code></li>
-  </ul>
+<p>Magento 2 looks for configuration information for each module in that module’s <code class="highlighter-rouge">etc</code> directory. Depending on the needs of your module, you might have the following configuration files at the top level of your module’s <code class="highlighter-rouge">etc</code> directory:</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<ul>
+  <li><code class="highlighter-rouge">acl.xml</code></li>
+  <li><code class="highlighter-rouge">config.xml</code></li>
+  <li><code class="highlighter-rouge">di.xml</code></li>
+  <li><code class="highlighter-rouge">module.xml</code></li>
+  <li><code class="highlighter-rouge">webapi.xml</code></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
   		<p>Additions you make to those configuration files are applied <em>globally</em> to your module.</p>
   </span>
  </div>
 
-  <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code class="highlighter-rouge">etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code class="highlighter-rouge">config.xml</code> file to <code class="highlighter-rouge">etc/frontend</code>, the settings you make in that file overrides the settings in <code class="highlighter-rouge">etc/config.xml</code> for   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+<p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code class="highlighter-rouge">etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code class="highlighter-rouge">config.xml</code> file to <code class="highlighter-rouge">etc/frontend</code>, the settings you make in that file overrides the settings in <code class="highlighter-rouge">etc/config.xml</code> for   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  functionality <em>only</em>.</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/</code></li>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/</code></li>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_rest/</code></li>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_soap/</code></li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/</code></li>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/</code></li>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_rest/</code></li>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_soap/</code></li>
+</ul>
 
-  <h3 id="configuration-files">Configuration files</h3>
-  <ul>
-    <li>Configuration files that are in the top level of that module’s <code class="highlighter-rouge">etc</code> directory are global to that component.</li>
-    <li>Configuration files placed in subdirectories (<code class="highlighter-rouge">adminhtml</code>, <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">webapi_rest</code>, <code class="highlighter-rouge">webapi_soap</code>) apply only to those respective functional areas.</li>
-  </ul>
+<h3 id="configuration-files">Configuration files</h3>
+<ul>
+  <li>Configuration files that are in the top level of that module’s <code class="highlighter-rouge">etc</code> directory are global to that component.</li>
+  <li>Configuration files placed in subdirectories (<code class="highlighter-rouge">adminhtml</code>, <code class="highlighter-rouge">frontend</code>, <code class="highlighter-rouge">webapi_rest</code>, <code class="highlighter-rouge">webapi_soap</code>) apply only to those respective functional areas.</li>
+</ul>
 
-  <h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
+<h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
 
-  <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+<p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  panel, or as a   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
    <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code class="highlighter-rouge">etc/adminhtml/</code>, like:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/di.xml</code></li>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/routes.xml</code></li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/di.xml</code></li>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/adminhtml/routes.xml</code></li>
+</ul>
 
-  <p>Similarly, if your module changes the UI, you should add the needed configuration files to <code class="highlighter-rouge">~/etc/frontend/</code>. For example:</p>
+<p>Similarly, if your module changes the UI, you should add the needed configuration files to <code class="highlighter-rouge">~/etc/frontend/</code>. For example:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/di.xml</code></li>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/page_types.xml</code></li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/di.xml</code></li>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/frontend/page_types.xml</code></li>
+</ul>
 
-  <p>If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration directories, like this:</p>
+<p>If the module is a service that may call an API, or does some other work that is not manifested in the UI you should add any needed configuration files in the REST and/or SOAP webapi configuration directories, like this:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_rest/di.xml</code></li>
-    <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_soap/di.xml</code></li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_rest/di.xml</code></li>
+  <li><code class="highlighter-rouge">&lt;your module root dir&gt;/etc/webapi_soap/di.xml</code></li>
+</ul>
 
-  <p>Keep in mind that you might be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code class="highlighter-rouge">etc</code> directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.</p>
+<p>Keep in mind that you might be able to handle your module’s configuration solely with configuration files at the top level of your module’s <code class="highlighter-rouge">etc</code> directory, but the nested directory is a useful way to keep the configuration neatly compartmentalized.</p>
 
-  <h4 id="next">Next</h4>
+<h4 id="next">Next</h4>
 
-  <p><a href="/guides/v2.0/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a></p>
-</div>
+<p><a href="/guides/v2.0/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a></p>
 
 			
 		</div>
@@ -1423,7 +1424,6 @@
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="/assets/js/app.min.js"></script>
 
-
 <script src="/common/js/devdocs.min.js"></script>
 
 
@@ -1450,7 +1450,6 @@
         document.getElementsByTagName('head')[0].appendChild(s);
     })();
 </script>
-
 
 
 

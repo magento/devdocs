@@ -1460,42 +1460,44 @@
     <li><code class="highlighter-rouge">composer.json</code>: Specifies component dependencies and other metadata. For more information, see <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html">Composer integration</a>.</li>
   </ul>
 
-  <h3 id="module-file-structure">Module file structure</h3>
-  <p>A typical file structure for a Magento 2   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+</div>
+
+<h3 id="module-file-structure">Module file structure</h3>
+<p>A typical file structure for a Magento 2   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  can look like the following:</p>
 
-  <p><img src="/common/images/pdg-config-file-structure.png" alt="Module File Structure" width="300px" /></p>
+<p><img src="/common/images/pdg-config-file-structure.png" alt="Module File Structure" width="300px" /></p>
 
-  <h4 class="no_toc" id="common-directories">Common directories</h4>
-  <p>Following are some common module directories:</p>
+<h4 class="no_toc" id="common-directories">Common directories</h4>
+<p>Following are some common module directories:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">Block</code>: contains   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<ul>
+  <li><code class="highlighter-rouge">Block</code>: contains   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  view classes as part of Model View Controller(MVC) vertical implementation of module logic.</li>
-    <li><code class="highlighter-rouge">Controller</code>: contains PHP controller classes as part of MVC vertical implementation of module logic.</li>
-    <li><code class="highlighter-rouge">etc</code>: contains configuration files; in particular, <code class="highlighter-rouge">module.xml</code>, which is required.</li>
-    <li><code class="highlighter-rouge">Model</code>: contains PHP model classes as part of MVC vertical implementation of module logic.</li>
-    <li><code class="highlighter-rouge">Setup</code>: contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
-  </ul>
+  <li><code class="highlighter-rouge">Controller</code>: contains PHP controller classes as part of MVC vertical implementation of module logic.</li>
+  <li><code class="highlighter-rouge">etc</code>: contains configuration files; in particular, <code class="highlighter-rouge">module.xml</code>, which is required.</li>
+  <li><code class="highlighter-rouge">Model</code>: contains PHP model classes as part of MVC vertical implementation of module logic.</li>
+  <li><code class="highlighter-rouge">Setup</code>: contains classes for module database structure and data setup which are invoked when installing or upgrading.</li>
+</ul>
 
-  <h4 class="no_toc" id="additional-directories">Additional directories</h4>
-  <p>Additional folders can be added for configuration and other ancillary functions for items like <a href="/guides/v2.2/extension-dev-guide/plugins.html">plugin-ins</a>, localization, and   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
+<h4 class="no_toc" id="additional-directories">Additional directories</h4>
+<p>Additional folders can be added for configuration and other ancillary functions for items like <a href="/guides/v2.2/extension-dev-guide/plugins.html">plugin-ins</a>, localization, and   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  files.</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">Api</code>: contains any PHP classes exposed to the   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
+<ul>
+  <li><code class="highlighter-rouge">Api</code>: contains any PHP classes exposed to the   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
 .</li>
-    <li><code class="highlighter-rouge">Console</code>: contains CLI commands. For more info, see <a href="/guides/v2.2/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>.</li>
-    <li><code class="highlighter-rouge">i18n</code>: contains localization files.</li>
-    <li><code class="highlighter-rouge">Plugin</code>: contains any needed <a href="/guides/v2.2/extension-dev-guide/plugins.html">plug-ins</a>.</li>
-    <li><code class="highlighter-rouge">view</code>: contains view files, including static view files, design templates, email templates, and layout files.</li>
-  </ul>
+  <li><code class="highlighter-rouge">Console</code>: contains CLI commands. For more info, see <a href="/guides/v2.2/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>.</li>
+  <li><code class="highlighter-rouge">i18n</code>: contains localization files.</li>
+  <li><code class="highlighter-rouge">Plugin</code>: contains any needed <a href="/guides/v2.2/extension-dev-guide/plugins.html">plug-ins</a>.</li>
+  <li><code class="highlighter-rouge">view</code>: contains view files, including static view files, design templates, email templates, and layout files.</li>
+</ul>
 
-  <h3 id="theme-file-structure">Theme file structure</h3>
-  <p>A typical   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+<h3 id="theme-file-structure">Theme file structure</h3>
+<p>A typical   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  file structure can look like the following:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── composer.json
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── composer.json
 ├── etc
 │   └── view.xml
 ├── i18n
@@ -1530,35 +1532,35 @@
         ├── navigation-menu.js
         ├── responsive.js
         └── theme.js
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h4 class="no_toc" id="common-directories-1">Common directories</h4>
-  <p>Typical theme directories are:</p>
+<h4 class="no_toc" id="common-directories-1">Common directories</h4>
+<p>Typical theme directories are:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">etc</code>: Contains configuration files such as the <code class="highlighter-rouge">view.xml</code> file which contains image configurations for all images and thumbnails.</li>
-    <li><code class="highlighter-rouge">i18n</code>: <a href="/guides/v2.2/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.</li>
-    <li><code class="highlighter-rouge">media</code>: Theme preview images (screen capture of your theme) can be put in here.</li>
-    <li>
-      <p><code class="highlighter-rouge">web</code>: Optional directory that contains   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+<ul>
+  <li><code class="highlighter-rouge">etc</code>: Contains configuration files such as the <code class="highlighter-rouge">view.xml</code> file which contains image configurations for all images and thumbnails.</li>
+  <li><code class="highlighter-rouge">i18n</code>: <a href="/guides/v2.2/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">Translation dictionaries</a>, if any.</li>
+  <li><code class="highlighter-rouge">media</code>: Theme preview images (screen capture of your theme) can be put in here.</li>
+  <li>
+    <p><code class="highlighter-rouge">web</code>: Optional directory that contains   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  organized into the following subdirectories:</p>
 
-      <ul>
-        <li><code class="highlighter-rouge">css/source</code>: Contains a theme’s <code class="highlighter-rouge">less</code> configuration files that invoke mixins for global elements from the <a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the <code class="highlighter-rouge">theme.less</code> file that overrides the default variables values.</li>
-        <li><code class="highlighter-rouge">css/source/lib</code>: Contains view files that override the <a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">UI library</a> files stored in <code class="highlighter-rouge">lib/web/css/source/lib</code>.</li>
-        <li><code class="highlighter-rouge">fonts</code>: The folder to place the different fonts for your theme.</li>
-        <li><code class="highlighter-rouge">images</code>: Static images folder.</li>
-        <li><code class="highlighter-rouge">js</code>: The folder for your JavaScript files.</li>
-      </ul>
-    </li>
-  </ul>
+    <ul>
+      <li><code class="highlighter-rouge">css/source</code>: Contains a theme’s <code class="highlighter-rouge">less</code> configuration files that invoke mixins for global elements from the <a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>, and the <code class="highlighter-rouge">theme.less</code> file that overrides the default variables values.</li>
+      <li><code class="highlighter-rouge">css/source/lib</code>: Contains view files that override the <a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">UI library</a> files stored in <code class="highlighter-rouge">lib/web/css/source/lib</code>.</li>
+      <li><code class="highlighter-rouge">fonts</code>: The folder to place the different fonts for your theme.</li>
+      <li><code class="highlighter-rouge">images</code>: Static images folder.</li>
+      <li><code class="highlighter-rouge">js</code>: The folder for your JavaScript files.</li>
+    </ul>
+  </li>
+</ul>
 
-  <p>For more details on the theme folder structure, see <a href="/guides/v2.2/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.</p>
+<p>For more details on the theme folder structure, see <a href="/guides/v2.2/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.</p>
 
-  <h3 id="language-package-file-structure">Language package file structure</h3>
-  <p>A typical directory structure for three language packages follows:</p>
+<h3 id="language-package-file-structure">Language package file structure</h3>
+<p>A typical directory structure for three language packages follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── de_DE
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>├── de_DE
 │   ├── composer.json
 │   ├── language.xml
 │   ├── LICENSE_AFL.txt
@@ -1576,16 +1578,15 @@
 │   ├── LICENSE_AFL.txt
 │   ├── LICENSE.txt
 │   └── registration.php
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO</a> code to identify the locale.</p>
+<p>The only required directory for a language package is the top-level directory. Although not required, we recommend that the directory name match the <a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO</a> code to identify the locale.</p>
 
-  <p>For more information about language packages, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>.</p>
+<p>For more information about language packages, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>.</p>
 
-  <p><strong>Next</strong></p>
+<p><strong>Next</strong></p>
 
-  <p><a href="/guides/v2.2/extension-dev-guide/build/component-registration.html">Register your component</a></p>
-</div>
+<p><a href="/guides/v2.2/extension-dev-guide/build/component-registration.html">Register your component</a></p>
 
 			
 		</div>
@@ -1653,7 +1654,6 @@
 <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 <script src="/assets/js/app.min.js"></script>
 
-
 <script src="/common/js/devdocs.min.js"></script>
 
 
@@ -1680,7 +1680,6 @@
         document.getElementsByTagName('head')[0].appendChild(s);
     })();
 </script>
-
 
 
 
