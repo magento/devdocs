@@ -17,7 +17,7 @@ github_link: release-notes/ReleaseNotes2.1.9EE.md
 
 *Page updated:  September 14, 2017*
 
-We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.9. This release includes important enhancements to your Magento software.
+We are pleased to present {{site.data.var.ee}} 2.1.9. This release includes important enhancements to your Magento software.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.

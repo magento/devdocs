@@ -7,7 +7,7 @@ version: 2.1
 github_link: release-notes/thirdparty_ee.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento Commerce (formerly Enterprise Edition).  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within {{site.data.var.ee}}.  Click the **License** links to view the end user license agreement for the corresponding software.
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---

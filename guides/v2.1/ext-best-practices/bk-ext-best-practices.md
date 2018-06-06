@@ -27,10 +27,10 @@ Magento's architecture allows for enhancements by letting you develop your own c
 
 The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition. So for example, 32% of merchants on EE have over 50 different extensions installed!
 
-| Edition   | 1-9 extensions | 10-30 extensions| 31-50 extensions| 50+ extensions|
-| --------- | --- | ----- | ----- | --- |
-| Community | 10% | 53%   | 26%   | 11% |
-| Enterprise| 9%  | 32%   | 27%   | 32% |
+| Edition              | 1-9 extensions | 10-30 extensions| 31-50 extensions| 50+ extensions|
+| -------------------- | --- | ----- | ----- | --- |
+| {{site.data.var.ce}} | 10% | 53%   | 26%   | 11% |
+| {{site.data.var.ee}} | 9%  | 32%   | 27%   | 32% |
 
 This guide provides best practices, guidelines, and tips for creating Magento extensions.  We encourage you to follow our best practices when developing code for your Magento components.
 

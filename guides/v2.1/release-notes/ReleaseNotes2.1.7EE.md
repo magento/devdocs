@@ -18,7 +18,7 @@ github_link: release-notes/ReleaseNotes2.1.7EE.md
 
 *Page updated: June 1, 2017*
 
-We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.7. This release includes important enhancements to the security of your Magento software.
+We are pleased to present {{site.data.var.ee}} 2.1.7. This release includes important enhancements to the security of your Magento software.
 
 
 <div class="bs-callout bs-callout-warning" markdown="1">

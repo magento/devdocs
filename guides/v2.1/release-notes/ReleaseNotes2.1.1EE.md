@@ -10,7 +10,7 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.1EE.md
 ---
 
-We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. It also provides enhancements to the Wishlist module's extensibility and modularity.
+We are pleased to present {{site.data.var.ee}} 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. It also provides enhancements to the Wishlist module's extensibility and modularity.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
