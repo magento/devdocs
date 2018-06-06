@@ -8,8 +8,8 @@ To find the version of the Magento software:
 php <your Magento install dir>/bin/magento --version
 *	If you cloned the Magento 2 GitHub repository, enter the following commands:
 
-	cd <your Magento 2 clone directory>
-	git branch
+cd <your Magento 2 clone directory>
+git branch
 
 *   If you're currently in the `develop` branch, you must change to a <a href="{{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
 
