@@ -371,7 +371,7 @@ or
 
 **Unacceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 public function getAfterElementHtml()
 {
@@ -399,7 +399,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -412,7 +412,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 **Unacceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -430,7 +430,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 **Acceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 public function getSelectorOptions()
 {
@@ -449,7 +449,7 @@ public function getSelectorOptions()
 
 **Unacceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 public function getAfterElementHtml()
 {
@@ -472,7 +472,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 public function getAttributeName($element)
 {
@@ -503,7 +503,7 @@ public function getAttributeId($element)
 
 **Unacceptable PHP file**
 
-```php
+```php?start_inline=1
 ...
 public function getCheckbox($elementName){
     $elementNameTag = $this->getAttributeName($elementName) ? 'name="' . $this->getAttributeName($elementName) . '"' : NULL;
