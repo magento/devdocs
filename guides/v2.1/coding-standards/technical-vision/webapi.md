@@ -85,7 +85,7 @@ Any new design related to Web API must satisfy the following constraints to keep
     * The base class for GraphQL tests is: `\Magento\TestFramework\TestCase\GraphQlAbstract`
 1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and store front areas from executing routers.
 1. Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)
-1. Authentication parameters must be be passed via headers.
+1. Authentication parameters must be passed via headers.
 1. Throttling must be configured by the system integrator. It is not supported by Magento
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.
 1. Pagination must be supported by all list operations.
