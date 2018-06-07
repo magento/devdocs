@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>TreeMassActions component | Magento 2 Developer Documentation</title>
+	<title>Magento binding syntax | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -57,7 +57,7 @@
 
 
 
-	<link rel="canonical" href="/guides/v2.2/ui_comp_guide/components/ui-treemassactions.html">
+	<link rel="canonical" href="/guides/v2.2/ui_comp_guide/concepts/magento-bindings.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -97,13 +97,13 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ui_comp_guide/components/ui-treemassactions.html">Magento 2.0</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/ui_comp_guide/concepts/magento-bindings.html">Magento 2.0</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ui_comp_guide/components/ui-treemassactions.html">Magento 2.1</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/ui_comp_guide/concepts/magento-bindings.html">Magento 2.1</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ui_comp_guide/components/ui-treemassactions.html">Magento 2.2</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/ui_comp_guide/concepts/magento-bindings.html">Magento 2.2</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/ui_comp_guide/components/ui-treemassactions.html">Magento 2.3 Alpha</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/ui_comp_guide/concepts/magento-bindings.html">Magento 2.3 Alpha</a></li>
 	
   </ul>
 
@@ -948,7 +948,7 @@
         
         
         
-        <li class="nav-level2 active " id="treemassactions-component">
+        <li class="nav-level2  " id="treemassactions-component">
 
             
 
@@ -1108,7 +1108,7 @@
         
         
         
-        <li class="nav-level2  " id="magento-binding-syntax">
+        <li class="nav-level2 active " id="magento-binding-syntax">
 
             
 
@@ -1307,7 +1307,7 @@
 
 	
 
-	<h1 class="page-heading">TreeMassActions component</h1>
+	<h1 class="page-heading">Magento binding syntax</h1>
 
   
 
@@ -1315,70 +1315,202 @@
 </section>
 
 			<h2 id="overview">Overview</h2>
+<p>Within HTML templates, Magento gives you the option of using a binding syntax that is simpler and easier to read and write than the standard Knockout binding syntax. The following code snippets help make the comparison.</p>
 
-<p>The TreeMassActions component is a decorator for <a href="/guides/v2.2/ui_comp_guide/components/ui-massactions.html">MassActions</a> that adds the support of nested actions.</p>
+<h3 id="knockout-syntax">Knockout syntax</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- ko if: isVisible--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someClass"</span><span class="nt">&gt;</span>
+        <span class="c">&lt;!-- ko i18n: 'Some translatable message!'--&gt;&lt;!-- /ko --&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">data-bind=</span><span class="s">"html: content"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="c">&lt;!-- /ko --&gt;</span>
+</code></pre></div></div>
+<h3 id="magento-syntax">Magento syntax</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;if</span> <span class="na">args=</span><span class="s">"isVisible"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someClass"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;translate</span> <span class="na">args=</span><span class="s">"'Some translatable message!'"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">html=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/if&gt;</span>
+</code></pre></div></div>
+<p>or</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"someClass"</span> <span class="na">if=</span><span class="s">"isVisible"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">translate=</span><span class="s">"'Some translatable message!'"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span</span> <span class="na">html=</span><span class="s">"content"</span><span class="nt">&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
 
-<p>Constructor: <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js">app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js</a></p>
+<p>If you use the Magento syntax, the Magento wrapper replaces the Magento syntax with the matching Knockout comments or <code class="highlighter-rouge">data-bind</code> attributes during the loading of the HTML template.</p>
 
-<h2 id="treemassactions-configuration">TreeMassActions configuration</h2>
+<h2 id="binding-map">Binding map</h2>
 
-<p>Extends all <a href="/guides/v2.2/ui_comp_guide/components/ui-massactions.html">MassActions</a> configuration.</p>
+<p>The table below shows how the Knockout bindings map to their Magento binding counterparts.</p>
 
-<p>TreeMassActions-specific configuration:</p>
-
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>submenuTemplate</code></td>
-    <td>Path to the <code>.html</code> template used to render nested actions.</td>
-    <td>String</td>
-    <td><code>ui/grid/submenu</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>Path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/tree-massactions</code></td>
-  </tr>
-  <tr>
-    <td><code>actions</code></td>
-    <td>A list of available actions.</td>
-    <td><code>(MassActionContainer | MassAction)[]</code></td>
-    <td>-</td>
-  </tr>
-</table>
-
-<h2 id="massactioncontainer-interface">MassActionContainer interface</h2>
-<table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
-  </tr>
-  <tr>
-    <td><code>label</code></td>
-    <td>Action's label displayed in the list of actions.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-  <tr>
-    <td><code>type</code></td>
-    <td>Action's identifier.</td>
-    <td>String</td>
-    <td>Required</td>
-  </tr>
-  <tr>
-    <td><code>actions</code></td>
-    <td>A list of child elements that may contain both MassActionContainer and MassAction instances.</td>
-    <td>(MassActionContainer | MassAction)[]</td>
-    <td>Required</td>
-  </tr>
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Knockout Syntax</th>
+      <th>Magento Syntax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>if</td>
+      <td><code class="highlighter-rouge">&lt;!-- ko if: isVisible--&gt;&lt;!-- /ko --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;if args="isVisible"&gt;&lt;/if&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="if: isVisible"&gt;&lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div if="isVisible"&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>ifnot</td>
+      <td><code class="highlighter-rouge">&lt;!-- ko ifnot: isVisible--&gt;&lt;!-- /ko --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;ifnot args="isVisible"&gt;&lt;/ifnot&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="ifnot: isVisible"&gt;&lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div ifnot="isVisible"&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>text</td>
+      <td><code class="highlighter-rouge">&lt;!-- ko text: 'Some text' --&gt;&lt;!-- /ko --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;text args="'Some text'"&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="text: 'Some text'"&gt;&lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div text="'Some text'"&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>with</td>
+      <td><code class="highlighter-rouge">&lt;!-- ko with: element --&gt;&lt;!-- /ko --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;with args="element"&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="with: element"&gt;&lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div with="element"&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>foreach</td>
+      <td><code class="highlighter-rouge">&lt;!-- ko foreach: elements --&gt;&lt;!-- /ko --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;each args="elements"&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="foreach: elements"&gt;&lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div each="elements"&gt;&lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>component</td>
+      <td><code class="highlighter-rouge">&lt;!-- ko component: 'componentName' --&gt; &lt;!-- /ko --&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;component args="'componentName'"&gt;</code></td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="component: 'componentName'"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div component="'componentName'"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>css</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="css: {_visible: isVisible}"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div css="_visible: isVisible"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>attr</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="attr: {title: title}"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div attr="title: title"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>style</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="style: {color: redColor}"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div ko-style="color: redColor"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>html</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="html: '&lt;span/&gt;'"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div html="'&lt;span/&gt;'"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>click</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="click: onClick"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div click="onClick"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>event</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="event: {mouseover: showEl}"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div event="mouseover: showEl"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>template</td>
+      <td><code class="highlighter-rouge">&lt;div data-bind="template: templateUrl"&gt; &lt;/div&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;div template="templateUrl"&gt; &lt;/div&gt;</code></td>
+    </tr>
+    <tr>
+      <td>submit</td>
+      <td><code class="highlighter-rouge">&lt;form data-bind="submit: onSubmit"&gt; &lt;/form&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;form submit="onSubmit"&gt; &lt;/form&gt;</code></td>
+    </tr>
+    <tr>
+      <td>options</td>
+      <td><code class="highlighter-rouge">&lt;select data-bind="options: optionsList"&gt; &lt;/select&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;select options="optionsList"&gt; &lt;/select&gt;</code></td>
+    </tr>
+    <tr>
+      <td>selectedOptions</td>
+      <td><code class="highlighter-rouge">&lt;select data-bind="options: optionsList, selectedOptions: value"&gt; &lt;/select&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;select options="optionsList" selectedOptions="value"&gt; &lt;/select&gt;</code></td>
+    </tr>
+    <tr>
+      <td>optionsText</td>
+      <td><code class="highlighter-rouge">&lt;select data-bind="options: optionsList, optionsText: 'label'"&gt; &lt;/select&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;select options="optionsList" optionsText="'label'"&gt; &lt;/select&gt;</code></td>
+    </tr>
+    <tr>
+      <td>optionsText</td>
+      <td><code class="highlighter-rouge">&lt;select data-bind="options: optionsList, optionsValue: 'value'"&gt; &lt;/select&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;select options="optionsList" optionsValue="'value'"&gt; &lt;/select&gt;</code></td>
+    </tr>
+    <tr>
+      <td>enable</td>
+      <td><code class="highlighter-rouge">&lt;input data-bind="enable: isEnabled"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input enable="isEnabled"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td>disable</td>
+      <td><code class="highlighter-rouge">&lt;input data-bind="disable: !isEnabled"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input ko-disabled="!isEnabled"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td>hasFocus</td>
+      <td><code class="highlighter-rouge">&lt;input data-bind="hasFocus: onFocus"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input ko-focused="onFocus"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td>textInput</td>
+      <td><code class="highlighter-rouge">&lt;input data-bind="textInput: value"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input textInput="value"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td><code class="highlighter-rouge">&lt;input data-bind="value: value"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input ko-value="value"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td>checked</td>
+      <td><code class="highlighter-rouge">&lt;input type="checkbox" data-bind="checked: isChecked"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input type="checkbox" ko-checked="isChecked"/&gt;</code></td>
+    </tr>
+    <tr>
+      <td>checkedValue</td>
+      <td><code class="highlighter-rouge">&lt;input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;input type="checkbox" checkedValue="$data" checked="isChecked"/&gt;</code></td>
+    </tr>
+  </tbody>
 </table>
 
 			
@@ -1391,7 +1523,7 @@
 
   
   <div class="github-link">
-    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/ui_comp_guide/components/ui-treemassactions.md" target="_blank">
+    <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/ui_comp_guide/concepts/magento-bindings.md" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
@@ -1399,7 +1531,7 @@
 
   
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.2/ui_comp_guide/components/ui-treemassactions.html" target="_blank">
+    <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.2/ui_comp_guide/concepts/magento-bindings.html" target="_blank">
       Give us feedback
     </a>
   </div>
