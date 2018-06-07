@@ -7,8 +7,8 @@ menu_order: 10
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_init.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 <h2 id="js_init_overview">Overview</h2>
