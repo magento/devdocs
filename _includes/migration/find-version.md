@@ -11,7 +11,7 @@ To find the version of the Magento software:
 		cd <your Magento 2 clone directory>
 		git branch
 
-	If you're currently in the `develop` branch, you must change to a <a href="{{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
+*   If you're currently in the `develop` branch, you must change to a <a href="{{ page.baseurl }}/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.
 
 ### Find the Data Migration Tool version {#migration-tool-version}
 
@@ -22,3 +22,5 @@ To find the version of the migration tool:
 * Find the value of "version"
 
 	This is the version of your Data Migration Tool.
+
+</div>

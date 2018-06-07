@@ -22,8 +22,8 @@ For more information see the <a href="{{ page.baseurl }}/test/testing.html">Mage
 For further testing with the Magento functional testing frameworks, see
 [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html).
 
-## Test using Community Edition {#test-comm}
-Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>.
+## Test using {{site.data.var.ce}} {#test-comm}
+Test your component by deploying {{site.data.var.ce}} and adding the component to the project's <code>composer.json</code>.
 
 {% highlight JSON %}
 "require": {

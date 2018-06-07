@@ -320,9 +320,8 @@ In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file a
                                                 <item name="rendererTemplates" xsi:type="array">
                                                     <item name="%address type%" xsi:type="array">
                                                         <item name="component" xsi:type="string">uiComponent</item>
-                                                            <item name="config" xsi:type="array">
+                                                        <item name="config" xsi:type="array">
                                                                 <item name="template" xsi:type="string">%custom template%</item>
-                                                            </item>
                                                         </item>
                                                     </item>
                                                 </item>

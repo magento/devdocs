@@ -20,7 +20,7 @@ This topic describes how to apply your custom {% glossarytooltip d2093e4a-2b71-4
 2. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html). 
 3. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} information):
 {%highlight xml%}
-    <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend -->"
+    <module name="%YourVendor_YourModule%" setup_version="2.0.1"> <!-- Example: "Magento_Backend" -->
         <sequence>
             <module name="Magento_Theme"/>
             <module name="Magento_Enterprise"/> <!-- For Enterprise versions only -->
