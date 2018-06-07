@@ -2049,8 +2049,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-  	chown -R :&lt;web server group&gt; .
-  	chmod u+x bin/magento
+  	    chown -R :&lt;web server group&gt; .
+  	    chmod u+x bin/magento
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -2119,7 +2119,8 @@ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <li>
     <p>If you are not in the correct Magento user, switch:</p>
 
-    <pre>sudo su - magento</pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> sudo su - magento
+</code></pre></div>    </div>
   </li>
   <li>Change directory to <code class="highlighter-rouge">app/bin</code>.</li>
   <li>
