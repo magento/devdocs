@@ -335,14 +335,14 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 public function getSelectorOptions()
 {
     return $selectorOptions;
 }
 ...
-{% endhighlight %}
+```
 
 **Acceptable PHTML template**
 
@@ -371,7 +371,7 @@ or
 
 **Unacceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 public function getAfterElementHtml()
 {
@@ -380,7 +380,7 @@ public function getAfterElementHtml()
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 </script>
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHTML template**
 
@@ -399,7 +399,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -408,11 +408,11 @@ $fieldset->addField('new_category_parent', 'text', array(
     'class'    => 'parent category',
 ));
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -421,7 +421,7 @@ $fieldset->addField('new_category_parent', 'text', array(
     'style'    => 'border: 1px solid #ccc;',
 ));
 ...
-{% endhighlight %}
+```
 
 ### You must not hard-code inline JavaScript in PHP classes
 <ul>
@@ -430,14 +430,14 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 public function getSelectorOptions()
 {
     return $selectorOptions;
 }
 ...
-{% endhighlight %}
+```
 
 **Acceptable PHTML template**
 
@@ -449,7 +449,7 @@ public function getSelectorOptions()
 
 **Unacceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 public function getAfterElementHtml()
 {
@@ -458,7 +458,7 @@ public function getAfterElementHtml()
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 </script>
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHTML template**
 {% highlight php startinline=true %}
@@ -472,7 +472,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php
 ...
 public function getAttributeName($element)
 {
@@ -484,7 +484,7 @@ public function getAttributeId($element)
     return $element->getId();
 }
 ...
-{% endhighlight %}
+```
 
 **Acceptable PHTML template**
 
@@ -503,15 +503,15 @@ public function getAttributeId($element)
 
 **Unacceptable PHP file**
 
-{%highlight php%}
+```php
 ...
- public function getCheckbox($elementName){
+public function getCheckbox($elementName){
     $elementNameTag = $this->getAttributeName($elementName) ? 'name="' . $this->getAttributeName($elementName) . '"' : NULL;
     $tpl = "<input type=\"checkbox\" {$elementNameTag} data-mage-init=\"{customToggleWidget: [elementSelector: \"input[name='someCustomName']\"]}\" />";
     return $tpl;
 }
 ...
-{%endhighlight%}
+```
 
 **Unacceptable PHTML template**
 
