@@ -263,41 +263,10 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 #### To profile using the CLI:
 
-1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
-1.  Checkout an active Integration branch.
-1.  Run the profiler.
-
-    ```bash
-	php --ri blackfire
-    ```
-
-	A sample result follows:
-
-	```bash
-	blackfire
-
-	Blackfire => enabled
-	Blackfire => 1.10.3
-	Timing measurement => cgt
-	Num of CPU => 8
-	Profiling heap memory => 0 Kb
-	Main instance trigger mode => HTTP header triggered
-	Main instance => enabled
-
-	Main instance info
-	Output stream => file
-	Signature validated => no
-	EnvId validated => no
-	Fully decoded => no
-
-	Directive => Local Value => Master Value
-	blackfire.agent_socket => tcp://blackfire.platform.sh:8307 => tcp://blackfire.platform.sh:8307
-	blackfire.agent_timeout => 10 => 10
-	blackfire.env_id => no value => no value
-	blackfire.env_token => no value => no value
-	blackfire.log_level => 1 => 1
-	blackfire.log_file => no value => no value
-	```
+1.  Install the Blackfire [CLI Tool](https://blackfire.io/docs/up-and-running/installation){:target="_blank"} (Select your Platform and scroll down to "Installing the Blackfire CLI tool")
+1.  Depending on the type of code that you wish to profile, use `blackfire curl` or `blackfire run`:
+-  [Profiling HTTP Requests](https://blackfire.io/docs/cookbooks/profiling-http)
+-  [Profiling CLI Commands](https://blackfire.io/docs/cookbooks/profiling-cli)
 
 ## Automate performance testing
 After completing the [Blackfire Integration](#dev), you can define events for the Staging and Production environments that enable Blackfire to execute polling requests automatically. An event example is whenever a commit deploys in the Integration environment, or when activating the integration between Blackfire and New Relic.
@@ -336,6 +305,44 @@ Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire 
 
 ### Blackfire notifications
 When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See [Scenario notification channels](https://blackfire.io/docs/reference-guide/notification-channels){:target="_blank"}.
+
+
+## Blackfire troubleshooting
+### Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)
+If you are using one of those, you will need them to let Blackfire access your servers. [More information on how to configure a bypass](https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn)
+
+### HTTP Cache configuration
+If you are using the HTTP cache with `cookies`, please update in your `.magento.app.yaml` the cookies that are allowed to go through the cache. You need to allow the __blackfire cookie name.
+
+It should look something like:
+```
+cache:
+    enabled: true
+    cookies: [“/SESS.*/“, “__blackfire”]
+```
+
+### Collecting the Blackfire logs for support
+If the above didn't help, please send Blackfire support the following:
+
+- The output of `magento-cloud ssh -- php -d display_startup_errors=on --ri blackfire`
+- The Blackfire logs
+
+#### Getting the Blackfire logs
+Please execute the following in the environment where you're facing the issue:
+
+- `​magento-cloud variable:create --name php:blackfire.log_file --value /tmp/blackfire.log` 
+- `​magento-cloud variable:create --name php:blackfire.log_level --value 4` 
+- start a profile/build again
+
+You will get the logs we need with `magento-cloud ssh -- cat /tmp/blackfire.log > blackfire.log` 
+
+Please send them to support@blackfire.io.
+
+#### Disabling the Blackfire logs
+Once you are done, please disable logging with:
+
+- `magento-cloud variable:delete php:blackfire.log_file` 
+- `magento-cloud variable:delete php:blackfire.log_level  
 
 ## Blackfire resources
 Blackfire provides great information to better profile and investigate the results on their documentation site:
