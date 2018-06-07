@@ -9,7 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for develop and testing, or for automation tasks. There are three, essential parts to launching the Magento Cloud Docker environment: a Magento 2 template, Docker Compose, and Magento Cloud Tools.
+{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The Magento Cloud Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and Magento Cloud Tools.
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker){:target="\_blank"} contains build information for the following [Docker hub](https://hub.docker.com/r/magento/){:target="\_blank"} images, including the following:
 
@@ -18,7 +18,7 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
     -  PHP-FPM - version 7 and later
 -  NGINX:  magento/magento-cloud-docker-nginx
 
-The Cloud tools provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
+The Cloud Tools provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
 
 -  PHP: `--php`
 -  NGINX: `--nginx`
@@ -56,16 +56,16 @@ The Cloud tools provides a `docker:build` command to generate the Docker Compose
     docker-compose up -d --build
     ``` 
 
-1.  Start the Magento installer. This step may take time.
+1.  Start the Magento installer. This step may take some time to complete.
 
     ```bash
     docker-compose run cli magento-installer
     ```
 
-1.  Open the `http://localhost:8080` URL in a browser.
+1.  Open the `http://localhost:8080` URL in a browser to access your local Magento Cloud template.
 
 ### Integration testing with Cloud tools
-A dedicated Docker environment provides the opportunity for you to customize and exercise the following advantages:
+Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:
 
 -  2-layer configuration for Docker build and Travis CI
 -  Customizable Docker Compose file to support a wide range of environment sets
