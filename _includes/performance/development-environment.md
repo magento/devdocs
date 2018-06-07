@@ -39,3 +39,4 @@ If you develop on a VM and it takes longer than 2 seconds to load a Magento page
 {:target="_blank"}
 [disable the caches]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en
 {:target="_blank"}
+</div>
