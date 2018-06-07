@@ -12,7 +12,7 @@ To get a patch from the {{site.data.var.ee}} merchant portal:
 5.	Click **Magento Enterprise Edition** > **2.X** > **Magento Enterprise Edition 2.x Release** > **Support Patches**.
 6.	Transfer the patch to your development system.
 
-#### From the {{site.data.var.ee}} parter portal
+#### From the {{site.data.var.ee}} partner portal
 To get a patch from the {{site.data.var.ee}} partner portal:
 
 1.	Log in to [partners.magento.com](https://partners.magento.com/English/?rdir=/files.aspx){:target="_blank"}.

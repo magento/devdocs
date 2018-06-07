@@ -104,7 +104,7 @@ Use capitalization standards, as specified in the Magento Glossary and Word U
 
 * **UI names.** Use initial caps, where the Magento Glossary and Word Usage Bank specify.
 
-* **Lists' first word, initial capped.** See more “Lists” guidance in Content Formats.
+* **Lists' first word, initial capped.** See more “Lists” for guidance in Content Formats.
 
 ### Do Not Capitalize ...
 

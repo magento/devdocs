@@ -23,7 +23,7 @@ _(AKA Expand-Collapse, Collapsible panels)_
 
 <h3 id="overview">Overview</h3>
 
-Expandable Sections are expandable content areas which are useful in cases where a lot of information must be accommodated in limited space thereby reducing clutter and allowing to focus on primary task.  Typically the information to be accomodated can be separated into various sections and/or sub-sections, or topics.
+Expandable Sections are expandable content areas which are useful in cases where a lot of information must be accommodated in limited space thereby reducing clutter and allowing to focus on primary task.  Typically the information to be accommodate can be separated into various sections and/or sub-sections, or topics.
 
 <img src="img/example_general.png">
 
@@ -59,7 +59,7 @@ _<sup>*</sup> The current design proposal accommodates 4 levels of nested expand
 * When a page contains several expandable sections, all sections remain collapsed by default.
 ..* Once the user expands / collapsed few panels, the system remembers the panels states and on a return visit the same states are displayed.
 * For Nested Panels:
-..* If a section is collapsed, all "nested" expandabed sections within that section should be collapsed as well.
+..* If a section is collapsed, all "nested" expandable sections within that section should be collapsed as well.
 
 <h3 id="variations">Variations</h3>
 1."Simple" – a section that contains a single level of expansion in a section (no nested expandable sub-sections).

@@ -29,3 +29,4 @@ You cannot delete or disable keys you created by signing in to your [magento.com
 
 	![Access your keys]({{ site.baseurl }}/common/images/connect_keys1.png){:width="200px"}
 4.	Click **Generate new token** to replace and disable an existing token.
+</div>
