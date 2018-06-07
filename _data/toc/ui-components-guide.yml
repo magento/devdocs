@@ -149,9 +149,11 @@ pages:
           url: /ui_comp_guide/components/ui-treemassactions.html
 
         - label: UrlInput component
+          versions: "2.3"
           url: /ui_comp_guide/components/ui-urlinput.html
 
         - label: UI-select component
+          versions: "2.3"
           url: /ui_comp_guide/components/ui-secondary-uiselect.html
 
         - label: WYSIWYG component
@@ -194,6 +196,7 @@ pages:
           url: /ui_comp_guide/concepts/knockout-bindings.html
 
         - label: Magento binding syntax
+          versions: ["2.2","2.3"]
           url: /ui_comp_guide/concepts/magento-bindings.html
 
         - label: About the uiClass library
