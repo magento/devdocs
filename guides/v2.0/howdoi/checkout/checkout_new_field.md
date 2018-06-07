@@ -16,8 +16,7 @@ This topic describes how to add new fields to default {% glossarytooltip 278c3ce
 
 ## Add the field to layout and handle its value on the client side
 
-To add your custom field to the checkout address form and access its value on the client side,
-take the steps described further.
+To add your custom field to the checkout address form and access its value on the client side, take the steps described further.
 
 1. [Add the field to layout](#add-field)
 2. [Add mixin to modify component behavior](#mixin)
@@ -148,12 +147,12 @@ Following is a sample `extension_attributes.xml`:
 </config>
 {%endhighlight%}
 
-## Access the value of the custom field on server side
+### Access the value of the custom field on server side
 
 When you complete the steps, Magento generates the interface that includes your custom attribute. You can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();
 
-## Related information
+#### Related topics
 
 - [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)

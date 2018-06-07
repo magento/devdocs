@@ -26,8 +26,14 @@ The checkout totals and the corresponding side-bar are only displayed after the 
 
 The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
+{%
+include note.html
+type='info'
+content='For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.'
+%}
+
 ## List of checkout customizations
-You can customize the default checkout in many ways. Here the following customizations in this tuturial:
+You can customize the default checkout in many ways. This tutorial includes the following customizations:
 
  - [Add a new checkout step]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html)
  - [Customize the view of an existing step]({{ page.baseurl }}/howdoi/checkout/checkout_customize.html)
@@ -40,5 +46,3 @@ You can customize the default checkout in many ways. Here the following customiz
  - [Add a new field in address form]({{ page.baseurl }}/howdoi/checkout/checkout_new_field.html)
  - [Add custom shipping address renderer]({{ page.baseurl }}/howdoi/checkout/checkout_address.html)
  - [Customize the list of shipping methods]({{ page.baseurl }}/howdoi/checkout/checkout_shipping_methods.html)
-
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.

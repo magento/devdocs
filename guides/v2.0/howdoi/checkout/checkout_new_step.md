@@ -23,8 +23,14 @@ You can add a custom checkout step implemented as a {% glossarytooltip 9bcc648c-
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
+To add a new checkout step:
 
-## Create the view part of the checkout step component
+1. [Create the view part of the checkout step component](#create-view).
+2. [Add your step to the Checkout page layout](#checkout-step).
+3. [Create mixins for payment and shipping steps (optional)](#mixins).
+
+
+## Step 1: Create the view part of the checkout step component {#create-view}
 
 To create the view part of the new checkout step:
 
@@ -154,7 +160,7 @@ A sample `mystep.html` follows:
 </li>
 {%endhighlight html%}
 
-## Add your step to the Checkout page layout {#checkout-step}
+## Step 2: Add your step to the Checkout page layout {#checkout-step}
 
 For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`.
 
@@ -196,7 +202,7 @@ A sample `checkout_index_index.xml` follows:
 </page>
 {%endhighlight xml%}
 
-## Create mixins for payment and shipping steps (optional)
+## Step 3: Create mixins for payment and shipping steps (optional) {#mixins}
 
 If your new step is the first step, you have to create mixins for the payment and shipping steps. Otherwise two steps will be activated on loading of the checkout.
 
@@ -245,5 +251,5 @@ define(
 {%endhighlight js%}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
+For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins go to [JS Mixins]({{ page.baseurl }}/javascript-dev-guide/javascript/js_mixins.html).
 </div>

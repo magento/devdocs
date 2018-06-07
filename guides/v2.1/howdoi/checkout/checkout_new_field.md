@@ -150,12 +150,12 @@ Following is a sample `extension_attributes.xml`:
 </config>
 {%endhighlight%}
 
-## Access the value of the custom field on server side
+### Access the value of the custom field on server side
 
 When you complete the steps, Magento generates the interface that includes your custom attribute. You can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();
 
-## Related information
+#### Related topics
 
 - [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)
