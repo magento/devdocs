@@ -43,3 +43,4 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 </tbody>
 </table>
 
+</div>

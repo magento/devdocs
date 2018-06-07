@@ -12,7 +12,7 @@ functional_areas:
   - Configuration
 ---
 
-For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with addtional content to post over time and across versions.
+For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
 
 ## Understanding marketing campaigns and promotions {#campaigns}
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
@@ -71,7 +71,7 @@ Each website can include one or more _stores_ with different categories and arti
 You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
-* Single website with one store and two views for Engligh and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
+* Single website with one store and two views for English and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
 
   ![Store example 1]({{ site.baseurl }}/common/images/cloud_example-store1.png)
 * Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.

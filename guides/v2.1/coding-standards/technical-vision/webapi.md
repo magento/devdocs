@@ -9,7 +9,7 @@ Web API is crucial for Magento because of the need to integrate with order manag
 
 There are many headless Magento installations in which a merchant partially uses Magento functionality, while the other pieces of an eCommerce website are provided by other systems.
 
-See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of web APIs in modern web applications.
+See [more details](https://en.wikipedia.org/wiki/Web_API) about the importance of web APIs in modern web applications.
 
 
 ### Components Dependencies
@@ -20,7 +20,7 @@ The following diagram shows Web API component dependencies.
 
 ### High-level Architecture
 
-The following image provides an overview of how Web APIs are processed.
+The following image provides an overview of how Web API requests are processed.
 
 ![Web API request processing overview]({{ site.baseurl }}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
 
@@ -35,7 +35,7 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 1. Create custom resolvers.
 1. Declare a custom query and all necessary types in `schema.graphqls`
 
-If the target module is called `MyModule`, then create the resolvers and configuration files in a a new module called `MyModuleGraphQl`.
+If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
 See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/index.html) for more information.
 
