@@ -160,7 +160,7 @@ Add project variables for Blackfire for the server ID and token. You can add the
 	```
 
 ### Add Blackfire integration to the project {#integration}
-Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
+Using the Magento Cloud CLI, enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
 
 1.  Open a terminal and navigate to your {{site.data.var.ece}} project.
 1.  Copy and enter the integration commands from the Blackfire _Magento Cloud Integration_ page.
@@ -179,7 +179,7 @@ If you do not have a default route specified in the `routes.yaml` file, or want 
 
 #### To add route information on the Blackfire _Magento Cloud Integration_ page:
 
-1.  Locate step 5 and enter the default route. It should look like `https://example.com/` or `http://*.{default}/`. If you leave this field blank, we will try the following keys in this order: `https://{default}/`, `https://www.{default}/`, `http://{default}/`, `http://www.{default}/`.
+1.  Locate step 5 and enter the default route. It should look like `https://example.com/` or `http://*.{default}/`. If you leave this field blank, we try the following keys in this order: `https://{default}/`, `https://www.{default}/`, `http://{default}/`, `http://www.{default}/`.
 1.  If you use a wildcard `*` in step 5 for the default route, you need to enter a resolved value for the `*` value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key `https://*.{default}` in step 5, you need to specify a route placeholder in step 6.
 
 #### To add the default route to `routes.yaml`:
@@ -263,10 +263,12 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 #### To profile using the CLI:
 
-1.  Install the Blackfire [CLI Tool](https://blackfire.io/docs/up-and-running/installation){:target="_blank"} (Select your Platform and scroll down to "Installing the Blackfire CLI tool")
-1.  Depending on the type of code that you wish to profile, use `blackfire curl` or `blackfire run`:
--  [Profiling HTTP Requests](https://blackfire.io/docs/cookbooks/profiling-http)
--  [Profiling CLI Commands](https://blackfire.io/docs/cookbooks/profiling-cli)
+1.  Install the Blackfire [CLI Tool](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}. Click on your preferred Platform tab and scroll down to **Installing the Blackfire CLI tool**.
+
+1.  Depending on the type of code, profile using the `blackfire curl` or `blackfire run` command.
+
+    -  [Profiling HTTP Requests](https://blackfire.io/docs/cookbooks/profiling-http)
+    -  [Profiling CLI Commands](https://blackfire.io/docs/cookbooks/profiling-cli)
 
 ## Automate performance testing
 After completing the [Blackfire Integration](#dev), you can define events for the Staging and Production environments that enable Blackfire to execute polling requests automatically. An event example is whenever a commit deploys in the Integration environment, or when activating the integration between Blackfire and New Relic.
@@ -306,43 +308,62 @@ Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire 
 ### Blackfire notifications
 When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See [Scenario notification channels](https://blackfire.io/docs/reference-guide/notification-channels){:target="_blank"}.
 
-
 ## Blackfire troubleshooting
+
 ### Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)
-If you are using one of those, you will need them to let Blackfire access your servers. [More information on how to configure a bypass](https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn)
+If you use a reverse proxy, cache, or CDN, you must grant Blackfire access to your servers. See [Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)](https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn) for an in-depth explanation.
 
 ### HTTP Cache configuration
-If you are using the HTTP cache with `cookies`, please update in your `.magento.app.yaml` the cookies that are allowed to go through the cache. You need to allow the __blackfire cookie name.
+If you use the HTTP cache with `cookies`, update your `.magento.app.yaml` file to allow the `__blackfire` cookie name to pass through the cache. For example:
 
-It should look something like:
-```
+> `.magento.app.yaml`
+
+```yaml
 cache:
     enabled: true
     cookies: [“/SESS.*/“, “__blackfire”]
 ```
 
-### Collecting the Blackfire logs for support
-If the above didn't help, please send Blackfire support the following:
+## Blackfire support
+If you continue to experience problems, you can contact Blackfire support and provide output from the following:
 
-- The output of `magento-cloud ssh -- php -d display_startup_errors=on --ri blackfire`
-- The Blackfire logs
+1. Display startup errors and save the output.
 
-#### Getting the Blackfire logs
-Please execute the following in the environment where you're facing the issue:
+    ```bash
+    magento-cloud ssh -- php -d display_startup_errors=on --ri blackfire
+    ```
 
-- `​magento-cloud variable:create --name php:blackfire.log_file --value /tmp/blackfire.log` 
-- `​magento-cloud variable:create --name php:blackfire.log_level --value 4` 
-- start a profile/build again
+1.  Create a temporary log file.
 
-You will get the logs we need with `magento-cloud ssh -- cat /tmp/blackfire.log > blackfire.log` 
+    ```bash
+    magento-cloud variable:create --name php:blackfire.log_file --value /tmp/blackfire.log
+    ```
 
-Please send them to support@blackfire.io.
+1.  Set the logging level.
 
-#### Disabling the Blackfire logs
-Once you are done, please disable logging with:
+    ```bash
+    magento-cloud variable:create --name php:blackfire.log_level --value 4
+    ```
 
-- `magento-cloud variable:delete php:blackfire.log_file` 
-- `magento-cloud variable:delete php:blackfire.log_level  
+1. Start a profile/build again and collect the logs.
+
+    ```bash
+    magento-cloud ssh -- cat /tmp/blackfire.log > blackfire.log
+    ```
+
+1.  Send output and logs to support@blackfire.io.
+
+#### To disable the Blackfire logs:
+
+You can disable logging by cleaning the temporary log file and removing the log level:
+
+```bash
+magento-cloud variable:delete php:blackfire.log_file
+```
+
+```bash 
+magento-cloud variable:delete php:blackfire.log_level
+```
 
 ## Blackfire resources
 Blackfire provides great information to better profile and investigate the results on their documentation site:
