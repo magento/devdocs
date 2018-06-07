@@ -35,7 +35,7 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 1. Create custom resolvers.
 1. Declare a custom query and all necessary types in `graphql.xml`
 
-If the target module is called `MyModule`, then create the resolvers and configuration files in a a new module called `MyModuleGraphQl`.
+If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
 See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/index.html) for more information.
 
