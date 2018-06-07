@@ -21,7 +21,8 @@ The MFTF is installed separately as a dependency using Composer. When pulling th
 
 To update the MFTF (via a command line interface):
 
-1. When you update Magento, verify that the Magento [WYSIWYG settings](getting-started.html#wysiwyg-settings) and [Security settings](getting-started.html#security-settings) are set appropriately.
+1. When you update Magento,
+ verify that the Magento [WYSIWYG settings](getting-started.html#wysiwyg-settings) and [Security settings](getting-started.html#security-settings) are set appropriately.
 1. Go to the `magento2/dev/tests/acceptance` directory:
 
 	```bash

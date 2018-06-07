@@ -19,7 +19,7 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 Before you continue, make sure you have completed all of the following tasks:
 
 *   Created a [file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
-*   Created the the [configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html) you'll need
+*   Created the [configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html) you'll need
 *   [Registered]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component
 
 ## Add the component's `module.xml` file {#module-xml}

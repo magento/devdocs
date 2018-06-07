@@ -172,7 +172,7 @@ The dotmailer bundled extension features the following enhancements for this rel
 
 <!--- MAGETWO-84652 -->* Category page X-Magento-Tags headers no longer contain product cache identities  when category display mode is set to **Static block only**. *Fix submitted by [Atish Goswami](https://github.com/atishgoswami) in pull request 12466*.
 
-<!--- MAGETWO-84665 -->* You can now delete rows in the the `dynamicRows` component. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 921*. [GitHub-8830](https://github.com/magento/magento2/issues/8830)
+<!--- MAGETWO-84665 -->* You can now delete rows in the `dynamicRows` component. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 921*. [GitHub-8830](https://github.com/magento/magento2/issues/8830)
 
 <!--- MAGETWO-84808 -->* You can now add a new product with custom attributes that has the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a `request_path` with the same value already existed in `table url_rewrite` from the previous product. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12167*. [GitHub-12110](https://github.com/magento/magento2/issues/12110)
 
