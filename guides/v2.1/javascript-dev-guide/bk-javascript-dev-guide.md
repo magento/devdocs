@@ -51,7 +51,7 @@ Any separate <code>.js</code> file decorated as <a href="http://requirejs.org/do
 <i>Ui component</i>
 </td>
 <td>
-JS component located in the <code>Magento_Ui</code> module, in the <a href="{{ site.mage2000url }}app/code/Magento/Ui/view" target="_blank">app/code/Magento/Ui/view</a> directory.
+JS component located in the <a href="{{ site.mage2100url }}app/code/Magento/Ui" target="_blank"><code>Magento_Ui</code></a> module, in the <a href="{{ site.mage2100url }}app/code/Magento/Ui/view" target="_blank">app/code/Magento/Ui/view</a> directory.
 </td>
 </tr>
 
@@ -60,7 +60,7 @@ JS component located in the <code>Magento_Ui</code> module, in the <a href="{{ s
 <i>jQuery UI widget</i>
 </td>
 <td>
-A JS component/widget provided by <a href="{{ site.mage2000url }}lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
+A JS <code>component/widget</code> provided by <a href="{{ site.mage2100url }}lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
 </td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@ A JS component/widget provided by <a href="{{ site.mage2000url }}lib/web/jquery/
 <i>jQuery widget</i>
 </td>
 <td>
-Custom widget created using jQuery UI Widget Factory and decorated as AMD {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Many Magento JS components are jQuery widget.
+Custom widget created using jQuery UI Widget Factory and decorated as AMD {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Many Magento JS components are jQuery widgets. Check <a href="https://jqueryui.com/widget/" target="_blank">jQuery Widget</a>
 </td>
 </tr>
 </table>

@@ -25,7 +25,7 @@ Prior to adding the B2B module, you should have the following:
 * A Git branch to add the new B2B module
 * Have your Magento Authentication keys (public and private) available
 
-We provide B2B as a module for Magento. For new Pro projects, we highly recommend having {{site.data.var.ece}} fully deployed to Intergration, Staging, and Production environments. For more information, see [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). Adding a module as part of your initial deployment could cause issues.
+We provide B2B as a module for Magento. For new Pro projects, we highly recommend having {{site.data.var.ece}} fully deployed to Integration, Staging, and Production environments. For more information, see [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). Adding a module as part of your initial deployment could cause issues.
 
 ## Create a branch to work in {#branch}
 We recommend working in a branch to add the B2B module and features to your implementation. If you have a branch, continue to [Add B2B in the cloud](#add).

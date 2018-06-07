@@ -29,10 +29,10 @@ Link is a leaf level item which user can select to navigate to detail page or di
 <br>
 <em>Active Link</em>- Links that are active state and can be clicked to navigate to detail page.
 <br>
-<em>Inactive Link</em>- Links that are inactive state and cann't be clicked.
+<em>Inactive Link</em>- Links that are inactive state and can't be clicked.
 
 <h3 id="funcbehavior">Basic Functional Behavior</h3>
-All trees must have these baseic functional behaviors.
+All trees must have these basic functional behaviors.
 
 <h4> 1. 'N' Number of Levels </h4>
 The propose tree can accommodate "n" levels of parent child relation. But only 2 levels of nesting is recommended.
@@ -46,7 +46,7 @@ Clicking "Expand All" will open all the nodes in the tree structure. Expand All 
 <img src="img/expandall.jpg">
 
 <h4> 4. Collapse All </h4>
-Clickign "Collapse All" will condense all the nodes in the tree structure. Once "Collapse All" is clicked link changes to "Expand All".  If user manually collapsed all the items, this control should also be changed to "Collapse All."
+Clicking "Collapse All" will condense all the nodes in the tree structure. Once "Collapse All" is clicked link changes to "Expand All".  If user manually collapsed all the items, this control should also be changed to "Collapse All."
 
 <img src="img/collpaseall.jpg">
 

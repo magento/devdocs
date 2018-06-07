@@ -52,7 +52,7 @@ You will continue to use SSH for:
 * Deploy code to Staging and Production
 
 ### Branch changes {#branches}
-When converted, your branches will be updated. The current branhces include a repository for Integration, Staging, and Production. Each repository has a `master` branch with deployment targets configured for Staging and Production.
+When converted, your branches will be updated. The current branches include a repository for Integration, Staging, and Production. Each repository has a `master` branch with deployment targets configured for Staging and Production.
 
 After the conversion, the three repositories are merged into a single repository. You will have the following branches and environments:
 
