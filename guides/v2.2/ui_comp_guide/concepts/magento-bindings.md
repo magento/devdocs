@@ -56,7 +56,7 @@ The table below shows how the Knockout bindings map to their Magento binding cou
 |foreach        |`<!-- ko foreach: elements --><!-- /ko -->`                                    | `<each args="elements">`                                              |
 |               |`<div data-bind="foreach: elements"></div>`                                    | `<div each="elements"></div>`                                         |
 |component      |`<!-- ko component: 'componentName' --> <!-- /ko -->`                          | `<component args="'componentName'">`                                  |
-|               |`<div data-bind="component: componentName"> </div>`                            | `<div component="'componentName'"> </div>`                            |
+|               |`<div data-bind="component: 'componentName'"> </div>`                          | `<div component="'componentName'"> </div>`                            |
 |css            |`<div data-bind="css: {_visible: isVisible}"> </div>`                          | `<div css="_visible: isVisible"> </div>`                              |
 |attr           |`<div data-bind="attr: {title: title}"> </div>`                                | `<div attr="title: title"> </div>`                                    |
 |style          |`<div data-bind="style: {color: redColor}"> </div>`                            | `<div ko-style="color: redColor"> </div>`                             |
@@ -74,6 +74,6 @@ The table below shows how the Knockout bindings map to their Magento binding cou
 |hasFocus       |`<input data-bind="hasFocus: onFocus"/>`                                       | `<input ko-focused="onFocus"/>`                                       |
 |textInput      |`<input data-bind="textInput: value"/>`                                        | `<input textInput="value"/>`                                          |
 |value          |`<input data-bind="value: value"/>`                                            | `<input ko-value="value"/>`                                           |
-|checked        |`<input type="chackbox" data-bind="checked: isChecked"/>`                      | `<input type="chackbox" ko-checked="isChecked"/>`                     |
-|checkedValue   |`<input type="chackbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="chackbox" checkedValue="$data" checked="isChecked"/>`   |
+|checked        |`<input type="checkbox" data-bind="checked: isChecked"/>`                      | `<input type="checkbox" ko-checked="isChecked"/>`                     |
+|checkedValue   |`<input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="checkbox" checkedValue="$data" checked="isChecked"/>`   |
 {:style="table-layout:auto"}
