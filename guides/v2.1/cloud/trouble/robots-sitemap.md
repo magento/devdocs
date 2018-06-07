@@ -51,21 +51,3 @@ To avoid this error, you can only write to specific directories, such as `var`, 
 1.  Click **Save Config**.
 
 Your `robots.txt` file appears in the `<magento_root>/app/pub/media/` folder.
-
-## Rewrite using Fastly VCL snippet
-You can generate the `sitemap.xml` file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
-
-#### To use a Fastly VCL snippet for redirect:
-Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key and value pairs.
-
-```json
-{ 
-  "name": "sitemapxml_rewrite",
-  "dynamic": "0",
-  "type": "recv",
-  "priority": "90",
-  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }" 
-}
-```
-
-{% include note.html type="tip" content="When you upgrade from Magento version 2.1 to version 2.2, enter a Support ticket to remove any existing redirects for these files." %}
