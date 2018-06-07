@@ -5,7 +5,7 @@ title: your page title
 menu_title:
 menu_node:
 menu_order: 1
-version: 2.1
+version: 2.2
 github_link: ui_comp_guide/ui_comp_conceptual_template.md
 ---
 

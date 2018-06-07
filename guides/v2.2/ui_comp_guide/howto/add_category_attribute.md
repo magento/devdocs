@@ -6,7 +6,7 @@ menu_title: Create and display a category attribute with UI components
 menu_order: 3
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-version: 2.1
+version: 2.2
 github_link: ui_comp_guide/howto/add_category_attribute.md
 ---
 

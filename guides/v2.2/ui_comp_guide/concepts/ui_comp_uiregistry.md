@@ -4,7 +4,7 @@ subgroup: concepts
 title: uiRegistry
 menu_title: uiRegistry
 menu_order: 110
-version: 2.1
+version: 2.2
 github_link: ui_comp_guide/concepts/ui_comp_uiregistry.md
 ---
 

@@ -1,7 +1,7 @@
 ---
 group: UI_Components_guide
 title: The uiLayout service object
-version: 2.1
+version: 2.2
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
