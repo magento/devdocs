@@ -471,7 +471,9 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <li>Reduces the number of files to be modified.</li></ul>
 
 **Acceptable PHP file**
-<pre>
+
+{% highlight php startinline=true %}
+...
 public function getAttributeName($element)
 {
     return ($element->getExtType() === 'multiple') ? $element->getId() . '_checkbox' : NULL;
@@ -481,7 +483,8 @@ public function getAttributeId($element)
 {
     return $element->getId();
 }
-</pre>
+...
+{% endhighlight %}
 
 **Acceptable PHTML template**
 
