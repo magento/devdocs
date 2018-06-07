@@ -79,8 +79,8 @@ After you have installed Magento, you need to set the file system permissions an
 		cd <your Magento install dir>
 		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-  	chown -R :<web server group> .
-  	chmod u+x bin/magento
+  	    chown -R :<web server group> .
+  	    chmod u+x bin/magento
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
@@ -123,7 +123,7 @@ After installing Magento, run the commands for [compile]({{ page.baseurl }}/conf
 
 1. If you are not in the correct Magento user, switch:
 
-    <pre>sudo su - magento</pre>
+        sudo su - magento
 2. Change directory to `app/bin`.
 3. Run the compile command:
 
