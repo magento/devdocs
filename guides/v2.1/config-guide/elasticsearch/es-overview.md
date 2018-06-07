@@ -153,7 +153,7 @@ To install Elasticsearch:
 
 
 ## Additional resources {#es-resources}
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
+For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next
 
