@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: howdoi
 subgroup:
 title: Initial Tasks
 menu_title: Initial Tasks

@@ -1,17 +1,16 @@
 ---
-group: howdoi
+group: tutorial
 subgroup: product-create-page
 title: Customize product creation form
 menu_title: Customize product creation form
-menu_node: parent
+menu_node:
+level3_subgroup: customize-product
 menu_order: 1
 version: 2.1
 github_link: howdoi/customize_product.md
 ---
 
-<h2>What's in this topic</h2>
-
-This topic describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+This topic describes how developers can customize the product creation form used on the product creation and product edit pages in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
@@ -19,18 +18,26 @@ The following image is an illustration of the default view of the form on the **
 
 ## Overview
 
-In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html). 
+In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html).
 
-Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+Product attributes and attribute sets available in the form can be customized in the following methods:
 
+* Admin under **STORES** > **Attributes**  
+* Custom code
 
-## Prerequisites
+The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+
+## Prerequisites {#prerequisites}
 
 [Set Magento to developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.
+{%
+include note.html
+type='info'
+content='For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.'
+%}
 
-## Customize the form configuration
+## Customize the form configuration {#form-configuration}
 
 Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.
 
@@ -121,7 +128,7 @@ To add your custom modifier, you need to do the following:
 2. [Add it to the modifiers' pool in `di.xml`](#pool)
 
 
-### Add your modifier {#modifier}
+### Add your modifier
 
 In your custom module directory, add the modifier class that implements the `Magento\UI\DataProvider\ModifierInterface` interface or extends the `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier`class. In your modifier, the `modifyData()` and the `modifyMeta()` methods must be implemented.
 
@@ -221,7 +228,7 @@ For reference, view the modifier classes in the Magento modules, for example:
 
 For reference about setting conditions for displaying certain elements for certain product types, view `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php#L476`.
 
-## Recommended reading:
+## Recommended reading
 
  - [Form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
  - [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)
