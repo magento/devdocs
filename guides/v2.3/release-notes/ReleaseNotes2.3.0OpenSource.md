@@ -271,7 +271,7 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 ### Indexing
 <!---85225 -->* `indexer:status` now outputs information about the schedule mview backlog. *Fix submitted by [Luke Rodgers](https://github.com/convenient) in pull request 12592*.
 
-<!---70883 -->* Magento no longer reindexes entities that have not been changed. Previously, Magento reindexed entries that that were not changed but which had a MySQL UPDATE. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 4893*.[GitHub-2987](https://github.com/magento/magento2/issues/2987)
+<!---70883 -->* Magento no longer reindexes entities that have not been changed. Previously, Magento reindexed entries that were not changed but which had a MySQL UPDATE. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 4893*.[GitHub-2987](https://github.com/magento/magento2/issues/2987)
 
 
 
