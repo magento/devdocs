@@ -19,9 +19,21 @@ Use <a href="{{ page.baseurl }}/howdoi/howdoi_template.html">this template</a> i
 
 Submissions should be {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} is welcome also.
 
-
-| Contributor name  |  Description or subject |
-|---|---|
-| <a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a>  | How do I develop and maintain my custom Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} in a separate repository  |
-| <a href="http://www.alanstorm.com/" title="Alan Storm">Alan Storm</a>  | Which {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class should I use to read from each `app/etc/` configuration file "type"? (acl.xml, events.xml, {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml, etc. -- excluding {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files)  |
-|   |   |
+<table>
+    <thead>
+    <tr>
+        <th>Contributor name</th>
+        <th>Description or subject</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a></td>
+        <td>How do I develop and maintain my custom Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} in a separate repository</td>
+    </tr>
+    <tr>
+        <td><a href="http://www.alanstorm.com/" title="Alan Storm">Alan Storm</a></td>
+        <td>Which {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class should I use to read from each <code>app/etc/</code> configuration file “type”? (acl.xml, events.xml, {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml, etc. — excluding {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files)</td>
+    </tr>
+    </tbody>
+</table>
