@@ -1698,7 +1698,7 @@ This process should be followed by technical users responsible for stores runnin
 
 <p>Run the following <a href="https://getcomposer.org/doc/03-cli.md#dump-autoload">composer command</a> to generate an optimized composer class map that supports faster auto-loading.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer dump-autoload -o
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer dump-autoload -o --apcu
 </code></pre></div></div>
 
 <h3 id="server---php-configuration">Server - PHP Configuration</h3>
@@ -1720,6 +1720,14 @@ Magento’s performance team uses the values in the preceding example for testin
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
+</code></pre></div></div>
+
+<p>We recommend enabling the <a href="https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache">PHP APCu extension</a> for maximum performance. This extension caches file locations for opened files, increasing performance for Magento server calls (including pages, ajax calls, and endpoints).
+Edit your <code class="highlighter-rouge">apcu.ini</code> file to include the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension=apcu.so
+[apcu]
+acp.enabled = 1
 </code></pre></div></div>
 
 <h3 id="server---redis-configuration--tuning">Server - Redis Configuration &amp; Tuning</h3>
