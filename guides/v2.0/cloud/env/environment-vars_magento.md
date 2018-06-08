@@ -72,7 +72,7 @@ The following variables are available during the deploy process of build and dep
 <td><code>CLEAN_STATIC_FILES</code></td>
 <td><p>The default value, <code>enabled</code>, cleans <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action like enabling or disabling a component. We recommend the default value in development. The supported values are <code>enabled</code> and <code>disabled</code>.</p>
 <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. </p>
-<p>Because of <a href="{{ page.baseurl }}/howdoi/clean_static_cache.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>Because of <a href="{{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
 <p>This is available in all versions.</p></td>
 <td>enabled</td>
 </tr>
