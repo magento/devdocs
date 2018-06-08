@@ -770,7 +770,7 @@ The credentials are posted to <code class="highlighter-rouge">endpoint.php</code
 
 <span class="sd">/** Use $consumerKey to retrieve the following data in case it was stored in DB when received at "endpoint.php" */</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$consumerKey</span> <span class="o">!==</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_consumer_key'</span><span class="p">])</span> <span class="p">{</span>
-    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">"Consumer keys received on on different requests do not match."</span><span class="p">);</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">\Exception</span><span class="p">(</span><span class="s2">"Consumer keys received on different requests do not match."</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="nv">$consumerSecret</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'oauth_consumer_secret'</span><span class="p">];</span>
