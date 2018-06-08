@@ -17,12 +17,12 @@ functional_areas:
 Magento 2 incorporates <a href="http://lesscss.org/" target="_blank">LESS</a>, a {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor that simplifies the management of complex CSS files.
 To define styles of a Magento store, you can use both - CSS and LESS stylesheets.
 
-Magento application provides a built-in LESS UI library, which you can optionally extend. 
+Magento application provides a built-in LESS UI library, which you can optionally extend.
 
 To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} styles, you need to <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html" target="_blank">create a custom design theme</a>. Then you can use one of the following approaches:
 
-*	If your theme <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Magento out-of-the-box Blank or Luma theme, you can override the default LESS files; for example to <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. 
-*	Create your own LESS files using the built-in LESS preprocessor. 
+*	If your theme <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Magento out-of-the-box Blank or Luma theme, you can override the default LESS files; for example to <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files.
+*	Create your own LESS files using the built-in LESS preprocessor.
 *	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
 
@@ -30,7 +30,7 @@ To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefron
 
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
-If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/howdoi/clean_static_cache.html) for instructions how to do this.
+If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See [Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
 
 <h2 id="css_walk">Change styles: walkthrough</h2>
 
@@ -64,10 +64,8 @@ When OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.
 <h2 id="css_topics">What's in this chapter</h2>
 Other topics of this chapter describe the following:
 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application. 
+* <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application.
 * <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a>: how stylesheets are preprocessed and compiled
 * <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI Library</a>: how to use the Magento styles {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} in your custom themes
-* <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html" target="_blank">Using Custom Fonts</a>: how to add custom fonts 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html" target="_blank">Customizing styles illustration</a>: how to change a theme's color scheme using Magento UI library. 
-
-
+* <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html" target="_blank">Using Custom Fonts</a>: how to add custom fonts
+* <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html" target="_blank">Customizing styles illustration</a>: how to change a theme's color scheme using Magento UI library.

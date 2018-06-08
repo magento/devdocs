@@ -53,7 +53,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/howdoi/clean_static_cache.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 ### `CRYPT_KEY`
 
@@ -67,7 +67,7 @@ Use the Project Web UI to set this value. When you move the database from one en
 -  **Default**—`true`
 -  **Version**—Magento 2.1.x
 
-Generates symlinks for the `var/generation` and `var/di` generated folders. 
+Generates symlinks for the `var/generation` and `var/di` generated folders.
 
 ```yaml
 stage:
@@ -152,12 +152,12 @@ Themes include numerous files. Set this variable to `true` if you want to skip c
 ```yaml
 stage:
   deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
 ```
 
 ### `SCD_THREADS`
 
--  **Default**: 
+-  **Default**:
     -  `1`—Starter environments and Pro Integration environments
     -  `3`—Pro Staging and Production environments
 -  **Version**—Available in all versions
@@ -190,7 +190,7 @@ stage:
       elasticsearch_server_timeout: '15'
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+By default, the deployment process overwrites all settings in the `env.php` file.
 
 ### `SESSION_CONFIGURATION`
 
@@ -203,7 +203,7 @@ Configure Redis session storage. You must specify the `save`, `redis`, `host`, `
 stage:
   deploy:
     SESSION_CONFIGURATION:
-      redis: 
+      redis:
         bot_first_lifetime: 100
         bot_lifetime: 10001
         database: 0
@@ -216,7 +216,7 @@ stage:
       save: redis
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+By default, the deployment process overwrites all settings in the `env.php` file.
 
 ### `SKIP_SCD`
 

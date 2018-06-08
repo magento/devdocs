@@ -1,21 +1,22 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add a new input form to checkout
 menu_title: Add a new input form to checkout
 menu_order: 8
+level3_subgroup: checkout-tutorial
 version: 2.1
 github_link: howdoi/checkout/checkout_form.md
 functional_areas:
   - Checkout
 ---
-## What's in this topic
 
 This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
 
 Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
-## Overview
+The forms used on the Checkout page are implemented using Knockout JS.
 
 Magento provides the ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
 
@@ -29,7 +30,7 @@ Magento provides the ability to add a custom form to any of the checkout steps: 
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
-## Create the JS implementation of the form UI component {#component}
+## Step 1: Create the JS implementation of the form UI component {#component}
 
 In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `.js` file implementing the form.
 
@@ -71,7 +72,7 @@ define([
 {%endhighlight%}
 
 
-## Create the HTML template {#template}
+## Step 2: Create the HTML template {#template}
 Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory.
 
 Example:
@@ -97,14 +98,14 @@ Example:
 
 {%endhighlight%}
 
-### Modifying the custom template after it was applied
+### Clear files to load custom template changes {#modify}
 
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
 1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
 2. Reload the pages.
 
-## Declare the form in the checkout page layout {#layout}
+## Step 3: Declare the form in the checkout page layout {#layout}
 
 Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`.
 
@@ -278,7 +279,7 @@ $textField = [
 ];
 {%endhighlight%}
 
-## Illustration
+## Illustration of example {#image}
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:
 
 <img src="{{ site.baseurl }}/common/images/how_checkout_form.png" alt="The input form with four fields">

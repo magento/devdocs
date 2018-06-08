@@ -53,21 +53,21 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/howdoi/clean_static_cache.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 ### `CRON_CONSUMERS_RUNNER`
 
 -  **Default**—`cron_run = false`, `max_messages = 1000`
 -  **Version**—Magento 2.2.0 and later
 
-Use this environment variable to make sure message queues are running after a deployment. 
+Use this environment variable to make sure message queues are running after a deployment.
 
 -   `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -   `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
 -   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers. Refer to [List consumers]({{ page.baseurl }}/config-guide/mq/manage-mysql.html#list-consumers) for more information.
 
 ```yaml
-stage: 
+stage:
   deploy:
     CRON_CONSUMERS_RUNNER:
       cron_run: true,
@@ -163,7 +163,7 @@ Themes can include numerous files. Set this variable to `true` if you want to sk
 ```yaml
 stage:
   deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
 ```
 
 ### `SCD_STRATEGY`
@@ -187,7 +187,7 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**: 
+-  **Default**:
     -  `1`—Starter environments and Pro Integration environments
     -  `3`—Pro Staging and Production environments
 -  **Version**—Magento 2.1.4 and later
@@ -220,7 +220,7 @@ stage:
      elasticsearch_server_timeout: '15'
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+By default, the deployment process overwrites all settings in the `env.php` file.
 
 ### `SESSION_CONFIGURATION`
 
@@ -230,10 +230,10 @@ By default, the deployment process overwrites all settings in the `env.php` file
 Configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
 ```yaml
-stage: 
+stage:
   deploy:
-    SESSION_CONFIGURATION: 
-      redis: 
+    SESSION_CONFIGURATION:
+      redis:
         bot_first_lifetime: 100
         bot_lifetime: 10001
         database: 0
@@ -246,7 +246,7 @@ stage:
       save: redis
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+By default, the deployment process overwrites all settings in the `env.php` file.
 
 ### `SKIP_SCD`
 

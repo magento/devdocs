@@ -31,7 +31,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 *	<a href="{{ page.baseurl }}/install-gde/install/verify.html">Verifying</a>
 *	<a href="{{ page.baseurl }}/install-gde/install/post-install-config.html">Configuring</a>
 *	<a href="{{ page.baseurl }}/install-gde/install/sample-data-after-magento.html">Optional sample data (after installing Magento)</a>
-*	[Magento in production]({{ page.baseurl }}/howdoi/deploy/deploy-to-prod.html)
+*	[Deploy Magento to production]({{ page.baseurl }}/config-guide/prod/prod_deploy.html)
 {% endcollapsible %}
 
 ## Upgrade, update

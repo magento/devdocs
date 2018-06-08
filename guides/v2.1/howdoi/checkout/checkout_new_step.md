@@ -1,35 +1,42 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add a new checkout step
 menu_title: Add a new checkout step
 menu_order: 1
+level3_subgroup: checkout-tutorial
 version: 2.1
 github_link: howdoi/checkout/checkout_new_step.md
 functional_areas:
   - Checkout
 ---
 
-## What's in this topic
+This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} part of the component, implementing a checkout step, and how to add it to the checkout flow.
+
 The default Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} consists of two steps:
 
  - Shipping Information
  - Review and Payments Information
 
-You can add a custom checkout step, it should be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+You can add a custom checkout step implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}.
 
-This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} part of the component, implementing a checkout step, and how to add it to the checkout flow.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+
+To add a new checkout step:
+
+1. [Create the view part of the checkout step component](#create-view).
+2. [Add your step to the Checkout page layout](#checkout-step).
+3. [Create mixins for payment and shipping steps (optional)](#mixins).
 
 
-## Create the view part of the checkout step component
+## Step 1: Create the view part of the checkout step component {#create-view}
 
 To create the view part of the new checkout step:
 
 1. Add a module directory (not covered in this topic). See [Build your module]({{ page.baseurl }}/extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
-1. Create the `.js` file implementing the view model.
-2. Create an `.html` template for the component.
-
-Each step is described in details in the following paragraphs.
+2. [Create the `.js` file implementing the view model](#component).
+3. [Create an `.html` template for the component](#add-html).
 
 ### Add the JavaScript file implementing the new step {#component}
 
@@ -126,7 +133,7 @@ define(
 {%endhighlight js%}
 
 
-### Add the .html template
+### Add the .html template {#add-html}
 
 In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
@@ -153,7 +160,7 @@ A sample `mystep.html` follows:
 </li>
 {%endhighlight html%}
 
-## Add your step to the Checkout page layout
+## Step 2: Add your step to the Checkout page layout {#checkout-step}
 
 For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`.
 
@@ -195,7 +202,7 @@ A sample `checkout_index_index.xml` follows:
 </page>
 {%endhighlight xml%}
 
-## Create mixins for payment and shipping steps (optional)
+## Step 3: Create mixins for payment and shipping steps (optional)
 
 If your new step is the first step, you have to create mixins for the payment and shipping steps. Otherwise two steps will be activated on loading of the checkout.
 
@@ -245,5 +252,5 @@ define(
 {%endhighlight js%}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/howdoi/clean_static_cache.html). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
+For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins go to [JS Mixins](/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins go to [JS Mixins](/v2.1/javascript-dev-guide/javascript/js_mixins.html).
 </div>
