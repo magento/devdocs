@@ -1316,7 +1316,7 @@ This release includes substantial improvements to Magento caching, image process
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 
 ### Installation and upgrade instructions
