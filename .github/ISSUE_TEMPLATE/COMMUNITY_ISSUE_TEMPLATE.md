@@ -5,6 +5,7 @@ Type of Doc:
 - [ ] Other
 
 Magento 2 GitHub Issue: https://github.com/magento/devdocs/pull/link
+
 Magento 2 GitHub PR: https://github.com/magento/devdocs/pull/link
 
 Magento 2 version:
