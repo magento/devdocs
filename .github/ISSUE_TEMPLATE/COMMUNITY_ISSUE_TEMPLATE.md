@@ -4,7 +4,7 @@ Type of Doc:
 - [ ] Topic Update, Devdoc link:
 - [ ] Other
 
-Magento 2 GitHub Issue: https://github.com/magento/devdocs/pull/link
+Magento 2 GitHub Issue: https://github.com/magento/devdocs/issues/link
 
 Magento 2 GitHub PR: https://github.com/magento/devdocs/pull/link
 
