@@ -14,14 +14,14 @@ functional_areas:
 
 You can apply patches to update {{site.data.var.ece}}. We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-The `composer update` command performs a {{site.data.var.ece}} upgrade with patches and hotfixes. Check the `magento/magento-cloud-configuration/patches` folder for available patches.
+The `composer update` command performs a {{site.data.var.ece}} upgrade with patches and hot fixes. Check the `magento/magento-cloud-configuration/patches` folder for available patches.
 
-To upgrade and test {{site.data.var.ece}} (including patches and hotfixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). Starting with 2.2.0, we use `magento/ece-tools` to update {{site.data.var.ece}} with new features and fixes and to update build and deploy processes.
+To upgrade and test {{site.data.var.ece}} (including patches and hot fixes), see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). Starting with 2.2.0, we use `magento/ece-tools` to update {{site.data.var.ece}} with new features and fixes and to update build and deploy processes.
 
 Available patches are in the `vendor/magento/ece-patches` folder.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
+We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hot fixes.
 </div>
 
 There are two types of patches:
@@ -42,7 +42,7 @@ There are two types of patches:
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.
 </div>
 
-Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
+Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hot fixes through the `composer update` command.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).

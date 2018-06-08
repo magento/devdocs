@@ -160,7 +160,7 @@ Instead of configuring an {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cd
 5.	Save your changes to `magento-vars.php` and exit the text editor.
 
 ### Deploy and test on the Integration server {#cloud-multi-stores-deploy}
-The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.
+The final step is to push your changes to your {{site.data.var.ece}} server and test your site there.
 To deploy and test:
 
 1.	Enter the following commands in the order shown:

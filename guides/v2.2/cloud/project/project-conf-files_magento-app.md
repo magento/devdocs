@@ -231,7 +231,7 @@ hooks:
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
-Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root`or as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
 
 `crons` support the following:
 
@@ -373,7 +373,11 @@ After pushing your file, you can check that the custom PHP configuration has bee
 	cat /etc/php5/fpm/php.ini
 
 ## Workers
-You can define zero or multiple work instances for each application. A worker instance runas as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
+<<<<<<< HEAD
+You can define zero or multiple work instances for each application. A worker instance can run as its own container, independent of the web instance and without a running Nginx instance. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
+=======
+You can define zero or multiple work instances for each application. A worker instance can run as its own container, independent of the web instance amd without a running Nginx instance. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
+>>>>>>> b22dda1d7462b9020f66676c84bb0499ef0a817a
 
 A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same `build` hook and `dependencies`. You can customize the container and allocated resources.
 

@@ -45,8 +45,9 @@ This format is more rich and works with any type of route, including routes serv
 
 Two keys are available under `redirects`:
 
- * `expires`: optional, the duration the redirect is cached. Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
- * `paths`: the paths to which to apply redirections.
+ * `expires`: Optional, the duration that the redirect is cached.
+ Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
+ * `paths`: The paths to apply the redirects to.
 
 Each rule under `paths` is defined by:
 
