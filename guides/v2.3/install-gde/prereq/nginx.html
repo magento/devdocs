@@ -2322,10 +2322,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.3install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
-  <li><a href="/guides/v2.3install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
-  <li><a href="/guides/v2.3install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
-  <li><a href="/guides/v2.3install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+  <li><a href="/guides/v2.3/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+  <li><a href="/guides/v2.3/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+  <li><a href="/guides/v2.3/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+  <li><a href="/guides/v2.3/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
 </ul>
 
 <h2 id="ubuntu-16">Ubuntu 16</h2>
@@ -2336,7 +2336,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get -y install nginx
 </code></pre></div></div>
 
-<p>After completing the following sections and <a href="/guides/v2.3install-gde/prereq/nginx.html#install-magento2-ubuntu">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.3install-gde/prereq/nginx.html#configure-nginx-ubuntu">configure nginx</a>.</p>
+<p>After completing the following sections and <a href="/guides/v2.3/install-gde/prereq/nginx.html#install-magento2-ubuntu">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.3/install-gde/prereq/nginx.html#configure-nginx-ubuntu">configure nginx</a>.</p>
 
 <h3 id="install-and-configure-php-fpm">Install and configure php-fpm</h3>
 <p>Magento requires several <a href="php-centos-ubuntu.html">PHP extensions</a> to function properly. In addition to these extensions, you must also install and configure the <code class="highlighter-rouge">php-fpm</code> extension if you’re using nginx.</p>
@@ -2366,7 +2366,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info">
-      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.3install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
+      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.3/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
     </div>
   </li>
   <li>
@@ -2381,20 +2381,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="install-and-configure-mysql">Install and configure MySQL</h3>
-<p>Refer to <a href="/guides/v2.3install-gde/prereq/mysql.html">MySQL</a> for more information.</p>
+<p>Refer to <a href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a> for more information.</p>
 
 <h3 id="install-magento2-ubuntu">Install and configure Magento2</h3>
 <p>There are several ways to download the Magento software, including:</p>
 
 <ul>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/zip_install.html">Download an archive</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/zip_install.html">Download an archive</a></p>
   </li>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></p>
   </li>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/dev_install.html">Clone the git repository</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/dev_install.html">Clone the git repository</a></p>
   </li>
 </ul>
 
@@ -2416,7 +2416,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
+    <p><a href="/guides/v2.3/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2
  find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
@@ -2439,10 +2439,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If prompted, enter your <a href="/guides/v2.3install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
+    <p>If prompted, enter your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
   </li>
   <li>
-    <p>Install Magento from the <a href="/guides/v2.3install-gde/install/cli/install-cli.html">command line</a>.</p>
+    <p>Install Magento from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /var/www/html/magento2/bin
  ./magento setup:install --base-url=http://www.magento-dev.com/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
@@ -2522,7 +2522,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="verify-the-installation">Verify the installation</h3>
-<p>Open a web browser and navigate to your site’s base URL to <a href="/guides/v2.3install-gde/install/verify.html">verify the installation.</a></p>
+<p>Open a web browser and navigate to your site’s base URL to <a href="/guides/v2.3/install-gde/install/verify.html">verify the installation.</a></p>
 
 <h2 id="centos-7">CentOS 7</h2>
 <p>The following section describes how to install Magento 2.x on CentOS 7 using nginx, PHP, and MySQL.</p>
@@ -2539,7 +2539,7 @@ yum -y install nginx
 systemctl enable nginx
 </code></pre></div></div>
 
-<p>After completing the following sections and <a href="/guides/v2.3install-gde/prereq/nginx.html#install-magento2-centos">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.3install-gde/prereq/nginx.html#configure-nginx-centos">configure nginx</a>.</p>
+<p>After completing the following sections and <a href="/guides/v2.3/install-gde/prereq/nginx.html#install-magento2-centos">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.3/install-gde/prereq/nginx.html#configure-nginx-centos">configure nginx</a>.</p>
 
 <h3 id="install-and-configure-php-fpm-1">Install and configure php-fpm</h3>
 <p>Magento requires several <a href="php-centos-ubuntu.html">PHP extensions</a> to function properly. In addition to these extensions, you must also install and configure the <code class="highlighter-rouge">php-fpm</code> extension if you’re using nginx.</p>
@@ -2566,7 +2566,7 @@ systemctl enable nginx
 </code></pre></div>    </div>
 
     <div class="bs-callout bs-callout-info">
-      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.3install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
+      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.3/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
     </div>
   </li>
   <li>
@@ -2635,20 +2635,20 @@ systemctl enable php-fpm
 </ol>
 
 <h3 id="install-and-configure-mysql-1">Install and configure MySQL</h3>
-<p>Refer to <a href="/guides/v2.3install-gde/prereq/mysql.html">MySQL</a> for more information.</p>
+<p>Refer to <a href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a> for more information.</p>
 
 <h3 id="install-magento2-centos">Install and configure Magento2</h3>
 <p>There are several ways to download the Magento software, including:</p>
 
 <ul>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/zip_install.html">Download an archive</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/zip_install.html">Download an archive</a></p>
   </li>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></p>
   </li>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/dev_install.html">Clone the git repository</a></p>
+    <p><a href="/guides/v2.3/install-gde/prereq/dev_install.html">Clone the git repository</a></p>
   </li>
 </ul>
 
@@ -2670,7 +2670,7 @@ systemctl enable php-fpm
 </code></pre></div>    </div>
   </li>
   <li>
-    <p><a href="/guides/v2.3install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
+    <p><a href="/guides/v2.3/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2
  find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
@@ -2693,10 +2693,10 @@ systemctl enable php-fpm
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>If prompted, enter your <a href="/guides/v2.3install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
+    <p>If prompted, enter your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
   </li>
   <li>
-    <p>Install Magento from the <a href="/guides/v2.3install-gde/install/cli/install-cli.html">command line</a>.</p>
+    <p>Install Magento from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> cd /usr/share/nginx/html/magento2/bin
  ./magento setup:install --base-url=http://www.magento-dev.com/ \
@@ -2822,15 +2822,15 @@ systemctl enable php-fpm
 </ol>
 
 <h3 id="verify-the-installation-1">Verify the installation</h3>
-<p>Open a web browser and navigate to your site’s base URL to <a href="/guides/v2.3install-gde/install/verify.html">verify the installation.</a></p>
+<p>Open a web browser and navigate to your site’s base URL to <a href="/guides/v2.3/install-gde/install/verify.html">verify the installation.</a></p>
 
 <h4 id="related-topics">Related topics:</h4>
 <ul>
   <li><a href="php-centos-ubuntu.html">PHP</a></li>
-  <li><a href="/guides/v2.3install-gde/prereq/mysql.html">MySQL</a></li>
-  <li><a href="/guides/v2.3install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v2.3install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v2.3install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
+  <li><a href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.3/install-gde/prereq/security.html">Configuring security options</a></li>
+  <li><a href="/guides/v2.3/install-gde/prereq/optional.html">Installing optional software</a></li>
+  <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
 </ul>
 
 			

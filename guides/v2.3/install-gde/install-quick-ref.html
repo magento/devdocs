@@ -2344,22 +2344,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="precondition-how-advanced-are-you">Precondition: How advanced are you?</h2>
 <p>Do you know what a “terminal” application is? Do you know what operating system your server runs? Do you know what Apache is?</p>
 
-<p>If not, see the <a href="/guides/v2.3install-gde/bk-install-guide.html">Installation overview</a>.</p>
+<p>If not, see the <a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation overview</a>.</p>
 
 <h2 id="installation-part-1-getting-started">Installation part 1: Getting started</h2>
 <ol>
-  <li>See the <a href="magento-system-requirements.html">system requirements</a>.</li>
+  <li>See the <a href="/magento-system-requirements.html">system requirements</a>.</li>
   <li>
     <p>If your system lacks any requirements, see the prerequisites documentation:</p>
 
     <ul>
-      <li><a href="/guides/v2.3install-gde/prereq/apache.html">Apache</a></li>
-      <li><a href="/guides/v2.3install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP (Ubuntu)</a></li>
-      <li><a href="/guides/v2.3install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP (CentOS)</a></li>
-      <li><a href="/guides/v2.3install-gde/prereq/mysql.html">MySQL</a></li>
+      <li><a href="/guides/v2.3/install-gde/prereq/apache.html">Apache</a></li>
+      <li><a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP (Ubuntu)</a></li>
+      <li><a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP (CentOS)</a></li>
+      <li><a href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a></li>
     </ul>
   </li>
-  <li>Just as importantly, set up the <a href="/guides/v2.3install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.</li>
+  <li>Just as importantly, set up the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on the server.</li>
   <li>Switch to the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
 .</li>
 </ol>
@@ -2372,10 +2372,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2
 </code></pre></div></div>
 
-<p>You’re required to authenticate; see <a href="/guides/v2.3install-gde/prereq/connect-auth.html">Get your authentication keys</a> for details. This downloads Magento code only; it doesn’t install the software for you.</p>
+<p>You’re required to authenticate; see <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Get your authentication keys</a> for details. This downloads Magento code only; it doesn’t install the software for you.</p>
 
 <div class="bs-callout bs-callout-tip">
-	<p>Alternatively, you can also download a <a href="/guides/v2.3install-gde/install/get-software.html">Magento software archive</a>.</p>
+	<p>Alternatively, you can also download a <a href="/guides/v2.3/install-gde/install/get-software.html">Magento software archive</a>.</p>
 </div>
 
 <div>
@@ -2622,7 +2622,7 @@ chmod u+x bin/magento
 </div>
 
 <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
-<p>You can choose to install the Magento software using either a <a href="/guides/v2.3install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="/guides/v2.3install-gde/install/cli/install-cli.html">command line</a>.</p>
+<p>You can choose to install the Magento software using either a <a href="/guides/v2.3/install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
 <h4 id="command-line-installation">Command line installation</h4>
 
@@ -2665,7 +2665,7 @@ chmod u+x bin/magento
   </li>
 </ul>
 
-<p>Optionally switch to <a href="/guides/v2.3config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
+<p>Optionally switch to <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html">developer mode</a>.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;your Magento install dir&gt;/bin
 php magento deploy:mode:set developer
@@ -2713,39 +2713,39 @@ php magento deploy:mode:set developer
   <li>
     <p>At the welcome page, click <strong>Agree and Setup Magento</strong>.</p>
 
-    <p><img src="common/images/install_qr_wizard-welcome.png" alt="You must accept the license agreement to install the Magento software" width="200px" /></p>
+    <p><img src="/common/images/install_qr_wizard-welcome.png" alt="You must accept the license agreement to install the Magento software" width="200px" /></p>
   </li>
   <li>
     <p>Step 1: Readiness Check verifies your system is ready to install the Magento software.</p>
 
     <p>Click <strong>Start Readiness Check</strong></p>
 
-    <p><img src="common/images/install_qr_readiness.png" alt="The Readiness Check makes sure your system is ready for the Magento software" width="400px" /></p>
+    <p><img src="/common/images/install_qr_readiness.png" alt="The Readiness Check makes sure your system is ready for the Magento software" width="400px" /></p>
 
     <ul>
       <li>If the readiness check passes, click <strong>Next</strong> and continue with the next step.</li>
-      <li>If the readiness check fails, see <a href="/guides/v2.3install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a></li>
+      <li>If the readiness check fails, see <a href="/guides/v2.3/install-gde/trouble/readiness/tshoot_rc_main.html">Readiness check issues</a></li>
     </ul>
   </li>
   <li>
     <p>Step 2: Add a Database enables you to set up your Magento database.</p>
 
-    <p><img src="common/images/install_qr_database.png" alt="Set up your Magento database" width="400px" /></p>
+    <p><img src="/common/images/install_qr_database.png" alt="Set up your Magento database" width="400px" /></p>
   </li>
   <li>
     <p>Step 3: Web Configuration enables you to enter the storefront and Magento Admin URLs.</p>
 
-    <p><img src="common/images/install_qr_web.png" alt="Enter your storefront and Magento Admin URLs" width="400px" /></p>
+    <p><img src="/common/images/install_qr_web.png" alt="Enter your storefront and Magento Admin URLs" width="400px" /></p>
   </li>
   <li>
     <p>Step 4: Customize Your Store enables you to enter a default store currency, time zone, and language.</p>
 
-    <p><img src="common/images/install_qr_store.png" alt="Customize the store's language, time zone, currency" width="400px" /></p>
+    <p><img src="/common/images/install_qr_store.png" alt="Customize the store's language, time zone, currency" width="400px" /></p>
   </li>
   <li>
     <p>Step 5: Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.</p>
 
-    <p><img src="common/images/install_qr_admin.png" alt="Create a Magento administrator account" width="400px" /></p>
+    <p><img src="/common/images/install_qr_admin.png" alt="Create a Magento administrator account" width="400px" /></p>
   </li>
   <li>
     <p>Step 6: Install starts the installation when you click <strong>Install Now</strong>.</p>
@@ -2758,8 +2758,8 @@ php magento deploy:mode:set developer
 
 <h2 id="installation-part-3-post-installation">Installation part 3: Post-installation</h2>
 <ul>
-  <li><a href="/guides/v2.3install-gde/install/verify.html">Verify the installation</a> was successful.</li>
-  <li>Learn about the <a href="/guides/v2.3comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.</li>
+  <li><a href="/guides/v2.3/install-gde/install/verify.html">Verify the installation</a> was successful.</li>
+  <li>Learn about the <a href="/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.</li>
 </ul>
 
 			
