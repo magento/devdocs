@@ -31,11 +31,9 @@ The following sections describe what files define the form and how they can be c
 
 [Set Magento to developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
-{%
-include note.html
-type='info'
-content='For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.'
-%}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+</div>
 
 ## Customize the form configuration {#form-configuration}
 

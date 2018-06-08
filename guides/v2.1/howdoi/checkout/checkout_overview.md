@@ -25,11 +25,9 @@ The checkout totals and the corresponding side-bar are only displayed after the 
 
 The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
-{%
-include note.html
-type='info'
-content='For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.'
-%}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+</div>
 
 ## List of described customizations
 You can customize the default checkout in many ways. This tutorial includes the following customizations:

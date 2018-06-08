@@ -17,10 +17,7 @@ content="**Temporary issue**: Added docblock tags like [@deprecated] are defined
 
 ## 2.2.0 - 2.3-develop
 
-{% include note.html
-type='info'
-content='This table is updated when new commits are merged into the "2.3-develop" branch on a daily basis.'
-%}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">This table is updated when new commits are merged into the "2.3-develop" branch on a daily basis.</div>
 
 {% include backward-incompatible-changes/open-source/2.2.0-develop.html %}
 

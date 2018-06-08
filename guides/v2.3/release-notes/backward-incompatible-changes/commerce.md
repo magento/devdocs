@@ -23,7 +23,7 @@ content="**Temporary issue**: Added docblock tags like [@deprecated] are defined
 
 {% include note.html
 type="info"
-content='The following tables are updated when new commits are merged into the "2.3-develop" branch on a daily basis.'
+The following tables are updated when new commits are merged into the "2.3-develop" branch on a daily basis.
 %}
 
 {% include backward-incompatible-changes/commerce/2.2.0-develop.html %}
