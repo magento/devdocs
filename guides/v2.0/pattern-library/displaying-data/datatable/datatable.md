@@ -30,7 +30,7 @@ This specification defines the following features for the data-table:
 	<li>Positioning of elements to allow for a more intuitive user experience</li>
 	<li>Pagination</li>
 	<li>Keyword Search</li>
-	<li>Allowing for user-defined number of of items per page</li>
+	<li>Allowing for user-defined number of items per page</li>
 	<li>Allowing users to go directly to a specific page</li>
 	<li>Filtering</li>
 	<li>Sortable columns</li>
