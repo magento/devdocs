@@ -56,8 +56,8 @@ pages:
       - label: CLI Commands
         children:
 
-          - label: robo
-            url: /magento-functional-testing-framework/release-2/commands/robo.html
+          - label: mftf
+            url: /magento-functional-testing-framework/release-2/commands/mftf.html
           - label: codecept
             url: /magento-functional-testing-framework/release-2/commands/codeception.html
 
