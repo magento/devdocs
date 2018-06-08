@@ -128,7 +128,7 @@ To get these values from the database:
 1.	If you haven't done so already, log in to your development system as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Enter the following command:
 
-		mysql -u <magento database user name> -p
+		mysql -u <magento database username> -p
 3.	At the `mysql>` prompt, enter the following commands in the order shown:
 
 		use <magento database name>;
