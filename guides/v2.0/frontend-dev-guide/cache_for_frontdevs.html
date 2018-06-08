@@ -1236,6 +1236,40 @@ The full list of cache types can be found in the <a href="/guides/v2.0/config-gu
 
   <p>For more details about working with cache, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></p>
 
+  <h2 id="clean_static_cache">Clean static files cache</h2>
+
+  <p>You can clean generated static view files in any of the following ways:</p>
+
+  <ul>
+    <li>
+      <p>In the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+. Go to <strong>System</strong> &gt; <strong>Tools</strong> &gt; <strong>Cache Management</strong> and click <strong>Flush   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">Static Files</span>
+ Cache</strong>.</p>
+
+      <div class="bs-callout bs-callout-info" id="info">
+        <p>This option is only availble in <code class="highlighter-rouge">developer</code> mode. Refer to the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files overview</a> for more information.</p>
+
+      </div>
+    </li>
+    <li>
+      <p>Manually by clearing the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories and subdirectories <em>except</em> for <code class="highlighter-rouge">pub/static/.htaccess</code>.</p>
+
+      <p>To clear the <code class="highlighter-rouge">pub/static</code> directory of all files except <code class="highlighter-rouge">.htaccess</code> (which is a hidden file), enter the following command:</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -R pub/static/*
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Several commands support an optional parameter <code class="highlighter-rouge">--clear-static-content</code>, which cleans generated static view files:</p>
+
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html"><code class="highlighter-rouge">magento module:enable</code> and <code class="highlighter-rouge">magento module:disable</code></a></li>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html"><code class="highlighter-rouge">magento theme:uninstall</code></a></li>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html"><code class="highlighter-rouge">magento module:uninstall</code></a></li>
+      </ul>
+    </li>
+  </ul>
+
   <h2 id="clean_static">Clean static files</h2>
 
   <p>Besides the cached files, in theme development process developers also deal with other saved files - static view files that are preprocessed and published to the <code class="highlighter-rouge">var/view_preprocessed</code> and <code class="highlighter-rouge">pub/static</code> directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  <code class="highlighter-rouge">grunt clean &lt;theme&gt;</code> or manually clear the <code class="highlighter-rouge">pub/static</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories.</p>
