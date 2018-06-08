@@ -3,7 +3,7 @@ group: release-notes
 title: Magento 2.3 backward incompatible changes
 version: 2.3
 github_link: release-notes/backward-incompatible-changes/index.md
-redirect_from: guides/v2.3/release-notes/backward-incompatible-changes.html
+redirect_from: /guides/v2.3/release-notes/backward-incompatible-changes.html
 ---
 
 Magento 2.3 introduces several major changes that may affect the correct functionality of already released external modules.

@@ -143,7 +143,7 @@ Node Format:
 
 : `<argument xsi:type="number">{numericValue}</argument>`
 
-Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:taget="_blank"}.
+Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:target="_blank"}.
 
 ---
 
