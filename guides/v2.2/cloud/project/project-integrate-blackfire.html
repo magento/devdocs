@@ -2150,7 +2150,7 @@ git push origin
 </ol>
 
 <h3 id="integration">Add Blackfire integration to the project</h3>
-<p>Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
+<p>Using the Magento Cloud CLI, enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
   <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
@@ -2172,7 +2172,7 @@ git push origin
 <h4 id="to-add-route-information-on-the-blackfire-magento-cloud-integration-page">To add route information on the Blackfire <em>Magento Cloud Integration</em> page:</h4>
 
 <ol>
-  <li>Locate step 5 and enter the default route. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we will try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
+  <li>Locate step 5 and enter the default route. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
   <li>If you use a wildcard <code class="highlighter-rouge">*</code> in step 5 for the default route, you need to enter a resolved value for the <code class="highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="highlighter-rouge">https://*.{default}</code> in step 5, you need to specify a route placeholder in step 6.</li>
 </ol>
 
@@ -2270,40 +2270,16 @@ git push origin
 <h4 id="to-profile-using-the-cli">To profile using the CLI:</h4>
 
 <ol>
-  <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
-  <li>Checkout an active Integration branch.</li>
   <li>
-    <p>Run the profiler.</p>
+    <p>Install the Blackfire <a href="https://blackfire.io/docs/up-and-running/installation" target="_blank">CLI Tool</a>. Click on your preferred Platform tab and scroll down to <strong>Installing the Blackfire CLI tool</strong>.</p>
+  </li>
+  <li>
+    <p>Depending on the type of code, profile using the <code class="highlighter-rouge">blackfire curl</code> or <code class="highlighter-rouge">blackfire run</code> command.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">--ri</span> blackfire
-</code></pre></div>    </div>
-
-    <p>A sample result follows:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blackfire
-
-Blackfire <span class="o">=&gt;</span> enabled
-Blackfire <span class="o">=&gt;</span> 1.10.3
-Timing measurement <span class="o">=&gt;</span> cgt
-Num of CPU <span class="o">=&gt;</span> 8
-Profiling heap memory <span class="o">=&gt;</span> 0 Kb
-Main instance trigger mode <span class="o">=&gt;</span> HTTP header triggered
-Main instance <span class="o">=&gt;</span> enabled
-
-Main instance info
-Output stream <span class="o">=&gt;</span> file
-Signature validated <span class="o">=&gt;</span> no
-EnvId validated <span class="o">=&gt;</span> no
-Fully decoded <span class="o">=&gt;</span> no
-
-Directive <span class="o">=&gt;</span> Local Value <span class="o">=&gt;</span> Master Value
-blackfire.agent_socket <span class="o">=&gt;</span> tcp://blackfire.platform.sh:8307 <span class="o">=&gt;</span> tcp://blackfire.platform.sh:8307
-blackfire.agent_timeout <span class="o">=&gt;</span> 10 <span class="o">=&gt;</span> 10
-blackfire.env_id <span class="o">=&gt;</span> no value <span class="o">=&gt;</span> no value
-blackfire.env_token <span class="o">=&gt;</span> no value <span class="o">=&gt;</span> no value
-blackfire.log_level <span class="o">=&gt;</span> 1 <span class="o">=&gt;</span> 1
-blackfire.log_file <span class="o">=&gt;</span> no value <span class="o">=&gt;</span> no value
-</code></pre></div>    </div>
+    <ul>
+      <li><a href="https://blackfire.io/docs/cookbooks/profiling-http">Profiling HTTP Requests</a></li>
+      <li><a href="https://blackfire.io/docs/cookbooks/profiling-cli">Profiling CLI Commands</a></li>
+    </ul>
   </li>
 </ol>
 
@@ -2347,6 +2323,66 @@ blackfire.log_file <span class="o">=&gt;</span> no value <span class="o">=&gt;</
 
 <h3 id="blackfire-notifications">Blackfire notifications</h3>
 <p>When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See <a href="https://blackfire.io/docs/reference-guide/notification-channels" target="_blank">Scenario notification channels</a>.</p>
+
+<h2 id="blackfire-troubleshooting">Blackfire troubleshooting</h2>
+
+<h3 id="bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn">Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)</h3>
+<p>If you use a reverse proxy, cache, or CDN, you must grant Blackfire access to your servers. See <a href="https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn">Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)</a> for an in-depth explanation.</p>
+
+<h3 id="http-cache-configuration">HTTP Cache configuration</h3>
+<p>If you use the HTTP cache with <code class="highlighter-rouge">cookies</code>, update your <code class="highlighter-rouge">.magento.app.yaml</code> file to allow the <code class="highlighter-rouge">__blackfire</code> cookie name to pass through the cache. For example:</p>
+
+<blockquote>
+  <p><code class="highlighter-rouge">.magento.app.yaml</code></p>
+</blockquote>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">cache</span><span class="pi">:</span>
+    <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">cookies</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">“/SESS.*/“</span><span class="pi">,</span> <span class="nv">“__blackfire”</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<h2 id="blackfire-support">Blackfire support</h2>
+<p>If you continue to experience problems, you can contact Blackfire support and provide output from the following:</p>
+
+<ol>
+  <li>
+    <p>Display startup errors and save the output.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud ssh <span class="nt">--</span> php <span class="nt">-d</span> <span class="nv">display_startup_errors</span><span class="o">=</span>on <span class="nt">--ri</span> blackfire
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a temporary log file.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:create <span class="nt">--name</span> php:blackfire.log_file <span class="nt">--value</span> /tmp/blackfire.log
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Set the logging level.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:create <span class="nt">--name</span> php:blackfire.log_level <span class="nt">--value</span> 4
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Start a profile/build again and collect the logs.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud ssh <span class="nt">--</span> <span class="nb">cat</span> /tmp/blackfire.log <span class="o">&gt;</span> blackfire.log
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Send output and logs to support@blackfire.io.</p>
+  </li>
+</ol>
+
+<h4 id="to-disable-the-blackfire-logs">To disable the Blackfire logs:</h4>
+
+<p>You can disable logging by cleaning the temporary log file and removing the log level:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:blackfire.log_file
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:delete php:blackfire.log_level
+</code></pre></div></div>
 
 <h2 id="blackfire-resources">Blackfire resources</h2>
 <p>Blackfire provides great information to better profile and investigate the results on their documentation site:</p>
