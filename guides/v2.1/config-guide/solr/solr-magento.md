@@ -116,7 +116,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Username</td>
-	<td><em>Optional.</em> Enter a user name for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
+	<td><em>Optional.</em> Enter a username for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
 </tr>
 <tr>
 	<td>Solr Server Password</td>
