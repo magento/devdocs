@@ -2365,7 +2365,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Enter the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRANT ALL ON &lt;local database name&gt;.* TO &lt;remote web node user name&gt;@&lt;remote web node server ip address&gt; IDENTIFIED BY '&lt;database user password&gt;';
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRANT ALL ON &lt;local database name&gt;.* TO &lt;remote web node username&gt;@&lt;remote web node server ip address&gt; IDENTIFIED BY '&lt;database user password&gt;';
 </code></pre></div>    </div>
 
     <p>For example,</p>
@@ -2376,13 +2376,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If your web server is clustered, enter the same command on every web server. You must use the same user name for every web server.</p>
+  <p>If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.</p>
 </div>
 
 <h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
 <p>On your web node host, enter the following command to verify the connection works:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;local database user name&gt; -h &lt;database server ip address&gt; -p
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;local database username&gt; -h &lt;database server ip address&gt; -p
 </code></pre></div></div>
 
 <p>If the MySQL monitor displays as follows, the database is ready for the Magento software:</p>
@@ -2409,7 +2409,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
   <li>The Base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  (also referred to as the <em>store address</em>) specifies the host name or IP address of the <em>web node</em></li>
   <li>Database host is the <em>remote database server</em> IP address (or load balancer if the database server is clustered)</li>
-  <li>Database user name is the <em>local web node</em> database user to which you gave access</li>
+  <li>Database username is the <em>local web node</em> database user to which you gave access</li>
   <li>Database password is the local web node user’s password</li>
   <li>Database name is the name of the database on the remote server</li>
 </ul>

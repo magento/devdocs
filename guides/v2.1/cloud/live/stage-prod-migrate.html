@@ -2153,12 +2153,12 @@ P partial progress
 
       <p>For Starter environments and Pro Integration environments:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database username&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
 </code></pre></div>      </div>
 
-      <p>For Pro Staging and Production environments, the name of the database is in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and user name):</p>
+      <p>For Pro Staging and Production environments, the name of the database is in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable (typically the same as the application name and username):</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump -h &lt;database host&gt; --user=&lt;database username&gt; --password=&lt;password&gt; --single-transaction --triggers &lt;database name&gt; | gzip - &gt; /tmp/database.sql.gz
 </code></pre></div>      </div>
     </li>
     <li>
@@ -2199,7 +2199,7 @@ P partial progress
 
   <p>To solve the issue, you can generate a new database dump changing or removing the <code class="highlighter-rouge">DEFINER</code> clause. The following is one example of completing this change:</p>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump <span class="nt">-h</span> &lt;database host&gt; <span class="nt">--user</span><span class="o">=</span>&lt;database user name&gt; <span class="nt">--password</span><span class="o">=</span>&lt;password&gt; <span class="nt">--single-transaction</span> main  | sed <span class="nt">-e</span> <span class="s1">'s/DEFINER[ ]*=[ ]*[^*]*\*/\*/'</span> | gzip <span class="o">&gt;</span> /tmp/database_no-definer.sql.gz
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysqldump <span class="nt">-h</span> &lt;database host&gt; <span class="nt">--user</span><span class="o">=</span>&lt;database username&gt; <span class="nt">--password</span><span class="o">=</span>&lt;password&gt; <span class="nt">--single-transaction</span> main  | sed <span class="nt">-e</span> <span class="s1">'s/DEFINER[ ]*=[ ]*[^*]*\*/\*/'</span> | gzip <span class="o">&gt;</span> /tmp/database_no-definer.sql.gz
 </code></pre></div>  </div>
 
   <p>Use the database dump you just created to <a href="#cloud-live-migrate-db">migrate the database</a>.</p>

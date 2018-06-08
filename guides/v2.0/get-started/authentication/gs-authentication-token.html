@@ -558,7 +558,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="admin-and-customer-access-tokens">Admin and customer access tokens</h2>
 
-<p>Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the user name and password for a Magento account.</p>
+<p>Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the username and password for a Magento account.</p>
 
 <p>The Magento web API framework allows <em>guest users</em> to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. <a href="/guides/v2.0/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a> contains a list of APIs that do not require a token.</p>
 
@@ -620,7 +620,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
    <tr>
       <td>Credentials</td>
       <td>
-         <p>The user name and password for a Magento account.</p>
+         <p>The username and password for a Magento account.</p>
          <p>To specify these credentials in a JSON request body, include <code>'{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
          <p> To specify these credentials in XML, include <code>&lt;login&gt;&lt;username&gt;customer1@example.com&lt;/username&gt;&lt;password&gt;customer1pw&lt;/password&gt;&lt;/login&gt;</code> in the call.</p>
       </td>
