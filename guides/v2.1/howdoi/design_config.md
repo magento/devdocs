@@ -69,7 +69,7 @@ For reference, view the grid configuration files of the Magento modules:
 - `<Magento_Backend_module_dir>/view/adminhtml/ui_component/design_config_listing.xml`
 - `<Magento_Theme_module_dir>/view/adminhtml/ui_component/design_config_listing.xml`
 
-If you add a certain field as additional grid column, you also need to set the field's `use_in_grid` property in the [field's meta data in `di.xml`](#meta_data).
+If you add a certain field as additional grid column, you also need to set the field's `use_in_grid` property in the [field's metadata in `di.xml`](#meta_data).
 
 ## Customize the design options {#customize_options}
 
@@ -94,13 +94,13 @@ To customize the form view, take the following steps:
                 <item name="sortOrder" xsi:type="number">%order for displaying%</item>
             </item>
          </argument>
-        <!--Field sets can be nested -->
+        <!--Fieldsets can be nested -->
         <fieldset name="%nested_fieldset_name%">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string" translate="true">%Nested fieldset Label as displayed in UI%</item>
                     <item name="collapsible" xsi:type="boolean">true</item>
-                    <!-- Nesting level, the value should correspond to the actual nesting level in the config xml file. For the top field set level = 0 -->
+                    <!-- Nesting level, the value should correspond to the actual nesting level in the config xml file. For the top fieldset level = 0 -->
                     <item name="level" xsi:type="number">%level of nesting%</item>
                 </item>
             </argument>
@@ -119,11 +119,11 @@ To customize the form view, take the following steps:
 
 {%endhighlight%}
 
-Your custom fields and field sets will be available for all configuration scopes (website, store, and store view).
+Your custom fields and fieldsets will be available for all configuration scopes (website, store, and store view).
 
 Your `design_config_form.xml` is merged with the same files from the other modules. So there is no need to copy their content, you only need to add your customizations.
 
-To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. For example, if you only want to rename the **Other Settings** field set, your form configuration must contain the following:
+To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration. For example, if you only want to rename the **Other Settings** fieldset, your form configuration must contain the following:
 
 {%highlight xml%}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -141,7 +141,7 @@ To customize an existing entity, declare only those options, the values of which
 </form>
 {%endhighlight%}
 
-To delete an existing field, or field set, in your `design_config_form.xml` use the following syntax:
+To delete an existing field, or fieldset, in your `design_config_form.xml` use the following syntax:
 
 {%highlight xml%}
 ...
@@ -166,7 +166,7 @@ For reference, view the form configuration files of Magento modules:
 
 ### Add fields' metadata {#meta_data}
 
-If in the design configuration form you add new fields, in `<your_module_dir>/etc/di.xml` you must specify their parent field sets and the path in the database. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
+If in the design configuration form you add new fields, in `<your_module_dir>/etc/di.xml` you must specify their parent fieldsets and the path in the database. You can also declare the backend model used for processing the field values. If you do not specify any model, the default `Magento\Framework\App\Config\Value` model is used.
 
 The field declaration in a `di.xml` looks like following:
 
@@ -179,7 +179,7 @@ The field declaration in a `di.xml` looks like following:
                 <item name="%field name%" xsi:type="array">
                     <!-- the path to the field in system configuration storage in DB-->
                     <item name="path" xsi:type="string">%path in system config%</item>
-                    <!-- the name of field set for current field, as described in form configuration -->
+                    <!-- the name of fieldset for current field, as described in form configuration -->
                     <item name="fieldset" xsi:type="string">%parent_fieldset%</item>
                     <!-- The php model used for field value processing -->
                     <item name="backend_model" xsi:type="string">%Backend\Model\For\\Field\Processing%</item>
