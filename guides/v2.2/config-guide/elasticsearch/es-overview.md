@@ -71,7 +71,7 @@ Search requests are processed as follows:
 2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
 3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
 
-	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid user name and password.
+	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid username and password.
 4.	Elasticsearch processes the search request.
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 

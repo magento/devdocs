@@ -707,7 +707,7 @@ To set up and use Redis with Magento, see <a href="http://devdocs.magento.com/gu
 </ul>
 
 <h3 id="ce18-1800security">Security Enhancements</h3>
-<ul><li>The Magento Admin Panel and web stores no longer allow web browsers to store user names or passwords.</li>
+<ul><li>The Magento Admin Panel and web stores no longer allow web browsers to store usernames or passwords.</li>
 <li>The Magento web store has additional Cross Site Request Forgery (CSRF) protections, meaning an imposter can no longer impersonate a newly registered customer and perform actions on the customer's behalf.</li>
 <li>In earlier versions, Magento was vulnerable to a session fixation attack during the registration process. After logging in to their account, a registered user's session ID did not change. Therefore, if an attacker had knowledge of an unauthorized session ID and if that user successfully registers, the attacker was able to take over the newly registered account.<br />
 Now, the session ID changes after successful registration, making unauthorized use of an account impossible.</li>

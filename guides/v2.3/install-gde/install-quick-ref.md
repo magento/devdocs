@@ -76,14 +76,14 @@ The following example shows how to install using the command line with the follo
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	Uses server rewrites
 
 *	The Magento administrator has the following properties:
 
 	*	First and last name are `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)
@@ -113,11 +113,11 @@ The following example shows how to install using the Web Setup Wizard with the f
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	The Magento administrator has the following properties:
 
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)

@@ -17,7 +17,7 @@
 	</tr>
 	<tr>
 		<td>Database Server Username</td>
-		<td>Enter the user name of the Magento database instance owner.</td>
+		<td>Enter the username of the Magento database instance owner.</td>
 	</tr>
 	<tr>
 		<td>Database Server Password</td>

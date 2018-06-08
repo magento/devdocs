@@ -26,7 +26,7 @@ _Sensitive_ configuration values hold restricted or confidential information.
 Examples of sensitive information include:
 
 *	Keys (such as API keys)
-*	User names and passwords
+*	Usernames and passwords
 *	E-mail addresses
 *	Any personally identifiable information (e.g., address, phone number, date of birth, government identification number, etc.)
 
