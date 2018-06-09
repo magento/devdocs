@@ -1526,12 +1526,28 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is <code class="highlighter-rouge">Magento\Framework\DB\Adapter\&lt;class_name&gt;</code>. These exceptions extend generic <code class="highlighter-rouge">\Zend_Db_Adapter_Exception</code>.</p>
 
-<p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span>
- class | Description of database error(s)
-— | —
-ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <br />SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
-LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded
-DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock</p>
+<table>
+  <thead>
+    <tr>
+      <th>Exception class</th>
+      <th>Description of database error(s)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ConnectionException</td>
+      <td>SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <br />SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query</td>
+    </tr>
+    <tr>
+      <td>LockWaitException</td>
+      <td>SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded</td>
+    </tr>
+    <tr>
+      <td>DeadlockException</td>
+      <td>SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>The following pseudocode illustrates how to recover from database-related errors.</p>
 
