@@ -92,6 +92,10 @@ pages:
         - label: Optional - Configure Xdebug
           url: /cloud/howtos/debug.html
 
+        - label: Configure Docker
+          url: /cloud/reference/docker-config.html
+          versions: ["2.1","2.2","2.3"]
+
     - label: Import existing code into a project
       url: /cloud/access-acct/first-time-setup_import-first-steps.html
       children:
