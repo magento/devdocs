@@ -304,13 +304,13 @@ To override blocks, follow:
 * with the same `mca`
 * without `module` and `area` attributes
 
-**Step 3.** Add blocks that you want to override (indicating a block class with new behaviour)
+**Step 3.** Add blocks that you want to override (indicating a block class with new behavior)
 
 **Step 4.** Run the page generator.
 
 Let's see an example with the following use case:
 
-- A Magento_NewModule changes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} creation behaviour of a Magento_Catalog module.
+- A Magento_NewModule changes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} creation behavior of a Magento_Catalog module.
 - `editForm` block from page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` must be changed according to new functionality.
 
 Let us see page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit`:

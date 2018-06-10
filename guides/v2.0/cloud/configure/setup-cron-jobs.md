@@ -128,7 +128,7 @@ When you push the code, the cron jobs will be added to and run in the following 
 
 To add the cron jobs to Pro plan Staging and Production, you must [enter a ticket to Support]({{ page.baseurl }}/cloud/trouble/trouble.html). Request to have the cron jobs in `.magento.app.yaml` added to those environments. We recommend pushing the updates through to the Integration `master` branch.
 
-We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occassionally late.
+We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occasionally late.
 
 ## Update cron jobs {#update}
 If you need to change or update your cron jobs, update the crons section in your `.magento.app.yaml` file. Push the file to your Git branch and deploy across environments.

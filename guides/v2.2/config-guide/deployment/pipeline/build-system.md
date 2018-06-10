@@ -65,7 +65,7 @@ To set up the build system:
 3.	Wait for Magento dependencies to update.
 4.	Set ownership:
 
-		chown -R <magento file system owner name>:<web server user name> .
+		chown -R <magento file system owner name>:<web server username> .
 
 	For example,
 

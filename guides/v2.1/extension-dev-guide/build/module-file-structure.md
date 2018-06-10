@@ -34,6 +34,7 @@ Following are some common module directories:
 Additional folders can be added for configuration and other ancillary functions for items like [plugin-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html), localization, and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
+* `Console`: contains CLI commands. For more info, see [Add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html).
 * `i18n`: contains localization files.
 * `Plugin`: contains any needed <a href="{{ page.baseurl }}/extension-dev-guide/plugins.html">plug-ins</a>.
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.

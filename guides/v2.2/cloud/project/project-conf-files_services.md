@@ -3,23 +3,16 @@ group: cloud
 title: Services
 version: 2.2
 github_link: cloud/project/project-conf-files_services.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
-We provide a `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, PHP, Redis, ElasticSearch (for 2.1.X and later), and so on. You don't need to subscribe to external service providers.
+Use the `services.yaml` file to configure all of your services supported and used by {{site.data.var.ece}}. These services include MySQL, Redis, ElasticSearch (for 2.1.X and later), and so on. You do not need to subscribe to external service providers. This file is located in the `.magento` directory in your project. See the latest sample of the [`services.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"} file.
 
-This file is located at `.magento/services.yaml` in your project.
+When you push your Git branch, our deploy script uses the values defined by configuration files in the `.magento` directory. After deployment, the script deletes the directory and its contents. Your local development environment is not affected.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your Git branch, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory. After deployment, the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
-
-To see an example, see this [sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}.
-
-**For Pro:**
-
-{% include cloud/note-pro-using-yaml.md %}
-
-The following sections discuss properties in `services.yaml`.
+{% include cloud/note-pro-using-yaml-support.md %}
 
 ## How this file works {#howitworks}
 The `.magento.app.yaml` and `services.yaml` files set the services, applications, and configurations to build and include in an environment. If you add services with specific versions, the initial push and deployment of your branches with these updated files directs the PaaS environment to provision the environment with those services. When you make changes to the services, the environment updates.

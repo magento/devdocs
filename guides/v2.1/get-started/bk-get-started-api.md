@@ -37,7 +37,7 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>
 
-The APIs can used to perform a wide array of tasks. For example:
+The APIs can be used to perform a wide array of tasks. For example:
 
 * Create a shopping app. This can be a traditional app that a user downloads on a mobile device. You could also create an app that an employee uses on a showroom floor to help customers make purchases.
 

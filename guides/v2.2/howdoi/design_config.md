@@ -1,1 +1,0 @@
-../../v2.1/howdoi/design_config.md

@@ -22,40 +22,40 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
 ### `name`
-{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project.
+{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
 
-The `name` property can consist only of lower case alphanumeric characters, such as `a` to `z` and `0` to `9`. The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
 {% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
 
 ### `type` and `build`
-The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}.
+The `type`  and `build` properties provide information about the base container image to build and run the project.
 
-Supported versions for 2.0.X to 2.1.X:
-
-```
-type: php:5.5
-type: php:5.6
-type: php:7.0
-```
-
-The `build` property determines what happens by default when building the project. The only value currently supported is `composer`.
+The supported `type` language is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Specify the PHP version as follows:
 
 ```yaml
 type: php:7.0
+```
+
+The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The supported flavor is `composer`.
+
+```yaml
 build:
     flavor: composer
 ```
 
 ### `access`
-Defines the user roles who can log in using SSH to the environments to which they have access.
+The _access_ property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
-Possible values are:
+-  `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
+-  `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
+-  `viewer`—Can view the environment only.
 
-```
-ssh: admin
-ssh: contributor
-ssh: viewer
+The default user role is `contributor`, which restricts the SSH access from users with only _viewer_ rights. You can change the user role to `viewer` to allow SSH access for users with only _viewer_ rights:
+
+```yaml
+access:
+    ssh: viewer
 ```
 
 ### `relationships`
@@ -84,7 +84,7 @@ Supports the following:
 * `index_files`: To use a static file (for example, `index.html`) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named `index.html` as an index file, your whitelist should include an element that matches the filename, like `- \.html$`.
 * `blacklist`: A list of files that should never be executed. Has no effect on static files.
 * `whitelist`: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
-* `expires`: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this isn't set.
+* `expires`: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this is not set.
 
 Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allow everything to be accessed except a specific list, we accept a *whitelist*, which means that anything not matched will trigger a 404 error and will be passed through to your `passthru` URL.
 
@@ -98,46 +98,48 @@ The following displays the default set of web accessible locations associated wi
 ```yaml
  # The configuration of app when it is exposed to the web.
 web:
-locations:
-    "/":
-        # The public directory of the app, relative to its root.
-        root: "pub"
-        # The front-controller script to send non-static requests to.
-        passthru: "/index.php"
-        index:
-            - index.php
-        expires: -1
-        scripts: true
-        allow: false
-        rules:
-            \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
-                allow: true
-            /robots\.txt$:
-                allow: true
-    "/media":
-        root: "pub/media"
-        allow: true
-        scripts: false
-        passthru: "/index.php"
-    "/static":
-        root: "pub/static"
-        allow: true
-        scripts: false
-        passthru: "/front-static.php"
-        rules:
-            ^/static/version\d+/(?<resource>.*)$:
-                  passthru: "/static/$resource"
+    locations:
+        "/":
+            # The public directory of the app, relative to its root.
+            root: "pub"
+            # The front-controller script to send non-static requests to.
+            passthru: "/index.php"
+            index:
+                - index.php
+            expires: -1
+            scripts: true
+            allow: false
+            rules:
+                \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+                    allow: true
+                /robots\.txt$:
+                    allow: true
+        "/media":
+            root: "pub/media"
+            allow: true
+            scripts: false
+            passthru: "/index.php"
+        "/static":
+            root: "pub/static"
+            allow: true
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                ^/static/version\d+/(?<resource>.*)$:
+                    passthru: "/static/$resource"
 ```
 
 ### `disk`
-Defines the size of the persistent disk size of the application in MB.
+Defines the persistent disk size of the application in MB.
+
+```yaml
+disk: 256
+```
 
 {% include note.html type="info" content="The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
 
 ### `mounts`
-An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
-
-The following is a default list of mounts configured in `magento.app.yaml`:
+An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
 
 ```yaml
  # The mounts that will be performed when the package is deployed.
@@ -154,12 +156,12 @@ The format for adding your mount to this list is as follows:
 "/public/sites/default/files": "shared:files/files"
 ```
 
-* `shared` means that the volume is shared between your applications inside an environment.
-* `disk` key defines the size available for that `shared` volume
+-  `shared`—Shares a volume between your applications inside an environment.
+-  `disk`—Defines the size available for the shared volume.
 
 {% include note.html type="info" content="The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data."%}
 
-If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
+Also, if you want the mount web accessible, you must add it to the [`web`](#web) block of locations.
 
 ### `dependencies`
 Enables you to specify dependencies that your application might need during the build process.
@@ -210,24 +212,24 @@ The commands run from the application (`/app`) directory. You can use the `cd` c
 
 ```yaml
 dependencies:
-  ruby:
-    sass: "3.4.7"
-  nodejs:
-    grunt-cli: "~0.1.13"
+    ruby:
+        sass: "3.4.7"
+    nodejs:
+        grunt-cli: "~0.1.13"
 
 hooks:
-  build: |
-    cd public/profiles/project_name/themes/custom/theme_name
-    npm install
-    grunt
-    cd
-    php ./bin/magento magento-cloud:build
+    build: |
+        cd public/profiles/project_name/themes/custom/theme_name
+        npm install
+        grunt
+        cd
+        php ./bin/magento magento-cloud:build
 ```
 
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
-`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root`or as the web server user.
 
 More information about crons:
 

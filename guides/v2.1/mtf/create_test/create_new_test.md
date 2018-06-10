@@ -443,10 +443,10 @@ The following code contains a data set, but doesn't have data yet:
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd">
     <testCase name="Magento\Search\Test\TestCase\CreateSynonymEntityTest" summary="Create Synonyms" ticketId="MAGETWO-123">
         <variation name="CreateCategoryEntityTestVariation1_all_websites_all_store_views" summary="Create synonym for all websites and all store views">
-        enter data and constraints for vaiation 1
+        enter data and constraints for variation 1
         </variation>
         <variation name="CreateCategoryEntityTestVariation2_main_website_all_store_views" summary="Create synonyms for main website and all store views">
-        enter data and constraints for vaiation 2
+        enter data and constraints for variation 2
         </variation>
         <variation name="CreateCategoryEntityTestVariation3_main_website_default_store_view" summary="Create synonyms for main website and default store views">
         enter data and constraints for variation 3

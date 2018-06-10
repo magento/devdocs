@@ -19,4 +19,5 @@ To create `auth.json`:
            }
         }
 
-       	For example, if your user name is `magento_user`, create or edit `/home/magento_user/.composer/auth.json`
+       	For example, if your username is `magento_user`, create or edit `/home/magento_user/.composer/auth.json`
+</div>

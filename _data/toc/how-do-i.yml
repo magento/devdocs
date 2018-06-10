@@ -6,57 +6,6 @@ pages:
     - label: Contributor sign-up sheet
       url: /howdoi/howdoi_contribute.html
 
-    - label: Configure Magento
-      url: /howdoi/config/configure.html
-
-    - label: Customize Design Configuration
-      versions: ["2.1","2.2", "2.3"]
-      url: /howdoi/design_config.html
-
-    - label: Deploy Magento to production
-      url: /howdoi/deploy/deploy-to-prod.html
-
-    - label: Installation and configuration
-      url: /howdoi/install/install-topics.html
-
-    - label: Magento mode switch
-      url: /howdoi/install/mode-switch.html
-
-    - label: JavaScript development
-      url: /howdoi/frontend/front-js.html
-
-    - label: Layout development
-      url: /howdoi/frontend/front-layout.html
-
-    - label: Migrate from Magento 1 to Magento 2
-      url: /howdoi/migrate/migrate.html
-      children:
-
-        - label: Migrate themes
-          url: /howdoi/migrate/migrate-themes.html
-
-        - label: Migrate extensions
-          url: /howdoi/migrate/migrate-extensions.html
-
-        - label: Code Migration
-          url: /howdoi/migrate/migrate-code.html
-
-        - label: Data Migration
-          url: /howdoi/migrate/migrate-data.html
-
-    - label: PHP Development
-      url: /howdoi/php/php_devs.html
-
-    - label: Theme development
-      url: /howdoi/frontend/front-theme.html
-
-    - label: Troubleshooting Magento
-      url: /howdoi/troubleshoot/troubleshoot.html
-      children:
-
-        - label: Reset the theme to default
-          url: /howdoi/troubleshoot/reset_theme.html
-
     - label: Customize checkout
       url: /howdoi/checkout/checkout_overview.html
       children:
@@ -98,8 +47,6 @@ pages:
           versions: ["2.2", "2.3"]
           url: /howdoi/checkout/checkout_shipping_methods.html
 
-    - label: Clean static files cache
-      url: /howdoi/clean_static_cache.html
 
     - label: Customize product creation form
       versions: ["2.1","2.2", "2.3"]

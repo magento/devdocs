@@ -5,7 +5,7 @@ title: Overview of UI components
 landing-page: UI Components
 menu_title: Overview of UI components
 menu_order: 1
-version: 2.1
+version: 2.2
 github_link: ui_comp_guide/bk-ui_comps.md
 redirect_from:
   - /guides/v2.1/ui-components/ui-component.html

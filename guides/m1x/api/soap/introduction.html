@@ -57,7 +57,7 @@ title: Introduction to the Magento 1.x SOAP API
 <div id="root">
         <pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
-// If somestuff requires api authentification,
+// If somestuff requires api authentication,
 // then get a session token
 $session = $client-&gt;login('apiUser', 'apiKey');
 
@@ -94,7 +94,7 @@ $client-&gt;endSession($session);</pre>
 <div id="root">
         <pre class="theme: Default; brush: php; gutter: false">$client = new Zend_XmlRpc_Client('http://magentohost/api/xmlrpc/');
 
-// If somestuff requires api authentification,
+// If somestuff requires api authentication,
 // we should get session token
 $session = $client-&gt;call('login', array('apiUser', 'apiKey'));
 
