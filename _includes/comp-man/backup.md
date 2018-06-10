@@ -10,7 +10,7 @@ Backups are stored in the `var/backups` directory and can be restored at any tim
 
 To back up:
 
-1.	Select the check box of each item to back up and click **Create Backup**.
+1.	Select the checkbox of each item to back up and click **Create Backup**.
 
 	The following figure shows an example of backing up everything.
 

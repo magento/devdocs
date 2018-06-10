@@ -23,7 +23,7 @@ The following paragraphs describe these points in details.
 
 ## Add vault enabling controls
 
-Add the vault enabling controls to the payment form. In the following example, a check box bound to the Vault enabler is added.
+Add the vault enabling controls to the payment form. In the following example, a checkbox bound to the Vault enabler is added.
 
 Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
