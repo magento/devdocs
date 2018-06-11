@@ -34,3 +34,4 @@ Reverse proxies serve "public" or shared content to more than one user. However,
 -   **[Public]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/public-content.html)** - Public content is stored server side in your reverse proxy cache storage (e.g., file system, database, Redis, or Varnish) and is available to multiple customers. Examples of public content include header, footer, and category listing.
 
 -   **[Private]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/private-content.html)** - Private content is stored client side (e.g., browser) and is specific to an individual customer. Examples of private content include wishlist, shopping cart, customer name, and address. You should limit stored private content to a small portion of the page's total content.
+</div>

@@ -51,3 +51,4 @@ For example, to connect to the database, use the following command:
 	mysql --host=127.0.0.1 --user='<database username>' --pass='<user password>' --database='<name>' --port='<port>'
 
 Details about the service display if you use the `magento-cloud tunnel:info` command.
+</div>

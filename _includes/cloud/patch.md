@@ -215,3 +215,4 @@ After you've successfully tested a custom patch locally and on your integration 
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
+</div>
