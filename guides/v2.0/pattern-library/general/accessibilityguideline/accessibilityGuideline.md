@@ -21,9 +21,9 @@ Don't make textual content too long or too short.
 **2. Provide adequate contrast**
 
 Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
-<a href="http://webaim.org/resources/contrastchecker/" target="_blank">http://webaim.org/resources/contrastchecker/ </a>
+[http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target=_"blank"}
 or here:
-<a href="http://www.paciellogroup.com/resources/contrastAnalyser" target="_blank">http://www.paciellogroup.com/resources/contrastAnalyser</a>
+[http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target=_"blank"}
 
 Acceptable	<br>
 <img src="img/largetext-sample1.png">
