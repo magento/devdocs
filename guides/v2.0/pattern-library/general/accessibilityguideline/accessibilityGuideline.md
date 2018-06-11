@@ -144,7 +144,7 @@ Ensure form controls have descriptive labels and instructions. Pay close attenti
 Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.
 
 ### Resources {#resources}
-Overview: [http://www.w3.org/WAI/WCAG20/glance/}(http://www.w3.org/WAI/WCAG20/glance/){:target=_"blank"}
+Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target=_"blank"}
 
 Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target=_"blank"}
 
