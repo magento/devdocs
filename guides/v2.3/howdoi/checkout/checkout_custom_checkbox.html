@@ -558,17 +558,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>This topic describes how to add a custom field that influences other fields on the checkout page.</p>
 
-<p>Let’s consider a case where you need to add a check box whose state (selected or cleared) changes the state of other fields: when the check box is selected, the Shipping Address fields get prepopulated with a certain address. To implement such a check box, take the following steps:</p>
+<p>Let’s consider a case where you need to add a checkbox whose state (selected or cleared) changes the state of other fields: when the checkbox is selected, the Shipping Address fields get prepopulated with a certain address. To implement such a checkbox, take the following steps:</p>
 
 <ol>
   <li>Create a <a href="/guides/v2.3/extension-dev-guide/plugins.html">plugin</a> for the process method of the <code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/Block/Checkout/LayoutProcessor.php</code> class.</li>
   <li>Declare the plugin in your module’s <code class="highlighter-rouge">di.xml</code>.</li>
-  <li>Create a JS component for the check box with custom logic.</li>
+  <li>Create a JS component for the checkbox with custom logic.</li>
 </ol>
 
 <h2 id="create-a-plugin-for-the-layoutprocessors-process-method">Create a plugin for the <code class="highlighter-rouge">LayoutProcessor</code>’s process method</h2>
 
-<p>In your custom module directory, create the following new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/Block/Checkout/SomeProcessor.php</code>. In this file, add the following code sample. This is a plugin that adds a check box, makes the street labels trackable, and assigns dependencies to the check box.</p>
+<p>In your custom module directory, create the following new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/Block/Checkout/SomeProcessor.php</code>. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Checkout\Block\Checkout</span><span class="p">;</span>
 
@@ -683,7 +683,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h2 id="create-a-js-component-for-the-check-box">Create a JS component for the check box</h2>
+<h2 id="create-a-js-component-for-the-checkbox">Create a JS component for the checkbox</h2>
 
 <p>In your custom module directory, create the following new file: <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/single-checkbox.js</code>. In this file, add the following code. This is  a JS component that extends <code class="highlighter-rouge">Magento_Ui/js/form/element/single-checkbox.js</code>. The <code class="highlighter-rouge">onCheckedChanged</code> method calls the methods that update street labels, change the city and country values, and disable these fields:</p>
 
