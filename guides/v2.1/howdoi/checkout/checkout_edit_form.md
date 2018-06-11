@@ -57,7 +57,7 @@ Example of a field template:
 The original templates of all form field types are located in the `app/code/Magento/Ui/view/base/web/templates/form/element` directory.
 </div>
 
-## Specify the new template in layout {#layout}
+## Step 2: Specify the new template in layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file.
 In this file, add content similar to the following:
