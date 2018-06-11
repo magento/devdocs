@@ -2,7 +2,7 @@
 layout: tutorial
 group: howdoi
 subgroup: checkout
-title: Initial Tasks
+title: Customize Checkout
 menu_title: Initial Tasks
 menu_node:
 level3_subgroup: checkout-tutorial

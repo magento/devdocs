@@ -3,10 +3,10 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Customize using a modifier class
-menu_title: Customize using a modifier class
+subtitle: Customize Product Creation Form
 menu_node:
 level3_subgroup: product-creation-form
-menu_order: 1
+menu_order: 3
 version: 2.1
 github_link: howdoi/customize-modifier-class.md
 ---

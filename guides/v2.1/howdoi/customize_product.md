@@ -2,7 +2,7 @@
 layout: tutorial
 group: howdoi
 subgroup: product-create-page
-title: Initial Tasks
+title: Customize product creation form
 menu_title: Initial Tasks
 menu_node:
 level3_subgroup: product-creation-form

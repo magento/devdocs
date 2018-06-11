@@ -3,7 +3,7 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Add a custom template for a form field on Checkout page
-menu_title: Add a custom template for a form field on Checkout page
+subtitle: Customize Checkout
 menu_order: 7
 level3_subgroup: checkout-tutorial
 version: 2.1

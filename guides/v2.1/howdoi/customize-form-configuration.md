@@ -3,10 +3,10 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Customize the form configuration
-menu_title: Customize the form configuration
+subtitle: Customize Product Creation Form
 menu_node:
 level3_subgroup: product-creation-form
-menu_order: 1
+menu_order: 2
 version: 2.1
 github_link: howdoi/customize-form-configuration.md
 ---

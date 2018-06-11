@@ -3,7 +3,7 @@ layout: tutorial
 group: howdoi
 subgroup: checkout
 title: Customize the list of shipping methods
-menu_title: Customize the list of shipping methods
+subtitle: Customize Checkout
 menu_order: 100
 level3_subgroup: checkout-tutorial
 version: 2.2

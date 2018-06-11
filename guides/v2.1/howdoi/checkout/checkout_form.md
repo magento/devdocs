@@ -3,7 +3,7 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Add a new input form to checkout
-menu_title: Add a new input form to checkout
+subtitle: Customize Checkout
 menu_order: 8
 level3_subgroup: checkout-tutorial
 version: 2.1

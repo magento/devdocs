@@ -3,7 +3,7 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Add a custom shipping address renderer
-menu_title: Add a custom shipping address renderer
+subtitle: Customize Checkout
 menu_order: 10
 level3_subgroup: checkout-tutorial
 version: 2.0

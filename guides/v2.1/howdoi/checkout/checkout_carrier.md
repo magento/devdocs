@@ -3,7 +3,7 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Add custom shipping carrier validations
-menu_title: Add custom shipping carrier validations
+subtitle: Customize Checkout
 menu_order: 5
 level3_subgroup: checkout-tutorial
 version: 2.1

@@ -3,7 +3,7 @@ layout: tutorial
 group: howdoi
 subgroup:
 title: Add custom validations before order placement
-menu_title: Add custom validations before order placement
+subtitle: Customize Checkout
 menu_order: 4
 level3_subgroup: checkout-tutorial
 version: 2.1
