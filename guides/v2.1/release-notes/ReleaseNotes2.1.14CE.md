@@ -10,7 +10,7 @@ github_link: release-notes/ReleaseNotes2.1.14CE.md
 {:toc}
 
 
-*Patch code and release notes were published on June 12, 2018.*
+*Patch code and release notes were published on June 19, 2018.*
 
 
 We are pleased to present Magento Open Source  2.1.14. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
@@ -20,9 +20,7 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
-Magento 2.1.14 contains 38 security fixes and enhancements.  Look for the following highlights in this release:
-
-* **Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update)  for more information.
+Magento 2.1.14 contains 38 security fixes and enhancements.  The enhancements help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
 ## Fixed issues
 In addition to security enhancements, this release contains the following functional fixes. 
@@ -34,7 +32,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-707 -->* The misspelling in the name of the namespace in `Magento\Cron\Observer\ProcessCronQueueObserver.php` has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
-<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan3600](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
+<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan Yehuda](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
 <!--- ENGCOM-949 -->* `Store getConfig()` now respects  valid false return values. Previously, the system represented the **no** setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to **no**.    *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
 
@@ -314,6 +312,61 @@ The following table identifies contributions from our community members. This ta
   <td><a href="https://github.com/magento/magento2/pull/14349" target="_blank">14349</a></td>
     <td>7403</td>
      <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/magento/magento2/pull/14332" target="_blank">14332</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/sergiy-v" target="_blank">Sergiy</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14323" target="_blank">14323</a></td>
+    <td>7816</td>
+     <td><a href="https://github.com/mikewhitby" target="_blank">Mike Whitby</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14417" target="_blank">14417</a></td>
+    <td>11930, 10700</td>
+     <td><a href="https://github.com/xtremeperf" target="_blank">Doug</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14436" target="_blank">14436</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/vseager" target="_blank">Victor Seager</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14480" target="_blank">14480</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14497" target="_blank">14497</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14348" target="_blank">14348</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14479" target="_blank">14479</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14505" target="_blank">14505</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/quisse" target="_blank">Tommy Quissens</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14524" target="_blank">14524</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14572" target="_blank">14572</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/PierreLeMaguer" target="_blank">PierreLeMaguer</a></td>
   </tr>
  </table>
 
