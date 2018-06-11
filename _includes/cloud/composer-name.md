@@ -24,3 +24,4 @@ To get the module's Composer name from Magento Marketplace:
 	A sample follows:
 
 		pixlee/magento2:1.0.1
+</div>
