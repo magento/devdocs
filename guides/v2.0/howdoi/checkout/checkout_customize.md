@@ -86,7 +86,6 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 </page>
 ```
 
-
 ## Add the new component to the checkout page layout {#add}
 
 Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
@@ -111,7 +110,7 @@ To remove a component from layout rendering, you need to create a [plugin]({{ pa
 
 The following sample is an example of the around method removing a component:
 
-```php
+```php?start_inline=1
 unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_node%]); //%path_to_target_node% is the path to the component's node in checkout_index_index.xml
 return $jsLayout;
 ```

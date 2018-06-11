@@ -24,12 +24,12 @@ On the Shipping Information checkout step Magento renders all addresses previous
 To implement shipping address rendering in checkout, you need to take the following steps:
 
 1. [Create the JS renderer component (shipping address renderer)](#create).
-3. [Create a template for the shipping address renderer.](#template)
-2. [Create the JS model for the shipping rate processor](#rate_processor).
-3. [Create the JS model for the shipping address saving processor](#save).
-4. [Create the JS component registering the processors](#register).
-4. [Declare the new components in the checkout page layout.](#layout).
-5. [Add the shipping address renderer to the "Ship-To" block (optional)](#ship_to).
+2. [Create a template for the shipping address renderer.](#template)
+3. [Create the JS model for the shipping rate processor](#rate_processor).
+4. [Create the JS model for the shipping address saving processor](#save).
+5. [Create the JS component registering the processors](#register).
+6. [Declare the new components in the checkout page layout.](#layout).
+7. [Add the shipping address renderer to the "Ship-To" block (optional)](#ship_to).
 
 ## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 
@@ -39,7 +39,7 @@ For the sake of compatibility, upgradability and easy maintenance, do not edit t
 
 In your custom module directory, create the component's `.js` file (shipping address renderer). It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
-The general view of the shipping address renderer is the following:
+The following is a general view of the shipping address renderer:
 
 ```js
 define([
@@ -298,7 +298,7 @@ You can use the code from the default template: [app/code/Magento/Checkout/view/
 
 ### Declare the address to be used in the Ship-To section in layout
 
-In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file add the following:
+In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file, add the following:
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">

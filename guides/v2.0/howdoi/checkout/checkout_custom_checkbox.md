@@ -1,6 +1,6 @@
 ---
-group: howdoi
 layout: tutorial
+group: howdoi
 subgroup:
 title: Add custom fields that influence other Checkout fields
 menu_title: Add custom fields that influence other Checkout fields

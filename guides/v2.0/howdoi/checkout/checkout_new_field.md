@@ -110,7 +110,6 @@ define([
 
 When adding a field to the billing address form, you need to modify the behavior of one of the following components: `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information`, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the [place-order-mixin.js]({{ site.mage2100url }}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-
 ## Step 3: Load your mixin {#load_mixin}
 
 Instruct Magento to load your mixin for the corresponding JS component. For this, in the `<YourModule_dir>/view/frontend/` directory, add the `requirejs-config.js`.
@@ -128,7 +127,6 @@ var config = {
     }
 };
 ```
-
 
 ## Step 4: Add field to address model {#field}
 

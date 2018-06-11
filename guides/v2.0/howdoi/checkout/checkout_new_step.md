@@ -126,7 +126,6 @@ define(
 );
 ```
 
-
 ### Add the .html template {#html-template}
 
 In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
@@ -206,15 +205,16 @@ To create a mixin:
 
     ```js
     var config = {
-    'config': {
-        'mixins': {
+      'config': {
+          'mixins': {
             'Magento_Checkout/js/view/shipping': {
                 'Vendor_Module/js/view/shipping-payment-mixin': true
-            },
+                },
             'Magento_Checkout/js/view/payment': {
                 'Vendor_Module/js/view/shipping-payment-mixin': true
-            }
-        }
+                }
+          }
+      }
     }
     ```
 
