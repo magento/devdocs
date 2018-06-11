@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add a new field in address form
 menu_title: Add a new field in address form
 menu_order: 9
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_new_field.md
 functional_areas:
@@ -12,16 +14,20 @@ functional_areas:
 
 This topic describes how to add new fields to default {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form.
 
-## Add the field to layout and handle its value on the client side
-
 To add your custom field to the checkout address form and access its value on the client side,
 take the steps described further.
 
-**Step 1**
+1. [Add the field to layout](#add).
+2. [Add a JS mixin to modify data submission](#mixin).
+3. [Load your mixin](#load_mixin).
+4. [Add field to address model](#field).
+5. [Access the value of the custom field on server side](#access).
 
-Add the field to layout. Both shipping address and billing address forms are [generated dynamically]({{ page.baseurl }}/howdoi/checkout/checkout_form.html#dynamic_form). So to modify its layout, you need to create a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
+## Step 1: Add the field to layout {#add}
 
-Following is a sample logic for a plugin method adding a field named `Custom Attribute` to the shipping address form:
+Both shipping address and billing address forms are [generated dynamically]({{ page.baseurl }}/howdoi/checkout/checkout_form.html#dynamic_form). To modify its layout, you need to create a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
+
+The following is a sample logic for a plugin method adding a field named `Custom Attribute` to the shipping address form:
 
 {%highlight php%}
 <?php
@@ -73,11 +79,11 @@ Optionally, instead of adding a plugin, you can use [dependency injection (DI)](
 where `%unique_name%` and `%path\to\your\LayoutProcessor%` must be replaced by your real values.
 
 
-**Step 2**
+## Step 2: Add a JS mixin to modify data submission {#mixin}
 
-Add a JS {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} to change the behavior of the component responsible for the data submission to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming.
+Add a JS {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} to change the behavior of the component responsible for the data submission to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}. In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming.
 
-Following is a sample mixin modifying the behavior of `Magento_Checkout/js/action/set-shipping-information` (this component is responsible for data submission between shipping and billing checkout steps):
+The following is a sample mixin modifying the behavior of `Magento_Checkout/js/action/set-shipping-information` (this component is responsible for data submission between shipping and billing checkout steps):
 {%highlight js%}
 
 /*jshint browser:true jquery:true*/
@@ -108,11 +114,11 @@ define([
 When adding a field to the billing address form, you need to modify the behavior of one of the following components: `Magento_Checkout/js/action/place-order` or `Magento_Checkout/js/action/set-payment-information`, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the [place-order-mixin.js]({{ site.mage2100url }}app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js) in the Magento_CheckoutAgreements {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 
-**Step 3**
+## Step 3: Load your mixin {#load_mixin}
 
-Tell Magento to load your mixin for the corresponding JS component. For this, in the `<YourModule_dir>/view/frontend/` directory, add the `requirejs-config.js`.
+Instruct Magento to load your mixin for the corresponding JS component. For this, in the `<YourModule_dir>/view/frontend/` directory, add the `requirejs-config.js`.
 
-Following is a sample of such `requirejs-config.js` for the sample mixin added earlier:
+The following is a sample of such `requirejs-config.js` for the sample mixin added earlier:
 
 {%highlight js%}
 
@@ -128,7 +134,7 @@ var config = {
 {%endhighlight%}
 
 
-**Step 4**
+## Step 4: Add field to address model {#field}
 
 To add the field to the address model on the server side, add the `extension_attributes.xml` file in the `<YourModule_dir>/etc/` directory.
 
@@ -144,12 +150,11 @@ Following is a sample `extension_attributes.xml`:
 </config>
 {%endhighlight%}
 
-## Access the value of the custom field on server side
-If you took all the steps described in the previous paragraphs,
-Magento will generate the interface that includes your custom attribute and you can access your field value like this:
+## Step 5: Access the value of the custom field on server side {#access}
+If you took all the steps described in these steps, Magento will generate the interface that includes your custom attribute. You can access your field value like this:
 
     $value = $address->getExtensionAttributes()->getCustomField();
 
-## Related reading
+#### Related topics
 
 - [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)

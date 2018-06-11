@@ -11,7 +11,8 @@ github_link: howdoi/checkout/checkout_address.md
 functional_areas:
   - Checkout
 ---
-## What's in this topic
+
+This topic describes how to implement a custom shipping address renderer.
 
 Out of the box, Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} consists of two steps:
 
@@ -20,7 +21,6 @@ Out of the box, Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde 
 
 On the Shipping Information checkout step Magento renders all addresses previously saved by a shopper. The shopper can then select the one to be used for shipping by clicking it. The default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
 
-This topic describes how to implement a custom shipping address renderer.
 
 To implement shipping address rendering in checkout, you need to take the following steps:
 
@@ -35,7 +35,7 @@ To implement shipping address rendering in checkout, you need to take the follow
 All the steps are described further.
 
 
-## Create the JS renderer component (shipping address renderer) {#create}
+## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 
 Your shipping address renderer must be implemented as a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
@@ -83,7 +83,7 @@ define([
 });
 {%endhighlight%}
 
-## Create a template for the shipping address renderer {#template}
+## Step 2: Create a template for the shipping address renderer {#template}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax.
 
@@ -92,7 +92,7 @@ The template should contain a button for setting the address to be used for ship
 You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
 
 
-## Create the JS model for the shipping rate processor {#rate_processor}
+## Step 3: Create the JS model for the shipping rate processor {#rate_processor}
 
 A shipping rate processor is responsible for retrieving the shipping rates available for the given shipping address.
 
@@ -150,7 +150,7 @@ define(
 
 {%endhighlight%}
 
-## Create the JS model for the shipping address saving processor {#save}
+## Step 4: Create the JS model for the shipping address saving processor {#save}
 
 This processor is responsible for sending the shipping address and the selected rate to the server.
 
@@ -207,7 +207,7 @@ define(
 );
 {%endhighlight%}
 
-## Create the JS component registering the processors {#register}
+## Step 5: Create the JS component registering the processors {#register}
 
 In your custom module directory, create the `.js` UI component that registers the rate processor and the saving processor. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
@@ -243,7 +243,7 @@ define(
 );
 {%endhighlight%}
 
-## Declare the new components in the checkout page layout {#layout}
+## Step 6: Declare the new components in the checkout page layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
 
@@ -288,9 +288,9 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 </page>
 {%endhighlight%}
 
-The <code>address_type</code> you need to specify in the layout, is the value you set in the JS model of your custom address type.
+The `address_type` you need to specify in the layout, is the value you set in the JS model of your custom address type.
 
-### Add the shipping address renderer to the "Ship-To" block (optional) {#ship_to}
+## Step 7: Add the shipping address renderer to the "Ship-To" block (optional) {#ship_to}
 
 On the Review and Payment Information step of checkout, the shipping address is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
 
