@@ -829,7 +829,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 50498-->* The variations matrix is now populated as expected after you update a configurable product.
 
-<!--- 50461-->* The default address check boxes are  checked as expected on the Customer View page.
+<!--- 50461-->* The default address checkboxes are  checked as expected on the Customer View page.
 
 
 <!--- 50375-->* Magento now displays images for configurable product variations on the storefront.

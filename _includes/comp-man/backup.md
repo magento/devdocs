@@ -16,7 +16,7 @@ To back up:
 
 	<img src="{{ site.baseurl }}/common/images/modman_create-backup.png" width="550px" alt="You can back up the Magento 2 file system, media directory, and database">
 
-	(If you choose not to back up, clear all check boxes and click **Next**.)
+	(If you choose not to back up, clear all checkboxes and click **Next**.)
 
 	<div class="bs-callout bs-callout-info" id="info">
       <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>
