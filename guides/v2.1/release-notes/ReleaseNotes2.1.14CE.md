@@ -368,6 +368,11 @@ The following table identifies contributions from our community members. This ta
     <td>N/A</td>
      <td><a href="https://github.com/PierreLeMaguer" target="_blank">PierreLeMaguer</a></td>
   </tr>
+  <tr>
+  <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
+    <td>13214</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
  </table>
 
 
