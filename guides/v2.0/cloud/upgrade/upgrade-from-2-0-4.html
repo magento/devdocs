@@ -1758,38 +1758,40 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-  <h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
-  <p>This section discusses how to update:</p>
+</div>
 
-  <ul>
-    <li><code class="highlighter-rouge">.magento.app.yaml</code>, the main project configuration file.</li>
-    <li><code class="highlighter-rouge">composer.json</code>, which specifies project dependencies.</li>
-  </ul>
+<h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
+<p>This section discusses how to update:</p>
 
-  <p>Changes are discussed in the sections that follow.</p>
+<ul>
+  <li><code class="highlighter-rouge">.magento.app.yaml</code>, the main project configuration file.</li>
+  <li><code class="highlighter-rouge">composer.json</code>, which specifies project dependencies.</li>
+</ul>
 
-  <h3 id="magentoappyaml"><code class="highlighter-rouge">.magento.app.yaml</code></h3>
-  <p>Open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor and update the <code class="highlighter-rouge">build</code> section (which is nested in the <code class="highlighter-rouge">deploy</code> section) and <code class="highlighter-rouge">crons</code> sections as follows:</p>
+<p>Changes are discussed in the sections that follow.</p>
 
-  <p>Deploy section:</p>
+<h3 id="magentoappyaml"><code class="highlighter-rouge">.magento.app.yaml</code></h3>
+<p>Open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor and update the <code class="highlighter-rouge">build</code> section (which is nested in the <code class="highlighter-rouge">deploy</code> section) and <code class="highlighter-rouge">crons</code> sections as follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deploy: |
+<p>Deploy section:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deploy: |
     php ./vendor/magento/magento-cloud-configuration/pre-deploy.php
     php ./bin/magento magento-cloud:deploy
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Crons section:</p>
+<p>Crons section:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crons:
         cronrun:
             spec: "*/5 * * * *"
             cmd: "php bin/magento cron:run &amp;&amp; php bin/magento cron:run"
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h3 id="composerjson"><code class="highlighter-rouge">composer.json</code></h3>
-  <p>Open <code class="highlighter-rouge">composer.json</code> and update the <code class="highlighter-rouge">"files"</code> directive in the <code class="highlighter-rouge">autoload</code> section as follows:</p>
+<h3 id="composerjson"><code class="highlighter-rouge">composer.json</code></h3>
+<p>Open <code class="highlighter-rouge">composer.json</code> and update the <code class="highlighter-rouge">"files"</code> directive in the <code class="highlighter-rouge">autoload</code> section as follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"autoload": {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"autoload": {
         "psr-4": {
             "Magento\\Framework\\": "lib/internal/Magento/Framework/",
             "Magento\\Setup\\": "setup/src/Magento/Setup/",
@@ -1802,20 +1804,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             "app/etc/NonComposerComponentRegistration.php"
         ]
     }
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Move <code class="highlighter-rouge">app/NonComposerComponentRegistration.php</code> to <code class="highlighter-rouge">app/etc/NonComposerComponentRegistration.php</code>. Make sure the relative paths that point to locations in the <code class="highlighter-rouge">app</code> and <code class="highlighter-rouge">lib</code> directories reflect the  new location of the file.</p>
+<p>Move <code class="highlighter-rouge">app/NonComposerComponentRegistration.php</code> to <code class="highlighter-rouge">app/etc/NonComposerComponentRegistration.php</code>. Make sure the relative paths that point to locations in the <code class="highlighter-rouge">app</code> and <code class="highlighter-rouge">lib</code> directories reflect the  new location of the file.</p>
 
-  <p>Update the <code class="highlighter-rouge">require</code> section as follows to:</p>
+<p>Update the <code class="highlighter-rouge">require</code> section as follows to:</p>
 
-  <ul>
-    <li>Replace <code class="highlighter-rouge">"magento/product-enterprise-edition": "&lt;current version&gt;",</code> with <code class="highlighter-rouge">"magento/magento-cloud-metapackage": "&lt;upgrade version&gt;",</code></li>
-    <li>Remove <code class="highlighter-rouge">"magento/magento-cloud-configuration": "1.0.*",</code></li>
-  </ul>
+<ul>
+  <li>Replace <code class="highlighter-rouge">"magento/product-enterprise-edition": "&lt;current version&gt;",</code> with <code class="highlighter-rouge">"magento/magento-cloud-metapackage": "&lt;upgrade version&gt;",</code></li>
+  <li>Remove <code class="highlighter-rouge">"magento/magento-cloud-configuration": "1.0.*",</code></li>
+</ul>
 
-  <p>In some cases, your <code class="highlighter-rouge">composer.json</code> might already be correct.</p>
+<p>In some cases, your <code class="highlighter-rouge">composer.json</code> might already be correct.</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> },
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> },
     "require": {
         "magento/magento-cloud-metapackage": "2.1.0",
         "composer/composer": "@alpha",
@@ -1823,15 +1825,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         "colinmollenhour/php-redis-session-abstract": "1.1",
         "fastly/magento2": "^1.0"
     },
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>Run <code class="highlighter-rouge">composer update</code>, and make sure the updated composer.lock and other changed files are
+<p>Run <code class="highlighter-rouge">composer update</code>, and make sure the updated composer.lock and other changed files are
 checked in to git.</p>
 
-  <h2 id="repository-structure">Repository structure</h2>
-  <p>Here are the specific files for this example to work on Magento Commerce:</p>
+<h2 id="repository-structure">Repository structure</h2>
+<p>Here are the specific files for this example to work on Magento Commerce:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.magento/
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.magento/
          /routes.yaml
          /services.yaml
 .magento.app.yaml
@@ -1839,76 +1841,75 @@ auth.json
 composer.json
 magento-vars.php
 php.ini
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p><code class="highlighter-rouge">.magento/routes.yaml</code> redirects <code class="highlighter-rouge">www</code> to the naked domain, and that the application that will be serving HTTP is named <code class="highlighter-rouge">php</code>.</p>
+<p><code class="highlighter-rouge">.magento/routes.yaml</code> redirects <code class="highlighter-rouge">www</code> to the naked domain, and that the application that will be serving HTTP is named <code class="highlighter-rouge">php</code>.</p>
 
-  <p><code class="highlighter-rouge">.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
+<p><code class="highlighter-rouge">.magento/services.yaml</code> sets up a MySQL instance, plus Redis and Solr.</p>
 
-  <p><code class="highlighter-rouge">composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
+<p><code class="highlighter-rouge">composer.json</code> fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.</p>
 
-  <p>Verify your upgrade as discussed in the next section.</p>
+<p>Verify your upgrade as discussed in the next section.</p>
 
-  <h2 id="upgrade-verify">Verify your upgrade</h2>
-  <p>This section discusses how to verify your upgrade and to troubleshoot any issues you might find.</p>
+<h2 id="upgrade-verify">Verify your upgrade</h2>
+<p>This section discusses how to verify your upgrade and to troubleshoot any issues you might find.</p>
 
-  <p>To verify the upgrade in your integration, staging, or production system:</p>
+<p>To verify the upgrade in your integration, staging, or production system:</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
-    <li>
-      <p>Enter the following command from your Magento root directory to verify the installed version:</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
+  <li>
+    <p>Enter the following command from your Magento root directory to verify the installed version:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento --version
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento --version
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
-  <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
+<h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
+<p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: &lt;error number&gt;
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <h3 id="view-error-details-on-the-server">View error details on the server</h3>
-  <p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
+<h3 id="view-error-details-on-the-server">View error details on the server</h3>
+<p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
+</code></pre></div></div>
 
-  <h3 id="resolve-the-error">Resolve the error</h3>
-  <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
+<h3 id="resolve-the-error">Resolve the error</h3>
+<p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
 The following modules are outdated:
 Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>To resolve the error:</p>
+<p>To resolve the error:</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
-    <li><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Examine the logs</a> to determine the source of the issue.</li>
-    <li>
-      <p>After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
+  <li><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Examine the logs</a> to determine the source of the issue.</li>
+  <li>
+    <p>After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.</p>
 
-      <p>For example, on a local branch, enter the following commands:</p>
+    <p>For example, on a local branch, enter the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h4 id="related-topic">Related topic</h4>
-  <ul>
-    <li><a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
-  </ul>
-</div>
+<h4 id="related-topic">Related topic</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer</a></li>
+  <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a></li>
+  <li><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+  <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+</ul>
 
 			
 		</div>

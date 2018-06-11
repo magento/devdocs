@@ -2177,133 +2177,134 @@ git config --global user.email &lt;your e-mail address&gt;
 </code></pre></div>  </div>
 
   <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
+</div>
 
-  <h2 id="ssh">SSH to an environment</h2>
-  <p>You can connect using SSH in any of the following ways:</p>
+<h2 id="ssh">SSH to an environment</h2>
+<p>You can connect using SSH in any of the following ways:</p>
 
-  <ul>
-    <li><a href="#magento-cli">SSH using Magento Cloud CLI</a></li>
-    <li><a href="#web-interface">Locate the SSH command in the Project Web Interface</a></li>
-    <li><a href="#pro">Git SSH commands for Pro Staging and Production</a></li>
-  </ul>
+<ul>
+  <li><a href="#magento-cli">SSH using Magento Cloud CLI</a></li>
+  <li><a href="#web-interface">Locate the SSH command in the Project Web Interface</a></li>
+  <li><a href="#pro">Git SSH commands for Pro Staging and Production</a></li>
+</ul>
 
-  <h3 id="magento-cli">SSH using Magento Cloud CLI</h3>
-  <p>Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:</p>
+<h3 id="magento-cli">SSH using Magento Cloud CLI</h3>
+<p>Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:</p>
 
-  <ul>
-    <li>Starter environments</li>
-    <li>Pro Integration environments</li>
-  </ul>
+<ul>
+  <li>Starter environments</li>
+  <li>Pro Integration environments</li>
+</ul>
 
-  <p>To SSH to an environment using the Magento Cloud command line:</p>
+<p>To SSH to an environment using the Magento Cloud command line:</p>
 
-  <ol>
-    <li>
-      <p>Log in to the project:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>List the project IDs:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>List the environments in that project:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>SSH to the environment:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <h3 id="web-interface">Locate the SSH command in the Project Web Interface</h3>
-  <p>You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.</p>
-
-  <p>To copy the SSH command:</p>
-
-  <ol>
-    <li>Log in to the Project Web Interface.</li>
-    <li>Select an environment or branch to access.</li>
-    <li>
-      <p>Click <strong>Access Site</strong>.</p>
-
-      <p><img src="/common/images/cloud_project-access-starter.png" alt="Find the SSH URL using the Web Interface" /></p>
-    </li>
-    <li>Click the clipboard button to copy the full SSH command to the clipboard.</li>
-    <li>Enter the command in a terminal window to SSH.</li>
-  </ol>
-
-  <p>Example SSH command:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
-</code></pre></div>  </div>
-
-  <h3 id="pro">Git SSH commands for Pro Staging and Production</h3>
-  <p>You can’t use the Magento Cloud CLI to SSH into Pro plan Staging and Production systems. You can SSH into those environments and use Git CLI commands for managing your branches and Linux/Unix commands for managing the system.</p>
-
-  <p>With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.</p>
-
-  <p>For the URLs, see the following:</p>
-
-  <ul>
-    <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-    <li>
-      <p>Production:</p>
-
-      <ul>
-        <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-      </ul>
-    </li>
-  </ul>
-
-  <h2 id="env-start-tunn">SSH tunneling</h2>
-
-  <div>
-
-    <p>You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have <a href="/guides/v2.2/cloud/env/environments-ssh.html">SSH configured</a>.</p>
-
-    <p>Use a terminal application to log in and issue commands.</p>
+<ol>
+  <li>
+    <p>Log in to the project:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
 </code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List the project IDs:</p>
 
-    <p>First, you may want to check if any tunnels are already open using the following command:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:list
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
 </code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List the environments in that project:</p>
 
-    <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list -p &lt;project ID&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>SSH to the environment:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;project directory&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh -p &lt;project ID&gt; -e &lt;environment ID&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="web-interface">Locate the SSH command in the Project Web Interface</h3>
+<p>You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.</p>
+
+<p>To copy the SSH command:</p>
+
+<ol>
+  <li>Log in to the Project Web Interface.</li>
+  <li>Select an environment or branch to access.</li>
+  <li>
+    <p>Click <strong>Access Site</strong>.</p>
+
+    <p><img src="/common/images/cloud_project-access-starter.png" alt="Find the SSH URL using the Web Interface" /></p>
+  </li>
+  <li>Click the clipboard button to copy the full SSH command to the clipboard.</li>
+  <li>Enter the command in a terminal window to SSH.</li>
+</ol>
+
+<p>Example SSH command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
+</code></pre></div></div>
+
+<h3 id="pro">Git SSH commands for Pro Staging and Production</h3>
+<p>You can’t use the Magento Cloud CLI to SSH into Pro plan Staging and Production systems. You can SSH into those environments and use Git CLI commands for managing your branches and Linux/Unix commands for managing the system.</p>
+
+<p>With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.</p>
+
+<p>For the URLs, see the following:</p>
+
+<ul>
+  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>
+    <p>Production:</p>
+
+    <ul>
+      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="env-start-tunn">SSH tunneling</h2>
+
+<div>
+
+  <p>You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have <a href="/guides/v2.2/cloud/env/environments-ssh.html">SSH configured</a>.</p>
+
+  <p>Use a terminal application to log in and issue commands.</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>  </div>
+
+  <p>First, you may want to check if any tunnels are already open using the following command:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:list
+</code></pre></div>  </div>
+
+  <p>To build a tunnel, you must know the name of the app to which to tunnel. Use the following commands to list those applications:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;project directory&gt;
 magento-cloud project:list
 magento-cloud apps
-</code></pre></div>    </div>
+</code></pre></div>  </div>
 
-    <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
+  <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
 
-    <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
-    <p>Use the following command:</p>
+  <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
+  <p>Use the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
-</code></pre></div>    </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
+</code></pre></div>  </div>
 
-    <p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
+  <p>For example, to open a tunnel to the <code class="highlighter-rouge">sprint5</code> branch in a project with an app named <code class="highlighter-rouge">mymagento</code>, enter</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
-</code></pre></div>    </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e sprint5 --app mymagento
+</code></pre></div>  </div>
 
-    <p>Messages similar to the following display:</p>
+  <p>Messages similar to the following display:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSH tunnel opened on port 30003 to relationship: solr
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SSH tunnel opened on port 30003 to relationship: solr
 SSH tunnel opened on port 30004 to relationship: redis
 SSH tunnel opened on port 30005 to relationship: database
 Logs are written to: /home/magento_user/.magento/tunnels.log
@@ -2311,60 +2312,59 @@ Logs are written to: /home/magento_user/.magento/tunnels.log
 List tunnels with: magento-cloud tunnels
 View tunnel details with: magento-cloud tunnel:info
 Close tunnels with: magento-cloud tunnel:close
-</code></pre></div>    </div>
+</code></pre></div>  </div>
 
-    <h3 id="tunnel-info">Get tunnel information</h3>
-    <p>To display information about your tunnel, enter:</p>
+  <h3 id="tunnel-info">Get tunnel information</h3>
+  <p>To display information about your tunnel, enter:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
-</code></pre></div>    </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
+</code></pre></div>  </div>
 
-    <h3 id="tunnel-services">Connect to services</h3>
-    <p>Now you can connect to services as if they were running locally.</p>
+  <h3 id="tunnel-services">Connect to services</h3>
+  <p>Now you can connect to services as if they were running locally.</p>
 
-    <p>For example, to connect to the database, use the following command:</p>
+  <p>For example, to connect to the database, use the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql --host=127.0.0.1 --user='&lt;database username&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
-</code></pre></div>    </div>
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql --host=127.0.0.1 --user='&lt;database username&gt;' --pass='&lt;user password&gt;' --database='&lt;name&gt;' --port='&lt;port&gt;'
+</code></pre></div>  </div>
 
-    <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
-
-    <h2 id="sftp">sFTP to environments</h2>
-    <p>Typically, you want to use SSH for secure access to your environments and <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
-
-    <p>You need the following requirements to sFTP into cloud environments:</p>
-
-    <ul>
-      <li>You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.</li>
-      <li>Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a <a href="/guides/v2.2/cloud/trouble/trouble.html">Support ticket</a> with your public key attached. <strong>Never provide your private SSH key.</strong></li>
-    </ul>
-
-    <p>When configuring sFTP, use your SSH public key and the following information for access:</p>
-
-    <ul>
-      <li>Username: All content before the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
-      <li>Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.</li>
-      <li>Host: All content after the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
-      <li>Port: 22, which is the default SSH port.</li>
-    </ul>
-
-    <p>To add your SSH public key information to your client:</p>
-
-    <ol>
-      <li>Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.</li>
-      <li>Copy and paste all content before the <code class="highlighter-rouge">@</code> in the file for the client Username.</li>
-      <li>Leave Password empty.</li>
-      <li>Copy and paste all content after the <code class="highlighter-rouge">@</code> in the file for the client Host.</li>
-      <li>For the Port, enter 22.</li>
-    </ol>
-
-    <p>Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.</p>
-
-    <p>For <strong>Starter environments and Pro Integration environments</strong>, you may also want to consider <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html#mounts">adding a <code class="highlighter-rouge">mount</code></a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/guides/v2.2/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
-
-    <p>For <strong>Pro Staging and Production environments</strong>, you need to enter a <a href="/guides/v2.2/cloud/trouble/trouble.html">Support ticket</a> to request sFTP access in those environments. We can then create a mount point and provide access to the specific <code class="highlighter-rouge">pub/media</code> folder.</p>
-  </div>
+  <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
 </div>
+
+<h2 id="sftp">sFTP to environments</h2>
+<p>Typically, you want to use SSH for secure access to your environments and <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
+
+<p>You need the following requirements to sFTP into cloud environments:</p>
+
+<ul>
+  <li>You need to use a client that supports SSH key authentication for sFTP and use your SSH public key.</li>
+  <li>Your public SSH key must be added to the target environment. For Starter environments and Pro Integration environments, you can add it through the Project Web Interface. For Pro Staging and Production, you must enter a <a href="/guides/v2.2/cloud/trouble/trouble.html">Support ticket</a> with your public key attached. <strong>Never provide your private SSH key.</strong></li>
+</ul>
+
+<p>When configuring sFTP, use your SSH public key and the following information for access:</p>
+
+<ul>
+  <li>Username: All content before the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
+  <li>Password: You do not need a password for sFTP. sFTP access uses the SSH key based authentication.</li>
+  <li>Host: All content after the <code class="highlighter-rouge">@</code> in your public SSH key.</li>
+  <li>Port: 22, which is the default SSH port.</li>
+</ul>
+
+<p>To add your SSH public key information to your client:</p>
+
+<ol>
+  <li>Use a text editor to open your generated SSH public key. Locate and edit the file in the directory location you generated it into.</li>
+  <li>Copy and paste all content before the <code class="highlighter-rouge">@</code> in the file for the client Username.</li>
+  <li>Leave Password empty.</li>
+  <li>Copy and paste all content after the <code class="highlighter-rouge">@</code> in the file for the client Host.</li>
+  <li>For the Port, enter 22.</li>
+</ol>
+
+<p>Depending on the client, you may need to enter additional options and setup to complete SSH authentication for sFTP. Review the documentation for your selected client.</p>
+
+<p>For <strong>Starter environments and Pro Integration environments</strong>, you may also want to consider <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html#mounts">adding a <code class="highlighter-rouge">mount</code></a> for access to a specific directory. You would add the mount to your <code class="highlighter-rouge">.magento.app.yaml</code> file. For a list of writable directories, see <a href="/guides/v2.2/cloud/project/project-start.html">Project structure</a>. This mount point will only work in those environments.</p>
+
+<p>For <strong>Pro Staging and Production environments</strong>, you need to enter a <a href="/guides/v2.2/cloud/trouble/trouble.html">Support ticket</a> to request sFTP access in those environments. We can then create a mount point and provide access to the specific <code class="highlighter-rouge">pub/media</code> folder.</p>
 
 			
 		</div>

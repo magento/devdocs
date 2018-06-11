@@ -2049,100 +2049,100 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>      </div>
     </li>
   </ol>
+</div>
 
-  <h3 id="enable-the-integration">Enable the integration</h3>
-  <p>To enable the GitHub integration for your environment:</p>
+<h3 id="enable-the-integration">Enable the integration</h3>
+<p>To enable the GitHub integration for your environment:</p>
 
-  <ol>
-    <li>
-      <p>Enable the integration:</p>
+<ol>
+  <li>
+    <p>Enable the integration:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=&lt;project ID&gt; --token=&lt;your GitHub token&gt; {--repository=USER/REPOSITORY | --repository=ORGANIZATION/REPOSITORY} [--build-pull-requests={true|false} --fetch-branches={true|false}
+</code></pre></div>    </div>
 
-      <p>where</p>
+    <p>where</p>
 
-      <p><code class="highlighter-rouge">&lt;project ID&gt;</code> is your Magento Commerce (Cloud) project ID</p>
+    <p><code class="highlighter-rouge">&lt;project ID&gt;</code> is your Magento Commerce (Cloud) project ID</p>
 
-      <p><code class="highlighter-rouge">&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
+    <p><code class="highlighter-rouge">&lt;your GitHub token&gt;</code> is the token you got in the preceding section</p>
 
-      <p><code class="highlighter-rouge">--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
+    <p><code class="highlighter-rouge">--repository=USER/REPOSITORY</code> is how you specify your personal, private GitHub repository</p>
 
-      <p><code class="highlighter-rouge">--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
+    <p><code class="highlighter-rouge">--repository=ORGANIZATION/REPOSITORY</code> is how you specify an organization repository</p>
 
-      <p><code class="highlighter-rouge">--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code class="highlighter-rouge">true</code> by default)</p>
+    <p><code class="highlighter-rouge">--build-pull-requests</code> is an optional parameter that instructs Magento Cloud to deploy after you merge a pull request (<code class="highlighter-rouge">true</code> by default)</p>
 
-      <p><code class="highlighter-rouge">--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code class="highlighter-rouge">true</code> by default)</p>
+    <p><code class="highlighter-rouge">--fetch-branches</code> is an optional parameter that causes Magento Cloud to track branches and deploy after you update a branch (<code class="highlighter-rouge">true</code> by default)</p>
 
-      <p><strong>Example 1</strong>: Enable the GitHub integration for a personal, private repository:</p>
+    <p><strong>Example 1</strong>: Enable the GitHub integration for a personal, private repository:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=myUserName/myrepo
+</code></pre></div>    </div>
 
-      <p><strong>Example 2</strong>: Enable the GitHub integration for an organization repository:</p>
+    <p><strong>Example 2</strong>: Enable the GitHub integration for an organization repository:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Enter the required information when prompted.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud integration:add --type=github --project=ov58dlacU2e --token=&lt;token&gt; --repository=Magento/teamrepo
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter the required information when prompted.</p>
 
-      <p>Sample output:</p>
+    <p>Sample output:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Created integration wp2f2thlmxwcg (type: github)
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Created integration wp2f2thlmxwcg (type: github)
 Repository: myUserName/myrepo
 Build PRs: yes
 Fetch branches: yes
 Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Copy the Payload   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the Payload   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  displayed by the command and continue with the next section.</p>
-    </li>
-  </ol>
+  </li>
+</ol>
 
-  <h2 id="cloud-int-gh-hook">Add the webhook</h2>
-  <p>To add the webhook to your GitHub repository:</p>
+<h2 id="cloud-int-gh-hook">Add the webhook</h2>
+<p>To add the webhook to your GitHub repository:</p>
 
-  <ol>
-    <li>
-      <p>In your GitHub repository, click <strong>Settings</strong> as the following figure shows.</p>
+<ol>
+  <li>
+    <p>In your GitHub repository, click <strong>Settings</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_github-acct-settings.png" alt="Go to your GitHub's account settings" width="650px" /></p>
-    </li>
-    <li>In the left navigation bar, click <strong>Webhooks &amp; services</strong>.</li>
-    <li>
-      <p>In the right pane, click <strong>Add webhook</strong> as the following figure shows.</p>
+    <p><img src="/common/images/cloud_github-acct-settings.png" alt="Go to your GitHub's account settings" width="650px" /></p>
+  </li>
+  <li>In the left navigation bar, click <strong>Webhooks &amp; services</strong>.</li>
+  <li>
+    <p>In the right pane, click <strong>Add webhook</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_github-acct-webhook.png" alt="Add the webhook to your account" width="650px" /></p>
-    </li>
-    <li>
-      <p>Enter the following information:</p>
+    <p><img src="/common/images/cloud_github-acct-webhook.png" alt="Add the webhook to your account" width="650px" /></p>
+  </li>
+  <li>
+    <p>Enter the following information:</p>
 
-      <ul>
-        <li><strong>Payload URL</strong>: Enter the URL displayed by the command in the preceding section.</li>
-        <li><strong>Content type</strong>: Click <strong>application/json</strong></li>
-        <li><strong>Secret</strong>: Enter a verification secret.</li>
-        <li><strong>Which events would you like to trigger this webhook?</strong>: Click <strong>Send me everything</strong></li>
-        <li>Select the <strong>Active</strong> check box.</li>
-      </ul>
+    <ul>
+      <li><strong>Payload URL</strong>: Enter the URL displayed by the command in the preceding section.</li>
+      <li><strong>Content type</strong>: Click <strong>application/json</strong></li>
+      <li><strong>Secret</strong>: Enter a verification secret.</li>
+      <li><strong>Which events would you like to trigger this webhook?</strong>: Click <strong>Send me everything</strong></li>
+      <li>Select the <strong>Active</strong> check box.</li>
+    </ul>
 
-      <p>The following figure shows an example:</p>
+    <p>The following figure shows an example:</p>
 
-      <p><img src="/common/images/cloud_github-acct-webhook2.png" alt="Add the webhook to your account" width="650px" /></p>
-    </li>
-    <li>Click <strong>Add webhook</strong></li>
-  </ol>
+    <p><img src="/common/images/cloud_github-acct-webhook2.png" alt="Add the webhook to your account" width="650px" /></p>
+  </li>
+  <li>Click <strong>Add webhook</strong></li>
+</ol>
 
-  <h2 id="cloud-int-gh-verify">Verify it works</h2>
-  <p>To verify the integration works:</p>
+<h2 id="cloud-int-gh-verify">Verify it works</h2>
+<p>To verify the integration works:</p>
 
-  <ol>
-    <li>Make a change in the GitHub repository with which you integrated.</li>
-    <li>In the Magento Cloud CLI, pull the change to an environment.</li>
-  </ol>
-</div>
+<ol>
+  <li>Make a change in the GitHub repository with which you integrated.</li>
+  <li>In the Magento Cloud CLI, pull the change to an environment.</li>
+</ol>
 
 			
 		</div>

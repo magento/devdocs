@@ -2035,11 +2035,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>      </div>
     </li>
   </ol>
+</div>
 
-  <h2 id="manual">Install a theme manually</h2>
-  <p>To install a theme manually, you must have the theme’s code, either in a compressed archive or in a directory structure similar to the following:</p>
+<h2 id="manual">Install a theme manually</h2>
+<p>To install a theme manually, you must have the theme’s code, either in a compressed archive or in a directory structure similar to the following:</p>
 
-  <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;VendorName&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;VendorName&gt;</span>
   ├── composer.json
       ├── etc
       │   └── view.xml
@@ -2053,86 +2054,85 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
           ├── images
           └── js</code></pre></figure>
 
-  <p>To install a theme manually:</p>
+<p>To install a theme manually:</p>
 
-  <ol>
-    <li>
-      <p>Copy the theme’s code under <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme. Make sure the top-level directory is <code class="highlighter-rouge">&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
+<ol>
+  <li>
+    <p>Copy the theme’s code under <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/frontend</code> for a storefront theme or <code class="highlighter-rouge">&lt;Magento root dir&gt;/app/design/adminhtml</code> for an Admin theme. Make sure the top-level directory is <code class="highlighter-rouge">&lt;VendorName&gt;</code>; otherwise, the theme won’t install properly.</p>
 
-      <p>For example:</p>
+    <p>For example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Confirm the theme copied to the correct place.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp -r ExampleTheme &lt;Magento root dir&gt;/app/design/frontend
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Confirm the theme copied to the correct place.</p>
 
-      <ul>
-        <li>Storefront theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
-        <li>Admin theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
-      </ul>
+    <ul>
+      <li>Storefront theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/frontend</code></li>
+      <li>Admin theme: <code class="highlighter-rouge">ls &lt;Magento root dir&gt;/app/design/adminhtml</code></li>
+    </ul>
 
-      <p>A sample follows:</p>
+    <p>A sample follows:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ExampleTheme Magento
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Add and commit files:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ExampleTheme Magento
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add and commit files:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add theme"
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Push the files to your branch:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add theme"
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Push the files to your branch:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>Wait for deployment to complete.</li>
-    <li>Log in to the Magento Admin.</li>
-    <li>
-      <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Wait for deployment to complete.</li>
+  <li>Log in to the Magento Admin.</li>
+  <li>
+    <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>
 
-      <p>The theme displays in the right pane.</p>
-    </li>
-  </ol>
+    <p>The theme displays in the right pane.</p>
+  </li>
+</ol>
 
-  <h2 id="composer">Install a theme using Composer</h2>
-  <p>Installing a theme using Composer is the same as installing any other extension using Composer. See <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a> for details.</p>
+<h2 id="composer">Install a theme using Composer</h2>
+<p>Installing a theme using Composer is the same as installing any other extension using Composer. See <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a> for details.</p>
 
-  <p>To summarize the procedure:</p>
+<p>To summarize the procedure:</p>
 
-  <ol>
-    <li>Purchase the theme from Magento Marketplace.</li>
-    <li>Get the theme’s Composer name.</li>
-    <li>
-      <p>Change to your Magento root directory and enter the command:</p>
+<ol>
+  <li>Purchase the theme from Magento Marketplace.</li>
+  <li>Get the theme’s Composer name.</li>
+  <li>
+    <p>Change to your Magento root directory and enter the command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;vendor&gt;/&lt;name&gt;:&lt;version&gt;
+</code></pre></div>    </div>
 
-      <p>For example,</p>
+    <p>For example,</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require zero1/theme-fashionista-theme:1.0.0
-</code></pre></div>      </div>
-    </li>
-    <li>Wait for dependencies to update.</li>
-    <li>
-      <p>Enter the following commands:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require zero1/theme-fashionista-theme:1.0.0
+</code></pre></div>    </div>
+  </li>
+  <li>Wait for dependencies to update.</li>
+  <li>
+    <p>Enter the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add theme"
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Add theme"
 git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>Log in to the Magento Admin.</li>
-    <li>
-      <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>
+</code></pre></div>    </div>
+  </li>
+  <li>Log in to the Magento Admin.</li>
+  <li>
+    <p>Click <strong>Content</strong> &gt; Design &gt; <strong>Themes</strong>.</p>
 
-      <p>The theme displays in the right pane.</p>
-    </li>
-  </ol>
-</div>
+    <p>The theme displays in the right pane.</p>
+  </li>
+</ol>
 
 			
 		</div>

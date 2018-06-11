@@ -1800,44 +1800,44 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>      </div>
     </li>
   </ol>
-
-  <h2 id="data">Install sample data</h2>
-  <p>To install sample data:</p>
-
-  <ol>
-    <li>If you have not done so already, check out the environment in which to install sample data.</li>
-    <li>
-      <p>In a terminal, enter the following commands:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Magento root dir&gt;/bin/magento sampledata:deploy
-</code></pre></div>      </div>
-    </li>
-    <li>Wait for components to update.</li>
-    <li>
-      <p>Commit and push the changes:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Install sample data"
-git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>Wait for the project to deploy.</li>
-    <li>Verify the installation was successful by going to your storefront main page in the Integration environment. You can locate the URL link to the storefront through the Project Web Interface.</li>
-    <li>
-      <p>Take a snapshot of your environment:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <p>You can start testing your development with live data!</p>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
-  </ul>
 </div>
+
+<h2 id="data">Install sample data</h2>
+<p>To install sample data:</p>
+
+<ol>
+  <li>If you have not done so already, check out the environment in which to install sample data.</li>
+  <li>
+    <p>In a terminal, enter the following commands:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Magento root dir&gt;/bin/magento sampledata:deploy
+</code></pre></div>    </div>
+  </li>
+  <li>Wait for components to update.</li>
+  <li>
+    <p>Commit and push the changes:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "Install sample data"
+git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Wait for the project to deploy.</li>
+  <li>Verify the installation was successful by going to your storefront main page in the Integration environment. You can locate the URL link to the storefront through the Project Web Interface.</li>
+  <li>
+    <p>Take a snapshot of your environment:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>You can start testing your development with live data!</p>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a></li>
+  <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+</ul>
 
 			
 		</div>

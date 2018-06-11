@@ -391,118 +391,118 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>      </div>
     </li>
   </ol>
+</div>
 
-  <h3 id="merge-an-environment">Merge an environment</h3>
-  <p>To merge an environment:</p>
+<h3 id="merge-an-environment">Merge an environment</h3>
+<p>To merge an environment:</p>
 
-  <ol>
-    <li>
-      <p>Add a file named <code class="highlighter-rouge">test.txt</code> to the environment root directory.</p>
+<ol>
+  <li>
+    <p>Add a file named <code class="highlighter-rouge">test.txt</code> to the environment root directory.</p>
 
-      <p>You can put whatever contents you want; for example, the number <code class="highlighter-rouge">1</code></p>
-    </li>
-    <li>Save your changes and exit the text editor.</li>
-    <li>
-      <p>Add, commit, and push your change to the environment:</p>
+    <p>You can put whatever contents you want; for example, the number <code class="highlighter-rouge">1</code></p>
+  </li>
+  <li>Save your changes and exit the text editor.</li>
+  <li>
+    <p>Add, commit, and push your change to the environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
 git commit -m "&lt;commit message&gt;"
 git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>Where <code class="highlighter-rouge">&lt;branch name&gt;</code> is the Git name of the environment (that is, the environment ID).</p>
-    </li>
-    <li>
-      <p>Merge with the parent environment:</p>
+    <p>Where <code class="highlighter-rouge">&lt;branch name&gt;</code> is the Git name of the environment (that is, the environment ID).</p>
+  </li>
+  <li>
+    <p>Merge with the parent environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge &lt;environment ID&gt;
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge &lt;environment ID&gt;
+</code></pre></div>    </div>
 
-      <p>For example,</p>
+    <p>For example,</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge master
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:merge master
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h2 id="tut-env-delete">Optionally delete the environment</h2>
-  <p>Before you delete an environment, make sure you don’t need it anymore. You cannot recover a deleted environment later.</p>
+<h2 id="tut-env-delete">Optionally delete the environment</h2>
+<p>Before you delete an environment, make sure you don’t need it anymore. You cannot recover a deleted environment later.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
   <p>You cannot delete the <code>master</code> environment of any project.</p>
 </div>
 
-  <p>You must be a <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-project">project administrator</a>, <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-env">environment administrator</a>, or <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-acct-owner">account owner</a> to perform this task.</p>
+<p>You must be a <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-project">project administrator</a>, <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-env">environment administrator</a>, or <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-role-acct-owner">account owner</a> to perform this task.</p>
 
-  <p>This section discusses how to optionally delete an environment in the following ways:</p>
+<p>This section discusses how to optionally delete an environment in the following ways:</p>
 
-  <ul>
-    <li>Make the environment <em>inactive</em> but let it remain in the project</li>
-    <li>Delete the environment entirely and remove it from the project</li>
-  </ul>
+<ul>
+  <li>Make the environment <em>inactive</em> but let it remain in the project</li>
+  <li>Delete the environment entirely and remove it from the project</li>
+</ul>
 
-  <p>To delete a environment:</p>
+<p>To delete a environment:</p>
 
-  <ol>
-    <li>Log in to your project if you haven’t already done so.</li>
-    <li>
-      <p>Fetch branches from the origin server.</p>
+<ol>
+  <li>Log in to your project if you haven’t already done so.</li>
+  <li>
+    <p>Fetch branches from the origin server.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>To delete the branch entirely (removing it from the project), check out the branch.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>To delete the branch entirely (removing it from the project), check out the branch.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Delete the environment:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Delete the environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt;
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt;
+</code></pre></div>    </div>
 
-      <p>For example, to delete the <code class="highlighter-rouge">deleteme</code> environment:</p>
+    <p>For example, to delete the <code class="highlighter-rouge">deleteme</code> environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete deleteme
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete deleteme
+</code></pre></div>    </div>
 
-      <p>To delete more than one environment:</p>
+    <p>To delete more than one environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt; &lt;environmentID&gt;
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete &lt;environment ID&gt; &lt;environmentID&gt;
+</code></pre></div>    </div>
 
-      <p>For additional options, see the command-line help:</p>
+    <p>For additional options, see the command-line help:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete --help
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Answer the prompt:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:delete --help
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Answer the prompt:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Are you sure you want to delete the remote Git branch deleteme? [Y/n]
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Are you sure you want to delete the remote Git branch deleteme? [Y/n]
+</code></pre></div>    </div>
 
-      <p>A <code class="highlighter-rouge">Y</code> answer makes the branch inactive but leaves it in the project.</p>
-    </li>
-    <li>
-      <p>Answer the prompt:</p>
+    <p>A <code class="highlighter-rouge">Y</code> answer makes the branch inactive but leaves it in the project.</p>
+  </li>
+  <li>
+    <p>Answer the prompt:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Delete the remote Git branch too? [Y/n]
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Delete the remote Git branch too? [Y/n]
+</code></pre></div>    </div>
 
-      <p>A <code class="highlighter-rouge">Y</code> answer completely removes the branch from the project.</p>
-    </li>
-  </ol>
+    <p>A <code class="highlighter-rouge">Y</code> answer completely removes the branch from the project.</p>
+  </li>
+</ol>
 
-  <p>Wait for the environment to delete.</p>
+<p>Wait for the environment to delete.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
   <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
 </div>
 
-</div>
 
 			
 		</div>

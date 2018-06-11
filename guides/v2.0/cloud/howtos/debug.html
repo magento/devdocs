@@ -1817,424 +1817,424 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>      </div>
     </li>
   </ol>
+</div>
 
-  <h3 id="enable">Enable Xdebug in your environment</h3>
-  <p>Enable Xdebug by adding it to the extensions section of magento.app.yaml. When you push this update to Git and deploy to environments, the debugger is available.</p>
+<h3 id="enable">Enable Xdebug in your environment</h3>
+<p>Enable Xdebug by adding it to the extensions section of magento.app.yaml. When you push this update to Git and deploy to environments, the debugger is available.</p>
 
-  <p>You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> to have it enabled. We will get Xdebug enabled onto those environments for you.</p>
+<p>You can enable Xdebug directly to all Starter environments and Pro Integration environments. For Pro Staging and Production, you need to update this file and enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> to have it enabled. We will get Xdebug enabled onto those environments for you.</p>
 
-  <!-- You may need to run PHP with a separate config file to enable xdebug on the CLI, such as "php -c /etc/platform/<project_id>/php.ini ... " -->
+<!-- You may need to run PHP with a separate config file to enable xdebug on the CLI, such as "php -c /etc/platform/<project_id>/php.ini ... " -->
 
-  <ol>
-    <li>In your local terminal, open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor.</li>
-    <li>
-      <p>In the <code class="highlighter-rouge">runtime</code> section, under <code class="highlighter-rouge">extensions</code>, add <code class="highlighter-rouge">xdebug</code>. For example:</p>
+<ol>
+  <li>In your local terminal, open <code class="highlighter-rouge">.magento.app.yaml</code> in a text editor.</li>
+  <li>
+    <p>In the <code class="highlighter-rouge">runtime</code> section, under <code class="highlighter-rouge">extensions</code>, add <code class="highlighter-rouge">xdebug</code>. For example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> runtime:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> runtime:
     extensions:
    - mcrypt
    - redis
    - xsl
    - json
    - xdebug
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in <code class="highlighter-rouge">php-fpm</code> and will end your session. To avoid the timeout, add the following lines to the <code class="highlighter-rouge">web:</code> section of <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Optionally, modify the timeout. A default timeout of 300 seconds (5 minutes) is set in <code class="highlighter-rouge">php-fpm</code> and will end your session. To avoid the timeout, add the following lines to the <code class="highlighter-rouge">web:</code> section of <code class="highlighter-rouge">.magento.app.yaml</code>:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> web:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> web:
      commands:
          start: |
              cat /etc/php/7.0/fpm/php-fpm.conf | sed -e 's/request_terminate_timeout.*//g' &gt; /tmp/php-fpm.conf
              /usr/sbin/php-fpm7.0 -y /tmp/php-fpm.conf
-</code></pre></div>      </div>
-    </li>
-    <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
-    <li>
-      <p>Add, commit, and push the changes to redeploy the environment:</p>
+</code></pre></div>    </div>
+  </li>
+  <li>Save your changes to <code class="highlighter-rouge">.magento.app.yaml</code> and exit the text editor.</li>
+  <li>
+    <p>Add, commit, and push the changes to redeploy the environment:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git add -A
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> git add -A
  git commit -m "Add xdebug"
  git push origin &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p>When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see <a href="#phpstorm">Configure PhpStorm</a>.</p>
+<p>When deployed to Starter environments and Pro Integration environments, Xdebug is now available. You should continue configuring your IDE. For PhpStorm, see <a href="#phpstorm">Configure PhpStorm</a>.</p>
 
-  <h3 id="phpstorm">Configure PhpStorm</h3>
-  <p>You need to configure <a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> to properly work with Xdebug.</p>
+<h3 id="phpstorm">Configure PhpStorm</h3>
+<p>You need to configure <a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> to properly work with Xdebug.</p>
 
-  <ol>
-    <li>Open your PhpStorm project.</li>
-    <li>
-      <p>Open the settings for PhpStorm.</p>
+<ol>
+  <li>Open your PhpStorm project.</li>
+  <li>
+    <p>Open the settings for PhpStorm.</p>
 
-      <ul>
-        <li>On Mac, select <strong>File</strong> &gt; <strong>Preferences</strong>.</li>
-        <li>On Windows/Linux, select <strong>File</strong> &gt; <strong>Settings</strong>.</li>
-      </ul>
-    </li>
-    <li>Expand and locate <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>Servers</strong> section in settings.</li>
-    <li>Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a “server” configuration. This will be used to listen to port 9000 locally, which will be <a href="#port">forwarded</a>.</li>
-    <li>
-      <p>Configure settings for the new server:</p>
+    <ul>
+      <li>On Mac, select <strong>File</strong> &gt; <strong>Preferences</strong>.</li>
+      <li>On Windows/Linux, select <strong>File</strong> &gt; <strong>Settings</strong>.</li>
+    </ul>
+  </li>
+  <li>Expand and locate <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>Servers</strong> section in settings.</li>
+  <li>Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a “server” configuration. This will be used to listen to port 9000 locally, which will be <a href="#port">forwarded</a>.</li>
+  <li>
+    <p>Configure settings for the new server:</p>
 
-      <ul>
-        <li><strong>Name</strong>: enter the same as the hostname. This value is used in and must match the value for <code class="highlighter-rouge">PHP_IDE_CONFIG</code> variable in <a href="#debugcli">Debug CLI commands</a>.</li>
-        <li><strong>Host</strong>: enter <code class="highlighter-rouge">localhost</code></li>
-        <li><strong>Port</strong>: enter 80</li>
-        <li><strong>Debugger</strong>: set to Xdebug in the drop-down</li>
-      </ul>
-    </li>
-    <li>Select the <strong>Use path mappings</strong> option. In the files/directories, the root of the project displays that you opened for the added server.</li>
-    <li>
-      <p>In the <strong>Absolute path on the server</strong> column, click <img src="/common/images/install_docker_php-storm-edit.png" alt="Edit" width="15px" /> (<strong>Edit</strong>) and add a setting based on the environment:</p>
+    <ul>
+      <li><strong>Name</strong>: enter the same as the hostname. This value is used in and must match the value for <code class="highlighter-rouge">PHP_IDE_CONFIG</code> variable in <a href="#debugcli">Debug CLI commands</a>.</li>
+      <li><strong>Host</strong>: enter <code class="highlighter-rouge">localhost</code></li>
+      <li><strong>Port</strong>: enter 80</li>
+      <li><strong>Debugger</strong>: set to Xdebug in the drop-down</li>
+    </ul>
+  </li>
+  <li>Select the <strong>Use path mappings</strong> option. In the files/directories, the root of the project displays that you opened for the added server.</li>
+  <li>
+    <p>In the <strong>Absolute path on the server</strong> column, click <img src="/common/images/install_docker_php-storm-edit.png" alt="Edit" width="15px" /> (<strong>Edit</strong>) and add a setting based on the environment:</p>
 
-      <ul>
-        <li>For all Starter environments and Pro Integration environments, the remote path is <code class="highlighter-rouge">/app</code>.</li>
-        <li>
-          <p>For Pro Staging and Production environments:</p>
+    <ul>
+      <li>For all Starter environments and Pro Integration environments, the remote path is <code class="highlighter-rouge">/app</code>.</li>
+      <li>
+        <p>For Pro Staging and Production environments:</p>
 
-          <ul>
-            <li>Production: <code class="highlighter-rouge">/app/&lt;project_code&gt;/</code></li>
-            <li>Staging:  <code class="highlighter-rouge">/app/&lt;project_code&gt;_stg/</code></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ol>
+        <ul>
+          <li>Production: <code class="highlighter-rouge">/app/&lt;project_code&gt;/</code></li>
+          <li>Staging:  <code class="highlighter-rouge">/app/&lt;project_code&gt;_stg/</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
 
-  <h3 id="port">Set up port forwarding</h3>
-  <p>You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and xdebug locally can track along with it</p>
+<h3 id="port">Set up port forwarding</h3>
+<p>You need to set up port forwarding. This is necessary to map the XDEBUG connection from the server to your local system to PHPSTORM and xdebug locally can track along with it</p>
 
-  <p>To do any type of debugging, you must forward port 9000 from your Magento Commerce (Cloud) server to your local machine. See one of the following sections:</p>
+<p>To do any type of debugging, you must forward port 9000 from your Magento Commerce (Cloud) server to your local machine. See one of the following sections:</p>
 
-  <ul>
-    <li><a href="#portmac">Port forwarding on Mac or UNIX</a></li>
-    <li><a href="#portwindows">Port forwarding on Windows</a></li>
-  </ul>
+<ul>
+  <li><a href="#portmac">Port forwarding on Mac or UNIX</a></li>
+  <li><a href="#portwindows">Port forwarding on Windows</a></li>
+</ul>
 
-  <h4 id="portmac">Port forwarding on Mac or UNIX</h4>
-  <p>To set up port forwarding on a Mac or in a Unix environment, you will enter a command in a terminal.</p>
+<h4 id="portmac">Port forwarding on Mac or UNIX</h4>
+<p>To set up port forwarding on a Mac or in a Unix environment, you will enter a command in a terminal.</p>
 
-  <ol>
-    <li>Open a terminal.</li>
-    <li>
-      <p>Enter the following command:</p>
+<ol>
+  <li>Open a terminal.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R 9000:localhost:9000 &lt;ssh url&gt;
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R 9000:localhost:9000 &lt;ssh url&gt;
+</code></pre></div>    </div>
 
-      <p>Add the <code class="highlighter-rouge">-v</code> option to the SSH command to show in the terminal whenever a socket is connected to the port that is being forwarded.</p>
-    </li>
-  </ol>
+    <p>Add the <code class="highlighter-rouge">-v</code> option to the SSH command to show in the terminal whenever a socket is connected to the port that is being forwarded.</p>
+  </li>
+</ol>
 
-  <p>If an “unable to connect” or “could not listen to port on remote” error is displayed, there could be another active SSH session persisting on the server that is occupying port 9000. If that connection isn’t being used, you can terminate it.</p>
+<p>If an “unable to connect” or “could not listen to port on remote” error is displayed, there could be another active SSH session persisting on the server that is occupying port 9000. If that connection isn’t being used, you can terminate it.</p>
 
-  <p>To troubleshoot the connection:</p>
+<p>To troubleshoot the connection:</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> to the integration, staging, or production server.</li>
-    <li>Enter <code class="highlighter-rouge">who</code> to view a list of SSH sessions.</li>
-    <li>
-      <p>View existing SSH sessions by user. Be careful to not affect a user other than yourself!</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> to the integration, staging, or production server.</li>
+  <li>Enter <code class="highlighter-rouge">who</code> to view a list of SSH sessions.</li>
+  <li>
+    <p>View existing SSH sessions by user. Be careful to not affect a user other than yourself!</p>
 
-      <ul>
-        <li>Integration: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
-        <li>Staging: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
-        <li>Production: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
-      </ul>
-    </li>
-    <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="highlighter-rouge">pts/0</code>.</li>
-    <li>
-      <p>Kill the process ID (PID) corresponding to the PTS value using the following commands:</p>
+    <ul>
+      <li>Integration: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
+      <li>Staging: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
+      <li>Production: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
+    </ul>
+  </li>
+  <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="highlighter-rouge">pts/0</code>.</li>
+  <li>
+    <p>Kill the process ID (PID) corresponding to the PTS value using the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux | grep ssh
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux | grep ssh
 kill &lt;PID&gt;
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>For example, suppose <code class="highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
+    <p>For example, suppose <code class="highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+</code></pre></div>    </div>
 
-      <p>To terminate the connection, you enter a kill command with the process ID (PID). For example:</p>
+    <p>To terminate the connection, you enter a kill command with the process ID (PID). For example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill 3664
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill 3664
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h4 id="portwindows">Port forwarding on Windows</h4>
-  <p>To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>. You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.</p>
+<h4 id="portwindows">Port forwarding on Windows</h4>
+<p>To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>. You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.</p>
 
-  <p>To set up an SSH tunnel on Windows using Putty:</p>
+<p>To set up an SSH tunnel on Windows using Putty:</p>
 
-  <ol>
-    <li>If you haven’t already done so, download <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>.</li>
-    <li>Start Putty.</li>
-    <li>In the Category pane, click <strong>Session</strong>.</li>
-    <li>
-      <p>Enter the following information:</p>
+<ol>
+  <li>If you haven’t already done so, download <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>.</li>
+  <li>Start Putty.</li>
+  <li>In the Category pane, click <strong>Session</strong>.</li>
+  <li>
+    <p>Enter the following information:</p>
 
-      <ul>
-        <li><strong>Host Name (or IP address)</strong> field: Enter your Cloud server’s <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH URL</a></li>
-        <li><strong>Port</strong> field: Enter <code class="highlighter-rouge">22</code></li>
-      </ul>
+    <ul>
+      <li><strong>Host Name (or IP address)</strong> field: Enter your Cloud server’s <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH URL</a></li>
+      <li><strong>Port</strong> field: Enter <code class="highlighter-rouge">22</code></li>
+    </ul>
 
-      <p><img src="/common/images/cloud-xdebug_putty-session.png" alt="Set up Putty" width="350px" /></p>
-    </li>
-    <li>In the Category pane, click <strong>Connection</strong> &gt; <strong>SSH</strong> &gt; <strong>Tunnels</strong>.</li>
-    <li>
-      <p>Enter the following information:</p>
+    <p><img src="/common/images/cloud-xdebug_putty-session.png" alt="Set up Putty" width="350px" /></p>
+  </li>
+  <li>In the Category pane, click <strong>Connection</strong> &gt; <strong>SSH</strong> &gt; <strong>Tunnels</strong>.</li>
+  <li>
+    <p>Enter the following information:</p>
 
-      <ul>
-        <li><strong>Source port</strong> field: Enter <code class="highlighter-rouge">9000</code></li>
-        <li><strong>Destination</strong> field: Enter <code class="highlighter-rouge">127.0.0.1:9000</code></li>
-        <li>Click <strong>Remote</strong></li>
-      </ul>
-    </li>
-    <li>
-      <p>Click <strong>Add</strong>.</p>
+    <ul>
+      <li><strong>Source port</strong> field: Enter <code class="highlighter-rouge">9000</code></li>
+      <li><strong>Destination</strong> field: Enter <code class="highlighter-rouge">127.0.0.1:9000</code></li>
+      <li>Click <strong>Remote</strong></li>
+    </ul>
+  </li>
+  <li>
+    <p>Click <strong>Add</strong>.</p>
 
-      <p><img src="/common/images/cloud-xdebug_putty-tunnels.png" alt="Create an SSH tunnel in Putty" width="350px" /></p>
-    </li>
-    <li>In the Category pane, click <strong>Session</strong>.</li>
-    <li>In the <strong>Saved Sessions</strong> field, enter a name for this SSH tunnel.</li>
-    <li>
-      <p>Click <strong>Save</strong>.</p>
+    <p><img src="/common/images/cloud-xdebug_putty-tunnels.png" alt="Create an SSH tunnel in Putty" width="350px" /></p>
+  </li>
+  <li>In the Category pane, click <strong>Session</strong>.</li>
+  <li>In the <strong>Saved Sessions</strong> field, enter a name for this SSH tunnel.</li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
 
-      <p><img src="/common/images/cloud-xdebug_putty-session-save.png" alt="Save your SSH tunnel" width="350px" /></p>
-    </li>
-    <li>To test the SSH tunnel, click <strong>Load</strong>, then click <strong>Open</strong>.</li>
-  </ol>
+    <p><img src="/common/images/cloud-xdebug_putty-session-save.png" alt="Save your SSH tunnel" width="350px" /></p>
+  </li>
+  <li>To test the SSH tunnel, click <strong>Load</strong>, then click <strong>Open</strong>.</li>
+</ol>
 
-  <p>If an “unable to connect” error displays, verify all of the following:</p>
+<p>If an “unable to connect” error displays, verify all of the following:</p>
 
-  <ul>
-    <li>All Putty settings are correct</li>
-    <li>You are running Putty on the machine on which your private Magento Commerce (Cloud) SSH keys are located</li>
-  </ul>
+<ul>
+  <li>All Putty settings are correct</li>
+  <li>You are running Putty on the machine on which your private Magento Commerce (Cloud) SSH keys are located</li>
+</ul>
 
-  <h3 id="pro">Configure Pro Staging and Production</h3>
-  <p>To complete configuration for Pro plan Staging and Production environments, you must enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> to have Xdebug enabled and configured in Staging and Production environments.</p>
+<h3 id="pro">Configure Pro Staging and Production</h3>
+<p>To complete configuration for Pro plan Staging and Production environments, you must enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> to have Xdebug enabled and configured in Staging and Production environments.</p>
 
-  <p>We will enable Xdebug in the environment. Be aware, this will require a redeployment of Staging and Production.</p>
+<p>We will enable Xdebug in the environment. Be aware, this will require a redeployment of Staging and Production.</p>
 
-  <h2 id="ssh">SSH access to Xdebug environments</h2>
-  <p>For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</p>
+<h2 id="ssh">SSH access to Xdebug environments</h2>
+<p>For initiating debugging, performing setup, and more, you need the SSH commands for accessing the environments. You can get this information, through the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</p>
 
-  <p>For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:</p>
+<p>For Starter environments and Pro Integration environments, you can use the following Magento Cloud CLI command to SSH into those environments:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
+</code></pre></div></div>
 
-  <p>To use Xdebug, SSH to the environment as follows:</p>
+<p>To use Xdebug, SSH to the environment as follows:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
+</code></pre></div></div>
 
-  <p>For example,</p>
+<p>For example,</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
+</code></pre></div></div>
 
-  <h2 id="pro-debug">Debug for Pro Staging and Production</h2>
-  <p>To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.</p>
+<h2 id="pro-debug">Debug for Pro Staging and Production</h2>
+<p>To use Xdebug specifically on Pro plan Staging and Production environment, you create a separate SSH tunnel and web session only you have access to. This usage differs from typical access, only providing access to you and not to all users.</p>
 
-  <p>You will need the following:</p>
+<p>You will need the following:</p>
 
-  <ul>
-    <li>SSH commands for accessing the environments. You can get this information, through the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</li>
-    <li>The <code class="highlighter-rouge">xdebug_key</code> value we set when configuring the Staging and Pro environments</li>
-  </ul>
+<ul>
+  <li>SSH commands for accessing the environments. You can get this information, through the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a> and your project spreadsheet.</li>
+  <li>The <code class="highlighter-rouge">xdebug_key</code> value we set when configuring the Staging and Pro environments</li>
+</ul>
 
-  <p>Set up an SSH tunnel to Staging or Production environment:</p>
+<p>Set up an SSH tunnel to Staging or Production environment:</p>
 
-  <ol>
-    <li>Open a terminal.</li>
-    <li>
-      <p>Enter the following command to clean up all SSH sessions.</p>
+<ol>
+  <li>Open a terminal.</li>
+  <li>
+    <p>Enter the following command to clean up all SSH sessions.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Enter the following command to set up the SSH tunnel for Xdebug:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh USERNAME@CLUSTER.ent.magento.cloud 'rm /run/platform/USERNAME/xdebug.sock'
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter the following command to set up the SSH tunnel for Xdebug:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -R /run/platform/USERNAME/xdebug.sock:localhost:9000 -N USERNAME@CLUSTER.ent.magento.cloud
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p>To start debugging, use the following commands with the environment URL:</p>
+<p>To start debugging, use the following commands with the environment URL:</p>
 
-  <ol>
-    <li>
-      <p>To enable remote debugging, visit the site in the browser with the following added to the URL where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
+<ol>
+  <li>
+    <p>To enable remote debugging, visit the site in the browser with the following added to the URL where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ?XDEBUG_SESSION_START=KEY
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ?XDEBUG_SESSION_START=KEY
+</code></pre></div>    </div>
 
-      <p>This sets the cookie that sends browser requests to trigger Xdebug.</p>
-    </li>
-    <li>Complete your debugging with Xdebug.</li>
-    <li>
-      <p>When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
+    <p>This sets the cookie that sends browser requests to trigger Xdebug.</p>
+  </li>
+  <li>Complete your debugging with Xdebug.</li>
+  <li>
+    <p>When you are ready to end the session, you can use the following command to remove the cookie and end debugging through the browser where <code class="highlighter-rouge">KEY</code> is value for <code class="highlighter-rouge">xdebug_key</code>:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ?XDEBUG_SESSION_STOP=KEY
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ?XDEBUG_SESSION_STOP=KEY
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p>Please note, <code class="highlighter-rouge">XDEBUG_SESSION_START</code>passed by <code class="highlighter-rouge">POST</code> requests are not supported at this time.</p>
+<p>Please note, <code class="highlighter-rouge">XDEBUG_SESSION_START</code>passed by <code class="highlighter-rouge">POST</code> requests are not supported at this time.</p>
 
-  <h2 id="debugcli">Debug CLI commands</h2>
-  <p>This section walks through debugging CLI commands. To debug, you will need the SSH commands for your environments.</p>
+<h2 id="debugcli">Debug CLI commands</h2>
+<p>This section walks through debugging CLI commands. To debug, you will need the SSH commands for your environments.</p>
 
-  <ol>
-    <li>SSH into the server you want to debug using CLI commands.</li>
-    <li>
-      <p>Create the following environment variables:</p>
+<ol>
+  <li>SSH into the server you want to debug using CLI commands.</li>
+  <li>
+    <p>Create the following environment variables:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export XDEBUG_CONFIG='PHPSTORM'
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export XDEBUG_CONFIG='PHPSTORM'
  export PHP_IDE_CONFIG="serverName=&lt;name of the server that is configured in PHPSTORM&gt;"
-</code></pre></div>      </div>
-    </li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <p>These variables will be removed when SSH session is over. When adding the variables, you can add runtime options:</p>
+<p>These variables will be removed when SSH session is over. When adding the variables, you can add runtime options:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -d xdebug.profiler_enable=On -d xdebug.max_nesting_level=9999 ...
+</code></pre></div></div>
 
-  <p>If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the <code class="highlighter-rouge">/tmp</code> directory to run them each time.</p>
+<p>If you expect to SSH and debug multiple times, you can put the export commands into a bash script in the <code class="highlighter-rouge">/tmp</code> directory to run them each time.</p>
 
-  <h2 id="webrequests">For debugging web requests</h2>
-  <p>The following steps help you debug web requests.</p>
+<h2 id="webrequests">For debugging web requests</h2>
+<p>The following steps help you debug web requests.</p>
 
-  <ol>
-    <li>On the Extension menu, click <strong>Debug</strong> to enable.</li>
-    <li>Right click and on the options menu set the IDE key to <strong>PHPSTORM</strong>.</li>
-    <li>Install the Xdebug client on the browser. Configure and enable it.</li>
-  </ol>
+<ol>
+  <li>On the Extension menu, click <strong>Debug</strong> to enable.</li>
+  <li>Right click and on the options menu set the IDE key to <strong>PHPSTORM</strong>.</li>
+  <li>Install the Xdebug client on the browser. Configure and enable it.</li>
+</ol>
 
-  <h3 id="chrome">Example set up on Chrome</h3>
-  <p>This section discusses how to use Xdebug in Chrome using the Xdebug Helper extension. For information about Xdebug tools for other browsers, consult the browser documentation.</p>
+<h3 id="chrome">Example set up on Chrome</h3>
+<p>This section discusses how to use Xdebug in Chrome using the Xdebug Helper extension. For information about Xdebug tools for other browsers, consult the browser documentation.</p>
 
-  <p>To use Xdebug Helper with Chrome:</p>
+<p>To use Xdebug Helper with Chrome:</p>
 
-  <ol>
-    <li>Create an <a href="#ssh">SSH tunnel</a> to the Cloud server.</li>
-    <li>Install the <a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en" target="_blank">Xdebug Helper extension</a> from the Chrome store.</li>
-    <li>
-      <p>Enable the extension in Chrome as shown in the following figure.</p>
+<ol>
+  <li>Create an <a href="#ssh">SSH tunnel</a> to the Cloud server.</li>
+  <li>Install the <a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en" target="_blank">Xdebug Helper extension</a> from the Chrome store.</li>
+  <li>
+    <p>Enable the extension in Chrome as shown in the following figure.</p>
 
-      <p><img src="/common/images/install_docker_php-storm_xdebug-chrome.png" alt="Enable the Xdebug extension in Chrome" /></p>
-    </li>
-    <li>In Chrome, right-click <img src="/common/images/cloud-xdebug_helper-icon.png" alt="Xdebug helper icon" width="25px" /> in the Chrome toolbar.</li>
-    <li>From the pop-up menu, click <strong>Options</strong>.</li>
-    <li>From the <strong>IDE Key</strong> list, click <strong>PhpStorm</strong>.</li>
-    <li>
-      <p>Click <strong>Save</strong>.</p>
+    <p><img src="/common/images/install_docker_php-storm_xdebug-chrome.png" alt="Enable the Xdebug extension in Chrome" /></p>
+  </li>
+  <li>In Chrome, right-click <img src="/common/images/cloud-xdebug_helper-icon.png" alt="Xdebug helper icon" width="25px" /> in the Chrome toolbar.</li>
+  <li>From the pop-up menu, click <strong>Options</strong>.</li>
+  <li>From the <strong>IDE Key</strong> list, click <strong>PhpStorm</strong>.</li>
+  <li>
+    <p>Click <strong>Save</strong>.</p>
 
-      <p><img src="/common/images/cloud-xdebug_helper-options.png" alt="Xdebug Helper options" width="400px" /></p>
-    </li>
-    <li>Open your PhpStorm project.</li>
-    <li>
-      <p>In the top navigation bar, click <img src="/common/images/install_docker_php-storm_xdebug-start-listening.png" alt="Start listening for connections" width="25px" />  (<strong>Start listening</strong>).</p>
+    <p><img src="/common/images/cloud-xdebug_helper-options.png" alt="Xdebug Helper options" width="400px" /></p>
+  </li>
+  <li>Open your PhpStorm project.</li>
+  <li>
+    <p>In the top navigation bar, click <img src="/common/images/install_docker_php-storm_xdebug-start-listening.png" alt="Start listening for connections" width="25px" />  (<strong>Start listening</strong>).</p>
 
-      <p>If the navigation bar isn’t displayed, click <strong>View</strong> &gt; <strong>Navigation Bar</strong>.</p>
-    </li>
-    <li>In the PhpStorm navigation pane, double-click the PHP file to test.</li>
-  </ol>
+    <p>If the navigation bar isn’t displayed, click <strong>View</strong> &gt; <strong>Navigation Bar</strong>.</p>
+  </li>
+  <li>In the PhpStorm navigation pane, double-click the PHP file to test.</li>
+</ol>
 
-  <h2 id="code">Debug code locally</h2>
-  <p>Due to your environments being read-only, you need to pull code locally from an environment or specific Git branch/repository to perform debugging.</p>
+<h2 id="code">Debug code locally</h2>
+<p>Due to your environments being read-only, you need to pull code locally from an environment or specific Git branch/repository to perform debugging.</p>
 
-  <p>The method you choose is up to you. You have the following options:</p>
+<p>The method you choose is up to you. You have the following options:</p>
 
-  <ul>
-    <li>
-      <p>Check out code from Git and run <code class="highlighter-rouge">composer install</code></p>
+<ul>
+  <li>
+    <p>Check out code from Git and run <code class="highlighter-rouge">composer install</code></p>
 
-      <p>This method works unless <code class="highlighter-rouge">composer.json</code> references packages in private repositories to which you don’t have access. This method results in getting the entire Magento codebase.</p>
-    </li>
-    <li>
-      <p>Copy the <code class="highlighter-rouge">vendor</code>, <code class="highlighter-rouge">app</code>, <code class="highlighter-rouge">pub</code>, <code class="highlighter-rouge">lib</code>, and <code class="highlighter-rouge">setup</code> directories</p>
+    <p>This method works unless <code class="highlighter-rouge">composer.json</code> references packages in private repositories to which you don’t have access. This method results in getting the entire Magento codebase.</p>
+  </li>
+  <li>
+    <p>Copy the <code class="highlighter-rouge">vendor</code>, <code class="highlighter-rouge">app</code>, <code class="highlighter-rouge">pub</code>, <code class="highlighter-rouge">lib</code>, and <code class="highlighter-rouge">setup</code> directories</p>
 
-      <p>This method results in your having all code you can possibly test. Depending on how many static assets you have, it could result in a long transfer with a large volume of files.</p>
-    </li>
-    <li>
-      <p>Copy the <code class="highlighter-rouge">vendor</code> directory only</p>
+    <p>This method results in your having all code you can possibly test. Depending on how many static assets you have, it could result in a long transfer with a large volume of files.</p>
+  </li>
+  <li>
+    <p>Copy the <code class="highlighter-rouge">vendor</code> directory only</p>
 
-      <p>Because most Magento and third-party code is in the <code class="highlighter-rouge">vendor</code> directory, this method is likely to result in good testing although you won’t be testing the entire codebase.</p>
-    </li>
-  </ul>
+    <p>Because most Magento and third-party code is in the <code class="highlighter-rouge">vendor</code> directory, this method is likely to result in good testing although you won’t be testing the entire codebase.</p>
+  </li>
+</ul>
 
-  <p>To compress files and copy them to your local machine:</p>
+<p>To compress files and copy them to your local machine:</p>
 
-  <ol>
-    <li>SSH to the environment.</li>
-    <li>
-      <p>Enter the following command:</p>
+<ol>
+  <li>SSH to the environment.</li>
+  <li>
+    <p>Enter the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -czf /tmp/&lt;file name&gt;.tgz &lt;directory list&gt;
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -czf /tmp/&lt;file name&gt;.tgz &lt;directory list&gt;
+</code></pre></div>    </div>
 
-      <p>For example, to compress the <code class="highlighter-rouge">vendor</code> directory only, enter</p>
+    <p>For example, to compress the <code class="highlighter-rouge">vendor</code> directory only, enter</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -czf /tmp/vendor.tgz vendor
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>On your local environment with PhpStorm, enter the following commands:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -czf /tmp/vendor.tgz vendor
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>On your local environment with PhpStorm, enter the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;phpstorm project root dir&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;phpstorm project root dir&gt;
 rsync &lt;SSH URL&gt;:/tmp/&lt;file name&gt;.tgz .
 tar xzf &lt;file name&gt;.tgz
-</code></pre></div>      </div>
-    </li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h2 id="trouble">Troubleshooting Xdebug</h2>
-  <p>If you you suspend your laptop (like closing your lid on a Mac), then your SSH session may no longer work when your computer resumes. But the TCP session for the SSH connection on the server might not timeout on the server, leaving any open debug sessions active and preventing you from using the nginx server.</p>
+<h2 id="trouble">Troubleshooting Xdebug</h2>
+<p>If you you suspend your laptop (like closing your lid on a Mac), then your SSH session may no longer work when your computer resumes. But the TCP session for the SSH connection on the server might not timeout on the server, leaving any open debug sessions active and preventing you from using the nginx server.</p>
 
-  <p>Due to not having access to manually restart the nginx server, you need to locate and terminate SSH processes that haven’t timed out yet.</p>
+<p>Due to not having access to manually restart the nginx server, you need to locate and terminate SSH processes that haven’t timed out yet.</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> to the integration, staging, or production server.</li>
-    <li>Enter <code class="highlighter-rouge">who</code> to view a list of SSH sessions.</li>
-    <li>
-      <p>View existing SSH sessions by user. Be careful to not affect a user other than yourself!</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH</a> to the integration, staging, or production server.</li>
+  <li>Enter <code class="highlighter-rouge">who</code> to view a list of SSH sessions.</li>
+  <li>
+    <p>View existing SSH sessions by user. Be careful to not affect a user other than yourself!</p>
 
-      <ul>
-        <li>Integration: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
-        <li>Staging: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
-        <li>Production: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
-      </ul>
-    </li>
-    <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="highlighter-rouge">pts/0</code>.</li>
-    <li>
-      <p>Kill the process ID (PID) corresponding to the PTS value using the following commands:</p>
+    <ul>
+      <li>Integration: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
+      <li>Staging: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus_stg</code></li>
+      <li>Production: user names are similar to <code class="highlighter-rouge">dd2q5ct7mhgus</code></li>
+    </ul>
+  </li>
+  <li>For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, <code class="highlighter-rouge">pts/0</code>.</li>
+  <li>
+    <p>Kill the process ID (PID) corresponding to the PTS value using the following commands:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux | grep ssh
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps aux | grep ssh
 kill &lt;PID&gt;
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>For example, suppose <code class="highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
+    <p>For example, suppose <code class="highlighter-rouge">ps aux | grep ssh</code> returned the following:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd2q5ct7mhgus        5504  0.0  0.0  82612  3664 ?      S    18:45   0:00 sshd: dd2q5ct7mhgus@pts/0
+</code></pre></div>    </div>
 
-      <p>To terminate the connection, you enter a kill command with the process ID (PID). For example:</p>
+    <p>To terminate the connection, you enter a kill command with the process ID (PID). For example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill 3664
-</code></pre></div>      </div>
-    </li>
-  </ol>
-</div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kill 3664
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 			
 		</div>

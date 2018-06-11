@@ -1836,85 +1836,85 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div>
 
   <p>If you want to add the same variables to your Integration, Staging, and Production environments, we recommend adding all of the variables one at a time to Integration. After you finish adding variables, trigger a deployment to Staging and production. All variables will be inherited from Integration.</p>
+</div>
 
-  <h2 id="prepare">Prepare for adding Staging and Production</h2>
-  <p>When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts, branch user permissions, and environment variables from your Integration <code class="highlighter-rouge">master</code> environment.</p>
+<h2 id="prepare">Prepare for adding Staging and Production</h2>
+<p>When we add Staging and Production access to the Project Web Interface, we will leverage the user accounts, branch user permissions, and environment variables from your Integration <code class="highlighter-rouge">master</code> environment.</p>
 
-  <p>To prepare, ensure you have all settings and environment variables set correctly.</p>
+<p>To prepare, ensure you have all settings and environment variables set correctly.</p>
 
-  <ul>
-    <li><a href="#matchcode">Verify Git code matches across environments</a></li>
-    <li><a href="#prep-user">Verify user account access</a></li>
-    <li><a href="#prep-variables">Prepare variables</a></li>
-  </ul>
+<ul>
+  <li><a href="#matchcode">Verify Git code matches across environments</a></li>
+  <li><a href="#prep-user">Verify user account access</a></li>
+  <li><a href="#prep-variables">Prepare variables</a></li>
+</ul>
 
-  <h3 id="matchcode">Verify Git code matches across environments</h3>
-  <p>We strongly recommend working in your local development environment then deploying to Integration, Staging, and finally Production. All Git code should match 100% across each of these environments. If you have additional code (for example new extensions) on Production without following this workflow, any deployments from Integration or Staging will overwrite your Production code.</p>
+<h3 id="matchcode">Verify Git code matches across environments</h3>
+<p>We strongly recommend working in your local development environment then deploying to Integration, Staging, and finally Production. All Git code should match 100% across each of these environments. If you have additional code (for example new extensions) on Production without following this workflow, any deployments from Integration or Staging will overwrite your Production code.</p>
 
-  <p>Before entering a ticket, make sure your Git code matches and is synced.</p>
+<p>Before entering a ticket, make sure your Git code matches and is synced.</p>
 
-  <div class="bs-callout bs-callout-warning">
-    <p>The process will create a new Git branch of code for Staging and Production environments. When we create this code, it will push and overwrite on Production. Do not skip this step.</p>
-  </div>
+<div class="bs-callout bs-callout-warning">
+  <p>The process will create a new Git branch of code for Staging and Production environments. When we create this code, it will push and overwrite on Production. Do not skip this step.</p>
+</div>
 
-  <h3 id="prep-user">Verify user account access</h3>
-  <p>We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.</p>
+<h3 id="prep-user">Verify user account access</h3>
+<p>We recommend verifying your user account access and permissions set in the Master Integration environment. When adding Staging and Production to the Project Web Interface, all user accounts and settings are used initially. You can modify the settings and values for these environments after they are added.</p>
 
-  <ol>
-    <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-    <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
-    <li>Click Master to open the environment information and settings.</li>
-    <li>Click <img src="/common/images/cloud_edit-project.png" alt="configure your project" /> <strong>Configure environment</strong>.</li>
-    <li>Click the <strong>Users</strong> tab to review the user accounts and permission configurations.</li>
-    <li>You can add users if needed. Click <strong>Add User</strong>, enter an email address, and select a permission. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only).</li>
-    <li>To modify the environment permissions for a user, select Edit for the account and change the permissions. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). Select a permission and save.</li>
-  </ol>
+<ol>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
+  <li>Click Master to open the environment information and settings.</li>
+  <li>Click <img src="/common/images/cloud_edit-project.png" alt="configure your project" /> <strong>Configure environment</strong>.</li>
+  <li>Click the <strong>Users</strong> tab to review the user accounts and permission configurations.</li>
+  <li>You can add users if needed. Click <strong>Add User</strong>, enter an email address, and select a permission. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only).</li>
+  <li>To modify the environment permissions for a user, select Edit for the account and change the permissions. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). Select a permission and save.</li>
+</ol>
 
-  <h3 id="prep-variables">Prepare variables</h3>
-  <p>When we convert your project to the new Project Web Interface, we add variables from Integration <code class="highlighter-rouge">master</code> to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.</p>
+<h3 id="prep-variables">Prepare variables</h3>
+<p>When we convert your project to the new Project Web Interface, we add variables from Integration <code class="highlighter-rouge">master</code> to Staging and Production. You can review, modify, and add variables through the current Project Web Interface prior to conversion.</p>
 
-  <ol>
-    <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-    <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
-    <li>Click the Integration <code class="highlighter-rouge">master</code> branch to open the environment information and settings.</li>
-    <li>Click <strong>Configure environment</strong>.</li>
-    <li>On the <em>Variables</em> tab, review the environment variables.
+<ol>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
+  <li>Click the Integration <code class="highlighter-rouge">master</code> branch to open the environment information and settings.</li>
+  <li>Click <strong>Configure environment</strong>.</li>
+  <li>On the <em>Variables</em> tab, review the environment variables.
  To create a new variable, click <strong>Add Variable</strong>.
  To update an existing variable, click <strong>Edit</strong> next to the variable.</li>
-  </ol>
+</ol>
 
-  <p>For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables using the Magento Cloud CLI tool directly into the Staging and Production environments.</p>
+<p>For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables using the Magento Cloud CLI tool directly into the Staging and Production environments.</p>
 
-  <h2 id="enable">Enter a ticket for updating the Project Web Interface</h2>
-  <p>Enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> with the suggested title “Connect Stg / Prod to Project’s UI”. In the ticket, request to have your project enabled with Staging and Production in the UI.</p>
+<h2 id="enable">Enter a ticket for updating the Project Web Interface</h2>
+<p>Enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> with the suggested title “Connect Stg / Prod to Project’s UI”. In the ticket, request to have your project enabled with Staging and Production in the UI.</p>
 
-  <p>We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.</p>
+<p>We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.</p>
 
-  <p>When done, you can access review your project through the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a>.</p>
+<p>When done, you can access review your project through the <a href="/guides/v2.0/cloud/project/projects.html">Project Web Interface</a>.</p>
 
-  <h2 id="optional-migrate-environment-variables">(Optional) Migrate environment variables</h2>
-  <p>After conversion, you can manually migrate specific environment variables for Staging and Production.</p>
+<h2 id="optional-migrate-environment-variables">(Optional) Migrate environment variables</h2>
+<p>After conversion, you can manually migrate specific environment variables for Staging and Production.</p>
 
-  <ol>
-    <li>Open a terminal and <a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html#branch">checkout a branch</a> in your local environment.</li>
-    <li>
-      <p>List all environment variables.</p>
+<ol>
+  <li>Open a terminal and <a href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html#branch">checkout a branch</a> in your local environment.</li>
+  <li>
+    <p>List all environment variables.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:list
-</code></pre></div>      </div>
-    </li>
-    <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-    <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
-    <li>Click the Staging or Production environment.</li>
-    <li>On the <em>Variables</em> tab, review the environment variables.</li>
-    <li>Enter the variable name and value.</li>
-    <li>Select the <strong>Override</strong> checkbox if you want variables in the Project Web Interface to override local CLI or database values.</li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:list
+</code></pre></div>    </div>
+  </li>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>Click the <strong>Projects</strong> tab and the name of your project.</li>
+  <li>Click the Staging or Production environment.</li>
+  <li>On the <em>Variables</em> tab, review the environment variables.</li>
+  <li>Enter the variable name and value.</li>
+  <li>Select the <strong>Override</strong> checkbox if you want variables in the Project Web Interface to override local CLI or database values.</li>
+</ol>
 
-  <p>When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children of Integration <code class="highlighter-rouge">master</code>. For more information, see <a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
+<p>When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children of Integration <code class="highlighter-rouge">master</code>. For more information, see <a href="/guides/v2.0/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
 
-  <p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
-</div>
+<p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
 
 			
 		</div>
