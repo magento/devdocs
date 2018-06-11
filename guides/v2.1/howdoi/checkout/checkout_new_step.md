@@ -74,9 +74,9 @@ define(
             isVisible: ko.observable(true),
 
             /**
-			*
-			* @returns {*}
-			*/
+            *
+            * @returns {*}
+            */
             initialize: function () {
                 this._super();
                 // register your step
@@ -93,11 +93,11 @@ define(
                     _.bind(this.navigate, this),
 
                     /**
-					* sort order value
-					* 'sort order value' < 10: step displays before shipping step;
-					* 10 < 'sort order value' < 20 : step displays between shipping and payment step
-					* 'sort order value' > 20 : step displays after payment step
-					*/
+                    * sort order value
+                    * 'sort order value' < 10: step displays before shipping step;
+                    * 10 < 'sort order value' < 20 : step displays between shipping and payment step
+                    * 'sort order value' > 20 : step displays after payment step
+                    */
                     15
                 );
 
@@ -114,8 +114,8 @@ define(
             },
 
             /**
-			* @returns void
-			*/
+            * @returns void
+            */
             navigateToNextStep: function () {
                 stepNavigator.next();
             }
