@@ -5,7 +5,3 @@ pages:
 
     - label: Contributor sign-up sheet
       url: /howdoi/howdoi_contribute.html
-
-    - label: Customize product creation form
-      versions: ["2.1","2.2", "2.3"]
-      url: /howdoi/customize_product.html

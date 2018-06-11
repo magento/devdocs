@@ -1,36 +1,33 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup: product-create-page
 title: Customize product creation form
 menu_title: Customize product creation form
-menu_node: parent
+menu_node:
+level3_subgroup: product-creation-form
 menu_order: 1
 version: 2.1
 github_link: howdoi/customize_product.md
 ---
 
-<h2>What's in this topic</h2>
-
-This topic describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
 <img src="{{ site.baseurl }}/common/images/product_pmg.png" alt="The product creation page in Admin">
 
-## Overview
-
-In Magento version 2.1, the product creation form was completely refactored, and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html). 
+In Magento version 2.1, the product creation form was completely refactored and implemented using the [form UI component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-form.html).
 
 Product attributes and attribute sets available in the form, can be customized and added under **STORES** > **Attributes** in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-
-## Prerequisites
+## Prerequisites {#prereqs}
 
 [Set Magento to developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.
 
-## Customize the form configuration
+## Customize the form configuration {#customize-form}
 
 Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.
 
@@ -40,7 +37,7 @@ To customize the product creation form, take the following steps:
 
 2. In this file, add content similar to the following:
 
-{%highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
 
 ...
@@ -73,7 +70,7 @@ To customize the product creation form, take the following steps:
     </fieldset>
 ...
 </form>
-{%endhighlight%}
+```
 
 ### Adding new elements
 
@@ -88,7 +85,7 @@ To customize an existing entity, declare only those options, the values of which
 
 To delete an existing field, or field set, in your `product_form.xml` use the following construction:
 
-{%highlight xml%}
+```xml
 ...
     <fieldset name="%fieldset_name%">
         <argument name="data" xsi:type="array">
@@ -96,22 +93,20 @@ To delete an existing field, or field set, in your `product_form.xml` use the fo
         </argument>
     </fieldset>
 ...
-{%endhighlight%}
+```
 
 
 For reference, view the product form configuration files of the Magento modules:
 
-- `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_form.xml`
-- `<Magento_CatalogInventory_module_dir>/view/adminhtml/ui_component/product_form.xml`
-- `<Magento_ConfigurableProduct_module_dir>view/adminhtml/ui_component/product_form.xml`
+* `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_form.xml`
+* `<Magento_CatalogInventory_module_dir>/view/adminhtml/ui_component/product_form.xml`
+* `<Magento_ConfigurableProduct_module_dir>view/adminhtml/ui_component/product_form.xml`
 
 ## Customize using a modifier class {#modifier}
 
 [Modifier classes]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.
 
 In the run time, the form structure set in the modifier is merged with the configuration that comes from the `product_form.xml` configuration.
-
-### General implementation overview
 
 The `Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider` data provider class is responsible for data and metadata preparation for the product form. The pool of modifiers `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool` (virtual type) is injected to this data provider using the `__construct()` method. The pool's preference is defined in `di.xml`.
 
@@ -120,7 +115,6 @@ To add your custom modifier, you need to do the following:
 1. [Add the modifier code.](#modifier)
 2. [Add it to the modifiers' pool in `di.xml`](#pool)
 
-
 ### Add your modifier {#modifier}
 
 In your custom module directory, add the modifier class that implements the `Magento\UI\DataProvider\ModifierInterface` interface or extends the `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier`class. In your modifier, the `modifyData()` and the `modifyMeta()` methods must be implemented.
@@ -128,8 +122,8 @@ In your custom module directory, add the modifier class that implements the `Mag
 In the modifier class, you can add UI elements using the same structure as in the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration.
 
 For example:
-{% highlight php %}
 
+```php?start_inline=1
 <?php
 
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
@@ -181,7 +175,7 @@ class Example extends AbstractModifier
         return $data;
     }
 }
-{%endhighlight%}
+```
 
 You can create nested structures of elements by adding them to the `children` key of any element.
 
@@ -189,11 +183,11 @@ You can create nested structures of elements by adding them to the `children` ke
 In `<your_module_dir>/etc/adminhtml/di.xml` define your modifier as a dependency for `Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool`.
 
 
-Following is an example of such definition:
+The following is an example of such a definition:
 
 `app/code/Magento/CatalogInventory/etc/adminhtml/di.xml`:
 
-{%highlight xml%}
+```xml
      <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool">
         <arguments>
             <argument name="modifiers" xsi:type="array">
@@ -204,25 +198,24 @@ Following is an example of such definition:
             </argument>
         </arguments>
     </virtualType>
-{%endhighlight%}
+```
 
 The `sortOrder` parameter defines the order of invocation for your `modifyData()` and `modifyMeta()` methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its `modifyData()` and `modifyMeta()` are invoked with empty arguments.
 
 To access product model within your modifier, it's recommended to use an instance of `Magento\Catalog\Model\Locator\LocatorInterface`.
 
-
 For reference, view the modifier classes in the Magento modules, for example:
 
-- `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing.php`
-- `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/AttributeSet.php`
-- `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php`
-- `<Magento_ConfigurableProduct_module_dir>/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts.php`
+* `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing.php`
+* `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/AttributeSet.php`
+* `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php`
+* `<Magento_ConfigurableProduct_module_dir>/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts.php`
 
 
 For reference about setting conditions for displaying certain elements for certain product types, view `<Magento_Catalog_module_dir>/Ui/DataProvider/Product/Form/Modifier/Eav.php#L476`.
 
-## Recommended reading:
+#### Recommended reading
 
- - [Form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
- - [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)
- - [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+* [Form UI component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html)
+* [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html)
+* [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
