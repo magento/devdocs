@@ -55,13 +55,13 @@ To set the default locale and weight units in your development system:
 
 	![Switch websites]({{ site.baseurl }}/common/images/config_split-deploy_switch-website.png){:width="250px"}
 3.	In the right pane, expand **Store Information**.
-4.	If necessary, clear the **Use Default** check box next to the **VAT Number** and **Store Name** fields.
+4.	If necessary, clear the **Use Default** checkbox next to the **VAT Number** and **Store Name** fields.
 5.	Enter a number in the field (for example, `12345`).
 6.	In the **Store Name** field, enter a value (like `My Store`).
 7.	Click **Save Config**.
 9.	In the left navigation, under General, click **Contacts**.
 10.	In the right pane, expand **Email Options**.
-8.	If necessary, clear the **Use Default** check box next to the **Send Emails To** field.
+8.	If necessary, clear the **Use Default** checkbox next to the **Send Emails To** field.
 9.	Enter an e-mail address in the field.
 10.	Click **Save Config**.
 8.	Use the **Store View** list to select the **Default Config** as the following figure shows.
@@ -69,7 +69,7 @@ To set the default locale and weight units in your development system:
 	![Switch to the default config]({{ site.baseurl }}/common/images/config_split-deploy_default-config.png){:width="200px"}
 11.	In the left pane, click Customers > **Customer Configuration**.
 12.	In the right pane, expand **Create New Account Options**.
-13.	If necessary, clear the **Use system value** check box next to the **Default Email Domain** field.
+13.	If necessary, clear the **Use system value** checkbox next to the **Default Email Domain** field.
 14.	Enter a domain name in the field.
 15.	Click **Save Config**.
 11.	If prompted, flush the cache.

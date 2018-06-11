@@ -111,7 +111,7 @@ To add the webhook to your GitHub repository:
 	*	**Content type**: Click **application/json**
 	*	**Secret**: Enter a verification secret.
 	*	**Which events would you like to trigger this webhook?**: Click **Send me everything**
-	*	Select the **Active** check box.
+	*	Select the **Active** checkbox.
 
 	The following figure shows an example:
 

@@ -145,7 +145,6 @@ In `<your_module_dir>/etc/frontend/di.xml`, declare the plugin you created on th
 </config>
 ```
 
-
 ## Step 3: Create a JS component for the checkbox {#create-jscomponent}
 
 In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/web/js/single-checkbox.js`. In this file, add the following code. This is  a JS component that extends `Magento_Ui/js/form/element/single-checkbox.js`. The `onCheckedChanged` method calls the methods that update street labels, change the city and country values, and disable these fields:

@@ -445,7 +445,7 @@ Generates orders with configurable number of different types of order items. Opt
 
 XML profile node:
 
-<pre class="no-copy">&lt;!-- Is is necessary to enable quotes for orders -->
+<pre class="no-copy">&lt;!-- It is necessary to enable quotes for orders -->
 &lt;order_quotes_enable>{bool}&lt;/order_quotes_enable>
 
 &lt;!-- Min number of simple products per each order -->

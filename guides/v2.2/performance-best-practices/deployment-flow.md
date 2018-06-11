@@ -23,7 +23,7 @@ Deploying static content causes Magento 2 to perform the following actions:
 
 If your static content is not deployed, Magento performs all listed operation on the fly, leading to a significant increase in response time.
 
-You can use a variety of options to to customize deployment operations based on store size and fulfillment needs. The most common is the compact deploy strategy. See [Static files deployment strategies]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html)
+You can use a variety of options to customize deployment operations based on store size and fulfillment needs. The most common is the compact deploy strategy. See [Static files deployment strategies]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html)
 
 Run the following command to deploy static content:
 

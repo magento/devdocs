@@ -19,7 +19,7 @@ The MultiselectColumn component is implemented in the class `app\code\Magento\Ui
 
 Templates used by this component are:
 
-* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.
+* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines each field in the grid. It provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.
 * `app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html` - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.
 
 ## MultiselectColumn configuration
