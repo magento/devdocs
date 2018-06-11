@@ -582,7 +582,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getParam</span><span class="p">(</span><span class="nv">$name</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>Let’s also assume there is a concrete implementation <code class="highlighter-rouge">HttpRequest</code> that that also has a public method <code class="highlighter-rouge">getParams()</code> in addition to the two interface methods.</p>
+<p>Let’s also assume there is a concrete implementation <code class="highlighter-rouge">HttpRequest</code> that also has a public method <code class="highlighter-rouge">getParams()</code> in addition to the two interface methods.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">HttpRequest</span> <span class="k">implements</span> <span class="nx">RequestInterface</span>
 <span class="p">{</span>
