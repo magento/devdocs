@@ -21,9 +21,9 @@ Don't make textual content too long or too short.
 **2. Provide adequate contrast**
 
 Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
-<a href="http://webaim.org/resources/contrastchecker/" target="blank">http://webaim.org/resources/contrastchecker/ </a>
+<a href="http://webaim.org/resources/contrastchecker/" target="_blank">http://webaim.org/resources/contrastchecker/ </a>
 or here:
-<a href="http://www.paciellogroup.com/resources/contrastAnalyser" target="blank">http://www.paciellogroup.com/resources/contrastAnalyser</a>
+<a href="http://www.paciellogroup.com/resources/contrastAnalyser" target="_blank">http://www.paciellogroup.com/resources/contrastAnalyser</a>
 
 Acceptable	<br>
 <img src="img/largetext-sample1.png">
@@ -55,15 +55,15 @@ A link for keyboard users to skip navigation should be at the top of the page. I
 
 Examples
 
-<a href="http://www.nomensa.com/" target="blank"> http://www.nomensa.com/ </a>
+<a href="http://www.nomensa.com/" target="_blank"> http://www.nomensa.com/ </a>
 
-<a href="https://www.paypal.com/" target="blank"> https://www.paypal.com/ </a>
+<a href="https://www.paypal.com/" target="_blank"> https://www.paypal.com/ </a>
 
-<a href="http://www.standardchartered.com/en/" target="blank"> http://www.standardchartered.com/en/ </a>
+<a href="http://www.standardchartered.com/en/" target="_blank"> http://www.standardchartered.com/en/ </a>
 
-<a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/" target="blank"> http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/ </a>
+<a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/" target="_blank"> http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/ </a>
 
-<a href="https://github.com/paypal/skipto" target="blank">Skip-To Widget</a>
+<a href="https://github.com/paypal/skipto" target="_blank">Skip-To Widget</a>
 
 **8. Use animation, video and audio with caution**
 
@@ -144,8 +144,8 @@ Ensure form controls have descriptive labels and instructions. Pay close attenti
 Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.
 
 <h3 id="resources">Resources</h3>
-Overview: <a href="http://www.w3.org/WAI/WCAG20/glance/" target="blank"> http://www.w3.org/WAI/WCAG20/glance/ </a>
+Overview: <a href="http://www.w3.org/WAI/WCAG20/glance/" target="_blank"> http://www.w3.org/WAI/WCAG20/glance/ </a>
 
-Authoring Tool Accessibility Guidelines (ATAG) 1.0: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/" target="blank"> http://www.w3.org/TR/WCAG10-HTML-TECHS/</a>
+Authoring Tool Accessibility Guidelines (ATAG) 1.0: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/" target="_blank"> http://www.w3.org/TR/WCAG10-HTML-TECHS/</a>
 
-Authoring Tool Accessibility Guidelines (ATAG) 2.0: <a href="http://www.w3.org/TR/WCAG20-HTML-TECHS/" target="blank"> http://www.w3.org/TR/WCAG20-HTML-TECHS/</a>
+Authoring Tool Accessibility Guidelines (ATAG) 2.0: <a href="http://www.w3.org/TR/WCAG20-HTML-TECHS/" target="_blank"> http://www.w3.org/TR/WCAG20-HTML-TECHS/</a>
