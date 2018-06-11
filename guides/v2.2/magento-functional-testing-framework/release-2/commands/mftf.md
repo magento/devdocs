@@ -1,7 +1,7 @@
 ---
 group: mftf
 title: |
-    CLI commands: mftf
+    CLI commands: vendor/bin/mftf
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/mtft.md
 functional_areas:
@@ -35,30 +35,30 @@ The following is a list of the most used commands.
 #### Build the project
 
 ```bash
-mftf build:project
+vendor/bin/mftf build:project
 ```
 
 #### Generate all tests in PHP
 
 ```bash
-mftf generate:tests
+vendor/bin/mftf generate:tests
 ```
 #### Generate one or more tests in PHP
 
 ```bash
-mftf generate:tests testName01 testName02 testName03
+vendor/bin/mftf generate:tests testName01 testName02 testName03
 ```
 
 #### Run and generate all tests that contain the `group="example"` annotation 
 
 ```bash
-mftf run:group example
+vendor/bin/mftf run:group example
 ```
 
 #### Run and generate all tests
 
 ```bash
-mftf run:tests
+vendor/bin/mftf run:tests
 ```
 
 ## Reference
@@ -78,16 +78,18 @@ The path is set in the `TESTS_MODULE_PATH` [configuration] parameter.
 
 #### Usage
 
-`generate:tests --[option] [<test name>] [<test name>]`
+```bash
+vendor/bin/mftf generate:tests --[option] [<test name>] [<test name>]
+```
 
 #### Options
 
 Option | Description|
 ---|---
 `--config`   | Creates a single manifest file with a list of all tests by default: `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`. You can split it into multiple groups using `--config parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`. Available values: `default` (default), `singleRun`(same as `default`), and `parallel`. Example: `generate:tests --config parallel`.
-`--force`    | Force tests generation regardless of the Magento instance configuration.
-`--lines`    | Number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
-`--tests`    | A parameter accepting a JSON string used to determine the test configuration. Example: `--tests "{\r\n\"tests\":[\r\n\"general_test1\",\r\n\"general_test2\",\r\n\"general_test3\"\r\n],\r\n\"suites\":{\r\n\"sample\":[\r\n\"suite_test1\"\r\n],\r\n\"sample2\":null\r\n}\r\n}"`.
+`--force`    | Forces tests generation regardless of modules merge order in the Magento instance. Example: `generate:tests --force`.
+`--lines`    | Sets the number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
+`--tests`    | Defines the test configuration as a JSON string.
 
 #### Examples of the JSON configuration
 
@@ -101,7 +103,7 @@ The configuration to generate a single test with no suites:
 }
 ```
 
-The configuration to generate a single test contained in the suite:
+The configuration to generate a single test in the suite:
 ```json
 {  
    "tests": null,         // No tests outside the suite configuration will be generated.
@@ -145,23 +147,26 @@ content='The strings must be escaped and surrounded in quotes.'
 
 #### Description
 
-Generates a single suite based on declaration in xml.
+Generates suite(s) based on XML declarations.
 
 #### Usage
 
-`generate:suite <suites> (<suites>)...`
+`generate:suite <suites> <suites> ...`
 
-#### Arguments
+`<suites>` A suite names for generation (separated by space)
 
-Arguments| Description
----|---
-`suites`|suite names for generation (separated by space)
+#### Example
+
+```bash
+vendor/bin/mftf generate:suite suite1 suite2
+```
 
 #### `reset`
 
 #### Description
 
-Clean any configuration files from the environment (not including `.env`), as well as any generated artifacts.  
+Cleans any configuration files from the environment as well as any generated artifacts.
+The `.env` file is not affected.
 
 #### Usage
 
@@ -171,44 +176,69 @@ Clean any configuration files from the environment (not including `.env`), as we
 
 Option|Description
 ---|---
-`--hard` | Flag to force reset the configuration files.
+`--hard` | The flag forces resetting the configuration files.
+
+#### Example
+
+```bash
+vendor/bin/mftf reset --hard
+```
 
 ### `run:group`
 
+Generates and executes the listed groups of tests using Codeception.
+
 #### Usage
 
-`run:group [options] <groups> (<groups>)...`
-
-#### Arguments
-
-Arguments| Description
----|---
-`groups` | group names to be executed via codeception
+`run:group [options --] <group1> <group2> ...`
 
 #### Options
 
 Option | Description
 ---|---
-`-k, --skip-generate` | only execute a group of tests without generating from source xml
+`-k, --skip-generate` | Skips generating from the source XML; executes the specified group(s) of tests that were generated previously.
+
+#### Examples
+
+Generate from XML and execute the tests with the annotations `group="group1"` and `group="group2"`:
+
+```bash
+vendor/bin/mftf run:group group1 group2
+```
+
+Execute the generated PHP tests with the tags `@group group1` and `@group group2`:
+
+```bash
+vendor/bin/mftf run:group -k -- group1 group2
+```
   
 ### `run:test`
 
+Generates and executes tests by name using Codeception.
+
 #### Usage
 
-`run:test [options] <name> (<name>)...`
-
-#### Arguments
-
-Arguments| Description
----|---
-`name`  | name of tests to generate and execute
+`run:test [options --] <name1> <name2> ...`
 
 #### Options
 
 Option | Description
 ---|---
-`-k, --skip-generate` | skip generation and execute existing test(s)
+`-k, --skip-generate` | Skips generating from the source XML; executes the specified group(s) of tests that were generated previously.
 
+#### Examples
+
+Generate from XML and execute the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests:
+
+```bash
+vendor/bin/mftf run:tests LoginCustomerTest StorefrontCreateCustomerTest
+```
+
+Execute the `LoginCustomerTest.php` and `StorefrontCreateCustomerTest.php` tests:
+
+```bash
+vendor/bin/mftf run:group -k -- LoginCustomerTest StorefrontCreateCustomerTest
+```
 
 <!-- LINK DEFINITIONS -->
 
