@@ -24,7 +24,10 @@ If you joined us with a 30-day free trial {{site.data.var.ece}} account, we comp
 -   Provisioned the initial environment with a cloned {{site.data.var.ece}} code base in a `master` branch
 -   Created an environment for the `master` branch with a web server, database, and services
 -   Added Magento authentication keys for the Project Owner
--   Add the `ADMIN_EMAIL` variable. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+-   Added the `ADMIN_EMAIL` and `ADMIN_USERNAME` variables with both set to the
+default value, Project Owner email address.
+[Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+</div>
 </div>
 
 ## Project access and users {#users}
@@ -70,6 +73,11 @@ When you initially create your project, you can access the Magento Admin panel t
     -   Or you can access a store URL available through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html). For the store URL, add /admin at the end. A login panel displays.
 
 1.  Click the forgot Password link and complete the process to change the password.
-1.  Login to the Admin panel using the username Admin and newly changed password.
+1.  Login to the Admin panel using the default username (Project Owner email address)
+and the newly changed password.
 
-If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should already have the `ADMIN_EMAIL` variable configured for them.
+If you receive an error, you might need to add admin variables for
+`ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`. Trial accounts should
+already have the `ADMIN_EMAIL` and `ADMIN_USERNAME` variables configured on
+the account. Initially, both the email and username are set to the default value
+which is the Project Owner email address.
