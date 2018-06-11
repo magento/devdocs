@@ -30,7 +30,7 @@ vendor/bin/mftf command [options] [arguments]
   
 ## Useful commands
 
-The following is a list of the most popular commands.
+The following is a list of the most used commands.
 
 #### Build the project
 
@@ -73,7 +73,8 @@ Clone the example configuration files and build the Codeception project.
 
 #### Description
 
-Generate PHP code from the tests defined in XML files. (Path is determined by constant `TESTS_MODULE_PATH`)
+Generate PHP code from the tests defined in XML files.
+The path is set in the `TESTS_MODULE_PATH` [configuration] parameter.
 
 #### Usage
 
@@ -83,9 +84,9 @@ Generate PHP code from the tests defined in XML files. (Path is determined by co
 
 Option | Description|
 ---|---
-`--config`   | Creates a single manifest file with a list of all tests by default: `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`. You can split it into multiple groups using `--config parallel`: `_generated/groups/group1.txt, group2.txt, ...`. Available values: `default` (default), `singleRun`(same as `default`), and `parallel`. Example: `--config parallel`.
-`--force`    | Force generation of tests regardless of Magento Instance Configuration .
-`--lines`    | Used in combination with a parallel configuration, determines desired group size. The default value is `500`.  
+`--config`   | Creates a single manifest file with a list of all tests by default: `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`. You can split it into multiple groups using `--config parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`. Available values: `default` (default), `singleRun`(same as `default`), and `parallel`. Example: `generate:tests --config parallel`.
+`--force`    | Force tests generation regardless of the Magento instance configuration.
+`--lines`    | Number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
 `--tests`    | A parameter accepting a JSON string used to determine the test configuration. Example: `--tests "{\r\n\"tests\":[\r\n\"general_test1\",\r\n\"general_test2\",\r\n\"general_test3\"\r\n],\r\n\"suites\":{\r\n\"sample\":[\r\n\"suite_test1\"\r\n],\r\n\"sample2\":null\r\n}\r\n}"`.
 
 #### Examples of the JSON configuration
@@ -211,6 +212,7 @@ Option | Description
 
 <!-- LINK DEFINITIONS -->
 
+[configuration]: ../configuration.html
 [Reference]: #reference
 
 <!-- Abbreviations -->
