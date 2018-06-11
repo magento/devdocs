@@ -32,7 +32,7 @@ If you already know the extension's Composer name and version, skip this step an
 
 To get the extension's Composer name and version from the Magento Marketplace:
 
-1.  Log in to [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"} with the user name and password you used to purchase the extension.
+1.  Log in to [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"} with the username and password you used to purchase the extension.
 
 2.  In the upper-right corner, click **Your name** > **My Profile**.
 

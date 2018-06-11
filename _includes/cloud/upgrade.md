@@ -34,7 +34,7 @@ Back up your staging or production system database:
 
 3.  Create a database dump:
 
-        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+        mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
 
 ### Verify other changes
 Verify other changes you're going to submit to source control before you start the upgrade:
@@ -219,3 +219,4 @@ To resolve the error:
 *   [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 *   [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)
 *   [Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)
+</div>
