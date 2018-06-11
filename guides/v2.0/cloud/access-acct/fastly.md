@@ -64,7 +64,7 @@ We recommend using the `bin/magento magento-cloud:scd-dump` command for Configur
 </div>
 
 
-We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Intergration environments.
+We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Integration environments.
 
 1.	In your local environment root directory, use a terminal to enter the following commands in the order shown:
 
@@ -75,7 +75,7 @@ We provide Fastly services only for your Staging and Production environments. Yo
 3.	Enter the following command to fully update and clear the cache:
 
 		php bin/magento setup:upgrade && php bin/magento cache:clean
-4. Edit your composer.json and ensure the Fasty module is included with version.
+4. Edit your composer.json and ensure the Fastly module is included with version.
 
 	* In the "require" section, you should have `"fastly/magento2": <version number>`
 	* In the "repositories" section, you should have:
@@ -125,7 +125,7 @@ Configure the following features and enable additional [configuration options](h
 ## Upload Fastly VCL snippets {#upload-vcl-snippets}
 You don't have to create or code VCL snippets. We provide a default set of snippets for Fastly. You only need to click **Upload VCL to Fastly** to finish this step.
 
-The installed Fastly module includes the following default [VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\blank"} that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specificl Service ID and extension.
+The installed Fastly module includes the following default [VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets){:target="\blank"} that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specific Service ID and extension.
 
 For VCL snippet developers, these default snippets are prepended with `magentomodule_` with a priority of 50. You should not use this prepended name for your own snippets. For full details, see our guide to create and add [custom VCL snippets](#custom-vcl).
 
@@ -161,9 +161,9 @@ You can add multiple backends. Repeat these instructions to create multiple back
     * US - Oregon
     * EU - Dublin
     * APAC - Sydney
-4. Modify the timeout values (in miliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
+4. Modify the timeout values (in milliseconds) for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.
 5. Optionally, select to Activate the backend and Shield after editing or saving.
-6. Click **Upload** to save. The settings are commiunicated to Fastly.
+6. Click **Upload** to save. The settings are communicated to Fastly.
 7. In the Magento Admin, click **Save Config**.
 
 For more information from Fastly, see the Magento 2 [Backend settings guide](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md){:target="\_blank"}.
@@ -223,7 +223,7 @@ Since version 1.2.39, Fastly gets the Magento Admin path for generating the VCL 
 The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.
 
 1. In the **Fastly Configuration** section, expand **Advanced**.
-2. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration options disply.
+2. Scroll down and select **Yes** to **Enable GeoIP**. Additional configuration options display.
 3. For GeoIP Action, select if the visitor is automatically redirected with **Redirect** or provided a list of stores to select from with **Dialog**.
 4. For **Country Mapping**, click **Add** to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see [this site](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2){:target="\_blank"}.
 

@@ -118,7 +118,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--admin-user</p></td>
-		<td><p>Magento administrator user name.</p></td>
+		<td><p>Magento administrator username.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -290,7 +290,7 @@ The following table discusses the meanings of installation option names and valu
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>{{site.data.var.ee}} only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The username for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
@@ -331,7 +331,7 @@ The following example installs Magento with the following options:
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	Uses server rewrites
 
@@ -370,7 +370,7 @@ The following example installs Magento with the following options:
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	The Magento administrator has the following properties:
 

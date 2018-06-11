@@ -32,16 +32,16 @@ functional_areas:
 </ul>
 
 **Acceptable**
-{% highlight html %}
+```html
 <section id="information-dialog-tree">
    <p> ... </p>
    <p> ... </p>
 </section>
 <a href="#information-dialog-tree">Scroll to text</a></a>
-{% endhighlight %}
+```
 
 **Unacceptable**
-{% highlight html %}
+```html
 <section id="заголовок">
    <p> ... </p>
    <p> ... </p>
@@ -51,7 +51,7 @@ functional_areas:
    <p> ... </p>
 </section>
 <a href="#some_id">Scroll to text</a>
-{% endhighlight %}
+```
 
 ### Semantic representation may rely on ID attribute
 <ul>
@@ -62,7 +62,8 @@ functional_areas:
 **Acceptable {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} template**
 
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
-{% highlight html %}
+
+```html
 <ul>
    <li class="first" type="button" aria-pressed="false" aria-controls="some-id">button 1</li>
    <li type="button" aria-pressed="false" aria-controls="some-id">button 2</li>
@@ -73,32 +74,33 @@ functional_areas:
    <textarea id="some-id"></textarea>
 </div>
 <a href="#some-id">Scroll to text</a>
-{% endhighlight %}
+```
 
 
 **Unacceptable combination of PHTML, JavaScript, and CSS files**
 
 <p>The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.</p>
 <p><b>PHTML file</b></p>
-{% highlight html %}
+
+```php?start_inline=1
 <ul id="my-special-menu">
    <li id="buttonId1" class="first" type="button">button 1</li>
    <li id="buttonId2" type="button">button 2</li>
    <li id="buttonId3" type="button">button 3</li>
 </ul>
-{% endhighlight %}
+```
 
 **JavaScript file**
 
-{% highlight javascript %}
+```js
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
-{% endhighlight %}
+```
 
 **CSS file**
-{% highlight css %}
+```css
 #my-special-menu { ... }
 #my-special-menu > li { ... }
-{% endhighlight %}
+```
 
 ### You must follow the separation of presentation and content methodology.
 
@@ -127,17 +129,17 @@ The following list will help you make a distinction between the actual meaning o
 
 **Acceptable**:
 
-{%highlight html%}
+```html
 <p>HTML has been created to <strong>semantically</strong> represent documents.</p>
 <p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
-{%endhighlight%}
+```
 
 **Unacceptable**:
 
-{%highlight html%}
+```html
 <p>HTML has been created to <b>semantically</b> represent documents.</p>
 <p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
-{%endhighlight%}
+```
 
 ## Code demarcation
 
@@ -154,7 +156,7 @@ As the first option, you are required to use {% glossarytooltip a2aff425-07dd-4b
 
 **Acceptable CSS selectors**
 
-{% highlight css %}
+```css
 .notices-wrapper { ... }
 .page-header:after { ... }
 .payment-list:first-child { ... }
@@ -164,18 +166,18 @@ form input[type="password"] { ... }
 .control-text:focus { ... }
 a:hover { ... }
 nav li._active { ... }
-{% endhighlight %}
+```
 
 **Unacceptable CSS selectors**
 
-{% highlight css %}
+```css
 #header { ... }
 [data-action="delete"] { ... }
 form input[name="password"] { ... }
 section[role="main"] { ... }
 [role="menu] [role="menuitem"] { ... }
 [role="menu] [role="menuitem"].active { ... }
-{% endhighlight %}
+```
 
 ### You must not hard-code CSS styles in JavaScript files
 <div class="bs-callout bs-callout-info" id="info">
@@ -188,7 +190,8 @@ section[role="main"] { ... }
 </ul>
 
 **Acceptable {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} file**
-{% highlight javascript %}
+
+```js
 ...
    options: {
       hOffset: 0,
@@ -201,11 +204,11 @@ section[role="main"] { ... }
    this.options.hOffset = /* calculation based on dimensions of some DOM elements within a widget */
    this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
 ...
-{% endhighlight %}
+```
 
 **Unacceptable JavaScript file**
 
-{%highlight js%}
+```js
 this.element.on('click', function() {
    if ($(this).is(':visible')) {
       $(this).css({ visibility: 'hidden' });
@@ -213,7 +216,7 @@ this.element.on('click', function() {
       $(this).css({ visibility: 'visible' });
    }
 });
-{%endhighlight%}
+```
 
 ### You must not use inline CSS styles inside HTML tags
 <ul>
@@ -223,15 +226,15 @@ this.element.on('click', function() {
 
 **Acceptable PHTML template**
 
-{% highlight html %}
+```php?start_inline=1
 <div class="no-display"> ... </div>
-{% endhighlight %}
+```
 
 **Unacceptable PHTML template**
 
-{% highlight html %}
+```php?start_inline=1
 <div style="display: none;"> ... </div>
-{% endhighlight %}
+```
 
 ## Business logic and JavaScript
 
@@ -244,14 +247,14 @@ this.element.on('click', function() {
 
 **Acceptable PHTML template**
 
-{% highlight html %}
+```php?start_inline=1
 <div data-action="delete" data-mage-init="{myWidget: [option1: 'string']}"></div>
 <div data-role="tooltip">More details</div>
-{% endhighlight %}
+```
 
 **Acceptable JavaScript file**
 
-{% highlight javascript %}
+```js
 options {
  deleteAction:  '[data-action="delete"]',
  tooltip: '[data-role="tooltip]'
@@ -263,22 +266,22 @@ this.element.on('click', this.options.deleteAction , function() { ... });
 // Globally initialized widgets
 $( this.options.tooltip).tooltip();  // Globally for ALL tooltip elements
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHTML file**
 
-{% highlight html %}
+```php?start_inline=1
 <div id="my-widget"></div>
-{% endhighlight %}
+```
 
 **Unacceptable JavaScript file**
 
-{% highlight javascript %}
+```js
 $('#my-widget').doSomething();
 $('.parent').on('click', '.button', function() { ... });
 $('form').validate();
 $('[role="menu"]').navigation();
-{% endhighlight %}
+```
 
 ### You must assign HTML helper classes in JavaScript to modify presentation layer.
 
@@ -286,22 +289,22 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 
 **Acceptable**
 
-{% highlight html %}
+```html
 <div class="tab-element _active">Content</div>
 <div class="sales-transactions _open">Content</div>
 <div class="billing-agreement _expanded">Content</div>
 <div class="sales-report _hidden">Content</div>
-{% endhighlight %}
+```
 
 
 **Unacceptable**
 
-{% highlight html %}
+```html
 <div class="tab-element active">Content</div>
 <div class="sales-transactions open">Content</div>
 <div class="billing-agreement expanded">Content</div>
 <div class="sales-report hidden">Content</div>
-{% endhighlight %}
+```
 
 
 ### You must not select DOM elements based on HTML structure
@@ -310,17 +313,17 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 
 **Acceptable JavaScript file**
 
-{% highlight javascript %}
+```js
 this.element.find('[data-action="edit"]');
 this.elements.closest('[data-container]');
-{% endhighlight %}
+```
 
 **Unacceptable JavaScript file**
 
-{% highlight javascript %}
+```js
 this.element.children().children().html('hello world');
 this.element.parent().find('[data-action="edit"]').data('entity_id');
-{% endhighlight %}
+```
 
 ### You must use jQuery templates to insert recurring markup into DOM structure
 <ul>
@@ -335,28 +338,28 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 public function getSelectorOptions()
 {
     return $selectorOptions;
 }
 ...
-{% endhighlight %}
+```
 
 **Acceptable PHTML template**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
-{% endhighlight %}
+```
 
 or
 
 **Acceptable PHTML template**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 <div data-role="treeSuggest"></div>
 <script type="text/x-magento-init">
@@ -367,11 +370,11 @@ or
 }
 </script>
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHP file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 public function getAfterElementHtml()
 {
@@ -380,13 +383,13 @@ public function getAfterElementHtml()
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 </script>
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHTML template**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 <?php echo $this->getAfterElementHtml(); ?>
-{% endhighlight %}
+```
 
 
 ## PHTML templates and PHP files
@@ -399,7 +402,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -408,11 +411,11 @@ $fieldset->addField('new_category_parent', 'text', array(
     'class'    => 'parent category',
 ));
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHP file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 $fieldset->addField('new_category_parent', 'text', array(
     'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -421,7 +424,7 @@ $fieldset->addField('new_category_parent', 'text', array(
     'style'    => 'border: 1px solid #ccc;',
 ));
 ...
-{% endhighlight %}
+```
 
 ### You must not hard-code inline JavaScript in PHP classes
 <ul>
@@ -430,26 +433,26 @@ $fieldset->addField('new_category_parent', 'text', array(
 
 **Acceptable PHP file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 public function getSelectorOptions()
 {
     return $selectorOptions;
 }
 ...
-{% endhighlight %}
+```
 
 **Acceptable PHTML template**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 <div data-mage-init="{treeSuggest: [<?php echo $this->getSelectorOptions(); ?>]}"></div>
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHP file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 ...
 public function getAfterElementHtml()
 {
@@ -458,12 +461,12 @@ public function getAfterElementHtml()
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 </script>
 ...
-{% endhighlight %}
+```
 
 **Unacceptable PHTML template**
-{% highlight php startinline=true %}
+```php?start_inline=1
 <?php echo $this->getAfterElementHtml(); ?>
-{% endhighlight %}
+```
 
 ### You must not hard-code HTML markup (used in the `<body>` tag) in PHP classes
 <ul>
@@ -471,7 +474,9 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <li>Reduces the number of files to be modified.</li></ul>
 
 **Acceptable PHP file**
-<pre>
+
+```php?start_inline=1
+...
 public function getAttributeName($element)
 {
     return ($element->getExtType() === 'multiple') ? $element->getId() . '_checkbox' : NULL;
@@ -481,11 +486,12 @@ public function getAttributeId($element)
 {
     return $element->getId();
 }
-</pre>
+...
+```
 
 **Acceptable PHTML template**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 <span class="attribute-change-checkbox">
 <label>
    <input type="checkbox"
@@ -495,24 +501,23 @@ public function getAttributeId($element)
 </label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
-
-{% endhighlight %}
+```
 
 **Unacceptable PHP file**
 
-{%highlight php%}
+```php?start_inline=1
 ...
- public function getCheckbox($elementName){
+public function getCheckbox($elementName){
     $elementNameTag = $this->getAttributeName($elementName) ? 'name="' . $this->getAttributeName($elementName) . '"' : NULL;
     $tpl = "<input type=\"checkbox\" {$elementNameTag} data-mage-init=\"{customToggleWidget: [elementSelector: \"input[name='someCustomName']\"]}\" />";
     return $tpl;
 }
 ...
-{%endhighlight%}
+```
 
 **Unacceptable PHTML template**
 
-{%highlight php%}
+```php?start_inline=1
 <span class="attribute-change-checkbox">
 	<label>
 		<?php echo $this->getCheckbox($element)?>
@@ -520,5 +525,4 @@ public function getAttributeId($element)
 	</label>
 </span>
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
-
-{%endhighlight%}
+```

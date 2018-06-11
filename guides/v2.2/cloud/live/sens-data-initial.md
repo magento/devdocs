@@ -164,7 +164,7 @@ If you need to modify any of these settings and update `config.php`, you will ne
 
 To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.
 
-For an overvidew, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+For an overview, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 For this example, we'll modify static file optimization settings and add a new setting for JavaScript.
 

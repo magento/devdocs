@@ -7,8 +7,8 @@ menu_order: 25
 version: 2.1
 github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_practice.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 <h2 id="practice_overview">Overview</h2>
@@ -37,7 +37,7 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 <br>
 <img src="{{ site.baseurl }}/common/images/fdg_js_pr1.png" alt="Page source search result">
 </li>
-<li>View that it is output by <code>gallery.js</code>.
+<li>View that it is output by <a href="{{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>.
 
 </li>
 </ol>
@@ -93,7 +93,7 @@ The high level steps for this task are the following:
 
 Let's look at each step in more detail.
 <h3>Step 1: Define what is the default implementation</h3>
-Using the approach described in the previous section, OrangeCo defines that the product images are displayed by `gallery.js`, and the configuration path for it is `mage/gallery`.
+Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <a href="{{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>, and the configuration path for it is `mage/gallery`.
 
 <h3>Step 2: Add the custom script to the file system</h3>
 

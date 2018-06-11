@@ -210,7 +210,7 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Store Admin Username</td>
-        <td>Enter a user name for the Magento Admin, the management application for your stores.</td>
+        <td>Enter a username for the Magento Admin, the management application for your stores.</td>
     </tr>
     <tr>
         <td>Store Admin Password</td>
@@ -240,7 +240,7 @@ To provide you more control over your Magento installation, we enable you to cho
         </tr>
     <tr>
         <td>Store Admin Username</td>
-        <td>Enter a user name for the Magento Admin, the management application for your stores.</td>
+        <td>Enter a username for the Magento Admin, the management application for your stores.</td>
     </tr>
     <tr>
         <td>Store Admin Password</td>
