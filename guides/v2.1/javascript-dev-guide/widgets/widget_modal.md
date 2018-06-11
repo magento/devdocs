@@ -7,8 +7,8 @@ menu_title: Modal widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_modal.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
 <h2 id="modal_overview">Overview</h2>

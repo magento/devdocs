@@ -165,7 +165,7 @@ The following figure shows the technologies used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
-{{site.data.var.ee}} can scale seamlessly from the smallest Pro12 cluster to the largest Pro120 cluster.
+{{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
 -   Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
 -   Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
 

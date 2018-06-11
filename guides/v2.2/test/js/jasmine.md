@@ -58,7 +58,7 @@ Learn more in [Deploy static view files].
 
 ## Run tests
 
-`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in in the Magento root directory:
+`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in the Magento root directory:
 
 ```bash
 grunt spec:<THEME>

@@ -245,5 +245,5 @@ define(
 {%endhighlight js%}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/howdoi/clean_static_cache.html). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
+For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins go to [JS Mixins](http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html).
 </div>
