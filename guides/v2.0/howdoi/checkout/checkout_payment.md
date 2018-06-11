@@ -26,8 +26,6 @@ To implement a payment method rendering in checkout, you need to take the follow
 3. [Create a template for the payment method renderer.](#template)
 4. [Declare the new payment in the checkout page layout.](#layout)
 
-All the steps are described further.
-
 ## Step 1: Create the .js component file {#create}
 
 Your payment method renderer must be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html).
@@ -45,44 +43,44 @@ Usually, your component will extend the default payment method component (defaul
          <th>Description</th>
       </tr>
       <tr class="even">
-         <td>getCode():string</td>
+         <td><code>getCode():string</code></td>
          <td>Returns the code of the payment method</td>
       </tr>
       <tr class="odd">
-         <td>getData():object</td>
+         <td><code>getData():object</td>
          <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field.</td>
       </tr>
       <tr class="even">
-         <td>placeOrder():bool</td>
+         <td><code>placeOrder():bool</code></td>
          <td>Places an order if all validations passed.</td>
       </tr>
       <tr class="odd">
-         <td>selectPaymentMethod():bool</td>
+         <td><code>selectPaymentMethod():bool</code></td>
          <td> Adds information about the payment method selected by the user to the Quote JS object.</td>
       </tr>
       <tr class="even">
-         <td>isChecked():string</td>
+         <td><code>isChecked():string</code></td>
          <td> Returns the code of the selected payment method.</td>
       </tr>
       <tr class="odd">
-         <td>isRadioButtonVisible():bool</td>
+         <td><code>isRadioButtonVisible():bool</code></td>
          <td> Returns <code>true</code> if only one payment method is available.</td>
       </tr>
       <tr class="even">
-         <td>getTitle():string</td>
+         <td><code>getTitle():string</code></td>
          <td>Returns the payment method title.</td>
       </tr>
       <tr class="odd">
-         <td>validate():bool</td>
+         <td><code>validate():bool</code></td>
          <td> Used in the <code>placeOrder()</code> method. So you can override validate() in your module, and this validation will be performed in the scope of <code>placeOrder()</code>.</td>
       </tr>
       <tr class="odd">
-         <td>getBillingAddressFormName():string</td>
+         <td><code>getBillingAddressFormName():string</code></td>
          <td>Gets the unique billing address name.</td>
       </tr>
 
       <tr class="even">
-         <td>disposeSubscriptions()</td>
+         <td><code>disposeSubscriptions()</code></td>
          <td>Terminates the object's subscription.</td>
       </tr>
    </tbody>
@@ -91,7 +89,7 @@ Usually, your component will extend the default payment method component (defaul
 
 The general view of the payment method renderer is the following:
 
-{%highlight js%}
+```js
 define(
     [
         'Magento_Checkout/js/view/payment/default'
@@ -106,7 +104,7 @@ define(
         });
     }
 );
-{%endhighlight%}
+```
 
 If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{ site.mage2000url }}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
 
@@ -117,43 +115,43 @@ If your payment method requires credit cards information, you might use the Mage
       <th>Description</th>
    </tr>
          <tr class="even">
-          <td>getData():object</td>
+          <td><code>getData():object</code></td>
           <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field. Adds credit card data (type, issue date, number, CVV).</td>
      </tr>
    <tr class="odd">
-      <td>getCcAvailableTypes():array</td>
+      <td><code>getCcAvailableTypes():array</code></td>
       <td> Returns the list of available credit card types.</td>
    </tr>
    <tr class="even">
-      <td>getIcons()</td>
+      <td><code>getIcons()</code></td>
       <td>Returns links to the images for available credit card types.</td>
    </tr>
    <tr class="odd">
-      <td>getCcMonths()</td>
+      <td><code>getCcMonths()</code></td>
       <td> Retrieves the month of the credit card expiration date.</td>
    </tr>
    <tr class="even">
-      <td>getCcYears()</td>
+      <td><code>getCcYears()</code></td>
       <td> Retrieves the year of the credit card expiration date.</td>
    </tr>
    <tr class="odd">
-      <td>hasVerification():bool</td>
+      <td><code>hasVerification():bool</code></td>
       <td> A flag that shows if the credit card CVV number is required for this payment. </td>
    </tr>
    <tr class="even">
-      <td>hasSsCardType():bool</td>
+      <td><code>hasSsCardType():bool</code></td>
       <td>Returns <code>true</code> if the Solo and Switch (Maestro) card types are available.</td>
    </tr>
    <tr class="odd">
-      <td>getCvvImageUrl():string</td>
+      <td><code>getCvvImageUrl():string</code></td>
       <td> Retrieves the CVV tooltip image URL.</td>
    </tr>
    <tr class="odd">
-      <td>getCvvImageHtml():string</td>
+      <td><code>getCvvImageHtml():string</code></td>
       <td> Retrieves the CVV tooltip image HTML.</td>
    </tr>
    <tr class="even">
-      <td>getSsStartYears()</td>
+      <td><code>getSsStartYears()</code></td>
       <td>Solo or Switch (Maestro) card start year.</td>
    </tr>
 </table>
@@ -166,7 +164,7 @@ In order to get access to the system configuration, your payment method or a gro
 
 A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
-``` php?start_inline=1
+```php?start_inline=1
 class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
 {
 ...
@@ -182,7 +180,7 @@ class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigPro
 
 A sample DI configuration file of a custom module `<your_module_dir>/etc/frontend/di.xml`:
 
-{%highlight xml%}
+```xml
 ...
 <type name="Magento\Checkout\Modерel\CompositeConfigProvider">
     <arguments>
@@ -194,7 +192,7 @@ A sample DI configuration file of a custom module `<your_module_dir>/etc/fronten
     </arguments>
 ...
 </type>
-{%endhighlight%}
+```
 
 ### Add other payment-related features {#payment-features}
 You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the [checkout page layout file correspondingly](#layout).
@@ -204,7 +202,7 @@ In you custom module directory create the `.js` UI component that registers the 
 
 The file content must be similar to the following:
 
-{%highlight js%}
+```js
 define(
     [
         'uiComponent',
@@ -226,7 +224,7 @@ define(
         return Component.extend({});
     }
 );
-{%endhighlight%}
+```
 
 If your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} adds several payment methods, you can register all payment methods renderers in one file.
 
@@ -241,7 +239,7 @@ The template for rendering the Authorize.Net payment method in checkout is [`<Ma
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -310,6 +308,6 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
         </referenceBlock>
     </body>
 </page>
-{%endhighlight %}
+```
 
 For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml]({{ site.mage2000url }}app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)

@@ -36,7 +36,7 @@ Create a new `<your_template>.html` template in the following directory: `<your_
 
 Example of a field template:
 
-{%highlight html%}
+```xml
 <!-- input field element and corresponding bindings -->
 <input class="input-text" type="text" data-bind="
     value: value,
@@ -51,10 +51,10 @@ Example of a field template:
     }" />
 <!-- additional content -->
 <img src="%path_to_image%" alt="image_de"/>
-{%endhighlight%}
+```
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>The original templates of all form field types are located in the <code>app/code/Magento/Ui/view/base/web/templates/form/element</code> directory.</p>
+The original templates of all form field types are located in the `app/code/Magento/Ui/view/base/web/templates/form/element` directory.
 </div>
 
 ## Step 2: Specify the new template in layout {#layout}
@@ -62,7 +62,7 @@ Example of a field template:
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file.
 In this file, add content similar to the following:
 
-{% highlight xml%}
+```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
@@ -104,7 +104,7 @@ In this file, add content similar to the following:
         </referenceBlock>
     </body>
 </page>
-{%endhighlight%}
+```
 
 ## Step 3: Clear files after modification {#modify}
 

@@ -1,9 +1,11 @@
 ---
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add custom input mask for ZIP code
 menu_title: Add custom input mask for ZIP code
 menu_order: 6
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_zip.md
 functional_areas:
@@ -25,8 +27,7 @@ To add custom ZIP code input masks or change the default ones, create a new `zip
 
 The content of the file should be similar to the following sample:
 
-{%highlight xml%}
-
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
@@ -40,7 +41,7 @@ The content of the file should be similar to the following sample:
     	</codes>
 	</zip>
 </config>
-{%endhighlight%}
+```
 
 ## Modify default values in existing mask {#modify}
 
@@ -52,7 +53,7 @@ To change (override the default value) the existing mask:
 
 For example, in the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` the following mask is set for France:
 
-{%highlight xml%}
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
@@ -64,10 +65,11 @@ For example, in the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` t
     </zip>
 ...
 </config>
-{%endhighlight%}
+```
 
 To change this mask, add the following code in your `zip_codes.xml`:
-{%highlight xml%}
+
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
@@ -80,7 +82,7 @@ To change this mask, add the following code in your `zip_codes.xml`:
     </zip>
 ...
 </config>
-{%endhighlight%}
+```
 
 ## Remove a mask {#remove}
 To remove a mask, in your `zip_codes.xml` add the corresponding node and set `active` attribute of `<code/>` to `false`.

@@ -21,12 +21,9 @@ To add new shipping carrier validations to the Magento checkout, do the followin
 3. [Register validator and rules in the validators pool](#register).
 4. [Add the the validators and rules to the checkout layout](#layout).
 
-More details about each step follow.
-
 <div class="bs-callout bs-callout-info" id="info">
 During checkout, when a customer fills the shipping address form, shipping carrier validations trigger the shipping rates request. That is why adding shipping carrier validations for your custom shipping method is mandatory.
 </div>
-
 
 ## Step 1: Create validation rules {#rules}
 Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator).
@@ -41,8 +38,9 @@ The script must implement the `getRules()` method.
 
 For example, the FedEx shipping method requires only two fields of the shipping address to be filled: **Country** and **Zip Code**. This is how the validation rules for FedEx look:
 
-    <Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js
-{%highlight js%}
+> _<Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js_mixins_
+
+```js
 define(
     [],
     function () {
@@ -61,7 +59,7 @@ define(
         };
     }
 )
-{% endhighlight%}
+```
 
 Triggering the shipping rates request correlates directly with the fields you specify in the validation rules: the request is triggered once all these fields are populated and pass the validation.
 
@@ -71,7 +69,7 @@ Create the validator `.js` script that checks if the fields defined by the valid
 
 A sample validator script follows:
 
-{%highlight js%}
+```js
 define(
     [
         'jquery',
@@ -98,7 +96,7 @@ define(
         };
     }
 );
-{%endhighlight%}
+```
 
 You can use this sample for your validator, but you need to specify your validation rules script instead of `./shipping-rates-validation-rules` in the list of used modules.
 
@@ -107,7 +105,7 @@ You can use this sample for your validator, but you need to specify your validat
 Your custom validator must be added to the pool of validators. To do this, in the `<your_module_dir>/view/frontend/web/js/view` directory create a new `<your-validation>.js` file with the following content (having replaced the `<your_validator>` and `<your_validation_rules>` with your values):
 
 
-{%highlight js%}
+```js
 define(
     [
         'uiComponent',
@@ -129,7 +127,7 @@ define(
         return Component;
     }
 );
-{%endhighlight%}
+```
 
 
 ## Step 4: Add the validation to the checkout layout {#layout}
@@ -137,8 +135,10 @@ define(
 The last step is specifying the script you created on the previous step in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file.
+
 In this file, add the following:
-{% highlight xml%}
+
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -174,4 +174,4 @@ In this file, add the following:
         </referenceBlock>
     </body>
 </page>
-{%endhighlight%}
+```

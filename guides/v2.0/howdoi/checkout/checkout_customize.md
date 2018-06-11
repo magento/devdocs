@@ -22,20 +22,20 @@ To change the `.js` implementation and template used for components rendering, y
 1. In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. (For your checkout customization to be applied correctly, your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} should depend on the Magento_Checkout module.)
 2. In this file, add the following:
 
-{%highlight xml%}
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-        <referenceBlock name="checkout.root">
-                <arguments>
-                    <argument name="jsLayout" xsi:type="array">
-                        <!-- Your customization will be here -->
-                        ...
-                    </argument>
-                </arguments>
-        </referenceBlock>
-    </body>
-</page>
-{%endhighlight xml%}
+    ```xml
+    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <body>
+            <referenceBlock name="checkout.root">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <!-- Your customization will be here -->
+                            ...
+                        </argument>
+                    </arguments>
+            </referenceBlock>
+        </body>
+    </page>
+    ```
 
 3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parent nodes, as you are not going to change them.
 
@@ -48,7 +48,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 `<Magento_Shipping_module_dir>/view/frontend/layout/checkout_index_index.xml` looks like following:
 
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -84,8 +84,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
         </referenceBlock>
     </body>
 </page>
-
-{%endhighlight xml%}
+```
 
 
 ## Add the new component to the checkout page layout {#add}
@@ -98,13 +97,13 @@ Make sure that you declare a component so that it is rendered correctly by the p
 ## Disable a component {#disable}
 To disable the component in your `checkout_index_index.xml` use the following instructions:
 
-{%highlight xml%}
+```xml
 <item name="%the_component_to_be_disabled%" xsi:type="array">
     <item name="config" xsi:type="array">
         <item name="componentDisabled" xsi:type="boolean">true</item>
     </item>
 </item>
-{%endhighlight xml%}
+```
 
 ## Remove a component {#remove}
 
@@ -112,12 +111,12 @@ To remove a component from layout rendering, you need to create a [plugin]({{ pa
 
 The following sample is an example of the around method removing a component:
 
-{%highlight php%}
+```php
 unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_node%]); //%path_to_target_node% is the path to the component's node in checkout_index_index.xml
 return $jsLayout;
-{%endhighlight%}
+```
 
-(If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
+If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
 
 <div class="bs-callout bs-callout-info">
 Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.

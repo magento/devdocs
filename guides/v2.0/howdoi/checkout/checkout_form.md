@@ -26,7 +26,9 @@ Magento provides the ability to add a custom form to any of the checkout steps: 
 
 [Set Magento to developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) when performing customizations and debugging.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module.
+
+Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Step 1: Create the JS implementation of the form UI component {#component}
 
@@ -34,7 +36,7 @@ In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `.js`
 
 Example of extending the default form component:
 
-{%highlight js%}
+```js
 /*global define*/
 define([
     'Magento_Ui/js/form/form'
@@ -67,7 +69,7 @@ define([
         }
     });
 });
-{%endhighlight%}
+```
 
 
 ## Step 2: Create the HTML template {#template}
@@ -75,8 +77,7 @@ Add the `knockout.js` HTML template for the form component under the `<your_modu
 
 Example of adding the template:
 
-{%highlight html%}
-
+```html
 <div>
     <form id="custom-checkout-form" class="form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}">
         <fieldset class="fieldset">
@@ -93,8 +94,7 @@ Example of adding the template:
         </button>
     </form>
 </div>
-
-{%endhighlight%}
+```
 
 ### Clear files after modification {#modify}
 
@@ -114,7 +114,7 @@ Any content added here is rendered before the Shipping Address form on the Shipp
 
 It should be similar to the following:
 
-{%highlight xml%}
+```xml
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
@@ -149,7 +149,7 @@ It should be similar to the following:
         </referenceBlock>
     </body>
 </page>
-{%endhighlight%}
+```
 
 ### Static forms {#static_form}
 
@@ -160,7 +160,7 @@ The fields of static forms are not generated dynamically, so they can be defined
 The following code sample shows configuration of the form that contains four fields: text input, select, checkbox, and date. This form uses checkout data provider (`checkoutProvider`) that is introduced in the `Magento_Checkout` module:
 
 
-{%highlight xml%}
+```xml
 <item name="custom-checkout-form-container" xsi:type="array">
     <item name="component" xsi:type="string">%your_module_dir%/js/view/custom-checkout-form</item>
     <item name="provider" xsi:type="string">checkoutProvider</item>
@@ -251,7 +251,7 @@ The following code sample shows configuration of the form that contains four fie
         </item>
     </item>
 </item>
-{%endhighlight%}
+```
 
 ### Dynamically defined forms {#dynamic_form}
 
@@ -261,7 +261,7 @@ A plugin can add custom fields definitions to layout at run-time. The format of 
 
 For example:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 $textField = [
     'component' => 'Magento_Ui/js/form/element/abstract',
     'config' => [
@@ -277,7 +277,7 @@ $textField = [
         'required-entry' => true,
     ],
 ];
-{%endhighlight%}
+```
 
 ## Illustration
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:

@@ -21,7 +21,6 @@ Out of the box, Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde 
 
 On the Shipping Information checkout step Magento renders all addresses previously saved by a shopper. The shopper can then select the one to be used for shipping by clicking it. The default address renderers cover the majority of use cases, but Magento provides way to register custom address renderer for a new address type.
 
-
 To implement shipping address rendering in checkout, you need to take the following steps:
 
 1. [Create the JS renderer component (shipping address renderer)](#create).
@@ -31,9 +30,6 @@ To implement shipping address rendering in checkout, you need to take the follow
 4. [Create the JS component registering the processors](#register).
 4. [Declare the new components in the checkout page layout.](#layout).
 5. [Add the shipping address renderer to the "Ship-To" block (optional)](#ship_to).
-
-All the steps are described further.
-
 
 ## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 
@@ -45,7 +41,7 @@ In your custom module directory, create the component's `.js` file (shipping add
 
 The general view of the shipping address renderer is the following:
 
-{%highlight js%}
+```js
 define([
     'ko',
     'uiComponent',
@@ -81,7 +77,7 @@ define([
 
     });
 });
-{%endhighlight%}
+```
 
 ## Step 2: Create a template for the shipping address renderer {#template}
 
@@ -102,7 +98,7 @@ Here you need to specify the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f
 
 The following is a sample of the shipping rate processor code:
 
-{%highlight js%}
+```js
 define(
     [
         'Magento_Checkout/js/model/quote',
@@ -147,8 +143,7 @@ define(
         };
     }
 );
-
-{%endhighlight%}
+```
 
 ## Step 4: Create the JS model for the shipping address saving processor {#save}
 
@@ -156,10 +151,9 @@ This processor is responsible for sending the shipping address and the selected 
 
 In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory.
 
-
 Following is a sample of the shipping rate processor code:
 
-{%highlight js%}
+```js
 define(
     [
         'Magento_Checkout/js/model/quote',
@@ -205,7 +199,7 @@ define(
         }
     }
 );
-{%endhighlight%}
+```
 
 ## Step 5: Create the JS component registering the processors {#register}
 
@@ -213,7 +207,7 @@ In your custom module directory, create the `.js` UI component that registers th
 
 The file content must be similar to the following:
 
-{%highlight js%}
+```js
 define(
     [
         'uiComponent',
@@ -241,13 +235,13 @@ define(
         return Component.extend({});
     }
 );
-{%endhighlight%}
+```
 
 ## Step 6: Declare the new components in the checkout page layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
 
-{%highlight xml%}
+```js
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -286,7 +280,7 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
         </referenceBlock>
     </body>
 </page>
-{%endhighlight%}
+```
 
 The `address_type` you need to specify in the layout, is the value you set in the JS model of your custom address type.
 
@@ -306,7 +300,7 @@ You can use the code from the default template: [app/code/Magento/Checkout/view/
 
 In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file add the following:
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
@@ -340,4 +334,4 @@ In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file a
         </referenceContainer>
     </body>
 </page>
-{%endhighlight%}
+```

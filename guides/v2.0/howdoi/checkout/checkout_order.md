@@ -28,7 +28,7 @@ In your custom module directory, create a `.js` file implementing the validator.
 
 Following is a sample of the validator `.js` file. It must necessarily implement the `validate()` method:
 
-{%highlight js%}
+```js
 define(
     [],
     function () {
@@ -46,13 +46,13 @@ define(
         }
     }
 );
-{%endhighlight%}
+```
 
 ## Step 2: Add validator to the validators pool {#pool}
 
 Your custom validator must be added to the pool of "additional validators". In the `<your_module_dir>/view/frontend/web/js/view` directory, create a new `<your-validation>.js` file with the following content:
 
-{%highlight js%}
+```js
 define(
     [
         'uiComponent',
@@ -65,14 +65,15 @@ define(
         return Component.extend({});
     }
 );
-{%endhighlight%}
+```
 
 ## Step 3: Declare the validation in the checkout layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file.
 
 In this file, add the following:
-{%highlight xml%}
+
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
 <referenceBlock name="checkout.root">
@@ -110,4 +111,4 @@ In this file, add the following:
 </referenceBlock>
     </body>
 </page>
-{%endhighlight%}
+```

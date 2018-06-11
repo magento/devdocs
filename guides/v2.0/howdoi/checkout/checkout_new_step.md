@@ -34,22 +34,19 @@ To create the view part of the new checkout step:
 1. [Create the `.js` file implementing the view model](#component).
 1. [Create an `.html` template for the component](#html-template).
 
-Each step is described in details in the following paragraphs.
-
 ### Add the JavaScript file implementing the new step {#component}
 
 A new checkout step must be implemented as UI component. That is, its {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation must be a JavaScript module.
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="{{ page.baseurl }}/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+`<your_module_dir>` notation stands for the path to your module directory from the root directory. Usually it will be one of the following: `app/code/<YourVendor>/<YourModule>` or `vendor/<yourvendor>/module-<module>-<name>`. For more details see [Conventional notations for paths to modules and themes]({{ page.baseurl }}/frontend-dev-guide/conventions.html)
 </div>
 
 A sample `my-step-view.js` with comments follows:
 
-{%highlight js%}
-
+```js
 define(
     [
         'ko',
@@ -127,8 +124,7 @@ define(
         });
     }
 );
-
-{%endhighlight js%}
+```
 
 
 ### Add the .html template {#html-template}
@@ -136,8 +132,8 @@ define(
 In the module directory, add the `.html` template for the component. It must be located under the `<your_module_dir>/view/frontend/web/template` directory.
 
 A sample `mystep.html` follows:
-{%highlight html%}
 
+```html
 <!--The 'step_code' value from the .js file should be used-->
 <li id="step_code" data-bind="fadeVisible: isVisible">
 <div class="step-title" data-bind="i18n: 'Step Title'" data-role="title"></div>
@@ -156,7 +152,7 @@ A sample `mystep.html` follows:
         </form>
     </div>
 </li>
-{%endhighlight html%}
+```
 
 ## Step 2: Add your step to the Checkout page layout {#checkout}
 
@@ -166,7 +162,7 @@ So you need to add an [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/
 
 A sample `checkout_index_index.xml` follows:
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -198,7 +194,7 @@ A sample `checkout_index_index.xml` follows:
         </referenceBlock>
     </body>
 </page>
-{%endhighlight xml%}
+```
 
 ## Step 3: Create mixins for payment and shipping steps (optional) {#create-mixin}
 
@@ -208,45 +204,45 @@ To create a mixin:
 
 1. Create a `Vendor/Module/view/base/requirejs-config.js` file with these contents;
 
-{%highlight js%}
-var config = {
-'config': {
-    'mixins': {
-        'Magento_Checkout/js/view/shipping': {
-            'Vendor_Module/js/view/shipping-payment-mixin': true
-        },
-        'Magento_Checkout/js/view/payment': {
-            'Vendor_Module/js/view/shipping-payment-mixin': true
+    ```js
+    var config = {
+    'config': {
+        'mixins': {
+            'Magento_Checkout/js/view/shipping': {
+                'Vendor_Module/js/view/shipping-payment-mixin': true
+            },
+            'Magento_Checkout/js/view/payment': {
+                'Vendor_Module/js/view/shipping-payment-mixin': true
+            }
         }
     }
-}
-{%endhighlight js%}
+    ```
 
 2. Create the mixin. We'll use the same mixin for both payment and shipping:
 
-{%highlight js%}
-define(
-    [
-        'ko'
-    ], function (ko) {
-        'use strict';
+    ```js
+    define(
+        [
+            'ko'
+        ], function (ko) {
+            'use strict';
 
-        var mixin = {
+            var mixin = {
 
-            initialize: function () {
-                this.visible = ko.observable(false); // set visible to be initially false to have your step show first
-                this._super();
+                initialize: function () {
+                    this.visible = ko.observable(false); // set visible to be initially false to have your step show first
+                    this._super();
 
-                return this;
-            }
-        };
+                    return this;
+                }
+            };
 
-        return function (target) {
-            return target.extend(mixin);
-        };
-    }
-);
-{%endhighlight js%}
+            return function (target) {
+                return target.extend(mixin);
+            };
+        }
+    );
+    ```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins, see [JS Mixins]({{ page.baseurl }}/v2.1/javascript-dev-guide/javascript/js_mixins.html).
