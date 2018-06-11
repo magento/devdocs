@@ -15,9 +15,6 @@ functional_areas:
 
 ## v2002.0.12
 
-{: .bs-callout .bs-callout-info}
-The Magento [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/dist){:target="\_blank"} is open to the public!
-
 #### New Features
 
 -  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration rom the Cloud tools `ece-tools` repository.
@@ -40,7 +37,7 @@ The Magento [ece-tools repository](https://github.com/magento/ece-tools/tree/dev
 -  Added the following new [**Environment variables**]({{ page.baseurl }}/cloud/env/variables-intro.html):
     - <!-- MAGECLOUD-1501 -->Now you can define multiple locales for each theme using the new [SCD_MATRIX]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) environment variable, which reduces the amount of theme files to deploy.
     -  <!-- MAGECLOUD-2047 --> Added the [DATABASE_CONFIGURATION]({{ page.baseurl }}/cloud/env/variables-deploy.html#database_configuration) environment variable to customize your database connections for deployment.
-    -  <!-- MAGECLOUD-2129 -->The new [MIN_LOGGING_LEVEL]({{ page.baseurl }}/cloud/env/log-handlers.html#min_logging_level) variable overrides the minimum logging level for all output streams without making changes to the code.
+    -  <!-- MAGECLOUD-2129 -->The new [MIN_LOGGING_LEVEL]({{ page.baseurl }}/cloud/env/variables-intro.html#min-logging-level) variable overrides the minimum logging level for all output streams without making changes to the code.
 
 #### Fixed Issues
 
