@@ -1,19 +1,16 @@
 ---
 group: extension-dev-guide
-subgroup: 99_Module Development
 title: Routing
-menu_title: Routing
-menu_order: 11
 version: 2.1
 github_link: extension-dev-guide/routing.md
-redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
 In the Magento system, a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} has the following format:
 
 `<area front name>/<VendorName>/<ModuleName>/<controller name>/<action name>`
 
-`<area front name>` indicates it is at the "front" of the URL. (The _area name_ is used internally to refer to the area in configuration files. Magento provides areas such as `frontend` for the storefront and `adminhtml` for the administration area.)
+`<area front name>` indicates it is at the "front" of the URL. (The _area name_ is used internally to refer to the area in configuration files.
+Magento provides areas such as `frontend` for the storefront and `adminhtml` for the administration area.)
 
 To assign a URL to a corresponding controller and action, use the router class.
 
@@ -21,21 +18,22 @@ Router has an algorithm to find a matching controller, determined by request.
 
 Then, according to a route rule, controller is assigned to URL. Use the `routes.xml` file to review or change the route rules.
 
-<h3>Routers</h3>
+## Routers
 
-The routers information for the modules is described in the `routerList` parameter of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your `di.xml`.
+The routers information for the modules is described in the `routerList` parameter of [Magento\Framework\App\RouterList] type in your `di.xml`.
 
-Each area has its own set of the routers. The `Magento\Framework\App\RouterList` model is injected into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.
+Each area has its own set of the routers. The `Magento\Framework\App\RouterList` model is injected into [FrontController].
 
 You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
 (such as, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} router, default router, and so on).
 However, you must not customize the routers that are used in Magento core modules.
 
-<h3>Routes</h3>
+## Routes
 
 Configurations of the routes are stored in `routes.xml` in the scopes area.
 
-Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} routers use routes. Typically, the configuration for a route is in the following format:
+Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} routers use routes.
+Typically, the configuration for a route is in the following format:
 
 {% highlight XML %}
 <config>
@@ -80,28 +78,39 @@ class Create extends \Magento\Framework\App\Action\Action
 </pre>
 
 
-<h3>Routing processing</h3>
+## Routing processing
 
 Routing is processed in the following way:
 
 * Modules provide information on their routers through the `routerList` parameter of `Magento\Framework\App\RouterList` type in `di.xml`.
 * `FrontController` obtains active routers and checks whether a request can be processed.
 * If a request cannot be processed by any router, the default router is used.
-* If a request can be processed by a router, the router finds a route with matching `frontName` and looks through corresponding modules. If a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has matching controller and action names, a router instantiates this controller.
+* If a request can be processed by a router, the router finds a route with matching `frontName` and looks through corresponding modules.
+  If a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has matching controller and action names, a router instantiates this controller.
 
 The `dispatch()` method of the `Magento\Framework\App\Action\Action` class requests an instance and returns its response.
 
-For this class, the `Magento\Framework\App\ActionInterface` processes the requests through its actions. Also, the following classes participate in processing the requests:
+For this class, the `Magento\Framework\App\ActionInterface` processes the requests through its actions.
+Also, the following classes participate in processing the requests:
 
-* The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.
-* The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the `di.xml` file
-* The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area's front names
+* The [Magento\Framework\App\State]  class provides information on the state of the application, that is, current mode, installation date, and so on.
+* The [Magento\Framework\App\Arealist] class serves to configure the application areas through the `di.xml` file
+* The [Magento\App\Area\FrontNameResolverInterface] class resolves the dynamic area's front names
 
-<h2>Default router</h2>
+## Default router
 
-If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\Framework\App\Router\DefaultRouter</a> default router lists handlers for processing such request.
+If a request cannot be processed by any router, the [Magento\Framework\App\Router\DefaultRouter] default router lists handlers for processing such request.
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.
+[Magento\App\Router\NoRouteHandlerList] contains the list of handlers.
 
-#### Related information
-See [The Route Config Kata](http://vinaikopp.com/2016/03/21/05_the_route_config_kata){:target="_blank"} by Magento contributor [Vinai Kopp](http://vinaikopp.com/blog/list).
+## Related information
+See [The Route Config Kata]{:target="_blank"} by Magento contributor [Vinai Kopp].
+
+[FrontController]: {{ site.mage2000url }}lib/internal/Magento/Framework/App/FrontController.php
+[Magento\Framework\App\State]: {{ site.mage2000url }}lib/internal/Magento/Framework/App/State.php
+[Magento\Framework\App\Arealist]: {{ site.mage2000url }}lib/internal/Magento/Framework/App/AreaList.php
+[Magento\App\Area\FrontNameResolverInterface]: {{ site.mage2000url }}lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php
+[Magento\App\Router\NoRouteHandlerList]: {{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php
+[Magento\Framework\App\Router\DefaultRouter]: {{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php
+[The Route Config Kata]: http://vinaikopp.com/2016/03/21/05_the_route_config_kata
+[Vinai Kopp]: http://vinaikopp.com/blog/list
