@@ -204,9 +204,8 @@ Create a mixin as follows:
 1. Create a `Vendor/Module/view/base/requirejs-config.js` file with these contents;
 
 {%highlight js%}
-
-    var config = {
-    'config': {
+var config = {
+'config': {
     'mixins': {
         'Magento_Checkout/js/view/shipping': {
             'Vendor_Module/js/view/shipping-payment-mixin': true
@@ -215,14 +214,14 @@ Create a mixin as follows:
             'Vendor_Module/js/view/shipping-payment-mixin': true
         }
     }
-    }
+}
 {%endhighlight js%}
 
 2. Create the mixin. We'll use the same mixin for both payment and shipping:
 
 {%highlight js%}
 
-    define(
+        define(
     [
         'ko'
     ], function (ko) {
