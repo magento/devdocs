@@ -220,10 +220,12 @@ var config = {
 2. Create the mixin. We'll use the same mixin for both payment and shipping:
 
 {%highlight js%}
-define(
+
+    define(
     [
         'ko'
     ], function (ko) {
+
         'use strict';
 
         var mixin = {
