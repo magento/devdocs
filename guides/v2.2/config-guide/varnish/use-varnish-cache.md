@@ -8,8 +8,8 @@ menu_node:
 version: 2.2
 github_link: config-guide/varnish/use-varnish-cache.md
 redirect_from:
-  - guides/v2.0/config-guide/varnish/config-use-varnish.html
-  - guides/v2.1/config-guide/varnish/config-use-varnish.html
+ - /guides/v2.0/config-guide/varnish/config-use-varnish.html
+ - /guides/v2.1/config-guide/varnish/config-use-varnish.html
 functional_areas:
   - Configuration
   - System

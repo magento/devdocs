@@ -35,3 +35,4 @@
 7.  Create a [snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) of the environment as a backup:
 
         magento-cloud snapshot:create -e <environment ID>
+</div>

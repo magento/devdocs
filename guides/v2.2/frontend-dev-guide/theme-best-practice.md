@@ -1,1 +1,1 @@
-../../v2.0/frontend-dev-guide/theme-best-practice.md
+../../v2.1/frontend-dev-guide/theme-best-practice.md

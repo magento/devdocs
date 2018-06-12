@@ -29,7 +29,7 @@ Magento defines the following default health check:
     .interval = 5s;
     .window = 10;
     .threshold = 5;
-    }
+}
 {% endhighlight %}
 
 Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} is considered unhealthy.
@@ -83,9 +83,8 @@ Finally, all Magento instances must be in production mode. Before Varnish starts
 
 Saint mode is not part of the main Varnish package. It is a separately-versioned vmod that must be downloaded and installed. As a result, you should re-compile Varnish from source, as described in the following articles:
 
-* [Installing Varnish 5.0](https://www.varnish-cache.org/docs/5.0/installation/install.html)
-* [Installing Varnish 4.1](https://www.varnish-cache.org/docs/4.1/installation/install.html)
-* [Installing Varnish 4.0](https://www.varnish-cache.org/docs/4.0/installation/install.html)
+* [Installing Varnish 5.1](https://varnish-cache.org/docs/5.1/installation/index.html)
+* [Installing Varnish 4.1](https://varnish-cache.org/docs/4.1/installation/install.html) (Stable)
 
 After you've recompiled, you can install the Saint mode {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. In general, follow these steps:
 
@@ -118,13 +117,13 @@ backend default1 {
     .host = "192.168.0.1";
     .port = "8080";
     .first_byte_timeout = 600s;
-        .probe = {
-            .url = "/pub/health_check.php";
-            .timeout = 2s;
-            .interval = 5s;
-            .window = 10;
-            .threshold = 5;
-        }
+    .probe = {
+        .url = "/pub/health_check.php";
+        .timeout = 2s;
+        .interval = 5s;
+        .window = 10;
+        .threshold = 5;
+    }
 }
 
 backend default2 {

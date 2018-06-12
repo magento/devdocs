@@ -1,1 +1,1 @@
-../../../v2.0/cloud/basic-information/cloud-fastly.md
+../../../v2.1/cloud/basic-information/cloud-fastly.md

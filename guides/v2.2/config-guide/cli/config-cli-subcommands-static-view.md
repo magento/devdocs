@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Deploy static view files
-menu_title: Deploy static view files
-menu_node:
-menu_order: 302
-level3_menu_node: level3child
-level3_subgroup: static_deploy
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 functional_areas:
@@ -37,7 +31,7 @@ You must write static view files to the Magento file system manually using the c
 <div class="bs-callout bs-callout-warning" markdown="1">
 _Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{ page.baseurl }}/howdoi/clean_static_cache.html) for more information.
+You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for more information.
 </div>
 
 ## Deploy static view files {#config-cli-subcommands-staticview}
@@ -54,7 +48,7 @@ To deploy static view files:
 
 Command options:
 
-	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] [-f|--force]
+	bin/magento setup:static-content:deploy [<languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-f|--force]
 
 The following table explains this command's parameters and values.
 

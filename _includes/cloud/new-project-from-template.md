@@ -24,3 +24,4 @@
 	![Your sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template2.png){:width="650px"}
 
 7. After the project deploys, **Success** displays next to the name of your project.
+</div>

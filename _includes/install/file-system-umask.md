@@ -29,3 +29,4 @@ To set `magento_umask`:
 
 		For example, `022`
 3.	Save your changes to `magento_umask` and exit the text editor.
+</div>

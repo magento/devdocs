@@ -6,7 +6,7 @@ menu_title: Create an integration
 menu_order: 1
 version: 2.0
 github_link: get-started/create-integration.md
-redirect_from: guides/v2.0/howdoi/webapi/integration.html
+redirect_from: /guides/v2.0/howdoi/webapi/integration.html
 
 ---
 

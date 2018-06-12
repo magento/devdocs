@@ -166,14 +166,15 @@ This section shows the change made to `config.php` when you change the default w
 After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
 
 ``` php
-      'general' =>
-      array (
+'general' =>
+    array (
         'locale' =>
         array (
-          'code' => 'en_US',
-          'timezone' => 'America/Chicago',
-          'weight_unit' => 'kgs',
-        ),
+            'code' => 'en_US',
+            'timezone' => 'America/Chicago',
+            'weight_unit' => 'kgs'
+        )
+    )
 ```
 
 ### Change several configuration settings
@@ -283,7 +284,7 @@ File permissions and ownership must be consistent across development, build, and
 
 *   All of the following:
 
-    *   Set up the same {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} user name on all systems
+    *   Set up the same {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} username on all systems
     *   Make sure the web server runs as the same user on all systems
     *   Make sure the Magento file system owner is in the web server group on all systems
 *   Change Magento file system permissions and ownership on each system as necessary using the following guidelines:

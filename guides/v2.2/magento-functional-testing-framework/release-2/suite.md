@@ -239,9 +239,9 @@ The element may contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### exclude {#exclude-tag}
 
-A set of filters to be used for excluding tests from the the suite.
+A set of filters to be used for excluding tests from the suite.
 
-There two types of behaviour:
+There two types of behavior:
 1. Applying filters to the included tests when the suite contains [`<include>`] filters.
 The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.
 2. Applying filter to all tests when the suite does not contain [`<include>`] filters.

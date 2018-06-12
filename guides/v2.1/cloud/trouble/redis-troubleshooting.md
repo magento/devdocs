@@ -24,7 +24,7 @@ Your Cloud systems and services have been updated to the latest Redis and PHP-Re
 
 * Use an Integration branch to add the code through your local.
 * Patch using the CLI command `composer update` in a terminal.
-* Push your code to deploy and test in an Intergration environment.
+* Push your code to deploy and test in an Integration environment.
 * After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -37,7 +37,7 @@ See the following instructions based on your {{site.data.var.ece}} version:
 * 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}/cloud/project/project-patch.html) the deployment in your Integration environment.
 * 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
 
-  If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update complees, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
+  If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update completes, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
 
   * 2.1.4: `magento/magento-cloud-configuration 101.4.5` or later
   * 2.1.5: `magento/magento-cloud-configuration 101.5.4` or later

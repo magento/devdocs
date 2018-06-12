@@ -50,7 +50,7 @@ php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
 ```
 
 #### Use the correct PHP interpreter
-On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, Buse the same version of PHP to run the unit tests you use to run Magento.
+On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, use the same version of PHP to run the unit tests you use to run Magento.
 
 Some examples follow:
 
