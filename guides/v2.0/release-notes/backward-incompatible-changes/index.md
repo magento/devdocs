@@ -113,7 +113,7 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
   </tr>
 </table>
 
-* Check boxes and radio buttons work as `on/off` fields.
+* Checkboxes and radio buttons work as `on/off` fields.
 * Category products grid
   * Rendered by a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} as a standalone block
   * Initialized using the `magento-init` {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %}

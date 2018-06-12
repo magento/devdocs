@@ -9,7 +9,7 @@ github_link: ui_comp_guide/components/ui-multiselectcolumn.md
 
 ## Overview
 
-The MultiselectColumn component implements a column with check boxes for selecting records. It also provides controls for selecting multiple records.
+The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.
 
 MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.
 

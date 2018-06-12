@@ -33,7 +33,7 @@ To generate a token:
 1.	Log in to GitHub.
 2.	In your personal settings, on the **Personal access tokens** tab page, click [**Generate new token**](https://github.com/settings/tokens/new){:target="_blank"}.
 4.	In the **Token description** field, enter a meaningful name.
-5.	Select check boxes corresponding to how you intend to use the token:
+5.	Select checkboxes corresponding to how you intend to use the token:
 
 	*	To integrate with public repositories, select **public_repo**
 	*	To integrate with your personal, private repositories, select **repo**
