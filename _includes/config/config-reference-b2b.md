@@ -6,7 +6,7 @@ This reference contains unique configuration paths for the Magento Enterprise B2
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
 ### B2B Features paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **B2B Features**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **B2B Features**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? | 
 | -------------- | -------------- | -------------- | -------------- | -------------- | 
@@ -22,7 +22,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
 
 ### Company configuration paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|
@@ -59,7 +59,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Reverted Email Template | `company/email/credit_reverted_email_template` | | | |
 
 ### Requisition lists paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Requisition Lists**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Requisition Lists**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? | 
 | -------------- | -------------- | -------------- | -------------- | -------------- |
@@ -69,7 +69,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
 ### Sales Emails paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? | 
 | -------------- | -------------- | -------------- | -------------- | -------------- |
@@ -85,7 +85,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Send Quote Email Copy Method | `sales_email/quote/copy_method` | | | |
 
 ### Quotes paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
@@ -101,7 +101,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Maximum file size | `quote/attached_files/maximum_file_size` | | | |
 
 ## Payment method paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The available paths are determined by your choice of Merchant country.
