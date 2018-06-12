@@ -44,12 +44,13 @@ In your custom module directory, create the component's `.js` file (shipping add
 The general view of the shipping address renderer is the following:
 
 {%highlight js%}
-define([
+
+    define([
     'ko',
     'uiComponent',
     'Magento_Checkout/js/action/select-shipping-address',
     'Magento_Checkout/js/model/quote'
-], function(ko, Component, selectShippingAddressAction, quote) {
+    ], function(ko, Component, selectShippingAddressAction, quote) {
     'use strict';
     return Component.extend({
         defaults: {
@@ -78,7 +79,7 @@ define([
         /** additional logic required for this renderer  **/
 
     });
-});
+    });
 {%endhighlight%}
 
 ## Create a template for the shipping address renderer {#template}
@@ -101,7 +102,8 @@ Here you need to specify the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f
 The following is a sample of the shipping rate processor code:
 
 {%highlight js%}
-define(
+
+    define(
     [
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/model/shipping-service',
@@ -144,7 +146,7 @@ define(
             }
         };
     }
-);
+    );
 
 {%endhighlight%}
 
@@ -158,7 +160,8 @@ In your custom module directory, create the component's `.js` file for the proce
 Following is a sample of the shipping rate processor code:
 
 {%highlight js%}
-define(
+
+    define(
     [
         'Magento_Checkout/js/model/quote',
         'Magento_Checkout/js/model/resource-url-manager',
@@ -202,7 +205,7 @@ define(
             }
         }
     }
-);
+    );
 {%endhighlight%}
 
 ## Create the JS component registering the processors {#register}
@@ -212,7 +215,8 @@ In your custom module directory, create the `.js` UI component that registers th
 The file content must be similar to the following:
 
 {%highlight js%}
-define(
+
+    define(
     [
         'uiComponent',
         'Magento_Checkout/js/model/shipping-rate-service',
@@ -238,7 +242,7 @@ define(
         /** Add view logic here if needed */
         return Component.extend({});
     }
-);
+    );
 {%endhighlight%}
 
 ## Declare the new components in the checkout page layout {#layout}

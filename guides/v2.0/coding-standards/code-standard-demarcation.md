@@ -206,13 +206,14 @@ section[role="main"] { ... }
 **Unacceptable JavaScript file**
 
 {%highlight js%}
-this.element.on('click', function() {
-   if ($(this).is(':visible')) {
-      $(this).css({ visibility: 'hidden' });
-   } else {
-      $(this).css({ visibility: 'visible' });
-   }
-});
+
+    this.element.on('click', function() {
+        if ($(this).is(':visible')) {
+          $(this).css({ visibility: 'hidden' });
+        } else {
+          $(this).css({ visibility: 'visible' });
+        }
+    });
 {%endhighlight%}
 
 ### You must not use inline CSS styles inside HTML tags

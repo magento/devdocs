@@ -44,7 +44,8 @@ For example, the FedEx shipping method requires only two fields of the shipping 
 
     <Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js
 {%highlight js%}
-define(
+
+    define(
     [],
     function () {
         'use strict';
@@ -61,7 +62,7 @@ define(
             }
         };
     }
-)
+    )
 {% endhighlight%}
 
 Triggering the shipping rates request correlates directly with the fields you specify in the validation rules: the request is triggered once all these fields are populated and pass the validation.
@@ -73,7 +74,8 @@ Create the validator `.js` script that checks if the fields defined by the valid
 A sample validator script follows:
 
 {%highlight js%}
-define(
+
+    define(
     [
         'jquery',
         'mageUtils',
@@ -98,7 +100,7 @@ define(
             }
         };
     }
-);
+    );
 {%endhighlight%}
 
 You can use this sample for your validator, but you need to specify your validation rules script instead of `./shipping-rates-validation-rules` in the list of used modules.
@@ -109,7 +111,8 @@ Your custom validator must be added to the pool of validators. To do this, in th
 
 
 {%highlight js%}
-define(
+
+    define(
     [
         'uiComponent',
         'Magento_Checkout/js/model/shipping-rates-validator',
@@ -129,7 +132,7 @@ define(
         defaultShippingRatesValidationRules.registerRules('carrierName', shippingRatesValidationRules);
         return Component;
     }
-);
+    );
 {%endhighlight%}
 
 
