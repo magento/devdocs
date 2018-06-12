@@ -222,7 +222,7 @@ Refer to the following table for a description of each label. These labels are a
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}/common/images/github_Cannot_Reproduce.png" alt="Can Not Reproduce"/></td>
-         <td>The Community Engineering Team can not reproduce the issue with the given steps to reproduce.</td>
+         <td>The Community Engineering Team cannot reproduce the issue with the given steps to reproduce.</td>
       </tr>
       <tr>
          <td><img src="{{ site.baseurl }}/common/images/github_non-issue.png" alt="Non Issue"/></td>
