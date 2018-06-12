@@ -1221,7 +1221,8 @@ The following file is a sample of a file you must add:</p>
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;head&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
         <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"css/ie-9.css"</span> <span class="na">ie_condition=</span><span class="s">"IE 9"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
@@ -1251,7 +1252,8 @@ A sample follows:</p>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;remove</span> <span class="na">src=</span><span class="s">"http://fonts.googleapis.com/css?family=Montserrat"</span> <span class="nt">/&gt;</span> 
-   <span class="nt">&lt;/head&gt;</span></code></pre></figure>
+   <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>Note, that if a static asset is added with a module path (for example <code class="highlighter-rouge">Magento_Catalog::js/sample.js</code>) in the initial layout, you need to specify the module path as well when removing the asset.</p>
 
