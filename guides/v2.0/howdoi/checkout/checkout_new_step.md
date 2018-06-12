@@ -149,7 +149,7 @@ A sample `mystep.html` follows:
                 </div>
             </div>
         </form>
-    </div>
+   </div>
 </li>
 ```
 
@@ -199,50 +199,51 @@ A sample `checkout_index_index.xml` follows:
 
 If your new step is the first step, you have to create mixins for the payment and shipping steps. Otherwise, two steps will be activated on loading of the checkout.
 
-To create a mixin:
+Create a mixin as follows:
 
 1. Create a `Vendor/Module/view/base/requirejs-config.js` file with these contents;
 
-    ```js
-    var config = {
-      'config': {
-          'mixins': {
-            'Magento_Checkout/js/view/shipping': {
-                'Vendor_Module/js/view/shipping-payment-mixin': true
-                },
-            'Magento_Checkout/js/view/payment': {
-                'Vendor_Module/js/view/shipping-payment-mixin': true
-                }
-          }
-      }
-    }
-    ```
+{%highlight js%}
 
+    var config = {
+    'config': {
+    'mixins': {
+        'Magento_Checkout/js/view/shipping': {
+            'Vendor_Module/js/view/shipping-payment-mixin': true
+        },
+        'Magento_Checkout/js/view/payment': {
+            'Vendor_Module/js/view/shipping-payment-mixin': true
+        }
+    }
+    }
+{%endhighlight js%}
 2. Create the mixin. We'll use the same mixin for both payment and shipping:
 
-    ```js
+{%highlight js%}
+
     define(
-        [
-            'ko'
-        ], function (ko) {
-            'use strict';
+    [
+        'ko'
+    ], function (ko) {
 
-            var mixin = {
+        'use strict';
 
-                initialize: function () {
-                    this.visible = ko.observable(false); // set visible to be initially false to have your step show first
-                    this._super();
+        var mixin = {
 
-                    return this;
-                }
-            };
+            initialize: function () {
+                this.visible = ko.observable(false); // set visible to be initially false to have your step show first
+                this._super();
 
-            return function (target) {
-                return target.extend(mixin);
-            };
-        }
+                return this;
+            }
+        };
+
+        return function (target) {
+            return target.extend(mixin);
+        };
+    }
     );
-    ```
+{%endhighlight js%}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For your changes to be applied, you might need to [clean layout cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache). For more info on mixins, see [JS Mixins]({{ page.baseurl }}/v2.1/javascript-dev-guide/javascript/js_mixins.html).
