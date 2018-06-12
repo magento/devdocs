@@ -31,7 +31,7 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 * Go to **Cache Management**.
 ![Cache Management message]({{ site.baseurl }}/common/images/ftf/mtf_cache_mngt.png){:width="650px"}
 
-* Select the check boxes next to **Configuration** and **Page Cache**.
+* Select the checkboxes next to **Configuration** and **Page Cache**.
 * * From the **Actions** list in the upper left, click **Refresh**.
 * * Click **Submit**.
 ## Enable CLI commands

@@ -7,8 +7,8 @@ menu_title: Add a custom breakpoint
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
-  - guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
 functional_areas:
   - Frontend
 ---

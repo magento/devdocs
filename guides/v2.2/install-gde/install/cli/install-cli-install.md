@@ -118,7 +118,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--admin-user</p></td>
-		<td><p>Magento administrator user name.</p></td>
+		<td><p>Magento administrator username.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -165,7 +165,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--db-user</p></td>
-		<td><p>User name of the Magento database instance owner.</p>
+		<td><p>Username of the Magento database instance owner.</p>
 			<p>Default is <code>root</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -290,7 +290,7 @@ The following table discusses the meanings of installation option names and valu
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>{{site.data.var.ee}} only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The username for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
@@ -331,14 +331,14 @@ The following example installs Magento with the following options:
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	Uses server rewrites
 
 *	The Magento administrator has the following properties:
 
 	*	First and last name are `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)
@@ -370,12 +370,12 @@ The following example installs Magento with the following options:
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	The Magento administrator has the following properties:
 
 	*	First and last name are is `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)

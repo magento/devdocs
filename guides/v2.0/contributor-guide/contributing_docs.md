@@ -5,7 +5,7 @@ contributor_name: Staffan Palopää from Vaimo
 contributor_link: http://www.vaimo.com/
 version: 2.0
 github_link: contributor-guide/contributing_docs.md
-redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
+redirect_from: /guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
 
 Share your knowledge with the community by contributing to Magento DevDocs! You can contribute by creating an issue or pull request (PR) on our [devdocs](https://github.com/magento/devdocs){:target="\_blank"} Github repository. We welcome all types of contributions; from minor typo fixes to new topics.

@@ -7,8 +7,8 @@ menu_title: DropdownDialog widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_dialog.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 <h2>Overview</h2>
 Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:
