@@ -3,7 +3,7 @@ group: release-notes
 title: Backward incompatible changes in Magento Open Source
 version: 2.0
 github_link: release-notes/backward-incompatible-changes/open-source.md
-redirect_from: guides/v2.0/release-notes/changes/ce_changes.html
+redirect_from: /guides/v2.0/release-notes/changes/ce_changes.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ce}} 2.0.

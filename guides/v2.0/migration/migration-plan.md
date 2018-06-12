@@ -12,7 +12,7 @@ functional_areas:
   - Tools
 ---
 
-To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will prove helpful.
+To migrate successfully and avoid issues, you need to thoroughly plan and test your migration. We hope the guidelines below will prove helpful.
 
 ## Before you start: Consider upgrade
 
@@ -79,7 +79,7 @@ In such migration testing, follow these steps:
 
 Sometimes you may want to have your Magento 2 store with different catalog structure, sales rules, CMS pages, etc. after migration.
 
-It is is important to practice caution while working through manual data changes. Mistakes will create errors in the incremental data migration step that follows.
+It is important to practice caution while working through manual data changes. Mistakes will create errors in the incremental data migration step that follows.
 
 For example, a product deleted from Magento 2: the one that has been bought on your live Magento 1 store and which is not available anymore in your Magento 2 store. Transferring data about such purchase might cause an error while running the Data Migration Tool in Delta mode.
 

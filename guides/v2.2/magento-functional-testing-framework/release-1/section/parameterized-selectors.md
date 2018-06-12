@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-1/section/parameterized-selectors.md
 functional_areas:
  - Testing
-redirect_from: guides/v2.2/magento-functional-testing-framework/section/parameterized-selectors.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/section/parameterized-selectors.html
 mftf-release: 1.0.0
 ---
 

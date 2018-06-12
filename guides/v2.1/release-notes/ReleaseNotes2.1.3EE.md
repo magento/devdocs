@@ -575,7 +575,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 <!---60680-->* **Issue**: You cannot successfully edit and save a gift card product. 
 
 
-<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the **Use Default Value** check box for the option title does not work. Clearing this check box and then changing the title affects all storeviews. 
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. That is, a change to one option affects products on all stores. Also, the **Use Default Value** checkbox for the option title does not work. Clearing this checkbox and then changing the title affects all storeviews. 
 
 
 <!---60616-->* **Issue**: Magento fails to validate required Customer Address or Customer attributes. 
@@ -595,7 +595,21 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl }}/install-gde/prereq/php-settings.html) to 1 GB. 
 
-
+* **Issue** If using Nginx to serve static content you will see 404 responses for CSS/JS. This is due to requirements for a  rewrite which has been added in pub/static/.htaccess
+ ```
+     # Remove signature of the static files that is used to overcome the browser cache
+     RewriteRule ^version.+?/(.+)$ $1 [L]
+ ```
+ 
+  **Workaround** You can add the equivalent Nginx rewrite in your Nginx configuration as below.
+ ```
+ 	server {
+ 		...
+ 		# Needed for M2 2.1.3+
+                 rewrite ^/pub/static/version.+?/(.*)$ /pub/static/$1 last;
+ 		....
+ 	}
+ ```
 
 
 

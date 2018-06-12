@@ -64,7 +64,7 @@ where
 </tr>
 <tr>
 	<td>server</td>
-	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or a an absolute path to a UNIX socket.</td>
+	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or an absolute path to a UNIX socket.</td>
 </tr>
 <tr>
 	<td>port</td>

@@ -185,7 +185,7 @@ To install one extension, click the **Install** link at the end of its row and c
 ### Install more than one extension
 To install more than one extension:
 
-1.	Select the check box next to each extension, or click **Select All** from the list as the following figure shows.
+1.	Select the checkbox next to each extension, or click **Select All** from the list as the following figure shows.
 
 	![Choose extensions to install]({{ site.baseurl }}/common/images/extensman_choose-to-install.png){:width="550px"}
 2.	After you select what to install, click **Install** at the top of the page as the following figure shows.
@@ -219,7 +219,7 @@ The New Updates page displays all extensions that can be updated.
 You have the following options:
 
 *	To update one extension, click **Update** at the end of its row.
-*	To update more than one extension, select its check box and click **Update**, as the following figure shows.
+*	To update more than one extension, select its checkbox and click **Update**, as the following figure shows.
 
 	![Update selected extensions]({{ site.baseurl }}/common/images/extensman_update-selected.png){:width="500px"}
 *	To update all extensions, click **Select All** from the list and click **Update**, as the following figure shows.

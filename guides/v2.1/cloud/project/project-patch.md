@@ -232,7 +232,7 @@ After you've successfully tested a custom patch locally and on your Integration 
             php ./vendor/bin/ece-tools build
         # We run deploy hook after your application has been deployed and started.
         deploy: |
-            php ./vendor/bin/ece-tools build
+            php ./vendor/bin/ece-tools deploy
         # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
         post_deploy: |
             php ./vendor/bin/ece-tools post-deploy

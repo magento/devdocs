@@ -46,3 +46,4 @@ Do you know what a "terminal" application is? Do you know what operating system 
 <a href="{{ page.baseurl }}/howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a>
 
 *[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase
+</div>

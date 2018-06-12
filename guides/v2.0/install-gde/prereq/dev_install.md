@@ -55,8 +55,8 @@ The Magento 2 GitHub repository requires you to authenticate. The `composer inst
 ### How to clone the Magento 2 GitHub repository {#instgde-prereq-compose-clone-ways}
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
-*	Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">share a public key</a> with GitHub.
-*	Use HTTPS if you don't share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).
+*	Use SSH for better security (no username and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="&#95;blank">share a public key</a> with GitHub.
+*	Use HTTPS if you don't share an SSH key with GitHub (your username and password are encrypted before being sent to GitHub).
 
 See one of the following section:
 
