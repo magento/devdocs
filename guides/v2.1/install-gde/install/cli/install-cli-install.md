@@ -162,7 +162,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--db-user</p></td>
-		<td><p>User name of the Magento database instance owner.</p>
+		<td><p>Username of the Magento database instance owner.</p>
 			<p>Default is <code>root</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -323,7 +323,7 @@ The following example installs Magento with the following options:
 *	The Magento administrator has the following properties:
 
 	*	First and last name are `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)
@@ -360,7 +360,7 @@ The following example installs Magento with the following options:
 *	The Magento administrator has the following properties:
 
 	*	First and last name are is `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)

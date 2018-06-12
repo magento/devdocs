@@ -31,7 +31,7 @@ Disable the Secret Key in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f862
 
 ![Cache Management message]({{ site.baseurl }}/common/images/ftf/mtf_cache_mngt.png){:width="650px"}
 
-* Select the check box next to **Configuration** and **Page Cache**.
+* Select the checkbox next to **Configuration** and **Page Cache**.
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
 
