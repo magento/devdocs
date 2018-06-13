@@ -238,36 +238,43 @@ The following table identifies contributions from our community members. This ta
     <td>7720, 12186, 12395</td>
     <td><a target="_blank" href="https://github.com/p-bystritsky">p-bystritsky</a></td>
   </tr>
+
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13898">13898</a></td>
     <td>12792</td>
     <td><a target="_blank" href="https://github.com/pmclain">Patrick McLain</a></td>
   </tr>
+
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/1140">1140</a></td>
     <td>7372</td>
     <td><a target="_blank" href="https://github.com/nmalevanec">Nickolas Malyovanets </a></td>
   </tr>
+
  <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/1258">1258</a></td>
     <td>13231</td>
     <td><a target="_blank" href="https://github.com/serhii-balko">Serhii</a></td>
   </tr>
+
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/1134">1134</a></td>
     <td>12205</td>
     <td><a target="_blank" href="https://github.com/p-bystritsky">p-bystritsky</a></td>
   </tr>
+
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/1031">1031</a></td>
     <td>18168</td>
     <td><a target="_blank" href="https://github.com/RomaKis">Roman K.</a></td>
   </tr>
+
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13956">13956</a></td>
     <td>N/A</td>
     <td><a target="_blank" href="https://github.com/koenner01">Koen V.</a></td>
   </tr>
+
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13691">13691</a></td>
     <td><a href="https://github.com/magento/magento2/issues/13556" target="_blank">13556</a></td>
@@ -462,7 +469,7 @@ The following table identifies contributions from our community members. This ta
 
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11707">11707</a></td>
-    <t>N/A</td>
+    <td>N/A</td>
     <td><a target="_blank" href="https://github.com/gwharton">gwharton</a></td>
   </tr>
 
