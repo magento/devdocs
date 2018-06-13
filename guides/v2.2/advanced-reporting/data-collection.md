@@ -71,7 +71,7 @@ Configuration of data collection can be extended or changed in any module adding
 
 ## Structure
 
-The `etc/analytics.xsd` schema declares structure of the `etc/analytics.xml` file .
+The `etc/analytics.xsd` schema declares the structure of the `etc/analytics.xml` file.
 
 {% include_relative img/analytics_xsd.svg %}
 
