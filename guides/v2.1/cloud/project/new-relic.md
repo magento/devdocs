@@ -73,7 +73,7 @@ If you have more than three active environments using the same New Relic license
 ## Investigate performance
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
-Using the New Relic dashboard, you can immediately track and find the following:
+Using the New Relic dashboard, you can immediately track and find:
 
 -  Applications and transactions encountering slow responses or bottlenecks
 -  Customer comments about issues with your site
