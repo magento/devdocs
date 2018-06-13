@@ -10,9 +10,11 @@ github_link: release-notes/bk-release-notes.md
 ---
 
 
-**Note**: With Magento 2.2.5, we are moving to a quarterly release cycle for minor releases (define minor releases). Quarterly releases contain bug fixes, security enhancements, introduction of new bundled extensions, and community code contributions.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+With Magento 2.2.5, we are moving to a quarterly release cycle for minor releases (define minor releases). Quarterly releases contain bug fixes, security enhancements, introduction of new bundled extensions, and community code contributions.
 
 Quarterly releases do not introduce backward-incompatible changes, architectural changes, or changes to underlying major components. Magento remains committed to restricting those changes to only major releases (for example, 2.x or 3.x). 
+</div>
 
 
 
