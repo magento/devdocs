@@ -99,7 +99,7 @@
 
 <p>You should be an old hat at creating empty modules at this point, so we'll skip the details and assume you can create an empty module named Weblog. After you've done that, we'll setup a route for an index Action Controller with an action named "testModel". As always, the following examples assume a Package Name of "Magentotutorial".</p>
 
-<p>In Magentotutorial/Weblog/etc/config.xml, setup the following route</p>
+<p>In `Magentotutorial/Weblog/etc/config.xml`, setup the following route</p>
 
 <pre>
 &lt;frontend>
@@ -166,7 +166,7 @@ CREATE TABLE `blog_posts` (
 
 <p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
 
-<p>So, let's add the following XML to our module's config.xml.</p>
+<p>So, let's add the following XML to our module's `config.xml`.</p>
 <pre>
 &lt;global>
     &lt;!-- ... -->
@@ -186,7 +186,7 @@ CREATE TABLE `blog_posts` (
 
 <p>The outer &lt;weblog /&gt; tag is your Group Name, which should match your module name. &lt;class /&gt; is the BASE name all Models in the weblog group will have, also called <strong>Class Prefix</strong>. The &lt;resourceModel /&gt; tag indicates which Resource Model that weblog group Models should use. We talk more about this later on this page. For now, remember your Group Name and the literal string "resource".</p>
 
-<p>So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your testModelAction method, use the following code</p>
+<p>So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your `testModelAction` method, use the following code</p>
 <pre>
     public function testModelAction() {
         $blogpost = Mage::getModel('weblog/blogpost');
