@@ -75,10 +75,10 @@ New Relic connects and monitors your site using a PHP agent. As it collects data
 
 Using the New Relic dashboard, you can immediately track and find the following:
 
--  Monitor applications and transactions encountering slow responses or bottlenecks
--  Investigate customer comments on issues with your site
--  Identify applications with high transaction time and follow up on queries, calls, and methods with Blackfire
--  Verify and compare traffic to transaction time
+-  Applications and transactions encountering slow responses or bottlenecks
+-  Customer comments about issues with your site
+-  Applications with high transaction time and follow up on queries, calls, and methods with Blackfire
+-  Traffic to transaction time
 
 We recommend reviewing tracked data:
 
