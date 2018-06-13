@@ -182,7 +182,7 @@ To complete extensive changes:
 You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled for your Staging and Production environments. You simply update the locales using the Admin panel.
 
 {: .bs-callout .bs-callout-warning}
-If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feature and generate a new `config.php` file. This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
+If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feature and generate a new `config.local.php` file. This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
 
 1.  From your Integration environment, enable the `SCD_ON_DEMAND` variable.
 1.  Add the necessary locales using your Admin panel.
@@ -201,7 +201,7 @@ If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feat
 1.  Push code changes to the remote.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
+While you can manually edit the `config.local.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
 
-Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
+Never delete the `config.local.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
 </div>
