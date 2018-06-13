@@ -198,7 +198,7 @@ If they differ, you can append content from the `config.local.php` file to your 
 You only need to complete this migration once. When you need to update the file, always update the `config.php` file.
 
 ## Change locales
-You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled for your Staging and Production environments. You simply update the locales using the Admin panel.
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled for your Staging and Production environments. You can update the locales using the Admin panel.
 
 {: .bs-callout .bs-callout-warning}
 If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feature and generate a new `config.php` file. This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
