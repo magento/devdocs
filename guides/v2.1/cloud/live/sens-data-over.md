@@ -181,11 +181,12 @@ To complete extensive changes:
 ## Change locales
 You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled for your Staging and Production environments. You simply update the locales using the Admin panel.
 
+{: .bs-callout .bs-callout-warning}
 If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feature and generate a new `config.php` file. This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
 
 1.  From your Integration environment, enable the `SCD_ON_DEMAND` variable.
 1.  Add the necessary locales using your Admin panel.
-1.  Generate the `app/etc/config.php` file containing all locales.
+1.  Generate the `app/etc/config.local.php` file containing all locales.
 
     ```bash
     php ./vendor/bin/ece-tools config:dump
@@ -194,13 +195,10 @@ If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feat
 1.  Copy the new configuration file from your Integration environment to your local Staging environment directory.
 
     ```bash
-    `rsync <SSH URL>:app/etc/config.php ./app/etc/config.php`
+    rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
     ```
 
 1.  Push code changes to the remote.
-
-2.	Make configuration changes in the Admin panel on the Integration environment.
-3.	Repeat the process to re-create the `config.local.php`file and deploy. You do not need to make additional configurations in the Staging and Production environments. Recreating this file should not affect those environment-specific settings.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
