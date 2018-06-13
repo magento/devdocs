@@ -31,7 +31,7 @@ A UI component's behavior, configuration and structure is defined by the followi
 All these properties, options, and methods are available in the component template's scope.
 
 
-## Most important UI component's properties {#main_properties}
+## Most important UI component properties {#main_properties}
 The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} are the following:
 
  - `component`: the path to the component's `.js` file in terms of RequireJS.
@@ -76,7 +76,7 @@ This string is constructed from the following values:
  - `listing_top`: the value of the `name` attribute of the parent `<container name="listing_top">` component. 
  - `columns_controls`: the value of the `name` attribute of the component itself.
 
-## UI Component's properties used for linking {#comp_link}
+## UI Component properties used for linking {#comp_link}
 
 The following properties are used for linking observable properties and methods of UI components:
 
