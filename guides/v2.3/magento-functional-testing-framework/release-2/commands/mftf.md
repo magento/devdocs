@@ -104,6 +104,7 @@ opt                | description|
 `--force`           | force generation of tests regardless of Magento Instance Configuration  
 `--lines=LINES`     | Used in combination with a parallel configuration, determines desired group size [default: 500]  
 `--tests=TESTS`     | A parameter accepting a JSON string used to determine the test configuration  
+`--debug`           | Generates tests with extra schema validation to narrow down issues
 
 ##### Examples of the JSON configuration
 
