@@ -1,8 +1,8 @@
 ---
 group:  UI Library
 subgroup: A_Using_UI
-title: Using UI component's client-side
-menu_title: Using UI component's client-side
+title: Using UI components client-side
+menu_title: Using UI components client-side
 menu_node: parent
 version: 2.0
 github_link: ui-components/ui_components_js.md
