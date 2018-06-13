@@ -20,7 +20,7 @@ The topic covers the following:
 - [Description of the additional UI components](#comp_additional)
 - [JS UI components debugging](#comp_debug)
 
-## UI component's configuration {#config}
+## UI components configuration {#config}
 
 A UI component's behavior, configuration and structure is defined by the following:
 
