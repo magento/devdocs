@@ -147,7 +147,7 @@ To set up an SSH tunnel on Windows using Putty:
 3.	In the Category pane, click **Session**.
 4.	Enter the following information:
 
-    *	**Host Name (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
+    *	**Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
     *	**Port** field: Enter `22`
 
     ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}

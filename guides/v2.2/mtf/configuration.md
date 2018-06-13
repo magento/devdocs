@@ -220,7 +220,7 @@ Set of parameters to be used for [installation test case].
 
 |Parameter|Description|
 |---|---|
-|`<host>`|Magento database host name or IP address.|
+|`<host>`|Magento database hostname or IP address.|
 |`<user>`|Magento database username.|
 |`<password>`| Magento database user password.|
 |`<dbName>`|Name of a database.|

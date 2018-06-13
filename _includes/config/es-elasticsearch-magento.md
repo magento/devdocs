@@ -20,7 +20,7 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Hostname</td>
-		<td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
+		<td><p>Enter the fully qualified hostname or IP address of the machine running Elasticsearch.</p>
 		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
 	</tr>
 	<tr>

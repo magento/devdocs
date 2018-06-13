@@ -29,7 +29,7 @@ where:
 Element | Description
 --- | ---
 `HTTP verb` | One of `GET`, `POST`, `PUT`, or `DELETE`
-`host` | The host name or IP address (and optionally, port) of the Magento installation.
+`host` | The hostname or IP address (and optionally, port) of the Magento installation.
 `scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Identifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
 
