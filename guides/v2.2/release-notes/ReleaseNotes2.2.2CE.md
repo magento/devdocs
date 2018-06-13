@@ -68,7 +68,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
@@ -300,7 +300,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81594 -->*  Exception message was passed as a exception description argument instead of exception message. *Fix submitted by [Tim Bezhashvyly](https://github.com/tim-bezhashvyly) in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
 
-<!--- MAGETWO-83310 -->* Importing an import file to update customer data no loner results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*.
+<!--- MAGETWO-83310 -->* Importing an import file to update customer data no longer results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*.
 
 
 ### Indexing
