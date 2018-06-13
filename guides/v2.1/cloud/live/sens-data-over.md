@@ -177,6 +177,8 @@ To complete extensive changes:
 1.  Delete the `config.local.php`file in your Integration branch.
 
     You must delete the file to change settings. All configurations exist in the database, displaying as editable in your Magento Admin panel. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can not edit the name until this file is removed.
+2.	Make configuration changes in the Admin on the Integration environment.
+3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.
 
 ## Change locales
 You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled for your Staging and Production environments. You simply update the locales using the Admin panel.
