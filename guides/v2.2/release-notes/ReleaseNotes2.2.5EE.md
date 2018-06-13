@@ -5,7 +5,7 @@ title: Magento Commerce 2.2.5 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.5EE.md
 ---
-*Patch code and release notes published on June 12, 2018.*
+*Patch code and release notes published on June 19, 2018.*
 
 
 
@@ -38,9 +38,9 @@ Looking for more information on these new features as well as many others? Check
 ### Highlights (core code enhancements)
 This release includes significant performance improvements to the core Magento code: 
 
-* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly increase the `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
+* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly increase  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
 
-* <!--- MAGETWO-74154 --> Refactoring of Catalog Fulltext indexer has improved indexing performance up to 15% for very large profiles (600K products) and product catalogs with many configurable options (5K configurable products and 500 options). 
+* <!--- MAGETWO-74154 --> Refactoring of the catalog fulltext indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options). 
 
 
 * <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options). 
@@ -86,7 +86,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Catalog
-<!--- MAGETWO-88808 -->* Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view
+<!--- MAGETWO-88808 -->* Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.
 
 <!--- MAGETWO-88107 -->* The `Category\Collection::joinUrlRewrite` method now returns the URL of the store  whose `storeId` is set on the collection. Previously, this method returned the name of the default store. *Fix submitted by [Alessandro Pagnin](https://github.com/alepane21) in pull request 13716*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
@@ -94,7 +94,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-73419 -->* Sorting products with required custom options by price now works as expected. 
 
-<!--- MAGETWO-73008 -->* Tier pricing for a single product unit now works as expected. If a tier price is set for one product unit, and this price is lower than the product price or special price, then the product price index table is populated with tier price.
+<!--- MAGETWO-73008 -->* Tier pricing for a single product unit now works as expected. If a tier price is set for one product unit, and this price is lower than the product price or special price, then the product price index table is populated with the tier price.
 
 <!--- MAGETWO-71936 -->* Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YEAR. Previously, when you tried to save a product in a locale where dates are formatted this way, Magento did not save the product, and displayed this error: `Invalid input datetime format`. [GitHub-10485](https://github.com/magento/magento2/issues/10485)
 
@@ -102,7 +102,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### CMS content
-<!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there is a validation check that uses `realpath` to test whether the file is outside the media directory base path. Since `realpath` resolves symlinks to actual paths, this check will fail if actual path is outside of base path and will prevent action from being completed.
+<!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there is a validation check that uses `realpath` to test whether the file is outside the media directory base path. Since `realpath` resolves symlinks to actual paths, this check will fail if the actual path is outside of the base path, and will prevent action from being completed.
 
 
 
@@ -131,7 +131,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Gift card 
-<!--- MAGETWO-85536 -->* Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to their cart. 
+<!--- MAGETWO-85536 -->* Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to his cart. 
 
 
 ### Import/export
@@ -196,7 +196,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- MAGETWO-87487 -->* The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`). 
 
-<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+<!--- MAGETWO-81742 MAGETWO-89250 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by [Adrian Martinez](https://github.com/adrian-martinez-interactiv4) in pull request 11376*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
 
 ### URL rewrites
@@ -232,18 +232,42 @@ The following table identifies contributions from our community members. This ta
     <th>Contributing community member</th>
   </tr>
 
+
+<tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/967">967</a></td>
+    <td>7720, 12186, 12395</td>
+    <td><a target="_blank" href="https://github.com/p-bystritsky">p-bystritsky</a></td>
+  </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13898">13898</a></td>
-    <td>N/A</td>
+    <td>12792</td>
     <td><a target="_blank" href="https://github.com/pmclain">Patrick McLain</a></td>
   </tr>
-
+<tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/1140">1140</a></td>
+    <td>7372</td>
+    <td><a target="_blank" href="https://github.com/nmalevanec">Nickolas Malyovanets </a></td>
+  </tr>
+ <tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/1258">1258</a></td>
+    <td>13231</td>
+    <td><a target="_blank" href="https://github.com/serhii-balko">Serhii</a></td>
+  </tr>
+<tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/1134">1134</a></td>
+    <td>12205</td>
+    <td><a target="_blank" href="https://github.com/p-bystritsky">p-bystritsky</a></td>
+  </tr>
+  <tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/1031">1031</a></td>
+    <td>18168</td>
+    <td><a target="_blank" href="https://github.com/RomaKis">Roman K.</a></td>
+  </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13956">13956</a></td>
     <td>N/A</td>
     <td><a target="_blank" href="https://github.com/koenner01">Koen V.</a></td>
   </tr>
-
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13691">13691</a></td>
     <td><a href="https://github.com/magento/magento2/issues/13556" target="_blank">13556</a></td>
@@ -258,7 +282,7 @@ The following table identifies contributions from our community members. This ta
 
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13943">13943</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/12405" target="_blank">12421</a>, <a href="https://github.com/magento/magento2/issues/12405" target="_blank">12421</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/12405" target="_blank">12405</a>, <a href="https://github.com/magento/magento2/issues/12421" target="_blank">12421</a></td>
     <td><a target="_blank" href="https://github.com/hostep">Pieter Hoste</a></td>
   </tr>
 
@@ -301,7 +325,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a></td>
     <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a></td>
+    <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">Adrian Martinez</a></td>
   </tr>
 
   <tr>
@@ -438,7 +462,7 @@ The following table identifies contributions from our community members. This ta
 
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11707">11707</a></td>
-    <td>N/A</td>
+    <t>N/A</td>
     <td><a target="_blank" href="https://github.com/gwharton">gwharton</a></td>
   </tr>
 
@@ -446,12 +470,6 @@ The following table identifies contributions from our community members. This ta
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14156">14156</a></td>
     <td>N/A</td>
     <td><a target="_blank" href="https://github.com/aschrammel">Andreas Schrammel</a></td>
-  </tr>
-
-  <tr>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a></td>
-    <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/Coderimus">Alexander Shkurko</a></td>
   </tr>
 
   <tr>
@@ -642,7 +660,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14452">14452</a></td>
     <td>N/A</td>
-    <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">adrian-martinez-interactiv4</a></td>
+    <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">Adrian Martinez</a></td>
   </tr>
 
 <tr>
@@ -700,7 +718,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
 
 <tr>
-    <td><a target="_blank" href="https://github.com/magento-engcom/magento2ce/pull/14176">14176</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2ce/pull/14176">14176</a></td>
     <td><a href="https://github.com/magento/magento2/issues/14049" target="_blank">14049</a></td>
     <td><a target="_blank" href="https://github.com/joost-florijn-kega">joost-florijn-kega</a></td>
   </tr>
@@ -735,7 +753,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
 <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13016">13016</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/966" target="_blank">966</a>, <a href="https://github.com/magento/magento2/issues/12323" target="_blank">12323</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/9666" target="_blank">9666</a>, <a href="https://github.com/magento/magento2/issues/12323" target="_blank">12323</a></td>
     <td><a target="_blank" href="https://github.com/rossmc">Ross</a></td>
   </tr>
 <tr>
@@ -958,4 +976,4 @@ See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/ins
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
