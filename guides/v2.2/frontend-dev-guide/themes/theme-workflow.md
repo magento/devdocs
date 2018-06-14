@@ -25,7 +25,7 @@ Continue From:<br />
 
 In the Magento root directory, run:
 
-`php bin/magento deploy:mode:set developer`
+    php bin/magento deploy:mode:set developer
 
 See
 
@@ -35,7 +35,7 @@ See
 <div class="bs-callout bs-callout-tip" markdown="1">
 To check the current mode of your Magento instance, in the root directory, run:
 
-`php bin/magento deploy:mode:show`
+    php bin/magento deploy:mode:show
 </div>
 </div>
 
@@ -176,7 +176,7 @@ When you finish developing and your styles are ready to go to production, you ca
 
 In the Magento root directory, run:
 
-`php bin/magento deploy:mode:set production`
+    php bin/magento deploy:mode:set production
 
 See [Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) for details.
 </div>
