@@ -16,6 +16,7 @@ Please make sure that "/" is writable by the web-server.
 With {{site.data.var.ece}}, you can only write to specific directories, such as `var`, `pub/media`, or `app/etc`. When you generate the `sitemap.xml` file using the Admin panel, you must specify the `/media/` path.
 
 For version 2.1.11 and later, you do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. You can view the content in your browser with the url: `<domain.your.project>/robots.txt`
+
 This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.app.yaml` file. See an example of these rules in the [magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49){:target="\_blank"}.
 
 #### To generate a `sitemap.xml` file in version 2.1.11 and later:
@@ -33,7 +34,7 @@ This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.ap
 
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
-#### To add a `robots.txt` file in version earlier than 2.1.11:
+#### To add content to the `robots.txt` file:
 
 1.  Access the Magento Admin panel.
 1.  On the _Stores_ menu, click **Configuration** in the _Settings_ section.
@@ -45,7 +46,7 @@ This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.ap
 Your `robots.txt` file appears in the `<magento_root>/app/pub/media/` folder.
 
 {: .bs-callout .bs-callout-info}
-For versions earlier than  2.1.4, you must use the `pub/media` path. The 'robots.txt' file must exist. To generate the `robots.txt` file in the Magento Admin Panel: Stores > Settings:Configuration > General:Design
+For versions earlier than  2.1.4, you must use the `pub/media` path. The 'robots.txt' file must exist. You can generate the `robots.txt` file using the Magento Admin Panel: Stores > Settings:Configuration > General:Design
 
 ## Rewrite using Fastly VCL snippet
  If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

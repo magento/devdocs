@@ -16,6 +16,7 @@ Please make sure that "/" is writable by the web-server.
 With {{site.data.var.ece}}, you can only write to specific directories, such as `var`, `pub/media`, `pub/static`, or `app/etc`. When you generate the `sitemap.xml` file using the Admin panel, you must specify the `/media/` path.
 
 You do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. You can view the content in your browser with the url: `<domain.your.project>/robots.txt`
+
 This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.app.yaml` file. See an example of these rules in the [magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49){:target="\_blank"}.
 
 #### To generate a `sitemap.xml` file in version 2.2 and later:
