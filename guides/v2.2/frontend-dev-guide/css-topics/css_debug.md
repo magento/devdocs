@@ -130,7 +130,7 @@ After you customize the content of any <code>.less</code> file, changes are appl
 
 When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier.
 
-For each theme, Magento compliles all theme `.less` files into two CSS files: `styles-m.css` and `styles-l.css`. So when you debug a theme, you browser only sees `styles-m.css` and it might be difficult to define which exactly `.css` or `.less` file requires corrections. For example:
+For each theme, Magento compiles all theme `.less` files into two CSS files: `styles-m.css` and `styles-l.css`. So when you debug a theme, you browser only sees `styles-m.css` and it might be difficult to define which exactly `.css` or `.less` file requires corrections. For example:
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/no-map.png){:width="610px"}
 
