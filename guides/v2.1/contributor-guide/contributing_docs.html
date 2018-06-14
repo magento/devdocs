@@ -473,34 +473,48 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Share your knowledge with the community by contributing to Magento DevDocs! You can contribute by creating an issue or pull request (PR) on our <a href="https://github.com/magento/devdocs" target="\_blank">devdocs</a> Github repository. We welcome all types of contributions; from minor typo fixes to new topics.</p>
+			<p>Share your knowledge with the community by contributing to Magento DevDocs! You can contribute by creating an issue or pull request (PR) on our <a href="https://GitHub.com/magento/devdocs" target="_blank">devdocs</a> GitHub repository. We welcome all types of contributions; from minor typo fixes to new topics. As you contribute PRs, you can also gain Contribution Points with Community Engineering.</p>
 
 <p>Magento’s team of technical writers reviews all issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible. Working through the backlog takes time, though, so we appreciate your patience.</p>
 
-<div class="bs-callout bs-callout-tip" id="tip">
+<div class="bs-callout bs-callout-info" id="info">
   <p>If you are not sure where to start contributing, you can review our list of <a href="/guides/v2.1/contributor-guide/contributing_docs_suggested.html">suggested topics</a>.</p>
 </div>
 
-<p>If you write and contribute a full topic, we will put your name (or company’s name) at the top of the page, right under the title, and link it to your blog or website! We will also add your picture and a link to your Github account on the <a href="/guides/v2.1/contributor-guide/quarterly-contributors.html#top-recent-contributors">Top recent contributors</a> page.</p>
+<p>If you write and contribute a full topic, we will put your name (or your company’s name) at the top of the page right under the title, and link it to your blog or website! We will also add your picture and a link to your GitHub account on the <a href="/guides/v2.1/contributor-guide/quarterly-contributors.html#top-recent-contributors">Top recent contributors</a> page.</p>
 
 <h2 id="contribution-guidelines">Contribution guidelines</h2>
-<p>We use <a href="http://daringfireball.net/projects/markdown/" target="\_blank">Markdown</a> to write our documentation, which is a simple markup language that we convert to HTML using <a href="http://kramdown.gettalong.org/syntax.html" target="\_blank">Kramdown</a>. We have a <a href="/guides/v2.1/contributor-guide/templates/basic_template.html" target="\_blank">template</a> to make getting started easy.</p>
+<p>We use <a href="http://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> to write our documentation, which is a simple markup language that we convert to HTML using <a href="http://kramdown.gettalong.org/syntax.html" target="_blank">Kramdown</a>.</p>
 
-<!-- Available note types: "info", "warning", "tip" -->
+<p>You can update, or add content to, existing topics in their respective versioned directories (for 2.0, 2.1, 2.2, and onward).</p>
+
+<p>We provide templates to help get you started writing a new topic:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/contributor-guide/templates/basic_template.html">General topic template</a>: This is a template for writing any topic with example formats and styles.</li>
+  <li>Tutorial templates: These templates provide example formats and styles for step-by-step instructions (like how-tos). Templates include a <a href="/guides/v2.1/contributor-guide/templates/tutorial-template-first.html">first introduction topic</a>, <a href="/guides/v2.1/contributor-guide/templates/tutorial-template-middle.html">middle topic</a> for each step, and a <a href="/guides/v2.1/contributor-guide/templates/tutorial-template-last.html">final step topic</a>.</li>
+</ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Refer to the <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about licensing. All contributors are required to submit a click-through form to agree to the terms.</p>
+  <p>Refer to the <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about licensing. All contributors are required to submit the form and agree to the terms.</p>
 </div>
+
+<p>The following guidelines may answer most of your questions and help you get started:</p>
 
 <ol>
   <li>
-    <p>First, check <a href="https://github.com/magento/devdocs/pulls">existing pull requests</a> and make sure you are not duplicating work!</p>
+    <p>Check <a href="https://GitHub.com/magento/devdocs/pulls">existing pull requests</a> and make sure you are not duplicating work!</p>
   </li>
   <li>
-    <p>For large contributions or changes that include multiple files, <a href="https://github.com/magento/devdocs/issues" target="\_blank">open an issue</a> and discuss it with us first. This may prevent duplicate or unnecessary effort.</p>
+    <p>For large contributions or changes that include multiple files, <a href="https://GitHub.com/magento/devdocs/issues" target="_blank">open an issue</a> and discuss it with us first. This may further prevent duplicate or unnecessary effort.</p>
   </li>
   <li>
-    <p>Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits. The DevDocs team can also help find the best home for your new topics.</p>
+    <p>Familiarize yourself with the existing documentation. Look through the guides to decide where to add your topics.</p>
+
+    <ul>
+      <li>The DevDocs team can find the best home for your new topics and add it to the navigation.</li>
+      <li>If a topic has a symlink, you can remove it with git commands and add a new file. Copy and paste a previous version of the topic to get started.</li>
+    </ul>
   </li>
   <li>
     <p>Focus on the content and on creating useful information for your fellow Magento developers and community members. Don’t forget to review your work for typos, formatting errors, or sentences that need clarifying before opening a pull request.</p>
@@ -522,39 +536,44 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="fork">Fork and clone a repository</h2>
 <p>Use the <a href="#fork">fork</a> and <a href="#create-a-pull-request">pull</a> model to contribute to Magento DevDocs. This model requires you to keep your forked repository in sync with the upstream repository. You submit pull requests to <em>pull</em> a set of changes from your forked repository to the upstream repository.</p>
 
-<p>To fork the devdocs repository on Github, do the following:</p>
+<p>To fork the devdocs repository on GitHub, do the following:</p>
 
 <ol>
   <li>
-    <p>Create or log in to your development environment account on GitHub.</p>
+    <p>Create or log into your development environment account on GitHub.</p>
   </li>
   <li>
-    <p>Navigate to the <a href="https://github.com/magento/devdocs" target="\_blank">DevDocs repository</a>.</p>
+    <p>Navigate to the <a href="https://GitHub.com/magento/devdocs" target="\_blank">DevDocs repository</a>.</p>
   </li>
   <li>
     <p>Click <strong>Fork</strong> at the top right.</p>
   </li>
   <li>
-    <p>Clone the repository into your development environment and then start writing and committing your changes. Optionally, create a branch first if you plan to work on multiple changes.</p>
+    <p>Clone the repository into your development environment and start writing and committing your changes. Optionally, create a branch first if you plan to work on multiple changes.</p>
   </li>
   <li>
-    <p>Build the devdocs site locally using Jekyll by following the instructions in our <a href="https://github.com/magento/devdocs/blob/develop/README.md" target="\_blank">README</a>.</p>
+    <p>To preview your changes in HTML output, follow the instructions in the <a href="https://GitHub.com/magento/devdocs/blob/develop/README.md" target="_blank">README</a> to build the devdocs site locally using Jekyll.</p>
+  </li>
+  <li>
+    <p>Before opening a pull request, don’t forget to review your work for typos, formatting errors, code sample formatting, or sentences that need clarifying.</p>
   </li>
 </ol>
 
 <h2 id="sync">Update your fork</h2>
-<p>As we merge changes with the upstream repository, your fork becomes outdated and pull requests might result in merge conflicts. To see if your fork is outdated, open the fork page in GitHub. If you see the following message at the top of the page, you must update your fork: <code class="highlighter-rouge">This branch is &lt;number&gt; commits behind develop</code>.</p>
+<p>As we merge changes with the upstream repository, your fork becomes outdated and pull requests might result in merge conflicts.</p>
 
-<p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.github.com/articles/syncing-a-fork" target="\_blank">GitHub documentation</a>. Make sure to update from the correct branch!</p>
+<p>To see if your fork is outdated, open the fork page in GitHub. If you see the following message at the top of the page, update your fork: <code class="highlighter-rouge">This branch is &lt;number&gt; commits behind develop</code>.</p>
+
+<p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.GitHub.com/articles/syncing-a-fork" target="_blank">GitHub documentation</a>. Ensure you are updating your fork from the correct branch.</p>
 
 <p>It is also possible to use the GitHub interface to update your fork. This is referred to as a <em>reverse pull request</em>. This method has the downside of inserting unnecessary information into fork commit history.</p>
 
 <ol>
   <li>
-    <p>Go to your forked repository GitHub page, click <strong>New pull request</strong>. You should see the following message:</p>
+    <p>Navigate to the GitHub page for your forked repository and click <strong>New pull request</strong>. You should see the following message:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There isn’t anything to compare.
-magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switching the base for your comparison.
+magento:2.1 is up to date with all commits from &lt;your fork&gt;:2.1. Try switching the base for your comparison.
 </code></pre></div>    </div>
   </li>
   <li>
@@ -571,7 +590,7 @@ magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switc
   </li>
 </ol>
 
-<h2 id="create-a-pull-request">Create a pull request</h2>
+<h2 id="pull-request">Create a pull request</h2>
 <p>To create a pull request do the following:</p>
 
 <ol>
@@ -588,18 +607,25 @@ magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switc
     <p>Review the changes, then click <strong>Create pull request</strong>.</p>
   </li>
   <li>
-    <p>Fill out the form, and click <strong>Create pull request</strong> again to submit the pull request—that’s it!</p>
+    <p>Fill out the form and click <strong>Create pull request</strong> again to submit the pull request—that’s it!</p>
   </li>
 </ol>
 
-<h2 id="report-an-issue">Report an issue</h2>
-<p>If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs Github repository.</p>
+<h2 id="issues">Report an issue</h2>
+<p>If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs GitHub repository.</p>
+
+<p>GitHub issues use templates for requested information. Enter as much information as you can including content corrections, steps to reproduce, command or code updates, or questions for clarifications.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Check the <a href="https://github.com/magento/devdocs/issues">existing issues</a> on Github to see if someone has already reported the issue.</p>
+  <p>Check the <a href="https://GitHub.com/magento/devdocs/issues">existing issues</a> on GitHub to see if someone has already reported the issue.</p>
 </div>
 
-<p>All topics on this site contain a link to the Issues panel on Github, which makes it easy to report issues on specific topics. Click the <strong>Give us feedback</strong> link at the top left of the page to open an issue for that page.</p>
+<p>You have a couple of options to enter an issue:</p>
+<ul>
+  <li>Have general feedback? Create an issue on <a href="https://GitHub.com/magento/devdocs/issues/new" target="_blank">GitHub DevDocs</a>.</li>
+  <li>Have feedback on a specific DevDocs page? Click the <strong>Report an Issue</strong> link at the top right of the page to report on the currently open topic.</li>
+  <li>Have a Community code contribution? Create an issue to <a href="https://GitHub.com/magento/devdocs/issues/new?template=COMMUNITY_ISSUE_TEMPLATE.md" target="_blank">request DevDocs content</a>.</li>
+</ul>
 
 <h2 id="edit-metadata">Edit metadata</h2>
 <p>The Markdown (.md) file’s   <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span>
@@ -609,7 +635,7 @@ magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switc
 <span class="na">group</span><span class="pi">:</span> <span class="s">install2</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s">Continue with your installation</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s">2.1</span>
-<span class="na">github_link</span><span class="pi">:</span> <span class="s">install-gde/continue.md</span>
+<span class="na">GitHub_link</span><span class="pi">:</span> <span class="s">install-gde/continue.md</span>
 <span class="nn">---</span>
 </code></pre></div></div>
 
@@ -631,31 +657,25 @@ magento:2.0 is up to date with all commits from &lt;your fork&gt;:2.0. Try switc
          <td>Selects the template Jekyll will use to render the .md file into HTML&amp;CSS.</td>
       <tr>
          <td>group: install</td>
-         <td>Defines which guide the file belongs to, that is, which left-hand menu collection the file will show up in. Note that what you put here does not affect the top navigation menu. That is controlled by the `_/includes/navigation.html` file.</td>
+         <td>Defines which guide the file belongs to and which left-hand menu collection the file will show up in. What you put here does not affect the top navigation menu, which is controlled by the `_/includes/navigation.html` file.</td>
       </tr>
       <tr>
          <td>title: Install Magento</td>
          <td>Sets the title of the page in the HTML meta and the main title on the page.</td>
       </tr>
       <tr>
-         <td>version: 2.0</td>
-         <td>Specifies which version(s) of Magento the topic affects. We also use this data to build links to the file on Github.</td>
+         <td>version: 2.1</td>
+         <td>Specifies which version(s) of Magento the topic affects. We also use this data to build links to the file on GitHub.</td>
       </tr>
       <tr>
-        <td>github_link: install-gde/continue.md</td>
-        <td>Specifies the name and location of the source file in the Github repository.</td>
+        <td>GitHub_link: install-gde/continue.md</td>
+        <td>Specifies the name and location of the source file in the GitHub repository.</td>
       </tr>
    </tbody>
 </table>
 
-<h4 id="add-a-contributors-name-to-a-topic">Add a Contributor’s name to a topic</h4>
-<p>When a community member contributes an entire topic—or makes substantial improvements to an existing topic—we like to thank them by adding their name (or company name) beneath the topic title and a link to their blog or web site.</p>
-
-<p>In the metadata section at the top of the file, add these two entries:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">contributor_name</span><span class="pi">:</span> <span class="s">&lt;name_of_contributor&gt;</span>
-<span class="na">contributor_link</span><span class="pi">:</span> <span class="s">&lt;link_to_contributors_site_or_blog&gt;</span>
-</code></pre></div></div>
+<h3 id="add-a-contributors-name-to-a-topic">Add a Contributor’s name to a topic</h3>
+<p>When a community member contributes an entire topic—or makes substantial improvements to an existing topic—we like to thank them by adding their name (or company name) beneath the topic title and a link to their blog or website.</p>
 
 <p>Thank you for contributing your brilliance to Magento DevDocs!!</p>
 
