@@ -27,7 +27,6 @@ If multiple annotation values are supported and required each value requires a s
 - Tests must contain a unique `stories` and `title` combination within a module; this is required for correct Allure reporting.
 
 Recommended use cases of the annotation types:
-- [features] - report grouping, defaults to module containing the test.
 - [stories] - report grouping, a set of tests that verify a story.
 - [title] - description of the test purpose.
 - [group] - general functionality grouping.
@@ -37,7 +36,6 @@ Recommended use cases of the annotation types:
 
 ```xml
 <annotations>
-    <features value="Category"/>
     <title value="Create a Category via Admin"/>
     <group value="category"/>
 </annotations>
