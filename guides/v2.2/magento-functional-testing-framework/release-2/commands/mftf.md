@@ -153,7 +153,7 @@ Generates suite(s) based on XML declarations.
 
 `generate:suite <suites> <suites> ...`
 
-`<suites>` A suite names for generation (separated by space)
+`<suites>` is a placeholder for the suite name that you want to generate. If more than one, list them using the space separator.
 
 #### Example
 
