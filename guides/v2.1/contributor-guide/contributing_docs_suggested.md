@@ -7,14 +7,14 @@ github_link: contributor-guide/contributing_docs_suggested.md
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
 
-If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also [email us](DL-Magento-Doc-Feedback@magento.com), chat us at Community Engineering [#devdocs](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} Slack channel, or post a comment in the Github issue linked to the project title.
+If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com>, chat us at [Community Engineering Slack channel](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} , or post a comment in the GitHub issue linked to the project title.
 
-We also have labeled GitHub issues seeking your expert knowledge:
+The following GitHub issues are a great place to start:
 
 * [Help Wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22){:target="_blank"}
 * [Good First Issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22){:target="_blank"}
 
-If you take the issue and provide a PR to resolve, make sure to add the link to the issue in the description. You earn Contribution Points for every submitted and merged PR to DevDocs.
+If you take the issue and provide a PR to resolve it, make sure to add the link to the issue in the description. You can earn Contribution Points for every submitted to and merged into DevDocs.
 
 {% include note.html type="info" content="All of the following suggestions come directly from the community." %}
 

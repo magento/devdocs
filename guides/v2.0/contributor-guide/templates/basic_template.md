@@ -5,7 +5,7 @@ title: Basic template
 menu_title: Basic template
 menu_order: 1
 version: 2.0
-github_link: contributor-guide/templates/basic_template.md
+GitHub_link: contributor-guide/templates/basic_template.md
 redirect_from: contributor-guide/basic_template.html
 ---
 
@@ -66,7 +66,7 @@ Lists are useful for organizing and displaying related items. Below are examples
 3.	Third Step
 
 ### Images {#images}
-Please add any images you may need to the [`common/images`](https://github.com/magento/devdocs/tree/develop/common/images){:target="_blank"} directory.
+Please add any images you may need to the [`common/images`](https://GitHub.com/magento/devdocs/tree/develop/common/images){:target="_blank"} directory.
 
 Once the image is added, you can use it in your documentation:
 
@@ -117,7 +117,7 @@ Code blocks can also be defined using [Rouge formatting](http://rouge.jneen.net/
 
 For inline code, surround the content with single backticks: <code>`example`</code>.
 
-For blocks of code, surround content with 3 backticks and an optional [supported language](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
+For blocks of code, surround content with 3 backticks and an optional [supported language](https://GitHub.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers){:target="_blank"}.
 
 *Example:*
 
@@ -176,7 +176,7 @@ content='This is a note callout. You can use these to provide important informat
 {%
 include note.html
 type='warning'
-content='This is a warning callout. This is can be used to convey important information to the reader.'
+content='This is a warning callout. This can be used to convey important information to the reader.'
 %}
 {%endraw%}
 {% endhighlight %}
@@ -186,7 +186,7 @@ content='This is a warning callout. This is can be used to convey important info
 {%
 include note.html
 type='warning'
-content='This is a warning callout. This is can be used to convey important information to the reader.'
+content='This is a warning callout. This can be used to convey important information to the reader.'
 %}
 
 **Tips:**
@@ -196,7 +196,7 @@ content='This is a warning callout. This is can be used to convey important info
 {%
 include note.html
 type='tip'
-content='This is a tip callout. These can be used to provide useful tips or interesting fact on a topic.'
+content='This is a tip callout. These can be used to provide useful tips or interesting facts on a topic.'
 %}
 {%endraw%}
 {% endhighlight %}
@@ -206,11 +206,11 @@ content='This is a tip callout. These can be used to provide useful tips or inte
 {%
 include note.html
 type='tip'
-content='This is a tip callout. These can be used to provide useful tips or interesting fact on a topic.'
+content='This is a tip callout. These can be used to provide useful tips or interesting facts on a topic.'
 %}
 
 ### Collapsible content {#collapsible}
-You can use the collapsible content tag for large code samples in your content. Remember: Any content in a collapse is blocked from searching on page.
+You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.
 
 <div class="bs-callout bs-callout-info">
   <p>The <code>{%raw%}{% collapsible %}{%endraw%}</code> tag must be preceded by a blank line.</p>
