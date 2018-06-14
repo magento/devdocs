@@ -114,7 +114,7 @@ On your development system:
 
     *   `app/etc/config.php` is the shared configuration, which contains all settings _except_ sensitive and system-specific settings. This file should be in source control.
 
-    *   `app/etc/env.php` is the system-specific configuration, which contains settings that are unique to a particular system (for example, host names and port numbers). This file should _not_ be in source control.
+    *   `app/etc/env.php` is the system-specific configuration, which contains settings that are unique to a particular system (for example, hostnames and port numbers). This file should _not_ be in source control.
 3.  Add your modified code and the shared configuration to source control.
 
 ### Build system
