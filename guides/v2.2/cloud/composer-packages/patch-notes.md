@@ -15,7 +15,7 @@ Use this section to learn about updates to the following Composer packages:
 
 -   `vendor/magento/magento-cloud-metapackage`
 -   [`vendor/magento/ece-patches`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html)
--   [`vendor/magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html)
+-   [`vendor/magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
 -   `vendor/magento/product-enterprise-edition`
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

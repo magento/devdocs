@@ -38,7 +38,23 @@ stage:
           backend: file
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file.
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    CACHE_CONFIGURATION:
+      _merge: true
+      frontend:
+        default:
+          backend:
+            database: 10
+        page_cache:
+          backend:
+            database: 11
+```
 
 ### `CLEAN_STATIC_FILES`
 
@@ -61,6 +77,32 @@ Failure to clear static view files might result in issues if there are multiple 
 -  **Version**—Magento 2.1.4 and later
 
 Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
+
+### `DATABASE_CONFIGURATION`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+If you defined a database in the [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_value'
+```
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_new_value'
+      _merge: true
+```
 
 ### `GENERATED_CODE_SYMLINK`
 
@@ -110,7 +152,25 @@ stage:
         port: 1234
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file.
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+        QUEUE_CONFIGURATION:
+          _merge: true
+          amqp:
+            host: changed1.host
+            port: 5672
+          amqp2:
+            host: changed2.host2
+            port: 12345
+          mq:
+            host: changedmq.host
+            port: 1234
+```
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
@@ -155,6 +215,35 @@ stage:
     SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
 ```
 
+### `SCD_MATRIX`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+You can configure specific locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+
+The following example deploys the `magento/backend` theme with three locales:
+
+```yaml
+stage:
+  deploy:
+    SCD_MATRIX:
+      "magento/backend":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+```
+
+Also, you can choose to _not_ deploy a theme:
+
+```yaml
+stage:
+  deploy:
+    SCD_MATRIX:
+      "magento/backend": [ ]
+```
+
 ### `SCD_THREADS`
 
 -  **Default**: 
@@ -190,7 +279,18 @@ stage:
       elasticsearch_server_timeout: '15'
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    SEARCH_CONFIGURATION:
+      engine: elasticsearch
+      elasticsearch_server_port: '1234'
+      _merge: true
+```
 
 ### `SESSION_CONFIGURATION`
 
@@ -216,7 +316,18 @@ stage:
       save: redis
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    SESSION_CONFIGURATION:
+      _merge: true
+      redis:
+        max_concurrency: 10
+```
 
 ### `SKIP_SCD`
 

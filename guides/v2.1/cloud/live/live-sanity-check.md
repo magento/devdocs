@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 160_deploy
 title: Build and deploy on local
-menu_title: Build and deploy on local
-menu_order: 30
-menu_node:
 version: 2.1
 github_link: cloud/live/live-sanity-check.md
 functional_areas:
@@ -40,7 +36,7 @@ Your Git branch must have the following files for building and deploying for you
 * [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
 ## Test build your code locally before pushing {#test-build}
-Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. The generated build files from this test build **should not be pushed** into Git. This is just a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins.
+Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do **NOT** push the generated build files from this test to your remote Git branch. This is a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.
 
 1. SSH into your local Magento workspace.
 2. Move to another location to run your build. You should keep this build separate from your usual Git branch.
@@ -58,32 +54,38 @@ To remove these test builds, you can use the `magento-cloud local:clean` command
 ## Push code to Git and Integration {#push}
 Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
-To prepare your code and branch:
+#### To prepare your code and branch:
 
 {% include cloud/cli-get-started.md %}
 
-To push code to your remote environment:
+#### To push code to your remote environment:
 
-1.	If you haven't already, change to your project root directory.
-2.	Enter the following commands to complete code commits in a terminal:
+1.  Change to your project root directory.
+1.  Complete code commits in a terminal.
 
-		git add -A && git commit -m "<comment>"
-		git push origin <branch name>
-3.	The build and deploy phases begin. Wait for the deployment to complete.
+    ```bash
+    git add -A && git commit -m "<comment>"
+    ```
+    
+    ```bash
+    git push origin <branch name>
+    ```
+
+1.  The build and deploy phases begin. Wait for the deployment to complete.
 
 ## Build phase {#build}
-During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
+During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Commerce (Cloud) accounts
 *	Apply patches we provided specifically to you
-*	Enable all modules to build
+*	Enable modules to build
 *	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
 
-The build also checks for a [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it's completed in the deployment stage.
+The build also checks for a [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
 Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
-To build your site:
+#### To build your site:
 
 1.	Apply patches distributed to all Magento Commerce (Cloud) accounts.
 
@@ -105,7 +107,7 @@ To build your site:
 
 		... more ...
 							)
-2.	Apply hot fixes and other patches provided to you:
+2.	Apply hot fixes and other patches provided to you.
 
 		git apply <path to patch>
 
@@ -116,33 +118,36 @@ To build your site:
 	If the `m2-hotfixes` directory is empty, skip this step.
 
 	If patches are present, output from this command is similar to the patches command.
-3.	Enable all modules:
+1.  Enable all missing modules.
 
-		php bin/magento module:enable --all
+    ```bash
+    ./vendor/bin/ece-tools module:refresh
+    ```
 
-4.	Compile code and the dependency injection configuration:
+1.  Compile code and the dependency injection configuration:
 
-		php bin/magento  setup:di:compile
+    ```bash
+    php bin/magento  setup:di:compile
+    ```
+	This command can take several minutes to complete and produces messages similar to the following:
 
-	This command can take several minutes to complete.
+    ```terminal
+    Compilation was started.
+    0% 1 sec 54.0 MiB%message% 0/7 [>---------------------------]
+    0% 1 sec 54.0 MiBProxies code generation...
+    0/7 [>---------------------------]
+    0% 1 sec 54.0 MiB
+    Proxies code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
+    Repositories code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
+    Repositories code generation... 2/7 [========>-------------------]  28% 30 secs 176.0 MiB
+    ...
+    ...
+    Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
+    ```
 
-	Messages similar to the following are displayed:
+If you receive errors, debug them when possible and open a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) for further assistance.
 
-		Compilation was started.
-		0% 1 sec 54.0 MiB%message% 0/7 [>---------------------------]
-		0% 1 sec 54.0 MiBProxies code generation...
-		0/7 [>---------------------------]
-		0% 1 sec 54.0 MiB
-		Proxies code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
-		Repositories code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
-		Repositories code generation... 2/7 [========>-------------------]  28% 30 secs 176.0 MiB
-
-		... more ...
-		Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
-
-If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to get additional assistance.
-
-We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
+We strongly recommend you complete your testing in an Integration or Staging environment only, and _not_ in a Production environment.
 
 ## Deploy phase {#deploy}
 We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
@@ -152,15 +157,15 @@ We highly recommend having Magento already installed prior to deployment. During
 *	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 *	Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
-To deploy your site:
+#### To deploy your site:
 
-1.	If you haven't already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1.	If you have not already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to your project root directory.
 3.	Enter the following command:
 
 		php bin/magento setup:upgrade
 
-	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean
