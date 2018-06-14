@@ -98,11 +98,11 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-71936 -->* Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YEAR. Previously, when you tried to save a product in a locale where dates are formatted this way, Magento did not save the product, and displayed this error: `Invalid input datetime format`. [GitHub-10485](https://github.com/magento/magento2/issues/10485)
 
-<!--- MAGETWO-54740 -->* When you import new products using CVS, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock. 
+<!--- MAGETWO-54740 -->* When you import new products using CSV, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock. 
 
 
 ### CMS content
-<!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there is a validation check that uses `realpath` to test whether the file is outside the media directory base path. Since `realpath` resolves symlinks to actual paths, this check will fail if the actual path is outside of the base path, and will prevent action from being completed.
+<!--- MAGETWO-89281 -->* When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in `pub/media`. Previously, any files or folders that were symlinked inside the `pub/media` directory could not be deleted because there was a validation check that used `realpath` to test whether the file was outside the media directory base path. Since `realpath` resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.
 
 
 
@@ -114,7 +114,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-87570 -->* The **Hide from Product Page** option now works for the child product of a configurable product. 
 
-<!--- MAGETWO-71662 -->* The **Update On Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-indexed from the command line, your changes to configurable product options were not saved. 
+<!--- MAGETWO-71662 -->* The **Update on Save** re-index operation now works as expected when re-indexing configurable products after changing options. Previously,  when you manually re-indexed from the command line, your changes to configurable product options were not saved. 
 
 
 ### Frameworks
@@ -142,7 +142,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Indexing
-<!--- MAGETWO-80789 -->* The Search indexer is now scoped and multi-threaded, which improves  layered navigation, search and indexing actions for complex sites with multiple store views and shared catalogs.
+<!--- MAGETWO-80789 -->* The search indexer is now scoped and multithreaded, which improves  layered navigation, search and indexing actions for complex sites with multiple store views and shared catalogs.
 
 
 ### Orders
@@ -152,7 +152,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Payment methods
-<!--- MAGETWO-87832 -->* In multistore environments, Magento now retrieves the correct PayPal Payflow Pro credentials. Previously, Magento always retrieved the credentials configured for the default store. 
+<!--- MAGETWO-87832 -->* In multistore environments, Magento now retrieves the correct PayPal Payflow Pro credentials. Previously, Magento always retrieved the credentials that are configured for the default store. 
 
 
 
@@ -171,7 +171,7 @@ In addition to security enhancements, this release contains the following functi
 You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
 </div>
 
-<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 
+<!--- MAGETWO-84257 -->* Merchants can now choose whether to request and include tax information from UPS in the rate charged to the customer during checkout.  (This permits merchants  to pass on the tax costs to their customer as part of the overall shipping rate.) *Fix submitted by [gwharton](https://github.com/gwharton) in pull request 11707*. 
 
 
 
@@ -192,7 +192,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 ### Testing
-<!--- MAGETWO-88291 -->* You can now use REST to update the `available_payment_methods` company extension attribute. Previously, Magento set whatever  value you passed in to null in the database  `company_payment` table. 
+<!--- MAGETWO-88291 -->* You can now use REST to update the `available_payment_methods` company extension attribute. Previously, Magento set to null whatever  value you passed to the database  `company_payment` table. 
 
 <!--- MAGETWO-87487 -->* The `phpunit.xml` configuration file is now blacklisted during schema validation static tests (particularly `Magento/Test/Integrity/Xml/SchemaTest.php`). 
 
@@ -200,7 +200,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 ### URL rewrites
-<!--- MAGETWO-86554 -->* Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog on a different store. 
+<!--- MAGETWO-86554 -->* Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store. 
 
 
 ### Visual Merchandiser
