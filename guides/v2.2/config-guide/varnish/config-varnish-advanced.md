@@ -22,7 +22,7 @@ Varnish's health check feature polls the Magento server to determine whether it 
 
 Magento defines the following default health check:
 
-{% highlight json %}
+```json
 .probe = {
     .url = "/pub/health_check.php";
     .timeout = 2s;
@@ -30,7 +30,7 @@ Magento defines the following default health check:
     .window = 10;
     .threshold = 5;
     }
-{% endhighlight %}
+```
 
 Every 5 seconds, this health check calls the `pub/health_check.php` script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} is considered unhealthy.
 
@@ -90,17 +90,16 @@ Saint mode is not part of the main Varnish package. It is a separately-versioned
 After you've recompiled, you can install the Saint mode {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. In general, follow these steps:
 
 <ol>
-<li><p>Obtain the source code from <a href="https://github.com/varnish/varnish-modules">Varnish modules</a> . Clone the git version (master version) since the 0.9.x versions contain a source code error.</p></li>
-
+<li><p>Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the git version (master version) since the 0.9.x versions contain a source code error.</p></li>
 <li><p>Build the source code with autotools:</p>
-
-    sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
-    ./bootstrap   # If running from git.
-    ./configure
-    make
-    make check   # optional
-    sudo make install
-
+```bash
+sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
+./bootstrap   # If running from git.
+./configure
+make
+make check   # optional
+sudo make install
+```
 </li></ol>
 
 See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing the Saint mode module.
