@@ -61,7 +61,6 @@ The following conventions apply to MFTF tests:
 * `<test>` name must be alphanumeric.
 * Each action and action group has its own identifier `<stepKey>` for reference purposes.
 * A test may have any number of [assertions](./test/assertions.html), at any point within the `<test>`.
-* The file name and `<test>` name are equal.
 * If `<test>` is included in `<suite>`, it **cannot be generated in isolation** to the rest of the contents of the suite (see [suites](./suite.html) for details).
 
 Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.
