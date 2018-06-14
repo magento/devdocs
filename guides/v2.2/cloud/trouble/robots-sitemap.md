@@ -23,7 +23,7 @@ Create the `/pub/media` directory using the following, appropriate environment:
 
 Add the path to the `.gitgnore` file and commit the code changes.
 
-You do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. You can view the content in your browser with the url: `<domian.your.project>/robots.txt`
+You do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. You can view the content in your browser with the url: `<domain.your.project>/robots.txt`
 
 #### To generate a `sitemap.xml` file in version 2.2 and later:
 
@@ -41,7 +41,7 @@ You do not have to generate a `robots.txt` because it generates on demand and st
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
 ## Rewrite using Fastly VCL snippet
- If you have different domains and you need separate sitemaps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+ If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
 Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key and value pairs.

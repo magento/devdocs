@@ -38,7 +38,14 @@ Add the path to the `.gitgnore` file and commit the code changes.
 
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
-#### To add a `robots.txt` file:
+For versions earlier than 2.1.11, see the following table for the appropriate path to use:
+
+Version | Site Map Path | Notes
+--- | --- | ---
+Earlier than 2.1.10 | `pub/media` | The 'robots.txt' file must exist.<br>**Generate robots**: Admin Panel > Stores > Settings:Configuration > General:Design
+2.1.4 to 2.1.10 | `/media/` | 
+
+#### To add a `robots.txt` file in version earlier than 2.1.11:
 
 1.  Access the Magento Admin panel.
 1.  On the _Stores_ menu, click **Configuration** in the _Settings_ section.
@@ -49,15 +56,8 @@ Add the path to the `.gitgnore` file and commit the code changes.
 
 Your `robots.txt` file appears in the `<magento_root>/app/pub/media/` folder.
 
-For versions earlier than 2.1.11, see the following table for the appropriate path to use:
-
-Version | Site Map Path | Notes
---- | --- | ---
-Earlier than 2.1.10 | `pub/media` | The 'robots.txt' file must exist.<br>**Generate robots**: Admin Panel > Stores > Settings:Configuration > General:Design
-2.1.4 to 2.1.10 | `/media/` | 
-
 ## Rewrite using Fastly VCL snippet
- If you have different domains and you need separate sitemaps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+ If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
 #### To use a Fastly VCL snippet for redirect:
 Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key and value pairs.
