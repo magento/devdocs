@@ -8,26 +8,42 @@ github_link: contributor-guide/contributing_docs.md
 redirect_from: /guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
 
-Share your knowledge with the community by contributing to Magento DevDocs! You can contribute by creating an issue or pull request (PR) on our [devdocs](https://github.com/magento/devdocs){:target="\_blank"} Github repository. We welcome all types of contributions; from minor typo fixes to new topics.
+Share your knowledge with the community by contributing to Magento DevDocs! You can contribute by creating an issue or pull request (PR) on our [devdocs](https://github.com/magento/devdocs){:target="_blank"} Github repository. We welcome all types of contributions; from minor typo fixes to new topics. As you contribute PRs, you can also gain Contribution Points with Community Engineering.
 
 Magento's team of technical writers reviews all issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible. Working through the backlog takes time, though, so we appreciate your patience.
 
-<div class="bs-callout bs-callout-tip" id="tip" markdown="1">
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 If you are not sure where to start contributing, you can review our list of [suggested topics]({{ page.baseurl }}/contributor-guide/contributing_docs_suggested.html).
 </div>
 
-If you write and contribute a full topic, we will put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! We will also add your picture and a link to your Github account on the <a href="{{ page.baseurl }}/contributor-guide/quarterly-contributors.html#top-recent-contributors">Top recent contributors</a> page.
+If you write and contribute a full topic, we will put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! We will also add your picture and a link to your Github account on the [Top recent contributors]({{ page.baseurl }}/contributor-guide/quarterly-contributors.html#top-recent-contributors) page.
 
-## Contribution guidelines
-We use [Markdown](http://daringfireball.net/projects/markdown/){:target="\_blank"} to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="\_blank"}. We have a <a href="{{ page.baseurl }}/contributor-guide/templates/basic_template.html" target="\_blank">template</a> to make getting started easy.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The 2.0 version of Magento DevDocs has reached its end of life (EOL). The doc set will still be available and visible on the Magento DevDocs site for you to access and reference. [Magento 2.0.18](https://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html) is the final 2.0x release, and as of March 2018, Magento 2.0x will no longer receive security patches, quality fixes, or documentation updates.
+</div>
 
-{% include note.html type="info" content="Refer to the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about licensing. All contributors are required to submit a click-through form to agree to the terms." %}
+## Contribution guideslines
+We use [Markdown](http://daringfireball.net/projects/markdown/){:target="_blank"} to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="_blank"}.
+
+You can update or add content to existing topics. We have all topics in versioned directories for 2.0, 2.1, 2.2, and onward.
+
+We provide templates to help get you started on new topics:
+
+* [General topic template]({{ page.baseurl }}/contributor-guide/templates/basic_template.html) with example formats and styles.
+* Tutorial templates with example formats and styles for step-by-step instructions, like How Tos. It includes templates for the [first introduction topic]({{ page.baseurl }}/contributor-guide/templates/tutorial-template-first.html), [middle topic]({{ page.baseurl }}/contributor-guide/templates/tutorial-template-middle.html) for each step, and a [final step topic]({{ page.baseurl }}/contributor-guide/templates/tutorial-template-last.html).
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Refer to the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about licensing. All contributors are required to submit a click-through form to agree to the terms.
+</div>
 
 1.  First, check [existing pull requests](https://github.com/magento/devdocs/pulls){:target=\_blank"} and make sure you are not duplicating work!
 
-1.  For large contributions or changes that include multiple files, [open an issue](https://github.com/magento/devdocs/issues){:target="\_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort.
+1.  For large contributions or changes that include multiple files, [open an issue](https://github.com/magento/devdocs/issues){:target="_blank"} and discuss it with us first. This may prevent duplicate or unnecessary effort.
 
-1.  Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits. The DevDocs team can also help find the best home for your new topics.
+1.  Familiarize yourself with the existing documentation; taking a look at what is already there will help you decide where your topic best fits.
+
+    -   The DevDocs team can help find the best home for your new topics and add it to the navigation. 
+    -   If a topic has a symlink, you can remove it with git commands and add a new file. Copy and paste a previous version of the topic to get started.
 
 1.  Focus on the content and on creating useful information for your fellow Magento developers and community members. Don't forget to review your work for typos, formatting errors, or sentences that need clarifying before opening a pull request.
 
@@ -53,12 +69,12 @@ To fork the devdocs repository on Github, do the following:
 
 1.  Clone the repository into your development environment and then start writing and committing your changes. Optionally, create a branch first if you plan to work on multiple changes.
 
-1.  Build the devdocs site locally using Jekyll by following the instructions in our [README](https://github.com/magento/devdocs/blob/develop/README.md){:target="\_blank"}.
+1.  Build the devdocs site locally using Jekyll by following the instructions in our [README](https://github.com/magento/devdocs/blob/develop/README.md){:target="_blank"}.
 
 ## Update your fork {#sync}
 As we merge changes with the upstream repository, your fork becomes outdated and pull requests might result in merge conflicts. To see if your fork is outdated, open the fork page in GitHub. If you see the following message at the top of the page, you must update your fork: `This branch is <number> commits behind develop`.
 
-There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="\_blank"}. Make sure to update from the correct branch!
+There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.github.com/articles/syncing-a-fork){:target="_blank"}. Make sure to update from the correct branch!
 
 It is also possible to use the GitHub interface to update your fork. This is referred to as a *reverse pull request*. This method has the downside of inserting unnecessary information into fork commit history.
 
@@ -75,7 +91,7 @@ It is also possible to use the GitHub interface to update your fork. This is ref
 
 1.  Click **Confirm Merge**.
 
-## Create a pull request
+## Create a pull request {#pull-request}
 To create a pull request do the following:
 
 1.  Push your changes to your forked repository on GitHub.
@@ -88,16 +104,19 @@ To create a pull request do the following:
 
 1.  Fill out the form, and click **Create pull request** again to submit the pull request&mdash;that’s it!
 
-## Report an issue
-If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs Github repository.
+## Report an issue {#issues}
+If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs Github repository. New GitHub issues include questions and requests for information to help us write or update content. Fill in as much information as you can.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Check the [existing issues](https://github.com/magento/devdocs/issues){:target} on Github to see if someone has already reported the issue.
+Check the [existing issues](https://github.com/magento/devdocs/issues) on Github to see if someone has already reported the issue.
 </div>
 
-All topics on this site contain a link to the Issues panel on Github, which makes it easy to report issues on specific topics. Click the **Give us feedback** link at the top left of the page to open an issue for that page.
+You have a couple of options to enter an issue:
+* Have general feedback? Create an issue on [GitHub DevDocs](https://github.com/magento/devdocs/issues/new){:target="_blank"}.
+* Have feedback on a specific DevDocs page? Click the **Report an Issue** link at the top right of the page to report on the currently open topic.
+* Have a Community code contribution? Create an issue to [request DevDocs content](https://github.com/magento/devdocs/issues/new?template=COMMUNITY_ISSUE_TEMPLATE.md){:target="_blank"}.
 
-## Edit metadata  
+## Edit metadata
 The Markdown (.md) file's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} is a set of YAML key-value pairs. The metadata section is located at the top of each file.
 
 ```yaml
@@ -144,7 +163,7 @@ Refer to the following table for a description of each key-value pair.
    </tbody>
 </table>
 
-#### Add a Contributor's name to a topic
+### Add a Contributor's name to a topic
 When a community member contributes an entire topic—or makes substantial improvements to an existing topic—we like to thank them by adding their name (or company name) beneath the topic title and a link to their blog or web site.
 
 In the metadata section at the top of the file, add these two entries:
