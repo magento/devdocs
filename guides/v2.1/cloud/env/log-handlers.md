@@ -13,7 +13,7 @@ You can configure logging handlers to send messages to a remote logging server. 
 
 The following example configures both of these handlers by adding the configuration to the `.magento.env.yaml` file. For the minimum logging level (`min_level`), see [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels).
 
-```
+```yaml
 log:
   syslog:
     ident: "<syslog-ident>"

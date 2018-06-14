@@ -92,7 +92,7 @@ where:
 </tr>
 <tr>
 <td>amqp-host</td>
-<td>The host name where RabbitMQ is installed.</td>
+<td>The hostname where RabbitMQ is installed.</td>
 </tr>
 <tr>
 <td>amqp-port</td>

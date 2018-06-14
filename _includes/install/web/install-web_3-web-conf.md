@@ -13,7 +13,7 @@
 	<tr>
 		<td>Your Store Address </td>
 		<td><p>Enter the URL, <em>including scheme and trailing slash</em>, by which users access your storefront.</p>
-		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
+		<p>For example, if your storefront hostname is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
 	</tr>
 	<tr>
 		<td>Magento Admin Address </td>

@@ -108,7 +108,7 @@ For example, if you have a public URL `www.mymagento.biz`, enter a command simil
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
 
-If you do not have DNS set up for a public host name, enter a command similar to the following:
+If you do not have DNS set up for a public hostname, enter a command similar to the following:
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 

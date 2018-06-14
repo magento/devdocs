@@ -61,7 +61,7 @@ where
 	</tr>
 <tr>
 	<td>host</td>
-	<td><p>Fully qualified host name, IP address, or absolute path if using UNIX sockets.</p></td>
+	<td><p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p></td>
 	<td>127.0.0.1</td>
 </tr>
 <tr>

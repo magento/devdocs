@@ -82,17 +82,23 @@ You can only delete this file to replace it this one time. After generating a co
 ### Update .magento.app.yaml {#magento-app-yaml}
 If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
 
-1. Locate and edit your `.magento.app.yaml` in your Git branch.
+1. Locate and edit the `.magento.app.yaml` file in your Git branch.
 2. For the PHP version, make sure it is 7.0: `type: php:7.0`
 3. We have updated our build and deploy hooks. Locate the `hooks` section, and update the following:
 
-        hooks:
-          # We run build hooks before your application has been packaged.
-          build: |
-              php ./vendor/bin/m2-ece-build
-          # We run deploy hook after your application has been deployed and started.
-          deploy: |
-              php ./vendor/bin/m2-ece-deploy
+		```yaml
+		hooks:
+		    # We run build hooks before your application has been packaged.
+		    build: |
+		        php ./vendor/bin/ece-tools build
+		    # We run deploy hook after your application has been deployed and started.
+		    deploy: |
+		        php ./vendor/bin/ece-tools deploy
+		    # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
+		    post_deploy: |
+		        php ./vendor/bin/ece-tools post-deploy
+		```
+
 4. Enter the following environment variables to the end of your file:
 
         variables:
