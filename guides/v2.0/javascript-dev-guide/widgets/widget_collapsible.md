@@ -7,8 +7,8 @@ menu_title: Collapsible widget
 version: 2.0
 github_link: javascript-dev-guide/widgets/widget_collapsible.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_collapsible.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_collapsible.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html
 ---
 
 <h2>Overview</h2>
@@ -539,4 +539,8 @@ $("#element").collapsible("forceDeactivate");
 Called before the content is opened. 
 
 <h3 id="c_dimensionsChanged"><code>dimensionsChanged</code></h3>
-Called after content is opened or closed.
+Called after content is opened or closed. Passes object as first parameter when triggered.  
+
+Parameter on open: <code>{opened: true}</code>
+
+Parameter on close: <code>{opened: false}</code>

@@ -9,7 +9,7 @@ Create checkout and OMS master databases as follows:
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same user names and passwords:
+4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
 		create database magento_quote;
 		GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';

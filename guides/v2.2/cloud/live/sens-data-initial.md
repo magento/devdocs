@@ -59,7 +59,7 @@ To change locale and static file optimization settings:
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** check box next to the **Minify Html** list.
+6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
 7.	From the **Minify Html** list, click **No**.
 5.	In the right pane, expand **CSS Settings**.
 6.	From the **Merge CSS Files** list, click **No**.
@@ -164,7 +164,7 @@ If you need to modify any of these settings and update `config.php`, you will ne
 
 To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.
 
-For an overvidew, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+For an overview, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 For this example, we'll modify static file optimization settings and add a new setting for JavaScript.
 

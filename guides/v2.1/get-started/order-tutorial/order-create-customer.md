@@ -123,7 +123,7 @@ Magento assigned this user `id` value of `2`.
 {% endhighlight %}
 {% endcollapsible %}
 
-You can log in to the Luma store using the user name `jdoe@example.com` and password `Password1`.
+You can log in to the Luma store using the username `jdoe@example.com` and password `Password1`.
 
 ### Get the customer's access token {#get-token}
 

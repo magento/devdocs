@@ -80,7 +80,7 @@ To install a new purchase:
 
 	To install all of them, click **Select all** from the list.
 
-	To install components individually, either select the check box next to the component or click **Install** in the Action column.
+	To install components individually, either select the checkbox next to the component or click **Install** in the Action column.
 
 	The following figure shows an example of selecting all components.
 

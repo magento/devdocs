@@ -30,7 +30,7 @@ We now use <a href="http://getcomposer.org">Composer</a> to resolve dependencies
   		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
 	</div>
 
-For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">>switch to the Magento file system owner</a>.
+For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
 
 <h2 id="install-composer-install">Run <code>composer install</code> to update dependencies</h2>
 Update installation dependencies as follows:

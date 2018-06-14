@@ -1,1 +1,1 @@
-../../../v2.0/cloud/configure/fastly-vcl-blacklist.md
+../../../v2.1/cloud/configure/fastly-vcl-blacklist.md

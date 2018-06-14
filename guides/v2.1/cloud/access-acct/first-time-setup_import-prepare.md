@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transfering media files, and migrating data.
+You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.
 
 Before preparing your project and importing code, push all pending changes to Git. Your remote {{site.data.var.ece}} branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.
 
@@ -177,7 +177,7 @@ The following command example compresses the dump so it doesn't significantly in
 
         mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 
-  For example, if your database is on localhost with the default port (3306), database user name is `magento`, and database name is also `magento`:
+  For example, if your database is on localhost with the default port (3306), database username is `magento`, and database name is also `magento`:
 
         mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 

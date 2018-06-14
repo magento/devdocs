@@ -66,7 +66,7 @@ Back up your Staging or Production environment database before deploying to thos
 
 3.  Create a database dump:
 
-        mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
+        mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
 
 ## Verify other changes {#verify-changes}
 Verify other changes you're going to submit to source control before you start the upgrade:

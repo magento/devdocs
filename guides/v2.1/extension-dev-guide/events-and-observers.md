@@ -27,18 +27,23 @@ The following example shows you how to dispatch an event with and without an arr
 {% highlight php startinline=true %}
 
 namespace MyCompany\MyModule;
+
 use Magento\Framework\Event\ObserverInterface;
-class MyClass{
+
+class MyClass
+{
   /**
-  * @var EventManager
-  */
+   * @var EventManager
+   */
   private $eventManager;
 
-  public function __construct(\Magento\Framework\Event\Manager $eventManager){
+  public function __construct(\Magento\Framework\Event\Manager $eventManager)
+  {
     $this->eventManager = $eventManager;
   }
 
-  public function something(){
+  public function something()
+  {
     $eventData = null;
     // Code...
     $this->eventManager->dispatch('my_module_event_before');
@@ -90,6 +95,7 @@ One of the more powerful feature of observers is that they are able to use param
 
 {% highlight php startinline=true %}
 namespace MyCompany\MyModule\Observer;
+
 use Magento\Framework\Event\ObserverInterface;
 
 class AnotherObserver implements ObserverInterface
