@@ -725,6 +725,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1868,12 +1882,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.1/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -2058,9 +2072,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h2 id="cloud-config-specific-recomm">Recommended procedure to manage your settings</h2>
-<p>Managing store configuration is a complex task that’s mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions. We can help you manage those settings more easily. For example, you may want to change the default locale and a store’s static file optimization settings, with different settings in Staging and Production. Instead of making these changes in every environment, use <code class="highlighter-rouge">config.local.php</code>.</p>
+<p>Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the <code class="highlighter-rouge">config.local.php</code> file, which contains a number of configuration properties that you can adjust as needed.</p>
 
-<p>We <strong>strongly recommend</strong> using <code class="highlighter-rouge">scd-dump</code> to generate <code class="highlighter-rouge">config.local.php</code>. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.</p>
+<p>We <strong>strongly recommend</strong> using the <code class="highlighter-rouge">scd-dump</code> command to generate a <code class="highlighter-rouge">config.local.php</code> file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.</p>
 
 <p>To fully understand the process, please see <a href="/guides/v2.1/cloud/live/sens-data-initial.html">our extensive example</a>.</p>
 
@@ -2077,14 +2091,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>
-    <p>Log into the Magento Admin for one of the environments:</p>
+    <p>Log in to the Magento Admin for one of the environments:</p>
 
     <ul>
       <li>Starter: An active development branch</li>
-      <li>Pro: The <code class="highlighter-rouge">master</code> environment in Integration</li>
+      <li>Pro: Integration branch</li>
     </ul>
   </li>
-  <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don’t include your full store data.</li>
+  <li>Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.</li>
   <li>
     <p>Open a terminal on your local and use an SSH command to generate <code class="highlighter-rouge">/app/etc/config.local.php</code> on the environment:</p>
 
@@ -2092,7 +2106,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<p>For example for Pro, to run the <code class="highlighter-rouge">scd-dump</code> on Integration <code class="highlighter-rouge">master</code>:</p>
+<p>For example, for Pro on the Integration branch:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 </code></pre></div></div>
@@ -2114,31 +2128,58 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="push-git">Step 3 &amp; 4: Push Git branch to Staging and Production</h3>
-<p>Log into the Magento Admin in those environments to verify the settings. If you used <code class="highlighter-rouge">scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
+<p>Log in to the Magento Admin in those environments to verify the settings. If you used <code class="highlighter-rouge">scd-dump</code>, only configured settings display. You can continue configuring the environment if needed.</p>
 
 <p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally <code class="highlighter-rouge">master</code> for Production. Complete any additional configurations in Staging and Production as needed.</p>
 
-<p>For Pro, when you push to the Git branch, the Integration <code class="highlighter-rouge">master</code> environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
+<p>For Pro, when you push to the Git branch, the Integration environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
 
-<h2 id="update">Update configurations</h2>
-<p>If you need to change any configuration settings <code class="highlighter-rouge">config.local.php</code>, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration <code class="highlighter-rouge">master</code> environment.</p>
+<h2 id="update-configurations">Update configurations</h2>
+<p>If you need to change any configuration settings in the <code class="highlighter-rouge">config.local.php</code> file, repeat the process with an extra step. For Starter, complete the changes in an active, development environment. For Pro, use the Integration environment.</p>
 
-<p>If you only need to make a small change, you can edit <code class="highlighter-rouge">config.local.php</code> in a local Git branch and redeploy across environments.</p>
+<p>If you need to make a small change, you can edit the <code class="highlighter-rouge">config.local.php</code> file in a local development branch and redeploy across environments.</p>
 
 <p>To complete extensive changes:</p>
 
 <ol>
   <li>
-    <p>Delete <code class="highlighter-rouge">config.local.php</code> in your Integration environment.</p>
+    <p>Delete the <code class="highlighter-rouge">config.local.php</code>file in your Integration branch.</p>
 
-    <p>You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can’t edit it until this file is removed.</p>
+    <p>You must delete the file to change settings. All configurations exist in the database, displaying as editable in your Magento Admin panel. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can not edit the name until this file is removed.</p>
   </li>
   <li>Make configuration changes in the Admin on the Integration environment.</li>
   <li>Repeat the process to re-create <code class="highlighter-rouge">config.local.php</code> and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.</li>
 </ol>
 
+<h2 id="change-locales">Change locales</h2>
+<p>You can change your store locales without following a complex configuration import and export process, <em>if</em> you have <a href="/guides/v2.1/cloud/env/variables-intro.html#scd_on_demand">SCD_ON_DEMAND</a> enabled. You can update the locales using the Admin panel.</p>
+
+<p>You can add another locale to the Staging or Production environment by enabling <code class="highlighter-rouge">SCD_ON_DEMAND</code> in an Integration branch, generate an updated <code class="highlighter-rouge">config.local.php</code> file with the new locale information, and copy the configuration file to the target environment.</p>
+
+<p class="bs-callout bs-callout-warning">This process <strong>overwrites</strong> the store configuration; only do the following if the environments contain the same stores.</p>
+
+<ol>
+  <li>From your Integration environment, enable the <code class="highlighter-rouge">SCD_ON_DEMAND</code> variable.</li>
+  <li>Add the necessary locales using your Admin panel.</li>
+  <li>
+    <p>Generate the <code class="highlighter-rouge">app/etc/config.local.php</code> file containing all locales.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php ./vendor/bin/ece-tools config:dump
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the new configuration file from your Integration environment to your local Staging environment directory.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
+</code></pre></div>    </div>
+  </li>
+  <li>Push code changes to the remote.</li>
+</ol>
+
 <div class="bs-callout bs-callout-warning">
-  <p>While you can manually edit <code class="highlighter-rouge">config.local.php</code> in Staging and Production, we don’t recommend it. The file helps keep all of your configurations consistent across all of your environments.</p>
+  <p>While you can manually edit the <code class="highlighter-rouge">config.local.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.</p>
+
+  <p>Never delete the <code class="highlighter-rouge">config.local.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
 </div>
 
 			

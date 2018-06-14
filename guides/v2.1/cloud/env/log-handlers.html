@@ -725,6 +725,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1868,12 +1882,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.1/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -1946,40 +1960,40 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following example configures both of these handlers by adding the configuration to the <code class="highlighter-rouge">.magento.env.yaml</code> file. For the minimum logging level (<code class="highlighter-rouge">min_level</code>), see <a href="/guides/v2.1/cloud/env/setup-notifications.html#log-levels">Set up notifications—Log levels</a>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log:
-  syslog:
-    ident: "&lt;syslog-ident&gt;"
-    facility: 8 # http://php.net/manual/en/network.constants.php
-    min_level: "info"
-    logopts: &lt;syslog-logopts&gt;
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">log</span><span class="pi">:</span>
+  <span class="na">syslog</span><span class="pi">:</span>
+    <span class="na">ident</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;syslog-ident&gt;"</span>
+    <span class="na">facility</span><span class="pi">:</span> <span class="s">8</span> <span class="c1"># http://php.net/manual/en/network.constants.php</span>
+    <span class="na">min_level</span><span class="pi">:</span> <span class="s2">"</span><span class="s">info"</span>
+    <span class="na">logopts</span><span class="pi">:</span> <span class="s">&lt;syslog-logopts&gt;</span>
 
-  syslog_udp:
-    host: "&lt;syslog-host&gt;"
-    port: &lt;syslog-port&gt;
-    facility: 8  # http://php.net/manual/en/network.constants.php
-    ident: "&lt;syslog-ident&gt;"
-    min_level: "info"
+  <span class="na">syslog_udp</span><span class="pi">:</span>
+    <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;syslog-host&gt;"</span>
+    <span class="na">port</span><span class="pi">:</span> <span class="s">&lt;syslog-port&gt;</span>
+    <span class="na">facility</span><span class="pi">:</span> <span class="s">8</span>  <span class="c1"># http://php.net/manual/en/network.constants.php</span>
+    <span class="na">ident</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;syslog-ident&gt;"</span>
+    <span class="na">min_level</span><span class="pi">:</span> <span class="s2">"</span><span class="s">info"</span>
 
-  gelf:
-    min_level: "info"
-    use_default_formatter: true
-    additional: # Some additional information for each log message
-      project: "&lt;some-project-id&gt;"
-      app_id: "&lt;some-app-id&gt;"
-    transport:
-      http:
-        host: "&lt;http-host&gt;"
-        port: &lt;http-port&gt;
-        path: "&lt;http-path&gt;"
-        connection_timeout: 60
-      tcp:
-        host: "&lt;tcp-host&gt;"
-        port: &lt;tcp-port&gt;
-        connection_timeout: 60
-      udp:
-        host: "&lt;udp-host&gt;"
-        port: &lt;udp-port&gt;
-        chunk_size: 1024
+  <span class="na">gelf</span><span class="pi">:</span>
+    <span class="na">min_level</span><span class="pi">:</span> <span class="s2">"</span><span class="s">info"</span>
+    <span class="na">use_default_formatter</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">additional</span><span class="pi">:</span> <span class="c1"># Some additional information for each log message</span>
+      <span class="na">project</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;some-project-id&gt;"</span>
+      <span class="na">app_id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;some-app-id&gt;"</span>
+    <span class="na">transport</span><span class="pi">:</span>
+      <span class="na">http</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;http-host&gt;"</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">&lt;http-port&gt;</span>
+        <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;http-path&gt;"</span>
+        <span class="na">connection_timeout</span><span class="pi">:</span> <span class="s">60</span>
+      <span class="na">tcp</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;tcp-host&gt;"</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">&lt;tcp-port&gt;</span>
+        <span class="na">connection_timeout</span><span class="pi">:</span> <span class="s">60</span>
+      <span class="na">udp</span><span class="pi">:</span>
+        <span class="na">host</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;udp-host&gt;"</span>
+        <span class="na">port</span><span class="pi">:</span> <span class="s">&lt;udp-port&gt;</span>
+        <span class="na">chunk_size</span><span class="pi">:</span> <span class="s">1024</span>
 </code></pre></div></div>
 
 			

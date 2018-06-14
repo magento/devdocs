@@ -396,9 +396,9 @@ All the data are stored in an encrypted archive file which is securely transferr
 Data collection is declared in a configuration file <code class="highlighter-rouge">etc/analytics.xml</code>. It declares:</p>
 
 <ul>
-  <li>which report files must be included into the archive file</li>
-  <li>which provider classes must collect data for each report file</li>
-  <li>which report data configuration must be applied to collected data</li>
+  <li>Which report files must be included into the archive file.</li>
+  <li>Which provider classes must collect data for each report file.</li>
+  <li>Which report data configuration must be applied to collected data.</li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
@@ -443,12 +443,12 @@ Any changes in configuration files will cause issues, because the <abbr title="M
 <p>The example configuration file declares the following:</p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">modules.csv</code>, <code class="highlighter-rouge">store_config.csv</code>, <code class="highlighter-rouge">stores.csv</code> report files must be included into the archive file prepared for the <abbr title="Magento Business Analytics">MBI</abbr> service.</li>
+  <li>The <code class="highlighter-rouge">modules.csv</code>, <code class="highlighter-rouge">store_config.csv</code>, and <code class="highlighter-rouge">stores.csv</code> report files must be included in the archive file prepared for the <abbr title="Magento Business Analytics">MBI</abbr> service.</li>
   <li><code class="highlighter-rouge">modules.csv</code> must contain data provided by the <code class="highlighter-rouge">\Magento\Analytics\ReportXml\ReportProvider</code> class.
  Provided data must be configured according to the <code class="highlighter-rouge">modules</code> report declarations defined in the <code class="highlighter-rouge">etc/reports.xml</code> file.</li>
   <li><code class="highlighter-rouge">store_config.csv</code> must contain data provided by the <code class="highlighter-rouge">Magento\Analytics\Model\StoreConfigurationProvider</code> class.</li>
   <li><code class="highlighter-rouge">stores.csv</code> must contain data provided by the <code class="highlighter-rouge">\Magento\Analytics\ReportXml\ReportProvider</code> class.
- Provided data are configured according to the <code class="highlighter-rouge">store_config</code> report declarations defined in the <code class="highlighter-rouge">etc/reports.xml</code> file.
+ Provided data is configured according to the <code class="highlighter-rouge">store_config</code> report declarations defined in the <code class="highlighter-rouge">etc/reports.xml</code> file.
  Also, the report file must contain data provided by the <code class="highlighter-rouge">Magento\Analytics\Model\StoreConfigurationProvider</code> class.</li>
 </ul>
 
@@ -458,7 +458,7 @@ Any changes in configuration files will cause issues, because the <abbr title="M
 
 <h2 id="structure">Structure</h2>
 
-<p>The <code class="highlighter-rouge">etc/analytics.xsd</code> schema declares structure of the <code class="highlighter-rouge">etc/analytics.xml</code> file .</p>
+<p>The <code class="highlighter-rouge">etc/analytics.xsd</code> schema declares the structure of the <code class="highlighter-rouge">etc/analytics.xml</code> file.</p>
 
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="924" height="166" version="1.1" id="svg208" sodipodi:docname="analytics_xsd.svg" inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
@@ -764,7 +764,7 @@ It can contain parameters.</p>
   </tbody>
 </table>
 
-<p>Currently there is only one report provider is available that is <code class="highlighter-rouge">Magento\Analytics\ReportXml\ReportProvider</code>.</p>
+<p>Currently there is only one report provider available that is <code class="highlighter-rouge">Magento\Analytics\ReportXml\ReportProvider</code>.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
     <span class="nt">&lt;providers&gt;</span>

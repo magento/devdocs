@@ -739,6 +739,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1906,12 +1920,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -2083,7 +2097,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
   <li>Save the file.</li>
   <li>
-    <p>Run the composer update command to pull all B2B files into your branch.</p>
+    <p>Update composer to pull all B2B files into your branch.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer update
 </code></pre></div>    </div>
@@ -2100,9 +2114,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enable all modules using the following command. You need to use this command to ensure all modules, including B2B, are enabled for updating.</p>
+    <p>Enable all missing modules,including B2B, for updating.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php bin/magento module:enable --all
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ./vendor/bin/ece-tools module:refresh
 </code></pre></div>    </div>
   </li>
   <li>

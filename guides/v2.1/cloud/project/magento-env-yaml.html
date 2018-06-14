@@ -725,6 +725,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1868,12 +1882,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.1/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -1972,11 +1986,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<p>The latest sample of the <code class="highlighter-rouge">.magento.env.yaml</code> file is in the <a href="https://github.com/magento/magento-cloud/blob/master/.magento.env.yaml" target="\_blank"><code class="highlighter-rouge">magento-cloud</code> template repository</a>. You can find a detailed definition for each variable in the following reference topics:</p>
+<p>The latest sample of the <code class="highlighter-rouge">.magento.env.yaml</code> file contains a detailed definition for each variable in the following reference topics:</p>
 
 <ul>
   <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Application</a>—variables control administrative credentials</li>
-  <li><a href="/guides/v2.1/cloud/env/variables-cloud.html">Cloud</a>—variables specific to Magento Commerce (Cloud)</li>
   <li><a href="/guides/v2.1/cloud/env/variables-intro.html">Global</a>—variables control actions in the following stages:
     <ul>
       <li><a href="/guides/v2.1/cloud/env/variables-build.html">Build</a>—variables control build actions</li>
@@ -1985,6 +1998,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
 </ul>
+
+<p>When a failure occurs because of an unexpected value in the the <code class="highlighter-rouge">.magento.env.yaml</code> configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  - Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:
+  	Item CRON_CONSUMERS_RUNNER is not supposed to be in stage build. Please move it to one of possible stages: global, deploy
+  	Item SKIP_SCD has unexpected type string. Please use one of next types: boolean
+  	Item VERBOSE_COMMANDS has unexpected type boolean. Please use one of next types: string
+  	Item SKIP_HTML_MINIFICATION has unexpected type string. Please use one of next types: boolean
+  	Item CRON_CONSUMERS_RUNNER has unexpected type boolean. Please use one of next types: array
+  	Item VAR_WARM_UP_PAGES is not allowed in configuration.
+  	Item WARM_UP_PAGES has unexpected type string. Please use one of next types: array
+</span></code></pre></div></div>
+
+<p>Make any corrections, commit, and push the changes. If you do not receive an error message, then the changes to your configuration file pass the validation.</p>
 
 			
 		</div>

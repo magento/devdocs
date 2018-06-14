@@ -725,6 +725,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.1/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1868,12 +1882,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.1/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.1/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -1975,7 +1989,29 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
           <span class="na">backend</span><span class="pi">:</span> <span class="s">file</span>
 </code></pre></div></div>
 
-<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
+<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file; however, you can choose to merge one or more values for a service configuration without overwriting all of the values.</p>
+
+<p>Set the <code class="highlighter-rouge">_merge</code> option to one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code>—<strong>Merge</strong> the configured service values with the environment variable values.</li>
+  <li><code class="highlighter-rouge">false</code>—<strong>Overwrite</strong> the configured service values with the environment variable values.</li>
+</ul>
+
+<p>The following example merges new values to an existing configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">CACHE_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">_merge</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">frontend</span><span class="pi">:</span>
+        <span class="na">default</span><span class="pi">:</span>
+          <span class="na">backend</span><span class="pi">:</span>
+            <span class="na">database</span><span class="pi">:</span> <span class="s">10</span>
+        <span class="na">page_cache</span><span class="pi">:</span>
+          <span class="na">backend</span><span class="pi">:</span>
+            <span class="na">database</span><span class="pi">:</span> <span class="s">11</span>
+</code></pre></div></div>
 
 <h3 id="clean_static_files"><code class="highlighter-rouge">CLEAN_STATIC_FILES</code></h3>
 
@@ -2001,6 +2037,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <p>Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the <code class="highlighter-rouge">crypt/key</code> value in the <code class="highlighter-rouge">env.php</code> file. This does not overwrite an existing encryption key value in the <code class="highlighter-rouge">env.php</code> file.</p>
+
+<h3 id="database_configuration"><code class="highlighter-rouge">DATABASE_CONFIGURATION</code></h3>
+
+<ul>
+  <li><strong>Default</strong>—<em>Not set</em></li>
+  <li><strong>Version</strong>—Magento 2.1.4 and later</li>
+</ul>
+
+<p>If you defined a database in the <a href="https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships">relationships property</a> of the <code class="highlighter-rouge">.magento.app.yaml</code> file, you can customize your database connections for deployment.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">DATABASE_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">some_config</span><span class="pi">:</span> <span class="s1">'</span><span class="s">some_value'</span>
+</code></pre></div></div>
+
+<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file; however, you can choose to merge one or more values for a service configuration without overwriting all of the values.</p>
+
+<p>Set the <code class="highlighter-rouge">_merge</code> option to one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code>—<strong>Merge</strong> the configured service values with the environment variable values.</li>
+  <li><code class="highlighter-rouge">false</code>—<strong>Overwrite</strong> the configured service values with the environment variable values.</li>
+</ul>
+
+<p>The following example merges new values to an existing configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">DATABASE_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">some_config</span><span class="pi">:</span> <span class="s1">'</span><span class="s">some_new_value'</span>
+      <span class="na">_merge</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
 
 <h3 id="generated_code_symlink"><code class="highlighter-rouge">GENERATED_CODE_SYMLINK</code></h3>
 
@@ -2053,7 +2122,31 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="na">port</span><span class="pi">:</span> <span class="s">1234</span>
 </code></pre></div></div>
 
-<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
+<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file; however, you can choose to merge one or more values for a service configuration without overwriting all of the values.</p>
+
+<p>Set the <code class="highlighter-rouge">_merge</code> option to one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code>—<strong>Merge</strong> the configured service values with the environment variable values.</li>
+  <li><code class="highlighter-rouge">false</code>—<strong>Overwrite</strong> the configured service values with the environment variable values.</li>
+</ul>
+
+<p>The following example merges new values to an existing configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+        <span class="na">QUEUE_CONFIGURATION</span><span class="pi">:</span>
+          <span class="na">_merge</span><span class="pi">:</span> <span class="no">true</span>
+          <span class="na">amqp</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">changed1.host</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="s">5672</span>
+          <span class="na">amqp2</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">changed2.host2</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="s">12345</span>
+          <span class="na">mq</span><span class="pi">:</span>
+            <span class="na">host</span><span class="pi">:</span> <span class="s">changedmq.host</span>
+            <span class="na">port</span><span class="pi">:</span> <span class="s">1234</span>
+</code></pre></div></div>
 
 <h3 id="redis_use_slave_connection"><code class="highlighter-rouge">REDIS_USE_SLAVE_CONNECTION</code></h3>
 
@@ -2101,6 +2194,35 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="na">SCD_EXCLUDE_THEMES</span><span class="pi">:</span> <span class="s2">"</span><span class="s">magento/luma,</span><span class="nv"> </span><span class="s">magento/my-theme"</span> 
 </code></pre></div></div>
 
+<h3 id="scd_matrix"><code class="highlighter-rouge">SCD_MATRIX</code></h3>
+
+<ul>
+  <li><strong>Default</strong>—<em>Not set</em></li>
+  <li><strong>Version</strong>—Magento 2.1.4 and later</li>
+</ul>
+
+<p>You can configure specific locales per theme as long as the theme is not excluded using the <code class="highlighter-rouge">SCD_EXCLUDE_THEMES</code> variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the <em>magento/backend</em> theme in English and a custom theme in other languages.</p>
+
+<p>The following example deploys the <code class="highlighter-rouge">magento/backend</code> theme with three locales:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SCD_MATRIX</span><span class="pi">:</span>
+      <span class="s2">"</span><span class="s">magento/backend"</span><span class="pi">:</span>
+        <span class="na">language</span><span class="pi">:</span>
+          <span class="pi">-</span> <span class="s">en_US</span>
+          <span class="pi">-</span> <span class="s">fr_FR</span>
+          <span class="pi">-</span> <span class="s">af_ZA</span>
+</code></pre></div></div>
+
+<p>Also, you can choose to <em>not</em> deploy a theme:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SCD_MATRIX</span><span class="pi">:</span>
+      <span class="s2">"</span><span class="s">magento/backend"</span><span class="pi">:</span> <span class="pi">[</span> <span class="pi">]</span>
+</code></pre></div></div>
+
 <h3 id="scd_threads"><code class="highlighter-rouge">SCD_THREADS</code></h3>
 
 <ul>
@@ -2141,7 +2263,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <span class="na">elasticsearch_server_timeout</span><span class="pi">:</span> <span class="s1">'</span><span class="s">15'</span>
 </code></pre></div></div>
 
-<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
+<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file; however, you can choose to merge one or more values for a service configuration without overwriting all of the values.</p>
+
+<p>Set the <code class="highlighter-rouge">_merge</code> option to one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code>—<strong>Merge</strong> the configured service values with the environment variable values.</li>
+  <li><code class="highlighter-rouge">false</code>—<strong>Overwrite</strong> the configured service values with the environment variable values.</li>
+</ul>
+
+<p>The following example merges a new value to the existing configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SEARCH_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">engine</span><span class="pi">:</span> <span class="s">elasticsearch</span>
+      <span class="na">elasticsearch_server_port</span><span class="pi">:</span> <span class="s1">'</span><span class="s">1234'</span>
+      <span class="na">_merge</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
 
 <h3 id="session_configuration"><code class="highlighter-rouge">SESSION_CONFIGURATION</code></h3>
 
@@ -2168,7 +2307,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <span class="na">save</span><span class="pi">:</span> <span class="s">redis</span>
 </code></pre></div></div>
 
-<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file.</p>
+<p>By default, the deployment process overwrites all settings in the <code class="highlighter-rouge">env.php</code> file; however, you can choose to merge one or more values for a service configuration without overwriting all of the values.</p>
+
+<p>Set the <code class="highlighter-rouge">_merge</code> option to one of the following:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code>—<strong>Merge</strong> the configured service values with the environment variable values.</li>
+  <li><code class="highlighter-rouge">false</code>—<strong>Overwrite</strong> the configured service values with the environment variable values.</li>
+</ul>
+
+<p>The following example merges a new value to the existing configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
+  <span class="na">deploy</span><span class="pi">:</span>
+    <span class="na">SESSION_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">_merge</span><span class="pi">:</span> <span class="no">true</span>
+      <span class="na">redis</span><span class="pi">:</span>
+        <span class="na">max_concurrency</span><span class="pi">:</span> <span class="s">10</span>
+</code></pre></div></div>
 
 <h3 id="skip_scd"><code class="highlighter-rouge">SKIP_SCD</code></h3>
 

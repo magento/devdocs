@@ -739,6 +739,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1906,12 +1920,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -2068,18 +2082,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you will encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
 
 <ol>
-  <li>Locate and edit your <code class="highlighter-rouge">.magento.app.yaml</code> in your Git branch.</li>
+  <li>Locate and edit the <code class="highlighter-rouge">.magento.app.yaml</code> file in your Git branch.</li>
   <li>For the PHP version, make sure it is 7.0: <code class="highlighter-rouge">type: php:7.0</code></li>
   <li>
     <p>We have updated our build and deploy hooks. Locate the <code class="highlighter-rouge">hooks</code> section, and update the following:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> hooks:
-   # We run build hooks before your application has been packaged.
-   build: |
-       php ./vendor/bin/m2-ece-build
-   # We run deploy hook after your application has been deployed and started.
-   deploy: |
-       php ./vendor/bin/m2-ece-deploy
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ```yaml
+ hooks:
+     # We run build hooks before your application has been packaged.
+     build: |
+         php ./vendor/bin/ece-tools build
+     # We run deploy hook after your application has been deployed and started.
+     deploy: |
+         php ./vendor/bin/ece-tools deploy
+     # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
+     post_deploy: |
+         php ./vendor/bin/ece-tools post-deploy
+ ```
 </code></pre></div>    </div>
   </li>
   <li>

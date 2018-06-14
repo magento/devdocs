@@ -735,6 +735,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.2/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1902,12 +1916,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.2/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.2/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -2008,7 +2022,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="test-build">Test build your code locally before pushing</h2>
-<p>Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. The generated build files from this test build <strong>should not be pushed</strong> into Git. This is just a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins.</p>
+<p>Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do <strong>NOT</strong> push the generated build files from this test to your remote Git branch. This is a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.</p>
 
 <ol>
   <li>SSH into your local Magento workspace.</li>
@@ -2031,7 +2045,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="push">Push code to Git and Integration</h2>
 <p>Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.</p>
 
-<p>To prepare your code and branch:</p>
+<h4 id="to-prepare-your-code-and-branch">To prepare your code and branch:</h4>
 
 <div>
 
@@ -2096,15 +2110,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ol>
 </div>
 
-<p>To push code to your remote environment:</p>
+<h4 id="to-push-code-to-your-remote-environment">To push code to your remote environment:</h4>
 
 <ol>
-  <li>If you haven’t already, change to your project root directory.</li>
+  <li>Change to your project root directory.</li>
   <li>
-    <p>Enter the following commands to complete code commits in a terminal:</p>
+    <p>Complete code commits in a terminal.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "&lt;comment&gt;"
-git push origin &lt;branch name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"&lt;comment&gt;"</span>
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>The build and deploy phases begin. Wait for the deployment to complete.</li>
@@ -2116,16 +2132,16 @@ git push origin &lt;branch name&gt;
 <ul>
   <li>Apply patches distributed to all Magento Commerce (Cloud) accounts</li>
   <li>Apply patches we provided specifically to you</li>
-  <li>Enable all modules to build</li>
+  <li>Enable modules to build</li>
   <li>Compile code and the   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
  configuration</li>
 </ul>
 
-<p>The build also checks for a <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">configuration file</a>. If the file exists, the static file deployment is also completed during the build stage. If not, it’s completed in the deployment stage.</p>
+<p>The build also checks for a <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">configuration file</a>. If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.</p>
 
 <p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
 
-<p>To build your site:</p>
+<h4 id="to-build-your-site">To build your site:</h4>
 
 <ol>
   <li>
@@ -2153,7 +2169,7 @@ git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Apply hot fixes and other patches provided to you:</p>
+    <p>Apply hot fixes and other patches provided to you.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply &lt;path to patch&gt;
 </code></pre></div>    </div>
@@ -2168,39 +2184,36 @@ git push origin &lt;branch name&gt;
     <p>If patches are present, output from this command is similar to the patches command.</p>
   </li>
   <li>
-    <p>Enable all modules:</p>
+    <p>Enable all missing modules.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento module:enable --all
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./vendor/bin/ece-tools module:refresh
 </code></pre></div>    </div>
   </li>
   <li>
     <p>Compile code and the dependency injection configuration:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento  setup:di:compile
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento  setup:di:compile
 </code></pre></div>    </div>
+    <p>This command can take several minutes to complete and produces messages similar to the following:</p>
 
-    <p>This command can take several minutes to complete.</p>
-
-    <p>Messages similar to the following are displayed:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Compilation was started.
-0% 1 sec 54.0 MiB%message% 0/7 [&gt;---------------------------]
-0% 1 sec 54.0 MiBProxies code generation...
-0/7 [&gt;---------------------------]
-0% 1 sec 54.0 MiB
-Proxies code generation... 1/7 [====&gt;-----------------------]  14% 1 sec 58.0 MiB
-Repositories code generation... 1/7 [====&gt;-----------------------]  14% 1 sec 58.0 MiB
-Repositories code generation... 2/7 [========&gt;-------------------]  28% 30 secs 176.0 MiB
-
-... more ...
-Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
-</code></pre></div>    </div>
+    <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Compilation was started.
+</span><span class="gp">0% 1 sec 54.0 MiB%message% 0/7 [&gt;</span><span class="nt">---------------------------</span><span class="o">]</span>
+<span class="go">0% 1 sec 54.0 MiBProxies code generation...
+</span><span class="gp">0/7 [&gt;</span><span class="nt">---------------------------</span><span class="o">]</span>
+<span class="go">0% 1 sec 54.0 MiB
+</span><span class="gp">Proxies code generation... 1/7 [====&gt;</span><span class="nt">-----------------------</span><span class="o">]</span>  14% 1 sec 58.0 MiB
+<span class="gp">Repositories code generation... 1/7 [====&gt;</span><span class="nt">-----------------------</span><span class="o">]</span>  14% 1 sec 58.0 MiB
+<span class="gp">Repositories code generation... 2/7 [========&gt;</span><span class="nt">-------------------</span><span class="o">]</span>  28% 30 secs 176.0 MiB
+<span class="c">...
+...
+</span><span class="go">Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
+</span></code></pre></div>    </div>
   </li>
 </ol>
 
-<p>If errors display, debug them if possible or open a <a href="/guides/v2.2/cloud/trouble/trouble.html">support ticket</a> to get additional assistance.</p>
+<p>If you receive errors, debug them when possible and open a <a href="/guides/v2.2/cloud/trouble/trouble.html">support ticket</a> for further assistance.</p>
 
-<p>We strongly recommend you do all your testing in an integration or staging environment only, and <em>not</em> in production.</p>
+<p>We strongly recommend you complete your testing in an Integration or Staging environment only, and <em>not</em> in a Production environment.</p>
 
 <h2 id="deploy">Deploy phase</h2>
 <p>We highly recommend having Magento already installed prior to deployment. During the <a href="/guides/v2.2/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook">deployment phase</a>, we perform the following tasks:</p>
@@ -2214,10 +2227,10 @@ Interception cache generation... 7/7 [============================] 100% 5 mins 
   <li>Set the Magento application for <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#production-mode"><code class="highlighter-rouge">production</code></a> mode</li>
 </ul>
 
-<p>To deploy your site:</p>
+<h4 id="to-deploy-your-site">To deploy your site:</h4>
 
 <ol>
-  <li>If you haven’t already, log in as or switch to the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>If you have not already, log in as or switch to the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
   <li>Change to your project root directory.</li>
   <li>
     <p>Enter the following command:</p>
@@ -2225,7 +2238,7 @@ Interception cache generation... 7/7 [============================] 100% 5 mins 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
 </code></pre></div>    </div>
 
-    <p>We highly recommend having Magento already installed if you followed the <a href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">First time deployment</a>. If you haven’t installed the Magento application yet, use the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html"><code class="highlighter-rouge">magento setup:install</code></a> command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.</p>
+    <p>We highly recommend having Magento already installed if you followed the <a href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">First time deployment</a>. If you have not installed the Magento application yet, use the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html"><code class="highlighter-rouge">magento setup:install</code></a> command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.</p>
   </li>
   <li>
     <p>Clean the Magento cache:</p>

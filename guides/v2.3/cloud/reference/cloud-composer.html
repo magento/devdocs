@@ -739,6 +739,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="configure-docker">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/reference/docker-config.html">Configure Docker</a>
+            
+
+            
+        </li>
+        
+        
     </ul>
     
 </li>
@@ -1906,12 +1920,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="patch-cloud-tools">
+        <li class="nav-level2  " id="cloud-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.3/cloud/composer-packages/ece-tools.html">Patch Cloud tools</a>
+            <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
             
 
             
@@ -2056,18 +2070,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="ece-tools">vendor/magento/ece-tools</h3>
 
-<div>
-  <p>The ece-tools package contains the following scripts and Magento Commerce (Cloud) commands that automatically perform build and deploy actions of the codebase in your environments:</p>
+<p>The Cloud tools package, also known as <em>ece-tools</em>, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce project.  It contains scripts and Magento Commerce (Cloud) commands designed to help manage your code and automatically build and deploy your Cloud projects.</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">php ./vendor/bin/m2-ece-build</code></li>
-    <li><code class="highlighter-rouge">php ./vendor/bin/m2-ece-deploy</code></li>
-  </ul>
+<p>You can list the available Cloud tools commands using:</p>
 
-  <p>Versions are specified as <code class="highlighter-rouge">200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php ./vendor/bin/ece-tools list
+</code></pre></div></div>
 
-  <p>These updates strictly contain improvements for tools, including build and deploy hooks. These tools are updated as needed through patching and product upgrades; managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>.</p>
-</div>
+<p>The following updates describe the latest improvements to the Cloud tools package, which update as needed through patching and product upgrades managed by the <code class="highlighter-rouge">magento-cloud-metapackage</code>. The Cloud tools package adheres to the version sequence:  <code class="highlighter-rouge">200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
 
 <h3 id="cloud-composer-prodee">vendor/magento/product-enterprise-edition</h3>
 <p>This   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>

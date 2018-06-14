@@ -1885,7 +1885,7 @@ Connection: keep-alive
 </tr>
 <tr>
     <td>Elasticsearch Server Hostname</td>
-    <td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
+    <td><p>Enter the fully qualified hostname or IP address of the machine running Elasticsearch.</p>
     <p>Magento Commerce (Cloud): <a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
 </tr>
 <tr>
@@ -2130,7 +2130,7 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
         <h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
         <p>Enter the following command:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>        </div>
 
         <p>For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:</p>
@@ -2157,7 +2157,7 @@ WWW-Authenticate: Basic realm="Restricted"
 
         <p>Now try the following command:</p>
 
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -u &lt;username&gt;:&lt;password&gt; http://&lt;host name, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i -u &lt;username&gt;:&lt;password&gt; http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
 </code></pre></div>        </div>
 
         <p>For example:</p>
