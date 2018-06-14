@@ -33,7 +33,7 @@ functional_areas:
 
 -  <!-- MAGECLOUD-2105 -->Added the ability to choose to merge or overwrite configuration for services using the `_merge` option in [CACHE]({{ page.baseurl }}/cloud/env/variables-deploy.html#cache_configuration), [SESSION]({{ page.baseurl }}/cloud/env/variables-deploy.html#session_configuration), [QUEUE]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration), and [SEARCH]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) configurations.
 
-- <!-- MAGECLOUD-1908 -->**Environment Configuration sample file**—We added the `/dist/.magento.env.yaml` file to the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/dist){:target="\_blank"}, which includes a detailed description and possible values for each environment variable.
+- <!-- MAGECLOUD-1908 -->**Environment Configuration sample file**—We added a `.magento.env.yaml` sample file to the ece-tools package that includes a detailed description and possible values for each environment variable.
     -  <!-- MAGECLOUD-1907 -->We also added a deep validation for the `.magento.env.yaml` configuration that prevents failures in the deployment process caused by unexpected values. When a failure occurs, you now receive a detailed error message that begins with: `Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:`
 
 -  Added the following new [**Environment variables**]({{ page.baseurl }}/cloud/env/variables-intro.html):
