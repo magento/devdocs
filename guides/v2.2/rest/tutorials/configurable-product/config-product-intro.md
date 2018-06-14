@@ -3,6 +3,8 @@ layout: tutorial
 group: rest
 title: Create a configurable product with REST APIs tutorial
 menu_title: Initial tasks
+menu_order: 0
+level3_subgroup: configurable-product-tutorial
 version: 2.2
 github_link: rest/tutorials/configurable-product/config-product-intro.md
 functional_areas:
