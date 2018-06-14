@@ -10,20 +10,13 @@ functional_areas:
 An attempt to generate and write the `sitemap.xml` file to the root directory results in the following error:
 
 ```
-The path ".:///app/app/" is not writable.
-Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
+Please make sure that "/" is writable by the web-server.
 ```
 
-With {{site.data.var.ece}}, you can only write to specific directories, such as `var`, `pub/media`, or `app/etc`. When you generate the `sitemap.xml` file using the Admin panel, you must specify the `/media/` path.
-
-Create the `/pub/media` directory using the following, appropriate environment:
-
--  For Starter, access the `staging` branch
--  For Pro, access the `integration` branch
-
-Add the path to the `.gitgnore` file and commit the code changes.
+With {{site.data.var.ece}}, you can only write to specific directories, such as `var`, `pub/media`, `pub/static`, or `app/etc`. When you generate the `sitemap.xml` file using the Admin panel, you must specify the `/media/` path.
 
 You do not have to generate a `robots.txt` because it generates on demand and stores the contents in the database. You can view the content in your browser with the url: `<domain.your.project>/robots.txt`
+This requires ECE-Tools version 2002.0.12 and later with an updated `.magento.app.yaml` file. See an example of these rules in the [magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml#L43-L49){:target="\_blank"}.
 
 #### To generate a `sitemap.xml` file in version 2.2 and later:
 
@@ -39,6 +32,16 @@ You do not have to generate a `robots.txt` because it generates on demand and st
 1.  Click the path in the `Link for Google` column.
 
 {% include note.html type="warning" content="Do not change the location of the files during deployment." %}
+
+#### To add content to `robots.txt` file:
+
+1.  Access the Magento Admin panel.
+1.  On the _Content_ menu, click **Configuration** in the _Design_ section.
+1.  In the _Design Configuration_ view, click **Edit** for the website in the _Action_ column.
+1.  In the _Main Website_ view, click **Search Engine Robots**.
+1.  Make changes to the **Edit custom instruction of robots.txt** field.
+1.  Click **Save Configuration**.
+1.  Verify the file in your browser with the url: `<domain.your.project>/robots.txt`
 
 ## Rewrite using Fastly VCL snippet
  If you have different domains and you need separate site maps, you can create a VCL to route to the proper sitemap. Generate the `sitemap.xml` file in the Magento Admin panel as described above, then create a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
