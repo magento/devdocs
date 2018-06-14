@@ -47,7 +47,7 @@ To set up an SSH tunnel on Windows using Putty:
 3.	In the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} pane, click **Session**.
 4.	Enter the following information:
 
-	*	**Host Name (or IP address)** field: Enter `127.0.0.1`
+	*	**Hostname (or IP address)** field: Enter `127.0.0.1`
 	*	**Port** field: Enter the [SSH listen port]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html)
 
 	![Set up Putty]({{ site.baseurl }}/common/images/install_docker_putty-session.png){:width="350px"}

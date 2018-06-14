@@ -9,7 +9,7 @@ This section discusses two ways to verify that HTTP Basic authentication is work
 ### Use a `curl` command to verify cluster status
 Enter the following command:
 
-	curl -i http://<host name, ip, or localhost>:<proxy port>/_cluster/health
+	curl -i http://<hostname, ip, or localhost>:<proxy port>/_cluster/health
 
 For example, if you enter the command on the Elasticsearch server and your proxy uses port 8080:
 
@@ -33,7 +33,7 @@ The following message displays to indicate authentication failed:
 
 Now try the following command:
 
-	curl -i -u <username>:<password> http://<host name, ip, or localhost>:<proxy port>/_cluster/health
+	curl -i -u <username>:<password> http://<hostname, ip, or localhost>:<proxy port>/_cluster/health
 
 For example:
 
