@@ -33,7 +33,7 @@ runtime:
 ```
 
 ## Add New Relic APM to an environment
-The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice.
+The {{site.data.var.ece}} plans to support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice.
 
 {% include note.html type="info" content="If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment. 
 
@@ -73,12 +73,12 @@ If you have more than three active environments using the same New Relic license
 ## Investigate performance
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
-Using the New Relic dashboard, you can immediately track and find the following:
+Using the New Relic dashboard, you can immediately track and find:
 
--  Monitor applications and transactions encountering slow responses or bottlenecks
--  Investigate customer comments of issues with your site
--  Identify applications with high transaction time and follow up on queries, calls, and methods with Blackfire
--  Verify and compare traffic to transaction time
+-  Applications and transactions encountering slow responses or bottlenecks
+-  Customer comments about issues with your site
+-  Applications with high transaction time and follow up on queries, calls, and methods with Blackfire
+-  Traffic to transaction time
 
 We recommend reviewing tracked data:
 
