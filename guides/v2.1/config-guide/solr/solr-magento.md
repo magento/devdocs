@@ -182,7 +182,7 @@ After you change Magento's Solr configuration, you must reindex the catalog sear
 To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} using the Admin:
 
 1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
-2.  Select the check box next to <strong>Page Cache</strong>.
+2.  Select the checkbox next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">

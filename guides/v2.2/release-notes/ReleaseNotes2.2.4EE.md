@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.4 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.4EE.md
 ---
-*Patch code and release notes published on May 2, 2018.* *Release notes revised on June 4, 2018.*
+*Patch code and release notes published on May 2, 2018.* *Release notes revised on June 13, 2018.*
 
 
 
@@ -170,15 +170,13 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-84367 -->* You can now save emojis in custom product options. *Fix submitted by [Carlos Lizaga](https://github.com/KarlDeux) in pull request 12253*.
 
-<!--- MAGETWO-84411 -->* Magento no longer displays unused product attributes  with a value of N/A or NO on the storefront. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request 12057*. [GitHub-6634](https://github.com/magento/magento2/issues/6634), [GitHub-9961](https://github.com/magento/magento2/issues/9961)
-
 <!--- MAGETWO-84498 -->* The `delay` parameter now works as expected, which permits you to set the delay on the JQuery widget opening or closing. Previously, this parameter was documented, but did not work as expected. *Fix submitted by [Sam Carr](https://github.com/scazz010) in pull request 12161*.
 
 <!--- MAGETWO-84515 -->* Third-party category images now have `size` and `type` properties. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request 12161*.
 
 <!--- MAGETWO-84652 -->* Category page X-Magento-Tags headers no longer contain product cache identities  when category display mode is set to **Static block only**. *Fix submitted by [Atish Goswami](https://github.com/atishgoswami) in pull request 12466*.
 
-<!--- MAGETWO-84665 -->* You can now delete rows in the the `dynamicRows` component. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 921*. [GitHub-8830](https://github.com/magento/magento2/issues/8830)
+<!--- MAGETWO-84665 -->* You can now delete rows in the `dynamicRows` component. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 921*. [GitHub-8830](https://github.com/magento/magento2/issues/8830)
 
 <!--- MAGETWO-84808 -->* You can now add a new product with custom attributes that has the same name and attributes as a previously deleted product. Previously, Magento did not let you add this new product because a `request_path` with the same value already existed in `table url_rewrite` from the previous product. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12167*. [GitHub-12110](https://github.com/magento/magento2/issues/12110)
 

@@ -4,3 +4,4 @@ This package contains patch files that are specific to {{site.data.var.ece}}. Pa
 Versions are specified as `10<major>.<minor>.<patch>`.
 
 These updates strictly contain improvements to {{site.data.var.ece}}. Patches are available in the `vendor/magento/ece-patches` folder. To check for available patches, you can check in the `vendor/magento/ece-patches` folder.
+</div>

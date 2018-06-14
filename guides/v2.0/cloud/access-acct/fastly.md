@@ -104,7 +104,7 @@ Complete the following configuration steps in Staging and Production environment
 3.	In the right pane, expand **Full Page Cache**.
 
 	![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud_fastly_menu.png){:width="650px"}
-4.	For **Caching Application**, uncheck the **Use system value** check box and select **Fastly CDN** from the drop-down list.
+4.	For **Caching Application**, uncheck the **Use system value** checkbox and select **Fastly CDN** from the drop-down list.
 
 	![Choose Fastly]({{ site.baseurl }}/common/images/cloud-fastly_enable-admin.png){:width="550px"}
 5.	Expand **Fastly Configuration**. You can then [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="\_blank"}.

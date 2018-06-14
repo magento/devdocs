@@ -198,7 +198,7 @@ Available parameters:
 
 |Parameter|Type|Required|Description|
 |---------|----|--------|-----------|
-|submission_ids|array|no|A list of submission IDs to disassociate the the file from the specified package.|
+|submission_ids|array|no|A list of submission IDs to disassociate the file from the specified package.|
 {:.style="table-layout: auto;"}
 
 **Request**
