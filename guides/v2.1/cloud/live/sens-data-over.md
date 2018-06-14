@@ -181,10 +181,12 @@ To complete extensive changes:
 3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.
 
 ## Change locales
-You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled for your Staging and Production environments. You can update the locales using the Admin panel.
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
+
+You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.local.php` file with the new locale information, and copy the configuration file to the target environment. 
 
 {: .bs-callout .bs-callout-warning}
-If you do **not** have `SCD_ON_DEMAND` enabled, then you need to enable the feature and generate a new `config.local.php` file. This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
+This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
 
 1.  From your Integration environment, enable the `SCD_ON_DEMAND` variable.
 1.  Add the necessary locales using your Admin panel.
