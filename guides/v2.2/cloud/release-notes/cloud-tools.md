@@ -19,7 +19,7 @@ functional_areas:
 
 -  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration rom the Cloud tools `ece-tools` repository.
 
--  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can change store locale without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
+-  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
 -  <!-- MAGECLOU-1998 -->**Site map and Robots**—There is a new workflow to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
@@ -31,7 +31,7 @@ functional_areas:
 
 -  <!-- MAGECLOUD-2105 -->Added the ability to choose to merge or overwrite configuration for services using the `_merge` option in [CACHE]({{ page.baseurl }}/cloud/env/variables-deploy.html#cache_configuration), [SESSION]({{ page.baseurl }}/cloud/env/variables-deploy.html#session_configuration), [QUEUE]({{ page.baseurl }}/cloud/env/variables-deploy.html#queue_configuration), and [SEARCH]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) configurations.
 
-- <!-- MAGECLOUD-1908 -->**Environment Configuration sample file**—We added the `/dist/.magento.env.yaml` file to the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/dist){:target="\_blank"}, which includes a detailed description and possible values for each environment variable.
+- <!-- MAGECLOUD-1908 -->**Environment Configuration sample file**—We added a `.magento.env.yaml` sample file to the ece-tools package that includes a detailed description and possible values for each environment variable.
     -  <!-- MAGECLOUD-1907 -->We also added a deep validation for the `.magento.env.yaml` configuration that prevents failures in the deployment process caused by unexpected values. When a failure occurs, you now receive a detailed error message that begins with: `Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:`
 
 -  Added the following new [**Environment variables**]({{ page.baseurl }}/cloud/env/variables-intro.html):
@@ -40,6 +40,8 @@ functional_areas:
     -  <!-- MAGECLOUD-2129 -->The new [MIN_LOGGING_LEVEL]({{ page.baseurl }}/cloud/env/variables-intro.html#min-logging-level) variable overrides the minimum logging level for all output streams without making changes to the code.
 
 #### Fixed Issues
+
+-  Fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the post_deploy phase begins _immediately_ after the deploy phase ends.
 
 -  <!-- MAGECLOUD-2268 -->Fixed an issue that did not clean the successful cron jobs, those with `status = success`, from the schedule.
 

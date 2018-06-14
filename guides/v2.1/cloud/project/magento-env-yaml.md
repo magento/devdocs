@@ -26,15 +26,13 @@ The `.magento.env.yaml` file includes the following sections:
     -   `email`—Configure an email to send to one or more email recipients.
     -  [logging handlers]({{ page.baseurl }}/cloud/env/log-handlers.html)—Configure hardware and software application messages sent to a remote logging server.
 
-The latest sample of the `.magento.env.yaml` file is in the [ece-tools repository](https://github.com/magento/ece-tools/tree/develop/dist){:target="\_blank"}. You can find a detailed definition for each variable in the following reference topics:
+The latest sample of the `.magento.env.yaml` file contains a detailed definition for each variable in the following reference topics:
 
 -   [Application]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables control administrative credentials
--   [Cloud]({{ page.baseurl }}/cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
 -   [Global]({{ page.baseurl }}/cloud/env/variables-intro.html)—variables control actions in the following stages:
     -   [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
     -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
     -   [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
-
 
 When a failure occurs because of an unexpected value in the the `.magento.env.yaml` configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:
 
