@@ -12,6 +12,7 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+There is a new Cloud workflow to [add a `robots.txt` file and generate a `sitemap.xml` file](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html) for a single domain configuration without requiring a change to the infrastructure.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
 Now you can [change store locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales) when using SCD_ON_DEMAND without using the exporting and importing configuration process.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
 The new Cloud tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration.|2.1.x, 2.2.x, 2.3.x|New topic|Jun 09
 Added a topic about the [Magento binding syntax](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/magento-bindings.html).|2.2.x, 2.3.x|New topic|Jun 07
