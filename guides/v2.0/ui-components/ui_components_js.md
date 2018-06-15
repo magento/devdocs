@@ -14,7 +14,7 @@ This topic is aimed for developers, who need to reuse the [Magento UI Components
 
 The topic covers the following:
 
-- [UI components configuration](#config)
+- [UI component configuration](#config)
 - [The most important UI component's properties](#main_properties)
 - [UI components’ properties used for linking](#comp_link)
 - [Description of the additional UI components](#comp_additional)
