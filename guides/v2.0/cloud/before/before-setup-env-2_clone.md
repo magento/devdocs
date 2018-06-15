@@ -31,7 +31,7 @@ The commands in these instructions use Magento CLI commands and Git commands to 
 You should complete these instructions in the following order:
 
 * [Clone the project master branch](#clonemaster)
-* [Change the Magento Admin URL, user name, and password on master](#setvariables)
+* [Change the Magento Admin URL, username, and password on master](#setvariables)
 * [Branch an environment](#branch)
 
 ## Clone the project master branch {#clonemaster}
@@ -69,11 +69,11 @@ To clone the project's `master` environment to your local:
 
 		git pull magento <environment ID>
 
-## Change the Magento Admin URL, user name, and password on master {#setvariables}
+## Change the Magento Admin URL, username, and password on master {#setvariables}
 We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
 
 * `ADMIN_EMAIL`: Administrative user's e-mail address. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
-* `ADMIN_USERNAME`: User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. The default hardcoded username is `admin`. You can use `admin` or change it to another secure username.
+* `ADMIN_USERNAME`: Username for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. The default hardcoded username is `admin`. You can use `admin` or change it to another secure username.
 * `ADMIN_PASSWORD`: Administrative user's password. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.
 * `ADMIN_URL`: The relative URL by which to access the Magento Admin. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
@@ -99,7 +99,7 @@ Everytime you add or modify a variable using the web interface or the CLI, the b
 ### Add variables using the CLI {#cli}
 To set variables using the CLI (with example values used):
 
-1.  To set the administrator's user name to `admin_A456` in the `master` environment, enter:
+1.  To set the administrator's username to `admin_A456` in the `master` environment, enter:
 
 		magento-cloud variable:set ADMIN_USERNAME admin_A456 -e master
 2.  Wait for the project to redeploy.
@@ -130,7 +130,7 @@ To set variables using the CLI (with example values used):
 		Environment routes:
 			http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
 
-	In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `admin_A456` and password `admin_A456`
+	In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the username `admin_A456` and password `admin_A456`
 
 8.	After the project redeploys, take a snapshot of the master branch:
 

@@ -197,3 +197,4 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 ## Magento B2B
 
 See [Integrate with B2B using REST]({{ page.baseurl }}/b2b/integrations.html) for a list of services provided with B2B.
+</div>

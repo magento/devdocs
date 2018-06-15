@@ -118,9 +118,9 @@ The `config.local.php` file includes the following settings and configuration va
 </table>
 
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
-Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions. We can help you manage those settings more easily. For example, you may want to change the default locale and a store's static file optimization settings, with different settings in Staging and Production. Instead of making these changes in every environment, use `config.local.php`.
+Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.local.php` file, which contains a number of configuration properties that you can adjust as needed. 
 
-We **strongly recommend** using `scd-dump` to generate `config.local.php`. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.
+We **strongly recommend** using the `scd-dump` command to generate a `config.local.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
 To fully understand the process, please see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
@@ -135,17 +135,17 @@ The **Pro plan** environment high-level overview of this process:
 ### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:
 
-1. Log into the Magento Admin for one of the environments:
+1. Log in to the Magento Admin for one of the environments:
 
     * Starter: An active development branch
-    * Pro: The `master` environment in Integration
+    * Pro: Integration branch
 
-2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
+2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.
 3. Open a terminal on your local and use an SSH command to generate `/app/etc/config.local.php` on the environment:
 
     `ssh <SSH URL> "<Command>"`
 
-  For example for Pro, to run the `scd-dump` on Integration `master`:
+  For example, for Pro on the Integration branch:
 
     ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
@@ -161,25 +161,51 @@ Push `config.local.php` to Git. To push this file to the `master` Git branch, yo
     `git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master`
 
 ### Step 3 & 4: Push Git branch to Staging and Production {#push-git}
-Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
+Log in to the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
 
 For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
 
-For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
+For Pro, when you push to the Git branch, the Integration environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
-## Update configurations {#update}
-If you need to change any configuration settings `config.local.php`, you repeat the process with an extra step. For Starter, complete the changes in an active development environment. For Pro, use the Integration `master` environment.
+## Update configurations
+If you need to change any configuration settings in the `config.local.php` file, repeat the process with an extra step. For Starter, complete the changes in an active, development environment. For Pro, use the Integration environment.
 
-If you only need to make a small change, you can edit `config.local.php` in a local Git branch and redeploy across environments.
+If you need to make a small change, you can edit the `config.local.php` file in a local development branch and redeploy across environments.
 
 To complete extensive changes:
 
-1.	Delete `config.local.php` in your Integration environment.
+1.  Delete the `config.local.php`file in your Integration branch.
 
-	You must delete the file to change settings. All of your configurations still exist in the database, displaying as editable in your Magento Admin. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can't edit it until this file is removed.
+    You must delete the file to change settings. All configurations exist in the database, displaying as editable in your Magento Admin panel. Remember, the stored configurations in the file are blocked from editing in the Admin console until you delete the file. For example, if you want to change a store name, you can not edit the name until this file is removed.
 2.	Make configuration changes in the Admin on the Integration environment.
 3.	Repeat the process to re-create `config.local.php` and deploy. You do not need to make additional configurations in Staging and Production unless you need to. Recreating this file should not affect those environment specific settings.
 
+## Change locales
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
+
+You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.local.php` file with the new locale information, and copy the configuration file to the target environment. 
+
+{: .bs-callout .bs-callout-warning}
+This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
+
+1.  From your Integration environment, enable the `SCD_ON_DEMAND` variable.
+1.  Add the necessary locales using your Admin panel.
+1.  Generate the `app/etc/config.local.php` file containing all locales.
+
+    ```bash
+    php ./vendor/bin/ece-tools config:dump
+    ```
+
+1.  Copy the new configuration file from your Integration environment to your local Staging environment directory.
+
+    ```bash
+    rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+    ```
+
+1.  Push code changes to the remote.
+
 <div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit `config.local.php` in Staging and Production, we don't recommend it. The file helps keep all of your configurations consistent across all of your environments.
+While you can manually edit the `config.local.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
+
+Never delete the `config.local.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
 </div>

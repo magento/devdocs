@@ -7,7 +7,7 @@ To get a patch from the {{site.data.var.ee}} merchant portal:
 
 1.	Go to [www.magento.com](http://www.magento.com){:target="_blank"}.
 2.	In the top horizontal navigation bar, click **My Account**.
-3.	Log in with your Magento user name and password.
+3.	Log in with your Magento username and password.
 4.	In the left navigation bar, click **Downloads**.
 5.	Click **Magento Enterprise Edition** > **2.X** > **Magento Enterprise Edition 2.x Release** > **Support Patches**.
 6.	Transfer the patch to your development system.

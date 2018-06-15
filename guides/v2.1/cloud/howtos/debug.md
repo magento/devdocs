@@ -120,9 +120,9 @@ To troubleshoot the connection:
 2.	Enter `who` to view a list of SSH sessions.
 3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-    *	Integration: user names are similar to `dd2q5ct7mhgus`
-    *	Staging: user names are similar to `dd2q5ct7mhgus_stg`
-    *	Production: user names are similar to `dd2q5ct7mhgus`
+    *	Integration: usernames are similar to `dd2q5ct7mhgus`
+    *	Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+    *	Production: usernames are similar to `dd2q5ct7mhgus`
 4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
 
@@ -147,7 +147,7 @@ To set up an SSH tunnel on Windows using Putty:
 3.	In the Category pane, click **Session**.
 4.	Enter the following information:
 
-    *	**Host Name (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
+    *	**Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
     *	**Port** field: Enter `22`
 
     ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
@@ -309,9 +309,9 @@ Due to not having access to manually restart the nginx server, you need to locat
 2.	Enter `who` to view a list of SSH sessions.
 3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-    *	Integration: user names are similar to `dd2q5ct7mhgus`
-    *	Staging: user names are similar to `dd2q5ct7mhgus_stg`
-    *	Production: user names are similar to `dd2q5ct7mhgus`
+    *	Integration: usernames are similar to `dd2q5ct7mhgus`
+    *	Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+    *	Production: usernames are similar to `dd2q5ct7mhgus`
 4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
 

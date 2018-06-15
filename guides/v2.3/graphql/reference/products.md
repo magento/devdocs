@@ -212,7 +212,7 @@ The `Price` object defines the price of a product as well as any tax-related adj
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`amount` | Money | The price of the the product and its currency code. See [Money object](#Money).
+`amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
 
 ##### Money object {#Money}

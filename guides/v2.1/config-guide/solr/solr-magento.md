@@ -108,7 +108,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Hostname</td>
-	<td>Enter the fully qualified host name or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
+	<td>Enter the fully qualified hostname or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
 </tr>
 <tr>
 	<td>Solr Server Port</td>
@@ -116,7 +116,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Username</td>
-	<td><em>Optional.</em> Enter a user name for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
+	<td><em>Optional.</em> Enter a username for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
 </tr>
 <tr>
 	<td>Solr Server Password</td>
@@ -182,7 +182,7 @@ After you change Magento's Solr configuration, you must reindex the catalog sear
 To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} using the Admin:
 
 1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
-2.  Select the check box next to <strong>Page Cache</strong>.
+2.  Select the checkbox next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">

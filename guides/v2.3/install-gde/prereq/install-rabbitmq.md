@@ -99,7 +99,7 @@ where:
 </tr>
 <tr>
 <td>--amqp-host</td>
-<td>The host name where RabbitMQ is installed.</td>
+<td>The hostname where RabbitMQ is installed.</td>
 </tr>
 <tr>
 <td>--amqp-port</td>
@@ -107,7 +107,7 @@ where:
 </tr>
 <tr>
 <td>--amqp-user</td>
-<td>The user name for connecting to RabbitMQ. Do not use the default user `guest`. </td>
+<td>The username for connecting to RabbitMQ. Do not use the default user `guest`. </td>
 </tr>
 <tr>
 <td>--amqp-password</td>

@@ -97,7 +97,7 @@ To configure:
 5. Save the changes.
 
 ## Add cron jobs to .magento.app.yaml {#add-cron}
-You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the the `crons` section. We include a default cron job for Magento in the default file:
+You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section. We include a default cron job for Magento in the default file:
 
     # Default Magento 2 cron jobs
     crons:

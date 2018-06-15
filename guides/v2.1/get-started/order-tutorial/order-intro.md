@@ -1,15 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Initial tasks
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 0
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-intro.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders

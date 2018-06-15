@@ -74,5 +74,5 @@ Custom Variable entities can also be created in your module's `DataInstall` or `
 See [Module Lifecycle] for more information.
 
 [Variable module]: https://github.com/magento/magento2/tree/{{page.guide_version}}/app/code/Magento/Variable/etc
-[Module Lifecycle]: {{page.baseurl}}extension-dev-guide/prepare/lifecycle.html
-[`di.xml`]: {{page.baseurl}}extension-dev-guide/build/di-xml-file.html
+[Module Lifecycle]: {{page.baseurl }}/extension-dev-guide/prepare/lifecycle.html
+[`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html

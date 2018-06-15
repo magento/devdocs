@@ -83,7 +83,7 @@ Where the following table defines parameters and values:
         <p>--admin-user</p>
       </td>
       <td>
-        <p>Magento administrator user name.</p>
+        <p>Magento administrator username.</p>
       </td>
       <td>
         <p>Yes</p>
@@ -108,9 +108,9 @@ Where the following table defines parameters and values:
 ## Unlock an administrator account
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
 
-	magento admin:user:unlock {user name}
+	magento admin:user:unlock {username}
 
-You must specify the administrator's user name. Example:
+You must specify the administrator's username. Example:
 
 	magento admin:user:unlock admin
 	The user account "admin" has been unlocked

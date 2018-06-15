@@ -71,7 +71,7 @@ To send this notification, use `OperationManagementInterface::changeOperationSta
 
 Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magento\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
 
-{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %} class | Description of database error(s)
+Exception class | Description of database error(s)
 --- | ---
 ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded

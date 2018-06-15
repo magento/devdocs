@@ -171,7 +171,7 @@ To verify cron is secure:
 		TRUNCATE TABLE cron_schedule;
 4.	Run cron from a browser:
 
-		http[s]://<magento host name or ip>/cron.php?group=default
+		http[s]://<magento hostname or ip>/cron.php?group=default
 
 	For example,
 
@@ -243,11 +243,11 @@ If you're using an Apache web server, you must remove the restriction from the `
 
 You can then run cron in a web browser as follows:
 
-	<your Magento host name or IP>/<Magento root>/pub/cron.php[?group=<group name>]
+	<your Magento hostname or IP>/<Magento root>/pub/cron.php[?group=<group name>]
 
 Where:
 
-*	`<your Magento host name or IP>` is the host name or IP address of your Magento installation
+*	`<your Magento hostname or IP>` is the hostname or IP address of your Magento installation
 *	`<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
 
 	The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.

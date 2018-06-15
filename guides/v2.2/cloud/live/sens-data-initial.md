@@ -59,7 +59,7 @@ To change locale and static file optimization settings:
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** check box next to the **Minify Html** list.
+6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
 7.	From the **Minify Html** list, click **No**.
 5.	In the right pane, expand **CSS Settings**.
 6.	From the **Merge CSS Files** list, click **No**.
