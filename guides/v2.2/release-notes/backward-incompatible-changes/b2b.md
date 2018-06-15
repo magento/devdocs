@@ -3,7 +3,7 @@ group: release-notes
 version: 2.2
 title: Backward Incompatible Changes in Magento Commerce for B2B
 github_link: release-notes/backward-incompatible-changes/b2b.md
-redirect_from: guides/v2.2/release-notes/changes/b2b_changes.html
+redirect_from: /guides/v2.2/release-notes/changes/b2b_changes.html
 ---
 
 This topic provides details about backward incompatible changes related to {{site.data.var.b2b}} 1.0.
@@ -31,4 +31,5 @@ The changes are aggregated into two tables:
 
 [changes in {{site.data.var.ce}}]: open-source.html
 [changes in {{site.data.var.ee}}]: commerce.html
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
 [@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

@@ -105,7 +105,7 @@ To apply this patch:
 		<td>Use the following steps:
 		<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
 		<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
-		<li>Log in with your Magento user name and password.</li>
+		<li>Log in with your Magento username and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Click <strong>Magento Commerce</strong> <strong>2.X</strong> > <strong>Magento Commerce 2.x Release</strong> > <strong>Support Patches</strong></li>
 		<li>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</li></ul>

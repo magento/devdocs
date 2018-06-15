@@ -20,7 +20,7 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Hostname</td>
-		<td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
+		<td><p>Enter the fully qualified hostname or IP address of the machine running Elasticsearch.</p>
 		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
 	</tr>
 	<tr>
@@ -34,7 +34,7 @@ To configure Magento to use Elasticsearch:
 	</tr>
 	<tr>
 		<td>Enable Elasticsearch HTTP Auth</td>
-		<td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a user name and password in the provided fields.</td>
+		<td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.</td>
 	</tr>
 	</tbody>
 	</table>
@@ -76,7 +76,7 @@ After you change Magento's Elasticsearch configuration, you must reindex the cat
 To refresh the cache using the Admin:
 
 1.  In the Admin, click <strong>System</strong> > <strong>Cache Management</strong>.
-2.  Select the check box next to <strong>Page Cache</strong>.
+2.  Select the checkbox next to <strong>Page Cache</strong>.
 3.  From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">

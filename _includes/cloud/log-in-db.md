@@ -31,4 +31,7 @@
 
 3.  Use the following command to connect to the database:
 
-	<pre class="no-copy">mysql --host=&lt;host> --user='&lt;database user name>' --password='&lt;user password>' --port='&lt;port>' --database='&lt;path>'</pre>
+
+	<pre class="no-copy">mysql --host=&lt;host> --user='&lt;database username>' --password='&lt;user password>' --port='&lt;port>' --database='&lt;path>'</pre>
+
+</div>

@@ -241,7 +241,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58345-->* Magento now displays out-of-stock products in the shopping cart. Previously, if a product’s status changed between the time you added it to the cart and you proceeded to check out, Magento removed the product from your cart. [GitHub-6583](https://github.com/magento/magento2/issues/6583)
 
-<!--- 60110-->* When you select `New Address` while reviewing order information during check out, Magento now profiles the user name and country fields, but leaves the address fields empty. Previously, Magento did not leave the address fields empty, and the checkout process failed. [GitHub-6869](https://github.com/magento/magento2/issues/6869)
+<!--- 60110-->* When you select `New Address` while reviewing order information during check out, Magento now profiles the username and country fields, but leaves the address fields empty. Previously, Magento did not leave the address fields empty, and the checkout process failed. [GitHub-6869](https://github.com/magento/magento2/issues/6869)
 
 <!--- 57682-->* Checkout agreement validation now works as expected after you change payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
 
@@ -481,6 +481,9 @@ This release contains hundreds of fixes and enhancements.
 
 <!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094)
 
+
+
+<!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member <a href="https://github.com/LukeHandle" target="_blank">Luke Hanley</a> in pull request <a href="https://github.com/magento/magento2/pull/9368" target="_blank">9368</a>.* 
 
 
 #### Admin framework
@@ -1316,7 +1319,7 @@ This release includes substantial improvements to Magento caching, image process
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 
 ### Installation and upgrade instructions

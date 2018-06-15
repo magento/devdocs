@@ -32,7 +32,7 @@ To complete almost all of the tasks in this guide, you must remotely log in to y
 	
 	*	Mac OS: You can use the built-in <a href="http://en.wikipedia.org/wiki/Terminal_(OS_X)" target="_blank">Terminal</a> application or any of the following: <a href="http://iterm2.com/" target="_blank">iTerm</a>, or <a href="http://computers.tutsplus.com/tutorials/beyond-terminal-4-os-x-terminal-alternatives--mac-56217" target="_blank">these</a>
 	
-*	A user name and password for the Magento server
+*	A username and password for the Magento server
 	
 	On a hosted system, this is likely a user who doesn't have administrative rights to the server; that's OK as long as the user can install system software, stop and start services like the web server, and so on. 
 	
@@ -42,8 +42,8 @@ To use a terminal application to remotely access the Magento server:
 
 1.	Set up the terminal application according to its provided documentation.
 2.	Start the terminal application.
-3.	When prompted, enter your Magento server's host name or IP address.
-4.	Log in to the server with the user name or password you were provided.
+3.	When prompted, enter your Magento server's hostname or IP address.
+4.	Log in to the server with the username or password you were provided.
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.
 
@@ -51,6 +51,6 @@ Here's what it looks like when you're logged in to a server as the `root` user w
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p><a href="http://en.wikipedia.org/wiki/Secure_Shell" target="_blank">Secure Shell (ssh)</a> is a protocol you can use to securely connect to a remote server without the user name or password being sent over the network.</p></span>
+  <p><a href="http://en.wikipedia.org/wiki/Secure_Shell" target="_blank">Secure Shell (ssh)</a> is a protocol you can use to securely connect to a remote server without the username or password being sent over the network.</p></span>
 </div>
 	

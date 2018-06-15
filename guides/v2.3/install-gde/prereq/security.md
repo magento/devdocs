@@ -58,9 +58,9 @@ Depending on your security requirements, you might find it necessary to open por
 
 #### Related topics:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP&mdash;CentOS</a>
+*	<a href="{{page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{page.baseurl }}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

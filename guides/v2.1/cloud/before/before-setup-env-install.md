@@ -26,8 +26,8 @@ With your workspace prepared, install Magento on your local to verify custom cod
 
 To be able to customize the Magento software on your local machine, you should install it using the following information:
 
-*	Host name or IP address of your machine
-*	Admin user name, password, and URL you created earlier
+*	Hostname or IP address of your machine
+*	Admin username, password, and URL you created earlier
 *	Magento authentication keys for installing Magento locally
 
 ### Get Magento Admin environment variables {#variables}
@@ -79,8 +79,8 @@ After you have installed Magento, you need to set the file system permissions an
 		cd <your Magento install dir>
 		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-  	chown -R :<web server group> .
-  	chmod u+x bin/magento
+  	    chown -R :<web server group> .
+  	    chmod u+x bin/magento
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
@@ -123,7 +123,7 @@ After installing Magento, run the commands for [compile]({{ page.baseurl }}/conf
 
 1. If you are not in the correct Magento user, switch:
 
-    <pre>sudo su - magento</pre>
+        sudo su - magento
 2. Change directory to `app/bin`.
 3. Run the compile command:
 

@@ -81,7 +81,7 @@ To find the values in the database:
 
 1.  Connect to the Magento database.
 
-        mysql -u <magento database user name> -p
+        mysql -u <magento database username> -p
 2.  Enter the following commands:
 
         use <magento database name>;

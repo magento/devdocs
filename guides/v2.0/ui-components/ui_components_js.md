@@ -1,8 +1,8 @@
 ---
 group:  UI Library
 subgroup: A_Using_UI
-title: Using UI components' client-side
-menu_title: Using UI components' client-side
+title: Using UI components client-side
+menu_title: Using UI components client-side
 menu_node: parent
 version: 2.0
 github_link: ui-components/ui_components_js.md
@@ -14,13 +14,13 @@ This topic is aimed for developers, who need to reuse the [Magento UI Components
 
 The topic covers the following:
 
-- [UI components' configuration](#config)
+- [UI component configuration](#config)
 - [The most important UI component's properties](#main_properties)
-- [UI components’ properties used for linking](#comp_link)
+- [UI component properties used for linking](#comp_link)
 - [Description of the additional UI components](#comp_additional)
 - [JS UI components debugging](#comp_debug)
 
-## UI components' configuration {#config}
+## UI component configuration {#config}
 
 A UI component's behavior, configuration and structure is defined by the following:
 
@@ -31,7 +31,7 @@ A UI component's behavior, configuration and structure is defined by the followi
 All these properties, options, and methods are available in the component template's scope.
 
 
-## Most important UI components' properties {#main_properties}
+## Most important UI component properties {#main_properties}
 The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} are the following:
 
  - `component`: the path to the component's `.js` file in terms of RequireJS.
@@ -76,7 +76,7 @@ This string is constructed from the following values:
  - `listing_top`: the value of the `name` attribute of the parent `<container name="listing_top">` component. 
  - `columns_controls`: the value of the `name` attribute of the component itself.
 
-## UI Components' properties used for linking {#comp_link}
+## UI Component properties used for linking {#comp_link}
 
 The following properties are used for linking observable properties and methods of UI components:
 
