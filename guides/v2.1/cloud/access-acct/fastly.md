@@ -265,7 +265,12 @@ The following list contains examples of DNS providers for informational purposes
 
 Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirect service to redirect the apex over to the `www` version of the domain. Consult your DNS provider for more information.
 
-Another option for apex domain is to add an A record, which maps a domain name to the Fastly IP address: `150.101.113.124`.
+Another option for apex domain is to add A records, which maps a domain name to the Fastly IP addresses:
+
+* `151.101.1.124`
+* `151.101.65.124`
+* `151.101.129.124`
+* `151.101.193.124`
 
 Refer to [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html) for more information.
 
