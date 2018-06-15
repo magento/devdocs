@@ -42,7 +42,7 @@ To make sure the strings of an email template are added to the dictionary, use t
 
 Custom email templates <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-admin" target="_blank">added using the Admin panel</a>, are not stored in the file system, and their strings are not added to the dictionary.
 
-<h2 id="add_strings_ui_html">Strings added in UI components' templates</h2>
+<h2 id="add_strings_ui_html">Strings added in UI component templates</h2>
 
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how it should be used for different cases of adding a text:
 
