@@ -31,7 +31,7 @@ An extension is used when a test or action group needs to be repeated with the e
 2. You want to create a new test that follows the same path as the original test.
 3. You want a new action group that behaves similarly to an existing action group, but you don't want the functionality of the original action group to change.
 
-#### Signs that you should just use action groups
+#### Signs that you should not use 'extends'
 
 1. You want to change the functionality of the test/action group and don't want the original version to run.
 2. You plan on using merging on the base test/action group.
