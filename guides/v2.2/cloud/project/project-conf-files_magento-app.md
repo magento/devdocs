@@ -375,7 +375,7 @@ After pushing your file, you can check that the custom PHP configuration has bee
 ## Workers
 
 You can define zero or multiple work instances for each application. A worker
-instance can run as its own container, independent of the web instance amd without
+instance runs as a container, independent from the web instance and without
 a running Nginx instance. Additionally, you do not need to set up a web server on
 the worker instance (using Node.js or Go) because the router cannot direct public
 requests to the worker.
