@@ -373,11 +373,10 @@ After pushing your file, you can check that the custom PHP configuration has bee
 	cat /etc/php5/fpm/php.ini
 
 ## Workers
-<<<<<<< HEAD
-You can define zero or multiple work instances for each application. A worker instance can run as its own container, independent of the web instance and without a running Nginx instance. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
-=======
-You can define zero or multiple work instances for each application. A worker instance can run as its own container, independent of the web instance amd without a running Nginx instance. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
->>>>>>> b22dda1d7462b9020f66676c84bb0499ef0a817a
+
+You can define zero or multiple work instances for each application. A worker instance can run as its own container, independent of the web instance and without a running Nginx instance. Additionally, it is not useful to run your own
+web server on the worker instance (using Node.js or Go) because the router service
+cannot direct public requests to the worker.
 
 A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same `build` hook and `dependencies`. You can customize the container and allocated resources.
 
