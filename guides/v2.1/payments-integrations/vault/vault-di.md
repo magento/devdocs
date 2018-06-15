@@ -140,4 +140,4 @@ There are two ways to add command manager to the pool:
 
 In the first case, this pool can be used in any {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to perform vault payment commands. In the second case, only specific vault payment integration can use this pool. 
 
-You can use the samples as templates for your command manager configuration.You only need to change the Braintree-related names to your custom ones.
+You can use the samples as templates for your command manager configuration. You only need to change the Braintree-related names to your custom ones.
