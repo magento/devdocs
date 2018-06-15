@@ -16,7 +16,7 @@ The topic covers the following:
 
 - [UI component configuration](#config)
 - [The most important UI component's properties](#main_properties)
-- [UI components’ properties used for linking](#comp_link)
+- [UI component properties used for linking](#comp_link)
 - [Description of the additional UI components](#comp_additional)
 - [JS UI components debugging](#comp_debug)
 
