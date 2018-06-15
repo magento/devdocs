@@ -1906,13 +1906,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento defines the following default health check:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">.probe</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">.probe</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="err">.url</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">"/pub/health_check.php"</span><span class="err">;</span><span class="w">
     </span><span class="err">.timeout</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">2</span><span class="err">s;</span><span class="w">
     </span><span class="err">.interval</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">5</span><span class="err">s;</span><span class="w">
     </span><span class="err">.window</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">10</span><span class="err">;</span><span class="w">
     </span><span class="err">.threshold</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="mi">5</span><span class="err">;</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+    </span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Every 5 seconds, this health check calls the <code class="highlighter-rouge">pub/health_check.php</code> script. This script checks the availability of the server, each database, and Redis (if installed). The script must return a response within 2 seconds. If the script determines that any of these resources are down, it returns a 500 HTTP error code. If this error code is received in 6 out of 10 attempts, the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
  is considered unhealthy.</p>
@@ -1942,7 +1943,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To change the default grace period from within the <code class="highlighter-rouge">default.vcl</code> file, edit the following line in the <code class="highlighter-rouge">vcl_hit</code> subroutine:</p>
 
-<p><code class="highlighter-rouge">if (obj.ttl + 300s &gt; 0s) {</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (obj.ttl + 300s &gt; 0s) {
+</code></pre></div></div>
 
 <h3 id="grace-unhealthy">When the Magento backend is not healthy</h3>
 
@@ -1964,7 +1966,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to <strong>System &gt; Cache Management</strong> and click <strong>Flush Magento Cache</strong>. You can also run the following command to clear the cache:</p>
 
-<p><code class="highlighter-rouge">bin/magento cache:flush</code></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:flush
+</code></pre></div></div>
 
 <h3 id="saint-install">Installation</h3>
 
@@ -1979,17 +1982,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 . In general, follow these steps:</p>
 
 <ol>
-<li><p>Obtain the source code from <a href="https://github.com/varnish/varnish-modules">Varnish modules</a> . Clone the git version (master version) since the 0.9.x versions contain a source code error.</p></li>
-
-<li><p>Build the source code with autotools:</p>
-
-<p><code>sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel</code></p>
-<p><code>./bootstrap   # If running from git.</code></p>
-<p><code>./configure</code></p>
-<p><code>make</code></p>
-<p><code>make check   # optional</code></p>
-<p><code>sudo make install</code></p>
-</li></ol>
+  <li>Obtain the source code from <a href="https://github.com/varnish/varnish-modules">Varnish modules</a> . Clone the git version (master version) since the 0.9.x versions contain a source code error.</li>
+  <li>Build the source code with autotools:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install libvarnishapi-dev <span class="o">||</span> <span class="nb">sudo </span>yum install varnish-libs-devel
+./bootstrap   <span class="c"># If running from git.</span>
+./configure
+make
+make check   <span class="c"># optional</span>
+<span class="nb">sudo </span>make install
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <p>See <a href="https://github.com/varnish/varnish-modules">Varnish module collection</a> for information about installing the Saint mode module.</p>
 
