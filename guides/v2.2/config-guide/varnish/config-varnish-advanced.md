@@ -88,9 +88,8 @@ Saint mode is not part of the main Varnish package. It is a separately-versioned
 
 After you've recompiled, you can install the Saint mode {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. In general, follow these steps:
 
-<ol>
-<li><p>Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the git version (master version) since the 0.9.x versions contain a source code error.</p></li>
-<li><p>Build the source code with autotools:</p>
+1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the git version (master version) since the 0.9.x versions contain a source code error.
+2. Build the source code with autotools:
 ```bash
 sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
 ./bootstrap   # If running from git.
@@ -99,7 +98,6 @@ make
 make check   # optional
 sudo make install
 ```
-</li></ol>
 
 See [Varnish module collection](https://github.com/varnish/varnish-modules) for information about installing the Saint mode module.
 
