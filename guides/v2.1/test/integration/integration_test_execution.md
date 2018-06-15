@@ -63,7 +63,7 @@ By default, for every integration test run, the test framework installs a fresh 
 </div>
 
 For safety reasons it is recommended to use a dedicated database user for running the tests. That db user should not have access to any other databases.
-Here are example SQL commands to create a test database and a dedicated test user account.
+Here are examples of SQL commands to create a test database and a dedicated test user account.
 
 ```sql
 CREATE DATABASE magento_integration_tests;
@@ -114,7 +114,7 @@ Without adjustments it will run all core integration tests, which is useful for 
 When making adjustments to the configuration, copy the default file to `dev/tests/integration/phpunit.xml` (again, without the `.dist` suffix) and make your changes there. That way your changes will not be overwritten during Magento upgrades.
 
 There are many settings in the file.
-This guide will only describes three common adjustments.
+This guide will only describe three common adjustments.
 Please refer to the [PHPUnit documentation] and the comments in the default file for more information on the available configuration settings.
 
 #### The TESTS_CLEANUP Constant
@@ -229,7 +229,7 @@ cd dev/tests/integration
 ../../../vendor/bin/phpunit --testsuite "Memory Usage Tests"
 ```
 
-### Running a tests from a specific directory tree
+### Running tests from a specific directory tree
 
 To execute only the tests within a specific directory (for example an extension), pass the path to that directory as an argument to `phpunit`.
 
