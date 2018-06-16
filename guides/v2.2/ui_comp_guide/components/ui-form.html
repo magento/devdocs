@@ -1541,10 +1541,10 @@ For more details see the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_li
 
 <ul>
   <li>globally: using any module’s <code class="highlighter-rouge">view/ui_component/etc/definition.xml</code> file. All settings declared in     this file will be applied to all component’s instances</li>
-  <li>locally: using concrete component instance configuration, such as <code class="highlighter-rouge">&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form</code></li>
+  <li>locally: using concrete component instance configuration, such as <code class="highlighter-rouge">&lt;your module root dir&gt;view/base/ui_component/customer_form</code></li>
 </ul>
 
-<p>Create configuration file: <code class="highlighter-rouge">&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
+<p>Create configuration file: <code class="highlighter-rouge">&lt;your module root dir&gt;view/base/ui_component/customer_form.xml</code></p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"data"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>

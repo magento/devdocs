@@ -1293,7 +1293,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="step-2-define-the-templates">Step 2: Define the templates</h3>
 
-<p>Similar to the way they defined the layout on the previous step, OrangeCo 
+<p>Similar to the way they defined the layout on the previous step, OrangeCo
 defines the template which is used as the drop-down container : <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/frontend/templates/account/customer.phtml</code>.</p>
 
 <div class="collapsible">
@@ -1393,20 +1393,15 @@ defines the template which is used as the drop-down container : <code class="hig
 
 <ul>
   <li>redundant elements are hidden with CSS</li>
-  <li>
-    <p>the <code class="highlighter-rouge">.lib-dropdown()</code> mixin from <a href="/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a> was applied to the corresponding element</p>
-
-    <div class="collapsible">
-  <b class="collapsible-title">Expand to see the code </b>
-  <div class="collapsible-content"><p><code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/web/css/source/_extend.less</code>:</p>
-
-</div></div>
-  </li>
+  <li>the <code class="highlighter-rouge">.lib-dropdown()</code> mixin from <a href="/guides/v2.3/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a> was applied to the corresponding element</li>
 </ul>
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="o">//</span>
+
+<p><code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/web/css/source/_extend.less</code></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">//</span>
 <span class="o">//</span>  <span class="nt">Common</span>
 <span class="o">//</span>  <span class="nt">_____________________________________________</span>
- 
+
 <span class="o">&amp;</span> <span class="nt">when</span> <span class="o">(</span><span class="k">@media-common</span> <span class="err">=</span> <span class="n">true</span><span class="p">)</span> <span class="p">{</span>
     <span class="nc">.header.panel</span> <span class="nc">.header.links</span> <span class="p">{</span>
         <span class="err">.customer-welcome</span> <span class="err">+</span> <span class="err">.authorization-link</span> <span class="err">{</span>
@@ -1414,11 +1409,11 @@ defines the template which is used as the drop-down container : <code class="hig
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="err">}</span>
-  
+
 <span class="o">//</span>
 <span class="o">//</span>  <span class="nt">Mobile</span>
 <span class="o">//</span>  <span class="nt">_____________________________________________</span>
-    
+
 <span class="nc">.media-width</span><span class="o">(</span><span class="k">@extremum</span><span class="p">,</span> <span class="err">@</span><span class="n">break</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="err">@</span><span class="n">extremum</span> <span class="err">=</span> <span class="s2">'max'</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="err">@</span><span class="n">break</span> <span class="err">=</span> <span class="err">@</span><span class="n">screen__m</span><span class="p">)</span> <span class="p">{</span>
     <span class="nc">.customer-name</span><span class="o">,</span>
     <span class="nc">.customer-welcome</span> <span class="o">+</span> <span class="nc">.authorization-link</span> <span class="p">{</span>
@@ -1429,7 +1424,7 @@ defines the template which is used as the drop-down container : <code class="hig
 <span class="o">//</span>
 <span class="o">//</span>  <span class="nt">Desktop</span>
 <span class="o">//</span>  <span class="nt">_____________________________________________</span>
-    
+
 <span class="nc">.media-width</span><span class="o">(</span><span class="k">@extremum</span><span class="p">,</span> <span class="err">@</span><span class="n">break</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="err">@</span><span class="n">extremum</span> <span class="err">=</span> <span class="s2">'min'</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="err">@</span><span class="n">break</span> <span class="err">=</span> <span class="err">@</span><span class="n">screen__m</span><span class="p">)</span> <span class="p">{</span>
     <span class="nc">.customer-welcome</span> <span class="p">{</span>
         <span class="err">.lib-dropdown(</span>
@@ -1445,9 +1440,8 @@ defines the template which is used as the drop-down container : <code class="hig
             <span class="err">@</span><span class="n">_dropdown-list-position-right</span><span class="p">:</span> <span class="m">0</span>
         <span class="p">);</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-<p>&lt;/div&gt;
-  &lt;/div&gt;</p>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>As a result, the customer links look like following:</p>
 
