@@ -17,13 +17,14 @@ functional_areas:
 
 #### New Features
 
--  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration rom the Cloud tools `ece-tools` repository.
+-  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration from the Cloud tools `ece-tools` repository.
 
 -  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
--  <!-- MAGECLOU-1998 -->**Site map and Robots**—There is a new workflow to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
+-  <!-- MAGECLOU-1998 -->**Site map and Robots**—Created a [new workflow]({{ page.baseurl }}/cloud/trouble/robots-sitemap.html)
+to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain configuration without requiring a change to the infrastructure.
 
-- <!-- MAGECLOUD-1910 -->**Wizards**—Added two [new wizards]({{ page.baseurl }}/cloud/env/smart-wizards.html) to assist configuring your Cloud:
+- <!-- MAGECLOUD-1910 -->**Wizards**—Added two [new wizards]({{ page.baseurl }}/cloud/env/smart-wizards.html) to help you with Cloud configuration:
     -  `ideal-state`—configure the ideal state for minimal deployment downtime
     -  `master-slave`—configure load balancing for database and Redis
 
@@ -69,10 +70,10 @@ functional_areas:
 -  <!-- MAGECLOUD-1489 -->The first installation of the Staging & Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.
 -  <!-- MAGECLOUD-2021 -->Fixed an issue that interrupted the build phase for legacy architecture during static content deployment.
 
--  <!-- MAGECLOUD-1607 -->**Cron-specific Improvements**—Re-worked the cron implementation: 
+-  <!-- MAGECLOUD-1607 -->**Cron-specific Improvements**—Re-worked the cron implementation:
     - Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.
     - Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.
-    - Improved logging to better assist in debugging cron issues. 
+    - Improved logging to better assist in debugging cron issues.
     - **NOTE**—This release addresses many cron-related issues. If you currently use some cron-related patches in _m2-hotfixes_, remove them.
 
 -  **SCD-specific improvements**
