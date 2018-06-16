@@ -83,7 +83,7 @@ During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#c
 
 The build also checks for a [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
-Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
+Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hotfixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
 #### To build your site:
 
@@ -107,11 +107,12 @@ Before you continue, you must know the file system path to any patch we provided
 
 		... more ...
 							)
-2.	Apply hot fixes and other patches provided to you.
+              
+2.	Apply hotfixes and other patches provided to you:
 
 		git apply <path to patch>
 
-	For example, to apply hot fixes:
+	For example, to apply hotfixes:
 
 		git apply m2-hotfixes/<patch file name>
 

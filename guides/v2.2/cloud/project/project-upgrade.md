@@ -7,7 +7,7 @@ github_link: cloud/project/project-upgrade.md
 
 This information details how to upgrade {{site.data.var.ece}} to 2.2.X from any version, and upgrading to new 2.2.X versions.
 
-When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
+When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure that your project root folder contains an `auth.json` file for authentication.
 
 Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
@@ -124,7 +124,9 @@ The environment variable `ADMIN_EMAIL` is required for upgrading and patching. T
 ### Upgrade Fastly {#fastly}
 If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{ page.baseurl }}/cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html#upgrade).
 
-If you do not upgrade your Fastly module, you will be missing vital updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="\_blank"}.
+If you do not upgrade your Fastly module, your upgraded instance will not have critical updates
+required to use Fastly and Magento services. You might also need to update the JSON format.
+This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="\_blank"}.
 
 ### Update .gitignore for new generated directory {#gitignore}
 With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.
