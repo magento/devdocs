@@ -324,7 +324,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<h1 id="step-by-step-walk-through-of-git-push-output">Step by step walk-through of <code class="highlighter-rouge">git push</code> output</h1>
 <p>To better grasp what is happening here, we will show you what the output of the <code class="highlighter-rouge">git push</code> command might look like with Magento Commerce (Cloud).</p>
 
-<p>For this example, we use a sample PHP project with multiple data backends, MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code class="highlighter-rouge">composer.json</code> file. It uses the Ruby library <code class="highlighter-rouge">sass</code> to compile the SCSS during its build process.</p>
+<p>For this example, we use a sample PHP project configured with multiple services including MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a <code class="highlighter-rouge">composer.json</code> file. It uses the Ruby library <code class="highlighter-rouge">sass</code> to compile the SCSS during its build process.</p>
 
 <p>A developer wants to work on a new feature for the store. They created a new environment by running <code class="highlighter-rouge">magento-cloud environment:branch maximal</code>, where <code class="highlighter-rouge">maximal</code> is the name of the branch.</p>
 
@@ -411,7 +411,7 @@ Beaming package to its final destination.
     moarsearch (type: Elasticsearch, size: S, disk: 200)
 </code></pre></div></div>
 
-<p>We can see the five different data backends were deployed (started, and initialized with the data from the parent environment). Magento Commerce (Cloud) also  configured the network so your application container can access them.</p>
+<p>We can see the five different data back ends were deployed (started, and initialized with the data from the parent environment). Magento Commerce (Cloud) also  configured the network so your application container can access them.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Environment routes:
     http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`

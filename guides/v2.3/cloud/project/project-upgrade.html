@@ -1996,7 +1996,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>This information details how to upgrade Magento Commerce (Cloud) to 2.2.X from any version, and upgrading to new 2.2.X versions.</p>
 
-<p>When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the <code class="highlighter-rouge">magento-cloud-metapackage</code>. Make sure you have <code class="highlighter-rouge">auth.json</code> in your project root folder if there isn’t one already.</p>
+<p>When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the <code class="highlighter-rouge">magento-cloud-metapackage</code>. Make sure that your project root folder contains an <code class="highlighter-rouge">auth.json</code> file for authentication.</p>
 
 <p>Our upgrades are Composer driven. For more information on Composer, see <a href="/guides/v2.3/cloud/reference/cloud-composer.html">Composer in Cloud</a>.</p>
 
@@ -2132,7 +2132,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="fastly">Upgrade Fastly</h3>
 <p>If you have not upgraded to the latest supported version of Fastly, you should do so. Check <a href="/guides/v2.3/cloud/requirements/cloud-requirements.html#cloud-arch-software">Supported software versions</a> for the latest version of Fastly we recommend. For instructions, see <a href="/guides/v2.3/cloud/access-acct/fastly.html#upgrade">Upgrade Fastly</a>.</p>
 
-<p>If you do not upgrade your Fastly module, you will be missing vital updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see <a href="https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md" target="\_blank">Fastly upgrade documentation</a>.</p>
+<p>If you do not upgrade your Fastly module, your upgraded instance will not have critical updates
+required to use Fastly and Magento services. You might also need to update the JSON format.
+This is already included in Fastly module v1.2.33 and later. For full details, see <a href="https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md" target="\_blank">Fastly upgrade documentation</a>.</p>
 
 <h3 id="gitignore">Update .gitignore for new generated directory</h3>
 <p>With Magento Commerce (Cloud) 2.2.X, the generated folders <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> have been moved to a <code class="highlighter-rouge">generated/</code> read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.</p>

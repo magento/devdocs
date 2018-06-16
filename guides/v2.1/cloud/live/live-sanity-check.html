@@ -2105,7 +2105,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The build also checks for a <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">configuration file</a>. If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.</p>
 
-<p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
+<p>Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hotfixes are in the <code class="highlighter-rouge">&lt;Magento root dir&gt;/m2-hotfixes</code> directory.</p>
 
 <h4 id="to-build-your-site">To build your site:</h4>
 
@@ -2135,12 +2135,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Apply hot fixes and other patches provided to you.</p>
+    <p>Apply hotfixes and other patches provided to you:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply &lt;path to patch&gt;
 </code></pre></div>    </div>
 
-    <p>For example, to apply hot fixes:</p>
+    <p>For example, to apply hotfixes:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply m2-hotfixes/&lt;patch file name&gt;
 </code></pre></div>    </div>
