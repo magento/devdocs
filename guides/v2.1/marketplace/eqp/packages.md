@@ -62,7 +62,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |options|object|GET, POST, PUT|marketing|A set of options this package supports. Refer to [Additional notes](#additional-notes).|
 |submission_id|string|GET, PUT|-|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|
 |item_id|string|GET, POST, PUT|-|A developer-defined unique ID assigned to the package (if available). If it is being supplied, it must be unique for every POST request.|
-|action|object|POST, PUT|-|The action to be taken during a package submission (POST or PUT). Refer to [Package submission](#package-submission).|
+|action|object|POST, PUT|-|The action to be taken during a package submission (POST or PUT). Refer to [Package submission](#package-submissions).|
 |eqp_status|object|GET|-|The current status of the package in the EQP process. Refer to [Get package details](#get-package-details).|
 |offset|integer|GET|-|In combination with the `limit` parameter, it can be used for paging the collection of packages. Refer to [Get package details](#get-package-details). Default value is 0.|
 |limit|integer|GET|-|Along with `offset`, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
@@ -73,7 +73,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 
 ### Additional notes
 
-* For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submission) section.
+* For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submissions) section.
 * The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.
 * The list of valid values for `license_type` are:
     * `afl`—Academic Free License 3.0 (AFL)
