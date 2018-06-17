@@ -408,9 +408,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
          <td>Returns the code of the payment method</td>
       </tr>
       <tr class="odd">
-         <td><code>getData():object&lt;/td&gt;
+         <td><code>getData():object</code></td>
          <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field.</td>
-      &lt;/tr&gt;
+      </tr>
       <tr class="even">
          <td><code>placeOrder():bool</code></td>
          <td>Places an order if all validations passed.</td>
@@ -444,31 +444,28 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
          <td><code>disposeSubscriptions()</code></td>
          <td>Terminates the object's subscription.</td>
       </tr>
-   &lt;/tbody&gt;
-&lt;/table&gt;
+   </tbody>
+</table>
 
+<p>The general view of the payment method renderer is the following:</p>
 
-The general view of the payment method renderer is the following:
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">'Magento_Checkout/js/view/payment/default'</span>
+    <span class="p">],</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">Component</span><span class="p">)</span> <span class="p">{</span>
+        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+            <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span>
+                <span class="na">template</span><span class="p">:</span> <span class="s1">'%path to template%'</span>
+            <span class="p">},</span>
+            <span class="c1">// add required logic here</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
 
-```js
-define(
-    [
-        'Magento_Checkout/js/view/payment/default'
-    ],
-    function (Component) {
-        'use strict';
-        return Component.extend({
-            defaults: {
-                template: '%path to template%'
-            },
-            // add required logic here
-        });
-    }
-);
-```
-
-If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
-
+<p>If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js"><code class="highlighter-rouge">&lt;Magento_Payment_module_dir&gt;/view/frontend/web/js/view/payment/cc-form.js</code></a>. It also extends the default payment renderer, but has the following own methods:</p>
 
 <table>
    <tr>
@@ -517,165 +514,159 @@ If your payment method requires credit cards information, you might use the Mage
    </tr>
 </table>
 
-### Access the system config data {#system-config-data}
-Your payment method might need to get data that cannot be defined in   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
+<h3 id="system-config-data">Access the system config data</h3>
+<p>Your payment method might need to get data that cannot be defined in   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  configuration, JS components or templates directly, for example, data from the Magento system config.
-This configuration is stored in the `window.checkoutConfig` variable that is defined in root checkout template.
+This configuration is stored in the <code class="highlighter-rouge">window.checkoutConfig</code> variable that is defined in root checkout template.</p>
 
-In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
- configuration. The following code samples illustrate this.
+<p>In order to get access to the system configuration, your payment method or a group of payment methods has to implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Checkout/Model/ConfigProviderInterface.php"><code class="highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code></a> interface, and the class implementing it must be injected to the composite config provider via DI   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
+ configuration. The following code samples illustrate this.</p>
 
-A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
+<p>A sample <code class="highlighter-rouge">.php</code> class implementing <code class="highlighter-rouge">\Magento\Checkout\Model\ConfigProviderInterface</code>:</p>
 
-```php?start_inline=1
-class MyCustomPaymentConfigProvider implements \Magento\Checkout\Model\ConfigProviderInterface
-{
-...
-    public function getConfig()
-    {
-        return [
-            // 'key' =&gt; 'value' pairs of configuration
-        ];
-    }
-...
-}
-```
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyCustomPaymentConfigProvider</span> <span class="k">implements</span> <span class="nx">\Magento\Checkout\Model\ConfigProviderInterface</span>
+<span class="p">{</span>
+<span class="o">...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getConfig</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="c1">// 'key' =&amp;gt; 'value' pairs of configuration
+</span>        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="o">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
-A sample DI configuration file of a custom module `<your_module_dir>/etc/frontend/di.xml`:
+<p>A sample DI configuration file of a custom module <code class="highlighter-rouge">&lt;your_module_dir&gt;/etc/frontend/di.xml</code>:</p>
 
-```xml
-...
-<type name="Magento\Checkout\Modерel\CompositeConfigProvider">
-    <arguments>
-        <argument name="configProviders" xsi:type="array">
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+<span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Checkout\Modерel\CompositeConfigProvider"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"configProviders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
             ...
-            <item name="%Custom_provider_name%" xsi:type="object">MyCustomPaymentConfigProvider</item>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%Custom_provider_name%"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>MyCustomPaymentConfigProvider<span class="nt">&lt;/item&gt;</span>
             ...
-        </argument>
-    </arguments>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
 ...
-</type>
-```
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
 
-### Add other payment-related features {#payment-features}
-You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the [checkout page layout file correspondingly](#layout).
+<h3 id="payment-features">Add other payment-related features</h3>
+<p>You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the <a href="#layout">checkout page layout file correspondingly</a>.</p>
 
-## Step 2: Create the .js component that registers the renderer {#register}
-In you custom module directory create the `.js` UI component that registers the payment method renderer in the renderers list. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory. For example in the Magento modules, the payment methods renderers are stored in the `<Magento_module_dir>/view/frontend/web/js/view/payment/` directory.
+<h2 id="register">Step 2: Create the .js component that registers the renderer</h2>
+<p>In you custom module directory create the <code class="highlighter-rouge">.js</code> UI component that registers the payment method renderer in the renderers list. It must be located under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code class="highlighter-rouge">&lt;Magento_module_dir&gt;/view/frontend/web/js/view/payment/</code> directory.</p>
 
-The file content must be similar to the following:
+<p>The file content must be similar to the following:</p>
 
-```js
-define(
-    [
-        'uiComponent',
-        'Magento_Checkout/js/model/payment/renderer-list'
-    ],
-    function (
-        Component,
-        rendererList
-    ) {
-        'use strict';
-        rendererList.push(
-            {
-                type: '%payment_method_code%',
-                component: '%js_renderer_component%'
-            },
-            // other payment method renderers if required
-        );
-        /** Add view logic here if needed */
-        return Component.extend({});
-    }
-);
-```
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">'uiComponent'</span><span class="p">,</span>
+        <span class="s1">'Magento_Checkout/js/model/payment/renderer-list'</span>
+    <span class="p">],</span>
+    <span class="kd">function</span> <span class="p">(</span>
+        <span class="nx">Component</span><span class="p">,</span>
+        <span class="nx">rendererList</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="nx">rendererList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span>
+            <span class="p">{</span>
+                <span class="na">type</span><span class="p">:</span> <span class="s1">'%payment_method_code%'</span><span class="p">,</span>
+                <span class="na">component</span><span class="p">:</span> <span class="s1">'%js_renderer_component%'</span>
+            <span class="p">},</span>
+            <span class="c1">// other payment method renderers if required</span>
+        <span class="p">);</span>
+        <span class="cm">/** Add view logic here if needed */</span>
+        <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({});</span>
+    <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div></div>
 
-If your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- adds several payment methods, you can register all payment methods renderers in one file.
+<p>If your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+ adds several payment methods, you can register all payment methods renderers in one file.</p>
 
-## Step 3: Create the template for the payment method component {#template}
+<h2 id="template">Step 3: Create the template for the payment method component</h2>
 
-In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module.
+<p>In your custom module directory create a new <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax. You can find a sample <code class="highlighter-rouge">.html</code> template in any module implementing payment methods, for example the Magento_Authorizenet module.</p>
 
-The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
+<p>The template for rendering the Authorize.Net payment method in checkout is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html"><code class="highlighter-rouge">&lt;Magento_Authorizenet_module_dir&gt;/view/frontend/web/template/payment/authorizenet-directpost.html</code></a>.</p>
 
+<h2 id="layout">Step 4: Declare the payment method in layout</h2>
 
-## Step 4: Declare the payment method in layout {#layout}
+<p>In your custom module directory, create a new <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code> file. In this file, add the following:</p>
 
-In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">layout=</span><span class="s">"1column"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">"checkout.root"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;arguments&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"jsLayout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"components"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"checkout"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"steps"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"billing-step"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
+                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"payment"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                        <span class="c">&lt;!-- Declare additional before payment components. START --&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"beforeMethods"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"displayArea"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>beforeMethods<span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%your_feature_name%"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%path/to/your/feature_js_component%<span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;/item&gt;</span>
+                                                        <span class="nt">&lt;/item&gt;</span>
+                                                        <span class="c">&lt;!-- Declare additional before payment components. END --&gt;</span>
+                                                        <span class="c">&lt;!-- Declare the payment method (the component that registrates in the list). START --&gt;</span>
+                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"renders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%group name of the payment methods%"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                    <span class="c">&lt;!-- Example of value: Magento_Authorizenet/js/view/payment/authorizenet--&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%component_that_registers_payment_renderer%<span class="nt">&lt;/item&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"methods"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
 
-```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-        <referenceBlock name="checkout.root">
-            <arguments>
-                <argument name="jsLayout" xsi:type="array">
-                    <item name="components" xsi:type="array">
-                        <item name="checkout" xsi:type="array">
-                            <item name="children" xsi:type="array">
-                                <item name="steps" xsi:type="array">
-                                    <item name="children" xsi:type="array">
-                                        <item name="billing-step" xsi:type="array">
-                                            <item name="component" xsi:type="string">uiComponent</item>
-                                            <item name="children" xsi:type="array">
-                                                <item name="payment" xsi:type="array">
-                                                    <item name="children" xsi:type="array">
-                                                        <!-- Declare additional before payment components. START -->
-                                                        <item name="beforeMethods" xsi:type="array">
-                                                            <item name="component" xsi:type="string">uiComponent</item>
-                                                            <item name="displayArea" xsi:type="string">beforeMethods</item>
-                                                            <item name="children" xsi:type="array">
-                                                                <item name="%your_feature_name%" xsi:type="array">
-                                                                    <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
-                                                                </item>
-                                                            </item>
-                                                        </item>
-                                                        <!-- Declare additional before payment components. END -->
-                                                        <!-- Declare the payment method (the component that registrates in the list). START -->
-                                                        <item name="renders" xsi:type="array">
-                                                            <item name="children" xsi:type="array">
-                                                                <item name="%group name of the payment methods%" xsi:type="array">
-                                                                    <!-- Example of value: Magento_Authorizenet/js/view/payment/authorizenet-->
-                                                                    <item name="component" xsi:type="string">%component_that_registers_payment_renderer%</item>
-                                                                    <item name="methods" xsi:type="array">
+                                                                        <span class="c">&lt;!-- Add this if your payment method requires entering a billing address--&gt;</span>
+                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%payment_method_code%"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"isBillingAddressRequired"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                                                                        <span class="nt">&lt;/item&gt;</span>
+                                                                    <span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="c">&lt;!-- Declare the payment method (the component that registrates in the list). END --&gt;</span>
+                                                            <span class="c">&lt;!-- Declare additional after payment components. START --&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"afterMethods"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"displayArea"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>afterMethods<span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"children"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%your_feature_name%"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"component"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%path/to/your/feature_js_component%<span class="nt">&lt;/item&gt;</span>
+                                                                    <span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="c">&lt;!-- Declare additional after payment components. END --&gt;</span>
+                                                        <span class="nt">&lt;/item&gt;</span>
+                                                    <span class="nt">&lt;/item&gt;</span>
+                                                <span class="nt">&lt;/item&gt;</span>
+                                            <span class="nt">&lt;/item&gt;</span>
+                                        <span class="nt">&lt;/item&gt;</span>
+                                    <span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/arguments&gt;</span>
+        <span class="nt">&lt;/referenceBlock&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/page&gt;</span>
+</code></pre></div></div>
 
-                                                                        <!-- Add this if your payment method requires entering a billing address-->
-                                                                        <item name="%payment_method_code%" xsi:type="array">
-                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
-                                                                        </item>
-                                                                    </item>
-                                                                </item>
-                                                            </item>
-                                                            <!-- Declare the payment method (the component that registrates in the list). END -->
-                                                            <!-- Declare additional after payment components. START -->
-                                                            <item name="afterMethods" xsi:type="array">
-                                                                <item name="component" xsi:type="string">uiComponent</item>
-                                                                <item name="displayArea" xsi:type="string">afterMethods</item>
-                                                                <item name="children" xsi:type="array">
-                                                                    <item name="%your_feature_name%" xsi:type="array">
-                                                                        <item name="component" xsi:type="string">%path/to/your/feature_js_component%</item>
-                                                                    </item>
-                                                                </item>
-                                                            </item>
-                                                            <!-- Declare additional after payment components. END -->
-                                                        </item>
-                                                    </item>
-                                                </item>
-                                            </item>
-                                        </item>
-                                    </item>
-                                </item>
-                            </item>
-                        </item>
-                    </item>
-                </argument>
-            </arguments>
-        </referenceBlock>
-    </body>
-</page>
-```
-
-For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)
-</your_module_dir></Magento_Authorizenet_module_dir></your_template></your_module_dir></Magento_module_dir></your_module_dir></your_module_dir></Magento_Payment_module_dir></code></td></tr></tbody></table>
+<p>For an illustration of <code class="highlighter-rouge">checkout_index_index.xml</code> where a new payment method is declared, view <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml">app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml</a></p>
 
 
       <div class="horisontal-nav">
