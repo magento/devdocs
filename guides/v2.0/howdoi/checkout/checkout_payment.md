@@ -47,7 +47,7 @@ Usually, your component will extend the default payment method component (defaul
          <td>Returns the code of the payment method</td>
       </tr>
       <tr class="odd">
-         <td><code>getData():object</td>
+         <td><code>getData():object</code></td>
          <td> Returns an object with the payment data to be sent to the server on selecting a payment method and/or an extension (on pressing Continue button). It must contain data according to <code>\Magento\Quote\Api\Data\PaymentInterface</code>. All the payment information except the method code and purchase order number is passed in the <code>additional_data</code> field.</td>
       </tr>
       <tr class="even">

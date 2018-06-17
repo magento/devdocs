@@ -22,7 +22,7 @@ To implement such a checkbox, take the following steps:
 2. [Declare the plugin in your module's `di.xml`](#declare-plugin).
 3. [Create a JS component for the checkbox with custom logic](#create-jscomponent).
 
-## Create a plugin for the `LayoutProcessor`'s process method
+## Create a plugin for the `LayoutProcessor`'s process method {#create-plugin}
 
 In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.
 

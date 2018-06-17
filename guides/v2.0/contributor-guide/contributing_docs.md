@@ -59,7 +59,7 @@ The following guidelines may answer most of your questions and help you get star
     -   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
 
 ## Fork and clone a repository {#fork}
-Use the [fork](#fork) and [pull](#create-a-pull-request) model to contribute to Magento DevDocs. This model requires you to keep your forked repository in sync with the upstream repository. You submit pull requests to _pull_ a set of changes from your forked repository to the upstream repository.
+Use the [fork](#fork) and [pull](#pull-request) model to contribute to Magento DevDocs. This model requires you to keep your forked repository in sync with the upstream repository. You submit pull requests to _pull_ a set of changes from your forked repository to the upstream repository.
 
 To fork the devdocs repository on GitHub, do the following:
 
