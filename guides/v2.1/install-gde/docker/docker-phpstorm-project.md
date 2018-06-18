@@ -82,7 +82,7 @@ This section discusses how to add a remote {% glossarytooltip bf703ab1-ca4b-48f9
 	*	**Port**: Enter the web container's [SSH listen port]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html).
 	*	**Username**: Enter `magento2`
 	*	**Password**: Leave blank
-	*	**Save password**: Select the check box
+	*	**Save password**: Select the checkbox
 	*	**PHP executable**: Enter `/usr/local/bin/php`
 7.	In the Configure Remote PHP Interpreter dialog box, click **OK**.
 
@@ -186,7 +186,7 @@ To set up a PHP server for debugging:
 	*	**Name**: Enter a name to identify your server
 	*	**Host**: `127.0.0.1`
 	*	**Port**: Enter the [SSH listen port]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html)
-	*	Select the **Use path mappings** check box.
+	*	Select the **Use path mappings** checkbox.
 	*	**Debugger**: Click **Xdebug**
 5.	Specify path mappings:
 

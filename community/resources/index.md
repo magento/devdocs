@@ -38,7 +38,7 @@ They are listed here because the content has been well received within the Magen
 * *Presentation:* [Magento 2 Deployment: What you should know][4]{:target="_blank"} by Olga KopyLova
 * *Blog post* [Magento 2 deployment without the downtime][5]{:target="_blank"} by Robert Egginton
 * *Blog post* [Deploying Magento 2 - History & Overview][6]{:target="_blank"} by Matthias Walter
-* *Blog post* [Deploying Magento 2 using Capistrano][17]{:taget="_blank"} by David Alger
+* *Blog post* [Deploying Magento 2 using Capistrano][17]{:target="_blank"} by David Alger
 * *Blog post* [Deploying Magento 2 with Composer and Envoyer][16]{:target="_blank"} by Nick Rigby
 * *GitHub* [Magento 2 Docker][18]{:target="_blank"}
 

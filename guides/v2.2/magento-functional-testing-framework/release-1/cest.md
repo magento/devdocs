@@ -6,8 +6,8 @@ github_link: magento-functional-testing-framework/release-1/cest.md
 functional_areas:
  - Testing
 redirect_from:
-    - guides/v2.2/magento-functional-testing-framework/cest.html
-    - guides/v2.2/magento-functional-testing-framework/1.0/cest.html
+ - /guides/v2.2/magento-functional-testing-framework/cest.html
+ - /guides/v2.2/magento-functional-testing-framework/1.0/cest.html
 mftf-release: 1.0.0
 ---
 

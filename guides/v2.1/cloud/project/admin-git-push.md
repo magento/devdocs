@@ -12,7 +12,7 @@ github_link: cloud/project/admin-git-push.md
 # Step by step walk-through of `git push` output
 To better grasp what is happening here, we will show you what the output of the `git push` command might look like with {{site.data.var.ece}}.
 
-For this example, we use a sample PHP project with multiple data backends, MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a `composer.json` file. It uses the Ruby library `sass` to compile the SCSS during its build process.
+For this example, we use a sample PHP project configured with multiple services including MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a `composer.json` file. It uses the Ruby library `sass` to compile the SCSS during its build process.
 
 A developer wants to work on a new feature for the store. They created a new environment by running `magento-cloud environment:branch maximal`, where `maximal` is the name of the branch.
 
@@ -86,7 +86,7 @@ You will not be able to see output from the "deploy" hook as these happen in the
         database (type: mysql, size: S, disk: 200)
         moarsearch (type: Elasticsearch, size: S, disk: 200)
 
-We can see the five different data backends were deployed (started, and initialized with the data from the parent environment). {{site.data.var.ece}} also  configured the network so your application container can access them.
+We can see the five different data back ends were deployed (started, and initialized with the data from the parent environment). {{site.data.var.ece}} also  configured the network so your application container can access them.
 
     Environment routes:
         http://maximal-mswy7hzcuhcjy.example.magento.com/ is served by application `myapp`

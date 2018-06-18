@@ -24,7 +24,7 @@ All users | `<module>/etc`
 Merchants | `<module>/adminhtml`
 Customers | `<module>/frontend`
 
-The files placed in the `adminhtml` and `frontend` directories ensure that customers and store administrators see only audience-specific messages. For example, a customer should see error messages when a credit card fails verfication due to mis-entered data and similar reasons. The store's administrator should have more detailed descriptions of why an attempt to create an invoice or refund failed.
+The files placed in the `adminhtml` and `frontend` directories ensure that customers and store administrators see only audience-specific messages. For example, a customer should see error messages when a credit card fails verification due to mis-entered data and similar reasons. The store's administrator should have more detailed descriptions of why an attempt to create an invoice or refund failed.
 
 The  [braintree_error_mapping.xml]({{ site.mage2300url }}app/code/Magento/Braintree/etc/braintree_error_mapping.xml) file provides an example  collection:
 
@@ -48,7 +48,7 @@ The message definitions are based on the [error_mapping.xsd]({{ site.mage2300url
 
 ### Configure dependency injection
 
-After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a `virtualType` defintion for `\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader` in the module's `di.xml` file:
+After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a `virtualType` definition for `\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader` in the module's `di.xml` file:
 
 ``` xml
 <virtualType name="Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader" type="Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader">

@@ -7,8 +7,8 @@ menu_order: 20
 version: 2.1
 github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_debug.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_debug.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_debug.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_debug.html
 functional_areas:
   - Testing
 ---
@@ -89,5 +89,5 @@ This means we should check for <code>mage/menu.js</code> the following locations
 <li><code>&lt;Magento_Blank_theme_dir&gt;/web/js</code> (parent theme JS files)</li>
 <li><code>lib/web</code> (library files)</li>
 </ol>
-There is no <code>mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
+There is no <code>mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <a href="{{ site.mage2100url }}/lib/web/mage/menu.js" target="_blank"><code>lib/web/mage/menu.js</code></a>
 </ol>

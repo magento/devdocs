@@ -11,7 +11,7 @@ functional_areas:
   - Upgrade
 ---
 
-This topic provides a simple example of getting free extensions for {{site.data.var.ce}} (formerly Community Edition (CE)). For more detail, see the [Marketplace quick tour](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html){:target="_blank"}.
+This topic provides a simple example of getting free extensions for {{site.data.var.ce}} . For more detail, see the [Marketplace quick tour](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html){:target="_blank"}.
 
 ### Log in to Magento Marketplace
 To get started, log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} using your `magento.com` credentials. 

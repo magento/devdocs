@@ -246,7 +246,7 @@ Through preprocessing/compilation of DI instructions, Magento
 
 After compilation completes, we recommend running the following command:
 
-`composer dump-autoload -o`
+`composer dump-autoload -o --apcu`
 
 This command allows composer to rebuild the mapping to project files so that they load faster.
 

@@ -112,7 +112,7 @@ To set these options:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.	Click **System** > **Index Management**.
-3.	Select the check box next to each type of indexer to change.
+3.	Select the checkbox next to each type of indexer to change.
 4.	From the **Actions** list, click the indexing mode.
 5.	Click **Submit**.
 

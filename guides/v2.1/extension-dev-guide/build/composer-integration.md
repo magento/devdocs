@@ -55,25 +55,25 @@ Other root `composer.json` files use this file as a template.
 
 ----
 
-### Community Edition project
+### {{site.data.var.ce}} project
 **Location:** `composer.json`
 
 **Name:** `magento/project-community-edition`
 
 **Type:** `project`
 
-Magento system integrators use this `composer.json` file to deploy the Magento Community Edition product and its dependencies.
+Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ce}} product and its dependencies.
 
 ----
 
-### Enterprise Edition project
+### {{site.data.var.ee}} project
 **Location:** `composer.json`
 
 **Name:** `magento/product-enterprise-edition`
 
 **Type:** `metapackage`
 
-Magento system integrators use this `composer.json` file to deploy the Magento Enterpries Edition product and its dependencies.
+Magento system integrators use this `composer.json` file to deploy the {{site.data.var.ee}} product and its dependencies.
 
 ----
 

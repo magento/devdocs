@@ -138,17 +138,17 @@ Example of `map.php`:
 
 ```php?start_inline=1
 return [
-        'Magento_Checkout::cvv.png' => [
-            'area' => 'frontend',
-            'theme' => 'Magento/luma',
-            'locale' => 'en_US',
-        ],
-        '...' => [
-            'area' => '...',
-            'theme' => '...',
-            'locale' => '...'
-        ]
-        ];
+    'Magento_Checkout::cvv.png' => [
+        'area' => 'frontend',
+        'theme' => 'Magento/luma',
+        'locale' => 'en_US',
+    ],
+    '...' => [
+        'area' => '...',
+        'theme' => '...',
+        'locale' => '...'
+    ]
+];
 ```
 
 Example of `requirejs-map.js`:

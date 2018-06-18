@@ -9,3 +9,4 @@ To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magen
 <!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) -->
 
 More details about these parameters can be found later in this topic.
+</div>

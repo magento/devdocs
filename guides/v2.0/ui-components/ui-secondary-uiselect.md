@@ -13,7 +13,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-uiselect.html
 
 <h3 id="uiselect">UI-select component</h3>
 
-The UI-select component is used to provide check box interface for a specific listing or a specific data set. The component allows selecting a collection of items.
+The UI-select component is used to provide checkbox interface for a specific listing or a specific data set. The component allows selecting a collection of items.
 
 The UI-select component has extended from the Abstract component.
 

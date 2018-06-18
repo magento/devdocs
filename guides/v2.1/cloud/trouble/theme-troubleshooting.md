@@ -22,7 +22,7 @@ To resolve, you need the SSH information and store URL available through the [Pr
     php bin/magento catalog:images:resize
     ```
 
-1.  Test the catagory pages through the store URL.
+1.  Test the category pages through the store URL.
 
 ## Locate blocks in themes that make them uncacheable {#uncache}
 When debugging your themes, you may need to locate blocks in themes that make the pages uncacheable. Use the following command to locate these blocks.
