@@ -1292,108 +1292,206 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>In the Magento system, a   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- has the following format:</p>
+			<p>In web applications, such as Magento, routing is the act of providing data from a URL request to the appropriate class for processing.
+Magento routing uses the following flow:</p>
 
-<p><code class="highlighter-rouge">&lt;area front name&gt;/&lt;VendorName&gt;/&lt;ModuleName&gt;/&lt;controller name&gt;/&lt;action name&gt;</code></p>
+<p>index.php -&gt; HTTP application -&gt; FrontController -&gt; Routing -&gt; Controller processing -&gt; etc</p>
 
-<p><code class="highlighter-rouge">&lt;area front name&gt;</code> indicates it is at the “front” of the URL. (The <em>area name</em> is used internally to refer to the area in configuration files. Magento provides areas such as <code class="highlighter-rouge">frontend</code> for the storefront and <code class="highlighter-rouge">adminhtml</code> for the administration area.)</p>
+<h2 id="frontcontroller-class"><code class="highlighter-rouge">FrontController</code> class</h2>
 
-<p>To assign a URL to a corresponding controller and action, use the router class.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/FrontController.php"><code class="highlighter-rouge">FrontController</code> class</a> class searches through a list of routers, provided by the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/RouterList.php"><code class="highlighter-rouge">RouterList</code></a> class, until it matches one that can process a request.
+When the <code class="highlighter-rouge">FrontController</code> finds a matching router, it dispatches the request to an <a href="#action-class">action class</a> returned by the router.</p>
 
-<p>Router has an algorithm to find a matching controller, determined by request.</p>
+<p>If the <code class="highlighter-rouge">FrontController</code> cannot find a router to process a request, it uses the <a href="#default-router">default router</a>.</p>
 
-<p>Then, according to a route rule, controller is assigned to URL. Use the <code class="highlighter-rouge">routes.xml</code> file to review or change the route rules.</p>
+<h2 id="router-class">Router class</h2>
 
-<h3>Routers</h3>
+<p>The <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/RouterInterface.php">Router class</a> matches a request to an <a href="#action-class">action class</a> that processes the request.</p>
 
-<p>The routers information for the modules is described in the <code class="highlighter-rouge">routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code class="highlighter-rouge">di.xml</code>.</p>
+<p>The following tables show the core routers that come with Magento:</p>
 
-<p>Each area has its own set of the routers. The <code class="highlighter-rouge">Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
+<p><strong><code class="highlighter-rouge">frontend</code> area routers:</strong></p>
 
-<p>You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
-(such as,   <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span>
- router, default router, and so on).
-However, you must not customize the routers that are used in Magento core modules.</p>
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sort order</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Robots/Controller/Router.php">robots</a></td>
+      <td>10</td>
+      <td>Matches request to the <code class="highlighter-rouge">robots.txt</code> file</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/UrlRewrite/Controller/Router.php">urlrewrite</a></td>
+      <td>20</td>
+      <td>Matches requests with URL defined in the database</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Router/Base.php">standard</a></td>
+      <td>30</td>
+      <td>The standard router</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Cms/Controller/Router.php">cms</a></td>
+      <td>60</td>
+      <td>Matches requests for CMS pages</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Router/DefaultRouter.php">default</a></td>
+      <td>100</td>
+      <td>The default router</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3>Routes</h3>
+<p><strong><code class="highlighter-rouge">adminhtml</code> area routers:</strong></p>
 
-<p>Configurations of the routes are stored in <code class="highlighter-rouge">routes.xml</code> in the scopes area.</p>
+<table style="table-layout:auto">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Sort order</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Backend/App/Router.php">admin</a></td>
+      <td>10</td>
+      <td>Matches requests in the Magento admin area</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Router/DefaultRouter.php">default</a></td>
+      <td>100</td>
+      <td>The default router for the admin area</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Only the standard   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
- and   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
- routers use routes. Typically, the configuration for a route is in the following format:</p>
+<h3 id="standard-router">Standard router</h3>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config&gt;</span>
+<p>A Magento   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
+ that uses the standard router has the following format:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;store-url&gt;/&lt;store-code&gt;/&lt;front-name&gt;/&lt;controller-name&gt;/&lt;action-name&gt;
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;store-url&gt;</code> - specifies the base URL for the Magento instance</li>
+  <li><code class="highlighter-rouge">&lt;store-code&gt;</code> - specifies the store context</li>
+  <li><code class="highlighter-rouge">&lt;front-name&gt;</code> - specifies the <code class="highlighter-rouge">frontName</code> of the <a href="#frontcontroller-class">FrontController</a> to use</li>
+  <li><code class="highlighter-rouge">&lt;controller-name&gt;</code> - specifies the name of the controller</li>
+  <li><code class="highlighter-rouge">&lt;action-name&gt;</code> - specifies the <a href="#action-class">action class</a> to execute on the controller class</li>
+</ul>
+
+<p>The standard router parses this URL format and matches it to the correct controller and action.</p>
+
+<h3 id="default-router">Default router</h3>
+
+<p>The default router, defined by the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Router/DefaultRouter.php"><code class="highlighter-rouge">DefaultRouter</code></a> class, is the last router Magento checks during the routing process.
+Requests that reach this point often contain invalid URLs that previous routers cannot handle.</p>
+
+<p>Magento uses the default <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Router/NoRouteHandler.php">NoRouteHandler</a> to process these requests, but
+you can write your own no-route handler by implementing the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php">NoRouteHandlerInterface</a>.</p>
+
+<h3 id="custom-routers">Custom routers</h3>
+
+<p>Create an implementation of <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/RouterInterface.php"><code class="highlighter-rouge">RouterInterface</code></a> to create a custom router, and
+define the <code class="highlighter-rouge">match()</code> function in this class to use your own route matching logic.</p>
+
+<p>If you need route configuration data, use the Route <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Route/ConfigInterface.php"><code class="highlighter-rouge">Config</code></a> class.</p>
+
+<p>To add your custom router to the list of routers for the <code class="highlighter-rouge">FrontController</code>, add the following entry in your module’s <code class="highlighter-rouge">di.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Framework\App\RouterList"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"routerList"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%name%"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"class"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%classpath%<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"disable"</span> <span class="na">xsi:type=</span><span class="s">"boolean"</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"sortOrder"</span> <span class="na">xsi:type=</span><span class="s">"string"</span><span class="nt">&gt;</span>%sortorder%<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+
+<p>Where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">%name%</code> - The unique name of your router in Magento.</li>
+  <li><code class="highlighter-rouge">%classpath%</code> - The path to your router class.  <br />
+  Example: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Robots/etc/frontend/di.xml"><code class="highlighter-rouge">Magento\Robots\Controller\Router</code></a></li>
+  <li><code class="highlighter-rouge">%sortorder%</code> - The sort order of this entry in the router list.</li>
+</ul>
+
+<h2 id="routesxml"><code class="highlighter-rouge">routes.xml</code></h2>
+
+<p>The <code class="highlighter-rouge">routes.xml</code> file maps which module to use for a URL with a specific <code class="highlighter-rouge">frontName</code> and area.
+The location of the <code class="highlighter-rouge">routes.xml</code> file in a module, either <code class="highlighter-rouge">etc/frontend</code> or <code class="highlighter-rouge">etc/adminhtml</code>, specifies where those routes are active.</p>
+
+<p>The content of this file uses the following format:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"%routerId%"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">"%routeId%"</span> <span class="na">frontName=</span><span class="s">"%frontName%"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"%moduleName%"</span> <span class="na">before=</span><span class="s">"%moduleName%"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"%moduleName%"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;/route&gt;</span>
     <span class="nt">&lt;/router&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>
-  <p><code>%frontName%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _, -</code>.</p>
-</div>
-
-<p>To retrieve the configuration for route for an area by the specified router, use the <code class="highlighter-rouge">Magento\App\Framework\Route\Config</code>.</p>
-
-<p>To replace the controller action in a route with custom one, add the custom controller class before the original controller.</p>
-
-<p>The custom controller and action should share the same names with the original ones.</p>
-
-<p>The system processes the custom controller before the original, while a route remains the same.</p>
-
-<p>If you must reset a route and design, forward the request processing to another route:</p>
-
-<p><code class="highlighter-rouge">$this-&gt;_forward('other/controller/action')</code></p>
-
-<p>To remove the controller action, forward to <code class="highlighter-rouge">noroute</code>, for instance, in <code class="highlighter-rouge">app/code/Company/SomeExtension/Controller/Account/Create.php</code>:</p>
-
-<pre>
-  <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
- Company\SomeExtension\Controller\Account;
-
-class Create extends \Magento\Framework\App\Action\Action
-{
-    public function execute()
-    {
-        $this-&gt;_forward('noroute');
-    }
-}
-</pre>
-
-<h3>Routing processing</h3>
-
-<p>Routing is processed in the following way:</p>
+<p>Where:</p>
 
 <ul>
-  <li>Modules provide information on their routers through the <code class="highlighter-rouge">routerList</code> parameter of <code class="highlighter-rouge">Magento\Framework\App\RouterList</code> type in <code class="highlighter-rouge">di.xml</code>.</li>
-  <li><code class="highlighter-rouge">FrontController</code> obtains active routers and checks whether a request can be processed.</li>
-  <li>If a request cannot be processed by any router, the default router is used.</li>
-  <li>If a request can be processed by a router, the router finds a route with matching <code class="highlighter-rouge">frontName</code> and looks through corresponding modules. If a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
- has matching controller and action names, a router instantiates this controller.</li>
+  <li><code class="highlighter-rouge">%routerId</code> - specifies the name of the router in Magento.  <br />
+  See the reference tables in the <a href="#router-class">Router class section</a>.</li>
+  <li><code class="highlighter-rouge">%routeId%</code> - specifies the unique node id for this route in Magento.</li>
+  <li><code class="highlighter-rouge">%frontName%</code> - specifies the first segment after the base URL of a request.</li>
+  <li><code class="highlighter-rouge">%moduleName%</code> - specifies the name of your module.</li>
 </ul>
 
-<p>The <code class="highlighter-rouge">dispatch()</code> method of the <code class="highlighter-rouge">Magento\Framework\App\Action\Action</code> class requests an instance and returns its response.</p>
+<p>For more details, see <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/etc/routes.xsd"><code class="highlighter-rouge">routes.xsd</code></a>.</p>
 
-<p>For this class, the <code class="highlighter-rouge">Magento\Framework\App\ActionInterface</code> processes the requests through its actions. Also, the following classes participate in processing the requests:</p>
+<h3 id="before-and-after-parameters">Before and after parameters</h3>
 
-<ul>
-  <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code class="highlighter-rouge">di.xml</code> file</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area’s front names</li>
-</ul>
+<p>You can add a <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> parameter in the <code class="highlighter-rouge">module</code> entry to override or extend routes in existing modules.</p>
 
-<h2>Default router</h2>
+<p><strong>Example: <code class="highlighter-rouge">routes.xml</code></strong></p>
 
-<p>If a request cannot be processed by any router, the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\Framework\App\Router\DefaultRouter</a> default router lists handlers for processing such request.</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:App/etc/routes.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;router</span> <span class="na">id=</span><span class="s">"standard"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;route</span> <span class="na">id=</span><span class="s">"customer"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">"OrangeCompany_RoutingExample"</span> <span class="na">before=</span><span class="s">"Magento_Customer"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;/router&gt;</span>
+<span class="nt">&lt;/config&gt;</span>
+</code></pre></div></div>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.</p>
+<p>This configuration tells the <code class="highlighter-rouge">FrontController</code> to look for actions in the <code class="highlighter-rouge">OrangeCompany_RoutingExample</code> module before searching in the <code class="highlighter-rouge">Magento_Customer</code> module.
+If <code class="highlighter-rouge">app/code/OrangeCompany/RoutingExample/Controller/Account/Login.php</code> exists, it will use that file for processing the login route instead of the original class.</p>
 
-<h4 id="related-information">Related information</h4>
-<p>See <a href="http://vinaikopp.com/2016/03/21/05_the_route_config_kata" target="_blank">The Route Config Kata</a> by Magento contributor <a href="http://vinaikopp.com/blog/list">Vinai Kopp</a>.</p>
+<h2 id="action-class">Action class</h2>
+
+<p>Action classes are extensions of the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/Action/Action.php"><code class="highlighter-rouge">Action</code></a> class that a router returns on matched requests. 
+The <code class="highlighter-rouge">execute()</code> function in these classes contain the logic for dispatching requests.</p>
+
+<p>If you need to forward a request to another action in your class, use the <code class="highlighter-rouge">_forward()</code> function.</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_forward</span><span class="p">(</span><span class="s1">'action'</span><span class="p">,</span> <span class="s1">'controller'</span><span class="p">,</span> <span class="s1">'Other_Module'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p class="bs-callout bs-callout-tip">Use the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/App/ActionFactory.php"><code class="highlighter-rouge">ActionFactory</code></a> in your router to create an instance of an <code class="highlighter-rouge">Action</code> class.</p>
+
 
 			
 		</div>
