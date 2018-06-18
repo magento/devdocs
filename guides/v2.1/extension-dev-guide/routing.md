@@ -47,12 +47,13 @@ The following tables show the core routers that come with Magento:
 A Magento {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} that uses the standard router has the following format: 
 
 ```
-<store-url>/<front-name>/<controller-name>/<action-name>
+<store-url>/<store-code>/<front-name>/<controller-name>/<action-name>
 ```
 
 Where:
 
-* `<store-url>` - the base URL for the Magento instance
+* `<store-url>` - specifies the base URL for the Magento instance
+* `<store-code>` - specifies the store context
 * `<front-name>` - specifies the `frontName` of the [FrontController] to use
 * `<controller-name>` - specifies the name of the controller 
 * `<action-name>` - specifies the [action class] to execute on the controller class
@@ -62,10 +63,10 @@ The standard router parses this URL format and matches it to the correct control
 ### Default router
 
 The default router, defined by the [`DefaultRouter`] class, is the last router Magento checks during the routing process.
-Requests that reach this point often contain invalid URL that previous routers cannot handle.
+Requests that reach this point often contain invalid URLs that previous routers cannot handle.
 
 Magento uses the default [NoRouteHandler] to process these requests, but
-you can write your own no route handler by implementing the [NoRouteHandlerInterface].
+you can write your own no-route handler by implementing the [NoRouteHandlerInterface].
 
 ### Custom routers
 
@@ -118,11 +119,11 @@ The content of this file uses the following format:
 
 Where:
 
-* `%routerId` - The name of the router in Magento.    
+* `%routerId` - specifies the name of the router in Magento.    
     See the reference tables in the [Router class section].
-* `%routeId%` - The unique node id for this route in Magento.
-* `%frontName%` - The first segment after the base URL of a request.
-* `%moduleName%` - The name of your module.
+* `%routeId%` - specifies the unique node id for this route in Magento.
+* `%frontName%` - specifies the first segment after the base URL of a request.
+* `%moduleName%` - specifies the name of your module.
 
 For more details, see [`routes.xsd`].
 
