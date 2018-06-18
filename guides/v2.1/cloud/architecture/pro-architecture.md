@@ -131,7 +131,10 @@ The three gateways map to the three servers in your Production environment clust
 ### Backup and disaster recovery
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
 
-In addition to the redundancy of the high-availability architecture, there is a full system backup every six hours that includes the file system and the database. We retain the backups according to the following schedule:
+In addition to the redundancy of the high-availability architecture, {site.data.var.ece}} provides
+incremental backups every hour for the first 24 hours of operation. After the
+initial period, full backups which include the file system and the database.
+We retain the backups according to the following schedule:
 
 Time Period | Backup Retention Policy
 --- | ---
@@ -143,8 +146,10 @@ Weeks 12 to 22 | One backup per month
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
--  **Recovery Point Objective (RPO)**—is 6 hours (maximum time to last backup).
--  **Recover Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
+-  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after
+the initial period, the RPO is 6 hours (maximum time to last backup).
+-  **Recover Time Objective (RTO)**—depends on the size of the storage. Large
+EBS volumes take more time to restore.
 
 ### Production technology stack
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
