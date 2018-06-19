@@ -12,7 +12,7 @@ github_link: release-notes/tech_bull_216-imageresize.md
 
 *Technical bulletin updated on May 17, 2017.*
 
-These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
+These instructions apply to anyone upgrading to {{site.data.var.ce}} or {{site.data.var.ee}} version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
 
 ### Who needs this information?
 You need to read this bulletin if you've upgraded to Magento 2.1.6 (Open Source or Commerce) and are experiencing any of the following issues: 

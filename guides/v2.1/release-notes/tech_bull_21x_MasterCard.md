@@ -20,7 +20,7 @@ In response, we’ve issued a set of patches for the Magento 1.x versions that d
 
 ### Who is affected by this issue?
 
-Magento Commerce (formerly Enterprise Edition) versions 1.14.3.0 and later and Magento Open Source (formerly Community Edition) versions 1.9.3.0 and later fully support the new MasterCard numbers. Similarly, Magento Open Source and Commerce 2.1.3 and later versions fully support this MasterCard BIN range update.
+{{site.data.var.ee}} versions 1.14.3.0 and later and {{site.data.var.ce}} versions 1.9.3.0 and later fully support the new MasterCard numbers. Similarly, {{site.data.var.ce}} and {{site.data.var.ee}} 2.1.3 and later versions fully support this MasterCard BIN range update.
 
 However, if you are using an older version of Magento, you must upgrade by June 30 to avoid fines and ensure the correct processing of payments made with these new BINs. 
 

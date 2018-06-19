@@ -10,7 +10,7 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.2EE.md
 ---
 
-We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.2. This release includes security enhancements and several functional fixes.
+We are pleased to present {{site.data.var.ee}} 2.1.2. This release includes security enhancements and several functional fixes.
 
 
 
@@ -48,7 +48,7 @@ The following list provides an overview of the security issues fixed in this rel
 ### General security
 {:.no_toc} 
 
-<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and subsequently execute it in the Admin context.  
+<!--- 56912/1488-->*  Fixed issue with using the {{site.data.var.ee}} invitations feature to insert malicious {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and subsequently execute it in the Admin context.  
 
 
 <!--- 57565-->* You can no longer change or fake a product price from the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and then complete an order with that faked price. 

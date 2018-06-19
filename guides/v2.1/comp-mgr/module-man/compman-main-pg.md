@@ -132,7 +132,7 @@ We define the following *components*:
 *	`library` for a library&mdash;such as a shared third-party {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}
 *	`component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
-We also use `metapackage` to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.
+We also use `metapackage` to group components; {{site.data.var.ce}} and {{site.data.var.ee}} are examples of metapackages.
 
 You can perform actions on components differently, depending on whether the component is part of a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} or not.
 

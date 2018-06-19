@@ -18,7 +18,7 @@ functional_areas:
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.4 and 2.0.12.
 
 ## Changes in this release
-* Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise Edition 2.1.4.
+* Removed the MDVA-913 patch because the issue is now fixed in {{site.data.var.ee}} 2.1.4.
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
 ## Fixes in this release

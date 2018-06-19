@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.4EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
+We are pleased to present {{site.data.var.ee}} 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
 
 
 Looking for the <a href="{{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud)  2.1.4 and 2.0.12 Release Notes</a>?

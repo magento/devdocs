@@ -510,7 +510,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Set up multiple MECE database users]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html#cloud-appyaml-mysqlusers){:target="_blank"} | 2.x | New | Feb 21 |
 | [MECE 2.1.5 and 2.0.13 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.5.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
 | [Magento Community Edition (CE) 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5CE.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
-| [Magento Enterprise Edition (EE) 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5EE.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
+| [{{site.data.var.ee}} 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5EE.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
 | [Magento CE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13CE.html){:target="_blank"} | 2.0.13 | New | Feb 21 |
 | [Magento EE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html){:target="_blank"} | 2.0.13 | New | Feb 21 |
 | [How {{site.data.var.ece}} uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html){:target="_blank"}  | 2.x  |  New | Feb 17  |
@@ -518,7 +518,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [How to create a Fastly error or maintenance page]({{ page.baseurl }}/cloud/access-acct/fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
 | [{{site.data.var.ece}} 2.1.4 and 2.0.12 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}  |  2.x | New  | Feb 7  |
 | [Magento Community Edition (CE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}  | 2.0.x  | New  | Feb 7  |
-| [Magento Enterprise Edition (EE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}  |  2.0.x | New  |  Feb 7 |
+| [{{site.data.var.ee}} 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}  |  2.0.x | New  |  Feb 7 |
 | [Magento CE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4CE.html){:target="_blank"}  | 2.1.x  | New  |  Feb 7 |
 | [Magento EE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html){:target="_blank"}  |  2.1.x |  New | Feb 7  |
 |  [Use PhpStorm, PHPUnit, and Xdebug with DevBox]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-parent.html){:target="_blank"} | 2.x  | New  | Feb 8  |
@@ -552,7 +552,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Magento UI components explained]({{ site.gdeurl21 }}ui_comp_guide/ui_component_explained.html){:target="_blank"} | 2.1.x | New | Dec 30 (includes week ending Dec 23) |
 | [Magento Community Edition (CE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3CE.html){:target="_blank"}   | 2.1.3  |  New | Dec 16  |
 | [Magento CE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11CE.html){:target="_blank"}   | 2.0.11  |  New | Dec 16  |
-| [Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  | New  | Dec 16  |
+| [{{site.data.var.ee}}) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  | New  | Dec 16  |
 | [Magento EE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}   |  2.0.11  |  New | Dec 16  |
 | [Configure the Magento functional testing framework]({{ page.baseurl }}/mtf/configuration.html){:target="_blank"}   | 2.x | New  | Dec 16  |
 | [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.x |  New | Dec 9 |
@@ -567,7 +567,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Set up multiple Magento stores on {{site.data.var.ece}}]({{ page.baseurl }}/cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  |  New | Dec 2  |
 | [Install the Magento data migration tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
 | [Upgrade the Magento data migration tool]({{ page.baseurl }}/migration/migration-tool-upgrade.html){:target="_blank"} |  2.x | Updated  | Dec 2  |
-| [Add REST APIs for Magento Enterprise Edition]({{ page.baseurl }}/rest/list.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
+| [Add REST APIs for {{site.data.var.ee}}]({{ page.baseurl }}/rest/list.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
 | [Add REST API endpoints for Magento EE]({{ page.baseurl }}/rest/rest_endpoints.html){:target="_blank"} | 2.x  |  Updated |  Dec 2 |
 | [Use Jasmine for JavaScript unit testing]({{ page.baseurl }}/test/js/jasmine.html){:target="_blank"} | 2.x | New | Nov 25 |
 | [Use adapters with third-party libraries]({{ page.baseurl }}/extension-dev-guide/adapters.html){:target="_blank"} | 2.x | New | Nov 25 |

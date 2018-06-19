@@ -34,7 +34,7 @@ Configuration paths can be found in:
 
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*	[Magento Enterprise B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html)
+*	[{{site.data.var.ee}} B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html)
 *	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
 
 ### Variable names
@@ -75,7 +75,7 @@ A complete list of configuration paths can be found in:
 
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*	[Magento Enterprise B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html)
+*	[{{site.data.var.ee}} B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html)
 *	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
 
 ## Step 1: Find the website or store view scope value {#deploy-system-vars-scopes}

@@ -26,7 +26,7 @@ The following is a list of recommended software for production instances in orde
 
 * [Varnish cache][config-varnish]
 * PHP 7
-* (Enterprise only) Use the [Elasticsearch & Elasticsearch Search Adapter][elasticsearch]
+* ({{site.data.var.ee}} only) Use the [Elasticsearch & Elasticsearch Search Adapter][elasticsearch]
 *	Nginx and [PHP-FPM][php-fpm]
 
 For multi-server deployments or for merchants planning on scaling their business we recommend the following:
