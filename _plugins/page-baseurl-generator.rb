@@ -8,7 +8,7 @@ module Jekyll
   # Extending the Generator class of the Jekyll module
   class PageBaseUrlGenerator < Generator
     VERSION = '2.2'.freeze
-    PATTERN = %r{guides\/v(\d\.\d)\/.*/}
+    PATTERN = %r{guides\/v(\d\.\d)}
 
     def generate(site)
       pages = site.pages

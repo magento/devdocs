@@ -157,7 +157,7 @@ content="Do not edit the `nginx.conf.sample` file; it is a core Magento file tha
 %}
 
 {% collapsible To edit the PHP entry point for the main application: %}
-To modify the the `nginx.conf.sample` file:
+To modify the `nginx.conf.sample` file:
 
 1.	Open a text editor and review the `nginx.conf.sample` file ,`<magento2_installation_directory>/nginx.conf.sample`. Look for the following section:
 

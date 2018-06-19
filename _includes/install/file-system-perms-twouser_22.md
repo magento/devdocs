@@ -50,7 +50,7 @@ To find the web server user's group:
 	Typically, the user and group name are both `apache`
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
-	Typically, the user name and the group name are both `www-data`
+	Typically, the username and the group name are both `www-data`
 
 ### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
 To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
@@ -75,7 +75,7 @@ The following sample result shows the user's primary (`magento`) and secondary (
 	magento_user : magento_user apache
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Typically, the user name and primary group name are the same.
+Typically, the username and primary group name are the same.
 </div>
 
 To complete the task, restart the web server:

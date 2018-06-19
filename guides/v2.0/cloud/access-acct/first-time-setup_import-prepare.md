@@ -177,7 +177,7 @@ The following command example compresses the dump so it doesn't significantly in
 
         mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 
-  For example, if your database is on localhost with the default port (3306), database user name is `magento`, and database name is also `magento`:
+  For example, if your database is on localhost with the default port (3306), database username is `magento`, and database name is also `magento`:
 
         mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 

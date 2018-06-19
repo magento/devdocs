@@ -184,3 +184,4 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
     taxTaxClassRepositoryV1
     taxTaxRateRepositoryV1
     taxTaxRuleRepositoryV1
+</div>

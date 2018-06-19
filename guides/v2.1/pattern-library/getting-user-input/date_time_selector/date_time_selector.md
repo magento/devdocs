@@ -249,7 +249,7 @@ Do not implement keyboard navigation schemes that would place more than one cale
 
 *	The container for the day of week headers and numeric days of the week should have a role of grid
 
-*	The grid should have an aria-labelledby property with a value equivalent to the id of the label for the grid
+*	The grid should have an aria-labelled by property with a value equivalent to the id of the label for the grid
 
 *	Each name for the day of the week should have a role columnheader and they should not be navigable via the keyboard.
 

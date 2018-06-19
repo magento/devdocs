@@ -63,7 +63,7 @@ Depending on what tests should be included in the run configuration, the next st
 
 1.	Give the run configuration a descriptive name; for example **All Unit Tests**
 2.	Test Scope: select the **Defined in the configuration file** radio button
-3.	Check the **Use alternative configuration file** check box
+3.	Check the **Use alternative configuration file** checkbox
 4.	Select the file `dev/tests/unit/phpunit.xml.dist`
 5.	Click **OK**.
 

@@ -32,7 +32,7 @@ Name | Version |  License
 [lusitanian/oauth](https://github.com/Lusitanian/PHPoAuthLib)  |v0.8.10  |MIT
 [monolog/monolog](https://github.com/Seldaek/monolog) |1.23.0 |MIT
 [myclabs/deep-copy](https://github.com/myclabs/DeepCopy) |1.7.0  |MIT
-[oyejorge/less.php]((https://github.com/oyejorge/less.php)) |v1.7.0.14  |Apache-2.0
+[oyejorge/less.php](https://github.com/oyejorge/less.php) |v1.7.0.14  |Apache-2.0
 [paragonie/random_compat](https://github.com/paragonie/random_compat) |v2.0.11  |MIT
 [pdepend/pdepend](https://github.com/pdepend/pdepend) |2.5.0  |BSD-3-Clause
 [pelago/emogrifier](https://github.com/jjriv/emogrifier) |v2.0.0 |MIT
@@ -73,7 +73,7 @@ Name | Version |  License
 [seld/jsonlint](https://github.com/Seldaek/jsonlint) |1.7.0  |MIT
 [seld/phar-utils](https://github.com/Seldaek/phar-utils) |1.0.1  |MIT
 [squizlabs/php_codesniffer](https://github.com/squizlabs/PHP_CodeSniffer) |3.0.1  |BSD-3-Clause
-[Swagger UI]((https://github.com/swagger-api/swagger-ui)) |2.0 | Apache 2
+[Swagger UI](https://github.com/swagger-api/swagger-ui) |2.0 | Apache 2
 [symfony/config](https://github.com/symfony/config)  |v3.4.3 |MIT
 [symfony/console](https://github.com/symfony/console) |v2.8.33  |MIT
 [symfony/debug](https://github.com/symfony/debug) |v3.0.9 |MIT

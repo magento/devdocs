@@ -25,7 +25,7 @@ To configure a MySQL database and database user:
 3.	In the MySQL Users section, enter information in the provided fields and click **Create User**.
 
 	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Give the database user a strong password and <em>write down</em> the user name and password you choose.</p>
+  		<p>Give the database user a strong password and <em>write down</em> the username and password you choose.</p>
   		<p>You can optionally click <strong>Password Generator</strong> to create a strong password for you.</p>
 	</div>
 
@@ -37,7 +37,7 @@ To configure a MySQL database and database user:
 
 	The Manage User Privileges page displays.
 
-5.	Select the **ALL PRIVILEGES** check box at the top of the page and click **Make Changes**.
+5.	Select the **ALL PRIVILEGES** checkbox at the top of the page and click **Make Changes**.
 
 	<img src="{{ site.baseurl }}/common/images/install-merch_db-user-privs.png" width="750px" alt="Give the database user all privileges to the database">
 

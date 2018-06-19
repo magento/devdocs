@@ -22,7 +22,7 @@ We also show you how to optionally create a cron group, which you can use to run
 In this tutorial, we assume the following:
 
 *   The Magento application is installed in `/var/www/html/magento2`
-*   Your Magento database user name and password are both `magento`
+*   Your Magento database username and password are both `magento`
 *   You perform all actions as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 
 ## Step 1: Get a sample module {#cron-tut-get}

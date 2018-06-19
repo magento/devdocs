@@ -111,22 +111,22 @@ The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
-     - community/
-     - swagger/
-     - vagrant/
-     - guides/m1x/
-     - guides/v2.0/
-     - guides/v2.1/
-    # - guides/v2.2/
-     - guides/v2.3/
+     - /community/
+     - /swagger/
+     - /vagrant/
+     - /guides/m1x/
+     - /guides/v2.0/
+     - /guides/v2.1/
+    # - /guides/v2.2/
+     - /guides/v2.3/
     
     # Excluded in config.yml
-     - scss/
-     - bin/
-     - node_modules/
-     - vendor/
-     - .*
-     - Rakefile
+     - /scss/
+     - /bin/
+     - /node_modules/
+     - /vendor/
+     - /.*
+     - /Rakefile
    ```
 
 1. Run the preview command:

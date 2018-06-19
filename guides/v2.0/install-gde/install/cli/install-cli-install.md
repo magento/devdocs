@@ -119,7 +119,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--admin-user</p></td>
-		<td><p>Magento administrator user name.</p></td>
+		<td><p>Magento administrator username.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -136,7 +136,7 @@ The following table discusses the meanings of installation option names and valu
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
 		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir>/</code> or <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</p></li>
-		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>
+		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>
 
 		</td>
 		<td><p>No</p></td>
@@ -152,9 +152,9 @@ The following table discusses the meanings of installation option names and valu
 	<tr>
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li>The database server's fully qualified host name or IP address.</li>
+		<ul><li>The database server's fully qualified hostname or IP address.</li>
 		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
-		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
+		<p><strong>Note</strong>: You can optionally specify the database server port in its hostname like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
 	</tr>
@@ -166,7 +166,7 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--db-user</p></td>
-		<td><p>User name of the Magento database instance owner.</p>
+		<td><p>Username of the Magento database instance owner.</p>
 			<p>Default is <code>root</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -279,7 +279,7 @@ The following table discusses the meanings of installation option names and valu
 <tr>
 <td><p>--amqp-host</p></td>
 <td><p>{{site.data.var.ee}} only. Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See <a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about installing and configuring RabbitMQ.</p>
-<p>The host name where RabbitMQ is installed.</p></td>
+<p>The hostname where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
@@ -289,7 +289,7 @@ The following table discusses the meanings of installation option names and valu
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>{{site.data.var.ee}} only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>{{site.data.var.ee}} only. The username for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
@@ -320,14 +320,14 @@ The following example installs Magento with the following options:
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	Uses server rewrites
 
 *	The Magento administrator has the following properties:
 
 	*	First and last name are `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)
@@ -359,12 +359,12 @@ The following example installs Magento with the following options:
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	The Magento administrator has the following properties:
 
 	*	First and last name are is `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)
