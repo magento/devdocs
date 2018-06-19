@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Test your component | Magento 2 Developer Documentation</title>
+	<title>Extension Repository Structure | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -64,7 +64,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-	<link rel="canonical" href="/guides/v2.2/extension-dev-guide/validate/test-module.html">
+	<link rel="canonical" href="/guides/v2.3/extension-dev-guide/prepare/ext-repo-structure.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -90,27 +90,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <div class="nav-container">
 
-    <a class="logo" href="/">
+    <a class="logo" href="/guides/v2.3/">
       <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
       <span class="site-logo">DevDocs</span>
     </a>
 
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
       
-<div class="version-switcher dropdown" data-version="2.2">
+<div class="version-switcher dropdown" data-version="2.3">
 	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Magento 2.2
+    Magento 2.3 Alpha
 	</button>
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/extension-dev-guide/validate/test-module.html">Magento 2.0</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/extension-dev-guide/prepare/ext-repo-structure.html">Magento 2.0</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/extension-dev-guide/validate/test-module.html">Magento 2.1</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/extension-dev-guide/prepare/ext-repo-structure.html">Magento 2.1</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/extension-dev-guide/validate/test-module.html">Magento 2.2</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/extension-dev-guide/prepare/ext-repo-structure.html">Magento 2.2</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/extension-dev-guide/validate/test-module.html">Magento 2.3 Alpha</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/extension-dev-guide/prepare/ext-repo-structure.html">Magento 2.3 Alpha</a></li>
 	
   </ul>
 
@@ -125,16 +125,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-          <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
-          <li><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           
-          <li><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
           
-          <li><a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a></li>
-          
-          <li><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li><a href="/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li><a href="/magento-release-information.html">Release Information</a></li>
       </ul>
     </div>
@@ -150,25 +148,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <div class="nav-section">
         <div class="nav-section-title">Backend</div>
         <ul>
-          <li><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
-          <li><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-          <li><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
-          <li><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
-          <li><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-          <li><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
         <div class="nav-section-title">Frontend</div>
         <ul>
-          <li class=""><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           
-          <li><a href="/guides/v2.2/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
           
-          <li><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-          <li><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-          <li><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
           <li><a href="https://magento-research.github.io/pwa-devdocs/">PWA Studios</a></li>
         </ul>
       </div>
@@ -176,12 +174,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <div class="nav-section">
         <div class="nav-section-title"><abbr>API</abbr></div>
         <ul>
-          <li><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-          <li><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
-          <li><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
           
           
-          <li><a href="/guides/v2.2/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
           <li><a href="https://developers.rjmetrics.com/" target="_blank">Magento BI Import REST API</a></li>
           
         </ul>
@@ -196,15 +196,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-        <li><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
         
-        <li><a href="/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
         
-        <li><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
-        <li><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
-        <li><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
-        <li><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
-        <li><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
       </ul>
     </div>
 
@@ -220,16 +220,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
           
-          <li class="leaf"><a href="/guides/v2.2/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
           
         
-        <li class="leaf"><a href="/guides/v2.2/b2b/bk-b2b.html">B2B</a></li>
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
         
-        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
         <li><a href="http://omsdocs.magento.com/en/" target="_blank">Order Management</a></li>
-        <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
         
-          <li><a href="/guides/v2.2/extension-dev-guide/staging.html">Staging</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
         
       </ul>
     </div>
@@ -242,17 +242,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
-        <li><a href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
         
-        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
-        
-        
-        <li><a href="/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product with REST APIs</a></li>
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
         
         
-        <li><a  data-proofer-ignore href="/guides/v2.2/howdoi/customize_product.html">Customize Product Creation Form</a></li>
+        <li><a href="/guides/v2.3/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product with REST APIs</a></li>
         
-        <li><a href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/howdoi/customize_product.html">Customize Product Creation Form</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
         <li><a href="/community/resources/support.html">Magento Support</a></li>
         <li><a href="/videos/">Video Tutorials</a></li>
       </ul>
@@ -268,7 +268,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <a class="search-trigger search-icon" href="#"></a>
     </div>
 
-    <form class="quick-search" action="/guides/v2.2/search.html" method="get" novalidate="novalidate">
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
       <input type="search" name="q" placeholder="Search" />
       <a href="#" class="quick-search-close">&times;</a>
     </form>
@@ -285,6 +285,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 		
 
+
+<div class="message-banner">
+    This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+</div>
 
 
 
@@ -311,7 +315,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a>
+    <a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a>
     
 
     
@@ -324,7 +328,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
+            <a href="/guides/v2.3/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
             
 
             
@@ -338,7 +342,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+            <a href="/guides/v2.3/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
             
 
             
@@ -352,7 +356,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
+            <a href="/guides/v2.3/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
             
 
             
@@ -371,7 +375,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a>
+    <a href="/guides/v2.3/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a>
     
 
     
@@ -384,7 +388,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/prepare/dev-modtypes.html">Component types</a>
+            <a href="/guides/v2.3/extension-dev-guide/prepare/dev-modtypes.html">Component types</a>
             
 
             
@@ -398,7 +402,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a>
+            <a href="/guides/v2.3/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a>
             
 
             
@@ -407,12 +411,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="extension-repository-structure">
+        <li class="nav-level2 active " id="extension-repository-structure">
 
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/prepare/ext-repo-structure.html">Extension repository structure</a>
+            <a href="/guides/v2.3/extension-dev-guide/prepare/ext-repo-structure.html">Extension repository structure</a>
             
 
             
@@ -426,7 +430,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
+            <a href="/guides/v2.3/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
             
 
             
@@ -440,7 +444,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a>
+            <a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a>
             
 
             
@@ -459,7 +463,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/build/build.html">Build</a>
+    <a href="/guides/v2.3/extension-dev-guide/build/build.html">Build</a>
     
 
     
@@ -472,7 +476,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/di-xml-file.html">The di.xml file</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/di-xml-file.html">The di.xml file</a>
             
 
             
@@ -486,7 +490,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a>
             
 
             
@@ -500,7 +504,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/composer-integration.html">The composer.json file</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html">The composer.json file</a>
             
 
             
@@ -514,7 +518,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a>
             
 
             
@@ -528,7 +532,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>
             
 
             
@@ -542,7 +546,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/component-registration.html">Register your component</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">Register your component</a>
             
 
             
@@ -556,7 +560,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a>
             
 
             
@@ -570,7 +574,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/create_component.html">Name your component</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/create_component.html">Name your component</a>
             
 
             
@@ -584,7 +588,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/module-load-order.html">Component load order</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/module-load-order.html">Component load order</a>
             
 
             
@@ -598,7 +602,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/build/enable-module.html">Enable or disable your component</a>
+            <a href="/guides/v2.3/extension-dev-guide/build/enable-module.html">Enable or disable your component</a>
             
 
             
@@ -617,7 +621,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/package/package.html">Package</a>
+    <a href="/guides/v2.3/extension-dev-guide/package/package.html">Package</a>
     
 
     
@@ -630,7 +634,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/package/package_module.html">Package a component</a>
+            <a href="/guides/v2.3/extension-dev-guide/package/package_module.html">Package a component</a>
             
 
             
@@ -644,7 +648,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a>
+            <a href="/guides/v2.3/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a>
             
 
             
@@ -663,7 +667,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/validate/validate.html">Validate</a>
+    <a href="/guides/v2.3/extension-dev-guide/validate/validate.html">Validate</a>
     
 
     
@@ -671,12 +675,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2 active " id="test-your-component">
+        <li class="nav-level2  " id="test-your-component">
 
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/validate/test-module.html">Test your component</a>
+            <a href="/guides/v2.3/extension-dev-guide/validate/test-module.html">Test your component</a>
             
 
             
@@ -695,7 +699,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/cache/partial-caching.html">Partial caching</a>
+    <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching.html">Partial caching</a>
     
 
     
@@ -708,7 +712,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/cache/partial-caching/database-caching.html">Create custom cache engines</a>
+            <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching/database-caching.html">Create custom cache engines</a>
             
 
             
@@ -722,7 +726,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/cache/partial-caching/create-cache-type.html">Create a cache type</a>
+            <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching/create-cache-type.html">Create a cache type</a>
             
 
             
@@ -741,7 +745,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/cache/page-caching.html">Full page caching</a>
+    <a href="/guides/v2.3/extension-dev-guide/cache/page-caching.html">Full page caching</a>
     
 
     
@@ -754,7 +758,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/cache/page-caching/public-content.html">Public content</a>
+            <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/public-content.html">Public content</a>
             
 
             
@@ -768,7 +772,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/cache/page-caching/private-content.html">Private content</a>
+            <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html">Private content</a>
             
 
             
@@ -787,7 +791,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>
+    <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>
     
 
     
@@ -800,7 +804,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
+            <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
             
 
             
@@ -814,7 +818,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
+            <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
             
 
             
@@ -833,7 +837,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/staging.html">Staging (Magento Commerce only)</a>
+    <a href="/guides/v2.3/extension-dev-guide/staging.html">Staging (Magento Commerce only)</a>
     
 
     
@@ -847,7 +851,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/module-development.html">Component development</a>
+    <a href="/guides/v2.3/extension-dev-guide/module-development.html">Component development</a>
     
 
     
@@ -860,7 +864,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
             
 
             
@@ -874,7 +878,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/api-concepts.html">Public interfaces &amp; APIs</a>
+            <a href="/guides/v2.3/extension-dev-guide/api-concepts.html">Public interfaces &amp; APIs</a>
             
 
             
@@ -888,7 +892,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a>
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a>
             
 
             
@@ -902,7 +906,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/depend-inj.html">Dependency injection</a>
+            <a href="/guides/v2.3/extension-dev-guide/depend-inj.html">Dependency injection</a>
             
 
             
@@ -916,7 +920,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/object-manager.html">ObjectManager</a>
+            <a href="/guides/v2.3/extension-dev-guide/object-manager.html">ObjectManager</a>
             
 
             
@@ -930,7 +934,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/events-and-observers.html">Events and observers</a>
+            <a href="/guides/v2.3/extension-dev-guide/events-and-observers.html">Events and observers</a>
             
 
             
@@ -944,7 +948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/factories.html">Factories</a>
+            <a href="/guides/v2.3/extension-dev-guide/factories.html">Factories</a>
             
 
             
@@ -958,7 +962,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/proxies.html">Proxies</a>
+            <a href="/guides/v2.3/extension-dev-guide/proxies.html">Proxies</a>
             
 
             
@@ -972,7 +976,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/code-generation.html">Code generation</a>
+            <a href="/guides/v2.3/extension-dev-guide/code-generation.html">Code generation</a>
             
 
             
@@ -986,7 +990,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/attributes.html">EAV and extension attributes</a>
+            <a href="/guides/v2.3/extension-dev-guide/attributes.html">EAV and extension attributes</a>
             
 
             
@@ -1000,7 +1004,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/plugins.html">Plugins (Interceptors)</a>
+            <a href="/guides/v2.3/extension-dev-guide/plugins.html">Plugins (Interceptors)</a>
             
 
             
@@ -1014,7 +1018,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/routing.html">Routing</a>
+            <a href="/guides/v2.3/extension-dev-guide/routing.html">Routing</a>
             
 
             
@@ -1041,7 +1045,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/indexing.html">Indexing overview</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/indexing.html">Indexing overview</a>
                     
 
                     
@@ -1055,7 +1059,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/indexer-batch.html">Indexer optimization</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/indexer-batch.html">Indexer optimization</a>
                     
 
                     
@@ -1069,7 +1073,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
                     
 
                     
@@ -1081,6 +1085,78 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="declarative-schema">
+
+            
+
+            
+            <span>Declarative schema</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="delcarative-schema-overview">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/">Delcarative schema overview</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="migrate-install/upgrade-scripts-to-declarative-schema">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/migration-commands.html">Migrate install/upgrade scripts to declarative schema</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-declarative-schema">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html">Configure declarative schema</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="develop-data-and-schema-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/data-patches.html">Develop data and schema patches</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
         
         
         
@@ -1103,7 +1179,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/message-queues/message-queues.html">Message queues overview</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/message-queues.html">Message queues overview</a>
                     
 
                     
@@ -1117,7 +1193,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/message-queues/config-mq.html">Configure message Queues</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/config-mq.html">Configure message Queues</a>
                     
 
                     
@@ -1131,7 +1207,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
                     
 
                     
@@ -1145,7 +1221,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/message-queues/bulk-operations.html">Bulk operations</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/bulk-operations.html">Bulk operations</a>
                     
 
                     
@@ -1159,7 +1235,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                     
 
                     
-                    <a  href="/guides/v2.2/extension-dev-guide/message-queues/implement-bulk.html">Example bulk operations implementation</a>
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/implement-bulk.html">Example bulk operations implementation</a>
                     
 
                     
@@ -1178,7 +1254,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a>
+            <a href="/guides/v2.3/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a>
             
 
             
@@ -1192,7 +1268,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/searching-with-repositories.html">Searching with repositories</a>
+            <a href="/guides/v2.3/extension-dev-guide/searching-with-repositories.html">Searching with repositories</a>
             
 
             
@@ -1206,7 +1282,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
             
 
             
@@ -1220,7 +1296,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/howdoi/php/php_clear-dirs.html">Clear directories during development</a>
+            <a href="/guides/v2.3/howdoi/php/php_clear-dirs.html">Clear directories during development</a>
             
 
             
@@ -1234,13 +1310,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/adapters.html">Adapters</a>
+            <a href="/guides/v2.3/extension-dev-guide/adapters.html">Adapters</a>
             
 
             
         </li>
         
         
+        
+        
+        <li class="nav-level2  " id="variable-pool">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/variable-pool/">Variable Pool</a>
+            
+
+            
+        </li>
         
         
     </ul>
@@ -1268,7 +1356,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html">Sensitive Environment Settings</a>
+            <a href="/guides/v2.3/extension-dev-guide/configuration/sensitive-and-environment-settings.html">Sensitive Environment Settings</a>
             
 
             
@@ -1282,7 +1370,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/configuration/importers.html">Configuration Importers</a>
+            <a href="/guides/v2.3/extension-dev-guide/configuration/importers.html">Configuration Importers</a>
             
 
             
@@ -1314,7 +1402,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/framework/serializer.html">Serialize Library</a>
+            <a href="/guides/v2.3/extension-dev-guide/framework/serializer.html">Serialize Library</a>
             
 
             
@@ -1346,7 +1434,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/xss-protection.html">XSS Prevention</a>
+            <a href="/guides/v2.3/extension-dev-guide/xss-protection.html">XSS Prevention</a>
             
 
             
@@ -1360,7 +1448,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a>
+            <a href="/guides/v2.3/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a>
             
 
             
@@ -1379,7 +1467,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     
 
     
-    <a href="/guides/v2.2/extension-dev-guide/versioning/">Versioning</a>
+    <a href="/guides/v2.3/extension-dev-guide/versioning/">Versioning</a>
     
 
     
@@ -1392,7 +1480,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a>
+            <a href="/guides/v2.3/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a>
             
 
             
@@ -1406,7 +1494,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             
 
             
-            <a href="/guides/v2.2/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a>
+            <a href="/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a>
             
 
             
@@ -1438,60 +1526,115 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Test your component</h1>
+	<h1 class="page-heading">Extension Repository Structure</h1>
 
   
 
 
 </section>
 
-			<h2 id="test-unit">Unit and Integration Tests</h2>
+			<h2 id="extension-repository-structure">Extension Repository Structure</h2>
 
-<p>Run the PHPUnit based Magento unit and integration tests.
-For more information see the <a href="/guides/v2.2/test/testing.html">Magento Testing Overview</a></p>
-
-<h2 id="test-functional">Functional testing</h2>
-<p>For further testing with the Magento functional testing frameworks, see
-<a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing Framework</a>.</p>
-
-<h2 id="test-comm">Test using Magento Open Source</h2>
-<p>Test your component by deploying Magento Open Source and adding the component to the project’s <code>composer.json</code>.</p>
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"magento/magento-composer-installer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"*"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"magento/product-community-edition"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"yourvendorname/module-one"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.1"</span><span class="w">
-</span><span class="p">},</span></code></pre></figure>
-
-<p>Remember to <a href="/guides/v2.2/extension-dev-guide/build/component-registration.html">register</a> your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.</p>
-
-<h2 id="test-install">Test installing your component</h2>
-<p>Before you publish your component, you should test installing it using the <a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).</p>
-
-<p>One way to do this follows:</p>
-
-<ol>
-  <li><a href="/guides/v2.2/extension-dev-guide/package/package_module.html">Package your component</a> in a GitHub repository that’s accessible by the machine on which you run the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
-.</li>
-  <li>
-    <p>On that machine, create a static route from <code class="highlighter-rouge">https://repo.magento.com</code> to your GitHub repository.</p>
-
-    <p>To create a static route, add a line similar to the following to your <code class="highlighter-rouge">hosts</code> file:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;IP or hostname of your GitHub repository&gt; https://repo.magento.com
-</code></pre></div>    </div>
-  </li>
-  <li><a href="/guides/v2.2/comp-mgr/extens-man/extensman-checklist.html">Install your component</a> exactly like a merchant.</li>
-  <li>Verify the component installed properly.</li>
-</ol>
-
-<h2 id="more-information">More information</h2>
-<p>For more information on testing in   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- and validating Magento components, see the following:</p>
+<p>For Magento 2.3 module, theme, and language pack extension repositories, we recommend five best practices:</p>
 
 <ul>
-  <li><a href="http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/" target="_blank">Validating Magento Extensions</a></li>
+  <li>Flatter hierarchy</li>
+  <li>One <em>extension type</em> (module, theme, or language pack) per repository</li>
+  <li>Multiple components per repository</li>
+  <li>One component per repository</li>
+  <li>One functional test suite per module component</li>
 </ul>
+
+<h3 id="flatter-hierarchy">Flatter hierarchy</h3>
+
+<p>Your repository structure should no longer include <code class="highlighter-rouge">app/code/&lt;Vendor&gt;/</code> directories.</p>
+
+<p><em>Before:</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root\&gt;
+└── app/code/&lt;Vendor&gt;/
+    └── &lt;Module1&gt;
+</code></pre></div></div>
+
+<p><em>After:</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;/
+└── &lt;Module1&gt;
+</code></pre></div></div>
+
+<h3 id="one-extension-type-per-repository">One extension type per repository</h3>
+
+<p>You cannot mix extension types (modules, themes, and language packs) in the same extension repository. Each component type must have its own repository. For example, <em>you cannot do this</em>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// This is not supported
+&lt;extension_repo_root&gt;
+├── &lt;Module1&gt;
+├── &lt;theme1&gt;
+└── &lt;language1&gt;
+</code></pre></div></div>
+
+<h3 id="multiple-components-per-repository">Multiple components per repository</h3>
+
+<p>If your extension is complex and requires several components, you can keep those components in the same repository to make the extension easy to package and maintain:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;
+├── &lt;Module1&gt;
+├── &lt;Module2&gt;
+├── &lt;Module1SampleData&gt;
+└── &lt;Module2SampleData&gt;
+</code></pre></div></div>
+
+<p>You can do the same for theme and language pack extensions:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;/
+├── &lt;theme1&gt;
+└── &lt;theme2&gt;
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;/
+├── &lt;language1&gt;
+└── &lt;language2&gt;
+</code></pre></div></div>
+<h3 id="one-component-per-repository">One component per repository</h3>
+
+<p>If your extension requires only one component, your <code class="highlighter-rouge">&lt;component_root&gt;</code> directory and your <code class="highlighter-rouge">&lt;repo_root&gt;</code> directory will be the same to reduce unnecessary hierarchy in the directory structure:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;MyModule_repo_root&gt;
+├── Api
+├── Block
+├── Controller
+├── Console
+├── etc
+├── Helper
+├── i18n
+├── Model
+├── Plugin
+├── Test
+├── view
+├── composer.json
+├── LICENSE.txt
+└── ...
+</code></pre></div></div>
+
+<h3 id="test-suites">Test Suites</h3>
+
+<p>Function tests can be added to a <code class="highlighter-rouge">Test</code> directory within each module of your extension.</p>
+
+<p>Note: Currently, only Unit and MFTF tests can be run from within a <code class="highlighter-rouge">&lt;Module&gt;</code> directory.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;
+├── &lt;Module1&gt;
+│   ├── ...
+│   ├── Test
+│   │   ├── Unit
+│   │   ├── Integration
+│   │   └── Mftf
+│   │       ├── TestSuite
+│   │       └── composer.json
+│   └── ...
+├── &lt;Module2&gt;
+├── &lt;Module1SampleData&gt;
+└── &lt;Module2SampleData&gt;
+</code></pre></div></div>
 
 			
 		</div>
@@ -1505,13 +1648,13 @@ For more information see the <a href="/guides/v2.2/test/testing.html">Magento Te
   
 
     <div class="github-link">
-      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.2/extension-dev-guide/validate/test-module.md" target="_blank">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/extension-dev-guide/prepare/ext-repo-structure.md" target="_blank">
         Edit this page on GitHub
       </a>
     </div>
 
     <div class="new-issue">
-      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.2/extension-dev-guide/validate/test-module.html" target="_blank">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/extension-dev-guide/prepare/ext-repo-structure.html" target="_blank">
         Give us feedback
       </a>
     </div>
@@ -1538,12 +1681,12 @@ For more information see the <a href="/guides/v2.2/test/testing.html">Magento Te
 
     <div class="copyright-links">
       <ul class="nav footer-links">
-  <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
   <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
   <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
   <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
   <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
-  <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
   <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
 </ul>
 
