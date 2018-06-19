@@ -2137,7 +2137,7 @@ git push origin
 </ol>
 
 <h3 id="integration">Add Blackfire integration to the project</h3>
-<p>Using the Magento Cloud CLI, enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
+<p>Using the Magento Cloud CLI, enter an integration command to connect Blackfire with the project. This command requires using an account with superuser access. Make sure your Cloud Project account has the <a href="/guides/v2.1/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
   <li>Open a terminal and navigate to your Magento Commerce (Cloud) project.</li>
@@ -2150,80 +2150,11 @@ git push origin
 <span class="nt">--url</span><span class="o">=</span><span class="s1">'&lt;Blackfire provided URL&gt;'</span>
 </code></pre></div>    </div>
   </li>
-  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or have someone else who is an admin run this command.</li>
+  <li>A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, verify that you have superuser access for the Magento Commerce (Cloud) project. Either request your permission be upgraded or request an admin run this command.</li>
 </ol>
 
-<h3 id="route">Add a default route</h3>
-<p>If you do not have a default route specified in the <code class="highlighter-rouge">routes.yaml</code> file, or want to define which route to use instead of the default route, add it to Blackfire and <code class="highlighter-rouge">routes.yaml</code>.</p>
-
-<h4 id="to-add-route-information-on-the-blackfire-magento-cloud-integration-page">To add route information on the Blackfire <em>Magento Cloud Integration</em> page:</h4>
-
-<ol>
-  <li>Locate step 5 and enter the default route. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>. If you leave this field blank, we try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
-  <li>If you use a wildcard <code class="highlighter-rouge">*</code> in step 5 for the default route, you need to enter a resolved value for the <code class="highlighter-rouge">*</code> value in step 6. Otherwise, leave step 6 empty. For example, if you specified the route key <code class="highlighter-rouge">https://*.{default}</code> in step 5, you need to specify a route placeholder in step 6.</li>
-</ol>
-
-<h4 id="to-add-the-default-route-to-routesyaml">To add the default route to <code class="highlighter-rouge">routes.yaml</code>:</h4>
-
-<ol>
-  <li>
-    <p>Log in to your Magento Commerce (Cloud) project.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>List projects.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>List environments in the project.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list <span class="nt">-p</span> &lt;project_ID&gt;
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Verify current branch.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>If necessary, check out an existing branch.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment_ID&gt;
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Back up the environment using a snapshot.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create <span class="nt">-e</span> &lt;environment_ID&gt;
-</code></pre></div>    </div>
-  </li>
-  <li>Use a text editor to locate and edit <code class="highlighter-rouge">&lt;project root dir&gt;/magento/routes.yaml</code> in your branch.</li>
-  <li>
-    <p>Add the route the file. See <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">Configure routes</a>.</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
-type: upstream
-upstream: "blackfire:php"
-</code></pre></div>    </div>
-  </li>
-  <li>Save your changes to <code class="highlighter-rouge">routes.yaml</code> and exit the text editor. It should look like <code class="highlighter-rouge">https://example.com/</code> or <code class="highlighter-rouge">http://*.{default}/</code>.
-If you leave this field blank, we try the following keys in this order: <code class="highlighter-rouge">https://{default}/</code>, <code class="highlighter-rouge">https://www.{default}/</code>, <code class="highlighter-rouge">http://{default}/</code>, <code class="highlighter-rouge">http://www.{default}/</code>.</li>
-  <li>
-    <p>Add, commit, and push your changes to the environment.</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span>
-git commit <span class="nt">-m</span> <span class="s2">"&lt;message&gt;"</span>
-git push origin
-</code></pre></div>    </div>
-
-    <p>If errors display during deployment, open <code class="highlighter-rouge">routes.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
-  </li>
-</ol>
+<h3 id="route">Default route</h3>
+<p>If you need to specify a different route to use instead of the default route, change the route in the Blackfire <em>Magento Cloud Integration</em> page (step 5) and update the route in your project <code class="highlighter-rouge">routes.yaml</code> file.</p>
 
 <h3 id="save">Save changes in Blackfire</h3>
 <p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your Magento Commerce (Cloud) project. Continue to the next section to begin profiling your store to verify the integration.</p>
