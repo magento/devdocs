@@ -22,7 +22,7 @@ Your repository structure should no longer include `app/code/<Vendor>/` director
 
 *Before:*
 
-```
+```tree
 <extension_repo_root\>
 └── app/code/<Vendor>/
     └── <Module1>
@@ -30,7 +30,7 @@ Your repository structure should no longer include `app/code/<Vendor>/` director
 
 *After:*
 
-```
+```tree
 <extension_repo_root>/
 └── <Module1>
 ```
@@ -39,7 +39,7 @@ Your repository structure should no longer include `app/code/<Vendor>/` director
 
 You cannot mix extension types (modules, themes, and language packs) in the same extension repository. Each component type must have its own repository. For example, *you cannot do this*:
 
-```
+```tree
 // This is not supported
 <extension_repo_root>
 ├── <Module1>
@@ -51,7 +51,7 @@ You cannot mix extension types (modules, themes, and language packs) in the same
 
 If your extension is complex and requires several components, you can keep those components in the same repository to make the extension easy to package and maintain:
 
-```
+```tree
 <extension_repo_root>
 ├── <Module1>
 ├── <Module2>
@@ -61,12 +61,12 @@ If your extension is complex and requires several components, you can keep those
 
 You can do the same for theme and language pack extensions:
 
-```
+```tree
 <extension_repo_root>/
 ├── <theme1>
 └── <theme2>
 ```
-```
+```tree
 <extension_repo_root>/
 ├── <language1>
 └── <language2>
@@ -75,7 +75,7 @@ You can do the same for theme and language pack extensions:
 
 If your extension requires only one component, your `<component_root>` directory and your `<repo_root>` directory will be the same to reduce unnecessary hierarchy in the directory structure:
 
-```
+```tree
 <MyModule_repo_root>
 ├── Api
 ├── Block
@@ -99,7 +99,7 @@ Function tests can be added to a `Test` directory within each module of your ext
 
 Note: Currently, only Unit and MFTF tests can be run from within a `<Module>` directory.
 
-```
+```tree
 <extension_repo_root>
 ├── <Module1>
 │   ├── ...
