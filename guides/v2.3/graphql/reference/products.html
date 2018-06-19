@@ -755,8 +755,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following attributes can be used to create filters. See the <a href="#Response">Response</a> section for information about each attribute.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>category_ids
-country_of_manufacture
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>country_of_manufacture
 created_at
 custom_design
 custom_design_from
@@ -860,7 +859,7 @@ weight
   <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/type&gt;</span>
 </code></pre></div></div>
-<p>This example adds <code class="highlighter-rouge">field_to_sort</code> and <code class="highlighter-rouge">other_field_to_sort</code> attributes to the <code class="highlighter-rouge">additionalAttributes</code> array defined in the <code class="highlighter-rouge">ProductEntityAttributesForAst</code> class. The array also contains the <code class="highlighter-rouge">min_price</code>, <code class="highlighter-rouge">max_price</code>, and <code class="highlighter-rouge">category_ids</code>attributes.</p>
+<p>This example adds <code class="highlighter-rouge">field_to_sort</code> and <code class="highlighter-rouge">other_field_to_sort</code> attributes to the <code class="highlighter-rouge">additionalAttributes</code> array defined in the <code class="highlighter-rouge">ProductEntityAttributesForAst</code> class. The array already contains the <code class="highlighter-rouge">min_price</code>, <code class="highlighter-rouge">max_price</code>, and <code class="highlighter-rouge">category_ids</code>attributes.</p>
 
 <h2 id="ProductInterface">ProductInterface</h2>
 
@@ -905,11 +904,6 @@ The <code class="highlighter-rouge">items</code> that are returned in a <code cl
       <td><code class="highlighter-rouge">categories</code></td>
       <td>[CategoryInterface]</td>
       <td>The categories assigned to the product. See <a href="/guides/v2.3/graphql/reference/categories.html">categories endpoint</a> for more information</td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">category_ids</code></td>
-      <td>[Int]</td>
-      <td>An array of category IDs the product belongs to</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">country_of_manufacture</code></td>
