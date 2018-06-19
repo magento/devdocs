@@ -8,7 +8,7 @@ github_link: extension-dev-guide/prepare/ext-repo-structure.md
 
 ## Extension Repository Structure
 
-To create Magento 2.3 extensions for modules, themes, and language packs, your extension repository should adhere to these five changes:
+For Magento 2.3 module, theme, and language pack extension repositories, we recommend five best practices:
 
 * Flatter hierarchy
 * One *extension type* (module, theme, or language pack) per repository
@@ -93,11 +93,11 @@ If your extension requires only one component, your `<component_root>` directory
 └── ...
 ```
 
-### Functional Test Suites
+### Test Suites
 
 Function tests can be added to a `Test` directory within each module of your extension. 
 
-Note: Currently, only Unit and MFTF tests can be run from within a `<Module>` directory. All other types of tests should be located in `dev/tests`.
+Note: Currently, only Unit and MFTF tests can be run from within a `<Module>` directory.
 
 ```
 <extension_repo_root>
