@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.5 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.5CE.md
 ---
-*Patch code and release notes published on June 19, 2018.* 
+*Patch code and release notes published on June 26, 2018.* 
 
 This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
 
@@ -52,13 +52,17 @@ Highlights of community contributions include  fixes that improve checkout flow 
 * <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
 
-## Known issue
+## Known issues
+
+**Issue 1**
 Customers have reported the following behavior after upgrading to Magento 2.2.5 (and 2.2.4) in deployments that span multiple websites: 
 
 Magento multi-store installations do not use the store view-specific values from the store configuration settings if these settings have different values than the global default configuration settings.  Instead, Magento uses the default configuration for all store views. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245)
 
 We do not recommend upgrading to Magento 2.2.5 if you deploy across multiple websites. Note that this problem is not triggered if you have only a single website with multiple stores or store views.
 
+**Issue 2**
+Clicking **Save Config** on the Payment Methods page while configuring your Amazon Payments settings can result in a JavaScript error. **Workaround**: Refresh the page.
 
 
 ## Fixes
