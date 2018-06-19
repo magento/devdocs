@@ -172,10 +172,10 @@ Using the Magento Cloud CLI, enter an integration command to connect Blackfire w
 	--url='<Blackfire provided URL>'
 	```
 
-1.  A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the {{site.data.var.ece}} project. Either request your permission be upgraded or have someone else who is an admin run this command.
+1.  A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, verify that you have superuser access for the {{site.data.var.ece}} project. Either request your permission be upgraded or request an admin run this command.
 
 ### Default route {#route}
-If you need to specify a different route to use instead of the default route, update the Blackfire _Magento Cloud Integration_ page (step 5) and update you project `routes.yaml` file.
+If you need to specify a different route to use instead of the default route, change the route in the Blackfire _Magento Cloud Integration_ page (step 5) and update the route in your project `routes.yaml` file.
 
 ### Save changes in Blackfire {#save}
 With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
