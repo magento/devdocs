@@ -26,12 +26,14 @@ An action group is used to group a set of actions that will be used multiple tim
 An extension is used when a test or action group needs to be repeated with the exception of a few steps.
 
 #### Signs that you should use 'extends'
+* If one of the below is true, you may want to use 'extends' to write a new test or action group
 
 1. You still want the original test to run, without any modifications to that test.
 2. You want to create a new test that follows the same path as the original test.
 3. You want a new action group that behaves similarly to an existing action group, but you don't want the functionality of the original action group to change.
 
 #### Signs that you should not use 'extends'
+* If one of the below is true, you may want to avoid using extends outside of unique scenarios
 
 1. You want to change the functionality of the test/action group and don't want the original version to run.
 2. You plan on using merging on the base test/action group.
