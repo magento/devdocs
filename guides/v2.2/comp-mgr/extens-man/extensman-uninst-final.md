@@ -10,8 +10,8 @@ github_link: comp-mgr/extens-man/extensman-uninst-final.md
 functional_areas:
   - Upgrade
 redirect_from: 
-  - guides/v2.2/comp-mgr/module-man/compman-uninst-final.html
-  - guides/v2.3/comp-mgr/module-man/compman-uninst-final.html
+ - /guides/v2.2/comp-mgr/module-man/compman-uninst-final.html
+ - /guides/v2.3/comp-mgr/module-man/compman-uninst-final.html
 ---
 
 ## Step 4. Uninstall

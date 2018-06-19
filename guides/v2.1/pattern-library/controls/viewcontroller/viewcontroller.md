@@ -24,7 +24,7 @@ github_link: pattern-library/controls/viewcontroller/viewcontroller.md
 
 <h3 id="overview">Overview</h3>
 
-Within the Magento application, user may need to view a set of data in more than one way. The view controller isused to switch between the views of data set.
+Within the Magento application, user may need to view a set of data in more than one way. The view controller is used to switch between the views of data set.
 
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design Team.
 

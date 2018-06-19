@@ -149,6 +149,6 @@ Whenever the `signIn` button is used in a test, the MFTF will add a 30 second `w
 {% endraw %}
 
 
-<!-- Link definitioins -->
+<!-- Link definitions -->
 
 [waitForPageLoad]: test/actions.html#waitforpageload

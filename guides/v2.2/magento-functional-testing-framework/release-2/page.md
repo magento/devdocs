@@ -153,7 +153,7 @@ Attributes|Type|Use|Description
 ---|---|---|---
 `name`|string|required|Unique page name identifier.
 `url`|string|required|URL path (excluding the base URL) for the page. Use parameterized notation (`{{var1}}`) for replaceable parameters, such as the edit page for a persisted entity that is based on an ID or a name.
-`module`|string|required|The name of the module to which the page belongs. Example: `"Magento_Catalog"`.
+`module`|string|required|Name of the module to which the page belongs. The name must be prefixed with a vendor name. It corresponds to the parent directory where the module with tests is stored. Example: `"Magento_Catalog"`.
 `area`|string|required|The area where this page lives. Three possible values: `admin` prepends `BACKEND_NAME` to `url`, `storefront` does not prepend anything to `url`, `external` flags the page for use with `amOnUrl`. The `url` provided must be a full URL, such as `http://myFullUrl.com/`, instead of the URL for a Magento page.
 `parameterized`|boolean |optional|Include and set to `"true"` if the `url` for this page has parameters that need to be replaced for proper use.
 `remove`|boolean|optional|The default value is `"false"`. Set to `"true"` to remove this element during parsing.

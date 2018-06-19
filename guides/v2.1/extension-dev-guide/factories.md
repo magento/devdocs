@@ -41,6 +41,7 @@ class BaseFactory
   {
     $this->_objectManager = $objectManager;
   }
+
   /**
    * Create config model
    * @param string|\Magento\Framework\Simplexml\Element $sourceData

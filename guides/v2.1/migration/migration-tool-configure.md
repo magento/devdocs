@@ -67,7 +67,7 @@ Optional parameters:
 * Database custom port: `port=<port>`
 * Table prefix: `<source_prefix>`, `<dest_prefix>`
 
-For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
+For example, if your database owner's username is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
 {% highlight xml %}
 <source>

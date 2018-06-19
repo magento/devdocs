@@ -37,7 +37,7 @@ Applied search terms (filters) may be removed by clicking the remove control, ju
 <br />
 
 <h3 id="advanced">Advanced Filters</h3>
-To access the Advanced Filters the user may click/tap the "Filters" button found in the table controls area. When activated, the button transforms into a tab and displays the available filters in a 'drawer' which opens between the table contols and the table data. The available filters are determined by the columns present in the table; therefore, if the user customizes the column visibility of the table to show some columns and hide others, the corresponing filters for these columns will display or hide in the filter 'drawer'.
+To access the Advanced Filters the user may click/tap the "Filters" button found in the table controls area. When activated, the button transforms into a tab and displays the available filters in a 'drawer' which opens between the table controls and the table data. The available filters are determined by the columns present in the table; therefore, if the user customizes the column visibility of the table to show some columns and hide others, the corresponding filters for these columns will display or hide in the filter 'drawer'.
 <br />
 <br />
 <img src="img/filter_init.png">
@@ -49,7 +49,7 @@ To access the Advanced Filters the user may click/tap the "Filters" button found
 <img src="img/filter_drawer.png">
 <br />
 <br />
-To apply filters, the user sets the desired parameters in the input fields of the appropriate filters. The action initiated by clicking/tapping the "Apply" button (found in the advanced filters area). When applied, the advanced filter 'drawer' closes and the data-table refreshes to display the filtered data. The applied filters are indicated to the user in the form of filter 'tags' that appear between the filter button and the table data. Filter 'tag' are listed in the order that they are applied and each individula 'tag' has a control for removing it.
+To apply filters, the user sets the desired parameters in the input fields of the appropriate filters. The action initiated by clicking/tapping the "Apply" button (found in the advanced filters area). When applied, the advanced filter 'drawer' closes and the data-table refreshes to display the filtered data. The applied filters are indicated to the user in the form of filter 'tags' that appear between the filter button and the table data. Filter 'tag' are listed in the order that they are applied and each individual 'tag' has a control for removing it.
 <br />
 <br />
 <img src="img/filter_applied.png">
@@ -63,7 +63,7 @@ Users may remove a filter setting by clicking/tapping the remove control next to
 <img src="img/filter_remove.png">
 
 <h2>Future Capabilities</h2>
-Additional capabilites have been designed to further increase the functionality of filtering, however these features have not, as of yet, been developed.  These include **"Quick Filters"**.
+Additional capabilities have been designed to further increase the functionality of filtering, however these features have not, as of yet, been developed.  These include **"Quick Filters"**.
 
 
 <h3 class="quick">Quick Filters</h3>

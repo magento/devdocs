@@ -115,7 +115,7 @@ if (class_exists('Memcache')) {
     $meminstance = new Memcached();
 }
 
-$meminstance->addServer('<memcache host name or ip>', <memcache port>);
+$meminstance->addServer('<memcache hostname or ip>', <memcache port>);
 
 $query = "select id from example where name = 'new_data'";
 $querykey = "KEY" . md5($query);
@@ -138,7 +138,7 @@ print "got result from memcached\n";
 return 0;
 {% endhighlight %}
 
-where `<memcache host name or ip>` is either `localhost`, `127.0.0.1`, or the memcache host name or IP address. `<memcache port>` is its listen port; by default, `11211`.
+where `<memcache hostname or ip>` is either `localhost`, `127.0.0.1`, or the memcache hostname or IP address. `<memcache port>` is its listen port; by default, `11211`.
 
 Run the script from the command line.
 

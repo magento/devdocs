@@ -1,8 +1,8 @@
 <!-- (REQUIRED) What is the nature of this PR? -->
 ## This PR is a:
-[ ] New topic
-[ ] Content fix or rewrite
-[ ] Bug fix or improvement
+- [ ] New topic
+- [ ] Content fix or rewrite
+- [ ] Bug fix or improvement
  
 <!-- (REQUIRED) What does this PR change? -->
 ## Summary

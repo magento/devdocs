@@ -50,7 +50,7 @@ The following attributes are available for all UI components, including the basi
 </table>
 
 
-## Basic components' options
+## Basic component options
 
 The following options are available for all basic components:
 
