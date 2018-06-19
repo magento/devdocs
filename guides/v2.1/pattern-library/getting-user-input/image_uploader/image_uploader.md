@@ -34,7 +34,7 @@ This pattern should be used specifically to upload images, and not to upload doc
 
 **Uploading via Browser**
 
-The Image Uploader allows the user to browse for images to upload to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} application. This can accomodate single or multiple image upload. To initiate this behavior the user clicking on the "Upload Image" link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.
+The Image Uploader allows the user to browse for images to upload to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} application. This can accommodate single or multiple image upload. To initiate this behavior the user clicking on the "Upload Image" link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.
 
 <img src="img/image-uploader-browse.jpg">
 
