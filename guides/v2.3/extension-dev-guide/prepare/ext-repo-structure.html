@@ -1551,54 +1551,54 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><em>Before:</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root\&gt;
+<pre><code class="language-tree">&lt;extension_repo_root\&gt;
 └── app/code/&lt;Vendor&gt;/
     └── &lt;Module1&gt;
-</code></pre></div></div>
+</code></pre>
 
 <p><em>After:</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;/
+<pre><code class="language-tree">&lt;extension_repo_root&gt;/
 └── &lt;Module1&gt;
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="one-extension-type-per-repository">One extension type per repository</h3>
 
 <p>You cannot mix extension types (modules, themes, and language packs) in the same extension repository. Each component type must have its own repository. For example, <em>you cannot do this</em>:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// This is not supported
+<pre><code class="language-tree">// This is not supported
 &lt;extension_repo_root&gt;
 ├── &lt;Module1&gt;
 ├── &lt;theme1&gt;
 └── &lt;language1&gt;
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="multiple-components-per-repository">Multiple components per repository</h3>
 
 <p>If your extension is complex and requires several components, you can keep those components in the same repository to make the extension easy to package and maintain:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;
+<pre><code class="language-tree">&lt;extension_repo_root&gt;
 ├── &lt;Module1&gt;
 ├── &lt;Module2&gt;
 ├── &lt;Module1SampleData&gt;
 └── &lt;Module2SampleData&gt;
-</code></pre></div></div>
+</code></pre>
 
 <p>You can do the same for theme and language pack extensions:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;/
+<pre><code class="language-tree">&lt;extension_repo_root&gt;/
 ├── &lt;theme1&gt;
 └── &lt;theme2&gt;
-</code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;/
+</code></pre>
+<pre><code class="language-tree">&lt;extension_repo_root&gt;/
 ├── &lt;language1&gt;
 └── &lt;language2&gt;
-</code></pre></div></div>
+</code></pre>
 <h3 id="one-component-per-repository">One component per repository</h3>
 
 <p>If your extension requires only one component, your <code class="highlighter-rouge">&lt;component_root&gt;</code> directory and your <code class="highlighter-rouge">&lt;repo_root&gt;</code> directory will be the same to reduce unnecessary hierarchy in the directory structure:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;MyModule_repo_root&gt;
+<pre><code class="language-tree">&lt;MyModule_repo_root&gt;
 ├── Api
 ├── Block
 ├── Controller
@@ -1613,7 +1613,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 ├── composer.json
 ├── LICENSE.txt
 └── ...
-</code></pre></div></div>
+</code></pre>
 
 <h3 id="test-suites">Test Suites</h3>
 
@@ -1621,7 +1621,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Note: Currently, only Unit and MFTF tests can be run from within a <code class="highlighter-rouge">&lt;Module&gt;</code> directory.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;extension_repo_root&gt;
+<pre><code class="language-tree">&lt;extension_repo_root&gt;
 ├── &lt;Module1&gt;
 │   ├── ...
 │   ├── Test
@@ -1634,7 +1634,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 ├── &lt;Module2&gt;
 ├── &lt;Module1SampleData&gt;
 └── &lt;Module2SampleData&gt;
-</code></pre></div></div>
+</code></pre>
 
 			
 		</div>
