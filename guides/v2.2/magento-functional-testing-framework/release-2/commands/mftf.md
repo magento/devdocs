@@ -32,6 +32,12 @@ vendor/bin/mftf command [options] [arguments]
 
 The following is a list of the most used commands.
 
+#### Options
+
+Option | Description|
+---|---
+`-u, --upgrade`   | Upgrades existing MFTF tests according to last major release requirements. Only tests in the default location will be upgraded with this flag.
+
 #### Build the project
 
 ```bash
@@ -161,6 +167,24 @@ Generates suite(s) based on XML declarations.
 vendor/bin/mftf generate:suite suite1 suite2
 ```
 
+### `generate:urn-catalog`
+
+#### Description
+
+Generates an URN catalog to enable PHPStorm to recognize and highlight URNs. This is necessary for IDE auto-completion after MFTF `2.3.0`.
+
+#### Usage
+
+`generate:urn-catalog <path>`
+
+`<path>` path to the folder containing PHPStorm's misc.xml file (typically located in `ProjectRoot/.idea/misc.xml`)
+
+#### Example
+
+```bash
+vendor/bin/mftf generate:urn-catalog /Users/user/Documents/Project/.idea/
+```
+
 #### `reset`
 
 #### Description
@@ -238,6 +262,30 @@ Execute the `LoginCustomerTest.php` and `StorefrontCreateCustomerTest.php` tests
 
 ```bash
 vendor/bin/mftf run:group -k -- LoginCustomerTest StorefrontCreateCustomerTest
+```
+
+### `upgrade:tests`
+
+Applies all MFTF major version upgrade scripts to test materials in given path (`test.xml`, `data.xml`, etc).
+
+#### Usage
+
+`upgrade:tests <path>`
+
+`<path>` is the path that contains MFTF test materials that need to be upgraded. The command searches subdirectories for any `*.xml` to attempt to upgrade.
+
+#### Examples
+
+To upgrade all test materials inside any `dev/tests/acceptance/tests` modules:
+
+```bash
+vendor/bin/mftf upgrade:tests /Users/user/magento2ce/dev/tests/acceptance/tests/
+```
+
+To upgrade all test materials inside the `Catalog` module:
+
+```bash
+vendor/bin/mftf upgrade:tests /Users/user/magento2ce/app/code/Magento/Catalog/Test/Mftf
 ```
 
 <!-- LINK DEFINITIONS -->
