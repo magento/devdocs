@@ -483,6 +483,9 @@ This release contains hundreds of fixes and enhancements.
 
 
 
+<!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member <a href="https://github.com/LukeHandle" target="_blank">Luke Hanley</a> in pull request <a href="https://github.com/magento/magento2/pull/9368" target="_blank">9368</a>.* 
+
+
 #### Admin framework
 
 <!--- 57805 -->* You can no longer delete a currently logged-in user.

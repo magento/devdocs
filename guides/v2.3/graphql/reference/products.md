@@ -178,7 +178,7 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
-`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices]({#ProductPrices}) for more information.
+`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
 `product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | String | A short description of the product. Its use depends on the store's theme.
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer

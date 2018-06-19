@@ -87,7 +87,7 @@ Magento CE 1.7 and later support the <a href="http://tools.ietf.org/html/rfc5849
 phpinfo();</pre></li>
 <li>Start a web browser and enter the following URL in its address or location field:
 <pre>http://<em>host-or-ip</em>[:<em>port</em>]/<em>path-to-phpinfo</em>/phpinfo.php</pre><br />
-For example, if your Magento instance host name is <code>www.example.com</code> and you put <code>phpinfo.php</code> in the web server's docroot, enter:
+For example, if your Magento instance hostname is <code>www.example.com</code> and you put <code>phpinfo.php</code> in the web server's docroot, enter:
 <pre>http://www.example.com/phpinfo.php</pre></li>
 <li>Search the resulting output for <code>OAuth</code>.<br />
 The following figure shows an example of OAuth being properly set up.<br />
@@ -415,7 +415,7 @@ chmod 644 CouponDemo_AutoGen.xml</pre></li></ol>
 The Role Resources page contains a hierarchical list of resources to which you can grant or deny the Coupon Auto Generate Demo role access.</li>
 <li>From the <strong>Resource Access</strong> list, click <strong>Custom</strong>.</li>
 <li><p>Select the checkbox next to the node labeled <strong>CouponDemo API</strong>.</p>
-<p id="figure_check-boxes">Magento automatically checks the child check boxes as the following figure shows.</p>
+<p id="figure_check-boxes">Magento automatically checks the child checkboxes as the following figure shows.</p>
 <img src="{{ site.baseurl }}/common/images/m1x/ht_magento-REST-API_edit_rest_role_api_resources.png" height="203px" width="600px"></li>
 <li>Click <strong>Save Role</strong>.<br />
 Magento saves the resource API permissions you granted to the Coupon Auto Generate Demo REST role. <br />
@@ -440,7 +440,7 @@ The specified user(s) can now grant an external program the right to call the Co
 <li>On the REST Attributes page, under User Type, click <strong>Admin</strong>.</li>
 <li>In the User Type Resources section, from the <strong>Resource Access</strong> list, click <strong>Custom</strong>.</li>
 <li>Select the <strong>CouponDemo API</strong> checkbox.<br />
-Doing so selects all the child check boxes, as the following figure shows.<br />
+Doing so selects all the child checkboxes, as the following figure shows.<br />
 <img src="{{ site.baseurl }}/common/images/m1x/ht_magento-REST-API_rest-api-attributes.png" height="263px" width="600px"></li>
 <li>Click <strong>Save</strong>.<br />
 Any user with the REST Admin role can now read from and write to the Coupon AutoGen API.</li></ol>
@@ -503,8 +503,8 @@ You must include these values in the test script you will write in the next sect
 </tr>
 <tr>
   <td>&lt;&lt;host-or-ip:port>>/&lt;&lt;path>></td>
-  <td><p>Your Magento instance's fully qualified host name or IP address and port, if you are using a port other than 80, and the path to your Magento installation. If you are running Magento on localhost, enter <code>127.0.0.1</p>
-  <p>For example, if your Magento server's host name is <code>www.example.com</code>, running on port 80, and Magento is installed at <code>/var/www/magento</code>, enter <code>http://www.example.com/magento</code></td>
+  <td><p>Your Magento instance's fully qualified hostname or IP address and port, if you are using a port other than 80, and the path to your Magento installation. If you are running Magento on localhost, enter <code>127.0.0.1</p>
+  <p>For example, if your Magento server's hostname is <code>www.example.com</code>, running on port 80, and Magento is installed at <code>/var/www/magento</code>, enter <code>http://www.example.com/magento</code></td>
 </tr>
 <tr>
   <td>&lt;&lt;RULE_ID>></td>
@@ -580,8 +580,8 @@ extension=oauth.so</pre></li>
 <li>Verify the OAuth installation succeeded as discussed in <a href="#prereq-software-oauth">Confirming that OAuth Installed Successfully</a>.</li></ol>
 
 <h3 id="trouble-admin-panel-options">CouponDemo API Calls Options Don't Display in the Admin Panel</h3>
-<p><strong>Problem:</strong> After setting up the CouponDemo configuration files, the <strong>CouponDemo API Calls</strong> check boxes do not display in the Admin Panel. A sample is shown <a href="#figure_check-boxes">in a figure earlier in this guide</a>.</p>
-<p><strong>Description:</strong> The <strong>CouponDemo API Calls</strong> check boxes display to indicate you set up the module correctly. If they don't display, either the Magento cache hasn't been entirely cleared or there's something wrong with the directory structure or configuration files.</p>
+<p><strong>Problem:</strong> After setting up the CouponDemo configuration files, the <strong>CouponDemo API Calls</strong> checkboxes do not display in the Admin Panel. A sample is shown <a href="#figure_check-boxes">in a figure earlier in this guide</a>.</p>
+<p><strong>Description:</strong> The <strong>CouponDemo API Calls</strong> checkboxes display to indicate you set up the module correctly. If they don't display, either the Magento cache hasn't been entirely cleared or there's something wrong with the directory structure or configuration files.</p>
 <p><strong>Solution:</strong> Use the following steps to isolate and correct the issue:</p>
 <ol><li>Make sure your directory structure is set up <em>exactly</em> as shown in <a href="#figure_dir-structure">this figure earlier in this guide</a>.</li>
 <li>Make sure you copied the <em>exact text</em> from the sample configuration files discussed in <a href="#extend-rest-api_create-files">Creating Configuration Files</a>. <em>Do not change anything</em>, and remember that case is important.</li>
@@ -597,7 +597,7 @@ Click <strong>Flush Cache Storage</strong> and follow the prompts on your screen
 <li>Click <strong>System</strong> > <strong>REST - Roles</strong>.</li>
 <li>Click <strong>Coupon Auto Generate Demo</strong>.</li>
 <li>In the left navigation bar, click <strong>Role API Resources</strong>.</li>
-<li>If the <strong>CouponDemo API Calls</strong> check boxes do not display, double-check <a href="#trouble_xml">all of the <code>.xml</code> configuration files</a> to make sure there is <em>no leading white space</em> (that is, there are no blank lines at the beginning of the files.<br />
+<li>If the <strong>CouponDemo API Calls</strong> checkboxes do not display, double-check <a href="#trouble_xml">all of the <code>.xml</code> configuration files</a> to make sure there is <em>no leading white space</em> (that is, there are no blank lines at the beginning of the files.<br />
 Remove any blank lines and save the <code>.xml</code> files.</li></ol>
 
 <h3 id="trouble-rest-test">Errors Running rest_test.php</h3>

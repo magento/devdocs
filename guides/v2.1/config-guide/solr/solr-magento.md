@@ -108,7 +108,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Hostname</td>
-	<td>Enter the fully qualified host name or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
+	<td>Enter the fully qualified hostname or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
 </tr>
 <tr>
 	<td>Solr Server Port</td>

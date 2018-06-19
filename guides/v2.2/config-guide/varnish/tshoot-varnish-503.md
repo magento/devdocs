@@ -71,6 +71,6 @@ This situation could happen because the default health check has a `timeout` val
 
 Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again).  However, you can use the following command to enable cache:
 
-`bin/magento cache:enable`
+    bin/magento cache:enable
 
 For more information about using the command line, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.

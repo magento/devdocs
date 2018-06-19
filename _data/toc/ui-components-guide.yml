@@ -74,7 +74,7 @@ pages:
 
         - label: ImageUploader component
           versions: ["2.3"]
-          url: ui_comp_guide/components/image-uploader/
+          url: /ui_comp_guide/components/image-uploader/
 
         - label: Input component
           url: /ui_comp_guide/components/ui-input.html

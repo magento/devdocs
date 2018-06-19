@@ -31,4 +31,5 @@ The changes are aggregated into two tables:
 
 [changes in {{site.data.var.ce}}]: open-source.html
 [changes in {{site.data.var.ee}}]: commerce.html
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
 [@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

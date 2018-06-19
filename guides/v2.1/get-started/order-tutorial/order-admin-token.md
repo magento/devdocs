@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 2. Get the admin token
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 2
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-admin-token.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -29,7 +28,7 @@ where:
 Element | Description
 --- | ---
 `HTTP verb` | One of `GET`, `POST`, `PUT`, or `DELETE`
-`host` | The host name or IP address (and optionally, port) of the Magento installation.
+`host` | The hostname or IP address (and optionally, port) of the Magento installation.
 `scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Identifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
 

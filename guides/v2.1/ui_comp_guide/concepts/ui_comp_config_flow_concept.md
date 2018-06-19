@@ -24,7 +24,7 @@ This section provides more detailed steps about the configuration flow.
 
 Lets consider an example with the top-level UI component, `form`.
 
-Lets imagine we have the following file structure in our {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} <My_Module>:
+Lets imagine we have the following file structure in our {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} `<My_Module>`:
 
 - {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} `.xml` file of the Module’s page: `my_page.xml`
 - top-level UI Component (form or listing) configuration: `my_form.xml`

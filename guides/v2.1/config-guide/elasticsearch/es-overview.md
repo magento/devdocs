@@ -24,11 +24,11 @@ functional_areas:
 *	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
 
-<h2 id="overview">Overview of Elasticsearch</h2>
+## Overview of Elasticsearch {#overview}
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
-*	Elasticsearch analyzers support multiple languages
+*	Elasticsearch Analyzers support multiple languages
 *	Supports stop words and synonyms
 *	Indexing does not impact customers until reindex is completed
 
@@ -153,7 +153,7 @@ To install Elasticsearch:
 
 
 ## Additional resources {#es-resources}
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
+For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next
 

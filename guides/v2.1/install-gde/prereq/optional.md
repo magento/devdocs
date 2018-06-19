@@ -88,7 +88,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 	If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
 
-	Try the <code>ntpdate <em>[pool server host name]</em></code> command. If it fails, search for the error it returns.
+	Try the <code>ntpdate <em>[pool server hostname]</em></code> command. If it fails, search for the error it returns.
 
 	If all else fails, try rebooting the server.
 

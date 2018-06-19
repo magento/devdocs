@@ -44,7 +44,7 @@ The following is an illustration of how the process of making simple changes loo
 
     ![Less code redefining the color of the primary buttons]({{ site.baseurl }}/common/images/extend_less_screenshot121.png)
 
-1. Change the button font by adding the following code in the `_extend.less` file:
+1. Change the button font size by adding the following code in the `_extend.less` file:
 
     ```css
     .action {
@@ -93,7 +93,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
     ![Admin login page where the color of the button was changed]({{ site.baseurl }}/common/images/extend_less_screenshot121.png)
 
-1. Change the button font by adding the following code in the `_extend.less` file:
+1. Change the button font size by adding the following code in the `_extend.less` file:
 
     ```css
     .action {
@@ -131,7 +131,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot121.png)
 
-1. Change the button font by adding the following code in the `_extend.less` file:
+1. Change the button font size by adding the following code in the `_extend.less` file:
 
     ```css
     .action {

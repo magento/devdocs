@@ -122,7 +122,7 @@ If your web server is clustered, enter the command on each web server host.
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
-*	The Base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the *store address*) specifies the host name or IP address of the *web node*
+*	The Base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the *store address*) specifies the hostname or IP address of the *web node*
 *	Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
 *	Database username is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password

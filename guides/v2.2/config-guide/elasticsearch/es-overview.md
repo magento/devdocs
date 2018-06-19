@@ -24,7 +24,7 @@ functional_areas:
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
-*	Elasticsearch analyzers support multiple languages
+*	Elasticsearch Analyzers support multiple languages
 *	Supports stop words and synonyms
 *	Indexing does not impact customers until reindex is completed
 
@@ -49,7 +49,7 @@ Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elastic
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-<img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
+<img src="../../../../common/images/elastic_config.png" width="300px">
 
 The preceding diagram shows:
 
@@ -202,7 +202,7 @@ Elasticsearch 5.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7
 </div>
 
 ## Additional resources {#es-resources}
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
+For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next
 
