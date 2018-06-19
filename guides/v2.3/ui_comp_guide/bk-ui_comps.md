@@ -43,7 +43,7 @@ Basic components are:
 
 All other UI components are secondary.
 
-Basic components are declared in the [page layout files]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level components’ instances configuration files.
+Basic components are declared in the [page layout files]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level component's instances configuration files.
 
 All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
@@ -113,7 +113,7 @@ A particular instance of a UI component is defined primarily by the following:
 
 **UI components have different settings**
 
-Configuration settings (their list and names) are different among UI components; these settings contain constants, optional and required settings. Developers need to treat every UI component separately.
+Configuration settings (their list and names) are different among UI component's these settings contain constants, optional and required settings. Developers need to treat every UI component separately.
 
 **Beware of mistakes in XML config**
 
