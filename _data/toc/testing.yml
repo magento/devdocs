@@ -11,6 +11,28 @@ pages:
 
         - label: Using DocBlock annotations
           url: /test/integration/annotations.html
+          children:
+
+          - label: '@magentoAppArea'
+            url: /test/integration/annotations/magentoAppArea.html
+
+          - label: '@magentoAppIsolation'
+            url: /test/integration/annotations/magentoAppIsolation.html
+
+          - label: '@magentoCache'
+            url: /test/integration/annotations/magentoCache.html
+
+          - label: '@magentoComponentsDir'
+            url: /test/integration/annotations/magentoComponentsDir.html
+
+          - label: '@magentoConfigFixture'
+            url: /test/integration/annotations/magentoConfigFixture.html
+
+          - label: '@magentoDataFixture'
+            url: /test/integration/annotations/magentoDataFixture.html
+
+          - label: '@magentoDbIsolation'
+            url: /test/integration/annotations/magentoDbIsolation.html
 
     - label: JavaScript Unit Testing
       children:
