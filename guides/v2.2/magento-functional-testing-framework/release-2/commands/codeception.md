@@ -1,6 +1,7 @@
 ---
 group: mftf
-title: Codeception commands
+title: |
+    CLI commands: vendor/bin/codecept
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/codeception.md
 functional_areas:
