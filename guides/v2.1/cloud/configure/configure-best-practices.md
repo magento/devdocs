@@ -49,7 +49,7 @@ To edit Advanced Pricing and update Content Staging:
 For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html){:target="_blank"}. Click **Next** to walk through the steps.
 
 ## Example Price Rules {#price-rules}
-Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on on orders over $100 dollars, and so on.
+Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on orders over $100 dollars, and so on.
 
 To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules){:target="_blank"}.
 

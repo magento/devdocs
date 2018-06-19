@@ -226,12 +226,13 @@ pages:
           url: /extension-dev-guide/adapters.html
 
         - label: Variable Pool
-          url: extension-dev-guide/variable-pool/
+          versions: ["2.3"]
+          url: /extension-dev-guide/variable-pool/
 
     - label: Configuration
       versions: ["2.2", "2.3"]
       children:
-        - label: Sensitive Environemnt Settings
+        - label: Sensitive Environment Settings
           url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
 
         - label: Configuration Importers

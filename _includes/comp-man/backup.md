@@ -10,13 +10,13 @@ Backups are stored in the `var/backups` directory and can be restored at any tim
 
 To back up:
 
-1.	Select the check box of each item to back up and click **Create Backup**.
+1.	Select the checkbox of each item to back up and click **Create Backup**.
 
 	The following figure shows an example of backing up everything.
 
 	<img src="{{ site.baseurl }}/common/images/modman_create-backup.png" width="550px" alt="You can back up the Magento 2 file system, media directory, and database">
 
-	(If you choose not to back up, clear all check boxes and click **Next**.)
+	(If you choose not to back up, clear all checkboxes and click **Next**.)
 
 	<div class="bs-callout bs-callout-info" id="info">
       <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>

@@ -58,7 +58,7 @@ To change locale and static file optimization settings:
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** check box next to the **Minify Html** list.
+6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
 7.	From the **Minify Html** list, click **No**.
 5.	In the right pane, expand **CSS Settings**.
 6.	From the **Merge CSS Files** list, click **No**.
@@ -175,7 +175,7 @@ To change values in the Integration environment Magento Admin:
 	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** check box next to the **Minify Html** list.
+6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
 7.	From the **Minify Html** list, click **Yes**.
 5.	In the right pane, expand **CSS Settings**.
 6.	From the **Merge CSS Files** list, click **Yes**.

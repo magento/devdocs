@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 090_configure
 title: Set up Magento B2B
-menu_title: Set up Magento B2B
-menu_order: 16
-menu_node:
 version: 2.2
 github_link: cloud/configure/setup-b2b.md
 ---
@@ -42,7 +38,7 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
         "magento/extension-b2b": "*"
 5. Save the file.
-6. Run the composer update command to pull all B2B files into your branch.
+6. Update composer to pull all B2B files into your branch.
 
         composer update
 
@@ -53,9 +49,9 @@ You need to add the module to `composer.json`. All extensions and modules must b
 5. Add the new B2B files to Git:
 
         git add setup dev pub lib && git commit -a -m "b2b"
-5. Enable all modules using the following command. You need to use this command to ensure all modules, including B2B, are enabled for updating.
+5. Enable all missing modules,including B2B, for updating.
 
-        php bin/magento module:enable --all
+        ./vendor/bin/ece-tools module:refresh
 
 6. Complete the upgrade with B2B using the following command:
 

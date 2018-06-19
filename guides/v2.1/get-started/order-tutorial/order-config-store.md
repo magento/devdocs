@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 1. Configure the store
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 1
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-config-store.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -28,7 +27,7 @@ Check/Money Order | `checkmo` | Yes
 Bank Transfer Payment | `banktransfer` | No
 Cash on Delivery | `cashondelivery` | No
 Purchase Order | `purchaseorder` | No
-Zero Subtotal {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} | `free` | Yes
+Zero Subtotal Checkout | `free` | Yes
 
 In this tutorial, configure Magento to accept bank transfer payments. To allow bank transfer payments (or any other offline payment method) as a payment method, log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and select **Stores > Configuration > Sales > Payment Methods**. Then enable the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} and click **Save**.
 

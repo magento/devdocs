@@ -80,7 +80,7 @@ With the settings:
 *   `bin/magento indexer:reindex catalog_category_product` is the script actions
 
 ## Add cron jobs to .magento.app.yaml {#add-cron}
-You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the the `crons` section.
+You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.

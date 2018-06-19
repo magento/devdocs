@@ -52,7 +52,7 @@ We recommend creating a user account with Super User access as your Technical Ad
 ![Use the Project Web Interface to manage environments]({{ site.baseurl }}/common/images/cloud_project-access.png)
 
 ## Sign up for Magento status {#status}
-We provide an {{site.data.var.ece}} environment and service status site. Anyone working on your site and project can subscribe on the site for email notifications and updates. We recommend subscribing and adding a bookmark to check the page daily or as needed.
+We provide a {{site.data.var.ece}} environment and service status site. Anyone working on your site and project can subscribe on the site for email notifications and updates. We recommend subscribing and adding a bookmark to check the page daily or as needed.
 
 The site location is [https://status.magento.cloud/](https://status.magento.cloud/){:target="\_blank"}. Scroll to the bottom and click [Subscribe](http://status.magento.cloud/subscribe){:target="\_blank"} at the bottom of the page. Complete the prompts with your email address and types of notifications you want to receive.
 

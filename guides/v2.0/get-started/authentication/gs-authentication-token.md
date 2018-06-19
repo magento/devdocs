@@ -41,7 +41,7 @@ The access token can be used in all calls made on behalf of the integration.
 
 ## Admin and customer access tokens
 
-Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the user name and password for a Magento account.
+Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the username and password for a Magento account.
 
 The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html) contains a list of APIs that do not require a token.
 
@@ -84,7 +84,7 @@ A access token request contains three basic elements:
    <tr>
       <td>Credentials</td>
       <td>
-         <p>The user name and password for a Magento account.</p>
+         <p>The username and password for a Magento account.</p>
          <p>To specify these credentials in a JSON request body, include <code>'{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
          <p> To specify these credentials in XML, include <code>&lt;login>&lt;username>customer1@example.com&lt;/username>&lt;password>customer1pw&lt;/password>&lt;/login></code> in the call.</p>
       </td>

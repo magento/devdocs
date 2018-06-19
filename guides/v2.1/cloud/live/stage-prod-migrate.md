@@ -168,11 +168,11 @@ To migrate a database:
 
 	For Starter environments and Pro Integration environments:
 
-		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+		mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
 
-	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and user name):
+	For Pro Staging and Production environments, the name of the database is in the `MAGENTO_CLOUD_RELATIONSHIPS` variable (typically the same as the application name and username):
 
-		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
+		mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction --triggers <database name> | gzip - > /tmp/database.sql.gz
 		
 
 4.	Transfer the database dump to another remote environment with an `rsync` command:
@@ -205,7 +205,7 @@ This error occurs because the DEFINER for the triggers in the SQL dump is the pr
 To solve the issue, you can generate a new database dump changing or removing the `DEFINER` clause. The following is one example of completing this change:
 
 ```bash
-mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
+mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
 ```
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
