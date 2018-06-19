@@ -1188,6 +1188,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#layout_markup_columns">Set the page layout</a></li>
   <li><a href="#layout_markup_css">Include static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a></li>
   <li><a href="#layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a></li>
+  <li><a href="#layout_markup_meta">Add meta tags to the head block</a></li>
   <li><a href="#create_cont">Create a container</a></li>
   <li><a href="#ref_container">Reference a container</a></li>
   <li><a href="#xml-manage-block">Create a block</a></li>
@@ -1204,7 +1205,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="glyphicon-class">
   <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  and   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
+ layouts. To customize your layout, create extending and overriding layout files in your custom theme.</p></span>
 </div>
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
@@ -1296,6 +1297,44 @@ A sample follows:</p>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>Note, that if a static asset is added with a module path (for example <code class="highlighter-rouge">Magento_Catalog::js/sample.js</code>) in the initial layout, you need to specify the module path as well when removing the asset.</p>
+
+<h2 id="layout_markup_meta">Add meta tags to the head block</h2>
+
+<p>To add <code class="highlighter-rouge">&lt;meta&gt;</code> tags to the <code class="highlighter-rouge">&lt;head&gt;</code> element of your layout, create a theme-extending file similar to: <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>.</p>
+
+<p>By default, the class that renders the <code class="highlighter-rouge">&lt;meta&gt;</code> tags is <code class="highlighter-rouge">\Magento\Framework\View\Page\Config\Renderer</code>. This class can render five meta types and a catch-all (the default).</p>
+<ol>
+  <li>og:</li>
+  <li>charset</li>
+  <li>content_type</li>
+  <li>x_ua_compatible</li>
+  <li>media_type</li>
+  <li>“default” case</li>
+</ol>
+
+<p><strong>Examples:</strong>
+Use the following examples to include in your own layout themes.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+        <span class="c">&lt;!-- This will create a tag like '&lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"&gt;' --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"x_ua_compatible"</span> <span class="na">content=</span><span class="s">"IE=edge,chrome=1"</span><span class="nt">/&gt;</span>
+        
+	<span class="c">&lt;!-- This will create a tag like '&lt;meta property="og:type" content="article"/&gt;'' --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"article"</span><span class="nt">/&gt;</span>
+        
+	<span class="c">&lt;!-- This will create a tag like '&lt;meta charset="UTF-8"&gt;' --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"charset"</span> <span class="na">content=</span><span class="s">"UTF-8"</span><span class="nt">/&gt;</span>
+        
+	<span class="c">&lt;!-- This will create a tag like '&lt;meta http-equiv="Content-Type" content="content-type-value"/&gt;' --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"content_type"</span> <span class="na">content=</span><span class="s">"content-type-value"</span><span class="nt">/&gt;</span>
+        
+	<span class="c">&lt;!-- This tag will not render (see \Magento\Framework\View\Page\Config\Renderer for details) --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"media_type"</span> <span class="na">content=</span><span class="s">"any-value"</span><span class="nt">/&gt;</span>
+        
+	<span class="c">&lt;!-- This will create a tag like '&lt;meta name="my_custom_type" content="my_custom_value"/&gt;' --&gt;</span>
+        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"my_custom_type"</span> <span class="na">content=</span><span class="s">"my_custom_value"</span><span class="nt">/&gt;</span>
+   <span class="nt">&lt;/head&gt;</span></code></pre></figure>
 
 <h2 id="create_cont">Create a container</h2>
 
