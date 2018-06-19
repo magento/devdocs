@@ -2007,7 +2007,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="domain">Multiple Fastly accounts and assigned domains</h2>
-<p>Before launching Magento Commerce (Cloud), you may already have a Fastly account or trial with your apex and subdomains assigned to it. Be advised, you will need to remove any apex domain and subdomains you plan use with Magento Commerce (Cloud) from this existing Fastly account.</p>
+<p>Before launching Magento Commerce (Cloud), you may already have a Fastly account or trial with your apex and subdomains assigned to it. Be advised, you will need to remove any apex domain and subdomains you plan to use with Magento Commerce (Cloud) from this existing Fastly account.</p>
 
 <p>Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and Magento Commerce (Cloud).</p>
 
@@ -2220,7 +2220,7 @@ composer require fastly/magento2
 <h2 id="backend">Configure backends and Origin shielding</h2>
 <p>Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A <em>backend</em> is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.</p>
 
-<p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.</p>
+<p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduce traffic directly to the origin.</p>
 
 <p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.2/cloud/configure/fastly-vcl-wordpress.html">Wordpress</a> to handle your blog.</p>
 
@@ -2286,7 +2286,7 @@ composer require fastly/magento2
 <p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">Fastly’s configuration options</a>.</p>
 
 <h2 id="fastly-errpg">Create a custom error/maintenance page</h2>
-<p>You can optionally create a custom page for errors or when your site is down for maintenance. Create your page with HTML code to provide detailed information why the site is temporarily down, instead of an HTTP error code.</p>
+<p>You can optionally create a custom page for errors or when your site is down for maintenance. Create your page with HTML code to provide detailed information about why the site is temporarily down, instead of an HTTP error code.</p>
 
 <p>To create a custom error/maintenance page:</p>
 
