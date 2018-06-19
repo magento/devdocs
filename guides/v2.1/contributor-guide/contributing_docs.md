@@ -153,7 +153,7 @@ Refer to the following table for a description of each key-value pair.
    </thead>
    <tbody>
          <td>layout: default</td>
-         <td>Selects the template Jekyll will use to render the .md file into HTML & CSS.</td>
+         <td>Selects the template Jekyll will use to render the .md file into HTML and CSS.</td>
       <tr>
          <td>group: install</td>
          <td>Defines which guide the file belongs to and which left-hand menu collection the file will show up in. What you put here does not affect the top navigation menu, which is controlled by the `_/includes/navigation.html` file.</td>
