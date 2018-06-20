@@ -52,70 +52,64 @@ To enable maintenance mode:
 
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
-1. Log in to your Magento server as, or switch to, the Magento file system owner.
-2. Change to the directory in which you installed the Magento software. For example,
-   ```bash
-   cd /var/www/html/magento2
-   ```
+{% collapsible To upgrade using the command line: %}
 
-3. Require the Magento package using Composer and update the dependencies:
-   ```bash
-   composer require <product> <version> --no-update
-   ```
-   ```bash
-   composer update
-   ```
+1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+2.	Change to the directory in which you installed the Magento software.
 
-   For example, to upgrade to {{ site.data.var.ce }} version {{page.version}}.4, enter:
-   ```bash
-   composer require magento/product-community-edition {{ page.version }}.4 --no-update
-   ```
-   ```bash
-   composer update
-   ```
+	For example, `cd /var/www/html/magento2`
+2.	Enter the following commands in the order shown:
 
-   To upgrade to Magento EE version {{page.version}}.4, enter:
-   ```bash
-   composer require magento/product-enterprise-edition {{ page.version }}.4 --no-update
-   ```
-   ```bash
-   composer update
-   ```
+		composer require <product> <version> --no-update
+		composer update
 
-4. If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
-5. Manually clear `var` subdirectories:
-   ```bash
-   rm -rf <Magento install dir>/var/cache/*
-   ```
-   ```bash
-   rm -rf <Magento install dir>/var/page_cache/*
-   ```
-   ```bash
-   rm -rf <Magento install dir>/generated/code/*
-   ```
-6. Update the database schema and data:
-   ```bash
-   php bin/magento setup:upgrade
-   ```
-7. Put your storefront online (that is, cancel maintenance mode):
-   ```bash
-   php bin/magento maintenance:disable
-   ```
-8. Restart Varnish if you use it for page caching.
-   ```bash
-   service varnish restart
-   ```
-9. Access your storefront.
+	For example, to upgrade to {{site.data.var.ce}} version 2.0.11, enter:
 
-   The following error might display:
-   ```terminal
-   We're sorry, an error has occurred while generating this email.
-   ```
+		composer require magento/product-community-edition 2.0.11 --no-update
+		composer update
 
-   If so, perform the following tasks:
+	To upgrade to Magento EE version 2.0.11, enter:
 
-   1. Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
-   2. Clear the following directories and try again:
-      * `<your Magento install dir>/var/cache`
-	  * `<your Magento install dir>/var/page_cache`
-	  * `<your Magento install dir>/generated/code`
+		composer require magento/product-enterprise-edition 2.0.11 --no-update
+		composer update
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<p>If an error displays about a missing <code>.gitignore</code> files, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html#resolution2">Technical Bulletin (1/28/16)</a>.</p>
+	</div>
+
+3.	If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+4.	Manually clear `var` subdirectories:
+
+		rm -rf <Magento install dir>/var/cache/*
+		rm -rf <Magento install dir>/var/page_cache/*
+		rm -rf <Magento install dir>/generated/code/*
+		
+<div class="bs-callout bs-callout-info" markdown="1">
+   If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+</div>
+
+4. Update the database schema and data:
+
+		php bin/magento setup:upgrade
+5.	Put your storefront online (that is, cancel maintenance mode):
+
+		php bin/magento maintenance:disable
+5.	Restart Varnish if you use it for page caching.
+
+		service varnish restart
+6.	Access your storefront.
+
+	The following error might display:
+
+		We're sorry, an error has occurred while generating this email.
+
+	If so, perform the following tasks:
+
+	1.	Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
+	2.	Clear the following directories and try again:
+
+			<your Magento install dir>/var/cache
+			<your Magento install dir>/var/page_cache
+			<your Magento install dir>/generated/code
+
+{% endcollapsible %}
