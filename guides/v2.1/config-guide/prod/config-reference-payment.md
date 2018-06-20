@@ -71,7 +71,7 @@ Countries Payment Applicable From | `payment/paypal_billing_agreement/specificco
 Enable SSL verification | `payment/paypal_billing_agreement/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Transfer Cart Line Items | `payment/paypal_billing_agreement/line_items_enabled` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Allow in Billing Agreement Wizard | `payment/paypal_billing_agreement/allow_billing_agreement_wizard` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-nable Automatic Fetching | `paypal/fetch_reports/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Enable Automatic Fetching | `paypal/fetch_reports/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Schedule | `paypal/fetch_reports/schedule` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Time of Day | `paypal/fetch_reports/time` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 PayPal Product Logo | `paypal/style/logo` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |

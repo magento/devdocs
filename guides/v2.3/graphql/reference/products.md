@@ -47,7 +47,6 @@ Magento processes the attribute values specified in  a `ProductFilterInput` as  
 The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
 
 ```
-category_ids
 country_of_manufacture
 created_at
 custom_design
@@ -131,7 +130,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
-This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array also contains the `min_price`, `max_price`, and `category_ids`attributes.
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids`attributes.
 
 
 ## ProductInterface {#ProductInterface}
@@ -154,7 +153,6 @@ Attribute | Data type | Description
 `attribute_set_id` | Int | The attribute set assigned to the product
 `canonical_url` | String  | The canonical URL for the product
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
-`category_ids` | [Int] | An array of category IDs the product belongs to
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
 `custom_design` | String | A theme that can be applied to the product page
