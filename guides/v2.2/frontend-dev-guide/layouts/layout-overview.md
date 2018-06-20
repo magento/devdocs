@@ -1,19 +1,18 @@
 ---
 group: fedg
-subgroup: B_Layouts
 title: Layout overview
-menu_title: Layout
-menu_order: 1
-menu_node: parent
 version: 2.2
 github_link: frontend-dev-guide/layouts/layout-overview.md
 functional_areas:
   - Frontend
 ---
+
 ## What's in this topic
+
 This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Introduction
+
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
 ![web page sample layout][layout]
@@ -33,7 +32,7 @@ The basic view of all Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca7
 
 These basic page configuration layouts are extended in other Magento modules and in Magento themes.
 
-You can also [extend]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) or [override]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html) these files in your custom theme.
+You can also [extend] or [override] these files in your custom theme.
 
 
 ## Layout handles {#layout-over-terms}
@@ -59,11 +58,11 @@ Following are the definitions of each layout file type:
 * *Page configuration*: an XML file declaring detailed structure, contents and meta-information of a page (includes the `<html>`, `<head>`, and `<body>` sections of the HTML page markup).
 * *Generic layout*: an XML file declaring page detailed structure and contents inside the `body` section of the HTML page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.
 
-For details, refer to [Layout file types]{:target="_blank"}.
+For details, refer to [Layout file types].
 
 In this guide we use *layout files* when talking about concepts which are similarly applied to all of these types of layout files.
 
-### Module and theme layout files
+### Module and theme layout files {#layout-loc}
 
 The following terms are used to distinguish layouts provided by different application components:
 
@@ -78,8 +77,7 @@ The following terms are used to distinguish layouts provided by different applic
 ## Customize layout {#layout-custom}
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
-
-To make the necessary changes, create [extending]{:target="_blank"} and [overriding]{:target="_blank"} layout files in your custom theme.
+To make the necessary changes, create [extending][extend]{:target="_blank"} and [overriding][override]{:target="_blank"} layout files in your custom theme.
 
 ## Layout files processing {#layout_processing}
 
@@ -87,7 +85,7 @@ To make the necessary changes, create [extending]{:target="_blank"} and [overrid
 The Magento application processes layout files in the following order:
 
 1.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`.
-2.	Determines the sequence of [inherited]{:target="_blank"} themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
+2.	Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
 3.	Iterates the sequence of themes from last ancestor to current:
 
 	a.	Adds all extending theme layout files to the list.
@@ -114,20 +112,20 @@ Layout validations and error handling depends on the [application mode] in which
 
 * [Layout instructions]
 * [Common layout customization tasks]
-* [Extend a layout]
-* [Override a layout]
+* [Extend a layout][extend]
+* [Override a layout][override]
 * [Customizing layout - step-by-step illustration]
 
 <!-- Link definitions -->
+[extend]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html
+[override]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html
 [Layout file types]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html
-[extending]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html
-[overriding]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html
+{:target="_blank"}
 [inherited]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
+{:target="_blank"}
 [application mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html
 [Common layout customization tasks]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html
-[Extend a layout]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html
-[Override a layout]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html
 [Customizing layout - step-by-step illustration]: {{ page.baseurl }}/frontend-dev-guide/layouts/layout-practice.html
 
 <!-- Image Definitions -->
