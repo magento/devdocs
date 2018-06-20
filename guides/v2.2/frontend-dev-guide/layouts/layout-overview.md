@@ -34,7 +34,6 @@ These basic page configuration layouts are extended in other Magento modules and
 
 You can also [extend] or [override] these files in your custom theme.
 
-
 ## Layout handles {#layout-over-terms}
 
 A *layout handle* is a uniquely identified set of {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} that serves as a name of a layout file.
