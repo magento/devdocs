@@ -2081,7 +2081,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="backup-and-disaster-recovery">Backup and disaster recovery</h3>
 <p>Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.</p>
 
-<p>In addition to the redundancy of the high-availability architecture, there is a full system backup every six hours that includes the file system and the database. We retain the backups according to the following schedule:</p>
+<p>In addition to the redundancy of the high-availability architecture, Magento Commerce (Cloud) provides
+incremental backups every hour for the first 24 hours of operation. After the
+initial period, full backups which include the file system and the database.
+We retain the backups according to the following schedule:</p>
 
 <table>
   <thead>
@@ -2117,8 +2120,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento Commerce (Cloud) creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.</p>
 
 <ul>
-  <li><strong>Recovery Point Objective (RPO)</strong>—is 6 hours (maximum time to last backup).</li>
-  <li><strong>Recover Time Objective (RTO)</strong>—depends on the size of the storage. Large EBS volumes take more time to restore.</li>
+  <li><strong>Recovery Point Objective (RPO)</strong>—is 1 hour for the first 24 hours; after
+the initial period, the RPO is 6 hours (maximum time to last backup).</li>
+  <li><strong>Recover Time Objective (RTO)</strong>—depends on the size of the storage. Large
+EBS volumes take more time to restore.</li>
 </ul>
 
 <h3 id="production-technology-stack">Production technology stack</h3>
