@@ -2,9 +2,6 @@
 # a product renaming initiative, the Devdocs team decided to replace plain text instances of old product
 # names with variables that would automatically pull in the new product name.
 
-# Use the following syntax to add a variable in the documentation source: {{site.data.var.##}}. ##
-# is the variable value.
-
 # Here's a reference of old-to-new Magento product names for future reference:
 
 # Community Edition (CE)          ---> Open Source
@@ -13,6 +10,9 @@
 # Enterprise Edition for B2B      ---> Commerce for B2B
 
 #NOTE: The new product name variables use the old product name abbreviations (e.g., ce, ee, ece, b2b). 
+
+# Use the following syntax to add a variable in the documentation source: {{site.data.var.xx}} where xx
+# is the variable value.
 
 ce: Magento Open Source
 ee: Magento Commerce
