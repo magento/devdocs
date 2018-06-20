@@ -56,7 +56,7 @@ For Starter and Pro plans, the `master` environment is ultimately the source or 
 
 Your Integration includes a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can synchronize code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
 
-You fully develop in these branches. When ready, you push the code to build and deploy to an Integration enviornment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, the parent environment redeploys with the code changes of the child environment. For Pro, this is the Integration `master`. For Starter, it is an environment and branch of your choice.
+You fully develop in these branches. When ready, you push the code to build and deploy to an Integration environment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, the parent environment redeploys with the code changes of the child environment. For Pro, this is the Integration `master`. For Starter, it is an environment and branch of your choice.
 
 For extensive details, see the following:
 

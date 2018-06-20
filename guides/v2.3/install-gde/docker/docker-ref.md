@@ -58,7 +58,7 @@ To set up Docker file sharing on Windows:
 
     This tab page displays all drives that Docker currently knows about. Make sure you install Magento in a drive listed on this tab page.
 
-4.  Select the check box next to the drive in which to install Magento.
+4.  Select the checkbox next to the drive in which to install Magento.
 5.  Click **Apply**.
 
 **Mac OS**
@@ -180,7 +180,7 @@ For new installations, you have the option to install {{site.data.var.ce}} or {{
 
 **Optional sample data** Optional sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.
 
-Select the check box to install optional sample data. This option increases your installation time by a few minutes.
+Select the checkbox to install optional sample data. This option increases your installation time by a few minutes.
 
 #### Access Keys
 Enter your Magento public and private authentication keys in the provided fields.
@@ -206,7 +206,7 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Store Admin Username</td>
-        <td>Enter a user name for the Magento Admin, the management application for your stores.</td>
+        <td>Enter a username for the Magento Admin, the management application for your stores.</td>
     </tr>
     <tr>
         <td>Store Admin Password</td>
@@ -214,7 +214,7 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Authentication Key Directory</td>
-        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> check box if your keys are stored in the specified directory.</li></ul></td>
+        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> checkbox if your keys are stored in the specified directory.</li></ul></td>
     </tr>
 
     <tr>
@@ -236,7 +236,7 @@ To provide you more control over your Magento installation, we enable you to cho
         </tr>
     <tr>
         <td>Store Admin Username</td>
-        <td>Enter a user name for the Magento Admin, the management application for your stores.</td>
+        <td>Enter a username for the Magento Admin, the management application for your stores.</td>
     </tr>
     <tr>
         <td>Store Admin Password</td>
@@ -244,7 +244,7 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Authentication Key Directory</td>
-        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> check box if your keys are stored in the specified directory.</li></ul></td>
+        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> checkbox if your keys are stored in the specified directory.</li></ul></td>
     </tr>
 
     <tr>

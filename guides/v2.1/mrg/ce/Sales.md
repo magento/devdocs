@@ -4,9 +4,9 @@ title: Magento_Sales module
 version: 2.1
 github_link: mrg/ce/Sales.md
 redirect_from:
-    - guides/v2.1/mrg/ce/Sales/description.html
-    - guides/v2.1/mrg/ce/Sales/dependencies.html
-    - guides/v2.1/mrg/ce/Sales/services.html
+ - /guides/v2.1/mrg/ce/Sales/description.html
+ - /guides/v2.1/mrg/ce/Sales/dependencies.html
+ - /guides/v2.1/mrg/ce/Sales/services.html
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.

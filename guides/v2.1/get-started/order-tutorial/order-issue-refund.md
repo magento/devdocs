@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 10. Issue a partial refund
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 10
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-issue-refund.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -22,7 +21,7 @@ Magento 2.1.3 introduced two endpoints that streamline the process of issuing a 
 Endpoint | Description
 --- | ---
 `POST /V1/order/<order_ID>/refund` | Issues an offline refund
-`POST /V1/invoice/<order_ID>/refund` | Issue a refund with an online payment system
+`POST /V1/invoice/<invoice_ID>/refund` | Issue a refund with an online payment system
 
 In this example, the customer did not like the fit of the Radiant T-M-Orange shirt and wants a refund.
 

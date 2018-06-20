@@ -23,6 +23,9 @@ pages:
         - label: About component file structure
           url: /extension-dev-guide/prepare/prepare_file-str.html
 
+        - label: Extension repository structure
+          url: /extension-dev-guide/prepare/ext-repo-structure.html
+
         - label: Roadmap for developing and packaging components
           url: /extension-dev-guide/prepare/dev-summary.html
 
@@ -223,12 +226,13 @@ pages:
           url: /extension-dev-guide/adapters.html
 
         - label: Variable Pool
-          url: extension-dev-guide/variable-pool/
+          versions: ["2.3"]
+          url: /extension-dev-guide/variable-pool/
 
     - label: Configuration
       versions: ["2.2", "2.3"]
       children:
-        - label: Sensitive Environemnt Settings
+        - label: Sensitive Environment Settings
           url: /extension-dev-guide/configuration/sensitive-and-environment-settings.html
 
         - label: Configuration Importers

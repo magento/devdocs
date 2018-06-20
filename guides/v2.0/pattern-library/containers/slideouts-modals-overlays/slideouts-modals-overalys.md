@@ -209,7 +209,7 @@ Modal windows are implemented by the following Magento {% glossarytooltip 5bfa8a
 - <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">modal</a>
 - <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_alert.html">alert</a> (extends modal)
 - <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_confirm.html">confirm</a> (extends modal)
-- <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_prompt.html">propmt</a> (extends modal)
+- <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_prompt.html">prompt</a> (extends modal)
 
 
 <h3 id="overlays">Overlays</h3>

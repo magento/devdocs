@@ -1,1 +1,1 @@
-../../../../guides/v2.0/cloud/architecture/pro-architecture-legacy.md
+../../../../guides/v2.1/cloud/architecture/pro-architecture-legacy.md

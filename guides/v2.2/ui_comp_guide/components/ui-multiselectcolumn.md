@@ -9,7 +9,7 @@ github_link: ui_comp_guide/components/ui-multiselectcolumn.md
 
 ## Overview
 
-The MultiselectColumn component implements a column with check boxes for selecting records. It also provides controls for selecting multiple records.
+The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.
 
 MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.
 
@@ -19,7 +19,7 @@ The MultiselectColumn component is implemented in the class `app\code\Magento\Ui
 
 Templates used by this component are:
 
-* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.
+* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines each field in the grid. It provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.
 * `app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html` - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.
 
 ## MultiselectColumn configuration

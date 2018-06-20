@@ -80,6 +80,10 @@ pages:
         - label: Get started with command-line configuration
           url: /config-guide/cli/config-cli-subcommands.html
 
+        - label: Logging
+          versions: ["2.2", "2.3"]
+          url: /config-guide/cli/logging.html
+
         - label: Manage the cache
           url: /config-guide/cli/config-cli-subcommands-cache.html
 

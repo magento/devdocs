@@ -38,7 +38,7 @@ Name | Version |  License
 [justinrainbow/json-schema](https://github.com/justinrainbow/json-schema) |5.2.7  |MIT
 [monolog/monolog](https://github.com/Seldaek/monolog) |1.23.0 |MIT
 [nesbot/carbon](https://github.com/briannesbitt/Carbon)    |1.24.2    |MIT
-[oyejorge/less.php]((https://github.com/oyejorge/less.php)) |v1.7.0.14  |Apache-2.0
+[oyejorge/less.php](https://github.com/oyejorge/less.php) |v1.7.0.14  |Apache-2.0
 [paragonie/random_compat](https://github.com/paragonie/random_compat) |v2.0.11  |MIT
 [pelago/emogrifier](https://github.com/jjriv/emogrifier) |v2.0.0 |MIT
 [php-amqplib/php-amqplib](https://github.com/php-amqplib/php-amqplib) |v2.5.2 |LGPL-2.1

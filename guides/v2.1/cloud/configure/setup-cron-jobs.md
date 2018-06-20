@@ -80,7 +80,7 @@ With the settings:
 *   `bin/magento indexer:reindex catalog_category_product` is the script actions
 
 ## Add cron jobs to .magento.app.yaml {#add-cron}
-You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the the `crons` section.
+You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.
@@ -120,7 +120,7 @@ When you push the code, the cron jobs will be added to and run in the following 
 
 To add the cron jobs to Pro plan Staging and Production, you must [enter a ticket to Support]({{ page.baseurl }}/cloud/trouble/trouble.html). Request to have the cron jobs in `.magento.app.yaml` added to those environments. We recommend pushing the updates through to the Integration `master` branch.
 
-We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occassionally late.
+We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occasionally late.
 
 ## Update cron jobs {#update}
 If you need to change or update your cron jobs, update the crons section in your `.magento.app.yaml` file. Push the file to your Git branch and deploy across environments.

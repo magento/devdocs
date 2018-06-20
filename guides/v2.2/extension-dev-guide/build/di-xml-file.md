@@ -10,7 +10,7 @@ github_link: extension-dev-guide/build/di-xml-file.md
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration sensitive](#ext-di-sens) using `di.xml`.
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
 
 ## Areas and application entry points
 
@@ -143,7 +143,7 @@ Node Format:
 
 : `<argument xsi:type="number">{numericValue}</argument>`
 
-Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:taget="_blank"}.
+Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:target="_blank"}.
 
 ---
 

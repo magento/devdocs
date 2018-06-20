@@ -161,7 +161,7 @@ title: Address Create
 <div id="root">
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
-// If somestuff requires api authentification,
+// If somestuff requires api authentication,
 // then get a session token
 $session = $client-&gt;login('apiUser', 'apiKey');
 
@@ -179,7 +179,7 @@ var_dump ($result);</pre>
 <div id="root">
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
 
-// If some stuff requires api authentification,
+// If some stuff requires api authentication,
 // then get a session token
 $session = $client-&gt;login('apiUser', 'apiKey');
 $result = $client-&gt;customerAddressCreate($session, '2', array('firstname' =&gt; 'John', 'lastname' =&gt; 'Doe', 'street' =&gt; array('Street line 1', 'Streer line 2'), 'city' =&gt; 'Weaverville', 'country_id' =&gt; 'US', 'region' =&gt; 'Texas', 'region_id' =&gt; 3, 'postcode' =&gt; '96093', 'telephone' =&gt; '530-623-2513', 'is_default_billing' =&gt; FALSE, 'is_default_shipping' =&gt; FALSE));

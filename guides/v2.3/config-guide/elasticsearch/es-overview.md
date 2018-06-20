@@ -19,7 +19,7 @@ functional_areas:
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
-*	Elasticsearch analyzers support multiple languages
+*	Elasticsearch Analyzers support multiple languages
 *	Supports stop words and synonyms
 *	Indexing does not impact customers until reindex is completed
 
@@ -66,7 +66,7 @@ Search requests are processed as follows:
 2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
 3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
 
-	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid user name and password.
+	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid username and password.
 4.	Elasticsearch processes the search request.
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 

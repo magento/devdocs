@@ -44,7 +44,7 @@ mysql -u <user> -p -e "delete from <dbname>.theme where theme_path ='<Vendor>/<t
 ```
 Where:
 
-- `<user>`: your Magento database user name
+- `<user>`: your Magento database username
 - `<dbname>`: your Magento database name
 - `<Vendor>/<theme>`: relative path to the theme directory
 

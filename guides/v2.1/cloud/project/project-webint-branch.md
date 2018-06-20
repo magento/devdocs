@@ -16,7 +16,7 @@ functional_areas:
   - Configuration
 ---
 
-Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branchs, see [Git documentation](https://git-scm.com/doc).
+Every {{site.data.var.ece}} *environment* has an associated active Git *branch*. You can manage your environments using either the Project Web Interface, the Magento Cloud CLI, or Git commands. For more information on Git branches, see [Git documentation](https://git-scm.com/doc).
 
 For more information about managing environments using the CLI, see [Manage branches with the CLI]({{ page.baseurl }}/cloud/env/environments-start.html).
 
@@ -104,7 +104,7 @@ To sync an environment with its parent:
 	The following prompt displays:
 
 	![Choose what to sync]({{ site.baseurl }}/common/images/cloud_environment-sync2.png)
-4.	Select the check box next to each item to sync and click **Sync**.
+4.	Select the checkbox next to each item to sync and click **Sync**.
 
 ## Merge with the environment's parent {#project-branch-merge}
 Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to `master`. You can also deploy to Staging and Production using the merge command.
