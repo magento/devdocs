@@ -120,7 +120,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### General
-<!--- 80096 -->* We've fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
+<!--- 80096 -->* We've fixed JavaScript date validation on the storefront. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
 <!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added a new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
 

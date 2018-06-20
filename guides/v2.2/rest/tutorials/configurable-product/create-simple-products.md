@@ -232,4 +232,4 @@ Attribute | Medium Value | Large Value
 
   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/products-page-all.png)
 
-* On the Luma store front page, search for `Champ`. No results are returned.
+* On the Luma storefront page, search for `Champ`. No results are returned.

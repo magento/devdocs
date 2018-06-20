@@ -71,7 +71,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
 
-* On the Luma store front page, search for `Champ`.
+* On the Luma storefront page, search for `Champ`.
 
 ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
 

@@ -552,7 +552,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51314-->* You can now successfully  sort products by swatch attribute.
 
-<!--- 51276-->* Magento now displays product attributes for a product on the store front as expected.
+<!--- 51276-->* Magento now displays product attributes for a product on the storefront as expected.
 
 
 #### Indexing
