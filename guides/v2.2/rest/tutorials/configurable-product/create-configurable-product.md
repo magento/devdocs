@@ -212,4 +212,4 @@ Before you using this code sample, verify that the attribute values are the same
 
   ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
-* On the Luma store front page, search for `Champ`. No results are returned.
+* On the Luma storefront page, search for `Champ`. No results are returned.
