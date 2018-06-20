@@ -45,7 +45,6 @@ There are three kinds of layout handles:
 - **page layout handles** – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128 or for a CMS page, cms_page_view_id_home.xml.
 - **arbitrary handles** - Do not correspond to any page type, but other handles use them by including.
 
-
 ## Layout files types and conventions
 
 ### Layout file types: by role
@@ -92,8 +91,7 @@ The Magento application processes layout files in the following order:
 
 	b.	Replaces overridden layout files in the list.
 
-
-1.	Merges all layout files from the list.
+4.	Merges all layout files from the list.
 
 Layout files that belong to inactive modules or modules with disabled output are ignored.
 {: .bs-callout .bs-callout-info #info}
