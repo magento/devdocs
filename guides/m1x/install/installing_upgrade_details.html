@@ -248,7 +248,7 @@ This installs Magento CE or EE on the file system on your development system. Ne
 <h3 id="upgrade-manual-db">Updating the Magento Database</h3>
 <p>This section discusses how to:</p>
 <ul><li>Import the production database data into the development database instance.</li>
-<li>In the development database instance, change the values of the paths <code>web/unsecure/base_url</code> and <code>web/secure/base_url</code> in the <code>core_config_data</code> table to the development server's IP address or host name.</li></ul>
+<li>In the development database instance, change the values of the paths <code>web/unsecure/base_url</code> and <code>web/secure/base_url</code> in the <code>core_config_data</code> table to the development server's IP address or hostname.</li></ul>
 <p>Import the production database data using your database manager tool.</p>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>:The database instance into which you import <em>must be empty</em>.</span></div>
 
@@ -294,7 +294,7 @@ If not, repeat the tasks discussed in this section. <em>Do not continue</em> unt
 </ol>
 
 <h4 id="upgrade-manual-db-phpmyadmin">Updating the Base URL the Database Using phpmyadmin</h4>
-<p>This section discusses how to use phpmyadmin to change the values of the paths <code>web/unsecure/base_url</code> and <code>web/secure/base_url</code> in the <code>core_config_data</code> table to the development server's IP address or host name.</p>
+<p>This section discusses how to use phpmyadmin to change the values of the paths <code>web/unsecure/base_url</code> and <code>web/secure/base_url</code> in the <code>core_config_data</code> table to the development server's IP address or hostname.</p>
 <ol><li>In a web browser's location or address field, enter <code><em>dev-web-server-host-or-ip</em>/phpmyadmin</code>
 For example, if your web server address is <code>http://dev.example.com</code>, enter
 <code>http://dev.example.com/phpmyadmin</code></li>
@@ -310,7 +310,7 @@ The following figure shows an example.<br />
 The following figure shows sample results.<br />
 <img src="{{ site.baseurl }}/common/images/m1x/install_myphpadmin_results.png" height="139px" width="600px"></li>
 <li>Click <img src="{{ site.baseurl }}/common/images/m1x/install_myphpadmin_edit-icon.png"> (Edit) in the row that includes the path <code>web/unsecure/base_url</code>.</li>
-<li>Change the value to the host name or IP address of your development server.<br />
+<li>Change the value to the hostname or IP address of your development server.<br />
 The following figure shows an example.<br />
 <img src="{{ site.baseurl }}/common/images/m1x/install_myphpadmin_edit.png" height="333px" width="600px">
 <li>Click <strong>Go</strong>.</li>
@@ -450,7 +450,7 @@ chown -R myuser:www-data magento</code></li></ol> -->
 You can find errors in the web server's error log or in <code>[your Magento install dir]/var/log</code>.</li>
 <li style="list-style-type:lower-alpha">Fix the cause in your extension code.</li>
 <li style="list-style-type:lower-alpha">In your development environment, drop the Magento database.</li>
-<li style="list-style-type:lower-alpha">Re-create the development database and import production data into it as discussed in <A href="#upgrade-manual-db">Updating the Magento Database</a>.</li>
+<li style="list-style-type:lower-alpha">Re-create the development database and import production data into it as discussed in <a href="#upgrade-manual-db">Updating the Magento Database</a>.</li>
 <li style="list-style-type:lower-alpha">Use the following command to delete the contents of the Magento <code>var/</code> subdirectories:
 <pre>rm -rf [your Magento install dir]/var/cache [your Magento install dir]/var/full_page_cache \
 	[your Magento install dir]/var/locks [your Magento install dir]/var/session</pre>

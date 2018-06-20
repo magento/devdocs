@@ -43,7 +43,7 @@ Name | Description | Format | Requirements
 `comment`	| The comment to add to the quote.	| string | Optional
 `files` | An array of files to add to the quote | array | Optional
 
-The buyer or the seller can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
+The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
 
 The `files` array contains the following parameters
 

@@ -104,7 +104,7 @@ A UI component can be bound to one or more {% glossarytooltip a2aff425-07dd-4bd6
 
 A particular instance of a UI component is defined primarily by the following:
 
-1. `<Magento_Ui_module_dir>/view/base/ui_component/etc/definition.xml`: default components' configuration. Can be extended in custom modules.
+1. `<Magento_Ui_module_dir>/view/base/ui_component/etc/definition.xml`: default component configuration. Can be extended in custom modules.
 2. [UI component's XML declaration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
 3. [Backend/PHP modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.

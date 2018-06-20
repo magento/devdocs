@@ -5,12 +5,32 @@ title: What's new on DevDocs
 github_link: magento-devdocs-whatsnew.md
 ---
 
-This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
+This page contains recent changes that we think you'd like to know about.
+We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## May 2018
+## June 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+There is a new Cloud workflow to [add a `robots.txt` file and generate a `sitemap.xml` file](https://devdocs.magento.com/guides/v2.2/cloud/trouble/robots-sitemap.html) for a single domain configuration without requiring a change to the infrastructure.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
+Now you can [change store locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales) when using SCD_ON_DEMAND without using the exporting and importing configuration process.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
+The new Cloud tools command—`docker:build`—generates a [Docker Compose](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html) configuration.|2.1.x, 2.2.x, 2.3.x|New topic|Jun 09
+Added a topic about the [Magento binding syntax](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/magento-bindings.html).|2.2.x, 2.3.x|New topic|Jun 07
+Added a new topic describing how to [enable/disable logging](https://devdocs.magento.com/guides/v2.2/config-guide/cli/logging.html) with the Magento CLI.|2.2.x, 2.3.x|New topic|Jun 04
+Updated the storage capacity information for Magento Commerce Cloud Pro architecture information in the [Production Technology Stack](https://devdocs.magento.com/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack) documentation for Magento Cloud [v2.1](https://devdocs.magento.com/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack), [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack), and [v2.3](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).|2.x|Technical changes|Jun 04
+[These changes](https://devdocs.magento.com/guides/v2.1/config-guide/multi-site/ms_nginx.html) show users how to simplify Nginx configs to host multiple Magento websites and store views with one virtual host file. It allows to that Nginx configuration to stay much cleaner, and more maintainable.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 1
+
+{% collapsibleh2 May 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Contribution with fix to the custom entry point script in [MAGE_DIRS](https://devdocs.magento.com/guides/v2.1/config-guide/bootstrap/mage-dirs.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|May 29
+Updated the GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) to include functionality contributed by community members.|2.3.x|Technical changes|May 23
+Added a new Cloud command—module:refresh—to enable missing modules the same way that it is done automatically during a build. See [Build and deploy on local in Build phase](https://devdocs.magento.com/guides/v2.2/cloud/live/live-sanity-check.html#build).|2.1.x, 2.2.x, 2.3.x|Technical changes|May 23
+Added [Handling a REST API response](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html#rest-response) to the MFTF Metadata.|2.2.x, 2.3.x|Technical changes|May 22
+Added descriptions for the [new `magento config:set lock-env` and `lock-config` options](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).|2.2.x|Technical changes|May 22
+Removed `setup:cache:{command}` and `setup:indexer:{command}`from [config-cli-subcommands.md](https://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands.html),  as they do not exist. Replaced with `cache:{command}` and `indexer:{command}` commands.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 21
+[Updated](https://devdocs.magento.com/guides/v2.2/config-guide/multi-site/ms_nginx.html) to show a way to pass the MAGE_RUN_TYPE and MAGE_RUN_CODE Nginx variables into PHP, and include the $MAGE_RUN_TYPE in the Nginx vhost files to show how one could specify website vs store.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 15
 Added filter attribute information in [GraphQL Product](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)|2.3.x|Technical changes|May 10
 Added configuration info for [creating nginx virtual hosts](https://devdocs.magento.com/guides/v2.0/config-guide/multi-site/ms_nginx.html#ms-nginx-vhosts) on Tutorial—Set up multiple websites or stores with nginx page.|2.x|Technical changes|May 10
 Updated the Cloud build and deploy [environment variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-intro.html) descriptions and samples.|2.1.x, 2.2.x, 2.3.x|Technical changes|May 08
@@ -29,7 +49,7 @@ Describes the highlights, fixed issues, and community contributions for Magento 
 [Magento 2.x GDPR compliance](http://devdocs.magento.com/guides/v2.2/architecture/gdpr/magento-2x.html)<br/>[Magento 1.x GDPR compliance](http://devdocs.magento.com/guides/v2.2/architecture/gdpr/magento-1x.html)|2.x|New topic|May 01
 Added the [development environment recommendations]({{ page.baseurl }}/performance-best-practices/development-environment.html).|2.1.x, 2.2.x, 2.3.x|New topic|May 01
 Documented the [Redis Sentinel settings](http://devdocs.magento.com/guides/v2.2/config-guide/redis/redis-session.html).|2.3.x|Technical changes|May 01
-
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 April 2018 %}
 

@@ -18,6 +18,7 @@
 *.bat
 *.sh
 /tmp/
+!/**/samples/*.sh
 /vendor/
 /node_modules/
 

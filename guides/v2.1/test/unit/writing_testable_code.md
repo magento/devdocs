@@ -86,7 +86,7 @@ interface RequestInterface
 }
 {%endhighlight%}
 
-Let's also assume there is a concrete implementation `HttpRequest` that that also has a public method `getParams()` in addition to the two interface methods.
+Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
 {%highlight php startinline=true %}
 class HttpRequest implements RequestInterface

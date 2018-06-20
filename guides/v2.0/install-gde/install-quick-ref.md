@@ -29,7 +29,7 @@ This topic assumes:
 
 *	You're installing to the `magento2` subdirectory under your web server's docroot (full path is `/var/www/html/magento2`)
 
-	You can optionally set up static routing or a virtual host to install to a host name instead of an IP but that's beyond the scope of this topic.
+	You can optionally set up static routing or a virtual host to install to a hostname instead of an IP but that's beyond the scope of this topic.
 
 We've broken the installation process into three main parts: getting started, installing, and post-installation. We hope that what follows helps you; if you'd like to suggest improvements, click **Edit this page on GitHub** at the top of this page and let us know.
 
@@ -76,14 +76,14 @@ The following example shows how to install using the command line with the follo
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	Uses server rewrites
 
 *	The Magento administrator has the following properties:
 
 	*	First and last name are `Magento User`
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)
@@ -113,11 +113,11 @@ The following example shows how to install using the Web Setup Wizard with the f
 
 *	The database server is on the same host as the web server.
 
-	The database name is `magento`, and the user name and password are both `magento`
+	The database name is `magento`, and the username and password are both `magento`
 
 *	The Magento administrator has the following properties:
 
-	*	User name is `admin` and the password is `admin123`
+	*	Username is `admin` and the password is `admin123`
 	*	E-mail address is `user@example.com`
 
 *	Default language is `en_US` (U.S. English)

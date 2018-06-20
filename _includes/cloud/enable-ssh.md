@@ -138,3 +138,4 @@ To set variables, enter the following commands on every workspace:
 	git config --global user.email <your e-mail address>
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
+</div>

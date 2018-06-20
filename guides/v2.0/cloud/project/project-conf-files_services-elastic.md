@@ -12,7 +12,7 @@ functional_areas:
 [Elasticsearch](https://www.elastic.co){:target="\_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
 *   Elasticsearch performs quick and advanced searches on products in the product catalog
-*   Elasticsearch analyzers support multiple languages
+*   Elasticsearch Analyzers support multiple languages
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until reindex is completed
 

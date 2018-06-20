@@ -7,8 +7,8 @@ menu_order: 3
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_calendar.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
 <h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>

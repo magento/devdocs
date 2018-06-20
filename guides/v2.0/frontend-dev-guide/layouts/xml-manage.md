@@ -251,7 +251,7 @@ Extending layout:
     <arguments>
         <!-- Modified block argument -->
         <argument name="label" xsi:type="string">New Block Label</argument>
-        <!- Newly added block argument -->
+        <!-- Newly added block argument -->
         <argument name="custom_label" xsi:type="string">Custom Block Label</argument>
     </arguments>
 </referenceBlock> 
