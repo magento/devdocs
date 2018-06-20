@@ -589,7 +589,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><strong>General</strong></p>
 
 <ol>
-  <li>REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for store front scenarios.</li>
+  <li>REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for storefront scenarios.</li>
   <li>Any identifier exposed in guest APIs (for example, cart ID) must be masked to prevent the possibility of unauthorized access to the data of other guest users.</li>
   <li>Authentication must be done via <code class="highlighter-rouge">\Magento\Authorization\Model\UserContextInterface</code>.</li>
   <li>Customer-specific identifiers (such as customer ID or cart ID) must be deducted from the record of the successfully authenticated customer. They must not be accepted via request parameters.</li>
@@ -599,7 +599,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <li>The base class for GraphQL tests is: <code class="highlighter-rouge">\Magento\TestFramework\TestCase\GraphQlAbstract</code></li>
     </ul>
   </li>
-  <li>Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and store front areas from executing routers.</li>
+  <li>Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and storefront areas from executing routers.</li>
   <li>Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)</li>
   <li>Authentication parameters must be passed via headers.</li>
   <li>Throttling must be configured by the system integrator. It is not supported by Magento</li>
