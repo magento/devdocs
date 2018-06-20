@@ -20,5 +20,5 @@ ece: Magento Commerce (Cloud)
 mbi: Magento Business Intelligence
 
 
-#TIP: # Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
+# TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.
