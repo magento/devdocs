@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Operations responses | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="/guides/v2.3/extension-dev-guide/async-bulk/response-operations.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-default">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Alpha
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/extension-dev-guide/async-bulk/response-operations.html">Magento 2.0</a></li>
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/extension-dev-guide/async-bulk/response-operations.html">Magento 2.1</a></li>
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/extension-dev-guide/async-bulk/response-operations.html">Magento 2.2</a></li>
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/extension-dev-guide/async-bulk/response-operations.html">Magento 2.3 Alpha</a></li>
+	
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li><a href="https://magento-research.github.io/pwa-devdocs/">PWA Studios</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+          
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          <li><a href="https://developers.rjmetrics.com/" target="_blank">Magento BI Import REST API</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="http://omsdocs.magento.com/en/" target="_blank">Order Management</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/howdoi/bk-how-do-i.html">How To</a></li>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
+        
+        
+        <li><a href="/guides/v2.3/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product with REST APIs</a></li>
+        
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/howdoi/customize_product.html">Customize Product Creation Form</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+        <li><a href="/community/resources/support.html">Magento Support</a></li>
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+<div class="message-banner">
+    This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+</div>
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+		
+
+		<h4 class="guide-title">PHP Developer Guide</h4>
+		<div class="collapsible-navigation">
+		    <ul>
+		    
+		    	
+
+<li class="nav-level1  " id="introduction">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="developer-roadmap">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/intro/developers_roadmap.html">Developer roadmap</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="introduction-to-composer">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="glossary-of-common-terms">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="prepare-(development-quick-start)">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/prepare/prepare.html">Prepare (development quick start)</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="component-types">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/dev-modtypes.html">Component types</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="about-component-file-structure">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/prepare_file-str.html">About component file structure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="extension-repository-structure">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/ext-repo-structure.html">Extension repository structure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="roadmap-for-developing-and-packaging-components">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/dev-summary.html">Roadmap for developing and packaging components</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="extension-lifecycle">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html">Extension lifecycle</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="build">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/build/build.html">Build</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="the-di.xml-file">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/di-xml-file.html">The di.xml file</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="optimal-development-environment">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/optimal-dev-environment.html">Optimal development environment</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="the-composer.json-file">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/composer-integration.html">The composer.json file</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="define-your-configuration-files">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/required-configuration-files.html">Define your configuration files</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-your-component-file-structure">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/module-file-structure.html">Create your component file structure</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="register-your-component">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/component-registration.html">Register your component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="urn-schema-validation">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/XSD-XML-validation.html">URN schema validation</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="name-your-component">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/create_component.html">Name your component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="component-load-order">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/module-load-order.html">Component load order</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="enable-or-disable-your-component">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/build/enable-module.html">Enable or disable your component</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="package">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/package/package.html">Package</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="package-a-component">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/package/package_module.html">Package a component</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="upload-your-component-to-the-magento-marketplace">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/package/package_mktpl.html">Upload your component to the Magento Marketplace</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="validate">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/validate/validate.html">Validate</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="test-your-component">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/validate/test-module.html">Test your component</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="partial-caching">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching.html">Partial caching</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="create-custom-cache-engines">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching/database-caching.html">Create custom cache engines</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="create-a-cache-type">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/partial-caching/create-cache-type.html">Create a cache type</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="full-page-caching">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/cache/page-caching.html">Full page caching</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="public-content">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/public-content.html">Public content</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="private-content">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/cache/page-caching/private-content.html">Private content</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="add-cli-commands">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-add.html">Add CLI commands</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="command-naming-guidelines">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="how-to-add-cli-commands">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="staging-(magento-commerce-only)">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/staging.html">Staging (Magento Commerce only)</a>
+    
+
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="component-development">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/module-development.html">Component development</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="service-contracts">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="public-interfaces-&amp;-apis">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/api-concepts.html">Public interfaces &amp; APIs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="service-contract-design-patterns">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="dependency-injection">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/depend-inj.html">Dependency injection</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="objectmanager">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/object-manager.html">ObjectManager</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="events-and-observers">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/events-and-observers.html">Events and observers</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="factories">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/factories.html">Factories</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="proxies">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/proxies.html">Proxies</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="code-generation">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/code-generation.html">Code generation</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="eav-and-extension-attributes">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/attributes.html">EAV and extension attributes</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="plugins-(interceptors)">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/plugins.html">Plugins (Interceptors)</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="routing">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/routing.html">Routing</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="indexing">
+
+            
+
+            
+            <span>Indexing</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="indexing-overview">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/indexing.html">Indexing overview</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="indexer-optimization">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/indexer-batch.html">Indexer optimization</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="adding-a-custom-indexer">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/indexing-custom.html">Adding a custom indexer</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="declarative-schema">
+
+            
+
+            
+            <span>Declarative schema</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="delcarative-schema-overview">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/">Delcarative schema overview</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="migrate-install/upgrade-scripts-to-declarative-schema">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/migration-commands.html">Migrate install/upgrade scripts to declarative schema</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-declarative-schema">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html">Configure declarative schema</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="develop-data-and-schema-patches">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/declarative-schema/data-patches.html">Develop data and schema patches</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="message-queues">
+
+            
+
+            
+            <span>Message Queues</span>
+            
+
+            
+            <ul>
+                
+
+                
+                
+                <li class="nav-level3  " id="message-queues-overview">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/message-queues.html">Message queues overview</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="configure-message-queues">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/config-mq.html">Configure message Queues</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="migrate-message-queue-configuration">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="bulk-operations">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/bulk-operations.html">Bulk operations</a>
+                    
+
+                    
+                </li>
+                
+                
+
+                
+                
+                <li class="nav-level3  " id="example-bulk-operations-implementation">
+                    
+
+                    
+                    <a  href="/guides/v2.3/extension-dev-guide/message-queues/implement-bulk.html">Example bulk operations implementation</a>
+                    
+
+                    
+                </li>
+                
+                
+            </ul>
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="adding-extension-attributes-to-entity">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="searching-with-repositories">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/searching-with-repositories.html">Searching with repositories</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configure-services-as-web-apis">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="clear-directories-during-development">
+
+            
+
+            
+            <a href="/guides/v2.3/howdoi/php/php_clear-dirs.html">Clear directories during development</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="adapters">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/adapters.html">Adapters</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="variable-pool">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/variable-pool/">Variable Pool</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="configuration">
+    
+
+    
+    <span>Configuration</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="sensitive-environment-settings">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/configuration/sensitive-and-environment-settings.html">Sensitive Environment Settings</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="configuration-importers">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/configuration/importers.html">Configuration Importers</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="framework">
+    
+
+    
+    <span>Framework</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="serialize-library">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/framework/serializer.html">Serialize Library</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="security">
+    
+
+    
+    <span>Security</span>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="xss-prevention">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/xss-protection.html">XSS Prevention</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="non-secure-functions">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/security/non-secure-functions.html">Non-secure functions</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    	
+
+<li class="nav-level1  " id="versioning">
+    
+
+    
+    <a href="/guides/v2.3/extension-dev-guide/versioning/">Versioning</a>
+    
+
+    
+    <ul>
+        
+        
+        
+        <li class="nav-level2  " id="module-version-dependencies">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/versioning/dependencies.html">Module version dependencies</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="codebase-changes">
+
+            
+
+            
+            <a href="/guides/v2.3/extension-dev-guide/versioning/codebase-changes.html">Codebase changes</a>
+            
+
+            
+        </li>
+        
+        
+    </ul>
+    
+</li>
+
+
+		    
+		    </ul>
+		</div>
+
+	</div>
+
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+
+	<h1 class="page-heading">Operations responses</h1>
+
+  
+
+
+</section>
+
+			
+
+			
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.3/extension-dev-guide/async-bulk/response-operations.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/extension-dev-guide/async-bulk/response-operations.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+</body>
+</html>
+
