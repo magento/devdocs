@@ -80,8 +80,7 @@ We do not recommend upgrading to Magento 2.2.5 if you deploy across multiple web
 Clicking **Save Config** on the Payment Methods page while configuring your Amazon Payments settings can result in a JavaScript error. **Workaround**: Refresh the page.
 
 **Issue 3**
-Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  [GitHub-16167](https://github.com/magento/magento2/issues/16167)
-
+Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`. Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167)
 
 
 ## Fixes
