@@ -73,7 +73,7 @@ Contents of the file:
 	MagentoCronGroup: <username1> ... <usernameN>
 
 ### Secure cron in `.htaccess`
-To seecure cron in Magento's `.htaccess` file:
+To secure cron in Magento's `.htaccess` file:
 
 1.	Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Open `<your Magento install dir>/pub/.htaccess` in a text editor.
