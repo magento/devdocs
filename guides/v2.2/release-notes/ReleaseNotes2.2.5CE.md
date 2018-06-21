@@ -52,6 +52,21 @@ Highlights of community contributions include  fixes that improve checkout flow 
 * <!-- MAGETWO-73419 --> When sorting simple products with a required custom option, which catalog promo price rule is applied for, these products are sorted by a regular price instead disregarding the applied promo price.
 
 
+### Highlights (Magento Shipping)
+This release of Magento Shipping adds the following new capabilities: 
+
+• With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment. 
+
+• Batch processing increases automation and merchant efficiency by making it easier to process a large volume of shipments in batches. 
+
+
+• Collection points provide the ability for customers to designate a drop point rather than residence for delivery by carrier.  
+
+
+This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API. 
+
+
+
 ## Known issues
 
 **Issue 1**
@@ -63,6 +78,10 @@ We do not recommend upgrading to Magento 2.2.5 if you deploy across multiple web
 
 **Issue 2**
 Clicking **Save Config** on the Payment Methods page while configuring your Amazon Payments settings can result in a JavaScript error. **Workaround**: Refresh the page.
+
+**Issue 3**
+Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  [GitHub-16167](https://github.com/magento/magento2/issues/16167)
+
 
 
 ## Fixes
