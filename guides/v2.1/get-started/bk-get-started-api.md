@@ -27,7 +27,8 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 * Any Magento or third-party service can be <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">configured as a web API</a> with a few lines of {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% endglossarytooltip %}.
 
-* To configure a web API, you define XML elements and attributes in a `webapi.xml` configuration file. If a service is not defined in a configuration file, it will not be exposed at all.
+To configure a web API, you define XML elements and attributes in a `webapi.xml` configuration file. If a service is not defined in a configuration file, it will not be exposed at all.
+
 * The framework is based on the CRUD (create, read, update, delete) & search model. The system does not currently support web hooks.
 
 * The framework supports field filtering of web API responses to conserve mobile bandwidth.
@@ -37,7 +38,7 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>
 
-The APIs can be used to perform a wide array of tasks. For example:
+The APIs can be used to perfTo configure a web API, you define XML elements aorm a wide array of tasks. For example:
 
 * Create a shopping app. This can be a traditional app that a user downloads on a mobile device. You could also create an app that an employee uses on a showroom floor to help customers make purchases.
 
