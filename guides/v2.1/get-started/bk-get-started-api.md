@@ -38,7 +38,7 @@ To configure a web API, you define XML elements and attributes in a `webapi.xml`
 
 <h2 id="uses">What can I do with the Magento web APIs?</h2>
 
-The APIs can be used to perfTo configure a web API, you define XML elements aorm a wide array of tasks. For example:
+The APIs can be used to perform a wide array of tasks. For example:
 
 * Create a shopping app. This can be a traditional app that a user downloads on a mobile device. You could also create an app that an employee uses on a showroom floor to help customers make purchases.
 
