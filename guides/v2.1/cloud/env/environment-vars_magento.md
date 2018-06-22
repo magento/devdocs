@@ -58,7 +58,8 @@ for the administrative user account and Admin panel. See [Set environment and pr
       <td><code>ADMIN_USERNAME</code></td>
       <td>Username for the administrative user. The administrative user
       can create other users, including other administrative users. The default
-      value for the ADMIN_USERNAME is the Project Owner email address.
+      hardcoded username is the Project Owner email address.  You can use this
+      value, or change it to another secure username.
     </td>
     </tr>
   </tbody>

@@ -77,7 +77,8 @@ We recommend changing the following variables for the Magento Admin URL and admi
 can create other users, including other administrative users. The default
 hardcoded username is the Project Owner email address. You can use this
 value, or change it to another secure username.
-* `ADMIN_PASSWORD`: Password for the administrative user. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.
+* `ADMIN_PASSWORD`: Password for the administrative user. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You might
+need to contact the Project Owner for the updated password.
 * `ADMIN_URL`: The relative URL to access the Admin panel. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
