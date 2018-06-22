@@ -47,7 +47,6 @@ first steps for you:
 </div>
 
 ## Project portal
-
 Once you have an account with a provisioned environment, you can use the
 Magento Project Portal that guides you through the process to build and launch
 your {{site.data.var.ece}} store. The portal provides a Getting Started guide
@@ -61,7 +60,7 @@ from the Magento tab on the My Account page. Click View Project Page in the
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
 Don't have a {{site.data.var.ece}} account yet? You can get an account
-using either of the following options:
+using either of the following methods:
 
 - Sign up for a [free 30-day trial](https://magento.com/trial){:target="\_blank"}
   for a Starter or Pro plan
@@ -152,7 +151,7 @@ You can submit a password change request using either of the following methods:
 After you submit the password change request, check your email for the password
 reset notification. If you do not get the email, check your spam folder.
 
-If you the password reset fails or you cannot sign in to the Admin panel, add
+If the password reset fails or you cannot sign in to the Admin panel, add
 the following project environment variables to your project: `ADMIN_EMAIL`, `ADMIN_USERNAME`,
 and `ADMIN_PASSWORD`. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 

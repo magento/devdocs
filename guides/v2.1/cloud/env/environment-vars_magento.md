@@ -8,12 +8,9 @@ functional_areas:
   - Configuration
 ---
 
-You can use the following project environment variables to
-override the default administrative credentials for your project. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var)
-
-You can use the following project environment variables to override the
-configuration settings for the administrative user account and Admin panel.
-See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+Users that have Admin access to the {{site.data.var.ece}} project can use the
+following project environment variables to override the configuration settings
+for the administrative user account and Admin panel. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <table>
   <thead>
@@ -35,7 +32,7 @@ See [Set environment and project variables]({{ page.baseurl }}/cloud/project/pro
       <td><code>ADMIN_EMAIL</code></td>
       <td>Email address for the administrative user. This value is required for
       upgrading and patching {{site.data.var.ece}} and is used to send password
-      reset emails. See <a href="{{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
+      reset emails.
     </tr>
     <tr>
       <td><code>ADMIN_LOCALE</code></td>
@@ -44,20 +41,22 @@ See [Set environment and project variables]({{ page.baseurl }}/cloud/project/pro
     </tr>
     <tr>
       <td><code>ADMIN_PASSWORD</code></td>
-      <td>Password for the administrative user. Initially, we generate a random
-      password and provide an email directing the Project Owner to reset the
-      password. You should immediately change this password.</td>
+      <td>Password for the administrative user. When the project is created,
+      a random password is generated and an email is sent to the Project Owner
+      During project creation, the Project Owner should have already changed
+      the password. You might need to contact the Project Owner for the updated
+      password.
+      </td>
     </tr>
     <tr>
       <td><code>ADMIN_URL</code></td>
-      <td>Enter the relative URL by which to access the Magento Admin. For
-      security reasons, we recommend that you choose a value other than
-      <code>admin</code> or <code>backend</code> or another term that is easy
-      to guess.</td>
+      <td>The relative URL to access the Admin panel. For example: `<domain>/admin`.
+      For security reasons, we recommend you choose a value other than `admin`,
+      `backend`, or another term that is easy to guess.</td>
     </tr>
     <tr>
       <td><code>ADMIN_USERNAME</code></td>
-      <td>Username for the Magento administrative user. The administrative user
+      <td>Username for the administrative user. The administrative user
       can create other users, including other administrative users. The default
       value for the ADMIN_USERNAME is the Project Owner email address.
     </td>
