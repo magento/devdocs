@@ -30,7 +30,7 @@ Depending on how Magento 2 has been installed, core modules can either be locate
 
 If you build a module for a specific project, it is best to choose the app/code folder and commit to the project's repository.
 
-If you build an extension to be reused, it is better to use composer to create it, and put your module in the `vendor/<YOUR_VENDOR>/module-something` folder.
+If you build an extension to be reused, it is better to use composer to manage it, and put your module in the `vendor/<YOUR_VENDOR>/module-something` folder.
 
 Each module name in Magento 2 consists of two parts – the vendor and the module itself. In other words, modules are grouped into vendors, so you need to define the vendor and module names. For this example, let’s name the vendor “Learning” and the module “FirstUnit”.
 
@@ -97,6 +97,14 @@ __DIR__
 The `registration.php` is a standardized file that follows the same pattern for all modules.
 
 The only thing that varies is the module name, which in our case is `Learning_FirstUnit`.
+
+## Run "composer update"  for module in the vendor dir
+
+After you've committed your change and included your new module in the require section of composer.json, running this command will dump the new required autoloader file.
+
+```
+composer update
+```
 
 
 ## Run the “setup:upgrade” command
