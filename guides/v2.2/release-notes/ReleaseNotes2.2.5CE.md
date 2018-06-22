@@ -20,6 +20,8 @@ Look for the following highlights in this release:
 
 * Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
+* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.5 (and 2.2.4) in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. 
+
 * Substantial improvements to indexing performance. 
 
 * Over 150 **community contributions**.
@@ -69,18 +71,12 @@ This release of Magento Shipping also includes additional minor enhancements, su
 
 ## Known issues
 
+
 **Issue 1**
-Customers have reported the following behavior after upgrading to Magento 2.2.5 (and 2.2.4) in deployments that span multiple websites: 
-
-Magento multi-store installations do not use the store view-specific values from the store configuration settings if these settings have different values than the global default configuration settings.  Instead, Magento uses the default configuration for all store views. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245)
-
-We do not recommend upgrading to Magento 2.2.5 if you deploy across multiple websites. Note that this problem is not triggered if you have only a single website with multiple stores or store views.
-
-**Issue 2**
 Clicking **Save Config** on the Payment Methods page while configuring your Amazon Payments settings can result in a JavaScript error. **Workaround**: Refresh the page.
 
-**Issue 3**
-Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`. Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167)
+**Issue 2**
+Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`. Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
 
 
 ## Fixes
