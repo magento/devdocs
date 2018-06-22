@@ -539,7 +539,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview-authenticate">Web API authentication overview</h2>
+			<h2 id="web-api-authentication-overview">Web API authentication overview</h2>
 
 <p>Magento allows developers to define web   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  resources and their permissions in a configuration file <code>webapi.xml</code>.
@@ -576,21 +576,18 @@ Permissions required to access particular resource are configured in the <code c
   </tbody>
 </table>
 
-<h3 id="acl-webapi-relation">Relation between acl.xml and webapi.xml</h3>
+<h3 id="relation-between-aclxml-and-webapixml">Relation between acl.xml and webapi.xml</h3>
 <p>The <code>acl.xml</code> file defines the access control list (ACL) for a given   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 . It defines available set of permissions to access the resources.
 <code class="highlighter-rouge">acl.xml</code> files across all Magento modules are consolidated to build an ACL tree which is used to select allowed   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
- role resources or third party Integration’s access (System &gt;   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span></p>
-<blockquote>
-  <p>Integration &gt; Add New Integration &gt; Available APIs).</p>
-</blockquote>
+ role resources or third party Integration’s access (<strong>System</strong> &gt; <strong>Extension</strong> &gt; <strong>Integration</strong> &gt; <strong>Add New Integration</strong> &gt; <strong>Available APIs</strong>).</p>
 
-<h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
+<h4 id="sample-customer-aclxml">Sample customer acl.xml</h4>
 <p>For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module’s <code><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a></code>.</p>
 
 <p>When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.</p>
 
-<h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
+<h4 id="sample-truncated-customer-webapixml">Sample (truncated) customer webapi.xml</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
         <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Webapi:etc/webapi.xsd"</span><span class="nt">&gt;</span>
@@ -647,7 +644,7 @@ Permissions required to access particular resource are configured in the <code c
   <p>Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, <code class="highlighter-rouge">GET /V1/customers/me</code> fetches the logged-in customer’s details. This is typically useful for JavaScript-based widgets.</p>
 </div>
 
-<h3 id="webapi-clients">Web API clients and authentication methods</h3>
+<h3 id="web-api-clients-and-authentication-methods">Web API clients and authentication methods</h3>
 
 <p>You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.</p>
 
@@ -716,7 +713,7 @@ Permissions required to access particular resource are configured in the <code c
    </tr>
 </table>
 
-<h2 id="related">Related topics</h2>
+<h2 id="related-topics">Related topics</h2>
 
 <p>Proceed to the authentication method for your preferred client:</p>
 
