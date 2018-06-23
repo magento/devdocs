@@ -30,3 +30,9 @@ As the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">
 	cd <your Magento install directory>/var
 	rm -rf cache/* di/* generation/* page_cache/*
 
+#### Redis
+
+If you use Redis and still have the error, empty the redis cache as follows:
+
+    redis-cli FLUSHALL
+
