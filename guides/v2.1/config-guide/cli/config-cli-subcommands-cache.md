@@ -124,7 +124,7 @@ config_integration_api: 1
      config_webservice: 1
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
-This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.
+This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types have an adverse effect on performance.
 
 Command options:
 
