@@ -384,7 +384,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Deploy files in any mode. (by default, the static content
+          Deploy files in any mode. (by default, the static
           content deployment tool can be run only in production
           mode. Use this option to run it in default or developer
           mode).
