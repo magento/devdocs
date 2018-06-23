@@ -40,7 +40,7 @@ To run the Magento application, the following actions are implemented in <a href
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The assertions that the Magento application is installed and not in maintenance mode is the default behavior of the <code>\Magento\Framework\App\Bootstrap</code> class. You can modify it using an entry point script when creating the bootstrap object.</p></span>
+  <p>The assertions that the Magento application is installed and not in maintenance mode is the default behavior of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Bootstrap.php" target="_blank">\Magento\Framework\App\Bootstrap</a> class. You can modify it using an entry point script when creating the bootstrap object.</p></span>
 </div>
 
 Sample entry point script that modifies the bootstrap object:
@@ -98,8 +98,8 @@ We have the following entry point applications (that is, applications defined by
 In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate `.htaccess`.
 When the request is redirected to the entry point, the Magento application parses the requested {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} based on retrieved parameters and finds the requested resource.
 
-*	In developer mode, the content of the file is returned so that every time the resource is requested, the returned content is up to date.
-*	In <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode">default</a> mode, the retrieved resource is published so it is accessible by the previously requested URL.
+*	In <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode">developer mode</a>, the content of the file is returned so that every time the resource is requested, the returned content is up to date.
+*	In <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode">default mode</a>, the retrieved resource is published so it is accessible by the previously requested URL. Default mode is the initial mode when you install magento setup. Once you change mode to developer or production you can't switch back to default mode again.
 
 	All future requests for the static resource are processed by the server the same as static files; that is, without involving the entry point. If it's necessary to synchronize published files with original ones, the `pub/static` directory should be removed; as a result, files are automatically republished with the next request.
 
