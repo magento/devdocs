@@ -22,6 +22,8 @@ One instance of the Magento software can enable you to start multiple websites o
 *   Default languages
 *   {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}Domain{% endglossarytooltip %} names
 *   Categories
+*   Products
+*   Currency
 
 This flexible solution enables one Magento codebase and {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} to administer and display different stores.
 
@@ -34,13 +36,15 @@ This section discusses the tasks required to use the `MAGE_RUN_TYPE` and `MAGE_R
 
 We use the following terms:
 
-*	*Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites. 
+*	*Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites.
+
+	Using  Website Customer account can be shared with different Website from a single magento instance. One Website contains at least one store. Catalog Prices should be manage at Website level.
 
 *	*Store* is contained by a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}. In turn, a store contains at least one *store view*. 
 
-	Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures. 
+	Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures and Catalog price and Catalog Qty can't be manage at store level.
 
-	Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. 
+	Store views change the way pages are presented, and are typically used to display a store with different layouts or languages.You can manage different currency at each store views also.
 
 Each website and each {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` as follows:
 
