@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/annotations.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -31,6 +31,7 @@ Recommended use cases of the annotation types:
 - [group] - general functionality grouping.
 - [title] - description of the test purpose.
 - [description] - description of how the test achieves the purpose defined in the title.
+- [skip] - used for tests that are incomplete due to an issue
 
 ## Example
 
@@ -90,7 +91,7 @@ content="Group values cannot collide with [suite] names."
 
 {% include note.html
 type="tip"
-content="Add `<group value=\"skip\"/>` to the test if you want to skip it during test run."
+content="Add `<skip>` to the test if you want to skip it during test run."
 %}
 
 Attribute|Type|Use|Definition
@@ -195,6 +196,26 @@ Attribute|Type|Use
 <useCaseId value="USECASE-1"/>
 ```
 
+### skip
+
+The `<skip>` element is an implementation that allows a test to be skipped. It also specifies the issue(s) that cause the test to be skipped in `<issueId value="issue#">` elements.
+
+##### issueId
+
+This element under `<skip>` is required at least once and contains references to issues that cause the test to be skipped.
+
+Attribute|Type|Use
+---|---|--
+`value`|string|required
+
+#### Example
+
+```xml
+<skip>
+    <issueId value="issue#"/>
+</skip>
+```
+
 <!-- Link definitions -->
 
 [`@Description`]: https://devhub.io/zh/repos/allure-framework-allure-phpunit#extended-test-class-or-test-method-description
@@ -214,3 +235,4 @@ Attribute|Type|Use
 [suite]: ../suite.html
 [tests]: ../test.html
 [title]: #title
+[skip]: #skip

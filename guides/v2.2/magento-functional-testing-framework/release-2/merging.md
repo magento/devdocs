@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/merging.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -68,7 +68,9 @@ Create the `.../Foo/Test/AdminLoginTest.xml` file:
 <tests ...>
     <test name="AdminLoginTest">
             <annotations>
-                <group value="skip"/>
+                <skip>
+                    <issueId value="Issue#"/>
+                </skip>
             </annotations>
     </test>
 </tests>
@@ -87,7 +89,9 @@ The `AdminLoginTest` result corresponds to:
             <testCaseId value="MAGETWO-71572"/>
             <group value="example"/>
             <group value="login"/>
-            <group value="skip"/>
+            <skip>
+                <issueId value="Issue#"/>
+            </skip>
         </annotations>
     <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
     <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>

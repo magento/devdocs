@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/robo.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -109,7 +109,7 @@ vendor/bin/robo group <group-value>
 
 #### Run skipped tests
 
-Typically, each test tagged by the `<group value="skip">` annotation is ignored during test run.
+Typically, each test tagged by the `<skip>` annotation is ignored during test run.
 But in case you still need to run the skipped tests, run:
 
 ```bash

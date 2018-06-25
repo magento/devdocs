@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/commands/codeception.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -30,10 +30,10 @@ Run all tests in `dev/tests/acceptance/tests/functional/Magento/FunctionalTest`:
 vendor/bin/codecept run functional
 ```
 
-Run all tests without the `<group value="skpip"/>` [annotation](../test/annotations.html):
+Run all tests without the `<group value="skipThese"/>` [annotation](../test/annotations.html):
 
 ```bash
-vendor/bin/codecept run functional --skip-group skip
+vendor/bin/codecept run functional --skip-group skipThese
 ```
 
 Run all tests with the `<group value="example"/>` [annotation](../test/annotations.html) but with no `<group value="skpip"/>`:

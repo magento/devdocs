@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/suite.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -58,7 +58,7 @@ The format of a suite:
   - must not match any existing group value.
   For example, the suite `<suite name="ExampleTest">` will fail during test run if any test contains in annotations `<group value="ExampleTest">`.
   - must not be `default` or `skip`. Tests that are not in any suite are generated under the `default` suite.
-  The suite name `skip` is synonymous to including a test in the `<group value="skip"/>`.
+  The suite name `skip` is synonymous to including a test in the `<group value="skip"/>` which will be deprecated in MFTF 3.0.0.
   - can contain letters, numbers, and underscores.
   - should be upper camel case.
 - A suite must contain at least one `<include>`, or one `<exclude>`, or both.
