@@ -18,7 +18,7 @@ GraphQL allows you to define the structure of the data that you need, and the se
 
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
 
-* **EAV attributes** are explicitly declared in the `schema.graphqls` files.
+* **EAV attributes** are explicitly declared in the `schema.graphqls` files. You can check Catalog GraphQl schema.graphqls file at [`schema.graphqls`](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/CatalogGraphQl/etc/schema.graphqls)
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 * **Extension attributes** can be declared in a `schema.graphqls` file or by a custom reader, but they should be declared in a separate `*GraphQl` module. The attributes should extend from the resolver that fetches that model's data.
 
