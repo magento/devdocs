@@ -205,15 +205,15 @@ MAGETWO-91014 MAGETWO-90943 MAGETWO-90541 MAGETWO-90413 MAGETWO-90362 MAGETWO-90
 MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91074 MAGETWO-91123 --->
 
 
-## Known issues
 
-Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
+## Known Issues
+The Amazon Pay, Magento Shipping, and Vertex extensions have the following known issues:
 
-
-
-## Known Issues: bundled extensions
 
 ### Amazon Pay known issues
+
+* Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
+
 
 <!-- BUNDLE--1480 -->*  Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
 
