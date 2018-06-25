@@ -619,7 +619,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Indexing]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html){:target="_blank"} (add information about improving indexing performance)  | 2.x  | Updated| Oct 7 |
 | [Magento 2 documentation resources for {{site.data.var.ece}} (MECE)]({{ page.baseurl }}/cloud/access-acct/resources.html){:target="_blank"} |  2.x |New| Oct 7 |
 | [MECE environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html){:target="_blank"}  | 2.x  |  Updated | Oct 7 |
-| [MECE add more information about project directory structure]({{ page.baseurl }}/cloud/access-acct/first-time-setup_dir-structure.html){:target="_blank"}  | 2.x  | Updated  |  Oct 7 |
+| [MECE add more information about project directory structure]({{ page.baseurl }}/cloud/project/project-start.html){:target="_blank"}  | 2.x  | Updated  |  Oct 7 |
 | [MECE completely revise new environment setup]({{ page.baseurl }}/cloud/before/before-setup-env-1_get-start.html){:target="_blank"} | 2.x  |  Updated | Oct 7 |
 | [MECE responsibilities of the account owner]({{ page.baseurl }}/cloud/before/before-project-owner.html){:target="_blank"}  | 2.x  |  New |  Oct 7 |
 | [MECE Magento file system owner for local development]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html){:target="_blank"}| 2.x  | New  | Oct 7 |
