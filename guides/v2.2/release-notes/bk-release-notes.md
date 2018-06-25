@@ -51,7 +51,7 @@ Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x](http:/
 
 ## {{site.data.var.ece}} Composer packages
 
-[{{site.data.var.ece}} Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html) allow you to apply patches without a full product installation or upgrade.
+[{{site.data.var.ece}} Composer package updates](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html) allow you to apply patches without a full product installation or upgrade.
 
 You can apply patches as they become available to update Magento Commerce (Cloud). We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 

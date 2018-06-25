@@ -75,14 +75,6 @@ This release of Magento Shipping adds the following new capabilities:
 This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API. 
 
 
-## Known issues
-
-**Issue 1**
-Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
-
-**Issue 2**
-Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
-
 
 
 ## Fixes
@@ -90,7 +82,8 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MAGETWO-88237 -->  * Magento no longer permits you to re-run an already running cron job. *Fix submitted by [Paavo Pokkinen](https://github.com/paveq) in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
+<!-- MAGETWO-88237 -->* Magento no longer permits you to re-run an already running cron job. *Fix submitted by [Paavo Pokkinen](https://github.com/paveq) in pull request 12497*. [GitHub-10650](https://github.com/magento/magento2/issues/10650)
+
 
 
 
@@ -219,6 +212,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-86554 -->* Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store. 
 
 
+
+
+
 ### Visual Merchandiser
 
 <!--- MAGETWO-71554 -->* We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).
@@ -231,6 +227,76 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- NOT NEEDED  
 MAGETWO-91014 MAGETWO-90943 MAGETWO-90541 MAGETWO-90413 MAGETWO-90362 MAGETWO-90071 MAGETWO-90067 MAGETWO-90041 MAGETWO-89974  MAGETWO-89613 MAGETWO-89610  MAGETWO-88890 MAGETWO-88817 MAGETWO-88812 MAGETWO-88646 MAGETWO-88643 MAGETWO-88601 MAGETWO-88509 MAGETWO-88436 MAGETWO-88326 MAGETWO-88289 MAGETWO-87467 MAGETWO-86990 MAGETWO-86046 MAGETWO-85871 MAGETWO-85135 MAGETWO-80093 MAGETWO-73694 MAGETWO-80908
 MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91074 MAGETWO-91123 --->
+
+## Known issues
+
+Clicking **Save Config** on the Payment Methods page while configuring your Amazon Pay settings can result in a JavaScript error. **Workaround**: Refresh the page.
+
+
+
+## Known Issues: bundled extensions
+
+### Amazon Pay known issues
+
+<!-- BUNDLE--1480 -->*  Magento throws the following exception during checkout if you disable Amazon Pay when installing Magento using the web wizard:  `Exception #0 (UnexpectedValueException): Payment model name is not provided in config!`.  Note that this error occurs only if one or two of the three Amazon modules shipped with Magento are disabled. If all three Amazon modules are disabled, this problem does not occur. [GitHub-16167](https://github.com/magento/magento2/issues/16167) <!--- BUNDLE-1480 -->
+
+ 
+<!-- BUNDLE--15453 -->*  Magento displays the Amazon Pay option during checkout with multiple addresses even though multi shipping is not supported with Amazon Pay.
+
+<!-- BUNDLE--1450 -->*  Magento does not display the Amazon Pay button during checkout when the customer selects Klarna or PayPal as a payment method for an order containing a virtual product. 
+
+<!-- BUNDLE--1427 -->* Magento does not display the Amazon Pay button on the Checkout page if an order contains a virtual product.
+
+<!-- BUNDLE--1426 -->* Customer cannot return to standard checkout flow by clicking the **Return to standard checkout** button.
+
+<!-- BUNDLE--1425 -->* Customer cannot leave the Amazon Pay checkout page and return to the generic checkout page when an order contains virtual products. 
+
+<!-- BUNDLE--1424 -->* Customers cannot add a new shipping address to an order that contains virtual products.
+
+
+### dotmailer known issues
+The following Dotmailer behaviors have been observed when Magento Commerce for B2B is deployed with split databases: 
+
+<!-- BUNDLE--1390 -->* Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
+
+
+<!-- BUNDLE--1408 -->* Review remainder email cannot be sent to a subscribed customer if review remainder emails are not enabled for non-subscribed customers. 
+
+<!-- BUNDLE--1398 -->* Magento cannot send Customer and Guest Abandoned Cart email if these emails are not allowed for non-subscribed contacts. 
+
+
+<!-- BUNDLE--1389 -->* When a merchant clicks the Run Contact Sync button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
+
+<!-- BUNDLE--526 -->* Magento throws an error during the creation of a subscriber or customer, but still creates the new subscriber or customer. 
+
+
+
+### Magento Shipping known issues
+<!-- BUNDLE--1448 -->*  A merchant can create multiple return shipments for an already shipped return.
+
+
+
+###  Vertex known issues 
+
+<!-- BUNDLE--1446 -->* The order amount on Vertex Cloud differs from the order information displayed by Magento  when Catalog Price Rule is applied. 
+
+<!-- BUNDLE--910 -->* Magento applies taxes to a custom price even when the **Original Price only** option from the Apply Tax On drop-down list has been selected.
+
+<!-- BUNDLE--1385 -->* Magento displays an inaccurate Vertex API Status message when  the **Vertex Address Validation API Url** and **Vertex Validation Function** fields contain invalid values.
+
+<!-- BUNDLE--1399 -->*  The Transaction Details reports and Transaction Summary reports have slight irregularities.  Magento does not include product price and taxes in the Transaction Details Report "Gross Amount" and "Tax Amount" columns, and does not include product price in the Transaction Summary Report.
+
+<!-- BUNDLE--1405 -->*  The **Vertex invoice has been sent** message appears momentarily on the Review and Payments page, but not as expected on the Success page.
+
+<!-- BUNDLE--1410 -->*  When a customer places an order, Magento calculates the amount of tax and sends a Vertex invoice even when the Company Information tab is missing  the company street, company city, and company postal code.
+
+<!-- BUNDLE--1457 -->* Magento does not display the Vertex invoice has been sent message as expected when the payment method is Authorize.net and  the order status is Suspect Fraud.
+
+<!-- BUNDLE--1325 -->* Magento does not display the Vertex customer code field on the All Customers page as expected, which undermines the ability to filter by customer code.
+
+<!-- BUNDLE--1432 -->* Magento does not display the tax section of the Order Summary that is included on the Review and Payments page during checkout when the shopping cart includes a virtual product.
+
+
 
 
 ## Community contributions
