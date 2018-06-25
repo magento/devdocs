@@ -227,37 +227,4 @@ After you've successfully tested a custom patch locally and on your Integration 
 
 ## Upgrade to ece-tools
 
-1.  Modify the build and deploy hook commands in your `magento.app.yaml` file.
-
-    ```yaml
-    hooks:
-        # We run build hooks before your application has been packaged.
-        build: |
-            php ./vendor/bin/ece-tools build
-        # We run deploy hook after your application has been deployed and started.
-        deploy: |
-            php ./vendor/bin/ece-tools deploy
-        # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
-        post_deploy: |
-            php ./vendor/bin/ece-tools post-deploy
-    ```
-
-1.  Update the metapackage version constraint in the `composer.json` file. See [Update the metapackage]({{ page.baseurl }}/cloud/project/project-upgrade-parent.html#metapackage).
-
-1.  Run Composer update.
-
-    ```
-    composer update
-    ```
-
-1.  Add changes to your local files to the Git staging area.
-
-        git add composer.json composer.lock .magento.app.yaml
-
-1.  Commit your changes.
-
-        git commit -m 'Updating cloud deployment tool'
-
-1.  Push your changes to the remote repository.
-
-        git push
+See [Upgrade Cloud tools]({{ page.baseurl }}/cloud/project/cloud-tools-upgrade).

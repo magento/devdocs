@@ -358,6 +358,10 @@ pages:
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
+        - label: Upgrade Cloud tools
+          url: /cloud/project/cloud-tools-upgrade.html
+          versions: ["2.1","2.2","2.3"]
+
         - label: Patch Magento Commerce (Cloud)
           url: /cloud/project/project-patch.html
 
