@@ -390,8 +390,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p><a href="http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html" target="_blank">Advanced reporting functionality</a> is provided through integration of a Magento instance with the <a href="https://magento.com/products/business-intelligence" target="_blank">Magento Business Intelligence</a> (MBI).
 Magento collects data and sends this information to the MBI for analytics.</p>
 
-<p><strong>Magento Admin &gt; Dashboard &gt; “Go to Advanced Reporting”</strong> button opens reports in  <code class="highlighter-rouge">https://advancedreporting.rjmetrics.com/report</code> with corresponding authorization.</p>
-
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ol>
@@ -403,6 +401,8 @@ Magento collects data and sends this information to the MBI for analytics.</p>
   <li>Make sure that <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html" target="_blank">Magento crontab</a> is created and cron jobs are running on the installed server.</li>
 </ol>
 
+<p>The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at <code class="highlighter-rouge">https://advancedreporting.rjmetrics.com/report</code>.</p>
+
 <div class="bs-callout bs-callout-info">
   <p>The first synchronization of a Magento instance and the MBI can take up to a day to complete after the successful subscription.</p>
 </div>
@@ -410,8 +410,6 @@ Magento collects data and sends this information to the MBI for analytics.</p>
 <h2 id="recommendations">Recommendations</h2>
 
 <p>To avoid system overload during its prime time, you can set the preferable time of a day for a data collection.</p>
-
-<p><strong>Magento Admin &gt; Stores &gt; Settings &gt; Configuration &gt; General &gt; Advanced Reporting</strong></p>
 
 <h2 id="extensibility">Extensibility</h2>
 
