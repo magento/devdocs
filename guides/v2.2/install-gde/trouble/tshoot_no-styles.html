@@ -2344,14 +2344,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The path to images and stylesheets is not correct, either because of an incorrect base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.</p>
 
-<p>Magento static assets should be located under <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static/</code> (there should be <code class="highlighter-rouge">frontend</code> and <code class="highlighter-rouge">adminhtml</code> directories).</p>
+<p>Magento static assets are located under <code class="highlighter-rouge">&lt;your Magento install dir&gt;/pub/static/</code>, within the <code class="highlighter-rouge">frontend</code> and <code class="highlighter-rouge">adminhtml</code> directories).</p>
 
 <h3 id="solution">Solution</h3>
 
 <ul>
   <li>
-    <p>Verify your <a href="/guides/v2.2/install-gde/prereq/apache.html#apache-help-rewrite">Apache server rewrites</a> setting and your Magento server’s base URL and try again. If you set up the <code class="highlighter-rouge">AllowOverride</code> directive incorrectly,   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
- aren’t served from the correct location.</p>
+    <p>If you are using the Apache web server, verify your <a href="/guides/v2.2/install-gde/prereq/apache.html#apache-help-rewrite">server rewrites</a> setting and your Magento server’s base URL and try again. If you set up the Apache <code class="highlighter-rouge">AllowOverride</code> directive incorrectly, the   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
+ are not served from the correct location.</p>
+  </li>
+  <li>
+    <p>If you are using the nginx web server, be sure to <a href="/guides/v2.2/install-gde/prereq/nginx.html#configure-nginx-ubuntu">configure a virtual host file</a>. The nginx virtual host file must meet the following criteria:</p>
+
+    <ul>
+      <li>
+        <p>The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory. For example:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include /var/www/html/magento2/nginx.conf.sample;
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>The <code class="highlighter-rouge">server_name</code> directive must match the base URL you specified when installing Magento. For example:</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server_name 192.186.33.10;
+</code></pre></div>        </div>
+      </li>
+    </ul>
   </li>
   <li>
     <p>If the Magento application is in <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, try deploying static view files using the command <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html"><code class="highlighter-rouge">magento setup:static-content:deploy</code></a>.</p>
