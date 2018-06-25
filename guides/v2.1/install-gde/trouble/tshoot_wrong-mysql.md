@@ -32,7 +32,8 @@ As the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">
 
 #### Redis
 
-If you use Redis and still have the error, empty the redis cache as follows:
+If you use Redis and still get an error, clear the Redis cache as follows:
 
-    redis-cli FLUSHALL
-
+```bash
+redis-cli FLUSHALL
+```
