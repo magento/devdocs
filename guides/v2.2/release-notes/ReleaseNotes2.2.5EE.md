@@ -5,7 +5,7 @@ title: Magento Commerce 2.2.5 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.5EE.md
 ---
-*Patch code and release notes published on June 26, 2018.*
+*Patch code and release notes published on June 27, 2018.*
 
 
 
@@ -212,6 +212,27 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- MAGETWO-86554 -->* Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store. 
 
 
+### Vertex
+<!--- BUNDLE-841 -->* The correct tax amount is now included as expected in the Order Total that is listed under Order Summary section of Orders page. Previously, the **Tax amount** field was missing from the Order Summary section, which resulted in an incorrect Order Total.
+
+<!--- BUNDLE-966 -->* The **including tax**and **excluding tax** fields on the Checkout page now contain correctly calculated prices. Previously, Magento displayed  the same price in these fields. 
+
+<!--- BUNDLE-977 -->* Magento now displays the **Tax amount** field in the Order Summary section of the Checkout page for orders that contain virtual products.
+
+<!--- BUNDLE-904 -->* Merchants can now create a Vertex invoice refund as expected after an order has been canceled.
+
+<!--- BUNDLE-1044 -->* We’ve improved the performance of the Admin Create Order and Performance Compare Report in Plain Text - Catalog (server side) actions.
+
+<!--- BUNDLE-976 -->* Magento now prompts you to select order status if a customer does not select an option from the Order Status drop down list when setting the **When to send Invoice to Vertex** option. 
+
+<!--- BUNDLE-903 -->* The **Allow tax quote request at shopping cart page** option has been removed from the Vertex Setting tab. 
+
+<!--- BUNDLE-945 -->* Magento now disables Vertex API Status as expected when you set the **Enable Vertex Tax Calculation** option to **no**. 
+
+<!--- BUNDLE-902 -->* Magento now displays the green checkmark and **Vertex invoice has been sent** message as expected when you set an order’s status to **Suspected Fraud**. 
+
+
+<!--- BUNDLE-905 -->* Customers no longer receive a notice about negative tax amount after a merchant creates a refund on Vertex Cloud. 
 
 
 
