@@ -19,7 +19,7 @@ functional_areas:
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
 In a future release, Solr compatibility will be removed.
 
-If possible, use [Elastic Search](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+If possible, use [Elastic Search]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 </div>
 
 After you've tested the Solr solution, you should perform the following tasks to get it ready for production:

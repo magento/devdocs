@@ -50,5 +50,5 @@ Though the Analytics module provides API, it is used specifically to interchange
 [Advanced reporting functionality]: http://docs.magento.com/m2/ce/user_guide/reports/advanced-reporting.html
 [base url]: http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
-[Magento crontab]: http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
+[Magento crontab]: {{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html
 [set to **Yes**]: http://docs.magento.com/m2/ce/user_guide/Resources/Images/config-general-web-base-urls-secure.png

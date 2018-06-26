@@ -86,7 +86,7 @@ This software is *not* upgradable but versions for the following software is con
 
 * [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 * [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
-* [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
+* [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)

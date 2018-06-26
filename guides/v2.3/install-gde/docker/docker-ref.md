@@ -249,7 +249,7 @@ To provide you more control over your Magento installation, we enable you to cho
 
     <tr>
         <td>Environment configuration</td>
-        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> </li><li><a href="http://devdocs.magento.com/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}/config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a></li></ul></td>
+        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> </li><li><a href="{{ site.baseurl }}/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}/config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a></li></ul></td>
     </tr>
 </tbody>
 </table>

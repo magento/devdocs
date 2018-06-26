@@ -142,7 +142,7 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 
 <!-- LINK DEFINITIONS -->
 
-[Magento’s backward compatibility policy]: http://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/index.html
+[Magento’s backward compatibility policy]: {{ site.baseurl }}/guides/v2.0/contributor-guide/backward-compatible-development/index.html
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
