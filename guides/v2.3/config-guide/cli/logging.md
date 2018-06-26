@@ -15,7 +15,7 @@ functional_areas:
 
 By default, Magento writes debug logs to the `var/log/debug.log` file inside the Magento application directory.
 
-To enable debug logging:
+#### To enable debug logging:
 
 1. Use the `config:set` command to change the `dev/debug/debug_logging` database value to `1`.
 
@@ -29,7 +29,7 @@ To enable debug logging:
     bin/magento cache:flush
     ```
 
-To disable debug logging:
+#### To disable debug logging:
 
 1. Use the `config:set` command to change the `dev/debug/debug_logging` database value to `0`.
 
@@ -47,7 +47,7 @@ To disable debug logging:
 
 By default, Magento writes database activity logs to the `var/debug/db.log` file inside the Magento application directory.
 
-To enable database logging:
+#### To enable database logging:
 
 1. Use the `dev:query-log` command to enable or disable database logging.
 
@@ -66,9 +66,9 @@ To enable database logging:
 
 ## Syslog logging
 
-By default, Magento writes syslog logs to the system's syslog file.
+By default, Magento writes _syslog_ logs to the operating system `syslog` file.
 
-To enable syslog logging:
+#### To enable syslog logging:
 
 1. Use the `config:set` command to change the `dev/syslog/syslog_logging` database value to `1`.
 
@@ -82,7 +82,7 @@ To enable syslog logging:
     bin/magento cache:flush
     ```
 
-To disable syslog logging:
+#### To disable syslog logging:
 
 1. Use the `config:set` command to change the `dev/syslog/syslog_logging` database value to `0`.
 
