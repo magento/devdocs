@@ -30,7 +30,7 @@ Look for the following highlights in this release:
 
 Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
-### Highlights (core code enhancements)
+### Core code highlights
 This release includes significant performance improvements to the core Magento code: 
 
 * <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly increase  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
@@ -42,7 +42,7 @@ This release includes significant performance improvements to the core Magento c
 
 
 
-### Highlights (community contributions)
+### Community contribution highlights
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
 * <!--- MAGETWO-87115 --> Users can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
