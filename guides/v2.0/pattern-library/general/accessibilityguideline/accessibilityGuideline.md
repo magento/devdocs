@@ -1,11 +1,10 @@
 ---
-layout: default
 group: pattern
 subgroup: General
 title: Admin Design Pattern Library
-menu_title: Accessibility Guideline
-menu_order: 
-menu_node: 
+menu_title: Accessibility Guidelines
+menu_order:
+menu_node:
 version: 2.0
 github_link: pattern-library/general/accessibilityguideline/accessibilityGuideline.md
 redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
@@ -14,17 +13,17 @@ redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/acces
 ## Accessibility guidelines
 The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.
 
-<h3 id="visual">Visual</h3>
+### Visual {#visual}
 **1. Be mindful of text length**
 
 Don't make textual content too long or too short.
 
 **2. Provide adequate contrast**
 
-Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here: 
-<a href="http://webaim.org/resources/contrastchecker/" target="blank">http://webaim.org/resources/contrastchecker/ </a>
+Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
+[http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target=_"blank"}
 or here:
-<a href="http://www.paciellogroup.com/resources/contrastAnalyser" target="blank">http://www.paciellogroup.com/resources/contrastAnalyser</a>
+[http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target=_"blank"}
 
 Acceptable	<br>
 <img src="img/largetext-sample1.png">
@@ -50,21 +49,21 @@ The reading order should match the visual order.
 
 Ensure keyboard users can visually identify a focused link.
 
-**7. Design a “skip to main content” link**
+**7. Design a "skip to main content" link**
 
 A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.
 
-Examples
+**Examples**
 
-<a href="http://www.nomensa.com/" target="blank"> http://www.nomensa.com/ </a>
+[http://www.nomensa.com/](http://www.nomensa.com/){:target=_"blank"}
 
-<a href="https://www.paypal.com/" target="blank"> https://www.paypal.com/ </a>
+[https://www.paypal.com/](https://www.paypal.com/){:target=_"blank"}
 
-<a href="http://www.standardchartered.com/en/" target="blank"> http://www.standardchartered.com/en/ </a>
+[http://www.standardchartered.com/en/](http://www.standardchartered.com/en/){:target=_"blank"}
 
-<a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/" target="blank"> http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/ </a>
+[http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/](http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/){:target=_"blank"}
 
-<a href="https://github.com/paypal/skipto" target="blank">Skip-To Widget</a>
+[Skip-To Widget](https://github.com/paypal/skipto){:target=_"blank"}
 
 **8. Use animation, video and audio with caution**
 
@@ -82,7 +81,7 @@ Differentiate link text from other text.
 
 **12. Do not use content that causes seizures.**
 
-<h3 id="content">Content</h3>
+### Content {#content}
 **1. Ensure that link text makes sense by itself**
 
 Avoid "Click Here" in link text. Ambiguous links such as "More" or "Continue" can also be confusing.
@@ -93,7 +92,7 @@ Avoid "Click Here" in link text. Ambiguous links such as "More" or "Continue" ca
 
 **4. Content should appear and operate in predictable ways.**
 
-<h3 id="user-interaction">User Interaction</h3>
+### User Interaction {#user-interaction}
 
 **1. Use animation, video and audio with caution.**
 
@@ -112,7 +111,7 @@ Ensure form controls have descriptive labels and instructions. Pay close attenti
 **5. Help users navigate and find content.**
 
 
-<h3 id="development">Development</h3>
+### Development {#development}
 
 (This section is high level only and is no way a complete list for engineering.)
 
@@ -126,13 +125,13 @@ Ensure all content and design fits under a logical heading structure.
 
 **3. Use true text whenever possible**
 
-True text enlarges better, loads faster, and is easier to translate. Use CSS to add visual style.
+True text enlarges better, loads faster, and is easier to translate. Use {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} to add visual style.
 
 **4. Support the link focus indicator**
 
 Make sure keyboard users can always visually identify a focused link.
 
-**5. Support a “skip to main content” link**
+**5. Support a "skip to main content" link**
 
 A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.
 
@@ -140,13 +139,13 @@ A link for keyboard users to skip navigation should be at the top of the page. I
 
 Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.
 
-**7. Provide alt text if icons or glyphs are used without text**
+**7. Provide {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% endglossarytooltip %} if icons or glyphs are used without text**
 
 Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.
 
-<h3 id="resources">Resources</h3>
-Overview: <a href="http://www.w3.org/WAI/WCAG20/glance/" target="blank"> http://www.w3.org/WAI/WCAG20/glance/ </a>
+### Resources {#resources}
+Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target=_"blank"}
 
-Authoring Tool Accessibility Guidelines (ATAG) 1.0: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/" target="blank"> http://www.w3.org/TR/WCAG10-HTML-TECHS/</a>
+Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target=_"blank"}
 
-Authoring Tool Accessibility Guidelines (ATAG) 2.0: <a href="http://www.w3.org/TR/WCAG20-HTML-TECHS/" target="blank"> http://www.w3.org/TR/WCAG20-HTML-TECHS/</a>
+Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/){:target=_"blank"}

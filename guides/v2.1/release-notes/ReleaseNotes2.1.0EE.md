@@ -1,9 +1,8 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.0 Release Notes
-menu_title: Magento EE 2.1.0 Release Notes
+title: Magento Commerce 2.1.0 Release Notes
+menu_title: Magento Commerce 2.1.0 Release Notes
 menu_order: 299
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
@@ -11,26 +10,26 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
+  <p>This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
 </div>
 
 ### Highlights
-Magento Enterprise Edition 2.1.0 includes several new and exciting features:
+Magento Magento Commerce 2.1.0 includes several new and exciting features:
 
-* **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, CMS content, promotions, and pricing, and can preview these changes by date or store view to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
+* **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing, and can preview these changes by date or {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
 
 
 * **Elasticsearch** is cutting edge search technology that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can set ‘stop words’, search synonyms, and attribute weighting to deliver highly relevant search results..
 
-* **PayPal enhancements** include PayPal in-context checkout and saved credit cards. In-context checkout helps to increase conversion rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the Admin interface.
+* **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
 
-* **Braintree Hosted Fields** securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and layout because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree settlement reports are now also conveniently available within the Magento Admin.
+* **Braintree Hosted Fields** securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree {% glossarytooltip 73a87074-8de7-4e69-a97f-12c65c6f5582 %}settlement{% endglossarytooltip %} reports are now also conveniently available within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
@@ -42,7 +41,7 @@ This release includes enhancements to improve the security of your Magento appli
 ### Known issues
 Magento 2.1.0 GA includes the following known issues:
 
-<!--- 54447-->* A developer who attempts to upgrade the Magento EE software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
+<!--- 54447-->* A developer who attempts to upgrade the {{site.data.var.ee}} software using the commands `git pull` followed by `composer update` sees the error `Fatal error: Cannot use Composer\Installer as Installer because the name is already in use`.
 
 To work around this issue, run the following commands in the order shown:
 
@@ -50,7 +49,7 @@ To work around this issue, run the following commands in the order shown:
     composer update
 
 
-<!--- 54512-->* You cannot currently remove a product or category from a campaign. Selecting Remove this Update > Move to Another Campaign results in the following error: "Something went wrong while removing the Magento\Catalog\Api\Data\ProductInterface."
+<!--- 54512-->* You cannot currently remove a product or {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} from a campaign. Selecting Remove this Update > Move to Another Campaign results in the following error: "Something went wrong while removing the Magento\Catalog\Api\Data\ProductInterface."
 
 * <i>Known issue <a href="https://github.com/magento/magento2/issues/5025" target="_blank"> (GITHUB-5025)</a>  removed.</i>
 
@@ -66,7 +65,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51327 -->* You don't need to have a `composer.json` to run Magento CLI commands.
 
-<!--- 50794 -->* Addressed an issue that caused the following error on the Magento storefront when optional sample data is installed: "We're sorry, an error has occurred while generating this email".
+<!--- 50794 -->* Addressed an issue that caused the following error on the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} when optional sample data is installed: "We're sorry, an error has occurred while generating this email".
 
 
 <!--- 53232 -->*  Resolved data loss issues during upgrade to version 2.0.4. <a href="https://github.com/magento/magento2/issues/4054" target="_blank"> (GITHUB-4054)</a>, <a href="https://github.com/magento/magento2/issues/3951" target="_blank"> (GITHUB-3951)</a>, <a href="https://github.com/magento/magento2/issues/3097" target="_blank"> (GITHUB-3097)</a>, <a href="https://github.com/magento/magento2/issues/3249" target="_blank"> (GITHUB-3249)</a>
@@ -81,7 +80,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 52973 -->* Installing optional sample data no longer throws the following exception: `efault: Notice: /Stage[magento_setup]/Magento::Setup::Magento_cli/Exec[Run Magento reindex]/returns: SQLSTATE[23000]: Integrity constraint violation: 1062`.
 
-<!--- 45608 -->* You can now successfully uninstall the Magento_CustomerBalanceSampleData module.
+<!--- 45608 -->* You can now successfully uninstall the Magento_CustomerBalanceSampleData {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 <!--- 51175 -->* The Component Manager now displays component versions that are compatible with your Magento software version.
 
@@ -96,7 +95,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51953 -->* Manually unselecting the DownloadableStaging during installation no longer throws a fatal error.
 
-<!--- 45105 -->*   You can now successfully install Magento using a setup URL that contains a port number. <a href="https://github.com/magento/magento2/issues/2272" target="_blank"> (GITHUB-2272)</a>
+<!--- 45105 -->*   You can now successfully install Magento using a setup {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} that contains a port number. <a href="https://github.com/magento/magento2/issues/2272" target="_blank"> (GITHUB-2272)</a>
 
 <!--- 46858-->* The Magento CLI `setup:config:set` now accepts  hyphens and dashes "-".  <a href="https://github.com/magento/magento2/issues/2700" target="_blank"> (GITHUB-2700)</a>
 
@@ -104,7 +103,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51779-->* Magento Community Edition 2.0.4 with Sample Data.tar.bz2 (204 MB) download now works. <a href="https://github.com/magento/magento2/issues/4090" target="_blank"> (GITHUB-4090)</a>
 
-<!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for NGINX configuration.
+<!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} configuration.
 
 
 
@@ -115,7 +114,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51987-->* We've fixed the Add to Cart button translation. <a href="https://github.com/magento/magento2/issues/4181" target="_blank"> (GITHUB-4181)</a>
 
 
-<!--- 40616 -->*  The shopping cart for a registered user now returns a complete list of products.  
+<!--- 40616 -->*  The {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} for a registered user now returns a complete list of products.  
 
 <!--- 51259 -->*  You can now create a fixed amount discount for an entire cart.
 
@@ -149,11 +148,11 @@ To work around this issue, run the following commands in the order shown:
 {:.no_toc}
 <!--- 50878 -->* The Oauth handshake now clearly indicates the SAAS platform with which the Magento store is doing the Oauth handshake.
 
-<!--- 49699 -->*  You can now use the Web API to access Version Manager.
+<!--- 49699 -->*  You can now use the Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} to access Version Manager.
 
 <!--- 46720 -->* The Orders API now exposes Shipping Address. <a href="https://github.com/magento/magento2/issues/2628" target="_blank"> (GITHUB-2628)</a>
 
-<!--- 52613 -->* The Credit Memo REST API now updates attributes as expected.  <a href="https://github.com/magento/magento2/issues/4329" target="_blank"> (GITHUB-4329)</a>
+<!--- 52613 -->* The {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} REST API now updates attributes as expected.  <a href="https://github.com/magento/magento2/issues/4329" target="_blank"> (GITHUB-4329)</a>
 
 <!--- 47451-->* The 'in' filter now works in list APIs (checked customer, product, product attributes).  <a href="https://github.com/magento/magento2/issues/2892" target="_blank"> (GITHUB-2892)</a>
 
@@ -202,7 +201,7 @@ To work around this issue, run the following commands in the order shown:
 
 #### PHP
 {:.no_toc}
-<!--- 53524 -->*  PHP errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank"> (GITHUB-4722)</a>
+<!--- 53524 -->*  {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} errors no longer occur when you run a cron script on installations running PHP5.5. <a href="https://github.com/magento/magento2/issues/4722" target="_blank"> (GITHUB-4722)</a>
 
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
 
@@ -213,11 +212,11 @@ To work around this issue, run the following commands in the order shown:
 #### Gift cards
 {:.no_toc}
 
-<!--- 52275 -->* Merchants can now  edit Gift Card Product.
+<!--- 52275 -->* Merchants can now  edit {% glossarytooltip f5cdf732-d644-4bd5-9f75-53b01401b7e7 %}Gift Card{% endglossarytooltip %} Product.
 
 <!--- 50488-->* Fixed issue where customers could not purchase gift cards.
 
-<!--- 53312-->* Clicking on Submit invoice button no longer exposes the PHP error log.
+<!--- 53312-->* Clicking on Submit {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} button no longer exposes the PHP error log.
 
 <!--- 52992-->* Expiration date for Gift Card account is left unspecified if you do not specify a date.
 
@@ -252,7 +251,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51099-->* The PayPal Settlement report now works correctly.
 
 
-<!--- 50054-->* Magento now requires the Merchant Account ID field  in PayPal configuration.
+<!--- 50054-->* Magento now requires the {% glossarytooltip 5ac2d367-070a-474c-badf-df2b84fe3b09 %}Merchant Account{% endglossarytooltip %} ID field  in PayPal configuration.
 
 <!--- 50024-->* Magento still displays products  in the mini shopping cart after guest checkout with PayPal Express.
 
@@ -270,7 +269,7 @@ To work around this issue, run the following commands in the order shown:
 {:.no_toc}
 <!--- 48649-->* You can now change the quantity for an invoice.
 
-<!--- 50309-->* You can now  create invoice of transaction with expired authorization.
+<!--- 50309-->* You can now  create invoice of transaction with expired {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %}.
 
 <!--- 52359-->* You can now place an order through online payments in the Admin area.
 
@@ -279,7 +278,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 53237-->* You can now apply Gift Card Account/Discount Code on the review page.
 
 
-<!--- 53240-->* You can now check out  virtual product using Braintree.
+<!--- 53240-->* You can now check out  {% glossarytooltip dcd8e53f-079c-43fa-abf3-bdeabdbb9e86 %}virtual product{% endglossarytooltip %} using Braintree.
 
 <!--- 53798-->* The Braintree PayPal button is no longer active until checkout.
 
@@ -338,9 +337,9 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 47001-->* Magento no longer lets you  import two products with the same URL key.
 
-<!--- 50973-->* Magento no longer throws a general exception when you try to import more than 100,000 products.
+<!--- 50973-->* Magento no longer throws a general {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} when you try to import more than 100,000 products.
 
-<!--- 50899 -->*  You can now export products to a CSV file, edit names, then import products successfully.
+<!--- 50899 -->*  You can now export products to a {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file, edit names, then import products successfully.
 
 
 <!--- 47877 -->*   Import process speed has been improved. <a href="https://github.com/magento/magento2/issues/2957" target="_blank"> (GITHUB-2957)</a>
@@ -348,13 +347,13 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 52831-->* You can now re-import data. <a href="https://github.com/magento/magento2/issues/4315" target="_blank"> (GITHUB-4315)</a>  
 
 
-<!--- 52037-->* Magento changes the order in which products are displayed  after you export or import a catalog.
+<!--- 52037-->* Magento changes the order in which products are displayed  after you export or import a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 <!--- 49676-->* You can now import cross-sells, up-sells and related products. <a href="https://github.com/magento/magento2/issues/3286" target="_blank"> (GITHUB-3286)</a>
 
 <!--- 53781-->* The Ajax loader now stops if you use an incorrect file type during import.
 
-<!--- 50817 -->*  The `console` command now flushes caches without error. Cache should be flushed without errors.
+<!--- 50817 -->*  The `console` command now flushes caches without error. {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} should be flushed without errors.
 
 
 
@@ -375,7 +374,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 52482-->* Magento no longer throws a fatal error if you use fewer than the minimal required characters in your search query.
 
-<!--- 53263-->* Search input on themes using the Blank theme now works as expected.
+<!--- 53263-->* Search input on themes using the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} now works as expected.
  <a href="https://github.com/magento/magento2/issues/4282" target="_blank"> (GITHUB-4282)</a>
 
 
@@ -418,7 +417,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 50745-->* Loader now disappears as expected after you click  the Place Order button.
 
-<!--- 52262-->* Fixed error on checkout page when you changed base currency at checkout.
+<!--- 52262-->* Fixed error on checkout page when you changed {% glossarytooltip 825b5f85-7bb8-4005-938e-51c1bb4b401b %}base currency{% endglossarytooltip %} at checkout.
 
 <!--- 50830 -->* Fixed problem with opening My Cart page in one-page checkout.
 
@@ -428,7 +427,7 @@ target="_blank"> (GITHUB-4099)</a>
 #### Bundle products
 {:.no_toc}
 
-<!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a Bundle product.
+<!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}Bundle product{% endglossarytooltip %}.
 
 <!--- 52832 -->* You can now include quotation marks in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a>
 
@@ -437,7 +436,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 47379-->* You can now successfully move Bundle products to the Wishlist. <a href="https://github.com/magento/magento2/issues/2717" target="_blank"> (GITHUB-2717)</a>
 
 
-<!--- 45173-->* Bundle products created using Web API are now visible on the storefront.
+<!--- 45173-->* Bundle products created using {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} are now visible on the storefront.
 
 <!--- 46695-->* Magento now saves the price for Bundle option items.
 
@@ -473,7 +472,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 51371, 51580-->* Error messages generated during installation are now more informative.  
 
 
-<!--- 51641-->* Documentation now states that the iconv extension is required in installations running PHP 7.x. <a href="https://github.com/magento/magento2/issues/4002" target="_blank"> (GITHUB-4002)</a>
+<!--- 51641-->* Documentation now states that the iconv {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is required in installations running PHP 7.x. <a href="https://github.com/magento/magento2/issues/4002" target="_blank"> (GITHUB-4002)</a>
 
 <!--- 46415-->* CLI documentation now includes `magento dev:css` command. <a href="https://github.com/magento/magento2/issues/433" target="_blank"> (GITHUB-433)</a>
 
@@ -517,7 +516,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51278 -->* Magento no longer creates a new single update when you edit an existing update.
 
-<!--- 52963 -->* You can now create and successfully save a future update for a downloadable product associated with links and file content.  
+<!--- 52963 -->* You can now create and successfully save a future update for a {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}downloadable product{% endglossarytooltip %} associated with links and file content.  
 
 <!--- 51449 -->*  Update Staging product offline status now works.
 
@@ -535,7 +534,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 50591 -->*  You can now create both permanent and temporary updates for one date or time.
 
 
-<!--- 50476 -->*  Magento no longer deletes a product from a quote after you delete a product update.
+<!--- 50476 -->*  Magento no longer deletes a product from a {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} after you delete a product update.
 
 <!--- 52159 -->*  You can now open Catalogs for which you've applied multiple updates.  
 
@@ -546,7 +545,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 49314 -->*  Magento date pickers now take into account Magento timezone settings.  
 
-<!--- 49973 -->*  Update Preview for a simple product now works.
+<!--- 49973 -->*  Update Preview for a {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} now works.
 
 <!--- 51093 -->*  Magento now displays the "Is Active" flag for the Catalog rule when Staging is enabled.
 
@@ -573,7 +572,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51613-->* Data format for campaign start and end times are now presented in OS data format.
 
-<!--- 51638-->* Magento no longer displays the wrong entity names on the pop-up that appears on the Staging timeline.
+<!--- 51638-->* Magento no longer displays the wrong {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} names on the pop-up that appears on the Staging timeline.
 
 
 <!--- 51823-->* You must provide a valid ID to open the Staging form edit page.
@@ -625,7 +624,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 52104-->* You can now remove an entity update.
 
-<!--- 52057-->* Magento now displays attributes when you choose another attribute set in Staging Update.
+<!--- 52057-->* Magento now displays attributes when you choose another {% glossarytooltip 44d60586-b853-40dd-bf82-4a1580450416 %}attribute set{% endglossarytooltip %} in Staging Update.
 
 <!--- 52576-->* The Catalog Price Rule now works as expected.
 
@@ -664,7 +663,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51121 --> *  Fixed issue where the Select from Existing Scheduled Update option resulted in an SQL error.
 
-<!--- 51402-->* Fixed JavaScript errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
+<!--- 51402-->* Fixed {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
 
 
 
@@ -675,7 +674,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 
 
-<!--- 53919 -->*  We changed the HTML header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
+<!--- 53919 -->*  We changed the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
 
 To view this setting in the Magento Admin, click **Stores** > Settings > **Configuration** > GENERAL > **Web**. In the right pane, expand **Base URLs (Secure)**, value of the **Offloader header** field.
 
@@ -711,7 +710,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 49939 -->*  You can now assign a CMS page to multiple storeviews.
 
-<!--- 49001 -->*  The Search Engine Optimization fieldset no longer displays Category url_key.
+<!--- 49001 -->*  The {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %} fieldset no longer displays Category url_key.
 <!--- 49154 -->*  You can now successfully create a new update on 'custom store view'.
 <!--- 48588 -->*  You can now add a new row to a Custom Option of Input Type when editing a simple product.
 
@@ -722,7 +721,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48218 -->*  You can now create permanent or temporary URL rewrites.  <a href="https://github.com/magento/magento2/issues/2929" target="_blank"> (GITHUB-2929)</a>
 
-<!--- 48153 -->*  You can now save a product that's been assigned to more than one website.
+<!--- 48153 -->*  You can now save a product that's been assigned to more than one {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 <!--- 53807 -->*  You can now save Text Swatch "Swatch" values.
 
 <!--- 53126 -->*  Multi-site cache now shows the correct site's content. <a href="https://github.com/magento/magento2/issues/4556" target="_blank"> (GITHUB-4556)</a>
@@ -735,21 +734,21 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 54228 -->* Varnish cache is no longer disabled on most HTML requests.
 
-<!--- 54214 -->* You can now place orders using the Payflow Pro payment method.
+<!--- 54214 -->* You can now place orders using the Payflow Pro {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}.
 
 <!--- 54182 -->* You can now place an order for an item for an amount that exceeds half of item's stock.  
 
 <!--- 52612 -->* CLI is affected by the permissions configuration setting in server config.
 
-<!--- 53342 -->* Magento no longer duplicates URL keys during the creation of a configurable product.
+<!--- 53342 -->* Magento no longer duplicates URL keys during the creation of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}.
 
 <!--- 51592 -->* Single tenant compiler now works when Magento is not installed.
 
-<!--- 51834 -->* Maestro credit cards can now pass validation on the application server side.
+<!--- 51834 -->* Maestro credit cards can now pass validation on the application {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}.
 
 <!--- 50507 -->* You can now successfully rest the Product Attributes mass update Admin form.
 
-<!--- 52284 -->* You can now insert more than two images using the WYSIWYG editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank"> (GITHUB-4221)</a>
+<!--- 52284 -->* You can now insert more than two images using the {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. <a href="https://github.com/magento/magento2/issues/4221" target="_blank"> (GITHUB-4221)</a>
 
 <!--- 49877 -->* Don't omit the "callable" argument type hint. <a href="https://github.com/magento/magento2/issues/2026" target="_blank"> (GITHUB-2026)</a>
 
@@ -765,7 +764,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 54092 -->* We now include `.gitignore` as part of the project package. <a href="https://github.com/magento/magento2/issues/4358" target="_blank"> (GITHUB-4358)</a>
 
-<!--- 46022 -->*  The PHP code migration tool no longer fails with this error:  "Call to a member function xpath() on a non-object".
+<!--- 46022 -->*  The PHP {% glossarytooltip 610157a5-5054-41f5-994b-4eadf54786ec %}code migration{% endglossarytooltip %} tool no longer fails with this error:  "Call to a member function xpath() on a non-object".
 
 <!--- 46807 -->*  You can now add new Content CMS New Blocks.
 
@@ -860,9 +859,9 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 53865-->* The CC model now assigns cc data that is passed in the `additional_data` field.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank"> (GITHUB-4741)</a>
 
-<!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a>
+<!--- 51803-->* The Select All checkbox on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a>
 
-<!--- 41378-->* The locale for Chinese translation now works as expected. <a href="https://github.com/magento/magento2/issues/1547" target="_blank"> (GITHUB-1547)</a>
+<!--- 41378-->* The {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} for Chinese translation now works as expected. <a href="https://github.com/magento/magento2/issues/1547" target="_blank"> (GITHUB-1547)</a>
 
 <!--- 41377-->* Products > Catalog "Change status" mass action now works properly. <a href="https://github.com/magento/magento2/issues/1559" target="_blank"> (GITHUB-1559)</a>
 
@@ -915,14 +914,14 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 47377-->* Unnecessary StoreCookie plugins are no longer executed on each request.
 <!--- 47375-->* Unnecessary MessageBox plugin no longer duplicate message logic.
-<!--- 47321-->* MessageBox plugin is no longer triggered by frontend requests.
+<!--- 47321-->* MessageBox plugin is no longer triggered by {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} requests.
 
 <!--- 47267-->* URL Rewrites now work for products that you access through the category landing pages.
 <!--- 47844-->* Magento now displays  customer attribute options on the Attribute Edit page.
-<!--- 47064-->* Fixed issue with JaveScript errors when loading the product grid after cleaning the cache and static files.
+<!--- 47064-->* Fixed issue with JaveScript errors when loading the product grid after cleaning the cache and {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %}.
 
 <!--- 51074-->* Product images now switch as expected when  you click on a swatch.
-<!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog Event change in the Product page and Advance Inventory changes.  
+<!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}Event{% endglossarytooltip %} change in the Product page and Advance Inventory changes.  
 <!--- 51053-->* Quote are no longer lost after you  cancel an order with the Worldpay payment method.
 
 <!--- 51034-->* You can now create a simple product with custom options.
@@ -935,7 +934,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51314-->* You can now successfully  sort products by swatch attribute.
 <!--- 51299-->* You can now create an order from the Admin interface while using non-default website.
-<!--- 51276-->* Magento now displays product attributes for a product on the store front as expected.
+<!--- 51276-->* Magento now displays product attributes for a product on the storefront as expected.
 <!--- 51191-->* Fixed issue with resetting password  after waiting an hour.
 
 <!--- 51186-->* Magento now provides an additional field in the Admin and customer login forms that prevent web browsers from caching login credentials.
@@ -964,7 +963,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51541-->* Changing configurations in an update no longer changes the original configurations.
 
-<!--- 50313-->* Magento no longer throws a fatal error  when you click on the related banner grid in Cart Price Rule form while in production mode.
+<!--- 50313-->* Magento no longer throws a fatal error  when you click on the related {% glossarytooltip f6528c80-6c22-4d84-9c31-13f1794d1757 %}banner{% endglossarytooltip %} grid in Cart Price Rule form while in production mode.
 <!--- 50248-->* Customer grid indexer performance has been enhanced.
 <!--- 50772-->* Rule-based free shipping now works as expected.
 <!--- 50761-->* You can now assign a product to a custom website.
@@ -995,20 +994,20 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 50498-->* The variations matrix is now populated as expected after you update a configurable product.
 
-<!--- 50461-->* The default address check boxes are  checked as expected on the Customer View page.
+<!--- 50461-->* The default address checkboxes are  checked as expected on the Customer View page.
 
 
 <!--- 50375-->* Magento now displays images for configurable product variations on the storefront.
 
 <!--- 50366-->* Magento now creates a new attribute set as expected after you use the Configurable Product wizard to create a new product.
 
-<!--- 50025-->* The checkout page now loads correctly after you add an extension attribute to CartItemInterface.  <a href="https://github.com/magento/magento2/issues/3640" target="_blank"> (GITHUB-3640)</a>
+<!--- 50025-->* The checkout page now loads correctly after you add an {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %} to CartItemInterface.  <a href="https://github.com/magento/magento2/issues/3640" target="_blank"> (GITHUB-3640)</a>
 
 <!--- 50195-->* The Admin URL is no longer indexed in Google.
 
 <!--- 50184-->* Fixed issue with Catalog Search Auto Suggest button.  <a href="https://github.com/magento/magento2/issues/3657" target="_blank"> (GITHUB-3657)</a>
 
-<!--- 50202-->* Fixed issue with saving  shipment data. <a href="https://github.com/magento/magento2/issues/527" target="_blank"> (GITHUB-527)</a> 	
+<!--- 50202-->* Fixed issue with saving  {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} data. <a href="https://github.com/magento/magento2/issues/527" target="_blank"> (GITHUB-527)</a> 	
 
 
 <!--- 52747-->* Fixed issue with fatal error while reordering.
@@ -1060,7 +1059,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 52558-->* Cache is not invalidated or refreshed when product website visibility changes.
 
-<!--- 52536-->* Magento no longer throws an exception  when you create a custom widget.
+<!--- 52536-->* Magento no longer throws an exception  when you create a custom {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %}.
 
 
 <!--- 52583-->* Fixed issue with updating Category products  on the storefront.
@@ -1074,14 +1073,14 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 49559-->* Online payment methods now display as expected when you place an order for a  virtual product as a guest.
 
-<!--- 49538-->* You can now  dynamically switch product types when creating a new product.
+<!--- 49538-->* You can now  dynamically switch {% glossarytooltip 6e836354-0067-48ac-84ce-a4ab7c0c492e %}product types{% endglossarytooltip %} when creating a new product.
 
 <!--- 49520-->* You can now create a credit memo when placing an order using Eway payment method when the  payment action setting is set to Authorize only.
 
 
 <!--- 49389-->* Setting category permissions to DENY now hides the category as expected.
 
-<!--- 48240-->* Fixed issue with the display of forms incorporating new UI component in  Single-Store mode.
+<!--- 48240-->* Fixed issue with the display of forms incorporating new {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} in  Single-Store mode.
 
 <!--- 49349-->* You can now save bookmarks you've created in Admin data tables.
 
@@ -1093,7 +1092,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48261-->* Fixed the test dev/tests/integration/testsuite/Magento/Framework/Filesystem/Driver/FileTest.php to properly set file permissions.
 
-<!--- 48803-->* The Use default value check box on a product in a non-default store view function properly.
+<!--- 48803-->* The Use default value checkbox on a product in a non-default store view function properly.
 
 <!--- 48809-->* Tests in `dev/tests/integration/testsuite/Magento/Catalog/Model/ProductTest.php` are executed as expected.
 
@@ -1112,7 +1111,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 47892-->* Fixed Fatal error: Maximum execution time of 60 seconds exceeded when deploying static files. <a href="https://github.com/magento/magento2/issues/2461" target="_blank"> (GITHUB-2461)</a>
 
-<!--- 47919-->* We improved the error message when you install the Magento software using composer install with the --no-dev option. (Only developers who contribute to the Magento codebase typically use composer install.) <a href="https://github.com/magento/magento2/issues/2561" target="_blank"> (GITHUB-2561)</a>
+<!--- 47919-->* We improved the error message when you install the Magento software using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} install with the --no-dev option. (Only developers who contribute to the Magento codebase typically use composer install.) <a href="https://github.com/magento/magento2/issues/2561" target="_blank"> (GITHUB-2561)</a>
 
 <!--- 47931-->* A quick edit of a CMS page no longer switches the store view to the default store.
 
@@ -1122,7 +1121,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48079-->* Resolved issues with shipping providers for one-page checkout.
 
-<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between Magento CE and EE components.
+<!--- 48094-->* Updated packages on repo.magento.com to remove conflicts between {{site.data.var.ce}} and {{site.data.var.ee}} components.
 
 <!--- 48171-->* User notifications work as expected.
 
@@ -1155,7 +1154,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 53320-->* Invoice amounts now display the currency symbol of the currency used on the store view.
 
-<!--- 53395-->* Magento no longer displays Payment Review order status  to the customer after the Authorize.net  Fraud filters are triggered.
+<!--- 53395-->* Magento no longer displays Payment Review {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %}  to the customer after the Authorize.net  Fraud filters are triggered.
 
 <!--- 52552-->* Invoice status now reflects the status of the captured saved invoice. <a href="https://github.com/magento/magento2/issues/4385" target="_blank"> (GITHUB-4385)</a>
 
@@ -1174,7 +1173,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 52785-->* The Save button now works as expected on the Category Edit page after you've manipulated  CatalogPermissions elements.
 
-<!--- 53223-->* Setting Merge CSS Files = Yes no longer erodes Magento performance.  <a href="https://github.com/magento/magento2/issues/4710" target="_blank"> (GITHUB-4710)</a>
+<!--- 53223-->* Setting Merge {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} Files = Yes no longer erodes Magento performance.  <a href="https://github.com/magento/magento2/issues/4710" target="_blank"> (GITHUB-4710)</a>
 
 <!--- 53157-->* Image previewer now works with images that contain spaces in their name.   
 
@@ -1200,7 +1199,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 46014-->* Magento now displays error messages on the page where the error occurred.
 
-<!--- 52928-->* Fixed issue with rendering of the category permissions landing page  config control.
+<!--- 52928-->* Fixed issue with rendering of the category permissions {% glossarytooltip d2990aa9-3553-43fc-a4a3-8d0924303128 %}landing page{% endglossarytooltip %}  config control.
 <!--- 53178-->* Magento now caches catalog event statuses when event status changes.
 
 <!--- 54172-->* Magento now creates product URL rewrites as expected on mass update to a new website.
@@ -1264,20 +1263,20 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 
-You can install Magento Enterprise Edition 2.1 General Availability (GA) using Composer.
+You can install Magento Magento Commerce 2.1 General Availability (GA) using Composer.
 
 
 {% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

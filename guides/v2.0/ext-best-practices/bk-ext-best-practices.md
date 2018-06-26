@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 title: Best Practices for Extension Developers
 landing-page: Best Practices for Extension Developers
@@ -11,6 +10,8 @@ redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 tabgroup: best-practices
 tablabel: Home
 tabweight: 0
+functional_areas:
+  - Standards
 ---
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -22,7 +23,7 @@ We want your feedback; please do a pull request on <a href="https://github.com/m
 
 Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.
 
-Magento's architecture allows for enhancements by letting you develop your own component. Keep in mind that in addition to Magento's own modules, your extension will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
+Magento's architecture allows for enhancements by letting you develop your own component. Keep in mind that in addition to Magento's own modules, your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
 
 The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition. So for example, 32% of merchants on EE have over 50 different extensions installed!
 
@@ -38,11 +39,11 @@ This guide provides best practices, guidelines, and tips for creating Magento ex
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{page.baseurl}}{{ node.github_link | replace: ".md",".html" }})
+*  [{{ node.menu_title }}]({{ page.baseurl }}/{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}
 
 ### Related Content
 
-* [Admin Design Pattern Library]({{page.baseurl}}pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
-* [PHP Developer Guide]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
-* [Frontend Developer Guide]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.
+* [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
+* [PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
+* [Frontend Developer Guide]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.

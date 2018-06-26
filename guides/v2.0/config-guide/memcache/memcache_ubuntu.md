@@ -1,13 +1,16 @@
 ---
-layout: default
 group: config-guide
 subgroup: 10_mem
 title: Install, configure, verify memcached on Ubuntu
 menu_title: Install, configure, verify memcached on Ubuntu
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/memcache/memcache_ubuntu.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 
@@ -66,14 +69,14 @@ To verify memcached is recognized by the web server:
 
 2.  Make sure memcached displays as follows:
 
-    <img src="{{ site.baseurl }}common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server">
+    <img src="{{ site.baseurl }}/common/images/config_memcache-ubuntu.png" alt="Confirm memcache is recognized by the web server">
 
     Verify you're using memcached version 3.0.5 or later.
 
     If memcache does not display, restart the web server and refresh the browser page. If it still does not display, verify you installed the `php-pecl-memcache` extension.
 
 ### Verify memcached can cache data
-This test uses a PHP script to verify that memcached can store and retrieve cache data.
+This test uses a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script to verify that memcached can store and retrieve {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} data.
 
 For more information about this test, see <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04" target="_blank">this digitalocean tutorial</a>.
 
@@ -86,7 +89,7 @@ if (class_exists('Memcache')) {
     $meminstance = new Memcached();
 }
 
-$meminstance->addServer("<memcache host name or ip>", <memcache port>);
+$meminstance->addServer("<memcache hostname or ip>", <memcache port>);
 
 $result = $meminstance->get("test");
 
@@ -98,7 +101,7 @@ if ($result) {
 }
 {% endhighlight %}
 
-where `<memcache host name or ip>` is either `localhost`, `127.0.0.1`, or the memcache host name or IP address. `<memcache port>` is its listen port; by default, `11211`.
+where `<memcache hostname or ip>` is either `localhost`, `127.0.0.1`, or the memcache hostname or IP address. `<memcache port>` is its listen port; by default, `11211`.
 
 Go to that page in a web browser.
 
@@ -137,4 +140,4 @@ Flush memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+<a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

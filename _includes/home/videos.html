@@ -1,0 +1,19 @@
+<!-- We used to display this on the devdocs home page (index.html) using an include statement {% include home/videos.html%}. See MAGEDOC-2937 for more info.-->
+<section class="home-videos">
+  <div class="container">
+    <h2>Video Tutorials</h2>
+    <p class="intro">Seeing is believing! Our developers sharing their knowledge of Magento. Subscribe to our <a href="https://www.youtube.com/channel/UCZeJjcZ0_rnvL-pp7p4Aq3A">YouTube channel</a> and never miss new tutorial.</p>
+
+    <div class="videos">
+    {% assign sorted_videos = (site.videos | where: 'layout', 'video' | sort: 'date') | reverse %}
+		{% for video in sorted_videos limit:3 %}
+      {% include video/preview.html %}
+    {% endfor %}
+    </div>
+
+    <div>
+      <a href="{{ site.baseurl }}/videos/" class="btn btn-large btn-primary">See all Videos</a>
+    </div>
+
+  </div>
+</section><!-- END home-contributors -->

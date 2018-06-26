@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS
 title: Using custom fonts
@@ -7,9 +6,11 @@ menu_order: 6
 version: 2.0
 github_link: frontend-dev-guide/css-topics/using-fonts.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html
+functional_areas:
+  - Frontend
 ---
 <h2>What's in this topic</h2>
-The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento theme.
+The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 
 <h2 id="fonts_location">Font files location</h2>
@@ -18,7 +19,7 @@ The Magento application contains a set of built-in fonts, but you can easily inc
 Place the font files to your theme directory under: <code>&lt;theme_dir&gt;/web/fonts</code>.
 
 <h3 id="ext_fonts">External fonts</h3>
-To use external fonts, include them in the page configuration file, as described in <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
+To use external fonts, include them in the page configuration file, as described in <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
 
 <h2 id="fonts">Include fonts</h2>
 
@@ -28,7 +29,7 @@ To ensure stability and secure your customizations from being deleted during upg
 To include a custom font stored locally, use one of the following approaches:
 
 <ul> 
-<li>If you build a theme using Magento UI library, declare the font by adding the <code>.lib-font-face</code> mixin in the <code>&lt;theme_dir&gt;/web/css/source/_typography.less</code> file:
+<li>If you build a theme using Magento UI library, declare the font by adding the <code>.lib-font-face</code> {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} in the <code>&lt;theme_dir&gt;/web/css/source/_typography.less</code> file:
 <pre>
 .lib-font-face(
     @family-name:'&lt;any_font_name&gt;',
@@ -41,10 +42,10 @@ To include a custom font stored locally, use one of the following approaches:
 Where:
 <ul>
 	<li><code>{@baseDir}</code> stands for the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory.</li>
-<li><code>&lt;path_to_font_file&gt;</code> includes the font file name, but without the extension. For example, <code>@font-path: '@{baseDir}fonts/Luma-Icons'</code> for the font stored in <code>web/fonts/Luma-Icons.woff</code></li>
+<li><code>&lt;path_to_font_file&gt;</code> includes the font file name, but without the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}. For example, <code>@font-path: '@{baseDir}fonts/Luma-Icons'</code> for the font stored in <code>web/fonts/Luma-Icons.woff</code></li>
 </ul>
 
-The mixin generates the CSS including font. For example, here is how the generated CSS looks for the Open Sans font used in the Blank theme:
+The mixin generates the {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} including font. For example, here is how the generated CSS looks for the Open Sans font used in the Blank theme:
 <pre>
 @font-face {
     font-family: 'Open Sans';

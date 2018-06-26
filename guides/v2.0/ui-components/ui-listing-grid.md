@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: B_UI Library Listing/Grid Component
 title: Listing/Grid Component
@@ -47,7 +46,7 @@ Example configuration of Listing Component instance:
 
 #### Data Source
 
-Data Source is another UI Component that provides data in specific format which is shared among all UI Components. 
+Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components. 
 
 The listing component requires the data source to be properly configured and associated with it:
 

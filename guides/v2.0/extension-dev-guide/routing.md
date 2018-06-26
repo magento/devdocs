@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Routing
@@ -10,7 +9,7 @@ github_link: extension-dev-guide/routing.md
 redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
-In the Magento system, a URL has the following format:
+In the Magento system, a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} has the following format:
 
 `<area front name>/<VendorName>/<ModuleName>/<controller name>/<action name>`
 
@@ -29,14 +28,14 @@ The routers information for the modules is described in the `routerList` paramet
 Each area has its own set of the routers. The `Magento\Framework\App\RouterList` model is injected into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.
 
 You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
-(such as, CMS router, default router, and so on).
+(such as, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} router, default router, and so on).
 However, you must not customize the routers that are used in Magento core modules.
 
 <h3>Routes</h3>
 
 Configurations of the routes are stored in `routes.xml` in the scopes area.
 
-Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:
+Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} routers use routes. Typically, the configuration for a route is in the following format:
 
 {% highlight XML %}
 <config>
@@ -65,25 +64,15 @@ If you must reset a route and design, forward the request processing to another 
 
 `$this->_forward('other/controller/action')`
 
-To remove the controller action, forward to `noroute`, for instance, in `app/code/Company/SomeExtension/Controller/Account.php`:
+To remove the controller action, forward to `noroute`, for instance, in `app/code/Company/SomeExtension/Controller/Account/Create.php`:
 
 
 <pre>
-namespace Company\SomeExtension\Controller;
+{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} Company\SomeExtension\Controller\Account;
 
-class Account extends \Magento\Framework\App\Action\Action
+class Create extends \Magento\Framework\App\Action\Action
 {
-    public function loginAction()
-    {
-        ...
-    }
-
-    public function createAction()
-    {
-        $this->_forward('noroute');
-    }
-
-    public function forgotpasswordAction()
+    public function execute()
     {
         $this->_forward('noroute');
     }
@@ -98,7 +87,7 @@ Routing is processed in the following way:
 * Modules provide information on their routers through the `routerList` parameter of `Magento\Framework\App\RouterList` type in `di.xml`.
 * `FrontController` obtains active routers and checks whether a request can be processed.
 * If a request cannot be processed by any router, the default router is used.
-* If a request can be processed by a router, the router finds a route with matching `frontName` and looks through corresponding modules. If a module has matching controller and action names, a router instantiates this controller.
+* If a request can be processed by a router, the router finds a route with matching `frontName` and looks through corresponding modules. If a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has matching controller and action names, a router instantiates this controller.
 
 The `dispatch()` method of the `Magento\Framework\App\Action\Action` class requests an instance and returns its response.
 
@@ -110,7 +99,7 @@ For this class, the `Magento\Framework\App\ActionInterface` processes the reques
 
 <h2>Default router</h2>
 
-If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.
+If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\Framework\App\Router\DefaultRouter</a> default router lists handlers for processing such request.
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.
 

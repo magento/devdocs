@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: List of service names per module
@@ -7,7 +6,8 @@ menu_title: List of service names per module
 menu_order: 4
 version: 2.0
 github_link: rest/rest_endpoints.md
-
+functional_areas:
+  - Integration
 ---
 
 ## REST Schema Endpoint Format
@@ -24,13 +24,13 @@ To specify all services:
   <ul>
   <li><code>default</code></li>
   <li>The assigned store code</li>
-  <li><code>all</code>. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores. <code>GET</code>operations cannot be performed when you specify <code>all</code>.</li>
+  <li><code>all</code>. This value only applies to the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all the merchant's stores. <code>GET</code>operations cannot be performed when you specify <code>all</code>.</li>
   </ul>
 </div>
 
-## Magento Enterprise Edition (EE) REST API Services per module {#eelist}
+## {{site.data.var.ee}} REST API Services per module {#eelist}
 
-The REST APIs for Magento EE are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+The REST APIs for {{site.data.var.ee}} are available on Commerce installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
 
 ### Customer balance
     customerBalanceBalanceManagementV1
@@ -58,9 +58,9 @@ The REST APIs for Magento EE are available on EE installations only. EE installa
     worldpayGuestPaymentInformationManagementProxyV1
 
 
-## Magento Community Edition (CE) REST APIs Services per Module {#celist}
+## {{site.data.var.ce}} REST APIs Services per Module {#celist}
 
-  The Magento CE REST APIs are available on all EE and CE installations.
+  The {{site.data.var.ce}} REST APIs are available on all installations.
 
 ### Backend
     backendModuleServiceV1

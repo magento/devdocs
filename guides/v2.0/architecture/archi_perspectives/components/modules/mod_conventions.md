@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Components
 title: Module conventions
@@ -18,15 +17,15 @@ redirect_from:
 
 Modules must conform to Magento conventions regarding code location and file names. Keep these conventions in mind when working with or developing modules.
 
-Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a>.
+Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{ page.baseurl }}/coding-standards/bk-coding-standards.html">Coding Standards</a>.
 
 ## Module location conventions {#m2arch-module-conventions-location}
 
 The following table shows the *recommended* location within the Magento file system for specific components.
 
-(A module must include a `registration.php` file in its root folder.)
+(A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must include a `registration.php` file in its root folder.)
 
-We refer to a component’s root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
+We refer to a component's root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
 
 |Entity|Location|
 |---|---|

@@ -1,13 +1,16 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-install.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
@@ -34,4 +37,4 @@ A sample follows:
 Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
 
 ### Next step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
+<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>

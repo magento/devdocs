@@ -1,111 +1,111 @@
 ---
-layout: default
 group: cloud
-subgroup: 12_env
-title: Manage your environments
-menu_title: Manage your environments
-menu_order: 1
-menu_node: parent
+title: Configure environments
 version: 2.0
 github_link: cloud/env/environments.md
+redirect_from:
+  - /guides/v2.0/cloud/deploy/configure-deploy.html
+  - /guides/v2.1/cloud/deploy/configure-deploy.html
+  - /guides/v2.2/cloud/deploy/configure-deploy.html
+  - /guides/v2.3/cloud/deploy/configure-deploy.html
+functional_areas:
+  - Cloud
 ---
 
-## Overview of environments {#cloud-env-over}
-A Magento Enterprise Cloud *environment* consists of a running Magento instance. It includes your Magento application (codebase and files) and the services required to run it (*Services* include the web server, database, search engine, caching server, and so on).
+Environments in {{site.data.var.ece}} include containers with applications, services, a database, and much more to provide a complete system for your Magento application (codebase and files). You can configure environment variables, settings, routes, and more to support your code branches per project environment.
 
-Each environment is a branch of the `master` environment (which is your live environment). Every Cloud project has at least one environment, the `master`, which cannot be removed or renamed. You can create up to 6 additional environments. Typically, these environments are used for development and testing.
+We provide options to:
 
-If you use GitHub or Bitbucket, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
+* Export configuration settings to a file for cross-environment deployment
+* Set environment variables per environment
 
-## Master environment
-Every Magento Enterprise Cloud Edition project starts with a `master` environment that corresponds to the `master` branch in Git. The master environment is your live, production environment.
+{% include cloud/wings-management.md %}
+
+## Environments and branches {#env-branches}
+Every {{site.data.var.ece}} project starts with a `master` environment that corresponds to the `master` branch in Git. Each environment has an associated active Git branch of code.
+
+* For [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html), we recommend branching from Integration.
+* For [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html), we recommend creating a `staging` branch, then creating additional code branches from `staging`.
+
+We recommend using GitHub for maintaining your code branches.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Your project must have a <code>master</code> branch; it won't function properly without one.</p>
 </div>
 
+You can create branches using the Project Web Interface or Git CLI commands. For this information, examples use Git or [Magento Cloud CLI]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) commands.
 
-## Inactive environments {#cloud-env-inactive}
-An *inactive* environment is an environment which doesn't run any service. You can have any number of inactive environments.
+## Active and inactive branches {#active-inactive}
+You have access to a limited number of _active_ Git branches per plan. When you push this branch, an active environment is provisioned as a container, updating when you push per the configurations of .magento.app.yaml, services.yaml, and routes.yaml.
 
-By default, when you push a new branch via Git, Magento Enterprise Cloud automatically creates an inactive environment. It's referred to as *inactive* because it isn't a working environment. 
-
-You can use the following command to create an active environment from a parent environment:
+You begin by creating active branches and pushing code. You can use the following command to create an active branch from a parent branch:
 
 	magento-cloud environment:branch
 
-You can use the following command to create an active environment from an inactive one:
+You have unlimited inactive Git branches. These branches do not receive an environment until it is made active. You can use the following command to activate an inactive branch:
 
 	magento-cloud environment:activate
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This command will deploy the web server and the services from the parent environment.</p>
+When you activate an inactive branch, or create a new active branch, the command deploys a new active environment with a web server and services.
+
+## Branch hierarchy, development, and deployment {#hierarchy}
+For Starter and Pro plans, the `master` environment is ultimately the source or parent for all code in {{site.data.var.ece}}.
+
+* For Starter, `master` is your Production environment and branch. You create branches from `master` as your Integration environment.
+* For Pro, you have a `master` branch in Integration for creating your code branches. You deploy this branch to a matching `master` branch in Staging and Production environments.
+
+Your Integration includes a number of branches and environments available to you per plan. When you branch from `master`, you create a child relationship to this parent. Every branching creates a parent-child relationship. Each child environment can synchronize code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
+
+You fully develop in these branches. When ready, you push the code to build and deploy to an Integration environment. In these Integration environments, you can test custom code, extensions, third party integrations, and more. When ready, you merge this child Integration branch up to a parent. When merged, the parent environment redeploys with the code changes of the child environment. For Pro, this is the Integration `master`. For Starter, it is an environment and branch of your choice.
+
+For extensive details, see the following:
+
+*	Starter:
+
+	* [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
+	*	[Starter develop and deploy workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html)
+*	Pro:
+
+	* [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
+	*	[Pro develop and deploy workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
+*	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+
+## Environment services {#services}
+Your cloud environments for Starter and Pro configure the available and used database, web server, caching, and services per the settings entered for a series of YAML files. When you push Git code from your local, these services and more configure automatically in the environments hosted in the cloud (PaaS). For Pro Staging and Production environments (IaaS), you need to enter a ticket for those files to be migrated to configure those environment services and more. See [Configure your environments](#configenv).
+
+Additional services and drivers are automatically included in your environments.
+
+### SQL Server extension driver {#sqldriver}
+We include updated [Microsoft PHP drivers](https://docs.microsoft.com/en-us/sql/connect/php/microsoft-php-driver-for-sql-server) for MS SQL Server extension to enable connecting between {{site.data.var.ece}} and off cloud MS SQL Servers. No additional installation is necessary to use these drivers. You will need to complete a couple configurations before using the connection and external SQL.
+
+These drivers are included in all Starter environments and Pro Integration environments. To enable in Pro plan Staging and Production environments, please enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with the request. You need to configure and provide the following:
+
+* SSL certificate on the MS SQL Server: The connection between the cloud cluster and the remote SQL server must be SSL secured.  Customers must provide an SSL-enabled connection to their MS SQL server in order to connect to their project.
+* An MS SQL Server for testing: Please include a Microsoft SQL server for us to test the connection. Include this information in a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+
+If you have questions regarding connectivity or configuration for MS SQL Server, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The drivers and supported service only includes configuration and updates in {{site.data.var.ece}} environments. We cannot provide support for client MS SQL Servers or applications utilizing these external systems and services outside of the cloud hosting environments.
 </div>
 
-## Environment hierarchy {#cloud-env-hier}
-The `master` environment is ultimately the parent of all other environments. Every time you branch it or any other environment, you create a parent-child relationship between them.
+## Configure your environments {#configenv}
+After fully configuring your store, you should configure your environments. This includes specific files to manage builds, deployments, services, and routes. These settings may also affect your builds and deployments. The following information provides files, settings, and options for configuring services and settings in environments.
 
-Each child environment can sync code, data, or both from its parent. Syncing data to an environment results in a byte-for-byte copy of all services and media files.
+For Starter, you can push these files across all environments including Production `master`.
 
-Likewise, a child can merge code with its parent, which ends up redeploying the parent environment with the code changes of the child environment.
+For Pro, you need to enter a ticket to have these files and settings pushed to Staging and Production environments. You can push these files and settings across all Integration environments.
 
-Child environments are typically used for development, staging, and testing.
+* [.magento.app.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) configures how the Magento application is built and deployed including services, hooks, cron jobs, and more
+* [services.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) configures the services you use in your stores and sites including name, version, and allocated disk space
 
-## Workflows {#cloud-env-work}
-Magento Enterprise Cloud Edition imposes no rules on how you use branches and environments. You can use whatever workflow makes sense to you, consistent with the workflow you already use.
+  * [MySQL service]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
+  * [Redis service]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
+  * [Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
+  * [Elasticsearch service]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
+  * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
+* [routes.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment
 
-For example, suppose your Agile development team needs a branch (that is, environment) for every story in a sprint and at the end of the sprint, those branches merge to another branch for testing.
-
-Following is one way to set up the environments:
-
-	Master
-		Sprint-X
-		   Story1
-		   Story2
-		   Story3
-		   QA
-
-In this example, the following can happen:
-
-1.	To start, a project administrator either:
-
-	*	Creates the Sprint-X environments and grants contributor privileges to developers to create the story environments.
-	*	Creates all the environments and grants contributor privileges to developers.
-
-2.	When the sprint is finished (or when the story is closed), the administrator can review the work by accessing the website of the feature environment. The new feature is then merged back to the Sprint-X environment.
-3.	The administrator synchronizes Sprint-X with QA so all features can be tested.
-3.	The administrator backs up the live site, then merges the Sprint-X environment into the `master` environment, making it live.
-4.	The administrator synchronizes the next sprint's environment with data from the `master` environment to repeat and continue the development process.
-
-### Commands used in the example
-The following table lists the commands used in the preceding example.
-
-<table>
-	<tbody>
-		<tr>
-			<th>Task</th>
-			<th>Command</th>
-		</tr>
-	<tr>
-		<td>Create environment</td>
-		<td><code>magento-cloud environment:branch Sprint-X</code></td>
-	</tr>
-	<tr>
-		<td>Grant the contributor role to an environment</td>
-		<td><code>magento-cloud user:role &lt;user e-mail> --level environment --environment test --role contributor</code></td>
-	</tr>
-	<tr><td>Merge an environment</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
-	</tr>
-	<tr><td>Sync QA with Sprint-X</td>
-	<td><code>magento-cloud environment:synchronize code data</code></td>
-	</tr>
-	<tr><td>Merge Sprint-X with the master branch</td>
-	<td><code>magento-cloud environment:merge Sprint-X</code></td>
-	</tr>
-</tbody>
-</table>
-
-#### Related topics
-*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
-*	[Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html)
+  * [Caching]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html) configuration options for caches set in routes.yaml
+  * [Redirect]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html) configuration and rules for managing redirections set in routes.yaml
+  * [Server side includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html) configured set in routes.yaml

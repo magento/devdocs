@@ -1,0 +1,1 @@
+../../../v2.2/install-gde/tutorials/change-docroot-to-pub.md

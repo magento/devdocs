@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 01_Introduction
 title: Glossary of common terms
@@ -15,11 +14,11 @@ redirect_from:
 ---
 
 ### Component {#gloss-component}
-We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A Magento component can be classified into the following *types*:
+We refer to what you're coding as *components*. (Composer refers to them as <a href="https://getcomposer.org/doc/05-repositories.md#packages" target="_blank">*packages*</a>; the terms component and package are equivalent.) A {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} can be classified into the following *types*:
 
-*	Module (extend Magento capabilities)
-*	Theme (change the look and feel of your storefront and Admin)
-*	Language package (localize the storefront and Admin)
+*	{% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} (extend Magento capabilities)
+*	{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
+*	{% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}Language package{% endglossarytooltip %} (localize the storefront and Admin)
 
 You can *package* your components as follows:
 
@@ -31,7 +30,7 @@ You can *package* your components as follows:
 	More information about metapackages can be found in the next section.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Marketplace uses the blanket term <em>product</em> to refer to a component or a metapackage.</p>
+  <p>Magento Marketplace uses the blanket term <em>product</em> to refer to a component or a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.</p>
 </div>
 
 ### Metapackage {#gloss-meta}
@@ -48,11 +47,11 @@ Merchants do not need to understand that, under the covers, some packages are sh
 </div>
 
 #### For more information
-*	<a href="{{page.baseurl}}extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
-*	<a href="{{page.baseurl}}extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
+*	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage">metapackages</a>
+*	<a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">component types in <code>composer.json</code></a>.
 
 ### Component Manager {#gloss-compman}
-Merchants use the <a href="{{page.baseurl}}comp-mgr/compman-start.html">Component Manager</a> (part of the Magento Admin) to do any of the following:
+Merchants use the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) (part of the Magento Admin) to do any of the following:
 
 *	Install, uninstall
 *	Update
@@ -60,4 +59,4 @@ Merchants use the <a href="{{page.baseurl}}comp-mgr/compman-start.html">Componen
 
 If you package and upload your components as discussed in this guide and in the <em>Marketplace User Guide</em>, merchants can easily update your components after you publish them.
 
-For details, see <a href="{{page.baseurl}}comp-mgr/compman-main-pg.html#compman-access-types">Supported actions for each component type</a>.
+For details, see [Supported actions for each component type]({{ page.baseurl }}/comp-mgr/module-man/compman-main-pg.html#compman-access-types)

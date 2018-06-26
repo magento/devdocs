@@ -1,23 +1,25 @@
 ---
-layout: default
 group: config-guide
 subgroup: 20_cqrs
 title: Manually configure master databases
 menu_title: Manually configure master databases
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
+ee_only: True
 github_link: config-guide/multi-master/multi-master_manual.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
 ## Overview of manual split database configuration {#config-ee-multidb-manual-over}
 If the Magento application is already in production or if you've already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.
 
 Manually splitting databases involves:
 
-*   Create the checkout and order management system (OMS) databases
+*   Create the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and order management system (OMS) databases
 *   Run a series of SQL scripts that:
 
     *   Drop foreign keys
@@ -30,11 +32,11 @@ Manually splitting databases involves:
 
 This topic uses the following naming conventions:
 
-*   The main Magento database name is `magento` and its user name and password are both `magento`
-*   The quote database name is `magento_quote` and its user name and password are both `magento_quote`
+*   The main Magento database name is `magento` and its username and password are both `magento`
+*   The quote database name is `magento_quote` and its username and password are both `magento_quote`
 
     The quote database is also referred to as the *checkout* database.
-*   The sales database name is `magento_sales` and its user name and password are both `magento_sales`
+*   The sales database name is `magento_sales` and its username and password are both `magento_sales`
 
     The sales database is also referred to as the order management system (*OMS*) database.
 
@@ -44,13 +46,13 @@ This topic uses the following naming conventions:
 </div>
 
 ## Back up the Magento system {#config-ee-multidb-backup}
-We strongly recommend you back up your current database and file system so you can restore it later in the event of issues during the process.
+We strongly recommend you back up your current database and file system so you can restore it later in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues during the process.
 
 {% collapsible Click to show how to back up Magento %}
 
 To back up your system:
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/apache-user.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 2.  Enter the following commands:
 
         magento setup:backup --code --media --db
@@ -58,7 +60,7 @@ To back up your system:
 {% endcollapsible %}
 
 ## Set up additional master databases {#config-ee-multidb-master-masters}
-This section discusses how to create database instances for sales and quote tables.
+This section discusses how to create database instances for sales and {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} tables.
 
 {% collapsible Click to show how to create database instances %}
 Create sales and OMS quote databases as follows:
@@ -69,7 +71,7 @@ Create sales and OMS quote databases as follows:
         mysql -u root -p
 
 3.  Enter the MySQL `root` user's password when prompted.
-4.  Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same user names and passwords:
+4.  Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
         create database magento_quote;
         GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
@@ -198,29 +200,29 @@ If you're currently at the `mysql>` prompt, enter `exit` to return to the comman
 
 Run the following `mysqldump` commands, one at a time, from the command shell. In each, substitute the following:
 
-*   `<your database root user name>` with the name of your database root user
+*   `<your database root username>` with the name of your database root user
 *   `<your database root user password>` with the user's password
 *   `<your main magento DB name>` with the name of your Magento database
 *   `<path>` with a writable file system path
 
 **Script 1**
 {% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order > /<path>/sales.sql
+mysqldump -u <your database root username> -p <your main magento DB name> sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order > /<path>/sales.sql
 {% endhighlight %}
 
 **Script 2**
 {% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive > /<path>/salesarchive.sql
+mysqldump -u <your database root username> -p <your main magento DB name> magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive > /<path>/salesarchive.sql
 {% endhighlight %}
 
 **Script 3**
 {% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address > /<path>/customercustomattributes.sql
+mysqldump -u <your database root username> -p <your main magento DB name> magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address > /<path>/customercustomattributes.sql
 {% endhighlight %}
 
 **Script 4**
 {% highlight sql %}
-mysqldump -u <your database root user name> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
+mysqldump -u <your database root username> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
 {% endhighlight %}
 
 ### Restore sales data {#sql-sales-restore}
@@ -239,10 +241,10 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 Run the following commands:
 
 {% highlight sql %}
-mysql -u <root user name> -p <your sales DB name> < /<path>/sales.sql
-mysql -u <root user name> -p <your sales DB name> < /<path>/sequence.sql
-mysql -u <root user name> -p <your sales DB name> < /<path>/salesarchive.sql
-mysql -u <root user name> -p <your sales DB name> < /<path>/customercustomattributes.sql
+mysql -u <root username> -p <your sales DB name> < /<path>/sales.sql
+mysql -u <root username> -p <your sales DB name> < /<path>/sequence.sql
+mysql -u <root username> -p <your sales DB name> < /<path>/salesarchive.sql
+mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattributes.sql
 {% endhighlight %}
 
 where
@@ -250,7 +252,7 @@ where
 *   `<your sales DB name>` with the name of your sales database. 
 
     In this topic, the sample database name is `magento_sales`.
-*   `<root user name>` with your MySQL root user name
+*   `<root username>` with your MySQL root username
 *   `<root user password>` with the user's password
 *   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
@@ -300,7 +302,7 @@ This section discusses how to back up quote tables from the main Magento databas
 
 Run the following command from a command prompt:
 
-    mysqldump -u <your database root user name> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
+    mysqldump -u <your database root username> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
 
 ### NDB requirement
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"} cluster:
@@ -414,7 +416,7 @@ The final step in manually splitting databases is to add connection and resource
 
 {% collapsible Click to update the Magento deployment configuration %}
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Back up your deployment configuration:
 
         cp <your Magento install dir>/app/etc/env.php <your Magento install dir>/app/etc/env.php.orig
@@ -484,7 +486,7 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
 {% endcollapsible %}
 
 ## Reference scripts {#split-db-ref}
-This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento database schema.
+This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}.
 
 {% collapsible Click to view reference SQL scripts %}
 
@@ -607,4 +609,4 @@ Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+<a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html">Verify split databases</a>

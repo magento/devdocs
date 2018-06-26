@@ -1,6 +1,5 @@
 ---
-layout: default
-group:  migration
+group: migration
 subgroup: A_Overview
 title: Versions supported
 menu_title: Versions supported
@@ -9,13 +8,44 @@ menu_order: 2
 version: 2.0
 github_link: migration/migration-overview-supported.md
 redirect_from: /guides/v1.0/migration/migration-overview-supported.html
+functional_areas:
+  - Tools
 ---
 
-We support the following versions for migration:
+## Migration from versions
 
-* Enterprise Edition (EE) version 1.11.x, 1.12.x, 1.13.x, 1.14.x
+The Data Migration Tool supports migration from the following versions:
 
-* Community Edition (CE) version 1.6.x, 1.7.x, 1.8.x, 1.9.x
+* {{site.data.var.ee}}:
 
-Also the following versions are already supported if you choose to migrate from CE to EE:
-1.6.x, 1.7.x, 1.8.x, 1.9.x
+    * 1.11.x
+
+    * 1.12.x
+
+    * 1.13.x
+
+    * 1.14.x
+
+* {{site.data.var.ce}}:
+
+    * 1.6.x
+
+    * 1.7.x
+
+    * 1.8.x
+
+    * 1.9.x
+
+If you migrate from {{site.data.var.ce}} to {{site.data.var.ee}}, the following versions are supported:
+
+* 1.6.x
+
+* 1.7.x
+
+* 1.8.x
+
+* 1.9.x
+
+## Migration to version
+
+To know the supported Magento 2 version (the one you're migrating to), see the Data Migration Tool's [Release page](https://github.com/magento/data-migration-tool/releases).

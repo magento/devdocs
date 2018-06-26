@@ -1,0 +1,82 @@
+label: Architecture Guide
+pages:
+    - label: Introduction
+      url: /architecture/bk-architecture.html
+
+    - label: Architectural basics
+      url: /architecture/archi_perspectives/ABasics_intro.html
+      children:
+
+        - label: Extensibility and modularity
+          url: /architecture/extensibility.html
+
+        - label: Ease of frontend customization
+          url: /architecture/frontend_custom_strategies.html
+
+        - label: Global features that support extensibility
+          url: /architecture/global_extensibility_features.html
+
+        - label: Security
+          url: /architecture/security_intro.html
+
+        - label: Storefront customization strategies
+          url: /architecture/storefront_customization.html
+
+        - label: Architectural diagrams
+          url: /architecture/archi_perspectives/arch_diagrams.html
+
+        - label: Technology stack
+          url: /architecture/tech-stack.html
+
+    - label: Architectural layers
+      url: /architecture/archi_perspectives/ALayers_intro.html
+      children:
+
+        - label: Presentation layer
+          url: /architecture/archi_perspectives/present_layer.html
+
+        - label: Service layer
+          url: /architecture/archi_perspectives/service_layer.html
+
+        - label: Domain layer
+          url: /architecture/archi_perspectives/domain_layer.html
+
+        - label: Persistence layer
+          url: /architecture/archi_perspectives/persist_layer.html
+
+    - label: Components
+      url: /architecture/archi_perspectives/components/AComponents.html
+      children:
+
+        - label: Module overview
+          url: /architecture/archi_perspectives/components/modules/mod_intro.html
+
+        - label: Modules and areas
+          url: /architecture/archi_perspectives/components/modules/mod_and_areas.html
+
+        - label: Module conventions
+          url: /architecture/archi_perspectives/components/modules/mod_conventions.html
+
+        - label: Module relationships
+          url: /architecture/archi_perspectives/components/modules/mod_relationships.html
+
+        - label: Module dependencies
+          url: /architecture/archi_perspectives/components/modules/mod_depend.html
+
+        - label: Module dependency types
+          url: /architecture/archi_perspectives/components/modules/mod_depend_types.html
+
+    - label: Magento Framework
+      url: /architecture/archi_perspectives/framework.html
+
+    - label: Third-party libraries
+      url: /architecture/archi_perspectives/third-party-libs.html
+
+    - label: GDPR compliance
+      versions: ["2.1", "2.2", "2.3"]
+      children:
+        - label: Magento 2.x
+          url:  /architecture/gdpr/magento-2x.html
+
+        - label: Magento 1.x
+          url:  /architecture/gdpr/magento-1x.html

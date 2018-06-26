@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Configure and use Varnish
@@ -8,15 +7,19 @@ menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: config-guide/varnish/config-varnish.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
 <a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
 
-Magento 2 supports Varnish versions 3.0.5 or later or any Varnish 4.x version.
+Magento 2 supports versions 3.0.5 or later or any Varnish 4.x version.
 
 <div class="bs-callout bs-callout-warning">
-    <p>We <em>strongly recommend</em> you use Varnish in production. The built-in full-page caching (to either the file system or <a href="{{page.baseurl}}config-guide/database/database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
+    <p>We <em>strongly recommend</em> you use Varnish (or <a href="{{ page.baseurl }}/config-guide/redis/redis-pg-cache.html">Redis</a>) in production. The built-in full-page caching (to either the file system or <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
 </div>
 
 For more information about Varnish, see:
@@ -29,21 +32,21 @@ For more information about Varnish, see:
 <h2 id="varnish-arch">Varnish topology diagram</h2>
 The following figure shows a basic view of Varnish in your Magento topology.
 
-<img src="{{ site.baseurl }}common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
+<img src="{{ site.baseurl }}/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram">
 
-In the preceding figure, users' HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server. 
+In the preceding figure, users' HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as *assets*). Varnish sits in front of the web server and proxies these requests to the web server.
 
-As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don't reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.  
+As the web server returns assets, cacheable assets are stored in Varnish. Any subsequent requests for those assets are fulfilled by Varnish (meaning, the requests don't reach the web server). Varnish returns cached content extremely quickly. The results are faster response times to return the content to users and a reduced number of requests that must be fulfilled by Magento.
 
-Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the Magento Admin or the <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html">`magento cache:clean`</a> command. 
+Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">`magento cache:clean`</a> command.
 
 <h2 id="config-varnish-process">Process overview</h2>
-This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you'll export a Varnish configuration from the Magento Admin and test it again.
+This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you'll export a Varnish configuration from the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and test it again.
 
 The process can be summarized as follows:
 
 1.	Install Varnish and test it by accessing any Magento page to see if you're getting HTTP response headers that indicate Varnish is working.
-2.	Install the Magento software and use the Magento Admin to create a Varnish configuration file. 
+2.	Install the Magento software and use the Magento Admin to create a Varnish configuration file.
 3.	Replace your existing Varnish configuration file with the one generated by the Admin.
 3.	Test everything again.
 
@@ -80,4 +83,4 @@ We know of the following issues with Varnish:
 		}
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
+<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-install.html">Install Varnish</a>

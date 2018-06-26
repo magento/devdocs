@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: 01_Admin
 title: Admin Panel Placement and Design
@@ -7,12 +6,13 @@ menu_title: Admin Panel Placement and Design
 menu_order: 1
 version: 2.0
 github_link: ext-best-practices/admin/placement-and-design.md
-
+functional_areas:
+  - Standards
 ---
 
 ## Overview
 
-Magento’s flexible platform lets you place an extension anywhere in the Admin panel. However, it can be difficult finding the right place for your extension and how it should look, so we’ve prepared the following guidelines to help.
+Magento’s flexible platform lets you place an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} anywhere in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel. However, it can be difficult finding the right place for your extension and how it should look, so we’ve prepared the following guidelines to help.
 
 ## Things to Avoid
 
@@ -25,10 +25,10 @@ Icons should not be used in any of the navigation submenu panels to bring attent
 
 Your extension's settings and configuration area is an appropriate place to use icons.
 
-For more information about icon design and Magento's icon library, see the article about  [Iconography]({{page.baseurl}}design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
+For more information about icon design and Magento's icon library, see the article about  [Iconography]({{ page.baseurl }}/design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
 
 ### Advertising in Navigation
-It is not appropriate to use the Magento Admin navigation for marketing or to cross-sell extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
+It is not appropriate to use the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} navigation for marketing or to {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
 
 Do not use the name of your company or marketing jargon as part of an extension name or the extension name itself in the Admin. You should create a unique feature name that users will understand because people usually search for extensions by feature or function keywords, not by a company or brand name.
 
@@ -38,13 +38,13 @@ From the list of extension types below, determine the type of extension you have
 *The names for the types of extensions listed below are for reference purposes only.*
 
 ### Standard Connector
-These extensions provide additional API over Magento's existing API and is responsible for providing settings between Magento and another system.
+These extensions provide additional {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} over Magento's existing API and is responsible for providing settings between Magento and another system.
 
 **Placement**
 
 All required settings for this connector type should appear in the **Stores > Settings > Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
 
-![Connector settings placement]({{ site.baseurl }}common/images/ext-best-practices/connector-settings-placement.png)
+![Connector settings placement]({{ site.baseurl }}/common/images/ext-best-practices/connector-settings-placement.png)
 
 **Style**
 
@@ -63,7 +63,7 @@ The settings for these extensions should be displayed under its respective paren
 
 For example, if the extension is for Shipping, then you can place it under **Store > Settings > Configuration > Sales > Shipping Settings**.
 
-![Store Feature Connector placement]({{site.baseurl}}common/images/ext-best-practices/store-feature-connector-placement.png)
+![Store Feature Connector placement]({{ site.baseurl }}/common/images/ext-best-practices/store-feature-connector-placement.png)
 
 ---
 
@@ -74,9 +74,9 @@ These extensions are responsible for integrating with different systems and need
 
 If all the settings for an extension can be consolidated into one section, then the extension can be added to one of the primary navigation's submenu as links under the appropriate parent item. Avoid placing extension settings in multiple sections, such as the Configuration section and another related section.
 
-For example, if your extension is related to the “Reports” functionality then its settings should appear as a link under the Report Section in the Primary navigation.
+For example, if your extension is related to the "Reports" functionality then its settings should appear as a link under the Report Section in the Primary navigation.
 
-![Connector with additional features placement]({{site.baseurl}}common/images/ext-best-practices/additional-feature-placement.png)
+![Connector with additional features placement]({{ site.baseurl }}/common/images/ext-best-practices/additional-feature-placement.png)
 
 **Style**
 
@@ -93,7 +93,7 @@ These are extensions which provide additional functionality to Magento that do n
 
 There will be a new, dedicated section designed for such exclusive extensions. When feature-level extensions are installed, those extensions will live under this section. The exact final name of this new section has not been decided (we welcome your feedback), but in the image below it is named Extensions.
 
-![Feature Placement]({{site.baseurl}}common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
+![Feature Placement]({{ site.baseurl }}/common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The name and icon for this section is still TBD.</p>

@@ -1,18 +1,20 @@
 ---
-layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: JavaScript DocBlock standard
+landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
 version: 2.0
 github_link: coding-standards/docblock-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
+functional_areas:
+  - Standards
 ---
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
-To add JavaScript code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
+To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
@@ -42,7 +44,7 @@ Example:
 */
 </pre>
 
-Many tools extract metadata from JSDoc comments to validate and optimize the code.
+Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} from JSDoc comments to validate and optimize the code.
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-indentation">JSDoc indentation</h3>
 
@@ -223,7 +225,7 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
 &nbsp;*&nbsp;@param&nbsp;{string|number|null}&nbsp;term&nbsp;An&nbsp;itemName,
 &nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;itemId,&nbsp;or&nbsp;null&nbsp;to&nbsp;search&nbsp;everything.
 &nbsp;*/
-namespace.Storage.prototype.query&nbsp;=&nbsp;function(groupNum,&nbsp;term)&nbsp;{
+{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.Storage.prototype.query&nbsp;=&nbsp;function(groupNum,&nbsp;term)&nbsp;{
 &nbsp;&nbsp;&nbsp;//&nbsp;...
 };
 </pre>
@@ -245,7 +247,7 @@ namespace.Storage.prototype.getLastId&nbsp;=&nbsp;function()&nbsp;{
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-this">@this</h4>
 
-The type of the object in whose context a particular method is called. Required when the this keyword is referenced from a function that is not a prototype method.
+The type of the object in whose context a particular method is called. Required when the this {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} is referenced from a function that is not a prototype method.
 
 <pre>pinto.chat.RosterWidget.extern('getRosterElement',
 &nbsp;&nbsp;&nbsp;&nbsp;/**
@@ -579,58 +581,3 @@ new&nbsp;project.MyClass()</pre></td>
 	</tr>
   </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

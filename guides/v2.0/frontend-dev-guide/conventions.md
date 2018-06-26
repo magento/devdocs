@@ -1,11 +1,12 @@
 ---
-layout: default
 group: fedg
 title: Conventional notations used in this Guide
 menu_title: Conventional notations used in this Guide
 menu_order: 2
 version: 2.0
 github_link: frontend-dev-guide/conventions.md
+functional_areas:
+  - Frontend
 ---
 
 ## Conventional notations for paths to modules and themes
@@ -16,9 +17,11 @@ The following relative paths are used for modules and themes:
 
 **- `<theme_dir>`**
 
-Theme directory. Usually used when talking about custom themes, or any theme in general.
+{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} directory. Usually used when talking about custom themes, or any theme in general.
 
 For Magento out of the box frontend themes,blank and luma themes, the absolute path usually is one of the following:
+
+For Magento out of the box {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} themes, the absolute path usually is one of the following:
 
  - `app/design/frontend/Magento/<theme>`
  - `vendor/magento/theme-frontend-<theme>`

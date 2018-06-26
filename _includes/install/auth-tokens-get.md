@@ -1,42 +1,32 @@
 <div markdown="1">
 
-## Overview of Magento authentication {#auth-overview}
-The `repo.magento.com` repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character *authentication tokens* you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.
+The `repo.magento.com` repository is where Magento 2 and third-party Composer packages are stored and requires authentication. Use your Magento Marketplace account to generate a pair of 32-character *authentication keys* to access the repository.
 
-To get your authentication keys:
+To create authentication keys:
 
-1.	Go to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"}.
-2.	Click **Sign In** and enter your login credentials.
+1.  Log in to the [Magento Marketplace](https://marketplace.magento.com){:target="&#95;blank"}. If you don't have an account, click **Register**.
+2.  Click your account name in the top-right of the page and select **My Profile**.
 
-	If you don't have a free account, click **Create an Account**.
+3.  Click **Access Keys** in the Marketplace tab.
 
-2.	After you log in, click **My Access Keys** as the following figure shows.
+	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}/common/images/cloud_access-key.png){:width="500px"}
+4.  Click **Create a New Access Key**. Enter a specific name for the keys (e.g., the name of the developer receiving the keys) and click **OK**.
 
-	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}common/images/install_mkpl_access-keys.png){:width="500px"}
-3.	If you already have keys, use the **Public key** as your user name and the **Private key** as your password.
-3.	To create a new key pair, click **Create a New Access Key**.
+5.  New public and private keys are now associated with your account that you can click to copy. Save this information or keep the page open when working with your Magento project. Use the **Public key** as your username and the **Private key** as your password.
 
-	The following figure shows an example.
+### Manage your authentication keys
+You can also disable or delete authentication keys. For example, you can disable or delete keys for security reasons after someone leaves your organization.
 
-	![]({{ site.baseurl }}common/images/install_mkpl_access-keys-detail.png){:width="500px"}
-4.	When prompted, enter a descritive name to identify the key pair.
-5.	Click **Generate New**.
+*	To disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
+*	To enable a previously disabled key: Click **Enable**.
+*	To delete keys: Click **Delete**.
 
-	Use the **Public key** as your user name and the **Private key** as your password.
+You cannot delete or disable keys you created by signing in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="&#95;blank"}. To manage those keys:
 
-#### Manage your authentiation keys
-You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.
+1.	Log in to your [magento.com account](https://www.magentocommerce.com/products/customer/account/login){:target="&#95;blank"}.
+2.	Click **My Account** at the top of the page.
+3.	Click **Account Settings** > **Downloads Access Token**.
 
-*	Disable keys: Click **Disable**. You can do this if you want to suspend use of your keys.
-*	Enable a previously disabled key: Click **Enable**.
-*	Delete keys: Click **Delete**.
-
-You cannot delete or disable keys you created by logging in to `magento.com`. To manage those keys:
-
-1.	[Log in](https://www.magentocommerce.com/products/customer/account/login){:target="_blank"} to your `magento.com` account.
-2.	In the top navigation bar, click **Connect**.
-3.	In the left pane, click **Secure keys**.
-
-	![Access your keys]({{ site.baseurl }}common/images/connect_keys1.png){:width="200px"}
-4.	Enable or disable the desired keys.
-
+	![Access your keys]({{ site.baseurl }}/common/images/connect_keys1.png){:width="200px"}
+4.	Click **Generate new token** to replace and disable an existing token.
+</div>

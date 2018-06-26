@@ -1,1 +1,0 @@
-../../v2.1/howdoi/howdoi_bios.md

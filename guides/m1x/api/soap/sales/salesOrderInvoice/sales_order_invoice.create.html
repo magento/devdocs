@@ -115,14 +115,15 @@ title: Invoice Create
 <div id="root">
 		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
 
-// If somestuff requires api authentification,
+// If somestuff requires api authentication,
 // then get a session token
 $session = $client-&gt;login('apiUser', 'apiKey');
 
 $result = $client-&gt;call(
     $session,
     'sales_order_invoice.create',
-    array('orderIncrementId' =&gt; '200000008', array('order_item_id' =&gt; '15', 'qty' =&gt; '1'))
+    array('orderIncrementId' =&gt; '200000008', array('15' =&gt; '1', '16' =&gt; '1')) 
+    // orderItemIdQty Array is Keyed with Order Item ID, with Value of qty to invoice
 );
 var_dump ($result);
 
@@ -139,9 +140,10 @@ var_dump ($result);
 $sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
 
 //Create invoice for order
-$qty = array(
-    array('order_item_id' =&gt; '15', 'qty' =&gt; '1')
-);
+
+// orderItemIdQty Array is Keyed with Order Item ID, with Value of qty to invoice
+$qty = array('15' =&gt; '1', '16' =&gt; '1');
+
 $invoiceIncrementId = $proxy-&gt;salesOrderInvoiceCreate(
     $sessionID,
     '200000008',
@@ -162,7 +164,7 @@ var_dump($invoiceIncrementId);</pre>
 
 $sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
 
-$result = $proxy-&gt;salesOrderInvoiceCreate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'orderIncrementId' =&gt; '200000008', 'itemsQty' =&gt; array('order_item_id' =&gt; 15, 'qty' =&gt; '1'), 'comment' =&gt; null,
+$result = $proxy-&gt;salesOrderInvoiceCreate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'orderIncrementId' =&gt; '200000008', 'itemsQty' =&gt; array('15' =&gt; '1',  '16' =&gt; '1'), 'comment' =&gt; null,
 'email' =&gt; null,
 'includeComment' =&gt; null
 ));

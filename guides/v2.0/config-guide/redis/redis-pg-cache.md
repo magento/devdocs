@@ -1,20 +1,25 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Redis
-title: Use Redis for page caching
-menu_title: Use Redis for page caching
+title: Use Redis for the Magento page and default cache
+menu_title: Use Redis for the Magento page and default cache
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/redis/redis-pg-cache.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="reds-sess-prereq">Prerequisite</h2>
-Before you continue, install Redis as discussed in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
+Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
-<h2 id="config-redis-config">Configure Magento to use Redis for page caching</h2>
-Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
+## Configure Magento to use Redis for default and page caching {#config-redis-config}
+Following is a sample configuration that causes Magento to use Redis for both the default cache (`default` array) and the full page cache (`page_cache` array). Magento's caching is implemented by [`Magento\Framework\App\CacheInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/CacheInterface.php){:target="_blank"}.
+
+Add a configuration similar to the following to `<your Magento install dir>app/etc/env.php`:
 
 	'cache' =>
 	array(
@@ -26,6 +31,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 	         'backend_options' =>
 	         array(
 	            'server' => '127.0.0.1',
+	            'database' => '0',
 	            'port' => '6379'
 	            ),
 	    ),
@@ -58,7 +64,7 @@ where
 </tr>
 <tr>
 	<td>server</td>
-	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or a an absolute path to a UNIX socket.</td>
+	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or an absolute path to a UNIX socket.</td>
 </tr>
 <tr>
 	<td>port</td>
@@ -66,7 +72,8 @@ where
 </tr>
 <tr>
 	<td>database</td>
-	<td>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.</td>
+	<td><p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
+	<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p></td>
 </tr>
 <tr>
 	<td>password</td>
@@ -85,5 +92,6 @@ where
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+*	[Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
+*  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
+*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>

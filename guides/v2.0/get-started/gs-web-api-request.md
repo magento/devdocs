@@ -1,7 +1,6 @@
 ---
-layout: default
 group: get-started
-subgroup: C_REST
+subgroup: 20_REST
 title: Construct a request
 menu_title: Construct a request
 menu_order: 1
@@ -11,11 +10,11 @@ github_link: get-started/gs-web-api-request.md
 redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
-To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.
+To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} calls.
 
 ## Overview {#request-overview}
 
-Each Magento web API call contains of a combination of these elements:
+Each Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} call contains of a combination of these elements:
 <ul>
    <li><a href="#verbs">HTTP verb</a></li>
    <li><a href="#endpoints">Endpoint</a></li>
@@ -116,7 +115,7 @@ Specify one or more of the following HTTP headers in your web API calls:
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
+See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
       <td><pre>Accept</pre>
@@ -203,7 +202,7 @@ This example shows you how to construct a REST web API call to create an account
 <li><p>Use the <code>method</code> and <code>url</code> values on the <code>route</code> element to construct the URI.</p><p>In this example, the URI is:</p>
 <pre>POST /V1/customers</pre></li>
 <li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
-<p>In this example, the service interface is the <code>AccountManagementInterface</code> PHP file.</p>
+<p>In this example, the service interface is the <code>AccountManagementInterface</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file.</p>
 <p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
 <pre>public function createAccount(
         \Magento\Customer\Api\Data\CustomerInterface $customer,
@@ -212,13 +211,13 @@ This example shows you how to construct a REST web API call to create an account
     );</pre>
 <p>The <code>createAccount</code> call requires a <code>customer</code> data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
 </li>
-<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
+<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} request body on the call.</p></li>
 </ol>
 
 ### Customers Search API request example {#customers-search-api-request-example}
 The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.
 <ol>
-<li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the Authorization token returned by the Magento token service.</p></li>
+<li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} token returned by the Magento token service.</p></li>
 <pre>
 $token = 'token';
 $httpHeaders = new \Zend\Http\Headers();
@@ -229,7 +228,7 @@ $httpHeaders->addHeaders([
 ]);
 </pre>
 <li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}get-started/usage.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{ page.baseurl }}/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
@@ -258,4 +257,4 @@ $response = $client->send($request);
 </ol>
 
 ## Next step
-Run the web API call through a <a href="{{page.baseurl}}get-started/gs-curl.html">cURL command</a> or a REST client.
+Run the web API call through a <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL command</a> or a REST client.

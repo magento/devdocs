@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Optional software
@@ -8,6 +7,10 @@ menu_order: 400
 version: 2.0
 github_link: install-gde/prereq/optional.md
 redirect_from: /guides/v1.0/install-gde/prereq/optional.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="install-optional-intro">Magento optional software</h2>
@@ -85,12 +88,12 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 
 	If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
 
-	Try the <code>ntpdate <em>[pool server host name]</em></code> command. If it fails, search for the error it returns.
+	Try the <code>ntpdate <em>[pool server hostname]</em></code> command. If it fails, search for the error it returns.
 
 	If all else fails, try rebooting the server.
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. 
+<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and its extensions. 
 
 <div class="bs-callout bs-callout-warning">
     <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
@@ -104,7 +107,7 @@ phpinfo();</pre>
 
 For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.
 
-To view the results, enter the following URL in your browser's location or address field:
+To view the results, enter the following {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} in your browser's location or address field:
 
 	http://<web server host or IP>/phpinfo.php
 
@@ -141,7 +144,7 @@ To install phpmyadmin on Ubuntu:
 
 		http://<web server host or IP>/phpmyadmin
 
-4.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
+4.	When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.
 
 <h2 id="install-optional-phpmyadmin-centos">Install phpmyadmin on CentOS</h2>
 To install phpmyadmin on CentOS:
@@ -188,14 +191,14 @@ To install phpmyadmin on CentOS:
 
 		http://<web server host or IP>/phpmyadmin
 
-8.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
+8.	When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.
 
 
 #### Related topics:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

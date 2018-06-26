@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: File Uploader Component
@@ -13,7 +12,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-uploader.html
 
 <h2 id="filter">Overview</h2>
 
-UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.
+UI File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.
 
 <h2 id="elements">Component elements</h2>
 
@@ -38,8 +37,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>Path to the files' preview template</td>
     <td>No</td>
     <td>String</td>
-    <td><Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html
-</td>
+    <td>Magento_Ui_module_dir/view/base/web/templates/form/element/uploader/preview.html</td>
 </tr>
 <tr>
     <td>maxFileSize</td>
@@ -88,7 +86,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 
 <h2 id="example">Integration</h2>
 
-Here is an example of how File Uploader component integrates with <a href="{{page.baseurl}}ui-components/ui-form.html">Form</a> component:
+Here is an example of how File Uploader component integrates with <a href="{{ page.baseurl }}/ui-components/ui-form.html">Form</a> component:
 
 {% highlight xml %}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

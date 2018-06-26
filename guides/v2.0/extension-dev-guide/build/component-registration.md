@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 03_Build
 title: Register your component
@@ -22,7 +21,7 @@ Register modules with:
 
      ComponentRegistrar::register(ComponentRegistrar::MODULE, '<VendorName_ModuleName>', __DIR__);
 
-where &lt;VendorName> is the name of the company providing the module and &lt;ModuleName> is the name of the module.
+where &lt;VendorName> is the name of the company providing the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and &lt;ModuleName> is the name of the module.
 
 Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.
 
@@ -35,7 +34,7 @@ Register themes with:
 
      ComponentRegistrar::register(ComponentRegistrar::THEME, '<area>/<vendor>/<theme name>', __DIR__);
 
-where &lt;area> is the functional area of the module (frontend, controller, and so on.), &lt;vendor> is the name of the company providing the theme, and &lt;theme name> is the name of the theme.
+where &lt;area> is the functional area of the module (frontend, controller, and so on.), &lt;vendor> is the name of the company providing the theme, and &lt;theme name> is the name of the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 
 ### Example
@@ -57,7 +56,7 @@ where &lt;VendorName> is the name of the company providing the package and &lt;p
 <p>&nbsp;</p>
 
 ## Invoke `registration.php` in `composer.json` with autoload {#register-autoload}
-After you create your `registration.php` file and you are creating [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
+After you create your `registration.php` file and you are creating [your component's composer.json file]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
      {
     "name": "Acme-vendor/bar-component",
@@ -77,8 +76,7 @@ After you create your `registration.php` file and you are creating [your compone
 use \Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotification', __DIR__);
-?>
 {%endhighlight %}
 
 #### Next
-[URN schema validation]({{page.baseurl}}extension-dev-guide/build/XSD-XML-validation.html)
+[URN schema validation]({{ page.baseurl }}/extension-dev-guide/build/XSD-XML-validation.html)

@@ -1,14 +1,13 @@
 ---
-layout: default
 group: release-notes
 subgroup: 99_third
-menu_title: Magento CE third-party licenses
+menu_title: Magento Open Source third-party licenses
 menu_order: 1
 version: 2.0
 github_link: release-notes/thirdparty_ce.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento CE.  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within Magento Open Source.  Click the **License** links to view the end user license agreement for the corresponding software.
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
@@ -52,7 +51,7 @@ symfony/finder || MIT|[Source](https://github.com/symfony/finder)|[License](http
 symfony/process || MIT|[Source](https://github.com/symfony/process)|[License](https://github.com/symfony/process/blob/master/LICENSE)
 symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
-tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 tubalmartin/cssmin || BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
 Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
 Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)

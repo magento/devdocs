@@ -1,22 +1,24 @@
 ---
-layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 090_configure
 title: Redirects
 menu_title: Redirects
-menu_order: 18
-menu_node: 
+menu_order: 40
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
 version: 2.0
 github_link: cloud/project/project-routes-more-redir.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 ## Overview of redirection {#cloud-route-redir}
 Managing redirection rules is a common requirement for web applications,
 especially in cases where you do not want to lose incoming links that have
 changed or been removed over time. This topic discusses how you can manage redirection rules on your
-Magento Enterprise Cloud Edition projects. 
+{{site.data.var.ece}} projects.
 
 If the redirection methods discussed in this topic don't work for you, you can use caching headers to do the same thing.
 
@@ -28,14 +30,14 @@ Using whole-route redirects, you can define very basic routes in `routes.yaml`. 
 	    to: http://www.{default}/
 
 ## Partial redirects {#cloud-route-partial}
-In the [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) file you can also add partial redirect rules
+In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
 to existing routes:
 
 	http://{default}/:
 	  # [...]
-	  redirects:	
+	  redirects:
 	    expires: 1d
-	    paths:	
+	    paths:
 	      "/from": { "to": "http://example.com/" }
 	      "/regexp/(.*)/matching": { "to": "http://example.com/$1", regexp: true }
 
@@ -49,9 +51,9 @@ Two keys are available under `redirects`:
 Each rule under `paths` is defined by:
 
 * A key that describes the expression to match against the
-request path 
+request path
 * A value object describing both the destination to redirect to with
-detail on how to handle the redirection. 
+detail on how to handle the redirection.
 
   The value object is defined with the following
 keys:
@@ -67,7 +69,7 @@ Required, a partial (`"/destination"` or `"//destination"`) or full URL (`"http:
 
 ### `regexp` {#cloud-route-partial-regexp}
 Optional, defaults to `false`. Specifies whether the path key should be interpreted as
-   a PCRE regular expression. 
+   a PCRE regular expression.
 
 {% collapsible Click to show/hide content %}
 
@@ -76,10 +78,10 @@ In the following example, a request to `http://example.com/regexp/a/b/c/match` r
 {% highlight yaml %}
 
 http://{default}/:
-    type: upstream 
+    type: upstream
     redirects:
        paths:
-          "/regexp/(.*)/match":  
+          "/regexp/(.*)/match":
           to: "http://example.com/$1"
           regexp: true
 {% endhighlight %}
@@ -87,7 +89,7 @@ http://{default}/:
 {% endcollapsible %}
 
 ### `prefix` {#cloud-route-partial-prefix}
-Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to `true`, but is not supported if `regexp` is `true`. 
+Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to `true`, but is not supported if `regexp` is `true`.
 
 {% collapsible Click to show/hide content %}
 
@@ -126,7 +128,7 @@ http://{default}/:
           append_suffix: false
 {% endhighlight %}
 
-The preceding example results in `/from/path/suffix` redirecting to just `/to`. 
+The preceding example results in `/from/path/suffix` redirecting to just `/to`.
 
 If `append_suffix` is set to its default value of `true`, `/from/path/suffix` redirects to `/to/path/suffix`.
 
@@ -149,4 +151,3 @@ http://{default}/:
 {% endhighlight %}
 
 In the preceding example, redirects from `/from` expire in one day, but redirects from `/here` expire in two weeks.
-

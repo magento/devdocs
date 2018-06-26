@@ -1,14 +1,15 @@
 ---
-layout: default
 group: release-notes
 subgroup: 99_third
-menu_title: Magento CE third-party licenses
+menu_title: Magento Open Source third-party licenses
+title: Magento Open Source third-party licenses
 menu_order: 1
 version: 2.1
 github_link: release-notes/thirdparty_ce.md
 ---
 
-This page contains links to license agreements of the third party components used within Magento CE.  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within Magento Open Source (formerly Community Edition).  Click the **License** links to view the end user license agreement for the corresponding software.
+
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
@@ -33,7 +34,7 @@ symfony/process |2.1| MIT|[Source](https://github.com/symfony/process)|[License]
 symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 phpseclib/phpseclib |2.0| MIT|[Source](https://github.com/phpseclib/phpseclib)|[License](https://github.com/phpseclib/phpseclib/blob/master/LICENSE)
-tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 sjparkinson/static-review |4.1| MIT|[Source](https://github.com/sjparkinson/static-review)|[License](https://github.com/sjparkinson/static-review/blob/master/LICENSE)
 phpunit/phpunit |4.1.0| BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpunit)|[License](https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE)
 squizlabs/php_codesniffer |1.5.3| BSD-3-Clause|[Source](https://github.com/squizlabs/PHP_CodeSniffer)|[License](https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt)

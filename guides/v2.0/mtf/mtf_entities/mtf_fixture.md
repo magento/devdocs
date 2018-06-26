@@ -1,19 +1,13 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
-menu_title: Fixture
-menu_order: 1
+title: Fixture
 version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
 
-## Overview {#mtf_fixture_overview}
+An FTF fixture is a list of properties of the Magento {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} under test.
 
-An FTF fixture is a list of properties of the Magento entity under test.
-
-A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
+A fixture is represented as an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file located in the `Fixture` directory that corresponds to a module in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 
 -  `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
@@ -29,13 +23,13 @@ To apply any changes in fixture, run generate tool:
     cd <magento2_root_dir>/dev/tests/functional/utils
     php generate.php
 
-This tool creates PHP classes that are used by the test.
+This tool creates {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes that are used by the test.
 
-You can check fixture PHP class in corresponding module in the `<magento2_root_dir>/dev/tests/functional/generated/Magento` directory.
+You can check fixture PHP class in corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} in the `<magento2_root_dir>/dev/tests/functional/generated/Magento` directory.
 
 ## Create new fixture {#mtf_fixture_create}
 
-Let's imagine that we want to create new fixture to test our Widget module.
+Let's imagine that we want to create new fixture to test our {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} module.
 
 Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture with parameters indicated in arguments. It is located in `<magento2_root_dir>/dev/tests/functional/utils`.
 
@@ -47,7 +41,7 @@ Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture
 </div>
 
 <div class="bs-callout bs-callout-warning">
-<p>To work with generateFixtureXml tool, <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
+<p>To work with generateFixtureXml tool, <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
 </div>
 
 In the following table see `generateFixtureXml` arguments.
@@ -137,11 +131,11 @@ The following table describes `<field>` attributes.
 | `is_required`       | Specifies whether field is required on the form.   | 1 - required, 0 - optional | 1  |optional     |
 | `group`    | Tab name that contains field (for example, `title` field is placed on **Storefront properties** tab on widget creation page).      |           string           |storefront_properties | optional      |
 | `source`    | Class that prepares field data for use. See <a href="#mtf_fixture_source">Add the data source to the fixture field</a>.      |    string |Magento\Widget\Test\Fixture\Widget\LayoutUpdates   |     optional      |
-| `repository`    | Reference to  the class that stores data sets for the field. <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>. |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
+| `repository`    | Reference to  the class that stores data sets for the field. <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html">More details about the repository</a>. |  string  |Magento\Widget\Test\Repository\Widget\LayoutUpdates   |     optional      |
 
 The following image shows how XML is connected with GUI of your new widget.
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_fixture_xml_pic.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_fixture_xml_pic.png" /></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_fixture_xml_pic.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_fixture_xml_pic.png" /></a>
 
 Orange arrows show relations between `<field>` nodes of fixture and GUI element of Magento widget, that we are going to test.
 
@@ -192,7 +186,7 @@ To apply the changes, enter the following commands:
 
 ## Add a repository to the fixture field {#mtf_fixture_repositoy}
 
-Now we have a new fixture for Widget. All fields are defined and ready to take test data. Let's assume that we are not focused on layout updates functionality and want to use pre-defined data.
+Now we have a new fixture for Widget. All fields are defined and ready to take test data. Let's assume that we are not focused on {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates functionality and want to use pre-defined data.
 
 For this goal, link to the repository where all test data has already been defined.
 
@@ -248,7 +242,7 @@ To apply changes, enter following commands:
 
 Our new field `layout_updates` is complex and contains different elements and logic, depending on the type of layout chosen.
 
-![Layout update subelements]({{ site.baseurl }}common/images/ftf/mtf_layout_update.jpg)
+![Layout update subelements]({{ site.baseurl }}/common/images/ftf/mtf_layout_update.jpg)
 
 You can use a data source that provides additional processing of the field (for example, parsing or creation of new field).
 

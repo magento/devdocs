@@ -1,1 +1,0 @@
-../../../v2.1/architecture/view/static-process.md

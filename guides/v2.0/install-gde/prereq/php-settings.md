@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Required PHP settings
@@ -9,9 +8,13 @@ level3_menu_node: level3child
 level3_subgroup: php
 version: 2.0
 github_link: install-gde/prereq/php-settings.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
-This topic discusses how to set required PHP options.
+This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} options.
 
 {% collapsible About required and recommended PHP options: %}
 
@@ -25,7 +28,7 @@ This topic discusses how to set required PHP options.
 
 	Our detailed recommendations are:
 
-	*	Compiling code or deploying static assets, `768M`
+	*	Compiling code or deploying static assets, `756M`
     *	Installing and updating Magento components from Magento Marketplace, `2G`
     *	Testing, `2G`
 *	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
@@ -49,9 +52,9 @@ This topic discusses how to set required PHP options.
 This section discusses how you find the configuration files necesary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}
-To find the web server configuration, run a <a href="{{page.baseurl}}install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
+To find the web server configuration, run a <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
 
-<img src="{{ site.baseurl }}common/images/config_phpini-webserver.png" width="700px">
+<img src="{{ site.baseurl }}/common/images/config_phpini-webserver.png" width="700px">
 
 To locate the PHP command-line configuration, enter
 
@@ -136,10 +139,10 @@ If you have more than one `opcache.ini`, modify all of them.
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
+*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/optional.html">Installing optional software</a>
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 

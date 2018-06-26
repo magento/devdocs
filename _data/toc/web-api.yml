@@ -1,0 +1,48 @@
+label: Getting Started with Web APIs
+pages:
+    - label: Introduction
+      url: /get-started/bk-get-started-api.html
+
+    - label: Use REST APIs
+      url: /get-started/rest_front.html
+      children:
+
+        - label: Construct a request
+          url: /get-started/gs-web-api-request.html
+
+        - label: Use cURL to run the request
+          url: /get-started/gs-curl.html
+
+        - label: Status codes and responses
+          url: /get-started/gs-web-api-response.html
+
+        - label: Order Processing with REST APIs Tutorial
+          class: tutorial
+          url: /get-started/order-tutorial/order-intro.html
+          versions: ["2.1", "2.2", "2.3"]
+
+
+    - label: Use SOAP Services
+      url: /get-started/soap/soap-web-api-calls.html
+
+    - label: Authentication
+      url: /get-started/authentication/gs-authentication.html
+      children:
+
+        - label: Token-based authentication
+          url: /get-started/authentication/gs-authentication-token.html
+
+        - label: OAuth-based authentication
+          url: /get-started/authentication/gs-authentication-oauth.html
+
+        - label: OAuth error codes
+          url: /get-started/authentication/oauth-errors.html
+
+        - label: Session-based authentication
+          url: /get-started/authentication/gs-authentication-session.html
+
+    - label: Create an integration
+      url: /get-started/create-integration.html
+
+    - label: Web API functional testing
+      url: /get-started/web-api-functional-testing.html

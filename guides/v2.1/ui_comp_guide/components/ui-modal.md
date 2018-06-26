@@ -1,24 +1,22 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Modal сomponent
 menu_title: Modal component
 version: 2.1
 github_link: ui_comp_guide/components/ui-modal.md
+redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 
-This topic describes the modal UI component.
+## Overview
 
-## Modal component: overview
+The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
 
-The Modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html).
+Similar to the widget's configuration, the component's configuration allows you to set the window type and the behavior of action buttons (including linking action buttons to methods of the other UI components).
 
-Similar to the widget's configuration, the component's configuration allows you to set the window type and action buttons behavior (including linking action buttons to methods of the other UI components).
+The Modal component can be used for both {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and storefronts.
 
-The Modal component can be used for both Admin panel and storefront.
-
-For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library](http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
+For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
 ## Structure
 
@@ -44,236 +42,51 @@ Component's options are set in the configuration `.xml` file as follows:
 </modal>
 {%endhighlight%}
 
-The modal component uses general configuration options, similar to other UI components. However, it uses the following specific options as well:
+Extends UiCollection configuration.
+
+Modal-specific configuration:
 <table>
   <tr>
-    <th>
-      Modal options
-    </th>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default</th>
   </tr>
   <tr>
-    <td>
-      <code>state</code>
-      <p>
-        Set the state of the modal window: <code>true</code> for
-        open.
-      </p>
-      <p>
-        <strong>Type:</strong> Boolean
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value</strong>: <code>false</code>
-      </p>
-    </td>
+    <td><code>modalClass</code></td>
+    <td>CSS class applied to the root node of the component's <code>.html</code> template.</td>
+    <td>String</td>
+    <td><code>modal-component</code></td>
   </tr>
   <tr>
-    <td>
-      <code>options</code>
-      <p>
-        Configuration for the modal widget. Passed to the widget
-        initialization as is.
-      </p>
-      <p>
-        <strong>Type:</strong> Object
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> <code>{}</code>
-      </p>
-    </td>
+    <td><code>onCancel</code></td>
+    <td>Name of the method invoked when a user attempts to close the modal window.</td>
+    <td>String</td>
+    <td><code>closeModal</code></td>
   </tr>
   <tr>
-    <td>
-      <code>title</code>
-      <p>
-        The title of the modal window. Set as follows:
-      </p>
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="title" xsi:type="string"&gt;%window_title%&lt;/item&gt;
-&lt;/item&gt;
-</pre>
-      <p>
-        <strong>Type:</strong> String
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> <code>''</code>
-      </p>
-    </td>
+    <td><code>options</code></td>
+    <td>Configuration passed to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
+    <td>Object</td>
+    <td></td>
   </tr>
   <tr>
-    <td>
-      <code>subTitle</code>
-      <p>
-        The subtitle of the modal window. Set as follows:
-      </p>
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="title" xsi:type="string"&gt;%window_subtitle%&lt;/item&gt;
-&lt;/item&gt;
-</pre>
-      <p>
-        <strong>Type:</strong> String
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> <code>''</code>
-      </p>
-    </td>
+    <td><code>subTitle</code></td>
+    <td>Subtitle of the modal window.</td>
+    <td>String</td>
+    <td></td>
   </tr>
   <tr>
-    <td>
-      <code>type</code>
-      <p>
-        The type of the modal window. Can be one of the following:
-        <code>slide</code> or <code>popup</code>. Set as follows:
-      </p>
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="type" xsi:type="string"&gt;%slide|popup%&lt;/item&gt;
-&lt;/item&gt;
-</pre>
-      <p>
-        <strong>Type:</strong> String
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> <code>slide</code>
-      </p>
-    </td>
+    <td><code>template</code></td>
+    <td>Path to the component's .html template.</td>
+    <td>String</td>
+    <td><code>ui/modal/modal-component</code></td>
   </tr>
   <tr>
-    <td>
-      <code>buttons</code>
-      <p>
-        The action buttons of the modal window.
-      </p>
-      <p>
-        <strong>Type:</strong> Array <strong>Required?:</strong>
-        Optional <strong>Default value:</strong> <code>[]</code>
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>text</code>
-      <p>
-        The button label.<br />
-        Set as follows:
-      </p>
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="buttons" xsi:type="array"&gt;
-         &lt;item name="%button_number%" xsi:type="array"&gt;
-             &lt;item name="text" xsi:type="string"&gt;%label%&lt;/item&gt;
-         &lt;/item&gt;
-    &lt;/item&gt;
-&lt;/item&gt;
-</pre>
-      <p>
-        <strong>Type:</strong> String
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> Undefined
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>class</code>
-      <p>
-        The CSS class for the button.<br />
-        Set as follows:
-      </p>
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="buttons" xsi:type="array"&gt;
-         &lt;item name="%button_number%" xsi:type="array"&gt;
-             &lt;item name="class" xsi:type="string"&gt;%class%&lt;/item&gt;
-         &lt;/item&gt;
-    &lt;/item&gt;
-&lt;/item&gt;
-</pre>
-      <p>
-        <strong>Type:</strong> String
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> Undefined
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>actions</code>
-      <p>
-        Button actions. On button click, actions are performed in
-        the same order as they are specified in config.<br />
-        Set as follows:
-      </p>
-      <pre>
-&lt;item name="options" xsi:type="array"&gt;
-    &lt;item name="buttons" xsi:type="array"&gt;
-         &lt;item name="%button_number%" xsi:type="array"&gt;
-             &lt;item name="actions" xsi:type="string"&gt;
-                &lt;--! Action that calls the method of the other UI component --&gt;
-                &lt;item name="%action_number%" xsi:type="array"&gt;
-                    &lt;item name="targetName" xsi:type="string"&gt;%component_which_performs_action%&lt;/item&gt;
-                    &lt;item name="actionName" xsi:type="string"&gt;%method_of_target_component%&lt;/item&gt;
-                &lt;/item&gt;
-                &lt;--! Action that calls the method of the modal component --&gt;
-                &lt;item name="%next_action_number%" xsi:type="array"&gt;%method_of_modal_component%&lt;/item&gt;
-             &lt;/item&gt;
-         &lt;/item&gt;
-    &lt;/item&gt;
-&lt;/item&gt;
-</pre>
-      <p>
-        <strong>Type:</strong> Object
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> Undefined
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>onCancel</code>
-      <p>
-        Action (method name), that is performed on canceling
-        interactions: pressing Esc, clicking outside the modal
-        window, or clicking the 'X' (close) icon.
-      </p>
-      <p>
-        <strong>Type:</strong> String
-      </p>
-      <p>
-        <strong>Required?:</strong> Optional
-      </p>
-      <p>
-        <strong>Default value:</strong> <code>closeModal</code>
-      </p>
-    </td>
+    <td><code>title</code></td>
+    <td>Label displayed in the header of the modal window.</td>
+    <td>String</td>
+    <td></td>
   </tr>
 </table>
 

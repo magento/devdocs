@@ -15,7 +15,7 @@ github_link: release-notes/tech_bull_tls-repo.md
 ### Solution
 The solution to this issue depends on how your operating system packages TLS. See one of the following sections for more information:
 
-*	[Unbuntu](#solution-ubuntu)
+*	[Ubuntu](#solution-ubuntu)
 *	[CentOS](#solution-centos)
 *	[Mac OS](#solution-macos)
 
@@ -27,7 +27,7 @@ To determine your `libcurl` version, enter the following command:
 	curl --version
 
 #### CentOS {#solution-centos}
-The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} library packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
+The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
 
 To determine the version of CentOS your server runs, enter the following command:
 

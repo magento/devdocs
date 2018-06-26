@@ -1,18 +1,19 @@
 ---
-layout: default
 group: compman
 subgroup: 50_trouble
 title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
-menu_node: 
+menu_node:
 menu_order: 200
 version: 2.0
 github_link: comp-mgr/trouble/cman/maint-mode.md
+functional_areas:
+  - Upgrade
 ---
 
 This topic discusses how you can create a custom maintenance page to display to users while your Magento application is being upgraded. Creating a custom page is optional but recommended because your site is accessible during part of the upgrade.
 
-Creating a custom page to which to redirect users prevents any access to the site and also informs your users that the site is undergoing maintenance.
+Creating a custom page to which to {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} users prevents any access to the site and also informs your users that the site is undergoing maintenance.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You must perform the tasks in this section as a user with <code>root</code> privileges.</p>
@@ -90,7 +91,7 @@ To redirect traffic to a custom maintenance page:
 4. Enter the following command:
 
 		touch <web server docroot>/maintenance.enable
-5.	[Upgrade your system]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+5.	[Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete `maintenance.enable`.
 
@@ -99,7 +100,7 @@ This section discusses how to create a custom maintenance page and how to redire
 
 To redirect traffic to a custom maintenance page:
 
-1.	Use a text editor to open the nginx configuration file that contains your server block.
+1.	Use a text editor to open the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} configuration file that contains your server block.
 2.	Add the following to the server block (`server` is shown for clarity only; don't add a second server block).
 
 	The following whitelists IP address 192.0.2.110 and 192.0.2.115 on a system where Magento is installed in `/var/www/html/magento2`:
@@ -139,7 +140,7 @@ To redirect traffic to a custom maintenance page:
 3. Reload the nginx configuration:
 
 		service nginx reload
-5.	[Upgrade your system]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+5.	[Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete or rename `maintenance.enable`
 5.	Reload the nginx configuration:

@@ -1,14 +1,13 @@
 ---
-layout: default
 group: unit-testing
-subgroup: 40_Running_Unit_Tests
 title: Writing Testable Code
-menu_title: Writing Testable Code
-menu_node: parent
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
 github_link: test/unit/writing_testable_code.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.
@@ -30,19 +29,19 @@ We strongly recommend you do *not*:
 *   Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
 *   Use the `ObjectManager` directly in production code.  
 
-There always is a better alternative, usually a [generated]({{page.baseurl}}extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
+There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This rule applies only to production code. When writing <a href="{{page.baseurl}}test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
+  <p>This rule applies only to production code. When writing <a href="{{ page.baseurl }}/test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
 </div>
 
 ### Collaborator classes
 
 Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.  
 
-PHP cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
+{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
 
-Collaborator instances should be passed into the class using [constructor injection]({{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons).
+Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
 
 ### The environment (file system, time, global variables)
 
@@ -87,7 +86,7 @@ interface RequestInterface
 }
 {%endhighlight%}
 
-Let's also assume there is a concrete implementation `HttpRequest` that that also has a public method `getParams()` in addition to the two interface methods.
+Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
 {%highlight php startinline=true %}
 class HttpRequest implements RequestInterface
@@ -193,9 +192,9 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
 }
 {%endhighlight%}
 
-### The law of Demeter
+### The Law of Demeter
 
-The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated "Only talk to friends" or "Don't talk to strangers". It states that code cannot call methods on any object, but only on objects that it received in one of the following ways:
+The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Don't talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
 
 * Objects received as constructor arguments
 * Objects received as arguments to the current method
@@ -203,7 +202,7 @@ The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_bla
 
 The principle explicitly states that no method can be called on objects that are the return value of another method call. Calling method calls on returned objects introduces a hidden dependency on the returned object type.
 
-The following example violates the law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
+The following example violates the Law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
 
 {%highlight php startinline=true %}
 function isJsonResponse(Response $response)
@@ -227,7 +226,7 @@ Almost as a side effect, those classes are very easy to test.
 
 #### For more information
 
-* Kent Beck's [rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"}
+* [Rules of simple software design](http://martinfowler.com/bliki/BeckDesignRules.html){:target="_blank"} by Kent Beck
 * [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
 * [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
 * [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce

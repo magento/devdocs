@@ -1,18 +1,20 @@
 ---
-layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 090_configure
 title: Caching
 menu_title: Caching
-menu_order: 17
-menu_node: 
+menu_order: 35
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
 version: 2.0
 github_link: cloud/project/project-routes-more-cache.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
-Magento Enterprise Cloud Edition enables you to use caching in your environment. If you disable caching, Magento Enterprise Cloud Edition directly serves the files. 
+{{site.data.var.ee}} enables you to use caching in your environment. If you disable caching, {{site.data.var.ee}} directly serves the files.
 
 ## Set up caching {#cloud-cache-setup}
 Enable caching in your Magento application's `.magento/routes.yaml` as follows:
@@ -29,8 +31,7 @@ http://{default}/:
 {% endhighlight %}
 
 ## Route-based caching {#cloud-cache-route}
-If you need fine-grained caching, you can set up caching rules for
-several routes separately as the following example shows:
+If you need fine-grained caching, you can set up caching rules for several routes separately as the following example shows:
 
 {% highlight yaml %}
 http://{default}/:
@@ -68,15 +69,10 @@ And the following routes are **not** cached:
 </div>
 
 ## Cache duration {#cloud-cache-ttl}
-The cache duration is determined by the `Cache-Control` response
-header value. If no `Cache-Control` header is in the response, we use the 
-`default_ttl` key.
+The cache duration is determined by the `Cache-Control` response header value. If no `Cache-Control` header is in the response, we use the `default_ttl` key.
 
 ## Cache key {#cloud-cache-key}
-To decide how to cache a response, Magento Enterprise Cloud Edition builds a cache key
-depending on several factors and store the response associated with this
-key. When a request comes with the same cache key, the response is
-reused. Its purpose is similar to the HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44){:target="_blank"}.
+To decide how to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} a response, {{site.data.var.ee}} builds a cache key depending on several factors and store the response associated with this key. When a request comes with the same cache key, the response is reused. Its purpose is similar to the HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44){:target="_blank"}.
 
 The parameters `headers` and
 `cookies` keys enable you to change this cache key.
@@ -96,11 +92,10 @@ We support the following attributes:
 *	[`enabled`](#cloud-cache-attrib-en)
 *	[`headers`](#cloud-cache-attrib-head)
 *	[`cookies`](#cloud-cache-attrib-cook)
-*	[`default_ttl`](#cloud-cache-attrib-ttl) 
+*	[`default_ttl`](#cloud-cache-attrib-ttl)
 
 ### `enabled` {#cloud-cache-attrib-en}
-When set to `true`, enable the cache for this route. When set to
-`false`, disable the cache for this route.
+When set to `true`, enable the cache for this route. When set to `false`, disable the cache for this route.
 
 ### `headers` {#cloud-cache-attrib-head}
 Defines on which values the cache key must depend.
@@ -113,8 +108,7 @@ cache:
   headers: ["Accept"]
 {% endhighlight %}
 
-Then Magento Enterprise Cloud Edition will cache a different response for each value of the
-`Accept` HTTP header.
+Then {{site.data.var.ee}} will cache a different response for each value of the `Accept` HTTP header.
 
 ### `cookies` {#cloud-cache-attrib-cook}
 The `cookies` key define on which values the cache key must depend.
@@ -127,12 +121,9 @@ cache:
   cookies: ["value"]
 {% endhighlight %}
 
-The cache key depends on the value of the `value` cookie in the
-request.
+The cache key depends on the value of the `value` cookie in the request.
 
-A special case exists if the `cookies` key has the `["*"]` value. This value
-means that any request with a cookie will bypass the cache. This is the
-default value.
+A special case exists if the `cookies` key has the `["*"]` value. This value means that any request with a cookie will bypass the cache. This is the default value.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You cannot  use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (<code>*</code>). <code>SESS*</code> or <code>~SESS</code> are currently  <em>not</em> valid values.
@@ -140,6 +131,4 @@ default value.
 </div>
 
 ### `default_ttl` {#cloud-cache-attrib-ttl}
-If the response does not have a `Cache-Control` header, the
-`default_ttl` key is used to define the cache duration, in seconds. The
-default value is `0`, which means nothing is cached.
+If the response does not have a `Cache-Control` header, the `default_ttl` key is used to define the cache duration, in seconds. The default value is `0`, which means nothing is cached.

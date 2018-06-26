@@ -1,24 +1,26 @@
 ---
-layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
+landing-page: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
 version: 2.0
 github_link: coding-standards/code-standard-demarcation.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
+functional_areas:
+  - Standards
 ---
 
 <p>Magento core developers must follow the Magento code demarcation standard.</p>
-<p>This standard is recommended for third-party extension developers.</p>
+<p>This standard is recommended for third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.</p>
 <p>Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.</p>
 <p>The standard was developed in the scope of our efforts to ensure the following:</p>
 <ul>
    <li>Decouple visual (CSS) layer from the functional (JavaScript) layer.</li>
-   <li>Decouple functional (JavaScript) layer from the markup (HTML).</li>
-   <li>Reinstate emphasis on using of jQuery templates.</li>
-   <li>Reinstate emphasis on decoupling HTML, CSS and JS from PHP classes.</li>
+   <li>Decouple functional (JavaScript) layer from the {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} (HTML).</li>
+   <li>Reinstate emphasis on using of {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} templates.</li>
+   <li>Reinstate emphasis on decoupling HTML, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and JS from {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes.</li>
 </ul>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
 
@@ -57,7 +59,7 @@ redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
    <li>Reduces long-term maintenance efforts.</li>
 </ul>
 
-**Acceptable PHTML template**
+**Acceptable {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} template**
 
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
 {% highlight html %}
@@ -126,26 +128,26 @@ The following list will help you make a distinction between the actual meaning o
 **Acceptable**:
 
 {%highlight html%}
-<p>HTML has been created to <b>semantically</b> represent documents.</p>
+<p>HTML has been created to <strong>semantically</strong> represent documents.</p>
 <p><strong>Warning:</strong> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
 **Unacceptable**:
 
 {%highlight html%}
-<p>HTML has been created to <strong>semantically</strong> represent documents.</p>
+<p>HTML has been created to <b>semantically</b> represent documents.</p>
 <p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
-## Code demarcation 
+## Code demarcation
 
 ### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
 
-As the first option, you are required to use HTML class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
+As the first option, you are required to use {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
 
 <ul>
    <li>Enforces clean, strict separation between visual and business logic layers.</li>
-   <li>Allows frontend and backend teams to work independently.</li>
+   <li>Allows {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} teams to work independently.</li>
    <li>Allows changing look and feel without affecting business functionality, and vice versa.</li>
    <li>Enables frontend teams to clean up old styles quickly and easily when refactoring.</li>
 </ul>
@@ -185,7 +187,7 @@ section[role="main"] { ... }
    <li>Reduces long-term maintenance efforts by containing CSS styles in a single place.</li>
 </ul>
 
-**Acceptable JavaScript widget file**
+**Acceptable {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} file**
 {% highlight javascript %}
 ...
    options: {
@@ -252,7 +254,7 @@ this.element.on('click', function() {
 {% highlight javascript %}
 options {
  deleteAction:  '[data-action="delete"]',
- tooltip: '[data-role="tooltip]'  
+ tooltip: '[data-role="tooltip]'
 }
 ...
 this.element.find(this.options.deleteAction).on( ... );
@@ -350,7 +352,7 @@ public function getSelectorOptions()
 ...
 {% endhighlight %}
 
-or 
+or
 
 **Acceptable PHTML template**
 
@@ -484,9 +486,9 @@ public function getAttributeId($element)
 **Acceptable PHTML template**
 
 {% highlight php startinline=true %}
-<span class="attribute-change-checkbox”>
+<span class="attribute-change-checkbox">
 <label>
-   <input type="checkbox” 
+   <input type="checkbox"
       <?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
       data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
    <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
@@ -511,7 +513,7 @@ public function getAttributeId($element)
 **Unacceptable PHTML template**
 
 {%highlight php%}
-<span class="attribute-change-checkbox”>
+<span class="attribute-change-checkbox">
 	<label>
 		<?php echo $this->getCheckbox($element)?>
 		<?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
@@ -520,5 +522,3 @@ public function getAttributeId($element)
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 
 {%endhighlight%}
-
-

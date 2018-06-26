@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Payment Token
@@ -7,19 +6,21 @@ menu_title: Payment Token
 menu_order: 10
 version: 2.1
 github_link: payments-integrations/vault/payment-token.md
+functional_areas:
+  - Integration
 ---
 
 Magento does not store any private credit card details. It only stores the data received from the payment provider: payment processor token and credit card details without sensitive data. 
 
 This information is stored in Payment Token.
 
-The basic interface for Payment Token is [PaymentTokenInterface]({{site.mage2100url}}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php).
+The basic interface for Payment Token is [PaymentTokenInterface]({{ site.mage2100url }}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php).
 
-To retrieve and store token details, you need to implement a [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html) in your payment integration, create a Payment Token entity, and store it in the payment extension attributes.
+To retrieve and store token details, you need to implement a [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html). In the response handler a Payment Token {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} is created and stored in the payment {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
 
 Following sample is an example of the response handler implementation:
 
-{% highlight php startinline=1 %}
+``` php?start_inline=1
 class VaultDetailsHandler implements HandlerInterface
 {
     /**
@@ -66,12 +67,16 @@ class VaultDetailsHandler implements HandlerInterface
         return $paymentToken;
     }
 }
-{% endhighlight %}
+```
 
- There are two types of `paymentTokenFactory`:
+There are two types of `paymentTokenFactory`: 
 
  * `CreditCardTokenFactory`: used for credit cards
  * `AccountPaymentTokenFactory`: used for payment accounts, like PayPal
+
+Depending on your payment integration, you need to specify one of them to create a payment token.
+
+Also, you can use `\Magento\Vault\Api\Data\PaymentTokenInterfaceFactory` in your code as common dependency. But in that case you must specify preference for this interface in `di.xml`, because `PaymentTokenInterfaceFactory` does not have default preference.
 
 The important thing is the `setGatewayToken()` method. This method gets the gateway token: a hashed value based on some credit card details. Different
 payment providers use different algorithms to create this hash. In most cases, exactly this token is used to perform place order actions.
@@ -92,7 +97,7 @@ Example of the Braintriee `di.xml`:
 </virtualType>
 {% endhighlight %}
 
-The persistence layer for Payment Token is implemented in the [Vault Module]({{site.mage2100url}}app/code/Magento/Vault).
+The persistence layer for Payment Token is implemented in the [Vault Module]({{ site.mage2100url }}app/code/Magento/Vault).
 
 ## What's next
-[Adding and using  UI_Vault component to place orders on the storefront]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html).
+[Adding and using  UI_Vault component to place orders on the storefront]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html).

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: Resize Component
@@ -58,6 +57,6 @@ The Resize components does not depend on other components
 
 The following options are available:
 
-* rootSelector - the css selector for listing's root node
+* rootSelector - the {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}css{% endglossarytooltip %} selector for listing's root node
 * showLines - max lines of text allowed in column
 * minColumnWidth - minimum width of the column

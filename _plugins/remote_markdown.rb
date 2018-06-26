@@ -16,8 +16,6 @@ module Jekyll
       check_protocol(text)
       uri = URI(text)
 
-      check_extension(uri.path)
-
       res = Net::HTTP.get_response(uri)
       fail 'resource unavailable' unless res.is_a?(Net::HTTPSuccess)
 
@@ -35,11 +33,6 @@ module Jekyll
       fail error_message unless text =~ URI.regexp(%w(http https ftp ftps))
     end
 
-    def check_extension(path)
-      mdexts = %w(.markdown .mkdown .mkdn .mkd .md .xml .php .js .json .less)
-      error_message = "remote_markdown: URI file extension not in #{mdexts}"
-      fail error_message unless mdexts.include?(File.extname(path))
-    end
   end
 end
 

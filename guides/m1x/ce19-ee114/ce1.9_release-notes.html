@@ -5,18 +5,18 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon"> 
-	<title>Magento Community Edition (CE) Release Notes (1.9 and later)</title>
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl }}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
+	<title>Magento Open Source Release Notes (1.9 and later)</title>
 
 </head>
 
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <!-- Title: Magento Community Edition (CE) 1.9 Release Notes -->
 <!-- URL: ce19-later-release-notes -->
@@ -24,31 +24,199 @@
 
 
 
-<h1>Magento Community Edition (CE) Release Notes (1.9 and later)</h1>
+<h1>Magento Open Source Release Notes (1.9 and later)</h1>
 
 <div class="toc"><h4 class="toc">Contents</h4>
 <p>These Release Notes contain the following information:</p>
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
-<li><a href="#ce19-1931">Magento CE 1.9.3.1 Release Notes</a></li>
-<li><a href="#ce19-1930">Magento CE 1.9.3.0 Release Notes</a></li>
-<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.4.html" target="_blank">Magento CE 1.9.2.4 Release Notes</a></li>
-<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.3.html" target="_blank">Magento CE 1.9.2.3 Release Notes</a></li>
-<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.2.html" target="_blank">Magento CE 1.9.2.2 Release Notes</a></li>
-<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.1.html" target="_blank">Magento CE 1.9.2.1 Release Notes</a></li>
-<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.html" target="_blank">Magento CE 1.9.2.0 Release Notes</a></li>
-<li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.html" target="_blank">Magento CE 1.9.1.0 Release Notes</a></li>
-<li><a href="#ce19-1901">Magento CE 1.9.0.1 Release Notes</a></li>
-<li><a href="#ce19-1900">Magento CE 1.9.0.0 Release Notes</a></li>
+
+<li><a href="#ce19-1938">Magento Open Source 1.9.3.8 Release Notes</a></li>
+<li><a href="#ce19-1937">Magento Open Source 1.9.3.7 Release Notes</a></li>
+<li><a href="#ce19-1936">Magento Open Source 1.9.3.6 Release Notes</a></li>
+<li><a href="#ce19-1935">Magento Open Source 1.9.3.5 Release Notes</a></li>
+<li><a href="#ce19-1934">Magento Open Source 1.9.3.4 Release Notes</a></li>
+<li><a href="#ce19-1933">Magento Open Source 1.9.3.3 Release Notes</a></li>
+<li><a href="#ce19-1932">Magento Open Source 1.9.3.2 Release Notes</a></li>
+<li><a href="#ce19-1931">Magento Open Source 1.9.3.1 Release Notes</a></li>
+<li><a href="#ce19-1930">Magento Open Source 1.9.3.0 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.4.html" target="_blank">Magento Open Source 1.9.2.4 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.3.html" target="_blank">Magento Open Source 1.9.2.3 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.2.html" target="_blank">Magento Open Source 1.9.2.2 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.1.html" target="_blank">Magento Open Source 1.9.2.1 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.html" target="_blank">Magento Open Source 1.9.2.0 Release Notes</a></li>
+<li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.1.html" target="_blank">Magento Open Source 1.9.1.0 Release Notes</a></li>
+<li><a href="#ce19-1901">Magento Open Source 1.9.0.1 Release Notes</a></li>
+<li><a href="#ce19-1900">Magento Open Source 1.9.0.0 Release Notes</a></li>
 <li><a href="#oss">Open Source Software Licensing Agreements</a></li>
 
 
 </ul></div>
 
 <h2 id="upgrade">Important Upgrade Information</h2>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.3.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+<h2 id="ce19-1938">Magento Open Source 1.9.3.8 Release Notes</h2>
+ <p>This version (or patch SUPEE-10570, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include authenticated Admin user remote code execution, unauthorized data leaks, and cross-site request forgery (CSRF) vulnerabilities. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10570" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+
+<h3>Fixed issues and enhancements</h3>
+
+<ul>
+<li>Changed Magento Admin to support recent USPS shipping changes. On February 23, 2018, USPS removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied.  </li>
+
+<li>Updated copyright to 2018.</li>
+</ul>
+
+<h3>Known issues</h3>
+
+<p>These two known issues are associated with the use of HTML tags within a product’s SKU attribute:</p>
+
+<ul>
+<li>If you try to import products that contain HTML tags in the SKU attribute, Magento displays this error  at the data validation stage (that is, when you click <b>Check data</b>):  <code>Invalid value in SKU column. HTML tags are not allowed</code>.</li>
+
+
+<li>If you try to create  or edit a product in the Admin panel and the product’s SKU attribute value contains HTML tags, Magento throws this error when you try to save the product: <code>HTML tags are not allowed in SKU attribute</code>. </li>
+</ul>
+
+
+
+<h2 id="ce19-1937">Magento Open Source 1.9.3.7 Release Notes</h2>
+ <p>This patch (SUPEE-10415) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10415" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h3>Fixed issues</h3>
+<ul>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9842" target="_blank">MPERF-9842</a>.-->Magento no longer displays the “Invalid Secret Key. Please refresh the page.” message when a user loads the Admin.</li>
+
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9685" target="_blank">MPERF-9685</a>.-->The one-page checkout page now displays the following message when a customer checks out an order for which no amount is due: <b>No payment information required</b>. Magento versions prior to 1.14.3.3 included this message, but it was missing from v1.14.3.3.</li>
+
+
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9843" target="_blank">MPERF-9843</a>.-->We’ve fixed a typo in the patch header information. (<code>autocomplete="new-pawwsord”</code> is now <code>autocomplete="new-password”</code>.)
+</li>
+</ul>
+
+<h3>Known issue</h3>
+<p><b>Issue:</b> Magento displays a  "404: Page Not Found" error from the <code>errors/</code> directory after upgrading to SUPEE-10415. This issue occurs only in Magento installations that run certain third-party extensions.</p>
+
+<p><b>Description:</b> Magento is not properly logging PHP warnings that occur early during page initialization. Instead, of logging the error and continuing operation, Magento generates a 404 page. (Previously, Magento logged these warnings in the system.log file, and execution would continue as usual.)</p>
+
+<p><b>Workaround:</b> Confirm that there are no PHP warnings generated by any of the extensions or customizations.</p>
+
+
+
+<h3>Notes</h3>
+
+<ul><li> We no longer support custom file extensions for <code>Mage::log()</code>. Supported file extensions include <code>.log</code>, <code>.txt</code>, <code>.html</code>, <code>.csv</code>. For more information, navigate to <b>Developers > Log Settings</b> from the Admin. Magento displays this comment: <b>Logging from Mage::log(). File is located in {{ base_dir }}/var/log. Allowed file extensions: log, txt, html, csv.</b> </li>
+
+<li>Passwords for new users are now limited to  256 characters. If a new user enters a password that exceeds 256 characters, Magento displays this message: <b>Please enter a password with at most 256 characters</b>. </li>
+</ul>
+
+
+
+<h2 id="ce19-1936">Magento Open Source 1.9.3.6 Release Notes</h2>
+ <p>This patch (SUPEE-10266) provides resolution of multiple critical security issues and several functional fixes. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10266" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9726" target="_blank">MPERF-9726</a>.-->We’ve also fixed an issue where uploaded images were twice their original size after you applied SUPEE-9767 v2.</li>
+
+
+
+
+
+<h2 id="ce19-1935">Magento Open Source 1.9.3.5 Release Notes</h2>
+We have skipped release 1.9.3.5. 
+
+
+<h2 id="ce19-1934">Magento Open Source 1.9.3.4 Release Notes</h2>
+ <p>This patch addresses both security and functional issues discovered when using the <code>SUPEE-9767</code> patch. We recommend upgrading your Magento store to this latest version.  
+
+ Here are your upgrade options:
+
+
+<ul><li>Upgrade to Magento Open Source 1.9.3.4. You don’t need to revert any patches or install SUPEE-9767 version 2 as version 2 is already included in the Open Source 1.9.3.4 release. </li>
+
+<li>If you’ve already installed SUPEE-9767 version 1, you can either: 
+
+	<ul>
+	<li>Upgrade to Magento Open Source 1.9.3.4, or</li>
+
+	<li>revert SUPEE-9767 version 1, then install SUPEE-9767 version 2.</li>
+	</ul>
+	</li>
+
+
+
+<li>If you haven’t installed SUPEE-9767 version 1, you can either: 
+
+	<ul><li>Upgrade to  Magento Open Source 1.9.3.4, or </li>
+
+	<li>install SUPEE-9767 version 2.
+	</li></ul>
+
+</ul>
+
+
+
+
+
+
+
+
+See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these security issues.</p>
+
+ <p>This release also provides support for the following functional issues: </p>
+
+<h3>General fixes</h3>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9591" target="_blank">MPERF-9591</a>.-->We’ve restored missing <code>strip_tags</code> functionality in the checkout JavaScript.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9583" target="_blank">MPERF-9583</a> .-->We’ve changed how Magento validates form keys during the generic five-step checkout process. Previously, customer registration failed during standard checkout processing if form key authentication was enabled.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9585" target="_blank">MPERF-9585</a>. -->Magento now displays the <code>Allow_symlinks</code> message in the Admin message area as expected.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9594" target="_blank">MPERF-9594</a>.  -->Magento now preserves the background transparency of uploaded images as expected. Previously, transparency was lost after the image was uploaded, resulting in an unusable image.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9635" target="_blank">MPERF-9635</a>.  -->You can now use Checkout with Multiple Addresses when checkout form validation is enabled.</li>
+
+	</ul>
+
+<h3>Installation</h3>
+	<ul>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9581" target="_blank">MPERF-9581</a>. --> The Allow symlinks option is now disabled during installation or upgrade processes. Previously, when you changed the Allow symlinks setting to true in the database before upgrading and then installing the patch, this option remained enabled,  but you could no longer access it from the Admin panel.</li>
+</ul>
+
+
+
+This patch is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+
+
+
+
+
+
+
+<h2 id="ce19-1933">Magento Open Source 1.9.3.3 Release Notes</h2>
+ <p>This patch provides resolution of multiple critical security issues. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+ <p>This release also provides support for the following issue: </p>
+
+ <p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9553" target="_blank">MPERF-9553</a>  -->Support for PayPal's update to its Instant Payment Notification (IPN) server URL. PayPal provides more information about this feature in <a href="https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1916&viewlocale=en_US" target="_blank">IPN Verification Postback to HTTPS Microsite</a>. This update is essential for retaining uninterrupted service after June 30.</p>
+
+ <p><code>SUPEE-8167</code>, an older patch that also contains this fix, was added on May 8, 2017, and is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+
+ <h3>Known Issues</h3>
+<p>This patch/release has known issues. Please see <a href="https://magento.com/security/patches/supee-9767" target="_blank">SUPEE-9767</a> for updates.</p>
+
+<p><b>Note:</b> Before applying this patch or updating to this release, disable the <b>Symlinks</b> setting in <b>System > Configuration > Advanced > Developer > Enable Symlinks</b>. If the <b>Symlinks</b> setting is enabled, it will override your configuration file settings. If that override occurs, you will need to directly modify the database to change those settings.</p>
+
+
+
+
+
+
+
+<h2 id="ce19-1932">Magento Open Source 1.9.3.2 Release Notes</h2>
+<p>This patch addresses the following issues:</p>
+<ul><li>Removal of vulnerability with the Zend framework <code>Zend_Mail</code> library. For more information, see <a href="https://magento.com/security/patches/supee-9652" target="_blank">Magento Security Center</a>. </li>
+	<li>Updated the copyright year to 2017.</li></ul>
  
-<h2 id="ce19-1931">Magento CE 1.9.3.1 Release Notes</h2>
+<h2 id="ce19-1931">Magento Open Source 1.9.3.1 Release Notes</h2>
 <p>This patch addresses the following issues:</p>
 <ul><!-- <li><a href="https://jira.corp.magento.com/browse/MPERF-9229" target="_blank">MPERF-9229</a>. Configurable swatches work as expected.</li> -->
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9221" target="_blank">MPERF-9221</a>.  -->We restored the old tax calculation algorithm for shipping charges. The patch to apply new calculation will be available on request.</li>
@@ -68,9 +236,9 @@
 
 </ul>
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You currently <em>cannot</em> upgrade to this version using Magento Connect Manager. We expect to resolve this issue soon.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You currently <em>cannot</em> upgrade to this version using Magento Connect Manager. We expect to resolve this issue soon.</div>
 
-<h2 id="ce19-1930">Magento CE 1.9.3.0 Release Notes</h2>
+<h2 id="ce19-1930">Magento Open Source 1.9.3.0 Release Notes</h2>
 <p>See the following sections for information about this release:</p>
 
 <ul><li><a href="#ce19-1930-highlights">Highlights</a></li>
@@ -81,7 +249,7 @@
 <li><a href="#ce19-1930fixes">Fixes</a></li>
 
 <h3 id="ce19-1930-highlights">Highlights</h3>
-<p>Magento Community Edition 1.9.3 delivers more than 120 quality improvements, as well as support for PHP 5.6 in addition to PHP 5.4 and 5.5. <!-- <a href="https://jira.corp.magento.com/browse/MPERF-7852" target="_blank">MPERF-7852</a> --></p>
+<p>Magento Open Source 1.9.3 delivers more than 120 quality improvements, as well as support for PHP 5.6 in addition to PHP 5.4 and 5.5. <!-- <a href="https://jira.corp.magento.com/browse/MPERF-7852" target="_blank">MPERF-7852</a> --></p>
 
 <h3 id="ce19-1930security">Security Enhancements</h3>
 <p>We addressed the following security issues in this release:</p>
@@ -143,13 +311,13 @@
 </ul>
 
 <h3 id="ce19-1930security-upgrade">Check for <code>.swf</code> Files After Upgrade</h3>
-<p>If you upgraded to Magento CE 1.9.3 after applying the <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 patch</a>, make sure the following files have been deleted:</p>
+<p>If you upgraded to Magento Open Source 1.9.3 after applying the <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 patch</a>, make sure the following files have been deleted:</p>
 
 <pre>skin/adminhtml/default/default/media/flex.swf
 skin/adminhtml/default/default/media/uploader.swf
 skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 
-<p>If the files are present, delete them to avoid a potential security exploit. As of Magento CE 1.9.0.0, we no longer distribute <code>.swf</code> files with the Magento software.</p>
+<p>If the files are present, delete them to avoid a potential security exploit. As of Magento Open Source 1.9.0.0, we no longer distribute <code>.swf</code> files with the Magento software.</p>
 
 
 <h3 id="ce19-1930back">Backward-Incompatible Changes</h3>
@@ -289,8 +457,6 @@ skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5155" target="_blank">MPERF-5155</a> --> When you manage product attributes, selecting an action from <strong>Actions</strong> works properly. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3281" target="_blank">MPERF-3281</a> --> You can now add a configurable product by SKU to an order using the Admin Panel. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2615" target="_blank">MPERF-2615</a> --> You can now save a product's weight attribute. </li>
-	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-1808" target="_blank">MPERF-1808</a> --> You can now save changes to a CMS page hierarchy when hierarchy metadata is disabled. </li>
-	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5798" target="_blank">MPERF-5798</a>  -->You can now save a banner after upgrading. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7047" target="_blank">MPERF-7047</a> --> Using a Portable Network Graphics (<code>.png</code>) image on a CMS page no longer results in a <code>HEADERS_ALREADY_SENT</code> message to be logged. </li>
 	<li>Fixed an exception related to an unknown database table. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7059" target="_blank">MPERF-7059</a> --> Fixed an issue with JavaScript merging. </li>
@@ -313,21 +479,21 @@ skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 
 </ul>
 
-<h2 id="ce19-1901">Magento CE 1.9.0.1 Release Notes</h2>
-<p>CE 1.9.0.1 resolved the following issues:</p>
+<h2 id="ce19-1901">Magento Open Source 1.9.0.1 Release Notes</h2>
+<p>Magento Open Source 1.9.0.1 resolved the following issues:</p>
 <ul><li><!-- https://jira.corp.x.com/browse/MPERF-5270 -->Customers can no longer apply a coupon from an inactive shopping cart price rule to a purchase.</li>
 <li>Customers using a smartphone or other small viewport can expand subcategories in the web store that uses the new responsive theme.</li></ul>
 
 
 <h2 id="ce19-patches">Recent Patches</h2>
 <p>We'd like to draw your attention to several new patches that were recently posted to the Partner Portal and Support Center. These patches deliver important improvements, such as enabling several concurrent administrators to work with the product catalog, and to make it easier to install community-created translation packages.</p>
-<p>Details about the patches follow. To install patches, see <a href="#ce19-patches-how-to-get">How to Get Patches For Magento EE</a>.</p>
+<p>Details about the patches follow. To install patches, see <a href="#ce19-patches-how-to-get">How to Get Patches For Magento Commerce</a>.</p>
 <ul class="level1"><li><a href="#ce19-patches-connect-general">General Magento Connect Patches</a></li>
 <li><a href="#ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</a></li>
 <li><a href="#ce19-patches-how-to-get">How to Get Patches For Magento EE</a></li> 
 </ul>
 
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.9.x as well.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against Open Source 1.9.x as well.</div>
 
 
 <h3 id="ce19-patches-connect-general">General Magento Connect Patches</h3>
@@ -341,16 +507,16 @@ To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}i
 <h3 id="ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
 
-<h3 id="ce19-patches-how-to-get">How to Get Patches For Magento CE</h3>
+<h3 id="ce19-patches-how-to-get">How to Get Patches For Magento Open Source</h3>
 <p>This section discusses how to get patches referenced in these Release Notes. </p>
-<p>To get patches for Magento CE:</p>
+<p>To get patches for Magento Open Source:</p>
 <ol><li>Log in to <a href="http://www.magentocommerce.com/download" target="_blank">www.magentocommerce.com/download</a>.</li>
 <li>In the left pane, click <strong>Downloads</strong>.</li>
-li>Scroll down to the Magento Community Edition Patches section.</li>
-<li>Follow the prompts on your screen to download a patch for your version of CE.</li>
+li>Scroll down to the Magento Open Source Patches section.</li>
+<li>Follow the prompts on your screen to download a patch for your version of Magento Open Source.</li>
 <li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
-<h2 id="ce19-1900">Magento CE 1.9.0.0 Release Notes</h2>
+<h2 id="ce19-1900">Magento Open Source 1.9.0.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
 <ul class="level1"><li><a href="#ce19-1900-highlights">Highlights</a></li>
 <li><a href="#ce19-1900security">Security Enhancements</a></li>
@@ -360,8 +526,8 @@ li>Scroll down to the Magento Community Edition Patches section.</li>
 </ul> 
 
 <h3 id="ce19-1900-highlights">Highlights</h3>
-<p>This section lists the key new features in Magento CE 1.9. For more information about these new features, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
-<ul class="level1"><li>The default theme in Magento CE 1.9 uses <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">Responsive Web Design</a> principles to provide a better experience for users of mobile devices in particular. Benefits include:
+<p>This section lists the key new features in Magento Open Source 1.9. For more information about these new features, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
+<ul class="level1"><li>The default theme in Magento Open Source 1.9 uses <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">Responsive Web Design</a> principles to provide a better experience for users of mobile devices in particular. Benefits include:
 <ul class="level2"><li>You can get a tablet and smart phone friendly responsive site in about half the time as before, speeding time to market and freeing up resources for other projects.</li>
 <li>Your responsive site makes you better able to participate in the fast growing mobile commerce space, gives you the ability to more easily adapt to new opportunities, and is less expensive to maintain.  A responsive site also offers potential search engine optimization (SEO) benefits because it uses Google's preferred approach to mobile-optimizing sites.</li></ul>
 </li>
@@ -394,11 +560,11 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 
 <h3 id="ce19-1900-changes">Changes</h3>
 <ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4632" target="_blank">MPERF-4632</a>  -->A default setting for configurable and bundled products has changed. When you create a configurable or bundled product in the Admin Panel, click <strong>Manage</strong> > <strong>Products</strong>. Create a new configurable or bundled product and click the <strong>Design</strong> tab. The default option for <strong>Display Product Options In</strong> has changed to <strong>Product Info Column</strong>.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4870" target="_blank">MPERF-4870</a>  -->The Google Websites Optimizer has been disabled because it has been deprecated by Google. (In earlier EE versions, this option was available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Google API</strong> > <strong>Google Website Optimizer</strong>).</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4870" target="_blank">MPERF-4870</a>  -->The Google Websites Optimizer has been disabled because it has been deprecated by Google. (In earlier Magento Commerce versions, this option was available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Google API</strong> > <strong>Google Website Optimizer</strong>).</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2563" target="_blank">MPERF-2563</a>  -->Two new options to prevent <a href="http://en.wikipedia.org/wiki/Clickjacking" target="_blank">"clickjacking"</a> if you run Magento in a <code>frame</code> or <code>iframe</code>:
 <ul class="level2"><li>Enable frames only in the same domain.</li>
 <li>Enable frames.</li>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</span></div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</span></div>
 
 <p>The options are available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong> and are named <strong>Allow Magento Backend to run in frame</strong> and <strong> Allow Magento Frontend to run in frame</strong>.</p>
 <p>Enabling the option causes the <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank"><code>X-Frame-Options</code></a> request header to be sent.</p></ul>
@@ -410,8 +576,8 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 </li>
 <!-- <li><a href="https://jira.corp.x.com/browse/MPERF-3769" target="_blank">MPERF-3769</a> Added address validation, which enables users to select from multiple matching addresses. For example, if a user enters a partial address or a common street name, they might be presented with matching addresses from which to choose.</li>
  -->
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->CE 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->Open Source 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
 <li>The default values for two configuration options changed. Both options can be found in the Admin Panel under <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Frontend</strong>. The new default values follow:
 <ul class="level2"><li><strong>Products per Page on Grid Allowed Values</strong> is now <strong>12, 24, 36</strong>.</li>
 <li><strong>Products per Page on Grid Default Value</strong> is now <strong>12</strong>.</li></ul>
@@ -419,7 +585,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <li>Changes to PayPal Express checkout:
 <ul class="level2"><li>Changes to both <strong>Proceed to Checkout</strong> and to <strong>Pay With PayPal</strong>:
 <ul class="level3"><li>Customers cannot edit their billing address on the PayPal site&mdash;in fact, the billing address does not display on the PayPal site.</li>
-<li>Magento CE uses the customer's PayPal address information, not the address information stored in Magento CE. The customer does not need to enter Magento CE or EE address information.</li>
+<li>Magento Open Source uses the customer's PayPal address information, not the address information stored in Magento Open Source. The customer does not need to enter Magento Open Source or Commerce address information.</li>
 <li>When the customer is redirected to the PayPal site, they can click <strong>Change</strong> next to their payment method to change it.</li>
 <p>The Magento administrator can set billing address information in the Admin Panel as follows: <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Payment Methods</strong>. For any payment method that includes Express Checkout, in Basic Settings, set the value of the <strong> Require Customer's Billing Address</strong> list.</p>
 </ul>
@@ -427,7 +593,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 </ul>
 <ul class="level2"><li>Changes to <strong>Pay With PayPal</strong> only:
 <ul class="level3"><li>If the Magento administrator does not require the customer's billing address, the customer's billing address is set to the customer's PayPal <em>shipping</em> address.</li>
-<li>If the Magento requires the customer's billing address, the customer's billing address is set to the customer's PayPal <em>billing</em> address.</li>
+<li>If  Magento requires the customer's billing address, the customer's billing address is set to the customer's PayPal <em>billing</em> address.</li>
 <li>On the PayPal site, the customer can click <strong>Change</strong> next to their shipping address to change it. The customer can choose any shipping address configured with PayPal.</li>
 <li>Because the customer's configured address in Magento is not used, the customer's shipping address stored in PayPal is never changed.</li></ul>
 </li></ul>
@@ -436,7 +602,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <li>In the event of a shipping address mismatch between Magento and PayPal, the following message displays when the customer attempts to pay using PayPal:<br />
 <pre>The address you entered on <em>store-name</em> is different than your PayPal preferred shipping address. 
 Return to <em>store-name</em> if you'd like to change the shipping address</pre>
-The user can select the <strong>Use as preferred shipping address</strong> check box to instruct PayPal to change their shipping address.</li>
+The user can select the <strong>Use as preferred shipping address</strong> checkbox to instruct PayPal to change their shipping address.</li>
 </li></ul>
 </li></ul>
 </li>
@@ -537,5 +703,5 @@ To enable product price display including tax: <strong>System</strong> > <strong
 </ul>
 
 <h2 id="oss">Open Source Software Licensing Agreements</h2>
-<p>Some versions of Magento CE use open source software licensing. Following are license agreements for that software.</p>
+<p>Some versions of Magento Open Source use open source software licensing. Following are license agreements for that software.</p>
 <p><strong>Touch punch</strong>: This code is dual licensed under the MIT or GPL Version 2 licenses and is therefore free to use, modify and/or distribute, but if you include Touch Punch in other software packages or plugins, please include an attribution to the original software and a link to this <a href="http://touchpunch.furf.com/" target="_blank">Touch Punch website</a>.</p>

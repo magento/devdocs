@@ -1,0 +1,217 @@
+<?xml version="1.0" standalone="no"?>
+
+<svg width="622" height="426" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <a href="#annotations-element">
+<rect x="357" y="25" width="86" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<text x="400" y="36" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">annotations</text>
+    </a>
+<rect x="438" y="31" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="440" y1="36" x2="446" y2="36" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="443" y1="33" x2="443" y2="39" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<path d="M507 77 L601 77 L607 83 L607 93 L601 99 L507 99 L501 93 L501 83 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+    <a href="{{ page.baseurl }}/magento-functional-testing-framework/cest/actions.html">
+<text x="554" y="88" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionTypeTags</text>
+    </a>
+<line x1="504" y1="96" x2="507" y2="93" style="stroke:rgb(0,0,0);stroke-width:2"/>
+<path d="M507 93 L509 95 L510 90 L505 91 L507 93 Z" style="fill:rgb(0,0,0)"/>
+<rect x="602" y="83" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="604" y1="88" x2="610" y2="88" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="607" y1="85" x2="607" y2="91" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+    <a href="#actiongroup">
+<rect x="501" y="129" width="89" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<text x="545.5" y="140" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionGroup</text>
+    </a>
+<rect x="585" y="135" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="587" y1="140" x2="593" y2="140" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="590" y1="137" x2="590" y2="143" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="491" y1="88" x2="501" y2="88" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="491" y1="140" x2="501" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="491" y1="88" x2="491" y2="140" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="481" y1="114" x2="491" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<path d="M450 107 L473 107 L479 113 L479 121 L473 127 L450 127 L444 121 L444 113 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<path d="M447 104 L470 104 L476 110 L476 118 L470 124 L447 124 L441 118 L441 110 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<line x1="446" y1="114" x2="450" y2="114" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="450" y1="114" x2="454" y2="110" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="462" y1="110" x2="466" y2="110" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="462" y1="114" x2="470" y2="114" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="462" y1="118" x2="466" y2="118" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="466" y1="110" x2="466" y2="118" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<ellipse cx="458" cy="110" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="458" cy="114" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="458" cy="118" rx="2" ry="2" style="rgb(0,0,0)"/>
+<text x="471" y="134" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">0..∞</text>
+<rect x="471" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="473" y1="114" x2="479" y2="114" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="421" y1="114" x2="441" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<rect x="357" y="103" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+    <a href="#before">
+<text x="386.5" y="114" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">before</text>
+    </a>
+<rect x="411" y="109" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="413" y1="114" x2="419" y2="114" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<path d="M498 181 L592 181 L598 187 L598 197 L592 203 L498 203 L492 197 L492 187 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+    <a href="{{ page.baseurl }}/magento-functional-testing-framework/cest/actions.html">
+<text x="545" y="192" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionTypeTags</text>
+    </a>
+<line x1="495" y1="200" x2="498" y2="197" style="stroke:rgb(0,0,0);stroke-width:2"/>
+<path d="M498 197 L500 199 L501 194 L496 195 L498 197 Z" style="fill:rgb(0,0,0)"/>
+<rect x="593" y="187" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="595" y1="192" x2="601" y2="192" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="598" y1="189" x2="598" y2="195" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+    <a href="#actiongroup">
+<rect x="492" y="233" width="89" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<text x="536.5" y="244" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionGroup</text>
+    </a>
+<rect x="576" y="239" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="578" y1="244" x2="584" y2="244" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="581" y1="241" x2="581" y2="247" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="482" y1="192" x2="492" y2="192" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="482" y1="244" x2="492" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="482" y1="192" x2="482" y2="244" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="472" y1="218" x2="482" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<path d="M441 211 L464 211 L470 217 L470 225 L464 231 L441 231 L435 225 L435 217 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<path d="M438 208 L461 208 L467 214 L467 222 L461 228 L438 228 L432 222 L432 214 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<line x1="437" y1="218" x2="441" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="441" y1="218" x2="445" y2="214" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="453" y1="214" x2="457" y2="214" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="453" y1="218" x2="461" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="453" y1="222" x2="457" y2="222" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="457" y1="214" x2="457" y2="222" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<ellipse cx="449" cy="214" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="449" cy="218" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="449" cy="222" rx="2" ry="2" style="rgb(0,0,0)"/>
+<text x="462" y="238" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">0..∞</text>
+<rect x="462" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="464" y1="218" x2="470" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="412" y1="218" x2="432" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+    <a href="#after">
+<rect x="357" y="207" width="50" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<text x="382" y="218" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">after</text>
+    </a>
+<rect x="402" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="404" y1="218" x2="410" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<path d="M494 285 L588 285 L594 291 L594 301 L588 307 L494 307 L488 301 L488 291 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+    <a href="{{ page.baseurl }}/magento-functional-testing-framework/cest/actions.html">
+<text x="541" y="296" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionTypeTags</text>
+    </a>
+<line x1="491" y1="304" x2="494" y2="301" style="stroke:rgb(0,0,0);stroke-width:2"/>
+<path d="M494 301 L496 303 L497 298 L492 299 L494 301 Z" style="fill:rgb(0,0,0)"/>
+<rect x="589" y="291" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="591" y1="296" x2="597" y2="296" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="594" y1="293" x2="594" y2="299" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+    <a href="#annotations-element">
+<rect x="488" y="337" width="86" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<text x="531" y="348" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">annotations</text>
+    </a>
+<rect x="569" y="343" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="571" y1="348" x2="577" y2="348" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="574" y1="345" x2="574" y2="351" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+    <a href="#actiongroup">
+<rect x="488" y="389" width="89" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<text x="532.5" y="400" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">actionGroup</text>
+    </a>
+<rect x="572" y="395" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="574" y1="400" x2="580" y2="400" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="577" y1="397" x2="577" y2="403" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="478" y1="296" x2="488" y2="296" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="478" y1="348" x2="488" y2="348" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="478" y1="400" x2="488" y2="400" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="478" y1="296" x2="478" y2="400" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="468" y1="348" x2="478" y2="348" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<path d="M437 341 L460 341 L466 347 L466 355 L460 361 L437 361 L431 355 L431 347 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<path d="M434 338 L457 338 L463 344 L463 352 L457 358 L434 358 L428 352 L428 344 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<line x1="433" y1="348" x2="437" y2="348" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="437" y1="348" x2="441" y2="344" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="449" y1="344" x2="453" y2="344" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="449" y1="348" x2="457" y2="348" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="449" y1="352" x2="453" y2="352" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="453" y1="344" x2="453" y2="352" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<ellipse cx="445" cy="344" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="445" cy="348" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="445" cy="352" rx="2" ry="2" style="rgb(0,0,0)"/>
+<text x="458" y="368" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">0..∞</text>
+<rect x="458" y="343" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="460" y1="348" x2="466" y2="348" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="408" y1="348" x2="428" y2="348" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<rect x="360" y="340" width="46" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+    <a href="#test">
+<rect x="357" y="337" width="46" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<text x="380" y="348" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">test</text>
+    </a>
+<text x="398" y="369" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">1..∞</text>
+<rect x="398" y="343" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="400" y1="348" x2="406" y2="348" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="347" y1="36" x2="357" y2="36" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="347" y1="114" x2="357" y2="114" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="347" y1="218" x2="357" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="347" y1="348" x2="357" y2="348" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="347" y1="36" x2="347" y2="348" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<line x1="337" y1="218" x2="347" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<path d="M306 211 L329 211 L335 217 L335 225 L329 231 L306 231 L300 225 L300 217 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<path d="M303 208 L326 208 L332 214 L332 222 L326 228 L303 228 L297 222 L297 214 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"/>
+<line x1="302" y1="218" x2="306" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="306" y1="218" x2="310" y2="214" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="318" y1="214" x2="322" y2="214" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="318" y1="218" x2="326" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="318" y1="222" x2="322" y2="222" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="322" y1="214" x2="322" y2="222" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<ellipse cx="314" cy="214" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="314" cy="218" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="314" cy="222" rx="2" ry="2" style="rgb(0,0,0)"/>
+<text x="327" y="238" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">0..∞</text>
+<rect x="327" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="329" y1="218" x2="335" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="277" y1="218" x2="297" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<rect x="227" y="210" width="48" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+    <a href="#cest-element">
+<rect x="224" y="207" width="48" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<text x="248" y="218" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">cest</text>
+    </a>
+<text x="267" y="239" style="font-family:Arial;font-size:7.2pt;fill:rgb(0,0,0);text-anchor:end;dominant-baseline:central">1..∞</text>
+<rect x="267" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="269" y1="218" x2="275" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="204" y1="218" x2="224" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<path d="M170 208 L193 208 L199 214 L199 222 L193 228 L170 228 L164 222 L164 214 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="169" y1="218" x2="173" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="173" y1="218" x2="177" y2="214" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="185" y1="214" x2="189" y2="214" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="185" y1="218" x2="193" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="185" y1="222" x2="189" y2="222" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="189" y1="214" x2="189" y2="222" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<ellipse cx="181" cy="214" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="181" cy="218" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="181" cy="222" rx="2" ry="2" style="rgb(0,0,0)"/>
+<rect x="194" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="196" y1="218" x2="202" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="144" y1="218" x2="164" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<path d="M110 208 L133 208 L139 214 L139 222 L133 228 L110 228 L104 222 L104 214 Z" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="107" y1="218" x2="136" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+<ellipse cx="116" cy="218" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="121" cy="218" rx="2" ry="2" style="rgb(0,0,0)"/>
+<ellipse cx="126" cy="218" rx="2" ry="2" style="rgb(0,0,0)"/>
+<rect x="134" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="136" y1="218" x2="142" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+
+<line x1="84" y1="218" x2="104" y2="218" style="stroke:rgb(0,0,0);stroke-width:1;stroke-linecap:round"/>
+<rect x="20" y="207" width="59" height="22" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<text x="49.5" y="218" style="font-family:Arial;font-size:8pt;fill:rgb(0,0,0);font-weight:bold;text-anchor:middle;dominant-baseline:central">config</text>
+<rect x="74" y="213" width="10" height="10" style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"/>
+<line x1="76" y1="218" x2="82" y2="218" style="stroke:rgb(0,0,0);stroke-width:1"/>
+</svg>

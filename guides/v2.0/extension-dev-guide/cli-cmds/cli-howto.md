@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 65_CLI
 title: How to add CLI commands
@@ -11,11 +10,6 @@ github_link: extension-dev-guide/cli-cmds/cli-howto.md
 redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 
-#### Contents
-*	<a href="#cli-add-over">Overview of adding CLI commands</a>
-*	<a href="#cli-sample">Add CLI commands using dependency injection</a>
-*	<a href="#cli-autoload">Add CLI commands using the Composer autoloader</a>
-
 <h2 id="cli-add-over">Overview of adding CLI commands</h2>
 Magento enables your component to add commands to our Symfony-like command-line interface (CLI). 
 
@@ -26,15 +20,15 @@ Magento enables your component to add commands to our Symfony-like command-line 
 Before you begin, make sure you understand the following:
 
 *	All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.
-*	All CLI commands should be implemented in the scope of your module and should depend on the module's status.
-*	Your command can use the Object Manager and Magento dependency injection features; for example, it can use <a href="{{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor dependency injection</a>.
+*	All CLI commands should be implemented in the scope of your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and should depend on the module's status.
+*	Your command can use the Object Manager and Magento dependency injection features; for example, it can use [constructor dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
 *	You must register your commands as discussed in any of the following sections:
 
 	*	<a href="#cli-sample">Add CLI commands using dependency injection</a>
 	*	<a href="#cli-autoload">Add CLI commands using the Composer autoloader</a>
 
 <h2 id="cli-sample">Add CLI commands using dependency injection</h2>
-The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using dependency injection. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank">`sample-module-command`</a> for an example. The module's <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.
+The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank">`sample-module-command`</a> for an example. The module's <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.
 
 Following is a summary of the process:
 
@@ -42,7 +36,7 @@ Following is a summary of the process:
 
 	See `app/code/Magento/CommandExample/Console/Command` for examples.
 2.	Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`).
-3.	Clean the cache and compiled code directories:
+3.	Clean the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories:
 
 		cd <your Magento install dir>/var
 		rm -rf cache/* page_cache/* di/* generation/* 
@@ -51,5 +45,5 @@ Following is a summary of the process:
 To be added at a later time.
 
 #### Related topic
-<a href="{{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
+<a href="{{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html">Command naming guidelines</a>
 

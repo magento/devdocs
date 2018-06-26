@@ -1,0 +1,1 @@
+../../../v2.2/payments-integrations/vault/vault-intro.md

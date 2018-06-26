@@ -9,13 +9,13 @@ Create checkout and OMS master databases as follows:
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_checkout` and `magento_oms` with the same user names and passwords:
+4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
-		create database magento_checkout;
-		GRANT ALL ON magento_checkout.* TO magento_checkout@localhost IDENTIFIED BY 'magento_checkout';
+		create database magento_quote;
+		GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
 
-		create database magento_oms;
-		GRANT ALL ON magento_oms.* TO magento_oms@localhost IDENTIFIED BY 'magento_oms';
+		create database magento_sales;
+		GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
 
 5.	Enter `exit` to quit the command prompt.
 
@@ -23,17 +23,17 @@ Create checkout and OMS master databases as follows:
 
 	Checkout database:
 
-		mysql -u magento_checkout -p
+		mysql -u magento_quote -p
 		exit
 
 	Order management database:
 
-		mysql -u magento_oms -p
+		mysql -u magento_sales -p
 		exit
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-## Configure Magento EE to use the master databases {#config-ee-multidb-master-cli}
+## Configure {{site.data.var.ee}} to use the master databases {#config-ee-multidb-master-cli}
 After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)
 
 ### First steps
@@ -47,7 +47,7 @@ Command syntax:
 
 For example,
 
-	magento setup:db-schema:split-quote --host="localhost" --dbname="magento_checkout" --username="magento_checkout" --password="magento_checkout"
+	magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
 
 The following message displays to confirm a successful setup:
 
@@ -60,7 +60,7 @@ Command syntax:
 
 For example,
 
-	magento setup:db-schema:split-sales --host="localhost" --dbname="magento_oms" --username="magento_oms" --password="magento_oms"
+	magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
 
 The following message displays to confirm a successful setup:
 

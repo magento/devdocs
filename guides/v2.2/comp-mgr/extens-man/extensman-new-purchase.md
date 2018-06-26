@@ -1,21 +1,22 @@
 ---
-layout: default 
 group: compman
 subgroup: 06_UseExtMan
 title: Step 3. Install
 menu_title: Install
-menu_node: 
+menu_node:
 menu_order: 25
 level3_menu_node: level3child
 level3_subgroup: step3-ext
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-new-purchase.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Step 3. Install
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
-<img src="{{ site.baseurl }}common/images/extensman_new-purchases-step3install.png" width="500px">
+<img src="{{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png" width="500px">
 
 If the list of purchases is correct, click **Install**.
 
@@ -71,10 +72,10 @@ layout: 0 -> 1
 [2016-07-28 15:22:17 UTC] Job "setup:upgrade []" has started
 Cache cleared successfully
 File system cleanup:
-/var/www/html/magento2/var/generation/Composer
-/var/www/html/magento2/var/generation/Magento
-/var/www/html/magento2/var/generation/Symfony
-The directory '/var/www/html/magento2/var/di/' doesn't exist - skipping cleanup
+/var/www/html/magento2/generated/code/Composer
+/var/www/html/magento2/generated/code/Magento
+/var/www/html/magento2/generated/code/Symfony
+The directory '/var/www/html/magento2/generated/metadata/' doesn't exist - skipping cleanup
 /var/www/html/magento2/pub/static/_requirejs
 /var/www/html/magento2/pub/static/adminhtml
 /var/www/html/magento2/var/view_preprocessed/source
@@ -94,6 +95,6 @@ Installing data...
 
 When the installation is complete, a page similar to the following displays:
 
-<img src="{{ site.baseurl }}common/images/extensman_new-purchases_finish.png" width="200px">
+<img src="{{ site.baseurl }}/common/images/extensman_new-purchases_finish.png" width="200px">
 
 Click **Back to Setup Tool**.

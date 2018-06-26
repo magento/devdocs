@@ -1,20 +1,14 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
-menu_title: Fixture Repository
-menu_order: 2
+title: Fixture Repository
 version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
 
-## Overview {#mtf_repository_overview}
-
 The repository stores pre-defined data for the fixture.
 It contains only data sets that are used in the test along with the associated field data.
-Repositories are stored in the `Repository` directory in the module to which they belong.
-Reference to the repository is placed in the fixture XML file in attribute named `repository`.
+Repositories are stored in the `Repository` directory in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to which they belong.
+Reference to the repository is placed in the fixture {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file in attribute named `repository`.
 
 In this topic you will learn how to create, use, and merge a repository.
 
@@ -22,7 +16,7 @@ In this topic you will learn how to create, use, and merge a repository.
 
 Let's create a repository for the Widget fixture `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
-<a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
+<a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
 
 Assume that we have the following fixture:
 
@@ -77,7 +71,7 @@ Also `layout` and `widgetOptions` fields use `<magento2_root_dir>/dev/tests/func
 
 <a href="#mtf_repository_create-field"> Learn how to create repository for the fixture field</a>.
 
-We want to specify data sets for two cases of submitting Widget forms: `default` with minimum data, and `cms_page_link` with data needed to create new CMS page link.
+We want to specify data sets for two cases of submitting {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} forms: `default` with minimum data, and `cms_page_link` with data needed to create new {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} page link.
 
 To create a new CMS page link the user must enter data of all required fields. The widget has three forms with fields to specify: <a href="#mtf_repo_ex_set">**Settings**</a>, <a href="#mtf_repo_ex_store">**Storefront Properties**</a>, <a href="#mtf_repo_ex_front">**Frontend Apps Options**</a>. The following text along with screenshots gives an example of how to create a data set of the repository.
 
@@ -85,14 +79,14 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 <h4 id="mtf_repo_ex_set">Settings form</h4>
 
-![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/ftf/mtf_ent_fixt_repo_cms_set_ui.png)
+![cms_page_link "Settings" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui.png)
 
 - Set the **Type** field (`field name="code"`) to "CMS Page Link". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="code" xsi:type="string">CMS Page Link</field>`.
 - Set the **Design Theme** field (`field name="theme_id"`) to "Magento Blank". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="theme_id" xsi:type="string">Magento Blank</field>`.
 
 <h4 id="mtf_repo_ex_store">Storefront Properties form</h4>
 
-![cms_page_link "Storefront properties" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
+![cms_page_link "Storefront properties" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_storefront.png)
 
 - Set the **Frontend App Title** field to "Cms Page Link [random integer value]". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<field name="title" xsi:type="string">Cms Page Link %isolation%</field>`.
 - Set the **Assign to Store Views** field to "All Store Views". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>:
@@ -112,7 +106,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 <h4 id="mtf_repo_ex_front">Frontend App Options</h4>  
 
-![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
+![cms_page_link "Frontend App Options" data set for entire fixture view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_cms_set_ui_frontend-app.png)
 
 - Set the **Anchor Custom Text** field to "text".
 - Set the **Anchor Custom Title** field to "anchor title".
@@ -130,7 +124,7 @@ To create a new CMS page link the user must enter data of all required fields. T
 
 This simple code contains a bit more complex logic, where <a href="#mtf_repository_create-field">the repository is applied to the fixture field</a>. Just to remind you, how this field is represented in the fixture: `<field name="widgetOptions" source="Magento\Widget\Test\Fixture\Widget\WidgetOptions" repository="Magento\Widget\Test\Repository\Widget\WidgetOptions" group="widget_options" />`.
 
-In brief, we reference another repository `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
+In brief, we reference another repository `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/WidgetOptions.xml`, and a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">source</a> that is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/WidgetOptions.php`.
 
 The `WidgetOptions.xml` repository includes `cmsPageLink` data set:
 
@@ -244,14 +238,14 @@ In the preceding section, the Widget fixture code contains fields with the links
 
 The repository value is a reference to the repository XML file. Therefore, we should create `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`. The XML structure of this repository is the same as of <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
-Assume that we want to provide data for the Layout Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).
+Assume that we want to provide data for the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} Update block for the following cases shown on the screenshots (name of data sets have orange font, fields defined in repository are highlighted in orange).
 
 Case 1. **all_pages** data set:
 
 * Set the **Display on** field (`item name="page_group"`) to "All Pages", which is the subcategory of "Generic Pages" (see drop-down menu on the following screenshot). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="page_group" xsi:type="string">Generic Pages/All Pages</item>`
 * Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a>  `<item name="block" xsi:type="string">Main Content Area</item>`
 
-![all_pages data set view on GUI]({{ site.baseurl }}common/images/ftf/mtf_repository_layout-allpages_w_dropd.png)
+![all_pages data set view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_repository_layout-allpages_w_dropd.png)
 
 Case 2. **on_category** data set:
 
@@ -260,7 +254,7 @@ Case 2. **on_category** data set:
 * Set the in a tree of categories the **Default Category** (`item name="entities"`). It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="entities" xsi:type="string">category::default_subcategory</item>`.
 * Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
 
-![on_category data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_repository_layout-oncategory_w_dropd.png)
+![on_category data set view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_repository_layout-oncategory_w_dropd.png)
 
 Case 3. **for_cms_page_link** data set:
 
@@ -268,7 +262,7 @@ Case 3. **for_cms_page_link** data set:
 * Set the **Container** field (`item name="block"`) to "Main content Area". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<item name="block" xsi:type="string">Main Content Area</item>`.
 * Set the **Template** field (`item name="template"`) to "CMS Page Link Block Template". It corresponds to the following code in <a href="#mtf_repo_widgetxml">the repository data set</a> `<`item name="template" xsi:type="string"`>CMS Page Link Block Template</item>`.
 
-![layout_for_cms_page_link data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_repository_layout-for-cms-page-link_w_dropd.png)
+![layout_for_cms_page_link data set view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_repository_layout-for-cms-page-link_w_dropd.png)
 
 The repository code for these cases follows:
 
@@ -313,9 +307,9 @@ The repository code for these cases follows:
 
 ## Configuration repository {#mtf_repository_config}
 
-The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="{{site.mage2000url}}app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
+The configuration repository stores predefined data sets for Magento configuration settings. It is the repository for the <a href="{{ site.mage2000url }}app/code/Magento/Config">Magento_Config module</a> and is named `ConfigData.xml`.
 
-Let's see the following example of configuration settings for <a href="{{site.mage2000url}}app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+Let's see the following example of configuration settings for <a href="{{ site.mage2000url }}app/code/Magento/Authorizenet">Authorize.Net module</a> `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
 
 {% highlight xml %}
 
@@ -385,7 +379,7 @@ Let's see the following example of configuration settings for <a href="{{site.ma
 
 {% endhighlight %}
 
-Path to the `Authorizenet` UI form in Admin is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
+Path to the `Authorizenet` UI form in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
 
 This repository contains two data sets: `authorizenet` that covers seven fields, and `authorizenet_rollback` that covers one field.
 
@@ -407,11 +401,11 @@ Each field contains 4 items:
 
 The following screenshot helps to understand the `scope_id` attribute.
 
-![authorizenet data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_ent_fixt_repo_config_scope-id.png)
+![authorizenet data set view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_ent_fixt_repo_config_scope-id.png)
 
 Let's see the `authorizenet` data set in action. Fields defined in repository are in orange. Other fields are set in default values.
 
-![authorizenet data set view on GUI]({{site.baseurl}}common/images/ftf/mtf_repo_config_ex.png)
+![authorizenet data set view on GUI]({{ site.baseurl }}/common/images/ftf/mtf_repo_config_ex.png)
 
 ## Merging repositories {#mtf_repository_merge}
 
@@ -419,9 +413,9 @@ The FTF enables you to split data sets among different modules. The configuratio
 
 Modules that require configuration adjustment store `ConfigData.xml` in their `Repository` directory. All `ConfigData.xml` repositories have reference to the `Config` repository class. See the example on the following screenshot:
 
-<a href="{{site.baseurl}}common/images/ftf/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/ftf/mtf_repo_merge_ex.png" /></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_repo_merge_ex.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_repo_merge_ex.png" /></a>
 
-As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{site.mage2000url}}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{site.mage2000url}}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
+As you can see, the `ConfigData.xml` of the [`Magento_Authorizenet` module]({{ site.mage2000url }}app/code/Magento/Authorizenet) and the `ConfigData.xml` of the [`Magento_Backend` module]({{ site.mage2000url }}app/code/Magento/Backend) have the same reference to the repository class; that is `Magento\Config\Test\Repository\ConfigData`.
 
 `ConfigData.php` will be generated in `<magento2_root_dir>/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have a `ConfigData.xml` repository.
 
@@ -435,7 +429,7 @@ The preceding is an example of repository merging. Using the approach from the e
 
 Credentials are stored in an `*.xml` file that is specified in `phpunit.xml`.
 
-You can find a template for credentials in [`<magento2_root_dir>/dev/tests/functional/credentials.xml.dist`]({{site.mage2000url}}dev/tests/functional/credentials.xml.dist).
+You can find a template for credentials in [`<magento2_root_dir>/dev/tests/functional/credentials.xml.dist`]({{ site.mage2000url }}dev/tests/functional/credentials.xml.dist).
 
 Credentials always should stay invisible for security reasons. The FTF implicitly pastes credentials during the test run only.
 There are two ways to paste credentials:

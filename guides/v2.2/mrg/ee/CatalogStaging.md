@@ -1,26 +1,16 @@
 ---
-layout: default
 group: mrg
-subgroup: Enterprise Edition
-title: Module Reference Guide
+subgroup: 20_Enterprise Edition
+ee_only: true
+title: Magento_CatalogStaging module
 menu_title: CatalogStaging
 menu_order: 2
 version: 2.2
-
-
+ee_only: true
 github_link: mrg/ee/CatalogStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_CatalogStaging module
-
-## Overview
-
-The Magento_CatalogStaging module is a part of the staging functionality in Magento EE. It enables you to add catalog updates to the existing store campaigns. In other words, you can change the category and product entity attributes in campaigns. These updates are shown on the campaign dashboard.
+The Magento_CatalogStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} updates to the existing store campaigns. In other words, you can change the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} and product {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} attributes in campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -62,7 +52,7 @@ The Magento_CatalogStaging module enables you to stage the following category at
     - Anchor
     - Product Sorting
     - Layered Navigation Price Step
-- Search Engine Optimization
+- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %}
     - Meta Title
     - Meta Keywords
     - Meta Description
@@ -74,13 +64,13 @@ The Magento_CatalogStaging module enables you to stage the following category at
 The following category attributes cannot be staged:
 
 - Assignment of Products to a Category
-- URL
+- {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}
 
 ### Product Staging
 
 The Magento_CatalogStaging module enables you to stage the following product attributes:
 
-- Attribute Set
+- {% glossarytooltip 44d60586-b853-40dd-bf82-4a1580450416 %}Attribute Set{% endglossarytooltip %}
 - Product Name
 - Price
 - Weight attributes
@@ -90,18 +80,18 @@ The Magento_CatalogStaging module enables you to stage the following product att
 - Description
 - Websites(assignment)
 - Design
-  - Layout
+  - {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %}
   - Display Product Options In
-  - Layout Update XML
+  - Layout Update {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %}
 - Related Products, Up-Sells, and Cross-Sells
 
-Also, you can stage any other attribute added in Admin.
+Also, you can stage any other attribute added in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 The following product attributes cannot be staged:
 
 - Quantity
 - URL Key
-- SKU
+- {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %}
 
 ### Installation details
 
@@ -113,13 +103,13 @@ You can find the list of modules that have dependencies on the Magento_CatalogSt
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CatalogStaging module.
 
 ### UI components
 
-You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui-components/ui-listing-grid.html).
+You can extend product and category updates using the UI components located in the `Magento\CatalogStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
@@ -139,4 +129,4 @@ You can use the following events:
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

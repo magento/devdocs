@@ -1,13 +1,15 @@
 ---
-layout: default
 group: get-started
-subgroup: D_SOAP
-title: Consuming Services via SOAP
-menu_title: Consuming Services
-menu_order: 2
+subgroup: 30_SOAP
+title: Use SOAP Services
+menu_title: Use SOAP Services
+menu_order: 1
+menu_node: parent
 version: 2.0
 github_link: get-started/soap/soap-web-api-calls.md
-redirect_from: /guides/v1.0/rest/soap/soap-web-api-calls.html
+redirect_from:
+  - /guides/v1.0/rest/soap/soap-web-api-calls.html
+  - /guides/v2.0/get-started/soap/soap-front.html
 
 ---
 
@@ -16,11 +18,11 @@ redirect_from: /guides/v1.0/rest/soap/soap-web-api-calls.html
 
 A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.
 
-The Magento web API uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
+The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
-Each Magento service interface that is part of a service contract is represented as a separate service in the WSDL.
+Each Magento service interface that is part of a {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} is represented as a separate service in the WSDL.
 
-To consume several services, you must specify them in the WSDL endpoint URL.
+To consume several services, you must specify them in the WSDL endpoint {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 
 <table style="width:100%">
@@ -50,7 +52,7 @@ To consume several services, you must specify them in the WSDL endpoint URL.
    </tbody>
 </table>
 
-The WSDL URL follows the following pattern: 
+The WSDL URL follows the following pattern:
 
 `http://<magento.host>/soap/<optional_store_code>?wsdl&services=<service_name_1>,<service_name_2>`
 
@@ -65,7 +67,7 @@ Service names use the following conventions:
 * The string `Service` is omitted.
 * The `Magento` prefix is omitted.
 * The `Interface` suffix is omitted.
-* If the service name is the same as the module name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
+* If the service name is the same as the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
 
 <table>
 <thead>
@@ -93,9 +95,9 @@ Service names use the following conventions:
 
 <h2 id="auth">Authentication</h2>
 
-Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access authorization issued to the client. For more information, see <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 
-The following PHP script illustrates how to get an access token:
+The following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script illustrates how to get an access token:
 
 {% highlight php %}
 <?php
@@ -109,13 +111,11 @@ $serviceArgs = array("id"=>1);
 
 $context = stream_context_create($opts);
 $soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $context]);
- 
+
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
 
 <h2 id="related">Related topics</h2>
-* <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
-* <a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-* <a href="{{page.baseurl}}soap/bk-soap.html">SOAP Reference</a>
-
-
+* <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+* <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+* <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP Reference</a>

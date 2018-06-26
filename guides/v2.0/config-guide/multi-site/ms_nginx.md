@@ -1,17 +1,20 @@
 ---
-layout: default
 group: config-guide
-subgroup: 500_sites
-title: Set up multiple websites or stores with nginx (tutorial)
-menu_title: Set up multiple websites or stores with nginx (tutorial)
+subgroup: 11_sites
+title: Tutorial&mdash;Set up multiple websites or stores with nginx
+menu_title: Tutorial&mdash;Set up multiple websites or stores with nginx
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/multi-site/ms_nginx.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}
-This tutorial shows you step-by-step how to set up multiple websites using nginx. 
+This tutorial shows you step-by-step how to set up multiple websites using {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}.
 
 ### Assumptions
 We assume the following:
@@ -20,21 +23,25 @@ We assume the following:
 
 	Additional tasks might be required to deploy multiple websites in a hosted environment; check with your hosting provider for more information.
 
-	Additional tasks are required to set up Magento Enterprise Cloud Edition. After you complete the tasks discussed in this topic, see [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html).
+	Additional tasks are required to set up {{site.data.var.ece}}. After you complete the tasks discussed in this topic, see [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
 *	You use one virtual host per website; the virtual host configuration files are located in `/etc/nginx/sites-available`
-*	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial
+*	You use `nginx.conf.sample` provided by Magento with only the modifications discussed in this tutorial, and two line configurations.
 *	The Magento software is installed in `/var/www/html/magento2`
 *	You have two websites other than the default:
 
 	*	`french.mysite.mg` with website code `french` and store view code `fr`
 	*	`german.mysite.mg` with website code `german` and store view code `de`
- 
+
+    <div class="bs-callout bs-callout-tip" markdown="1">
+Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-2-create-websites) and [Create store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html#step-4-create-store-views) for help locating these values.
+    </div>
+
 ### Roadmap for setting up multiple websites with nginx
 Setting up multiple stores consists of the following tasks:
 
-1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
-2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento website.
-3.  Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
+1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
+3.  Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`
 
@@ -42,8 +49,9 @@ Setting up multiple stores consists of the following tasks:
         *   Use `store` to load any store view in your storefront.
 
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
+
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
-This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
+This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
 
 {% collapsible To create virtual hosts: %}
 
@@ -51,6 +59,9 @@ This section discusses how to load websites on the storefront. You can use eithe
 
 		map $http_host $MAGE_RUN_CODE {
            french.mysite.mg french;
+		}
+		map $http_host $MAGE_RUN_TYPE {
+		    french.mysite.mg store
 		}
 
 		server {
@@ -65,6 +76,9 @@ This section discusses how to load websites on the storefront. You can use eithe
 		map $http_host $MAGE_RUN_CODE {
            german.mysite.mg german;
 		}
+		map $http_host $MAGE_RUN_TYPE {
+		    german.mysite.mg store
+		}
 
 		server {
            listen 80;
@@ -74,6 +88,41 @@ This section discusses how to load websites on the storefront. You can use eithe
            include /var/www/html/magento2/nginx.conf;
 		}
 4.	Save your changes to the files and exit the text editor.
+5.  Change `nginx.conf.sample` content 
+		
+		location ~ (index|get|static|report|404|503|health_check)\.php$ {
+			try_files $uri =404;
+			fastcgi_pass   fastcgi_backend;
+			fastcgi_buffers 1024 4k;
+
+			fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+			fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+			fastcgi_read_timeout 600s;
+			fastcgi_connect_timeout 600s;
+
+			fastcgi_index  index.php;
+			fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+			include        fastcgi_params;
+		}
+		
+	to
+	
+		location ~ (index|get|static|report|404|503|health_check)\.php$ {
+		    try_files $uri =404;
+		    fastcgi_pass   fastcgi_backend;
+		    fastcgi_buffers 1024 4k;
+
+		    fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+		    fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+		    fastcgi_param  MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+    		    fastcgi_param  MAGE_RUN_CODE $MAGE_RUN_CODE;
+		    fastcgi_read_timeout 600s;
+		    fastcgi_connect_timeout 600s;
+
+		    fastcgi_index  index.php;
+		    fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		    include        fastcgi_params;
+		}
 5.	Verify the server configuration:
 
 		nginx -t

@@ -1,13 +1,16 @@
 ---
-layout: default
-group: 
+group:
 subgroup: 02_config-hosted
 title: Set up scheduled tasks (cron)
 menu_title: Set up scheduled tasks (cron)
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.1
 github_link: install-gde/install/hosted/hosted_start_cron.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="newbie-db">Set up scheduled tasks (cron)</h2>

@@ -1,9 +1,8 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.1 Release Notes
-menu_title: Magento EE 2.1.1 Release Notes
+title: Magento Commerce 2.1.1 Release Notes
+menu_title: Magento Commerce 2.1.1 Release Notes
 menu_order: 298
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
@@ -11,10 +10,10 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.1EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. It also provides enhancements to the Wishlist module's extensibility and modularity.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.1. This release includes several functional fixes as well as enhancements to the deployment of static assets. It also provides enhancements to the Wishlist module's extensibility and modularity.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
 
 ### Fixed issues
@@ -35,13 +34,13 @@ We address the following functional issues in this release.
 
 
 #### Pricing
-<!--- 54320 -->* The Category page now displays current, rather than outdated,  product prices.
+<!--- 54320 -->* The {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} page now displays current, rather than outdated,  product prices.
 
 
-<!--- 55055 -->* Tier pricing now works correctly with full page cache. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a> 
+<!--- 55055 -->* Tier pricing now works correctly with full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a> 
 
 
-<!--- 45339 -->* Cart Price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout.
+<!--- 45339 -->* Cart Price rules are now applied as expected to {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} conditions. Previously, discounts set in Cart Price rules were not applied during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
 
 
 
@@ -49,7 +48,7 @@ We address the following functional issues in this release.
 
 #### Shopping cart
 
-<!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your shopping cart.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
+<!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
 
 
@@ -58,7 +57,7 @@ We address the following functional issues in this release.
 #### Performance
 
 
-<!--- 57410-->* You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+<!--- 57410-->* You can now quickly generate or preview multiple variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
 <!--- 52660 -->* We've improved the speed of static asset deployment. 
@@ -66,7 +65,7 @@ We address the following functional issues in this release.
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see <a href="https://github.com/magento/magento2/issues/4294" target="_blank">(GITHUB-4294)</a>. 
 
 
-<!--- 55300, 55620, 54682-->* We've improved storefront performance when creating 2500 or more product variants. 
+<!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants. 
 
 
 
@@ -74,7 +73,7 @@ We address the following functional issues in this release.
 
 <!--- 56892-->*  You can now save products using the multiple select attribute value. Previously, you could not save values if using this attribute. 
 
-<!--- 55524/48429-->* You can now delete updates from a campaign's page entity grid. 
+<!--- 55524/48429-->* You can now delete updates from a campaign's page {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} grid. 
 
 
 
@@ -86,7 +85,7 @@ We address the following functional issues in this release.
 <!--- 56126 -->* You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out. 
 
 
-<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
+<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}Website{% endglossarytooltip %} Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a> 
 
 
 
@@ -113,13 +112,13 @@ We address the following functional issues in this release.
 ### Known issue
 
 
-The Sales API does not currently support all the update operations on objects that you can execute from the Admin. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+The Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} does not currently support all the update operations on objects that you can execute from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
 The Sales API
 
 * supports create, read, delete, and search operations on objects
 
-* does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
+* does not support updates to {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %} or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 
 You can run these operations from the Admin.
@@ -127,8 +126,8 @@ You can run these operations from the Admin.
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For more information, see
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For more information, see
+[System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_21.md %}
@@ -136,6 +135,6 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ### Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

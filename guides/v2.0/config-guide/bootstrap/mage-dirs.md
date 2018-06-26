@@ -1,25 +1,28 @@
 ---
-layout: default
 group: config-guide
 subgroup: 03_Bootstrap
 title: Customize base directory paths (MAGE_DIRS)
 menu_title: Customize base directory paths (MAGE_DIRS)
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/bootstrap/mage-dirs.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>
 The `MAGE_DIRS` environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs. 
 
 <h2 id="dirs-set">Set MAGE_DIRS</h2>
-Specify an associative array where keys are constants from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php" target="_blank">\Magento\App\Filesystem\DirectoryList</a> and values are absolute paths of directories or their URL paths, respectively.
+Specify an associative array where keys are constants from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php" target="_blank">\Magento\App\Filesystem\DirectoryList</a> and values are absolute paths of directories or their {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} paths, respectively.
 
 You can set `MAGE_DIRS` in any of the following ways:
 
-*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
+*	<a href="{{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
 *	Use a custom entry point script such as the following:
 
 	{% highlight php startinline=true %}

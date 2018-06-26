@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
@@ -10,16 +9,18 @@ contributor_link: http://www.classyllama.com/
 version: 2.0
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
+functional_areas:
+  - Services
 ---
 
 <h2 id="overview-web-service">Overview</h2>
-<p>You can configure a Magento or third-party service as a web API.</p>
-<p>To <a href="#configure-webapi">configure a web API</a>, you define XML elements and attributes in the <code>webapi.xml</code> XML configuration file for the module for the service.
+<p>You can configure a Magento or third-party service as a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p>
+<p>To <a href="#configure-webapi">configure a web API</a>, you define {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} elements and attributes in the <code>webapi.xml</code> XML configuration file for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} for the service.
    The <code>webapi.xml</code> file for your module specifies an XML schema file for validation.
    By default, this file is <code>app/code/&lt;VENDOR>/Webapi/etc/webapi.xsd</code>.
 </p>
 <p>Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
-<p>Users can make REST or SOAP calls to access the web API.</p>
+<p>Users can make REST or SOAP calls to access the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %}.</p>
 <p>To configure a web API, read these topics:</p>
 <ul>
    <li>
@@ -44,7 +45,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web
 
 After a service class is configured using the `webapi.xml` file, Magento dynamically makes the service method available using the web API. Because this is automatically generated, it is important that the service class be formatted a very specific way.
 
-This makes sense when you consider that while a service class possibly expects objects of a specific class type (such a save method) and possibly returns a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a PHP class. Because of this, Magento uses reflection to automatically create these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.  
+This makes sense when you consider that while a service class possibly expects objects of a specific class type (such a save method) and possibly returns a result that is a class or array of classes, neither SOAP nor REST are guaranteed to have that class defined on the client end or even to have a concept similar to a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class. Because of this, Magento uses reflection to automatically create these classes and sets data that you have submitted in JSON or HTTP array syntax onto an instance of the expected PHP class when calling the service method.  
 
 Conversely, if an object is returned from one of these methods, Magento automatically converts that PHP object into a JSON or SOAP object before sending it over the web API.
 
@@ -181,7 +182,7 @@ Following are some examples of various types and what they would look like in th
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
                <p><strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
-                  <p>Any user that the framework cannot authenticate through existing <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">authentication
+                  <p>Any user that the framework cannot authenticate through existing <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">authentication
                      mechanisms</a> is considered a guest user.</p>
 
             </li>
@@ -220,7 +221,28 @@ Following are some examples of various types and what they would look like in th
 </table>
 <h2 id="sample-webapi">Sample webapi.xml file</h2>
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-<script src="https://gist.github.com/keharper/507f485712a496ad079a.js"></script>
+``` xml
+<?xml version="1.0"?>
+    <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <!-- Customer Group Service-->
+    <route url="/V1/customerGroups/:id" method="GET">
+        <service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Magento_Customer::group"/>
+        </resources>
+    </route>
+...
+    <route url="/V1/customers/me/billingAddress" method="GET">
+        <service class="Magento\Customer\Service\V1\CustomerAddressServiceInterface" method="getDefaultBillingAddress"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+</routes>
+```
 <p>In this <code>webapi.xml</code> example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">

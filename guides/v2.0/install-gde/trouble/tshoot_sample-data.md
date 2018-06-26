@@ -1,13 +1,16 @@
 ---
-layout: default 
 group: install_trouble
 subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
-menu_node: 
+menu_node:
 menu_order: 500
 version: 2.0
 github_link: install-gde/trouble/tshoot_sample-data.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 This topic discusses solutions to errors you might encounter installing optional sample data.
@@ -34,17 +37,17 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
-<a href="{{page.baseurl}}install-gde/install/web/install-web-sample-data.html#instgde-prereq-compose-clone-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
+<a href="{{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
-If you're currently set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}install-gde/install/cli/install-cli-sample-data-composer.html) command:
+If you're currently set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command:
 
 	PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /<path>/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /<path>/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
 
 #### Solution
 Don't install sample data in production mode. Switch to developer mode and clear some `var` directories and try again.
 
-Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html):
+Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html):
 
 	cd <your Magento install dir>
 	php bin/magento deploy:mode:set developer
@@ -53,7 +56,7 @@ Enter the following commands in the order shown as the [Magento file system owne
 
 ### Symptom (security) {#trouble-samp-secy}
 
-During installation of optional sample data, a  message similar to the following displays: 
+During installation of optional sample data, a  message similar to the following displays:
 
 	PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
 
@@ -88,7 +91,7 @@ The installation stops before the sample data installation finishes. An example 
 
 Sample data installation does not finish.
 
-This error occurs when the maximum configured execution time of your PHP scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.
+This error occurs when the maximum configured execution time of your {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.
 
 #### Solution
 

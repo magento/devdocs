@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Adding extension attributes to entity
@@ -9,11 +8,11 @@ version: 2.0
 github_link: extension-dev-guide/extension_attributes/adding-attributes.md
 ---
 
-Third party developers cannot change API Data interface in the Magento Core, so the one way to affect interfaces
-using configuration is to add extension attributes.
+Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces
+using configuration is to add {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
-  <p>We will demonstrate this on Product entity, Product Repository and Web Api example. </p>
+  <p>We will demonstrate this on Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example. </p>
 </div>
 
 
@@ -62,47 +61,97 @@ We can add scalar and non-scalar extension attributes.
   <p>Non-scalar attribute can be represented by Data Object. </p>
 </div>
 
-{% highlight php %}
-    <?php
-       public function afterGet
-        (
-            \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-            \Magento\Catalog\Api\Data\ProductInterface $entity
-        ) {
-            $ourCustomData = $this->customDataRepository->get($entity->getId());
+{% highlight php inline=true %}
+public function afterGet
+(
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductInterface $entity
+) {
+    $ourCustomData = $this->customDataRepository->get($entity->getId());
 
-            $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-            $extensionAttributes->setOurCustomData($ourCusomData);
-            $entity->setExtensionAttributes($extensionAttributes);
+    $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
+    $extensionAttributes->setOurCustomData($ourCustomData);
+    $entity->setExtensionAttributes($extensionAttributes);
 
-            return $entity;
-        }
-
-    ?>
+    return $entity;
+}
 {% endhighlight %}
 
-It is the easiest way to add custom attributes. Because we need to know if entity already has extension attributes.
-Also we need to check whether we already has our extension attribute.
+It is the easiest way to add custom attributes. Because we need to know if {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} already has extension attributes.
+Also we need to check whether we already has our {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %}.
 
 AfterGetList is similar to afterGet.
 
 Likewise afterSave plugin should take data from entity and do some manipulations:
 
-{% highlight php %}
-    <?php
-           public function afterSave
-            (
-                \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-                \Magento\Catalog\Api\Data\ProductInterface $entity
-            ) {
-                $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-                $ourCustomData = $extensionAttributes->getOurCustomData();
-                $this-customDataRepository->save($ourCustomData);
+{% highlight php inline=true %}
+public function afterSave
+(
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductInterface $entity
+) {
+    $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
+    $ourCustomData = $extensionAttributes->getOurCustomData();
+    $this->customDataRepository->save($ourCustomData);
 
-                return $entity;
-            }
+    return $entity;
+}
+{% endhighlight %}
 
-        ?>
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension atrributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+
+Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
+
+``` php?start_inline=1
+
+use Magento\Catalog\Api\Data\ProductExtensionInterface;
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Api\Data\ProductExtensionFactory;
+
+class ProductAttributesLoad
+{
+    /**
+     * @var ProductExtensionFactory
+     */
+    private $extensionFactory;
+
+    /**
+     * @param ProductExtensionFactory $extensionFactory
+     */
+    public function __construct(ProductExtensionFactory $extensionFactory)
+    {
+        $this->extensionFactory = $extensionFactory;
+    }
+
+    /**
+     * Loads product entity extension attributes
+     *
+     * @param ProductInterface $entity
+     * @param ProductExtensionInterface|null $extension
+     * @return ProductExtensionInterface
+     */
+    public function afterGetExtensionAttributes(
+        ProductInterface $entity,
+        ProductExtensionInterface $extension = null
+    ) {
+        if ($extension === null) {
+            $extension = $this->extensionFactory->create();
+        }
+
+        return $extension;
+    }
+}
+
+```
+
+And now need to bind our plugin to `ProductInterface`:
+
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="ProductExtensionAttributeOperations" type="Magento\Catalog\Plugin\ProductAttributesLoad"/>
+    </type>
+</config>
 {% endhighlight %}
 
 ## Extension Attributes Configuration:
@@ -118,11 +167,13 @@ For scalar attributes we can use next configuration:
 {% endhighlight %}
 
 For non-scalar attributes:
+{% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
     </extension_attributes>
 </config>
+{% endhighlight %}
 
 In first case we will get the next result:
 
@@ -153,4 +204,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-<a href="https://github.com/magento-south/magento2-samples/tree/MAGETWO-55017/sample-external-links">Sample module on github</a>
+<a href="https://github.com/magento/magento2-samples/tree/master/sample-external-links">Sample module on github</a>

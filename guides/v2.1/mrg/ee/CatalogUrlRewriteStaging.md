@@ -1,25 +1,16 @@
 ---
-layout: default
 group: mrg
-subgroup: Enterprise Edition
-title: Module Reference Guide
-menu_title: CatalogUrlRewriteStaging
-menu_order: 2
+title: Magento_CatalogUrlRewriteStaging module
 version: 2.1
-
-
+ee_only: true
 github_link: mrg/ee/CatalogUrlRewriteStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
-
-The Magento_CatalogUrlRewriteStaging module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogUrlRewrite module.
+The Magento_CatalogUrlRewriteStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It extends the Magento_CatalogUrlRewrite module.
 
 ## Implementation details
 
-The Magento_CatalogUrlRewriteStaging module disables an opportunity to change the URL for a product or category, when you schedule an update. It is a technical module that doesn't have any public calls to intercept.
+The Magento_CatalogUrlRewriteStaging module disables an opportunity to change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for a product or category, when you schedule an update. It is a technical module that doesn't have any public calls to intercept.
 
 ## Dependencies
 
@@ -31,4 +22,4 @@ Extensions points for the Magento_CatalogUrlRewriteStaging module are not availa
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

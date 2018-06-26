@@ -1,23 +1,113 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
-menu_title: Data set
-menu_order: 8
+title: Data set
 version: 2.0
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
-
-## Overview {#overview}
 
 A data set contains data used by a [test case] and [constraints][constraint].
 A data set can have several variations.
 Each variation has constraints that are called at the end of the test flow.
 
+## Example data set {#example}
+
+Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
+
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"/></a>
+
+The `CreateSimpleProductEntityTest.xml` data set contains:
+
+{%highlight xml%}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/variations.xsd">
+    <testCase name="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
+        <variation name="CreateSimpleProductEntityTestVariation1" summary="Create product with custom options(fixed price)">
+            <data name="product/data/url_key" xsi:type="string">simple-product-%isolation%</data>
+            <data name="product/data/name" xsi:type="string">Simple Product %isolation%</data>
+            <data name="product/data/sku" xsi:type="string">simple_sku_%isolation%</data>
+            <data name="product/data/price/value" xsi:type="string">10000</data>
+            <data name="product/data/price/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
+            <data name="product/data/short_description" xsi:type="string">Simple Product short_description %isolation%</data>
+            <data name="product/data/description" xsi:type="string">Simple Product description %isolation%</data>
+            <data name="product/data/weight" xsi:type="string">50</data>
+            <data name="product/data/quantity_and_stock_status/qty" xsi:type="string">657</data>
+            <data name="product/data/custom_options/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
+            <data name="product/data/checkout_data/dataset" xsi:type="string">simple_drop_down_with_one_option_fixed_price</data>
+            <data name="tag" xsi:type="string">test_type:acceptance_test</data>
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductSaveMessage" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInGrid" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCategory" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductPage" />
+            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCart" />
+        </variation>
+    </testCase>
+</config>
+{%endhighlight xml%}
+
+This is a data set that:
+
+- corresponds to the XSD schema `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd`
+- relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test case (performs creation of the simple product)
+- relates to the ticket `MAGETWO-23414` in Jira
+- contains variation `CreateSimpleProductEntityTestVariation1` that 
+  - contains data to create product with fixed price (see descriptions in the following table) 
+  - defines tag that can be used to customize the test suite run
+  - defines [constraints][constraint] that will be performed after the test flow in the order they are presented in the data set
+
+The `CreateSimpleProductEntityTestVariation1` variation contains the following `$product` data:
+{:#ex_variation_table}
+
+<table>
+<col width="1*">
+<col width="2*">
+<tr><th>Fixture field</th><th>Description</th></tr>
+<tr>
+<td><code>url_key</code> </td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+</tr>
+<tr>
+<td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
+</tr>
+<tr>
+<td><code>sku</code></td><td>field is assigned with <code>simple_sku_%isolation%</code></td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>
+<ul>
+<li> <code>product/data/price/value</code> is processed by a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td><code>short_description</code></td>
+<td>field is assigned with <code>Simple Product short_description %isolation%</code></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>field is assigned with <code>Simple Product description %isolation%</code></td>
+</tr>
+<tr>
+<td><code>weight</code></td>
+<td>field is assigned with <code>50</code></td>
+</tr>
+<tr>
+<td><code>quantity_and_stock_status/qty</code></td>
+<td>field is assigned with <code>657</code></td>
+</tr>
+<tr>
+<td><code>custom_options</code></td>
+<td>field is processed by a data source <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></td>
+</tr>
+<tr>
+<td><code>checkout_data</code></td>
+<td>fields are assigned with a data set <code>simple_drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData</code> repository</td>
+</tr>
+</table>
+
 ## Data set structure {#structure}
 
-A data set is an XML file that contains test variations for a test case.
+A data set is an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file that contains test variations for a test case.
 
 Each variation includes:
 
@@ -27,7 +117,6 @@ Each variation includes:
 The following table shows structure of the data set:
 {:#dataset_struct_table}
 
-
 <table>
 <col width="1*">
 <col width="1*">
@@ -35,7 +124,7 @@ The following table shows structure of the data set:
 <tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
-<td>The root element that defines an XML namespace and an XML Schema. </td>
+<td>The root element that defines an XML {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} and an XML Schema. </td>
 <td><ul>
 <li><code> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code></li>
 <li><code>xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd"</code></li>
@@ -94,105 +183,22 @@ The following data types are available:
 
 A data set should be placed in the same directory with a corresponding test case.
 
-### Example data set {#example}
+## Data set merging {#merge}
 
-Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case][] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
+The FTF enables you to merge data sets from different modules. For example, if you create a new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
+   
+There are two options to merge data sets in the FTF:
+ 
+- [add a new variation]
+- [extend an existing variation]
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"/></a>
+## HowTos {#howtos}
 
-The `CreateSimpleProductEntityTest.xml` data set contains:
+A data set is a flexible FTF {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} that allows to perform different tasks. Learn their descriptions in the following sections.
+ 
+### Define `name` in the `<data>` node {#data_node}
 
-{%highlight xml%}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/variations.xsd">
-    <testCase name="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
-        <variation name="CreateSimpleProductEntityTestVariation1" summary="Create product with custom options(fixed price)">
-            <data name="product/data/url_key" xsi:type="string">simple-product-%isolation%</data>
-            <data name="product/data/name" xsi:type="string">Simple Product %isolation%</data>
-            <data name="product/data/sku" xsi:type="string">simple_sku_%isolation%</data>
-            <data name="product/data/price/value" xsi:type="string">10000</data>
-            <data name="product/data/price/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
-            <data name="product/data/short_description" xsi:type="string">Simple Product short_description %isolation%</data>
-            <data name="product/data/description" xsi:type="string">Simple Product description %isolation%</data>
-            <data name="product/data/weight" xsi:type="string">50</data>
-            <data name="product/data/quantity_and_stock_status/qty" xsi:type="string">657</data>
-            <data name="product/data/custom_options/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
-            <data name="product/data/checkout_data/dataset" xsi:type="string">simple_drop_down_with_one_option_fixed_price</data>
-            <data name="tag" xsi:type="string">test_type:acceptance_test</data>
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductSaveMessage" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInGrid" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCategory" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductPage" />
-            <constraint name="Magento\Catalog\Test\Constraint\AssertProductInCart" />
-        </variation>
-    </testCase>
-</config>
-{%endhighlight xml%}
-
-This is a data set that:
-
-- corresponds to the XSD schema `<magento2_root_dir>/dev/tests/functional/vendor/magento/mtf/etc/variations.xsd`
-- relates to the `Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest` test case (performs creation of the simple product). 
-- relates to the ticket `MAGETWO-23414` in Jira
-- contains variation `CreateSimpleProductEntityTestVariation1` that 
-  - contains data to create product with fixed price (see descriptions in the following table) 
-  - defines tag that can be used to customize the test suite run
-  - defines [constraints][] that will be performed after the test flow in the order they are presented in the data set
-
-The `CreateSimpleProductEntityTestVariation1` variation contains the following `$product` data:
-{:#ex_variation_table}
-
-<table>
-<col width="1*">
-<col width="2*">
-<tr><th>Fixture field</th><th>Description</th></tr>
-<tr>
-<td><code>url_key</code> </td>
-<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
-</tr>
-<tr>
-<td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
-</tr>
-<tr>
-<td><code>sku</code></td><td>field is assigned with <code>simple_sku_%isolation%</code></td>
-</tr>
-<tr>
-<td><code>price</code></td>
-<td>
-<ul>
-<li> <code>product/data/price/value</code> is processed by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
-</ul>
-</td>
-</tr>
-<tr>
-<td><code>short_description</code></td>
-<td>field is assigned with <code>Simple Product short_description %isolation%</code></td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>field is assigned with <code>Simple Product description %isolation%</code></td>
-</tr>
-<tr>
-<td><code>weight</code></td>
-<td>field is assigned with <code>50</code></td>
-</tr>
-<tr>
-<td><code>quantity_and_stock_status/qty</code></td>
-<td>field is assigned with <code>657</code></td>
-</tr>
-<tr>
-<td><code>custom_options</code></td>
-<td>field is processed by a data source <code>Magento\Catalog\Test\Fixture\Product\CustomOptions</code> using a data set <code>drop_down_with_one_option_fixed_price</code> from the repository <code>Magento\Catalog\Test\Repository\Product\CustomOptions</code></td>
-</tr>
-<tr>
-<td><code>checkout_data</code></td>
-<td>fields are assigned with a data set <code>simple_drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData</code> repository</td>
-</tr>
-</table>
-
-### How to define `name` in the `<data>` node {#data_node}
-
-As you can see in the [previous table](#dataset_struct_table), the `name` data has a specific structure. Why? To make your test more flexible.
+As you can see in the [structure table](#dataset_struct_table), the `name` data has a specific structure. Why? To make your test more flexible.
 
 Data mapping by `name` is performed for the test methods in test case  and `processAssert()` method in constraints. Let's see the logic of the `<data>` processing.
 
@@ -201,7 +207,7 @@ Slash `/` means array nesting. For example:
 - `<data name=var/index1>value</data>` is converted as `var[index1 => value]`
 - `<data name=var/index1/index2>value</data>` is converted as `var[index1 => [index2 => value]]`
 
-where `var` is a name of an argument of a [test case][] or a [constraint][].
+where `var` is a name of an argument of a [test case] or a [constraint].
 
 If a variable is assigned more than one value:
 
@@ -212,7 +218,7 @@ If a variable is assigned more than one value:
 
 the value is processed as an array:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 $price = [
     'data' => [
         'shopping_cart' => [
@@ -225,7 +231,7 @@ $price = [
         ]
     ]
 ]
-{%endhighlight php%}
+```
 
 Also, in similar cases you can use array type in a data set, like:
 
@@ -241,17 +247,15 @@ Also, in similar cases you can use array type in a data set, like:
 </data>
 {%endhighlight xml%}
 
-#### Set a simple variable {#simple_var}
+### Set a simple variable {#simple_var}
 
-For example, if a [test case][] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
+For example, if a [test case] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate($price)
 {
     //
 }
-?>
 {%endhighlight php%}
 
 To assign it with `10` in one of the variations, add the following field to a variation of the corresponding data set:
@@ -260,36 +264,34 @@ To assign it with `10` in one of the variations, add the following field to a va
 <data name="price" xsi:type="string">10</data>
 {%endhighlight xml%}
 
-#### Set data to a fixture field {#fixture_field}
+### Set data to a fixture field {#fixture_field}
 
-In your test you often need to use injectable [fixture][] instances. For example:
+In your test you often need to use injectable [fixture] instances. For example:
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $product)
 {
     //
 }
-?>
 {%endhighlight php%}
 
-In this case, the ObjectManager sends data to the [InjectableFixture][] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
+In this case, the ObjectManager sends data to the [InjectableFixture] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
 
 {%highlight xml%}
  <data name="product/data/weight" xsi:type="string">50</data>
 {%endhighlight xml%}
 
-#### Set data to a fixture from a repository {#fixture_repository}
+### Set data to a fixture from a repository {#fixture_repository}
 
-The [InjectableFixture][] class enables you to use a fixture [repository][]. It can be injected in a `$dataset` variable. For example, to use `dataset = product_with_special_symbols_in_name` from the repository assigned in the [fixture][], you can use:
+The [InjectableFixture] class enables you to use a [fixture repository][repository]. It can be injected in a `$dataset` variable. For example, to use `dataset = product_with_special_symbols_in_name` from the repository assigned in the [fixture], you can use:
 
 {%highlight xml%}
 <data name="product/dataset" xsi:type="string">product_with_special_symbols_in_name</data>
 {%endhighlight xml%}
 
-#### Set data to a fixture field from a repository {#fixture_field_repository}
+### Set data to a fixture field from a repository {#fixture_field_repository}
 
-You can assign data to a [fixture field from its repository][].
+You can assign data to a [fixture field from its repository].
  
 Let's see an example:
 
@@ -305,22 +307,13 @@ A `CatalogProductSimple.xml` fixture contains the following declarations:
 <field name="checkout_data" group="null" repository="Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData" />
 {%endhighlight xml%}
 
-The `price` fixture field contains the [data source][] that assigns values from a repository. After the [InjectableFixture][] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `['dataset' => 'drop_down_with_one_option_fixed_price']` and assigns values from the `['dataset' => 'drop_down_with_one_option_fixed_price']` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
+The `price` fixture field contains the [data source] that assigns values from a repository. After the [InjectableFixture] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `['dataset' => 'drop_down_with_one_option_fixed_price']` and assigns values from the `['dataset' => 'drop_down_with_one_option_fixed_price']` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
 
 The `checkout_data` doesn't contain source and is assigned with values from the `Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData` directly.
 
-## Merge data sets {#merge}
-
-The FTF enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
-   
-There are two options to merge data sets in the FTF:
- 
-- add a new variation
-- extend an existing variation
-
 ### Add a new variation {#add_variation}
 
-To add a new variation using merging, you should simply use the name of a [test case][] that you want to merge with. For example, you want to add a new variations from the Magento_ProductVideo module to the `Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest` that is placed in the Magento_Catalog module. You can create data set in the Magento_ProductVideo module, containing variations you need, and paste the test case name that you want to merge with:
+To add a new variation using [merging], you should simply use the name of a [test case] that you want to merge with. For example, you want to add a new variations from the Magento_ProductVideo module to the `Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest` that is placed in the Magento_Catalog module. You can create data set in the Magento_ProductVideo module, containing variations you need, and paste the test case name that you want to merge with:
  
  * Create `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml` with the following code:
 
@@ -360,29 +353,33 @@ Variations `DeleteVideoFromPCFTestVariation1` and `DeleteVideoFromPCFTestVariati
 
 ### Extend a variation with data {#extend_variation}
 
-If you want to extend variation in another module using merging, you should use a [test case][] name that you want to merge with and a variation name that you want to extend.
+If you want to extend variation in another module using [merging], you should use a [test case] name that you want to merge with and a variation name that you want to extend.
  
 For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
 
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
  {%endhighlight xml%}
  
  the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
  
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
   {%endhighlight xml%}
 
 <!-- LINK DEFINITIONS -->
 
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[data source]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[add a new variation]: #add_variation
+[extend an existing variation]: #extend_variation
+[merging]: #merge 
+
+[constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[data source]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[fixture field from its repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
-[repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[fixture field from its repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+[repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
 
 <!-- ABBREVIATIONS -->
 

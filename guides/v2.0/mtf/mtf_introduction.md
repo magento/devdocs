@@ -1,17 +1,12 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 10_Introduction
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
-menu_title: INTRODUCTION
-menu_node: parent
 version: 2.0
 github_link: mtf/mtf_introduction.md
-redirect_from: /guides/v1.0/mtf/mtf_introduction.html
 ---
 
-This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on. This FTF guide is also applicable to the Magento 1 platform.
+This guide provides instructions on installing and configuring the Functional Testing Framework (FTF). Using the FTF, you can create and run *functional* tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, and so on.
 
 FTF is an open source cross-platform solution (that is, does not depend on a specific operating system).
 
@@ -23,7 +18,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 <h3 id="mtf_intro_extratools">What tools should I use to run tests with FTF?</h3>
 
--   [PHPUnit][] (downloaded via composer during installation)
+-   [PHPUnit][] (downloaded via {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} during installation)
 
 -   [Selenium Standalone Server][]
 
@@ -41,7 +36,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 <h2 id="mtf_intro_audi">Audience</h2>
 
-This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, PHP developers, and system integrators.
+This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} developers, and system integrators.
 
 <h2 id="mtf_intro_goal">Goal</h2>
 
@@ -77,13 +72,13 @@ FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- <a href="{{page.baseurl}}test/unit/unit_test_execution.html">How to run unit tests during development on the command line or PHPStorm.</a>
+- <a href="{{ page.baseurl }}/test/unit/unit_test_execution.html">How to run unit tests during development on the command line or PHPStorm.</a>
 
-- <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">How to run unit and integration tests using `bin/magento` in continuous integration.</a>
+- <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">How to run unit and integration tests using `bin/magento` in continuous integration.</a>
 
-- <a href="{{page.baseurl}}test/js/test_js-unit.html">More information about JavaScript unit tests.</a>
+- <a href="{{ page.baseurl }}/test/js/test_js-unit.html">More information about JavaScript unit tests.</a>
 
-- <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
+- <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 
 
 <h2 id="mtf_intro_github-link">FTF on GitHub</h2>

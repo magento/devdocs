@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 65_CLI
 title: Command naming guidelines
@@ -14,16 +13,10 @@ redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
  -->
 
-#### Contents
-*	<a href="#cli-over">Naming guideline overview</a>
-*	<a href="#cli-name">Command name</a>
-*	<a href="#cli-args">Command options and arguments</a>
-*	<a href="#cli-collision">Recommendations to avoid naming collisions</a>
-
 <h2 id="cli-over">Naming guideline overview</h2>
 Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules.
 
-As an extension developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it's also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user's learning curve.
+As an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developer, you can now create and distribute your own commands for Magento applications. But as for any implementation, it's also important to follow some general conventions to keep your commands consistent with commands from other developers. Being consistent in this way reduces the user's learning curve.
 
 This topic discusses our recommended naming conventions.
 
@@ -67,7 +60,7 @@ If you have a Magento installation handy, enter the following to display the cur
 <h2 id="cli-args">Command options and arguments</h2>
 Options and arguments follow the command name and modify the command's behavior.
 
-For example, in `bin/magento module:disable --force Magento_Catalog`, the `--force` *option* and the `Magento_Catalog` *argument* bypass the restrictions and specify a particular module to be disabled; in this case, regardless of dependencies on other modules.
+For example, in `bin/magento module:disable --force Magento_Catalog`, the `--force` *option* and the `Magento_Catalog` *argument* bypass the restrictions and specify a particular {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to be disabled; in this case, regardless of dependencies on other modules.
 
 Options and arguments create different user experiences. As a developer, you can choose which type of input is better for your particular case.
 
@@ -86,7 +79,7 @@ where:
 
 `vendor` is a vendor argument
 
-`themename` is a theme name argument
+`themename` is a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} name argument
 
 Use arguments when you need required data from the user. We recommend as few arguments as possible (no more then three) so the user will not confuse their order.
 
@@ -146,7 +139,7 @@ To avoid naming your command the same as another command, we recommend:
 
 *	Looking at other extensions in the Magento Marketplace before you choose a name for your commands. By planning ahead, you can avoid naming collisions entirely.
 
-*	Restricting command names to start with a unique name, such as a vendor name. The usability of the command depends on what you choose for a vendor name.
+*	Restricting command names to start with a unique name, such as a vendor name. The {% glossarytooltip f583cac1-8ed5-4305-8195-2d5630e72ba8 %}usability{% endglossarytooltip %} of the command depends on what you choose for a vendor name.
 
 	For example, `myname:dev:theme:create` is not obvious and is hard to remember.
 
@@ -158,4 +151,4 @@ To avoid naming your command the same as another command, we recommend:
 		dev:myname:theme:delete
 
 #### Related topic
-<a href="{{page.baseurl}}extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>
+<a href="{{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-howto.html">How to add CLI commands</a>

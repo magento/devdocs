@@ -1,20 +1,14 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
-menu_title: Constraint
-menu_order: 7
+title: Constraint
 version: 2.0
 github_link: mtf/mtf_entities/mtf_constraint.md
 ---
 
-## Overview {#mtf_constraint_overview}
-
 The Functional Testing Framework (FTF) constraint performs assertions after a test flow. A test flow is a set of test steps without assertions.
-Each constraint name must be globally unique in Magento application and must be placed in the module to which it belongs. Constraints run automatically after test flow has finished.
+Each constraint name must be globally unique in Magento application and must be placed in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to which it belongs. Constraints run automatically after test flow has finished.
 
-![Constraints and test flow]({{site.baseurl}}common/images/ftf/mtf_constraint_flow.png)
+![Constraints and test flow]({{ site.baseurl }}/common/images/ftf/mtf_constraint_flow.png)
 
 ## Constraint structure {#mtf_constraint_structure}
 
@@ -22,11 +16,11 @@ Each constraint name must be globally unique in Magento application and must be 
 
 A module in functional tests (`<magento2_root_dir>/dev/tests/app/Magento/`) stores constraints in the `Constraint` directory. The following image shows the `Constraint` directory of the Magento_Widget module.
 
-![]({{site.baseurl}}common/images/ftf/mtf_constraint_dir.png)
+![]({{ site.baseurl }}/common/images/ftf/mtf_constraint_dir.png)
 
 ### Constraint class {#mtf_constraint_assert}
 
-The constraint PHP class must:
+The constraint {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class must:
 
 * Have unique name created using the following template `Assert{MagentoEntityName}{verification|action|place}`. For example:
 
@@ -51,15 +45,15 @@ An object that is not defined in the data set or isn't returned from the test ca
 
 Let's see the following images for the `CreateSimpleProductEntityTest` test and the `AssertProductPricesOnCategoryPage` constraint. Data set from the diagrams contains three variables with data: `product`, `category` and `price`.
 
-<img src="{{ site.baseurl }}common/images/ftf/mtf_constraint_arguments_green.png" width="800" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_green.png" width="800" />
 
 <span style="color: #21610B; font-weight:bold">Green arrows</span> show that `product` value is transferred to the test and the constraint.
 
-<img src="{{ site.baseurl }}common/images/ftf/mtf_constraint_arguments_orange.png" width="800" />
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_orange.png" width="800" />
 
 <span style="color: #FF8000; font-weight:bold">Orange arrows</span> show that `category` variable is transferred to the test directly, overwritten by `testCreate()` method and only then transferred to constraint.
 
-<img src="{{ site.baseurl }}common/images/ftf/mtf_constraint_arguments_blue.png" width="800"/>
+<img src="{{ site.baseurl }}/common/images/ftf/mtf_constraint_arguments_blue.png" width="800"/>
 
 <span style="color: #0000FF; font-weight:bold">Blue arrow</span> shows that `price` value is transferred to the constraint only.
 
@@ -139,7 +133,7 @@ To assign severity tags do the following:
 For example, `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml`:
 
 {%highlight xml%}
-{%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
+{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/CatalogRule/Test/etc/di.xml %}
 {%endhighlight%}
 
 ## How to create constraint {#mtf_constraint_create}
@@ -270,6 +264,6 @@ in the order that it must be performed.
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html

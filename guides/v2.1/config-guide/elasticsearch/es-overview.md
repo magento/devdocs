@@ -1,54 +1,58 @@
 ---
-layout: default
 group: config-guide
 subgroup: 14_Elastic
 title: Install and configure Elasticsearch
-menu_title: Install and configure Elasticsearch (Enterprise Edition only)
+menu_title: Install and configure Elasticsearch (Magento Commerce only)
 menu_order: 1
 menu_node: parent
 version: 2.1
+ee_only: True
 github_link: config-guide/elasticsearch/es-overview.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
-
 
 #### Contents
 
-*	<a href="#overview">Overview of Elasticsearch</a>
-*	<a href="#es-prereq">Install prerequisites and Elasticsearch</a>
-*	<a href="#es-resources">Additional resources</a>
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)
+*	[Overview of Elasticsearch](#overview){:target="_blank"}
+*	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
+*	[Additional resources](#es-resources){:target="_blank"}
+*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
 
-<h2 id="overview">Overview of Elasticsearch</h2>
-In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your catalog.
+## Overview of Elasticsearch {#overview}
+In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
-*	Elasticsearch analyzers support multiple languages
+*	Elasticsearch Analyzers support multiple languages
 *	Supports stop words and synonyms
 *	Indexing does not impact customers until reindex is completed
 
 	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers
 
 *	Accurate, performant, scalable
-*	Works well out of the box 
+*	Works well out of the box
 *	Easy to horizontally scale
 *	Supports real-time data and analysis
 *	Can be used as a document-oriented data store
 *	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
-Magento Enterprise Edition (EE) version 2.1.x supports the following Elasticsearch versions:
+{{site.data.var.ee}} version 2.1.x supports the following Elasticsearch versions:
 
 *	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 *	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
 
+We also support version 1.7 but recommend you use a later version.
+
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-<img src="{{ site.baseurl }}common/images/elastic_config.png" width="500px">
+<img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
 
 The preceding diagram shows:
 
@@ -70,7 +74,7 @@ Search requests are processed as follows:
 2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
 3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
 
-	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid user name and password.
+	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid username and password.
 4.	Elasticsearch processes the search request.
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
@@ -78,61 +82,64 @@ Search requests are processed as follows:
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
-*	<a href="#prereq-java">Install the Java Software Development Kit (JDK)</a>
+*	[Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"}
 *	[Install Elasticsearch](#es-install-es)
+*	[Configure Magento to use Elasticsearch](#configure-magento-to-use-elasticsearch)
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java.md %}
 
 ### Install Elasticsearch {#es-install-es}
-This section discusses how to install the latest 2.x version of Elasticsearch from their repository. 
+This section discusses how to install the latest 2.x version of Elasticsearch from their repository.
 
-To install older versions, see the [https://www.elastic.co/guide/en/elasticsearch/reference/index.html](Elasticsearch reference){:target="_blank"} (for example, the [2.0 reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html){:target="_blank"}).
+To install older versions, see the [Elasticsearch reference](https://www.elastic.co/guide/en/elasticsearch/reference/index.html){:target="_blank"} (for example, the [2.0 reference](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html){:target="_blank"}).
 
 To install Elasticsearch:
 
 1.	Log in to your Magento server as a user with `root` privileges.
-2.	Enter the following commands in the order shown:
+2.	_CentOS_: Enter the following commands in the order shown:
 
-	*	CentOS:
+		rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+		vim /etc/yum.repos.d/Elasticsearch.repo
 
-			rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-			vim /etc/yum.repos.d/Elasticsearch.repo
+	Add the following:
 
-		Add the following:
+		[elasticsearch-2.x]
+		name=Elasticsearch repository for 2.x packages
+		baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
+		gpgcheck=1
+		gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+		enabled=1
 
-			[elasticsearch-2.x]
-			name=Elasticsearch repository for 2.x packages
-			baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
-			gpgcheck=1
-			gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
-			enabled=1
+	Enter the following commands:
 
-		Enter the following commands:
+		yum -y install elasticsearch
+		chkconfig --add elasticsearch
 
-			yum -y install elasticsearch
-			chkconfig --add elasticsearch
+2.	_Ubuntu_: Enter the following commands in the order shown:
 
-	*	Ubuntu:
+	Find the [latest 2.x version of Elasticsearch](https://www.elastic.co/downloads/past-releases){:target="_blank"}.
 
-			wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+	Install the latest 2.x version using [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html){:target="_blank"}
 
-			echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
+	For example, to install Elasticsearch version 2.4.4, enter the following commands in the order shown:
 
-			sudo apt-get -y update && sudo apt-get -y install elasticsearch
+		curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz
+		tar -xvf elasticsearch-2.4.4.tar.gz
+		cd elasticsearch-2.4.4/bin
+		./elasticsearch
 
-	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
 4.	Open the [Elasticsearch configuration file](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings){:target="_blank"}, `elasticsearch.yml`, in a text editor.
 
-	For example, it might be located in `/etc/elasticsearch`.
+	For example, it might be located in `/etc/elasticsearch` or `<elasticsearch install dir>/config`.
 5.	Add the following parameter to the `Memory` section:
 
-		index.query.bool.max_clause_count: 4096
+		indices.query.bool.max_clause_count: 10024
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.
+3.	Optionally configure the [Elasticsearch service](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html){:target="_blank"}.
 4.	Start Elasticsearch:
 
 		service elasticsearch start
@@ -144,10 +151,12 @@ To install Elasticsearch:
 
 		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 
+
 ## Additional resources {#es-resources}
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
+For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next
 
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
+*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Magento to use Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html)

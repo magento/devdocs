@@ -1,29 +1,20 @@
 ---
-layout: default
 group: mrg
-subgroup: Enterprise Edition
-title: Module Reference Guide
-menu_title: CheckoutStaging
-menu_order: 2
+title: Magento_CheckoutStaging module
 version: 2.1
-
-
+ee_only: true
 github_link: mrg/ee/CheckoutStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-## Overview
-
-The Magento_CheckoutStaging module is a part of the staging functionality in Magento EE.
-It extends the checkout functionality and enables you to use it in the staging preview mode.
+The Magento_CheckoutStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}.
+It extends the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} functionality and enables you to use it in the staging preview mode.
 
 ## Implementation details
 
 The Magento_CheckoutStaging module extends the following Magento_Checkout module functionality to be used in the staging preview mode:
 
 - Disables an order creation
-- Creates a demo quote
+- Creates a demo {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}
 - Deletes the demo quote using cron
 
 Configuration options:
@@ -41,10 +32,10 @@ You can find the list of modules that have dependencies on the Magento_CheckoutS
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_CheckoutStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CheckoutStaging module.
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento EE mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

@@ -1,0 +1,133 @@
+label: Magento Functional Testing Framework Guide
+pages:
+
+  - label:  MFTF release 2
+    url: /magento-functional-testing-framework/release-2/introduction.html
+    versions: ["2.2", "2.3"]
+    children:
+
+      - label: Getting started
+        url: /magento-functional-testing-framework/release-2/getting-started.html
+
+      - label: Suite
+        url: /magento-functional-testing-framework/release-2/suite.html
+
+      - label: Test
+        url: /magento-functional-testing-framework/release-2/test.html
+        children:
+
+          - label: Annotations
+            url: /magento-functional-testing-framework/release-2/test/annotations.html
+
+          - label: Actions
+            url: /magento-functional-testing-framework/release-2/test/actions.html
+
+          - label: Action groups
+            url: /magento-functional-testing-framework/release-2/test/action-groups.html
+
+          - label: Assertions
+            url: /magento-functional-testing-framework/release-2/test/assertions.html
+
+      - label: Page
+        url: /magento-functional-testing-framework/release-2/page.html
+
+      - label: Section
+        url: /magento-functional-testing-framework/release-2/section.html
+        children:
+
+          - label: Parameterized selectors
+            url: /magento-functional-testing-framework/release-2/section/parameterized-selectors.html
+
+          - label: Locator functions
+            url: /magento-functional-testing-framework/release-2/section/locator-functions.html
+
+      - label: Data
+        url: /magento-functional-testing-framework/release-2/data.html
+
+      - label: Metadata
+        url: /magento-functional-testing-framework/release-2/metadata.html
+
+      - label: Merging
+        url: /magento-functional-testing-framework/release-2/merging.html
+
+      - label: Configuration
+        url: /magento-functional-testing-framework/release-2/configuration.html
+
+      - label: CLI Commands
+        children:
+
+          - label: robo
+            url: /magento-functional-testing-framework/release-2/commands/robo.html
+          - label: codecept
+            url: /magento-functional-testing-framework/release-2/commands/codeception.html
+
+      - label: Update
+        url: /magento-functional-testing-framework/release-2/update.html
+
+      - label: Best practices
+        url: /magento-functional-testing-framework/release-2/best-practices.html
+
+      - label: Troubleshooting
+        url: /magento-functional-testing-framework/release-2/troubleshooting.html
+
+  - label: MFTF release 1
+    url: /magento-functional-testing-framework/release-1/introduction.html
+    versions: ["2.2"]
+    children:
+
+    - label: Getting Started
+      url: /magento-functional-testing-framework/release-1/getting-started.html
+
+    - label: Cest
+      url: /magento-functional-testing-framework/release-1/cest.html
+      children:
+
+        - label: Annotations
+          url: /magento-functional-testing-framework/release-1/cest/annotations.html
+
+        - label: Actions
+          url: /magento-functional-testing-framework/release-1/cest/actions.html
+
+        - label: Action groups
+          url: /magento-functional-testing-framework/release-1/cest/action-groups.html
+
+        - label: Assertions
+          url: /magento-functional-testing-framework/release-1/cest/assertions.html
+
+    - label: Page
+      url: /magento-functional-testing-framework/release-1/page.html
+
+    - label: Section
+      url: /magento-functional-testing-framework/release-1/section.html
+      children:
+
+        - label: Parameterized selectors
+          url: /magento-functional-testing-framework/release-1/section/parameterized-selectors.html
+
+        - label: Locator Functions
+          url: /magento-functional-testing-framework/release-1/section/locator-functions.html
+
+    - label: Data
+      url: /magento-functional-testing-framework/release-1/data.html
+
+    - label: CLI Commands
+      children:
+
+        - label: robo
+          url: /magento-functional-testing-framework/release-1/commands/robo.html
+        - label: codecept
+          url: /magento-functional-testing-framework/release-1/commands/codeception.html
+
+    - label: Update
+      url: /magento-functional-testing-framework/release-1/update.html
+
+    - label: Troubleshooting
+      url: /magento-functional-testing-framework/release-1/troubleshooting.html
+
+  - label: Contribution Guidelines
+    url: /magento-functional-testing-framework/contribution-guidelines.html
+    versions: ["2.2", "2.3"]
+
+  - label: Changelog
+    url: /magento-functional-testing-framework/changelog.html
+    versions: ["2.2", "2.3"]

@@ -1,13 +1,15 @@
 ---
-layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Incorrect credentials
 menu_title: Incorrect credentials
-menu_order: 5
-menu_node: 
+menu_order: 7
+menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble_ce-creds.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 ## Incorrect credentials
@@ -16,17 +18,17 @@ This topic discusses how to resolve issues with incorrect credentials in your `a
 ### Symptom
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
 
-	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden  
+	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
 
 To see the error log:
 
-1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
+1.	[Log in to your project]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-access).
 2.	Click **Failure** to view the log as the following figure shows.
 
-	![View the log for a failed deployment]({{ site.baseurl }}common/images/cloud_deploy-failure-creds.png){:width="600px"}
+	![View the log for a failed deployment]({{ site.baseurl }}/common/images/cloud_deploy-failure-creds.png){:width="600px"}
 
 ### Solution
-To resolve this issue, you must clone the project locally and update `auth.json` with the correct Magento EE [authorization keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
+To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
 
 Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){:target="_blank"}.
 
@@ -52,8 +54,8 @@ To resolve the issue with credentials:
 
 1.	If you haven't done so already, change to the project root directory.
 2.	Open `auth.json` in a text editor.
-3.	Change the value of `username` to your Magento EE public key.
-4.	Change the value of `password` to your Magento EE private key.
+3.	Change the value of `username` to your {{site.data.var.ee}} public key.
+4.	Change the value of `password` to your {{site.data.var.ee}} private key.
 5.	Save your changes to `auth.json` and exit the text editor.
 6.	Update project dependencies:
 
@@ -142,10 +144,10 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
 To verify the deployment was successful, enter one of the URLs displayed under `Environment routes:` in a web browser.
 
 <div class="bs-callout bs-callout-warning">
-	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator user name, and administrator password. For step-by-step details, see <a href="{{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html">Set Magento environment variables</a>.</p>
+	<p>For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see <a href="{{ page.baseurl }}/cloud/env/set-variables.html">Set Magento environment variables</a>.</p>
 </div>
 
 #### Related topics
-*	[Manage your projects]({{page.baseurl}}cloud/project/projects.html)
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[Tutorials]({{page.baseurl}}cloud/howtos/how-to.html)
+*	[Manage your projects]({{ page.baseurl }}/cloud/project/projects.html)
+*	[Manage your environments]({{ page.baseurl }}/cloud/env/environments.html)
+*	[Tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)

@@ -1,28 +1,27 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: About the uiClass library
 menu_title: About the uiClass library
-menu_order: 10
+menu_order: 60
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---
 
-## What is `uiClass`
+## What is `uiClass`?
 
-The `uiClass` is an abstract class from which all components are extended. The `uiClass` is a low-level class and is rarely used as direct parent for UI components' classes.
+The `uiClass` is an abstract class from which all components are extended. The `uiClass` is a low-level class and is rarely used as direct parent for UI component classes.
 
-`uiClass` source code is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/class.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/class.js)
+`uiClass` source code is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/class.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/class.js)
 
 ## Commonly used uiClass methods
 The uiClass class introduces the architecture of UI components through the following methods:
 
-*  The `extend()` method implements inheritance of UI components. The `extend()` returns new class. The `extend()` method gets a JavaScript object as a parameter, and then extends the base object with the properties and methods of the argument's object. The properties of the argument's object have higher priority than base object's properties.
+*  The `extend()` method implements inheritance of UI components. The `extend()` returns new class. The `extend()` method gets a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} object as a parameter, and then extends the base object with the properties and methods of the argument's object. The properties of the argument's object have higher priority than base object's properties.
    As an example:
     %componentName%.extend(%JavaScript_extender_object%);
 
-* The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent UI component. This resulting configuration is then set as first level properties in the current UI component instance.
+* The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
 {%highlight js%}

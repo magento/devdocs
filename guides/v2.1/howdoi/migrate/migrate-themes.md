@@ -1,1 +1,0 @@
-../../../v2.0/howdoi/migrate/migrate-themes.md

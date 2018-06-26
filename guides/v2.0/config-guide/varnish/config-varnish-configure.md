@@ -1,53 +1,63 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-configure.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
-
 <h2 id="config-varnish-config-web">Configure your web server</h2>
-Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server. 
+Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.
 
 In the sections that follow, we use port 8080 as an example.
 
 To change the Apache 2.2 listen port:
 
-1.	Open `/etc/httpd/conf/httpd.conf` in a text editor.
+1.	Open `/etc/httpd/conf/httpd.conf` (or `/etc/apache2/ports.conf` on Debian and Ubuntu) in a text editor.
 2.	Locate the `Listen` directive.
 3.	Change the value of the listen port to `8080`. (You can use any available listen port.)
 4.	Save your changes to `httpd.conf` and exit the text editor.
 
+on Debian and Ubuntu
+1.	Open `/etc/apache2/ports.conf` in a text editor.
+2.	Locate the `Listen` directive.
+3.	Change the value of the listen port to `8080`. (You can use any available listen port.)
+4.	Save your changes to `ports.conf` and exit the text editor.
+5. 	Open `/etc/apache2/sites-enabled/000-default.conf` in a text editor.
+6.	change <VirtualHost *:80> to <VirtualHost *:8080>
+7.	Save your changes to `000-default.conf` and exit the text editor.
+
+
+
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
 To modify the Varnish system configuration:
 
-1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
+1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
+
+	*	CentOS 6: `/etc/sysconfig/varnish`
+	*	CentOS 7: `/etc/varnish/varnish.params`
+	*	Debian: `/etc/default/varnish`
+	*	Ubuntu: `/etc/default/varnish`
+
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
 
-3.	If necessary, comment out the following:
+    For Varnish 4.&#42;, make sure that DAEMON_OPTS contains the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT is set to the correct value):
 
-		## Alternative 1, Minimal configuration, no VCL
-		#DAEMON_OPTS="-a :6081 \
-		#             -T localhost:6082 \
-		#             -b localhost:8080 \
-		#             -u varnish -g varnish \
-		#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
-		## Alternative 2, Configuration with VCL
-		#DAEMON_OPTS="-a :6081 \
-		#             -T localhost:6082 \
-		#             -f /etc/varnish/default.vcl \
-		#             -u varnish -g varnish \
-		#             -S /etc/varnish/secret \
-		#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
+		DAEMON_OPTS="-a :80 \
+		   -T localhost:6082 \
+		   -f /etc/varnish/default.vcl \
+		   -S /etc/varnish/secret \
+		   -s malloc,256m"		
 
-
-4.	Save your changes to `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) and exit the text editor.
+3.	Save your changes to the Varnish configuration file and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
 This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.
@@ -66,9 +76,9 @@ To minimally configure Varnish:
 	      .port = "80";
 		}
 
-4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. 
+4.	Replace the value of `.host` with the fully qualified hostname or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
 
-	Typically, this is your web server. 
+	Typically, this is your web server.
 
 	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
@@ -76,14 +86,14 @@ To minimally configure Varnish:
 	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
 
 		backend default {
-	      .host = "192.0.2.55"; 
+	      .host = "192.0.2.55";
 	      .port = "8080";
-		}		
+		}
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or host name and not <code>localhost</code>.</p>
+		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not <code>localhost</code>.</p>
 	</div>
-		
+
 7.	Save your changes to `default.vcl` and exit the text editor.
 
 8.	Restart Varnish:
@@ -169,12 +179,12 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 	}
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
-Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
+Now you can verify that Varnish is serving pages by looking at {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} response headers returned from any Magento page.
 
-Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
+Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
 #### Set Magento for developer mode
-To set Magento for developer mode, use the [`magento deploy:mode:set`]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
+To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
 
 #### Look at the Varnish log
 Make sure Varnish is running then enter the following command on the Varnish server:
@@ -201,7 +211,7 @@ A long list of response headers display in your command prompt window. Look for 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
+There are several ways to look at response headers, including using a browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 
@@ -220,4 +230,4 @@ Look for headers like the following:
 	X-Magento-Cache-Debug: HIT
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
+<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>

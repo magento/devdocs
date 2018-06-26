@@ -1,19 +1,13 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
-menu_title: Test case
-menu_order: 9
+title: Test case
 version: 2.0
 github_link: mtf/mtf_entities/mtf_testcase.md
 ---
 
-## Overview {#mtf_testcase_overview}
-
 The Magento Functional Testing Framework supports two types of functional tests:
 
-- Injectable test: the main type of the FTF test that uses XML [data set][] files as inputs
+- Injectable test: the main type of the FTF test that uses {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} [data set][] files as inputs
 - [Scenario test][]: supports a Magento modularity and enables you to inject one step into another test
 
 This topic discusses the injectable test only. 
@@ -33,13 +27,13 @@ The `__prepare()` method can be useful to prepare the unchangeable data that is 
 
 This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function __prepare(Customer $customer)
 {
     $customer->persist();
     return ['customer' => $customer];
 }
-{%endhighlight%}
+```
 
 A returned argument `$customer` is available in the test and in [constraints][].
 
@@ -47,7 +41,7 @@ A returned argument `$customer` is available in the test and in [constraints][].
 
 The `__inject()` method is used to inject data in a test (usually to initialize a page). For an example:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function __inject(
     CatalogProductIndex $productGrid,
     CatalogProductEdit $editProductPage
@@ -55,7 +49,7 @@ public function __inject(
     $this->productGrid = $productGrid;
     $this->editProductPage = $editProductPage;
 }
-{%endhighlight%}
+```
 
  This method is run before each [variation][] test started. Returned arguments from this method are available in [constraints][] and in the test as well.
 
@@ -63,7 +57,7 @@ public function __inject(
 
 The `test()` method must contain the test steps described in a [docblock](#docblock). The returned arguments from this method are available in [constraints][]. This method is run for each variation in a [data set][]. The `test()` method is required.
 
-In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the category state). Test steps are the following:
+In the following example, the test includes preconditions and test steps. Preconditions contain a logic of different scenarios about creating a product (depending on the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} state). Test steps are the following:
 
 - opening of the product creation grid page
 - searching by the `sku` parameter and opening of the product
@@ -115,7 +109,7 @@ When [constraints][] of the variation have been performed, you can use the `tear
 
 For example, the following code deletes a sales rule after each variation:
 
-{%highlight php startinline=1%}
+``` php?start_inline=1
 public function tearDown()
 {
     $this->promoQuoteIndex->open();
@@ -123,19 +117,19 @@ public function tearDown()
     $this->promoQuoteEdit->getFormPageActions()->delete();
     $this->promoQuoteEdit->getModalBlock()->acceptAlert();
 }
-{%endhighlight%}
+```
 
 ## Test case flow {#flow}
 
 All data required for the test are stored in variations of a data set. A `__prepare()` method is run first to prepare entities needed for a whole test. Arguments returned by a `__prepare()` method are available during all test including constraints. Further, the `__inject()` method injects data in the test. The `test()` method performs all the test steps using the data from the `variation 1`. Then, constraints listed in the `variation 1` are run in the order they are listed. After that, the `tearDown()` method "cleans up" to be ready for the next test or variation. When a variation fails, the test launches for the next variation in a queue.
 
-![Test case flow diagram]({{site.baseurl}}common/images/ftf/mtf_test_case_flow.png)
+![Test case flow diagram]({{ site.baseurl }}/common/images/ftf/mtf_test_case_flow.png)
 
 ## How to create a test case {#how-to-create}
 
 __Step 1.__ Create a [data set][]
 
-__Step 2.__ Create a PHP class in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
+__Step 2.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/<module>/TestCase` directory
 
 __Step 3.__ Give it a name using the following format:
 
@@ -157,14 +151,14 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 
 <!-- LINK DEFINITIONS -->
 
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[variation]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[variation]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [Mtf\TestCase\Injectable]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/TestCase/Injectable.php
-[Scenario test]: {{page.baseurl}}mtf/mtf_entities/mtf_scenariotest.html
-[processAssert()]:{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
-[constraints]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
+[Scenario test]: {{ page.baseurl }}/mtf/mtf_entities/mtf_scenariotest.html
+[processAssert()]:{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
+[constraints]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->
 

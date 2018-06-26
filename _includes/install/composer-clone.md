@@ -1,6 +1,5 @@
 <div markdown="1">
 
-<h2 id="instgde-prereq-compose-install">Install Composer</h2>
 First, check  if Composer is already installed: 
 
 In a command prompt, enter any of the following commands:
@@ -22,3 +21,4 @@ To install Composer:
 		mv composer.phar /usr/local/bin/composer
 		
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
+</div>

@@ -1,24 +1,23 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: About XML сonfiguration of UI сomponents
 menu_title: About XML сonfiguration of UI сomponents
-menu_order: 6
+menu_order: 13
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.md
 ---
 
 ## Overview
 
-This topic discusses the XML declaration of UI components.
+This topic discusses the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} declaration of UI components.
 
 ## About the layout configuration file and UI component declaration
-Every module that has view representation contains the directory named `layout`. In this directory, the `.xml` declarations of the pages are stored. These `.xml` declarations are, in fact, the pages' markup.
+Every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that has view representation contains the directory named `layout`. In this directory, the `.xml` declarations of the pages are stored. These `.xml` declarations are, in fact, the pages' {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}.
 
-In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). Top-level UI components are declared in this node. All nested components are declared in the top-level components' instances configuration files (not in the page layouts).
+In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). [Basic]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) UI components are declared in this node. All nested components are declared in the basic component instances configuration files (not in the page layouts).
 
-Example of a top-level UI component declaration:
+Example of a basic {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} declaration:
 
 {%highlight xml%}
 <referenceContainer name="page-container">
@@ -26,24 +25,24 @@ Example of a top-level UI component declaration:
 </referenceContainer>
 {%endhighlight%}
 
-A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the top-level UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
+A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the basic UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
 
 
-## About the top-level component configuration file
+## About the basic component configuration file
 
-The instance configuration file name is the name of instance (`%instance_name%`). The namespace of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.
+The instance configuration file name is the name of instance (`%instance_name%`). The {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.
 
 Following are the rules for the instance configuration files:
 
-* The top node must have the name of one of the top-level UI components. <!-- need to mention or link what components -->
+* The top node must have the name of one of the basic UI components. <!-- need to mention or link what components -->
 * The top node must contain a link to the XSD schema.
 
-In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that top-level UI component. The `<argument/>` node's `name` attribute value must be `data`. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
+In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that basic UI component. The `<argument/>` node's `name` attribute value must be `data`. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
 
 The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the `<argument>` node.
 
 
-## Example of a top-level configuration file
+## Example of a basic component's configuration file
 
 {%highlight xml%}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -110,7 +109,7 @@ In the above example, within the top-level `<form>` node the `<fieldset>` node i
 
 The `name` attribute value must be a unique among the other components on the same hierarchical level of the same parent node. Look at the `<argument>` node which `name` attribute has `data` value. The child nodes of this node are the arguments that will be passed in to the component.
 
-All other child nodes are declared as items. `<item name="config"> ...</item>` contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use `<item name="component">...</item>` to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in [`require.js` configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html#config).
+All other child nodes are declared as items. `<item name="config"> ...</item>` contains the children nodes that describe the configuration of the current UI component. Please note that although configuration for all components is different, there are base properties that are mostly the same for different components. For example, we can use `<item name="component">...</item>` to define which JS file will be used as the Model for the  Fieldset UI component in the above example. Reference to this JS file can be either be the full path to this file or the alias which is defined in [`require.js` configuration]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html).
 
 In our example, the `<item name="component">...</item>` node within `<fieldset>` is omitted, because this property of the Fieldset UI component is already defined in `definition.xml`.
 
@@ -119,9 +118,9 @@ In this example we showed only a small part of the possible configuration.
 The default configuration of a UI component is declared in one of the following ways:
 
 - inside the UI component itself, in the `.js` file
-- in the [`definition.xml` file]({{site.mage2100url}}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
+- in the [`definition.xml` file]({{ site.mage2100url }}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
 - in both places, in which case the configurations merge (the UI component `.js` file has priority).
 
-In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI componenet's `.js` file.
+In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI component's `.js` file.
 
-For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html) topic.
+For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html) topic.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Controls
 title: Admin Design Pattern Library
@@ -118,7 +117,7 @@ To ensure page level actions are always visible, The button bar should stick to 
 
 
 <h3 id="accessibility">Accessibility</h3>
-Buttons should make use of CSS and HTML so that button text is never dependent on a
+Buttons should make use of {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} so that button text is never dependent on a
 graphic asset.
 
 

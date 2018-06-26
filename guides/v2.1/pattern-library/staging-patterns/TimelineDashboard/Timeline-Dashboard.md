@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Staging Patterns
 title: Magento Admin Pattern Library
@@ -7,9 +6,9 @@ menu_title: Timeline Dashboard
 menu_order: 1
 menu_node: 
 version: 2.1
+ee_only: true
 github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
-<img src="img/ee-only_large.png">
 
 <h2> Timeline Dashboard </h2>
 
@@ -38,7 +37,7 @@ Do not use a timeline as an alternative display mode for tree, card or data tabl
 A part of Magento that can be scheduled to change, within an update. Examples: Products, Categories<br>
 
 #### Update:
-A combination of changes to a stage-able entity. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent. <br>
+A combination of changes to a stage-able {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent. <br>
 
 #### Objects: 
 These are the individual changes contained within an update.<br>
@@ -53,7 +52,7 @@ These are the individual changes contained within an update.<br>
 <img src="img/Staging_Dashboard_0006_timeline_notes.jpg">
 <br>
 
-1. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scolling the timeline with scroll control, or the right arrow.
+1. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scrolling the timeline with scroll control, or the right arrow.
 
 
 #### Update schedule:
@@ -68,8 +67,8 @@ When clicked, a bar on the timeline spawns an overlay window, showing a summary 
 A slider control at the bottom of the page allows users to zoom out from 1 week to 4 weeks, viewing a bigger timeline of updates.
 <img src="img/4-week-zoom.jpg">
 
-#### “Load More” Control:
-On the default timeline view, the number of updates displayed is set to 10. Clicking “Load More” adds more updates on the timeline. A grid menu control changes the number of items displayed per page. 
+#### "Load More" Control:
+On the default timeline view, the number of updates displayed is set to 10. Clicking "Load More" adds more updates on the timeline. A grid menu control changes the number of items displayed per page. 
 <img src="img/load-more.jpg">
 
 #### Horizontal Scrolling for Future Updates:

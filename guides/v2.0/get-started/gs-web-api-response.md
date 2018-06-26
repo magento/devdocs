@@ -1,7 +1,6 @@
 ---
-layout: default
 group: get-started
-subgroup: C_REST
+subgroup: 20_REST
 title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
@@ -13,11 +12,11 @@ redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 
 ## REST responses {#rest-responses}
 
-Each web API call returns a HTTP status code and a response payload. When an error occcurs, the response body also returns an error message.
+Each web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call returns a HTTP status code and a response payload. When an error occcurs, the response body also returns an error message.
 
 ### HTTP status codes {#http-status-codes}
 
-Each web API call returns an HTTP status code that reflects the result of a request:
+Each {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} call returns an HTTP status code that reflects the result of a request:
 
 HTTP code | Meaning | Description
 --- | --- | ---
@@ -28,7 +27,7 @@ HTTP code | Meaning | Description
 404 | Not found | The specified REST endpoint does not exist. The caller can try again.
 405 | Not allowed | A request was made of a resource using a method that is not supported by that resource. For example, using GET on a form which requires data to be presented via POST, or using PUT on a read-only resource.
 406 | Not acceptable | The requested resource is only capable of generating content that is not acceptable according to the Accept headers sent in the request.
-500 | System Errors | If service implementation throws any other exception like network errors, database communication, framework returns HTTP 500.
+500 | System Errors | If service implementation throws any other exception  like network errors, database communication, framework returns HTTP 500.
 
 
 ### Response payload {#response-payload}

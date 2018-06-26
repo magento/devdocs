@@ -15,10 +15,10 @@ To apply a patch:
 	<td><code>unzip -o &lt;patch name>.zip</code></td>
 </tr>
 <tr><td><code>.tar.gz</code></td>
-	<td><code>tar -zxf &lt;patch name>.zip</code></td>
+	<td><code>tar -zxf &lt;patch name>.tar.gz</code></td>
 </tr>
 <tr><td><code>.tar.bz2</code></td>
-	<td><code>tar -jxf &lt;patch name>.zip</code></td>
+	<td><code>tar -jxf &lt;patch name>.tar.bz2</code></td>
 </tr>
 </tbody>
 </table>

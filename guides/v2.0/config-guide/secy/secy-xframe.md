@@ -1,17 +1,20 @@
 ---
-layout: default
 group: config-guide
 subgroup: 02_Security
 title: X-Frame-Options header
 menu_title: X-Frame-Options header
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-xframe.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Overview
-To help prevent <a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">clickjacking</a> exploits, we added an option to use the <a href="https://tools.ietf.org/html/rfc7034" target="_blank">X-Frame-Options</a> HTTP request header in requests to your storefront.
+To help prevent <a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">clickjacking</a> exploits, we added an option to use the <a href="https://tools.ietf.org/html/rfc7034" target="_blank">X-Frame-Options</a> HTTP request header in requests to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 The `X-Frame-Options` header enables you to specify whether or not a browser should be allowed to render a page in a `<frame>`, `<iframe>`, or `<object>` as follows:
 
@@ -28,7 +31,7 @@ Set a value for `X-Frame-Options` in `<your Magento install dir>/app/etc/env.php
 
 	  'x-frame-options' => 'SAMEORIGIN',
 
-We require you to edit `env.php` because it's more secure than setting a value in the Magento Admin.
+We require you to edit `env.php` because it's more secure than setting a value in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 ## Verify your setting for `X-Frame-Options`
 To verify your setting, view HTTP headers on any storefront page. There are several ways to do this, including using a web browser inspector.

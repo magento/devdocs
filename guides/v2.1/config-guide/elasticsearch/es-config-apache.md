@@ -1,17 +1,19 @@
 ---
-layout: default
 group: config-guide
 subgroup: 14_Elastic
 title: Configure Apache and Elasticsearch
 menu_title: Configure Apache and Elasticsearch
 menu_order: 7
-menu_node: 
+menu_node:
 version: 2.1
+ee_only: True
 github_link: config-guide/elasticsearch/es-config-apache.md
+functional_areas:
+  - Configuration
+  - Search
+  - System
+  - Setup
 ---
-
-<img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
-
 
 #### Contents
 
@@ -19,7 +21,7 @@ github_link: config-guide/elasticsearch/es-config-apache.md
 *	[Set up a proxy](#es-apache-proxy)
 *	[Configure Magento to use Elasticsearch](#elastic-m2-configure)
 *	[Secure communication with Apache](#es-ws-secure-apache)
-*	[Verify communication is secure](#es-ws-secure-verify-apache)
+*	[Verify communication is secure](#es-ws-secure-verify)
 
 {% include config/es-webserver-overview.md %}
 
@@ -36,7 +38,7 @@ See one of the following sections:
 *	[Set up a proxy for Apache 2.2](#es-apache-proxy-22)
 
 ### Set up a proxy for Apache 2.4 {#es-apache-proxy-24}
-This section discusses how to configure an Elasticsearch proxy using a virtual host. 
+This section discusses how to configure an Elasticsearch proxy using a virtual host.
 
 1.	Enable `mod_proxy` as follows:
 
@@ -49,7 +51,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 		<VirtualHost *:8080>
 		   ProxyPass "/" "http://localhost:9200/"
-		   ProxyPassReverse "/" http://localhost:9200/"
+		   ProxyPassReverse "/" "http://localhost:9200/"
 		</VirtualHost>
 5.	Restart Apache:
 
@@ -74,7 +76,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 6.	Continue with [Configure Magento to use Elasticsearch](#elastic-m2-configure).
 
 ### Set up a proxy for Apache 2.2 {#es-apache-proxy-22}
-This section discusses how to configure an Elasticsearch proxy using a virtual host. 
+This section discusses how to configure an Elasticsearch proxy using a virtual host.
 
 1.	As a user with `root` privileges, open `/etc/httpd/conf/httpd.conf` in a text editor.
 
@@ -133,9 +135,9 @@ See one of the following sections:
 ### Step 2: Secure communication with Apache {#es-ws-secure-finish}
 This section discusses how to set up [HTTP Basic authentication](https://httpd.apache.org/docs/2.2/howto/auth.html){:target="_blank"}. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.
 
-This section discusses how to specify who can access the Apache server. 
+This section discusses how to specify who can access the Apache server.
 
-1.	Use a text editor to add the following contents to your secure virtual host. 
+1.	Use a text editor to add the following contents to your secure virtual host.
 
 	*	Apache 2.2: Depending on how you set up SSL, the Apache 2.2 SSL configuration might be located in `/etc/httpd/conf/httpd.conf` or `/etc/httpd/conf.d/ssl.conf`.
 
@@ -150,7 +152,7 @@ This section discusses how to specify who can access the Apache server.
 			 AuthBasicProvider file
 			 AuthUserFile /usr/local/apache/password/.htpasswd_elasticsearch
 			 Require valid-user
-	  
+
 			# This allows OPTIONS-requests without authorization
 			 <LimitExcept OPTIONS>
 			   Require valid-user
@@ -165,4 +167,4 @@ This section discusses how to specify who can access the Apache server.
 {% include config/es-verify-proxy.md %}
 
 #### Next
-<a href="{{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>
+<a href="{{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>

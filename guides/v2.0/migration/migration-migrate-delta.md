@@ -1,6 +1,5 @@
 ---
-layout: default
-group:  migration
+group: migration
 subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 menu_title: Migrate changes
@@ -9,23 +8,25 @@ menu_order: 3
 version: 2.0
 github_link: migration/migration-migrate-delta.md
 redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
+functional_areas:
+  - Tools
 ---
 
 ## Overview
 
 Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
-* data that customers added via storefront (created orders, reviews, changes in customer profiles, etc.)
+* data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
 
-* all operations with orders in the Magento Admin panel
+* all operations with orders in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel
 
 ## Before you start: routine preparations
 
-1. Log in to Magento server as [the file system owner]({{page.baseurl}}install-gde/prereq/file-sys-perms-over.html).
+1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
-See the [First steps]({{page.baseurl}}migration/migration-migrate.html#migration-command-run-first) section for more details.
+See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the incremental migration command {#migrate-data-cmd}
 
@@ -48,7 +49,7 @@ where;
 
 In the `Delta` mode, the Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created data in the storefront database and the merchant wants to have this data in Magento 2 --- config files of the Data Migration Tool should be created and modified accordingly.
 
-If an extension has its own tables, and you need to track their changes for delta migration, follow these steps:
+If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} has its own tables, and you need to track their changes for delta migration, follow these steps:
 
 1. Add the tables to be tracked to the `deltalog.xml` file
 
@@ -58,4 +59,6 @@ If an extension has its own tables, and you need to track their changes for delt
 
 ## Related topics
 
-* <a href="{{page.baseurl}}migration/migration-manually.html">Data that needs to be migrated manually</a>
+* <a href="{{ page.baseurl }}/migration/migration-manually.html">Data that needs to be migrated manually</a>
+
+* <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">End migration</a>

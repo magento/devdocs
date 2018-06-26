@@ -1,18 +1,15 @@
 ---
-layout: default
-group: cloud
-subgroup: 15_howto
-title: Merge and delete an environment
-menu_title: Merge and delete an environment
-menu_order: 51
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: env-tut
+group:
+subgroup:
+title: Merge and delete an environment (tutorial)
+menu_title: Merge and delete an environment (tutorial)
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/howtos/environment-tutorial-env-merge.md
-redirect_from: 
-  - guides/v2.0/cloud/env/environment-tutorial-env-merge.html
-  - guides/v2.1/cloud/env/environment-tutorial-env-merge.html
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 ## Merge an environment {#tut-env-merge}
@@ -20,7 +17,7 @@ This tutorial shows how to merge changes from an environment to its parent, whic
 
 You can then optionally delete the environment.
 
-This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-comm) to create one.
+This tutorial shows how to create a sample file and merge it. This tutorial assumes you're already working in an environment; if not, see [Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-comm) to create one.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You <em>cannot</em> merge environment variables because they are not code. You must set the value of environment variables in an environment.</p>
@@ -61,7 +58,7 @@ Before you delete an environment, make sure you don't need it anymore. You canno
   <p>You cannot delete the <code>master</code> environment of any project.</p>
 </div>
 
-You must be a [project administrator]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-project), [environment administrator]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-env), or [account owner]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [account owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
 This section discusses how to optionally delete an environment in the following ways:
 
@@ -103,7 +100,7 @@ To delete a environment:
 		Delete the remote Git branch too? [Y/n]
 
 	A `Y` answer completely removes the branch from the project.
-		
+
 Wait for the environment to delete.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -111,4 +108,4 @@ Wait for the environment to delete.
 </div>
 
 #### Related topic
-[Set Magento environment variables]({{page.baseurl}}cloud/howtos/environment-tutorial-set-mage-vars.html)
+[Set Magento environment variables]({{ page.baseurl }}/cloud/env/set-variables.html)

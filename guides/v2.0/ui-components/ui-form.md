@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: D_UI Library Form Component
 title: Form Component
@@ -8,11 +7,11 @@ menu_node: parent
 version: 2.0
 github_link: ui-components/ui-form.md
 redirect_from: /guides/v2.0/ui-library/ui-form.html
-
+redirect_from: /guides/v2.0/ui_comp_guide/components/ui-form.html
 ---
 
 ## Overview
-Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
+Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. 
 
 The following are the components element, the constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/form.js`
 
@@ -23,7 +22,7 @@ The following components are used to extend the Form component:
 * DataSource
 * FieldSet
 * Field
-* Layout
+* {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %}
 * Container
 
 ## Component options
@@ -88,7 +87,7 @@ Nodes are optional and contain parameters required for component:
 
 * js_config -> config -> provider - specifies the name of the component data
 
-* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”
+* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
 
 Add a description of the fields in the form using components and Field Fieldset:
 

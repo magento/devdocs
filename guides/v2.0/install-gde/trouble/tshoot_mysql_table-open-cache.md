@@ -1,13 +1,16 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 20_other
 title: Error 'MySQL server has gone away' during installation
 menu_title: Error 'MySQL server has gone away' during installation
-menu_node: 
-menu_order: 505 
+menu_node:
+menu_order: 505
 version: 2.0
 github_link: install-gde/trouble/tshoot_mysql_table-open-cache.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Details
@@ -22,7 +25,9 @@ Set the value of <a href="https://dev.mysql.com/doc/refman/5.6/en/table-cache.ht
 
 1.	As a user with `root` privileges, open the MySQL configuration file in a text editor.
 
-	Ubuntu: `/etc/mysql/my.cnf`
+	Ubuntu 16: `/etc/mysql/mysql.conf.d/mysqld.cnf`
+
+	Ubuntu earlier than 16: `/etc/mysql/my.cnf`
 
 	CentOS: `/etc/my.cnf`
 

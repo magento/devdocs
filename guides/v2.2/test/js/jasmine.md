@@ -1,16 +1,12 @@
 ---
-layout: default
 group: jstf
-subgroup: Jasmine
 title: JavaScript unit testing with Jasmine
-menu_title: Jasmine
-menu_node: parent
-menu_order:
 version: 2.2
 github_link: test/js/jasmine.md
+functional_areas:
+  - Testing
+  - test
 ---
-
-## Preface
 
 Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for all tests, a theme, or a single test.
 
@@ -26,58 +22,65 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
-    $ npm install
+```bash
+npm install
+```
 
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
-    $ php bin/magento setup:static-content:deploy -f
+```bash
+php bin/magento setup:static-content:deploy -f
+```
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
-<div class="bs-callout bs-callout-tip">
-  <p><b>For CentOS users</b></p>
-  <p>If the command fails with error message:</p>
-  <p><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></p>
-  <p>install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fonctconfig library</a>.</p>
-  <p><code>yum install fontconfig</code></p>
-</div>
+{% include note.html
+type="tip"
+content="**For CentOS and Ubuntu users**<br/>
+If the command fails with the error message:
+```terminal
+/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
+```
+install [fonctconfig library]:<br/>
+* CentOS:
+  ```bash
+  yum install fontconfig
+  ```
+* Ubuntu:
+  ```bash
+  apt-get install fontconfig
+  ``` 
+"
+%}
 
 Learn more in [Deploy static view files].
 
 ## Run tests
 
-`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in in the Magento root directory:
+`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in the Magento root directory:
 
-    $ grunt spec
+```bash
+grunt spec:<THEME>
+```
 
-You can run a **single test** adding an optional parameter:
+Example:
 
-    $ grunt spec --file=<path_to_test>
-
-  Example:
-
-    $ grunt spec --file="dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/core/layout.test.js"
-
-If you want to run **tests for a theme**, enter:
-
-    $ grunt spec:<THEME>
-
-  Example:
-
-    $ grunt spec:backend
+```bash
+grunt spec:backend
+```
 
 ## Write a test {#write-test}
 
 All tests are distributed through modules stored in `<magento_root_dir>/dev/tests/js/jasmine/tests`. Let's see how to write a test using an example of an existing test:
 
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]{:target="_blank"}
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]
 
 which tests a JS module:
 
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]{:target="_blank"}
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]
 
-in its static representations generated in [Step 6] previously
+in its static representations generated in [Step 6] previously:
 
 `<magento_root_dir>/pub/static/<area>/<theme>/<localisation>/Magento_Ui/js/columns/actions.js`.
 
@@ -85,7 +88,7 @@ in its static representations generated in [Step 6] previously
 
 For convenience, we can reflect the directory structure of a file to test.
 
-A path to JS module that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
+A path to JS {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
 
 A path to a test of the module: `app/code/Magento/Ui/base/js/grid/columns/actions.test.js`
 
@@ -95,7 +98,7 @@ In `<magento_root_dir>/dev/tests/js/jasmine/tests` create the test with appropri
 
 For our example we need to cover all static view files ending with `Magento_Ui/js/grid/columns/actions`.
 
-{% highlight js %}
+```js
 define([
     'Magento_Ui/js/grid/columns/actions'
 ], function (Actions) {
@@ -104,7 +107,7 @@ define([
     //Test code
     //...
 });
-{% endhighlight %}
+```
 
 ### Step 3. Write your Jasmine test code.
 
@@ -122,12 +125,7 @@ In `describe` you can use `beforeEach` and `afterEach` functions performing a pr
 
 {% collapsible See the full code of the test%}
 
-{% highlight js %}
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
+```js
 define([
     'underscore',
     'Magento_Ui/js/grid/columns/actions'
@@ -209,7 +207,7 @@ define([
         });
     });
 });
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -217,17 +215,72 @@ This topic doesn't provide Jasmine test writing methodology.
 
 [Learn more about testing with Jasmine.]
 
+## Known issues and solutions
+
+### Error: Cannot find module '&lt;module&gt;' {#cannot-find-module-error}
+
+#### Issue:
+
+An error message appears:
+
+```terminal
+Loading "Gruntfile.js" tasks...ERROR
+
+>> Error: Cannot find module '<module>'
+
+Warning: Task "spec" not found. Use --force to continue.
+```
+
+#### Solution:
+
+1. Make sure your Node.js version is up-to-date.
+2. Remove `package.json`, `Gruntfile.js`.
+3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
+4. Delete the `node_modules` directory.
+5. Run `npm install` in your terminal.
+
+### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
+
+#### Issue:
+ 
+An error message appears:
+
+```terminal
+Warning: Cannot read property 'pid' of undefined
+
+Use --force to continue. Aborted due to warnings.
+```
+
+#### Solution:
+
+Run in your terminal:
+
+```bash
+cd <magento_root>/node_modules/grunt-contrib-jasmine
+```
+```bash
+npm install
+```
+
 <!-- LINK DEFINITIONS -->
 
 <!-- External -->
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
-
-[Deploy static view files]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
+{:target="_blank"}
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2200url }}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
+{:target="_blank"}
+[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+{:target="_blank"}
+[fonctconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
+{:target="_blank"}
 [Grunt]: http://gruntjs.com/
+{:target="_blank"}
 [Install grunt-cli]: http://gruntjs.com/getting-started
+{:target="_blank"}
 [Install Node.js]: https://nodejs.org/en/
+{:target="_blank"}
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
+{:target="_blank"}
 
 <!-- Internal -->
 [Step 6]: #prepare-step6

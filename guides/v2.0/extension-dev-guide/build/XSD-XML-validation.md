@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 03_Build
 title: URN schema validation
@@ -10,7 +9,7 @@ github_link: extension-dev-guide/build/XSD-XML-validation.md
 redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
 
-Each Magento module can contain XSD files for XML validation.
+Each Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can contain XSD files for {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} validation.
 
 Magento uses [Uniform Resource Names](https://en.wikipedia.org/wiki/Uniform_Resource_Name) (URNs) to reference XML schema declarations.
 
@@ -33,7 +32,7 @@ where
 
 *  `urn:magento` is the URN identifier
 *  `module` is the reference type identifier
-*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php]({{page.baseurl}}extension-dev-guide/build/component-registration.html) file.
+*  `Magento_Flow` is the name of the module. This must be exactly the same as the module specified by ComponentRegistrar in the [registration.php]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) file.
 * `flows/content.xsd` is the relative path to the module&#8217;s directory.
 
 
@@ -68,11 +67,11 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The relative path to other XSDs cannot be used from inside the XSD file, because the entity loader fails to resolve the relative path.</p></span>
+  <p>The relative path to other XSDs cannot be used from inside the XSD file, because the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} loader fails to resolve the relative path.</p></span>
 </div>
 
 
 
 
 #### Next
-[Name your component]({{page.baseurl}}extension-dev-guide/build/create_component.html)
+[Name your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)

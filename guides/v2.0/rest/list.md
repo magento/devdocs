@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: List of REST APIs by module
@@ -8,12 +7,14 @@ menu_order: 3
 version: 2.0
 github_link: rest/list.md
 redirect_from: /guides/v1.0/rest/list.html
+functional_areas:
+  - Integration
 ---
 
 
-## List of REST APIs for Magento Enterprise Edition {#listee}
+## List of REST APIs for {{site.data.var.ee}} {#listee}
 
-The REST APIs for Magento Enterprise Edition (EE) are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
+The REST APIs for {{site.data.var.ee}} are available on Commerce installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
 
 Additions since 2.0 are marked with asterisks (*).
 
@@ -66,9 +67,9 @@ Additions since 2.0 are marked with asterisks (*).
     GET    /V1/returns/:id/tracking-numbers
     GET    /V1/returns/:id/labels
 
-## List of REST APIs for Magento Community Edition {#list}
+## List of REST APIs for {{site.data.var.ce}} {#list}
 
-    The Magento Community Edition (CE) REST APIs are available on all EE and CE installations.
+    The {{site.data.var.ee}} REST APIs are available on all installations.
 
     Additions since 2.0 are marked with asterisks (*).
 

@@ -1,16 +1,15 @@
 ---
-layout: default
-group: cloud
-subgroup: 08_setup
+group:
+subgroup:
 title: Public IP addresses for integration environments
 menu_title: Public IP addresses for integration environments
-menu_order: 200
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/before/integration-ip-addr.md
 ---
 
-This topic lists incoming and outgoing IP addresses used by Magento Enterprise Cloud Edition [integration environments]({{page.baseurl }}cloud/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+This topic lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 ## Outbound IP addresses
 This section lists public outbound IP addresses for integration environments.
@@ -22,7 +21,7 @@ This section lists public outbound IP addresses for integration environments.
 
 50.17.163.75
 
-## EU region
+### EU region
 52.51.163.159
 
 52.209.44.60
@@ -45,4 +44,3 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 52.209.23.96
 
 52.51.117.101
-
