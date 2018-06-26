@@ -60,7 +60,7 @@ The following sections discuss the Composer packages used by {{site.data.var.ece
 *	[`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html) for release information.
+Refer to [Composer package updates]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/patch-notes.html) for release information.
 </div>
 
 ### magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}

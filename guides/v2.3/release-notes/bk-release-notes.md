@@ -18,7 +18,7 @@ github_link: release-notes/bk-release-notes.md
 
 
 
-Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x](http://devdocs.magento.com/guides/v2.1/release-notes/bk-release-notes.html) and [2.2.x](http://devdocs.magento.com/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
+Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x]({{ site.baseurl }}/guides/v2.1/release-notes/bk-release-notes.html) and [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
 
 ## Backward-incompatible changes
 
@@ -28,12 +28,12 @@ Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x](http:/
 
 ## {{site.data.var.ece}} Composer packages
 
-[{{site.data.var.ece}} Composer package updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html) allow you to apply patches without a full product installation or upgrade.
+[{{site.data.var.ece}} Composer package updates]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/patch-notes.html) allow you to apply patches without a full product installation or upgrade.
 
 You can apply patches as they become available to update Magento Commerce (Cloud). We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-We recommend installing full [{{site.data.var.ece}} upgrades](http://devdocs.magento.com/guides/v2.3/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
+We recommend installing full [{{site.data.var.ece}} upgrades]({{ site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
 </div>
 
 

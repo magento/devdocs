@@ -95,7 +95,7 @@ To get started as a developer in a {{site.data.var.ece}} project, you need to se
 
 *	Set up a [local development environment]({{ page.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in your account
-*	Gethttp://devdocs.magento.com/guides/v2.0/cloud/onboarding/onboarding-tasks.html#users a [project invite]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) by the Project Owner or a super user to the project
+*	Get{{ site.baseurl }}/guides/v2.0/cloud/onboarding/onboarding-tasks.html#users a [project invite]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) by the Project Owner or a super user to the project
 *	Get [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) from the Project Owner
 
 We walk you through everything you need to do and know.

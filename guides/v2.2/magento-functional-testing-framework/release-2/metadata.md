@@ -336,7 +336,7 @@ The following example of response in JSON demonstrates how to reference data on 
 For cases when REST API is not applicable, you may use [HTML forms] (when all object parameters are encoded in a URL as `key=name` attributes).
 There are two different attributes to split access to different areas:
 * `auth="adminFormKey"` is used for objects in an Admin area.
-* `auth="customerFormKey"` is used for objects in a store front.
+* `auth="customerFormKey"` is used for objects in a storefront.
 
 You are able to create assurances with `successRegex`, and even return values with `returnRegex`.
 
@@ -375,9 +375,9 @@ The operation enables you to assign the following form fields:
 * `store_action`
 * `store_type`
 
-### Create an object in store front {#create-object-as-customerFormKey}
+### Create an object in storefront {#create-object-as-customerFormKey}
 
-The MFTF uses the `CreateWishlist` operation to create a wish list on store front:
+The MFTF uses the `CreateWishlist` operation to create a wish list on storefront:
 
 > Source file: _Wishlist/Metadata/wishlist-meta.xml_
 

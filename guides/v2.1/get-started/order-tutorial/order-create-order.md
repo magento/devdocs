@@ -1574,4 +1574,4 @@ Not applicable
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma store as the customer. The dashboard shows the order.
-2. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Orders**. The order is displayed in the grid. Its status is Pending.
+2. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.

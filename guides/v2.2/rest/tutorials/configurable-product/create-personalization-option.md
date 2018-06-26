@@ -5,6 +5,9 @@ title: Step 5. Create the personalization option
 menu_title: Step 5. Create the personalization option
 menu_order: 50
 level3_subgroup: configurable-product-tutorial
+return_to:
+  title: REST API Reference
+  url: rest/bk-rest.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-personalization-option.md
 functional_areas:
@@ -60,7 +63,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/options-section.png)
 
-* On the Luma store front page, search for `Champ`. Then click on the Champ Tee product.
+* On the Luma storefront page, search for `Champ`. Then click on the Champ Tee product.
 
   ![Search results]({{ page.baseurl }}/rest/images/add-your-name.png)
 

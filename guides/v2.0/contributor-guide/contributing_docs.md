@@ -19,7 +19,7 @@ If you are not sure where to start contributing, you can review our list of [sug
 If you write and contribute a full topic, we will put your name (or your company's name) at the top of the page right under the title, and link it to your blog or website! We will also add your picture and a link to your GitHub account on the [Top recent contributors]({{ page.baseurl }}/contributor-guide/quarterly-contributors.html#top-recent-contributors) page.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The 2.0 version of Magento DevDocs has reached its end of life (EOL). The doc set will still be available and visible on the Magento DevDocs site for you to access and reference. [Magento 2.0.18](https://devdocs.magento.com/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html) is the final 2.0x release, and as of March 2018, Magento 2.0x will no longer receive security patches, quality fixes, or documentation updates.
+The 2.0 version of Magento DevDocs has reached its end of life (EOL). The doc set will still be available and visible on the Magento DevDocs site for you to access and reference. [Magento 2.0.18]({{ site.baseurl }}/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html) is the final 2.0x release, and as of March 2018, Magento 2.0x will no longer receive security patches, quality fixes, or documentation updates.
 </div>
 
 ## Contribution guidelines

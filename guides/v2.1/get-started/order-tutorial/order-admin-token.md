@@ -48,7 +48,7 @@ This section lists the information that Magento sends to the REST client. These 
 
 Most REST calls to Magento require an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token. The token allows Magento to verify that the caller is authorized to access a system resource. To get a token, you must specify the user's username and password in the payload.
 
-By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Configuration > Services > OAuth > Access Token Expiration**.
+By default, an admin token is valid for 4 hours. To change this value, log in to Admin and go to **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information about authorization tokens.
 

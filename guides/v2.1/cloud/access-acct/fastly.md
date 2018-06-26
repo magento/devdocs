@@ -27,7 +27,7 @@ The process for configuring Fastly includes:
 * Advanced configurations including VCL snippets
 
 ## Multiple Fastly accounts and assigned domains {#domain}
-Before launching {{site.data.var.ece}}, you may already have a Fastly account or trial with your apex and subdomains assigned to it. Be advised, you will need to remove any apex domain and subdomains you plan use with {{site.data.var.ece}} from this existing Fastly account.
+Before launching {{site.data.var.ece}}, you may already have a Fastly account or trial with your apex and subdomains assigned to it. Be advised, you will need to remove any apex domain and subdomains you plan to use with {{site.data.var.ece}} from this existing Fastly account.
 
 Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and {{site.data.var.ece}}.
 
@@ -60,7 +60,7 @@ You should install the Fastly module on your local, pushing the code to Integrat
 <div class="bs-callout bs-callout-warning" markdown="1">
 Don't configure the module in your local before building and deploying. You'll configure the module in those environments.
 
-We recommend using the `bin/magento magento-cloud:scd-dump` command for Configuration Management([2.1.X](https://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), [2.2.X](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm)). If you use the `app:config:dump` command, all configuration options for Fastly will be locked from editing in Staging and Production.
+We recommend using the `bin/magento magento-cloud:scd-dump` command for Configuration Management([2.1.X]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), [2.2.X]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm)). If you use the `app:config:dump` command, all configuration options for Fastly will be locked from editing in Staging and Production.
 </div>
 
 
@@ -148,7 +148,7 @@ For more information, see [Fastly VCL documentation](https://docs.fastly.com/gui
 ## Configure backends and Origin shielding {#backend}
 Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A _backend_ is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.
 
-_Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
+_Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduce traffic directly to the origin.
 
 You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for [Wordpress]({{ page.baseurl }}/cloud/configure/fastly-vcl-wordpress.html) to handle your blog.
 
@@ -203,7 +203,7 @@ To configure Fastly purge options:
 For more information, see [Fastly's configuration options](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options){:target="\_blank"}.
 
 ## Create a custom error/maintenance page {#fastly-errpg}
-You can optionally create a custom page for errors or when your site is down for maintenance. Create your page with HTML code to provide detailed information why the site is temporarily down, instead of an HTTP error code.
+You can optionally create a custom page for errors or when your site is down for maintenance. Create your page with HTML code to provide detailed information about why the site is temporarily down, instead of an HTTP error code.
 
 To create a custom error/maintenance page:
 
@@ -249,7 +249,7 @@ Fastly also provides a series of [geolocation-related VCL features](https://docs
 ## Configure DNS for Fastly {#fastly-dns}
 You must complete these steps when you go live.
 
-After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple host names for your site, you must add a CNAME record for each one.
+After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>

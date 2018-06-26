@@ -39,7 +39,7 @@ Examples of environment or system-specific values include:
 *	URLs
 *	IP addresses
 *	Ports
-*	Host names
+*	Hostnames
 *	Domain names
 *	Paths (e.g., custom paths, proxy host, proxy port)
 *	"modes" (e.g, sandbox mode, debug mode, test mode)
