@@ -28,7 +28,7 @@ Look for the following highlights in this release:
 * Almost 200 **community contributions**. These community contributions include performance-tuning enhancements plus at least 80 engineering fixes.
 
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
 
 
@@ -1914,7 +1914,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 ### Installation and upgrade instructions
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 
 

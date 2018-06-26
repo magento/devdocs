@@ -84,7 +84,7 @@ We support and deploy the following services for you:
 
 *	[`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) version `10.0`
 *	[`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) versions `2.8` and `3.0`
-*	[`solr`](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html) version `4.1`
+*	[`solr`]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html) version `4.1`
 *	[`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) version `3.5`
 
 ### `disk` {#cloud-yaml-services-disk}
