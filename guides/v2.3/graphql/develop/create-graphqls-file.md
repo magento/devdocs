@@ -17,7 +17,7 @@ The `<module_name>/etc/schema.graphqls` file:
 * Points to the resolvers that verify and process the query data and response
 * Serves as the source for displaying the schema in a GraphQL browser
 
-The base `schema.graphqls` file, located in the [`app/code/Magento/GraphQl/etc/`](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento/GraphQl/etc) directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
+The base `schema.graphqls` file, located in the `app/code/Magento/GraphQl/etc/` directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
 
 To illustrate how to configure the `schema.graphqls` file, let's suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We'll assume this module extends the Catalog module.
 
