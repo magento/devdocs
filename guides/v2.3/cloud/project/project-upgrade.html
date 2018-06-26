@@ -2051,15 +2051,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
 
 <ul>
-  <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workspace</li>
+  <li><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workspace</li>
   <li><a href="http://php.net/manual/en/migration70.php" target="\_blank">Migrating from PHP 5.6 to PHP 7.0.x</a></li>
-  <li><a href="http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php">Magento 2.2.x technology stack requirements</a></li>
+  <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">Magento 2.2.x technology stack requirements</a></li>
 </ul>
 
 <h3 id="config">Configuration Management and upgrading</h3>
 <p>If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate <code class="highlighter-rouge">config.local.php</code> to a temporary <code class="highlighter-rouge">config.php</code> file to your Git branch. When you upgrade without having this file prepared, you will encounter an error with a list of steps to complete prior to upgrading.</p>
 
-<p>Previous versions with Configuration Management use a <code class="highlighter-rouge">config.local.php</code> file for Configuration Management. Starting with 2.2.0, <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> uses a different file name of <code class="highlighter-rouge">config.php</code>.</p>
+<p>Previous versions with Configuration Management use a <code class="highlighter-rouge">config.local.php</code> file for Configuration Management. Starting with 2.2.0, <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> uses a different file name of <code class="highlighter-rouge">config.php</code>.</p>
 
 <p>We recommend creating a temporary <code class="highlighter-rouge">config.php</code> file for your Git branch prior to upgrading:</p>
 
@@ -2070,16 +2070,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Continue preparing and upgrade to 2.2.X.</li>
 </ol>
 
-<p>For more information, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#migrate">Migrate config.local.php to config.php</a>.</p>
+<p>For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html#migrate">Migrate config.local.php to config.php</a>.</p>
 
 <p>After you finish upgrading, you can remove <code class="highlighter-rouge">config.php</code> and create a new, complete file. For more information, see <a href="#configphp">Create a new config.php file</a>. This file works exactly as <code class="highlighter-rouge">config.local.php</code>, with additional settings including a list of your enabled modules, additional configurations, and a different name.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management and Pipeline Deployment</a>.</p>
+  <p>You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management and Pipeline Deployment</a>.</p>
 </div>
 
 <h3 id="magento-app-yaml">Update .magento.app.yaml</h3>
-<p>If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you will encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
+<p>If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you will encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
 
 <ol>
   <li>Locate and edit the <code class="highlighter-rouge">.magento.app.yaml</code> file in your Git branch.</li>

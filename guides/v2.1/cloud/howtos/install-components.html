@@ -2092,7 +2092,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
-<p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.1/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from <code class="highlighter-rouge">config.local.php</code> used by <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
+<p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.1/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from <code class="highlighter-rouge">config.local.php</code> used by <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
 
 <p>To update <code class="highlighter-rouge">composer.json</code>:</p>
 
@@ -2217,7 +2217,7 @@ git push origin &lt;environment ID&gt;
 <h3 id="configure">Modify configurations</h3>
 <p>For projects using Magento Commerce (Cloud) <strong>before 2.1.4</strong>, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.</p>
 
-<p>For projects <strong>2.1.4 and later</strong>, you will update configurations according to <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#update">Configuration Management</a> for <code class="highlighter-rouge">config.local.php</code>.</p>
+<p>For projects <strong>2.1.4 and later</strong>, you will update configurations according to <a href="/guides/v2.1/cloud/live/sens-data-over.html#update">Configuration Management</a> for <code class="highlighter-rouge">config.local.php</code>.</p>
 
 <h2 id="update">Upgrade an extension</h2>
 <p>You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:</p>

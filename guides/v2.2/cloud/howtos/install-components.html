@@ -2126,7 +2126,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
-<p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.2/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> (Pipeline Deployment) values too.</p>
+<p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.2/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> (Pipeline Deployment) values too.</p>
 
 <p>To update <code class="highlighter-rouge">composer.json</code>:</p>
 
@@ -2183,7 +2183,7 @@ When installing and adding the module, you must add the `composer.lock` to your 
 <p>To manage your extensions, you can enable and disable or change settings per environment.</p>
 
 <h3 id="enable-disable">Enable and disable extensions</h3>
-<p>To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have <code class="highlighter-rouge">config.php</code> in your Git branch and implementation. If you do not use <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> or <code class="highlighter-rouge">config.php</code>, we strongly recommend you do.</p>
+<p>To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have <code class="highlighter-rouge">config.php</code> in your Git branch and implementation. If you do not use <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> or <code class="highlighter-rouge">config.php</code>, we strongly recommend you do.</p>
 
 <p>Trying to enable and disable extensions not following this method can lead to permissions and other issues.</p>
 
@@ -2219,7 +2219,7 @@ When installing and adding the module, you must add the `composer.lock` to your 
 </ol>
 
 <h3 id="configure">Modify configurations</h3>
-<p>You will update configurations according to <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#update">Configuration Management</a> for <code class="highlighter-rouge">config.php</code>.</p>
+<p>You will update configurations according to <a href="/guides/v2.2/cloud/live/sens-data-over.html#update">Configuration Management</a> for <code class="highlighter-rouge">config.php</code>.</p>
 
 <h2 id="update">Upgrade an extension</h2>
 <p>You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:</p>

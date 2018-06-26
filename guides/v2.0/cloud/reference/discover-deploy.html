@@ -1845,7 +1845,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>This means you cannot FTP to the server and add modules. Instead, you must add code to your Git repo and run <code class="highlighter-rouge">git push</code>, which builds and deploys the environment.</p>
 
-  <p>The build checks if the <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html"><code class="highlighter-rouge">config.local.php</code> file</a> exists in the codebase and has information about scopes (for details see <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html"><code class="highlighter-rouge">SCD_STRATEGY</code></a>). If so, static files are deployed during this phase, reducing the downtime in the deployment phase.</p>
+  <p>The build checks if the <a href="/guides/v2.1/cloud/live/sens-data-over.html"><code class="highlighter-rouge">config.local.php</code> file</a> exists in the codebase and has information about scopes (for details see <a href="/guides/v2.2/cloud/env/environment-vars_magento.html"><code class="highlighter-rouge">SCD_STRATEGY</code></a>). If so, static files are deployed during this phase, reducing the downtime in the deployment phase.</p>
 
   <h3 id="cloud-deploy-over-phases-slug">Phase 3: Prepare the slug</h3>
   <p>The result of the build phase is a read-only file system we refer to as a <em>slug</em>. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service didn’t change, we reuse the slug from the archive.</p>

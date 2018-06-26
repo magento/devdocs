@@ -1972,7 +1972,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>During static content deployment in the deploy phase, the default number of processing jobs is set to <code class="highlighter-rouge">3</code>. We recommend setting the number of processing jobs to <code class="highlighter-rouge">1</code> as a workaround.</p>
 
-<p>You can also move static content deployment from the deploy phase to the build phase, which does not have access to Redis. Refer to <a href="http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a> for more information.</p>
+<p>You can also move static content deployment from the deploy phase to the build phase, which does not have access to Redis. Refer to <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a> for more information.</p>
 
 <div class="bs-callout bs-callout-info">
   <p>Static content deployment in the build phase also reduces downtime. The deploy phase puts your application in maintenance mode, which takes your site offline until static content deployment is complete. If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime.</p>

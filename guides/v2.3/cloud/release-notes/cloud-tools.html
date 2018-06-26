@@ -2193,7 +2193,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
     <!-- MAGECLOUD-1751 -->
     <p><strong>Deployment Logging</strong>—Added the ability to enable Syslog and Graylog Extended Log Format (GELF) handlers for outputting logs during the deployment process. See <a href="/guides/v2.3/cloud/env/log-handlers.html">Logging handlers</a>.</p>
   </li>
-  <li>Added the following new <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/variables-intro.html"><strong>Environment variables</strong></a>:
+  <li>Added the following new <a href="/guides/v2.2/cloud/env/variables-intro.html"><strong>Environment variables</strong></a>:
     <ul>
       <li>
         <!-- MAGECLOUD-1556 -->
@@ -2207,7 +2207,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
         <!-- MAGECLOUD-1738 -->
         <p><code class="highlighter-rouge">SCD_ON_DEMAND</code>—<em>Global</em> environment variable to generate static content when requested.</p>
       </li>
-      <li><code class="highlighter-rouge">WARM_UP_PAGES</code>—You can list the pages to use to pre-load the cache. Available in the new <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/variables-post-deploy.html">Post-deploy variables</a>.</li>
+      <li><code class="highlighter-rouge">WARM_UP_PAGES</code>—You can list the pages to use to pre-load the cache. Available in the new <a href="/guides/v2.2/cloud/env/variables-post-deploy.html">Post-deploy variables</a>.</li>
     </ul>
   </li>
 </ul>
@@ -2240,7 +2240,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 <h2 id="v200209">v2002.0.9</h2>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html">upgrade the Magento Commerce (Cloud) metapackage</a> to get this and all future updates.</p>
+  <p>You must <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">upgrade the Magento Commerce (Cloud) metapackage</a> to get this and all future updates.</p>
 </div>
 
 <h4 id="new-features-3">New features</h4>
@@ -2251,7 +2251,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
   <li>
     <!-- MAGECLOUD-1552 -->
-    <p><strong>Redis configuration</strong>—You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/working-with-variables.html#redis">configure Redis</a> page and default cache and Redis session storage using an environment variable.</p>
+    <p><strong>Redis configuration</strong>—You can now <a href="/guides/v2.2/cloud/env/working-with-variables.html#redis">configure Redis</a> page and default cache and Redis session storage using an environment variable.</p>
   </li>
   <li>
     <!-- MAGECLOUD-1437 -->
@@ -2299,7 +2299,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 
 <h2 id="v200208">v2002.0.8</h2>
 <div class="bs-callout bs-callout-info">
-  <p>We merged <a href="http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-patches.html"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a> with <code class="highlighter-rouge">vendor/magento/ece-tools</code> in this release. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
+  <p>We merged <a href="/guides/v2.2/cloud/composer-packages/ece-patches.html"><code class="highlighter-rouge">vendor/magento/ece-patches</code></a> with <code class="highlighter-rouge">vendor/magento/ece-tools</code> in this release. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
 </div>
 
 <h4 id="new-features-4">New features</h4>
@@ -2319,15 +2319,15 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
   <li>
     <!-- MAGECLOUD-1367 -->
-    <p><strong>New cron command</strong>—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the <a href="http://devdocs.magento.com/guides/v2.2/cloud/trouble/reset-cron-jobs.html"><code class="highlighter-rouge">cron:unlock</code></a> command. Not available in 2.1.</p>
+    <p><strong>New cron command</strong>—You can now unlock specific stuck cron jobs instead of stopping and re-launching all of them with the <a href="/guides/v2.2/cloud/trouble/reset-cron-jobs.html"><code class="highlighter-rouge">cron:unlock</code></a> command. Not available in 2.1.</p>
   </li>
   <li>
     <!-- MAGECLOUD-1369 -->
-    <p><strong>Unified configuration file</strong>—You can now configure build and deploy stages using a <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a> file.</p>
+    <p><strong>Unified configuration file</strong>—You can now configure build and deploy stages using a <a href="/guides/v2.2/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a> file.</p>
   </li>
   <li>
     <!-- MAGECLOUD-1372 -->
-    <p><strong>Backup configuration files</strong>—The deployment process now automatically creates a backup of the <code class="highlighter-rouge">app/etc/env.php</code> and <code class="highlighter-rouge">app/etc/config.php</code> configuration files after deployment. We also added a <a href="http://devdocs.magento.com/guides/v2.2/cloud/trouble/restore-configuration-files.html">new CLI command</a> to restore these configuration files from a backup.</p>
+    <p><strong>Backup configuration files</strong>—The deployment process now automatically creates a backup of the <code class="highlighter-rouge">app/etc/env.php</code> and <code class="highlighter-rouge">app/etc/config.php</code> configuration files after deployment. We also added a <a href="/guides/v2.2/cloud/trouble/restore-configuration-files.html">new CLI command</a> to restore these configuration files from a backup.</p>
   </li>
   <li>
     <!-- MAGECLOUD-1491 -->
@@ -2335,7 +2335,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
   </li>
   <li>
     <!-- MAGECLOUD-1410 -->
-    <p><strong>New environment variables</strong>—You can now use environment variables to connect custom <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#search">search</a> and <a href="http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#queue">AMQP-based</a> services to your site.</p>
+    <p><strong>New environment variables</strong>—You can now use environment variables to connect custom <a href="/guides/v2.1/cloud/env/working-with-variables.html#search">search</a> and <a href="/guides/v2.1/cloud/env/working-with-variables.html#queue">AMQP-based</a> services to your site.</p>
   </li>
   <li>
     <!--MAGECLOUD-1090-->
@@ -2422,25 +2422,25 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
     <p><strong>Configuration scanning</strong>—We now scan for critical components during the build/deploy process and halt the process if the scan fails, which prevents unnecessary downtime due to the site being in maintenance mode.</p>
   </li>
   <li>
-    <p><strong>Build/deploy notifications</strong>—We added a new configuration file that you can use to <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/setup-notifications.html">set up Slack and/or email notifications</a> for build/deploy actions in all your environments.</p>
+    <p><strong>Build/deploy notifications</strong>—We added a new configuration file that you can use to <a href="/guides/v2.2/cloud/env/setup-notifications.html">set up Slack and/or email notifications</a> for build/deploy actions in all your environments.</p>
   </li>
   <li>
-    <p><strong>Static content compression</strong>—We now compress static content using <a href="https://www.gnu.org/software/gzip/" target="\_blank">gzip</a> during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build">build option</a> or <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy">deploy variable</a>. See the following topics for more information:</p>
+    <p><strong>Static content compression</strong>—We now compress static content using <a href="https://www.gnu.org/software/gzip/" target="\_blank">gzip</a> during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a <a href="/guides/v2.2/cloud/env/environment-vars_magento.html#build">build option</a> or <a href="/guides/v2.2/cloud/env/environment-vars_magento.html#deploy">deploy variable</a>. See the following topics for more information:</p>
 
     <ul>
-      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
-      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over">Static content deployment performance</a></li>
-      <li><a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
+      <li><a href="/guides/v2.2/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+      <li><a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over">Static content deployment performance</a></li>
+      <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a></li>
     </ul>
   </li>
   <li>
-    <p><strong>Configuration management</strong>—We now auto-generate an <code class="highlighter-rouge">app/etc/config.php</code> file in your git repository during the build phase if it doesn’t already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow <a href="http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> at a later time, the commands update the file without requiring additional steps. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a> for more information.</p>
+    <p><strong>Configuration management</strong>—We now auto-generate an <code class="highlighter-rouge">app/etc/config.php</code> file in your git repository during the build phase if it doesn’t already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> at a later time, the commands update the file without requiring additional steps. Refer to <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment process</a> for more information.</p>
   </li>
   <li>
-    <p><strong>Database dumps</strong>—We added a new <code class="highlighter-rouge">magento/ece-tools</code> CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshots and backup management</a> for more information.</p>
+    <p><strong>Database dumps</strong>—We added a new <code class="highlighter-rouge">magento/ece-tools</code> CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See <a href="/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshots and backup management</a> for more information.</p>
   </li>
   <li>
-    <p><strong>Cron interval limitations lifted</strong>—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in <code class="highlighter-rouge">.magento.app.yaml</code> or create a support ticket for Production/Staging environments. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
+    <p><strong>Cron interval limitations lifted</strong>—The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. To modify your existing cron jobs, edit your settings in <code class="highlighter-rouge">.magento.app.yaml</code> or create a support ticket for Production/Staging environments. Refer to <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a> for more information.</p>
   </li>
 </ul>
 
@@ -2486,7 +2486,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 <ul>
   <li>
     <!-- MAGECLOUD-1355 -->
-    <p>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. Not available in 2.1.</p>
+    <p>You can now <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. Not available in 2.1.</p>
   </li>
 </ul>
 
@@ -2516,7 +2516,7 @@ to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <
 <ul>
   <li>
     <!--- MAGECLOUD-1057 -->
-    <p>Magento Commerce (Cloud) now supports scopes and <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of <code class="highlighter-rouge">quick</code> for the static content deployment strategy. You can use the environment variable <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options <code class="highlighter-rouge">standard</code>, <code class="highlighter-rouge">quick</code>, or <code class="highlighter-rouge">compact</code>. If you select <code class="highlighter-rouge">compact</code>, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with <code class="highlighter-rouge">1</code>, which can slow deployment, especially in production environments. Not available in 2.1.</p>
+    <p>Magento Commerce (Cloud) now supports scopes and <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of <code class="highlighter-rouge">quick</code> for the static content deployment strategy. You can use the environment variable <a href="/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options <code class="highlighter-rouge">standard</code>, <code class="highlighter-rouge">quick</code>, or <code class="highlighter-rouge">compact</code>. If you select <code class="highlighter-rouge">compact</code>, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with <code class="highlighter-rouge">1</code>, which can slow deployment, especially in production environments. Not available in 2.1.</p>
   </li>
   <li>
     <!--- MAGECLOUD-1014 & MAGECLOUD-1023 -->

@@ -668,23 +668,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="highlights">Highlights</h2>
 
-<p>Magento Commerce (Cloud) 2.2.1 includes multiple new features, enhancements and fixes. For full Magento Commerce (Cloud) highlights and updates, see <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html">Magento Commerce 2.2.1 Release Notes</a></p>
+<p>Magento Commerce (Cloud) 2.2.1 includes multiple new features, enhancements and fixes. For full Magento Commerce (Cloud) highlights and updates, see <a href="/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html">Magento Commerce 2.2.1 Release Notes</a></p>
 
 <p>Look for the following Magento Commerce (Cloud) highlights in this release:</p>
 
 <ul>
   <li>
-    <p><strong>30-day free trials available for Starter and Pro projects</strong>. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>.</p>
+    <p><strong>30-day free trials available for Starter and Pro projects</strong>. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see <a href="/guides/v2.2/cloud/basic-information/cloud-plans.html">Subscriptions and plans</a>.</p>
   </li>
   <li>
-    <p><strong>Staging and Production environments in the UI for Pro projects</strong>. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+    <p><strong>Staging and Production environments in the UI for Pro projects</strong>. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
   </li>
   <li>
-    <p><strong>Onboarding Portal for new accounts helps merchants new to Magento Commerce (Cloud) get started with their project</strong>. Quickly ramp up and get started with your project with our <a href="http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-portal.html">Onboarding Portal</a>: assign a Technical Admin, preview your store, plan your local development environment, walk-through UAT tests, and prep for launching.</p>
+    <p><strong>Onboarding Portal for new accounts helps merchants new to Magento Commerce (Cloud) get started with their project</strong>. Quickly ramp up and get started with your project with our <a href="/guides/v2.2/cloud/onboarding/onboarding-portal.html">Onboarding Portal</a>: assign a Technical Admin, preview your store, plan your local development environment, walk-through UAT tests, and prep for launching.</p>
   </li>
 </ul>
 
-<p>Looking for more information on these new features as well as many others? Check out <a href="http://devdocs.magento.com/guides/v2.2/">Magento 2.2 Developer Documentation</a>.</p>
+<p>Looking for more information on these new features as well as many others? Check out <a href="/guides/v2.2/">Magento 2.2 Developer Documentation</a>.</p>
 
 <h2 id="security">Security enhancements</h2>
 <p>Magento 2.2.1 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
@@ -697,10 +697,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!--- MAGECLOUD-1057 -->
 <ul>
   <li>
-    <p>Magento Commerce (Cloud) supports scopes and <a href="http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable <a href="http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with 1, which can slow deployment, especially in production environments.</p>
+    <p>Magento Commerce (Cloud) supports scopes and <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">static content deployment strategies</a>. We have added the <code class="highlighter-rouge">–s</code> parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable <a href="/guides/v2.2/cloud/env/environment-vars_magento.html">SCD_STRATEGY</a> to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> value with 1, which can slow deployment, especially in production environments.</p>
   </li>
   <li>
-    <p>When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for <code class="highlighter-rouge">ADMIN_EMAIL</code> using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a> and <a href="http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning">What is autoprovisioning</a>.</p>
+    <p>When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for <code class="highlighter-rouge">ADMIN_EMAIL</code> using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see <a href="/guides/v2.2/cloud/onboarding/onboarding-tasks.html">Onboarding tasks</a> and <a href="/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning">What is autoprovisioning</a>.</p>
   </li>
 </ul>
 
@@ -710,12 +710,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="known">Known issues</h2>
-<p>For all known Magento Commerce 2.2.1  issues, see <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html">Magento Commerce 2.2.1 Release Notes</a>.</p>
+<p>For all known Magento Commerce 2.2.1  issues, see <a href="/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html">Magento Commerce 2.2.1 Release Notes</a>.</p>
 
 <h2 id="fixed">Fixed issues</h2>
 <!-- MAGECLOUD-1355 -->
 <ul>
-  <li>You can now <a href="http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get this update.</li>
+  <li>You can now <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must <a href="/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get this update.</li>
 </ul>
 
 <!--- MAGECLOUD-1121 -->
@@ -744,15 +744,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></p>
 
 <ul>
-  <li>The <code class="highlighter-rouge">ADMIN_EMAIL</code> variable must be set for new and existing projects. We require that you configure the <code class="highlighter-rouge">ADMIN_EMAIL</code> environment variable  for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</li>
+  <li>The <code class="highlighter-rouge">ADMIN_EMAIL</code> variable must be set for new and existing projects. We require that you configure the <code class="highlighter-rouge">ADMIN_EMAIL</code> environment variable  for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see <a href="/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</li>
 </ul>
 
 <h2 id="community">Community contributions</h2>
 
-<p>We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the <a href="http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html">Magento Commerce 2.2.1 Release Notes</a> for more information.</p>
+<p>We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the <a href="/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html">Magento Commerce 2.2.1 Release Notes</a> for more information.</p>
 
 <h2 id="requirements">System requirements</h2>
-<p>For Magento Commerce (Cloud) requirements, see <a href="http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html">Technologies and Requirements</a>.</p>
+<p>For Magento Commerce (Cloud) requirements, see <a href="/guides/v2.2/cloud/requirements/cloud-requirements.html">Technologies and Requirements</a>.</p>
 
 <p>The Magento Commerce technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a> and <a href="/magento-system-requirements.html">System Requirements</a>.</p>
 
