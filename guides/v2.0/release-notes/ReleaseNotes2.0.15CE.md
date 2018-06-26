@@ -22,7 +22,7 @@ You must upgrade or apply this patch by June 30, 2017 to avoid any disruption to
 </div>
 
 
- Looking for the [Magento Commerce (Cloud) Release Notes](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
+ Looking for the [Magento Commerce (Cloud) Release Notes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see

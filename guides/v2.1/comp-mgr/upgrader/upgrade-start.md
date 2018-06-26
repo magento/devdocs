@@ -15,7 +15,7 @@ functional_areas:
 Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <div class="bs-callout bs-callout-warning">
-   	<p>If you're upgrading to version 2.1, see <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
+   	<p>If you're upgrading to version 2.1, see <a href="{{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
 </div>
 
 ## Optional custom maintenance page

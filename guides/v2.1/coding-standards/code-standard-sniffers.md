@@ -26,4 +26,4 @@ You can configure PHP_CodeSniffer to use your own rules, too. The [Magento Exten
 Magento supports the [PSR-1](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [PSR-2](http://www.php-fig.org/psr/psr-2/){:target="_blank"} standards.
 
 
-The [Coding standards overview](http://devdocs.magento.com/guides/v2.0/coding-standards/bk-coding-standards.html){:target="_blank"} introduces Magento-specific practices for PHP, JavaScript, and {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}JQuery{% endglossarytooltip %}.
+The [Coding standards overview]({{ site.baseurl }}/guides/v2.0/coding-standards/bk-coding-standards.html){:target="_blank"} introduces Magento-specific practices for PHP, JavaScript, and {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}JQuery{% endglossarytooltip %}.

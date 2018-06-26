@@ -82,6 +82,6 @@ Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endg
 ## Related topics
 
 * [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
-* [Create a configurable product Tutorial](http://devdocs.magento.com/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
+* [Create a configurable product Tutorial]({{ site.baseurl }}/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
 * [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
-* [REST API documentation](http://devdocs.magento.com/swagger/){:target="_blank"}
+* [REST API documentation]({{ site.baseurl }}/swagger/){:target="_blank"}

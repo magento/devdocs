@@ -24,7 +24,7 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, 101.6.4, 101.6.5, an
 
 ### 101.6.6 changes
 
-<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 ### 101.6.5 changes
 

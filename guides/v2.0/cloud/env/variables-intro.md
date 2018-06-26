@@ -29,10 +29,10 @@ You can create all variables using the Magento Cloud CLI in all Starter environm
 ## Additional information {#magevar}
 For additional information on Magento variables for v2.1.X and later, see the following:
 
-* [Sensitive and system-specific](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-sens.html)
-* [Sensitive configuration paths reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-payment.html)
-* [Other configuration paths reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-most.html)
-* [System settings reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-var-name.html)
+* [Sensitive and system-specific]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-sens.html)
+* [Sensitive configuration paths reference]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-payment.html)
+* [Other configuration paths reference]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-most.html)
+* [System settings reference]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-var-name.html)
 
 To use a configuration path as a variable:
 

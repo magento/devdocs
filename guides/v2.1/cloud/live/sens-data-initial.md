@@ -172,7 +172,7 @@ To change values in the Integration environment Magento Admin:
 1.	If you haven't done so already, log out of the Integration Admin.
 1.	Log in to the Integration Admin.
 
-	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+	For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
 6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
