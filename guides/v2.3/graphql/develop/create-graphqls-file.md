@@ -6,7 +6,7 @@ github_link: graphql/develop/create-graphqls-file.md
 redirect_from: graphql/develop/configure-graphql-xml.html
 ---
 
-Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds [`GraphQl`](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/GraphQl) modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.
+Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds [`GraphQl`](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento/GraphQl) modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.
 
 A GraphQL module's `schema.graphqls` file defines how the attributes defined in the module can be used in a GraphQL query. If your module's attributes are completely self-contained, then the `schema.graphqls` file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must define those attributes and ensure that the other module can load your attributes.
 
@@ -17,7 +17,7 @@ The `<module_name>/etc/schema.graphqls` file:
 * Points to the resolvers that verify and process the query data and response
 * Serves as the source for displaying the schema in a GraphQL browser
 
-The base `schema.graphqls` file, located in the [`app/code/Magento/GraphQl/etc/`](https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento/GraphQl/etc) directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
+The base `schema.graphqls` file, located in the [`app/code/Magento/GraphQl/etc/`](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento/GraphQl/etc) directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
 
 To illustrate how to configure the `schema.graphqls` file, let's suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We'll assume this module extends the Catalog module.
 
