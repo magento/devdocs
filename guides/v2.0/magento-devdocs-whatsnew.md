@@ -452,7 +452,6 @@ Description  | Versions applied to  | New or Updated | Date
 | [Magento Enterprise Edition (EE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}  |  2.0.x | New  |  Feb 7 |
 | [Magento CE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4CE.html){:target="_blank"}  | 2.1.x  | New  |  Feb 7 |
 | [Magento EE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html){:target="_blank"}  |  2.1.x |  New | Feb 7  |
-|  [Use PhpStorm, PHPUnit, and Xdebug with DevBox]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-parent.html){:target="_blank"} | 2.x  | New  | Feb 8  |
 | [Clarify file system permissions for production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html){:target="_blank"}  | 2.x  | Updated  | Jan 27  |
 | [Corrected instructions to set up multiple websites or stores on {{site.data.var.ece}}]({{ page.baseurl }}/cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  | Updated  | Jan 31  |
 
@@ -467,7 +466,6 @@ Description  | Versions applied to  | New or Updated | Date
 | [Added information about the RequireJS library]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html){:target="_blank"} | 2.x | Updated | Jan 26 |
 | [Data Migration Guide troubleshooting]({{ page.baseurl }}/migration/migration-troubleshooting.html){:target="_blank"}  | 2.x  | New  |  Jan 20 |
 | [Updated `@deprecated` tag and added requirements for `@inheritdoc`]({{ page.baseurl }}/coding-standards/docblock-standard-general.html){:target="_blank"}  |  2.x | Updated  |  Jan 20 |
-| [How to install and use Magento DevBox (easy developer installation)]({{ page.baseurl }}/install-gde/docker/docker-over.html){:target="_blank"}  | 2.x  | New  | Jan 19  |
 |  [Functional Testing Framework isolation management tutorial]({{ page.baseurl }}/mtf/features/isolation.html){:target="_blank"} | 2.x  | New  | Jan 18  |
 | [How to test a patch on {{site.data.var.ece}}]({{ page.baseurl }}/cloud/howtos/patch-magento.html)  | 2.x  |  Updated  |  Jan 10 |
 |  [Add `type` prefixes and product, project in description of `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html){:target="_blank"} |  2.x |  Updated  | Jan 9  |
