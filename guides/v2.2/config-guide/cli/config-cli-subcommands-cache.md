@@ -108,7 +108,7 @@ To view the status of the cache, enter
 
 <!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
-A sample follows:
+A sample follows.
 
 There are lists of cache types available for Magento by default. You can check it by run command,
 
