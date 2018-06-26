@@ -198,7 +198,7 @@ To find the variable name for the shipping country origin:
 
 1.	Determine the scope.
 
-	Find the scope in the [database](#deploy-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
+	Find the scope in the [database](#deploy-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
 
 	For example, the scope might be `CONFIG__WEBSITE__DEFAULT`.
 2.	The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.

@@ -63,7 +63,7 @@ For a list of configurable settings, see [Configuration settings you can change]
 ### Static content deployment performance {#cloud-confman-scd-over}
 Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the [deploy phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which is in Maintenance mode. To move the deployment of static content to the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), generate the configuration file.
 
-If you generate `config.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
+If you generate a `config.php` file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
@@ -123,11 +123,11 @@ The `config.php` file includes the following settings and configuration values:
 </table>
 
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
-Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions. We can help you manage those settings more easily. For example, you may want to change the default locale and a store's static file optimization settings, with different settings in Staging and Production. Instead of making these changes in every environment, use `config.php`.
+Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.php` file, which contains a number of configuration properties that you can adjust as needed. 
 
-We **strongly recommend** using `scd-dump` to generate `config.php`. This file includes only the settings you configured without locking all default values. It also ensures all extensions used in Staging and Production do not break due to read-only configurations, especially Fastly.
+We **strongly recommend** using the `scd-dump` command to generate a `config.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, please see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
+To fully understand the process, see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
@@ -140,70 +140,90 @@ The **Pro plan** environment high-level overview of this process:
 ### Step 1: Configure your store {#config-store}
 Complete all configurations for your stores in the Admin console:
 
-1. Log into the Magento Admin for one of the environments:
+1. Log in to the Magento Admin for one of the environments:
 
     * Starter: An active development branch
-    * Pro: The `master` environment in Integration
+    * Pro: Integration environment
 
-2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases don't include your full store data.
-3. Open a terminal on your local and use an SSH command to generate `/app/etc/config.php` on the environment:
+2. Create and configure all store settings. These configurations do not include the actual products unless you plan on dumping the database from this environment to Staging and Production. Typically development databases do not include your full store data.
+3. Open a terminal on your local and generate `/app/etc/config.php` on the environment:
 
-    `ssh <SSH URL> "<Command>"`
-
-  For example for Pro, to run the `scd-dump` on Integration `master`:
-
-    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
-
-**Important:** The `config.php` file includes the following settings and configuration values:
-
-* Configured values for settings entered through the Magento Admin
-* Configured extension settings
-* Scopes value for static content deployment (default is [`quick`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick))
+    `ssh <SSH URL> "php vendor/bin/m2-ece-scd-dump"`
 
 ### Step 2: Transfer and add the file to Git {#transfer-file}
-Push `config.php` to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
+Push the `config.php` file to Git. To push this file to the `master` Git branch, you need to complete a few extra steps because this environment is read-only.
 
-1. Transfer `config.php` to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
+1. Transfer the `config.php` file to your local system using `rsync` or `scp`. You can only add this file to the Git branch through your local.
 
     `rsync <SSH URL>:app/etc/config.php ./app/etc/config.php`
 
-2. Add and push `config.php` to the Git master branch.
+2. Add and push the `config.php` file to the Git master branch.
 
     `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
 
-When you add `config.php` to Git, all build and deploy processes move static content deployment to the build phase. The method for the deployment uses the scope. The default option is [`quick`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy).
+When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
-</div>
+{: .bs-callout .bs-callout-info}
+Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.
 
 ### Step 3 & 4: Push Git branch to Staging and Production {#push-git}
-Log into the Magento Admin in those environments to verify the settings. If you used `scd-dump`, only configured settings display. You can continue configuring the environment if needed.
+Log in to the Magento Admin panel in those environments to verify the settings. Only configured settings display when you use the `scd-dump` command. Continue configuring the environment, if needed.
 
-For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and finally `master` for Production. Complete any additional configurations in Staging and Production as needed.
+For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
 For Pro, when you push to the Git branch, the Integration `master` environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.
 
-## Update configurations {#update}
-If you need to modify or remove any existing configuration settings in `config.php`, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.
+## Update configurations
+If you need to modify or remove any existing configuration settings in the `config.php` file, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.
 
 To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit `config.php` in Staging and Production, we don't recommend it. The file helps keep all of your configurations consistent across all of your environments.
+While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
 
-You should never delete `config.php` to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
+Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
 </div>
 
-## Migrate config.local.php to config.php {#migrate}
-If you upgrade to {{site.data.var.ece}} 2.2 or later, you may want to migrate settings from `config.local.php` to your new `config.php` file. If the configuration settings in your Magento Admin match the contents of the file, you can follow the instructions to generate and add `config.php`.
+## Migrate configurations
+If you upgrade to {{site.data.var.ece}} 2.2 or later, you may want to migrate settings from the `config.local.php` file to your new `config.php` file. If the configuration settings in your Magento Admin panel match the contents of the file, follow the instructions to generate and add the `config.php` file.
 
-If they differ, you can append content from `config.local.php` to your new `config.php` file:
+If they differ, you can append content from the `config.local.php` file to your new `config.php` file:
 
 1. Follow instructions to generate the `config.php` file using the [recommended method](#cloud-config-specific-recomm).
-2. Open `config.php`and delete the last line.
-3. Open `config.local.php`and copy the contents.
-4. Paste the contents into `config.php`, save, and complete adding it to Git.
+2. Open the `config.php` file and delete the last line.
+3. Open the `config.local.php` file and copy the contents.
+4. Paste the contents into the `config.php` file, save, and complete adding it to Git.
 5. Deploy across your environments.
 
-You only need to complete this migration once. When you need to update the file, you will always update the new `config.php`.
+You only need to complete this migration once. When you need to update the file, always update the `config.php` file.
+
+## Change locales
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
+
+You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.php` file with the new locale information, and copy the configuration file to the target environment. 
+
+{: .bs-callout .bs-callout-warning}
+This process **overwrites** the store configuration; only do the following if the environments contain the same stores.
+
+1.  From your Integration environment, enable the `SCD_ON_DEMAND` variable.
+1.  Add the necessary locales using your Admin panel.
+1.  Generate the `app/etc/config.php` file containing all locales.
+
+    ```bash
+    php ./vendor/bin/ece-tools config:dump
+    ```
+
+1.  Copy the new configuration file from your Integration environment to your local Staging environment directory.
+
+    ```bash
+    rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
+    ```
+
+1.  Push code changes to the remote.
+
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+While you can manually edit the `config.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
+
+Never delete the `config.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
+</div>

@@ -14,7 +14,7 @@ You give a name to your component in its `composer.json` and `module.xml` files.
 ## Prerequisites {#prereq}
 Before you continue, make sure you have completed all of the following tasks:
 *   Create a [file structure]({{page.baseurl}}/extension-dev-guide/build/module-file-structure.html).
-*   Create the the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
+*   Create the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
 *   [Register]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component.
 
 ## Add the component's `module.xml` file {#module-xml}

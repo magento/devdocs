@@ -58,7 +58,7 @@ See [Theme inheritance]
 ## Root template {#root}
 
 `<Magento_Theme_module_dir>/view/base/templates/root.phtml` is the root template for all storefront pages in the Magento application.
-This file can be overriden in a theme just like any other template file.
+This file can be overridden in a theme just like any other template file.
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to `<head>` and `<body>` sections of all pages rendered by Magento application.
 

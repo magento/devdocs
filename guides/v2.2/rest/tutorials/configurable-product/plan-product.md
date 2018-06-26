@@ -5,6 +5,9 @@ title: Step 1. Plan the product
 menu_title: Step 1. Plan the product
 menu_order: 10
 level3_subgroup: configurable-product-tutorial
+return_to:
+  title: REST API Reference
+  url: rest/bk-rest.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/plan-product.md
 functional_areas:
@@ -42,7 +45,7 @@ Color | Gray
 Size | Configurable in small, medium, or large
 Description | The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.
 
-A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are are defined by the system.
+A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are defined by the system.
 
 ## Find the system-defined values
 

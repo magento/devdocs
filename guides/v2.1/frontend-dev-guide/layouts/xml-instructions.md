@@ -43,7 +43,7 @@ Use the following layout instructions to customize your layout:
 
 Defines a block.
 
-<p><b>Details:</b> A block is a unit of page output that renders some distinctive content (anything vvisually tangible for the end-user), such as a piece of information or a user interface element.
+<p><b>Details:</b> A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
 
 Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.</p>
 

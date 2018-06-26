@@ -27,7 +27,7 @@ To avoid the appearance of a disabled site and to set up a custom maintenance pa
 To run System Upgrade:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.	Click **System** > Tools > **Web Setup Wizard**.
+2.	Click **System** > **Tools** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **System Configuration**.

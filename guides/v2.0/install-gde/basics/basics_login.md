@@ -42,7 +42,7 @@ To use a terminal application to remotely access the Magento server:
 
 1.	Set up the terminal application according to its provided documentation.
 2.	Start the terminal application.
-3.	When prompted, enter your Magento server's host name or IP address.
+3.	When prompted, enter your Magento server's hostname or IP address.
 4.	Log in to the server with the username or password you were provided.
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.

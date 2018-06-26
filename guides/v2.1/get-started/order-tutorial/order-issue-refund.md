@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 10. Issue a partial refund
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 10
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-issue-refund.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -74,7 +73,7 @@ A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}credit memo{% endglo
 
 ### Verify this step {#verify-step}
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Credit memos**. The credit memo is displayed in the grid.
+Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Credit memos**. The credit memo is displayed in the grid.
 
 
 ## Congratulations! You've finished.

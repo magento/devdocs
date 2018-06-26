@@ -21,7 +21,7 @@ The following table lists variables that you can override using environment vari
 <tbody>
 <tr>
 <td><code>ADMIN_USERNAME</code></td>
-<td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
+<td>Username for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
 <td>admin</td>
 </tr>
 <tr><td><code>ADMIN_FIRSTNAME</code></td>
@@ -112,7 +112,7 @@ The following variables are available during the deploy process of build and dep
 </tr>
 <tr>
 <td><code>ADMIN_USERNAME</code></td>
-<td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. This is available in all versions.</td>
+<td>Username for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. This is available in all versions.</td>
 <td>admin</td>
 </tr>
 <tr><td><code>ADMIN_FIRSTNAME</code></td>

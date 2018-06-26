@@ -10,8 +10,6 @@ functional_areas:
 [Advanced reporting functionality]{:target="_blank"} is provided through integration of a Magento instance with the [Magento Business Intelligence]{:target="_blank"} (MBI).
 Magento collects data and sends this information to the MBI for analytics.
  
-**Magento Admin > Dashboard > "Go to Advanced Reporting"** button opens reports in  `https://advancedreporting.rjmetrics.com/report` with corresponding authorization.
- 
 ## Prerequisites
 
 1. The website must run on a public web server.
@@ -22,6 +20,8 @@ Magento collects data and sends this information to the MBI for analytics.
 6. Make sure that [Magento crontab]{:target="_blank"} is created and cron jobs are running on the installed server.
 
 
+The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
+
 <div class="bs-callout bs-callout-info" markdown="1">
 The first synchronization of a Magento instance and the MBI can take up to a day to complete after the successful subscription.
 </div>
@@ -29,8 +29,6 @@ The first synchronization of a Magento instance and the MBI can take up to a day
 ## Recommendations
 
 To avoid system overload during its prime time, you can set the preferable time of a day for a data collection.
-
-**Magento Admin > Stores > Settings > Configuration > General > Advanced Reporting**
 
 ## Extensibility
 

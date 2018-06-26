@@ -292,7 +292,7 @@ There are many ways this problem can be resolved, but the easiest is to run the 
 
 ## Running Integration Tests in PHPStorm {#phpstorm-run}
 
-When writing new integration tests or during debugging, it is convenient to execute tests from within the the PHPStorm IDE.
+When writing new integration tests or during debugging, it is convenient to execute tests from within the PHPStorm IDE.
 
 Please ensure you have [prepared the integration test environment][setup] before starting.
 

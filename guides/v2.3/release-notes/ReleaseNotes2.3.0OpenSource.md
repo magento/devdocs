@@ -184,7 +184,7 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 
 <!--- 70736-->* Magento can now generate unsecure URLs if the current URL is secure. [GitHub-6175](https://github.com/magento/magento2/issues/6175)
 
-<!--- 82235-->* The `php bin/magento app:config:dump` command no longer adds an extra space to to multiline array values every time it runs. Previously, this command inserted extra spaces, which triggered Github to commit these files as changed. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11452*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
+<!--- 82235-->* The `php bin/magento app:config:dump` command no longer adds an extra space to multiline array values every time it runs. Previously, this command inserted extra spaces, which triggered Github to commit these files as changed. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11452*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
 
 <!--- 82007-->* The `StockItemCriteriaInterface` method `setProductsFilter` now accepts an array of IDs. Previously, this method accepted either a single integer or an array, but returned only one item. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request 11503*.[GitHub-7678](https://github.com/magento/magento2/issues/7678)
 
@@ -271,7 +271,7 @@ We've fixed hundreds of issues for Magento 2.3.0. Here's an incomplete list of t
 ### Indexing
 <!---85225 -->* `indexer:status` now outputs information about the schedule mview backlog. *Fix submitted by [Luke Rodgers](https://github.com/convenient) in pull request 12592*.
 
-<!---70883 -->* Magento no longer reindexes entities that have not been changed. Previously, Magento reindexed entries that that were not changed but which had a MySQL UPDATE. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 4893*.[GitHub-2987](https://github.com/magento/magento2/issues/2987)
+<!---70883 -->* Magento no longer reindexes entities that have not been changed. Previously, Magento reindexed entries that were not changed but which had a MySQL UPDATE. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request 4893*.[GitHub-2987](https://github.com/magento/magento2/issues/2987)
 
 
 

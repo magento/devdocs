@@ -219,3 +219,4 @@ To resolve the error:
 *   [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
 *   [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)
 *   [Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)
+</div>

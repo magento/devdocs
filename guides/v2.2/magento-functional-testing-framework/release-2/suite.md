@@ -239,7 +239,7 @@ The element may contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### exclude {#exclude-tag}
 
-A set of filters to be used for excluding tests from the the suite.
+A set of filters to be used for excluding tests from the suite.
 
 There two types of behavior:
 1. Applying filters to the included tests when the suite contains [`<include>`] filters.

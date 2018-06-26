@@ -32,7 +32,7 @@ Name | Version |  License
 [lusitanian/oauth](https://github.com/Lusitanian/PHPoAuthLib)  |v0.8.10  |MIT
 [monolog/monolog](https://github.com/Seldaek/monolog) |1.23.0 |MIT
 [myclabs/deep-copy](https://github.com/myclabs/DeepCopy) |1.7.0  |MIT
-[oyejorge/less.php]((https://github.com/oyejorge/less.php)) |v1.7.0.14  |Apache-2.0
+[oyejorge/less.php](https://github.com/oyejorge/less.php) |v1.7.0.14  |Apache-2.0
 [paragonie/random_compat](https://github.com/paragonie/random_compat) |v2.0.11  |MIT
 [pdepend/pdepend](https://github.com/pdepend/pdepend) |2.5.0  |BSD-3-Clause
 [pelago/emogrifier](https://github.com/jjriv/emogrifier) |v2.0.0 |MIT
