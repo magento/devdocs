@@ -255,6 +255,22 @@ The Amazon Pay, Magento Shipping, and Vertex extensions have the following known
 <!-- BUNDLE--1424 -->* Customers cannot add a new shipping address to an order that contains virtual products.
 
 
+### dotmailer known issues
+The following Dotmailer behaviors have been observed when Magento Commerce for B2B is deployed with split databases: 
+
+<!-- BUNDLE--1390 -->* Customer, subscriber, and guest data are not being successfully synced. As a result, newly created contacts display the  **Not imported** status in the contact report, and the relevant address books in dotmailer remain empty.
+
+
+<!-- BUNDLE--1408 -->* Review remainder email cannot be sent to a subscribed customer if review remainder emails are not enabled for non-subscribed customers. 
+
+<!-- BUNDLE--1398 -->* Magento cannot send Customer and Guest Abandoned Cart email if these emails are not allowed for non-subscribed contacts. 
+
+
+<!-- BUNDLE--1389 -->* When a merchant clicks the Run Contact Sync button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
+
+<!-- BUNDLE--526 -->* Magento throws an error during the creation of a subscriber or customer, but still creates the new subscriber or customer. 
+
+
 ### Magento Shipping known issues
 <!-- BUNDLE--1448 -->*  A merchant can create multiple return shipments for an already shipped return.
 
