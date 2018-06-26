@@ -1070,49 +1070,30 @@ The following table highlights contributions made by our Partners, whose experti
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13807">13807</a></td>
     <td>N/A</td>
   </tr>
+
   <tr>
     <td>H&O</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13653">13653</a></td>
     <td>N/A</td>
   </tr>
+
   <tr>
     <td>Interactiv4</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14317">14317</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14317">14317</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13717">13717</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a>  </td>
+    <td><a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a>, <a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a> </td>
   </tr>
-  <tr>
-    <td></td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13717">13717</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/N/A" target="_blank">N/A</a></td>
-  </tr>
+
+
   <tr>
     <td>MediaCT</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14829">14829</a></td>
     <td>N/A</td>
   </tr>
+
+
   <tr>
     <td>Vaimo</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13173">13173</a> </td>
-    <td>N/A</td>
-     <td></td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14026">14026</a></td>
-    <td>N/A</td>
-
- <td></td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14030">14030</a></td>
-    <td>N/A</td>
-
- <td></td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14028">14028</a></td>
-    <td>N/A</td>
-
- <td></td>
-    <td> <a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a> </td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13173">13173</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14026">14026</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/14030">14030</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14028">14028</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a></td>
     <td>N/A</td>
 
   </tr>
