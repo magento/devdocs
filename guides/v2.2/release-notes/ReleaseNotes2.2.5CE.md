@@ -1055,7 +1055,7 @@ The following table identifies contributions from our community members. This ta
 
 ### Partner contributions
 
-The following table highlights contributions made by our Partners, whose expertise greatly enhances our code base. 
+The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
 
 <table>
   <tr>

@@ -1071,6 +1071,53 @@ The following table identifies contributions from our community members. This ta
  
 </table>
 
+### Partner contributions
+
+The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
+
+<table>
+  <tr>
+    <th>Contributing Partner</th>
+    <th>Pull Request</th>
+    <th>Related GitHub issue</th>
+  </tr>
+
+
+<tr>
+    <td>Convert</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13807">13807</a></td>
+    <td>N/A</td>
+  </tr>
+
+  <tr>
+    <td>H&O</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13653">13653</a></td>
+    <td>N/A</td>
+  </tr>
+
+  <tr>
+    <td>Interactiv4</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14317">14317</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13717">13717</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a>  </td>
+    <td><a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a>, <a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a> </td>
+  </tr>
+
+
+  <tr>
+    <td>MediaCT</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14829">14829</a></td>
+    <td>N/A</td>
+  </tr>
+
+
+  <tr>
+    <td>Vaimo</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13173">13173</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14026">14026</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/14030">14030</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14028">14028</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a></td>
+    <td>N/A</td>
+
+  </tr>
+
+</table>
+
 
 
 
