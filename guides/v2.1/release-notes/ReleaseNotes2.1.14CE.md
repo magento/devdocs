@@ -10,7 +10,7 @@ github_link: release-notes/ReleaseNotes2.1.14CE.md
 {:toc}
 
 
-*Patch code and release notes were published on June 19, 2018.*
+*Patch code and release notes were published on June 27, 2018.*
 
 
 We are pleased to present Magento Open Source  2.1.14. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
