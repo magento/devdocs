@@ -124,8 +124,8 @@ Because of our unique, triple-redundant hardware, we can provide you with three 
 The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
 -   DNS
--   Content Delivery Network (CDN)
--   Elastic load balancer (ELB)
+-   [`Content Delivery Network (CDN)`](https://en.wikipedia.org/wiki/Content_delivery_network){:target="\_blank"}
+-   [`Elastic load balancer (ELB)`](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html){:target="\_blank"}
 -   Three-server cluster comprising all Magento services, including the database and web server
 
 ### Backup and disaster recovery
@@ -194,4 +194,4 @@ Edit the following YAML files to configure specific software versions to use in 
 -   [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
 -   [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
 -   [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
--   [`.magento.env.yaml`]()—unified configs for {{site.data.var.ece}} 2.2
+-   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2
