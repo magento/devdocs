@@ -1085,7 +1085,7 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Balance Internet</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14128">14128</a></td>
-    <td>14109</td>
+    <td><a href="https://github.com/magento/magento2/issues/14109" target="_blank">14109</a></td>
   </tr>
 
 <tr>
@@ -1096,14 +1096,14 @@ The following table highlights contributions made by Partners. This table lists 
 
 <tr>
     <td>Convert</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13807">13807</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14457">14457</a></td>
     <td>N/A</td>
   </tr>
 
 <tr>
     <td>Divante</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14360">14360</a></td>
-    <td>13010</td>
+    <td><a href="https://github.com/magento/magento2/issues/13010" target="_blank">13010</a></td>
   </tr>
 
   <tr>
@@ -1114,39 +1114,39 @@ The following table highlights contributions made by Partners. This table lists 
 
   <tr>
     <td>Interactiv4</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14317">14317</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13717">13717</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/11376">11376</a>  </td>
-    <td><a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a>, <a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a> </td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14452">14452</a> </td>
+    <td>N/A</td>
   </tr>
 
 <tr>
     <td>Inviqa</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14552">14552</a></td>
-    <td>10057</td>
+    <td>N/A</td>
   </tr>
 
 <tr>
     <td>ISM eCompany</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14327">14327</a></td>
-    <td>10057</td>
+    <td><a href="https://github.com/magento/magento2/issues/10057" target="_blank">10057</a></td>
   </tr>
 
 
   <tr>
     <td>MediaCT</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14829">14829</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14309">14309</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/14307" target="_blank">14307</a></td>
   </tr>
 
 <tr>
     <td>Something Digital</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/12792">12792</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13778">13778</a></td>
-    <td>10057</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13898">13898</a></td>
+    <td><a href="https://github.com/magento/magento2/issues/12792" target="_blank">12792</a>, <a href="https://github.com/magento/magento2/issues/13778" target="_blank">13778</a></td>
   </tr>
 
 
   <tr>
     <td>Vaimo</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13173">13173</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14026">14026</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/14030">14030</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14028">14028</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/12893">12893</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13257">13257</a></td>
     <td>N/A</td>
 
   </tr>
