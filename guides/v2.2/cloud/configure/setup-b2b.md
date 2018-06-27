@@ -9,7 +9,7 @@ With the {{site.data.var.ece}} Pro subscription for v2.2 and later, you can inst
 
 For additional information on using and extending B2B, see the following guides:
 
-* [Magento B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html)
+* [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html)
 * [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}
 
 We provide these features as a module you can install and setup in {{site.data.var.ece}}. Installation of B2B in a Pro project require additional steps to add the module and update your Git branch.
@@ -29,7 +29,7 @@ We recommend working in a branch to add the B2B module and features to your impl
 {% include cloud/cli-get-started.md %}
 
 ## Add B2B in the cloud {#add}
-You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions](http://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) in the B2B guide.
+You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) in the B2B guide.
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.
@@ -69,4 +69,4 @@ If you have a config.php file as part of your deployment, you should also add th
         git commit -a -m “Add config.php.”
 
 ## Configure and use B2B {#use}
-For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}. To extend functionality, see the [Magento B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html).
+For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}. To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).

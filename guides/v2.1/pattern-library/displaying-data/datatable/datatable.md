@@ -181,7 +181,7 @@ The persistent header will reactivate when you scroll back up:
 <br />
 <br />
 
-For details about component's implementation see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.
+For details about component's implementation see <a href="{{ site.baseurl }}/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.
 
 ### Multiple Data-tables on Page
 The header will stick to the first table until the user scrolls past the bottom of that table . The header will have the same behavior for each subsequent data-table.

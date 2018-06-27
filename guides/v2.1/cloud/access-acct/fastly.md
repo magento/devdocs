@@ -60,7 +60,7 @@ You should install the Fastly module on your local, pushing the code to Integrat
 <div class="bs-callout bs-callout-warning" markdown="1">
 Don't configure the module in your local before building and deploying. You'll configure the module in those environments.
 
-We recommend using the `bin/magento magento-cloud:scd-dump` command for Configuration Management([2.1.X](https://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), [2.2.X](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm)). If you use the `app:config:dump` command, all configuration options for Fastly will be locked from editing in Staging and Production.
+We recommend using the `bin/magento magento-cloud:scd-dump` command for Configuration Management([2.1.X]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), [2.2.X]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm)). If you use the `app:config:dump` command, all configuration options for Fastly will be locked from editing in Staging and Production.
 </div>
 
 

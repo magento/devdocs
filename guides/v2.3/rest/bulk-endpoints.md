@@ -1,11 +1,10 @@
 ---
 group: rest
-title: Asynchronous Web APIs
+title: Bulk endpoints
 version: 2.3
 contributor_name: Oleksandr Lykun
-contributor_link: 
-github_link: rest/bulk-api.md
+contributor_link:
+github_link: rest/bulk-endpoints.md
 functional_areas:
   - Integration
 ---
-

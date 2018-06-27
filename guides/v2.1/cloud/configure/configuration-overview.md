@@ -20,7 +20,7 @@ You can set up [multiple websites and stores]({{ page.baseurl }}/cloud/project/p
 The following options, tools, and features can be set up and configured in your store:
 
 * [Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) for caching and CDN in Staging and Production environments
-* [PayPal On-Boarding tool](http://devdocs.magento.com/guides/v2.1/cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
+* [PayPal On-Boarding tool]({{ site.baseurl }}/guides/v2.1/cloud/live/paypal-onboarding.html) provides PayPal payment gateway checkout by connecting to your PayPal merchant account
 * [cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html) details how to create and configure Magento cron jobs in all environments
 * [Multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html) details how to create and configure multi-sites for your store, for example multiple locales including English, French, and Spanish
 * [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
@@ -42,4 +42,4 @@ We also provide integrations with:
 * [GitHub]({{ page.baseurl }}/cloud/project/project-integrate-github.html) for managing your Git branches and code
 
 ## Configuration management {#config-mgmt}
-We strongly recommend configuring settings, services, and integrations then using specific commands to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html).
+We strongly recommend configuring settings, services, and integrations then using specific commands to manage the configurations. This command exports all of your modified configurations from database values into a file. You add this file to your code repository and push it for deployment across all environments. For details, see [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html).
