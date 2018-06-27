@@ -5,7 +5,7 @@ version: 2.0
 github_link: cloud/basic-information/cloud-plans.md
 ---
 
-{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans and to start your [free 30-day trial](https://magento.com/trial){:target="\_blank"}, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="\_blank"}.
+{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="\_blank"}.
 
 <table>
   <tbody>
