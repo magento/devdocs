@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Blackfire Profiler
 version: 2.0
@@ -28,9 +27,9 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 </div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
-The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitiation email is sent to the Project Owner's e-mail address to complete activation.
+The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
-For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{page.baseurl}}/cloud/project/projects.html#integrations).
+For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{ page.baseurl }}/cloud/project/projects.html#integrations).
 
 ## Add collaborator accounts {#collaborators}
 After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
@@ -43,7 +42,7 @@ We recommend adding at least one account through Blackfire to manage all access,
 4. Enter an e-mail address and click Add Member.
 5. For one account, click the menu by Revoke and select **Promote as an admin**.
 
-	![Promote an admin]({{ site.baseurl}}/common/images/cloud_blackfire-member.png)
+	![Promote an admin]({{ site.baseurl }}/common/images/cloud_blackfire-member.png)
 
 ## Enable Blackfire on your local {#cloud-int-black-en}
 You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You don't need to run these installations directly on the hosted environments, only on your local.
@@ -63,19 +62,19 @@ We recommend enabling Blackfire in all of your environments including Integratio
 For Starter plans, pushing your code and `.magento.app.yaml` file to Staging and Master branches updates those environments directly. You can directly add Blackfire to those environments the way you do with development.
 </div>
 
-These instructions assume you have fully set up your [local workspace]({{page.baseurl}}/cloud/before/before-workspace.html).
+These instructions assume you have fully set up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html).
 
 1. Log in to [Blackfire](https://blackfire.io/login){:target="_blank"}.
 2. Select the Integration and Development environment in the **Current Environment** list.
 3. Select the Builds tab. In the Builds side panel, click the info icon next to Magento Cloud. This opens a list of commands you will need to execute in order to enable the Blackfire integration.
 
-	![Click info icon]({{ site.baseurl}}/common/images/cloud_blackfire-builds.png)
+	![Click info icon]({{ site.baseurl }}/common/images/cloud_blackfire-builds.png)
 
 	A page like the following opens with additional steps to complete the integration. The marked out content is your Project ID.
 
-	![Blackfire Magento Cloud integragtion]({{ site.baseurl}}/common/images/cloud_blackfire-integration.png)
+	![Blackfire Magento Cloud integration]({{ site.baseurl }}/common/images/cloud_blackfire-integration.png)
 
-The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information direcrtly.
+The following sections include instructions for completing this list of integration tasks. You can keep this page open to follow and copy information directly.
 
 * [Add Blackfire to .magento.app.yaml](#magentoappyaml)
 * [Add project variables](#variables)
@@ -173,7 +172,7 @@ Add project variables for Blackfire for the server ID and token. You can add the
 	```
 
 ### Add Blackfire integration to the project {#integration}
-Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{page.baseurl}}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
+Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
 
 1.  Log in to your {{site.data.var.ece}} project.
 
@@ -241,7 +240,7 @@ If adding a route to Blackfire, make sure to add the default route to `routes.ya
 	```
 
 1.	Use a text editor to locate and edit `<project root dir>/magento/routes.yaml` in your branch.
-1.	Add the route the file. For details, see [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html). Here's an example:
+1.	Add the route the file. For details, see [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html). Here's an example:
 
 	```yaml
 	"http://{default}/":
@@ -262,7 +261,7 @@ If you leave this field blank, we will try the following keys in this order: `ht
 	If errors display during deployment, open `routes.yaml` and check the syntax. Check indentation and spelling and try again.
 
 ### Save changes in Blackfire {#save}
-With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and conncetions with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
+With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
 
 ## Profile your store {#profile}
 To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).
@@ -277,13 +276,13 @@ To profile using the browser:
 2. Visit the store or site URL for your specific environment. For example, access the URL for your Integration environment. If you need this URL, you can find it through the Project Web Site. Select the environment branch and copy the link from the Access section.
 3. Click the Blackfire icon to profile. For Compare with, select No Reference.
 
-	![Start profiling]({{ site.baseurl}}/common/images/cloud_blackfire.png)
+	![Start profiling]({{ site.baseurl }}/common/images/cloud_blackfire.png)
 4. Click **Profile** to start.
 
 To profile using the CLI:
 
 1.  Open a terminal.
-1.  [Checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  [Checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.	Run the profiler:
 
 	```bash

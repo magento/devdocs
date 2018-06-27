@@ -14,52 +14,78 @@ You can build this site locally in the following ways:
 
 ## Build using Jekyll
 
-For local builds, you need to install [Bundler](http://bundler.io/), and [Ruby](https://www.ruby-lang.org) version manager.
+For local builds, you need to install Ruby 2.4 or later.
 
-### To prepare your MacOS environment:
+To check the Ruby version on your environment, run in your terminal:
+
+```shell
+$ ruby -v
+```
+
+### Install the latest Ruby (if the Ruby version is less than 2.4)
+
+**MacOS users**
+
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
-1. Use Homebrew to install a Ruby version manager.
-
+1. Use Homebrew to install the latest stable version of Ruby:
+ 
    ```
-   $ brew install rbenv ruby-build
-   ```
-
-1. Add rbenv to bash so that it loads every time you open a terminal.
-
-   ```
-   $ echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+   $ brew install ruby
    ```
 
-1. Source your `.bash_profile` file.
+**Unix, Windows and other OS users**
 
-   ```
-   $ source ~/.bash_profile
-   ```
+See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for instructions.
 
-1. Install a specific version of Ruby.
+### Install Bundler
 
-   ```
-   $ rbenv install 2.4.x
-   $ rbenv global 2.4.x
-   $ ruby -v
-   ```
+Install the [Bundler](http://bundler.io/) gem, which helps with Ruby dependencies:
 
-1. Install the Bundler gem, which helps with Ruby dependencies.
+```
+$ gem install bundler
+```
 
-   ```
-   $ gem install bundler
-   ```
-
-1. Run `bundle install` the first time you are in the `devdocs` directory or when you need to pick up theme changes.
-
-### To build locally:
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
 
-1. Run the serve command.
+### Install devdocs
+
+Clone or download the repository. The first time you are at the `devdocs` directory, run:
+
+```
+$ bundle install
+```
+
+Once you have completed preparing your environment, you can build locally and review the site in your browser.
+
+### To build locally:
+
+#### Using rake
+
+[rake](https://github.com/ruby/rake) is a native Ruby tool that helps to automate tasks.
+
+1. Run the rake task that installs all required dependencies and starts the [Jekyll](https://jekyllrb.com/) server:
+
+   ```
+   $ rake preview
+   ```
+
+1. Press `Ctrl+C` in the serve terminal to stop the server.
+
+If rake fails on your environment, generate the preview [using jekyll](#using-jekyll).
+
+#### Using jekyll
+
+1. The first time you are at the `devdocs` directory or when you need to pick up changes in `Gemfile.lock` dependencies (for example, theme changes), run:
+
+   ```
+   $ bundle install
+   ```
+
+1. To generate the local preview, run:
 
    ```
    $ bundle exec jekyll serve --incremental
-
+    
     Configuration file: /Users/username/Github/devdocs/_config.yml
                 Source: /Users/username/Github/devdocs
            Destination: /Users/username/Github/devdocs/_site
@@ -77,6 +103,43 @@ Once you have completed preparing your environment, you can build locally and re
 
 > ***TIP***  
 > Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file requires a fresh build. Using the `--incremental` option limits re-builds to posts and pages that have changed.
+
+### To minimize build time locally:
+
+1. Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
+The following example will generate Magento 2.2 documentation only.
+
+   ```yaml
+    exclude:
+     - /community/
+     - /swagger/
+     - /vagrant/
+     - /guides/m1x/
+     - /guides/v2.0/
+     - /guides/v2.1/
+    # - /guides/v2.2/
+     - /guides/v2.3/
+    
+    # Excluded in config.yml
+     - /scss/
+     - /bin/
+     - /node_modules/
+     - /vendor/
+     - /.*
+     - /Rakefile
+   ```
+
+1. Run the preview command:
+
+   ```
+   $ rake preview
+   ```
+   This command:
+   * Checks your environment according to the dependencies in `Gemfile.lock`.
+   * Removes the `_site/` directory, which contains previously generated preview files.
+   * Generates a new preview and opens the landing page in a web browsers.
+   
+If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
 
 ## Build using Docker
 This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).

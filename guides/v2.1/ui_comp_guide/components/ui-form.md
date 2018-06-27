@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Form component
@@ -13,16 +12,16 @@ redirect_from: /guides/v2.1/ui-components/ui-form.html
 ## Overview
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
-Form is a [basic component]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html#general-structure).
+Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure).
 
 
 ## Structure
 
-{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
+{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ## Component options
 
-Form configuration extends the [`uiCollection`]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Form configuration extends the [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 Form-specific configuration:
 
@@ -124,7 +123,7 @@ Form-specific configuration:
           receives the notification. Can use string templates.
           </li>
         </ul>
-For more details see the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
       </td>
       <td>
         Object
@@ -157,7 +156,7 @@ For more details see the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_com
           tracked for changes. Can use string templates.
           </li>
         </ul>
-For more details see the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
       </td>
       <td>
         Object
@@ -245,9 +244,9 @@ Example:
 Component could be configured in two ways:
 
 * globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
-* locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form`
+* locally: using concrete component instance configuration, such as `<your module root dir>view/base/ui_component/customer_form`
 
-Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
+Create configuration file: `<your module root dir>view/base/ui_component/customer_form.xml`
 
 {% highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">

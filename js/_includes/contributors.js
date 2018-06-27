@@ -12,8 +12,9 @@
 ;(function( $, window, document, undefined ) {
 
   var pluginName = 'contributorsList';
+
   var defaults = {
-    dataUrl: 'https://s3.amazonaws.com/public.magento.com/devdocs-contributors.js',
+    dataUrl: 'https://s3.us-east-2.amazonaws.com/statistic.engcom.magento.com/magento.com/devdocs-contributors.js',
     periodTypes: 'monthly,quarterly,yearly',
     periodTypesSettings: {
       monthly: {
@@ -78,15 +79,13 @@
         .removeClass(plugin.options.loadingClass)
         .addClass(plugin.options.loadedClass);
 
-      var periodContributors = '';
-      var periodTypesSwitcherOptions = '',
+      var periodContributors = '',
+          periodTypesSwitcherOptions = '',
           periodTypesSwitcher = '',
           periodSwitchers = '';
 
       // Iterate over period types
-
       var periodTypes = plugin.options.periodTypes.replace(/\s/g, '').toLowerCase().split(',');
-
       $.each( periodTypes, function ( index, value ) {
         // Strip whitespaces and make lower case
         var periodType = (plugin.options.periodTypesSettings[value]) ? plugin.options.periodTypesSettings[value].value : null;
@@ -117,30 +116,41 @@
 
       // Create a jQuery object out of raw html
       var $periodContributors = $( switchers + periodContributors);
+
       // Assign events
-      $periodContributors.find('select').on('change', plugin.handlePeriodChange );
-      $periodContributors.find('.' + plugin.options.periodTypeSwitcherClass + ' button' ).on('click', plugin.handlePeriodTypeChange);
+      $periodContributors.find('select')
+        .on('change', plugin.handlePeriodChange );
+
+      $periodContributors.find('.' + plugin.options.periodTypeSwitcherClass + ' button' )
+        .on('click', plugin.handlePeriodTypeChange);
+
       // Render the HTML
       plugin.$element.append( $periodContributors );
+      plugin.loadImages( plugin.$element.find('img:visible') );
     }
 
+    // Convert data-src to src
+    this.loadImages = function ( images ) {
+      images.each( function () {
+        $(this).attr( 'src', $(this).data('src') );
+      })
+    }
 
     // Build contributors for the period type
     this.buildContributorsPeriod = function ( data, periodTypeSettings ) {
       // Reverse and limit the array most recent comes first
-      var periods = data.periods.reverse().slice( 0, periodTypeSettings.periodsLimit );
-
-      var periodSwitcher = '',
+      var periods = data.periods.reverse().slice( 0, periodTypeSettings.periodsLimit ),
+          periodSwitcher = '',
           periodSwitcherOptions = '',
           periodContributors = '';
 
       $.each(periods, function (index, value) {
-        var period = value;
-        var periodSettings = {
-          periodValue: period.value,
-          periodLabel: period.label,
-          contributorsLimit: periodTypeSettings.contributorsLimit,
-          contributorsListClass: plugin.options.contributorsListClass + ((index != 0) ? ' ' + plugin.options.hiddenClass : ''),
+        var period = value,
+            periodSettings = {
+              periodValue: period.value,
+              periodLabel: period.label,
+              contributorsLimit: periodTypeSettings.contributorsLimit,
+              contributorsListClass: plugin.options.contributorsListClass + ((index != 0) ? ' ' + plugin.options.hiddenClass : ''),
         }
         periodSwitcherOptions += '<option value="' + periodSettings.periodValue + '">' + periodSettings.periodLabel + '</option>';
         periodContributors += plugin.buildContributorsList( data.contributors[ periodSettings.periodValue ], periodSettings );
@@ -158,7 +168,6 @@
         contributors: periodContributors,
       }
 
-      //return '<div class="'+ periodTypeSettings.class + '" data-period-type="' + periodTypeSettings.value + '">' + periodSwitcher + periodContributors + '</div>';
     }
 
     // Build an HTML list of contributors from data and settings object
@@ -173,45 +182,57 @@
 
     // Builds contributor html string
     this.buildContributor = function ( contributor ) {
-        var name = contributor.name;
-        var avatar = contributor.avatar;
-        var url = contributor.user_link;
+        var name = contributor.name,
+            avatar = contributor.avatar,
+            url = contributor.user_link;
+
+        // Do not show deleted users
+        if (url == 'https://github.com/ghost') {
+          return '';
+        }
+
         // Stats
-        var accepted = contributor.accepted;
-        var accepted_url = contributor.accepted_url;
-        var created = contributor.created;
-        var created_url = contributor.created_url;
-        var rejected = contributor.rejected;
-        var rejected_url = contributor.rejected_url;
+        var accepted = contributor.accepted,
+            accepted_url = contributor.accepted_url,
+            created = contributor.created,
+            created_url = contributor.created_url,
+            rejected = contributor.rejected,
+            rejected_url = contributor.rejected_url;
 
         var stats = '<ul class="' + plugin.options.contributorStatsClass + '"><li><span>Accepted</span> <a href="'+ accepted_url +'">' + accepted + '</a></li><li><span>Created</span> <a href="'+ created_url +'">'+ created +'</a></li><li><span>Rejected</span> <a href="'+ rejected_url +'">'+ rejected +'</a></li></ul>';
 
-        return '<div class="' + plugin.options.contributorClass + '"><a href="'+ url +'"><div class="' + plugin.options.contributorAvatarClass + '"><img src="'+ avatar + '" /></div><h5 class="' + plugin.options.contributorNameClass + '">' + name + '</h5></a>'+ stats +'</div>';
-    };
+        return '<div class="' + plugin.options.contributorClass + '"><a href="'+ url +'"><div class="' + plugin.options.contributorAvatarClass + '"><img data-src="'+ avatar + '" alt="' + name + '" /></div><h5 class="' + plugin.options.contributorNameClass + '">' + name + '</h5></a>'+ stats +'</div>';
+    }
 
     // * Events *
     // Handles the change in the period switcher
     this.handlePeriodChange = function ( event ) {
-      var value = event.target.value;
-      var periodType = event.target.getAttribute('data-period-type');
+      var value = event.target.value,
+          periodType = event.target.getAttribute('data-period-type'),
+          $period = plugin.$element.find( '.' + plugin.options.periodClass + '[data-period-type="' + periodType + '"] .' + plugin.options.contributorsListClass );
+
       // Hide other lists of the same type, show the requested list
-      plugin.$element.
-        find( '.' + plugin.options.periodClass + '[data-period-type="' + periodType + '"] .' + plugin.options.contributorsListClass )
-        .addClass( plugin.options.hiddenClass ).
+      $period.addClass( plugin.options.hiddenClass ).
         filter('[data-period="' + value + '"]')
         .removeClass( plugin.options.hiddenClass );
+
+      plugin.loadImages( $period.find('img:visible') );
     }
 
     // Handle the change in period type
     this.handlePeriodTypeChange = function ( event ) {
       var value = event.target.getAttribute('data-period-type');
-      $(this).addClass(plugin.options.activeClass).siblings().removeClass(plugin.options.activeClass);
+
+      $(this).addClass( plugin.options.activeClass ).siblings()
+        .removeClass( plugin.options.activeClass );
 
       plugin.$element.
-        find( '.' + plugin.options.periodClass)
+        find( '.' + plugin.options.periodClass )
         .addClass( plugin.options.hiddenClass ).
-        filter('[data-period-type="' + value + '"]')
+        filter( '[data-period-type="' + value + '"]' )
         .removeClass( plugin.options.hiddenClass );
+
+      plugin.loadImages( plugin.$element.find('img:visible') );
     }
 
     // Begin plugin init
@@ -222,21 +243,21 @@
   // Initialize the plugin
   Plugin.prototype.init = function () {
     // Begin loading the data
-    this.$element.addClass(this.options.loadingClass);
+    this.$element.addClass( this.options.loadingClass );
     $.getJSON( this.options.dataUrl, this.onDataLoaded )
       .fail( this.onDataFail );
-  };
+  }
 
   // Basic jQuery plugin wrapper
   // Prevents multiple instantiations
   $.fn[pluginName] = function ( options ) {
     return this.each(function () {
-      if (!$.data(this, 'plugin_' + pluginName)) {
+      if ( !$.data(this, 'plugin_' + pluginName) ) {
         $.data(this, 'plugin_' + pluginName,
           new Plugin( this, options ));
         }
-      });
-   }
+    });
+  }
 
 
 })(jQuery, window, document);// end contributors

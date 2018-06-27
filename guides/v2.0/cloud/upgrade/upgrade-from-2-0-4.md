@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 130_upgrades
 title: Upgrade from 2.0.4
@@ -16,7 +15,7 @@ functional_areas:
 This section discusses steps to upgrade *only* if your current {{site.data.var.ece}} version is 2.0.4. When upgrading only from this version, follow these instructions.
 
 ## Create an authorization file
-To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento Commerce [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html).
+To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento Commerce [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html).
 
 In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
 
@@ -121,7 +120,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -134,7 +133,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
-To view the error in your integration system, [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -147,8 +146,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl}}/cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{ page.baseurl}}/cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:
@@ -156,7 +155,7 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 #### Related topic
-* [Composer]({{page.baseurl}}/cloud/reference/cloud-composer.html)
-* [Install, manage, and upgrade modules]({{page.baseurl}}/cloud/howtos/install-components.html)
-* [Install optional sample data]({{page.baseurl}}/cloud/howtos/sample-data.html)
-* [Merge and delete an environment]({{page.baseurl}}/cloud/howtos/environment-tutorial-env-merge.html)
+* [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html)
+* [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)
+* [Install optional sample data]({{ page.baseurl }}/cloud/howtos/sample-data.html)
+* [Merge and delete an environment]({{ page.baseurl }}/cloud/howtos/environment-tutorial-env-merge.html)

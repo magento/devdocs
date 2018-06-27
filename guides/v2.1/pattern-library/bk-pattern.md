@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup:
 title: Admin Design Pattern Library

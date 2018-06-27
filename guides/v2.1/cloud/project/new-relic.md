@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: New Relic APM
 version: 2.1
@@ -22,7 +21,7 @@ New Relic APM provides the following features to Magento:
 
 Your {{site.data.var.ece}} account includes the agent software for New Relic; you do not need to purchase or install the New Relic extension (different than the APM service). You receive your credentials and license information from Magento during launch and can access your license key in the _Project Web Interface_ by clicking **View Details** for your project. The **NewRelic Service** section includes your Account Number, License Key, and other access keys.
 
-By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to request installation.
+By default, the Pro Staging and Production environments include New Relic. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
 ## Add New Relic extension to your project
 You must list the New relic extension in the `.magento.app.yaml` file:
@@ -34,7 +33,7 @@ runtime:
 ```
 
 ## Add New Relic APM to an environment
-The {{site.data.var.ece}} plans support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice.
+The {{site.data.var.ece}} plans to support up to three instances of your New Relic APM license across all environments. We recommend adding a New Relic license to your Staging and Production environments, and you can add the license to one other environment of your choice.
 
 {% include note.html type="info" content="If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment. 
 
@@ -74,12 +73,12 @@ If you have more than three active environments using the same New Relic license
 ## Investigate performance
 New Relic connects and monitors your site using a PHP agent. As it collects data, you can log in and review the responses through the New Relic [dashboard](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/apm-overview-page).
 
-Using the New Relic dashboard, you can immediately track and find the following:
+Using the New Relic dashboard, you can immediately track and find:
 
--  Monitor applications and transactions encountering slow responses or bottlenecks
--  Investigate customer comments of issues with your site
--  Identify applications with high transaction time and follow up on queries, calls, and methods with Blackfire
--  Verify and compare traffic to transaction time
+-  Applications and transactions encountering slow responses or bottlenecks
+-  Customer comments about issues with your site
+-  Applications with high transaction time and follow up on queries, calls, and methods with Blackfire
+-  Traffic to transaction time
 
 We recommend reviewing tracked data:
 
@@ -90,7 +89,7 @@ All collected data details the time spent on an action transmitting data, querie
 
 ## New Relic and Blackfire
 
-You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{page.baseurl}}/cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
+You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.

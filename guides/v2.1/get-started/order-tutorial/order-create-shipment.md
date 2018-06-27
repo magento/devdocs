@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 9. Create a shipment
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 9
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-shipment.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -58,8 +57,6 @@ The `tracks` array optionally allows you to include one or more tracking numbers
       "qty": 1
     }
   ],
-  "notify": true,
-  "appendComment": false,
   "tracks": [
     {
       "track_number": "1Y-9876543210",
@@ -78,4 +75,4 @@ A shipment ID, such as `3`.
 
 ## Verify this step
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Shipments**. The shipment is displayed in the grid. Then click **Sales > Orders**. The status is Complete.
+Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The status is Complete.

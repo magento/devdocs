@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 02_access
 title: Exceptions during installation

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: perf-best-practices
 title: Configuration best practices
 version: 2.2
@@ -14,7 +13,7 @@ Magento 2 provides many settings and tools that you can use to improve response 
 
 ## Cron Jobs
 
-All asynchronous operations in {{site.data.var.ce}} are performed using the Linux `cron` command. See [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html) to configure it correctly.
+All asynchronous operations in {{site.data.var.ce}} are performed using the Linux `cron` command. See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) to configure it correctly.
 
 ## Indexers
 
@@ -54,10 +53,10 @@ To improve the storefront responsiveness of your Magento instance, go to the Adm
 | Javascript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
-When you activate the **Enable Javascript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse it for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will will be loaded on the first call.
+When you activate the **Enable Javascript Bundling** option, you allow Magento to merge all JS resources into one or a set of bundles that are loaded in storefront pages. Bundling JS results in fewer requests to the server, which improves page performance. It also helps the browser cache JS resources on the first call and reuse them for all further browsing. This option also brings lazy evaluation, as all JS is loaded as text. It initiates analysis and evaluation of code only after specific actions are triggered on the page. However, this setting is not recommended for stores where the first page load time is extremely critical, because all JS content will be loaded on the first call.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-* Magento recommendeds that you use third-party tools for minification and bundling (like [r.js](http://requirejs.org/)). Magento built-in mechanisms are not optimal and are shipped as fallback alternatives.
+* Magento recommends that you use third-party tools for minification and bundling (like [r.js](http://requirejs.org/)). Magento built-in mechanisms are not optimal and are shipped as fallback alternatives.
 * Activating the HTTP2 protocol can be a good alternative to using JS bundling. The protocol provides pretty much the same benefits.
 * We do not recommend using deprecated settings like merging JS and CSS files, as they were designed only for synchronously-loaded JS in the HEAD section of the page. Using this technique can cause bundling and requireJS logic to work incorrectly.
 </div>

@@ -1,10 +1,11 @@
 ---
-layout: default
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add custom fields that influence other Checkout fields
-menu_title: Add custom fields that influence other Checkout fields
+subtitle: Customize Checkout
 menu_order: 90
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_custom_checkbox.md
 functional_areas:
@@ -13,17 +14,19 @@ functional_areas:
 
 This topic describes how to add a custom field that influences other fields on the checkout page.
 
-Let's consider a case where you need to add a check box whose state (selected or cleared) changes the state of other fields: when the check box is selected, the Shipping Address fields get prepopulated with a certain address. To implement such a check box, take the following steps:
+Let's consider a case where you need to add a checkbox whose state (selected or cleared) changes the state of other fields. When the checkbox is selected, the Shipping Address fields prepopulate with a certain address.
 
-1. Create a [plugin]({{page.baseurl}}/extension-dev-guide/plugins.html) for the process method of the `<Magento_Checkout_module_dir>/Block/Checkout/LayoutProcessor.php` class.
-2. Declare the plugin in your module's `di.xml`.
-2. Create a JS component for the check box with custom logic.
+To implement such a checkbox, take the following steps:
 
-## Create a plugin for the `LayoutProcessor`'s process method
+1. [Create a plugin for the process method](#create-plugin) of the `<Magento_Checkout_module_dir>/Block/Checkout/LayoutProcessor.php` class.
+2. [Declare the plugin in your module's `di.xml`](#declare-plugin).
+3. [Create a JS component for the checkbox with custom logic](#create-jscomponent).
 
-In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following code sample. This is a plugin that adds a check box, makes the street labels trackable, and assigns dependencies to the check box.
+## Step 1: Create a plugin for the `LayoutProcessor`'s process method {#create-plugin}
 
-{%highlight php inline=true%}
+In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following code sample. This is a plugin that adds a checkbox, makes the street labels trackable, and assigns dependencies to the checkbox.
+
+```php?start_inline=1
 namespace Magento\Checkout\Block\Checkout;
 
 class SomeProcessor
@@ -125,27 +128,32 @@ class SomeProcessor
         return $addressFieldset;
     }
 }
-{%endhighlight%}
+```
 
-## Declare plugin in di.xml
+For more information on creating plugins, see [Plugins (Interceptors)]({{ page.baseurl }}/extension-dev-guide/plugins.html).
 
-In `<your_module_dir>/etc/frontend/di.xml`, declare the plugin you created on the previous step. The plugin name is arbitrary, in our example it's `ProcessAddressConfiguration`:
+## Step 2: Declare plugin in di.xml {#declare-plugin}
 
-{% highlight xml%}
+In `<your_module_dir>/etc/frontend/di.xml`, declare the plugin you created on the previous step. The plugin name is arbitrary.
+
+In the following example, it is `ProcessAddressConfiguration`:
+
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
         <plugin name="ProcessAddressConfiguration" type="Magento\Checkout\Block\Checkout\SomeProcessor"/>
     </type>
 </config>
-{%endhighlight%}
+```
 
 
-## Create a JS component for the check box
+
+## Step 3: Create a JS component for the checkbox {#create-jscomponent}
 
 In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/web/js/single-checkbox.js`. In this file, add the following code. This is  a JS component that extends `Magento_Ui/js/form/element/single-checkbox.js`. The `onCheckedChanged` method calls the methods that update street labels, change the city and country values, and disable these fields:
 
-{% highlight javascript%}
+```js
 define([
     'Magento_Ui/js/form/element/single-checkbox',
     'mage/translate'
@@ -202,4 +210,4 @@ define([
         }
     });
 });
-{%endhighlight%}
+```

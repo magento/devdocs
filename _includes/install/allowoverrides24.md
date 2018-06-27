@@ -28,3 +28,4 @@
 	<ul><li>If you upgraded from an earlier Apache version, first look for <code>&lt;Directory "/var/www/html"></code> or <code>&lt;Directory "/var/www"></code> in <code>000-default.conf</code>.</li>
 	<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</li></ul></span>
 </div>
+</div>

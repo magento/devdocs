@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Development environment recommendations
 version: 2.1

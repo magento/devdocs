@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 subgroup: 05_Command-line installation
 title: Remove sample data modules or update sample data

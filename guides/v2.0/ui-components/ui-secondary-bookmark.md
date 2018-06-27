@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: Bookmark Component

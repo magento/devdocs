@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: 15_UseUpgrade
 title: Upgrade Magento Commerce with sample data to RC1 or RC2

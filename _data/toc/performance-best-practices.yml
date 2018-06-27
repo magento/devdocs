@@ -10,6 +10,9 @@ pages:
     - label: Software recommendations
       url: /performance-best-practices/software.html
 
+    - label: Reference architecture
+      url: /performance-best-practices/reference-architecture.html
+
     - label: Development environment recommendations
       url: /performance-best-practices/development-environment.html
 
@@ -21,3 +24,7 @@ pages:
 
     - label: Advanced setup
       url: /performance-best-practices/advanced-setup.html
+
+    - label: Advanced JavaScript bundling
+      url: /performance-best-practices/advanced-js-bundling.html
+      versions: ["2.3"]

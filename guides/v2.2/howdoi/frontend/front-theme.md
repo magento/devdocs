@@ -1,1 +1,0 @@
-../../../v2.1/howdoi/frontend/front-theme.md

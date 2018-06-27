@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: Multiselect Component
@@ -14,7 +13,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-multi.html
 
 #### UI Multiselect Component
 
-The Multiselect component is used to provide check box interface for a specific listing or a specific data set. The component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} for Column component and allows selecting either a collection of items or all items from the given set.
+The Multiselect component is used to provide checkbox interface for a specific listing or a specific data set. The component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} for Column component and allows selecting either a collection of items or all items from the given set.
 
 The Multiselect component which stores the information about the number of selected items in its template shares this data with the following components:
 
@@ -33,7 +32,7 @@ The Multiselect component is implemented in the class `app\code\Magento\Ui\view\
 
 Templates used by this component are:
 
-* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines every specific field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.
+* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines every specific field in the grid. It provides the Multiselect component with the checkbox interface for selecting item(s) in the grid and performing actions over them.
 * `app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html` - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.
 
 The component provides the following options:

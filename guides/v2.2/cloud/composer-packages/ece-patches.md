@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: vendor/magento/ece-patches
 version: 2.2
@@ -11,7 +10,7 @@ functional_areas:
 ---
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
 </div>
 
 {% include cloud/ece-patches.md %}

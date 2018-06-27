@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup:
 title: Magento Commerce (Cloud) 2.2 Release Notes

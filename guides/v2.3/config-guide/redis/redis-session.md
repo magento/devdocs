@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Use Redis for session storage
 version: 2.3
@@ -12,7 +11,7 @@ functional_areas:
 
 ## Prerequisite {#reds-cache-prereq}
 
-If Redis will be used for default or page caching, you must [install Redis]({{page.baseurl}}/config-guide/redis/config-redis.html#config-redis-install) before continuing. .
+If Redis will be used for default or page caching, you must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing. .
 
 ## Configure Magento to use Redis for session storage {#config-redis-config}
 
@@ -42,7 +41,7 @@ where
 <td>session-save-redis-host</td>
 <td>host</td>
 <td>
-<p>Fully qualified host name, IP address, or absolute path if using UNIX sockets.</p>
+<p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p>
 </td>
 <td>localhost</td>
 </tr>
@@ -270,5 +269,5 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
 
 #### Related topics
 
- * [Create or extend configuration types]({{page.baseurl}}/config-guide/config/config-create.html)
- * [Magento's deployment configuration]({{page.baseurl}}/config-guide/config/config-php.html)
+ * [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+ * [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

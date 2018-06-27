@@ -1,3 +1,6 @@
+<script src="{{ site.baseurl }}/common/js/devdocs.min.js"></script>
+
+{% if site.environment == "public" %}
 
 <script type="text/javascript">
     (function() {
@@ -22,4 +25,4 @@
     })();
 </script>
 
-<script src="{{ site.baseurl }}/common/js/devdocs.min.js"></script>
+{% endif %}

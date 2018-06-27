@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Merging
 version: 2.2

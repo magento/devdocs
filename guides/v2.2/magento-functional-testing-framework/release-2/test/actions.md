@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Test actions
 version: 2.2
@@ -75,7 +74,7 @@ The following example contains four actions:
 4. [Click the Sign In button](#example-step4).
 
     ```xml
-    <amOnPage url="{{StorefrontCustomerSignInPage}}" stepKey="amOnSignInPage"/>
+    <amOnPage url="{{StorefrontCustomerSignInPage.url}}" stepKey="amOnSignInPage"/>
     <fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
     <fillField  userInput="$$customer.password$$" selector="{{StorefrontCustomerSignInFormSection.passwordField}}" stepKey="fillPassword"/>
     <click selector="{{StorefrontCustomerSignInFormSection.signInAccountButton}}" stepKey="clickSignInAccountButton"/>
@@ -166,6 +165,17 @@ The following test actions return a variable:
 *  [executeJS](#executejs)
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
+
+## Actions handling data entities
+
+The following test actions handle data entities using [metadata](../metadata.html):
+
+* [createData](#createData)
+* [deleteData](#deleteData)
+* [updateData](#updateData)
+* [getData](#getData)
+
+Learn more in [Handling a REST API response](../metadata.html#rest-response).
 
 ## Reference
 
@@ -456,7 +466,7 @@ Delete the entity that was previously created using [`createData`](#createdata) 
 
 #### Example of existing data deletion
 
-Delete an entity using [REST API]({{page.baseurl}}/rest/bk-rest.html) request to the corresponding route:
+Delete an entity using [REST API]({{ page.baseurl }}/rest/bk-rest.html) request to the corresponding route:
 
 ```xml
 <grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
@@ -668,8 +678,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector1`|string|optional|A selector for the HTML element to drag.
 `selector2`|string|optional|A selector for the HTML element to drop onto.
-`x`|int|optional| X offset appllied to drag-and-drop destination.
-`y`|int|optional| Y offset appllied to drag-and-drop destination.
+`x`|int|optional| X offset applied to drag-and-drop destination.
+`y`|int|optional| Y offset applied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.

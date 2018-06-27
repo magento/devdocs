@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Getting Started
 title: TLS requirement for repo.magento.com
@@ -19,4 +18,4 @@ functional_areas:
 {% include install/tls-repo.md %}
 
 ### Solution
-See the [Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_tls-repo.html).
+See the [Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html).

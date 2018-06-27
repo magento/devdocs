@@ -191,7 +191,7 @@ class InstallData implements InstallDataInterface
            */
           $data = [
               ['message' => 'Happy New Year'],
-              ['message' => 'Marry Christams']
+              ['message' => 'Merry Christmas']
           ];
           foreach ($data as $bind) {
               $setup->getConnection()

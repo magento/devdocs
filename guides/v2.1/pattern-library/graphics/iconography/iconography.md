@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Graphics
 title: Iconography in Magento Admin Pattern Library

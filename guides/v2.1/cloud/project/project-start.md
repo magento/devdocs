@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 100_project
 title: Project structure
@@ -44,7 +43,7 @@ Not including the Magento application itself, your local project has the followi
 ### .gitignore file {gitignore}
 Depending on your {{site.data.var.ece}} version, you may need different information added to or commented out in your `.gitignore` file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.
 
-We include a base `.gitignore` file with the project repository. For a review of the {{site.data.var.ece}} file, see [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="\_blank"}. You can review the recommended files for your file in the [`.gitignore` reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-gitignore.html).
+We include a base `.gitignore` file with the project repository. For a review of the {{site.data.var.ece}} file, see [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="\_blank"}. You can review the recommended files for your file in the [`.gitignore` reference]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-gitignore.html).
 
 ## Magento application root directory {#rootdir}
 The Magento application root directory is located in different locations depending on the environment.
@@ -89,8 +88,8 @@ You can review these logs via SSH into the environment. Change to the directorie
 Logs from the deploy hook are located on the server in the following locations:
 
 *	Integration: `/var/log/deploy.log`
-*	Staging: `/var/log/platform/<prodject ID>/post_deploy.log`
-*	Production: `/var/log/platform/{1|2|3}.<prodject ID>/post_deploy.log`
+*	Staging: `/var/log/platform/<project ID>/post_deploy.log`
+*	Production: `/var/log/platform/{1|2|3}.<project ID>/post_deploy.log`
 
 The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 

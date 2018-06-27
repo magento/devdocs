@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Create, edit, or unlock a Magento administrator account
 version: 2.1
@@ -14,13 +13,13 @@ functional_areas:
 ## First steps
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see [Common arguments]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites
 Before you can use this command, you must do all of the following:
 
--   [Create the deployment configuration]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-deployment.html)
--   [Enable at minimum the Magento_Authorization and Magento_User modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html)
+-   [Create the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+-   [Enable at minimum the Magento_Authorization and Magento_User modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 -   Create the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -84,7 +83,7 @@ Where the following table defines parameters and values:
         <p>--admin-user</p>
       </td>
       <td>
-        <p>Magento administrator user name.</p>
+        <p>Magento administrator username.</p>
       </td>
       <td>
         <p>Yes</p>
@@ -109,9 +108,9 @@ Where the following table defines parameters and values:
 ## Unlock an administrator account
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
 
-	magento admin:user:unlock {user name}
+	magento admin:user:unlock {username}
 
-You must specify the administrator's user name. Example:
+You must specify the administrator's username. Example:
 
 	magento admin:user:unlock admin
 	The user account "admin" has been unlocked

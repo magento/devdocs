@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 02_Security
 title: X-Frame-Options header

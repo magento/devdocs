@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Payment method configuration
@@ -17,16 +16,16 @@ In the `config.xml` file in your `%Vendor_Module%/etc` directory, configure the 
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|
 | `active`               | is payment active by default                                                                                                                                                                                                   | Boolean                               |
 | `debug`                | enables debug mode by default, for example log for request/response                                                                                                                                                            | Boolean                               |
-| `debugReplaceKeys`     | request/response fields that are masked in log                                                                                                                                                                                 | comma separtated list                 |
-| `can_authorize`        | whether payment method supports {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %}                                                                                                | Boolean                               |
+| `debugReplaceKeys`     | request/response fields that are masked in log                                                                                                                                                                                 | comma separated list                 |
+| `can_authorize`        | whether payment method supports authorization                                                                                                 | Boolean                               |
 | `can_capture`          | whether payment method supports the capture operation                                                                                                                                                                          | Boolean                               |
 | `can_void`             | whether payment method supports the void operation                                                                                                                                                                             | Boolean                               |
-| `can_use_checkout`     | whether payment method is available in {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} | Boolean                               |
-| `can_use_internal`     | whether payment method is available in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation                                                                                  | Boolean                               |
+| `can_use_checkout`     | whether payment method is available in storefront  checkout | Boolean                               |
+| `can_use_internal`     | whether payment method is available in Admin  order creation                                                                                  | Boolean                               |
 | `currency`             | supported currency                                                                                                                                                                                                             |                                       |
 | `is_gateway`           | is an integration with gateway                                                                                                                                                                                                 | Boolean                               |
 | `merchant_gateway_key` | encrypted merchant credential                                                                                                                                                                                                  | string                                |
-| `model`                | [payment method facade]({{page.baseurl}}/payments-integrations/base-integration/facade-configuration.html) used for integration with Sales and Checkout modules                                                                 | string                                |
+| `model`                | [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html) used for integration with Sales and Checkout modules                                                                 | string                                |
 | `order_status`         | default {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %}                                                                                                                         |                                       |
 | `paymentInfoKeys`      | transaction request/response fields displayed on payment information block (can be any fields from payment additional information)                                                                                             | list of comma separated values        |
 | `privateInfoKeys`      | `paymentInfoKeys` fields which should not be displayed in customer payment information block (can be any fields from payment additional information)                                                                           |                                       |
@@ -69,5 +68,5 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
 
 ## What's next
 
-- [Payment  method facade]({{page.baseurl}}/payments-integrations/base-integration/facade-configuration.html)
-- [Payment info rendering in Admin checkout]({{page.baseurl}}/payments-integrations/base-integration/formblocktype.html)
+- [Payment  method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html)
+- [Payment info rendering in Admin checkout]({{ page.baseurl }}/payments-integrations/base-integration/formblocktype.html)

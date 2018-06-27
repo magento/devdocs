@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
@@ -127,7 +126,7 @@ class \VendorName\ModuleName\Setup\InstallData implements \Magento\Framework\Set
 
 ### Data upgrade
 
-Magento executes the data upgrade class when it detects an earlier version in the `schema_version` field for the module in the `setup_module` table.
+Magento executes the data upgrade class when it detects an earlier version in the `data_version` field for the module in the `setup_module` table.
 The purpose of this class is to fix corrupted data or populate a new data field after a schema change.
 
 | **Class name** | `UpgradeData`            |
@@ -142,7 +141,7 @@ class \VendorName\ModuleName\Setup\UpgradeData implements \Magento\Framework\Set
     /**
      * {@inheritdoc}
      */
-    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context);
+    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         // Data upgrade logic
     }
@@ -289,7 +288,7 @@ Avoid this situation by not including dependencies in your uninstall event class
 
 * Magento's [versioning policy]
 
-[versioning policy]: {{page.baseurl}}/architecture/versioning.html
+[versioning policy]: {{ page.baseurl }}/architecture/versioning.html
 [schema upgrade]: #schema-upgrade
 [`InstallSchemaInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php
 [`UpgradeSchemaInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php
@@ -299,5 +298,5 @@ Avoid this situation by not including dependencies in your uninstall event class
 [Customer module's InstallData.php]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Customer/Setup/InstallData.php
 [`ModuleContextInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
 [User module's UpgradeData.php]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/User/Setup/UpgradeData.php
-[Component Manager]: {{page.baseurl}}/comp-mgr/module-man/compman-uninst-final.html
+[Component Manager]: {{ page.baseurl }}/comp-mgr/module-man/compman-uninst-final.html
 [`UninstallInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php

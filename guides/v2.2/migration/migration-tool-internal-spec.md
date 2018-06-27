@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  migration
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification
@@ -21,7 +20,7 @@ Data Migration Tool repository <a href="https://github.com/magento/data-migratio
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
+Same as for <a href="{{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
 
 ## Internal structure {#migrate-is}
 
@@ -32,7 +31,7 @@ The following diagram represents directory structure of Data Migration Tool:
 <pre>
 
 ├── etc                                    --- all configuration files
-│   ├── opensource-to-opensourc            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
+│   ├── opensource-to-opensource            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 │   │   ├── 1.9.1.1
 │   │   │   ├── config.xml.dist
 │   │   │   └── map.xml.dist
@@ -112,7 +111,7 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{page.baseurl}}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see <a href="{{ page.baseurl }}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
 {% highlight xml %}
@@ -204,7 +203,7 @@ To execute a Step class, the class must be defined in config.xml file.
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="mode_name">
         <step title="Step Name">
-            <integrity>Migration\Step\StepName\Inegrity</integrity>  <!-- integrity check stage of the step -->
+            <integrity>Migration\Step\StepName\Integrity</integrity>  <!-- integrity check stage of the step -->
             <data>Migration\Step\StepName\Data</data>
             <volume>Migration\Step\StepName\Volume</volume>
         </step>
@@ -441,7 +440,7 @@ Some of the tables that are processed in the step:
 
 ### Delta migration mode
 
-After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see [Migrate data created by 3rd party extensions]({{page.baseurl}}/migration/migration-migrate-delta.html#migrate-delta-external-extensions).
+After main migration, additional data could have been added to the Magento 1 database (for example, by customers on storefront). To track this data, the Tool sets up the database triggers for tables in the beginning of migration process. For more information, see [Migrate data created by 3rd party extensions]({{ page.baseurl }}/migration/migration-migrate-delta.html#migrate-delta-external-extensions).
 
 ## Data Sources {#data-sources}
 
@@ -449,7 +448,7 @@ To reach to the data sources of Magento 1 and Magento 2 and operate with its dat
 
 Here is a class diagram of these classes:
 
-<p><img src="{{ site.baseurl}}/common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
+<p><img src="{{ site.baseurl }}/common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
 
 ## Logging {#logging}
 

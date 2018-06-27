@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 landing-page: Coding standards

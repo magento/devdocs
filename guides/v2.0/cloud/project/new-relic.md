@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: New Relic APM
 version: 2.0
@@ -11,7 +10,7 @@ functional_areas:
   - Services
 ---
 
-The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{page.baseurl}}/cloud/basic-information/cloud-plans.html).
+The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
 
 ## Key features {#features}
 
@@ -37,7 +36,7 @@ If you are interested in using New Relic on more than three active environments,
 To add a New Relic license key to an environment:
 
 1.  Open a terminal
-1.  [Checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  [Checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  Set the license variable.
 
     ```bash
@@ -50,7 +49,7 @@ The {{site.data.var.ece}} plans support up to 3 instances of your New Relic lice
 To remove a New Relic license key from an environment:
 
 1.  Open a terminal
-1.  [Checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  [Checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  List all variables.
 
     For project variables: `magento-cloud pvget`  
@@ -97,7 +96,7 @@ All collected data details the time spent on an action transmitting data, querie
 
 ## New Relic and Blackfire {#blackfire}
 
-You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{page.baseurl}}/cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
+You can mix the high-level data captured by New Relic APM and the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) to gain insight into your store performance. Each service has strengths and weaknesses that balance incredibly well together.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: Step 3. Use cURL to run the request
 title: Step 3. Use cURL to run the request

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 title: Conventional notations used in this Guide
 menu_title: Conventional notations used in this Guide

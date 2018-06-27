@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 04_CLI
 title: Translation dictionaries and language packages
@@ -25,12 +24,12 @@ This topic discusses how to generate:
 -   Translation dictionaries, which are a convenient way to translate *some* words and phrases, such as those for a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 -   Language packages, which enable you to translate *any or all* words and phrases in the Magento application.
 
-For more information, see <a href="{{page.baseurl}}/frontend-dev-guide/translations/xlate.html">Translation</a>.
+For more information, see <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translation</a>.
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %}. See one of the following sections:
 
--   <a href="{{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
+-   <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
 -   <a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a>
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
@@ -111,7 +110,7 @@ Use the following guidelines when translating words and phrases:
     	"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
 
 ## Create a language package {#config-cli-subcommands-xlate-pack}
-As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. (You can translate a particular component&mdash;like a module or a theme&mdash;using a translation dictionary.) <a href="{{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Learn more about language packages</a>.
+As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. (You can translate a particular component&mdash;like a module or a theme&mdash;using a translation dictionary.) <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Learn more about language packages</a>.
 
 This section discusses how to create a language package, which writes `.csv` files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:
 
@@ -178,7 +177,7 @@ A language package is a directory under `app/i18n/<VendorName>` in the Magento f
 
 -   Required license files
 -   `composer.json`
--   `registration.php` that <a href="{{page.baseurl}}/extension-dev-guide/build/component-registration.html">registers</a> the language package
+-   `registration.php` that <a href="{{ page.baseurl }}/extension-dev-guide/build/component-registration.html">registers</a> the language package
 -   <a href="#config-cli-subcommands-xlate-pack-meta-xml">`language.xml`</a> meta-information file
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -194,8 +193,8 @@ To create these files:
 	For example, Magento language packages are located in `app/i18n/magento`
 
 2.  Add any license files you require.
-3.  Add <a href="{{page.baseurl}}/extension-dev-guide/build/composer-integration.html">`composer.json`</a> that specifies dependencies for your language package.
-4.  Register the language package with <a href="{{page.baseurl}}/extension-dev-guide/build/component-registration.html">`registration.php`</a>
+3.  Add <a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">`composer.json`</a> that specifies dependencies for your language package.
+4.  Register the language package with <a href="{{ page.baseurl }}/extension-dev-guide/build/component-registration.html">`registration.php`</a>
 5.  Add `language.xml` meta-information file as discussed in the next section.
 
 #### Language package language.xml {#config-cli-subcommands-xlate-pack-meta-xml}
@@ -261,7 +260,7 @@ Specifying all inheritances between the language packages might result in creati
 ### Configure multiple packages for a language {#m2devgde-xlate-severalpacks}
 To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single package from all packages that are available for a language.
 
-To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package's `language.xml` meta-information file as discussed in the the next section.
+To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package's `language.xml` meta-information file as discussed in the next section.
 
 ## Examples of using translation commands
 The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:
@@ -364,15 +363,15 @@ Similar to the preceding example, generate a .csv file, but instead of specifyin
 
 #### Related topics
 
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: UI components XML configuration structure
@@ -11,7 +10,7 @@ github_link: ui_comp_guide/concepts/ui_comp_xmlconfig_structure.md
 
 ## Overview
 
-This topic describes the basic elements used in XML configuration files for declaring  UI components. These elements co structure is strict and third party developers must follow it when customizing existing UI components' configuration or declaring new ones.  
+This topic describes the basic elements used in XML configuration files for declaring  UI components. These elements core structure is strict and third party developers must follow it when customizing existing UI component configuration or declaring new ones.  
 
 ## Basic configuration elements
 <table>
@@ -51,7 +50,7 @@ This topic describes the basic elements used in XML configuration files for decl
         </li>
       </ul>For detailed descriptions of the general attributes see
       <a href=
-      "{{page.baseurl}}/ui_comp_guide/components/basic-attributes.html">
+      "{{ page.baseurl }}/ui_comp_guide/components/basic-attributes.html">
       Basic attributes</a>.
     </td>
     <td>
@@ -69,7 +68,7 @@ This topic describes the basic elements used in XML configuration files for decl
     </td>
     <td>
       Mandatory root element, the name of the <a href=
-      "{{page.baseurl}}/ui_comp_guide/bk-ui_comps.html#general-structure">
+      "{{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure">
       basic UI component</a>: <code>&lt;form&gt;</code>,
       <code>&lt;listing&gt;</code> or custom basic component.
     </td>
@@ -106,7 +105,7 @@ This topic describes the basic elements used in XML configuration files for decl
     <td>
       Introduces the configuration block for UiComponent according
       to the <a href=
-      "{{page.baseurl}}/ui_comp_guide/best-practices/semantic_config.html">
+      "{{ page.baseurl }}/ui_comp_guide/best-practices/semantic_config.html">
       new structure</a>. Use for configuring all options, except
       those that are not described in XSD.
     </td>
@@ -142,7 +141,7 @@ This topic describes the basic elements used in XML configuration files for decl
         </li>
       </ul>For detailed descriptions of the general attributes see
       <a href=
-      "{{page.baseurl}}/ui_comp_guide/components/basic-attributes.html">
+      "{{ page.baseurl }}/ui_comp_guide/components/basic-attributes.html">
       Basic attributes</a>
     </td>
     <td>

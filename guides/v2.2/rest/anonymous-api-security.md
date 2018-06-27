@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: Restricting access to anonymous web APIs
@@ -18,7 +17,7 @@ For this reason, by default, Magento 2 now prevents anonymous users from accessi
 
 The following table lists the APIs that are no longer available to an anonymous user by default:
 
-| Product | Module | {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} | Action |
+| Product | Module | API | Action |
 | --- | --- | --- | --- |
 | Open Source | Catalog | /V1/products | GET |
 | Open Source | Catalog | /V1/products/:sku | GET |

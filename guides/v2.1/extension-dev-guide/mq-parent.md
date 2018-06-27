@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Message queues (Magento Commerce only)

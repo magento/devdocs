@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 version: 2.2
 github_link: mrg/ce/QuoteAnalytics.md

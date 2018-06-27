@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Set up notifications
 version: 2.1
@@ -19,18 +18,16 @@ Before you configure notifications, consider the following:
 
 -   What kind of notifications do you want to receive (Slack messages, email, both)?
 -   How much detail do you want to see in the logs (see [Log levels](#log-levels))?
--   Where do you want to set up notifications (integration, staging, production)?
+-   Where do you want to set up notifications (Integration, Staging, Production)?
 
-For example, during initial development you may prefer email notifications that show detailed logs about your Integration environment to help you debug issues before deploying to the Staging environment. However, when you are ready to deploy to the Staging or Production environment, you may prefer a Slack message that contains less detailed information.
+For example, during initial development you may prefer email notifications that show detailed logs about your Integration environment to help you debug issues before deploying to the Staging environment. When you are ready to deploy to the Staging or Production environment, you may prefer a Slack message that contains less detailed information.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment.
-</div>
+{% include note.html type="info" content="The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment." %}
 
 ## Configure notifications
 To configure notifications:
 
-1.  Open a terminal and [checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  Open a terminal and [checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  Locate the `.magento.env.yaml.sample` file in your project root and rename it `.magento.env.yaml`. The code in this file is commented out by default.
 1.  Remove the code comments and add your messaging system settings, including preferred notification [log level](#log-levels).
 

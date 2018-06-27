@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Continuous integration
@@ -15,7 +14,7 @@ functional_areas:
 
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-Both Starter and Pro plan environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+Both Starter and Pro plan environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments
@@ -53,9 +52,9 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 * Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging
 
 #### Related topics
-* [Starter Architecture]({{page.baseurl}}/cloud/basic-information/starter-architecture.html)
-*	[Starter Develop and Deploy Workflow]({{page.baseurl}}/cloud/basic-information/starter-develop-deploy-workflow.html)
-* [Pro Architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html)
-*	[Pro Develop and Deploy Workflow]({{page.baseurl}}/cloud/architecture/pro-develop-deploy-workflow.html)
-* [Deploy your store]({{page.baseurl}}/cloud/live/stage-prod-live.html)
-* [Go live and launch]({{page.baseurl}}/cloud/live/live.html)
+* [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
+*	[Starter Develop and Deploy Workflow]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html)
+* [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
+*	[Pro Develop and Deploy Workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
+* [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html)
+* [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)

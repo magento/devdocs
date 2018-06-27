@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Troubleshooting 503 errors
@@ -31,6 +30,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 	*	CentOS 6: `/etc/sysconfig/varnish`
 	*	CentOS 7: `/etc/varnish/varnish.params`
+	*	Debian: `/etc/default/varnish`
 	*	Ubuntu: `/etc/default/varnish`
 
 2.	Search for the `http_resp_hdr_len` parameter.
@@ -71,6 +71,6 @@ This situation could happen because the default health check has a `timeout` val
 
 Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again).  However, you can use the following command to enable cache:
 
-`bin/magento cache:enable`
+    bin/magento cache:enable
 
-For more information about using the command line, see <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.
+For more information about using the command line, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.
