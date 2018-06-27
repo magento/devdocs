@@ -1141,7 +1141,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>The topic describes how stylesheets are preprocessed and compiled to   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  in the Magento application. It provides the theoretical background a   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
- developer needs to debug stylesheets effectively.</p>
+ developer needs to effectively debug stylesheets.</p>
 
 <h2 id="css_preprocess_terms">Terms used</h2>
 
@@ -1171,7 +1171,7 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0
     &lt;/head&gt;
 </pre>
 
-The root source files for the Blank theme:
+The root source files for the Blank theme are:
 
 <ul>
 <li><code><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less</a></code></li>
@@ -1185,94 +1185,81 @@ The root source files for the Blank theme:
 
 <h2 id="less_modes">LESS compilation modes</h2>
 
-<p>In the Magento application, the following modes of compiling <code>.less</code> files to CSS are implemented:</p>
+<p>In the Magento application, the following modes of compiling <code class="highlighter-rouge">.less</code> files to CSS are implemented:</p>
 
 <ol>
-<li>Server-side LESS compilation.<br />
-This is the default compilation mode, and is the only option in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode" target="_blank"> production application mode</a>.
-In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php" target="_blank">LESS PHP library</a>.
-</li>
-
-<li>Client-side LESS compilation. <br />
-When your application is not in the production mode, you can set Magento to compile <code>.less</code> files in a browser, using the <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">native <code>less.js</code> library</a>
-</li>
+  <li><strong>Server-side LESS compilation</strong> - This is the default compilation mode, and is the only option in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#production-mode">production application mode</a>. In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php">LESS PHP library</a>.</li>
+  <li><strong>Client-side LESS compilation</strong> - When your application is not in production mode, you can set Magento to compile <code class="highlighter-rouge">.less</code> files in a browser, using the <a href="http://lesscss.org/usage/#using-less-in-the-browser">native <code class="highlighter-rouge">less.js</code> library</a></li>
 </ol>
 
-<p>To set the compilation mode, do the following:</p>
-<ol>
-<li>In the Magento Admin, navigate to <b>Stores</b> &gt; <b>Configuration</b> &gt; ADVANCED &gt; <b>Developer</b>.</li>
-<li>In the <b>Store View</b> drop-down field, select <b>Default Config</b>.</li>
-<li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
-<li>To save the settings, click <b>Save Config</b>.</li>
+<p>To set the compilation mode:</p>
 
-<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
- scope first, and then to the   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
-. Change the option to match the default config if it is different.</li>
+<ol>
+  <li>In the Magento Admin, navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Developer</strong>.</li>
+  <li>In the <strong>Store View</strong> dropdown field, select <strong>Default Config</strong>.</li>
+  <li>Under <strong>Front-end development workflow</strong>, in the <strong>Workflow type</strong> field, select the compilation mode.</li>
+  <li>Click <strong>Save Config</strong>.</li>
+  <li>Make sure that the same compilation mode is set for each configuration scope. Switch the <strong>Store View</strong> dropdown field to the   <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>
+ scope, and then to the   <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>
+, to check the <strong>Front-end development workflow</strong> option. Change the option to match the default config if it is different.</li>
 </ol>
 
 <h3 id="server-side">Server-side LESS compilation</h3>
 
-<p>The following paragraph describes how the LESS preprocessor works in server-side compilation mode.
-For each CSS file included in the layouts, LESS preprocessor does the following:</p>
+<p>This section describes how the LESS preprocessor works in server-side compilation mode.
+For each CSS file included in the layouts, LESS preprocessor:</p>
 
 <ol>
-<li>Checks if the requested <code>.css</code> file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
-<li>Changes the   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
- of the requested file to <code>.less</code> and tries to find the file using the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
-<li>Reads <code>.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code>@magento_import</code></a> and default LESS <code>@import</code> directives.</li>
-
-<li>Resolves all paths in <code>.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to <code>var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
-
-<li id="compile_last">All source files are passed to the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- LESS compiler. The resulting compiled <code>.css</code> files are published to <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code>.</li>
-
+  <li>Checks if the requested <code class="highlighter-rouge">.css</code> file is found. If it is found, the pre-processor stops its execution. Otherwise, it proceeds to the next step.</li>
+  <li>Changes the   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
+ of the requested file to <code class="highlighter-rouge">.less</code> and tries to find the file using the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">Magento fallback mechanism</a>. If the <code class="highlighter-rouge">.less</code> file is not found, the LESS pre-processor stops its execution. Otherwise, it proceeds to the next step.</li>
+  <li>Reads <code class="highlighter-rouge">.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code class="highlighter-rouge">@magento_import</code></a> and default LESS <code class="highlighter-rouge">@import</code> directives.</li>
+  <li>Resolves all paths in <code class="highlighter-rouge">.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS pre-processor are copied to <code class="highlighter-rouge">var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
+  <li>All source files are passed to the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ LESS compiler. The resulting compiled <code class="highlighter-rouge">.css</code> files are published to <code class="highlighter-rouge">pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code>.</li>
 </ol>
 
 <h4 id="css_debug_server">Styles debugging in server-side compilation mode</h4>
 
-<p>In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.</p>
+<p>In server-side LESS compilation mode, to have your changes applied, clear <code class="highlighter-rouge">pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories.</p>
+<p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories.</p>
 </div>
-
 <p>Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.</p>
 
-<p>See the <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Compile LESS with Grunt</a> topic for details on how to install, configure and use Grunt.</p>
+<p>See the <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">Compile LESS with Grunt</a> topic for details on how to install, configure, and use Grunt.</p>
 
 <h3 id="client-side">Client-side LESS compilation</h3>
 
-<p>The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:</p>
+<p>The client-side compilation flow is similar to the server-side flow. The difference is in the set of files, published to <code class="highlighter-rouge">pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, these files are published to the <code class="highlighter-rouge">pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:</p>
 
 <ul>
-<li>root source (.less) files with resolved <code>@magento_import</code> directive </li>
-<li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento_import</code></li>
-<li>symlinks to all other <code>.less</code> files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
+  <li>Root source (.less) files with resolved <code class="highlighter-rouge">@magento_import</code> directive</li>
+  <li><a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">Symlinks</a> to the root source file that do not contain <code class="highlighter-rouge">@magento_import</code></li>
+  <li>symlinks to all other <code class="highlighter-rouge">.less</code> files imported recursively by the <code class="highlighter-rouge">@magento_import</code> and <code class="highlighter-rouge">@import</code> directives</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import">The @import directive usage</a> for more details.</p>
-</div>
+<p>Symlink is not created, and a copy of the processed file is published to <code class="highlighter-rouge">pub/static</code> instead, if the source file differs from the processed one. One of the reasons for this difference might be the usage of the <code class="highlighter-rouge">@import</code> directive without the file extension in the source file. See <a href="#fedg_css-import">The @import directive usage</a> for more details.</p>
 
 <h4 id="css_debug_client">Styles debugging in client-side compilation mode</h4>
 
 <p>Client-side LESS compilation is implemented using the native <code class="highlighter-rouge">less.js</code>   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
-. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed.</p>
+. The default configuration is set in <code class="highlighter-rouge">lib/web/less/config.less.js</code>. You can change it as needed.</p>
 
-<p>You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.</p>
+<p>Find detailed information about the configuration and other options of the <code class="highlighter-rouge">less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.</p>
 
 <p>In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.</p>
 
-<p><span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">publication</a> processes anew.</p>
+<p>There are certain types of changes, that require you to clear the <code class="highlighter-rouge">pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">publication</a> processes anew.</p>
 
-<p>This is required in the following cases:</p>
+<p>This is required if:</p>
 <ul>
-<li>If you change the <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento_import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
-<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento_import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
-
+  <li>You change the <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms">root source files</a> that contain the <code class="highlighter-rouge">@magento_import</code> directive or the <code class="highlighter-rouge">@import</code> directive where the imported file is specified without extension.</li>
+  <li>You rename, remove, or add a <code class="highlighter-rouge">.less</code> file imported with a <code class="highlighter-rouge">@magento_import</code> or <code class="highlighter-rouge">@import</code> directive but you did not correct the directives accordingly.</li>
 </ul>
 
-<p>To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.</p>
+<p>To clear the <code class="highlighter-rouge">pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.</p>
 
 <h2 id="fedg_css-import">The <code class="highlighter-rouge">@import</code> directive rules of usage</h2>
 <p>You can import local and remote <code class="highlighter-rouge">.less</code> and <code class="highlighter-rouge">.css</code> files in your <code class="highlighter-rouge">.less</code> Magento stylesheets by using the standard LESS <a href="http://lesscss.org/features/#import-directives-feature"><code class="highlighter-rouge">@import</code> directive</a>.
@@ -1281,32 +1268,31 @@ According to the <code class="highlighter-rouge">@import</code> syntax, specifyi
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="s2">'source/lib/_lib'</span><span class="p">;</span>
 <span class="k">@import</span> <span class="p">(</span><span class="n">css</span><span class="p">)</span> <span class="s2">'styles'</span><span class="p">;</span></code></pre></figure>
 
-<p>But in process of resolving the file path, Magento adds the <code class="highlighter-rouge">.less</code> extension for the imported files in all <code class="highlighter-rouge">@import</code> entrees. So in the processed files, the statements from the previous example will look like following:</p>
+<p>In process of resolving the file path, Magento adds the <code class="highlighter-rouge">.less</code> extension for the imported files in all <code class="highlighter-rouge">@import</code> entrees. So in the processed files, the statements from the previous example will look like:</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="s2">'source/lib/_lib.less'</span><span class="p">;</span>
 <span class="k">@import</span> <span class="p">(</span><span class="n">css</span><span class="p">)</span> <span class="s2">'styles.less'</span><span class="p">;</span></code></pre></figure>
 
-<p>As a result, the processed files are different from the source files. So in the <a href="#client-side">client-side compilation mode</a> or when using <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">grunt commands</a>, Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the <code class="highlighter-rouge">pub/static</code> directory. In case of importing CSS resources, this also results in not finding and not importing the required files.</p>
+<p>As a result, the processed files are different from the source files. So in the <a href="#client-side">client-side compilation mode</a>, or when using <a href="/guides/v2.1/frontend-dev-guide/css-topics/css_debug.html">grunt commands</a>, Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the <code class="highlighter-rouge">pub/static</code> directory. In the case of importing CSS resources, this also results in not finding and not importing the required files.</p>
 
-<h3 id="importing-remote-css-files">Importing remote CSS files</h3>
+<h3 id="import-remote-css-files">Import remote CSS files</h3>
 
-<p>If you need to import a remote CSS file in your <code class="highlighter-rouge">.less</code> source, use <code class="highlighter-rouge">url()</code> notation. For example, to import a Google font, use the following notation:</p>
+<p>If you need to import a remote CSS file in your <code class="highlighter-rouge">.less</code> source, use <code class="highlighter-rouge">url()</code> notation. For example, to import a Google font:</p>
 
 <figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="sx">url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css')</span><span class="p">;</span></code></pre></figure>
 
-<p>This way Magento will skip the <code class="highlighter-rouge">@import</code> directive while resolving paths to the local resources.</p>
+<p>In this instance, Magento will skip the <code class="highlighter-rouge">@import</code> directive while resolving paths to the local resources.</p>
 
 <h2 id="fedg_css-magento-import">The <code class="highlighter-rouge">@magento_import</code> directive</h2>
 
-<p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
-The standard <code>@import</code> directive includes a single file, which is found according to the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
+<p><code class="highlighter-rouge">@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, such as different modules. The standard <code class="highlighter-rouge">@import</code> directive includes a single file, which is found according to the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
 
-<p><code>@magento_import</code> can be used in the root source files of a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+<p><code class="highlighter-rouge">@magento_import</code>can be used in the root source files of a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  only.</p>
 
 <h3 id="magento-import-usage"><code class="highlighter-rouge">@magento_import</code> rules of usage</h3>
 
-<p>To include a <code>.less</code> file using the <code>@magento_import</code> directive:</p>
+<p>To include a <code class="highlighter-rouge">.less</code> file using the <code class="highlighter-rouge">@magento_import</code> directive:</p>
 
 <ol>
 <li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
@@ -1333,18 +1319,17 @@ The standard <code>@import</code> directive includes a single file, which is fou
 
 The best practice is to specify the file extension in the path, though technically you can omit this.
 </li>
-
 </ol>
 
 <h3 id="magento_import_example"><code class="highlighter-rouge">@magento_import</code> processing</h3>
 
-<p>In the scope of static resources preprocessing, the built-in LESS preprocessor does the following:</p>
+<p>In the scope of static resources preprocessing, the built-in LESS preprocessor:</p>
 
 <ol>
 <li>Searches for all <code>@magento_import</code> directives.</li>
 <li>Replaces the original <code>@magento_import</code> directives with the standard <code>@import</code> directives. The latter specify the paths to the particular files that correspond to the pattern specified in <code>@magento_import</code>.</li>
 </ol>
-<p>Example of how <code>@magento_import</code> is used and processed in <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:</p>
+<p><code>@magento_import</code> is used and processed in <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code>:</p>
 
 <table>
    <tbody>
