@@ -78,7 +78,7 @@ Example SSH command:
 	ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 
 ### SSH commands for Pro Staging and Production {#pro}
-You can't use the Magento Cloud CLI to SSH into Pro plan Staging and Production systems which aren't added into the Project Web Interface. You can SSH into those environments and use Linux/Unix commands for managing the system.
+You can not use the Magento Cloud CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.
 
 With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.
 
@@ -87,7 +87,7 @@ For the URLs, see the following:
 *	Staging: `ssh <project ID>_stg@<project ID>.ent.magento.cloud`
 *	Production: `ssh <project ID>@<project ID>.ent.magento.cloud`
 
-For example, to login on the Staging environment use the following command: `ssh abcdefghij_stg@abcdefghij.ent.magento.cloud`. For production: `ssh abcdefghij@abcdefghij.ent.magento.cloud`
+For example, to log in to the Staging environment, use the following command: `ssh abcdefghij_stg@abcdefghij.ent.magento.cloud`. For production: `ssh abcdefghij@abcdefghij.ent.magento.cloud`
 
 ## SSH tunneling {#env-start-tunn}
 
