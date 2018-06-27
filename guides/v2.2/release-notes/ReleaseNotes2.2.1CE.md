@@ -19,7 +19,7 @@ We are pleased to present Magento Open Source 2.2.1. This release includes numer
 
 Look for the following highlights in this release:
 
-* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
+* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
 
 * Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
@@ -32,7 +32,7 @@ Look for the following highlights in this release:
 
 
 
-Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
 
 ## Security enhancements

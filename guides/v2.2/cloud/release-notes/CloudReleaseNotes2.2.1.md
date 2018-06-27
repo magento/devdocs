@@ -20,18 +20,18 @@ We strongly recommend upgrading to Fastly v1.2.33 module for all Magento Commerc
 
 ## Highlights {#highlights}
 
-{{site.data.var.ece}} 2.2.1 includes multiple new features, enhancements and fixes. For full {{site.data.var.ece}} highlights and updates, see [Magento Commerce 2.2.1 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html)
+{{site.data.var.ece}} 2.2.1 includes multiple new features, enhancements and fixes. For full {{site.data.var.ece}} highlights and updates, see [Magento Commerce 2.2.1 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html)
 
 Look for the following {{site.data.var.ece}} highlights in this release:
 
-* **30-day free trials available for Starter and Pro projects**. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html).
+* **30-day free trials available for Starter and Pro projects**. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html).
 
-* **Staging and Production environments in the UI for Pro projects**. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI](http://devdocs.magento.com/guides/v2.2/cloud/trouble/pro-env-management.html).
+* **Staging and Production environments in the UI for Pro projects**. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{ site.baseurl }}/guides/v2.2/cloud/trouble/pro-env-management.html).
 
-* **Onboarding Portal for new accounts helps merchants new to Magento Commerce (Cloud) get started with their project**. Quickly ramp up and get started with your project with our [Onboarding Portal](http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-portal.html): assign a Technical Admin, preview your store, plan your local development environment, walk-through UAT tests, and prep for launching.
+* **Onboarding Portal for new accounts helps merchants new to Magento Commerce (Cloud) get started with their project**. Quickly ramp up and get started with your project with our [Onboarding Portal]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-portal.html): assign a Technical Admin, preview your store, plan your local development environment, walk-through UAT tests, and prep for launching.
 
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
 
 ## Security enhancements {#security}
@@ -42,18 +42,18 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 [Contact us](https://magento.com/company/contact-us) for more information.
 
 ### New Updates
-<!--- MAGECLOUD-1057 -->* Magento Commerce (Cloud) supports scopes and [static content deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the `STATIC_CONTENT_THREADS` value with 1, which can slow deployment, especially in production environments.   
+<!--- MAGECLOUD-1057 -->* Magento Commerce (Cloud) supports scopes and [static content deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the `STATIC_CONTENT_THREADS` value with 1, which can slow deployment, especially in production environments.   
 
 
-* When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks](http://devdocs.magento.com/guides/v2.2/cloud/onboarding/onboarding-tasks.html) and [What is autoprovisioning](http://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning).
+* When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html) and [What is autoprovisioning]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning).
 
 <!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `app/var/log/cloud.log` file inside the Magento root application directory.
 
 ## Known issues {#known}
-For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html).
+For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html).
 
 ## Fixed issues {#fixed}
-<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs](http://devdocs.magento.com/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools](http://devdocs.magento.com/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get this update.
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get this update.
 
 <!--- MAGECLOUD-1121 -->* We resolved an issue with the ElasticSearch option being added and saved to `app/etc/env.php`. When ElasticSearch is configured and activated in your environment, the setting properly saves in the `env.php` file. For example:  
 
@@ -77,19 +77,19 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 //...
 </code>
 
-* The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable  for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Add admin variables for Admin access](http://devdocs.magento.com/guides/v2.2/cloud/before/before-project-owner.html#variables).
+* The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable  for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html#variables).
 
 
 
 
 ## Community contributions {#community}
 
-We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the [Magento Commerce 2.2.1 Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html) for more information.
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. Check out the [Magento Commerce 2.2.1 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.1EE.html) for more information.
 
 
 
 ## System requirements {#requirements}
-For {{site.data.var.ece}} requirements, see [Technologies and Requirements](http://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html).
+For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
 The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
