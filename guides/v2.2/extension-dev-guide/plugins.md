@@ -33,8 +33,6 @@ Plugins can not be used on following:
 
 The <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} declares a plugin for a class object:
 
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
-
 You must specify these elements:
 
 * `type name`. A class or interface which the plugin observes.
