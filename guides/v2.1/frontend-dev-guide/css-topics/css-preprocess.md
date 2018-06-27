@@ -67,7 +67,7 @@ To set the compilation mode:
 2.  In the **Store View** dropdown field, select **Default Config**.
 3.  Under **Front-end development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  Click **Save Config**.
-5.  Make sure that the same compilation mode is set for each configuration scope. Switch the **Store View** dropdown field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %, to check the **Front-end development workflow** option. Change the option to match the default config if it is different.
+5.  Make sure that the same compilation mode is set for each configuration scope. Switch the **Store View** dropdown field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}, to check the **Front-end development workflow** option. Change the option to match the default config if it is different.
 
 ### Server-side LESS compilation {#server-side}
 
