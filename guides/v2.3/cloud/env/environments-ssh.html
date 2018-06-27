@@ -2271,24 +2271,19 @@ git config --global user.email &lt;your e-mail address&gt;
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh abcdefg123abc-smith-a12b34c--mymagento@ssh.us-2.magento.cloud
 </code></pre></div></div>
 
-<h3 id="pro">Git SSH commands for Pro Staging and Production</h3>
-<p>You can’t use the Magento Cloud CLI to SSH into Pro plan Staging and Production systems. You can SSH into those environments and use Git CLI commands for managing your branches and Linux/Unix commands for managing the system.</p>
+<h3 id="pro">SSH commands for Pro Staging and Production</h3>
+<p>You can not use the Magento Cloud CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.</p>
 
 <p>With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.</p>
 
 <p>For the URLs, see the following:</p>
 
 <ul>
-  <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-  <li>
-    <p>Production:</p>
-
-    <ul>
-      <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-      <li>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-    </ul>
-  </li>
+  <li>Staging: <code class="highlighter-rouge">ssh &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>Production: <code class="highlighter-rouge">ssh &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
 </ul>
+
+<p>For example, to log in to the Staging environment, use the following command: <code class="highlighter-rouge">ssh abcdefghij_stg@abcdefghij.ent.magento.cloud</code>. For production: <code class="highlighter-rouge">ssh abcdefghij@abcdefghij.ent.magento.cloud</code></p>
 
 <h2 id="env-start-tunn">SSH tunneling</h2>
 
