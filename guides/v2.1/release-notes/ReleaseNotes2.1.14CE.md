@@ -403,7 +403,7 @@ The following table highlights contributions made by Partners. This table lists 
   <tr>
     <td>Divante</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13980">13980</a></td>
-    <td>a target="_blank" href="https://github.com/magento/magento2/issues/13315">13315</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/13315">13315</a></td>
   </tr>
 
   <tr>
