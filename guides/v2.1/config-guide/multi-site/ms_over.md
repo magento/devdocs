@@ -27,11 +27,11 @@ One instance of the Magento software can enable you to start multiple websites o
 
 This flexible solution enables one Magento codebase and {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} to administer and display different stores.
 
-You configure the websites, stores, and store views in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in virtual hosts to start the Magento application using these websites or store views. 
+You configure the websites, stores, and store views in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in virtual hosts to start the Magento application using these websites or store views. 
 
 A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.
 
-<h2 id="magerun-conf">Configure Magento websites and stores</h2>
+## Configure Magento websites and stores {#magerun-conf}
 This section discusses the tasks required to use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables. 
 
 We use the following terms:
@@ -44,9 +44,9 @@ We use the following terms:
 
   Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures and Catalog price.
 
-  Catalog Qty(Inventory) can't be manage at store level. Inventory will be manage at Website or Global level only.
+  Catalog Qty (inventory) can't be managed at the store level. Inventory is managed at Website or Global level only.
 
-  Store views change the way pages are presented, and are typically used to display a store with different layouts or languages.You can manage different currencies per store view.
+  Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. You can manage different currencies per store view.
 
 Each website and each {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` as follows:
 
