@@ -381,6 +381,39 @@ The following table identifies contributions from our community members. This ta
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).
 
+<table>
+  <tr>
+    <th>Contributing Partner</th>
+    <th>Pull Request</th>
+    <th>Related GitHub issue</th>
+  </tr>
+
+<tr>
+    <td>Atwix</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14332">14332</a></td>
+    <td>N/A></td>
+  </tr>
+
+<tr>
+    <td>Convert</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a></td>
+    <td>N/A></td>
+  </tr>
+
+  <tr>
+    <td>Divante</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13980">13980</a></td>
+    <td>a target="_blank" href="https://github.com/magento/magento2/issues/13315">13315</a></td>
+  </tr>
+
+  <tr>
+    <td>H&O</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a></td>
+    <td>N/A></td>
+  </tr>
+
+</table>
+
 
 
 ## System requirements
