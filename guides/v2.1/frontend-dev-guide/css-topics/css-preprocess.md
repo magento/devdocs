@@ -43,9 +43,11 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0
 
 The root source files for the Blank theme:
 
-*   `[<Magento_Blank_theme_dir>/web/css/styles-m.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less)`
-*   `[<Magento_Blank_theme_dir>/web/css/styles-l.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less)`
-*   `[<Magento_Blank_theme_dir>/web/css/print.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less)`
+<ul>
+<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less</a></code></li>
+<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</a></code></li>
+<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/print.less</a></code></li>
+</ul>
 </p>
 </td>
 </tr>
@@ -63,7 +65,7 @@ In the Magento application, the following modes of compiling <code>.less</code> 
 
 To set the compilation mode, do the following:
 
-1.  In the Magento Admin, navigate to **Stores** \> **Configuration** \> **ADVANCED** > **Developer**.
+1.  In the Magento Admin, navigate to **Stores** \> **Configuration** \> **Advanced** > **Developer**.
 2.  In the **Store View** drop-down field, select **Default Config**.
 3.  Under **Front-end development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  To save the settings, click **Save Config**.
@@ -84,8 +86,9 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
 
-You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
-
+<div class="bs-callout bs-callout-info" id="info">
+<p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories.</p>
+</div>
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
 See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html) topic for details on how to install, configure and use Grunt.
