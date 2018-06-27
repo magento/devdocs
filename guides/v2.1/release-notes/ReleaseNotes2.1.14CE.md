@@ -391,13 +391,13 @@ The following table highlights contributions made by Partners. This table lists 
 <tr>
     <td>Atwix</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14332">14332</a></td>
-    <td>N/A></td>
+    <td>N/A</td>
   </tr>
 
 <tr>
     <td>Convert</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a></td>
-    <td>N/A></td>
+    <td>N/A</td>
   </tr>
 
   <tr>
@@ -409,7 +409,7 @@ The following table highlights contributions made by Partners. This table lists 
   <tr>
     <td>H&O</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a></td>
-    <td>N/A></td>
+    <td>N/A</td>
   </tr>
 
 </table>
