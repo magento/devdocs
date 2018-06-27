@@ -79,7 +79,7 @@ In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvide
 
 ## JavaScript component for vault 
 
-In you custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In your custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
 The component should extend [vault.js]({{ site.mage2100url }}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
