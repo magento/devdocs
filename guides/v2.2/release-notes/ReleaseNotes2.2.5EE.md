@@ -42,7 +42,7 @@ This release includes significant performance improvements to the core Magento c
 
 * <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly increase  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
 
-* <!--- MAGETWO-74154 --> Refactoring of the catalog fulltext indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options). 
+* <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options). 
 
 
 * <!--- MAGETWO-88775 -->  Improving the behavior of swatch product attributes has improved search result page performance up to 31% for catalogs with many configurable product options (for example, 5,000 configurable products and 500 options). 
@@ -52,7 +52,7 @@ This release includes significant performance improvements to the core Magento c
 ### Community contribution highlights
 Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:
 
-* <!--- MAGETWO-87115 --> Users can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
+* <!--- MAGETWO-87115 --> Customers can now create an account from the Order Confirmation page. Previously, a customer could not populate the required fields to create an account from this page, and Magento displayed an error. 
 
 * <!--- MAGETWO-73479 --> Magento now correctly applies coupon codes that exclude bundle products. Previously, Magento applied these coupons but did not exclude bundle products as expected. 
 
@@ -105,7 +105,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-73008 -->* Tier pricing for a single product unit now works as expected. If a tier price is set for one product unit, and this price is lower than the product price or special price, then the product price index table is populated with the tier price.
 
-<!--- MAGETWO-71936 -->* Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YEAR. Previously, when you tried to save a product in a locale where dates are formatted this way, Magento did not save the product, and displayed this error: `Invalid input datetime format`. [GitHub-10485](https://github.com/magento/magento2/issues/10485)
+<!--- MAGETWO-71936 -->* Magento now successfully saves products when using a locale that formats dates in this way: DD/MM/YYYY. Previously, when you tried to save a product in a locale where dates are formatted this way, Magento did not save the product, and displayed this error: `Invalid input datetime format`. [GitHub-10485](https://github.com/magento/magento2/issues/10485)
 
 <!--- MAGETWO-54740 -->* When you import new products using CSV, Magento no longer lists as in stock any products whose CSV values indicate that they should be represented as out-of-stock. 
 
@@ -144,7 +144,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Import/export
-<!--- MAGETWO-88265 -->* The data check on imported customer information now completes as expected. Previously, when you clicked Check Data on a large CSV file created by **System > Data Transfer > Import**, the request failed, and Magento displayed the timeout spinner. 
+<!--- MAGETWO-88265 -->* The data check on imported customer information now completes as expected. Previously, when you clicked **Check Data** on a large CSV file created by **System** > **Data Transfer** > **Import**, the request failed, and Magento displayed the timeout spinner. 
 
 <!--- MAGETWO- 84942-->* If you remove a product's custom options from the CSV file created during product import,  Magento no longer displays the custom options on the storefront. 
 
@@ -1082,11 +1082,28 @@ The following table highlights contributions made by Partners. This table lists 
     <th>Related GitHub issue</th>
   </tr>
 
+<tr>
+    <td>Balance Internet</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14128">14128</a></td>
+    <td>14109</td>
+  </tr>
+
+<tr>
+    <td>Comwrap</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14559">14559</a></td>
+    <td>N/A</td>
+  </tr>
 
 <tr>
     <td>Convert</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/13807">13807</a></td>
     <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Divante</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14360">14360</a></td>
+    <td>13010</td>
   </tr>
 
   <tr>
@@ -1101,11 +1118,29 @@ The following table highlights contributions made by Partners. This table lists 
     <td><a href="https://github.com/magento/magento2/issues/7428" target="_blank">7428</a>, <a href="https://github.com/magento/magento2/issues/13117" target="_blank">13117</a> </td>
   </tr>
 
+<tr>
+    <td>Inviqa</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14552">14552</a></td>
+    <td>10057</td>
+  </tr>
+
+<tr>
+    <td>ISM eCompany</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14327">14327</a></td>
+    <td>10057</td>
+  </tr>
+
 
   <tr>
     <td>MediaCT</td>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/14829">14829</a></td>
     <td>N/A</td>
+  </tr>
+
+<tr>
+    <td>Something Digital</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/12792">12792</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13778">13778</a></td>
+    <td>10057</td>
   </tr>
 
 
@@ -1115,6 +1150,14 @@ The following table highlights contributions made by Partners. This table lists 
     <td>N/A</td>
 
   </tr>
+
+<tr>
+    <td>Wagento</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14473">14473</a></td>
+    <td>N/A</td>
+  </tr>
+
+
 
 </table>
 
