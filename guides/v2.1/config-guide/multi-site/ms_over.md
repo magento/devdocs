@@ -36,32 +36,34 @@ This section discusses the tasks required to use the `MAGE_RUN_TYPE` and `MAGE_R
 
 We use the following terms:
 
-*	*Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites.
+* *Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites.
 
-	Using  Website Customer account can be shared with different Website from a single magento instance. One Website contains at least one store. Catalog Prices should be manage at Website level.
+  Website customer accounts can be shared between multiple websites within a single Magento instance. A website contains at least one store. Catalog prices should be managed at the website level.
 
-*	*Store* is contained by a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}. In turn, a store contains at least one *store view*. 
+* *Store* is contained by a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}. In turn, a store contains at least one *store view*. 
 
-	Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures and Catalog price and Catalog Qty can't be manage at store level.
+  Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures and Catalog price.
 
-	Store views change the way pages are presented, and are typically used to display a store with different layouts or languages.You can manage different currency at each store views also.
+  Catalog Qty(Inventory) can't be manage at store level. Inventory will be manage at Website or Global level only.
+
+  Store views change the way pages are presented, and are typically used to display a store with different layouts or languages.You can manage different currencies per store view.
 
 Each website and each {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` as follows:
 
-*	`MAGE_RUN_TYPE` can be either `store` or `website`
+* `MAGE_RUN_TYPE` can be either `store` or `website`
 
-	*	Use `website` to load a website in your storefront.
-	*	Use `store` to load any store view in your storefront.
+  * Use `website` to load a website in your storefront.
+  * Use `store` to load any store view in your storefront.
 
-*	`MAGE_RUN_CODE` is the unique website or store view code that corresponds to `MAGE_RUN_TYPE`
+* `MAGE_RUN_CODE` is the unique website or store view code that corresponds to `MAGE_RUN_TYPE`
 
 Following is a summary of the tasks you must perform. More details are provided in the sections that follow.
 
-1.	Define websites, stores, and store views in the Magento Admin.
-2.	Create a virtual host to load many websites or one virtual host per Magento website or store view to allow specific directives for each store.
-3.	Pass the values of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` to the web server.
+1.  Define websites, stores, and store views in the Magento Admin.
+2.  Create a virtual host to load many websites or one virtual host per Magento website or store view to allow specific directives for each store.
+3.  Pass the values of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` to the web server.
 
 #### Related topics
-*	[Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html)
-*	[Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
-*	[Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
+* [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html)
+* [Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
+* [Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)
