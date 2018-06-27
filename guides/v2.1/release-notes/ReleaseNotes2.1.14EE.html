@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Open Source 2.1.x Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Commerce 2.1.14 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -64,7 +64,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-	<link rel="canonical" href="/guides/v2.1/release-notes/2.1-ce-release-notes-parent.html">
+	<link rel="canonical" href="/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -104,13 +104,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/2.1-ce-release-notes-parent.html">Magento 2.0</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/release-notes/ReleaseNotes2.1.14EE.html">Magento 2.0</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/2.1-ce-release-notes-parent.html">Magento 2.1</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html">Magento 2.1</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/2.1-ce-release-notes-parent.html">Magento 2.2</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/release-notes/ReleaseNotes2.1.14EE.html">Magento 2.2</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/2.1-ce-release-notes-parent.html">Magento 2.3 Alpha</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/release-notes/ReleaseNotes2.1.14EE.html">Magento 2.3 Alpha</a></li>
 	
   </ul>
 
@@ -571,7 +571,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="magento-commerce-2.1.14-release-notes">
+                <li class="nav-level3 active " id="magento-commerce-2.1.14-release-notes">
                     
 
                     
@@ -1091,14 +1091,515 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Magento Open Source 2.1.x Release Notes</h1>
+	<h1 class="page-heading">Magento Commerce 2.1.14 Release Notes</h1>
 
   
 
 
 </section>
 
-			
+			<ul id="markdown-toc">
+  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
+  <li><a href="#fixed-issues" id="markdown-toc-fixed-issues">Fixed issues</a>    <ul>
+      <li><a href="#setup" id="markdown-toc-setup">Setup</a></li>
+      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#cart-and-checkout" id="markdown-toc-cart-and-checkout">Cart and checkout</a></li>
+      <li><a href="#configurable-products" id="markdown-toc-configurable-products">Configurable products</a></li>
+      <li><a href="#customers" id="markdown-toc-customers">Customers</a></li>
+      <li><a href="#email" id="markdown-toc-email">Email</a></li>
+      <li><a href="#framework" id="markdown-toc-framework">Framework</a></li>
+      <li><a href="#general" id="markdown-toc-general">General</a></li>
+      <li><a href="#swagger" id="markdown-toc-swagger">Swagger</a></li>
+      <li><a href="#swatches" id="markdown-toc-swatches">Swatches</a></li>
+      <li><a href="#translations" id="markdown-toc-translations">Translations</a></li>
+    </ul>
+  </li>
+  <li><a href="#community-contributions" id="markdown-toc-community-contributions">Community contributions</a>    <ul>
+      <li><a href="#individual-contributor-contributions" id="markdown-toc-individual-contributor-contributions">Individual contributor contributions</a></li>
+      <li><a href="#partner-contributions" id="markdown-toc-partner-contributions">Partner contributions</a></li>
+    </ul>
+  </li>
+  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+  <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
+  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
+</ul>
+
+<p><em>Patch code and release notes were published on June 27, 2018.</em></p>
+
+<p>We are pleased to present Magento Open Source  2.1.14. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!</p>
+
+<p>Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
+
+<p>See <a href="https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h2 id="highlights">Highlights</h2>
+<p>Magento 2.1.14 contains 38 security fixes and enhancements.  The enhancements help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See <a href="https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update">Magento Security Center</a> for more information.</p>
+
+<h2 id="fixed-issues">Fixed issues</h2>
+<p>In addition to security enhancements, this release contains the following functional fixes.</p>
+
+<h3 id="setup">Setup</h3>
+
+<!--- ENGCOM-902 -->
+<ul>
+  <li>The <code class="highlighter-rouge">magento cron:run</code> command now runs scheduled jobs as expected. Previously, cron generated only one job, no matter how many jobs were scheduled. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14096</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
+</ul>
+
+<!--- ENGCOM-707 -->
+<ul>
+  <li>The misspelling in the name of the namespace in <code class="highlighter-rouge">Magento\Cron\Observer\ProcessCronQueueObserver.php</code> has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 13949</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
+</ul>
+
+<!--- ENGCOM-846 -->
+<ul>
+  <li>The <code class="highlighter-rouge">magento setup:di:compile</code> command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the <code class="highlighter-rouge">excludedPathsList</code> property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,<code class="highlighter-rouge">/var/www/magento (1)/</code>). <em>Fix submitted by <a href="https://github.com/Ethan3600">Ethan Yehuda</a> in pull request 13806</em>. <a href="https://github.com/magento/magento2/issues/4173">GitHub-4173</a></li>
+</ul>
+
+<!--- ENGCOM-949 -->
+<ul>
+  <li><code class="highlighter-rouge">Store getConfig()</code> now respects  valid false return values. Previously, the system represented the <strong>no</strong> setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to <strong>no</strong>.    <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13654</em>.</li>
+</ul>
+
+<!--- ENGCOM-1200 -->
+<ul>
+  <li>All console commands now return status. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14480</em>.</li>
+</ul>
+
+<!--- MAGETWO-87870 -->
+<ul>
+  <li>We’ve added the <code class="highlighter-rouge">web/unsecure/base_url</code> config to both website and store scopes. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13658</em>.</li>
+</ul>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- ENGCOM-1223 -->
+<ul>
+  <li>Magento now checks if <code class="highlighter-rouge">storeId</code> is not null rather than checking if it is empty. Previously, when <code class="highlighter-rouge">storeId 0 is_empty</code> returned <code class="highlighter-rouge">true</code>, Magento could not create a CMS page for all store views. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 14505</em>.</li>
+</ul>
+
+<!--- ENGCOM-1172 -->
+<ul>
+  <li>Magento no longer displays HTML tags in product meta descriptions. <em>Fix submitted by <a href="https://github.com/vseager">Victor Seager</a> in pull request 14436</em>.</li>
+</ul>
+
+<!--- ENGCOM-820 -->
+<ul>
+  <li>The layout of <code class="highlighter-rouge">catalog_rule_promo_catalog_edit.xml</code> has been changed to adjust sidebar settings. Specifically, he tlayout attribute value has been changed from  <code class="highlighter-rouge">admin-2columns-left</code> to <code class="highlighter-rouge">admin-1column</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14022</em>.</li>
+</ul>
+
+<!--- MAGETWO-87573 -->
+<ul>
+  <li>The Catalog Price rule’s <code class="highlighter-rouge">contains</code> condition now works as expected when the <code class="highlighter-rouge">contains</code> condition allows multiple options. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13546</em>. <a href="https://github.com/magento/magento2/issues/7723">GitHub-7723</a></li>
+</ul>
+
+<h3 id="cart-and-checkout">Cart and checkout</h3>
+<!--- ENGCOM-780 -->
+<ul>
+  <li>Enhancements to LESS code include moving several LESS variables  to <code class="highlighter-rouge">.lib-dropdown()</code> variables and adding <code class="highlighter-rouge">font-weight</code> variable to <code class="highlighter-rouge">navigation.less</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 13987</em>.</li>
+</ul>
+
+<!--- ENGCOM-776 -->
+<ul>
+  <li>We’ve improved the display of the Payment Methods section of the checkout page on mobile devices. Previously, the layout of page elements was not correctly spaced. <em>Fix submitted by <a href="https://github.com/Frodigo">Marcin Kwiatkowski</a> in pull request 13980</em>. <a href="https://github.com/magento/magento2/issues/13315">GitHub-13315</a></li>
+</ul>
+
+<!--- ENGCOM-920 -->
+<ul>
+  <li>You can now successfully override settings in <code class="highlighter-rouge">module-directory/etc/zip_codes.xml</code>. Previously, when you tried to override these settings, Magento displayed only the last pattern from the module’s <code class="highlighter-rouge">zip_codes.xml</code>. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14117</em>. <a href="https://github.com/magento/magento2/issues/6694">GitHub-6694</a></li>
+</ul>
+
+<h3 id="configurable-products">Configurable products</h3>
+
+<!--- ENGCOM-1204 -->
+<ul>
+  <li>Magento now displays accurate configurable product prices in multi-store environments. Previously, Magento displayed the same configurable product prices for all stores after the first store emulation. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14479</em>.</li>
+</ul>
+
+<h3 id="customers">Customers</h3>
+
+<!--- ENGCOM-937 -->
+<ul>
+  <li>You can now successfully save an address with a blank address field. Previously, when you saved an address that contained no text in an optional address field, Magento threw this error, <code class="highlighter-rouge">'Exception' with message 'Notice: Array to string conversion on line 2903 in lib/internal/Magento/Framework/DB/Adapter/Pdo/Mysql.php will be raised</code>. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14115</em>.</li>
+</ul>
+
+<!--- ENGCOM-1147 -->
+<ul>
+  <li>We’ve removed <code class="highlighter-rouge">&lt;title&gt;Billing Agreements&lt;/title&gt;</code> from the <code class="highlighter-rouge">customer_account.xml</code> file in the PayPal module. <em>Fix submitted by <a href="https://github.com/mikewhitby">Mike Whitby</a> in pull request 14323</em>.</li>
+</ul>
+
+<h3 id="email">Email</h3>
+<!--- ENGCOM-1212 -->
+<ul>
+  <li>The color of the button on the email template when a user hovers over it has been changed from <code class="highlighter-rouge">@button-primary__color</code> to <code class="highlighter-rouge">@button-primary__hover__color</code>. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14497</em>.</li>
+</ul>
+
+<h3 id="framework">Framework</h3>
+
+<!--- ENGCOM-1121 -->
+<ul>
+  <li>We’ve added JSON and XML support to the post method in the <code class="highlighter-rouge">\Magento\Framework\HTTP\Client\Socket</code> class. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14348</em>.</li>
+</ul>
+
+<!--- ENGCOM-1074 -->
+<ul>
+  <li>Navigation menus without the <code class="highlighter-rouge">display: inline-block</code> setting now work as expected on deployments running on Internet Explorer 11.x. Previously, after a page refresh, navigation menus on pages running Luma or Blank themes would not work. <em>Fix submitted by <a href="https://github.com/sergiy-v">Sergiy</a> in pull request 14332</em>.</li>
+</ul>
+
+<!--- ENGCOM-1062 -->
+<ul>
+  <li>You can now successfully prevent the removal of a block or container by setting the <code class="highlighter-rouge">remove</code> attribute to <strong>false</strong>. Previously, setting this attribute to <strong>false</strong> did not cancel the removal of a block or container. <em>Fix submitted by <a href="https://github.com/quisse">Tommy Quissens</a> in pull request 14198</em>. <a href="https://github.com/magento/magento2/issues/1931">GitHub-1931</a></li>
+</ul>
+
+<!--- ENGCOM-947 -->
+<ul>
+  <li><code class="highlighter-rouge">String</code> type was added to <code class="highlighter-rouge">\Magento\Framework\HTTP\Client\Curl</code>  to support sending JSON or XML requests. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14151</em>. <a href="https://github.com/magento/magento2/issues/3489">GitHub-3489</a></li>
+</ul>
+
+<!--- ENGCOM-944 -->
+<ul>
+  <li>We’ve improved the ability to store passwords using different hashing algorithms. These improvements include changes to <code class="highlighter-rouge">\Magento\Framework\Encryption\Encryptor::getHash</code>, which previously ignored the specified hashing algorithm version that was supplied. 
+<em>Fix submitted by <a href="https://github.com/k4emic">Mads Nielsen</a> in pull request 13886</em>. <a href="https://github.com/magento/magento2/issues/5463">GitHub-5463</a></li>
+</ul>
+
+<!--- MAGETWO-69715 -->
+<ul>
+  <li>You can now cancel the removal of a block or container from a layout by setting the <code class="highlighter-rouge">remove</code> attribute value to <code class="highlighter-rouge">false</code>. <a href="https://github.com/magento/magento2/issues/1931">GitHub-1931</a></li>
+</ul>
+
+<h4 id="configuration-framework">Configuration framework</h4>
+
+<!--- ENGCOM-1011 -->
+<ul>
+  <li>You can now add an XML comment node as a parameter when adding a new widget declaration to <code class="highlighter-rouge">widget.xml</code>. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 14219</em>. <a href="https://github.com/magento/magento2/issues/3882">GitHub-3882</a></li>
+</ul>
+
+<h3 id="general">General</h3>
+
+<!--- ENGCOM-1251 -->
+<ul>
+  <li>The  <code class="highlighter-rouge">setAttributeFilter</code> method now specifies the relevant table when calling the <code class="highlighter-rouge">addFieldToFilter</code> method. This method is called as part of the process of adding a field to the filter for the collection <code class="highlighter-rouge">Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php</code>. Previously, Magento displayed an error (<code class="highlighter-rouge">ambiguous column name</code>) when you joined tables containing column <code class="highlighter-rouge">attribute_id</code>.<br />
+<em>Fix submitted by <a href="https://github.com/PierreLeMaguer">Pierre LeMaguer</a> in pull request 14596</em>. <a href="https://github.com/magento/magento2/issues/14572">GitHub-14572</a></li>
+</ul>
+
+<!--- ENGCOM-926 -->
+<ul>
+  <li>We’ve added a CodeTriage badge to the <code class="highlighter-rouge">magento/magento2</code> GitHub repository. See <a href="https://www.codetriage.com/magento/magento2">CodeTriage</a> for more information. <em>Fix submitted by <a href="https://github.com/ishakhsuvarov">Eugene Shakhsuvarov</a> in pull request 1454</em>.</li>
+</ul>
+
+<!--- ENGCOM-903 -->
+<ul>
+  <li>The catalog gallery <code class="highlighter-rouge">allowfullscreen</code> setting In the theme’s <code class="highlighter-rouge">view.xml</code> file now works as expected. Previously, when you set the gallery’s <code class="highlighter-rouge">allowfullscreen</code> variable to <strong>false</strong>, Magento displayed a white page (instead of the product page) when a customer tapped on a product image while using a mobile device. <em>Fix submitted by <a href="https://github.com/simpleadm">Sergey P</a> in pull request 14098</em>. <a href="https://github.com/magento/magento2/issues/5808">GitHub-5808</a></li>
+</ul>
+
+<!--- ENGCOM-1138 -->
+<ul>
+  <li>We’ve removed the ability of the Magento Framework to explicitly set file and directory permissions from the default cache backend. Removing this functionality allows permissions to be inherited properly from the file system, and respects SETGID bit and Magento umask settings. <em>Fix submitted by <a href="https://github.com/xtremeperf">Doug</a> in pull request 14417</em>. <a href="https://github.com/magento/magento2/issues/11930">GitHub-11930</a>, <a href="https://github.com/magento/magento2/issues/10700">GitHub-10700</a></li>
+</ul>
+
+<!--- ENGCOM-1145 -->
+<ul>
+  <li>Magento now installs the AdminGws module after it installs <code class="highlighter-rouge">Magento_Authorization</code>. <em>Fix submitted by <a href="https://github.com/ajpevers">Anton Evers</a> in pull request 58</em>.</li>
+</ul>
+
+<!--- MAGETWO-88277 -->
+<ul>
+  <li>We added a RewriteBase directive template to the <code class="highlighter-rouge">.htaccess</code> file in the  <code class="highlighter-rouge">pub/static</code> folder. Previously, if you set this directive in the <code class="highlighter-rouge">.htaccess</code> file in your Magento root directory, the Apache web server would miss files.  <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 13812</em>.</li>
+</ul>
+
+<!--- MAGETWO-87606 -->
+<ul>
+  <li>The <code class="highlighter-rouge">robots.txt</code> response header content type is now plain text. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13550</em>. <a href="https://github.com/magento/magento2/issues/13214">GitHub-13214</a></li>
+</ul>
+
+<!--- MAGETWO-87571 -->
+<ul>
+  <li>Load query no longer uses requireJS to print. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 13545</em>.</li>
+</ul>
+
+<h3 id="swagger">Swagger</h3>
+<!--- MAGETWO-87607 -->
+<ul>
+  <li>You can now use a parameter to change the store code in Swagger, which makes it possible to test API calls in Swagger for different storeviews. <em>Fix submitted by <a href="https://github.com/JeroenVanLeusden">Jeroen</a> in pull request 13486</em>. <a href="https://github.com/magento/magento2/issues/13474">GitHub-13474</a></li>
+</ul>
+
+<h3 id="swatches">Swatches</h3>
+
+<!--- MAGETWO-86331 -->
+<ul>
+  <li>You can now use JavaScript mixins to extend swatch functionality in all supported browsers. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 12928</em>. <a href="https://github.com/magento/magento2/issues/10559">GitHub-10559</a></li>
+</ul>
+
+<h3 id="translations">Translations</h3>
+
+<!--- ENGCOM-1231 -->
+<ul>
+  <li>You can now translate the text associated with rating stars in product reviews. <em>Fix submitted by <a href="https://github.com/Karlasa">Karla Saaremäe</a> in pull request 14524</em>.</li>
+</ul>
+
+<!--- ENGCOM-1068 -->
+<ul>
+  <li>We’ve fixed issues with the JavaScript translation regex file that previously led to untranslatable strings or parts of strings. <em>Fix submitted by <a href="https://github.com/hostep">Pieter Hoste</a> in pull request 14349</em>. <a href="https://github.com/magento/magento2/issues/7403">GitHub-7403</a></li>
+</ul>
+
+<!--- ENGCOM-952 -->
+<ul>
+  <li>We’ve added a <code class="highlighter-rouge">mage/translate</code> component to the customer AJAX login action component, which enables the translation of the  message that Magento displays if an AJAX call fails (<code class="highlighter-rouge">Could not authenticate. Please try again later</code>). Previously, Magento printed that message in English only, regardless of the storefront’s language setting. <em>Fix submitted by <a href="https://github.com/ccasciotti">Cristiano Casciotti</a> in pull request 14168</em>.</li>
+</ul>
+
+<!--- NOT NEEDED    MAGETWO-90925   MAGETWO-90394  MAGETWO-90069  MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->
+
+<h2 id="community-contributions">Community contributions</h2>
+<p>We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.</p>
+
+<h3 id="individual-contributor-contributions">Individual contributor contributions</h3>
+
+<p>The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.</p>
+
+<table>
+  <tr>
+    <th>Pull request</th>
+    <th>Related GitHub issue</th>
+     <th>Contributing community member</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13949" target="_blank">13949</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Ethan3600" target="_blank">Ethan Yehuda</a></td>
+  </tr>
+<tr>
+    <td><a href="https://github.com/magento/magento2/pull/13545" target="_blank">13545</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13546" target="_blank">13546</a></td>
+    <td>7723</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13896" target="_blank">13896</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Ctucker9233" target="_blank">Ctucker9233</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13812" target="_blank">13812</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/ccasciotti" target="_blank">Cristiano Casciotti</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13658" target="_blank">13658</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13980" target="_blank">13980</a></td>
+    <td>13315</td>
+     <td><a href="https://github.com/Frodigo" target="_blank">Marcin Kwiatkowski</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13987" target="_blank">13987</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/14022" target="_blank">14022</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/13806" target="_blank">13806</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13486" target="_blank">13486</a></td>
+    <td>13474</td>
+     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14096" target="_blank">14096</a></td>
+    <td>4173</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14098" target="_blank">14098</a></td>
+    <td>5808</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14115" target="_blank">14115</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14117" target="_blank">14117</a></td>
+    <td>6694</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/12928" target="_blank">12928</a></td>
+    <td>10559</td>
+     <td><a href="https://github.com/srenon" target="_blank">Renon Stewart</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14151" target="_blank">14151</a></td>
+    <td>3489</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13886" target="_blank">13886</a></td>
+    <td>5463</td>
+     <td><a href="https://github.com/k4emic" target="_blank">Mads Nielsen</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14168" target="_blank">14168</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/ccasciotti" target="_blank">Cristiano Casciotti</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/13654" target="_blank">13654</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
+  </tr>
+<tr>
+<td><a href="https://github.com/magento/magento2/pull/14219" target="_blank">14219</a></td>
+    <td>3882</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14198" target="_blank">14198</a></td>
+    <td>1931</td>
+     <td><a href="https://github.com/quisse" target="_blank">Tommy Quissens</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14349" target="_blank">14349</a></td>
+    <td>7403</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14332" target="_blank">14332</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/sergiy-v" target="_blank">Sergiy</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14323" target="_blank">14323</a></td>
+    <td>7816</td>
+     <td><a href="https://github.com/mikewhitby" target="_blank">Mike Whitby</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14417" target="_blank">14417</a></td>
+    <td>11930, 10700</td>
+     <td><a href="https://github.com/xtremeperf" target="_blank">Doug</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14436" target="_blank">14436</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/vseager" target="_blank">Victor Seager</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14480" target="_blank">14480</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14497" target="_blank">14497</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14348" target="_blank">14348</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14479" target="_blank">14479</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14505" target="_blank">14505</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/quisse" target="_blank">Tommy Quissens</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14524" target="_blank">14524</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
+  </tr>
+<tr>
+  <td><a href="https://github.com/magento/magento2/pull/14572" target="_blank">14572</a></td>
+    <td>N/A</td>
+     <td><a href="https://github.com/PierreLeMaguer" target="_blank">PierreLeMaguer</a></td>
+  </tr>
+  <tr>
+  <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
+    <td>13214</td>
+     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+  </tr>
+
+ </table>
+
+<h3 id="partner-contributions">Partner contributions</h3>
+
+<p>The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available).</p>
+
+<table>
+  <tr>
+    <th>Contributing Partner</th>
+    <th>Pull Request</th>
+    <th>Related GitHub issue</th>
+  </tr>
+
+<tr>
+    <td>Atwix</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14332">14332</a></td>
+    <td>N/A&gt;</td>
+  </tr>
+
+<tr>
+    <td>Convert</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a></td>
+    <td>N/A&gt;</td>
+  </tr>
+
+  <tr>
+    <td>Divante</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13980">13980</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/13315">13315</a></td>
+  </tr>
+
+  <tr>
+    <td>H&amp;O</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a></td>
+    <td>N/A&gt;</td>
+  </tr>
+
+</table>
+
+<h2 id="system-requirements">System requirements</h2>
+
+<p>Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>See <a href="http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html">How to get the Magento software</a> for comprehensive information about Magento 2.1.x installation and setup.</p>
+
+<h2 id="migration-toolkits">Migration toolkits</h2>
+
+<p>The Magento <a href="http://devdocs.magento.com/guides/v2.1/migration/bk-migration-guide.html">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="http://devdocs.magento.com/guides/v2.1/migration/migration-tool-install.html">Install Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool">Magento Data Migration repository</a>.</p>
+
+<p>An updated version of this toolkit is typically available several days after the patch release.</p>
+
+<p>The <a href="https://github.com/magento/code-migration">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+<h2 id="credits">Credits</h2>
+<p>Dear community members, thank you for your suggestions,  bug reports and code contributions.</p>
 
 			
 		</div>
@@ -1112,13 +1613,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   
 
     <div class="github-link">
-      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.1/release-notes/2.1-ce-release-notes-parent.md" target="_blank">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.md" target="_blank">
         Edit this page on GitHub
       </a>
     </div>
 
     <div class="new-issue">
-      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.1/release-notes/2.1-ce-release-notes-parent.html" target="_blank">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html" target="_blank">
         Give us feedback
       </a>
     </div>

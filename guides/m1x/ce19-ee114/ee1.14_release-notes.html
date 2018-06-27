@@ -24,6 +24,7 @@
 <p>These Release Notes contain the following information:</p>
 <ul><li><a href="#upgrade">Important Upgrade Information</a></li>
 
+	<li><a href="#ee114-11439">Magento Commerce 1.14.3.9 Release Notes</a></li>
 	<li><a href="#ee114-11438">Magento Commerce 1.14.3.8 Release Notes</a></li>
 	<li><a href="#ee114-11437">Magento Commerce 1.14.3.7 Release Notes</a></li>
 	<li><a href="#ee114-11436">Magento Commerce 1.14.3.6 Release Notes</a></li>
@@ -47,6 +48,27 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Commerce 1.14.3.0 or later for <em>all new Magento Commerce installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+
+<h2 id="ee114-11439">Magento Commerce 1.14.3.9 Release Notes</h2>
+<p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-768" target="_blank">MPERF-768</a> -->Magento no longer performs unnecessary write operations on the <code>core_url_rewrite</code> table.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10065" target="_blank">MPERF-10065</a> -->Customers can now successfully register during checkout without being unexpectedly logged out.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9735" target="_blank">MPERF-9735</a> -->Incorrect escaping in the <code>cron.sh</code> file no longer prevents cron jobs from running in parallel as expected.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10021" target="_blank">MPERF-10021</a> -->Magento now cleans session data as expected after a customer logs out.</li>	
+</ul>
+
+
+
+<h3>Known issue</h3>
+ <p>If your custom code or extension is using <code>Zend/Filter/PregReplace.php</code> with the modifier <code>e</code>, it will now return an error due to possible RCE issues. See APPSEC-2029 in <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for more information.</p>
+
+
+
 
 <h2 id="ee114-11438">Magento Commerce 1.14.3.8 Release Notes</h2>
 <p>This version (or patch SUPEE-10570, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10415" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
