@@ -1559,7 +1559,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The <code>di.xml</code> file in your   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  declares a plugin for a class object:</p>
 
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
+<span class="nt">&lt;config&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"{ObservedType}"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">"{pluginName}"</span> <span class="na">type=</span><span class="s">"{PluginClassName}"</span> <span class="na">sortOrder=</span><span class="s">"1"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>You must specify these elements:</p>
 

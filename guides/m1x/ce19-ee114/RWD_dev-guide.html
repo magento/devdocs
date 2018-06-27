@@ -314,10 +314,24 @@ cd app/design/frontend/custompackage/customtheme/etc</pre>
         <li id="themexml"><tt>theme.xml</tt> must have different contents for Magento CE or Magento EE:
             <ul>
                 <li>Magento CE:
-                    <script src="https://gist.github.com/xcomSteveJohnson/10934766.js"></script>
+                    <pre>
+                        <code>
+&lt;?xml version="1.0"?&gt;
+&lt;theme&gt;
+    &lt;parent&gt;rwd/default&lt;/parent&gt;
+&lt;/theme&gt;
+                        </code>
+                    </pre>
                 </li>
                 <li>Magento EE:
-                    <script src="https://gist.github.com/xcomSteveJohnson/10937099.js"></script>
+                    <pre>
+                        <code>
+&lt;?xml version="1.0"?&gt;
+&lt;theme&gt;
+    &lt;parent&gt;rwd/enterprise&lt;/parent&gt;
+&lt;/theme&gt;
+                        </code>
+                    </pre>
                 </li>
                 <div class="msg-box important"><img src="/common/images/m1x/icon-important.png"
                                                     alt="important" align="left"
@@ -385,7 +399,18 @@ ls skin/frontend/custompackage/customtheme/scss</pre>
     <pre>cp skin/frontend/rwd/default/scss/config.rb skin/frontend/custompackage/customtheme/scss</pre>
     <p>Compass requires a <tt>config.rb</tt> file located in the directory from which you run this command. The sample
         provided with Magento CE and EE follows:</p>
-    <script src="https://gist.github.com/xcomSteveJohnson/11048374.js"></script>
+        <pre><code>
+# note: this should never truly be refernced since we are using relative assets
+http_path = "/skin/frontend/rwd/default/"
+css_dir = "../css"
+sass_dir = "../scss"
+images_dir = "../images"
+javascripts_dir = "../js"
+relative_assets = true
+
+output_style = :expanded
+environment = :production
+        </code></pre>
     <p>After correcting the issue, try the <tt>compass watch</tt> commands discussed in <a href="#theme-compass">Step 3:
         Configuring a Compass Watcher</a>.</p>
 
@@ -694,9 +719,23 @@ $bp-large: 979px;
 $bp-xlarge: 1199px;</pre>
     <p>A custom <tt>bp()</tt> mixin includes media query breakpoints. </p>
     <p>For example, this Sass:</p>
-    <script src="https://gist.github.com/xcomSteveJohnson/11231041.js"></script>
+    <code><pre>
+@include bp(max-width, $bp-medium) {
+    /* These styles will only display on viewports smaller than or equal to 770px */
+}
+@include bp(min-width, $bp-medium+1) {
+    /* These styles will only display on viewports larger than or equal to 771px (770px + 1px) */
+}
+    </pre></code>
     <p>generates this CSS:</p>
-    <script src="https://gist.github.com/xcomSteveJohnson/11231104.js"></script>
+    <code><pre>
+@media only screen and (max-width: 770px) {
+    /* These styles will only display on viewports smaller than or equal to 770px */
+}
+@media only screen and (min-width: 771px) {
+    /* These styles will only display on viewports larger than or equal to 771px (770px + 1px) */
+}
+    </pre></code>
     <p>The breakpoint variables are intended to be used with <tt>max-width</tt> by default. When you use the breakpoint
         with <tt>min-width</tt>, you should add a pixel <tt>($bp-medium+1)</tt> so the <tt>min-width</tt> and <tt>max-width</tt>
         styles don't both get applied to the same viewport size.</p>
@@ -816,7 +855,20 @@ skin/frontend/custompackage/customtheme/css/madisonisland-ie8.css</pre>
         </li>
         <li>In your custom layout file (for example,
             <tt>app/design/frontend/custompackage/customtheme/layout/local.xml</tt>), add this XML:<br/>
-            <script src="https://gist.github.com/xcomSteveJohnson/11273347.js"></script>
+            <code><pre>
+&lt;layout version="0.1.0"&gt;
+    &lt;default&gt;
+        &lt;reference name="head"&gt;
+            &lt;action method="removeItem"&gt;&lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/slideshow.js&lt;/name&gt;&lt;/action&gt;
+            &lt;action method="removeItem"&gt;&lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/lib/jquery.cycle2.min.js&lt;/name&gt;&lt;/action&gt;
+            &lt;action method="removeItem"&gt;&lt;type&gt;skin_js&lt;/type&gt;&lt;name&gt;js/lib/jquery.cycle2.swipe.min.js&lt;/name&gt;&lt;/action&gt;
+            &lt;action method="removeItem"&gt;&lt;type&gt;skin_css&lt;/type&gt;&lt;name&gt;css/madisonisland.css&lt;/name&gt;&lt;/action&gt;
+            &lt;action method="removeItem"&gt;&lt;type&gt;skin_css&lt;/type&gt;&lt;name&gt;css/madisonisland-ie8.css&lt;/name&gt;&lt;/action&gt;
+            &lt;action method="removeItem"&gt;&lt;type&gt;link_rel&lt;/type&gt;&lt;name&gt;//fonts.googleapis.com/css?family=Raleway:300,400,500,700,600&lt;/name&gt;&lt;/action&gt;
+        &lt;/reference&gt;
+    &lt;/default&gt;
+&lt;/layout&gt;
+            </pre></code>
             The preceding XML:
             <ul>
                 <li>Removes the Madison Island CSS files</li>
@@ -833,7 +885,9 @@ skin/frontend/custompackage/customtheme/css/madisonisland-ie8.css</pre>
                 (see step 3). Customize the <tt>&lt;href></tt> value to the value that your custom web font provider
                 gives you. It is recommended to include the same font weights that are referenced below
                 (300,400,500,700,600) because the responsive theme uses each of those font weights.</p>
-            <script src="https://gist.github.com/xcomSteveJohnson/1081640af28ab619f259.js"></script>
+                <code><pre>
+&lt;action method="addLinkRel"&gt;&lt;rel&gt;stylesheet&lt;/rel&gt;&lt;href&gt;//fonts.googleapis.com/css?family=Raleway:300,400,500,700,600&lt;/href&gt;&lt;/action&gt;
+                </pre></code>
         </li>
     </ol>
 

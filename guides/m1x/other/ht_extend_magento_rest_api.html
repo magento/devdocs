@@ -355,24 +355,168 @@ For example, if Magento is installed in <code>/var/www/magento</code>, create th
     <strong>NOTE:</strong> For each file listed above, you must create the <em>exact</em> path shown. You must not change the name of any directory or file to something you prefer. Further, you must not change the case of any character in the directory  or file names shown. If you do, your REST API extension won't work!</li> -->
 <li>Change to the <code><em>magento-install-dir</em>/app/etc/modules</code> directory.</li>
 <li id="trouble_xml">In that directory, use a text editor to create your module declaration file. This file must be named <code>CouponDemo_AutoGen.xml</code> and have the following contents.<br />
-<script src="https://gist.github.com/4081239.js?file=CouponDemo_AutoGen.xml"></script></li>
+  <code><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;config&gt;
+    &lt;modules&gt;
+        &lt;CouponDemo_AutoGen&gt;
+            &lt;active&gt;true&lt;/active&gt;
+            &lt;codePool&gt;community&lt;/codePool&gt;
+        &lt;/CouponDemo_AutoGen&gt;
+    &lt;/modules&gt;
+&lt;/config&gt;
+  </pre></code>
 <li>Save your changes to <code>CouponDemo_AutoGen.xml</code> and exit the text editor.</li>
 <li>Change to the <code><em>magento-install-dir</em>/app/code/community/CouponDemo/AutoGen/etc</code> directory.</li>
 <li>Create a file named <code>config.xml</code> with the following contents.<br />
-<script src="https://gist.github.com/4089502.js?file=config.xml"></script></li>
-<!-- <li>Create a file named <code>api.xml</code> with the following contents.<br />
-<script src="https://gist.github.com/4089538.js?file=api.xml"></script></li>
-<li>Save your changes to <code>api.xml</code> and exit the text editor.</li> -->
+  <code><pre>
+&lt;?xml version="1.0"?&gt;
+&lt;config&gt;
+    &lt;modules&gt;
+        &lt;CouponDemo_AutoGen&gt;
+            &lt;version&gt;0.1.0&lt;/version&gt;
+        &lt;/CouponDemo_AutoGen&gt;
+    &lt;/modules&gt;
+    &lt;global&gt;
+        &lt;models&gt;
+            &lt;autogen&gt;
+                &lt;class&gt;CouponDemo_AutoGen_Model&lt;/class&gt;
+            &lt;/autogen&gt;
+        &lt;/models&gt;
+    &lt;/global&gt;
+&lt;/config&gt;
+  </pre></code>
 <li>Create a file named <code>api2.xml</code> with the following contents.<br />     
-<script src="https://gist.github.com/xcomSteveJohnson/6a97c176c8ee5d76e0c4.js"></script></li>
+  <code><pre>
+&lt;config&gt;
+    &lt;api2&gt;
+        &lt;resource_groups&gt;
+            &lt;autogen translate="title" module="CouponDemo_AutoGen"&gt;
+                &lt;title&gt;CouponDemo API&lt;/title&gt;
+                &lt;sort_order&gt;10&lt;/sort_order&gt;
+            &lt;/autogen&gt;
+        &lt;/resource_groups&gt;
+        &lt;resources&gt;
+            &lt;autogen translate="title" module="CouponDemo_AutoGen"&gt;
+                &lt;group&gt;autogen&lt;/group&gt;
+                &lt;model&gt;autogen/api2_coupon&lt;/model&gt;
+                &lt;title&gt;Coupon Code Auto Generation&lt;/title&gt;
+                &lt;sort_order&gt;10&lt;/sort_order&gt;
+                &lt;privileges&gt;
+                    &lt;admin&gt;
+                        &lt;create&gt;1&lt;/create&gt;
+                        &lt;retrieve&gt;1&lt;/retrieve&gt;
+                    &lt;/admin&gt;
+                &lt;/privileges&gt;
+                &lt;attributes&gt;
+                    &lt;coupon_id&gt;Coupon ID&lt;/coupon_id&gt;
+                    &lt;code&gt;Code&lt;/code&gt;
+                    &lt;qty&gt;Quantity&lt;/qty&gt;
+                    &lt;length&gt;Length&lt;/length&gt;
+                    &lt;format&gt;Format&lt;/format&gt;
+                &lt;/attributes&gt;
+                &lt;routes&gt;
+                    &lt;route&gt;
+                        &lt;route&gt;/coupondemo/rules/:rule_id/codes&lt;/route&gt;
+                        &lt;action_type&gt;collection&lt;/action_type&gt;
+                    &lt;/route&gt;
+                &lt;/routes&gt;
+                &lt;versions&gt;1&lt;/versions&gt;
+            &lt;/autogen&gt;
+        &lt;/resources&gt;
+    &lt;/api2&gt;
+&lt;/config&gt;
+  </pre></code>
 <li>Save your changes to <code>api2.xml</code> and exit the text editor.</li>
 <li>Change to the <code><em>magento-install-dir</em>/app/code/community/CouponDemo/AutoGen/Model/Api2</code> directory.</li>
 <li>Create a file named <code>Coupon.php</code> with the following contents.<br />
-<script src="https://gist.github.com/xcomSteveJohnson/4bfde04ed707610722ee.js"></script>
+  <code><pre>
+&lt;?php
+class CouponDemo_AutoGen_Model_Api2_Coupon extends Mage_Api2_Model_Resource
+{
+}
+  </pre></code>
 <li>Save your changes to <code>Coupon.php</code> and exit the text editor.</li>
 <li>Change to the <code><em>magento-install-dir</em>/app/code/community/CouponDemo/AutoGen/Model/Api2/Coupon/Rest/Admin</code> directory.</li>
 <li>Create a file named <code>V1.php</code> with the following contents.<br />
-<script src="https://gist.github.com/xcomSteveJohnson/551bd796539069a7cf99.js"></script></li>
+  <code><pre>
+&lt;?php
+/* Coupon AutoGen REST API
+*
+* @category CouponDemo
+* @package CouponDemo_AutoGen
+* @author Chuck Hudson (used with permission). For more recipes, see Chuck's book http://shop.oreilly.com/product/0636920023968.do
+*/
+class CouponDemo_AutoGen_Model_Api2_Coupon_Rest_Admin_V1 extends CouponDemo_AutoGen_Model_Api2_Coupon
+{
+    /**
+     * Generate one or more coupon codes using the Generate Coupons rule defined in Magento.
+     * Expected parameters are:
+     * {
+     *    'qty': int, - number of coupon codes to instruct Magento to generate
+     *    'length': int, - length of each generated coupon code
+     *    'format': string, - alphanum (for alphanumeric codes), alpha (for alphabetical codes), and num (for numeric codes)
+     * }
+     *
+     * @param array $couponData
+     * @return string|void
+     */
+    protected function _create($couponData)
+    {
+        $ruleId = $this->getRequest()->getParam('rule_id');
+        $couponData['rule_id'] = $ruleId;
+        $rule = $this->_loadSalesRule($ruleId);
+        // Reference the MassGenerator on this rule.
+        /** @var Mage_SalesRule_Model_Coupon_Massgenerator $generator */
+        $generator = $rule->getCouponMassGenerator();
+        // Validate the generator
+        if (!$generator->validateData($couponData)) {
+            $this->_critical(Mage::helper('salesrule')->__('Coupon AutoGen API: Invalid parameters passed in.'),
+                Mage_Api2_Model_Server::HTTP_BAD_REQUEST);
+        } else {
+            // Set the data for the generator
+            $generator->setData($couponData);
+            // Generate a pool of coupon codes for the Generate Coupons rule
+            $generator->generatePool();
+        }
+    }
+    /**
+     * Retrieve list of coupon codes.
+     *
+     * @return array
+     */
+    protected function _retrieveCollection()
+    {
+        $ruleId = $this->getRequest()->getParam('rule_id');
+        $rule = $this->_loadSalesRule($ruleId);
+        /** @var Mage_SalesRule_Model_Resource_Coupon_Collection $collection  */
+        $collection = Mage::getResourceModel('salesrule/coupon_collection');
+        $collection->addRuleToFilter($rule);
+        $this->_applyCollectionModifiers($collection);
+        $data = $collection->load()->toArray();
+        return $data['items'];
+    }
+    /**
+     * Load sales rule by ID.
+     *
+     * @param int $ruleId
+     * @return Mage_SalesRule_Model_Rule
+     */
+    protected function _loadSalesRule($ruleId)
+    {
+        if (!$ruleId) {
+            $this->_critical(Mage::helper('salesrule')
+                ->__('Rule ID not specified.'), Mage_Api2_Model_Server::HTTP_BAD_REQUEST);
+        }
+        $rule = Mage::getModel('salesrule/rule')->load($ruleId);
+        if (!$rule->getId()) {
+            $this->_critical(Mage::helper('salesrule')
+                ->__('Rule was not found.'), Mage_Api2_Model_Server::HTTP_NOT_FOUND);
+        }
+        return $rule;
+    }
+}
+  </pre></code>
 <li>Save your changes to <code>V1.php</code> and exit the text editor.</li></ol>
 
 <h3 id="extend-rest-api_permissions">Setting Permissions on the Configuration Files</h3>
@@ -480,7 +624,93 @@ You must include these values in the test script you will write in the next sect
 <p> Finally, the server responds to the browser's  request with an HTML page containing the  generated coupon codes.</p>
 <p>To create the test script, named <code>rest_test.php</code>:</p>
 <ol><li>Create the file <code><em>magento-install-dir</em>/rest_test.php</code> with the following contents.
-<script src="https://gist.github.com/4115482.js?file=rest_test.php"></script></li>
+  <code><pre>
+&lt;?php
+/********************************************************************
+File name: rest_test.php
+Description:
+A PHP test script that calls the Coupon AutoGen extension
+to Magento's REST API.
+The Coupon AutoGen API takes:
+-- the rule ID of the &quot;Generate Coupons&quot; rule to execute
+-- the number of coupon codes to generate
+-- the length of each coupon code
+-- the format of each coupon code
+The API returns the generated coupon codes, in JSON-encoded form
+ ********************************************************************/
+// Replace &lt;&lt;...&gt;&gt; below with the key and secret values generated for the Coupon AutoGen Test Driver
+$consumerKey = '&lt;&lt;YOUR CONSUMER KEY&gt;&gt;'; // from Admin Panel's &quot;REST - OAuth Consumers page&quot;
+$consumerSecret = '&lt;&lt;YOUR CONSUMER SECRET&gt;&gt;'; // from Admin Panel's &quot;REST - OAuth Consumers page&quot;
+
+// Set the OAuth callback URL to this script since it contains the logic
+// to execute *after* the user authorizes this script to use the Coupon AutoGen API
+$callbackUrl = "http://&lt;&lt;host-or-ip:port&gt;&gt;/&lt;&lt;path&gt;&gt;/rest_test.php";
+
+// Set the URLs below to match your Magento installation
+$temporaryCredentialsRequestUrl = "http://&lt;&lt;host-or-ip:port&gt;&gt;/&lt;&lt;path&gt;&gt;/oauth/initiate?oauth_callback=" . urlencode($callbackUrl);
+$adminAuthorizationUrl = 'http://&lt;&lt;host-or-ip:port&gt;&gt;/&lt;&lt;path&gt;&gt;/admin/oauth_authorize';
+$accessTokenRequestUrl = 'http://&lt;&lt;host-or-ip:port&gt;&gt;/&lt;&lt;path&gt;&gt;/oauth/token';
+$apiUrl = 'http://&lt;&lt;host-or-ip:port&gt;&gt;/&lt;&lt;path&gt;&gt;/api/rest';
+
+session_start();
+if (!isset($_GET['oauth_token']) && isset($_SESSION['state']) && $_SESSION['state'] == 1) {
+    $_SESSION['state'] = 0;
+}
+try {
+    $authType = ($_SESSION['state'] == 2) ? OAUTH_AUTH_TYPE_AUTHORIZATION : OAUTH_AUTH_TYPE_URI;
+    $oauthClient = new OAuth($consumerKey, $consumerSecret, OAUTH_SIG_METHOD_HMACSHA1, $authType);
+    $oauthClient->enableDebug();
+    if (!isset($_GET['oauth_token']) && !$_SESSION['state']) {
+        $requestToken = $oauthClient->getRequestToken($temporaryCredentialsRequestUrl);
+        $_SESSION['secret'] = $requestToken['oauth_token_secret'];
+        $_SESSION['state'] = 1;
+        header('Location: ' . $adminAuthorizationUrl . '?oauth_token=' . $requestToken['oauth_token']);
+        exit;
+    } else if ($_SESSION['state'] == 1) {
+        $oauthClient->setToken($_GET['oauth_token'], $_SESSION['secret']);
+        $accessToken = $oauthClient->getAccessToken($accessTokenRequestUrl);
+        $_SESSION['state'] = 2;
+        $_SESSION['token'] = $accessToken['oauth_token'];
+        $_SESSION['secret'] = $accessToken['oauth_token_secret'];
+        header('Location: ' . $callbackUrl);
+        exit;
+    } else {
+        // We have the OAuth client and token. Now, let's make the API call.
+        $oauthClient->setToken($_SESSION['token'], $_SESSION['secret']);
+        // Set the array of params to send with the request
+        $ruleId = <<RULE_ID>>; // Set to the rule ID of the Generate Coupons rule
+        $couponGenerationData = array();
+        $couponGenerationData['qty'] = 2; // Number of coupons codes to create
+        $couponGenerationData['length'] = 7; // Length of each coupon code
+        // Options for format include:
+        // alphanum (for alphanumeric codes), alpha (for alphabetical codes), and num (for numeric codes)
+        $couponGenerationData['format'] = "alphanum"; // Use alphanumeric for the coupon code format
+        // Generate coupon codes via POST
+        $resourceUrl = "$apiUrl/coupondemo/rules/{$ruleId}/codes";
+        $oauthClient->fetch($resourceUrl, json_encode($couponGenerationData), OAUTH_HTTP_METHOD_POST, array(
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+        ));
+        // Retrieve list of created coupons via GET
+        $collectionFilters = array('limit' => $couponGenerationData['qty'], 'order' => 'coupon_id', 'dir' => 'dsc');
+        $oauthClient->fetch($resourceUrl, $collectionFilters, OAUTH_HTTP_METHOD_GET, array(
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+        ));
+        $coupons = json_decode($oauthClient->getLastResponse(), true);
+        // Display the newly generated codes to demonstrate that the Coupon AutoGen API works
+        // In reality, you might put these codes in emails to customers, store them in a database, etc.
+        echo "New coupon codes:<br/>";
+        foreach ($coupons as $coupon) {
+            echo " --> " . $coupon['code'] . "<br/>";
+        }
+    }
+} catch (OAuthException $e) {
+    print_r($e->getMessage());
+    echo "<br/>";
+    print_r($e->lastResponse);
+}
+  </pre></code>
 <li>The following table discusses the values you must change.
 <table>
 <tbody>
