@@ -31,7 +31,7 @@ Description
 <td>
 <p>The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled.
 
-For example, in one of the [layout files of the Magento Blank theme](https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml){:target="_blank"}, the following `.css` files are included:
+For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
 
 <pre>
     &lt;head&gt;
@@ -41,7 +41,7 @@ For example, in one of the [layout files of the Magento Blank theme](https://git
     &lt;/head&gt;
 </pre>
 
-The root source files for the Blank theme:
+The root source files for the Blank theme are:
 
 <ul>
 <li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less</a></code></li>
@@ -74,7 +74,7 @@ To set the compilation mode:
 This section describes how the LESS preprocessor works in server-side compilation mode.
 For each CSS file included in the layouts, LESS preprocessor:
 
-1.  Checks if the requested `.css` file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.
+1.  Checks if the requested `.css` file is found. If it is found, the pre-processor stops its execution. Otherwise, it proceeds to the next step.
 2.  Changes the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the requested file to `.less` and tries to find the file using the [Magento fallback mechanism]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static). If the `.less` file is not found, the LESS pre-processor stops its execution. Otherwise, it proceeds to the next step.
 3.  Reads `.less` file contents and resolves [`@magento_import`](#fedg_css-magento-import) and default LESS `@import` directives.
 4.  Resolves all paths in `.less` files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS pre-processor are copied to `var/view_preprocessed/less`. Imported files are processed recursively.
