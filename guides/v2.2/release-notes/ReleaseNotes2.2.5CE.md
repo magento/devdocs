@@ -196,15 +196,15 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 ### Vertex
-<!--- BUNDLE-841 -->* The correct tax amount is now included as expected in the Order Total that is listed under Order Summary section of Orders page. Previously, the **Tax amount** field was missing from the Order Summary section, which resulted in an incorrect Order Total.
+<!--- BUNDLE-841 -->* The correct tax amount is now included as expected in the Order Total that is listed under the Order Summary section of the Orders page. Previously, the **Tax amount** field was missing from the Order Summary section, which resulted in an incorrect Order Total.
 
-<!--- BUNDLE-966 -->* The **including tax**and **excluding tax** fields on the Checkout page now contain correctly calculated prices. Previously, Magento displayed  the same price in these fields. 
+<!--- BUNDLE-966 -->* The **including tax** and **excluding tax** fields on the Checkout page now contain correctly calculated prices. Previously, Magento displayed  the same price in these fields. 
 
 <!--- BUNDLE-977 -->* Magento now displays the **Tax amount** field in the Order Summary section of the Checkout page for orders that contain virtual products.
 
 <!--- BUNDLE-904 -->* Merchants can now create a Vertex invoice refund as expected after an order has been canceled.
 
-<!--- BUNDLE-1044 -->* We’ve improved the performance of the Admin Create Order and Performance Compare Report in Plain Text - Catalog (server side) actions.
+<!--- BUNDLE-1044 -->* We’ve improved the performance of the **Admin Create Order** and **Performance Compare Report in Plain Text - Catalog** (server side) actions.
 
 <!--- BUNDLE-976 -->* Magento now prompts you to select order status if a customer does not select an option from the Order Status drop down list when setting the **When to send Invoice to Vertex** option. 
 
@@ -266,7 +266,7 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 <!-- BUNDLE--1398 -->* Magento cannot send Customer and Guest Abandoned Cart email if these emails are not allowed for non-subscribed contacts. 
 
 
-<!-- BUNDLE--1389 -->* When a merchant clicks the Run Contact Sync button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
+<!-- BUNDLE--1389 -->* When a merchant clicks the **Run Contact Sync** button, Magento throws an exception when a merchant clicks the Run Contact Sync button.
 
 <!-- BUNDLE--526 -->* Magento throws an error during the creation of a subscriber or customer, but still creates the new subscriber or customer. 
 
