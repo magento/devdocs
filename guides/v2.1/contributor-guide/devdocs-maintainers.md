@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 title: Community maintainers
 version: 2.1

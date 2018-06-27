@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 50_Testing
 title: Web API functional testing

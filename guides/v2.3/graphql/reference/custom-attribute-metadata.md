@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: CustomAttributeMetadata endpoint
 version: 2.3

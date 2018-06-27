@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 10_mem
 title: Install, configure, verify memcached on CentOS
@@ -82,7 +81,7 @@ To verify memcached is recognized by the web server:
 
 2.  Make sure memcache displays as follows:
 
-    <img src="{{ site.baseurl}}/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server">
+    <img src="{{ site.baseurl }}/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server">
 
     Verify you're using memcached version 3.0.5 or later.
 
@@ -116,7 +115,7 @@ if (class_exists('Memcache')) {
     $meminstance = new Memcached();
 }
 
-$meminstance->addServer('<memcache host name or ip>', <memcache port>);
+$meminstance->addServer('<memcache hostname or ip>', <memcache port>);
 
 $query = "select id from example where name = 'new_data'";
 $querykey = "KEY" . md5($query);
@@ -139,7 +138,7 @@ print "got result from memcached\n";
 return 0;
 {% endhighlight %}
 
-where `<memcache host name or ip>` is either `localhost`, `127.0.0.1`, or the memcache host name or IP address. `<memcache port>` is its listen port; by default, `11211`.
+where `<memcache hostname or ip>` is either `localhost`, `127.0.0.1`, or the memcache hostname or IP address. `<memcache port>` is its listen port; by default, `11211`.
 
 Run the script from the command line.
 
@@ -176,4 +175,4 @@ Flush the memcache storage and quit Telnet:
 <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
 
 #### Next step
-<a href="{{page.baseurl}}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+<a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>

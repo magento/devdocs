@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 title: Error after logging in to the Magento Admin
 version: 2.0

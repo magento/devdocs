@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jstf
 title: JavaScript testing with JsTestDriver
 version: 2.0

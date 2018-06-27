@@ -1,27 +1,25 @@
 # OS generated files #
 ######################
+/*.db
 .DS_Store
-.DS_Store?
-/.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-.idea
-.ruby-version
 
 # Config and output files #
 ###########################
-_site/
-.jekyll-metadata
-CNAME
-ignore
-*.yml
-!_config.yml
+
+/_site/
+
+/.*
+!/.github
+!/.github/**
+
+/*.yml
+!/_config.yml
+
 *.bat
 *.sh
-tmp/
-vendor/
-node_modules/
+/tmp/
+!/**/samples/*.sh
+/vendor/
+/node_modules/
+
 _algolia_api_key

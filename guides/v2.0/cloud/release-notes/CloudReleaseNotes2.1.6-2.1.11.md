@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 title: Magento Commerce (Cloud) 2.1.6 through 2.1.11 Release Notes
 version: 2.0
@@ -15,7 +14,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 
 <!--MAGECLOUD-1427-->* We fixed an issue that was causing the wrong products to be indexed. Previously, the `mview.xml` configuration used `row_id`  instead of `entity_id` when collecting information from changelogs.
 
-<!--MAGECLOUD-1428-->* We fixed an issue that was preventing merchants from using AMQP and search services. Previously, the deployment process was overwriting these settings in the `env.php` file if the `QUEUE_CONFIGURATION` and/or `SEARCH_CONFIGURATION` [environment variables](http://devdocs.magento.com/guides/v2.1/cloud/env/environment-vars_magento.html#deploy) were not set.
+<!--MAGECLOUD-1428-->* We fixed an issue that was preventing merchants from using AMQP and search services. Previously, the deployment process was overwriting these settings in the `env.php` file if the `QUEUE_CONFIGURATION` and/or `SEARCH_CONFIGURATION` [environment variables]({{ site.baseurl }}/guides/v2.1/cloud/env/environment-vars_magento.html#deploy) were not set.
 
 <!--MAGECLOUD-1409-->* We fixed an issue that was causing inordinately long down times during deployment in 2.1.9 through 2.1.11.
 

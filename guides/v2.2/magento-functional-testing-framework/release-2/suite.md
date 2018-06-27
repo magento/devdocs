@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Suites
 version: 2.2
@@ -61,7 +60,7 @@ The format of a suite:
   - must not be `default` or `skip`. Tests that are not in any suite are generated under the `default` suite.
   The suite name `skip` is synonymous to including a test in the `<group value="skip"/>`.
   - can contain letters, numbers, and underscores.
-  - should be upper case.
+  - should be upper camel case.
 - A suite must contain at least one `<include>`, or one `<exclude>`, or both.
 - Using `<before>` in a suite, you must add the corresponding `<after>` to restore the initial state of your testing instance.
 
@@ -240,9 +239,9 @@ The element may contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### exclude {#exclude-tag}
 
-A set of filters to be used for excluding tests from the the suite.
+A set of filters to be used for excluding tests from the suite.
 
-There two types of behaviour:
+There two types of behavior:
 1. Applying filters to the included tests when the suite contains [`<include>`] filters.
 The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.
 2. Applying filter to all tests when the suite does not contain [`<include>`] filters.

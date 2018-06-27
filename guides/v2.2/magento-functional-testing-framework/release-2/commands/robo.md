@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Robo commands
 version: 2.2

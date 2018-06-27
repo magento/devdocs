@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 03_Build
 title: The di.xml file
@@ -11,7 +10,7 @@ github_link: extension-dev-guide/build/di-xml-file.md
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{page.baseurl}}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{page.baseurl}}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration sensitive](#ext-di-sens) using `di.xml`.
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
 
 ## Areas and application entry points
 
@@ -26,7 +25,7 @@ Magento loads The configuration in the following stages:
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-During [bootstrapping]({{page.baseurl}}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
+During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
@@ -144,7 +143,7 @@ Node Format:
 
 : `<argument xsi:type="number">{numericValue}</argument>`
 
-Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:taget="_blank"}.
+Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:target="_blank"}.
 
 ---
 
@@ -322,7 +321,7 @@ Also, every instance of `Magento\Filesystem` will get separate instance of `$ada
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
 
-For multi-system deployments, such as the [pipeline deployment model]({{ page.baseurl}}/config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
+For multi-system deployments, such as the [pipeline deployment model]({{ page.baseurl }}/config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
 
 | shared          | Settings that are shared between systems using `app/etc/config.php` |
 | sensitive       | Settings that are restricted or confidential                        |
@@ -346,16 +345,16 @@ The following code sample is a template for specifying values as sensitive or sy
 
 Do not share sensitive or system-specific settings stored in `app/etc/env.php` between development and production systems.
 
-See [sensitive and environment settings]({{page.baseurl}}/extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
+See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
 
 ### Information related to pipeline deployment
 
-*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl}}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-sens.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl}}/config-guide/prod/config-reference-b2b.html)
+*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Related topics
 
-* [ObjectManager]({{page.baseurl}}/extension-dev-guide/object-manager.html)
-* [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)
-* [Sensitive and environment settings]({{page.baseurl}}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+* [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+* [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+* [Sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)

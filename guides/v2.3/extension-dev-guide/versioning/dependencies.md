@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: Versioning
 title: Module version dependencies
@@ -82,7 +81,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | **Javascript class** (marked with `@api`)                   | Inject in a constructor                                                                                 | MAJOR              |
 |                                                             | Extend from a class                                                                                     | MINOR              |
 |                                                             | Override a method                                                                                       | MINOR              |
-|                                                             | Subscribe to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} | MINOR              |
+|                                                             | Subscribe to an event  | MINOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **Virtual Type**                                            | Configure a virtual type in the `di.xml` file as a class dependency                                     | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |

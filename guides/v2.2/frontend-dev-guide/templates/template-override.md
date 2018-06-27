@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Templates basic concepts
 version: 2.1
@@ -59,7 +58,7 @@ See [Theme inheritance]
 ## Root template {#root}
 
 `<Magento_Theme_module_dir>/view/base/templates/root.phtml` is the root template for all storefront pages in the Magento application.
-This file can be overriden in a theme just like any other template file.
+This file can be overridden in a theme just like any other template file.
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to `<head>` and `<body>` sections of all pages rendered by Magento application.
 
@@ -84,9 +83,9 @@ is the same as writing
 
 ## Related reading
 
-[Set a block's template]({{page.baseurl}}/frontend-dev-guide/layouts/xml-manage.html#set_template)
+[Set a block's template]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#set_template)
 
-[`app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml`]: {{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml
-[Child theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
-[Theme inheritance]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates
-[Layout instructions]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#getter
+[`app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml`]: {{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml
+[Child theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
+[Theme inheritance]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates
+[Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#getter

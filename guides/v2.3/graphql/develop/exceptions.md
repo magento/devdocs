@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Exception handling
 version: 2.3

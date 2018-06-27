@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install
 subgroup: 05_umask
 title: Optionally set a umask

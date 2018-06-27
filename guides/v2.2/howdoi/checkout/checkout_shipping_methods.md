@@ -1,32 +1,34 @@
 ---
-layout: default
+layout: tutorial
 group: howdoi
 subgroup: checkout
 title: Customize the list of shipping methods
-menu_title: Customize the list of shipping methods
+subtitle: Customize Checkout
 menu_order: 100
+level3_subgroup: checkout-tutorial
 version: 2.2
 github_link: howdoi/checkout/checkout_shipping_methods.md
 ---
 
-This topic describes how to customize list of shipping methods displayed on the checkout page. 
+This topic describes how to customize list of shipping methods displayed on the checkout page.
 
 Let's consider a case where you need to add a collapsible text field with description for each shipping method in this list. To achieve this, you need to take the following steps:
 
-1. Create a new template for the shipping method item.
-2. Create a new template for the shipping method list.
-3. Override the shipping step configuration.
+1. [Create a new template for the shipping method item](#method-item).
+2. [Create a new template for the shipping method list](#method-list).
+3. [Override the shipping step configuration](#shipping).
 
-## Create new template for shipping method item
+## Step 1: Create new template for shipping method item {#method-item}
 
-In your custom module directory, create a new file: `<your_module_dir>/view/frontend/web/template/custom-method-item-template.html`. In this file, add the following code. 
+In your custom module directory, create a new file: `<your_module_dir>/view/frontend/web/template/custom-method-item-template.html`. In this file, add the following code.
+
 It is copied from the `<Magento_Checkout_module_dir>/view/frontend/web/template/shipping-address/shipping-method-item.html` template, with the following modifications:
 
-* a `<tr>` element added to contain the shipping method description 
-* a column with trigger elements that provide the collapse/expand functionality added 
-* the entire sample wrapped in `<tbody>` to provide the general collapsible context for rows:
+* A `<tr>` element added to contain the shipping method description
+* A column with trigger elements that provide the collapse/expand functionality added
+* The entire sample wrapped in `<tbody>` to provide the general collapsible context for rows
 
-{%highlight html%}
+```html
 <!-- Initialize collapsible binding -->
 <tbody collapsible="as: '$collapsible_' + method.method_code">
     <tr class="row">
@@ -73,17 +75,16 @@ It is copied from the `<Magento_Checkout_module_dir>/view/frontend/web/template/
         </td>
     </tr>
 </tbody>
-{%endhighlight%}
+```
 
-
-## Create new template for shipping methods list
+## Step 2: Create new template for shipping methods list {#method-list}
 
 In your custom module directory, create a new file: `<your_module_dir>/view/frontend/web/template/custom-method-list-template.html`. In this file, add the following code. It uses the code from the `app/code/Magento/Checkout/view/frontend/web/template/shipping-address/shipping-method-list.html` template, with the following modifications:
 
-* a column for triggers added in `<thead>` 
+* A column for triggers added in `<thead>`
 * `tbody` moved to the item template for collapsible context
 
-{%highlight html %}
+```html
 <div id="checkout-shipping-method-load">
     <table class="table-checkout-shipping-method">
         <thead>
@@ -102,13 +103,15 @@ In your custom module directory, create a new file: `<your_module_dir>/view/fron
         <!-- /ko -->
     </table>
 </div>
-{%endhighlight%}
+```
 
-## Override shipping step configuration
+## Step 3: Override shipping step configuration {#shipping}
 
-In your custom module directory, create a new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. In this file, add the following code. It overrides the `shippingMethodListTemplate` and `shippingMethodItemTemplate` properties of `<Magento_Checkout_module_dir>/view/frontend/web/js/view/shipping.js`:
+In your custom module directory, create a new file: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`. In this file, add the following code.
 
-{%highlight html %}
+It overrides the `shippingMethodListTemplate` and `shippingMethodItemTemplate` properties of `<Magento_Checkout_module_dir>/view/frontend/web/js/view/shipping.js`:
+
+```html
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
@@ -139,4 +142,4 @@ In your custom module directory, create a new file: `<your_module_dir>/view/fron
         </referenceBlock>
     </body>
 </page>
-{%endhighlight%}
+```

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: Release Notes
 title: Magento Commerce 2.2.1 Release Notes
@@ -20,7 +19,7 @@ We are pleased to present Magento Commerce 2.2.1. This release includes numerous
 
 Look for the following highlights in this release:
 
-* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
+* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
 
 * Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
@@ -32,7 +31,7 @@ Look for the following highlights in this release:
 
 
 
-Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
 
 ## Security enhancements
@@ -48,11 +47,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Installation, upgrade, deployment
 
-<!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
+<!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler</a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
 
 <!--- 71893 -->* If you do not specify `—base_url` during installation, all URLs now use the host and port of the current request to create URLs. 
 
-<!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
+<!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from an unsuccessful commit and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
 
 <!--- 80201 -->*  We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
 
@@ -121,9 +120,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### General
-<!--- 80096 -->* We've fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
+<!--- 80096 -->* We've fixed JavaScript date validation on the storefront. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
-<!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added a new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
+<!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
 
 <!--- 71980 -->* You can now remove system customer address and customer attributes from specific forms to prevent them from displaying on the frontend. 
 
@@ -135,7 +134,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 72353 -->* You can now remove custom attributes from the Use in Forms grid. 
 
 
-<!--- 75455 -->* You can now generate unsecure URLs even when the current URL is secure.
+<!--- 75455 -->* You can now generate unsecured URLs even when the current URL is secure.
 
 <!--- 80204 -->* The Checkout authentication popup now contains the correct message. [GitHub-9533](https://github.com/magento/magento2/issues/9533), [GitHub-10627](https://github.com/magento/magento2/issues/10627)
 
@@ -412,11 +411,11 @@ The following table identifies contributions from our community members. This ta
 </table>
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 
 
-For more information, [System Requirements]({{ site.baseurl}}/magento-system-requirements.html).
+For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
@@ -426,6 +425,6 @@ You can install Magento Commerce 2.2 General Availability (GA) using Composer.
 {% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
-The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

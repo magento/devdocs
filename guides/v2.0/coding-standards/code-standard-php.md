@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: PHP coding standard

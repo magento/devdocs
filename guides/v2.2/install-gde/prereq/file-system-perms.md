@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Set pre-installation ownership and permissions

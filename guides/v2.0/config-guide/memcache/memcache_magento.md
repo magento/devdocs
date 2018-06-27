@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 10_mem
 title: Configure Magento to use memcached

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
@@ -90,8 +89,8 @@ tests
 utils                           // Test running utilities
 .env.example                    // Example file with environmental settings
 .gitignore                      // List of files ignored by git
-.htaccess.sample                // Access settings for Appache web server to perform CLI commands on Magento application
-RoboFile.php                    // MFTF CLI commands configutaion for Robo task runner
+.htaccess.sample                // Access settings for Apache web server to perform CLI commands on Magento application
+RoboFile.php                    // MFTF CLI commands configuration for Robo task runner
 codeception.dist.yml            // Codeception configuration
 pre-install.php                 // Script that checks the environment on whether pre-installation requirements are met
 ```
@@ -136,7 +135,7 @@ Follow the [MFTF project](https://github.com/magento/magento2-functional-testing
 
 
 <!-- Link definitions -->
-[Functional Testing Framework]: {{page.baseurl}}/mtf/mtf_introduction.html
+[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework
 [contribute on Github]: ../contribution-guidelines.html
 

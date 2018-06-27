@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Feedback to User
 title: Admin Design Pattern Library

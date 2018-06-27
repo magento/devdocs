@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 50_trouble
 title: Roll back after update failure

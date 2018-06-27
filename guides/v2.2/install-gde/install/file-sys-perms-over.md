@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Overview of ownership and permissions

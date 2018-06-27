@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Create, edit, or unlock a Magento administrator account
 version: 2.0
@@ -14,13 +13,13 @@ functional_areas:
 ## First steps
 {% include install/first-steps-cli.html %}
 
-In addition to the command arguments discussed here, see [Common arguments]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites
 Before you can use this command, you must do all of the following:
 
--   [Create the deployment configuration]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-deployment.html)
--   [Enable at minimum the Magento_Authorization and Magento_User modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html)
+-   [Create the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+-   [Enable at minimum the Magento_Authorization and Magento_User modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 -   Create the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -84,7 +83,7 @@ Where the following table defines parameters and values:
         <p>--admin-user</p>
       </td>
       <td>
-        <p>Magento administrator user name.</p>
+        <p>Magento administrator username.</p>
       </td>
       <td>
         <p>Yes</p>
@@ -109,9 +108,9 @@ Where the following table defines parameters and values:
 ## Unlock an administrator account
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
 
-	magento admin:user:unlock {user name}
+	magento admin:user:unlock {username}
 
-You must specify the administrator's user name. Example:
+You must specify the administrator's username. Example:
 
 	magento admin:user:unlock admin
 	The user account "admin" has been unlocked
@@ -128,19 +127,19 @@ If the account doesn't exist, the following message displays:
 
 #### Related topics
 
--   [Installing the Magento software using the command line]({{page.baseurl}}/install-gde/install/cli/install-cli-install.html)
--   [Remove sample data modules or update sample data]({{page.baseurl}}/install-gde/install/cli/install-cli-sample-data-other.html)
--   [Enable or disable modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html)
--   [Display or change the Admin URI]({{page.baseurl}}/install-gde/install/cli/install-cli-adminurl.html)
--   [Uninstall modules]({{page.baseurl}}/install-gde/install/cli/install-cli-uninstall-mods.html)
--   [Create or update the deployment configuration]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-deployment.html)
--   [Enable or disable maintenance mode]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-maint.html)
--   [Create the Magento database schema]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-db.html)
--   [Update the Magento database schema and data]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
--   [Configure the store]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-store.html)
--   [Back up and roll back the file system, media, and database]({{page.baseurl}}/install-gde/install/cli/install-cli-backup.html)
--   [Uninstall themes]({{page.baseurl}}/install-gde/install/cli/install-cli-theme-uninstall.html)
--   [Uninstall language packages]({{page.baseurl}}/install-gde/install/cli/install-cli-uninstall-langpk.html)
--   [Uninstall the Magento software]({{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)
--   [Update the Magento software]({{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
--   [Reinstall the Magento software]({{page.baseurl}}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)
+-   [Installing the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
+-   [Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)
+-   [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
+-   [Display or change the Admin URI]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html)
+-   [Uninstall modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html)
+-   [Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+-   [Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html)
+-   [Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
+-   [Update the Magento database schema and data]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
+-   [Configure the store]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html)
+-   [Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html)
+-   [Uninstall themes]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
+-   [Uninstall language packages]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-langpk.html)
+-   [Uninstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)
+-   [Update the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
+-   [Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)

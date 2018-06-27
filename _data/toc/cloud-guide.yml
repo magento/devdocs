@@ -58,6 +58,10 @@ pages:
         - label: Blackfire.io
           url: /cloud/project/project-integrate-blackfire.html
 
+        - label: SendGrid
+          url: /cloud/project/sendgrid.html
+          versions: ["2.1","2.2","2.3"]
+
     - label: Local environment setup
       url: /cloud/access-acct/first-time-setup.html
       children:
@@ -87,6 +91,10 @@ pages:
 
         - label: Optional - Configure Xdebug
           url: /cloud/howtos/debug.html
+
+        - label: Configure Docker
+          url: /cloud/reference/docker-config.html
+          versions: ["2.1","2.2","2.3"]
 
     - label: Import existing code into a project
       url: /cloud/access-acct/first-time-setup_import-first-steps.html
@@ -346,8 +354,8 @@ pages:
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Patch Cloud tools
-          url: /cloud/composer-packages/ece-tools.html
+        - label: Cloud tools release notes
+          url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
         - label: Patch Magento Commerce (Cloud)

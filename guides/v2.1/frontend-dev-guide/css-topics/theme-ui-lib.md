@@ -1,26 +1,21 @@
 ---
-layout: default
 group: fedg
-subgroup: D_CSS
 title: Magento UI library
-menu_order: 4
 version: 2.1
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html
 functional_areas:
   - Frontend
   - Theme
 ---
 
-<h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>
+The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible [LESS]-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers.
+It employs a set of mixins for base elements to ease frontend theme development and customization.
 
-The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers. It employs a set of mixins for base elements to ease frontend theme development and customization. 
-
-This topic describes how the library is organized, and how to use it. 
+This topic describes how the library is organized, and how to use it. For more information, see the [Magento UI library documentation] that reflects the latest [embedded documentation].
 
 ## Components provided by the UI library {#library_elements}
-The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
 
+The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:
 *	actions-toolbar
 *	breadcrumbs
 *	buttons
@@ -42,15 +37,14 @@ The Magento UI library provides the ability to customize and reuse the following
 
 The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} product page containing some of the preceding elements:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl}}/common/images/ui_lib1.png" alt="A product page with user interface elements specified">
-</div>
+![A product page with user interface elements specified][ui_lib1.png]
 
 ## Mixin location {#fedg_using-ui-lib_mixins}
 
- You can find the Magento UI library under <a href="{{site.mage2000url}}lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source `.less` files are stored under the `source` directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:
-
-<pre>lib/web
+You can find the Magento UI library under [`lib/web/css`].
+Library source `.less` files are stored under the `source` directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:
+```tree
+lib/web
     ├── css/
     │    ├── docs/ (Library documentation)
     │    ├── source/
@@ -87,54 +81,91 @@ The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f
     │    └── Blank-Theme-Icons/ (Library custom icons font)
     ├── images/
     │    └── blank-theme-icons.png (Library icons sprite)
-    └── jquery/ (Library javascript files)</pre>
-
+    └── jquery/ (Library javascript files)
+```
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
-If your theme <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
+If your theme [inherits] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates.
+Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
-The complete list of these variables and their default values are stored in <a href="{{site.mage2000url}}lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="{{site.mage2000url}}lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the `breadcrumbs()` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}.
+The complete list of these variables and their default values are stored in [`lib/web/css/source/lib/variables`].
+This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables.
+For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`] contains variables used in the `breadcrumbs()` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}.
 
-To change the default library variables values, specify the new values for the required variables in the <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file.
+To change the default library variables values, specify the new values for the required variables in the `<theme_dir>/web/css/source/_theme.less` file.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please mind, that your <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Please mind, that your `&lt;theme_dir&gt;/web/css/source/_theme.less` file overrides `_theme.less` of the parent theme (if your theme has a parent).
+So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s `_theme.less` to your file as well.
 </div>
 
-The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.
+The following figure shows the product page shown earlier in this topic, after a custom theme was applied.
+The theme customized Blank by redefining variables only.
 
-<img src="{{site.baseurl}}/common/images/ui_lib2.png" alt="Changing design by redefining variables">
+![Changing design by redefining variables][ui_lib2.png]
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 
-When naming custom variables, please follow the [Magento naming convention for the LESS variables]({{page.baseurl}}/coding-standards/code-standard-less.html#naming).
+When naming custom variables, please follow the [Magento naming convention for the LESS variables].
 
 ## Using mixins {#fedg_using-ui-lib_customize}
 
-You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe both ways to call a mixin.
+You can use a mixin with default variables values, or you can redefine them when calling a mixin.
+The following paragraphs describe both ways to call a mixin.
 
-To use a mixin with default values, call the mixin without specifying any parameters. For example:
-
-<pre>.breadcrumbs {
+To use a mixin with default values, call the mixin without specifying any parameters.
+For example:
+```css
+.breadcrumbs {
     .breadcrumbs();
-}</pre>
-
+}
+```
 To call a mixin with parameter values different from default, set these values when calling the mixin, like in the following example:
-
-<pre>.example-button {
+```css
+.example-button {
     .button(
         @_button-padding: @button-padding,
         @_button-color: #fff,
         @_button-color-hover: #ccc
     );
-}</pre>
+}
+```
+Variables starting with `@_` are private mixin variables used only in this mixin.
+Variables starting with `@` (without the underscore) are global, and are listed in [`lib/web/css/source/lib/variables`].
 
-Variables starting with `@_` are private mixin variables used only in this mixin. Variables starting with `@` (without the underscore) are global, and are listed in <a href="{{site.mage2000url}}lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables/</code></a>.
+## Embedded documentation {#docs}
 
-## UI library documentation {#docs}
+The detailed information about the Magento UI library is embedded in the code repository:
+* [`lib/web/css/docs/source/README.md`] describes the Magento UI library structure, naming conventions, and code style.
+* [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 
-You can find detailed information about the Magento UI library in the documentation provided together with the code:
+Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
+The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
 
-* <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank"><code>lib/web/css/docs/source/README.md</code></a>: describes the Magento UI library structure, naming conventions, and code style.
-* <a href="{{ site.mage2000url }}lib/web/css/docs" target="_blank"><code>lib/web/css/docs</code></a>: contains a set of `.html` files with detailed information about the library mixins. Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins. The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} view in the following location in your Magento installation: <code>pub/static/frontend/Magento/blank/en_US/css/docs/index.html</code>
+
+<!-- Link definitions -->
+
+[`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}/lib/web/css/docs/source/README.md
+{:target="_blank"}
+[`lib/web/css/docs`]: {{ site.mage2100url }}/lib/web/css/docs
+{:target="_blank"}
+[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables/_breadcrumbs.less
+{:target="_blank"}
+[`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables
+{:target="_blank"}
+[`lib/web/css`]: {{ site.mage2100url }}/lib/web/css
+{:target="_blank"}
+[embedded documentation]: #docs
+[inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
+{:target="_blank"}
+[LESS]: http://lesscss.org/
+{:target="_blank"}
+[Magento naming convention for the LESS variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
+{:target="_blank"}
+[Magento UI library documentation]: https://magento-devdocs.github.io/magento2-ui-library/
+{:target="_blank"}
+[ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
+[ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png
+
+

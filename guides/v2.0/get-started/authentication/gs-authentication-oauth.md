@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 40_Authentication
 title: OAuth-based authentication
@@ -14,13 +13,13 @@ functional_areas:
 
 Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.
 
-In Magento, a third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that uses OAuth for authentication is called an [_integration_]( {{page.baseurl}}/get-started/create-integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.
+In Magento, a third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that uses OAuth for authentication is called an [_integration_]( {{ page.baseurl }}/get-started/create-integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.
 
 As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.
 
 ## OAuth overview {#overview}
 The following diagram shows the OAuth authentication process. Each step is described further.
-![OAuth flow]({{page.baseurl}}/get-started/authentication/images/oauthflow.png)
+![OAuth flow]({{ page.baseurl }}/get-started/authentication/images/oauthflow.png)
 
 
 1. **Create an integration**.  The merchant creates an integration from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Magento generates a consumer key and a consumer secret.
@@ -242,7 +241,7 @@ session_start();
 
 /** Use $consumerKey to retrieve the following data in case it was stored in DB when received at "endpoint.php" */
 if ($consumerKey !== $_SESSION['oauth_consumer_key']) {
-    throw new \Exception("Consumer keys received on on different requests do not match.");
+    throw new \Exception("Consumer keys received on different requests do not match.");
 }
 
 $consumerSecret = $_SESSION['oauth_consumer_secret'];
@@ -510,10 +509,10 @@ class OauthClient extends AbstractService
 
 ## Related topics
 
-[Create an integration]( {{page.baseurl}}/get-started/create-integration.html )
+[Create an integration]( {{ page.baseurl }}/get-started/create-integration.html )
 
-[OAuth error codes]( {{page.baseurl}}/get-started/authentication/oauth-errors.html )
+[OAuth error codes]( {{ page.baseurl }}/get-started/authentication/oauth-errors.html )
 
-[Construct a request]( {{page.baseurl}}/get-started/gs-web-api-request.html )
+[Construct a request]( {{ page.baseurl }}/get-started/gs-web-api-request.html )
 
-[Configure services as web APIs]( {{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html )
+[Configure services as web APIs]( {{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html )

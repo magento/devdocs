@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 title: DevDocs Contributors
 version: 2.1
@@ -18,5 +17,5 @@ Always feel free to [email us][1] with any questions.
 <div class="devdocs-contributors"></div>
 
 
-[0]: {{page.baseurl}}/contributor-guide/contributing_docs.html
+[0]: {{ page.baseurl }}/contributor-guide/contributing_docs.html
 [1]: mailto:DL-Magento-Doc-Feedback@magento.com

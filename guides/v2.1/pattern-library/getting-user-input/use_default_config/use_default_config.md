@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Getting User Input
 title: Admin Design Pattern Library

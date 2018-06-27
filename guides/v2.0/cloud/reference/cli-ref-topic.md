@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 020_tech
 title: Magento Cloud CLI reference
@@ -19,13 +18,13 @@ The Magento Cloud CLI is a cloud-specific version of the Magento CLI we provide 
 
 This reference lists all available commands, and a list of commonly used commands, for {{site.data.var.ece}}. You can also use Magento CLI commands as needed, using `bin/magento` for entering commands.
 
-You will [install]({{ page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
+You will [install]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You must install the Magento Cloud CLI to your local workspace to issue commands. For details, see:
 
-* [Install Magento prerequisites]({{ page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html)
+* [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+* [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
 </div>
 
 The following Magento Cloud CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Integration environments.
@@ -173,7 +172,7 @@ The following table lists all commands for interacting with your environments an
 	 				</tr>
 					<tr>
 					<td>auth-info</td>
-					<td>Display yourt account information</td>
+					<td>Display your account information</td>
 					</tr>
 					<tr>
 					<td>auth:login (login)</td>
@@ -314,7 +313,7 @@ The following table lists all commands for interacting with your environments an
 	 				<tr>
 	 				<td>local:build (build)</td>
 	 				<td><p>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</p>
-          <p>You should only use this command to <a href="{{page.baseurl}}/cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
+          <p>You should only use this command to <a href="{{ page.baseurl }}/cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>

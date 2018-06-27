@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento Open Source modules
 version: 2.1

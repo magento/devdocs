@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Architectural Basics
 title: Architectural basics overview

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Events and observers
@@ -19,7 +18,7 @@ Events are dispatched by modules when certain actions are triggered. In addition
 
 #### Dispatching events
 
-Events can be dispatched using the [`Magento\Framework\Event\Manager`]({{site.mage2000url}}lib/internal/Magento/Framework/Event/Manager.php){:target="_self"} class. This class can be obtained through [dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
+Events can be dispatched using the [`Magento\Framework\Event\Manager`]({{ site.mage2000url }}lib/internal/Magento/Framework/Event/Manager.php){:target="_self"} class. This class can be obtained through [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) by defining the dependency in your constructor.
 
 To dispatch an event, call the `dispatch` function of the event manager class and provide it with the name of the event you want to dispatch along with an array of data you wish to provide to observers.
 
@@ -28,18 +27,23 @@ The following example shows you how to dispatch an event with and without an arr
 {% highlight php startinline=true %}
 
 namespace MyCompany\MyModule;
+
 use Magento\Framework\Event\ObserverInterface;
-class MyClass{
+
+class MyClass
+{
   /**
-  * @var EventManager
-  */
+   * @var EventManager
+   */
   private $eventManager;
 
-  public function __construct(\Magento\Framework\Event\Manager $eventManager){
+  public function __construct(\Magento\Framework\Event\Manager $eventManager)
+  {
     $this->eventManager = $eventManager;
   }
 
-  public function something(){
+  public function something()
+  {
     $eventData = null;
     // Code...
     $this->eventManager->dispatch('my_module_event_before');
@@ -64,7 +68,7 @@ Observers are a certain type of Magento class that can influence general behavio
 
 #### Creating an observer
 
-To create an observer, you must place your class file under your `<module-root>/Observer` directory. Your observer class should implement [`Magento\Framework\Event\ObserverInterface`]({{site.mage2000url}}lib/internal/Magento/Framework/Event/ObserverInterface.php) and define its `execute` function.
+To create an observer, you must place your class file under your `<module-root>/Observer` directory. Your observer class should implement [`Magento\Framework\Event\ObserverInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/Event/ObserverInterface.php) and define its `execute` function.
 
 Below is an example of the basic observer class structure:
 {% highlight php startinline=true %}
@@ -91,6 +95,7 @@ One of the more powerful feature of observers is that they are able to use param
 
 {% highlight php startinline=true %}
 namespace MyCompany\MyModule\Observer;
+
 use Magento\Framework\Event\ObserverInterface;
 
 class AnotherObserver implements ObserverInterface
@@ -118,7 +123,7 @@ The `observer` {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% e
 * `name` (required) - The name of the observer for the event definition.
 * `instance` (required) - The fully qualified class name of the observer.
 * `disabled` - Determines whether this observer is active or not. Default value is false.
-* `shared` - Determines the [lifestyle]({{page.baseurl}}/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is false.
+* `shared` - Determines the [lifestyle]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html#object-lifestyle-configuration) of the class. Default is false.
 
 
 Below is an example of how to assign observers to watch certain events:
@@ -140,4 +145,4 @@ Observer names must be unique per event definition. This means that you cannot h
 
 ### Recommended Reading
 
-* [Observers best practices]({{page.baseurl}}/ext-best-practices/extension-coding/observers-bp.html)
+* [Observers best practices]({{ page.baseurl }}/ext-best-practices/extension-coding/observers-bp.html)

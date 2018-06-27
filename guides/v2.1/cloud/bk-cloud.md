@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Welcome to Magento Commerce (Cloud)
 version: 2.1

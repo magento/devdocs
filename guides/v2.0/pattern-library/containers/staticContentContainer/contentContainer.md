@@ -1,5 +1,4 @@
 ---
-layout: default
 group: pattern
 subgroup: Container
 title: Admin Design Pattern Library

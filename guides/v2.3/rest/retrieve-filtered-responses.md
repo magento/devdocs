@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: Web APIs
 title: Retrieve filtered responses for REST APIs
@@ -7,7 +6,7 @@ menu_title: Retrieve filtered responses
 menu_order: 3
 version: 2.3
 github_link: rest/retrieve-filtered-responses.md
-redirect_from: guides/v2.3/howdoi/webapi/filter-response.html
+redirect_from: /guides/v2.3/howdoi/webapi/filter-response.html
 ---
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} requests that return partial responses.
@@ -155,7 +154,7 @@ The following POST operation and payload creates a {% glossarytooltip 8d40d668-4
 
 ## Using with searchCriteria
 
-The [`searchCriteria` query parameter]({{page.baseurl}}/rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
+The [`searchCriteria` query parameter]({{ page.baseurl }}/rest/performing-searches.html) allows you to search across multiple objects in a collection. You can use the `fields` query parameter in conjunction with `searchCriteria` to limit the output. The question mark (?) that precedes `fields` in all the other examples in this document is replaced with an ampersand (&amp;).
 
 The following query returns only the `sku` and `name` parameters for product items whose `category_gear` attribute includes the value `86`.
 
@@ -207,4 +206,4 @@ The following query returns only the `sku` and `name` parameters for product ite
 
 ## Related topics
 {:.no_toc}
-* [Search using REST APIs]({{page.baseurl}}/rest/performing-searches.html)
+* [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html)

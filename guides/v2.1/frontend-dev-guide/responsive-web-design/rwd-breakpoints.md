@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: E_rwd
 title: Add a custom breakpoint
@@ -8,15 +7,15 @@ menu_title: Add a custom breakpoint
 version: 2.1
 github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
-  - guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
 functional_areas:
   - Frontend
 ---
 
 <h2>What's in this topic</h2>
 
-Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
+Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of [default breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break). This topic describes how to add a custom breakpoint in your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
 ## Overview
 To add a custom breakpoint in your theme, you need to do the following:
@@ -29,7 +28,7 @@ To add a custom breakpoint in your theme, you need to do the following:
 
 In your custom theme directory, add a `/web/css/source/variables.less` in one of the following ways:
 
-- if your theme [inherits]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
+- if your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the other, then copy the parent's `variables.less`.
 - if your theme is a standalone one, add a new empty file.
 
 In `variable.less`, add the variable for your new breakpoint.
@@ -38,7 +37,7 @@ For example:
 
     @your__breakpoint: 1280px;
 
-For variables' naming rules see [Less coding standards](http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables).
+For variables' naming rules see [Less coding standards]({{ site.baseurl }}/guides/v2.0/coding-standards/code-standard-less.html#variables).
 
 ## Override `_responsive.less` from the library
 
@@ -75,4 +74,4 @@ Example:
 ## Related reading
 
 - You can find information about the `_responsive.less` library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: `<your_Magento_installation>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html`.
-- [How to make your theme responsive and mobile]({{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_overview.html).
+- [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html).

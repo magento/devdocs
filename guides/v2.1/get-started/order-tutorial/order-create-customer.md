@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 3. Create a customer
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 3
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-customer.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -123,13 +122,13 @@ Magento assigned this user `id` value of `2`.
 {% endhighlight %}
 {% endcollapsible %}
 
-You can log in to the Luma store using the user name `jdoe@example.com` and password `Password1`.
+You can log in to the Luma store using the username `jdoe@example.com` and password `Password1`.
 
 ### Get the customer's access token {#get-token}
 
 To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an admin {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
 
-By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Configuration > Services > OAuth > Access Token Expiration**.
+By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 
 **Endpoint**

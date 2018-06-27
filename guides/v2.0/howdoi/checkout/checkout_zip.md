@@ -1,35 +1,33 @@
 ---
-layout: default
+layout: tutorial
 group: howdoi
 subgroup:
 title: Add custom input mask for ZIP code
-menu_title: Add custom input mask for ZIP code
+subtitle: Customize Checkout
 menu_order: 6
+level3_subgroup: checkout-tutorial
 version: 2.0
 github_link: howdoi/checkout/checkout_zip.md
 functional_areas:
   - Checkout
 ---
-## What's in this topic
 
-When a shopper specifies the country and ZIP code in the shipping address during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed.
 This topic describes how a developer can add custom input masks.
 
-
-## Adding custom input masks for ZIP code
+When a shopper specifies the country and ZIP code in the shipping address during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed.
 
 In Magento the input masks for the **ZIP code** field are specified in the `<Magento_Directory_module_dir>/etc/zip_codes.xml`. Input masks are specified per country, and are entered in the form of regular expressions.
-The syntax of defined by the [zip_code.xsd]({{site.mage2000url}}app/code/Magento/Directory/etc/zip_codes.xsd) scheme.
+The syntax of defined by the [zip_code.xsd]({{ site.mage2000url }}app/code/Magento/Directory/etc/zip_codes.xsd) scheme.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate, custom module. For your ZIP code input mask customization to be applied correctly, your custom module should depend on the `Magento_Directory` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
+## Add custom ZIP code input masks {#add}
 
 To add custom ZIP code input masks or change the default ones, create a new `zip_code.xml` in the `<your_module_dir>/etc` directory.
 
 The content of the file should be similar to the following sample:
 
-{%highlight xml%}
-
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
@@ -43,15 +41,19 @@ The content of the file should be similar to the following sample:
     	</codes>
 	</zip>
 </config>
-{%endhighlight%}
+```
 
-To change (override the default value) the existing mask, open your `zip_codes.xml` and copy in the related nodes. Then, change the regular expression defining the mask and the value of `example` correspondingly.
+## Modify default values in existing mask {#modify}
 
-Example of changing the default input mask:
+To change (override the default value) the existing mask:
 
-In the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` the following mask is set for France:
+1. Open `zip_codes.xml`.
+1. Copy in the related nodes.
+1. Change the regular expression defining the mask and the value of `example` correspondingly.
 
-{%highlight xml%}
+For example, in the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` the following mask is set for France:
+
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
@@ -63,10 +65,11 @@ In the default `<Magento_Directory_module_dir>/etc/zip_codes.xml` the following 
     </zip>
 ...
 </config>
-{%endhighlight%}
+```
 
 To change this mask, add the following code in your `zip_codes.xml`:
-{%highlight xml%}
+
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
@@ -79,6 +82,7 @@ To change this mask, add the following code in your `zip_codes.xml`:
     </zip>
 ...
 </config>
-{%endhighlight%}
+```
 
+## Remove a mask {#remove}
 To remove a mask, in your `zip_codes.xml` add the corresponding node and set `active` attribute of `<code/>` to `false`.

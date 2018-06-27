@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Writing and Content
 title: Admin Errors and Messages Writing

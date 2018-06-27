@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 title: Develop data and schema patches
 version: 2.3

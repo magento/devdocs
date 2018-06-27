@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 100_project
 title: Project structure
@@ -76,7 +75,7 @@ For Pro, the deployment log for Staging and Production is located in `/var/log/p
 Magento logs are located in the `<magento root dir>/var/log` directory.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can also [set up log-based Slack and email notifications]({{page.baseurl}}/cloud/env/setup-notifications.html).
+You can also [set up log-based Slack and email notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html).
 </div>
 
 ## Build logs {#build-log}
@@ -88,8 +87,8 @@ You can review these logs via SSH into the environment. Change to the directorie
 Logs from the deploy hook are located on the server in the following locations:
 
 *	Integration: `/var/log/deploy.log`
-*	Staging: `/var/log/platform/<prodject ID>/post_deploy.log`
-*	Production: `/var/log/platform/{1|2|3}.<prodject ID>/post_deploy.log`
+*	Staging: `/var/log/platform/<project ID>/post_deploy.log`
+*	Production: `/var/log/platform/{1|2|3}.<project ID>/post_deploy.log`
 
 The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 

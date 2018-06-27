@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 02_prereq
 title: Update and upgrade checklist

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: Template Literals in UI Components
@@ -21,7 +20,7 @@ Template literals allow UI Components to easily assign dynamic values to class p
 
 ### The `defaults` Class Property
 
-UI Components are [associated with Javascript classes](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
+UI Components are [associated with Javascript classes]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) to handle behavior on the client side. These should extend one of the core classes to provide a base level of functionality. Inside the child class, a `defaults` property can be provided.
 
 The `defaults` property should be an object and is handled in a special way. Each property of `defaults` becomes a class property upon initialization. This happens in the `initConfig()` method of `lib/core/class.js`. Every item in `defaults` is passed through a `template()` function which evaluates template literals.
 
@@ -53,7 +52,7 @@ Perhaps the most important part of template literals in Magento is the `$` objec
 
 Perhaps the most useful aspect of template literals is the ability to access other UI Component Javascript classes in the registry so we will use this as an example. First, there are a few things to explain.
 
-UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-top-level-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the front end and other Javascript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
+UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-top-level-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the front end and other Javascript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
 
 Names of other registered modules can be added to the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %} configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the Javascript on the front end. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this Javascript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other Javascript class.
 
@@ -90,7 +89,7 @@ In the template, the messages can be displayed like this:
 
 ```html
 <!-- File: app/code/Example/Component/view/frontend/web/template/message-list.html -->
-<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../Ui/etc/ui_template.xsd">
+<div>
   <ul data-bind="foreach: messages" class="message-list">
       <li data-bind="text: content, css: htmlClass"></li>
   </ul>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Section structure
 version: 2.2
@@ -56,7 +55,6 @@ The format of a `<section>` is:
 
 The following conventions apply to MFTF sections:
 
-* `<section>` name is the same as the file name.
 * `<section>` name must be alphanumeric.
 * `*Section.xml` is stored in the _Section_ directory of a module.
 * The name format is `{Admin|Storefront}{SectionDescription}Section.xml`.
@@ -150,6 +148,6 @@ Whenever the `signIn` button is used in a test, the MFTF will add a 30 second `w
 {% endraw %}
 
 
-<!-- Link definitioins -->
+<!-- Link definitions -->
 
 [waitForPageLoad]: test/actions.html#waitforpageload

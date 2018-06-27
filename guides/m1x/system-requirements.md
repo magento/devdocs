@@ -3,7 +3,7 @@ layout: m1x
 title: System Requirements for Magento Enterprise Edition and Community Edition (Current Shipping Versions)
 ---
 
-<p>Magento requires a LAMP or LNMP stack</p>
+Magento requires a LAMP or LNMP stack.
  
 #### Operating System
 Linux x86-64
@@ -30,14 +30,14 @@ MySQL 5.6 (Oracle or Percona)
 *   Self-signed SSL certificates are not supported.
  
 #### Magento can utilize the following technologies:
-*   <a href="http://devdocs.magento.com/guides/m1x/ce18-ee113/using_redis.html">Redis</a>
+*   [Redis]({{ site.baseurl }}/guides/m1x/ce18-ee113/using_redis.html)
     
 	Redis can be used for session or cache storage
 
-*   memcached
+*   [Memcached]({{ site.baseurl }}/guides/v2.2/config-guide/memcache/memcache.html)
     
     memcached can be used for session or cache storage
  
 *   Apache Solr
  
-    <a href="http://merch.docs.magento.com/ee/user_guide/search_seo/search-configuration-solr.html">Solr search</a> can be used as a search provider for Magento Enterprise Edition (EE) only
+    [Solr search](http://merch.docs.magento.com/ee/user_guide/search_seo/search-configuration-solr.html) can be used as a search provider for Magento Enterprise Edition (EE) only

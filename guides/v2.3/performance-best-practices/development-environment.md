@@ -1,5 +1,4 @@
 ---
-layout: default
 group: perf-best-practices
 title: Development environment recommendations
 version: 2.3
