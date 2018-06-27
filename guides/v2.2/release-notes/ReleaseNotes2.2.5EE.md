@@ -323,6 +323,8 @@ The following Dotmailer behaviors have been observed when Magento Commerce for B
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
+### Individual contributor contributions
+
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
 
