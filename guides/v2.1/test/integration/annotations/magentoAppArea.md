@@ -5,12 +5,11 @@ title: Application Area Annotation
 github_link: test/integration/annotations/magentoAppArea.md
 ---
 
-Integration testing framework allows to configure application area required to run tests.
-Annotation `@magentoAppArea` is used for this purpose.
+Integration testing framework enables you to configure the application area to run tests using the `@magentoAppArea` annotation.
 
 ## Format
 
-> Configure test environment in context of specified application area
+> Configuring the test environment in context of specified application area
 
 ```php?start_inline=1
 /**
@@ -18,12 +17,18 @@ Annotation `@magentoAppArea` is used for this purpose.
  */
 ```
 
-## Scope
+## Usage
 
-### Test Cases Annotation
+The fallback scheme is:
 
-Test case annotation is used for configuring environment in context of specified application area for all tests of test case.
-If some tests don't have own @magentoAppArea annotation, annotation specified for test case will be used and applied for all tests of test case.
+1. Test annotation
+2. Test case annotation
+3. Default application area, which is `global`
+
+### In a test case
+
+The annotation in a test case enables the specified application area for all tests in the test case.
+If the annotation is specified over a test in the test case, it will overwrite the test case annotation.
 
 > Test case annotation example
 ```php?start_inline=1
@@ -52,32 +57,27 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
 }
 ```
 
-In this case testOne and testTwo will be executed in context of the `adminhtml` application area.
+In the above example, `testOne` and `testTwo` will be executed in context of the `adminhtml` application area.
 
-If test case does not have annotation `@magentoAppArea`, it will be executed in context of the `global` area.
+The default value for `@magentoAppArea` is `global`.
 {:.bs-callout .bs-call-info}
 
-### Method annotation
+### In a test
 
-Test method annotation is used for configuring environment in context of specified application area for specified test. Fallback scheme is the following:
-
-1. Method annotation
-2. Test case annotation
-3. Default application area (global)
-
-If previous test was executed in context of another area, Magento application will be reinitialized
+The annotation in a test is used to configure the environment in context of the specified application area for the test.
+Each time you specify a different area, Magento will be reinitialized in the specified context.
 
 > Method annotation example
 ```php?start_inline=1
 class Some_Class_ToTest extends PHPUnit_Framework_TestCase
 {
-    //will be executed in context of global area
+    //executes in context of the global area
     public function testOne()
     {
         //...
     }
  
-    //application will be reinitialize and test will be executed in context of frontend area
+    // reinitializes the application and executes the test in context of the frontend area
     /**
      * @magentoAppArea frontend
      */
@@ -86,7 +86,7 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
         //...
     }
  
-    //application will be reinitialize and test will be executed in context of adminhtml area
+    // reinitializes the application and executes the test in context of the adminhtml area
     /**
      * @magentoAppArea adminhtml
      */
@@ -95,13 +95,13 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
         //...
     }
  
-    //application will be reinitialize and test will be executed in context of global area
+    // reinitializes the application and executes the test in context of the global area
     public function testFour()
     {
         //...
     }
  
-    //will be executed in context of global area
+    // executes in context of the global area
     public function testFive()
     {
         //...
