@@ -9,11 +9,15 @@ functional_areas:
   - Integration
 ---
 
-In order to track statuses of Asynchronous operations, Magento provides two REST API endpoints.
+Magento generates a `bulkUuid` each time it executes an [asynchronous API request]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html). You can track the status of an asynchronous operation with the following endpoints:
 
-### Get the Short Status
+* `GET /V1/bulk/:bulkUuid/status`
+* `GET /V1/bulk/:bulkUuid/detailed-status` 
 
-Returns back the status of the operation:
+
+### Get the status summary
+
+Returns the status of the operation:
 
 ```
 GET /V1/bulk/:bulkUuid/status
@@ -42,8 +46,7 @@ GET /V1/bulk/:bulkUuid/status
 
 ### Get the Detailed Status
 
-Returns information about operations status and also a detailed response of each operation. (Field: `result_serialized_data`)
-
+Returns detailed information about operations status. The `operations_list` array contains the message queue `topic_name` and `result_serialized_data` for each operation.
  
 ```
 GET /V1/bulk/:bulkUuid/detailed-status
@@ -71,5 +74,3 @@ GET /V1/bulk/:bulkUuid/detailed-status
   "operation_count": 0
 }
 ```
-
-bulkUuid - is an UUID that generates by [Magento Asynchronous API Requests](/asynchronous-web-endpoints.md).
