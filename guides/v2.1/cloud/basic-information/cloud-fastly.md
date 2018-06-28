@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 020_tech
 title: Fastly
-menu_title: Fastly
-menu_node:
-menu_order: 15
 version: 2.1
 github_link: cloud/basic-information/cloud-fastly.md
 functional_areas:
@@ -161,7 +157,7 @@ the following image optimization features:
 - Adaptive pixel ratios
 
 You must set up your Fastly service and configure the Origin shield before you
-can enable and configure the Fastly IO option. See [Configure Fastly image optimization]({{ page.baseurl }}/cloud/access-acct/fastly.html).
+can enable and configure the Fastly IO option. See [Configure Fastly image optimization]({{ page.baseurl }}/cloud/access-acct/fastly.html#configure-fastly-image-optimization).
 
 ### Force lossy conversion
 By default the Fastly IO service forces conversion of lossless formats such
