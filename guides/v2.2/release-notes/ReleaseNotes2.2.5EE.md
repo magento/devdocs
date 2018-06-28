@@ -25,7 +25,7 @@ Look for the following highlights in this release:
 
 * Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
-* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. 
+* Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  [GitHub-15205](https://github.com/magento/magento2/issues/15205) and [GitHub-15245](https://github.com/magento/magento2/issues/15245) for more detailed discussions of the problems some customers encountered. *Fix submitted by [Francesco Marangi](https://github.com/fmarangi) in pull request 15929*. 
 
 * Substantial improvements to indexing performance. 
 
@@ -334,6 +334,14 @@ The following table identifies contributions from our community members. This ta
     <th>Pull request</th>
     <th>Related GitHub issue</th>
     <th>Contributing community member</th>
+  </tr>
+
+
+
+<tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/15929">15929</a></td>
+    <td>15205, 15245</td>
+    <td><a target="_blank" href="https://github.com/fmarangi">Francesco Marangi</a></td>
   </tr>
 
 
