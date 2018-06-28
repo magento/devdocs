@@ -1955,32 +1955,64 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>When you create your project, you receive a cloned repository of Magento Commerce (Cloud) code.</p>
+			<p>All Magento Commerce (Cloud) projects include essential files for credentials and application configuration:</p>
 
-<h2 id="cloud-structure-local">Local project directory structure</h2>
-<p>Not including the Magento application itself, your local project has the following structure:</p>
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">.gitignore</code></td>
+      <td>Specify which files and directories to ignore. See <a href="/guides/v2.1/config-guide/prod/config-reference-gitignore.html" target="\_blank"><code class="highlighter-rouge">.gitignore</code> reference</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.magento.app.yaml</code></td>
+      <td>Configuration file that defines the properties to build your application. See <a href="/guides/v2.1/cloud/env/environments.html">Configure environments</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.magento.env.yaml</code></td>
+      <td>Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See <a href="/guides/v2.1/cloud/env/environments.html">Configure environments</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/app</code></td>
+      <td>The <code class="highlighter-rouge">code</code> folder is used for custom modules. The <code class="highlighter-rouge">design</code> folder is used for custom themes. See <a href="/guides/v2.1/cloud/howtos/custom-theme.html">Install a theme</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">auth.json</code></td>
+      <td>Contains your Magento authorization credentials. See <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your Magento install</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">composer.json</code></td>
+      <td>Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html">Prepare your Magento install</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">composer.lock</code></td>
+      <td>Stores version dependencies for every package.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/.magento/routes.yaml</code></td>
+      <td>Configuration file that redirects <code class="highlighter-rouge">www</code> to the naked domain and <code class="highlighter-rouge">php</code> application to serve HTTP. See <a href="/guides/v2.1/cloud/env/environments.html">Configure environments</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/.magento/services.yaml</code></td>
+      <td>Configuration file that defines a MySQL instance, Redis, and ElasticSearch. See <a href="/guides/v2.1/cloud/env/environments.html">Configure environments</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">magento-vars.php</code></td>
+      <td>A file used to define multiple stores and sites using <a href="/guides/v2.1/config-guide/multi-site/ms_over.html" target="\_blank">Magento variables</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">/update</code></td>
+      <td>For version 2.2—a service folder used by the support module.</td>
+    </tr>
+  </tbody>
+</table>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">├── .git
-├── .gitignore
-├── .magento
-│   ├── routes.yaml
-│   └── services.yaml
-├── .magento.app.yaml
-├── auth.json
-├── composer.json
-├── composer.lock
-├── magento-vars.php
-├── php.ini
-└── README.md</code></pre></figure>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
-
-<h3 id="gitignore-file-gitignore">.gitignore file {gitignore}</h3>
-<p>Depending on your Magento Commerce (Cloud) version, you may need different information added to or commented out in your <code class="highlighter-rouge">.gitignore</code> file. Git uses this file to determine which files and directories to ignore, before you make a commit to your branches. A .gitignore file should be committed into your root Magento in the repository, in order to share the ignore rules with any other users that clone the repository.</p>
-
-<p>We include a base <code class="highlighter-rouge">.gitignore</code> file with the project repository. For a review of the Magento Commerce (Cloud) file, see <a href="https://github.com/magento/magento-cloud/blob/master/.gitignore" target="\_blank">.gitignore file</a>. You can review the recommended files for your file in the <a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html"><code class="highlighter-rouge">.gitignore</code> reference</a>.</p>
+<p class="bs-callout bs-callout-info">When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code class="highlighter-rouge">.magento</code> directory, then the script deletes the directory and its contents. Your local development environment is not affected.</p>
 
 <h2 id="rootdir">Magento application root directory</h2>
 <p>The Magento application root directory is located in different locations depending on the environment.</p>
@@ -2011,12 +2043,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">/tmp</code></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In Production, each node in the three-node cluster has a <code>/tmp</code> directory that is not shared with the other nodes.</p>
-</div>
+<p class="bs-callout bs-callout-info">In Production, each node in the three-node cluster has a <code class="highlighter-rouge">/tmp</code> directory that is not shared with the other nodes.</p>
 
 <h2 id="logs">Logs</h2>
-<p>Logs for all environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
+<p>The <code class="highlighter-rouge">/var/log</code> directory contains logs for each environment. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
 <p>For Pro, the deployment log for Staging and Production is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
 

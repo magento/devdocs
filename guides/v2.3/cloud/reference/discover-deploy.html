@@ -2115,7 +2115,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>At this point, the cluster has not been created yet, so you should not try to connect to a database or assume anything was daemonized.</p>
   </div>
 
-  <p>After the application builds, it is mounted on a <strong>read-only file system</strong>. You can configure specific mount points that are going to be read/write. You cannot FTP to the server and add modules. Instead, you must add code to your local repository and run <code class="highlighter-rouge">git push</code>, which builds and deploys the environment. For the project structure, see <a href="/guides/v2.3/cloud/project/project-start.html#cloud-structure-local">Local project directory structure</a>.</p>
+  <p>After the application builds, it is mounted on a <strong>read-only file system</strong>. You can configure specific mount points that are going to be read/write. You cannot FTP to the server and add modules. Instead, you must add code to your local repository and run <code class="highlighter-rouge">git push</code>, which builds and deploys the environment. For the project structure, see <a href="/guides/v2.3/cloud/project/project-start.html">Local project directory structure</a>.</p>
 
   <h3 id="cloud-deploy-over-phases-slug">Phase 3: Prepare the slug</h3>
   <p>The result of the build phase is a read-only file system referred to as a <em>slug</em>. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service did not change, it uses the slug from the archive.</p>
