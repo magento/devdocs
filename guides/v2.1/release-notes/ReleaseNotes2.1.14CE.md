@@ -396,8 +396,8 @@ The following table highlights contributions made by Partners. This table lists 
 
 <tr>
     <td>Convert</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14348">14348</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14480">14480</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14151">14151</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14117">14117</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14098">14098</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14096">14096</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13806">13806</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/4173">4173</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/5808">5808</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/6694">6694</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/3489">3489</a> </td>
   </tr>
 
   <tr>
@@ -408,11 +408,12 @@ The following table highlights contributions made by Partners. This table lists 
 
   <tr>
     <td>H&O</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13658">13658</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/13486">13486</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/13474">13474</a></td>
   </tr>
 
 </table>
+
 
 
 
