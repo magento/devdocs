@@ -124,8 +124,8 @@ Because of our unique, triple-redundant hardware, we can provide you with three 
 The three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
 -   DNS
--   [`Content Delivery Network (CDN)`](https://en.wikipedia.org/wiki/Content_delivery_network){:target="\_blank"}
--   [`Elastic load balancer (ELB)`](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html){:target="\_blank"}
+-   Content Delivery Network (CDN)
+-   Elastic load balancer (ELB)
 -   Three-server cluster comprising all Magento services, including the database and web server
 
 ### Backup and disaster recovery
