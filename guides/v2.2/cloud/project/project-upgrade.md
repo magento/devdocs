@@ -55,14 +55,14 @@ After completing your upgrade, you may also want to [Verify and upgrade your ext
 
 Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
-* [PHP](http://devdocs.magento.com/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workspace
+* [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workspace
 * [Migrating from PHP 5.6 to PHP 7.0.x](http://php.net/manual/en/migration70.php){:target="\_blank"}
-* [Magento 2.2.x technology stack requirements](http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html#php)
+* [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
 ### Configuration Management and upgrading {#config}
 If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate `config.local.php` to a temporary `config.php` file to your Git branch. When you upgrade without having this file prepared, you will encounter an error with a list of steps to complete prior to upgrading.
 
-Previous versions with Configuration Management use a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) uses a different file name of `config.php`.
+Previous versions with Configuration Management use a `config.local.php` file for Configuration Management. Starting with 2.2.0, [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) uses a different file name of `config.php`.
 
 We recommend creating a temporary `config.php` file for your Git branch prior to upgrading:
 
@@ -71,16 +71,16 @@ We recommend creating a temporary `config.php` file for your Git branch prior to
 3. Push the file to your Integration branch and environment.
 4. Continue preparing and upgrade to 2.2.X.
 
-For more information, see [Migrate config.local.php to config.php](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#migrate).
+For more information, see [Migrate config.local.php to config.php]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#migrate).
 
 After you finish upgrading, you can remove `config.php` and create a new, complete file. For more information, see [Create a new config.php file](#configphp). This file works exactly as `config.local.php`, with additional settings including a list of your enabled modules, additional configurations, and a different name.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html).
+You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
 </div>
 
 ### Update .magento.app.yaml {#magento-app-yaml}
-If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml](http://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
+If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you will encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
 
 1. Locate and edit the `.magento.app.yaml` file in your Git branch.
 2. For the PHP version, make sure it is 7.0: `type: php:7.0`

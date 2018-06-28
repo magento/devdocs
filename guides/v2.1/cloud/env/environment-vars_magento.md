@@ -8,7 +8,7 @@ functional_areas:
   - Configuration
 ---
 
-The following environment variables are available for overriding administrative credentials. See [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file. 
+The following environment variables are available for overriding administrative credentials. See [Manage build and deploy actions]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html) for more information about using these options in the `.magento.env.yaml` file. 
 
 <table>
   <thead>

@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.4 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.4EE.md
 ---
-*Patch code and release notes published on May 2, 2018.* *Release notes revised on June 13, 2018.*
+*Patch code and release notes published on May 2, 2018.* *Release notes revised on June 27, 2018.*
 
 
 
@@ -31,7 +31,7 @@ Look for the following highlights in this release:
 * Almost 200 **community contributions**. These community contributions include performance-tuning enhancements plus at least 80 engineering fixes.
 
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento 2.2.x Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
 
 
@@ -69,11 +69,16 @@ The dotmailer bundled extension features the following enhancements for this rel
 * Enhanced validation for deletion of cron job CSV files
 
 ## Known issue
+
+**Note**: The following known issue has been resolved in Magento Commerce and Open Source 2.2.5. We recommend that all users of 2.2.4 upgrade to 2.2.5 at their earliest convenience. If you are unable to upgrade to 2.2.5, [Patch MAGETWO-92926](https://magento.com/tech-resources/download#download2217) provides a fix for this issue. 
+
 Customers have reported the following behavior after upgrading to Magento 2.2.4 in deployments that span multiple websites: 
 
 Magento multi-store installations do not use the store view-specific values from the store configuration settings if these settings have different values than the global default configuration settings.  Instead, Magento uses the default configuration for all store views. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245)
 
 We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple websites. Note that this problem is not triggered if you have only a single website with multiple stores or store views.
+
+
 
 
 ## Fixes
@@ -604,7 +609,7 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-88340 -->* You can now use the layout update XML field to include custom CSS in CMS pages. [GitHub-4454](https://github.com/magento/magento2/issues/4454)
 
-<!--- MAGETWO-88276 -->* We've added an @api annotation to the  block argument marker interface. This identifies this interface as requiring only a minor version dependency. See [Dependencies](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/versioning/dependencies.html) for more information. *Fix submitted by [Vinai Kopp](https://github.com/Vinai) in pull request 13816*.
+<!--- MAGETWO-88276 -->* We've added an @api annotation to the  block argument marker interface. This identifies this interface as requiring only a minor version dependency. See [Dependencies]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/versioning/dependencies.html) for more information. *Fix submitted by [Vinai Kopp](https://github.com/Vinai) in pull request 13816*.
 
 
 ### Indexing
@@ -1936,7 +1941,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

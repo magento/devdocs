@@ -17,24 +17,24 @@ functional_areas:
 
 This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.
 
-You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/).
+You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ site.baseurl }}/guides/v2.2/config-guide/deployment/pipeline/).
 
 A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.
 
 You can use variables for any of the following:
 
-*	[Sensitive values]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) must be set using either environment variables or the [`magento config:sensitive:set`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
+*	[Sensitive values]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) must be set using either environment variables or the [`magento config:sensitive:set`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
 *	System-specific values must be set using:
 
 	*	Environment variables
-	*	The [`magento config:set`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command
+	*	The [`magento config:set`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command
 	*	The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
 
 Configuration paths can be found in:
 
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*	[Magento Enterprise B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-b2b.html)
 *	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
 
 ### Variable names
@@ -75,7 +75,7 @@ A complete list of configuration paths can be found in:
 
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-payment.html)
-*	[Magento Enterprise B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-b2b.html)
 *	[Other configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-most.html)
 
 ## Step 1: Find the website or store view scope value {#deploy-system-vars-scopes}
@@ -215,7 +215,7 @@ $_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http
 $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '1234';
 ```
 
-A step-by-step example is shown in [Set configuration values using environment variables](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html).
+A step-by-step example is shown in [Set configuration values using environment variables]({{ site.baseurl }}/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 -   To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order){:target="\_blank"}.

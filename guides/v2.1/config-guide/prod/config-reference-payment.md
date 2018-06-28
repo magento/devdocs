@@ -15,7 +15,7 @@ functional_areas:
   - Setup
 ---
 
-This topic lists payment-related configuration paths that are neither sensitive nor system-specific. The [`magento app:config:dump` command](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
+This topic lists payment-related configuration paths that are neither sensitive nor system-specific. The [`magento app:config:dump` command]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
 
 For a list of other configuration paths, see:
 

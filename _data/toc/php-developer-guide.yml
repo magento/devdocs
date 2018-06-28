@@ -24,6 +24,7 @@ pages:
           url: /extension-dev-guide/prepare/prepare_file-str.html
 
         - label: Extension repository structure
+          versions: ["2.3"]
           url: /extension-dev-guide/prepare/ext-repo-structure.html
 
         - label: Roadmap for developing and packaging components

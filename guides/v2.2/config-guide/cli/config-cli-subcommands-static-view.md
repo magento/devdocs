@@ -362,10 +362,10 @@ The following table explains this command's parameters and values.
         Define the deployment strategy. Use these options only if you have more than one locale.
 				<ul>
 					<li>
-						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
+	          Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.
 					</li>
 					<li>
-	          Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.
+						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
 					</li>
 					<li>
 						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a> to conserve disk space on the server.
@@ -384,7 +384,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Deploy files in any mode. (by default, the static content
+          Deploy files in any mode. (by default, the static
           content deployment tool can be run only in production
           mode. Use this option to run it in default or developer
           mode).

@@ -174,7 +174,7 @@ To add additional configuration values in the Integration environment Magento Ad
 1.	If you haven't done so already, log out of the Integration Admin.
 2.	Log in to the Integration Admin.
 
-	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+	For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 3.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 4.	In the right pane, expand **JavaScript Settings**.
 5.	From the **Merge JavaScript Files** list, click **Yes**.

@@ -15,7 +15,7 @@ functional_areas:
 Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 <div class="bs-callout bs-callout-warning">
-   	<p>If you're upgrading to version 2.1, see <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
+   	<p>If you're upgrading to version 2.1, see <a href="{{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>   
 </div>
 
 ## Optional custom maintenance page
@@ -27,7 +27,7 @@ To avoid the appearance of a disabled site and to set up a custom maintenance pa
 To run System Upgrade:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.	Click **System** > Tools > **Web Setup Wizard**.
+2.	Click **System** > **Tools** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	<img src="{{ site.baseurl }}/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **System Configuration**.
