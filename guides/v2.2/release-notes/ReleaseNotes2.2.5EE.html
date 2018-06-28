@@ -704,7 +704,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Enhancements that help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See <a href="https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update">Magento Security Center</a> for more information.</p>
   </li>
   <li>
-    <p>Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  <a href="https://github.com/magento/magento2/issues/15205">GitHub-15205</a> and <a href="https://github.com/magento/magento2/issues/15245">GitHub-15245</a> for more detailed discussions of the problems some customers encountered.</p>
+    <p>Resolution of issues that customers were experiencing when upgrading to Magento 2.2.4 in deployments that span multiple websites. Magento multi-store installations were not using the store view-specific values from the store configuration settings if these settings differed from the global default configuration settings. Instead, Magento used the default configuration for all store views. See  <a href="https://github.com/magento/magento2/issues/15205">GitHub-15205</a> and <a href="https://github.com/magento/magento2/issues/15245">GitHub-15245</a> for more detailed discussions of the problems some customers encountered. <em>Fix submitted by <a href="https://github.com/fmarangi">Francesco Marangi</a> in pull request 15929</em>.</p>
   </li>
   <li>
     <p>Substantial improvements to indexing performance.</p>
@@ -1191,6 +1191,14 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
     <th>Pull request</th>
     <th>Related GitHub issue</th>
     <th>Contributing community member</th>
+  </tr>
+
+
+
+<tr>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/15929">15929</a></td>
+    <td>15205, 15245</td>
+    <td><a target="_blank" href="https://github.com/fmarangi">Francesco Marangi</a></td>
   </tr>
 
 
