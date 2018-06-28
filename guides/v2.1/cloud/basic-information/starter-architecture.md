@@ -39,12 +39,25 @@ Additional sections in this guide provide instructions and walk-throughs for fin
 
 We walk you through [deploying to Staging]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [testing your store(s)]({{ page.baseurl }}/cloud/live/stage-prod-test.html) requirements and processes.
 
-We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.
+<div class="bs-callout bs-callout-warning" markdown="1">
+We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
+</div>
 
 ## Integration environment {#cloud-arch-int}
-Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
+Developers use the Integration environment to develop, deploy, and test:
 
-You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them. This environment does not support all services. For example, Fastly is not accessible in Integration.
+-   Magento application code
+-   Custom code
+-   Extensions
+-   Services
+
+You have up to **two** active environments on a grid for **two** active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.
+
+You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+The Integration environment does not support all services. For example, the Fastly CDN and New Relic is not accessible in an Integration environment.
+</div>
 
 The process for developing in Integration requires the following process:
 
