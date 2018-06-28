@@ -121,7 +121,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Patch vendor/magento/ece-tools
-This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html).
+This is only required when we release [vendor/magento/ece-tools updates]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/patch-notes.html).
 
 1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
 2.  Enter the following command to patch `vendor/magento/ece-tools`:

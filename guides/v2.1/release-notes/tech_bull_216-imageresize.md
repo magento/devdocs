@@ -61,7 +61,7 @@ You can fix this issue with image resizing by downloading and installing the `EE
 #### Magento Commerce (Cloud) 
 General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. `magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
 
-See [Update extensions](http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on running `composer update` to upgrade your Cloud extension. 
+See [Update extensions]({{ site.baseurl }}/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on running `composer update` to upgrade your Cloud extension. 
 
 
 

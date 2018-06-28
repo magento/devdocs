@@ -437,7 +437,7 @@ We've improved the performance of these tasks:
 
 <!---56914-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JS, font, and image files) is now enabled by default. 
 
-<!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
+<!---57904-->* We've improved the speed of static asset deployment. See <a href="{{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options. 
 
 
 ### Tier pricing

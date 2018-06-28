@@ -128,7 +128,7 @@ You can log in to the Luma store using the username `jdoe@example.com` and passw
 
 To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an admin {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
 
-By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Configuration > Services > OAuth > Access Token Expiration**.
+By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 
 **Endpoint**
