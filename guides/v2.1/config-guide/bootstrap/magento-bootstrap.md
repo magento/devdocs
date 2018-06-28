@@ -18,9 +18,6 @@ functional_areas:
 To run the Magento application, the following actions are implemented in <a href="{{ site.mage2000url }}index.php" target="_blank">index.php</a>:
 
 * Include <a href="{{ site.mage2000url }}app/bootstrap.php" target="_blank">app/bootstrap.php</a> which performs essential initialization routines, such as error handling, initializing the autoloader, setting profiling options, setting the default timezone, and so on.
-* Create an instance of <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Bootstrap.php" target="_blank">\Magento\Framework\App\Bootstrap</a>. <!-- It requires initialization parameters to be specified in constructor.  Normally, the $_SERVER super-global variable is supposed to be passed there. -->
-* Create a Magento application instance (<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/AppInterface.php" target="_blank">\Magento\Framework\AppInterface</a>).
-* Run Magento
 
 ## Bootstrap run logic {#config-boot-logic}
 
