@@ -33,7 +33,7 @@ Looking for more information on these new features as well as many others? Check
 ### Core code highlights
 This release includes significant performance improvements to the core Magento code: 
 
-* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly increase  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
+* <!--- MAGETWO-80789  MAGETWO-88808  MAGETWO-89545 -->  Merchants can now  run the catalog search full text indexer and category product indexer in parallel mode by store view, which can significantly decrease  `indexer:reindex` execution time when running Magento with multiple store views and shared catalogs. 
 
 * <!--- MAGETWO-74154 --> Refactoring of the catalog full text indexer has improved indexing performance up to 15% for very large profiles (600,000 products) and product catalogs with many configurable options (5,000 configurable products and 500 options). 
 
