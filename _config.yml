@@ -6,7 +6,7 @@ email: mailto:DL-Magento-Doc-Feedback@magento.com
 description: > # this means to ignore newlines until "baseurl:"
   Magento 2 Developer Documentation.
 baseurl: ""
-# url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
+url: "https://devdocs.magento.com" # the base hostname & protocol for your site
 # twitter_username: magento
 # github_username:  magento
 theme: devdocs
