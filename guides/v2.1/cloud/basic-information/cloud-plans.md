@@ -5,7 +5,7 @@ version: 2.1
 github_link: cloud/basic-information/cloud-plans.md
 ---
 
-{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products. For a breakdown of the plans, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="\_blank"}.
+{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products.
 
 <table>
   <tbody>
