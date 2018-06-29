@@ -10,6 +10,7 @@ functional_areas:
 We use [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html) for upgrading to the {{site.data.var.ece}} tools (`ece-tools`). Typically, an _update_ includes patches and available hotfixes as part of the `magento-cloud-metapackage`. If you still use a version of Cloud that does not contain ece-tools, then your project requires an _upgrade_.
 
 Before beginning the upgrade process, create a new, active branch from Integration and checkout the branch to your local workstation. Dedicating a branch to the upgrade process helps to avoid interference with your work in progress. Your project root folder must contain an `auth.json` file for authentication.
+We deprecated the `magento/magento-cloud-configuration` and `magento/ece-patches` packages.
 
 ### Upgrade project to use ece-tools
 
