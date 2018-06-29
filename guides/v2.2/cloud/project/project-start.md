@@ -27,7 +27,7 @@ File | Description
 When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
 
 ## Ignoring files
-We include a base `.gitignore` file with the {{site.data.var.ece}} project repository. See [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="\_blank"}. You can add a listing to the `.gitignore` file when staging a commit by using `-f` option:
+We include a base `.gitignore` file with the {{site.data.var.ece}} project repository. See [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="\_blank"}. You can add an ignored file when staging a commit by using the `-f` option:
 
 ```bash
 git add <path/filename> -f
