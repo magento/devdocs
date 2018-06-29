@@ -32,3 +32,26 @@ DELETE /async/V1/products/{sku}
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoint.
 
 The [Swagger documentation]({{ site.baseurl }}/swagger/index.html) provides a list of all current Magento API routes.
+
+#### Response
+
+Response of any Asynchronous request looks like: 
+
+```
+{
+  "bulk_uuid": "GENERATED UUID,
+  "request_items": {
+    "items": [
+      {
+        "id": 0,
+        "data_hash": null,
+        "status": "string"
+      }
+    ]
+  }
+}
+```
+
+`bulkUuid` will be generated each time Asynchronous request is executed. 
+
+You can use generated `bulkUuid` as the key for request your [operation status]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html) later. 
