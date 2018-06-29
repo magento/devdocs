@@ -29,11 +29,9 @@ Code, test, and deploy across Integration, Staging, and finally Production envir
 For full release notes, see [Release Information]({{ page.baseurl }}/release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{ page.baseurl }}/release-notes/thirdparty-mccloud.html).
 
 ## {{site.data.var.ece}} plans and subscriptions {#plans}
-{{site.data.var.ece}} provides plan options based on the size of your business. Each plan includes {{site.data.var.ece}}, support, and Cloud-based hosting and infrastructure on a subscription basis. Want to sign up? We encourage starting with a free 30-day trial to begin working with Magento.
+{{site.data.var.ece}} provides plan options based on the size of your business. Each plan includes {{site.data.var.ece}}, support, and Cloud-based hosting and infrastructure on a subscription basis.
 
 For a list of our plans and breakdown of features, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
-
-To start your free 30-day trial, see our [Plan Comparison](https://magento.com/trial/plans-comparison){:target="_blank"}. You can select a plan that fits your business and start a trial with a newly provisioned project and code-base with the latest version of {{site.data.var.ece}}.
 
 ### Details about the cloud {#details}
 * Each plan includes Integration environment for development, testing, and integrating services. Additional active environments are available at additional cost.
@@ -56,8 +54,6 @@ See [Technologies and requirements]({{ page.baseurl }}/cloud/requirements/cloud-
 
 ## Where do I get started? {#getstarted}
 If you have experience with {{site.data.var.ee}} 2 or our cloud implementation, we recommend reviewing content in these DevDocs to understand the differences between {{site.data.var.ee}} and {{site.data.var.ece}}. If you are new to Magento and the Cloud, this guide introduces all aspects of building a project, setting up your local, continuous deployment across environments, and going live.
-
-If you create your account with the 30-day trial, we set you up quickly to get started. When you sign-up for the trial, we auto-provision your project with the latest version of {{site.data.var.ee}} as a base template.
 
 To get started, see:
 
