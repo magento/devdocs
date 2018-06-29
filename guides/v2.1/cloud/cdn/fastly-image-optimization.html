@@ -1969,7 +1969,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Fastly provides image optimization support for common image formats: PNG, JPEG, GIF. The Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store.</p>
+			<p>Fastly provides image optimization support for common image formats: PNG, JPEG, GIF. The Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.</p>
 
 <h2 id="enable-fastly-io">Enable Fastly IO</h2>
 <p>You can enable Fastly image optimization (Fastly IO) from the Admin panel by
@@ -2017,7 +2017,13 @@ optimization default config options page.</li>
 </ol>
 
 <h2 id="configure-fastly-io">Configure Fastly IO</h2>
-<p>You can review and update the default IO configuration settings for image optimization as needed. For example, you might want to change WebP and JPEG quality levels for lossy formats or change the format for serving JPEG images to <em>Progressive</em> or <em>Baseline</em>.</p>
+<p>You can review and update the default IO configuration settings for image optimization as needed. For example, you might want to change WebP and JPEG quality levels for lossy formats or change the format for serving JPEG images to <em>Progressive</em> or <em>Baseline</em>. Also, you can use Fastly IO for more granular image optimization features, such as:</p>
+
+<ul>
+  <li>Force lossy conversion</li>
+  <li>Deep image optimization</li>
+  <li>Adaptive pixel ratios</li>
+</ul>
 
 <h4 id="to-update-fastly-io">To update Fastly IO:</h4>
 
@@ -2115,13 +2121,7 @@ images.</li>
   </li>
 </ol>
 
-<h2 id="validate-fastly-io">Validate Fastly IO</h2>
-
-<p>After you enable and configure Fastly IO, you can validate your configuration by
-performing web page speed tests with and without Fastly IO enabled. You can also
-review the images in your store to check image size and appearance for issues.</p>
-
-<h2 id="force-lossy-conversion">Force lossy conversion</h2>
+<h3 id="force-lossy-conversion">Force lossy conversion</h3>
 <p>By default the Fastly IO service forces conversion of lossless formats such
 as PNG, BMP, or WEBP into JPEG/WEBP format.</p>
 
@@ -2140,7 +2140,7 @@ JPEG images to WEBP format for compatible browsers. No other image types are
 changed. For example, if the original image is PNG the output from the
 Fastly IO service is PNG.</p>
 
-<h2 id="deep-image-optimization">Deep image optimization</h2>
+<h3 id="deep-image-optimization">Deep image optimization</h3>
 <p>Deep image optimization is off by default. Enabling this option turns off the
 built-in Magento resizing and offloads it completely to the Fastly IO service.
 This feature only resizes <em>product</em> images. CMS images are not resized.</p>
@@ -2172,7 +2172,7 @@ code for the image is rewritten as shown in the following example:</p>
   <span class="na">alt=</span><span class="s">"Fusion Backpack"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
-<h2 id="adaptive-pixel-ratios">Adaptive pixel ratios</h2>
+<h3 id="adaptive-pixel-ratios">Adaptive pixel ratios</h3>
 
 <p>The Adaptive pixel ratios feature is useful to optimize images for Progressive
 web applications. It allows you to deliver multiple image sizes and resolutions
@@ -2194,6 +2194,12 @@ following example:</p>
 
 <p>See <code class="highlighter-rouge">srcset</code> <a href="https://caniuse.com/#feat=srcset" target="\_blank">browser support</a>
 and <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset" target="\_blank">specification</a>.</p>
+
+<h2 id="validate-fastly-io">Validate Fastly IO</h2>
+
+<p>After you enable and configure Fastly IO, you can validate your configuration by
+performing web page speed tests with and without Fastly IO enabled. You can also
+review the images in your store to check image size and appearance for issues.</p>
 
 			
 		</div>
