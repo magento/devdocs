@@ -948,6 +948,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="fastly-image-optimization">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/cdn/fastly-image-optimization.html">Fastly Image Optimization</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="custom-fastly-vcl-snippets">
 
             
@@ -1993,12 +2007,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p><a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Fastly</a> is required for Magento Commerce (Cloud), and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a   <span term-uuid="f83f1fa7-7a64-467b-b629-c2d0c25d2e7f" class="glossary-term" data-toggle="popover">Content Delivery Network</span>
- (CDN) for static assets. Fastly is not available in Integration environments.</p>
+			<p><a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Fastly</a> is
+required for Magento Commerce (Cloud), and is used in Staging and Production
+environments. It works with Varnish to provide fast caching capabilities and a
+  <span term-uuid="f83f1fa7-7a64-467b-b629-c2d0c25d2e7f" class="glossary-term" data-toggle="popover">Content Delivery Network</span></p>
 
-<p>This information gets you started with installing and configuring Fastly. We provide additional information for backends and Origin shields, and error/maintenance page, and VCL snippets.</p>
+<p>(CDN) for static assets. Fastly is not available in Integration environments.</p>
 
-<p>For VCL snippets, experience developing that code is required for advanced configurations.</p>
+<p>This information gets you started with installing and configuring Fastly.
+We provide additional information for backends and Origin shields, and
+error/maintenance page, and VCL snippets.</p>
+
+<p>For VCL snippets, experience developing that code is required for advanced
+configurations.</p>
 
 <p>The process for configuring Fastly includes:</p>
 
@@ -2007,33 +2028,53 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Deploy code across Staging and Production</li>
   <li>Configure Fastly credentials and settings</li>
   <li>Advanced configurations including VCL snippets</li>
+  <li>Enable and configure the Fastly image optimization feature (Fastly IO)</li>
 </ul>
 
 <h2 id="domain">Multiple Fastly accounts and assigned domains</h2>
-<p>Before launching Magento Commerce (Cloud), you may already have a Fastly account or trial with your apex and subdomains assigned to it. Be advised, you will need to remove any apex domain and subdomains you plan to use with Magento Commerce (Cloud) from this existing Fastly account.</p>
+<p>Before launching Magento Commerce (Cloud), you may already have a Fastly account
+or trial with your apex and subdomains assigned to it. Be advised, you must
+remove any apex domain and subdomains you plan to use with Magento Commerce (Cloud)
+from this existing Fastly account.</p>
 
-<p>Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and Magento Commerce (Cloud).</p>
+<p>Fastly only allows one apex domain and all subdomains assigned to a single Fastly
+service and account. For example, if you have the apex domain of mystore.com with
+subdomains of shoes.mystore.com and socks.mystore.com managed by an existing
+Fastly account, you need to remove them from that account before going live with
+Fastly and Magento Commerce (Cloud).</p>
 
-<p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a> to remove the domains. This may include removing and updating CNAME records and more.</p>
+<p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a>
+to remove the domains. This may include removing and updating CNAME records and
+more.</p>
 
 <h2 id="cloud-fastly-creds">Get your Fastly credentials</h2>
-<p>To get Fastly credentials, open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
+<p>To get Fastly credentials, open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a>.
+You must provide your fully-qualified domain name.</p>
 
-<p>We’ll provide you with the following credentials for your Staging and Production services:</p>
+<p>We’ll provide you with the following credentials for your Staging and Production
+services:</p>
 
 <ul>
   <li>Fastly Service ID</li>
   <li>Fastly API token</li>
 </ul>
 
-<p>You can also locate these credentials in your Staging and Production systems in <code class="highlighter-rouge">/mnt/shared/fastly_tokens.txt</code>. You can SSH into the servers to verify the file in that location. If you do not locate this file, please enter a ticket for <a href="/guides/v2.3/cloud/trouble/trouble.html">Support</a> asking to have the file added. We can help provide this credentials file.</p>
+<p>You can also locate these credentials in your Staging and Production systems
+in <code class="highlighter-rouge">/mnt/shared/fastly_tokens.txt</code>. You can SSH into the servers to verify the
+file in that location. If you do not locate this file, please enter a ticket
+for <a href="/guides/v2.3/cloud/trouble/trouble.html">Support</a> asking to have the
+file added. We can help provide this credentials file.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Make note of which environment each set of credentials is used for. If you use the wrong credentials in an environment, you’ll encounter issues with Fastly.</p>
+  <p>Make note of which environment each set of credentials is used for. If you use
+the wrong credentials in an environment, you’ll encounter issues with Fastly.</p>
 </div>
 
 <h2 id="cloud-fastly-start">Get started</h2>
-<p>You need to install Fastly in its own branch. Fine-tuning Fastly can be a complex process, depending on your needs and store size. If you already have a branch to work in, or know how to create a branch, continue to <a href="#cloud-fastly-setup">installing Fastly</a>.</p>
+<p>You need to install Fastly in its own branch. Fine-tuning Fastly can be a
+complex process, depending on your needs and store size. If you already have a
+branch to work in, or know how to create a branch, continue to
+<a href="#cloud-fastly-setup">installing Fastly</a>.</p>
 
 <p>To create a branch:</p>
 
@@ -2101,19 +2142,29 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="cloud-fastly-setup">Install Fastly in an Integration branch and deploy</h2>
-<p>You should install the Fastly module on your local, pushing the code to Integration and deploying across to your Staging and Production environments. For Magento Commerce (Cloud) 2.2, install Fastly module 1.2.33 or later for all updated settings and full VCL snippet uploading support.</p>
+<p>You should install the Fastly module on your local, pushing the code to
+Integration and deploying across to your Staging and Production environments.
+For Magento Commerce (Cloud) 2.2, install Fastly module 1.2.33 or later for all
+updated settings and full VCL snippet uploading support.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Don’t configure the module in your local before building and deploying. You’ll configure the module in those environments.</p>
+  <p>Don’t configure the module in your local before building and deploying. You’ll
+configure the module in those environments.</p>
 
-  <p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for Configuration Management(<a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.1.X</a>, <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.2.X</a>). If you use the <code class="highlighter-rouge">app:config:dump</code> command, all configuration options for Fastly will be locked from editing in Staging and Production.</p>
+  <p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for
+Configuration Management(<a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.1.X</a>,
+<a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.2.X</a>).
+When you use the <code class="highlighter-rouge">app:config:dump</code> command, all configuration options for Fastly
+are locked and cannot be edited in Staging and Production.</p>
 </div>
 
-<p>We provide Fastly services only for your Staging and Production environments. You cannot use the Fastly service in Integration environments.</p>
+<p>We provide Fastly services only for your Staging and Production environments.
+You cannot use the Fastly service in Integration environments.</p>
 
 <ol>
   <li>
-    <p>In your local environment root directory, use a terminal to enter the following commands in the order shown:</p>
+    <p>In your local environment root directory, use a terminal to enter the following
+commands in the order shown:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
 composer require fastly/magento2
@@ -2141,21 +2192,29 @@ composer require fastly/magento2
     </ul>
   </li>
   <li>
-    <p>Add, commit, and push the changes to your code repository with the following command:</p>
+    <p>Add, commit, and push the changes to your code repository with the following
+command:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A; git commit -m "Install Fastly"; git push origin &lt;branch name&gt;
 </code></pre></div>    </div>
   </li>
   <li>Merge the branch code with the <code class="highlighter-rouge">master</code> Integration branch.</li>
-  <li><a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy</a> the code to Staging and Production.</li>
+  <li><a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy</a> the code to
+Staging and Production.</li>
 </ol>
 
-<p>After deployment, you can log into the Admin in Staging and Production to configure Fastly credentials and settings. This gives you the flexibility to have different caching features as needed in both environments, including VCL snippets.</p>
+<p>After deployment, you can log into the Admin in Staging and Production to
+configure Fastly credentials and settings. This gives you the flexibility to have
+different caching features as needed in both environments, including VCL snippets.</p>
 
 <h2 id="cloud-fastly-config">Enable and configure Fastly using the Magento Admin</h2>
-<p>To begin configuring Fastly, you need to enter and test Fastly credentials in Staging and Production. After successfully testing the credentials, you can continue with advanced configurations and <a href="#custom-vcl">VCL snippets</a>.</p>
+<p>To begin configuring Fastly, you need to enter and test Fastly credentials in
+Staging and Production. After successfully testing the credentials, you can
+continue with advanced configurations and <a href="#custom-vcl">VCL snippets</a>.</p>
 
-<p>We provide your Fastly Service ID and API key (or token) for Staging and Production environments. These credentials are different for each environment. Make sure to use the correct credentials.</p>
+<p>We provide your Fastly Service ID and API key (or token) for Staging and
+Production environments. These credentials are different for each environment.
+Make sure to use the correct credentials.</p>
 
 <p>Complete the following configuration steps in Staging and Production environments:</p>
 
@@ -2174,7 +2233,9 @@ composer require fastly/magento2
   </li>
   <li>Expand <strong>Fastly Configuration</strong>. You can then <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module" target="\_blank">choose caching options</a>.</li>
   <li>When you’re done, click <strong>Save Config</strong> at the top of the page.</li>
-  <li>Clear the cache according to the notification. After you have cleared the cache, navigate back to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt; <strong>Fastly Configuration</strong> and continue your configurations.</li>
+  <li>Clear the cache according to the notification. After you have cleared the
+cache, navigate back to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> &gt;
+<strong>Fastly Configuration</strong> and continue your configurations.</li>
 </ol>
 
 <p>Configure the following features and enable additional <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">configuration options</a>:</p>
@@ -2187,57 +2248,88 @@ composer require fastly/magento2
 
 <div class="bs-callout bs-callout-info" id="info">
   <ul>
-    <li>Ignore the link to create a free Fastly account. We’ll provide your Fastly credentials (Service ID and API token).</li>
-    <li>With Fastly version 1.2.0 and later (we recommend 1.2.33 or later), use the <strong>Upload VCL to Fastly</strong> button to upload your default <a href="#custom-vcl">VCL snippets</a>.</li>
+    <li>Ignore the link to create a free Fastly account. We’ll provide your Fastly
+credentials (Service ID and API token).</li>
+    <li>With Fastly version 1.2.0 and later (we recommend 1.2.33 or later), use
+the <strong>Upload VCL to Fastly</strong> button to upload your default <a href="#custom-vcl">VCL snippets</a>.</li>
   </ul>
 </div>
 
 <h2 id="upload-vcl-snippets">Upload Fastly VCL snippets</h2>
-<p>You don’t have to create or code VCL snippets. We provide a default set of snippets for Fastly. You only need to click <strong>Upload VCL to Fastly</strong> to finish this step.</p>
+<p>You don’t have to create or code VCL snippets. We provide a default set of snippets for
+Fastly. You only need to click <strong>Upload VCL to Fastly</strong> to finish this step.</p>
 
-<p>The installed Fastly module includes the following default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\blank">VCL snippets</a> that drive the integration with Fastly. These VCL snippets are not available until you upload them. When you click Upload, you push a set of these default VCL snippets to Fastly for your specific Service ID and extension.</p>
+<p>The installed Fastly module includes the following default <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\blank">VCL snippets</a>
+that drive the integration with Fastly. These VCL snippets are not available
+until you upload them. When you click Upload, you push a set of these default
+VCL snippets to Fastly for your specific Service ID and extension.</p>
 
-<p>For VCL snippet developers, these default snippets are prepended with <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. You should not use this prepended name for your own snippets. For full details, see our guide to create and add <a href="#custom-vcl">custom VCL snippets</a>.</p>
+<p>For VCL snippet developers, these default snippets are prepended with
+<code class="highlighter-rouge">magentomodule_</code> with a priority of 50. You should not use this prepended name
+for your own snippets. For full details, see our guide to create and
+add <a href="#custom-vcl">custom VCL snippets</a>.</p>
 
-<p>To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:</p>
+<p>To use snippets, you must upload the Fastly VCL using the Magento Admin as
+follows:</p>
 
 <ol>
   <li>
-    <p>In the <strong>Fastly Configuration</strong> section, click <strong>Upload VCL to Fastly</strong> as the following figure shows.</p>
+    <p>In the <strong>Fastly Configuration</strong> section, click <strong>Upload VCL to Fastly</strong> as
+the following figure shows.</p>
 
     <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33 or later. Fastly’s Composer name is <code class="highlighter-rouge">fastly/magento2</code>.
+  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should
+      <p>upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33
+  or later. The Fastly Composer name is <code class="highlighter-rouge">fastly/magento2</code>.</p>
     </div>
   </li>
   <li>
-    <p>Once the upload completes, the modal automatically closes with a success message.</p>
+    <p>Once the upload completes, the modal automatically closes with a success
+message.</p>
   </li>
 </ol>
 
-<p>With this uploaded, you can create and upload custom VCL snippets with advanced settings and options. You use APIs to add these VCL snippets, further adding them in your site code depending on the actions.</p>
+<p>After the upload completes, you can create and upload custom VCL snippets with
+advanced settings and options. You use APIs to add these VCL snippets, further
+adding them in your site code depending on the actions.</p>
 
 <p>For more information, see <a href="https://docs.fastly.com/guides/vcl/guide-to-vcl" target="\_blank">Fastly VCL documentation</a> and <a href="https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets" target="\_blank">Fastly VCL snippets</a>.</p>
 
 <h2 id="backend">Configure backends and Origin shielding</h2>
-<p>Backend settings provide fine tuning for Fastly performance with Origin shielding and timeouts. A <em>backend</em> is a specific location (IP or domain) with configured Origin shield and timeout settings for checking and providing cached content.</p>
+<p>Backend settings provide fine tuning for Fastly performance with Origin
+shielding and timeouts. A <em>backend</em> is a specific location (IP or domain) with
+configured Origin shield and timeout settings for checking and providing cached
+content.</p>
 
-<p><em>Origin shielding</em> routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduce traffic directly to the origin.</p>
+<p><em>Origin shielding</em> routes all requests for your store to a specific Point of
+Presence (POP). When a request is received, the POP checks for cached content
+and provides it. If it is not cached, it continues to the Shield POP, then to
+the Origin server which caches the content. The shields reduce traffic directly
+to the origin.</p>
 
-<p>You can add multiple backends. Repeat these instructions to create multiple backends. For example, you may need a backend specifically for <a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Wordpress</a> to handle your blog.</p>
+<p>You can add multiple backends. Repeat these instructions to create multiple
+backends. For example, you may need a backend specifically for
+<a href="/guides/v2.3/cloud/configure/fastly-vcl-wordpress.html">Wordpress</a> to
+handle your blog.</p>
 
 <ol>
   <li>Access and expand <strong>Fastly Configuration</strong>.</li>
   <li>
-    <p>Expand <strong>Backend settings</strong> and click the gear to configure the default backend. A modal opens with options to select and configure.</p>
+    <p>Expand <strong>Backend settings</strong> and click the gear to configure the default
+backend. A modal opens with options to select and configure.</p>
 
     <p><img src="/common/images/cloud_fastly-backend.png" alt="Modify the backend" width="600px" /></p>
   </li>
   <li>
-    <p>Select the <strong>Shield</strong> location (or datacenter) closest to your AWS region. For example, if Staging is on the west coast of the United States (us-west-1), select the <code class="highlighter-rouge">sjc-ca-us</code> Fastly shield location. This is the POP that provides caching services.</p>
+    <p>Select the <strong>Shield</strong> location (or datacenter) closest to your AWS region.
+For example, if Staging is on the west coast of the United States
+(us-west-1), select the <code class="highlighter-rouge">sjc-ca-us</code> Fastly shield location. This is the POP
+that provides caching services.</p>
 
-    <p>The following list shows which Faslty shield locations to use based an AWS region:</p>
+    <p>The following list shows which Faslty shield locations to use based an AWS
+  region:</p>
 
     <ul>
       <li>ap-northeast-1 =&gt; tokyo-jp2</li>
@@ -2255,7 +2347,9 @@ composer require fastly/magento2
       <li>us-west-2 =&gt; sea-wa-us</li>
     </ul>
   </li>
-  <li>Modify the timeout values (in mimilliseconds for the connection to the shield, time between bytes, and time for the first byte. We recommend keeping the default timeout settings.</li>
+  <li>Modify the timeout values (in microseconds for the connection to the
+  shield, time between bytes, and time for the first byte. We recommend keeping
+  the default timeout settings.</li>
   <li>Optionally, select to Activate the backend and Shield after editing or saving.</li>
   <li>Click <strong>Upload</strong> to save. The settings are communicated to Fastly.</li>
   <li>In the Magento Admin, click <strong>Save Config</strong>.</li>
@@ -2264,15 +2358,32 @@ composer require fastly/magento2
 <p>For more information from Fastly, see the Magento 2 <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/Guides/BACKEND-SETTINGS.md" target="\_blank">Backend settings guide</a>.</p>
 
 <h2 id="purge">Configure purge options</h2>
-<p>Fastly provides multiple types of purge options on your Magento Cache Management page including purging product category, product assets, and content. When enabled, Fastly watches for events to automatically purge those caches. If you disable a purge option, you can manually purge Fastly aches after finishing updates through the Cache Management page.</p>
+<p>Fastly provides multiple types of purge options on your Magento Cache Management
+page including purging product category, product assets, and content. When enabled,
+Fastly watches for events to automatically purge those caches. If you disable a
+purge option, you can manually purge Fastly aches after finishing updates
+through the Cache Management page.</p>
 
 <p>The options include:</p>
 
 <ul>
-  <li><strong>Purge category</strong>: Purges product category content (not product content) when you add and update a single product. You may want to keep this disabled and enable purge product, which purges products and product categories.</li>
-  <li><strong>Purge product</strong>: Purges all product and product category content when saving a single modification to a product. Enabling purge product can be helpful to immediately get updates to customers when changing a price, adding a product option, and when product inventory is out-of-stock.</li>
-  <li><strong>Purge CMS page</strong>: Purges page content when updating and adding pages to the Magento CMS. For example, you may want to purge when updating your Terms and Conditions or Return policy. If you rarely make these changes, you could disable automatic purging.</li>
-  <li><strong>Soft purge</strong>: Sets changed content to stale and purges according to the stale timing. In combination with the stale timings your customers will be served stale content very fast while Fastly is updating the content in the background.</li>
+  <li>
+    <p><strong>Purge category</strong>: Purges product category content (not product content) when
+you add and update a single product. You may want to keep this disabled and
+enable purge product, which purges products and product categories.</p>
+  </li>
+  <li><strong>Purge product</strong>: Purges all product and product category content when
+saving a single modification to a product. Enabling purge product can be helpful
+to immediately get updates to customers when changing a price, adding a product
+option, and when product inventory is out-of-stock.</li>
+  <li><strong>Purge CMS page</strong>: Purges page content when updating and adding pages to the
+Magento CMS. For example, you may want to purge when updating your Terms and
+Conditions or Return policy. If you rarely make these changes, you could disable
+automatic purging.</li>
+  <li><strong>Soft purge</strong>: Sets changed content to stale and purges according to the
+stale timing. In combination with the stale timings your customers will be
+served stale content very fast while Fastly is updating the content in the
+background.</li>
 </ul>
 
 <p><img src="/common/images/cloud_fastly-purgeoptions.png" alt="Configure purge options" width="650px" /></p>
@@ -2281,30 +2392,38 @@ composer require fastly/magento2
 
 <ol>
   <li>In the <strong>Fastly Configuration</strong> section, expand <strong>Advanced</strong>.</li>
-  <li>All purge options display. Select “Yes” per purge option to enable automatic purging. Select “No” to disable automatic purging, allowing you to manually purge caches through the Cache Management page.</li>
+  <li>All purge options display. Select “Yes” per purge option to enable automatic
+purging. Select “No” to disable automatic purging, allowing you to manually
+purge caches through the Cache Management page.</li>
   <li>Click <strong>Save Config</strong> at the top of the page.</li>
-  <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</li>
+  <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the
+<em>Fastly Configuration</em> section.</li>
 </ol>
 
-<p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">Fastly’s configuration options</a>.</p>
+<p>For more information, see <a href="https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options" target="\_blank">the Fastly configuration options</a>.</p>
 
 <h2 id="fastly-errpg">Create a custom error/maintenance page</h2>
-<p>You can optionally create a custom page for errors or when your site is down for maintenance. Create your page with HTML code to provide detailed information about why the site is temporarily down, instead of an HTTP error code.</p>
+<p>You can optionally create a custom page for errors or when your site is down for
+maintenance. Create your page with HTML code to provide detailed information
+about why the site is temporarily down, instead of an HTTP error code.</p>
 
 <p>To create a custom error/maintenance page:</p>
 
 <ol>
   <li>
-    <p>In the <strong>Fastly Configuration</strong> section, expand <strong>Error/Maintenance Page</strong> as the following figure shows.</p>
+    <p>In the <strong>Fastly Configuration</strong> section, expand <strong>Error/Maintenance Page</strong>
+as the following figure shows.</p>
 
     <p><img src="/common/images/cloud-fastly_err-pg.png" alt="Custom Fastly error page" width="650px" /></p>
   </li>
   <li>Click <strong>Set HTML</strong>.</li>
   <li>
-    <p>In the provided field, enter your HTML code.	The HTML you enter can be a maximum of 65,535 bytes in length.</p>
+    <p>In the provided field, enter your HTML code.	The HTML you enter can be a<br />
+maximum of 65,535 bytes in length.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-      <p>Avoid using images on your site in the event Fastly is not available. To use images, refer to <a href="https://css-tricks.com/data-uris/" target="\_blank">Data URIs on the css-tricks site</a>.</p>
+      <p>Avoid using images on your site in the event Fastly is not available. To use
+  images, refer to <a href="https://css-tricks.com/data-uris/" target="\_blank">Data URIs on the css-tricks site</a>.</p>
     </div>
   </li>
   <li>When you’re done, click <strong>Upload</strong> to send your updates to Fastly.</li>
@@ -2312,29 +2431,41 @@ composer require fastly/magento2
 </ol>
 
 <h2 id="custom-vcl">Create custom VCL snippets</h2>
-<p>For extensive instructions to create custom VCL snippets and needed edge dictionaries or ACLs, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></p>
+<p>For extensive instructions to create custom VCL snippets and needed edge
+dictionaries or ACLs, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a></p>
 
 <h2 id="bulkaction">Extend Fastly timeout for the Magento Admin</h2>
-<p>Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you may encounter timeouts if you need to complete bulk actions that take longer than 3 minutes. You can manage timeouts using Fastly 1.2.41.</p>
+<p>Fastly sets a 180 second-timeout for HTTPS requests to the Magento Admin, so you
+may encounter timeouts if you need to complete bulk actions that take longer than
+3 minutes. You can manage timeouts using Fastly 1.2.41.</p>
 
 <ol>
   <li>In the <em>Fastly Configuration</em> section, expand <strong>Advanced</strong>.</li>
-  <li>Set the <strong>Admin path timeout</strong> value in seconds. This value cannot be more than one hour (3600 seconds).</li>
+  <li>Set the <strong>Admin path timeout</strong> value in seconds. This value cannot be more
+than one hour (3600 seconds).</li>
   <li>Click <strong>Save Config</strong> at the top of the page.</li>
-  <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the <em>Fastly Configuration</em> section.</li>
+  <li>After the page reloads, click <strong>Upload VCL to Fastly</strong> in the
+<em>Fastly Configuration</em> section.</li>
 </ol>
 
-<p>Since version 1.2.39, Fastly gets the Magento Admin path for generating the VCL file from the <code class="highlighter-rouge">app/etc/env.php</code> configuration file.</p>
+<p>Since version 1.2.39, Fastly gets the Magento Admin path for generating the VCL
+file from the <code class="highlighter-rouge">app/etc/env.php</code> configuration file.</p>
 
 <h2 id="geoip">Configure GeoIP handling</h2>
-<p>The Fastly module includes GeoIP handling to automatically redirect visitors or provide a list of stores matching their obtained country code. If you already use a Magento extension for GeoIP handling, you may need to verify the features with Fastly options.</p>
+<p>The Fastly module includes GeoIP handling to automatically redirect visitors or
+provide a list of stores matching their obtained country code. If you already use
+a Magento extension for GeoIP handling, you may need to verify the features with
+Fastly options.</p>
 
 <ol>
   <li>In the <strong>Fastly Configuration</strong> section, expand <strong>Advanced</strong>.</li>
-  <li>Scroll down and select <strong>Yes</strong> to <strong>Enable GeoIP</strong>. Additional configuration options display.</li>
-  <li>For GeoIP Action, select if the visitor is automatically redirected with <strong>Redirect</strong> or provided a list of stores to select from with <strong>Dialog</strong>.</li>
+  <li>Scroll down and select <strong>Yes</strong> to <strong>Enable GeoIP</strong>. Additional configuration
+options display.</li>
+  <li>For GeoIP Action, select if the visitor is automatically redirected with
+<strong>Redirect</strong> or provided a list of stores to select from with <strong>Dialog</strong>.</li>
   <li>
-    <p>For <strong>Country Mapping</strong>, click <strong>Add</strong> to enter a two-letter country code to map with a specific Magento store from a list. For a list of country codes, see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="\_blank">this site</a>.</p>
+    <p>For <strong>Country Mapping</strong>, click <strong>Add</strong> to enter a two-letter country code to
+map with a specific Magento store from a list. For a list of country codes, see <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="\_blank">this site</a>.</p>
 
     <p><img src="/common/images/cloud_fastly-geo-code.png" alt="Add GeoIP country maps" /></p>
   </li>
@@ -2342,30 +2473,40 @@ composer require fastly/magento2
   <li>After page reload, click <em>Upload VCL to Fastly</em> in the <em>Fastly Configuration</em> section.</li>
 </ol>
 
-<p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features" target="\_blank">geolocation-related VCL features</a> for customized geolocation coding.</p>
+<p>Fastly also provides a series of <a href="https://docs.fastly.com/guides/vcl/geolocation-related-vcl-features" target="\_blank">geolocation-related VCL features</a>
+for customized geolocation coding.</p>
 
 <h2 id="fastly-dns">Configure DNS for Fastly</h2>
 <p>You must complete these steps when you go live.</p>
 
-<p>After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: <code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site, you must add a CNAME record for each one.</p>
+<p>After checking with your registrar about where to change your DNS settings,
+add a CNAME record for your website that points to the Fastly service:
+<code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site,
+you must add a CNAME record for each one.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.</p>
+<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="\_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS
+provider that supports forwarding DNS queries to use an apex domain.</p>
 </div>
 
-<p>The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.</p>
+<p>The following list contains examples of DNS providers for informational purposes.
+Use your preferred DNS provider.</p>
 
 <ul>
-  <li>CNAME with ALIAS record from <a href="http://dyn.com" target="_blank">Dyn</a></li>
-  <li>ANAME record on <a href="http://www.dnsmadeeasy.com" target="_blank">DNS Made Easy</a></li>
-  <li>ANAME at <a href="https://www.easydns.com" target="_blank">easyDNS</a></li>
-  <li>ACNAME at <a href="https://www.cloudflare.com" target="_blank">CloudFlare</a></li>
-  <li>ALIAS at <a href="https://pointhq.com" target="_blank">PointDNS</a></li>
+  <li>CNAME with ALIAS record from <a href="http://dyn.com" target="\_blank">Dyn</a></li>
+  <li>ANAME record on <a href="http://www.dnsmadeeasy.com" target="\_blank">DNS Made Easy</a></li>
+  <li>ANAME at <a href="https://www.easydns.com" target="\_blank">easyDNS</a></li>
+  <li>ACNAME at <a href="https://www.cloudflare.com" target="\_blank">CloudFlare</a></li>
+  <li>ALIAS at <a href="https://pointhq.com" target="\_blank">PointDNS</a></li>
 </ul>
 
-<p>Many other DNS providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the DNS provider’s redirect service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of the domain. Consult your DNS provider for more information.</p>
+<p>Many other DNS providers also offer workarounds to accomplish this goal. The most
+common is to add a CNAME record for the <code class="highlighter-rouge">www</code> host on the domain and then use the
+DNS provider’s redirect service to redirect the apex over to the <code class="highlighter-rouge">www</code> version of
+the domain. Consult your DNS provider for more information.</p>
 
-<p>Another option for apex domain is to add A records, which maps a domain name to the Fastly IP addresses:</p>
+<p>Another option for apex domain is to add A records, which maps a domain name to
+the Fastly IP addresses:</p>
 
 <ul>
   <li><code class="highlighter-rouge">151.101.1.124</code></li>
@@ -2374,17 +2515,28 @@ composer require fastly/magento2
   <li><code class="highlighter-rouge">151.101.193.124</code></li>
 </ul>
 
-<p>Refer to <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a> for more information.</p>
+<p>Refer to <a href="/guides/v2.3/cloud/live/go-live-checklist.html">Go live checklist</a>
+for more information.</p>
 
 <h3 id="fastly-tls">TLS and Fastly</h3>
-<p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your [Support ticket]/guides/v2.3/cloud/trouble/trouble.html) for DNS information and going live, let us know you are using TLS, provide your domain names, and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
+<p>If you use TLS with Fastly enabled in your environment, you must provide your
+DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL
+certificate with Subject Alternative Name enabled, issued by GLobalSign. When
+entering your [Support ticket]/guides/v2.3/cloud/trouble/trouble.html) for
+DNS information and going live, let us know you are using TLS, provide your
+domain names, and request the TXT record. You can then send this record to your
+DNS provider. The domain validation process is executed by Fastly.</p>
 
-<p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="\_blank">DNS TXT record validation</a>.</p>
+<p>For details on this TXT record, see the Fastly <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="\_blank">DNS TXT record validation</a>.</p>
 
 <h2 id="upgrade">Upgrade Fastly</h2>
-<p>Fastly updates the Magento module to resolve issues, increase performance, and provide new features. You can check the <a href="https://marketplace.magento.com/fastly-magento2.html" target="\_blank">Magento Marketplace</a> and <a href="https://github.com/fastly/fastly-magento2/releases" target="\_blank">GitHub</a> for updates on the latest releases.</p>
+<p>Fastly updates the Magento module to resolve issues, increase performance, and
+provide new features. You can check the <a href="https://marketplace.magento.com/fastly-magento2.html" target="\_blank">Magento Marketplace</a>
+and <a href="https://github.com/fastly/fastly-magento2/releases" target="\_blank">GitHub</a>
+for updates on the latest releases.</p>
 
-<p>When you upgrade Fastly, you get the upgraded subset of default VCL snippets. When you finish upgrading, you must <a href="#upload-vcl-snippets">upload upgraded default VCL snippets to Fastly</a>:</p>
+<p>When you upgrade Fastly, you get the upgraded subset of default VCL snippets.
+When you finish upgrading, you must <a href="#upload-vcl-snippets">upload upgraded default VCL snippets to Fastly</a>:</p>
 
 <ol>
   <li>In the <em>Fastly Configuration</em> section, click <strong>Upload VCL to Fastly</strong>.</li>
@@ -2395,7 +2547,10 @@ composer require fastly/magento2
 
 <p>For information on upgrading modules, refer to <a href="/guides/v2.3/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a>.</p>
 
-<p>If you created a custom VCL snippet using the same name as a default snippet, you may need to verify and update those snippets. We do not recommend replacing existing default snippets with custom snippets of the same name. For details on custom VCL, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
+<p>If you created a custom VCL snippet using the same name as a default snippet,
+you may need to verify and update those snippets. We do not recommend replacing
+existing default snippets with custom snippets of the same name. For details on
+custom VCL, see <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 			
 		</div>
