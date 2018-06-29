@@ -137,6 +137,10 @@ pages:
         - label: Set up Fastly
           url: /cloud/access-acct/fastly.html
 
+        - label: Fastly Image Optimization
+          url: /cloud/cdn/fastly-image-optimization.html
+          versions: ["2.1","2.2","2.3"]
+
         - label: Custom Fastly VCL snippets
           url: /cloud/configure/cloud-vcl-custom-snippets.html
 
