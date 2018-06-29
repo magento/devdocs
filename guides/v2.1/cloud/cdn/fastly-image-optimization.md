@@ -98,7 +98,7 @@ You can review and update the default IO configuration settings for image optimi
 
 1. In the Image Optimization configuration _Enable deep image optimization_ field, select **Yes** to turn on deep image optimization.
 
-    ![Enable Fastly IO deep image optimization]({{ site.url}}/common/images/cloud_fastly-io-deep-image-config.png){:width="650px"}
+    ![Enable Fastly IO deep image optimization]({{ site.baseurl }}/common/images/cloud_fastly-io-deep-image-config.png){:width="650px"}
 
     Deep image optimization is off by default. When this feature is enabled,
     the built-in resizing feature in Magento is turned off and resizing work is
@@ -109,7 +109,7 @@ You can review and update the default IO configuration settings for image optimi
 1.  After you enable deep image optimization, enable the
     [adaptive pixel ratios](#adaptive-pixel-ratios) feature to generate images optimized for use in responsive websites.
 
-    ![Enable Fastly IO adaptive pixel ratios]({{ site.url}}/common/images/cloud_fastly-io-config-adaptive-pixel.png){:width="650px"}
+    ![Enable Fastly IO adaptive pixel ratios]({{ site.baseurl }}/common/images/cloud_fastly-io-config-adaptive-pixel.png){:width="650px"}
 
     -  In the _Enable adaptive device pixel ratios_ field, select **Yes**.
     -  In the _Device pixel ratios_ field, accept the default setting, or
@@ -187,7 +187,7 @@ from one image source file by adding a `srcset` for each product image.
 When the Adaptive pixel ratios feature is enabled, the Fastly IO service
 delivers a fixed-width image that can adapt to varying `device-pixel-ratios`.
 For example, the service modifies the product image definition as shown in the
-following example.
+following example:
 
 ```php
 <img class="product-image-photo"
