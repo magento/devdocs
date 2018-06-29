@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 090_configure
 title: Set up Fastly
-menu_title: Set up Fastly
-menu_order: 5
-menu_node:
 version: 2.1
 github_link: cloud/access-acct/fastly.md
 functional_areas:
@@ -415,146 +411,6 @@ DNS provider. The domain validation process is executed by Fastly.
 
 For details on this TXT record, see the Fastly [DNS TXT record validation](https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification){:target="\_blank"}.
 
-## Configure Fastly Image Optimization
-Fastly provides image optimization support for the following image formats:
-`.png`, `.jpeg`, and `.gif`.
-
-You can enable Fastly image optimization (Fastly IO) from the Admin panel by
-uploading the Fastly IO VCL snippet. When you upload the VCL snippet, it
-provides the Fastly service with configuration instructions to process all
-images through image optimizers, using default configurations. You can review
-and update the default IO configuration settings for image optimization as
-needed.
-
-The Fastly IO snippet inserts the VCL code to perform image optimization that
-speed up delivery of the product images included in your store.
-
-
-**Prerequisites**
-
--  Install or upgrade to Fastly module version 1.2.52 or later
--  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/access-acct/fastly.html#backend)
-
-
-**Enable Fastly Image Optimization**
-
-Enabling Fastly Image Optimization uploads the Fastly IO VCL snippet and
-configures the default IO configuration options. You can customize the
-configuration as needed. For example, you might want to change WebP and JPEG
-quality levels for lossy formats or change the format for serving JPEG images
-to *Progressive* or *Baseline*.
-
-1.  Log in to your local
-    [Magento Admin]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin){:target="\_blank"}
-    panel as an administrator.
-
-2.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
-
-3.  In the right pane, expand **Full Page Cache**.
-
-4.  Click **Fastly Configuration** > **Image Optimization** to specify the
-    configuration settings.
-
-6.  In the Fastly IO snippet field, click **Enable/Disable** to enable Fastly
-    image optimization.
-
-7.  Upload the Fastly IO snippet:
-
-    -  Click **Default IO config options** to open the Image
-       optimization default config options page.
-    -  Click **Upload** to upload the VCL snippet to your server.
-
-**Update Fastly Image Optimization Configuration**
-
-1.  On the Fastly Configuration page in the Default IO config options field,
-    click *Configure*.
-
-    ![View the Fastly IO configuration settings]({{ site.baseurl }}/common/images/cloud_fastly-io-default-config.png){:width="650px"})
-
-2.  Review and update the Fastly IO configuration settings on the Image
-    optimization default config options page:
-
-    ![Review Fastly IO configuration]({{ site.baseurl }}/common/images/cloud_fastly-io-config-options.png){:width="650px"}
-    -  In the **Auto WebP controls** field, leave the default setting (*Yes*)
-       to convert images to the WebP format in browsers that support it. If you
-       change the setting to **No**, Fastly uses the image file type instead of
-       converting the image to WebP format.
-
-    -  In the **Default WebP (lossy) quality field**, leave the
-       default setting (*85*) or type the compression level for lossy
-       file-formatted images. You can specify any whole number between 1 and 100.
-
-    -  In the **Default JPEG format controls** field, leave the
-       default setting (*Auto*), or select the JPEG type to use when serving an
-       image. If the value is set to the *Auto*, Fastly delivers images with the
-       output type matching the input type. Select *Baseline* to display images
-       line by line starting from top left and going to the bottom right.
-       Select *Progressive* to display a blurry image that becomes clear as it
-       loads.
-
-    -  In the **Default JPEG quality** field, leave the default
-       setting (*85*) or type the compression level for quality of lossy file
-       formats. You can specify any whole number between 1 and 100.
-
-    -  In the **Allow upscaling controls** field, leave default
-       setting (*No*), or select *Yes* to return images larger than the original
-       source file so they can fit the requested dimensions.
-
-    -  In the **Resize filter** field, leave the default setting
-       (*Lancsoz3*), or select an alternative. This setting specifies the filter
-       used to deliver a resized image. Depending on the filter selected the
-       resized image can have a higher or lower number of pixels.
-
-       **lanczos3** (default) This filter delivers the best quality image. It
-       increases the ability to detect edges and linear features within an image
-       and uses sinc resampling to provide the best possible reconstruction.
-
-       **lanczos2** Uses same filter as Lancsoz3 but with a less accurate
-       approximation of the sinc resampling function.
-
-       **bicubic**  When making an image smaller, use this filter, which has a
-       natural sharpening effect.
-
-       **bilinear** When making an image larger, use this filter, which has a
-       natural smoothing effect.
-
-       **nearest** When resizing pixel art, use this filter, which has a natural
-       pixelation effect.
-
-3.  After you specify the IO configuration settings for the Fastly service,
-    click **Cancel** to return to the Fastly configuration settings.
-
-4. In the Image Optimization configuration **Enable deep image optimization**
-   field, select *Yes* to turn on deep image optimization.
-
-    ![Enable Fastly IO deep image optimization]({{ site.url}}/common/images/cloud_fastly-io-deep-image-config.png){:width="650px"}
-
-    Deep image optimization is off by default. When this feature is enabled,
-    the built-in resizing feature in Magento is turned off and resizing work is
-    offloaded to the Fastly IO service. Image optimization only applies to
-    product images. CMS images are not resized. For details and caveats, see the
-    [Fastly documentation]({ {base.url }}/cloud/basic-information/cloud-fastly.html#deep-image-optimization){:target="\_blank"}.
-
-5.  After you enable deep image optimization, enable the
-    [adaptive pixel ratios]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html#adaptive-pixel-ratios){:target="\_blank"}
-    feature to generate images optimized for use in responsive websites.
-
-    ![Enable Fastly IO adaptive pixel ratios]({{ site.url}}/common/images/cloud_fastly-io-config-adaptive-pixel.png){:width="650px"}
-
-    -  In the Enable adaptive device pixel ratios field, select *Yes*.
-    -  In the **Device pixel ratios** fields, accept the default setting, or
-       click the **System Input** check box to remove the setting. Then, select
-       the desired ratio. A higher Device Pixel Ratio setting delivers larger
-       images.
-
-6.  Click **Save Configuration** to apply your changes.
-
-**Validate Fastly IO configuration**
-
-After you enable and configure Fastly IO, you can validate your configuration by
-performing web page speed tests with and without Fastly IO enabled. You can also
-review the images in your store to check image size and appearance for issues.
-
 ## Upgrade Fastly {#upgrade}
 Fastly updates the Magento module to resolve issues, increase performance, and
 provide new features. You can check the [Magento Marketplace](https://marketplace.magento.com/fastly-magento2.html){:target="\_blank"}
@@ -564,8 +420,8 @@ for updates on the latest releases.
 When you upgrade Fastly, you get the upgraded subset of default VCL snippets.
 When you finish upgrading, you must [upload upgraded default VCL snippets to Fastly](#upload-vcl-snippets):
 
-1. In the *Fastly Configuration* section, click **Upload VCL to Fastly**.
-2. After the upload completes, the modal automatically closes with a success message.
+1.  In the *Fastly Configuration* section, click **Upload VCL to Fastly**.
+1.  After the upload completes, the modal automatically closes with a success message.
 
 When you upgrade, the default VCL snippets you uploaded should not be affected or require any additional steps.
 
