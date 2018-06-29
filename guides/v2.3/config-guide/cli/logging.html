@@ -1907,7 +1907,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>By default, Magento writes debug logs to the <code class="highlighter-rouge">var/log/debug.log</code> file inside the Magento application directory.</p>
 
-  <p>To enable debug logging:</p>
+  <h4 id="to-enable-debug-logging">To enable debug logging:</h4>
 
   <ol>
     <li>
@@ -1924,7 +1924,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </li>
   </ol>
 
-  <p>To disable debug logging:</p>
+  <h4 id="to-disable-debug-logging">To disable debug logging:</h4>
 
   <ol>
     <li>
@@ -1945,7 +1945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
   <p>By default, Magento writes database activity logs to the <code class="highlighter-rouge">var/debug/db.log</code> file inside the Magento application directory.</p>
 
-  <p>To enable database logging:</p>
+  <h4 id="to-enable-database-logging">To enable database logging:</h4>
 
   <ol>
     <li>
@@ -1954,6 +1954,44 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:enable
 </code></pre></div>      </div>
       <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento dev:query-log:disable
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Flush the cache.</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <h2 id="syslog-logging">Syslog logging</h2>
+
+  <p>By default, Magento writes <em>syslog</em> logs to the operating system <code class="highlighter-rouge">syslog</code> file.</p>
+
+  <h4 id="to-enable-syslog-logging">To enable syslog logging:</h4>
+
+  <ol>
+    <li>
+      <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/syslog/syslog_logging</code> database value to <code class="highlighter-rouge">1</code>.</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/syslog/syslog_logging 1
+</code></pre></div>      </div>
+    </li>
+    <li>
+      <p>Flush the cache.</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento cache:flush
+</code></pre></div>      </div>
+    </li>
+  </ol>
+
+  <h4 id="to-disable-syslog-logging">To disable syslog logging:</h4>
+
+  <ol>
+    <li>
+      <p>Use the <code class="highlighter-rouge">config:set</code> command to change the <code class="highlighter-rouge">dev/syslog/syslog_logging</code> database value to <code class="highlighter-rouge">0</code>.</p>
+
+      <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bin/magento config:set dev/syslog/syslog_logging 0
 </code></pre></div>      </div>
     </li>
     <li>
