@@ -20,11 +20,7 @@ Only a [Magento file system owner]({{ page.baseurl }}/cloud/before/before-worksp
     magento-cloud environment:branch <branch-name>
     ```
 
-1.  copy the patch file to the `/m2-hotfixes` directory.
-
-    ```bash
-    mkdir <Magento project root dir>/m2-hotfixes
-    ```
+1.  Copy the patch file to the `/m2-hotfixes` directory.
 
 1.  Change to the `/m2-hotfixes` directory.
 
@@ -53,7 +49,6 @@ Only a [Magento file system owner]({{ page.baseurl }}/cloud/before/before-worksp
     ```bash
     git push origin <branch name>
     ```
-
 
 ## Upgrade to ece-tools
 
