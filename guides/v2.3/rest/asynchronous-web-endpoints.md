@@ -54,4 +54,4 @@ Response of any Asynchronous request looks like:
 
 `bulkUuid` will be generated each time Asynchronous request is executed. 
 
-You can use generated `bulkUuid` as the key for request your [operation status]({{ page.baseurl }}/rest/asynchronous-web-endpoints.html) later. 
+You can use generated `bulkUuid` as the key for request your [operation status]({{ page.baseurl }}/rest/operation-status-endpoints.html) later. 
