@@ -390,7 +390,7 @@ $fieldDataConverter->convert(
 ### Step 3d: Convert data in a multi-database setup
 {:#step-3d}
 
-The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
+The {{site.data.var.ee}} supports storing Quote, Sales and Inventory data in separate databases.
 Use the specific connections for each of these modules to update your extension's stored data for the entities of these modules.
 
 The following code sample gets the Sales module connection and uses it during data update.
