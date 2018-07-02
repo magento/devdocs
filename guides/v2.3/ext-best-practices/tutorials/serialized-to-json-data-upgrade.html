@@ -626,7 +626,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>The extension stores its own serialized data.</li>
-  <li>The extension is responsible for serializing/unserializing data stored in core tables.</li>
+  <li>The extension is responsible for serializing and unserializing data stored in core tables.</li>
 </ol>
 
 <h3 id="api-overview">API Overview</h3>
@@ -642,7 +642,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
   <li><code class="highlighter-rouge">\Magento\Framework\DB\DataConverter\DataConverterInterface</code> - This interface is for classes that convert data between different formats or types of data.</li>
-  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+  <li><code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code> - This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
     <ul>
       <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierInterface</code> - Interface for classes that add a condition to the database query to target specific entries.</li>
       <li><code class="highlighter-rouge">\Magento\Framework\DB\Select\QueryModifierFactory</code> - This class creates instances of specific implementations of <code class="highlighter-rouge">QueryModifierInterface</code>.</li>
@@ -658,12 +658,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="step-1">Step 1: Create the basic upgrade script</h2>
 
-<p>The upgrade script is what gets run during the upgrade step of your extension’s <a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html" title="Extension Lifecycle">lifecycle</a>.
+<p>The upgrade script is what runs during the upgrade step of your extension’s <a href="/guides/v2.3/extension-dev-guide/prepare/lifecycle.html" title="Extension Lifecycle">lifecycle</a>.
 Create the <code class="highlighter-rouge">UpgradeData.php</code> file in the <code class="highlighter-rouge">Setup</code> directory inside your extension’s root directory.</p>
 
 <p>Inside the file, create the class <code class="highlighter-rouge">UpgradeData</code> which implements <code class="highlighter-rouge">\Magento\Framework\Setup\UpgradeDataInterface</code>.</p>
 
-<p>The following is an example of the content for your upgrade script.</p>
+<p>Example upgrade script content:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show upgrade script content</b>
@@ -733,11 +733,11 @@ Create the <code class="highlighter-rouge">UpgradeData.php</code> file in the <c
 <h2 id="step-2">Step 2: Check that the module exists</h2>
 
 <p>Any module can replace another module in Magento.
-If your extension stores data in the tables of another module or it serializes/unserializes data stored in core modules, make sure the module exists and is active before executing the upgrade logic.</p>
+If your extension stores data in the tables of another module or it serializes or unserializes data stored in core modules, make sure the module exists and is active before executing the upgrade logic.</p>
 
 <p>Use the <code class="highlighter-rouge">\Magento\Framework\Module\Manager</code> class to check the status of the module your extension depends on.</p>
 
-<p>Add this dependency in the constructor of your upgrade script class.</p>
+<p>Add this dependency in the constructor of your upgrade script class:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
@@ -758,7 +758,7 @@ If your extension stores data in the tables of another module or it serializes/u
 
 <p>Use a <code class="highlighter-rouge">FieldDataConverterFactory</code> to create a <code class="highlighter-rouge">FieldDataConverter</code> instance with the appropriate data converter.</p>
 
-<p>You can convert data for a column in a table using the code below.</p>
+<p>Convert data for a column in a table using:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
@@ -786,18 +786,18 @@ If your extension stores data in the tables of another module or it serializes/u
   <tbody>
     <tr>
       <td>1</td>
-      <td>my_option</td>
-      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+      <td><code class="highlighter-rouge">my_option</code></td>
+      <td><code class="highlighter-rouge">a:1:{s:3:"foo";s:3:"bar";}</code></td>
     </tr>
     <tr>
       <td>2</td>
-      <td>another_option</td>
+      <td><code class="highlighter-rouge">another_option</code></td>
       <td>&lt;non-serialized string&gt;</td>
     </tr>
     <tr>
       <td>3</td>
-      <td>my_option</td>
-      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+      <td><code class="highlighter-rouge">my_option</code></td>
+      <td><code class="highlighter-rouge">a:1:{s:3:"foo";s:3:"bar";}</code></td>
     </tr>
   </tbody>
 </table>
@@ -833,11 +833,13 @@ If your extension stores data in the tables of another module or it serializes/u
 </div>
   </div>
 
-<h4 id="using-values-from-another-table-in-the-condition">Using values from another table in the condition</h4>
+<h4 id="use-values-from-another-table-in-the-condition">Use values from another table in the condition</h4>
 
 <p>The following tables show how the <code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">option_id</code> columns from the <code class="highlighter-rouge">catalog_product_option</code> table form the unique <code class="highlighter-rouge">code</code> value for custom options in the <code class="highlighter-rouge">quote_item_option</code> table.</p>
 
-<p><strong>Table: <code class="highlighter-rouge">catalog_product_option</code></strong></p>
+<blockquote>
+  <p><code class="highlighter-rouge">catalog_product_option</code> table</p>
+</blockquote>
 
 <table>
   <thead>
@@ -866,7 +868,9 @@ If your extension stores data in the tables of another module or it serializes/u
   </tbody>
 </table>
 
-<p><strong>Table: <code class="highlighter-rouge">quote_item_option</code></strong></p>
+<blockquote>
+  <p><code class="highlighter-rouge">quote_item_option</code> table</p>
+</blockquote>
 
 <table>
   <thead>
@@ -880,7 +884,7 @@ If your extension stores data in the tables of another module or it serializes/u
     <tr>
       <td>1</td>
       <td>my_custom_option_1001</td>
-      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+      <td><code class="highlighter-rouge">a:1:{s:3:"foo";s:3:"bar";}</code></td>
     </tr>
     <tr>
       <td>2</td>
@@ -890,17 +894,17 @@ If your extension stores data in the tables of another module or it serializes/u
     <tr>
       <td>3</td>
       <td>my_custom_option_1002</td>
-      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+      <td><code class="highlighter-rouge">a:1:{s:3:"foo";s:3:"bar";}</code></td>
     </tr>
     <tr>
       <td>4</td>
       <td>my_custom_option_1003</td>
-      <td>a:1:{s:3:”foo”;s:3:”bar”;}</td>
+      <td><code class="highlighter-rouge">a:1:{s:3:"foo";s:3:"bar";}</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>Use the following approach to update custom options data in the <code class="highlighter-rouge">quote_item_option</code> table.</p>
+<p>To update custom options data in the <code class="highlighter-rouge">quote_item_option</code> table:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
@@ -1037,7 +1041,7 @@ This field contains nested serialized data that needs conversion.</p>
 </div>
   </div>
 
-<p>After creating your custom data converter class, use the <code class="highlighter-rouge">FieldDataConverterFactory</code> to create a <code class="highlighter-rouge">FieldDataConverter</code> instance with your custom converter.</p>
+<p>After creating your custom data converter class, use the <code class="highlighter-rouge">FieldDataConverterFactory</code> to create a <code class="highlighter-rouge">FieldDataConverter</code> instance with your custom converter:</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
@@ -1056,10 +1060,10 @@ This field contains nested serialized data that needs conversion.</p>
 
 <h3 id="step-3d">Step 3d: Convert data in a multi-database setup</h3>
 
-<p>The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
+<p>Magento Commerce supports storing Quote, Sales, and Inventory data in separate databases.
 Use the specific connections for each of these modules to update your extension’s stored data for the entities of these modules.</p>
 
-<p>The following code sample gets the Sales module connection and uses it during data update.</p>
+<p>The following code sample obtains the Sales module connection and uses it during data update.</p>
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
     <div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */</span>
@@ -1076,8 +1080,9 @@ Use the specific connections for each of these modules to update your extension�
 
 <h3 id="step-3e-convert-data-from-multiple-fields">Step 3e: Convert data from multiple fields</h3>
 
-<p>Use the <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter</code> class to update multiple files instead of <code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code>.
-The following code sample updates two fields in different tables taking into account setup version of the module.
+<p>Use the <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter</code> class to update multiple files instead of <code class="highlighter-rouge">\Magento\Framework\DB\FieldDataConverter</code>.</p>
+
+<p>The following code sample updates two fields in different tables taking into account setup version of the module.
 It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to <code class="highlighter-rouge">\Magento\Framework\DB\AggregatedFieldDataConverter::convert()</code> must be made.</p>
 <div class="collapsible">
     <b class="collapsible-title">Show code </b>
