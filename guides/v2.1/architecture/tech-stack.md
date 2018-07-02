@@ -41,7 +41,7 @@ Magento's highly modular structure includes the following open-source technologi
 ### Search
 
 * Solr (Magento Enterprise Edition only)
-* Elasticsearch (Magento Enterprise Edition version 2.1.x only)
+* Elasticsearch ({{site.data.var.ee}} - 2.1.x only)
 
 ### Additional technologies
 
