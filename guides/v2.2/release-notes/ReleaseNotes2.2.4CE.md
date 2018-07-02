@@ -915,6 +915,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!--- CANNOT REPRODUCE MAGETWO-58206  MAGETWO-83676 MAGETWO-73275-->
 
 
+## Known issue 
+Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the **Applied theme** setting for a store view (**Content** > **Design** > **Configuration**), Magento does not change the theme but instead displays this error: `Something went wrong while saving this configuration: Area is already set`. See [GitHub-14968](https://github.com/magento/magento2/issues/14968) for more information. **Workaround**:  Merchants who are running Magento 2.2.4 should **upgrade to 2.2.5, then apply [patch MAGETWO-93036}( https://magento.com/tech-resources/download#download2224)**.
+
 ## Community contributions
 
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
