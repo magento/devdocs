@@ -687,7 +687,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p><em>Patch code and release notes published on May 2, 2018.</em> <em>Release notes revised on June 27, 2018.</em></p>
+			<p><em>Patch code and release notes published on May 2, 2018.</em> <em>Release notes revised on July 1, 2018.</em></p>
 
 <p>We are pleased to present Magento Commerce 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.</p>
 
@@ -2523,6 +2523,9 @@ the invoice ID was not included.  <em>Fix submitted by <a href="https://github.c
 <!--- WON'T FIX  MAGETWO-72116 -->
 
 <!--- CANNOT REPRODUCE MAGETWO-58206 MAGETWO-84074  MAGETWO-73275-->
+
+<h2 id="known-issue-1">Known issue</h2>
+<p>Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the <strong>Applied theme</strong> setting for a store view (<strong>Content</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>), Magento does not change the theme, but instead displays this error: <code class="highlighter-rouge">Something went wrong while saving this configuration: Area is already set</code>. See <a href="https://github.com/magento/magento2/issues/14968">GitHub-14968</a> for more information. <strong>Workaround</strong>:  Merchants who are running Magento 2.2.4 should <strong>upgrade to 2.2.5, then apply <a href="https://magento.com/tech-resources/download#download2224">patch MAGETWO-93036</a></strong>.</p>
 
 <h2 id="community-contributions">Community contributions</h2>
 

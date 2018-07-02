@@ -687,7 +687,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p><em>Patch code and release notes published on June 27, 2018.</em></p>
+			<p><em>Patch code and release notes published on July 1, 2018.</em></p>
 
 <p>We are pleased to present Magento Commerce 2.2.5. This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the over 150 community-contributed fixes!</p>
 
@@ -1053,6 +1053,8 @@ MAGETWO-91014 MAGETWO-90943 MAGETWO-90541 MAGETWO-90413 MAGETWO-90362 MAGETWO-90
 MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91074 MAGETWO-91123 --->
 
 <h2 id="known-issues">Known issues</h2>
+
+<p>Merchants are unable to change a store view’s applied theme in Magento 2.2.5. When a merchant tries to change the <strong>Applied theme</strong> setting for a store view (<strong>Content</strong> &gt; <strong>Design</strong> &gt; <strong>Configuration</strong>), Magento does not change the theme, but instead displays this error: <code class="highlighter-rouge">Something went wrong while saving this configuration: Area is already set</code>. See <a href="https://github.com/magento/magento2/issues/14968">GitHub-14968</a> for more information. <strong>Workaround</strong>: Merchants who are running 2.2.5 should apply <a href="https://magento.com/tech-resources/download#download2224">patch MAGETWO-93036</a>  or  upgrade to 2.2.6 when it becomes available.</p>
 
 <p>The Amazon Pay. dotmailer, Magento Shipping, and Vertex extensions have the following known issues:</p>
 
