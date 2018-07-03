@@ -77,6 +77,7 @@ GitHub_link: install-gde/continue.md
 ---
 ```
 
+
 > Key-value pair reference:
 
 | Property      | Description                                                                                                          |
@@ -99,7 +100,7 @@ You have a couple of options to enter an issue:
 
 ## Contact DevDocs
 
-Have a question? Need help? Magento DevDocs, Maintainers, and other contributors are available through:
+Have a question? Need help? Magento DevDocs, Maintainers, and other Contributors are available through:
 
 * [Slack](https://magentocommeng.slack.com/messages/CAN932A3H)
 * [Twitter @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
