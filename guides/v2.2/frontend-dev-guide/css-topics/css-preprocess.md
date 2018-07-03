@@ -103,7 +103,7 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 In server-side LESS compilation mode, to have your changes applied, you need to do the following:
 
 1. Clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system.
-2. Clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories by deleting the directory in the file system. (if they already existed there).
+2. Clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories by deleting the directory in the file system. (if they already existed there).
 2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
 
 	-  Reloading the page where the modified styles are applied.
