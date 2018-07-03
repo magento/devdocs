@@ -27,10 +27,9 @@ If multiple annotation values are supported and required each value requires a s
 - Tests must contain at least one of the following annotations: stories, title, description, severity.
 
 Recommended use cases of the annotation types:
-- [features] - report grouping, a set of tests that verify a feature.
 - [stories] - report grouping, a set of tests that verify a story.
-- [group] - general functionality grouping.
 - [title] - description of the test purpose.
+- [group] - general functionality grouping.
 - [description] - description of how the test achieves the purpose defined in the title.
 
 ## Example
