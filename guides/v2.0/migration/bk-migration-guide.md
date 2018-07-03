@@ -24,7 +24,7 @@ Magento 2 migration involves four components: data, extensions and custom code, 
 We've developed the **Magento 2 Data Migration Tool** to help you efficiently move all of your products, customers, and order data, store configurations, promotions and more to Magento 2. This guide provides information on the tool and best practices for using it to migrate your data.
 
 ### Extensions and custom code {#migrate-extensions-code}
-We've been working hard with the development community to help you use your Magento 1 extensions in Magento 2. Now we're proud to present the <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, where you can download or purchase the latest versions of your favourite extensions.
+We've been working hard with the development community to help you use your Magento 1 extensions in Magento 2. Now we're proud to present the <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, where you can download or purchase the latest versions of your favorite extensions.
 
 Also, we have developed the <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a>, which will help to port your extensions and custom code to Magento 2, significantly reducing your efforts.
 

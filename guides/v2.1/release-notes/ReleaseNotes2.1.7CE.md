@@ -27,7 +27,7 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 </div>
 
 
-Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
+Looking for the <a href= "{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud) Release Notes</a>?
 
 
 ## Highlights

@@ -76,7 +76,7 @@ To set sensitive values:
 
 		php bin/magento config:sensitive:set {configuration path} {value}
 
-	For example, to set the value of the YouTube API key To to `1234`, enter
+	For example, to set the value of the YouTube API key to `1234`, enter
 
 		php bin/magento config:sensitive:set catalog/product_video/youtube_api_key 1234
 

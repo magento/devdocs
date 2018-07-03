@@ -115,7 +115,7 @@ So far, we haven't added any useful code to our module – it is still empty (an
 Never change this list manually!
 
 ```
-cat app/etc/env.php | grep Learning_FirstUnit
+grep Learning_FirstUnit app/etc/config.php
 ```
 
 Employing these steps, you can successfully create a new module in Magento 2.

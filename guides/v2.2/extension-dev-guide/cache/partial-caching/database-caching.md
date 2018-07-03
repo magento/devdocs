@@ -78,11 +78,11 @@ To modify `di.xml`:
         	<arguments>
             	<argument name="frontendSettings" xsi:type="array">
             	    <item name="page_cache" xsi:type="array">
-            	      <item name="backend" xsi:type="string">database</item>
-             	       </item>
-             	     <item name="<your cache id>" xsi:type="array">
-             	     <item name="backend" xsi:type="string">database</item>
-             	     </item>
+                        <item name="backend" xsi:type="string">database</item>
+                    </item>
+                    <item name="<your cache id>" xsi:type="array">
+                        <item name="backend" xsi:type="string">database</item>
+                    </item>
            		</argument>
         	</arguments>
     	</type>
@@ -184,27 +184,27 @@ This section contains code sample snippets to refer to when configuring database
 <h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
 `di.xml` snippet:
 
-{% highlight XML %}
- <type name="Magento\Framework\App\Cache\Frontend\Pool">
-        <arguments>
-            <argument name="frontendSettings" xsi:type="array">
-                <item name="page_cache" xsi:type="array">
-                  <item name="backend" xsi:type="string">database</item>
-                    </item>
-                  <item name="default" xsi:type="array">
-                  <item name="backend" xsi:type="string">database</item>
-                  </item>
-            </argument>
-        </arguments>
-    </type>
-    <type name="Magento\Framework\App\Cache\Type\FrontendPool">
-        <arguments>
-            <argument name="typeFrontendMap" xsi:type="array">
+``` xml
+<type name="Magento\Framework\App\Cache\Frontend\Pool">
+    <arguments>
+        <argument name="frontendSettings" xsi:type="array">
+            <item name="page_cache" xsi:type="array">
                 <item name="backend" xsi:type="string">database</item>
-            </argument>
-        </arguments>
- </type>
-{% endhighlight %}
+            </item>
+            <item name="default" xsi:type="array">
+                <item name="backend" xsi:type="string">database</item>
+            </item>
+        </argument>
+    </arguments>
+</type>
+<type name="Magento\Framework\App\Cache\Type\FrontendPool">
+    <arguments>
+        <argument name="typeFrontendMap" xsi:type="array">
+            <item name="backend" xsi:type="string">database</item>
+        </argument>
+    </arguments>
+</type>
+```
 
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
 `env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:

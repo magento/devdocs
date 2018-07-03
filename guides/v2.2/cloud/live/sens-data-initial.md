@@ -59,7 +59,7 @@ To change locale and static file optimization settings:
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** check box next to the **Minify Html** list.
+6.	Clear the **Use default value** checkbox next to the **Minify Html** list.
 7.	From the **Minify Html** list, click **No**.
 5.	In the right pane, expand **CSS Settings**.
 6.	From the **Merge CSS Files** list, click **No**.
@@ -164,7 +164,7 @@ If you need to modify any of these settings and update `config.php`, you will ne
 
 To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.
 
-For an overvidew, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+For an overview, see the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 For this example, we'll modify static file optimization settings and add a new setting for JavaScript.
 
@@ -174,7 +174,7 @@ To add additional configuration values in the Integration environment Magento Ad
 1.	If you haven't done so already, log out of the Integration Admin.
 2.	Log in to the Integration Admin.
 
-	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+	For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 3.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 4.	In the right pane, expand **JavaScript Settings**.
 5.	From the **Merge JavaScript Files** list, click **Yes**.

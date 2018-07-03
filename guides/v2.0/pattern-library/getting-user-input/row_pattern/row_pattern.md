@@ -48,7 +48,7 @@ All these elements are optional, depending on the functions needed.
 
 * Each row will have a delete control on the far right, often represented by a _"trash can"_ icon. This will allow the User to remove any unwanted rows, along with any data that has been input into them (prior to saving the form).
 
-* The delete contol _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
+* The delete control _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
 
 * The "Add" link however should always be present to allow the user to add a row, even in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of deleting all rows.     
 
@@ -65,7 +65,7 @@ Once pagination is enabled an "Order" column should be appended to allow the use
 
 
 <h3 id="examples">Examples</h3>
-Typically the Row Pattern will span either 8 or 12 columns for the page grid, depending on the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the page or panel on which it appears. The Row Pattern should accomodate all typical form elements as are necessary, but discretion should be used to insure the elements within the row are easy to read and interact with and do not become to cramped within the space.
+Typically the Row Pattern will span either 8 or 12 columns for the page grid, depending on the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the page or panel on which it appears. The Row Pattern should accommodate all typical form elements as are necessary, but discretion should be used to insure the elements within the row are easy to read and interact with and do not become to cramped within the space.
 
 <img src="img/row-examples.png">
 

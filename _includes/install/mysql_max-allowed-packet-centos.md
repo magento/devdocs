@@ -9,3 +9,5 @@
 	To optionally verify the value you set, enter the following command at a `mysql>` prompt:
 
 		 SHOW VARIABLES LIKE 'max_allowed_packet';
+		 
+</div>

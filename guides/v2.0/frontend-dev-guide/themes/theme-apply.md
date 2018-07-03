@@ -32,7 +32,7 @@ To apply a theme:
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-6. To see your changes applied, reload the store front pages.
+6. To see your changes applied, reload the storefront pages.
 
 
 ## Add a design exception {#theme-apply-except}
@@ -45,11 +45,11 @@ To add a design exception:
 5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save Config**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-6. To see your changes applied, reload the store front pages.
+6. To see your changes applied, reload the storefront pages.
 
 
 ## Add a theme-independent logo {#theme-apply-logo}
-You might want to set a permanent store logo, that displays on the store front no matter what theme is applied.
+You might want to set a permanent store logo, that displays on the storefront no matter what theme is applied.
 To add a permanent theme-independent logo:
 
 1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
@@ -59,12 +59,12 @@ To add a permanent theme-independent logo:
 6. Upload the file.
 7. Click **Save Config**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-8. To see your changes applied, reload the store front pages.
+8. To see your changes applied, reload the storefront pages.
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.</p>
+  <p>To delete the permanent logo, go to the same location, select the checkbox next to the logo image, and click <b>Delete</b>.</p>
 </div>
 
 ## Clear the cache {#theme-apply-clear}

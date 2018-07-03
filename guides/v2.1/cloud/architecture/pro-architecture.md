@@ -131,7 +131,10 @@ The three gateways map to the three servers in your Production environment clust
 ### Backup and disaster recovery
 Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.
 
-In addition to the redundancy of the high-availability architecture, there is a full system backup every six hours that includes the file system and the database. We retain the backups according to the following schedule:
+In addition to the redundancy of the high-availability architecture, {{site.data.var.ece}} provides
+incremental backups every hour for the first 24 hours of operation. After the
+initial period, full backups which include the file system and the database.
+We retain the backups according to the following schedule:
 
 Time Period | Backup Retention Policy
 --- | ---
@@ -143,8 +146,10 @@ Weeks 12 to 22 | One backup per month
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
--  **Recovery Point Objective (RPO)**—is 6 hours (maximum time to last backup).
--  **Recover Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
+-  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after
+the initial period, the RPO is 6 hours (maximum time to last backup).
+-  **Recover Time Objective (RTO)**—depends on the size of the storage. Large
+EBS volumes take more time to restore.
 
 ### Production technology stack
 The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:
@@ -165,9 +170,13 @@ The following figure shows the technologies used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
-{{site.data.var.ee}} scales seamlessly from the smallest 6-CPU cluster with 11.25GB of RAM to the largest 96-CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
+{{site.data.var.ee}} can scale from the smallest Pro12 cluster to the largest Pro120 cluster.
+-   Pro12 offers a 12-CPU (4 x 3 nodes) and 48GB RAM (16 x 3 nodes)
+-   Pro120 offers 120 CPU (40 x 3 nodes) up to 480GB RAM (160 x 3 nodes)
 
-[//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.)
+Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
+
+<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
 
 ## Software versions {#cloud-arch-software}
 {{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
@@ -185,4 +194,4 @@ Edit the following YAML files to configure specific software versions to use in 
 -   [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
 -   [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
 -   [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
--   [`.magento.env.yaml`]()—unified configs for {{site.data.var.ece}} 2.2
+-   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2

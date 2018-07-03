@@ -10,7 +10,7 @@ github_link: pattern-library/getting-user-input/image_uploader/image_uploader.md
 ---
 
 ## Image uploader
-The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These iamges may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.  
+The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These images may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.  
 
 
 <h3 id="whentouse">When to Use</h3>
@@ -34,13 +34,13 @@ This pattern should be used specifically to upload images, and not to upload doc
 
 **Uploading via Browser**
 
-The Image Uploader allows the user to browse for images to upload to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} application. This can accomodate single or multiple image upload. To initiate this behavior the user clicking on the "Upload Image" link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.
+The Image Uploader allows the user to browse for images to upload to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} application. This can accommodate single or multiple image upload. To initiate this behavior the user clicking on the "Upload Image" link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.
 
 <img src="img/image-uploader-browse.jpg">
 
-**Uploading via Drap and Drop**
+**Uploading via Drag and Drop**
 
-The user may also upload images (single or multiple) by dragging the desired images onto the Image Uplaod target area.
+The user may also upload images (single or multiple) by dragging the desired images onto the Image Upload target area.
 
 <img src="img/image-uploader-drag.jpg">
 

@@ -20,7 +20,7 @@ redirect_from:
 {% include cloud/wings-management.md %}
 
 ## Account owner role {#cloud-role-acct-owner}
-The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the trial or create new account process.
+The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the account creation process.
 
 The account has super user access and additional capabilities for managing all aspects of your project and environments.
 
@@ -112,7 +112,7 @@ To create user accounts using the Web Interface:
 7.	Enter the user's e-mail address.
 8.	Select the access for the account:
 
-	*	For a project administrator account, select the **Super User** check box. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
+	*	For a project administrator account, select the **Super User** checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.
 	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 

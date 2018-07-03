@@ -96,6 +96,7 @@ In the terms of adding assets, you can add CSS files to be included for a specif
 A sample follows:
 
 {%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="css/ie-9.css" ie_condition="IE 9" />
     </head>
@@ -131,6 +132,7 @@ To remove the static resources, linked in a page `<head>`, make a change similar
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
         <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
+</page>
 {%endhighlight xml%}
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.

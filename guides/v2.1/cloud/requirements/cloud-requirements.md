@@ -92,9 +92,9 @@ For detailed information on supported versions and extensions, see the following
 ## Requirements to get started {#requirements}
 To get started as a developer in a {{site.data.var.ece}} project, you need to set up the following:
 
-*	Set up a [local development environment]({{ page.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
+*	Set up a [local development environment]({{ page.baseurl }}/cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisites installed and the project `master` Git branch cloned. You'll develop in branches to add modules, extensions, 3rd party integrations, and configurations. We recommend reading over develop and deploy process for your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) plan.
 *	Get [`repo.magento.com` credentials]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in your account.
-*	Get a [project invitiation]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) from the Project Owner or a super user.
+*	Get a [project invitation]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) from the Project Owner or a super user.
 
 We walk you through everything you need to do and know.
 
@@ -131,7 +131,7 @@ The Account Owner creates the initial {{site.data.var.ece}} account with a purch
 To work with and deploy stores, you need the following:
 
 *	[Magento Commerce (Cloud) account]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#cloud-first-acct) already created or created via an invitation
-*	[Project invitiation]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
+*	[Project invitation]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#users) for contributing developers from the Account Owner or a super user
 *	[Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) for each user who contributes to the project
 
 Your {{site.data.var.ee}} account must *authenticate* using any of the following:

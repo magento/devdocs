@@ -7,8 +7,8 @@ menu_order: 10
 version: 2.1
 github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_init.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 <h2 id="js_init_overview">Overview</h2>
@@ -45,7 +45,7 @@ When inserted in a certain element, the script is called only for this particula
 
 ##### How `data-mage-init` is processed {#init_process}
 
-On DOM ready, the `data-mage-init` attribute is parsed to extract components' names and configuration to be applied to the element.
+On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element.
 Depending on the type of the inserted JS component, processing is performed as follows:
 <ul>
 

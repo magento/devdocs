@@ -43,3 +43,4 @@ Magento uses server rewrites and <code>.htaccess</code> to provide directory-lev
 6.	If you changed Apache settings, restart Apache.
 
 		service apache2 restart
+</div>

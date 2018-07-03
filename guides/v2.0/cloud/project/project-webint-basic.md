@@ -105,7 +105,7 @@ To set environment specific variables in the Project Web Interface:
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-If you're attempting to [override Magento configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
+If you're attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 </div>
 
