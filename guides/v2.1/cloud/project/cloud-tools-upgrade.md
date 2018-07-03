@@ -83,7 +83,7 @@ The following example places a constraint for the Magento Cloud metapackage to a
 
 1.  Add and commit the code changes. In this example, the following files were updated:
 
-    ```
+    ```terminal
     .magento.app.yaml
     composer.json
     composer.lock

@@ -1,13 +1,15 @@
 ---
 group: cloud
-title: Upgrades and Patches
+title: Upgrades and patches
 version: 2.1
 github_link: cloud/project/project-upgrade-parent.md
 functional_areas:
   - Cloud
   - Upgrade
 ---
-{{site.data.var.ece}} checks for pending patches and updates when you push code changes to the remote environment.
+Upgrades and patches contains detailed release notes for the Cloud tools, and information on how to upgrade the Cloud tools and how to apply custom patches and hotfixes.
+
+{{site.data.var.ece}} checks for pending patches and updates whenever you push code changes to the remote environment.
 
 Some restrictions in the core {{site.data.var.ee}} code base prevent you from upgrading to the new application architecture directly, so use the following table to determine your upgrade path:
 

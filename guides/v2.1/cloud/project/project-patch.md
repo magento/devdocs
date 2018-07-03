@@ -36,7 +36,7 @@ Only a [Magento file system owner]({{ page.baseurl }}/cloud/before/before-worksp
     php <project-root>/bin/magento cache:clean
     ```
 
-    You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+    You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 
 1.  Test the patch, make any necessary changes, and commit your code changes.
 
