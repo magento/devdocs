@@ -26,9 +26,6 @@ pages:
           url: /contributor-guide/devdocs-maintainers.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Contributing Guidelines
-          url: https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md
-
     - label: Templates
       children:
         - label: Basic template
