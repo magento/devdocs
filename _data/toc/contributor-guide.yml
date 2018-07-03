@@ -9,8 +9,10 @@ pages:
           url: /contributor-guide/backward-compatible-development
 
     - label: DevDocs Contributions
-      url: /contributor-guide/contributing_docs.html
       children:
+        - label: Contribution Guidelines
+          url: https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md
+
         - label: Magento Definition of Done
           url: /contributor-guide/contributing_dod.html
 
@@ -20,9 +22,12 @@ pages:
         - label: DevDocs Contributors
           url: /contributor-guide/quarterly-contributors.html
 
-        - label: Community maintainers
+        - label: Community Maintainers
           url: /contributor-guide/devdocs-maintainers.html
           versions: ["2.1","2.2","2.3"]
+
+        - label: Contributing Guidelines
+          url: https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md
 
     - label: Templates
       children:
