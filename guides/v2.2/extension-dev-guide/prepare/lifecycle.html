@@ -1465,7 +1465,7 @@ If the <code class="highlighter-rouge">schema_version</code> for your module is 
     </tr>
     <tr>
       <td><strong>Interface:</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method:</strong></td>
@@ -1501,7 +1501,7 @@ The purpose of this class is to update the database structure or apply patches.<
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php"><code class="highlighter-rouge">UpgradeSchemaInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php"><code class="highlighter-rouge">UpgradeSchemaInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
@@ -1537,7 +1537,7 @@ This class makes final modifications to the database schema after it has been in
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php"><code class="highlighter-rouge">InstallSchemaInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
@@ -1577,7 +1577,7 @@ The purpose of this class is to populate the database with initial data.</p>
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
@@ -1613,7 +1613,7 @@ The purpose of this class is to fix corrupted data or populate a new data field 
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php"><code class="highlighter-rouge">UpgradeDataInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php"><code class="highlighter-rouge">UpgradeDataInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
@@ -1649,7 +1649,7 @@ This class makes final modifications to the database store after data has been i
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/InstallDataInterface.php"><code class="highlighter-rouge">InstallDataInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>
@@ -1674,10 +1674,10 @@ This class makes final modifications to the database store after data has been i
 
 <h2 id="database-interface">Database interface</h2>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php"><code class="highlighter-rouge">ModuleDataSetupInterface</code></a> when you need to do database manipulations.
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php"><code class="highlighter-rouge">ModuleDataSetupInterface</code></a> when you need to do database manipulations.
 If your installation or upgrade logic spans multiple classes, pass this resource on to other classes that need to modify the database.</p>
 
-<p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Customer/Setup/InstallData.php">Customer module’s InstallData.php</a></p>
+<p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/Customer/Setup/InstallData.php">Customer module’s InstallData.php</a></p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
 <span class="p">{</span>
@@ -1719,9 +1719,9 @@ If your installation or upgrade logic spans multiple classes, pass this resource
 
 <h2 id="module-version">Module version</h2>
 
-<p>Use the <a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php"><code class="highlighter-rouge">ModuleContextInterface</code></a> to get the current module version and execute logic based on the version.</p>
+<p>Use the <a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php"><code class="highlighter-rouge">ModuleContextInterface</code></a> to get the current module version and execute logic based on the version.</p>
 
-<p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/User/Setup/UpgradeData.php">User module’s UpgradeData.php</a></p>
+<p><strong>Example:</strong> <a href="https://github.com/magento/magento2/blob/2.2-develop/app/code/Magento/User/Setup/UpgradeData.php">User module’s UpgradeData.php</a></p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="nx">Magento\User\Setup</span><span class="p">;</span>
 
@@ -1765,7 +1765,7 @@ If your installation or upgrade logic spans multiple classes, pass this resource
     </tr>
     <tr>
       <td><strong>Interface</strong></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Setup/UninstallInterface.php"><code class="highlighter-rouge">UninstallInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.2-develop/lib/internal/Magento/Framework/Setup/UninstallInterface.php"><code class="highlighter-rouge">UninstallInterface</code></a></td>
     </tr>
     <tr>
       <td><strong>Method</strong></td>

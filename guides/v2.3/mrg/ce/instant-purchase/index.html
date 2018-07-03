@@ -468,22 +468,22 @@ They become invalid if a different implementation is used.</p>
     <tr>
       <td>Stored Payment</td>
       <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/PaymentMethodChoose/PaymentTokenChooserInterface.php"><code class="highlighter-rouge">PaymentTokenChooserInterface</code></a></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a></td>
     </tr>
     <tr>
       <td>Shipping Address</td>
       <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingAddressChoose/ShippingAddressChooserInterface.php"><code class="highlighter-rouge">ShippingAddressChooserInterface</code></a></td>
-      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
+      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
     </tr>
     <tr>
       <td>Billing Address</td>
       <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/BillingAddressChoose/BillingAddressChooserInterface.php"><code class="highlighter-rouge">BillingAddressChooserInterface</code></a></td>
-      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
+      <td>Customer’s <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Model/Address.php"><code class="highlighter-rouge">Address</code></a></td>
     </tr>
     <tr>
       <td>Shipping Method</td>
       <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/ShippingMethodChooserInterface.php"><code class="highlighter-rouge">ShippingMethodChooserInterface</code></a></td>
-      <td><a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Quote/Api/Data/ShippingMethodInterface.php"><code class="highlighter-rouge">ShippingMethodInterface</code></a></td>
+      <td><a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Quote/Api/Data/ShippingMethodInterface.php"><code class="highlighter-rouge">ShippingMethodInterface</code></a></td>
     </tr>
   </tbody>
 </table>
@@ -514,7 +514,7 @@ To address this issue, the Instant Purchase module allows you to postpone the fi
   </li>
   <li>
     <p>Create an implementation of the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/Model/ShippingMethodChoose/DeferredShippingMethodChooserInterface.php"><code class="highlighter-rouge">DeferredShippingMethodChooserInterface</code></a>.
-Unlike the <code class="highlighter-rouge">ShippingMethodChooserInterface</code>, this interface retrieves the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Quote/Model/Quote/Address.php"><code class="highlighter-rouge">Quote\Address</code></a> instead of the customer’s address, so it has access to the necessary data.</p>
+Unlike the <code class="highlighter-rouge">ShippingMethodChooserInterface</code>, this interface retrieves the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Quote/Model/Quote/Address.php"><code class="highlighter-rouge">Quote\Address</code></a> instead of the customer’s address, so it has access to the necessary data.</p>
 
     <p>This method must return a string that identifies the shipping method using the format <code class="highlighter-rouge">&lt;carrier code&gt;_&lt;method code&gt;</code> or <code class="highlighter-rouge">null</code> if nothing can be chosen.</p>
   </li>
@@ -621,7 +621,7 @@ This is why the default token formatter returns the payment method title as the 
 
 <p>We recommend you provide a custom token formatter for your Instant Purchase integration to provide the correct information for your payment token</p>
 
-<p>A custom payment token formatter should implement the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentTokenFormatterInterface.php"><code class="highlighter-rouge">PaymentTokenFormatterInterface</code></a> and return a human-readable string that describes the <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a>.</p>
+<p>A custom payment token formatter should implement the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/InstantPurchase/PaymentMethodIntegration/PaymentTokenFormatterInterface.php"><code class="highlighter-rouge">PaymentTokenFormatterInterface</code></a> and return a human-readable string that describes the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php"><code class="highlighter-rouge">PaymentTokenInterface</code></a>.</p>
 
 <p>The Instant Purchase module guarantees that the correct token associated with corresponding payment method is passed to the formatter.
 To configure the formatter, use the <code class="highlighter-rouge">default/payment/&lt;vault payment method code&gt;/instant_purchase/tokenFormat</code> configuration path.</p>
@@ -664,7 +664,7 @@ The default implementation returns an empty array.</p>
 
 <p>However, sometimes conditional logic for payment processing needs to be implemented to handle payments initiated from different entry points.</p>
 
-<p>For these cases, the payment object’s <a href="https://github.com/magento/magento2/blob/2.3/app/code/Magento/Payment/Model/InfoInterface.php"><code class="highlighter-rouge">InfoInterface</code></a> holds an <code class="highlighter-rouge">additional_information</code> property, accessible via the <code class="highlighter-rouge">getAdditionalInformation()</code> method, which can return the <code class="highlighter-rouge">instant-purchase</code> marker.
+<p>For these cases, the payment object’s <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Payment/Model/InfoInterface.php"><code class="highlighter-rouge">InfoInterface</code></a> holds an <code class="highlighter-rouge">additional_information</code> property, accessible via the <code class="highlighter-rouge">getAdditionalInformation()</code> method, which can return the <code class="highlighter-rouge">instant-purchase</code> marker.
 Use this marker if no other options are available to implement specific payment logic for the Instant Purchase module.</p>
 
 
