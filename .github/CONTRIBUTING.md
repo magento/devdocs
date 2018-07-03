@@ -20,9 +20,11 @@ We track and post your picture and a link to your GitHub account on the [Top rec
 * Make sure you have a [GitHub account](https://github.com/signup/free).
 * Make sure you sign the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca).
 * Check the [guidelines](#contribution-guidelines).
-* [Fork and clone](#fork-and-clone-a-repository) the repository.
+* [Fork and clone](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](GitHub.com/magento/devdocs). [Sync](https://help.github.com/articles/syncing-a-fork/) as needed.
 * Write content and commit.  Need help, see our [templates](#templates).
-* Create a [pull](#create-a-pull-request).
+* Create a [pull request](https://help.github.com/articles/creating-a-pull-request/). Fill out as much info as possible and link any GitHub issues.
+
+**Note:** If you have not signed the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca), the PR will provide a link to complete. All contributors are required to submit the form and agree to the terms.
 
 **TIP:** If you are not sure where to start contributing, you can check GitHub issues: [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
@@ -53,60 +55,9 @@ The following guidelines may answer most of your questions and help you get star
     -   Use notes to alert readers about important details.
     -   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
 
-## Fork and clone a repository
-
-To fork the devdocs repository on GitHub, do the following:
-
-1.  Create or log into your development environment account on GitHub.
-
-1.  Navigate to the [DevDocs repository](GitHub.com/magento/devdocs).
-
-1.  Click **Fork** at the top right.
-
-1.  Clone the repository into your development environment and start writing. Commit changes and  and committing your changes. Optionally, create a branch first if you plan to work on multiple changes.
-
-1.  Before opening a pull request, don't forget to review your work for typos, formatting errors, code sample formatting, or sentences that need clarifying.
-
-### Preview HTML locally
+## Preview HTML locally
 
 To preview your changes in HTML output, follow the instructions in the [README](https://GitHub.com/magento/devdocs/blob/develop/README.md) to build the devdocs site locally using Jekyll.
-
-### Update your fork
-As we merge changes with the upstream repository, your fork becomes outdated and pull requests might result in merge conflicts.
-To see if your fork is outdated, open the fork page in GitHub. If you see the following message at the top of the page, update your fork: `This branch is <number> commits behind develop`.
-
-There are two ways to update your fork. The typical way is discussed in [GitHub documentation](https://help.GitHub.com/articles/syncing-a-fork). Ensure you are updating your fork from the correct branch.
-
-It is also possible to use the GitHub interface to update your fork. This is referred to as a *reverse pull request*. This method has the downside of inserting unnecessary information into fork commit history.
-
-1.  Navigate to the GitHub page for your forked repository and click **New pull request**. You should see the following message:
-
-        There isn’t anything to compare.
-        magento:2.1 is up to date with all commits from <your fork>:2.1. Try switching the base for your comparison.
-
-1.  Click the base link and then click **Create pull request**.
-
-1.  Enter a name for your pull request.
-
-1.  Scroll to the bottom of the page and click **Merge pull request**.
-
-1.  Click **Confirm Merge**.
-
-## Create a pull request
-
-To create a pull request do the following:
-
-1.  Push your changes to your forked repository on GitHub.
-
-1.  In your forked repository, click **New pull request**.
-
-1.  Be sure to create the pull request on the `develop` branch. We do not accept pull requests on other branches, like `gh-pages`.
-
-1.  Review the changes, then click **Create pull request**.
-
-1.  Fill out the form and click **Create pull request** again to submit the pull request&mdash;that’s it!
-
-If you have not signed the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca), the PR will provide a link to complete. All contributors are required to submit the form and agree to the terms.
 
 ## Templates
 
