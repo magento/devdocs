@@ -3,6 +3,10 @@ group: cloud
 title: Import URL Rewrites
 version: 2.2
 github_link: cloud/configure/import-url-rewrites.md
+functional_areas:
+  - Cloud
+  - Setup
+  - Configuration
 ---
 
 If you want to be easily able to re-platform to Magento Commerce (Cloud) and redirect traffic from your old indexed URLs to new, and don't lose SEO rankings and traffic due to migration then use a module *magento/url-rewrite-import-export*.
