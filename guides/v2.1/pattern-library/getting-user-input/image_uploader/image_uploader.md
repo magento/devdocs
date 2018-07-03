@@ -14,7 +14,7 @@ The Image uploader provides the ability for users to upload a single image, or g
 
 
 <h3 id="whentouse">When to Use</h3>
-When it is desireable to allow users to upload a single image or multiple images for display within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %}.
+When it is desirable to allow users to upload a single image or multiple images for display within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %}.
 
 
 <h3 id="whennottouse">When Not to Use</h3>
