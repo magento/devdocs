@@ -4,16 +4,16 @@ Share your knowledge with the community by contributing to Magento DevDocs!
 You can contribute by creating an issue or pull request (PR) on our [devdocs](https://GitHub.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
-Magento's tech writer team and [Maintainers](devdocs.magento.com/contributor-guide/devdocs-maintainers.html) review issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible.
+Magento's tech writer team and [Maintainers](https://devdocs.magento.com/contributor-guide/devdocs-maintainers.html) review issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible.
 Working through the backlog takes time, though, so we appreciate your patience.
 
 ## Rewards and thanks
 
 DevDocs works with the Community Engineering teams and projects.
-As you contribute PRs, you gain [Contribution Points](github.com/magento/magento2/wiki/Contribution-Rewards).
+As you contribute PRs, you gain [Contribution Points](https://github.com/magento/magento2/wiki/Contribution-Rewards).
 
 If you write and contribute a full topic, we will put your name (or your company's name) at the top of the page right under the title, and link it to your blog or website!
-We track and post your picture and a link to your GitHub account on the [Top recent contributors](devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page.
+We track and post your picture and a link to your GitHub account on the [Top recent contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page.
 
 ## Get started
 
@@ -63,8 +63,8 @@ To preview your changes in HTML output, follow the instructions in the [README](
 
 Edit and add content to existing pages. For new topics, we provide templates to help get you started:
 
-* [General topic template](devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
-* Tutorial templates: These templates provide example formats and styles for step-by-step instructions (like how-tos). Templates include a [first introduction topic](devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-first.html), [middle topic](devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-middle.html) for each step, and a [final step topic](devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-last.html).
+* [General topic template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
+* Tutorial templates: These templates provide example formats and styles for step-by-step instructions (like how-tos). Templates include a [first introduction topic](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-first.html), [middle topic](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-middle.html) for each step, and a [final step topic](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-last.html).
 
 ### Edit metadata
 The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file.
@@ -97,7 +97,7 @@ GitHub issues use templates for requested information. Enter as much information
 **TIP:** Check the [existing issues](https://GitHub.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
 
 You have a couple of options to enter an issue:
-* Have general feedback? Create an issue on [GitHub DevDocs](https://GitHub.com/magento/devdocs/issues/new){.
+* Have general feedback? Create an issue on [GitHub DevDocs](https://GitHub.com/magento/devdocs/issues/new).
 * Have feedback on a specific DevDocs page? Click the **Report an Issue** link at the top right of the page to report on the currently open topic.
 * Have a Community code contribution? Create an issue to [request DevDocs content](https://GitHub.com/magento/devdocs/issues/new?template=COMMUNITY_ISSUE_TEMPLATE.md).
 
