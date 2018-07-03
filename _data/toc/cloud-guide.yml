@@ -358,11 +358,11 @@ pages:
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Upgrade Cloud tools
+        - label: Upgrade ece-tools
           url: /cloud/project/cloud-tools-upgrade.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Cloud patches
+        - label: Apply Cloud patches
           url: /cloud/project/project-patch.html
 
         - label: Upgrade Magento Commerce (Cloud)
