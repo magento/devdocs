@@ -1,1 +1,1 @@
-../../../v2.0/frontend-dev-guide/themes/theme-overview.md
+../../../v2.1/frontend-dev-guide/themes/theme-overview.md

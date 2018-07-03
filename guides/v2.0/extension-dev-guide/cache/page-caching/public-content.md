@@ -143,6 +143,7 @@ class CustomerAgeContextPlugin
     ) {
         $this->customerSession = $customerSession;
     }
+
     /**
      * \Magento\Framework\App\Http\Context::getVaryString is used by Magento to retrieve unique identifier for selected context,
      * so this is a best place to declare custom context variables
@@ -170,12 +171,14 @@ First, your entity {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}mod
 
 ``` php?start_inline=1
 use Magento\Framework\DataObject\IdentityInterface;
+
 class Product implements IdentityInterface
 {
      /**
       * Product cache tag
       */
      const CACHE_TAG = 'catalog_product';
+
     /**
      * Get identities
      *

@@ -20,7 +20,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 ## 101.4.5 changes
 In `magento-cloud-configuration` release 101.4.5 on {{site.data.var.ece}} 2.1.4, we provide the following improvements:
 
-<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 ## 101.4.4 changes
 

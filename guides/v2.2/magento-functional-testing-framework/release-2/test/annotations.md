@@ -28,7 +28,7 @@ If multiple annotation values are supported and required each value requires a s
 Recommended use cases of the annotation types:
 - [features] - report grouping, a set of tests that verify a feature.
 - [stories] - report grouping, a set of tests that verify a story.
-- [group] - reneral functionality grouping.
+- [group] - general functionality grouping.
 - [title] - description of the test purpose.
 - [description] - description of how the test achieves the purpose defined in the title.
 

@@ -81,7 +81,7 @@ You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properl
 4. Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a "server" configuration. This will be used to listen to port 9000 locally, which will be [forwarded](#port).
 5. Configure settings for the new server:
 
-    * **Name**: enter the same as the hostname. This value ise used in and must match the value for `PHP_IDE_CONFIG` variable in [Debug CLI commands](#debugcli).
+    * **Name**: enter the same as the hostname. This value is used in and must match the value for `PHP_IDE_CONFIG` variable in [Debug CLI commands](#debugcli).
     * **Host**: enter `localhost`
     * **Port**: enter 80
     * **Debugger**: set to Xdebug in the drop-down
@@ -120,9 +120,9 @@ To troubleshoot the connection:
 2.	Enter `who` to view a list of SSH sessions.
 3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-    *	Integration: user names are similar to `dd2q5ct7mhgus`
-    *	Staging: user names are similar to `dd2q5ct7mhgus_stg`
-    *	Production: user names are similar to `dd2q5ct7mhgus`
+    *	Integration: usernames are similar to `dd2q5ct7mhgus`
+    *	Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+    *	Production: usernames are similar to `dd2q5ct7mhgus`
 4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
 
@@ -147,7 +147,7 @@ To set up an SSH tunnel on Windows using Putty:
 3.	In the Category pane, click **Session**.
 4.	Enter the following information:
 
-    *	**Host Name (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
+    *	**Hostname (or IP address)** field: Enter your Cloud server's [SSH URL]({{ page.baseurl }}/cloud/env/environments-ssh.html)
     *	**Port** field: Enter `22`
 
     ![Set up Putty]({{ site.baseurl }}/common/images/cloud-xdebug_putty-session.png){:width="350px"}
@@ -222,7 +222,7 @@ To start debugging, use the following commands with the environment URL:
 
         ?XDEBUG_SESSION_STOP=KEY
 
-Please note, `XDEBUG_SESSION_START`passed by `POST` requersts are not supported at this time.
+Please note, `XDEBUG_SESSION_START`passed by `POST` requests are not supported at this time.
 
 ## Debug CLI commands {#debugcli}
 This section walks through debugging CLI commands. To debug, you will need the SSH commands for your environments.
@@ -269,7 +269,7 @@ To use Xdebug Helper with Chrome:
 10.	In the PhpStorm navigation pane, double-click the PHP file to test.
 
 ## Debug code locally {#code}
-Due to your environments being read-only, you need to pull code locally from an environment or specific Git branch/respository to perform debugging.
+Due to your environments being read-only, you need to pull code locally from an environment or specific Git branch/repository to perform debugging.
 
 The method you choose is up to you. You have the following options:
 
@@ -309,9 +309,9 @@ Due to not having access to manually restart the nginx server, you need to locat
 2.	Enter `who` to view a list of SSH sessions.
 3.	View existing SSH sessions by user. Be careful to not affect a user other than yourself!
 
-    *	Integration: user names are similar to `dd2q5ct7mhgus`
-    *	Staging: user names are similar to `dd2q5ct7mhgus_stg`
-    *	Production: user names are similar to `dd2q5ct7mhgus`
+    *	Integration: usernames are similar to `dd2q5ct7mhgus`
+    *	Staging: usernames are similar to `dd2q5ct7mhgus_stg`
+    *	Production: usernames are similar to `dd2q5ct7mhgus`
 4.	For a user session that is older than yours, find the pseudo-terminal (PTS) value. For example, `pts/0`.
 5.	Kill the process ID (PID) corresponding to the PTS value using the following commands:
 

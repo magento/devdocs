@@ -7,8 +7,8 @@ menu_title: Add a custom breakpoint
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd-breakpoints.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
-  - guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
 functional_areas:
   - Frontend
 ---
@@ -37,7 +37,7 @@ For example:
 
     @your__breakpoint: 1280px;
 
-For variables' naming rules see [Less coding standards](http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables).
+For variables' naming rules see [Less coding standards]({{ site.baseurl }}/guides/v2.0/coding-standards/code-standard-less.html#variables).
 
 ## Override `_responsive.less` from the library
 

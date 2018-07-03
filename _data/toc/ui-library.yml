@@ -3,7 +3,7 @@ pages:
     - label: Overview
       url: /ui-components/ui-component.html
 
-    - label: Using UI components' client-side
+    - label: Using UI components client-side
       url: /ui-components/ui_components_js.html
 
     - label: Listing/Grid Component

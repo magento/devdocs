@@ -16,12 +16,12 @@ github_link: release-notes/ReleaseNotes2.1.6EE.md
 *Release notes updated on April 28, 2017.*
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Upgrading to this release can cause problems with image resizing. Please see [Image Resize Issue with Magento 2.1.6](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_216-imageresize.html){:target="_blank"} for an overview of these post-upgrade issues and our suggested workaround.
+Upgrading to this release can cause problems with image resizing. Please see [Image Resize Issue with Magento 2.1.6]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_216-imageresize.html){:target="_blank"} for an overview of these post-upgrade issues and our suggested workaround.
 </div>
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page as well as image resizing. 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
+Looking for the <a href="{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
 
 

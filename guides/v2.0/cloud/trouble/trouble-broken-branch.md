@@ -22,7 +22,7 @@ When you push your code, the build and deploy phases begin. Patch and available 
 
     git apply <path to patch>
 
-Make note of the errors. These may help determine what fixes are required. We can also help further with those speified errors.
+Make note of the errors. These may help determine what fixes are required. We can also help further with those specified errors.
 
 You should apply patches in your local on your Git branch then push to the remote for normal build and deploy scripts to run. For full instructions, see [Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html).
 

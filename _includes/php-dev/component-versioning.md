@@ -9,3 +9,5 @@ Components have the following types of versions:
 *	Composer version; in other words, the version of each module, theme, language package, third-party package, and dependencies.
 
 Using Magento code as an example, {{site.data.var.ce}} marketing version 2.0.0 includes component versions such as 100.0.1, 100.0.2, and so on. These versioning strategy prevents collisions between the marketing version and component versions.
+
+</div>

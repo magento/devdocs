@@ -35,3 +35,4 @@ To optionally set the value in the user's Bash shell:
 <div class="bs-callout bs-callout-warning">
     <p>We recommend you avoid setting a value for <a href="http://php.net/manual/en/pcre.configuration.php" target="_blank"><code>pcre.recursion_limit</code></a> in <code>php.ini</code> because it can result in incomplete rollbacks with no failure notice.</p>
 </div>
+</div>

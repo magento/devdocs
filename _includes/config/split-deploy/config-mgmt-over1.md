@@ -6,7 +6,7 @@
 
 	The shared configuration file, `app/etc/config.php`, should be included in source control so it can be shared between development, build, and production systems.
 
-*	_System-specific_ configuration, which is all settings that vary by system; for example, search engine host names and ports.
+*	_System-specific_ configuration, which is all settings that vary by system; for example, search engine hostnames and ports.
 
 *	_Sensitive_ configuration, which is all settings that should not be in source control because they expose personally-identifiable information (PII) or settings such as API keys or passwords.
 

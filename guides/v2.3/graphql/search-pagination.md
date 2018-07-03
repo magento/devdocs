@@ -291,7 +291,7 @@ The query returns 8 items.
 
 ### Logical AND and OR search
 
-This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the prodict is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 {% highlight json %}
 {

@@ -12,7 +12,7 @@ github_link: release-notes/ReleaseNotes2.0.12EE.md
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.12. This release includes many functional fixes and enhancements. 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes</a>?
+Looking for the <a href="{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes</a>?
 
 
 ## Highlights
