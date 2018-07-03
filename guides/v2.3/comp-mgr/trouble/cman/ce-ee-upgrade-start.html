@@ -1082,17 +1082,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="compman-overview">Overview of Magento Open Source to Magento Commerce upgrade</h2>
+
 <p>This section discusses how to upgrade Magento Open Source to Magento Commerce.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>You must be authorized for Magento Commerce to perform the tasks discussed in this topic.</p>
+You must be authorized for Magento Commerce to perform the tasks discussed in this topic.
 </div>
 
 <h2 id="compman-prereq">Prerequisites</h2>
+
 <p>Before continuing, complete all tasks discussed in <a href="/guides/v2.3/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
 
 <p>In addition, you might need to install the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- <a href="http://php.net/manual/en/book.bc.php" target="_blank"><code class="highlighter-rouge">bcmath</code></a> extension, which is required by Magento Commerce. Examples follow:</p>
+ <a target="_blank" href="http://php.net/manual/en/book.bc.php"><code class="highlighter-rouge">bcmath</code></a> extension, which is required by Magento Commerce. Examples follow:</p>
 
 <ul>
   <li>CentOS (using the <code class="highlighter-rouge">webtatic</code> repository): <code class="highlighter-rouge">yum -y install php56w-bcmath</code></li>
@@ -1100,27 +1102,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Make sure you are authorized for Magento Commerce access before you continue. Contact <a href="http://support.magentocommerce.com" target="_blank">Magento Support</a> if you have questions.</p>
+Make sure you are authorized for Magento Commerce access before you continue. Contact [Magento Support] if you have questions.
 </div>
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
+
 <p>To run System Upgrade:</p>
 
 <ol>
   <li>Log in to the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  as an administrator.</li>
-  <li>Click <strong>System</strong> &gt; <strong>Web Setup Wizard</strong>.
-The following page displays.<br /><br />
-<img src="/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento" /></li>
+  <li>
+    <p>Click <strong>System</strong> &gt; <strong>Web Setup Wizard</strong>.
+The following page displays.</p>
+
+    <p><img width="650px" src="/common/images/cman_upgr_initial.png" alt="Specify whether to manage components or upgrade Magento" /></p>
+  </li>
   <li>
     <p>Click <strong>System Upgrade</strong>.</p>
 
     <p>Magento begins searching for core module updates immediately. To also search for component updates, click <strong>Yes</strong>. A sample follows:</p>
 
-    <p><img src="/common/images/upgr_initial-pg.png" width="650px" alt="Magento begins searching for upgrades right away" /></p>
+    <p><img width="650px" src="/common/images/upgr_initial-pg.png" alt="Magento begins searching for upgrades right away" /></p>
 
-    <p>The page displays similar to the following when we find components to upgrade.<br /><br />
-<img src="/common/images/upgr-ee-version-list.png" width="750px" alt="Magento finds software to upgrade" /><br /><br /></p>
+    <p>The page displays similar to the following when we find components to upgrade.</p>
+
+    <p><img width="750px" src="/common/images/upgr-ee-version-list.png" alt="Magento finds software to upgrade" /></p>
 
     <p>From the list, click the version to which to upgrade. Typically, you’ll choose the most recent version (indicated by <strong>(latest)</strong>.)</p>
   </li>
@@ -1132,11 +1139,12 @@ The following page displays.<br /><br />
 </code></pre></div></div>
 
 <h4 id="errors">Errors</h4>
+
 <ul>
   <li>
     <p>The following error can indicate one of several issues, including that you haven’t entered your <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">authentication keys</a> in the Magento Admin:</p>
 
-    <p><img src="/common/images/upgr-sorry.png" width="600px" /></p>
+    <p><img width="600px" src="/common/images/upgr-sorry.png" alt="Sorry we can't take that action right now" /></p>
 
     <p>For suggested solutions to other causes indicated by this message, see <a href="/guides/v2.3/comp-mgr/trouble/cman/were-sorry.html">troubleshooting</a>.</p>
   </li>
@@ -1154,7 +1162,12 @@ class "\Cybersource" for "CybersourceLogger" generation does not exist.
 </ul>
 
 <h2 id="ce-ee-continue">Continue your upgrade</h2>
+
 <p>From here, your upgrade is the same as any other upgrade. Continue with <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.</p>
+
+<!-- Link Definitions -->
+
+<!-- Image Definitions -->
 
 			
 		</div>

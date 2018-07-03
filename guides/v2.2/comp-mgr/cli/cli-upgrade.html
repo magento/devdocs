@@ -1290,11 +1290,13 @@ If you did not do this, skip this section and continue with the next section.</p
   <li>If prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
   <li>Manually clear <code class="highlighter-rouge">var</code> subdirectories:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/var/cache/<span class="k">*</span>
+rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/var/page_cache/<span class="k">*</span>
+rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/generated/code/<span class="k">*</span>
 </code></pre></div>    </div>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/var/page_cache/<span class="k">*</span>
-</code></pre></div>    </div>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> &lt;Magento install dir&gt;/generated/code/<span class="k">*</span>
-</code></pre></div>    </div>
+    <div class="bs-callout bs-callout-info">
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+</code></pre></div>      </div>
+    </div>
   </li>
   <li>Update the database schema and data:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:upgrade
