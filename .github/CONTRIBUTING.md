@@ -168,7 +168,6 @@ Refer to the following table for a description of each key-value pair.
 ### Add a Contributor's name to a topic
 When a community member contributes an entire topic—or makes substantial improvements to an existing topic—we like to thank them by adding their name (or company name) beneath the topic title and a link to their blog or website.
 
-
 ## Report an issue {#issues}
 If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs GitHub repository.
 GitHub issues use templates for requested information. Enter as much information as you can including content corrections, steps to reproduce, command or code updates, or questions for clarifications.
