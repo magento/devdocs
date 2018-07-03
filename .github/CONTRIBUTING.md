@@ -13,7 +13,7 @@ DevDocs works with the Community Engineering teams and projects.
 As you contribute PRs, you gain [Contribution Points](github.com/magento/magento2/wiki/Contribution-Rewards).
 
 If you write and contribute a full topic, we will put your name (or your company's name) at the top of the page right under the title, and link it to your blog or website!
-We track and post your picture and a link to your GitHub account on the [Top recent contributors](devdocs.magento.com/contributor-guide/quarterly-contributors.html) page.
+We track and post your picture and a link to your GitHub account on the [Top recent contributors](devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page.
 
 ## Get started
 
