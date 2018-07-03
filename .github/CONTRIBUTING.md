@@ -4,16 +4,15 @@ Share your knowledge with the community by contributing to Magento DevDocs!
 You can contribute by creating an issue or pull request (PR) on our [devdocs](https://GitHub.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
-Magento's tech writer team and [Maintainers](https://devdocs.magento.com/contributor-guide/devdocs-maintainers.html) review issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible.
+Magento's tech writer team and [Community Maintainers](https://devdocs.magento.com/contributor-guide/devdocs-maintainers.html) review issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible.
 Working through the backlog takes time, though, so we appreciate your patience.
 
-## Rewards and thanks
+## Rewards for contributions
 
 DevDocs works with the Community Engineering teams and projects.
 As you contribute PRs, you gain [Contribution Points](https://github.com/magento/magento2/wiki/Contribution-Rewards).
 
-If you write and contribute a full topic, we will put your name (or your company's name) at the top of the page right under the title, and link it to your blog or website!
-We track and post your picture and a link to your GitHub account on the [Top recent contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page.
+If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website! We post your picture and a link to your GitHub account on the [Top recent contributors](https://devdocs.magento.com/guides/v2.2/contributor-guide/quarterly-contributors.html) page.
 
 ## Get started
 
@@ -24,9 +23,9 @@ We track and post your picture and a link to your GitHub account on the [Top rec
 * Write content and commit.  Need help, see our [templates](#templates).
 * Create a [pull request](https://help.github.com/articles/creating-a-pull-request/). Fill out as much info as possible and link any GitHub issues.
 
-**Note:** If you have not signed the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca), the PR will provide a link to complete. All contributors are required to submit the form and agree to the terms.
+**Note:** If you have not signed the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca), the PR will provide a link to complete. All contributors are required to submit the form and agree to the terms to complete it.
 
-**TIP:** If you are not sure where to start contributing, you can check GitHub issues: [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+**TIP:** If you are not sure where to start contributing, check out our GitHub issues labeled [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 ## Contribution guidelines
 We use [Markdown](http://daringfireball.net/projects/markdown/) to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html).
@@ -51,7 +50,7 @@ The following guidelines may answer most of your questions and help you get star
     -   Define the goal of your topic. What exactly do you want to teach the reader?
     -   Make the title of your topic reflect the content.
     -   Keep your sentences concise and try to separate conceptual information from procedural steps.
-    -   Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"You can now view the output..."_.
+    -   Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
     -   Use notes to alert readers about important details.
     -   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
 
@@ -78,7 +77,7 @@ GitHub_link: install-gde/continue.md
 ---
 ```
 
-Refer to the following table for a description of each key-value pair.
+> Key-value pair reference:
 
 | Property      | Description                                                                                                          |
 | ------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -87,14 +86,11 @@ Refer to the following table for a description of each key-value pair.
 | `version`     | Specifies which version(s) of Magento the topic affects. We also use this data to build links to the file on GitHub. |
 | `github_link` | Specifies the name and location of the source file in the GitHub repository.                                         |
 
-### Add a Contributor's name to a topic
-When a community member contributes an entire topic—or makes substantial improvements to an existing topic—we like to thank them by adding their name (or company name) beneath the topic title and a link to their blog or website.
-
 ## Report an issue
 If you find a typo or erroneous information in Magento DevDocs, you can either fix it with a pull request (as described above) or you can report it by creating an issue in the DevDocs GitHub repository.
 GitHub issues use templates for requested information. Enter as much information as you can including content corrections, steps to reproduce, command or code updates, or questions for clarifications.
 
-**TIP:** Check the [existing issues](https://GitHub.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
+**Note:** Check the [existing issues](https://GitHub.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
 
 You have a couple of options to enter an issue:
 * Have general feedback? Create an issue on [GitHub DevDocs](https://GitHub.com/magento/devdocs/issues/new).
