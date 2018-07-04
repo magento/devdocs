@@ -28,19 +28,21 @@ PROVIDE TEXT HERE FOR FIRST SECTION.
 ### HEADING 3 
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
+TO HYPERLINK TO ANOTHER TOPIC... refer to the [NAME OF TOPIC OR BOOK]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html).
 
 
 
 ## HEADING 2 
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
+ADD DIAGRAM OR ILLUSTRATION
+
+![HOVER TEXT HERE]({{ site.baseurl }}/common/images/NAME_OF_IMAGE.jpg)
 
 ## Related topics 
 
-* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
-* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
+\* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
+\* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
 
 ## Collapsible Content
 
