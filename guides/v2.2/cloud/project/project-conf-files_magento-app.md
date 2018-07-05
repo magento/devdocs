@@ -208,14 +208,14 @@ hooks:
         php ./vendor/bin/ece-tools post-deploy
 ```
 
-There is a possibility to split build command in two part if you want to execute additional actions against generated code or static content during the build step and before moving it to final destination.
+There is a possibility to split build command in two part if you want to execute additional actions against generated code or static content during the build step and before transfer it to final destination.
 ```yaml
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
-        php ./vendor/bin/ece-tools build:backup
+        php ./vendor/bin/ece-tools build:transfer
 ```
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
