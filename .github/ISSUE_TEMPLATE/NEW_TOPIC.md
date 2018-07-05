@@ -7,7 +7,7 @@ about: Create a request to add missing information to devdocs
 
 ## Description
 
-<!-- (REQUIRED) What is the topic missing from devdocs -->
+<!-- (REQUIRED) What topic is missing from devdocs? -->
 
 ## Content checklist
 

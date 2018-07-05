@@ -11,7 +11,7 @@ about: Create a request for new functionality in devdocs
 
 ## Expected result
 
-<!-- (REQUIRED) When this feature is implemented, what is the expected result/behavior? -->
+<!-- (REQUIRED) What is the expected result/behavior of this feature? -->
 
 ## Benefits
 

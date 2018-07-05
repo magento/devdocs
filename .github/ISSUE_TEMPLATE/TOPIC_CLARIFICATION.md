@@ -11,7 +11,7 @@ about: Create a request to clarify or correct a documentation topic
 
 ## Description
 
-<!-- (REQUIRED) What needs to be clarified or corrected in this topic -->
+<!-- (REQUIRED) What needs to be clarified or corrected in this topic? -->
 
 ## Possible solutions
 
