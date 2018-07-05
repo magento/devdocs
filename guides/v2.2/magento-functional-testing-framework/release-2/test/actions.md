@@ -729,6 +729,19 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+### generateDate
+
+Generates a date for use in `{$stepKey}` format in other test actions.
+
+Attribute|Type|Use|Description
+---|---|---|---
+`date`|string|required| Data input to parse, uses same functionality as php `strtotime()` function.
+`format`|string|required| Format to save given date in, uses same formatting as php `date()` function.
+`timezone`|string|optional| Timezone to use when generating date, defaults to `America/Los_Angeles`.
+`stepKey`|string|required| A unique identifier of the action.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
 ### getData
 
 Gets an entity (for example, a category, the Magento API according to the data and metadata of the entity type that is requested.
