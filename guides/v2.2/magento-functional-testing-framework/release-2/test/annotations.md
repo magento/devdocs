@@ -31,7 +31,7 @@ Recommended use cases of the annotation types:
 - [group] - general functionality grouping.
 - [title] - description of the test purpose.
 - [description] - description of how the test achieves the purpose defined in the title.
-- [skip] - used for tests that are incomplete due to an issue
+- [skip] - a label for the test to be skipped during generation (for example, an incomplete test blocked by an issue)
 
 ## Example
 
@@ -198,7 +198,8 @@ Attribute|Type|Use
 
 ### skip
 
-The `<skip>` element is an implementation that allows a test to be skipped. It also specifies the issue(s) that cause the test to be skipped in `<issueId value="issue#">` elements.
+The <skip> element is used to skip a test.
+It contains one or more child elements <issueId> to specify one or more issues that cause the test skipping.
 
 ##### issueId
 
@@ -212,7 +213,8 @@ Attribute|Type|Use
 
 ```xml
 <skip>
-    <issueId value="issue#"/>
+    <issueId value="#117"/>
+    <issueId value="MC-345"/>
 </skip>
 ```
 
