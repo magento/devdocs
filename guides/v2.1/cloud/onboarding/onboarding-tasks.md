@@ -13,38 +13,19 @@ redirect_from:
   - /guides/v2.3/cloud/before/before-project-owner.html
 ---
 
-After your company purchases a subscription plan for {{site.data.var.ece}} and
-the initial account and project are created, the Project Owner is the only person
-who can access the project and code.
+After your company purchases a subscription plan for {{site.data.var.ece}}, the
+only person who initially has access to the project and code is the Project Owner.
 
-Typically, the _Project Owner_  is the person in your business or finance
+The _Project Owner_  is the person in your business or finance
 organization that manages payments and other business-related issues for
 the {{site.data.var.ece}} account. The Project Owner serves as the point of
 contact with Magento.
 
 To quickly onboard your project so you can develop your site for live
 deployment, you need to complete specific set up steps and onboarding tasks.
-Typically, the Project Owner begins the process by securing Admin access and
-creating Technical Admin users that can help with set up, customization, and
-development work.
-
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-When you sign up for a {{site.data.var.ece}}  account through a Magento Sales
-representative or by requesting a 30-day free trial, we complete the following
-first steps for you:
-
--   Create your Cloud account and project
--   Provision the initial environment with a cloned {{site.data.var.ece}} code
-    base in a `master` branch
--   Create an environment for the `master` branch with a web server,
-    database, and services
--   Add Magento authentication keys for the Project Owner
--   Create an administrative user account for managing the project and
-    environments. The username (`ADMIN_USERNAME`) and email address
-    (`ADMIN_EMAIL`) for the administrative account are both set to the Project
-    Owner email address.
-</div>
+Typically, the Project Owner begins the process by securing Admin access to
+the project and creating Technical Admin users that can help with set up,
+customization, and development work.
 
 ## Project portal
 Once you have an account with a provisioned environment, you can use the
@@ -59,20 +40,8 @@ from the Magento tab on the My Account page. Click View Project Page in the
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
-Don't have a {{site.data.var.ece}} account yet? You can get an account
-using either of the following methods:
-
-- Sign up for a [free 30-day trial](https://magento.com/trial){:target="\_blank"}
-  for a Starter or Pro plan
-- Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="\_blank"}
-  to request an {{site.var.ece}} account.
-
-After you submit the account request, you will receive a welcome email with
-instructions for accessing your project. If you do not receive the email,
-check your spam folder.
-
-The person who signs up for a {{site.data.var.ece}} account is referred to as
-the _Project Owner_.
+Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="\_blank"}.
+We will create your account and send you a welcome email with instructions to access your project.
 
 ## Your welcome e-mail {#email}
 Magento sends a welcome email to the Project Owner using the address that was

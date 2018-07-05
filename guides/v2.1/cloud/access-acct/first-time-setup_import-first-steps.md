@@ -21,10 +21,6 @@ functional_areas:
 
 You can create a {{site.data.var.ece}} project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-You cannot create trial projects by importing existing code.
-</div>
-
 ## Prerequisites for importing code {#prereqs}
 Before you begin, do the following:
 

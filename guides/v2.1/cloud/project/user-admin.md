@@ -20,7 +20,7 @@ redirect_from:
 {% include cloud/wings-management.md %}
 
 ## Account owner role {#cloud-role-acct-owner}
-The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including delete it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the trial or create new account process.
+The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the {{site.data.var.ece}} account through the account creation process.
 
 The account has super user access and additional capabilities for managing all aspects of your project and environments.
 

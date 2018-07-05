@@ -26,7 +26,7 @@ Your extension *must* convert data in the following cases:
 Your extension will continue working in Magento 2.2 and above in the following cases, but we recommend you switch to using the JSON format for security reasons:
 
 1. The extension stores its own serialized data.
-2. The extension is responsible for serializing/unserializing data stored in core tables.
+2. The extension is responsible for serializing and unserializing data stored in core tables.
 
 ### API Overview
 
@@ -36,7 +36,7 @@ This tutorial uses the following framework {% glossarytooltip 786086f2-622b-4007
    * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
    * `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
 * `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
-* `\Magento\Framework\DB\FieldDataConverter` This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
+* `\Magento\Framework\DB\FieldDataConverter` - This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
    * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
    * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
    * `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
@@ -50,12 +50,12 @@ This tutorial uses the following framework {% glossarytooltip 786086f2-622b-4007
 ## Step 1: Create the basic upgrade script
 {:#step-1}
 
-The upgrade script is what gets run during the upgrade step of your extension's [lifecycle][1].
+The upgrade script is what runs during the upgrade step of your extension's [lifecycle][1].
 Create the `UpgradeData.php` file in the `Setup` directory inside your extension's root directory.
 
 Inside the file, create the class `UpgradeData` which implements `\Magento\Framework\Setup\UpgradeDataInterface`.
 
-The following is an example of the content for your upgrade script.
+Example upgrade script content:
 
 {% collapsible Show upgrade script content%}
 {% highlight php startinline=true %}
@@ -126,11 +126,11 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {:#step-2}
 
 Any module can replace another module in Magento.
-If your extension stores data in the tables of another module or it serializes/unserializes data stored in core modules, make sure the module exists and is active before executing the upgrade logic.
+If your extension stores data in the tables of another module or it serializes or unserializes data stored in core modules, make sure the module exists and is active before executing the upgrade logic.
 
 Use the `\Magento\Framework\Module\Manager` class to check the status of the module your extension depends on.
 
-Add this dependency in the constructor of your upgrade script class.
+Add this dependency in the constructor of your upgrade script class:
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -152,7 +152,7 @@ If your extension stores serialized data in different ways, you will need to use
 
 Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with the appropriate data converter.
 
-You can convert data for a column in a table using the code below.
+Convert data for a column in a table using:
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -172,9 +172,9 @@ $fieldDataConverter->convert(
 
 | option_id | code           | value                         |
 | --- | --- | --- |
-| 1         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
-| 2         | another_option | &lt;non-serialized string&gt; |
-| 3         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
+| 1         | `my_option`      | `a:1:{s:3:"foo";s:3:"bar";}`   |
+| 2         | `another_option` | &lt;non-serialized string&gt; |
+| 3         | `my_option`      | `a:1:{s:3:"foo";s:3:"bar";}`    |
 
 If you need to convert specific rows in the column, you can use a query modifier to update values using a condition.
 
@@ -208,11 +208,11 @@ $fieldDataConverter->convert(
 {% endcollapsible %}
 
 
-#### Using values from another table in the condition
+#### Use values from another table in the condition
 
 The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.  
 
-**Table: `catalog_product_option`**
+> `catalog_product_option` table
 
 | option_id | product_id | type             |
 | --------- | ---------- | ---------------- |
@@ -221,16 +221,16 @@ The following tables show how the `type` and `option_id` columns from the `catal
 | 1003      | 5          | my_custom_option |
 
 
-**Table: `quote_item_option`**
+> `quote_item_option` table
 
 | option_id | code                  | value                         |
 | --------- | --------------------- | ----------------------------- |
-| 1         | my_custom_option_1001 | a:1:{s:3:"foo";s:3:"bar";}    |
+| 1         | my_custom_option_1001 | `a:1:{s:3:"foo";s:3:"bar";}`   |
 | 2         | another_option        | &lt;non-serialized string&gt; |
-| 3         | my_custom_option_1002 | a:1:{s:3:"foo";s:3:"bar";}    |
-| 4         | my_custom_option_1003 | a:1:{s:3:"foo";s:3:"bar";}    |
+| 3         | my_custom_option_1002 | `a:1:{s:3:"foo";s:3:"bar";}`    |
+| 4         | my_custom_option_1003 | `a:1:{s:3:"foo";s:3:"bar";}`   |
 
-Use the following approach to update custom options data in the `quote_item_option` table.
+To update custom options data in the `quote_item_option` table:
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -369,7 +369,8 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 {% endhighlight %}
 {% endcollapsible %}
 
-After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter.
+
+After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter:
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -390,10 +391,10 @@ $fieldDataConverter->convert(
 ### Step 3d: Convert data in a multi-database setup
 {:#step-3d}
 
-The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
+{{site.data.var.ee}} supports storing Quote, Sales, and Inventory data in separate databases.
 Use the specific connections for each of these modules to update your extension's stored data for the entities of these modules.
 
-The following code sample gets the Sales module connection and uses it during data update.
+The following code sample obtains the Sales module connection and uses it during data update.
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
@@ -411,6 +412,7 @@ $fieldDataConverter->convert(
 ### Step 3e: Convert data from multiple fields
 
 Use the `\Magento\Framework\DB\AggregatedFieldDataConverter` class to update multiple files instead of `\Magento\Framework\DB\FieldDataConverter`.
+
 The following code sample updates two fields in different tables taking into account setup version of the module.
 It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to `\Magento\Framework\DB\AggregatedFieldDataConverter::convert()` must be made.
 {% collapsible Show code %}

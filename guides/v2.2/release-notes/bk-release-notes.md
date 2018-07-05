@@ -10,8 +10,19 @@ github_link: release-notes/bk-release-notes.md
 ---
 
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+With Magento 2.2.5, we are moving to a quarterly release cycle for  minor releases. Quarterly releases contain bug fixes, security enhancements, introduction of new bundled extensions, and community code contributions.
+
+Quarterly patch releases do not introduce backward-incompatible changes, architectural changes, or changes to underlying major components. Magento remains committed to restricting those changes to only major and minor releases that occur outside this quarterly cadence. 
+</div>
+
+
+
 
 ## Magento 2.2.x Release Notes
+
+* [{{site.data.var.ce}} 2.2.5 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.5CE.html)
+* [{{site.data.var.ee}} 2.2.5 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.5EE.html)
 
 * [{{site.data.var.ce}} 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html)
 * [{{site.data.var.ee}} 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4EE.html)
@@ -41,6 +52,7 @@ Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x]({{ sit
 ## {{site.data.var.ece}} Composer packages
 
 [{{site.data.var.ece}} Composer package updates]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/patch-notes.html) allow you to apply patches without a full product installation or upgrade.
+
 
 You can apply patches as they become available to update Magento Commerce (Cloud). We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 

@@ -14,7 +14,7 @@ Each _Pro_ plan project supports a total of eight environments that you can use 
 -   **Production**—Provides a single environment and `master` branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.
+To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request the update, you must submit tickets to modify settings, variables, and routes.
 </div>
 
 ![High-level view of Pro architecture (legacy) flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-legacy.png)  

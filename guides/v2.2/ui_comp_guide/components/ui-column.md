@@ -24,6 +24,12 @@ Column-specific configuration:
     <th>Default</th>
   </tr>
   <tr>
+    <td><code>component</code></td>
+    <td>The path to the component's <code>.js</code> file in terms of RequireJS.</td>
+    <td>String</td>
+    <td><code>Magento_Ui/js/grid/columns/column</code></td>
+  </tr>
+  <tr>
     <td><code>bodyTmpl</code></td>
     <td>Path to the template used for rendering column's fields in the table's body.</td>
     <td>String</td>
