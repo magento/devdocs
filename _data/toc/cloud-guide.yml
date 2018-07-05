@@ -131,6 +131,10 @@ pages:
         - label: Install a theme
           url: /cloud/howtos/custom-theme.html
 
+        - label: Import URL Rewrites
+          url: /cloud/configure/import-url-rewrites.html
+          versions: ["2.2"]
+
     - label: Configure Fastly
       url: /cloud/basic-information/cloud-fastly.html
       children:
