@@ -1,14 +1,24 @@
-## Description:
+---
+name: New topic
+about: Create a request to add missing information to devdocs
+---
 
-<!-- (REQUIRED) What is the issue/current behavior? -->
+## Description
 
-## Possible solutions:
+<!-- (REQUIRED) What is the topic missing from devdocs -->
 
-<!-- (OPTIONAL) What would a solution for this issue look like? -->
+## Specifics to include
 
-## Additional information:
+<!-- (REQUIRED) List specific information or details to include in this topic -->
 
-<!-- (OPTIONAL) What other information can you provide about this issue? -->
+[ ] Explanation for ...
+[ ] How to ...
+[ ] Code sample to accomplish ...
+[ ] Other (please specify)
+
+## Additional information/resources
+
+<!-- (OPTIONAL) Any information you already know or other online resources that cover this topic -->
 
 <!--
 Thank you for taking the time to report this issue!

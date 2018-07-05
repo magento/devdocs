@@ -1,4 +1,10 @@
+---
+name: Community engineering issue
+about: Create an issue related to a community engineering effort
+---
+
 <!-- (REQUIRED) Provide information for the doc request including any Community code issues or PRs, Magento versions, or devdoc pages. -->
+
 Type of Doc:
 - [ ] New topic
 - [ ] Topic Update, Devdoc link:
@@ -22,12 +28,14 @@ Notifications of Changes:
 - [ ] New command line option?
 
 
-<!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
-## Content:
+## Content
 
+<!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
+
+
+## Additional information
 
 <!-- (OPTIONAL) What other information can you provide? -->
-## Additional information:
 
 
 <!--

@@ -1,14 +1,27 @@
-## Description:
+---
+name: New feature
+about: Create a request for new functionality in devdocs
+---
 
-<!-- (REQUIRED) What is the issue/current behavior? -->
+## Description
 
-## Possible solutions:
+<!-- (REQUIRED) Describe the feature you want added to devdocs -->
+
+## Expected result
+
+<!-- (REQUIRED) When this feature is implemented, what is the expected result/behavior? -->
+
+## Benefits
+
+<!-- (REQUIRED) How does this feature improve the devdocs experience? -->
+
+## Possible solutions
 
 <!-- (OPTIONAL) What would a solution for this issue look like? -->
 
-## Additional information:
+## Additional information
 
-<!-- (OPTIONAL) What other information can you provide about this issue? -->
+<!-- (OPTIONAL) What other information can you provide about this feature? -->
 
 <!--
 Thank you for taking the time to report this issue!
@@ -21,3 +34,4 @@ Issues that do not comply with our Code of Conduct or do not contain enough info
 
 Feel free to remove this section before creating this issue.
 -->
+
