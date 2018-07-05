@@ -1,7 +1,7 @@
 ---
 group: integration-testing
 version: 2.1
-title: Application Area Annotation
+title: Application Area Annotation in the Integration Testing Framework
 github_link: test/integration/annotations/magentoAppArea.md
 ---
 
@@ -9,7 +9,7 @@ Integration testing framework enables you to configure the application area to r
 
 ## Format
 
-> Configuring the test environment in context of specified application area
+> Configuring the test environment in scope of the specified application area
 
 ```php?start_inline=1
 /**
@@ -19,7 +19,7 @@ Integration testing framework enables you to configure the application area to r
 
 ## Usage
 
-The fallback scheme is:
+The annotation is applied following the fallback scheme below:
 
 1. Test annotation
 2. Test case annotation
@@ -30,7 +30,8 @@ The fallback scheme is:
 The annotation in a test case enables the specified application area for all tests in the test case.
 If the annotation is specified over a test in the test case, it will overwrite the test case annotation.
 
-> Test case annotation example
+> The test case annotation example:
+
 ```php?start_inline=1
 /**
  * @magentoAppArea adminhtml
@@ -57,27 +58,28 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
 }
 ```
 
-In the above example, `testOne` and `testTwo` will be executed in context of the `adminhtml` application area.
+In the above example, `testOne` and `testTwo` will be executed in scope of the `adminhtml` application area.
 
 The default value for `@magentoAppArea` is `global`.
-{:.bs-callout .bs-call-info}
+{:.bs-callout .bs-callout-info}
 
 ### In a test
 
-The annotation in a test is used to configure the environment in context of the specified application area for the test.
-Each time you specify a different area, Magento will be reinitialized in the specified context.
+The annotation in a test is used to configure the environment in scope of the specified application area for the test.
+Each time you specify a different area, Magento will be reinitialized in the specified scope.
 
-> Method annotation example
+> The test annotation example:
+
 ```php?start_inline=1
 class Some_Class_ToTest extends PHPUnit_Framework_TestCase
 {
-    //executes in context of the global area
+    // executes the test in scope of the global area
     public function testOne()
     {
         //...
     }
  
-    // reinitializes the application and executes the test in context of the frontend area
+    // reinitializes the application and executes the test in scope of the frontend area
     /**
      * @magentoAppArea frontend
      */
@@ -86,7 +88,7 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
         //...
     }
  
-    // reinitializes the application and executes the test in context of the adminhtml area
+    // reinitializes the application and executes the test in scope of the adminhtml area
     /**
      * @magentoAppArea adminhtml
      */
@@ -95,13 +97,13 @@ class Some_Class_ToTest extends PHPUnit_Framework_TestCase
         //...
     }
  
-    // reinitializes the application and executes the test in context of the global area
+    // reinitializes the application and executes the test in scope of the global area
     public function testFour()
     {
         //...
     }
  
-    // executes in context of the global area
+    // executes in scope of the global area
     public function testFive()
     {
         //...
