@@ -187,7 +187,7 @@ pages:
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:
-            - label: Application variables
+            - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
 
             - label: Build variables
