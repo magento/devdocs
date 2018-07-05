@@ -9,74 +9,54 @@ functional_areas:
   - Configuration
 ---
 
-If you want to be easily able to re-platform to Magento Commerce (Cloud) and redirect traffic from your old indexed URLs to new, and don't lose SEO rankings and traffic due to migration then use a module *magento/url-rewrite-import-export*.
+You can easily migrate to the {{site.data.var.ece}} platform without losing SEO rankings and traffic.  Use the `magento/url-rewrite-import-export` module to redirect traffic from your old, indexed URLs to new URLs.
 
-Currently, this module is available only for Magento 2.2.*
+{: .bs-callout .bs-callout-info}
+This module is available for Magento version 2.2.x only.
 
-## Instalattion
+#### To install the URL rewrite module:
 
-To install just follow the next steps:
+1.  Add the module to the `composer.json` file.
 
-* Run composer command
-```bash
-composer require magento/module-url-rewrite-import-export
-```
+    ```bash
+    composer require magento/module-url-rewrite-import-export
+    ```
 
-* Configure running of consumer **urlRewriteImport**
+1.  Configure the `.magento.env.yaml` file deploy stage with cron consumers to run **urlRewriteImport** only.
 
-Edit *.magento.env.yaml* file like this to run only **urlRewriteImport** consumer:
+    ```yaml
+    stage: 
+      deploy:
+        CRON_CONSUMERS_RUNNER:
+          cron_run: true
+          max_messages: 1000
+          consumers:
+            - urlRewriteImport
+    ```
 
-```yaml
-stage: 
-  deploy:
-    CRON_CONSUMERS_RUNNER:
-      cron_run: true
-      max_messages: 1000
-      consumers:
-        - urlRewriteImport
-```
+    Or, you can configure to run all consumers:
 
-Or like this example to run all consumers:
+    ```yaml
+    stage: 
+      deploy:
+        CRON_CONSUMERS_RUNNER:
+          cron_run: true
+          max_messages: 1000
+    ```    
 
-```yaml
-stage: 
-  deploy:
-    CRON_CONSUMERS_RUNNER:
-      cron_run: true
-      max_messages: 1000
-```    
+    See the following for more information about configuring consumers:
 
-More information about configuration of consumers there is:
+    -  [Message queues]({{page.baseurl}}/cloud/trouble/message-queues.html)
+    -  [CRON_CONSUMERS_RUNNER environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#cron_consumers_runner)
 
-[Message queues]({{ page.baseurl }}/cloud/trouble/message-queues.html)
+1.  Add, commit, and push code changes.
 
-[`CRON_CONSUMERS_RUNNER` environment variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#cron_consumers_runner)
+    ```bash
+    git add -A && git commit -m "Install UrlRewriteImportExport module" && git push origin <branch name>
+    ```
 
-* Add changes composer composer to git and commit
-```bash
-git add composer.*
-```
-
-```bash
-git commit -m 'Install UrlRewriteImportExport module'
-```
-
-* Push using magento-cloud CLI tool
-```bash
-magento-cloud push
-```
-Or push using git command
-```bash
-git push
-```
-
-* Wait for automatically redeploy
-
-* Done
-
-## How to use
-
-### File structure
+## Import the URL Rewrites file
+The URL Rewrites module exports custom rewrites using the following CSV file format:
 
 ```csv
 request_path,target_path,redirect_type,store_code
@@ -85,71 +65,58 @@ request-test2,home,301,default
 request-test3,contact,302,default
 ```
 
-`request_path` is the path from which you will be redirected
+Column | Description
+--- | ---
+`request_path` | Redirect **FROM** the request path.
+`target_path` | Redirect **TO** the target path.
+`redirect_type` | The type of redirect: <br>`0` —an internal Magento redirect type. Magento renders a page using the `target_path` path. <br>`301` —permanently moved status code.<br>`302` —temporarily moved status code.
+`store_code` | The store view code.
 
-`target_path` is a path you will be redirected to
+You use the Magento Admin panel to import the URL Rewrites file.
 
-`redirect_type` is type of redirect:
+#### To import URL Rewrites:
 
-* `0` is internal Magento redirect type. You wont redirected, but Magento renders a page with `target_path` path.
+1.  On the _Marketing_ menu, click **URL Rewrites** in the _SEO & Search_ section.
 
-* `301` is permanently moved status code.
+1.  Click **Add URL Rewrite**.
 
-* `302` is temporarily moved status code.
+1.  In the form, click **Upload** and choose the CSV file to import.
 
-`store_code` is store view code.
+1.  Select the **Behavior**.
 
-### Import
+    -  `Add/Update`—adds new URL rewrite and updates existing URL Rewrites
+    -  `Delete`—removes existing URL rewrites
 
-Open **Admin Panel** and go to **Marketing > URL Rewrites**
+1.  Click **Import**.
 
-Then click to **Import URL Rewrites button**
+    The import task begins with the following message:
+	![Task scheduled URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-task.png)
 
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/import-button.png" alt="Import URL Rewrites button">
+    A successful import returns the following message:
+	![Successful URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-success.png)
 
-You can see the import form.
+### Troubleshooting the import
 
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/import-form.png" alt="Import form">
+If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 
+![Failed URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-failed.png)
 
-Click to **Upload** button and choose file to import. Chosen file will be uploaded automatically.
+#### To research the URL rewrite error:
 
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/import-form-with-uploaded-file.png" alt="Import form with uploaded file">
+1.  Click **View Details** to see detailed information about the failure.
 
-Then choose behavior `Add/Update` or `Delete`.
+    Alternatively, you can find this log on the _System_ menu, click **Bulk Actions** in the _Action Logs_ section.
 
-The `Add/Update` behavior adds or updates existed URL Rewrites
+1.  In the _Bulk Actions Log_ view, search for your task, and click **Details** in the _Action_ column.
 
-The `Delete` behavior deletes existed URL Rewrites or do nothing if URL Rewrites do not exist.
+    ![Bulk actions log]({{ site.baseurl }}/common/images/cloud-urlrewrite-bulk-actions-log.png)
 
-Click **Import** button to run importing.
+1.  In the _Action Details_ view, click the error number in the **ID** column to download a report about the failed operation.
 
-After it, our module creates the task. You can see a message about it:
+    An example report:
 
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/info-message.png" alt="Info message">
-
-If the import is successful, you can see the following message:
-
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/success-message.png" alt="Success message">
-
-If the import is unsuccessful, you can see the following message:
-
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/error-message.png" alt="Error message">
-
-If you want to see more detailed information click **View Details** link and then a modal window with information is opened.
-
-Or go to *System > Bulk Actions* then found your task and click **Details** link
-
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/bulk-actions-log.png" alt="Bulk actions log">
-
-Click to number in ID column to download report about failed operation
-
-<img src="{{ site.baseurl }}/guides/v2.2/cloud/configure/img/grid-with-reports.png" alt="Grid with reports">
-
-The example of report:
-
-```csv
-request_path,target_path,redirect_type,store_code,messages
-request-test1,home,503,default,"This line is ignored. Column redirect_type has wrong redirect code"
-request-test,contact,302,second,"This line is ignored. Store View with second code does not exist"
-```
+    ```csv
+    request_path,target_path,redirect_type,store_code,messages
+    request-test1,home,503,default,"This line is ignored. Column redirect_type has wrong redirect code"
+    request-test,contact,302,second,"This line is ignored. Store View with second code does not exist"
+    ```
