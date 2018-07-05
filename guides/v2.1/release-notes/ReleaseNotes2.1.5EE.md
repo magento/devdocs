@@ -19,7 +19,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.5.
 This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
 </div>
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
+Looking for the <a href="{{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
 
 ## System requirements

@@ -27,3 +27,4 @@ pages:
 
     - label: Advanced JavaScript bundling
       url: /performance-best-practices/advanced-js-bundling.html
+      versions: ["2.3"]

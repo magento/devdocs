@@ -13,7 +13,7 @@ functional_areas:
   - Checkout
 ---
 
-Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
+Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
 Out of the box, the checkout consists of two steps:
 
  - Shipping Information

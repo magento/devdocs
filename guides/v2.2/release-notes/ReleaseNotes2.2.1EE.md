@@ -19,7 +19,7 @@ We are pleased to present Magento Commerce 2.2.1. This release includes numerous
 
 Look for the following highlights in this release:
 
-* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
+* Integrated Signifyd Fraud Protection is now available in Magento Open Source. See [Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html) for more information. 
 
 * Ability to implement translations from themes. We’ve also significantly reduced JavaScript-related translation issues. 
 
@@ -31,7 +31,7 @@ Look for the following highlights in this release:
 
 
 
-Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
 
 ## Security enhancements
@@ -120,7 +120,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 
 ### General
-<!--- 80096 -->* We've fixed JavaScript date validation on the store front. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
+<!--- 80096 -->* We've fixed JavaScript date validation on the storefront. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
 <!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
 

@@ -24,7 +24,7 @@ Staging and Production environments in the UI for Pro projects. You can enter a 
 ## 101.5.4 changes
 In `magento-cloud-configuration` release 101.5.4 on {{site.data.var.ece}} 2.1.5, we provide the following improvements:
 
-<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
+<!--- MAGECLOUD-1005 -->* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 
 ## 101.5.3 changes

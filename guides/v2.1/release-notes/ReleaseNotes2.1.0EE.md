@@ -934,7 +934,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 51314-->* You can now successfully  sort products by swatch attribute.
 <!--- 51299-->* You can now create an order from the Admin interface while using non-default website.
-<!--- 51276-->* Magento now displays product attributes for a product on the store front as expected.
+<!--- 51276-->* Magento now displays product attributes for a product on the storefront as expected.
 <!--- 51191-->* Fixed issue with resetting password  after waiting an hour.
 
 <!--- 51186-->* Magento now provides an additional field in the Admin and customer login forms that prevent web browsers from caching login credentials.

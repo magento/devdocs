@@ -28,24 +28,6 @@ Typically, the Project Owner begins the process by securing Admin access and
 creating Technical Admin users that can help with set up, customization, and
 development work.
 
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-When you sign up for a {{site.data.var.ece}}  account through a Magento Sales
-representative or by requesting a 30-day free trial, we complete the following
-first steps for you:
-
--   Create your Cloud account and project
--   Provision the initial environment with a cloned {{site.data.var.ece}} code
-    base in a `master` branch
--   Create an environment for the `master` branch with a web server,
-    database, and services
--   Add Magento authentication keys for the Project Owner
--   Create an administrative user account for managing the project and
-    environments. The username (`ADMIN_USERNAME`) and email address
-    (`ADMIN_EMAIL`) for the administrative account are both set to the Project
-    Owner email address.
-</div>
-
 ## Project portal
 Once you have an account with a provisioned environment, you can use the
 Magento Project Portal that guides you through the process to build and launch
@@ -59,17 +41,8 @@ from the Magento tab on the My Account page. Click View Project Page in the
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
-Don't have a {{site.data.var.ece}} account yet? You can get an account
-using either of the following methods:
-
-- Sign up for a [free 30-day trial](https://magento.com/trial){:target="\_blank"}
-  for a Starter or Pro plan
-- Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="\_blank"}
-  to request an {{site.var.ece}} account.
-
-After you submit the account request, you will receive a welcome email with
-instructions for accessing your project. If you do not receive the email,
-check your spam folder.
+Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="\_blank"}.
+We will create your account and send you a welcome email that provides instructions to access the project.
 
 The person who signs up for a {{site.data.var.ece}} account is referred to as
 the _Project Owner_.
@@ -155,6 +128,10 @@ If the password reset fails or you cannot sign in to the Admin panel, add
 the following project environment variables to your project: `ADMIN_EMAIL`, `ADMIN_USERNAME`,
 and `ADMIN_PASSWORD`. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
+<<<<<<< HEAD
 After adding the ADMIN variables to the project configuration and redeploying
 the environment, use the username and password values that you added to sign in
 to the Admin panel.
+=======
+If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`.
+>>>>>>> 52b43ee816908abf05338cd351631ae092da2ef9

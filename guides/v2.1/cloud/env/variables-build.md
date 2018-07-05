@@ -18,7 +18,7 @@ stage:
 
 For more information about customizing the build and deploy process:
 
--  [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)
+-  [Manage build and deploy actions]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html)
 -  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
 
 {% include note.html type="info" content="You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket." %}

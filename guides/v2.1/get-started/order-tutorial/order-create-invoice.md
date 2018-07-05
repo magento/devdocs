@@ -292,4 +292,4 @@ You will use the `order_item_id` values to create a {% glossarytooltip c8f00e9d-
 
 ### Verify this step {#verify-step}
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales > Orders**. The status is Processing.
+Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales** > **Orders**. The status is Processing.

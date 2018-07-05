@@ -89,7 +89,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 	*	[More information about PayPal]({{page.baseurl}}/install-gde/system-requirements_tls1-2.html)
 
-	*	[More information about `repo.magento.com`](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_tls-repo.html)
+	*	[More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
 Mail Transfer Agent (MTA) or an SMTP server
