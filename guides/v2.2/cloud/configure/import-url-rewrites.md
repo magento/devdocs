@@ -95,7 +95,7 @@ You use the Magento Admin panel to import the URL Rewrites file.
     A successful import returns the following message:
 	![Successful URL rewrite]({{site.baseurl}}/common/images/cloud-urlrewrite-success.png)
 
-### Troubleshooting the import
+## Troubleshooting the import
 
 If the import is **not** successful, you receive an error message reporting the URL rewrite failed:
 
