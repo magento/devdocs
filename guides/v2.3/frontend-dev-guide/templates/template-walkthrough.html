@@ -1197,10 +1197,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>
-    <p>Locate the template which is associated with the page/block you want to change using <a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ" target="_blank">template hints</a>.</p>
+    <p>Locate the template which is associated with the page/block you want to change using <a href="/guides/v2.3/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ">template hints</a>.</p>
   </li>
   <li>
-    <p>Copy the template to your theme folder according to the <a href="/guides/v2.3/frontend-dev-guide/templates/template-override.html#template-convention" target="_blank">template storing convention</a>.</p>
+    <p>Copy the template to your theme folder according to the <a href="/guides/v2.3/frontend-dev-guide/templates/template-override.html#template-convention">template storing convention</a>.</p>
   </li>
   <li>
     <p>Make the required changes.</p>
@@ -1214,20 +1214,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Add a template in your theme directory according to the template storing convention.</p>
   </li>
   <li>
-    <p>Assign your template to a block in the <a href="/guides/v2.3/frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>.</p>
+    <p>Assign your template to a block in the <a href="/guides/v2.3/frontend-dev-guide/templates/template-override.html#template-layout">corresponding layout file</a>.</p>
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>If you add a new <code>.html</code> template, and then edit it, the changes will not apply until you do the following: delete all files in the <code>pub/static/frontend</code> and <code>var/view_preprocessing</code> directories, then reload the pages. You can delete the files manually or run the <code>grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq">Installing and configuring Grunt</a>.</p>
-</div>
+<p class="bs-callout bs-callout-tip">If you add a new <code class="highlighter-rouge">.html</code> template, and then edit it, the changes will not apply until you delete all files in the <code class="highlighter-rouge">pub/static/frontend</code> and <code class="highlighter-rouge">var/view_preprocessed</code> directories and reload the pages. You can delete the files manually or run the <code class="highlighter-rouge">grunt clean:&lt;theme_name&gt;</code> command in CLI. For details about using Grunt in Magento see <a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html">Installing and configuring Grunt</a>.</p>
 
 <h2 id="walkthrough-illustration-adding-a-message-to-the-customer-review-form">Walkthrough illustration: adding a message to the customer review form</h2>
 <p>A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews.</p>
 
 <p>The following image illustrates how the default review form looks like:</p>
 
-<p><img src="/common/images/template_walk_without_text.png" alt="a default review form" /></p>
+<p><img src="/common/images/template_walk_without_text.png" alt="Default review form" /></p>
 
 <p>To add the text, OrangeCo needs to override the default review form template in the Orange theme.</p>
 
@@ -1236,12 +1234,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In the theme <code class="highlighter-rouge">form.phtml</code> file they add the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
  snippet with the message before the <code>&lt;form&gt;</code>:</p>
 
-<p><img src="/common/images/template-sample-code.png" alt="a HTML snippet you need to add" /></p>
+<p><img src="/common/images/template-sample-code.png" alt="HTML snippet to add" /></p>
 
 <p>Here’s how the form will look when the Orange theme is applied in a store:</p>
 
 <p><img src="/common/images/template_with_text.png" alt="Review form with the new message added" /></p>
-
 
 			
 		</div>
