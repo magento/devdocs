@@ -3,6 +3,8 @@ name: New topic
 about: Create a request to add missing information to devdocs
 ---
 
+# New topic request
+
 ## Description
 
 <!-- (REQUIRED) What is the topic missing from devdocs -->

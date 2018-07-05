@@ -3,6 +3,8 @@ name: Bug report
 about: Create an issue about a bug on the devdocs website
 ---
 
+# Bug report
+
 ## Description
 
 <!-- (REQUIRED) What is the issue/current behavior? -->

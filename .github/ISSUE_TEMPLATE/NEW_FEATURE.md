@@ -3,6 +3,8 @@ name: New feature
 about: Create a request for new functionality in devdocs
 ---
 
+# New feature request
+
 ## Description
 
 <!-- (REQUIRED) Describe the feature you want added to devdocs -->

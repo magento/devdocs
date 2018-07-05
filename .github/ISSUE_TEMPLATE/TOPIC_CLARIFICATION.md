@@ -2,6 +2,9 @@
 name: Topic clarification/correction
 about: Create a request to clarify or correct a documentation topic
 ---
+
+# Topic clarification/correction request
+
 ## Topic Link
 
 <!-- (REQUIRED) A link to the topic that needs clarification or correction -->
