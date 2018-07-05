@@ -7,13 +7,15 @@ about: Create a request to add missing information to devdocs
 
 <!-- (REQUIRED) What is the topic missing from devdocs -->
 
-## Specifics to include
+## Content checklist
 
 <!-- (REQUIRED) List specific information or details to include in this topic -->
 
-[ ] Explanation for ...
-[ ] How to ...
-[ ] Code sample to accomplish ...
+<!-- Use the following checklist template as a starting point -->
+
+[ ] The topic provides an explanation of how ___ works.
+[ ] The topic provides steps for ___.
+[ ] The topic contains code samples that shows ___.
 [ ] Other (please specify)
 
 ## Additional information/resources
