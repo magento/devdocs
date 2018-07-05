@@ -108,7 +108,7 @@ The following is a code of the new Synonym fixture.
              repository_class="Magento\Search\Test\Repository\Synonym"
              handler_interface="Magento\Search\Test\Handler\Synonym\SynonymInterface"
              class="Magento\Search\Test\Fixture\Synonym">
-        <field name="group_id" is_required="1 "/>
+        <field name="group_id" is_required="1"/>
         <field name="synonyms" is_required="0" />
         <field name="store_id" is_required="0" />
         <field name="website_id" is_required="0" />
