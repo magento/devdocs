@@ -13,11 +13,10 @@ redirect_from:
   - /guides/v2.3/cloud/before/before-project-owner.html
 ---
 
-After your company purchases a subscription plan for {{site.data.var.ece}} and
-the initial account and project are created, the Project Owner is the only person
-who can access the project and code.
+After your company purchases a subscription plan for {{site.data.var.ece}}, the
+only person who initially has access to the project and code is the Project Owner.
 
-Typically, the _Project Owner_  is the person in your business or finance
+The _Project Owner_  is the person in your business or finance
 organization that manages payments and other business-related issues for
 the {{site.data.var.ece}} account. The Project Owner serves as the point of
 contact with Magento.
@@ -128,10 +127,6 @@ If the password reset fails or you cannot sign in to the Admin panel, add
 the following project environment variables to your project: `ADMIN_EMAIL`, `ADMIN_USERNAME`,
 and `ADMIN_PASSWORD`. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
-<<<<<<< HEAD
 After adding the ADMIN variables to the project configuration and redeploying
 the environment, use the username and password values that you added to sign in
 to the Admin panel.
-=======
-If you receive an error, you may need to add admin variables for `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD`.
->>>>>>> 52b43ee816908abf05338cd351631ae092da2ef9
