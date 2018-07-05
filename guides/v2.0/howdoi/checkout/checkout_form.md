@@ -100,7 +100,7 @@ Example of adding the template:
 
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
 2. Reload the pages.
 
 ## Step 3: Declare the form in the checkout page layout {#layout}
