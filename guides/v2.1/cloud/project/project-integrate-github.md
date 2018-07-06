@@ -8,7 +8,6 @@ functional_areas:
   - Setup
 ---
 
-## About the GitHub integration {#cloud-int-gh-about}
 The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Before you begin, your project and environments must be in a GitHub repository.
 
 We strongly recommend you use a *private* GitHub repository.
