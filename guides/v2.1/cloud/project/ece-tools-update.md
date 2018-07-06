@@ -20,7 +20,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
     ```
 
     {: .bs-callout .bs-callout-info}
-    If you cannot update beyond ece-tools version 2002.0.08, follow the [upgrade steps](#upgrade-project-to-use-ece-tools).
+    If you cannot update beyond ece-tools version 2002.0.08, follow the [upgrade steps]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project).
 
 1.  Add, commit, and push your code changes.
 
