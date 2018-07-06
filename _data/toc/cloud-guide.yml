@@ -358,14 +358,18 @@ pages:
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Upgrade ece-tools
-          url: /cloud/project/cloud-tools-upgrade.html
+        - label: Update ece-tools
+          url: /cloud/project/ece-tools-update.html
           versions: ["2.1","2.2","2.3"]
 
         - label: Apply Cloud patches
           url: /cloud/project/project-patch.html
 
-        - label: Upgrade Magento Commerce (Cloud)
+        - label: Upgrade to use ece-tools
+          url: /cloud/project/ece-tools-upgrade-project.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Upgrade Magento Cloud
           url: /cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)
