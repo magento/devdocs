@@ -207,6 +207,8 @@ hooks:
     post_deploy: |
         php ./vendor/bin/ece-tools post-deploy
 ```
+* `build:generate` command responsible for applying patches, validating configuration, generation DI and static content (if enabled for build phase).
+* `build:transfer` command transfers generated code and static content to final destination.
 
 There is a possibility to split build command in two part if you want to execute additional actions against generated code or static content during the build step and before transfer it to final destination.
 ```yaml

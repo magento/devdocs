@@ -215,6 +215,8 @@ hooks:
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
+* `build:generate` command responsible for applying patches, validating configuration, generation DI and static content (if enabled for build phase).
+* `build:transfer` command transfers generated code and static content to final destination.
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
