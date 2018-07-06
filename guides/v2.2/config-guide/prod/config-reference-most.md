@@ -1062,6 +1062,7 @@ Enabled Template Path Hints for Storefront | `dev/debug/template_hints_storefron
 Enabled Template Path Hints for Admin | `dev/debug/template_hints_admin` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Add Block Names to Hints | `dev/debug/template_hints_blocks` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Log to File | `dev/debug/debug_logging` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Log to syslog | `dev/syslog/syslog_logging` |  |
 Enabled for Storefront | `dev/translate_inline/active` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Enabled for Admin | `dev/translate_inline/active_admin` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Merge JavaScript Files | `dev/js/merge_files` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |

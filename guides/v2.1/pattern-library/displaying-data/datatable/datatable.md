@@ -113,7 +113,7 @@ A common {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endgl
 <img src="img/datatable08.jpg">
 <br />
 <br />
-Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
+Actions will be positioned above the table . Each table  will have it’s own set of actions, some tables will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
 <br />
 <br />
 <br />

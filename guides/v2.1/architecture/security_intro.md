@@ -14,7 +14,7 @@ Magento has strengthened the hashing algorithms (SHA-256) used in password manag
 
 ## Improved prevention of cross-site scripting (XSS) attacks by making escaped data the default
 
-The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-security.html">Security measures against XSS attacks</a> in the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}Frontend{% endglossarytooltip %} Developer Guide.
+The Magento Framework has adopted conventions that regulate the escaping of data in output. These conventions include the ability to escape  output for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} pages (HTML, JSON, and JavaScript) and email. Where possible, escaping is transparent to client code. See [Security measures against XSS attacks]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) in the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}Frontend{% endglossarytooltip %} Developer Guide.
 
 ## More flexible file system ownership and permissions
 
@@ -28,12 +28,12 @@ For details about ownership and permissions in development and production, see [
 
 ## Improved prevention of clickjacking exploits
 
-Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see <a href="{{ page.baseurl }}/config-guide/secy/secy-xframe.html"> X-Frame-Options header</a>.
+Magento safeguards your store from clickjacking attacks by using an X-Frame-Options HTTP request header. For more information, see [X-Frame-Options header]({{ page.baseurl }}/config-guide/secy/secy-xframe.html).
 
 ## Use of non-default Magento Admin URL
 
-A simple {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a> in Configuration Guide for more information.
+A simple {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (like `admin` or `backend`) makes it easy to target attacks on specific locations using automated password guessing. To prevent against this type of attack, Magento by default creates a random Admin URI when you install the product. The CLI is provided so that you can  see the password if you forget it. You can also use the CLI to change this URI.  Although the use of a non-default admin URL will not secure the site, its use will help prevent large-scale automated attacks. See [Display or change the Admin URI]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html) in Configuration Guide for more information.
 
 ## Related topics
 
-<a href="{{ page.baseurl }}/config-guide/bk-config-guide.html">Configuration Guide</a>
+[Configuration Guide]({{ page.baseurl }}/config-guide/bk-config-guide.html)

@@ -28,18 +28,18 @@ The basic set of instructions is the same for all types of layout files. This to
 
 Use the following layout instructions to customize your layout:
 
-*  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a>
 *  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
-*  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
 *  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
 
-<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
+<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
 
 Defines a block.
 
@@ -106,9 +106,9 @@ Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-2
 
 To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
 
-<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container></h3>
+<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
 A structure without content that holds other layout elements such as blocks and containers.
-<p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container></code> and <code>&lt;block></code> elements.
+<p><b>Details:</b> A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container&gt;</code> and <code>&lt;block&gt;</code> elements.
 <table>
    <tbody>
       <tr>
@@ -162,13 +162,13 @@ A structure without content that holds other layout elements such as blocks and 
       <tr class="odd">
          <td><code>htmlId</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5 <code>&lt;id></code> value.</td>
+         <td>Any valid HTML 5 <code>&lt;id&gt;</code> value.</td>
          <td>no</td>
       </tr>
       <tr class="even">
          <td><code>htmlClass</code></td>
          <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5  <code>&lt;class></code> value.</td>
+         <td>Any valid HTML 5  <code>&lt;class&gt;</code> value.</td>
          <td>no</td>
       </tr>
    </tbody>
@@ -257,7 +257,7 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
+<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action&gt;</h3>
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
@@ -266,7 +266,7 @@ The following tables give a detailed description of the results you can get usin
 
 Calls public methods on the block API.
 
-<p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action></code> node must be located in the scope of the <code>&lt;block></code> node.</p>
+<p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action&gt;</code> node must be located in the scope of the <code>&lt;block&gt;</code> node.</p>
 
 
 Example:
@@ -283,7 +283,7 @@ Example:
 {%endhighlight xml%}
 
 
-<p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
+<p><code>&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action&gt;</code>, they are passed as one array.</p>
 
 <table>
    <tbody>
@@ -304,11 +304,11 @@ Example:
 
 To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
-<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
-<p>Updates in <code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code> are applied to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
-<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.</p>
+<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock&gt; and &lt;referenceContainer&gt;</h3>
+<p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
+<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
 
-To pass parameters to a block use the <a href="#argument"><code>&lt;argument>&lt;/argument></code></a> instruction.
+To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
 <table>
    <tbody>
@@ -352,7 +352,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument>&lt
     <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
 </ul>  
 
-<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
+<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move&gt;</h3>
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
 
@@ -362,7 +362,7 @@ Sets the declared block or container element as a child of another element in th
 
 
 <ul>
-   <li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
+   <li><code>&lt;move&gt;</code> is skipped if the element to be moved is not defined.</li>
    <li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
   <li>During layout generation, the <code>&lt;move&gt;</code>
   instruction is processed before the removal (set using the <code>
@@ -408,7 +408,7 @@ Sets the declared block or container element as a child of another element in th
 
 <h3 id="fedg_layout_xml-instruc_ex_rmv">&lt;remove&gt;</h3>
 
-`<remove>` is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
+<code>&lt;remove&gt;</code> is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
 For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
 
 Example of usage:
@@ -442,7 +442,7 @@ Used as follows:
 The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
-Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments></code></a>.
+Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
  
 <table>
    <tbody>
@@ -518,7 +518,7 @@ $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 
 <h3 id="arguments">&lt;arguments&gt;</h3>
 
-<code>&lt;arguments></code> is a required container for <code>&lt;argument></code>. It does not have its own attributes.
+<code>&lt;arguments&gt;</code> is a required container for <code>&lt;argument&gt;</code>. It does not have its own attributes.
 
 Example:
 
