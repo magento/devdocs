@@ -7,17 +7,15 @@
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
           <li><a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Installation Guide</a></li>
-          {% if page.guide_version == "2.2" %}
+          {% unless page.guide_version == "2.0" or page.guide_version == "2.1"%}
           <li><a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
-          {% elsif page.guide_version == "2.1" %}
+          {% else %}
           <li><a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-          {% elsif page.guide_version == "2.0" %}
-          <li><a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
-          {% endif %}
+          {% endunless %}
           <li><a href="{{ page.baseurl }}/config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          {% if page.guide_version == "2.2" or page.guide_version == "2.3" %}
+          {% unless page.guide_version == "2.0" or page.guide_version == "2.1"%}
           <li><a href="{{ page.baseurl }}/performance-best-practices/index.html">Performance Best Practices</a></li>
-          {% endif %}
+          {% endunless %}
           <li><a href="{{ page.baseurl }}/migration/bk-migration-guide.html">Migration Guide</a></li>
           <li><a href="{{ page.baseurl }}/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
           <li><a href="{{ site.baseurl }}/magento-release-information.html">Release Information</a></li>
