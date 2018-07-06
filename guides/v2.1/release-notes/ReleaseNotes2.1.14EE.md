@@ -123,7 +123,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 <!--- ENGCOM-1251 -->*  The  `setAttributeFilter` method now specifies the relevant table when calling the `addFieldToFilter` method. This method is called as part of the process of adding a field to the filter for the collection `Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php`. Previously, Magento displayed an error (`ambiguous column name`) when you joined tables containing column `attribute_id`.  
-*Fix submitted by [Pierre LeMaguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
+*Fix submitted by [Pierre Le Maguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
 
 <!--- ENGCOM-926 -->* We've added a CodeTriage badge to the `magento/magento2` GitHub repository. See [CodeTriage](https://www.codetriage.com/magento/magento2 ) for more information. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
 
@@ -186,14 +186,19 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-
-
 <table>
   <tr>
     <th>Pull request</th>
     <th>Related GitHub issue</th>
      <th>Contributing community member</th>
   </tr>
+
+<tr>
+    <td><a href="https://github.com/magento/magento2/pull/13949" target="_blank">14596</a></td>
+    <td>14572</td>
+     <td><a href="https://github.com/PierreLeMaguer" target="_blank">Pierre Le Maguer</a></td>
+  </tr>
+
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13949" target="_blank">13949</a></td>
     <td>N/A</td>
@@ -209,11 +214,7 @@ The following table identifies contributions from our community members. This ta
     <td>7723</td>
      <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
   </tr>
-  <tr>
-    <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
-    <td>N/A</td>
-     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
-  </tr>
+  
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13896" target="_blank">13896</a></td>
     <td>N/A</td>
@@ -364,11 +365,7 @@ The following table identifies contributions from our community members. This ta
     <td>N/A</td>
      <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
   </tr>
-<tr>
-  <td><a href="https://github.com/magento/magento2/pull/14572" target="_blank">14572</a></td>
-    <td>N/A</td>
-     <td><a href="https://github.com/PierreLeMaguer" target="_blank">PierreLeMaguer</a></td>
-  </tr>
+
   <tr>
   <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
     <td>13214</td>

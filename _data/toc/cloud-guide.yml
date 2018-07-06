@@ -131,11 +131,19 @@ pages:
         - label: Install a theme
           url: /cloud/howtos/custom-theme.html
 
+        - label: Import URL Rewrites
+          url: /cloud/configure/import-url-rewrites.html
+          versions: ["2.2"]
+
     - label: Configure Fastly
       url: /cloud/basic-information/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/access-acct/fastly.html
+
+        - label: Fastly Image Optimization
+          url: /cloud/cdn/fastly-image-optimization.html
+          versions: ["2.1","2.2","2.3"]
 
         - label: Custom Fastly VCL snippets
           url: /cloud/configure/cloud-vcl-custom-snippets.html
@@ -183,7 +191,7 @@ pages:
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:
-            - label: Application variables
+            - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
 
             - label: Build variables

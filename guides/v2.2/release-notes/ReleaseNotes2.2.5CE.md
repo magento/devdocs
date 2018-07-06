@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.5 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.5CE.md
 ---
-*Patch code and release notes published on June 27, 2018.* 
+*Patch code and release notes published on July 1, 2018.* 
 
 This release includes multiple enhancements to product security plus bug fixes and enhancements. Check out the many community-contributed fixes!
 
@@ -231,6 +231,10 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 
 
 ## Known Issues
+
+Merchants are unable to change a store view’s applied theme in Magento 2.2.5. When a merchant tries to change the **Applied theme** setting for a store view (**Content** > **Design** > **Configuration**), Magento does not change the theme, but instead displays this error: `Something went wrong while saving this configuration: Area is already set`. See [GitHub-14968](https://github.com/magento/magento2/issues/14968) for more information. **Workaround**: Merchants who are running 2.2.5 should apply [patch MAGETWO-93036]( https://magento.com/tech-resources/download#download2224)  or  upgrade to 2.2.6 when it becomes available.
+
+
 The Amazon Pay, Magento Shipping, and Vertex extensions have the following known issues:
 
 
