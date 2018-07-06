@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 020_tech
 title: GitHub integration
-menu_title: GitHub
-menu_order: 10
-menu_node:
 version: 2.1
 github_link: cloud/project/project-integrate-github.md
 functional_areas:
@@ -13,7 +9,7 @@ functional_areas:
 ---
 
 ## About the GitHub integration {#cloud-int-gh-about}
-The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Therefore, before you begin, make sure your project and environments are in a GitHub repository.
+The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Before you begin, your project and environments must be in a GitHub repository.
 
 We strongly recommend you use a *private* GitHub repository.
 
@@ -23,17 +19,17 @@ This integration enables you to:
 *	Rebuild the environment when you push new code to GitHub.
 *	Delete the environment when you merge a pull request.
 
-To set up the integration, you must obtain a GitHub token and a webhook. The following sections walk you through the process.
+You must obtain a GitHub token and a webhook to continue the process.
 
 ## Generate a GitHub token {#cloud-int-gh-token}
-To perform this task, you must be a member of a group that can write to the GitHub repository. (In other words, you must be able to push to the repository.)
+To perform this task, you must be a member of a group with write access to the GitHub repository. (In other words, you must be able to push to the repository.)
 
-To generate a token:
+#### To generate a token:
 
 1.	Log in to GitHub.
-2.	In your personal settings, on the **Personal access tokens** tab page, click [**Generate new token**](https://github.com/settings/tokens/new){:target="_blank"}.
-4.	In the **Token description** field, enter a meaningful name.
-5.	Select checkboxes corresponding to how you intend to use the token:
+1.	In your personal settings, on the **Personal access tokens** tab page, click [**Generate new token**](https://github.com/settings/tokens/new){:target="_blank"}.
+1.	In the **Token description** field, enter a meaningful name.
+1.	Select checkboxes corresponding to how you intend to use the token:
 
 	*	To integrate with public repositories, select **public_repo**
 	*	To integrate with your personal, private repositories, select **repo**
@@ -42,8 +38,8 @@ To generate a token:
 	The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:
 
 	![Create a GitHub token for a private repository]({{ site.baseurl }}/common/images/cloud_github-token.png){:width="600px"}
-6.	Click **Generate token**.
-7.	Copy the token to the clipboard.
+1.	Click **Generate token**.
+1.	Copy the token to the clipboard.
 
 	![Create a GitHub token for a private repository]({{ site.baseurl }}/common/images/cloud_github-token-copy.png){:width="600px"}
 
