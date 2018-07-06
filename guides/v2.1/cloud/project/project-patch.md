@@ -1,6 +1,6 @@
 ---
 group: cloud
-title: Cloud patches
+title: Apply Cloud patches
 version: 2.1
 github_link: cloud/project/project-patch.md
 functional_areas:
