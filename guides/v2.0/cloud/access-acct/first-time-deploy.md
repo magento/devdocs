@@ -42,10 +42,6 @@ If you need environments provisioned and SSH access, enter a [Support ticket]({{
 
 To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you are on a Pro trial and do not have Staging and Production environments provisioned, you cannot complete an initial deployment. To continue developing, create a branch from Integration `master`. Do not merge this code to your `master` branch until you have deployed it to your provisioned Staging and Production environments.
-</div>
-
 To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
 
 ## Deploy to Staging and Production {#deploy}

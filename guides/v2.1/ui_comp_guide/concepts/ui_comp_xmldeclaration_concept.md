@@ -15,7 +15,7 @@ This topic discusses the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079
 ## About the layout configuration file and UI component declaration
 Every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that has view representation contains the directory named `layout`. In this directory, the `.xml` declarations of the pages are stored. These `.xml` declarations are, in fact, the pages' {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}.
 
-In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). [Basic]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) UI components are declared in this node. All nested components are declared in the basic components' instances configuration files (not in the page layouts).
+In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). [Basic]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) UI components are declared in this node. All nested components are declared in the basic component instances configuration files (not in the page layouts).
 
 Example of a basic {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} declaration:
 
@@ -121,6 +121,6 @@ The default configuration of a UI component is declared in one of the following 
 - in the [`definition.xml` file]({{ site.mage2100url }}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
 - in both places, in which case the configurations merge (the UI component `.js` file has priority).
 
-In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI componenet's `.js` file.
+In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI component's `.js` file.
 
 For more information about the configuration flow, refer to  the [Configuration Flow of UI Components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html) topic.

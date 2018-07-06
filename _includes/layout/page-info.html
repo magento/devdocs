@@ -1,25 +1,28 @@
 <div class="page-info">
 
-    {% if page.contributor_link %}
-      <div class="page-contributor">
-        <a href="{{ page.contributor_link }}" target="_blank">
-          Thanks to {{ page.contributor_name }} for contributing this topic
-        </a>
-      </div>
-    {% endif %}
-  
-    {% if site.github_link == true %}
+  {% if page.contributor_link %}
+    <div class="page-contributor">
+      <a href="{{ page.contributor_link }}" target="_blank">
+        Thanks to {{ page.contributor_name }} for contributing this topic
+      </a>
+    </div>
+  {% endif %}
+
+
+  {% if page.guide_version != "2.0" %}
+
     <div class="github-link">
-      <a class="improve-page" href="{{ site.github_repo }}blob/develop/{{ page.path }}" target="_blank">
+      <a class="improve-page" href="{{ site.github_files }}{{ page.path }}" target="_blank">
         Edit this page on GitHub
       </a>
     </div>
-    {% endif %}
-  
-    {% if site.feedback_link == true %}
+
     <div class="new-issue">
-      <a href="{{ site.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
+      <a href="{{ site.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank">
+        Give us feedback
+      </a>
     </div>
-    {% endif %}
-  
-  </div>
+
+  {% endif %}
+
+</div>

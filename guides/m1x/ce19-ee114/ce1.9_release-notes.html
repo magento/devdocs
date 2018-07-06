@@ -31,6 +31,7 @@
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
 
+<li><a href="#ce19-1939">Magento Open Source 1.9.3.9 Release Notes</a></li>
 <li><a href="#ce19-1938">Magento Open Source 1.9.3.8 Release Notes</a></li>
 <li><a href="#ce19-1937">Magento Open Source 1.9.3.7 Release Notes</a></li>
 <li><a href="#ce19-1936">Magento Open Source 1.9.3.6 Release Notes</a></li>
@@ -55,6 +56,23 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+
+<h2 id="ce19-1939">Magento Open Source 1.9.3.9 Release Notes</h2>
+ <p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+ <h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-768" target="_blank">MPERF-768</a> -->Magento no longer performs unnecessary write operations on the <code>core_url_rewrite</code> table.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10065" target="_blank">MPERF-10065</a> -->Customers can now successfully register during checkout without being unexpectedly logged out.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9735" target="_blank">MPERF-9735</a> -->Incorrect escaping in the <code>cron.sh</code> file no longer prevents cron jobs from running in parallel as expected.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10021" target="_blank">MPERF-10021</a> -->Magento now cleans session data as expected after a customer logs out.</li>	
+</ul>
+
+
+<h3>Known issue</h3>
+ <p>If your custom code or extension is using <code>Zend/Filter/PregReplace.php</code> with the modifier <code>e</code>, it will now return an error due to possible RCE issues. See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for more information.</p>
 
 
 <h2 id="ce19-1938">Magento Open Source 1.9.3.8 Release Notes</h2>
@@ -260,7 +278,7 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 <h4 id="ee114-1430security-general">General security enhancements</h4>
 <p>For more information about these security enhancements, see <a href="https://magento.com/security/patches/supee-8788" target="_blank">our Security Center article</a>.</p>
 <p>Patches for major security issues in earlier versions of the Magento software are available on the <a href="https://www.magentocommerce.com/download" target="_blank">Magento download page (look for <code>SUPEE-8788</code>.)</p>
-<p>See <a href="http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
+<p>See <a href="{{ site.baseurl }}/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
 <ul><li>Resolved a potential SQL injection (Zend Framework issue)</li>
 	<li>Resolved a cache poisoning issue</li>
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7714" target="_blank">MPERF-7714</a> --> We now provide better protection against path exploits.</li>
@@ -602,7 +620,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <li>In the event of a shipping address mismatch between Magento and PayPal, the following message displays when the customer attempts to pay using PayPal:<br />
 <pre>The address you entered on <em>store-name</em> is different than your PayPal preferred shipping address. 
 Return to <em>store-name</em> if you'd like to change the shipping address</pre>
-The user can select the <strong>Use as preferred shipping address</strong> check box to instruct PayPal to change their shipping address.</li>
+The user can select the <strong>Use as preferred shipping address</strong> checkbox to instruct PayPal to change their shipping address.</li>
 </li></ul>
 </li></ul>
 </li>

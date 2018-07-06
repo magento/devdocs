@@ -1,1 +1,1 @@
-../../../v2.0/frontend-dev-guide/themes/product-video.md
+../../../v2.1/frontend-dev-guide/themes/product-video.md

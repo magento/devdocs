@@ -35,9 +35,9 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 1. Create custom resolvers.
 1. Declare a custom query and all necessary types in `graphql.xml`
 
-If the target module is called `MyModule`, then create the resolvers and configuration files in a a new module called `MyModuleGraphQl`.
+If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
-See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/index.html) for more information.
+See the [GraphQL documentation]({{ site.baseurl }}/guides/v2.3/graphql/index.html) for more information.
 
 
 #### Add a custom authentication mechanism
@@ -76,16 +76,16 @@ Any new design related to Web API must satisfy the following constraints to keep
 
 **General**
 
-1. REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for store front scenarios.
+1. REST and SOAP must be designed for Admin Panel integrations and be equal in terms of coverage. GraphQL should be designed for storefront scenarios.
 1. Any identifier exposed in guest APIs (for example, cart ID) must be masked to prevent the possibility of unauthorized access to the data of other guest users.
 1. Authentication must be done via `\Magento\Authorization\Model\UserContextInterface`.
 1. Customer-specific identifiers (such as customer ID or cart ID) must be deducted from the record of the successfully authenticated customer. They must not be accepted via request parameters.
 1. All new web API endpoints must be covered with web API functional tests.
     * For REST and SOAP, by default, the same test will be executed in the scope of different continuous integration jobs. The base class for REST and SOAP tests is `\Magento\TestFramework\TestCase\WebapiAbstract`
     * The base class for GraphQL tests is: `\Magento\TestFramework\TestCase\GraphQlAbstract`
-1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and store front areas from executing routers.
+1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and storefront areas from executing routers.
 1. Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)
-1. Authentication parameters must be be passed via headers.
+1. Authentication parameters must be passed via headers.
 1. Throttling must be configured by the system integrator. It is not supported by Magento
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.
 1. Pagination must be supported by all list operations.

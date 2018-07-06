@@ -86,7 +86,7 @@ Once a tile becomes a "Hero" a 1px yellow stroke highlights the tile at the top 
 <br />
 <br />
 
-<h3 id="styling">Stlying and Spacing</h3>
+<h3 id="styling">Styling and Spacing</h3>
 For specific details concerning styling including fonts, colors and effects and spacing and padding, please refer to the source PSD files and exports located on Box or contact the Magento Product Design and User Experience team.
 <br />
 <br />

@@ -221,7 +221,28 @@ Following are some examples of various types and what they would look like in th
 </table>
 <h2 id="sample-webapi">Sample webapi.xml file</h2>
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-<script src="https://gist.github.com/keharper/507f485712a496ad079a.js"></script>
+``` xml
+<?xml version="1.0"?>
+    <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <!-- Customer Group Service-->
+    <route url="/V1/customerGroups/:id" method="GET">
+        <service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Magento_Customer::group"/>
+        </resources>
+    </route>
+...
+    <route url="/V1/customers/me/billingAddress" method="GET">
+        <service class="Magento\Customer\Service\V1\CustomerAddressServiceInterface" method="getDefaultBillingAddress"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+</routes>
+```
 <p>In this <code>webapi.xml</code> example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">

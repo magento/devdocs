@@ -277,7 +277,7 @@ To configure a MySQL database instance:
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
+4.	Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
 		create database magento;
 		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';

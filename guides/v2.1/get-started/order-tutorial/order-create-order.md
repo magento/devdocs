@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 7. Create an order
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 7
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-order.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -1575,4 +1574,4 @@ Not applicable
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma store as the customer. The dashboard shows the order.
-2. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Orders**. The order is displayed in the grid. Its status is Pending. 
+2. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.

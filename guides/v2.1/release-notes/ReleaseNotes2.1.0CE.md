@@ -552,7 +552,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51314-->* You can now successfully  sort products by swatch attribute.
 
-<!--- 51276-->* Magento now displays product attributes for a product on the store front as expected.
+<!--- 51276-->* Magento now displays product attributes for a product on the storefront as expected.
 
 
 #### Indexing
@@ -705,7 +705,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 53865-->* The CC model now assigns cc data that is passed in the `additional_data` field.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank"> (GITHUB-4741)</a>
 
-<!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a>
+<!--- 51803-->* The Select All checkbox on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a>
 
 <!--- 41378-->* The {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} for Chinese translation now works as expected. <a href="https://github.com/magento/magento2/issues/1547" target="_blank"> (GITHUB-1547)</a>
 
@@ -829,7 +829,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 50498-->* The variations matrix is now populated as expected after you update a configurable product.
 
-<!--- 50461-->* The default address check boxes are  checked as expected on the Customer View page.
+<!--- 50461-->* The default address checkboxes are  checked as expected on the Customer View page.
 
 
 <!--- 50375-->* Magento now displays images for configurable product variations on the storefront.
@@ -923,7 +923,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48261-->* Fixed the test dev/tests/integration/testsuite/Magento/Framework/Filesystem/Driver/FileTest.php to properly set file permissions.
 
-<!--- 48803-->* The Use default value check box on a product in a non-default store view function properly.
+<!--- 48803-->* The Use default value checkbox on a product in a non-default store view function properly.
 
 <!--- 48809-->* Tests in `dev/tests/integration/testsuite/Magento/Catalog/Model/ProductTest.php` are executed as expected.
 

@@ -36,10 +36,14 @@ There are two types of patches:
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.
 </div>
 
-Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
+Our patches are Composer driven. When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. See [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+The environment variable `ADMIN_EMAIL` specifies the email address to send notifications
+about password resets or other verification requests. You must have access to this email
+address to respond to verification requests when you are upgrading or patching
+{{site.data.var.ece}}. For details on retrieving or setting the email address,
+see [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ## Back up the database {#backup-db}
 
@@ -102,7 +106,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 4.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 5.	After testing the patch, push it to the remote server and deploy it:
 
@@ -141,7 +145,7 @@ After you've successfully tested a patch locally and on your Integration environ
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 3.	Thoroughly test your local system to make sure the patch doesn't have unexpected side-affects.
 4.	After testing the patch, push it to the remote server and deploy it:
 
@@ -174,7 +178,7 @@ To test a custom patch on your local system:
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
@@ -207,7 +211,7 @@ After you've successfully tested a custom patch locally and on your Integration 
 
 	`P` partial progress
 
-	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
+	For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
 2.	Apply the patch:
 
 		git apply <Magento project root dir>/m2-hotfixes/<patch file name>
@@ -215,7 +219,7 @@ After you've successfully tested a custom patch locally and on your Integration 
 
 		php <Magento project root dir>/bin/magento cache:clean
 
-	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
@@ -232,7 +236,7 @@ After you've successfully tested a custom patch locally and on your Integration 
             php ./vendor/bin/ece-tools build
         # We run deploy hook after your application has been deployed and started.
         deploy: |
-            php ./vendor/bin/ece-tools build
+            php ./vendor/bin/ece-tools deploy
         # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
         post_deploy: |
             php ./vendor/bin/ece-tools post-deploy

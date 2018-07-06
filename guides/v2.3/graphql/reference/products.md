@@ -47,7 +47,6 @@ Magento processes the attribute values specified in  a `ProductFilterInput` as  
 The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
 
 ```
-category_ids
 country_of_manufacture
 created_at
 custom_design
@@ -105,6 +104,7 @@ items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
 filters: [LayerFilter]
+sort_fields: SortFields
 {% endhighlight %}
 
 Each attribute is described below:
@@ -115,6 +115,7 @@ Attribute |  Description
 `page_info` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | The number of products returned
 `filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
+`sort_fields` | An object that includes the default sort field and all available sort fields
 
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
@@ -129,7 +130,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
-This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array, which is defined in the `ProductEntityAttributesForAst` class. The array automatically contains the `min_price`, `max_price`, and `category_ids`attributes. 
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids`attributes.
 
 
 ## ProductInterface {#ProductInterface}
@@ -150,8 +151,8 @@ The following table defines the `ProductInterface` attributes and objects.
 Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
+`canonical_url` | String  | The canonical URL for the product
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
-`category_ids` | [Int] | An array of category IDs the product belongs to
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
 `custom_design` | String | A theme that can be applied to the product page
@@ -175,7 +176,7 @@ Attribute | Data type | Description
 `new_to_date` | String | The end date for new product listings
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
-`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices]({#ProductPrices}) for more information.
+`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
 `product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | String | A short description of the product. Its use depends on the store's theme.
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
@@ -209,7 +210,7 @@ The `Price` object defines the price of a product as well as any tax-related adj
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`amount` | Money | The price of the the product and its currency code. See [Money object](#Money).
+`amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
 
 ##### Money object {#Money}
@@ -322,6 +323,22 @@ Field | Type | Description
 `label` | String | The label applied to a filter
 `value_string` | String | The value for filter request variable to be used in a query
 `items_count` | Int | The number of items the filter returned
+
+## SortFields object
+
+The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
+
+Field | Type | Description
+--- | --- | ---
+`default` | String | The default sort field
+`options` | `SortField` | An array that contains all the fields you can use for sorting
+
+### SortField object
+
+Field | Type | Description
+--- | --- | ---
+`value` | String | The attribute name or code to use as the sort field
+`label` | String | The attribute's label
 
 ## Sample query
 

@@ -21,7 +21,7 @@ The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="\_blank"} as the messa
 We support RabbitMQ version 3.5.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`](http://devdocs.magento.com/guides/v2.1/cloud/env/working-with-variables.html#queue) environment variable to connect it to your site.
+If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/working-with-variables.html#queue) environment variable to connect it to your site.
 </div>
 
 ## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
@@ -90,7 +90,7 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
 3. Use the `ssh -L` command to enable local port forwarding to RabbitMQ as follows:
 
         ssh -L <port number>:mq.internal:<port number> <project ID>-<branch ID>@ssh.us.magentosite.cloud
-4. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber` using the user name and password you found in the relationship variable. For this example, you would use `localhost:5672`.
+4. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:<portnumber` using the username and password you found in the relationship variable. For this example, you would use `localhost:5672`.
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 To connect to RabbitMQ running in an application, you should install a client like [amqp-utils](https://github.com/dougbarth/amqp-utils){:target="_blank"} as a project dependency in your `.magento.app.yaml` file.
