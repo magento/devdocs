@@ -1166,11 +1166,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="application-variables">
+                <li class="nav-level3  " id="admin-variables">
                     
 
                     
-                    <a  href="/guides/v2.3/cloud/env/environment-vars_magento.html">Application variables</a>
+                    <a  href="/guides/v2.3/cloud/env/environment-vars_magento.html">ADMIN variables</a>
                     
 
                     
@@ -2007,64 +2007,128 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>After your company purchases a subscription plan for Magento Commerce (Cloud), the only person who initially has access to the project and code is the Project Owner.</p>
+			<p>After your company purchases a subscription plan for Magento Commerce (Cloud), the
+only person who initially has access to the project and code is the Project Owner.</p>
 
-<p>To quickly onboard your project to start developing your site and going live, you need to complete specific set up steps and onboarding tasks. Typically, you need the Project Owner to start. Technical Admin(s) with super user access can continue.</p>
+<p>The <em>Project Owner</em>  is the person in your business or finance
+organization that manages payments and other business-related issues for
+the Magento Commerce (Cloud) account. The Project Owner serves as the point of
+contact with Magento.</p>
 
-<h2 id="users">Project access and users</h2>
-<p>The <em>Project Owner</em> is typically a “business user” in your business or finance organization that purchased the subscription and is your point of contact with Magento regarding the account overall. The owner can <a href="/guides/v2.3/cloud/project/user-admin.html#cloud-user-webinterface">add user accounts</a> to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.</p>
+<p>To quickly onboard your project so you can develop your site for live
+deployment, you need to complete specific set up steps and onboarding tasks.
+Typically, the Project Owner begins the process by securing Admin access and
+creating Technical Admin users that can help with set up, customization, and
+development work.</p>
 
-<p>Typically, the only user the Project Owner must create is the <em>Technical Admin</em>. This user should have a user account with the Super User role. Your Technical Admin can create user accounts for developers, set environment permissions, and manage all branches and environments. Typically, the Technical Admin is a developer, consultant, a <a href="https://magento.com/find-a-partner" target="\_blank">Magento Solution Partner</a>, or yourself.</p>
+<h2 id="project-portal">Project portal</h2>
+<p>Once you have an account with a provisioned environment, you can use the
+Magento Project Portal that guides you through the process to build and launch
+your Magento Commerce (Cloud) store. The portal provides a Getting Started guide
+and an interactive workflow that helps project administrators, business users,
+and developers with the tasks required to develop, build, test, and launch your
+site.</p>
+
+<p>When you are logged into your Magento account, access the portal
+from the Magento tab on the My Account page. Click View Project Page in the
+<a href="https://cloud.magento.com/cloud/project/subscriptions/">Projects section</a>.</p>
 
 <h2 id="cloud-first-acct">Sign up for a Magento Commerce (Cloud) account</h2>
-<p>Don’t have a Magento Commerce (Cloud) account yet? Contact <a href="https://magento.com/explore/contact-sales" target="\_blank">Magento Sales</a>. We will create your account and send you a welcome email that provides instructions to access the project.</p>
+<p>Don’t have a Magento Commerce (Cloud) account yet? Contact <a href="https://magento.com/explore/contact-sales" target="\_blank">Magento Sales</a>.
+We will create your account and send you a welcome email that provides instructions to access the project.</p>
 
-<p>The person who signs up for a Magento Commerce (Cloud) account is referred to as the <em>Project Owner</em>. You receive a welcome e-mail that enables you to set up the project initially. You can also access your project by <a href="https://accounts.magento.cloud" target="\_blank">logging in to your account</a>.</p>
+<p>The person who signs up for a Magento Commerce (Cloud) account is referred to as
+the <em>Project Owner</em>.</p>
 
 <h2 id="email">Your welcome e-mail</h2>
-<p>After you register for an account, Magento sends you a welcome e-mail at the address at which you registered. The e-mail contains a link to your Magento Commerce (Cloud) project.</p>
+<p>Magento sends a welcome email to the Project Owner using the address that was
+provided during the sign up process. The email contains a link to access your
+Magento Commerce (Cloud) project and complete initial project set up.</p>
 
 <p>You can also access your project by <a href="https://accounts.magento.cloud" target="\_blank">logging in to your account</a>.</p>
 
+<h2 id="users">Project access and users</h2>
+<p>The Project Owner can add user accounts to provide access to code, manage
+branches, enter tickets, and support environments. These user accounts can
+include in-house development, consultants, and Magento solution specialists.</p>
+
+<p>Typically, the only user the Project Owner must create is the <em>Technical Admin</em>.
+The Technical Admin needs a user account with admin access to create user
+accounts for developers, set environment permissions, and
+manage all branches and environments. The Technical Admin can be a developer,
+a consultant, a <a href="https://magento.com/find-a-partner" target="\_blank">Magento Solution Partner</a>,
+or yourself.</p>
+
+<p>You can create a Technical Admin through the Project portal, from the Project
+Web interface, or from the command line using the Magento Cloud CLI. For details
+on using the web interface and command line,
+see <a href="/guides/v2.3/cloud/project/user-admin.html">Create and manage users</a>.</p>
+
 <h2 id="project-setup">Get started with the Project Web Interface</h2>
-<p>We provision your initial environment with a template Magento Commerce (Cloud) repository.</p>
+<p>When you sign up for a Pro or Starter subscription plan, we provision
+your initial project environment with a template Magento Commerce (Cloud)
+repository to build and manage your site. For information about what is included
+in Pro and Starter plans, see <a href="/cloud/basic-information/starter-architecture.html">Starter Architecture</a> and <a href="/cloud/basic-information/pro-architecture.html">Pro Architecture</a>.</p>
 
-<p>We provide a <a href="/guides/v2.3/cloud/project/projects.html">Project Web Interface</a> for you to manage your project, add user accounts, and get started developing your store(s). This interface provides a UI for the Project Owner, Technical Admin, and developers to manage all environments and branches, environment variables, environment settings, and routes.</p>
-
-<p>We recommend creating a user account with Super User access as your Technical Admin. With super user access, they can help add user accounts, manage branches, and configure environments.</p>
+<p>You can use the Project Web Interface to manage your project, add user accounts,
+and begin developing your store(s). The Project Owner, Technical Admin users,
+and developers can use this interface to manage all environments and branches,
+environment variables, environment settings, and routes.</p>
 
 <p><img src="/common/images/cloud_project-access.png" alt="Use the Project Web Interface to manage environments" /></p>
 
+<p>For details, see <a href="/guides/v2.3/cloud/project/projects.html">Project Web Interface</a>.</p>
+
 <h2 id="status">Sign up for Magento status</h2>
-<p>We provide a Magento Commerce (Cloud) environment and service status site. Anyone working on your site and project can subscribe on the site for email notifications and updates. We recommend subscribing and adding a bookmark to check the page daily or as needed.</p>
+<p>Get updates about Magento Commerce (Cloud)
+platform environments and related services from the
+<a href="https://status.magento.cloud" target="\_blank">Status page</a> page.</p>
 
-<p>The site location is <a href="https://status.magento.cloud/" target="\_blank">https://status.magento.cloud/</a>. Scroll to the bottom and click <a href="http://status.magento.cloud/subscribe" target="\_blank">Subscribe</a> at the bottom of the page. Complete the prompts with your email address and types of notifications you want to receive.</p>
-
-<p>The page lists all component and service status. Any issues, updates, and notices are displayed below these status tables by date. For example, any slow issues, outages, or upgraded services are listed with important information and any updates as available.</p>
+<p>The page lists current status for all Magento Commerce (Cloud) components and
+services followed by notifications about incident reports, service upgrades,
+planned outages, and more. These notifications are ordered by date.</p>
 
 <p><img src="/common/images/cloud_status.png" alt="All status on the page" /></p>
 
+<p>Anyone working on your project can subscribe to the Magento Commerce (Cloud)
+status site to receive event notifications and updates through email. You can
+customize your subscription to select only the platform and services that you
+want to track. Sign up from the
+<a href="https://status.magento.cloud/subscribe" target="\_blank">Subscription page</a>.</p>
+
 <h2 id="admin">Access your Magento Admin panel</h2>
-<p>When you initially create your project, you can access the Magento Admin panel to add users, configure your store, and more. To initially access the Magento Admin, you have a couple of options.</p>
+<p>Users that have administrative access to the Admin panel can add users, configure
+store services, complete store set up and customization work, and more.</p>
 
-<ol>
+<p>For a new project, the first step after getting the welcome email is to secure
+Admin access to the project by changing the password on the Project Owner
+account.</p>
+
+<p>You can submit a password change request using either of the following methods:</p>
+
+<ul>
   <li>
-    <p>Access the Admin panel to change the password:</p>
-
-    <ul>
-      <li>
-        <p>We send an email to the Project Owner with the link to your Magento Admin panel with instructions to click the Forgot Password link.</p>
-      </li>
-      <li>
-        <p>Or you can access a store URL available through the <a href="/guides/v2.3/cloud/project/projects.html">Project Web Interface</a>. For the store URL, add /admin at the end. A login panel displays.</p>
-      </li>
-    </ul>
+    <p>Locate the welcome email sent to the Project Owner email address and
+follow the link to change your password.</p>
   </li>
-  <li>Click the forgot Password link and complete the process to change the password.</li>
-  <li>Login to the Admin panel using the username Admin and newly changed password.</li>
-</ol>
+  <li>
+    <p>Copy the store URL from the <a href="/guides/v2.3/cloud/project/projects.html">Project Web Interface</a>.
+into a browser. Then, append <code class="highlighter-rouge">/admin</code> to the end of the URL to open
+the sign in page. Click the “Forgot password?” link to send a password
+change request to the Project Owner email address.</p>
+  </li>
+</ul>
 
-<p>If you receive an error, you may need to add admin variables for <code class="highlighter-rouge">ADMIN_EMAIL</code>, <code class="highlighter-rouge">ADMIN_USERNAME</code>, and <code class="highlighter-rouge">ADMIN_PASSWORD</code>.</p>
+<p>After you submit the password change request, check your email for the password
+reset notification. If you do not get the email, check your spam folder.</p>
+
+<p>If the password reset fails or you cannot sign in to the Admin panel, add
+the following project environment variables to your project: <code class="highlighter-rouge">ADMIN_EMAIL</code>, <code class="highlighter-rouge">ADMIN_USERNAME</code>,
+and <code class="highlighter-rouge">ADMIN_PASSWORD</code>. See <a href="/guides/v2.3/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
+
+<p>After adding the ADMIN variables to the project configuration and redeploying
+the environment, use the username and password values that you added to sign in
+to the Admin panel.</p>
 
 			
 		</div>

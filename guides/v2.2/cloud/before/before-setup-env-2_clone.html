@@ -1162,11 +1162,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="application-variables">
+                <li class="nav-level3  " id="admin-variables">
                     
 
                     
-                    <a  href="/guides/v2.2/cloud/env/environment-vars_magento.html">Application variables</a>
+                    <a  href="/guides/v2.2/cloud/env/environment-vars_magento.html">ADMIN variables</a>
                     
 
                     
@@ -2080,14 +2080,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned <code class="highlighter-rouge">master</code>. If you change the variables in the <code class="highlighter-rouge">master</code> branch, you only have to make these changes once. All branches inherit the variables from <code class="highlighter-rouge">master</code>.</p>
 
 <ul>
-  <li><code class="highlighter-rouge">ADMIN_EMAIL</code>: Administrative user’s e-mail address. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.</li>
-  <li><code class="highlighter-rouge">ADMIN_USERNAME</code>: Username for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. The default hardcoded username is <code class="highlighter-rouge">admin</code>. You can use <code class="highlighter-rouge">admin</code> or change it to another secure username.</li>
-  <li><code class="highlighter-rouge">ADMIN_PASSWORD</code>: Administrative user’s password. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.</li>
-  <li><code class="highlighter-rouge">ADMIN_URL</code>: The relative URL by which to access the Magento Admin. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.</domain></li>
+  <li><code class="highlighter-rouge">ADMIN_EMAIL</code>: The email address for the administrative user. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.</li>
+  <li><code class="highlighter-rouge">ADMIN_USERNAME</code>: Username for the administrative user. The administrative user
+can create other users, including other administrative users. The default
+hardcoded username is the Project Owner email address. You can use this
+value, or change it to another secure username.</li>
+  <li><code class="highlighter-rouge">ADMIN_PASSWORD</code>: Password for the administrative user. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You might
+need to contact the Project Owner for the updated password.</li>
+  <li><code class="highlighter-rouge">ADMIN_URL</code>: The relative URL to access the Admin panel. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.</domain></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.</p>
+  <p>Make note of any changed values so that you can use them when you install Magento from
+the command line and when you verify the installation.</p>
 </div>
 
 <h3 id="variablelist">List and review variables</h3>
