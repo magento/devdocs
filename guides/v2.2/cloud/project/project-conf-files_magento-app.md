@@ -207,8 +207,6 @@ hooks:
     post_deploy: |
         php ./vendor/bin/ece-tools post-deploy
 ```
-* `build:generate` command responsible for applying patches, validating configuration, generation DI and static content (if enabled for build phase).
-* `build:transfer` command transfers generated code and static content to final destination.
 
 There is a possibility to split build command in two part if you want to execute additional actions against generated code or static content during the build step and before transfer it to final destination.
 ```yaml
@@ -219,6 +217,8 @@ hooks:
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
+* `build:generate` command responsible for applying patches, validating configuration, generation DI and static content (if enabled for build phase).
+* `build:transfer` command transfers generated code and static content to final destination.
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
