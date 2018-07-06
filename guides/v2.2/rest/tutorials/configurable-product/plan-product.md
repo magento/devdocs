@@ -123,7 +123,7 @@ The attribute ID and value numbers might be different on your installation. Chec
 
 You must assign the product to one or more categories to enable customers to find the product by browsing. We'll assign the Champ Tee to the Men, Tops, and Tees categories.
 
-Use the following call to search for for all categories (`id` is greater than or equal to `0`).
+Use the following call to search for all categories (`id` is greater than or equal to `0`).
 
 ```html
 GET <host>/V1/categories?
