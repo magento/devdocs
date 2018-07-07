@@ -11,7 +11,8 @@ functional_areas:
   - Integration
 ---
 
-<h2 id="highlights">Getting started with Magento</h2>
+Getting started with Magento
+----------------------------
 
 Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
@@ -21,7 +22,8 @@ Magento is a highly-customizable eCommerce platform and content management syste
 
 Magento is written using the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} programming language, and leverages elements of the Zend framework and the model-view-controller architecture. Magento runs on the MySQL relational database, and Magento schema and tables are included in the Magento installation package.
 
-<h2 id="help">Help improve this documentation</h2>
+Help improve this documentation
+-------------------------------
 
 Magento 2.0 product documentation is hosted on GitHub, and we welcome your
 feedback there.
@@ -30,13 +32,14 @@ Click the **Edit this page on GitHub** link at the top of a documentation page t
 open the file in our GitHub repository, where you are invited to suggest changes
 by creating pull requests, or open a discussion by creating an issue.
 
-For more information, see our <a href="{{ page.baseurl }}/extension-dev-guide/Contribute_edg.html">Contributors Guide</a>.
+For more information, see our [Contributors Guide]({{ page.baseurl }}/extension-dev-guide/Contribute_edg.html).
 
-<h2 id="contact-us">Contact us</h2>
+Contact us
+----------
 Feel free to contact the documentation team directly at
-<a href="mailto:DL-Magento-Doc-Feedback@magento.com">DL-Magento-Doc-Feedback@magento.com</a>
+[DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
 
 #### Related topics
 
-*   <a href="{{ page.baseurl }}/release-notes/bk-release-notes.html">Release Notes</a>
-*   <a href="{{ page.baseurl }}/architecture/bk-architecture.html">Architecture Guide</a>
+*   [Release Notes]({{ page.baseurl }}/release-notes/bk-release-notes.html)
+*   [Architecture Guide]({{ page.baseurl }}/architecture/bk-architecture.html)
