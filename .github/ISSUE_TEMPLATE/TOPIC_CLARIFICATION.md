@@ -1,14 +1,23 @@
-# General issue
+---
+name: Topic clarification/correction
+about: Create a request to clarify or correct a documentation topic
+---
 
-## Description:
+# Topic clarification/correction request
 
-<!-- (REQUIRED) What is the issue/current behavior? -->
+## Topic Link
 
-## Possible solutions:
+<!-- (REQUIRED) A link to the topic that needs clarification or correction -->
+
+## Description
+
+<!-- (REQUIRED) What needs to be clarified or corrected in this topic? -->
+
+## Possible solutions
 
 <!-- (OPTIONAL) What would a solution for this issue look like? -->
 
-## Additional information:
+## Additional information
 
 <!-- (OPTIONAL) What other information can you provide about this issue? -->
 

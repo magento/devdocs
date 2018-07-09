@@ -1,14 +1,31 @@
-# General issue
+---
+name: Bug report
+about: Create an issue about a bug on the devdocs website
+---
 
-## Description:
+# Bug report
+
+## Description
 
 <!-- (REQUIRED) What is the issue/current behavior? -->
 
-## Possible solutions:
+### Steps to reproduce
+
+<!-- (OPTIONAL) What needs to be done to replicate this issue? (provide Gist if needed) -->
+
+1. First Step
+2. Second Step
+3. Etc.
+
+## Expected result
+
+<!-- (REQUIRED) When this issue is resolved, what is the expected result/behavior? -->
+
+## Possible solutions
 
 <!-- (OPTIONAL) What would a solution for this issue look like? -->
 
-## Additional information:
+## Additional information
 
 <!-- (OPTIONAL) What other information can you provide about this issue? -->
 
