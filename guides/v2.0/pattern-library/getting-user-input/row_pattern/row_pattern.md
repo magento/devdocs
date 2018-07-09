@@ -48,7 +48,7 @@ All these elements are optional, depending on the functions needed.
 
 * Each row will have a delete control on the far right, often represented by a _"trash can"_ icon. This will allow the User to remove any unwanted rows, along with any data that has been input into them (prior to saving the form).
 
-* The delete contol _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
+* The delete control _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
 
 * The "Add" link however should always be present to allow the user to add a row, even in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of deleting all rows.     
 

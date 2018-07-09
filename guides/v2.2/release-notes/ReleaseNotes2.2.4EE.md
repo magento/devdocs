@@ -43,7 +43,7 @@ This section describes changes in this release that are not full-fledged feature
 <!--- MAGETWO-84588,MAGETWO-84587 MAGETWO-84589 -->* The multishipping checkout  flow now supports the CyberSource payment method. This payment method is supported on Magento Commerce only. As part of the process of adding CyberSource support, we've made improvements to the Multishipping module to simplify integration process for other payment methods.
 
 
-<!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*.
+<!--- MAGETWO-84815 -->* Magento has an automated checker to enforce the short array syntax convention that we are now enforcing in new code. This standard complies with all requirements of PSR-2. *Fix submitted by [Nickolas Malyovanets](https://github.com/nmalevanec) in pull request 12499*.
 
 
 <!--- MAGETWO-86940 -->* Magento now provides dedicated payment and shipping debug log files to store information specific to those functional areas.
