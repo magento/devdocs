@@ -8,7 +8,13 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## June 2018
+## July 2018
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+The new [URL Rewrite module](https://devdocs.magento.com/guides/v2.2/cloud/configure/import-url-rewrites.html) helps to manage redirects in Magento Cloud without losing SEO rankings and traffic.|2.2.x|Major update|Jul 06
+
+{% collapsibleh2 June 2018 %}
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
@@ -27,6 +33,7 @@ Added a topic about the [Magento binding syntax]({{ site.baseurl }}/guides/v2.2/
 Added a new topic describing how to [enable/disable logging]({{ site.baseurl }}/guides/v2.2/config-guide/cli/logging.html) with the Magento CLI.|2.2.x, 2.3.x|New topic|Jun 04
 Updated the storage capacity information for Magento Commerce Cloud Pro architecture information in the [Production Technology Stack]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack) documentation for Magento Cloud [v2.1]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack), [v2.2]({{ site.baseurl }}/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack), and [v2.3]({{ site.baseurl }}/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).|2.x|Technical changes|Jun 04
 [These changes]({{ site.baseurl }}/guides/v2.1/config-guide/multi-site/ms_nginx.html) show users how to simplify Nginx configs to host multiple Magento websites and store views with one virtual host file. It allows to that Nginx configuration to stay much cleaner, and more maintainable.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 1
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 May 2018 %}
 
