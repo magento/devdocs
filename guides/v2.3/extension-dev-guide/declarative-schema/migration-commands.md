@@ -13,7 +13,7 @@ Once you start with data patches, you cannot continue to use upgrade scripts.
 
 ## Convert install/upgrade schema scripts to  db_schema.xml files
 
-The **Schema Listener Tool** converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argment when you run the `setup:install` or `setup:upgrade` CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of `db_schema.xml` files (one per affected module).
+The **Schema Listener Tool** converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the `setup:install` or `setup:upgrade` CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of `db_schema.xml` files (one per affected module).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.
