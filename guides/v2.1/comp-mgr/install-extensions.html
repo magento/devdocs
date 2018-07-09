@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Start the Component Manager | Magento 2 Developer Documentation</title>
+	<title>Install extensions from the command line | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -64,7 +64,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 
 
-	<link rel="canonical" href="/guides/v2.1/comp-mgr/module-man/compman-start.html">
+	<link rel="canonical" href="/guides/v2.1/comp-mgr/install-extensions.html">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
 	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
@@ -104,13 +104,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/comp-mgr/module-man/compman-start.html">Magento 2.0</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/comp-mgr/install-extensions.html">Magento 2.0</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/comp-mgr/module-man/compman-start.html">Magento 2.1</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/comp-mgr/install-extensions.html">Magento 2.1</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/comp-mgr/module-man/compman-start.html">Magento 2.2</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/comp-mgr/install-extensions.html">Magento 2.2</a></li>
 	
-    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/comp-mgr/module-man/compman-start.html">Magento 2.3 Alpha</a></li>
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/comp-mgr/install-extensions.html">Magento 2.3 Alpha</a></li>
 	
   </ul>
 
@@ -410,7 +410,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2 active " id="start-the-component-manager">
+        <li class="nav-level2  " id="start-the-component-manager">
 
             
 
@@ -566,7 +566,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 		    
 		    	
 
-<li class="nav-level1  " id="install-extensions-from-the-command-line">
+<li class="nav-level1 active " id="install-extensions-from-the-command-line">
     
 
     
@@ -995,43 +995,171 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Start the Component Manager</h1>
+	<h1 class="page-heading">Install extensions from the command line</h1>
 
   
 
 
 </section>
 
-			<h2 id="compman-access">Start the Component Manager from the Magento Admin</h2>
-<p>To run the Component Manager:</p>
+			<p>Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the <a href="https://marketplace.magento.com" target="&#95;blank">Magento Marketplace</a> or another Magento extension distribution system. Extensions include:</p>
+
+<ul>
+  <li>Modules (extend Magento capabilities)</li>
+  <li>Themes (change the look and feel of your   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
+ and Admin)</li>
+  <li>Language packages (localize the storefront and Admin)</li>
+</ul>
+
+<div class="bs-callout bs-callout-tip">
+  <p>This topic explains how to install extensions you purchase from the Magento Marketplace using the command line. You can use the same procedure to install <em>any</em> extension; all you need is the extension’s   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
+ name and version. To find it, open the extension’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+</div>
+
+<p>To install an extension, you must:</p>
 
 <ol>
-  <li>Log in to the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
- as an administrator.</li>
-  <li>Click <strong>System</strong> &gt; <strong>Web Setup Wizard</strong>.
-The following page displays.<br /><br />
-<img src="/common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento" /><br /><br /></li>
-  <li>Click <strong>System Configuration</strong>.</li>
+  <li>Get an extension from the Magento Marketplace or elsewhere.</li>
+  <li>Get the extension’s Composer name and version.</li>
+  <li>Update the <code class="highlighter-rouge">composer.json</code> file in your Magento project with the name and version of the extension.</li>
+  <li>Verify that the extension installed properly.</li>
+  <li>Enable and configure the extension.</li>
+</ol>
+
+<h2 id="get-the-extensions-composer-name-and-version">Get the extension’s Composer name and version</h2>
+<p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</a>.</p>
+
+<p>To get the extension’s Composer name and version from the Magento Marketplace:</p>
+
+<ol>
   <li>
-    <p>If you haven’t already done so, enter your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a> in the provided fields.</p>
-
-    <p>The following figure shows an example if you <em>have</em> already entered your keys.</p>
-
-    <p><img src="/common/images/compman_auth-keys.png" alt="Authentication keys entered in the Setup Wizard" /></p>
-
-    <div class="bs-callout bs-callout-warning">
-	<p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento Open Source authentication keys to update or upgrade Magento EE or vice versa. You also <em>cannot</em> use:</p>
-	<ul><li>Another user's authentication keys</li>
-	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
-</div>
+    <p>Log in to <a href="https://marketplace.magento.com" target="&#95;blank">Magento Marketplace</a> with the username and password you used to purchase the extension.</p>
   </li>
-  <li>Click <strong>Save Config</strong>.</li>
   <li>
-    <p>Click <strong>Component Manager</strong> and continue with <a href="/guides/v2.1/comp-mgr/module-man/compman-main-pg.html">Manage your components</a>.</p>
+    <p>In the upper-right corner, click <strong>Your name</strong> &gt; <strong>My Profile</strong>.</p>
 
-    <p>To upgrade Magento system software instead, see <a href="/guides/v2.1/comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.</p>
+    <p><img src="/common/images/marketplace-my-profile.png" alt="Access your Marketplace account" width="200px" /></p>
+  </li>
+  <li>
+    <p>Click <strong>My Purchases</strong>.</p>
+
+    <p><img src="/common/images/marketplace-my-purchases.png" alt="Marketplace purchase history" width="650px" /></p>
+  </li>
+  <li>
+    <p>Find the extension you want to install and click <strong>Technical Details</strong>.</p>
+
+    <p><img src="/common/images/marketplace-extension-technical-details.png" alt="Technical details shows the extension's Composer name" width="200px" /></p>
   </li>
 </ol>
+<div class="bs-callout bs-callout-tip">
+  <p>Alternatively, you can find the Composer name and version of <em>any</em> extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension’s <code class="highlighter-rouge">composer.json</code> file.</p>
+</div>
+
+<h2 id="update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</h2>
+<p>Add the extension’s name and version to your <code class="highlighter-rouge">composer.json</code> file:</p>
+
+<ol>
+  <li>
+    <p>Navigate to your Magento project directory and update your <code class="highlighter-rouge">composer.json</code> file.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require &lt;component-name&gt;:&lt;version&gt;
+</code></pre></div>    </div>
+
+    <p>For example,</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require j2t/module-payplug:2.0.2
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Enter your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</p>
+  </li>
+  <li>
+    <p>Wait for Composer to finish updating your project dependencies and make sure there aren’t any errors:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Updating dependencies (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing j2t/module-payplug (2.0.2): Downloading (100%)
+Writing lock file
+Generating autoload files
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="verify-the-extension">Verify the extension</h2>
+<p>To verify that the extension installed properly, run the following command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:status
+</code></pre></div></div>
+
+<p>By default, the extension is probably disabled:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List of disabled modules:
+J2t_Payplug
+</code></pre></div></div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>; it’s not the same format as the Composer name. Use this format to enable the extension.</p>
+</div>
+
+<h2 id="enable-the-extension">Enable the extension</h2>
+<p>Some extensions won’t work properly unless you clear Magento-generated static view files first. Use the <code class="highlighter-rouge">--clear-static-content</code> option to clear static view files when you’re enabling an extension.</p>
+
+<ol>
+  <li>
+    <p>Enable the extension and clear static view files:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:enable J2t_Payplug --clear-static-content
+</code></pre></div>    </div>
+
+    <p>You should see the following output:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The following modules have been enabled:
+- J2t_Payplug
+
+To make sure that the enabled modules are properly registered, run 'setup:upgrade'.
+Cache cleared successfully.
+Generated classes cleared successfully. Please run the 'setup:di:compile' command to generate classes.
+Generated static view files cleared successfully.
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Register the extension:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Recompile your Magento project:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:di:compile
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Verify that the extension is enabled:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:status
+</code></pre></div>    </div>
+
+    <p>You should see output verifying that the extension is no longer disabled:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>List of enabled modules:
+J2t_Payplug
+
+List of disabled modules:
+None
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Configure the extension in Admin as needed.</p>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-tip">
+  <p>You may need to clear the cache if you encounter errors when loading the storefront in a browser.</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cache:flush
+</code></pre></div>  </div>
+</div>
 
 			
 		</div>
@@ -1045,13 +1173,13 @@ The following page displays.<br /><br />
   
 
     <div class="github-link">
-      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.1/comp-mgr/module-man/compman-start.md" target="_blank">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/develop/guides/v2.1/comp-mgr/install-extensions.md" target="_blank">
         Edit this page on GitHub
       </a>
     </div>
 
     <div class="new-issue">
-      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.1/comp-mgr/module-man/compman-start.html" target="_blank">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.1/comp-mgr/install-extensions.html" target="_blank">
         Give us feedback
       </a>
     </div>
