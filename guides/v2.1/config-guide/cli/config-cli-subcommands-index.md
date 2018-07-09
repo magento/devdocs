@@ -51,14 +51,22 @@ A sample follows:
 
 Sample result:
 
-	Category Products:                                 Reindex required
-	Product Categories:                                Reindex required
-	Product Price:                                     Reindex required
-	Product EAV:                                       Reindex required
-	Stock:                                             Reindex required
-	Catalog Rule Product:                              Reindex required
-	Catalog Product Rule:                              Reindex required
-	Catalog Search:                                    Reindex required
+```
++----------------------+------------------+-----------+---------------------+---------------------+
+| Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
++----------------------+------------------+-----------+---------------------+---------------------+
+| Catalog Product Rule | Reindex required | Save      |                     |                     |
+| Catalog Rule Product | Reindex required | Save      |                     |                     |
+| Catalog Search       | Ready            | Save      |                     |                     |
+| Category Products    | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
+| Customer Grid        | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Design Config Grid   | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Product Categories   | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
+| Product EAV          | Reindex required | Save      |                     |                     |
+| Product Price        | Reindex required | Save      |                     |                     |
+| Stock                | Reindex required | Save      |                     |                     |
++----------------------+------------------+-----------+---------------------+---------------------+
+```
 
 ## Reindex {#config-cli-subcommands-index-reindex}
 Use this command to reindex all or selected indexers one time only.
