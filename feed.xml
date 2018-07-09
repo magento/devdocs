@@ -16,7 +16,7 @@ layout: null
       {% unless page.tag == 'omit' %}
         <item>
           <title>{{ page.title | xml_escape }}</title>
-          <description>{{ page.content | xml_escape }}</description>
+          <description>{{ page.content | xml_escape | strip_html | truncatewords: 75 }}</description>
           <link>{{ page.url | prepend: site.url }}</link>
         </item>
       {% endunless %}
