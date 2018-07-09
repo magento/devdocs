@@ -1,10 +1,6 @@
 ---
 group: compman
-subgroup: 10_Install extensions from the command line
 title: Install extensions from the command line
-menu_title: Install extensions from the command line
-menu_order: 1
-menu_node: parent
 version: 2.1
 github_link: comp-mgr/install-extensions.md
 ---
