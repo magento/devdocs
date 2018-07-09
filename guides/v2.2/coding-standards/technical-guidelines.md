@@ -703,6 +703,64 @@ class SampleEventObserverThatModifiesInputs
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
+## 15. Security
+
+15.1. Use prepared statements for SQL queries.
+
+15.2. Broken Authentication protection.
+
+15.2.1. Where possible, implement multi-factor authentication to prevent automated, credential stuffing, brute force, and stolen credential re-use attacks.
+
+15.2.2. Do not ship or deploy with any default credentials, particularly for admin users.
+
+15.2.3. Implement weak-password checks, such as testing new or changed passwords against a list of the [top 10000 worst passwords](https://github.com/danielmiessler/SecLists/tree/master/Passwords).
+
+15.2.4. Align password length, complexity and rotation policies with [NIST 800-63 B's guidelines in section 5.1.1 for Memorized Secrets](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) or other modern, evidence based password policies.
+
+15.2.5. Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.
+
+15.2.6. Limit or increasingly delay failed login attempts. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.
+
+15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
+
+15.3. XSS protection.
+
+15.3.1. Sanitize input, escape output.
+
+15.3.2. Follow [templates XSS security guidelines](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html) for escaping output.
+
+15.3.3. Incoming data should be casted to the expected type, string data should be validated/sanitized.
+
+15.3.4. Incoming string data length should be checked.
+
+15.3.5. Special characters like null byte characters should be dropped from Incoming string data.
+
+15.4. A module that introduces Admin Panel functionality should have ACL.
+
+15.5. Misconfiguration protection.
+
+15.5.1. Do not include/require unused libraries/frameworks.
+
+15.5.2. A segmented application architecture that provides effective, secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).
+
+15.5.3. Sending security directives to clients, e.g. [Security Headers](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project).
+
+15.6. Sensitive Data Exposure protection.
+
+15.6.1. Exceptions/Notices/Warnings should be caught and logged.
+
+15.6.2. No error output should be displayed to user, some standard message should appear instead.
+
+15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
+
+15.7. CSRF protection.
+
+15.7.1. CSRF tokens mechanism should be utilized.
+
+15.7.2. All data manipulation requests should be made with POST requests.
+
+15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
+
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
