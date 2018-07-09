@@ -1319,6 +1319,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
    <li>
       <p><a href="#validate-webapi">webapi.xsd XML schema file</a></p>
    </li>
+   <li>
+      <p><a href="#forced-parameters">Forcing Request Parameters</a></p>
+   </li>
 </ul>
 <h2 id="configure-webapi">Configure a web API</h2>
 <p>To configure a web API for a service, you define XML elements and attributes in the
@@ -1518,7 +1521,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                <p><code>name</code>. String. Parameter name.</p>
             </li>
             <li>
-               <p><code>force</code>. Boolean.</p>
+               <p><code>force</code>. Boolean. <a href="#forced-parameters">Forcing Request Parameters</a></p>
             </li>
          </ul>
       </td>
@@ -1605,6 +1608,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
+<h2 id="forced-parameters">Forcing Request Paramters</h2>
+<p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
+   always used. For instance, in the example "/V1/customers/me/billingAddress" route above, the <code>customerId</code>
+   parameter is forced to match the ID of the currently logged in user.</p>
+<p>Additional parameter overrides can be registered via <code>di.xml</code> by adding new items to the
+   <code>paramOverriders</code> argument for <code>\Magento\Webapi\Controller\Rest\ParamsOverrider</code>. Parameter
+   overriders must implement <code>\Magento\Framework\Webapi\Rest\Request\ParamOverriderInterface</code>. An
+   example excerpt from <code>di.xml</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">"Magento\Webapi\Controller\Rest\ParamsOverrider"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"paramOverriders"</span> <span class="na">xsi:type=</span><span class="s">"array"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">"%my_value%"</span> <span class="na">xsi:type=</span><span class="s">"object"</span><span class="nt">&gt;</span>VENDOR\MODULE\Controller\Rest\ParamOverriderMyValue<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/type&gt;</span>
+</code></pre></div></div>
+<p>The above example create a new parameter override available for use in <code>webapi.xml</code>. The value passed for
+   <code>%my_value%</code> will be the return value of
+   <code>\VENDOR\MODULE\Controller\Rest\ParamOverriderMyValue::getOverriddenValue</code>. Example:</p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">"/V1/example/me/service"</span> <span class="na">method=</span><span class="s">"GET"</span><span class="nt">&gt;</span>
+    ...
+    <span class="nt">&lt;data&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"myValue"</span> <span class="na">force=</span><span class="s">"true"</span><span class="nt">&gt;</span>%my_value%<span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;/data&gt;</span>
+    ...
+<span class="nt">&lt;/route&gt;</span>
+</code></pre></div></div>
 
 			
 		</div>
