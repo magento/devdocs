@@ -35,7 +35,7 @@ and an interactive workflow that helps project administrators, business users,
 and developers with the tasks required to develop, build, test, and launch your
 site.
 
-**Openthe Magento Project Portal**
+**Open the Magento Project Portal**
 
 1. Log in to your Magento account.
 
