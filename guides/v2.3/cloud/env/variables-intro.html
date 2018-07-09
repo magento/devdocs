@@ -2012,7 +2012,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Magento Commerce (Cloud) enables you to assign environment variables to override configuration options:</p>
 
 <ul>
-  <li><a href="/guides/v2.3/cloud/env/environment-vars_magento.html">Application</a>—variables override application variables</li>
+  <li><a href="/guides/v2.3/cloud/env/environment-vars_magento.html">ADMIN</a>—variables override project ADMIN variables</li>
   <li><a href="/guides/v2.3/cloud/env/variables-build.html">Build</a>—variables control build actions</li>
   <li><a href="/guides/v2.3/cloud/env/variables-cloud.html">Cloud</a>—variables specific to Magento Commerce (Cloud)</li>
   <li><a href="/guides/v2.3/cloud/env/variables-deploy.html">Deploy</a>—variables control deploy actions</li>
@@ -2021,7 +2021,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment.</p>
 
-<p>You use the <a href="/guides/v2.1/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a> file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
+<p>You can set <a href="/guides/v2.3/cloud/env/environment-vars_magento.html">ADMIN variables</a>
+from the Project Web interface or using the Magento CLI. Other environment variables can be managed from the <a href="/guides/v2.1/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a> file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
 
 <h2 id="global-variables">Global variables</h2>
 <p>The following <em>global</em> variables control actions in the build, deploy, and post-deploy stages of the <code class="highlighter-rouge">.magento.env.yaml</code> file. Because global variables impact every stage, you must set them in the <code class="highlighter-rouge">global</code> stage. Insert these variables in the <code class="highlighter-rouge">global</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
