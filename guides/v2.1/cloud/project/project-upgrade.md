@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 130_upgrades
-title: Upgrade Magento Commerce (Cloud)
-menu_title: Upgrade Magento Commerce (Cloud)
-menu_order: 10
-menu_node:
+title: Upgrade Magento version
 version: 2.1
 github_link: cloud/project/project-upgrade.md
 redirect_from:

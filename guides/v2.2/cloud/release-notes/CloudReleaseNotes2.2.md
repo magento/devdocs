@@ -90,7 +90,7 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html#variables).
 
-* Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html#config).
+* Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html).
 
 * The command for generating `config.php` changed in 2.2 from `php bin/magento magento-cloud:scd-dump` to `php vendor/bin/m2-ece-scd-dump`.
 

@@ -362,22 +362,22 @@ pages:
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Cloud tools release notes
+        - label: ECE-tools release notes
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Update ece-tools
-          url: /cloud/project/ece-tools-update.html
-          versions: ["2.1","2.2","2.3"]
-
-        - label: Apply Cloud patches
-          url: /cloud/project/project-patch.html
-
-        - label: Upgrade to use ece-tools
+        - label: Upgrade to use ECE-tools
           url: /cloud/project/ece-tools-upgrade-project.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Upgrade Magento Cloud
+        - label: Update ECE-tools version
+          url: /cloud/project/ece-tools-update.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Apply custom patches
+          url: /cloud/project/project-patch.html
+
+        - label: Upgrade Magento version
           url: /cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)

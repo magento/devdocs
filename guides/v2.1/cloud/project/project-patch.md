@@ -1,6 +1,6 @@
 ---
 group: cloud
-title: Apply Cloud patches
+title: Apply custom patches
 version: 2.1
 github_link: cloud/project/project-patch.md
 functional_areas:
@@ -22,6 +22,15 @@ You can only apply patches during the build phase of redeployment.
 
 1.  Copy the patch file to the `/m2-hotfixes` directory.
 
+1.  Add, commit, and push your code changes.
+
+    ```bash
+    git add -A && git commit -m "Apply patch" && git push origin <branch name>
+    ```
+
+1.  After test validation, merge this branch to the Integration branch.
+
+#### To test if a patch can be applied using your local workstation:
 1.  From the project root, apply the patch.
 
     ```bash
@@ -37,11 +46,3 @@ You can only apply patches during the build phase of redeployment.
     You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 
 1.  Test the patch, make any necessary changes.
-
-1.  Add, commit, and push your code changes.
-
-    ```bash
-    git add -A && git commit -m "Apply patch" && git push origin <branch name>
-    ```
-
-1.  After test validation, merge this branch to the Integration branch.
