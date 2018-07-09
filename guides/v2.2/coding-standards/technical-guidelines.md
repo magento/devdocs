@@ -715,7 +715,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.2.3. Implement weak-password checks, such as testing new or changed passwords against a list of the [top 10000 worst passwords](https://github.com/danielmiessler/SecLists/tree/master/Passwords).
 
-15.2.4. Align password length, complexity and rotation policies with [NIST 800-63 B's guidelines in section 5.1.1 for Memorized Secrets](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) or other modern, evidence based password policies.
+15.2.4. Align password length, complexity, and rotation policies with [NIST 800-63 B's guidelines in section 5.1.1 for Memorized Secrets](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) or other modern, evidence-based password policies.
 
 15.2.5. Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.
 
@@ -725,15 +725,15 @@ class SampleEventObserverThatModifiesInputs
 
 15.3. XSS protection.
 
-15.3.1. Sanitize input, escape output.
+15.3.1. Sanitize input; escape output.
 
 15.3.2. Follow [templates XSS security guidelines](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html) for escaping output.
 
-15.3.3. Incoming data should be casted to the expected type, string data should be validated/sanitized.
+15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
 
 15.3.4. Incoming string data length should be checked.
 
-15.3.5. Special characters like null byte characters should be dropped from Incoming string data.
+15.3.5. Special characters, like null byte characters, should be dropped from Incoming string data.
 
 15.4. A module that introduces Admin Panel functionality should have ACL.
 
