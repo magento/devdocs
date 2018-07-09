@@ -28,15 +28,20 @@ creating Technical Admin users that can help with set up, customization, and
 development work.
 
 ## Project portal
-Once you have an account with a provisioned environment, you can use the
-Magento Project Portal that guides you through the process to build and launch
+Once you have an account, you can use the
+Magento Project Portal to manage the project for
 your {{site.data.var.ece}} store. The portal provides a Getting Started guide
 and an interactive workflow that helps project administrators, business users,
 and developers with the tasks required to develop, build, test, and launch your
 site.
 
-When you are logged into your Magento account, access the portal
-from the Magento tab on the My Account page. Click View Project Page in the
+**Openthe Magento Project Portal**
+
+1. Log in to your Magento account.
+
+2. On the My Account page, click the Magento tab to see the projects in your account.
+
+3. **Click View Project Page** in the
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}

@@ -10,7 +10,7 @@ functional_areas:
 
 {{site.data.var.ece}} enables you to assign environment variables to override configuration options:
 
--   [Application]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables override application variables
+-   [Admin]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables override project ADMIN variables
 -   [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
 -   [Cloud]({{ page.baseurl }}/cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
 -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
@@ -18,7 +18,8 @@ functional_areas:
 
 Variables are _hierarchical_, which means that if a variable is not overridden, it is inherited from the parent environment.
 
-You use the [`.magento.env.yaml`]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
+You can set [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
+from the Project Web interface or using the Magento CLI. Other environment variables can be managed from the [`.magento.env.yaml`]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
 The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage. Insert these variables in the `global` stage of the `.magento.env.yaml` file:
