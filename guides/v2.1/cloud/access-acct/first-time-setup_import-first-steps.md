@@ -21,10 +21,6 @@ functional_areas:
 
 You can create a {{site.data.var.ece}} project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-You cannot create trial projects by importing existing code.
-</div>
-
 ## Prerequisites for importing code {#prereqs}
 Before you begin, do the following:
 
@@ -72,7 +68,7 @@ To find {{site.data.var.ece}} database access information:
               }
            ]</pre>
 
-In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root user name is `user`, and the user has no password.
+In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root username is `user`, and the user has no password.
 
 ### Cloud unsecure base URL
 After you import the {{site.data.var.ee}} database into {{site.data.var.ece}}, you must change the base URL so you can access the Magento Admin and storefront.

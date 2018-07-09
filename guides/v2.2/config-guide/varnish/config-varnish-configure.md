@@ -66,7 +66,7 @@ To minimally configure Varnish:
 	      .port = "80";
 		}
 
-4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
+4.	Replace the value of `.host` with the fully qualified hostname or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
 
 	Typically, this is your web server.
 
@@ -81,7 +81,7 @@ To minimally configure Varnish:
 		}
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or host name and not <code>localhost</code>.</p>
+		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or hostname and not <code>localhost</code>.</p>
 	</div>
 
 7.	Save your changes to `default.vcl` and exit the text editor.

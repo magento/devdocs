@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-1/cest/actions.md
 functional_areas:
  - Testing
-redirect_from: guides/v2.2/magento-functional-testing-framework/cest/actions.html
+redirect_from: /guides/v2.2/magento-functional-testing-framework/cest/actions.html
 mftf-release: 1.0.0
 ---
 
@@ -895,7 +895,7 @@ after|string|optional| `stepKey` of preceding action.
 
 ### parseFloat
 
-Parse float number with thousands seperator.
+Parse float number with thousands separator.
 
 Attribute|Type|Use|Description
 ---|---|---|---

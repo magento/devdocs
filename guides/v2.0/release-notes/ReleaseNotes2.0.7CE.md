@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.7CE.md
 We are pleased to present Magento Open Source (formerly Community Edition) 2.0.7. This release includes one functional fix. 
 
 
-Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
 
@@ -38,7 +38,7 @@ New users can now complete a full installation of Magento Open Source 2.0.7 from
 
 2. Under Full Release, select a format for the download archive file. Then, click **Download**.
 
-3.	Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
+3.	Follow the Magento <a href="{{ site.baseurl }}/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.
 
 ##### <b>Install a new installation with Composer</b>#####
 

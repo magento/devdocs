@@ -1,4 +1,3 @@
-
 <h2 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h2>
 
 1.	Enter the following information:
@@ -11,7 +10,7 @@
 		</tr>
 	<tr>
 		<td>New Username</td>
-		<td>Enter a user name with which to log in to the Magento Admin. This user is an administrator and can create other users, including other administrative users.</td>
+		<td>Enter a username with which to log in to the Magento Admin. This user is an administrator and can create other users, including other administrative users.</td>
 	</tr>
 	<tr>
 		<td>New E-Mail</td>

@@ -14,7 +14,7 @@ Each _Pro_ plan project supports a total of eight environments that you can use 
 -   **Production**—Provides a single environment and `master` branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request the update, you must use CLI commands or tickets to modify settings, variables, and routes.
+To manage Staging and Production environment settings through the Project Web Interface for Pro projects **created before October 23, 2017**, you must [request an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html). If you do not request the update, you must submit tickets to modify settings, variables, and routes.
 </div>
 
 ![High-level view of Pro architecture (legacy) flow]({{ site.baseurl }}/common/images/cloud_pro-branch-architecture-legacy.png)  
@@ -187,7 +187,7 @@ This software is *not* upgradable but versions for the following software is con
 
 -   [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -   [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--   [Solr](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
+-   [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 -   [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 -   [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 -   [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)

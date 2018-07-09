@@ -6,8 +6,8 @@ github_link: magento-functional-testing-framework/release-1/getting-started.md
 functional_areas:
  - Testing
 redirect_from:
-    - guides/v2.2/magento-functional-testing-framework/getting-started.html
-    - guides/v2.2/magento-functional-testing-framework/1.0/getting-started.html
+ - /guides/v2.2/magento-functional-testing-framework/getting-started.html
+ - /guides/v2.2/magento-functional-testing-framework/1.0/getting-started.html
 mftf-release: 1.0.0
 ---
 
@@ -103,7 +103,7 @@ Example: `MAGENTO_BASE_URL=http://magento.test`
 * `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
 Example: `MAGENTO_BACKEND_NAME=admin`
 
-* `MAGENTO_ADMIN_USERNAME` must contain a user name required for authorization in the Admin area.
+* `MAGENTO_ADMIN_USERNAME` must contain a username required for authorization in the Admin area.
 Example: `MAGENTO_ADMIN_USERNAME=admin`
 
 * `MAGENTO_ADMIN_PASSWORD` must contain a user password required for authorization in the Admin area. 

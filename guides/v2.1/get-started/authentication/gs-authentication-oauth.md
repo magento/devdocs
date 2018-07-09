@@ -241,7 +241,7 @@ session_start();
 
 /** Use $consumerKey to retrieve the following data in case it was stored in DB when received at "endpoint.php" */
 if ($consumerKey !== $_SESSION['oauth_consumer_key']) {
-    throw new \Exception("Consumer keys received on on different requests do not match.");
+    throw new \Exception("Consumer keys received on different requests do not match.");
 }
 
 $consumerSecret = $_SESSION['oauth_consumer_secret'];

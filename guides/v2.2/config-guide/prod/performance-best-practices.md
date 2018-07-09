@@ -145,7 +145,7 @@ backend health check validation: configuration of regular Varnish backend checks
 
 > __Note__: Another setting that is not covered in default distributed configuration, but deserves your attention it saintmode (please check official Varnish documentation for more details).
 
-**Question to reviewer** This article discusses installing and configuring saint mode. Does something need to be added for performance best practices?  http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html
+**Question to reviewer** This article discusses installing and configuring saint mode. Does something need to be added for performance best practices?  {{ site.baseurl }}/guides/v2.2/config-guide/varnish/config-varnish-advanced.html
 
 ### Caching and Session Server
 
@@ -246,7 +246,7 @@ Through preprocessing/compilation of DI instructions, Magento
 
 After compilation completes, we recommend running the following command:
 
-`composer dump-autoload -o`
+`composer dump-autoload -o --apcu`
 
 This command allows composer to rebuild the mapping to project files so that they load faster.
 

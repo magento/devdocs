@@ -22,8 +22,8 @@ For more information see the <a href="{{ page.baseurl }}/test/testing.html">Mage
 For further testing with the Magento functional testing frameworks, see
 [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html).
 
-## Test using Community Edition {#test-comm}
-Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>.
+## Test using {{site.data.var.ce}} {#test-comm}
+Test your component by deploying {{site.data.var.ce}} and adding the component to the project's <code>composer.json</code>.
 
 {% highlight JSON %}
 "require": {
@@ -45,7 +45,7 @@ One way to do this follows:
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
-		<IP or host name of your GitHub repository> https://repo.magento.com
+		<IP or hostname of your GitHub repository> https://repo.magento.com
 
 3.	<a href="{{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html">Install your component</a> exactly like a merchant.
 4.	Verify the component installed properly.

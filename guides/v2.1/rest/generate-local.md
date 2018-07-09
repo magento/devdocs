@@ -61,4 +61,4 @@ To return information about all services:
 
 [List of REST APIs by module]({{ page.baseurl }}/rest/list.html)
 
-[List of service names permodule]({{ page.baseurl }}/rest/rest_endpoints.html)
+[List of service names per module]({{ page.baseurl }}/rest/rest_endpoints.html)

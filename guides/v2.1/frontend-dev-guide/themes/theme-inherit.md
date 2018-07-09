@@ -148,7 +148,7 @@ To do this, they added an extending layout in `app/design/frontend/OrangeCo/oran
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name='report.bugs' remove='true'/>
+        <referenceBlock name="report.bugs" remove="true"/>
     </body>
 </page>
 {%endhighlight xml%}

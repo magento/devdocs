@@ -7,8 +7,8 @@ menu_title: Use custom JavaScript
 version: 2.1
 github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/custom_js.html
-  - guides/v1.0/frontend-dev-guide/javascript/custom_js.html
+ - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
+ - /guides/v1.0/frontend-dev-guide/javascript/custom_js.html
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
@@ -33,11 +33,6 @@ To use a custom implementation of an existing Magento JS component:
 <ol>
   <li markdown="1">Place the custom component source file in one of
   the following locations:
-<ul>
-  <li markdown="1">Place the custom component source file in one of
-  the following locations:
-  </li>
-</ul>
 <ul>
   <li markdown="1">Your theme JS files: `/web/js` or `/_/web/js`
   </li>

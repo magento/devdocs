@@ -189,7 +189,7 @@ Attributes|Type|Use|Description
 `name`|string|optional|Name of the `<entity>`.
 `type`|string|optional|Node containing the exact name of `<entity>` type. Used later to find specific Persistence Layer Model class. `type` in `<data>` can be whatever the user wants; There are no constraints. It is important when persisting data, depending on the `type` given, as it will try to match a metadata definition with the operation being done. Example: A `myCustomer` entity with `type="customer"`, calling `<createData entity="myCustomer"/>`, will try to find a metadata entry with the following attributes: `<operation dataType="customer" type="create">`.
 
-`<entity>` may contain one or more [`<data>`](#data-tag), [`<var>`](#var-tag), [`<required-entities>`](#rrequiredentities-tag), or [`<array>`](#array-tag) elements in any sequence.
+`<entity>` may contain one or more [`<data>`](#data-tag), [`<var>`](#var-tag), [`<required-entities>`](#requiredentity-tag), or [`<array>`](#array-tag) elements in any sequence.
 
 ### data {#data-tag}
 

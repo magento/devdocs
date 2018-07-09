@@ -20,8 +20,8 @@ Magento has several core components that are used to build custom web sites, app
 
 For more information about individual Magento components, see:
 
-* <a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
+* [Modules]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html)
 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html">Themes</a>
+* [Themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html)
 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Language packages</a>
+* [Language packages]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack)

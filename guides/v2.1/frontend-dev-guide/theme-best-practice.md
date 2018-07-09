@@ -23,7 +23,7 @@ Some other customizations that can be performed using layout instructions are th
  
    * change the position of a block or container using `<move>` 
    * remove a block or container using the `remove` or `display` attribute of the `<referenceBlock>/<referenceContainer>` instruction
-   *  reorder blocks and container using the `before/after`attributes of the `<referenceBlock>/<referenceContainer>` instruction
+   *  reorder blocks and container using the `before/after` attributes of the `<referenceBlock>/<referenceContainer>` instruction
    *  change the HTML tag or CSS class for the existing container using `<referenceContainer>` element
    
    For details about working with layouts see the [Layout chapter of this Guide]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html).

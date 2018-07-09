@@ -26,9 +26,9 @@ To configure PHP:
 
 4.	Click **Set as current**.
 
-	The check boxes following the PHP version are referred to as *PHP extensions*. 
+	The checkboxes following the PHP version are referred to as *PHP extensions*. 
 
-4.	Select all of the following check boxes: **gd**, **intl**, **mbstring**, **mcrypt**, **opcache**, **pdo**, **pdo_mysql**, and **xsl**.
+4.	Select all of the following checkboxes: **gd**, **intl**, **mbstring**, **mcrypt**, **opcache**, **pdo**, **pdo_mysql**, and **xsl**.
 
 	You can optionally select other PHP extensions if you want.
 

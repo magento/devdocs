@@ -30,7 +30,7 @@ The following diagram details the branch and environment relationships:
 You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following workflow and examples uses a Production, Staging, and Integration architecture.
+The following workflow and examples use a Production, Staging, and Integration architecture.
 </div>
 
 ## Starter environments and branches {#env-branches}
@@ -47,7 +47,7 @@ From each sprint, you can have branches for every user story. All the stories be
 For detailed information, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html).
 
 ## Development workflow {#development}
-Development and deployment on Starter plans begins with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.
+Development and deployment on Starter plans begin with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.
 
 The full process involves:
 
@@ -233,7 +233,7 @@ To learn more, check out [Go live and launch]({{ page.baseurl }}/cloud/live/live
 ## Continuous integration {#continuous-integration}
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-{{site.data.var.ece}} environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+{{site.data.var.ece}} environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments

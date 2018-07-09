@@ -55,17 +55,18 @@ All these elements are optional, depending on the functions needed.
 <img src="img/behavior.png">
 
 <h3 id="pagination">Pagination</h3>
-For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appeneded to allow the user to rearrange the rows.
+For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
 <img src="img/pagination.png">
 
-Once pagination is enabled an "Order" column should be appeneded to allow the user to rearrange the rows.
+Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
 <img src="img/drag.png">
 
 
 <h3 id="examples">Examples</h3>
-Typically the Row Pattern will span either 8 or 12 colums for the page grid, depending on the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the page or panel on which it appears. The Row Pattern should accomodate all typical form elements as are necessary, but discretion should be used to insure the elements within the row are easy to read and interact with and do not become to cramped within the space.
+
+Typically the Row Pattern will span either 8 or 12 colums for the page grid, depending on the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the page or panel on which it appears. The Row Pattern should accommodate all typical form elements as are necessary, but discretion should be used to insure the elements within the row are easy to read and interact with and do not become to cramped within the space.
 
 <img src="img/row-examples.png">
 

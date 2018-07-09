@@ -1,16 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 10. Issue a partial refund
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 10
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-issue-refund.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -22,7 +21,7 @@ Magento 2.1.3 introduced two endpoints that streamline the process of issuing a 
 Endpoint | Description
 --- | ---
 `POST /V1/order/<order_ID>/refund` | Issues an offline refund
-`POST /V1/invoice/<order_ID>/refund` | Issue a refund with an online payment system
+`POST /V1/invoice/<invoice_ID>/refund` | Issue a refund with an online payment system
 
 In this example, the customer did not like the fit of the Radiant T-M-Orange shirt and wants a refund.
 
@@ -74,7 +73,7 @@ A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}credit memo{% endglo
 
 ### Verify this step {#verify-step}
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales > Credit memos**. The credit memo is displayed in the grid.
+Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Credit memos**. The credit memo is displayed in the grid.
 
 
 ## Congratulations! You've finished.
@@ -83,6 +82,6 @@ Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endg
 ## Related topics
 
 * [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
-* [Create a configurable product Tutorial](http://devdocs.magento.com/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
+* [Create a configurable product Tutorial]({{ site.baseurl }}/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
 * [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
-* [REST API documentation](http://devdocs.magento.com/swagger/){:target="_blank"}
+* [REST API documentation]({{ site.baseurl }}/swagger/){:target="_blank"}
