@@ -716,14 +716,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.</p>
 
 <p>This primarily   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the   <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span>
+ software component is organized into logical groups called <em>libraries</em>, which all modules can call.  Most of the framework code sits under the   <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span>
  layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
 (Although the Magento Framework does not contain resource models, it does contain a   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
  of code to help implement a resource model.)</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Don't confuse the Magento Framework with the Zend web application framework that ships with Magento.</p>
-</div>
+<p class="bs-callout bs-callout-tip">Don’t confuse the Magento Framework with the Zend web application framework that ships with Magento.</p>
 
 <p>You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  </p>
 
@@ -749,15 +747,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Here is the Magento Framework folder structure:</p>
 
-<pre>
-vendor/
+<p><code class="highlighter-rouge">vendor/
     ../magento
         ../framework
 lib/
     ../internal
         ../LinLibertineFont
-    ../web
- </pre>
+    ../web</code></p>
 
 <ul>
   <li>
@@ -773,10 +769,8 @@ lib/
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>vendor/magento/framework</code> directory maps to the <code>Magento\Framework</code>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
+<p class="bs-callout bs-callout-tip">The <code class="highlighter-rouge">vendor/magento/framework</code> directory maps to the <code class="highlighter-rouge">Magento\Framework</code>   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
 .</p>
-</div>
 
 <h2 id="highlights-of-magento-framework">Highlights of Magento Framework</h2>
 
