@@ -77,14 +77,38 @@ composer remove magento/product-community-edition --no-update
 #### For the {{ site.data.var.ce }}
 
 ```bash
-composer require magento/product-community-edition=2.3 --no-update
+composer require magento/product-community-edition=2.3.0 --no-update
 ```
+
+{%
+include note.html
+type='tip'
+content=' To see a full list of available 2.3 versions, use:
+
+```bash
+composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
+```
+'
+%}
+
 
 #### For the {{ site.data.var.ee }}
 
 ```bash
-composer require magento/product-enterprise-edition=2.3 --no-update
+composer require magento/product-enterprise-edition=2.3.0 --no-update
 ```
+
+{%
+include note.html
+type='tip'
+content=' To see a full list of available 2.3 versions, use:
+
+```bash
+composer show magento/product-enterprise-edition 2.3.* --all | grep -m 1 versions
+```
+'
+%}
+
 
 ### Require the additional packages using Composer
 
@@ -128,15 +152,25 @@ To update the tool, follow the guidelines below.
 
 ##### For the {{ site.data.var.ce }}
 
+Example for the 2.3.0 version:
+
 ```bash
-composer create-project --repository=https://<repository.url> magento/project-community-edition=2.3 temp_dir --no-install
+composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
 ```
+
+If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
+{:bs-callout bs-callout-info}
 
 ##### For the {{ site.data.var.ee }}
 
+Example for the 2.3.0 version:
+
 ```bash
-composer create-project --repository=https://<repository.url> magento/project-enterprise-edition=2.3 temp_dir --no-install
+composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition=2.3.0 temp_dir --no-install
 ```
+
+If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
+{:bs-callout bs-callout-info}
 
 #### Move the project to `<Magento install dir>/update`
 
@@ -210,9 +244,9 @@ follow the next steps:
 
 1. Reset [file system ownership and permissions] as a user with `root` privileges.
 2. Clear the following directories and check the storefront again:
-* `<your Magento install dir>/var/cache`
-* `<your Magento install dir>/var/page_cache`
-* `<your Magento install dir>/generated/code`
+   * `<your Magento install dir>/var/cache`
+   * `<your Magento install dir>/var/page_cache`
+   * `<your Magento install dir>/generated/code`
 	  
 
 <!-- Link definitions -->
