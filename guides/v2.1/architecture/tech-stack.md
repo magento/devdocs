@@ -41,7 +41,7 @@ Magento's highly modular structure includes the following open-source technologi
 ### Search
 
 * Solr (Magento Enterprise Edition only)
-* Elasticsearch (Magento Enterprise Edition version 2.1.x only)
+* Elasticsearch ({{site.data.var.ee}} - 2.1.x only)
 
 ### Additional technologies
 
@@ -72,4 +72,4 @@ This framework is located in the `dev/tests` directory. The functional testing f
 For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+[Architectural basics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)

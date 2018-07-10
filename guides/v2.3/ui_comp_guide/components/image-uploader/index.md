@@ -30,7 +30,7 @@ ImageUploader component-specific configuration:
 {:style="table-layout:auto;"}
 
 [FileUploader component]: {{page.baseurl }}/ui_comp_guide/components/ui-fileuploader.html
-[`image-uploader.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js
-[`image.html`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html
-[`imageUploader.xsd`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd
-[`Image.php`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php
+[`image-uploader.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js
+[`image.html`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html
+[`imageUploader.xsd`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd
+[`Image.php`]: https://github.com/magento/magento2/blob/{{page.guide_version}}-develop/app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php

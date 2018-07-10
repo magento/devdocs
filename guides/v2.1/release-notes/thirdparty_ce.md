@@ -66,7 +66,7 @@ sebastian/exporter || BSD-3-Clause|[Source](https://github.com/sebastianbergmann
 sebastian/recursion-context || BSD-3-Clause|[Source](https://github.com/sebastianbergmann/recursion-context)|[License](https://github.com/sebastianbergmann/recursion-context/blob/master/LICENSE)
 sebastian/version || BSD-3-Clause|[Source](https://github.com/sebastianbergmann/version)|[License](https://github.com/sebastianbergmann/version/blob/master/LICENSE)
 seld/jsonlint || MIT|[Source](https://github.com/Seldaek/jsonlint)|[License](https://github.com/Seldaek/jsonlint/blob/master/LICENSE)
-Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/app/etc/modules/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
 knockoutjs|3.3.0 |MIT|[Source](http://knockoutjs.com/downloads/index.html)|[Source](https://github.com/knockout/knockout/blob/master/LICENSE)

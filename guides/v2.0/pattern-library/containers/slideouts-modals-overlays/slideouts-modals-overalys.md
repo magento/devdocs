@@ -258,4 +258,4 @@ When field level validation is triggered resulting message should appear and per
 <a href="src/Modal.psd">Download Modal PSD source</a>
 
 <h3 id="implement">Technical Implementation</h3>
-Technically slideouts and modals are implemented using the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-modal.html). 
+Technically slideouts and modals are implemented using the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html) or the [modal UI component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/components/ui-modal.html). 

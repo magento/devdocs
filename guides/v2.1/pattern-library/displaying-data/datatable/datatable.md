@@ -113,7 +113,7 @@ A common {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endgl
 <img src="img/datatable08.jpg">
 <br />
 <br />
-Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
+Actions will be positioned above the table . Each table  will have it’s own set of actions, some tables will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
 <br />
 <br />
 <br />
@@ -181,7 +181,7 @@ The persistent header will reactivate when you scroll back up:
 <br />
 <br />
 
-For details about component's implementation see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.
+For details about component's implementation see <a href="{{ site.baseurl }}/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.
 
 ### Multiple Data-tables on Page
 The header will stick to the first table until the user scrolls past the bottom of that table . The header will have the same behavior for each subsequent data-table.

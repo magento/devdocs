@@ -11,7 +11,7 @@ functional_areas:
 ---
 
 Store customers must have the ability to enable and disable credit cards details storing.
-Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation.
+Magento out-of-the-box provides mechanisms for adding this ability, but you still need to add modifications in your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation.
 
 These modifications are the following:
 

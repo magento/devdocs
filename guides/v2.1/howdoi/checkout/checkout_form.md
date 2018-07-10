@@ -100,7 +100,7 @@ Example:
 
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
 2. Reload the pages.
 
 ## Step 3: Declare the form in the checkout page layout {#layout}
@@ -255,7 +255,7 @@ The following code sample shows configuration of the form that contains four fie
 
 ### Dynamically defined forms {#dynamic_form}
 
-Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options.
+Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the **Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options**.
 
 For such forms, you must implement a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.

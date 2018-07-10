@@ -145,7 +145,7 @@ backend health check validation: configuration of regular Varnish backend checks
 
 > __Note__: Another setting that is not covered in default distributed configuration, but deserves your attention it saintmode (please check official Varnish documentation for more details).
 
-**Question to reviewer** This article discusses installing and configuring saint mode. Does something need to be added for performance best practices?  http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html
+**Question to reviewer** This article discusses installing and configuring saint mode. Does something need to be added for performance best practices?  {{ site.baseurl }}/guides/v2.2/config-guide/varnish/config-varnish-advanced.html
 
 ### Caching and Session Server
 

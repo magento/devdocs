@@ -17,7 +17,7 @@ stage:
 
 For more information about customizing the build and deploy process:
 
--  [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)
+-  [Manage build and deploy actions]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html)
 -  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
 
 ### `CACHE_CONFIGURATION`
@@ -83,7 +83,7 @@ Use the Project Web UI to set this value. When you move the database from one en
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:

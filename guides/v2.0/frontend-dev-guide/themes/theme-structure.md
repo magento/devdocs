@@ -277,7 +277,7 @@ A set of theme files that are returned by the server to a browser as is, without
 </pre>
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
 
-Static view files that can be accessed by a direct link from the store front, are distinguished as public theme files.
+Static view files that can be accessed by a direct link from the storefront, are distinguished as public theme files.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To be actually accessible for browsers public static files are <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code>/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>

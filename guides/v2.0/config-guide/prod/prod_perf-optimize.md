@@ -81,10 +81,10 @@ Estimate a memory size to fit the total number of effective skus, product pages 
 
 ### Magento - Performance Optimizations
 
-Enable these performance optimizations to improve the store front responsiveness of your Magento instance.
+Enable these performance optimizations to improve the storefront responsiveness of your Magento instance.
 
 
-Go to the Admin in default of developer mode and change the following settings for store front asset optimization:
+Go to the Admin in default of developer mode and change the following settings for storefront asset optimization:
 
 #### Stores -> Configuration -> Advanced -> Developer
 
@@ -109,7 +109,7 @@ Set all indexers to "Update on Schedule" mode.
 
 ### Production Mode
 
-Switching to production mode improves store front responsiveness and prevents long initial page load times that can occur in default mode.
+Switching to production mode improves storefront responsiveness and prevents long initial page load times that can occur in default mode.
 
 Run the following commands to switch to production mode:
 

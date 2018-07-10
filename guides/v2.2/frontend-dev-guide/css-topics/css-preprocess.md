@@ -78,8 +78,6 @@ To set the compilation mode, do the following:
 <li>In the <b>Store View</b> drop-down field, select <b>Default Config</b>.</li>
 <li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
 <li>To save the settings, click <b>Save Config</b>.</li>
-
-<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope first, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. Change the option to match the default config if it is different.</li>
 </ol>
 
 <h3 id="server-side">Server-side LESS compilation</h3>
@@ -103,7 +101,7 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 In server-side LESS compilation mode, to have your changes applied, you need to do the following:
 
 1. Clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system.
-2. Clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories by deleting the directory in the file system. (if they already existed there).
+2. Clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories by deleting the directory in the file system. (if they already existed there).
 2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
 
 	-  Reloading the page where the modified styles are applied.

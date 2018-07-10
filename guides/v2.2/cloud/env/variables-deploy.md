@@ -86,8 +86,8 @@ Use this environment variable to make sure message queues are running after a de
 stage: 
   deploy:
     CRON_CONSUMERS_RUNNER:
-      cron_run: true,
-      max_messages: 1000,
+      cron_run: true
+      max_messages: 1000
       consumers:
         - consumer1
         - consumer2
@@ -107,7 +107,7 @@ Use the Project Web UI to set this value. When you move the database from one en
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:
@@ -260,7 +260,7 @@ stage:
 -  **Default**—`quick`
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to customize the [deployment strategy](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+Allows you to customize the [deployment strategy]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 

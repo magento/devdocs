@@ -221,7 +221,7 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
 
 To create an instance of the Form component, you need to do the following:
 
-1. In you custom module, add a configuration file for the instance, for example: `customer_form.xml`.
+1. In your custom module, add a configuration file for the instance, for example: `customer_form.xml`.
 2. Add a set of fields (the Fieldset component with the component of the Field) for {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} or     to implement the upload of meta info in the DataProvider.
 3. Create the DataProvider class for the entity that implements DataProviderInterface
 * Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
@@ -244,9 +244,9 @@ Example:
 Component could be configured in two ways:
 
 * globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
-* locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form`
+* locally: using concrete component instance configuration, such as `<your module root dir>view/base/ui_component/customer_form`
 
-Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
+Create configuration file: `<your module root dir>view/base/ui_component/customer_form.xml`
 
 {% highlight xml%}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">

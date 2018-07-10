@@ -21,7 +21,7 @@ The main purpose of data serialization is to convert data into a string using `s
 
 The other half of this process uses the `unserialize()` function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.
 
-<div class class="bs-callout bs-callout-warning" markdown="1">
+<div class="bs-callout bs-callout-warning" markdown="1">
 
 For security reasons, `SerializerInterface` implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.
 

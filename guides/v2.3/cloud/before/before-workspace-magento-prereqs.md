@@ -173,13 +173,13 @@ To install the Magento Cloud CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		source /home/magento_user/.bashrc
+		source $HOME/.bashrc
 
 	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc){:target="_blank"}
 
-	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the username is `magento_user`, the command is similar to the following:
+	You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
 
-		export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+		export PATH=$PATH:$HOME/.magento-cloud/bin
 
 	Consult operating system documentation for details.
 

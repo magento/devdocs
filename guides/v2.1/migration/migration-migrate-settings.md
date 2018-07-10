@@ -35,7 +35,7 @@ where:
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration
 
-* `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
+* `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
