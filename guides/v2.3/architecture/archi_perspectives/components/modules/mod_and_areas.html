@@ -783,8 +783,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.</p>
 
-<p>After the area name, the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. Magento uses the handle to identify which controller (a   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code class="highlighter-rouge">index</code>, which returns an HTML page.</p>
+<p>After the area name, the URI segment specifies the <em>frontname</em>. When an HTTP request arrives, Magento extracts the handle from the URL and interprets it as follows: <code class="highlighter-rouge">[frontName]/[controller folder]/[controller class]</code> where <code class="highlighter-rouge">frontName</code> is a value defined in the module. For example, in <code class="highlighter-rouge">catalog/product/view</code>, <code class="highlighter-rouge">catalog</code> is the name of the module used, <code class="highlighter-rouge">product</code> is the controller folder, and <code class="highlighter-rouge">view</code> is the controller class.   For deeper directory structures, the controller folders are separated with <code class="highlighter-rouge">_</code> (for example, <code class="highlighter-rouge">catalog/product_compare/add</code> for <code class="highlighter-rouge">Magento/Catalog/Controller/Product/Compare/Add.php</code>).</p>
+
+<p>Note that only the <strong>execute()</strong> method of any given controller is executed.</p>
 
 <h2 id="m2arch-module-related">Related topics</h2>
 
