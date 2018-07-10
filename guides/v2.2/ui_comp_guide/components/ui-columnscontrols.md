@@ -7,8 +7,6 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-columnscontrols.md
 ---
 
-## Overview
-
 The ColumnsControls component is a collection of columns. It provides an interface for showing and hiding columns. The interface contains the following information:
 
 * total number of all available columns in a grid
@@ -16,7 +14,7 @@ The ColumnsControls component is a collection of columns. It provides an interfa
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 
-## ColumnsControls configuration
+## Configuration options
 
 Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 

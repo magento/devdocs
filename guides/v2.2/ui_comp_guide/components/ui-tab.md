@@ -7,8 +7,6 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-tab.md
 ---
 
-## Overview
-
 The Tab component implements a tab content area.
 
 See the [Admin Design Pattern Library (Tabs)]({{ page.baseurl }}/pattern-library/containers/tabs/tabs.html) topic for information about the UI design patterns that can be implemented using the Tab component.

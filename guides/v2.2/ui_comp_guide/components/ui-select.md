@@ -7,8 +7,6 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-select.md
 ---
 
-## Overview
-
 The Select component provides the interface for a list or a data set. With this component, the user can select only one item.
 
 ## Configuration options

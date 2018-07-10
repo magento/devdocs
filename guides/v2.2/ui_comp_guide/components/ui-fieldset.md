@@ -7,21 +7,10 @@ github_link: ui_comp_guide/components/ui-fieldset.md
 
 The Fieldset component implements a container for visually-grouped form elements, such as buttons and form fields.
 
-## Core files
-
-| Type                            | Filename                                                          |
-| ------------------------------- | ----------------------------------------------------------------- |
-| PHP Class                       | [`Magento/Ui/Component/Form/Fieldset.php`]                        |
-| Javascript Module               | [`Magento/Ui/view/base/web/js/form/components/fieldset.js`]      |
-| Template                        | [`Magento/Ui/view/base/web/templates/form/fieldset.html`]         |
-| Configuration Schema Definition | [`Magento/Ui/view/base/ui_component/etc/definition/fieldset.xsd`] |
-{:style="table-layout:auto;"}
-
-## Configuration settings
+## Configuration options
 
 Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `collapsible` configuration.
 
-### Fieldset component-specific configuration
 
 | Title               | Type    | Default | Description                                                                                                               |
 | ------------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -32,7 +21,7 @@ Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_u
 | `level`             | Integer |         | Explicitly indicates the level of nesting([date-level] attribute).                                                        |
 {:style="table-layout:auto;"}
 
-### `collapsible` configuration:
+### collapsible configuration
 
 | Title         | Type    | Default | Description                                                                       |
 | ------------- | ------- | ------- | --------------------------------------------------------------------------------- |

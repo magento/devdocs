@@ -8,8 +8,6 @@ github_link: ui_comp_guide/components/ui-modal.md
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 
-## Overview
-
 The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
 
 Similar to the widget's configuration, the component's configuration allows you to set the window type and the behavior of action buttons (including linking action buttons to methods of the other UI components).
@@ -18,14 +16,8 @@ The Modal component can be used for both {% glossarytooltip 29ddb393-ca22-4df9-a
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
-## Structure
 
-The modal UI component comprises the following files:
-
-- JS component: `<Magento_Ui_module_dir>/view/base/web/js/modal/modal-component.js`
-- Template: `<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-component.html`
-
-## Options
+## Configuration options
 
 Component's options are set in the configuration `.xml` file as follows:
 
@@ -90,7 +82,9 @@ Modal-specific configuration:
   </tr>
 </table>
 
-## Example of the Modal component configuration
+## Examples
+
+### Configure component
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
@@ -156,7 +150,7 @@ The following sample is an example of the configuration for a simple modal windo
 {%endhighlight%}
 
 
-## Public API (JS)
+## API reference
 
 - `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window.
 - `actionDone()`: validates the changes in the modal's child components and, if valid, closes the modal.

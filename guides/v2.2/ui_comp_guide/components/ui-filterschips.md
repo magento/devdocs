@@ -7,13 +7,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-filterschips.md
 ---
 
-## Overview
-
 The FiltersChips component provides UI controls that allows users to remove the previously-applied values of the [Filters]({{ page.baseurl }}/ui_comp_guide/components/ui-filters.html) and [Search]({{ page.baseurl }}/ui_comp_guide/components/ui-search.html) components.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)
 
-## FiltersChips configuration
+## Configuration options
 
 Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 

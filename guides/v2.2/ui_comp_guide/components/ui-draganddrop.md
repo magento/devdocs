@@ -7,8 +7,6 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-draganddrop.md
 ---
 
-## Overview
-
 The DragAndDrop component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} for [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html), allowing users to change columns position in the table.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/dnd.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/dnd.js)

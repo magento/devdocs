@@ -7,8 +7,6 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-multiselect.md
 ---
 
-## Overview
-
 The Multiselect component provides the interface for a list or a data set. Multiselect allows selecting multiple items.
 
 ## Сonfiguration options
