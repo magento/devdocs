@@ -28,9 +28,9 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
 </li>
 <li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br>
-<pre>
-npm install -g grunt-cli
-</pre>
+
+	npm install -g grunt-cli
+
 </li>
 <li>
 Rename the following files in your Magento root directory:
@@ -43,11 +43,10 @@ Rename the following files in your Magento root directory:
 
 Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
-<pre>
-cd &lt;your_Magento_instance_directory&gt;
-npm install
-npm update
-</pre>
+	cd &lt;your_Magento_instance_directory&gt;
+  npm install
+  npm update
+  
 </li>
 
 <li>
