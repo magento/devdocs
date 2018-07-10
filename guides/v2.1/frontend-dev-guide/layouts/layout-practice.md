@@ -20,6 +20,7 @@ In their Orange theme, OrangeCo wants to transform the header links block to a d
 <img src="{{ site.baseurl }}/common/images/layout_transform21.png">
 </div>
 
+
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.
 
 The Orange theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links look like following:
@@ -232,12 +233,13 @@ Now the customer links look like following:
 <img src="{{ site.baseurl }}/common/images/layout_screen221.png">
 </div>
 
+
 Clicking the **Change** button toggles the `active` CSS class:
 
 To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
-* redundant elements are hidden with CSS
-* the `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
+* Redundant elements are hidden with CSS
+* The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
 
 `app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
 
