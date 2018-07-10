@@ -28,9 +28,9 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
 </li>
 <li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br>
-<pre>
+{% highlight HTML%}
 npm install -g grunt-cli
-</pre>
+{% endhighlight HTML%}
 </li>
 <li>
 Rename the following files in your Magento root directory:
@@ -43,16 +43,16 @@ Rename the following files in your Magento root directory:
 
 Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
-<pre>
+{% highlight HTML%}
 cd &lt;your_Magento_instance_directory&gt;
 npm install
 npm update
-</pre>
+{% endhighlight HTML%}
 </li>
 
 <li>
 Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/themes.js</code> file, add your theme to <code>module.exports</code> like following:
-<pre>
+{% highlight js%}
 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.exports = {
     ...
     &lt;theme&gt;: {
@@ -66,7 +66,7 @@ Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endgl
         dsl: 'less'
     ...
     },
-</pre>
+{% endhighlight js%}
 
 Where the following notation is used:
 <ul>
@@ -85,7 +85,6 @@ Where the following notation is used:
 </li>
 <li id="livereload">
 (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/" target="_blank">LiveReload extension</a> in your browser.
-
 </li>
 </ol>
 
