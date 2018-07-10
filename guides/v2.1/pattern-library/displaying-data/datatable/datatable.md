@@ -323,7 +323,7 @@ Views can be named or deleted by clicking an edit icon. Refer to "Adding a custo
 ## Filters {#filters}
 Filters allow users to customize the display of information in an associated data-table. By entering desired parameters (for example, a date range) in the available filter input sections table returns a modified view, making visible only the records meeting the user-determined criteria.
 
-<h3>Advanced Filters</h3>
+### Advanced Filters
 To access the Advanced Filters the user may click/tap the "Filters" button found in the table controls area. When activated, the button transforms into a tab and displays the available filters in a 'drawer' which opens between the table controls and the table data. The available filters are determined by the columns present in the table; therefore, if the user customizes the column visibility of the table to show some columns and hide others, the corresponding filters for these columns will display or hide in the filter 'drawer'.
 <br />
 <br />
