@@ -46,9 +46,9 @@ The service contract of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e14
 
 This directory contains:
 
-* Service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module (e.g [Catalog API][catalog-api]).
+* Service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module ([Catalog API][catalog-api]).
 
-* Data (or *entity*) interfaces in the `Api/Data` directory (e.g. [Catalog API/Data][catalog-api-data]).
+* Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data]).
   Data entities* are data structures passed to and returned from service interfaces.
   
   Files in the data directory contain `get()` and `set()` methods for entries in the entity table and extension attributes.
@@ -80,5 +80,5 @@ However, if the client code uses the interface definition only, no class change 
 
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
 
-[catalog-api]: {{ site.mage2000url }}app/code/Magento/Customer/Api
-[catalog-api-data]: {{ site.mage2000url }}app/code/Magento/Customer/Api/Data
+[catalog-api]: {{site.mage2000url}}app/code/Magento/Customer/Api
+[catalog-api-data]: {{site.mage2000url}}app/code/Magento/Customer/Api/Data

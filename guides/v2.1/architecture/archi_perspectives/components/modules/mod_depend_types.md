@@ -56,8 +56,7 @@ You can build dependencies between the modules belonging to different layers.
 A module belonging to the Magento Framework can be used in the application layer by an explicit dependency.
 
 {:.bs-callout .bs-callout-tip} 
-In this case, using interfaces is preferable to using classes.
-You can build dependencies between classes in the Magento Framework even if they belong to different modules.
+In this case, using interfaces is preferable to using classes. You can build dependencies between classes in the Magento Framework even if they belong to different modules.
 
 
 ## Dependencies in the application layer {#m2devgde-moddep-app-layer}

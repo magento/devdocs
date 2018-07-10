@@ -8,7 +8,7 @@ github_link: architecture/frontend_custom_strategies.md
 
 ## Overview {#m2arch-whatis-overview}
 
-The Magento {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} is designed to optimize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} customization, with highly extensible <i>themes</i> being the central customization mechanism.
+The Magento {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} is designed to optimize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} customization, with highly extensible *themes* being the central customization mechanism.
 
 Merchants are encouraged to use Magento components and themes to extend and transform the appearance of their storefronts.
 
@@ -18,7 +18,7 @@ Magento provides several tools to help you significantly jumpstart the storefron
 
 * Magento Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %}
 
-[Magento UI Library Components]({{page.baseurl}}/ui-components/ui-component.html)
+* [Magento UI Library Components]({{page.baseurl}}/ui-components/ui-component.html)
 
 * [Magento Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html)
 

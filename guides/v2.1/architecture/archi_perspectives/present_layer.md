@@ -9,24 +9,17 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 
 ## What is the Magento Presentation layer?
 
-When you interact with the Magento web interface, you are interacting with *presentation layer* code.
+When you interact with the Magento web interface, you are interacting with *presentation layer* code. The presentation layer is the top layer of the four layers (presentation, service, domain, and persistence layers) described by the Magento architecture.
 
-The presentation layer contains both view elements **(layouts, blocks, templates)** and **controllers**, which process commands to and from the user interface.
-Presentation code controls web user interaction with the product and its appearance.
+The presentation layer contains both view elements **(layouts, blocks, templates)** and **controllers**, which process commands to and from the user interface. Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files to modify elements of the presentation layer. Basiccally, the presentation layer represents the customization of HTML, CSS, JavaScript, Magento UI, PHTML files, and block files.
 
-You can extensively customize the user interface by using HTML, CSS, and {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files to modify elements of the presentation layer.
-Presentation layer represents customization of HTML,CSS,Javascript,Magento UI,PHTML file and Block file.
 
-Presentation layer is Top layer among four layer(Presentational, Service, Domain, and Persistence layer) described by Magento architecture.
 
 ## Who uses the Presentation layer?
 
-Three types of Magento users interact with presentation layer code.
-Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user.
-Types of users and their associated areas include:
+Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Three types of Magento users interact with presentation layer code:
 
-* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation.
-These users work within the (`frontend`) area.
+* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the (`frontend`) area.
 
 * **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the front end.
 
@@ -34,7 +27,7 @@ These users work within the (`frontend`) area.
 
 ## Presentation layer components
 
-One helpful way of understanding the Magento presentation layer components is by examining Magento <i>themes</i>.
+One helpful way of understanding the Magento presentation layer components is by examining Magento *themes*.
 Magento themes organize both the visual aspect of your storefront and certain aspects of product behavior.
 
 Each {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience.
@@ -62,8 +55,7 @@ Presentation code typically calls service contracts, particularly for a storefro
 However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the *business logic* layer.
 For example, the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI screens are often tightly linked to a specific implementation and are not generic across implementations.
 
-The View layer calls code from the Model to get information about the state of the application (for example, the price of a product).
-Typically, the way it accesses the Model is through service contracts.
+The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
 
 ## Presentation layer flow
 
