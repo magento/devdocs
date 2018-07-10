@@ -12,27 +12,27 @@ mftf-release: 2.3.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The MFTF allows you to extend test components defined in XML files such as [tests](./test.html), [data](data.md), and [action groups](./test/action-groups.html). You can create or update the actions and hooks included. It is useful for supporting rapid test creation for extensions and customizations.
+There are cases when you need to create a bunch of tests that are very similar to each other.
+For example, only one or to parameters (for example, URL) must vary between tests.
+To avoid copy-pasting and save some time the Magento Functional Testing Framework (MFTF) enables you to extend the test components such as [test], [data], and [action group].
+You can create or update any component of the parent body in your new test/action group/entity.
 
-You can specify needed variations for an existing object to produce a copy of the original that incorporates the specified changes (the "delta").
+* A test starting with `<test name="SampleTest" extends="ParentTest">` creates a new test `SampleTest` that takes body of existing test `ParentTest` and adds to it the body of `SampleTest`.
+* An action group starting with `<actionGroup name="SampleActionGroup" extends="ParentActionGroup">` creates a new action group based on the `ParentActionGroup` but with the changes specified in `SampleActionGroup`.
+* An entity starting with `<entity name="SampleEntity" extends="ParentEntity">` creates an entity `SampleEntity` that is equivalent to merging the `SampleEntity` with the `ParentEntity`.
 
-**Unlike merging the original test or action group will still exist when tests are generated.**
+Specify needed variations for a parent object and produce a copy of the original that incorporates the specified changes (the "delta").
 
-Extending operates at the XML attribute level, triggered by our parser when an entity contains the `extends` attribute.
+Unlike merging the parent test (or action group) will still exist after the test generation.
+{:bs-callout bs-callout-info}
 
-For example:
-* A test with `<test name="SampleTest" extends"ParentTest">` will create a second test with the changes listed in `SampleTest`.
-* An action group with `<actionGroup name="SampleActionGroup" extends"ParentActionGroup">` will create a second Action Group with the changes listed in `SampleActionGroup`.
-* An entity with `<entity name="SampleEntity" extends"ParentEntity">` will create a second Entity with the changes listed in `SampleEntity`.
-
-
-## Extend Tests
+## Extending tests
 
 ### Update a test step
 
-**Example**
+__Use case__: Create two similar tests with different `url` in a test step.
 
-Create another test in which the url is changed for a stepKey
+> Test with "extends":
 
 ```xml
 <tests >
@@ -53,7 +53,7 @@ Create another test in which the url is changed for a stepKey
 </tests>
 ```
 
-The result corresponds to both tests as listed below:
+> Test without "extends":
 
 ```xml
 <tests >
@@ -78,7 +78,12 @@ The result corresponds to both tests as listed below:
 
 ### Add a test step
 
-**Use case**: Add `checkOption` before `click` (`stepKey="clickLogin"`) and add `seeInCurrentUrl` after the `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file):
+__Use case__: Create two similar tests where the second test contains two more steps:
+
+* `checkOption` before `click` (`stepKey="clickLogin"`)
+* `seeInCurrentUrl` after `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file)
+
+> Tests with "extends":
 
 ```xml
 <tests >
@@ -96,7 +101,7 @@ The result corresponds to both tests as listed below:
 </tests>
 ```
 
-The result corresponds to both tests as listed below:
+> Tests without "extends":
 
 ```xml
 <tests >
@@ -119,9 +124,14 @@ The result corresponds to both tests as listed below:
 </tests>
 ```
 
-### Update a test hook
+### Update a test annotation
 
-**Use case**: In the `Before` hook add `checkOption` before `click` (`stepKey="clickLogin"`) and add `seeInCurrentUrl` after the `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file):
+__Use case__: Create two similar tests where the second one contains two more actions in the `before` hook:
+
+* `checkOption` before `click` (`stepKey="clickLogin"`)
+* `seeInCurrentUrl` after `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file)
+
+> Tests with "extends":
 
 ```xml
 <tests >
@@ -143,7 +153,7 @@ The result corresponds to both tests as listed below:
 </tests>
 ```
 
-The result corresponds to both tests as listed below:
+> Tests without "extends":
 
 ```xml
 <tests >
@@ -170,16 +180,16 @@ The result corresponds to both tests as listed below:
 </tests>
 ```
 
+## Extending action groups
 
-
-## Extend action groups
-
-Use [action group](./test/action-groups.html) extensions to add or update [actions](./test/actions.html) in your module.
+Extend an [action group] to add or update [actions] in your module.
 
 ### Update an action
 
-**Use case**: The `CountProductA` test is only able to be used to count that product currently.
-Modify the action group to use another product's selector:
+__Use case__: The `CountProductA` test counts the particular product.
+Modify the action group to use another product.
+
+> Action groups with "extends":
 
 ```xml
 <actionGroups>
@@ -200,7 +210,7 @@ Modify the action group to use another product's selector:
 </actionGroups>
 ```
 
-The new action groups correspond to:
+> Action groups without "extends":
 
 ```xml
 <actionGroups>
@@ -230,8 +240,10 @@ The new action groups correspond to:
 
 ### Add an action
 
-**Use case**: The `grabProducts` action group needs count the products grabbed after
-Modify the action group to add steps for counting the object:
+__Use case__: The `GetProductCount` action group grabs the count of products.
+Add a new test `VerifyProductCount` that will assert the count of products:
+
+> Action groups with "extends":
 
 ```xml
 <actionGroups>
@@ -254,7 +266,7 @@ Modify the action group to add steps for counting the object:
 </actionGroups>
 ```
 
-The new action groups correspond to:
+> Action groups without "extends":
 
 ```xml
 <actionGroups>
@@ -279,13 +291,15 @@ The new action groups correspond to:
 </actionGroups>
 ```
 
-## Extend Data
+## Extending data
+
+Extend data to reuse entities in your module.
 
 ### Update a data entry
 
-**Example**
+__Use case__: Create the `DivPanelGreen` entity that is similar to the `DivPanel` entity but of a different color.
 
-Create another entity in which one value has been changed for a color.
+> Entities with "extends":
 
 ```xml
 <entities >
@@ -300,7 +314,7 @@ Create another entity in which one value has been changed for a color.
 </entities>
 ```
 
-The result corresponds to both entities as listed below:
+> Entities without "extends":
 
 ```xml
 <entities >
@@ -319,9 +333,10 @@ The result corresponds to both entities as listed below:
 
 ### Add a data entry
 
-**Example**
+__Use case__: Create the `DivPanelGreen` entity that is similar to the `DivPanel` entity but with a specific panel color.
 
-Add another attribute for specific panel color
+
+> Entities with "extends":
 
 ```xml
 <entities >
@@ -337,7 +352,7 @@ Add another attribute for specific panel color
 </entities>
 ```
 
-The result corresponds to both entities as listed below:
+> Entities without "extends":
 
 ```xml
 <entities >
@@ -354,3 +369,9 @@ The result corresponds to both entities as listed below:
     </entity>
 </entities>
 ```
+
+<!-- Link definitions -->
+[test]: ./test.html
+[data]: ./data.html
+[action group]: ./test/action-groups.html
+[actions]: ./test/actions.html
