@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 10_Community Edition
 title: Magento Open Source modules

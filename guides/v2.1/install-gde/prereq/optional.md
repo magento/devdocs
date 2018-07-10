@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Optional software
@@ -145,7 +144,7 @@ To install phpmyadmin on Ubuntu:
 
 		http://<web server host or IP>/phpmyadmin
 
-4.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
+4.	When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.
 
 <h2 id="install-optional-phpmyadmin-centos">Install phpmyadmin on CentOS</h2>
 To install phpmyadmin on CentOS:
@@ -192,14 +191,14 @@ To install phpmyadmin on CentOS:
 
 		http://<web server host or IP>/phpmyadmin
 
-8.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
+8.	When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.
 
 
 #### Related topics:
 
-*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)
+*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

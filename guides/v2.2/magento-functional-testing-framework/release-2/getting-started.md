@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Getting started
 version: 2.2
@@ -16,7 +15,7 @@ _This topic was updated after {{page.mftf-release}} MFTF release._
 
 Make sure that you've installed and set up the following software:
 
-* [PHP version supported by Magento instance under test]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+* [PHP version supported by Magento instance under test]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
 * [Composer v1.3.x+](https://getcomposer.org/download/)
 * [Java v1.8.x+](https://www.java.com/en/download/)
 * [Selenium Server Standalone v3.6.0+](#selenium-server)
@@ -78,7 +77,7 @@ composer install
 
 ### Step 3. Build the project
 
-In `magento2/dev/tests/acceptance`, run the following command:
+In _magento2/dev/tests/acceptance_, run the following command:
 
 ```bash
 vendor/bin/robo build:project
@@ -91,7 +90,7 @@ When added, you should be able to run the `robo`, `codecept`, and `phpunit` comm
 
 ### Step 4. Edit environment settings
 
-In the `magento2/dev/tests/acceptance` directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
+In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
@@ -99,7 +98,7 @@ Example: `MAGENTO_BASE_URL=http://magento.test`
 * `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
 Example: `MAGENTO_BACKEND_NAME=admin`
 
-* `MAGENTO_ADMIN_USERNAME` must contain the user name required for authorization in the Admin area.
+* `MAGENTO_ADMIN_USERNAME` must contain the username required for authorization in the Admin area.
 Example: `MAGENTO_ADMIN_USERNAME=admin`
 
 * `MAGENTO_ADMIN_PASSWORD` must contain the user password required for authorization in the Admin area.
@@ -126,7 +125,7 @@ http://127.0.0.1:4444/wd/hub
 
 ### Step 5. Make `command.php` visible in the Magento testing environment
 
-In your Magento installation, navigate to the `magento2/dev/tests/acceptance` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
 
 ```bash
 cp .htaccess.sample .htaccess

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 title: Performance Configuration Best Practices
 version: 2.2
@@ -168,7 +167,7 @@ Magento 2 provides many settings and tools that can be used and activated that i
 
 ### Cron Jobs
 
-All asynchronous operations in Magento 2 Open Source are performed using of Linux cron. See [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html) to configure it correctly.
+All asynchronous operations in Magento 2 Open Source are performed using of Linux cron. See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) to configure it correctly.
 
 ### Indexers
 
@@ -247,7 +246,7 @@ Through preprocessing/compilation of DI instructions, Magento
 
 After compilation completes, we recommend running the following command:
 
-`composer dump-autoload -o`
+`composer dump-autoload -o --apcu`
 
 This command allows composer to rebuild the mapping to project files so that they load faster.
 
@@ -335,7 +334,7 @@ A slave database serves as a full replica of your main database, or one of your 
 After splitting your master database and setting slave databases, Magento automatically regulates connections to a specific DB, making decisions based on the type of request (POST, PUT, GET, etc) and data resource. If Magento or its extensions performs write operations on a GET request, the system automatically switches the connection from slave to master database. It works the same way with master databases: as soon as you work with a checkout-related table, the system redirects all the queries to a specific DB. Meanwhile, all catalog-related queries will go to main database.
 
 For more details on configuration and benefits of multi master/slave configuration, see
-[Split database performance solution]({{page.baseurl}}/config-guide/multi-master/multi-master.html).
+[Split database performance solution]({{ page.baseurl }}/config-guide/multi-master/multi-master.html).
 
 ### Serving media content
 

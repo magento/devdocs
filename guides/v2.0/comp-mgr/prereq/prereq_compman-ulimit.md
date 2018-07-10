@@ -1,5 +1,4 @@
 ---
-layout: default
 group: compman
 subgroup: 02_prereq
 title: Set ulimit for the web server user

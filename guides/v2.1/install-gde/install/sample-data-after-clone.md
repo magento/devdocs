@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install
 subgroup: T_SampleData
 title: Install by cloning repositories

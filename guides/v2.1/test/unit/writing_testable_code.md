@@ -1,5 +1,4 @@
 ---
-layout: default
 group: unit-testing
 title: Writing Testable Code
 contributor_name: Vinai Kopp
@@ -30,10 +29,10 @@ We strongly recommend you do *not*:
 *   Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
 *   Use the `ObjectManager` directly in production code.  
 
-There always is a better alternative, usually a [generated]({{page.baseurl}}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
+There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This rule applies only to production code. When writing <a href="{{page.baseurl}}/test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
+  <p>This rule applies only to production code. When writing <a href="{{ page.baseurl }}/test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
 </div>
 
 ### Collaborator classes
@@ -42,7 +41,7 @@ Whenever an external class property, class constant, or a class method is used i
 
 {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
 
-Collaborator instances should be passed into the class using [constructor injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html#dep-inj-preview-cons).
+Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dep-inj-preview-cons).
 
 ### The environment (file system, time, global variables)
 
@@ -87,7 +86,7 @@ interface RequestInterface
 }
 {%endhighlight%}
 
-Let's also assume there is a concrete implementation `HttpRequest` that that also has a public method `getParams()` in addition to the two interface methods.
+Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
 {%highlight php startinline=true %}
 class HttpRequest implements RequestInterface

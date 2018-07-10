@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: List of REST endpoints by module
@@ -13,11 +12,11 @@ functional_areas:
 
 ## List of REST endpoints for {{site.data.var.ee}} {#listee}
 
-The REST endpoints for {{site.data.var.ee}} (formerly Enterprise Edition (EE)) are available on {{site.data.var.ee}} installations only. Commerce installations automatically have access to all {{site.data.var.ce}} (formerly Community Edition (CE)) REST APIs.
+The REST endpoints for {{site.data.var.ee}} are available on {{site.data.var.ee}} installations only. Commerce installations automatically have access to all {{site.data.var.ce}} REST APIs.
 
 Additions since 2.1 are marked with a single asterisk (*).
 
-See [Integrate with B2B using REST]({{page.baseurl}}/b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
+See [Integrate with B2B using REST]({{ page.baseurl }}/b2b/integrations.html) for a list of endpoints provided with {{site.data.var.b2b}}.
 
 ### CustomerBalance
 

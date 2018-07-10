@@ -54,7 +54,7 @@
      id="text8">0..∞</text>
   <a
      id="a3925"
-     xlink:href="#data-ref"
+     xlink:href="#data-tag"
      xlink:title="zero or more &lt;data&gt; elements">
     <g
        id="g195">
@@ -299,7 +299,7 @@
      id="line106" />
   <a
      id="a3984"
-     xlink:title="that contains one of the the following nodes one or times">
+     xlink:title="that contains one of the following nodes one or times">
     <g
        id="g3959">
       <g

@@ -1,9 +1,9 @@
 ---
-layout: default
 group: graphql
 version: 2.3
 title: Define the GraphQL schema for a module
 github_link: graphql/develop/create-graphqls-file.md
+redirect_from: graphql/develop/configure-graphql-xml.html
 ---
 
 Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds GraphQl modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.
@@ -25,7 +25,7 @@ To illustrate how to configure the `schema.graphqls` file, let's suppose you hav
 
 A query definition can be one line, or it can be complex. If your module's query implements `searchCriteria`, then you must define arguments that define filters and pagination information, all of which adds complexity. However, if you expect a single result from your query, then its definition can be simple.
 
-The following example shows the `products` query. The `type` is defined as a `Query`.  The `products` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes).
+The following example shows the `products` query. The `type` is defined as a `Query`.  The `products` definitions define the keywords that are used to construct a query, as shown in [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes).
 
 ``` php
 type Query {
@@ -89,7 +89,7 @@ In a `schema.graphqls` file, the output `Interface` defines top-level attributes
 
 ### Define the output interface
 
-In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}/graphql/resolvers.html) for more information.
+In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/resolvers.html) for more information.
 
 The following example defines module-specific output attributes for the Volumizer module.
 
@@ -102,7 +102,7 @@ interface ProductInterface @typeResolver(class: "\\Path\\To\\typeResolver\\Class
 }
 ```
 
-The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{page.baseurl}}/graphql/resolvers.html) for more information.
+The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/resolvers.html) for more information.
 
 The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object might be defined as follows:
 

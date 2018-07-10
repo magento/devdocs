@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Section structure
 version: 2.2
@@ -111,7 +110,7 @@ Attributes|Type|Use|Description
 Attributes|Type|Use|Description
 ---|---|---|---
 `name`|string|required|The element name; Must be alphanumeric.
-`type`|string|required|The type of the element. Possible values: `text`, `textarea`, `input`, `button`, `checkbox`, `radio`, `checkboxset`, `radioset`, `date`, `file`, `select`, `multiselect`, `wysiwyg`, `iframe`.
+`type`|string|required|The type of the element. Possible values: `text`, `textarea`, `input`, `button`, `checkbox`, `radio`, `checkboxset`, `radioset`, `date`, `file`, `select`, `multiselect`, `wysiwyg`, `iframe`, `block`.
 `selector`|string|optional|[XPath](https://www.w3schools.com/xml/xpath_nodes.asp) or [CSS](https://www.w3schools.com/cssref/css_selectors.asp) selector of the element.
 `locatorFunction`|string|optional|[Locator function](./section/locator-functions.html) declaration to be used in lieu of a selector.
 `timeout`|string|optional|The timeout after interaction with the element (in seconds). The default is _none_.
@@ -150,6 +149,6 @@ Whenever the `signIn` button is used in a test, the MFTF will add a 30 second `w
 {% endraw %}
 
 
-<!-- Link definitioins -->
+<!-- Link definitions -->
 
 [waitForPageLoad]: test/actions.html#waitforpageload

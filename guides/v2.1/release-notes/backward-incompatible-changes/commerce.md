@@ -1,10 +1,9 @@
 ---
-layout: default
 group: release-notes
 title: Backward incompatible changes in Magento Commerce
 version: 2.1
 github_link: release-notes/backward-incompatible-changes/commerce.md
-redirect_from: guides/v2.1/release-notes/changes/ee_changes.html
+redirect_from: /guides/v2.1/release-notes/changes/ee_changes.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ee}} 2.1.
@@ -23,6 +22,10 @@ The changes are aggregated into two tables:
 <div class="bs-callout bs-callout-warning" markdown="1">
 **Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
 </div>
+
+## 2.1.12 - 2.1.13    {#releases-2_1_12-2_1_13}
+
+{% include backward-incompatible-changes/commerce/2.1.12-2.1.13.html %}
 
 ## 2.1.11 - 2.1.12    {#releases-2_1_11-2_1_12}
 
@@ -80,4 +83,4 @@ The changes are aggregated into two tables:
 
 [changes in {{site.data.var.ce}}]: ./open-source.html
 
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

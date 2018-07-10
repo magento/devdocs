@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Logical View
 title: Third-party libraries

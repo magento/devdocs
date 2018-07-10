@@ -1,7 +1,6 @@
 <!--
 
 ---
-layout: default
 group: get-started
 subgroup: 30_SOAP
 title: SOAP Overview

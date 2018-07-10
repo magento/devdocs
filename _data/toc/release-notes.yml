@@ -3,15 +3,34 @@ pages:
     - label: Introduction
       url: /release-notes/bk-release-notes.html
 
+    - label: 2.3 Release Notes
+      versions: ["2.3"]
+      children:
+        - label: 2.3.0 Alpha Installation Guide
+          url: /release-notes/2.3.0-alpha-install.html
+
+        - label: Component Status
+          url: /release-notes/component-status.html
+
+        - label: Magento Open Source 2.3.0 Alpha Release Notes
+          url: /release-notes/ReleaseNotes2.3.0OpenSource.html
+
+        - label: Magento Commerce 2.3.0 Alpha Release Notes
+          url: /release-notes/ReleaseNotes2.3.0Commerce.html
+
     - label: 2.2 Release Notes
       versions: ["2.2"]
       children:
 
+        - label: Magento Open Source 2.2.4 Release Notes
+          url: /release-notes/ReleaseNotes2.2.4CE.html
 
+        - label: Magento Commerce 2.2.4 Release Notes
+          url: /release-notes/ReleaseNotes2.2.4EE.html
 
         - label: Magento Open Source 2.2.3 Release Notes
           url: /release-notes/ReleaseNotes2.2.3CE.html
-
+       
         - label: Magento Commerce 2.2.3 Release Notes
           url: /release-notes/ReleaseNotes2.2.3EE.html
 
@@ -45,6 +64,9 @@ pages:
 
         - label: Magento Open Source 2.1.x Release Notes
           children:
+
+            - label: Magento Open Source 2.1.13 Release Notes
+              url: /release-notes/ReleaseNotes2.1.13CE.html
 
             - label: Magento Open Source 2.1.12 Release Notes
               url: /release-notes/ReleaseNotes2.1.12CE.html
@@ -87,6 +109,9 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.13 Release Notes
+              url: /release-notes/ReleaseNotes2.1.13EE.html
 
             - label: Magento Commerce 2.1.12 Release Notes
               url: /release-notes/ReleaseNotes2.1.12EE.html

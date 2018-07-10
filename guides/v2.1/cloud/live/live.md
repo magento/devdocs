@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 165_live
 title: Go live and launch
@@ -30,17 +29,16 @@ We strongly recommend testing in these environments due to the complexity of you
 
 * Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
 * Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and front end, sometimes clashing and causing errors.
-* Extensions typically are heavily tested in [Developer mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
+* Extensions typically are heavily tested in [Developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
 * Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local doesn't confirm it works perfectly in production.
 * Integration environments don't have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.
-* [Fully test]({{page.baseurl}}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets
+* [Fully test]({{ page.baseurl }}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets
 * Integration environments may only have databases populated with test data, not matching a production-like environment
 
 ## Set up Magento Security Scan Tool {#security-scan}
-The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for security risks, malware, and unauthorized access. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
+The Magento Security Scan Tool enables you to regularly monitor your store websites and receive updates for known security risks, malware, and out of date software. This is a free service available for all implementations and versions of {{site.data.var.ece}}. You access the tool through your [Magento Marketplace account](https://account.magento.com/customer/account/login){:target="_blank"}.
 
-* Monitor your sites security status
-* Increase your security monitoring with an optional SSH scan
+* Monitor your sites security status and applied security updates
 * Receive security updates and site specific notifications
 
 For detailed instructions to set up and perform scans, see the [Magento User Guide](http://docs.magento.com/m2/ee/user_guide/magento/security-scan.html){:target="_blank"}. Typically, you want to start using this tool as you enter UAT testing.
@@ -65,5 +63,5 @@ Scan results include a general label that describes whether a site passed or fai
 ## Ready to go live {#ready}
 You are ready to start go live steps:
 
-* [Go live checklist]({{page.baseurl}}/cloud/live/go-live-checklist.html)
-* [Launch steps]({{page.baseurl}}/cloud/live/launch-steps.html)
+* [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html)
+* [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

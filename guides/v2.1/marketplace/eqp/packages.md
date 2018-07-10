@@ -1,5 +1,4 @@
 ---
-layout: default
 group: marketplace-api
 title: Packages
 version: 2.1
@@ -12,7 +11,7 @@ Use this resource to initiate and manage all aspects of submitting a package to 
 
 * **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
 
-Before submitting a package, you must first [upload your files]({{page.baseurl}}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
+Before submitting a package, you must first [upload your files]({{ page.baseurl }}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
 You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
 
@@ -20,7 +19,7 @@ A successful submission results in a package being published on the [Magento Mar
 
 ## EQP review process
 
-The EQP review process inlcudes two steps:
+The EQP review process includes two steps:
 
 * In **technical review**, we preform all automated testing. This step also involves manual testing after all automated tests run.
 * In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
@@ -788,7 +787,7 @@ curl -X GET \
 <div class="bs-callout bs-callout-info" markdown="1">
 * The previous example shows one product only, but an array of products can be returned.
 * The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
-* The code, documentation, and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
+* The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 * The `eqp_status` field will indicate the current state of the package in the EQP process.
 </div>
 

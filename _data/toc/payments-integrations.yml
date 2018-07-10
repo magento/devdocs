@@ -28,6 +28,10 @@ pages:
         - label: Response Handler
           url: /payments-integrations/payment-gateway/response-handler.html
 
+        - label: Error Code Mapping
+          versions: ["2.2", "2.3"]
+          url: /payments-integrations/payment-gateway/error-code-mapper.html
+
     - label: Adding a new payment integration (payment method)
       versions: ["2.1","2.2", "2.3"]
       url: /payments-integrations/base-integration/integration-intro.html

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: reporting
 title: Data collection for advanced reporting
 version: 2.2
@@ -18,7 +17,7 @@ Data collection is declared in a configuration file `etc/analytics.xml`. It decl
 
 <div class="bs-callout bs-callout-warning" markdown="1" >
 This topic serves to provide better understanding of how data collection works.
-Any changes in configuraton files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
+Any changes in configuration files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
 </div>
 
 ## Example

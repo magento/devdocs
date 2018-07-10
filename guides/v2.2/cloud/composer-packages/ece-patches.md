@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: vendor/magento/ece-patches
 version: 2.2

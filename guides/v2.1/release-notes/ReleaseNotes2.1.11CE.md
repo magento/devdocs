@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: Magento Open Source 2.1.11 Release Notes
@@ -40,7 +39,7 @@ Look for the following highlights in this release:
 
 <!--- MAGETWO-57166 -->* **Corrected sitemap generation**. Magento no longer generates the sitemap in the wrong directory when `vhost` is connected to `/pub`. Previously, Magento generated the sitemap in the root folder instead of the pub folder. [GitHub-2802](https://github.com/magento/magento2/issues/2802)
 
-<!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be "As low as" = <the lowest price>. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
+<!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be "As low as" = <the lowest price>. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with the lowest available price.
 
 <!--- MAGETWO-58503 -->* You can now add a configurable product to your cart from the Category page. Previously, you had to review the product on the Product page before adding it to your cart. [GitHub-2574](https://github.com/magento/magento2/issues/2574), [GitHub-5850](https://github.com/magento/magento2/issues/5850), [GitHub-5882](https://github.com/magento/magento2/issues/5882), [GitHub-6572](https://github.com/magento/magento2/issues/6572), [GitHub-5558](https://github.com/magento/magento2/issues/5558), [GitHub-8470](https://github.com/magento/magento2/issues/8470)
 
@@ -94,7 +93,7 @@ Look for the following highlights in this release:
 
 
 
-<!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be could be **as low as** as the lowest price. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
+<!--- MAGETWO-71515 -->* When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be could be **as low as** as the lowest price. Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with the lowest available price.
 
 
 
@@ -438,7 +437,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl}}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 {% include install/releasenotes/ce_install_21.md %}
@@ -446,7 +445,7 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 An updated version of this toolkit is typically available several days after the patch release.
 

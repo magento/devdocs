@@ -1,5 +1,4 @@
 ---
-layout: default
 group: Contributor Guide
 subgroup: Contributor Guide
 title: Contribute to Magento DevDocs

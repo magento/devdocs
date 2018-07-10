@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: concepts
 title: The DataSource Component
@@ -80,7 +79,7 @@ But, XML is static and while that gets us the name of the data provider componen
 
 # Javascript Component Linking
 
-Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in `Magento/Ui/view/base/web/js/lib/core/element/element.js`.  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
+Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in `Magento/Ui/view/base/web/js/lib/core/element/element.js`.  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
 
 The properties Magento will parse are:
 

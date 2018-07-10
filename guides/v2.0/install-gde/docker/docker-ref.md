@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install-dock
 subgroup: 02_ref
 title: DevBox reference
@@ -63,7 +62,7 @@ To set up Docker file sharing on Windows:
 
     This tab page displays all drives that Docker currently knows about. Make sure you install Magento in a drive listed on this tab page.
 
-4.  Select the check box next to the drive in which to install Magento.
+4.  Select the checkbox next to the drive in which to install Magento.
 5.  Click **Apply**.    
 
 **Mac OS**
@@ -110,7 +109,7 @@ Use the following guidelines:
 
 <p id="devbox-download"></p>{% collapsibleh2 How to download Magento code %}
 
-This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either [Composer]({{ page.baseurl}}/install-gde/prereq/integrator_install.html) or a [compressed archive]({{ page.baseurl}}/install-gde/prereq/zip_install.html) but you don't _install_ the software.
+This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either [Composer]({{ page.baseurl }}/install-gde/prereq/integrator_install.html) or a [compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html) but you don't _install_ the software.
 
 Downloading a compressed archive has potential issues on the Mac OS, which extracts known compressed file types like `.zip` to a folder. The folder contains files that have to be copied in a particular way; otherwise, the Magento DevBox doesn't perform properly.
 
@@ -185,12 +184,12 @@ For new installations, you have the option to install {{site.data.var.ce}} or {{
 
 **Optional sample data** Optional sample data provides a storefront based on the Luma theme outfitted with products, categories, customer registration, and so on. It functions just like a Magento storefront and you can manipulate prices, inventory, and promotional pricing rules using the Magento Admin.
 
-Select the check box to install optional sample data. This option increases your installation time by a few minutes.
+Select the checkbox to install optional sample data. This option increases your installation time by a few minutes.
 
 #### Access Keys
 Enter your Magento public and private authentication keys in the provided fields.
 
-Click **Take Me to My Access Keys** to log in to `magento.com` and get or generate [authentication keys]({{ page.baseurl}}/install-gde/prereq/connect-auth.html).
+Click **Take Me to My Access Keys** to log in to `magento.com` and get or generate [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
 {% endcollapsibleh2 %}
 
@@ -211,7 +210,7 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Store Admin Username</td>
-        <td>Enter a user name for the Magento Admin, the management application for your stores.</td>
+        <td>Enter a username for the Magento Admin, the management application for your stores.</td>
     </tr>
     <tr>
         <td>Store Admin Password</td>
@@ -219,12 +218,12 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Authentication Key Directory</td>
-        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> check box if your keys are stored in the specified directory.</li></ul></td>
+        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> checkbox if your keys are stored in the specified directory.</li></ul></td>
     </tr>
 
     <tr>
         <td>Environment configuration</td>
-        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl}}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for {{site.data.var.ce}})</li><li><a href="{{page.baseurl}}/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl}}/config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
+        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for {{site.data.var.ce}})</li><li><a href="{{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
     </tr>
 </tbody>
 </table>
@@ -241,7 +240,7 @@ To provide you more control over your Magento installation, we enable you to cho
         </tr>
     <tr>
         <td>Store Admin Username</td>
-        <td>Enter a user name for the Magento Admin, the management application for your stores.</td>
+        <td>Enter a username for the Magento Admin, the management application for your stores.</td>
     </tr>
     <tr>
         <td>Store Admin Password</td>
@@ -249,12 +248,12 @@ To provide you more control over your Magento installation, we enable you to cho
     </tr>
     <tr>
         <td>Authentication Key Directory</td>
-        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> check box if your keys are stored in the specified directory.</li></ul></td>
+        <td><p>Directory used to store your Magento authentication keys. From the <strong>Composer Directory</strong> list, click either of the following:</p> <ul><li><strong>Automatically generate</strong>: Allow Magento to create a directory for you.</li><li><strong>Use existing directory</strong>: If your authentication keys are already located in a directory on your laptop, specify its location relative to your home directory. Select the <strong>Use Access Keys from Composer directory?</strong> checkbox if your keys are stored in the specified directory.</li></ul></td>
     </tr>
 
     <tr>
         <td>Environment configuration</td>
-        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl}}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for {{site.data.var.ce}})</li><li><a href="http://devdocs.magento.com/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl}}/config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
+        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for {{site.data.var.ce}})</li><li><a href="http://devdocs.magento.com/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
     </tr>
 </tbody>
 </table>
@@ -284,7 +283,7 @@ The following DevBox scripts and configuration files are located in the root fol
     You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services. You can do the following:
 
     *   To set static listen ports that don't change every time you restart a container, see [Set static listen ports](#devbox-static-port) _before_ you run `m2devbox-init.[bat|sh]`
-    *   To find the listen ports currently being used, see [Stop, start, restart, and view port mappings]({{ page.baseurl}}/install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart).
+    *   To find the listen ports currently being used, see [Stop, start, restart, and view port mappings]({{ page.baseurl }}/install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart).
 
 *   `docker-compose.yml` DevBox configuration file.
 
@@ -323,4 +322,4 @@ To set static listen ports:
 4.  Save your changes to `docker-compose.yml` and exit the text editor.
 
 #### Next step
-[PhpStorm prerequisites]({{ page.baseurl}}/install-gde/docker/docker-phpstorm-prereq.html)
+[PhpStorm prerequisites]({{ page.baseurl }}/install-gde/docker/docker-phpstorm-prereq.html)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 500_log
 title: Example&mdash;logging database activity

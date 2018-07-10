@@ -71,3 +71,12 @@ pages:
 
     - label: Third-party libraries
       url: /architecture/archi_perspectives/third-party-libs.html
+
+    - label: GDPR compliance
+      versions: ["2.1", "2.2", "2.3"]
+      children:
+        - label: Magento 2.x
+          url:  /architecture/gdpr/magento-2x.html
+
+        - label: Magento 1.x
+          url:  /architecture/gdpr/magento-1x.html

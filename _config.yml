@@ -9,6 +9,7 @@ baseurl: ""
 # url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
 # twitter_username: magento
 # github_username:  magento
+theme: devdocs
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
@@ -25,11 +26,14 @@ versions:
       name: "2.2"
       url: /guides/v2.2/
    -
-      name: "2.3 Pre-release"
+      name: "2.3"
       url: /guides/v2.3/
 
 # GitHub variables
-github: "https://github.com/magento/devdocs/tree/develop/guides/"
+github_repo: "https://github.com/magento/devdocs/"
+github_files: "https://github.com/magento/devdocs/blob/develop/"
+github_link: true
+feedback_link: true
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
@@ -73,13 +77,23 @@ plugins:
 
 
 defaults:
+
   -
     scope:
       path: ""
+    values:
+      layout: default
+      guide_version: "2.2"
+  -
+    scope:
+      path: "guides/m1x"
+    values:
+      layout: null
+  -
+    scope:
       type: videos
     values:
       layout: video
-      guide_version: "2.2"
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 

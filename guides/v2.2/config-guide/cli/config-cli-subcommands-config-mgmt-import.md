@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 04_CLI
 title: Import data from configuration files
@@ -18,7 +17,7 @@ functional_areas:
 
 {% include config/cli-intro.md %}
 
-When you set up a production system using the Magento 2.2 [pipeline deployment model]({{ page.baseurl}}/config-guide/deployment/pipeline/), you must _import_ configuration settings from `config.php` and `env.php` into the database.
+When you set up a production system using the Magento 2.2 [pipeline deployment model]({{ page.baseurl }}/config-guide/deployment/pipeline/), you must _import_ configuration settings from `config.php` and `env.php` into the database.
 These settings include configuration paths and values, websites, stores, store views, and themes.
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
@@ -126,5 +125,5 @@ Full example:
 </div>
 
 #### For more information
-*   [Deployment general overview]({{ page.baseurl}}/config-guide/deployment/pipeline/)
-*   [`bin/magento app:config:dump`]({{ page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
+*   [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
+*   [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)

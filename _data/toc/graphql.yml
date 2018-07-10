@@ -10,12 +10,12 @@ pages:
         - label: GraphQL request headers
           url: /graphql/send-request.html
 
-        - label: Perform a search
+        - label: Searches and pagination
           url: /graphql/search-pagination.html
 
     - label: Development
       children:
-        - label: Configure the GraphQL schema for a module
+        - label: Define the GraphQL schema for a module
           url: /graphql/develop/create-graphqls-file.html
 
         - label: Resolvers
@@ -41,22 +41,22 @@ pages:
             - label: CustomizableOptionInterface
               url: /graphql/reference/customizable-option-interface.html
 
-            - label: Bundle product endpoint
+            - label: BundleProduct endpoint
               url: /graphql/reference/bundle-product.html
 
-            - label: Categories endpoint
+            - label: Category endpoint
               url: /graphql/reference/categories.html
 
-            - label: Configurable product endpoint
+            - label: ConfigurableProduct endpoint
               url: /graphql/reference/configurable-product.html
 
-            - label: Downloadable product endpoint
+            - label: DownloadableProduct endpoint
               url: /graphql/reference/downloadable-product.html
 
-            - label: Gift card product endpoint
+            - label: GiftCardProduct endpoint
               url: /graphql/reference/gift-card-product.html
 
-            - label: Grouped product endpoint
+            - label: GroupedProduct endpoint
               url: /graphql/reference/grouped-product.html
 
         - label: Other objects
@@ -67,5 +67,5 @@ pages:
             - label: Customer endpoint
               url: /graphql/reference/customer.html
 
-            - label: urlResolver service
+            - label: urlResolver endpoint
               url: /graphql/reference/url-resolver.html

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 title: Catalog module
 version: 2.0

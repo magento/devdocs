@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 045_pipeline
 title: Examples

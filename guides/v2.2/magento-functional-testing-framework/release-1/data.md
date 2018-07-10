@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Input testing data in the Magento Functional Testing Framework
 version: 2.2
@@ -7,8 +6,8 @@ github_link: magento-functional-testing-framework/release-1/data.md
 functional_areas:
  - Testing
 redirect_from:
-    - guides/v2.2/magento-functional-testing-framework/data.html
-    - guides/v2.2/magento-functional-testing-framework/1.0/data.html
+ - /guides/v2.2/magento-functional-testing-framework/data.html
+ - /guides/v2.2/magento-functional-testing-framework/1.0/data.html
 mftf-release: 1.0.0
 ---
 
@@ -167,7 +166,7 @@ type|string|optional|Node containing the exact name of Entity type. Used later t
 
 `<entity>` may contain one or more [`<data`], [`<var>`], [`<required-entities>`], [`<array>`] elements in any sequence.
 
-### data {#data-ref}
+### data {#data-tag}
 
 Element containing Data/Value pair.
 
@@ -237,7 +236,7 @@ Individual piece of data to be passed in as part of the parent array type.
 
 <!-- Anchors -->
 
-[`<data`]: #data-ref
+[`<data`]: #data-tag
 [`<var>`]: #var
 [`<required-entities>`]: #required-entity
 [`<array>`]: #array

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_cli
 title: Uninstall themes Composer packages
 version: 2.1
@@ -18,7 +17,7 @@ Before you use this command, you must know the relative path to your theme. Them
 
 For example, the path to the Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} provided with Magento 2 is `frontend/Magento/luma`.
 
-For more information about themes, see <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.
+For more information about themes, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.
 
 <h2 id="instgde-install-uninst-theme-over">Overview of uninstalling themes</h2>
 This section discusses how to uninstall one or more themes, optionally including the themes' code from the file system. You can create backups first so you can restore the data at a later time.
@@ -28,11 +27,11 @@ This command uninstalls *only* themes that are specified in `composer.json`; in 
 *	Updating the `parent` node information in `theme.xml` to remove references to the theme.
 *	Removing theme code from the file system.
 
-	<a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.
+	<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
 Command usage:
@@ -43,7 +42,7 @@ where
 
 *	`{theme path}` is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is `frontend/Magento/blank`.
 *	`--backup-code` backs up the Magento 2 codebase as discussed in the paragraphs that follow.
-*	`--clear-static-content` cleans generated <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files</a>, which is necessary to cause static view files to display properly.
+*	`--clear-static-content` cleans generated <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files</a>, which is necessary to cause static view files to display properly.
 
 The command performs the following tasks:
 
@@ -59,13 +58,13 @@ The command performs the following tasks:
 
 	The backup file name is `var/backups/<timestamp>_filesystem.tgz`
 
-	You can restore backups at any time using the <a href="{{page.baseurl}}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+	You can restore backups at any time using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
 8.	Removes themes from the `theme` database table.
 9.	Remove themes from code base using `composer remove`.
 10.	Cleans the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 11.	Cleans generated classes
-12.	If `--clear-static-content` is specified, cleans <a href="{{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
+12.	If `--clear-static-content` is specified, cleans <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
 
 For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:
 

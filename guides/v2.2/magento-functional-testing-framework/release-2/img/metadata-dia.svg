@@ -49,8 +49,8 @@
      inkscape:current-layer="svg318" />
   <a
      id="a4301"
-     xlink:href="#field-tag"
-     xlink:title="zero or more &lt;field&gt; elements">
+     href="#field-tag"
+     title="zero or more &lt;field&gt; elements">
     <g
        id="g417">
       <rect
@@ -81,8 +81,8 @@
   </a>
   <a
      id="a4308"
-     xlink:title="zero or more &lt;array&gt; elements"
-     xlink:href="#array-tag">
+     title="zero or more &lt;array&gt; elements"
+     href="#array-tag">
     <g
        id="g442">
       <rect
@@ -148,8 +148,8 @@
      id="line48" />
   <a
      id="a4318"
-     xlink:href="#object-tag"
-     xlink:title="zero or more &lt;object&gt; elements">
+     href="#object-tag"
+     title="zero or more &lt;object&gt; elements">
     <g
        id="g452">
       <rect
@@ -222,7 +222,7 @@
      id="line54" />
   <a
      id="a4284"
-     xlink:title="that may contain zero or more times one of the following nodes">
+     title="that may contain zero or more times one of the following nodes">
     <g
        id="g433">
       <path
@@ -326,8 +326,8 @@
      id="line84" />
   <a
      id="a4227"
-     xlink:title="zero or more &lt;field&gt; elements"
-     xlink:href="#field-tag">
+     title="zero or more &lt;field&gt; elements"
+     href="#field-tag">
     <g
        id="g387">
       <rect
@@ -358,8 +358,8 @@
   </a>
   <a
      id="a4262"
-     xlink:title="zero or one &lt;value&gt; element"
-     xlink:href="#value-tag">
+     title="zero or one &lt;value&gt; element"
+     href="#value-tag">
     <g
        id="g466">
       <rect
@@ -378,8 +378,8 @@
   </a>
   <a
      id="a4329"
-     xlink:title="zero or more &lt;object&gt; elements"
-     xlink:href="#object-tag">
+     title="zero or more &lt;object&gt; elements"
+     href="#object-tag">
     <g
        id="g462">
       <rect
@@ -459,7 +459,7 @@
      id="line146" />
   <a
      id="a4267"
-     xlink:title="that may contain zero or more times one of the following nodes">
+     title="that may contain zero or more times one of the following nodes">
     <g
        id="g482">
       <path
@@ -563,8 +563,8 @@
      id="line176" />
   <a
      id="a4234"
-     xlink:title="zero or more &lt;array&gt; elements"
-     xlink:href="#array-tag">
+     title="zero or more &lt;array&gt; elements"
+     href="#array-tag">
     <g
        id="g395">
       <rect
@@ -609,8 +609,8 @@
   </a>
   <a
      id="a4243"
-     xlink:href="#header-tag"
-     xlink:title="zero or more &lt;header&gt; elements">
+     href="#header-tag"
+     title="zero or more &lt;header&gt; elements">
     <g
        id="g400">
       <rect
@@ -641,8 +641,8 @@
      id="text196">0..∞</text>
   <a
      id="a4249"
-     xlink:title="zero or more &lt;param&gt; elements"
-     xlink:href="#param-tag">
+     title="zero or more &lt;param&gt; elements"
+     href="#param-tag">
     <g
        id="g406">
       <rect
@@ -673,8 +673,8 @@
   </a>
   <a
      id="a4216"
-     xlink:href="#object-tag"
-     xlink:title="zero or more &lt;object&gt; elements">
+     href="#object-tag"
+     title="zero or more &lt;object&gt; elements">
     <g
        id="g381">
       <g
@@ -757,8 +757,8 @@
      id="line242" />
   <a
      id="a4256"
-     xlink:title="one &lt;contentType&gt; element"
-     xlink:href="#contenttype-tag">
+     title="one &lt;contentType&gt; element"
+     href="#contentType-tag">
     <g
        id="g411">
       <rect
@@ -798,7 +798,7 @@
      id="line248" />
   <a
      id="a4199"
-     xlink:title="that may contain zero or more times one of the following nodes">
+     title="that may contain zero or more times one of the following nodes">
     <g
        id="g371">
       <path
@@ -902,8 +902,8 @@
      id="line278" />
   <a
      id="a4190"
-     xlink:title="zero or more &lt;operation&gt; elements"
-     xlink:href="#operation-tag">
+     title="zero or more &lt;operation&gt; elements"
+     href="#operation-tag">
     <g
        id="g338">
       <rect
@@ -955,7 +955,7 @@
      id="line292" />
   <a
      id="a4180"
-     xlink:title="that contains a sequence of">
+     title="that contains a sequence of">
     <g
        id="g355">
       <path
@@ -1015,7 +1015,7 @@
      id="line308" />
   <a
      id="a484"
-     xlink:href="#operations-tag"
+     href="#operations-tag"
      xlink:arcrole="The &lt;operations&gt; element">
     <g
        id="g330">

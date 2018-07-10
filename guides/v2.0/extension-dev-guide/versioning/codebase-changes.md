@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: Versioning
 title: Codebase changes
@@ -130,7 +129,7 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | New command                                                                                          | MINOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
 | **Less variables and mixins**                               | Removed variable                                                                                     | MAJOR          |
-|                                                             | Removed {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}                                                                                        | MAJOR          |
+|                                                             | Removed mixin                                                                                         | MAJOR          |
 |                                                             | New required mixin argument                                                                          | MAJOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
 | **Message queue topics and data types**                     | Topic removed                                                                                        | MAJOR          |
@@ -138,7 +137,7 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | Consumer removed                                                                                     | MINOR          |
 |                                                             | New topic published                                                                                  | MINOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Layout handles declared by modules**                      | New {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} page handle                                                                               | MINOR          |
+| **Layout handles declared by modules**                      | New layout  page handle                                                                               | MINOR          |
 |                                                             | New container/block added to handle                                                                  | MINOR          |
 |                                                             | Removed/renamed container/block                                                                      | MAJOR          |
 |                                                             | Removed layout handle                                                                                | MAJOR          |

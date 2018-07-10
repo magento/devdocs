@@ -141,7 +141,7 @@ SOAP | `salesTransactionRepositoryV1GetList` | `salesTransactionRepositoryV1Get`
 
 Language | Does not return detailed attributes | Returns detailed attributes
 --- | --- | ---
-PHP | `CouponRepositoryInterface::getList($searchCriteria)`	| `CouponRepositoryInterface::getById($ruleId)`
+PHP | `CouponRepositoryInterface::getList($searchCriteria)`	| `CouponRepositoryInterface::getById($couponId)`
 REST | 	`/V1/coupons/search`	| `/V1/coupons/{couponId}`
 SOAP | `salesRuleCouponRepositoryV1GetList` | `salesRuleCouponRepositoryV1GetById`
 

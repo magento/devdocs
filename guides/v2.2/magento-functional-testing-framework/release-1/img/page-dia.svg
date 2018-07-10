@@ -55,7 +55,7 @@
      style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
      id="rect2" />
   <a
-     xlink:href="#section-element"
+     href="#section-element"
      id="a8">
     <rect
        x="301"
@@ -143,7 +143,7 @@
      style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
      id="rect34" />
   <a
-     xlink:href="#page-element"
+     href="#page-element"
      id="a40">
     <rect
        x="164"

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 title: Magento_SearchStaging module
 version: 2.1

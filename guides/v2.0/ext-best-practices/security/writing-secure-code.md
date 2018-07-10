@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: Security
 title: Writing secure code

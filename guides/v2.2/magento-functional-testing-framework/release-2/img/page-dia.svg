@@ -55,9 +55,9 @@
      style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1;stroke-dasharray:4,1"
      id="rect2" />
   <a
-     xlink:href="#section-tag"
+     href="#section-tag"
      id="a8"
-     xlink:title="zero or more &lt;secion&gt; elements">
+     title="zero or more &lt;secion&gt; elements">
     <rect
        x="301"
        y="25"
@@ -85,7 +85,7 @@
      id="line16" />
   <a
      id="a3770"
-     xlink:title="that contains a sequence of">
+     title="that contains a sequence of">
     <g
        id="g3768">
       <path
@@ -151,9 +151,9 @@
      style="fill:rgb(255,255,255);stroke:rgb(0,0,0);stroke-width:1"
      id="rect34" />
   <a
-     xlink:href="#page-tag"
+     href="#page-tag"
      id="a40"
-     xlink:title="one or more &lt;page&gt; elements">
+     title="one or more &lt;page&gt; elements">
     <rect
        x="164"
        y="25"
@@ -195,7 +195,7 @@
      id="line52" />
   <a
      id="a3751"
-     xlink:title="that contains a sequence of">
+     title="that contains a sequence of">
     <g
        id="g3749">
       <path
@@ -255,8 +255,8 @@
      id="line68" />
   <a
      id="a46"
-     xlink:href="#pages-tag"
-     xlink:title="Root element &lt;pages&gt;">
+     href="#pages-tag"
+     title="Root element &lt;pages&gt;">
     <g
        id="g44">
       <rect

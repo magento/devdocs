@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 15_Solr
 title: Prepare Solr for production

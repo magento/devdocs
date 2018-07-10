@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Set up a remote MySQL database connection
@@ -23,8 +22,8 @@ This topic discusses how to set up a connection from your Magento web node to a 
 ### Prerequisites
 Before you begin, you must:
 
-*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
-*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
+*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">Install MySQL server</a> on the database server 
+*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config">Create a database instance</a> on the database server
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
 ### High availability
@@ -88,20 +87,20 @@ To grant access to a database user:
 2.	Connect to the MySQL database as the `root` user.
 3.	Enter the following command:
 
-		GRANT ALL ON <local database name>.* TO <remote web node user name>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
+		GRANT ALL ON <local database name>.* TO <remote web node username>@<remote web node server ip address> IDENTIFIED BY '<database user password>';
 
 	For example,
 
 		GRANT ALL ON magento_remote.* TO dbuser@192.0.2.50 IDENTIFIED BY 'dbuserpassword';
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If your web server is clustered, enter the same command on every web server. You must use the same user name for every web server.</p>
+  <p>If your web server is clustered, enter the same command on every web server. You must use the same username for every web server.</p>
 </div>
 
 <h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
 On your web node host, enter the following command to verify the connection works:
 
-	mysql -u <local database user name> -h <database server ip address> -p
+	mysql -u <local database username> -h <database server ip address> -p
 
 If the MySQL monitor displays as follows, the database is ready for the Magento software:
 
@@ -125,16 +124,16 @@ When you install the Magento software using either the command line or Setup Wiz
 
 *	The Base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the *store address*) specifies the host name or IP address of the *web node*
 *	Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
-*	Database user name is the *local web node* database user to which you gave access
+*	Database username is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password
 *	Database name is the name of the database on the remote server
 
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/security.html">Configuring security options</a>
-*	[How to get the Magento software]({{ page.baseurl}}/install-gde/bk-install-guide.html)
+*	<a href="{{ page.baseurl }}/install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
+*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

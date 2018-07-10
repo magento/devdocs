@@ -1,5 +1,4 @@
 ---
-layout: default
 group: graphql
 title: Products endpoint
 version: 2.3
@@ -23,11 +22,11 @@ Each query attribute is defined below:
 
 Attribute |  Description
 --- | ---
-`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html) for more information.
+`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
 `filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
-`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html) for more information.
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html) for more information.
-`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html) for more information.
+`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
+`currentPage` | Specifies which page of results to return. The default value is 1. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
+`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 
 ## ProductFilterInput object {#ProductFilterInput}
@@ -41,7 +40,7 @@ filter: {
        }
 {% endhighlight %}
 
-See [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html) for more information about the operators.
+See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information about the operators.
 
 Magento processes the attribute values specified in  a `ProductFilterInput` as  simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
@@ -106,6 +105,7 @@ items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
 filters: [LayerFilter]
+sort_fields: SortFields
 {% endhighlight %}
 
 Each attribute is described below:
@@ -116,6 +116,23 @@ Attribute |  Description
 `page_info` | An object that includes the `page_info` and `currentPage` values specified in the query
 `total_count` | The number of products returned
 `filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
+`sort_fields` | An object that includes the default sort field and all available sort fields
+
+
+When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
+
+``` xml
+<type name="Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst" >
+  <arguments>
+    <argument name="additionalAttributes" xsi:type="array">
+      <item name="field_to_sort" xsi:type="string">field</item>
+      <item name="other_field_to_sort" xsi:type="string">other_field</item>
+    </argument>
+  </arguments>
+</type>
+```
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array also contains the `min_price`, `max_price`, and `category_ids`attributes.
+
 
 ## ProductInterface {#ProductInterface}
 
@@ -123,19 +140,20 @@ Any type that implements `ProductInterface` contains all the base attributes nec
 The `items` that are returned in a `ProductInterface` array can also contain attributes from resources external to the CatalogGraphQl module:
 
 * Custom and extension attributes defined in any attribute set
-* The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{page.baseurl}}/graphql/reference/customizable-option-interface.html)
+* The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
 * Product types that define their own implementation of `ProductInterface`, including
-  * [BundleProduct]({{page.baseurl}}/graphql/reference/bundle-product.html)
-  * [ConfigurableProduct]({{page.baseurl}}/graphql/reference/configurable-product.html)
-  * [DownloadableProduct]({{page.baseurl}}/graphql/reference/downloadable-product.html)
-  * [GroupedProduct]({{page.baseurl}}/graphql/reference/grouped-product.html)
+  * [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html)
+  * [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html)
+  * [DownloadableProduct]({{ page.baseurl }}/graphql/reference/downloadable-product.html)
+  * [GroupedProduct]({{ page.baseurl }}/graphql/reference/grouped-product.html)
 
 The following table defines the `ProductInterface` attributes and objects.
 
 Attribute | Data type | Description
 --- | --- | ---
 `attribute_set_id` | Int | The attribute set assigned to the product
-`categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{page.baseurl}}/graphql/reference/categories.html) for more information
+`canonical_url` | String  | The canonical URL for the product
+`categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
 `category_ids` | [Int] | An array of category IDs the product belongs to
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
@@ -194,7 +212,7 @@ The `Price` object defines the price of a product as well as any tax-related adj
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`amount` | Money | The price of the the product and its currency code. See [Money object](#Money).
+`amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
 
 ##### Money object {#Money}
@@ -308,9 +326,25 @@ Field | Type | Description
 `value_string` | String | The value for filter request variable to be used in a query
 `items_count` | Int | The number of items the filter returned
 
+## SortFields object
+
+The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
+
+Field | Type | Description
+--- | --- | ---
+`default` | String | The default sort field
+`options` | `SortField` | An array that contains all the fields you can use for sorting
+
+### SortField object
+
+Field | Type | Description
+--- | --- | ---
+`value` | String | The attribute name or code to use as the sort field
+`label` | String | The attribute's label
+
 ## Sample query
 
-You can review several general interest `products` queries at [Searches and pagination in GraphQL]({{page.baseurl}}/graphql/search-pagination.html).
+You can review several general interest `products` queries at [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html).
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 

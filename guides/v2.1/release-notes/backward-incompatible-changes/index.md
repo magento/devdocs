@@ -1,12 +1,11 @@
 ---
-layout: default
 group: release-notes
 title: Magento 2.1 backward incompatible changes
 github_link: release-notes/backward-incompatible-changes/index.md
 version: 2.1
 redirect_from: 
-    - guides/v2.1/release-notes/backward-incompatible-changes-2.1.html
-    - guides/v2.1/release-notes/backward-incompatible-changes.html
+ - /guides/v2.1/release-notes/backward-incompatible-changes-2.1.html
+ - /guides/v2.1/release-notes/backward-incompatible-changes.html
 ---
 
 ## Overview
@@ -21,18 +20,18 @@ Magento 2.1 introduces changes in several {% glossarytooltip 786086f2-622b-4007-
 
 The {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} introduces new service methods that enhance both options management and products to categories cross linking management.
 
-**Class:** [`Magento\Catalog\Api\CategoryLinkManagementInterface`]({{site.mage2100url}}app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Catalog\Api\CategoryLinkManagementInterface`]({{ site.mage2100url }}app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php){:target="_blank"}<br/>
 **Action:** Added the service method `assignProductToCategories`<br/>
 **Description:** Assign product to given categories<br/>
 
-**Class:** [`Magento\Catalog\Api\ProductCustomOptionRepositoryInterface`]({{site.mage2100url}}app/code/Magento/Catalog/Api/ProductCustomOptionRepositoryInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Catalog\Api\ProductCustomOptionRepositoryInterface`]({{ site.mage2100url }}app/code/Magento/Catalog/Api/ProductCustomOptionRepositoryInterface.php){:target="_blank"}<br/>
 **Action:** Added the service method `getProductOptions`<br/>
 **Description:** Returns product options<br/>
 
 **Action:** Added service method - `duplicate`<br/>
 **Description:** Duplicate product options<br/>
 
-**Class:** [`Catalog\Api\ProductLinkRepositoryInterface`]({{site.mage2100url}}app/code/Magento/Catalog/Api/ProductLinkRepositoryInterface.php){:target="_blank"}<br/>
+**Class:** [`Catalog\Api\ProductLinkRepositoryInterface`]({{ site.mage2100url }}app/code/Magento/Catalog/Api/ProductLinkRepositoryInterface.php){:target="_blank"}<br/>
 **Action:** Added service method - `getList`<br/>
 **Description:** Get product links list<br/>
 
@@ -40,7 +39,7 @@ The {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endgloss
 
 The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Module has been updated to allow you to manage meta titles for your CMS pages.
 
-**Class:** [`Magento\Cms\Api\Data\PageInterface`]({{site.mage2100url}}app/code/Magento/Cms/Api/Data/PageInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Cms\Api\Data\PageInterface`]({{ site.mage2100url }}app/code/Magento/Cms/Api/Data/PageInterface.php){:target="_blank"}<br/>
 **Action:** Added the getter method `getMetaTitle`<br/>
 **Description:** Add meta title field to CMS pages<br/>
 
@@ -89,7 +88,7 @@ These changes are applied only if Staging modules are installed. For {% glossary
 
 ## Persistence management
 
-In Magento's 2.1 release, a new level of persistence management has been added, the [`EntityManager`]({{site.mage2100url}}lib/internal/Magento/Framework/EntityManager/EntityManager.php){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} component. It allows decoupling from Magento's persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all "Magento 1-style" model events in a backward compatible manner.
+In Magento's 2.1 release, a new level of persistence management has been added, the [`EntityManager`]({{ site.mage2100url }}lib/internal/Magento/Framework/EntityManager/EntityManager.php){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} component. It allows decoupling from Magento's persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all "Magento 1-style" model events in a backward compatible manner.
 
 ### Data interfaces persistence
 

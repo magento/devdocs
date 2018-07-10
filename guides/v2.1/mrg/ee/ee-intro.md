@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 ee_only: true
 title: Magento Commerce modules

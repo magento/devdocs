@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: Security
 title: XSS prevention strategies
@@ -32,7 +31,7 @@ Any data you receive from an external source needs to be validated and sanitized
 
 Output processing involves sanitizing strings that may have come from external data sources before sending it to the browser to be rendered with templates. It is the main method of protecting your extension from XSS attacks.
 
-For more information, see the article on [templates XSS security]({{page.baseurl}}/frontend-dev-guide/templates/template-security.html){:target="_blank"}.
+For more information, see the article on [templates XSS security]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html){:target="_blank"}.
 
 ### Using the Escaper classes
 
@@ -46,4 +45,4 @@ Magento provides the [Escaper](https://github.com/magento/magento2/blob/2.2/lib/
 
 ### Related Topics
 
-* [Templates XSS security]({{page.baseurl}}/frontend-dev-guide/templates/template-security.html){:target="_blank"}
+* [Templates XSS security]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html){:target="_blank"}

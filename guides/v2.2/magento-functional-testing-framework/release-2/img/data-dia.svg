@@ -54,8 +54,8 @@
      id="text8">0..∞</text>
   <a
      id="a3925"
-     xlink:href="#data-ref"
-     xlink:title="zero or more &lt;data&gt; elements">
+     href="#data-tag"
+     title="zero or more &lt;data&gt; elements">
     <g
        id="g195">
       <rect
@@ -86,8 +86,8 @@
      id="text24">0..∞</text>
   <a
      id="a3935"
-     xlink:href="#var"
-     xlink:title="zero or more &lt;var&gt; elements">
+     href="#var-tag"
+     title="zero or more &lt;var&gt; elements">
     <g
        id="g204">
       <rect
@@ -118,8 +118,8 @@
      id="text40">0..∞</text>
   <a
      id="a3945"
-     xlink:href="#requiredentity-tag"
-     xlink:title="zero or more &lt;requiredEntity&gt; elements">
+     href="#requiredentity-tag"
+     title="zero or more &lt;requiredEntity&gt; elements">
     <g
        id="g213">
       <rect
@@ -150,8 +150,8 @@
      id="text56">0..∞</text>
   <a
      id="a3963"
-     xlink:href="#item"
-     xlink:title="zero or more &lt;item&gt; elements">
+     href="#item-tag"
+     title="zero or more &lt;item&gt; elements">
     <g
        id="g229">
       <rect
@@ -184,7 +184,7 @@
      id="line66" />
   <a
      id="a3968"
-     xlink:title="a sequence of the following elements">
+     title="a sequence of the following elements">
     <g
        id="g3966">
       <path
@@ -230,8 +230,8 @@
      id="text90">0..∞</text>
   <a
      id="a99"
-     xlink:href="#array"
-     xlink:title="zero or more &lt;array&gt; elements">
+     href="#array-tag"
+     title="zero or more &lt;array&gt; elements">
     <g
        id="g3864">
       <rect
@@ -299,7 +299,7 @@
      id="line106" />
   <a
      id="a3984"
-     xlink:title="that contains one of the the following nodes one or times">
+     title="that contains one of the following nodes one or times">
     <g
        id="g3959">
       <g
@@ -395,8 +395,8 @@
      id="rect138" />
   <a
      id="a231"
-     xlink:href="#entity"
-     xlink:title="zero or more &lt;entity&gt; elements">
+     href="#entity-tag"
+     title="zero or more &lt;entity&gt; elements">
     <g
        id="g186">
       <rect
@@ -427,7 +427,7 @@
      id="line150" />
   <a
      id="a3976"
-     xlink:title="that contains a sequence of">
+     title="that contains a sequence of">
     <g
        id="g3944">
       <path
@@ -468,7 +468,8 @@
      id="line166" />
   <a
      id="a104"
-     xlink:title="Root element &lt;entities&gt;">
+     title="Root element &lt;entities&gt;"
+     href="#entities-tag">
     <g
        id="g102">
       <rect

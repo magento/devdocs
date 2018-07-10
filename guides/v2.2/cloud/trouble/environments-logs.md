@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 170_trouble
 title: View logs for troubleshooting
@@ -13,7 +12,7 @@ functional_areas:
   - Configuration
 ---
 
-This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
+This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
 
 You may need to SSH into the environments to locate and view logs. To locate the SSH command to access your environments, see the following:
 
@@ -25,7 +24,7 @@ You may need to SSH into the environments to locate and view logs. To locate the
   *	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-You can also [set up log-based Slack and email notifications]({{page.baseurl}}/cloud/env/setup-notifications.html).
+You can also [set up log-based Slack and email notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html).
 </div>
 
 ## Build logs

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: REST APIs (Swagger)

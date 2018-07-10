@@ -1,12 +1,11 @@
 ---
-layout: default
 group: mftf
 title: Test
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/test.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -19,7 +18,7 @@ MFTF `<tests>` is considered a sequence of actions with associated parameters.
 Any failed [assertion](./test/assertions.html) within a test constitutes a failed test.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-`<before>`and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
+`<before>` and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
 They only apply to the `<test>` in which they are declared.
 
 The steps in `<after>` are run in both successful **and** failed test runs.
@@ -63,7 +62,7 @@ The following conventions apply to MFTF tests:
 * Each action and action group has its own identifier `<stepKey>` for reference purposes.
 * A test may have any number of [assertions](./test/assertions.html), at any point within the `<test>`.
 * The file name and `<test>` name are equal.
-* If a `<test>` is included in a `<suite>`, it **cannot be generated in isolation** to the rest of the suite's contents (see [suites](./suite.html) for details).
+* If `<test>` is included in `<suite>`, it **cannot be generated in isolation** to the rest of the contents of the suite (see [suites](./suite.html) for details).
 
 Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.
 
@@ -85,10 +84,11 @@ There are several XML elements that are used in `<tests>` in the MFTF.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`name`|string|optional| A test identifier used while merging.
+`name`|string|optional|A test identifier.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
 `insertBefore`|string|optional| StepKey reference that all test actions should be inserted before. See [merging](./merging.html) for details.
 `insertAfter`|string|optional| StepKey reference that all test actions should be inserted after. See [merging](./merging.html) for details.
+`extends`|string|optional|A name of the parent test to [extend].
 
 `<test>` may also contain [`<annotations>`](#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
 
@@ -143,3 +143,7 @@ Attribute|Type|Use
 `value`|string|optional| Value of the argument.
 
 See more about [Action groups](./test/action-groups.html).
+
+<!-- Link definitions -->
+
+[extend]: extending.html

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup:
 title: magento-cloud-configuration release 101.7.x Release Notes
@@ -48,7 +47,7 @@ We've reverted the changes to image resizing that we introduced in 2.1.6. Unfort
 
 {{site.data.var.ece}} periodically provides patch releases in components like `magento-cloud-configuration`.
 
-To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl}}/cloud/project/project-upgrade.html).
+To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
 ## Magento Commerce Release Notes
 

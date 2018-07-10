@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Troubleshooting
 version: 2.2

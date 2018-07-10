@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 title: Application
 version: 2.2
@@ -23,36 +22,40 @@ The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yam
 Use the following properties to build your application configuration file. The `name`, `type`, `disk`, and one `web` or `worker` block is required.
 
 ### `name`
-{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project.
+{{site.data.var.ee}} supports multiple applications in a project, so you need a unique name that identifies the application in the project. You must use lower case alphanumeric characters, such as `a` to `z` and `0` to `9` for the name.
 
-The `name` property can consist only of lower case alphanumeric characters, such as `a` to `z` and `0` to `9`. The name is used in the [`routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
+The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
 {% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
 
 ### `type` and `build`
-The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Supported versions:
+The `type`  and `build` properties provide information about the base container image to build and run the project.
 
-```
-type: php:7.0
+The supported `type` language is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. Specify the PHP version as follows:
+
+```yaml
+type: php:7.1
 ```
 
-The `build` property determines what happens by default when building the project. The only value currently supported is `composer`.
+The `build` property determines what happens by default when building the project. The `flavor` specifies a default set of build tasks to run. The supported flavor is `composer`.
 
-```
-type: php:7.0
+```yaml
 build:
     flavor: composer
 ```
 
 ### `access`
-Defines the user roles that can log in to the environments.
+The _access_ property indicates a minimum user role level that is allowed SSH access to the environments. The available user roles are:
 
-Possible values are:
+-  `admin`—Can change settings and execute actions in the environment. Also has _contributor_ and _viewer_ rights.
+-  `contributor`—Can push code to this environment and branch from the environment. Also has _viewer_ rights.
+-  `viewer`—Can view the environment only.
 
-```
-ssh: admin
-ssh: contributor
-ssh: viewer
+The default user role is `contributor`, which restricts the SSH access from users with only _viewer_ rights. You can change the user role to `viewer` to allow SSH access for users with only _viewer_ rights:
+
+```yaml
+access:
+    ssh: viewer
 ```
 
 ### `relationships`
@@ -92,53 +95,54 @@ Our default configuration allows the following:
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
-```
-# The configuration of app when it is exposed to the web.
+```yaml
+ # The configuration of app when it is exposed to the web.
 web:
-locations:
-"/":
-    # The public directory of the app, relative to its root.
-    root: "pub"
-    # The front-controller script to send non-static requests to.
-    passthru: "/index.php"
-    index:
-        - index.php
-    expires: -1
-    scripts: true
-    allow: false
-    rules:
-        \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+    locations:
+        "/":
+            # The public directory of the app, relative to its root.
+            root: "pub"
+            # The front-controller script to send non-static requests to.
+            passthru: "/index.php"
+            index:
+                - index.php
+            expires: -1
+            scripts: true
+            allow: false
+            rules:
+                \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
+                    allow: true
+                /robots\.txt$:
+                    allow: true
+        "/media":
+            root: "pub/media"
             allow: true
-        /robots\.txt$:
+            scripts: false
+            passthru: "/index.php"
+        "/static":
+            root: "pub/static"
             allow: true
-"/media":
-    root: "pub/media"
-    allow: true
-    scripts: false
-    passthru: "/index.php"
-"/static":
-    root: "pub/static"
-    allow: true
-    scripts: false
-    passthru: "/front-static.php"
-    rules:
-        ^/static/version\d+/(?<resource>.*)$:
-              passthru: "/static/$resource"
+            scripts: false
+            passthru: "/front-static.php"
+            rules:
+                ^/static/version\d+/(?<resource>.*)$:
+                    passthru: "/static/$resource"
 ```
 
 ### `disk`
-`disk` defines the size of the persistent disk size of the
-application in MB.
+Defines the persistent disk size of the application in MB.
+
+```yaml
+disk: 2048
+```
 
 {% include note.html type="info" content="The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
 
 ### `mounts`
-`mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
+An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
 
-The following is a default list of mounts configured in `magento.app.yaml`:
-
-```
-# The mounts that will be performed when the package is deployed.
+```yaml
+ # The mounts that will be performed when the package is deployed.
 mounts:
     "var": "shared:files/var"
     "app/etc": "shared:files/etc"
@@ -152,8 +156,8 @@ The format for adding your mount to this list is as follows:
 "/public/sites/default/files": "shared:files/files"
 ```
 
--  `shared` means that the volume is shared between your applications inside an environment.
--  `disk` key defines the size available for that `shared` volume
+-  `shared`—Shares a volume between your applications inside an environment.
+-  `disk`—Defines the size available for the shared volume.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
@@ -162,7 +166,7 @@ Important: The subpath portion of the mount is the unique identifier of the file
 If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
 
 ### `dependencies`
-`dependencies` enables you to specify dependencies that your application might need during the build process.
+Enables you to specify dependencies that your application might need during the build process.
 
 {{site.data.var.ee}} supports dependencies on the following
 languages:
@@ -187,21 +191,19 @@ Use the `hooks` section to run shell commands during the build, deploy, and post
 
 -   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/m2-ece-build` command to make sure custom-generated content makes it to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/m2-ece-deploy` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
--   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{page.baseurl}}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
+-   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage](http://devdocs.magento.com/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
 Add CLI commands under the `build` or `deploy` sections:
 
-```
+```yaml
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
-        php ./bin/magento <custom-command>
-        php ./vendor/bin/m2-ece-build
+        php ./vendor/bin/ece-tools build
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        php ./vendor/bin/m2-ece-deploy
-        php ./bin/magento <custom-command>
-    # We run post deploy hook to clean and warm the cache.
+        php ./vendor/bin/ece-tools deploy
+    # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
     post_deploy: |
         php ./vendor/bin/ece-tools post-deploy
 ```
@@ -210,30 +212,30 @@ The commands run from the application (`/app`) directory. You can use the `cd` c
 
 #### To compile SASS files using grunt:
 
-```
+```yaml
 dependencies:
-  ruby:
-    sass: "3.4.7"
-  nodejs:
-    grunt-cli: "~0.1.13"
+    ruby:
+      sass: "3.4.7"
+    nodejs:
+      grunt-cli: "~0.1.13"
 
 hooks:
-  build: |
-    cd public/profiles/project_name/themes/custom/theme_name
-    npm install
-    grunt
-    cd
-    php ./vendor/bin/m2-ece-build
+    build: |
+        cd public/profiles/project_name/themes/custom/theme_name
+        npm install
+        grunt
+        cd
+        php ./vendor/bin/m2-ece-build
 ```
 
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
-`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
+Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root`or as the web server user.
 
 `crons` support the following:
 
--  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{page.baseurl}}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
+-  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
 A Cron job is well suited for the following tasks:
@@ -245,7 +247,7 @@ A Cron job is well suited for the following tasks:
 
 A sample Magento cron job follows:
 
-```
+```yaml
 crons:
   cronrun:
       spec: "*/5 * * * *"
@@ -254,17 +256,17 @@ crons:
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
 
-For more information, see [Set up cron jobs]({{page.baseurl}}/cloud/configure/setup-cron-jobs.html).
+For more information, see [Set up cron jobs]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html).
 
 ## Variables
 The following environment variables are included in `.magento.app.yaml`. These are required for {{site.data.var.ece}} 2.2.X.
 
-```
+```yaml
 variables:
-    env:
-        CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-        CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-        CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+  env:
+    CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
+    CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
+    CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
 ```
 
 ## Configure PHP options
@@ -276,21 +278,22 @@ type: php:7.0
 ```
 
 <div class="bs-callout bs-callout-info" markdown="1">
-{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
+{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 </div>
 
 ### PHP extensions
 You can define additional PHP extensions to enable or disable:
 
-```
-# .magento.app.yaml
+> .magento.app.yaml
+
+```yaml
 runtime:
-    extensions:
-        - xdebug
-        - redis
-        - ssh2
-    disabled_extensions:
-        - sqlite3
+  extensions:
+    - xdebug
+    - redis
+    - ssh2
+  disabled_extensions:
+    - sqlite3
 ```
 
 To view the current list of PHP extensions, SSH into your environment and enter the following command:
@@ -363,14 +366,14 @@ For example, if you need to increase the PHP memory limit:
 
 	memory_limit = 756M
 
-For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
+For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
-After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
+After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
 
 ## Workers
-You can define zero or multiple work instances for each application. A worker instance runas as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
+You can define zero or multiple work instances for each application. A worker instance run as its own container, independently of the web instance and has no Nginx instance running. The router service cannot direct public requests to it, either, so running your own web server on a worker (using Node.js or Go) is not useful.
 
 A worker instance is the exact same code and compilation output as a web instance. The container image is built once and deployed multiple times if needed using the same `build` hook and `dependencies`. You can customize the container and allocated resources.
 

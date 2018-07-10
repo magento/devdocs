@@ -54,8 +54,8 @@
      id="text8">0..∞</text>
   <a
      id="a3925"
-     xlink:href="#data-ref"
-     xlink:title="zero or more &lt;data&gt; elements">
+     href="#data-tag"
+     title="zero or more &lt;data&gt; elements">
     <g
        id="g195">
       <rect
@@ -114,8 +114,8 @@
      id="text24">0..∞</text>
   <a
      id="a3935"
-     xlink:href="#var"
-     xlink:title="zero or more &lt;var&gt; elements">
+     href="#var"
+     title="zero or more &lt;var&gt; elements">
     <g
        id="g204">
       <rect
@@ -174,8 +174,8 @@
      id="text40">0..∞</text>
   <a
      id="a3945"
-     xlink:href="#required-entity"
-     xlink:title="zero or more &lt;required-entity&gt; elements">
+     href="#required-entity"
+     title="zero or more &lt;required-entity&gt; elements">
     <g
        id="g213">
       <rect
@@ -234,8 +234,8 @@
      id="text56">0..∞</text>
   <a
      id="a3963"
-     xlink:href="#item"
-     xlink:title="zero or more &lt;item&gt; elements">
+     href="#item"
+     title="zero or more &lt;item&gt; elements">
     <g
        id="g229">
       <rect
@@ -296,7 +296,7 @@
      id="line66" />
   <a
      id="a3968"
-     xlink:title="a sequence of the following elements">
+     title="a sequence of the following elements">
     <g
        id="g3966">
       <path
@@ -342,8 +342,8 @@
      id="text90">0..∞</text>
   <a
      id="a99"
-     xlink:href="#array"
-     xlink:title="zero or more &lt;array&gt; elements">
+     href="#array"
+     title="zero or more &lt;array&gt; elements">
     <g
        id="g3864">
       <rect
@@ -411,7 +411,7 @@
      id="line106" />
   <a
      id="a3984"
-     xlink:title="one or more of the following elements in any order">
+     title="one or more of the following elements in any order">
     <g
        id="g3959">
       <g
@@ -507,8 +507,8 @@
      id="rect138" />
   <a
      id="a231"
-     xlink:href="#entity"
-     xlink:title="zero or more &lt;entity&gt; elements">
+     href="#entity"
+     title="zero or more &lt;entity&gt; elements">
     <g
        id="g186">
       <rect
@@ -539,7 +539,7 @@
      id="line150" />
   <a
      id="a3976"
-     xlink:title="a sequence of the following elements">
+     title="a sequence of the following elements">
     <g
        id="g3944">
       <path

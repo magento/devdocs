@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
@@ -93,7 +92,7 @@ class ProductAttributesUpdater
 
 After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
-Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{site.mage2100url}}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
+Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2100url }}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
 {% highlight PHP inline=true %}
 namespace My\Module\Plugin;
@@ -123,7 +122,7 @@ class AuthLogger
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
-The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{site.mage2100url}}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
+The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 {% highlight PHP %}
 
 class WebsitesLogger
@@ -153,6 +152,12 @@ In the example, the `afterUpdateWebsites` function uses the variable `$websiteId
 #### Around methods
 Magento runs the code in around methods before and after their observed methods. Using these methods allow you to override an observed method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
+<div class="bs-callout bs-callout-warning">
+    <p>Avoid using around method plugins when they are not required because they increase stack traces and affect performance.</p>
+    <p>The only use case for around method plugins is when the execution of all further plugins and original methods need termination.</p>
+    <p>Use after method plugins if you require arguments for replacing or altering function results.</p>
+</div>
+
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When your code executes the `callable`, Magento calls the next plugin or the observed function.
 
 <div class="bs-callout bs-callout-warning">
@@ -168,11 +173,17 @@ class ProductAttributesUpdater
 {
     public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
-        $this->doSmthBeforeProductIsSaved();
-        $returnValue = $proceed();
+        $someValue = $this->doSmthBeforeProductIsSaved();
+        $returnValue = null;
+        
+        if ($this->canCallProceedCallable($someValue)) {
+            $returnValue = $proceed();
+        }
+        
         if ($returnValue) {
             $this->postProductToFacebook();
         }
+        
         return $returnValue;
     }
 }
@@ -281,8 +292,8 @@ For example, the developer can disable a global plugin in the {% glossarytooltip
 
 ### Related topics
 
-*  [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)
-*  [Events and observers]({{page.baseurl}}/extension-dev-guide/events-and-observers.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
 
 ### Related information
 

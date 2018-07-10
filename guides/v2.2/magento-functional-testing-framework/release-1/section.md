@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mftf
 title: Section structure in the Magento Functional Testing Framework
 version: 2.2
@@ -7,8 +6,8 @@ github_link: magento-functional-testing-framework/release-1/section.md
 functional_areas:
  - Testing
 redirect_from:
-    - guides/v2.2/magento-functional-testing-framework/section.html
-    - guides/v2.2/magento-functional-testing-framework/1.0/section.html
+ - /guides/v2.2/magento-functional-testing-framework/section.html
+ - /guides/v2.2/magento-functional-testing-framework/1.0/section.html
 mftf-release: 1.0.0
 ---
 
@@ -98,7 +97,7 @@ Example of a call in test:
 
 ## Reference
 
-### section {#section-ref}
+### section {#section-tag}
 
 Contains sequence of UI elements in a section of a [page].
 
@@ -107,7 +106,7 @@ Attributes|Type|Use|Description
 name|string|required|Unique section name identifier
 remove|boolean|optional|Default: `false`. Set to `true` to remove this element during parsing
 
-### element {#element-ref}
+### element {#element-tag}
 
 A UI element used in an [action].
 
