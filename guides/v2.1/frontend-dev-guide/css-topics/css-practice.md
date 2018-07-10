@@ -23,7 +23,7 @@ The following image illustrates how store pages look when the Blank theme is app
 <div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}/common/images/practice_blank.png" alt="product page when Blank applied">
 </div>
-
+<br />
 
 In their Grey theme, OrangeCo wants to change the color scheme from white to grey.
 
@@ -31,7 +31,7 @@ The Grey theme directory is <code>app/design/frontend/OrangeCo/grey</code>.
 
 OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
 To do this, they added an overriding <code>_theme.less</code> file in the <code>app/design/frontend/OrangeCo/grey/web/css/source</code> directory, with the following content:
-<pre>
+{% highlight css%}
 //  Color nesting
 @page__background-color: @color-gray20;
 @sidebar__background-color: @color-gray40;
@@ -73,8 +73,7 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 //  Header icons
 @header-icons-color: @color-gray89;
 @header-icons-color-hover: @color-gray60;
-
-</pre>
+{% endhighlight css%}
 
 After the Grey theme is applied (and [static files cache cleared]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)), store pages will look like following:
 
