@@ -17,8 +17,8 @@ This topic describes how to uninstall a {% glossarytooltip 1a70d3ac-6bd9-475a-89
 
 The way a theme should be uninstalled is defined by two factors:
 
-* the way the theme was added: manually added (installed or created), installed as {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} package or as an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
-* the way Magento was installed: [using the source files from Github]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html) or [using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html). 
+* The way the theme was added: manually added (installed or created), installed as {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} package or as an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+* The way Magento was installed: [using the source files from Github]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html) or [using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html). 
 
 The following sections describe the flow for uninstalling themes in each case.
 
@@ -61,7 +61,6 @@ If both the theme and the Magento instance were installed using Composer, you ca
 To uninstall a theme Composer package if your Magento instance was installed by cloning the git repository, you can also uninstall it using a CLI command. However, you must first remove it from the list of dependencies.
 
 Take the following steps:
-
 1. Open the `<Magento root dir>/composer.json` file.
 2. Find a line with a reference to theme package and delete it. The reference would look like following:
 
@@ -74,10 +73,10 @@ Take the following steps:
    ...
    {%endhighlight%}
  
-3. To update the project dependencies, run:  
- 
-    composer update
-
+3. To update the project dependencies, run:
+{% highlight HTML%}
+composer update
+{% endhighlight HTML%}
 4. Use the `magento theme:uninstall` CLI command as described in the [Uninstall themes Composer package]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html) topic.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -88,8 +87,8 @@ You can use the Composer remove command to remove the dependency, but in that ca
 
 If the theme was installed as an extension, you can uninstall it using one of the following flows:
 
-* the same way as theme Composer packages are uninstalled, see the [Uninstall a theme package](#uninstall_theme_pack) section for details.
-* using the Component Manager.     
+* The same way as theme Composer packages are uninstalled, see the [Uninstall a theme package](#uninstall_theme_pack) section for details.
+* Using the Component Manager.     
 
 To uninstall a theme extension using the Component Manager:
 
