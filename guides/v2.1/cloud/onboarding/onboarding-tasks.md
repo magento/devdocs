@@ -110,7 +110,7 @@ want to track. Sign up from the
 Users that have administrative access to the Admin panel can add users, configure store services, complete store set up and customization work, and more.
 
 For a new project, the first step after getting the welcome email is to secure Admin access to the project by changing the password on the Project Owner
-account. The default username for this accounts is `Admin`.
+account. The default username for this account is `Admin`.
 
 You can submit a password change request using either of the following methods:
 
