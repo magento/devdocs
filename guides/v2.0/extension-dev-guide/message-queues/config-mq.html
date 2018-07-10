@@ -1263,7 +1263,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Each module that is to be a   <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span>
  must be configured as such. If you want a module to use the MQF, create a <code class="highlighter-rouge">&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
 
-<h2>Edit the <code>queue.xml</code> file</h2>
+<h2 id="edit-the-queuexml-file">Edit the <code>queue.xml</code> file</h2>
 <p>The <code class="highlighter-rouge">queue.xml</code> file can contain the following elements:</p>
 
 <ul>
@@ -1385,7 +1385,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tr>
 </table>
 
-<h2>Sample `queue.xml` file</h2>
+<h2 id="sample-queuexml-file">Sample <code class="highlighter-rouge">queue.xml</code> file</h2>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">"test-publisher-1"</span> <span class="na">connection=</span><span class="s">"rabbitmq"</span> <span class="na">exchange=</span><span class="s">"magento"</span><span class="nt">/&gt;</span>

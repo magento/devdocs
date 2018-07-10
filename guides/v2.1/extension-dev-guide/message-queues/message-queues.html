@@ -1305,7 +1305,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>See <a href="/guides/v2.1/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.</p>
 
-<h2>Send a message from the publisher to a queue</h2>
+<h2 id="send-a-message-from-the-publisher-to-a-queue">Send a message from the publisher to a queue</h2>
 
 <p>The following code sends a message to the queue. The <code class="highlighter-rouge">publish</code> method is defined in <code class="highlighter-rouge">PublisherInterface</code></p>
 
@@ -1313,7 +1313,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>In an MySQL adapter environment, when a message is published to multiple queues, create a single record in <code class="highlighter-rouge">queue_message</code> and multiple records in <code class="highlighter-rouge">queue_message_status</code>: one for each queue. (A join on the <code class="highlighter-rouge">queue</code>, <code class="highlighter-rouge">queue_message</code>, and <code class="highlighter-rouge">queue_message_status</code> tables is required).</p>
 
-<h2>Instantiate a consumer</h2>
+<h2 id="instantiate-a-consumer">Instantiate a consumer</h2>
 
 <p>The procedure for instantiating a consumer differs, depending on which message queue system is being used.</p>
 
@@ -1336,7 +1336,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Invoke callback  <code class="highlighter-rouge">Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback</code> and pass the decoded data as an argument.</li>
 </ol>
 
-<h2>Override topic configuration</h2>
+<h2 id="override-topic-configuration">Override topic configuration</h2>
 <p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'queue'</span> <span class="o">=&gt;</span>
