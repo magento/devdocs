@@ -25,7 +25,7 @@ The CSS class names can be assigned in both templates and layouts.</span></p>
 This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
 
 
-<h2>How Magento stylesheet files are organized</h2>
+## How Magento stylesheet files are organized
 
 Conventionally, CSS and LESS files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
 

@@ -11,12 +11,12 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
 
 
-<h2>Scripts general overview</h2>
+## Scripts general overview
 
 The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
 
