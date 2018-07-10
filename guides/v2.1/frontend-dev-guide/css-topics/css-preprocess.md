@@ -33,13 +33,13 @@ Description
 
 For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
 
-<pre>
+{% highlight HTML%}
     &lt;head&gt;
         &lt;css src=&quot;css/styles-m.css&quot; /&gt;
         &lt;css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/&gt;
         &lt;css src=&quot;css/print.css&quot; media=&quot;print&quot; /&gt;
     &lt;/head&gt;
-</pre>
+{% endhighlight HTML%}
 
 The root source files for the Blank theme are:
 
@@ -159,7 +159,7 @@ To include a `.less` file using the `@magento_import` directive:
 <ol>
 <li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
 <p><b>Example:</b></p>
-<pre>
+{% highlight css%}
 //  Comment in a LESS document
 
 //  Standard LESS import directive
@@ -175,7 +175,7 @@ To include a `.less` file using the `@magento_import` directive:
 //@magento_import 'source/_module.less'; // Theme modules
 //@magento_import 'source/_widgets.less'; // Theme widgets
 //@magento_import 'source/_extend.less'; // Extend for minor customization
-</pre>
+{% endhighlight css%}
 </li>
 <li><p><code>@magento_import</code> must contain the file path. The path is specified relatively to the file, where the directive is called and put in either single ('') or double quotes (""). </p>
 
@@ -201,19 +201,20 @@ In the scope of static resources preprocessing, the built-in LESS preprocessor:
       </tr>
       <tr class="even">
          <td> In <code>&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</code> there's a following directive:
-            <pre> ..
+            {% highlight css%} 
+            ..
 //@magento_import 'source/_widgets.less'; // Theme widgets
 ..
-</pre>
+{% endhighlight css%}
          </td>
          <td> In the processed file, this results in the following:
-            <pre>
+            {% highlight css%}
 @import '../Magento_Catalog/css/source/_widgets.less';
 @import '../Magento_Cms/css/source/_widgets.less';
 @import '../Magento_Reports/css/source/_widgets.less';
 @import '../Magento_Sales/css/source/_widgets.less';
  // Theme widgets
-</pre>
+{% endhighlight css%}
          </td>
       </tr>
    </tbody>
