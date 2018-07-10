@@ -11,8 +11,7 @@ functional_areas:
   - Integration
 ---
 
-Getting started with Magento
-----------------------------
+## Getting started with Magento {#highlights}
 
 Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
@@ -22,8 +21,7 @@ Magento is a highly-customizable eCommerce platform and content management syste
 
 Magento is written using the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} programming language, and leverages elements of the Zend framework and the model-view-controller architecture. Magento runs on the MySQL relational database, and Magento schema and tables are included in the Magento installation package.
 
-Help improve this documentation
--------------------------------
+## Help improve this documentation {#help}
 
 Magento 2.0 product documentation is hosted on GitHub, and we welcome your
 feedback there.
@@ -34,8 +32,7 @@ by creating pull requests, or open a discussion by creating an issue.
 
 For more information, see our [Contributors Guide]({{ page.baseurl }}/extension-dev-guide/Contribute_edg.html).
 
-Contact us
-----------
+## Contact us {#contact-us}
 Feel free to contact the documentation team directly at
 [DL-Magento-Doc-Feedback@magento.com](mailto:DL-Magento-Doc-Feedback@magento.com)
 
