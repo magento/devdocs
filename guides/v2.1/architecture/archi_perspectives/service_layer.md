@@ -1,9 +1,7 @@
 ---
 group: arch-guide
-subgroup: Architectural Layers
 title: Service layer
 menu_title: Service layer
-menu_order: 2
 version: 2.1
 github_link: architecture/archi_perspectives/service_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/service_layer.html
@@ -78,9 +76,9 @@ However, if the client code uses the interface definition only, no class change 
 
 ## Related topics {#related}
 
-[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
+[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
-[Architectural layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)
+[Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
 
 [catalog-api]: {{ site.mage2000url }}app/code/Magento/Customer/Api
 [catalog-api-data]: {{ site.mage2000url }}app/code/Magento/Customer/Api/Data

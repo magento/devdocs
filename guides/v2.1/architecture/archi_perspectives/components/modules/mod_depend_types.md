@@ -34,11 +34,9 @@ A module with a *soft dependency* on another module can function properly withou
 * Extend another module's configuration.
 * Extend another module's {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>
-    If a module uses code from another module, it should declare the dependency explicitly.
-  </p>
-</div>
+{:.bs-callout .bs-callout-tip} 
+If a module uses code from another module, it should declare the dependency explicitly.
+
 
 
 ## Inappropriate dependencies {#m2devgde-moddep-inapp-dep}
@@ -57,10 +55,10 @@ You can build dependencies between the modules belonging to different layers.
 
 A module belonging to the Magento Framework can be used in the application layer by an explicit dependency.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In this case, using interfaces is preferable to using classes. </p>
-  <p>You can build dependencies between classes in the Magento Framework even if they belong to different modules.</p>
-</div>
+{:.bs-callout .bs-callout-tip} 
+In this case, using interfaces is preferable to using classes.
+You can build dependencies between classes in the Magento Framework even if they belong to different modules.
+
 
 ## Dependencies in the application layer {#m2devgde-moddep-app-layer}
 A module belonging to the application layer cannot be used in the Magento Framework.
@@ -69,4 +67,4 @@ You can build dependencies between classes in the application layer, but these c
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+[Module dependencies]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend.html)
