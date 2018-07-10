@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -84,8 +84,9 @@ There are several XML elements that are used in `<tests>` in the MFTF.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`name`|string|optional| A test identifier used while merging.
+`name`|string|optional|A test identifier.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
+`extends`|string|optional|A name of the parent test to [extend].
 
 `<test>` may also contain [`<annotations>`](#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
 
@@ -140,3 +141,7 @@ Attribute|Type|Use
 `value`|string|optional| Value of the argument.
 
 See more about [Action groups](./test/action-groups.html).
+
+<!-- Link definitions -->
+
+[extend]: extending.html

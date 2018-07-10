@@ -50,6 +50,9 @@ pages:
       - label: Merging
         url: /magento-functional-testing-framework/release-2/merging.html
 
+      - label: Extending
+        url: /magento-functional-testing-framework/release-2/extending.html
+
       - label: Configuration
         url: /magento-functional-testing-framework/release-2/configuration.html
 
