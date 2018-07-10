@@ -22,7 +22,7 @@ composer/composer |1.4.1| MIT|[Source](https://github.com/composer/composer)|[Li
 monolog/monolog |1.23.0| MIT|[Source](https://github.com/Seldaek/monolog)|[License](https://github.com/Seldaek/monolog/blob/master/LICENSE)
 oyejorge/less.php |1.7.0| Apache-2.0|[Source](https://github.com/oyejorge/less.php)|[License](https://github.com/oyejorge/less.php/blob/master/LICENSE)
 paragonie/random_compat | 2.0.10 | MIT | [Source](https://github.com/paragonie/random_compat) | [License](https://github.com/paragonie/random_compat/blob/master/LICENSE)
-pelago/emogrifier |0.1.1| MIT|[Source](https://github.com/jjriv/emogrifier)|[License](https://github.com/jjriv/emogrifier/blob/master/LICENSE)
+pelago/emogrifier |2.0.0| MIT|[Source](https://github.com/jjriv/emogrifier)|[License](https://github.com/jjriv/emogrifier/blob/master/LICENSE)
 tubalmartin/cssmin |4.1.0| BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|No license
 braintree/braintree_php |3.22.0| MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
 symfony/console|2.8.22|MIT|[Source](https://github.com/symfony/console)|[License](https://github.com/symfony/console/blob/master/LICENSE)

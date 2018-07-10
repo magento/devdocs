@@ -4,7 +4,7 @@ title: Magento Open Source 2.2.4 Release Notes
 version: 2.2
 github_link: release-notes/ReleaseNotes2.2.4CE.md
 ---
-*Patch code and release notes published on May 2, 2018.* *Release notes revised on June 13, 2018.*
+*Patch code and release notes published on May 2, 2018.* *Release notes revised on July 1, 2018.*
 
 We are pleased to present Magento Open Source 2.2.4. This release includes new tools and numerous functional fixes and enhancements, plus a substantial number of contributions from the wider Magento community.
 
@@ -63,6 +63,9 @@ The dotmailer bundled extension features the following enhancements for this rel
 * Enhanced validation for deletion of cron job CSV files
 
 ## Known issue
+
+**Note**: The following known issue has been resolved in Magento Commerce and Open Source 2.2.5. We recommend that all users of 2.2.4 upgrade to 2.2.5 at their earliest convenience. If you are unable to upgrade to 2.2.5, [Patch MAGETWO-92926](https://magento.com/tech-resources/download#download2217) provides a fix for this issue. 
+
 Customers have reported the following behavior after upgrading to Magento 2.2.4 in deployments that span multiple websites: 
 
 Magento multi-store installations do not use the store view-specific values from the store configuration settings if these settings have different values than the global default configuration settings.  Instead, Magento uses the default configuration for all store views. [GitHub-15205](https://github.com/magento/magento2/issues/15205),  [GitHub-15245](https://github.com/magento/magento2/issues/15245)
@@ -911,6 +914,9 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--- CANNOT REPRODUCE MAGETWO-58206  MAGETWO-83676 MAGETWO-73275-->
 
+
+## Known issue 
+Merchants are unable to change a store view’s applied theme in Magento 2.2.4. When a merchant tries to change the **Applied theme** setting for a store view (**Content** > **Design** > **Configuration**), Magento does not change the theme, but instead displays this error: `Something went wrong while saving this configuration: Area is already set`. See [GitHub-14968](https://github.com/magento/magento2/issues/14968) for more information. **Workaround**:  Merchants who are running Magento 2.2.4 should **upgrade to 2.2.5, then apply [patch MAGETWO-93036]( https://magento.com/tech-resources/download#download2224)**.
 
 ## Community contributions
 

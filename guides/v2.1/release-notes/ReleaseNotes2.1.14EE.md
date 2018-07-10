@@ -30,7 +30,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-707 -->* The misspelling in the name of the namespace in `Magento\Cron\Observer\ProcessCronQueueObserver.php` has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
-<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan Yehuda](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
+<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan Yehuda](https://github.com/Ethan3600) in pull request 13806*. 
 
 <!--- ENGCOM-949 -->* `Store getConfig()` now respects  valid false return values. Previously, the system represented the **no** setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to **no**.    *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
 
@@ -123,7 +123,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 <!--- ENGCOM-1251 -->*  The  `setAttributeFilter` method now specifies the relevant table when calling the `addFieldToFilter` method. This method is called as part of the process of adding a field to the filter for the collection `Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php`. Previously, Magento displayed an error (`ambiguous column name`) when you joined tables containing column `attribute_id`.  
-*Fix submitted by [Pierre LeMaguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
+*Fix submitted by [Pierre Le Maguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
 
 <!--- ENGCOM-926 -->* We've added a CodeTriage badge to the `magento/magento2` GitHub repository. See [CodeTriage](https://www.codetriage.com/magento/magento2 ) for more information. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
 
@@ -186,14 +186,19 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
-
-
 <table>
   <tr>
     <th>Pull request</th>
     <th>Related GitHub issue</th>
      <th>Contributing community member</th>
   </tr>
+
+<tr>
+    <td><a href="https://github.com/magento/magento2/pull/13949" target="_blank">14596</a></td>
+    <td>14572</td>
+     <td><a href="https://github.com/PierreLeMaguer" target="_blank">Pierre Le Maguer</a></td>
+  </tr>
+
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13949" target="_blank">13949</a></td>
     <td>N/A</td>
@@ -209,11 +214,7 @@ The following table identifies contributions from our community members. This ta
     <td>7723</td>
      <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
   </tr>
-  <tr>
-    <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
-    <td>N/A</td>
-     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
-  </tr>
+  
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13896" target="_blank">13896</a></td>
     <td>N/A</td>
@@ -364,11 +365,7 @@ The following table identifies contributions from our community members. This ta
     <td>N/A</td>
      <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
   </tr>
-<tr>
-  <td><a href="https://github.com/magento/magento2/pull/14572" target="_blank">14572</a></td>
-    <td>N/A</td>
-     <td><a href="https://github.com/PierreLeMaguer" target="_blank">PierreLeMaguer</a></td>
-  </tr>
+
   <tr>
   <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
     <td>13214</td>
@@ -396,8 +393,8 @@ The following table highlights contributions made by Partners. This table lists 
 
 <tr>
     <td>Convert</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14348">14348</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14480">14480</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14151">14151</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14117">14117</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14098">14098</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14096">14096</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13806">13806</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/4173">4173</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/5808">5808</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/6694">6694</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/3489">3489</a> </td>
   </tr>
 
   <tr>
@@ -408,8 +405,8 @@ The following table highlights contributions made by Partners. This table lists 
 
   <tr>
     <td>H&O</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13658">13658</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/13486">13486</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/13474">13474</a></td>
   </tr>
 
 </table>

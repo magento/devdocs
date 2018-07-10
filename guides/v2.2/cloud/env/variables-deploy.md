@@ -86,8 +86,8 @@ Use this environment variable to make sure message queues are running after a de
 stage: 
   deploy:
     CRON_CONSUMERS_RUNNER:
-      cron_run: true,
-      max_messages: 1000,
+      cron_run: true
+      max_messages: 1000
       consumers:
         - consumer1
         - consumer2

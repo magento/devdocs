@@ -8,10 +8,24 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## June 2018
+## July 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+The new [URL Rewrite module](https://devdocs.magento.com/guides/v2.2/cloud/configure/import-url-rewrites.html) helps to manage redirects in Magento Cloud without losing SEO rankings and traffic.|2.2.x|Major update|Jul 06
+
+{% collapsibleh2 June 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Added [Magento Commerce Release Notes (1.14 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html) and [Magento Open Source Release Notes (1.9 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html).||Major update|Jun 27
+Added Magento Commerce and Open Source 2.1.14 Release Notes. See [Magento Commerce 2.1.14 Release Notes](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html) and [Magento Open Source 2.1.14](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.14CE.html) for more information.|2.1.x|New topic|Jun 27
+Added Magento Commerce and Open Source 2.2.5 Release Notes. See [Magento Commerce 2.2.5 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.5EE.html) and [Magento Open Source 2.2.5](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.5CE.html) for more information.|2.2.x|New topic|Jun 27
+Update the Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html) to reflect the recent base template changes for version 2.1 and 2.2.|2.1.x, 2.2.x|Technical changes|Jun 28
+Added a new solution section for Redis to an [installation troubleshooting](https://devdocs.magento.com/guides/v2.1/install-gde/trouble/tshoot_wrong-mysql.html) topic.|2.1.x|Major update|Jun 25
+Added the backward incompatible changes for the Magento 2.1.14 release in [OpenSource](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html) and [Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html).|2.1.x|Major update|Jun 27
+Added the backward incompatible changes for the Magento 2.2.5 release in [OpenSource](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html) and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).|2.2.x|Major update|Jun 27
+Added information to set up and configure [Fastly Image Optimization](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-image-optimization.html).|2.1.x, 2.2.x, 2.3.x|Major update|Jun 29
 There is a new Cloud workflow to [add a `robots.txt` file and generate a `sitemap.xml` file]({{ site.baseurl }}/guides/v2.2/cloud/trouble/robots-sitemap.html) for a single domain configuration without requiring a change to the infrastructure.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
 Now you can [change store locales]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#change-locales) when using SCD_ON_DEMAND without using the exporting and importing configuration process.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
 The new Cloud tools command—`docker:build`—generates a [Docker Compose]({{ site.baseurl }}/guides/v2.2/cloud/reference/docker-config.html) configuration.|2.1.x, 2.2.x, 2.3.x|New topic|Jun 09
@@ -19,6 +33,7 @@ Added a topic about the [Magento binding syntax]({{ site.baseurl }}/guides/v2.2/
 Added a new topic describing how to [enable/disable logging]({{ site.baseurl }}/guides/v2.2/config-guide/cli/logging.html) with the Magento CLI.|2.2.x, 2.3.x|New topic|Jun 04
 Updated the storage capacity information for Magento Commerce Cloud Pro architecture information in the [Production Technology Stack]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack) documentation for Magento Cloud [v2.1]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack), [v2.2]({{ site.baseurl }}/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack), and [v2.3]({{ site.baseurl }}/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).|2.x|Technical changes|Jun 04
 [These changes]({{ site.baseurl }}/guides/v2.1/config-guide/multi-site/ms_nginx.html) show users how to simplify Nginx configs to host multiple Magento websites and store views with one virtual host file. It allows to that Nginx configuration to stay much cleaner, and more maintainable.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 1
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 May 2018 %}
 
@@ -617,7 +632,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Indexing]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html){:target="_blank"} (add information about improving indexing performance)  | 2.x  | Updated| Oct 7 |
 | [Magento 2 documentation resources for {{site.data.var.ece}} (MECE)]({{ page.baseurl }}/cloud/access-acct/resources.html){:target="_blank"} |  2.x |New| Oct 7 |
 | [MECE environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html){:target="_blank"}  | 2.x  |  Updated | Oct 7 |
-| [MECE add more information about project directory structure]({{ page.baseurl }}/cloud/access-acct/first-time-setup_dir-structure.html){:target="_blank"}  | 2.x  | Updated  |  Oct 7 |
+| [MECE add more information about project directory structure]({{ page.baseurl }}/cloud/project/project-start.html){:target="_blank"}  | 2.x  | Updated  |  Oct 7 |
 | [MECE completely revise new environment setup]({{ page.baseurl }}/cloud/before/before-setup-env-1_get-start.html){:target="_blank"} | 2.x  |  Updated | Oct 7 |
 | [MECE responsibilities of the account owner]({{ page.baseurl }}/cloud/before/before-project-owner.html){:target="_blank"}  | 2.x  |  New |  Oct 7 |
 | [MECE Magento file system owner for local development]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html){:target="_blank"}| 2.x  | New  | Oct 7 |

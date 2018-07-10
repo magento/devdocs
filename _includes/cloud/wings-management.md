@@ -5,5 +5,5 @@
 
 We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.
 
-If you do not request this update, you must use CLI commands or tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
+If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.
 </div>
