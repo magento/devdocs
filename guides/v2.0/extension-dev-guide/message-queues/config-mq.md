@@ -22,7 +22,7 @@ functional_areas:
 
 Each module that is to be a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings.
 
-<h2>Edit the <code>queue.xml</code> file</h2>
+## Edit the <code>queue.xml</code> file
 The `queue.xml` file can contain the following elements:
 
 + publisher
@@ -143,7 +143,7 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 </tr>
 </table>
 
-<h2>Sample `queue.xml` file</h2>
+## Sample `queue.xml` file
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <publisher name="test-publisher-1" connection="rabbitmq" exchange="magento"/>

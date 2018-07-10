@@ -10,7 +10,7 @@ ee_only: true
 github_link: pattern-library/staging-patterns/ScheduledChangesModule/module.md
 ---
 
-<h2> Scheduled Changes Module </h2>
+##  Scheduled Changes Module 
 
 <h3> Contents </h3>
 

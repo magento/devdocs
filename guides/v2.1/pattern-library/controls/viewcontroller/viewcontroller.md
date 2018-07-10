@@ -8,7 +8,7 @@ menu_node:
 version: 2.1
 github_link: pattern-library/controls/viewcontroller/viewcontroller.md
 ---
-<h2> View Controller </h2>
+##  View Controller 
 
 <h3> Contents </h3>
 

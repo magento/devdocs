@@ -56,7 +56,7 @@ The data-table will contain the following elements where applicable and as neede
 	<li>Data</li>
 </ul>
 
-<h2>Modularity</h2>
+## Modularity
 The data-table will be designed in such a way that any of the above controls can be removed, collapsing the table gracefully.
 <br />
 <img src="img/datatable02.jpg">

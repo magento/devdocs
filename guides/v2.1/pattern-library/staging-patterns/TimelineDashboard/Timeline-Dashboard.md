@@ -10,7 +10,7 @@ ee_only: true
 github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
 
-<h2> Timeline Dashboard </h2>
+##  Timeline Dashboard 
 
 <h3> Contents </h3>
 

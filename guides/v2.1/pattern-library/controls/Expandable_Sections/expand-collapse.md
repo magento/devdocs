@@ -9,7 +9,7 @@ version: 2.1
 github_link: pattern-library/controls/Expandable_Sections/expand-collapse.md
 redirect_from: /guides/v1.0/pattern-library/controls/Expandable_Sections/expand-collapse.html
 ---
-<h2> Expandable Sections </h2>
+##  Expandable Sections 
 _(AKA Expand-Collapse, Collapsible panels)_
 
 <h3> Contents </h3>
