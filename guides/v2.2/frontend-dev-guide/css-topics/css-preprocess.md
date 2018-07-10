@@ -78,8 +78,6 @@ To set the compilation mode, do the following:
 <li>In the <b>Store View</b> drop-down field, select <b>Default Config</b>.</li>
 <li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
 <li>To save the settings, click <b>Save Config</b>.</li>
-
-<li>The compilation mode can be modified only for Default Config as this is global setting.</li>
 </ol>
 
 <h3 id="server-side">Server-side LESS compilation</h3>
