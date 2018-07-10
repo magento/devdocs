@@ -21,7 +21,7 @@ In this article, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-t
 Layout files with instructions that override the default or parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} files are referred to as *overriding layout files*.
 
 
-<h2>Examples of customizations that involve overriding layouts</h2>
+## Examples of customizations that involve overriding layouts
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.

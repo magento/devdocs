@@ -15,7 +15,7 @@ functional_areas:
 
 This topic features a step-by-step illustration of how to change a theme's color scheme using Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
-<h2>Changing theme color scheme</h2>
+## Changing theme color scheme
 
 OrangeCo created a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} that inherits from the Magento basic Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
