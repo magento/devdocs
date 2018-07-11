@@ -715,7 +715,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <tr>
       <td><code class="highlighter-rouge">EntityUrl</code></td>
       <td><code class="highlighter-rouge">EntityUrl</code></td>
-      <td>An output object containing the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">canonical_url</code>, and <code class="highlighter-rouge">type</code> attributes.</td>
+      <td>An output object containing the <code class="highlighter-rouge">id</code>, <code class="highlighter-rouge">relative_url</code>, and <code class="highlighter-rouge">type</code> attributes.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">id</code></td>
@@ -723,7 +723,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td>The ID assigned to the object associated with the specified <code class="highlighter-rouge">url</code>. This could be a product ID, category ID, or page ID.</td>
     </tr>
     <tr>
-      <td><code class="highlighter-rouge">canonical_url</code></td>
+      <td><code class="highlighter-rouge">relative_url</code></td>
       <td>String</td>
       <td>The internal relative URL. If the specified  <code class="highlighter-rouge">url</code> is a redirect, the query returns the redirected URL, not the original.</td>
     </tr>
@@ -742,7 +742,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
  </span><span class="err">urlResolver(url</span><span class="p">:</span><span class="s2">"joust-duffle-bag.html"</span><span class="err">)</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="err">id</span><span class="w">
-   </span><span class="err">canonical_url</span><span class="w">
+   </span><span class="err">relative_url</span><span class="w">
    </span><span class="err">type</span><span class="w">
  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
@@ -753,7 +753,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"urlResolver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"canonical_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog/product/view/id/1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"relative_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"catalog/product/view/id/1"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
