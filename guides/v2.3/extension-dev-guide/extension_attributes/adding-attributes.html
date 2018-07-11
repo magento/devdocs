@@ -1618,7 +1618,7 @@ Also we need to check whether we already has our   <span term-uuid="45013f4a-21a
     <span class="k">return</span> <span class="nv">$entity</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>But if some entity doesn’t have implementation to fetch extension attributes, we will always retrieve <code class="highlighter-rouge">null</code> and each time when we fetch extension atrributes we need to check if they are <code class="highlighter-rouge">null</code> - need to create them. To avoid such code duplication, we need to create <code class="highlighter-rouge">afterGet</code> plugin for our entity with extension attributes.</p>
+<p>But if some entity doesn’t have implementation to fetch extension attributes, we will always retrieve <code class="highlighter-rouge">null</code> and each time when we fetch extension attributes we need to check if they are <code class="highlighter-rouge">null</code> - need to create them. To avoid such code duplication, we need to create <code class="highlighter-rouge">afterGet</code> plugin for our entity with extension attributes.</p>
 
 <p>Let’s assume the product entity doesn’t have any implementation of extension attributes, so our plugin might looks like this:</p>
 

@@ -1540,7 +1540,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="convert-installupgrade-schema-scripts-to--db_schemaxml-files">Convert install/upgrade schema scripts to  db_schema.xml files</h2>
 
-<p>The <strong>Schema Listener Tool</strong> converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argment when you run the <code class="highlighter-rouge">setup:install</code> or <code class="highlighter-rouge">setup:upgrade</code> CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of <code class="highlighter-rouge">db_schema.xml</code> files (one per affected module).</p>
+<p>The <strong>Schema Listener Tool</strong> converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the <code class="highlighter-rouge">setup:install</code> or <code class="highlighter-rouge">setup:upgrade</code> CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of <code class="highlighter-rouge">db_schema.xml</code> files (one per affected module).</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.</p>
@@ -1559,7 +1559,7 @@ magento setup:upgrade <span class="nt">--convert_old_scripts</span><span class="
 <ul>
   <li>The tool supports only DDL operations represented in <code class="highlighter-rouge">\Magento\Framework\DB\Adapter\Pdo\Mysql</code>. As a result, the tool ignores all custom DDL operations.</li>
   <li>The tool ignores all raw SQL in your <code class="highlighter-rouge">InstallSchema</code> or <code class="highlighter-rouge">UpgradeSchema</code> scripts.</li>
-  <li>Any DDL statements in a <code class="highlighter-rouge">Recurring</code> file will not be transfered to the new schema, because this file should be designed to run during each installation or upgrade.</li>
+  <li>Any DDL statements in a <code class="highlighter-rouge">Recurring</code> file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.</li>
   <li>See <a href="/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html">Configure declarative schema</a> if you need to make manual modifications to your schema.</li>
 </ul>
 
