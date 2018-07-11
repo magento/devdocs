@@ -62,7 +62,7 @@ Users may remove a filter setting by clicking/tapping the remove control next to
 <br />
 <img src="img/filter_remove.png">
 
-<h2>Future Capabilities</h2>
+## Future Capabilities
 Additional capabilities have been designed to further increase the functionality of filtering, however these features have not, as of yet, been developed.  These include **"Quick Filters"**.
 
 
