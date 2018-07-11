@@ -92,7 +92,7 @@ For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projec
 ## Sign up for Magento status {#status}
 Get updates about {{site.data.var.ece}}
 platform environments and related services from the
-[Status page](https://status.magento.cloud){:target="\_blank"} page.
+[Status page](https://status.magento.cloud){:target="\_blank"}.
 
 The page lists current status for all {{site.data.var.ece}} components and
 services followed by notifications about incident reports, service upgrades,
