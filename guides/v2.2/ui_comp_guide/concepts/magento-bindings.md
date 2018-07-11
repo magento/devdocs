@@ -41,7 +41,7 @@ If you use the Magento syntax, the Magento wrapper replaces the Magento syntax w
 
 ## Binding map
 
-The table below shows how the Knockout bindings map to their Magento binding counterparts.
+The table below shows examples of how the Knockout bindings map to their Magento binding counterparts.
 
 |Name| Knockout Syntax | Magento Syntax |
 |--- | -------- | -------|
