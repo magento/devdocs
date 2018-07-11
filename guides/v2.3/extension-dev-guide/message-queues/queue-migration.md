@@ -21,7 +21,7 @@ To upgrade the message queues from Magento 2.1, you must create the following fi
 
 The existing `queue.xml` file is deprecated.
 
-For complete details about these files, see [Configure messque queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)
+For complete details about these files, see [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)
 
 <div class="bs-callout bs-callout-warning">
     <p>The Magento 2.1 <code>communication.xml</code> file has not changed for Magento 2.2.</p>
