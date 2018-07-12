@@ -23,11 +23,12 @@ Here is the part of the code OrangeCo worked with:
 ![code1]({{site.baseurl}}/common/images/templ_overview_code121.png)
 
 They created a new Orange {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and copied the `content.html` to the theme directory:
-`app/design/frontend/OrangeCo/orange/Magento_Checkout/web/template/minicart/content.html`
+`app/design/frontend/OrangeCo/orange/Magento_Checkout/web/template/minicart/content.html`.
+
 In their copy of the templates, they changed the order of the blocks as follows:
 
 ![code2]({{site.baseurl}}/common/images/templ_overview_code221.png)
 
-When the Orange theme was applied, the mini shopping cart with products looked like following:
+When the Orange theme was applied, the mini shopping cart with products looked like the following:
 
 ![In the minishopping cart products are listed before the Go to Checkout button]({{site.baseurl}}/common/images/inherit_mini221.png)
