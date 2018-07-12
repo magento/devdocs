@@ -36,16 +36,79 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
+<!--- ENGCOM-1685 -->* Category\Collection::joinUrlRewrite should use the store set on the collection
+https://github.com/magento/magento2/issues/13704
+
+The problem is that Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite always use the store id from the store manager. I think that it should instead use the storeId set on the actual collection.
+
+Now joinUrlRewrite uses directly the storeManager, but if a store is set directly on the collection, it should use the store set, and not the default passed by the store manager.
+The method getStoreId(), if not set, already goes on fallback to the store manager and get the default, so it should be safe to directly use getStoreId().
+
+Alessandro Pagnin 
+https://github.com/alepane21
+
+
+<!--- ENGCOM-1842 -->*
+misleading data-container in product list
+
+Steps to reproduce
+inspect the product list and see data-container="product-grid"
+Expected result
+data-container="product-list"
+Actual result
+data-container="product-grid"
+
+
+https://github.com/magento/magento2/issues/15319
+
+https://github.com/magento/magento2/pull/15816
+
+Viral Vasara
+viral-wagento
 
 
 
 
+<!--- ENGCOM-1907 -->*
 
+Dmytro Cheshun
+dmytro-ch
+
+When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
+
+Priduct page price is using the hardcoded digits in js
+
+When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
+
+https://github.com/magento/magento2/issues/14249
+
+https://github.com/magento/magento2/pull/15926
  
 
 ### Cart and checkout
+<!--- ENGCOM-1269 -->*
 
 
+https://github.com/magento/magento2/pull/14665
+
+Fix showing product name with special chars in mini cart.
+This code was used in html template to show product name
+
+https://github.com/magento/magento2/issues/13652
+
+Issue in product title with special chars in mini cart
+
+
+Steps to reproduce
+create a product titled Fusion Backpack ™
+go to front end the product title comes up correctly as Fusion Backpack ™ then add it to cart
+in the mini cart it shows it as Fusion Backpack ™ and not converting ™ to ™
+Expected result
+Mini cart should also show the correct product title after converting the html equivalent to characters
+
+
+ampulos
+https://github.com/ampulos
 
 ### Configurable products
 
@@ -58,6 +121,27 @@ In addition to security enhancements, this release contains the following functi
 ### Customers
 
 
+### Directory
+<!--- ENGCOM-1948 -->*
+
+https://github.com/magento/magento2/pull/16031
+
+Add new pattern to validate Canada Zip Codes
+
+Postal code (zip code) for Canada should allow postal codes without space
+
+Zip code validation warning on adresses from Canada.
+Current validation is A1B 2C3
+This should also allow postal code without space A1B2C3
+
+
+Hitesh
+hitesh-wagento
+
+
+https://github.com/magento/magento2/issues/13899
+
+
 
 
 ### Email
@@ -67,20 +151,447 @@ In addition to security enhancements, this release contains the following functi
 
 ### Framework
 
+<!--- ENGCOM-1262 -->*
+Fix empty changelog tables after MySQL restart
+https://github.com/magento/magento2/pull/14471
+Leave at least one record after tebles cleanup.
+
+
+Oleksandr Kravchuk
+https://github.com/swnsma
+
+https://github.com/magento/magento2/issues/14465
+
+Product 'version_id' lost last 'auro_increment' value after MySQL restart.
+
+
+
+
+<!--- ENGCOM-1410 -->*
+Prices aren't readable when using custom price symbol
+https://github.com/magento/magento2/pull/14902
+Yaroslav Rogoza
+https://github.com/rogyar
+
+When creating configurations on a configurable product, while assigning prices to configurable products, prices aren's readable when using custom price symbol.
+
+Tommy Quissens
+https://github.com/quisse
+
+
+<!--- ENGCOM-1796 -->*
+
+https://github.com/magento/magento2/pull/15714
+Dmytro Cheshun
+dmytro-ch
+
+the submenu relative to the "Bottoms 2" element in the image should be aligned next to it
+
+https://github.com/magento/magento2/issues/7897
+
+Steps to reproduce
+hover a menu item which contains some nested elements
+Expected result
+the submenu relative to the "Bottoms 2" element in the image should be aligned next to it
+
+
+
+<!--- ENGCOM-1908 -->*
+
+Add Malaysian Locale Code
+https://github.com/magento/magento2/pull/15927
+Dmytro Cheshun
+dmytro-ch
+Malaysian (Malaysia) missing from locale list
+
+https://github.com/magento/magento2/issues/14089
+
 
 #### Configuration framework
 
 
+#### Customer 
+
+<!--- ENGCOM-1337 -->*
+Preserve user group id when using /V1/customers/:customerId (PUT) 
+https://github.com/magento/magento2/pull/14757
+When you call /V1/customers/:customerId (PUT) and the customer has a group id already and you don't provide groupId in the request the customer group id is set to 1.
+This fix preserves the group id.
+
+
+André Ferraz
+ferrazzuk
+
+https://github.com/magento/magento2/issues/14663
 
 
 
 ### General
+<!--- ENGCOM-1272 -->*
+Check if proExpected result
+Return a 404 page similar to the product page on /catalog/product/view/id/1
+Actual result
+The page shows up as it would on website 1 with the review form, product image, title, description, add to cart (which throws an error if you try to use it), etc.
+duct is assigned to current website 
+https://github.com/magento/magento2/pull/14673
+Checking if product is assigne to current website, before displaying "Write a review page".
+
+Write a Review page works on multistore for products that are not assigned to that store
+
+https://github.com/afirlejczyk
+afirlejczyk
 
 
+
+
+<!--- ENGCOM-2233 -->*
+Fixed backwards incompatible change to Transport variable event parameters 
+
+https://github.com/magento/magento2/pull/16601
+ the type of event parameter "transport" was incorrectly changed from type DataObject to Array(). This change corrects this back to DataObject.
+
+ We waht to change the payment_html for banktransfer invoices. Unfortunately the instruction is also sent in invioce email. And there the customer already has paid the bill.
+Transport variable can not be altered in email_invoice_set_template_vars_before Event
+https://github.com/magento/magento2/issues/10210
+
+gwharton
+
+
+
+
+<!--- ENGCOM-1639 -->*
+
+Fix to allow use decimals less then 1 in subproducts qty 
+https://github.com/magento/magento2/pull/15407
+It is impossible to place an order from grouped product where subproducts qty less than one.
+
+Yaroslav Rogoza
+rogyar
+
+https://github.com/magento/magento2/issues/14692
+Seems that this 'validate-grouped-qty' validation haven't sense because validation should be done on the child elements.
+
+And seems that current implementation is buggy. Seems that sense of this validation is check that sum of qty for all products is more then one. But what sense in it?
+
+
+<!--- ENGCOM-1699 -->* Add resetting of triggerRecollection flag
+In order to prevent collecting totals a few times without necessity, the trigger for recollecting totals should be set to 0 right after the recollecting. Also, backported fix from the 2.2 version.
+
+
+Yaroslav Rogoza
+rogyar
+
+https://github.com/magento/magento2/pull/15522
+https://github.com/magento/magento2/issues/9580
+Expected result
+The attribute trigger_recollect in a quote should be set to 0 (integer) at some time.
+Actual result
+In all the magento code, I could only see the attribute trigger_recollect in a quote being set to 1, but never back to 0.
+
+
+
+
+
+
+
+
+
+<!--- ENGCOM-1693 -->*
+Fix unnecessary recalculation of product list pricing
+
+https://github.com/magento/magento2/pull/15445
+Unnecessary recalculation of large product list pricing causes huge slowdowns.
+
+
+https://github.com/magento/magento2/issues/14941
+
+Steps to reproduce
+Create a catalog where prices are including tax + prices are shown including tax.
+Go to a category page and show 100 products per page.
+Expected result
+System does price calculation very efficiently
+Actual result
+It recalculates the tax while it shouldn't be doing that.
+
+https://github.com/JeroenVanLeusden
+
+
+
+
+
+<!--- ENGCOM-1777 -->*
+set correct annotation
+Set correct annotation to formatDateTime function in lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php file
+
+
+Vishal Gelani
+gelanivishal
+
+
+https://github.com/magento/magento2/issues/15601
+The annotation for locale and timezone should be @param string|null $locale and @param string|null $timezone
+https://github.com/magento/magento2/pull/15668
+
+
+
+
+<!--- ENGCOM-1778 -->*
+
+https://github.com/magento/magento2/pull/15669
+Set correct annotation to formatDateTime function in lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php file
+
+Vishal Gelani
+gelanivishal
+
+The annotation for locale and timezone should be @param string|null $locale and @param string|null $timezone
+
+https://github.com/magento/magento2/issues/15601
+
+
+
+
+<!--- ENGCOM-1804 -->*
+Refactor javascript code of button split widget
+
+Format the javascript code in the template file spli.phtml for button widget
+
+
+https://github.com/magento/magento2/issues/15354
+Need to refactor template file and need to call js component which is already created
+magento2\app\code\Magento\Ui\view\base\web\js\grid\controls\button\split.js
+
+Vijay Golani
+vijay-wagento
+https://github.com/magento/magento2/pull/15736
+
+
+
+
+<!--- ENGCOM-1841 -->*
+
+https://github.com/magento/magento2/pull/15814
+Browsing through the source code, we found occurences of the word "Caterory" in tests, which seemed as if it would be a typo. Please have a look - and just close it, if we are wrong. ;) Thank you!!!
+
+
+
+
+
+<!--- ENGCOM-1859 -->*
+<!--- ENGCOM-1849 -->*
+
+<!--- ENGCOM-1930 -->*
+<!--- ENGCOM-2096 -->*
+
+<!--- ENGCOM-1881 -->*
+
+<!--- ENGCOM-1903 -->*
+
+<!--- ENGCOM-1870 -->*
+
+<!--- ENGCOM-1989 -->*
+
+<!--- ENGCOM-2048 -->*
+<!--- ENGCOM-2061 -->*
+<!--- ENGCOM-2080 -->*
+<!--- ENGCOM-2068 -->*
+<!--- ENGCOM-2084 -->*
+
+<!--- ENGCOM-2108 -->*
+
+<!--- ENGCOM-2244 -->*
+
+
+
+### JavaScript
+<!--- ENGCOM-2167 -->*
+Estimate Shipping and Tax Form not works due to js error in collapsible.js
+
+https://github.com/magento/magento2/issues/8222
+The shipping and estimate tax form don't display the form with country, city, postcode fields.
+The form is in the dom, but hidden.
+The Cannot read property 'it/checkout/cart/block-shipping' of null javascript error appears in the console.
+
+
+https://github.com/magento/magento2/pull/16491
+
+Vishal Gelani
+gelanivishal
+
+
+### Newsletter
+<!--- ENGCOM-2046 -->*
+https://github.com/magento/magento2/pull/15860
+Newsletter subscription confirmation message does not display after clicking link in email
+Rahul Kachhadiya
+https://github.com/rahul-kachhadiya
+
+https://github.com/magento/magento2/issues/14747
+Visit the store homepage.
+Enter a valid email address in the newsletter subscription box, press submit.
+In the subscription confirmation email, click on the link to confirm the subscription.
+Expected result
+Magento processes the subscription confirmation.
+Magento redirects the user to the homepage with a success message stating the subscription was successful.
+Actual result
+Magento processes the subscription confirmation.
+Magento redirects the user to the homepage, but there is no success message stating the subscription was successful.
+Furthermore, if you enter a search term and press submit on the search form, the newsletter confirmation message will appear on the search results page.
+
+
+### Quote
+<!--- ENGCOM-1962 -->*
+https://github.com/magento/magento2/pull/15829
+Error While Trying To Load Quote Item Collection Using Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()
+
+Neeta Kangiya
+https://github.com/neeta-wagento
+
+
+###  Sales
+<!--- ENGCOM-1292 -->*
+added GNU Free Font to be used by sales PDFs
+The sales PDFs use the Libertine font which is not a unicode font and therefore it does not have full support of characters. It does not support Arabic, Russian, Greek, Indian or Thai alphabets and many more. For example it does not support the Indian rupee currency symbol ( ₹ ) and displays tofu boxes instead, which makes the PDF invoice totals illegible.
+
+https://github.com/magento/magento2/issues/12323
+
+Invoice PDF doesn't support Thai
+
+Invoice and shipment PDF doesn't support Arabic 
+
+https://github.com/magento/magento2/issues/9666
+
+https://github.com/magento/magento2/issues/12323
+
+
+
+Ross
+rossmc
+
+<!--- ENGCOM-1413 -->*
+Pass parameter for export button url 
+
+Pass parameter to export button url, configure button in invoice, shipment and creditmemo xml file
+
+Extra rExpected result
+Information related to one invoice only is displayed in CSV file
+
+Actual result
+Information related to both invoices from both orders is displayed in CSV file
+
+This issue is also reproducible for Shipments and Credit Memos
+
+ecords are in exported CSV file for order
+
+Steps to reproduce
+Log in to Admin
+Go to Sales > Orders
+Open one of the orders from preconditions
+Go to Invoices tab
+Click Export and select CSV
+Open exported CSV file
+
+
+Expected result
+Information related to one invoice only is displayed in CSV file
+
+Actual result
+Information related to both invoices from both orders is displayed in CSV file
+
+This issue is also reproducible for Shipments and Credit Memos
+
+Yaroslav Rogoza
+rogyar
+
+
+<!--- ENGCOM-1727 -->*
+Fix incorrect type hinting in PHPDocs
+Incorrect PHPdoc causes warnings in IDE.
+
+Changes applied:
+
+Changed the return type for setQty method to the type it actually returns.
+Removed the hint for never thrown LocalizedException in PHPDocs of register and setQty methods.
+
+https://github.com/magento/magento2/issues/13992
+Dmytro Cheshun
+dmytro-ch
+https://github.com/magento/magento2/pull/15619
+
+
+### Search
+<!--- ENGCOM-2079 -->*
+
+Submitting search form (mini) with enter key fires event handlers bound by jquery twice
+
+https://github.com/magento/magento2/pull/16281
+
+When submitting the search form in the header with the enter key on the keyboard, event handlers that were bound to the form submit (through jQuery) are fired twice.
+
+When submitting the search form in the header with the enter key on the keyboard, event handlers that were bound to the form submit (through jQuery) are fired twice.
+https://github.com/magento/magento2/issues/13793
+
+
+Vishal Gelani
+gelanivishal
+
+
+
+### Setup
+<!--- ENGCOM-1856 -->*
+Error 500 in Module Manager
+
+https://github.com/magento/magento2/pull/15756
+
+https://github.com/magento/magento2/pull/15756
+
+
+Vijay Golani
+vijay-wagento
+
+
+Module Manager module grid is not working. Module Manager doesn't show module grid when going through below step:
+System > Tools > Web Setup Wizard > Module Manager
+https://github.com/magento/magento2/issues/15192
+
+
+
+###  Sitemap
+<!--- ENGCOM-1528 -->*Default schedule config for sitemap_generate job added
+
+https://github.com/magento/magento2/pull/15159
+
+Yaroslav Rogoza
+rogyar
+
+https://github.com/magento/magento2/issues/5768
+
+Steps to reproduce
+go to admin>store>configurtion>catalog>xml sitemap
+turn on generation and set up time.
+Expected result
+generate sitemap in magento root folder.
+Actual result
+no xml sitemap is found. 
+
+XML sitemap is not generated by schedule
 
 
 ### Swagger
 
+<!--- ENGCOM-1935 -->*
+https://github.com/magento/magento2/pull/15945
+
+Added zero index to array signifier in searchCriteria parameters builder
+
+This fix allows to generate correct response when user want to test method with some search criteria parameters in Swagger.
+
+
+Magento
+ REST API Schema (Swagger) is not compatible with Search Criteria
+ https://github.com/magento/magento2/issues/11477
+
+Vishal Gelani
+gelanivishal
 
 
 ### Swatches
@@ -91,6 +602,15 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Translations
+
+<!--- ENGCOM-2036 -->*
+https://github.com/magento/magento2/pull/16229
+Karla Saaremäe
+Karlasa
+
+Added translation possibility for moreButtonText
+
+https://github.com/magento/magento2/issues/16079
 
 
 
