@@ -83,7 +83,7 @@ Elasticsearch available in {{site.data.var.ee}} since 2.1.0 and in {{site.data.v
 
 #### Set up an message queue
 
-Since 2.3.0 {{site.data.var.ce}} includes message queue functionaity. In eralier versions it is availible only for  {{site.data.var.ee}}.
+Since 2.3.0 {{site.data.var.ce}} includes message queue functionality. In earlier versions it is available only for {{site.data.var.ee}}.
 
 *	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">RabbitMQ</a>
 
