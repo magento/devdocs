@@ -18,40 +18,66 @@ Magento supports the following types of asynchronous requests:
 * DELETE
 * PATCH
 
-GET requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.
-
++{%
++include note.html
++type='info'
++content='GET requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.'
++%}
 
 The route to all asynchronous calls contains the prefix `/async`, added before `/V1` of a standard synchronous endpoint. For example:
 
 ```
 POST /async/V1/products
-PUT /async/V1/products/{sku}
-DELETE /async/V1/products/{sku}
+PUT /async/V1/products/:sku
+DELETE /async/V1/products/:sku
 ```
 
 {{site.data.var.ce}} and {{site.data.var.ee}} installations support asynchronous web endpoint.
 
 The [Swagger documentation]({{ site.baseurl }}/swagger/index.html) provides a list of all current Magento API routes.
 
-#### Response
+The response of an asynchronous request contains the following fields:
 
-Response of any Asynchronous request looks like: 
+Field name | Data type | Description
+--- | --- | ---
+`bulk_uuid` | String | A generated universally unique identifier
+`request_items` | Object | An array containing information about the status of the asynchronous request.
+`id` | Integer | A generated ID that identifies the request 
+`data_hash` | String | 
+`status` | String | 
+`errors` | Boolean | Indicates whether an error occurred during processing 
 
-```
+## Sample usage
+
+The following call asynchronously changes the price of the product that has a `sku` of `24-MB01`:
+
+PUT /async/V1/products/24-MB01
+
+## Payload 
+
+``` json
 {
-  "bulk_uuid": "GENERATED UUID,
-  "request_items": {
-    "items": [
-      {
-        "id": 0,
-        "data_hash": null,
-        "status": "string"
-      }
-    ]
+  "product": {
+    "price": 29
   }
 }
 ```
 
-`bulkUuid` will be generated each time Asynchronous request is executed. 
+## Response
 
-You can use generated `bulkUuid` as the key for request your [operation status]({{ page.baseurl }}/rest/operation-status-endpoints.html) later. 
+Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status]({{ page.baseurl }}/rest/operation-status-endpoints.html) of your request. 
+
+``` json
+{
+    "bulk_uuid": "fbfca270-7a90-4c4e-9f32-d6cf3728cdc7",
+    "request_items": [
+        {
+            "id": 0,
+            "data_hash": null,
+            "status": "accepted"
+        }
+    ],
+    "errors": false
+}
+```
+
