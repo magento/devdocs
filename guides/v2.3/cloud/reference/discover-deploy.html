@@ -2114,7 +2114,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>During the build phase, the site is not in maintenance mode and will not be brought down if errors or issues occur. We build only what has changed since the last build.</p>
   </div>
 
-  <p>This phase builds the codebase and runs hooks in the <code class="highlighter-rouge">build</code> section of <code class="highlighter-rouge">.magento.app.yaml</code>. The default Magento build hook is the <code class="highlighter-rouge">php ./vendor/bin/m2-ece-build</code> command and performs the following:</p>
+  <p>This phase builds the codebase and runs hooks in the <code class="highlighter-rouge">build</code> section of <code class="highlighter-rouge">.magento.app.yaml</code>. The default Magento build hook is the <code class="highlighter-rouge">php ./vendor/bin/ece-tools</code> command and performs the following:</p>
 
   <ul>
     <li>Applies patches located in <code class="highlighter-rouge">vendor/magento/ece-patches</code>, as well as optional, project-specific patches in <code class="highlighter-rouge">m2-hotfixes</code></li>

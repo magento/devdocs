@@ -2163,12 +2163,12 @@ nodejs:
 <p>Use the <code class="highlighter-rouge">hooks</code> section to run shell commands during the build, deploy, and post-deploy phases:</p>
 
 <ul>
-  <li><strong><code class="highlighter-rouge">build</code></strong>—Execute commands <em>before</em> packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands <em>before</em> the default <code class="highlighter-rouge">php ./vendor/bin/m2-ece-build</code> command to make sure custom-generated content makes it to the deployment phase.</li>
-  <li><strong><code class="highlighter-rouge">deploy</code></strong>—Execute commands <em>after</em> packaging and deploying your application. You can access other services at this point. Since the default <code class="highlighter-rouge">php ./vendor/bin/m2-ece-deploy</code> command copies the <code class="highlighter-rouge">app/etc</code> directory to the correct location, you must add custom commands <em>after</em> the deploy command to prevent custom commands from failing.</li>
+  <li><strong><code class="highlighter-rouge">build</code></strong>—Execute commands <em>before</em> packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands <em>before</em> the default <code class="highlighter-rouge">php ./vendor/bin/ece-tools</code> command to make sure custom-generated content makes it to the deployment phase.</li>
+  <li><strong><code class="highlighter-rouge">deploy</code></strong>—Execute commands <em>after</em> packaging and deploying your application. You can access other services at this point. Since the default <code class="highlighter-rouge">php ./vendor/bin/ece-tools</code> command copies the <code class="highlighter-rouge">app/etc</code> directory to the correct location, you must add custom commands <em>after</em> the deploy command to prevent custom commands from failing.</li>
   <li><strong><code class="highlighter-rouge">post_deploy</code></strong>—Execute commands <em>after</em> deploying your application and <em>after</em> the container begins accepting connections. The <code class="highlighter-rouge">post_deploy</code> hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the <code class="highlighter-rouge">WARM_UP_PAGES</code> variable in the <a href="/guides/v2.1/cloud/env/variables-post-deploy.html">Post-deploy stage</a>. It is available only for Pro projects that contain <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Staging and Production environments in the Project Web UI</a> and for Starter projects. Although not required, this works in tandem with the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable.</li>
 </ul>
 
-<p>Add CLI commands under the <code class="highlighter-rouge">build</code> or <code class="highlighter-rouge">deploy</code> sections:</p>
+<p>Add CLI commands under the <code class="highlighter-rouge">build</code>, <code class="highlighter-rouge">deploy</code>, or <code class="highlighter-rouge">post_deploy</code> sections <em>before</em> the <code class="highlighter-rouge">ece-tools</code> command:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
     <span class="c1"># We run build hooks before your application has been packaged.</span>
@@ -2181,6 +2181,21 @@ nodejs:
     <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div></div>
+
+<p>Also, you can customize the build phase further by using the <code class="highlighter-rouge">generate</code> and <code class="highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools build:generate</span>
+        <span class="no"># php /path/to/your/script</span>
+        <span class="no">php ./vendor/bin/ece-tools build:transfer</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">build:generate</code>—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.</li>
+  <li><code class="highlighter-rouge">build:transfer</code>—transfers generated code and static content to the final destination.</li>
+</ul>
 
 <p>The commands run from the application (<code class="highlighter-rouge">/app</code>) directory. You can use the <code class="highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning of the hook.</p>
 
