@@ -239,7 +239,7 @@ hooks:
         npm install
         grunt
         cd
-        php ./vendor/bin/m2-ece-build
+        php ./vendor/bin/ece-tools
 ```
 
 You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
