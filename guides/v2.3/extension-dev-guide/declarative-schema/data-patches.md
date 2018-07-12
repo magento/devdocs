@@ -13,7 +13,7 @@ Optionally, if you plan to enable rollback for your patch during module uninstal
 
 The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the Composer version. Therefore, you can create all new patches and modules without specifying a `setup_module` version.
 
-The sequnce of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
+The sequence of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
 
 To define a dependency in a patch, make a static reference to the patch class. The class can be in any module.
 
