@@ -7,11 +7,9 @@ version: 2.3
 github_link: ui_comp_guide/components/ui-urlinput.md
 ---
 
-## Overview
-
 The urlInput component implements the `<urlInput>` form field.
 
-## urlInput configuration
+## Configuration options
 Extends all `abstract` configuration.
 
 urlInput-specific options:
@@ -141,6 +139,10 @@ urlInput-specific options:
     </td>
   </tr>
 </table>
+
+## Examples
+
+### Configure component
 
 By default, you can use `Magento\Ui\Model\UrlInput\LinksConfigProvider`, which provides text input for URLs. `LinksConfigProvider` is composite and you can add new options to the `di.xml` file.
 
