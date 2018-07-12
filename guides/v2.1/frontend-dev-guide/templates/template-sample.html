@@ -1139,31 +1139,31 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="whats-in-this-topic">What’s in this topic</h2>
-<p>This topic contains a step-by-step illustration of solving a typical design customization task using templates.</p>
+			<p>This topic contains a step-by-step illustration of solving a typical design customization task using templates.</p>
 
 <h2 id="sample-template-customization-changing-a-layout-of-the-mini-shopping-cart">Sample template customization: changing a layout of the mini shopping cart</h2>
 <p>In the Magento basic Blank theme, in the mini shopping cart, products are listed under the <strong>Go to Checkout</strong> button, like following:</p>
 
-<p><img src="/common/images/inherit_mini1.png" alt="An image of a mini shopping cart where products are listed under the **Go to Checkout** button" /></p>
+<p><img src="/common/images/inherit_mini121.png" alt="An image of a mini shopping cart where products are listed under the Go to Checkout button" /></p>
 
 <p>OrangeCo decided they want to change this and display the product list before the <strong>Go to Checkout</strong> button.</p>
 
-<p>The template responsible for displaying the mini-shopping cart items and controls is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html"><code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/template/minicart/content.html</code></a>.
+<p>The template responsible for displaying the mini-shopping cart items and controls is <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html" target="\_blank"><code class="highlighter-rouge">&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/template/minicart/content.html</code></a>.
 Here is the part of the code OrangeCo worked with:</p>
 
-<p><img src="/common/images/templ_overview_code1.png" alt="code" /></p>
+<p><img src="/common/images/templ_overview_code121.png" alt="code1" /></p>
 
 <p>They created a new Orange   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- and copied the <code class="highlighter-rouge">content.phtml</code> to the theme directory:
-<code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Checkout/web/template/minicart/content.html</code>
-In their copy of the templates, they changed the order of the blocks as follows:</p>
+ and copied the <code class="highlighter-rouge">content.html</code> to the theme directory:
+<code class="highlighter-rouge">app/design/frontend/OrangeCo/orange/Magento_Checkout/web/template/minicart/content.html</code>.</p>
 
-<p><img src="/common/images/templ_overview_code2.png" alt="code" /></p>
+<p>In their copy of the templates, they changed the order of the blocks as follows:</p>
 
-<p>When the Orange theme was applied, the mini shopping cart with products looked like following:</p>
+<p><img src="/common/images/templ_overview_code221.png" alt="code2" /></p>
 
-<p><img src="/common/images/inherit_mini2.png" alt="In the minishopping cart products are listed before the Go to Checkout button " /></p>
+<p>When the Orange theme was applied, the mini shopping cart with products looked like the following:</p>
+
+<p><img src="/common/images/inherit_mini221.png" alt="In the minishopping cart products are listed before the Go to Checkout button" /></p>
 
 			
 		</div>
