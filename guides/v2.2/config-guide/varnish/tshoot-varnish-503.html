@@ -1960,7 +1960,7 @@ DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
 <p>If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 .</p>
 
-<p>This situation could happen because the default health check has a <code class="highlighter-rouge">timeout</code> value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is consindered unhealthy. Varnish serves stale content when the server is unhealthy.</p>
+<p>This situation could happen because the default health check has a <code class="highlighter-rouge">timeout</code> value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is considered unhealthy. Varnish serves stale content when the server is unhealthy.</p>
 
 <p>Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again).  However, you can use the following command to enable cache:</p>
 
