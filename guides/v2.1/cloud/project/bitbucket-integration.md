@@ -8,86 +8,109 @@ functional_areas:
   - Setup
 ---
 
-Use the Bitbucket integration to automatically build and deploy an environment when you push new code to Bitbucket. This integration synchronizes your Bitbucket repository with your {{site.data.var.ece}} account.
+You can configure your Bitbucket repository to automatically build and deploy an environment when you push code changes. This integration synchronizes your Bitbucket repository with your {{site.data.var.ece}} account.
 
 For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info}
 We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
-</div>
 
-## Before you begin
--   You must have a {{site.data.var.ece}} project and you must be an administrator of the project.
--   You must have a Bitbucket account and administrative access to the Bitbucket repository you want to integrate.
--   You must install the [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment.
+Before you enable the integration, you must have the following:
+
+-  Administrator access to the {{site.data.var.ece}} project
+-  A Bitbucket account
+-  Administrator access to the Bitbucket repository
+-  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
 
 ## Prepare your repository
-This section shows you how to clone your {{site.data.var.ece}} project from and existing environment and add that code to a new, empty Bitbucket repository. If you don't already have an empty Bitbucket repository, [create one](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="\_blank"} before proceeding.
+You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.
 
-1.  Open a terminal and log in to your {{site.data.var.ece}} project:
+1.  From the terminal, log in to your {{site.data.var.ece}} project.
 
-        magento-cloud login
+    ```bash
+    magento-cloud login
+    ```
 
-1.  List your projects. With the project ID, you can complete additional commands:
+1.  List your projects and copy the project ID.
 
-        magento-cloud project:list
+    ```bash
+    magento-cloud project:list
+    ```
 
-1.  Clone a project to your local environment:
+1.  Clone the project to your local environment.
 
-        magento-cloud project:get <project ID>
+    ```bash
+    magento-cloud project:get <project-ID>
+    ```
 
-1.  Add your Bitbucket repository as a remote. Replace `<user-name>/<repo-name>` with your Bitbucket information.
+1.  Add your Bitbucket repository as a remote.
 
-        git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
+    ```bash
+    git remote add origin git@bitbucket.org:<user-name>/<repo-name>.git
+    ```
 
 1.  Delete the default `magento` remote.
 
-        git remote remove magento
+    ```bash
+    git remote remove magento
+    ```
 
-1.  Verify that you added the Bitbucket remote correctly:
+1.  Verify that you added the Bitbucket remote correctly.
 
-        git remote -v show
+    ```bash
+    git remote -v
+    ```
 
     You should see the following:
 
-        origin git@bitbucket.org:<user-name>/<repo-name>.git (fetch)
-        origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
+    ```terminal
+    origin git@bitbucket.org:<user-name>/<repo-name>.git (fetch)
+    origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
+    ```
 
-1.  Push files to your new Bitbucket repository:
+1.  Push the project files to your new Bitbucket repository. Remember to keep all branch names the same.
 
-        git push -u origin master
+    ```bash
+    git push -u origin master
+    ```
 
 1.  Verify that your Bitbucket repository contains all of your project files.
 
 ## Create an OAuth consumer
-The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. This section shows you how to create one in Bitbucket. You'll need the OAuth `key` and `secret` from this consumer to complete the next section.
+The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. You need the OAuth `key` and `secret` from this consumer to complete the next section.
+
+#### To create an OAuth consumer in Bitbucket:
 
 1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="\_blank"} account.
+
 1.  Click **Settings** > **Access Management** > **OAuth**.
+
 1.  Click **Add consumer** and configure it as follows:
 
     ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png)
 
-    <div class="bs-callout bs-callout-warning" markdown="1">
-    A valid **Callback URL** isn't required, but you must enter a value in this field to successfully complete the integration.
-    </div>
+    {: .bs-callout .bs-callout-warning}
+    A valid **Callback URL** is not required, but you must enter a value in this field to successfully complete the integration.
 
 1.  Click **Save**.
+
 1.  Click the consumer **Name** to reveal your OAuth `key` and `secret`.
-1.  Copy your OAuth `key` and `secret`. You'll need it to complete the next section.
+
+1.  Copy your OAuth `key` and `secret` for configuring the integration.
 
 ## Configure the integration
 
-1.  Open a terminal and navigate to your local {{site.data.var.ece}} project directory.
-1.  Create a temporary new file called `bitbucket.json` and add the following:
+1.  From the terminal, navigate to your {{site.data.var.ece}} project.
+
+1.  Create a temporary file called `bitbucket.json` and add the following, replacing the variables in angle brackets with your values:
 
     ```json
     {
       "type": "bitbucket",
-      "repository": "bitbucket-user-name/bitbucket-repo-name",
+      "repository": "<bitbucket-user-name/bitbucket-repo-name>",
       "app_credentials": {
-        "key": "YOUR OAUTH CONSUMER KEY",
-        "secret": "YOUR OAUTH CONSUMER SECRET"
+        "key": "<oauth-consumer-key>",
+        "secret": "<oauth-consumer-secret>"
       },
       "prune_branches": true,
       "fetch_branches": true,
@@ -96,70 +119,69 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     }
     ```
 
-    Replace the following values with your information:
+    {: .bs-callout .bs-callout-tip}
+    Be sure to use the name of your Bitbucket repository and not the URL. The integration will fail if you use a URL.
 
-    -   `bitbucket-user-name/bitbucket-repo-name`
-    -   `YOUR OAUTH CONSUMER KEY`
-    -   `YOUR OAUTH CONSUMER SECRET`
+1.  Add the integration to your project using the `magento-cloud` CLI tool.
 
-    <div class="bs-callout bs-callout-tip" markdown="1">
-    Be sure to use the name of your Bitbucket repository and not the URL. The integration will fail if you use the URL.
-    </div>
+    {: .bs-callout .bs-callout-warning}
+    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone.
 
-1.  Add the integration to your project using the `magento-cloud` CLI tool. Replace `PROJECT ID` with your {{site.data.var.ece}} project ID.
+    ```bash
+    magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
+    ```
 
-    <div class="bs-callout bs-callout-warning" markdown="1">
-    Running the following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the master (production) branch. This action happens instantly and cannot be undone.
-    </div>
-
-        magento-cloud project:curl -p 'PROJECT ID' /integrations -i -X POST -d "$(< bitbucket.json)"
-
-    This command returns a long HTTP response, including headers. The first line of the output should contain a 200 or 201 status code indicating successful integration. A status of 400 or above indicates that an error occurred.
+    This returns a long HTTP response with headers. A successful integration returns a 200 or 201 status code. A status of 400 or above indicates that an error occurred.
 
 1.  Delete the temporary `bitbucket.json` file.
 
-        rm bitbucket.json
+1.  Verify the project integration.
 
-1.  Your {{site.data.var.ece}} project, including all branches, is now synchronized with your Bitbucket repository. List the project's integration with the following command:
+    ```bash
+    magento-cloud integrations -p '<project-ID>'
+    ```
 
-        magento-cloud integrations -p 'PROJECT ID'
-
-## Verify that it works
+## Test the integration
 After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.
 
-1.  Create a test file:
+1.  Create a test file.
 
-        touch test.md
+    ```bash
+    touch test.md
+    ```
 
-1.  Commit and push it to your Bitbucket repository:
+1.  Commit and push the change to your Bitbucket repository.
 
-        git add . && git commit -m "Testing Bitbucket integration" && git push
+    ```
+    git add . && git commit -m "Testing Bitbucket integration" && git push
+    ```
 
-1.  Log in to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project is being deployed.
+1.  Log in to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) and verify that your commit message is displayed and your project deploying.
 
     ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
 
+## Create a new Cloud branch
+The Bitbucket integration cannot create new environments in your project; therefore, you must use the `magento-cloud` CLI tool to [create branches]({{page.baseurl}}/cloud/env/environments-start.html#getstarted).
 
-## Branching
-The Bitbucket integration cannot create new environments in your project, so you must use the `magento-cloud` CLI tool to [create branches]({{ page.baseurl }}/cloud/env/environments-start.html#getstarted).
-
-After creating a new environment, you can push the corresponding branch up to your remote Bitbucket repository using regular git commands. For example, `git push -u origin <your-branch>`. Subsequent changes to your branch in Bitbucket will automatically build and deploy the environment.
+After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 
 ## Remove the integration
 You can safely remove the Bitbucket integration from your project without affecting your code.
 
-To remove the integration using the `magento-cloud` CLI tool:
+#### To remove the Bitbucket integration:
 
-1.  Log in to your project.
-
-        magento-cloud login
+1.  From the terminal, log in to your {{site.data.var.ece}} project.
 
 1.  List your integrations. You need the Bitbucket integration ID to complete the next step.
 
-        magento-cloud integration:list
+    ```bash
+    magento-cloud integration:list
+    ```
 
 1.  Delete the integration.
 
-        magento-cloud integration:delete <ID>
+    ```bash
+    magento-cloud integration:delete <project-ID>
+    ```
 
-You can also remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the _Settings_ page.
+Also, you can remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the _Settings_ page.
