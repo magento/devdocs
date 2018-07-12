@@ -1650,7 +1650,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="nv">$serializedData</span> <span class="o">=</span> <span class="nv">$operation</span><span class="o">-&gt;</span><span class="na">getSerializedData</span><span class="p">();</span>
         <span class="nv">$unserializedData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">jsonHelper</span><span class="o">-&gt;</span><span class="na">jsonDecode</span><span class="p">(</span><span class="nv">$serializedData</span><span class="p">);</span>
         <span class="k">try</span> <span class="p">{</span>
-            <span class="c1">//add here your own logic for async opertions
+            <span class="c1">//add here your own logic for async operations
 </span>        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Zend_Db_Adapter_Exception</span>  <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">//here sample how to process exceptions if they occured
 </span>            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logger</span><span class="o">-&gt;</span><span class="na">critical</span><span class="p">(</span><span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">());</span>
@@ -1756,7 +1756,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h4 id="create-queue_topologyxml">Create <code class="highlighter-rouge">queue_topology.xml</code></h4>
-<p>The <code class="highlighter-rouge">queuetopology.xml</code> file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:</p>
+<p>The <code class="highlighter-rouge">queue_topology.xml</code> file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/topology.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;exchange</span> <span class="na">name=</span><span class="s">"magento"</span> <span class="na">type=</span><span class="s">"topic"</span> <span class="na">connection=</span><span class="s">"amqp"</span><span class="nt">&gt;</span>
