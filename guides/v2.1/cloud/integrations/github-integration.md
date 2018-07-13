@@ -2,7 +2,7 @@
 group: cloud
 title: GitHub integration
 version: 2.1
-github_link: cloud/project/project-integrate-github.md
+github_link: cloud/integrations/github-integration.md
 functional_areas:
   - Cloud
   - Setup
@@ -14,18 +14,17 @@ We strongly recommend you use a *private* GitHub repository.
 
 This integration enables you to:
 
-*	Create a new environment when you create a branch or opening a pull request on GitHub.
-*	Rebuild the environment when you push new code to GitHub.
-*	Delete the environment when you merge a pull request.
+-  Create a new environment when you create a branch
+-  Redeploy the environment when you merge a pull request
+-  Delete the environment when you delete the branch
 
 You must obtain a GitHub token and a webhook to continue the process.
 
 ## Generate a GitHub token
-You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="\_blank"}.
+You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="\_blank"}.
 
 ## Enable the GitHub integration
 This section discusses how to enable the GitHub integration.
-
 
 {% include cloud/cli-get-started.md %}
 

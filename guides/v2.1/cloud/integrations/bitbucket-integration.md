@@ -2,7 +2,7 @@
 group: cloud
 title: Bitbucket integration
 version: 2.1
-github_link: cloud/project/bitbucket-integration.md
+github_link: cloud/integrations/bitbucket-integration.md
 functional_areas:
   - Cloud
   - Setup
@@ -18,9 +18,10 @@ We _strongly_ recommend using a private Bitbucket repository for your {{site.dat
 Before you enable the integration, you must have the following:
 
 -  Administrator access to the {{site.data.var.ece}} project
+-  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
 -  A Bitbucket account
 -  Administrator access to the Bitbucket repository
--  [`magento-cloud` CLI]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install) tool in your local environment
+-  An SSH access key for the Bitbucket repository
 
 ## Prepare your repository
 You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.
@@ -66,13 +67,15 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
     ```terminal
     origin git@bitbucket.org:<user-name>/<repo-name>.git (fetch)
     origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
-    ```
+    ```{: .no-copy}
 
 1.  Push the project files to your new Bitbucket repository. Remember to keep all branch names the same.
 
     ```bash
     git push -u origin master
     ```
+
+    If you are starting with a new Bitbucket repository, you may have to use the `-f` option, because the remote repository does not match your local copy.
 
 1.  Verify that your Bitbucket repository contains all of your project files.
 
@@ -161,7 +164,40 @@ After configuring the Bitbucket integration, test it by pushing a simple change 
     ![Testing the Bitbucket integration]({{ site.baseurl }}/common/images/cloud_test_bitbucket_integration.png)
 
 ## Create a new Cloud branch
-The Bitbucket integration cannot create new environments in your project; therefore, you must use the `magento-cloud` CLI tool to [create branches]({{page.baseurl}}/cloud/env/environments-start.html#getstarted).
+The Bitbucket integration cannot activate new environments in your {{site.data.var.ece}} project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the `magento-cloud` CLI tool or the Project Web UI.
+
+#### To activate a branch created with Bitbucket:
+
+1.  Use the magento-cloud CLI to push the branch.
+
+    ```bash
+    magento-cloud environment:push from-bitbucket
+    ```
+
+    ```terminal
+    Pushing from-bitbucket to the new environment from-bitbucket
+    Activate from-bitbucket after pushing? [Y/n] y
+    Parent environment [master]: integration
+    --- (Validation and activation messages)
+    ```
+
+1.  Verify the environment is active.
+
+    ```bash
+    magento-cloud environment:list
+    ```
+
+    ```
+    Your environments are: 
+    +---------------------+----------------+--------+
+    | ID                  | Name           | Status |
+    +---------------------+----------------+--------+
+    | master              | Master         | Active |
+    |  integration        | integration    | Active |
+    |    from-bitbucket * | from-bitbucket | Active |
+    +---------------------+----------------+--------+
+    * - Indicates the current environment
+    ```
 
 After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 

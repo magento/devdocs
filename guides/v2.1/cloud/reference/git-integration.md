@@ -49,7 +49,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 When setting up your SSH, review our information at [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 
 ## Git integrations {#integrations}
-We support using either [Github]({{ page.baseurl }}/cloud/project/project-integrate-github.html) or [Bitbucket]({{ page.baseurl }}/cloud/project/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
+We support using either [Github]({{ page.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 To integrate other git repositories with your {{site.data.var.ece}} project using Github or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).
