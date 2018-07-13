@@ -2218,21 +2218,6 @@ nodejs:
         <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div></div>
 
-<p>Also, you can customize the build phase further by using the <code class="highlighter-rouge">generate</code> and <code class="highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
-    <span class="c1"># We run build hooks before your application has been packaged.</span>
-    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
-        <span class="no">php ./vendor/bin/ece-tools build:generate</span>
-        <span class="no"># php /path/to/your/script</span>
-        <span class="no">php ./vendor/bin/ece-tools build:transfer</span>
-</code></pre></div></div>
-
-<ul>
-  <li><code class="highlighter-rouge">build:generate</code>—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.</li>
-  <li><code class="highlighter-rouge">build:transfer</code>—transfers generated code and static content to the final destination.</li>
-</ul>
-
 <p>The commands run from the application (<code class="highlighter-rouge">/app</code>) directory. You can use the <code class="highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning of the hook.</p>
 
 <h4 id="to-compile-sass-files-using-grunt">To compile SASS files using grunt:</h4>
