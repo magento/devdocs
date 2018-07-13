@@ -36,7 +36,6 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<<<<<<< HEAD
 <!--- ENGCOM-1685 -->* Category\Collection::joinUrlRewrite should use the store set on the collection
 https://github.com/magento/magento2/issues/13704
 
@@ -111,7 +110,6 @@ Mini cart should also show the correct product title after converting the html e
 ampulos
 https://github.com/ampulos
 
-=======
 
 
 
@@ -123,7 +121,6 @@ https://github.com/ampulos
 
 
 
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
 ### Configurable products
 
 
@@ -135,7 +132,6 @@ https://github.com/ampulos
 ### Customers
 
 
-<<<<<<< HEAD
 ### Directory
 <!--- ENGCOM-1948 -->*
 
@@ -157,9 +153,6 @@ hitesh-wagento
 https://github.com/magento/magento2/issues/13899
 
 
-=======
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
-
 
 ### Email
 
@@ -168,7 +161,6 @@ https://github.com/magento/magento2/issues/13899
 
 ### Framework
 
-<<<<<<< HEAD
 <!--- ENGCOM-1262 -->*
 Fix empty changelog tables after MySQL restart
 https://github.com/magento/magento2/pull/14471
@@ -224,13 +216,11 @@ Malaysian (Malaysia) missing from locale list
 
 https://github.com/magento/magento2/issues/14089
 
-=======
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
+
 
 #### Configuration framework
 
 
-<<<<<<< HEAD
 #### Customer 
 
 <!--- ENGCOM-1337 -->*
@@ -244,13 +234,11 @@ André Ferraz
 ferrazzuk
 
 https://github.com/magento/magento2/issues/14663
-=======
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
+
 
 
 
 ### General
-<<<<<<< HEAD
 <!--- ENGCOM-1272 -->*
 Check if proExpected result
 Return a 404 page similar to the product page on /catalog/product/view/id/1
@@ -400,29 +388,292 @@ Browsing through the source code, we found occurences of the word "Caterory" in 
 
 
 
-<!--- ENGCOM-1859 -->*
+<!--- ENGCOM-1859 -->* 1859
+https://github.com/magento/magento2/pull/15767
+
+First PDF download / export after login
+https://github.com/magento/magento2/issues/15510
+
+Steps to reproduce
+Log in with an admin user who does not have the permissions Other Settings -> Notifications -> *
+Right after login try to download any PDF or export data
+Expected result
+Download of generated file
+Actual result
+Redirect to Admin Dashboard
+
+Sanjay Patel
+sanjay-wagento
+
+
 <!--- ENGCOM-1849 -->*
+Styling <select> by changing less variables in Luma theme… 
+https://github.com/magento/magento2/pull/15796
+
+Hitesh
+hitesh-wagento
+
+https://github.com/magento/magento2/issues/15608
+
+
+Expected result
+Have "select" elements with the styles you set in theme.less
+Actual result
+select" elements have different styles
+
+
+
 
 <!--- ENGCOM-1930 -->*
+
+Trim username on customer account login page 
+
+https://github.com/magento/magento2/pull/15874
+Trim email address on customer account login page generally when copy and paste.
+
+Description
+Trim email address by remove leading or trailing space on the customer account login page email field.
+
+Piyush Dankhara
+dankhrapiyush
+
+E11 user login email validation fails if field has leading or trailing space 
+Steps to reproduce
+Attempt login using IE with a valid user email but place a space either before or after the address.
+Try again with Chrome.
+Expected result
+Client-side email validation should work the same in IE11 as it does in Chrome.
+Actual result
+Using IE, client-side validation fails with "Please enter a valid email address (Ex: johndoe@domain.com)."
+Using Chrome, login succeeds. (padded whitespace is presumably trimmed?)
+
+
 <!--- ENGCOM-2096 -->*
+
+Trim email address in customer account create and login form 
+
+Description
+Trim email address by remove leading or trailing space on following forms.
+
+Customer account login page (Improved PR code #15874)
+Customer account create page
+Customer authentication popup in case Allow Guest Checkout set to No
+
+Client-side email validation should work the same in IE11 as it does in Chrome.
+
+
+Piyush Dankhara
+dankhrapiyush
+
+https://github.com/magento/magento2/pull/16297
+https://github.com/magento/magento2/issues/6058
+
+
 
 <!--- ENGCOM-1881 -->*
 
+limiter float too generic
+
+https://github.com/magento/magento2/pull/15880
+Hitesh
+hitesh-wagento
+https://github.com/magento/magento2/issues/15323
+
+Steps to reproduce
+inspect toolbar in product list
+compare styles of .limiter and .pages
+Expected result
+.limiter should have the same parent selectors like .pages to prevent clashes between styles and layouts
+Actual result
+.limiter is too generic and is used as single selector for floating the element
+
+
+
 <!--- ENGCOM-1903 -->*
+https://github.com/magento/magento2/pull/15917
+Hitesh
+hitesh-wagento
+
+Changing @tab-content__border variable has no effect in Blank theme
+
+
+Expected result
+Tabs content has border
+
+Actual result
+Tabs content has no border
+
+https://github.com/magento/magento2/issues/14999
+
+
+
 
 <!--- ENGCOM-1870 -->*
+contributor name: @viral-wagento
+contributor link: https://github.com/viral-wagento
+
+Resolve Knockout non-unique elements id in console error
+
+https://github.com/magento/magento2/pull/15834
+
+When enabling more than one payment methods from admin, It is giving an error in the console "Found elements with non-unique id billing-address-form "
+https://github.com/magento/magento2/issues/15348
+
+Multiple Payment Methods Enabled is giving error in console "Found 3 Elements with non - unique Id"
+
+
 
 <!--- ENGCOM-1989 -->*
 
+Added new less variables for primary button to change font-weight, font-size, font-family without changing default button attributes
+https://github.com/magento/magento2/issues/15832
+There is no @button-primary__font-weight for setting the font weight of the primary buttons.
+
+Expected result
+Possibility to change only primary button font-weight without changing regular button font-weight with less variables
+
+Actual result
+Primary button don't have specific variable and falling back to variable @button__font-weight
+
+Chirag Matholiya
+chirag-wagento
+
+https://github.com/magento/magento2/pull/16037
+
+
+
 <!--- ENGCOM-2048 -->*
+
+https://github.com/magento/magento2/pull/15727
+Added some style to solve space issue on a category page with one column layout.
+
+
+https://github.com/magento/magento2/issues/12601
+
+A space between the category page and the main footer when applying specific settings
+
+Sanjay Patel
+sanjay-wagento
+
+
+
+
 <!--- ENGCOM-2061 -->*
+
+unlock customer after password reset
+https://github.com/magento/magento2/pull/16255
+Vishal Gelani
+gelanivishal
+
+Customer who exceeded max login failures not able to login even after reset password
+
+https://github.com/magento/magento2/issues/15255
+
+Expected result
+Customer should be allowed to login successfully as Reset Password completed successfully.
+Actual result
+Customer receives error "You did not sign in correctly or your account is temporarily disabled" even though new password hash is updated in customer entity
+
+
+
 <!--- ENGCOM-2080 -->*
-<!--- ENGCOM-2068 -->*
+Fix duplicate element id issue
+Chirag Matholiya
+chirag-wagento
+
+https://github.com/magento/magento2/pull/16264
+
+https://github.com/magento/magento2/issues/13415
+
+Steps to reproduce
+Go to Stores -> Configuration -> Sales -> Sales under Gift Options and set both Allow Gift Messages to YES
+Put something in cart and go to checkout or cart page
+Expected result
+Two forms for gift messages having fields with unique ids
+Actual result
+Two forms for gift messages having fields with non unique ids
+
+
+
+<!--- ENGCOM-2068 -->* Refactor validate code in Tax module
+
+https://github.com/magento/magento2/pull/16270
+
+Refactor javascript validate code in Tax module.
+Vishal Gelani
+gelanivishal
+
+https://github.com/magento/magento2/issues/15352
+
+Use javascript inside .phtml file it's legacy code that we try to refactor according to Magento way.
+
+
+
+
+
+
+
 <!--- ENGCOM-2084 -->*
+Solve overlapping Issue on category page
+
+https://github.com/magento/magento2/pull/16287
+
+Chirag Matholiya
+chirag-wagento
+
+
+https://github.com/magento/magento2/issues/15213
+Alignment & overlapping Issue on every Home page & category page of Hot Seller section
+
+Steps to reproduce
+On Home page there are issue worth alignment for after the second row of product listing (Hot seller section)
+On Category Page there are section name Hot seller that section also same issue
+Expected result
+It would be in same alignment either same as second row or first row but alignment will be same
+
+
+
+
+
 
 <!--- ENGCOM-2108 -->*
 
+
+widget (jQuery UI DatePicker) with numberOfMonths = 2 or more
+
+
+Steps to reproduce
+set options to widget 'numberOfMonths'=> array(1,3),
+set options on widget to any non-default values for 'numberOfMonths'
+Expected result
+jQuery UI DatePicker Widget with a list of months
+Actual result
+the first month is normal - the remaining corrupted
+month header repeat
+next month days not show
+
+https://github.com/magento/magento2/issues/7379
+
+https://github.com/magento/magento2/pull/16280
+
+Burlacu Vasilii
+vasilii-b
+
 <!--- ENGCOM-2244 -->*
+clickableOverlay-less-fix - added pointer-events rule to .modal- popup class to let user click deeper than modals and reach to overlay's div in modal-wrapper div
+
+
+Problem: modal's overlay div would not catch click event because is covered by modal's div above. That's why modal is would not fire close event when user is clicking outside modal.
+
+My proposition of solution for that issue is add pointer-events: none css rule to modals in theme's less files.
+
+Prince Patel
+mageprince
+
+
+https://github.com/magento/magento2/issues/7399
+
+Modal UI: clickableOverlay option doesn't work
 
 
 
@@ -598,15 +849,10 @@ Actual result
 no xml sitemap is found. 
 
 XML sitemap is not generated by schedule
-=======
-
-
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
 
 
 ### Swagger
 
-<<<<<<< HEAD
 <!--- ENGCOM-1935 -->*
 https://github.com/magento/magento2/pull/15945
 
@@ -621,8 +867,6 @@ Magento
 
 Vishal Gelani
 gelanivishal
-=======
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
 
 
 ### Swatches
@@ -634,7 +878,6 @@ gelanivishal
 
 ### Translations
 
-<<<<<<< HEAD
 <!--- ENGCOM-2036 -->*
 https://github.com/magento/magento2/pull/16229
 Karla Saaremäe
@@ -643,10 +886,6 @@ Karlasa
 Added translation possibility for moreButtonText
 
 https://github.com/magento/magento2/issues/16079
-
-=======
->>>>>>> 07405af8034b9896096f8157d600384d19becab7
-
 
 
 
