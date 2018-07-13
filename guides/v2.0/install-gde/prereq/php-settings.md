@@ -49,7 +49,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 {% endcollapsible %}
 
 ### Step 1: Find PHP configuration files {#php-required-find}
-This section discusses how you find the configuration files necesary to update required settings.
+This section discusses how you find the configuration files necessary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}
 To find the web server configuration, run a <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
