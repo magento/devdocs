@@ -20,7 +20,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 ## General guidelines {#instgde-prereq-mysql-intro}
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento application requires MySQL 5.6.x.</p>
-  <p>Magention versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
+  <p>Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
   <p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies. </p>
 </div>
 

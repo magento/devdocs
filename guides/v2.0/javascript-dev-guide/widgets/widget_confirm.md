@@ -8,7 +8,7 @@ version: 2.0
 github_link: javascript-dev-guide/widgets/widget_confirm.md
 ---
 
-<h2>Overview</h2>
+## Overview
 
 The Magento confirmation widget implements a modal pop-up window with the cancel and confirmation button.It is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.
 

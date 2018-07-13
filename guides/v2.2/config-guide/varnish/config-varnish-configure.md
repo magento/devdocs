@@ -189,7 +189,7 @@ A long list of response headers display in your command prompt window. Look for 
 	-   VCL_call       BACKEND_FETCH
 	-   VCL_return     fetch
 	-   BackendOpen    17 default(10.249.151.10,,8080) 10.249.151.10 60914
-	-   Backend        17 default default(10.249.151.10,,8080)
+	-   Backend        17 default(10.249.151.10,,8080)
 	-   Timestamp      Bereq: 1440449534.261791 0.000618 0.000618
 	-   ReqHeader      Host: 10.249.151.10
 	-   ReqHeader      Connection: keep-alive

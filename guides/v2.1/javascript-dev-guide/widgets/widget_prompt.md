@@ -8,7 +8,7 @@ version: 2.1
 github_link: javascript-dev-guide/widgets/widget_prompt.md
 ---
 
-<h2>Overview </h2>
+## Overview 
 
 
 The Magento prompt {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a modal pop-up window with an input field, and a cancel and a confirmation button.

@@ -10,7 +10,7 @@ redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
-<h2>Overview</h2>
+## Overview
 Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:
 <ul>
 <li>triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening</li>

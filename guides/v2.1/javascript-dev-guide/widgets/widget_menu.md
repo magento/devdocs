@@ -10,7 +10,7 @@ redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_menu.html
 ---
-<h2>Overview</h2>
+## Overview
 
 The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento menu extends the default functionality with the following:
 <ul>

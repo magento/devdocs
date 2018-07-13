@@ -13,7 +13,7 @@ Once you start with data patches, you cannot continue to use upgrade scripts.
 
 ## Convert install/upgrade schema scripts to  db_schema.xml files
 
-The **Schema Listener Tool** converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argment when you run the `setup:install` or `setup:upgrade` CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of `db_schema.xml` files (one per affected module).
+The **Schema Listener Tool** converts pre-Magento 2.3 migration scripts into declarative schema. To use this tool, you specify an argument when you run the `setup:install` or `setup:upgrade` CLI command. As Magento is installed or upgraded, the system logs all schema changes per module, then persists the changes in a series of `db_schema.xml` files (one per affected module).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The Schema Listener tool listens for schema changes and attempts to change Magento code, so it should not be run in production mode. It is disabled by default.
@@ -32,7 +32,7 @@ The Schema Listener Tool cannot convert everything that can appear in a pre-Mage
 
 * The tool supports only DDL operations represented in `\Magento\Framework\DB\Adapter\Pdo\Mysql`. As a result, the tool ignores all custom DDL operations.
 * The tool ignores all raw SQL in your `InstallSchema` or `UpgradeSchema` scripts.
-* Any DDL statements in a `Recurring` file will not be transfered to the new schema, because this file should be designed to run during each installation or upgrade.
+* Any DDL statements in a `Recurring` file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.
 * See [Configure declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) if you need to make manual modifications to your schema.
 
 ## Convert install/upgrade data scripts to the data patch format

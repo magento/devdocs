@@ -10,7 +10,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This topic is a step-by-step illustration of creating a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
@@ -75,7 +75,7 @@ For example:
 <img width="700px" src="{{ site.baseurl }}/common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed"> 
 </div>
 
-<h2> Recommended reading </h2>
+## Recommended reading
 
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a></li>

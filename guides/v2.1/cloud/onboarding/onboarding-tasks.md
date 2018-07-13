@@ -92,7 +92,7 @@ For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projec
 ## Sign up for Magento status {#status}
 Get updates about {{site.data.var.ece}}
 platform environments and related services from the
-[Status page](https://status.magento.cloud){:target="\_blank"} page.
+[Status page](https://status.magento.cloud){:target="\_blank"}.
 
 The page lists current status for all {{site.data.var.ece}} components and
 services followed by notifications about incident reports, service upgrades,
@@ -110,7 +110,7 @@ want to track. Sign up from the
 Users that have administrative access to the Admin panel can add users, configure store services, complete store set up and customization work, and more.
 
 For a new project, the first step after getting the welcome email is to secure Admin access to the project by changing the password on the Project Owner
-account.
+account. The default username for this account is `Admin`.
 
 You can submit a password change request using either of the following methods:
 
