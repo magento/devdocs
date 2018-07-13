@@ -42,7 +42,7 @@ The following table discusses the bootstrap parameters you can set:
 
 {:.bs-callout .bs-callout-info}
 *   Not all bootstrap parameters are documented at this time.
-*   You now set the Magento mode (developer, default, production) using the \[\`magento deploy:mode:set {mode}\`\]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
+*   You now set the Magento mode (developer, default, production) using the [`magento deploy:mode:set {mode}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 
 ## Specifying a parameter value using an environment variable {#mode-specify-var}
 This section discusses how to set the values of bootstrap parameters using environment variables.
@@ -110,7 +110,7 @@ The procedures that follows show how to set the Magento mode in an Apache virtua
 *	[Specify a bootstrap variable for Apache on CentOS](#mode-specify-centos)
 
 #### Specify a bootstrap variable for Apache on Ubuntu {#mode-specify-ubuntu}
-This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts){:target="&#95;blank"}.
+This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts){:target="&#95;blank"}.
 
 To set a Magento bootstrap variable using your web server's environment:
 
@@ -144,7 +144,7 @@ To set a Magento bootstrap variable using your web server's environment:
 	*	CentOS: `service httpd restart`
 
 #### Specify a bootstrap variable for Apache on CentOS {#mode-specify-centos}
-This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6){:target="&#95;blank"}.
+This section assumes you've already set up your virtual host. If you have not, consult a resource such as [this DigitalOcean tutorial](https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6){:target="&#95;blank"}.
 
 To set a Magento bootstrap variable using your web server's environment:
 
