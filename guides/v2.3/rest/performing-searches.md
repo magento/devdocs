@@ -7,7 +7,7 @@ menu_title: Search using REST
 menu_order: 2
 version: 2.3
 github_link: rest/performing-searches.md
-redirect_from: guides/v2.3/howdoi/webapi/search-criteria.html
+redirect_from: /guides/v2.3/howdoi/webapi/search-criteria.html
 
 ---
 

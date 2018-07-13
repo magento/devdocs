@@ -14,7 +14,7 @@ functional_areas:
   - Setup
 ---
 
-You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transfering media files, and migrating data.
+You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.
 
 Before preparing your project and importing code, push all pending changes to Git. Your remote {{site.data.var.ece}} branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.
 
@@ -81,7 +81,7 @@ Modify these files as necessary as discussed in the following topics:
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
 ## Add or update `auth.json` with Magento Authentication keys {#auth-json}
-To enable install and update commands for {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your {{site.data.var.ee}} [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
+To enable install and update commands for {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
 
 In some cases, you might already have `auth.json`. Verify if you have the file and add your authentication credentials before you create a new one. It's located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample){:target="\_blank"}.
 
@@ -177,7 +177,7 @@ The following command example compresses the dump so it doesn't significantly in
 
         mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 
-  For example, if your database is on localhost with the default port (3306), database user name is `magento`, and database name is also `magento`:
+  For example, if your database is on localhost with the default port (3306), database username is `magento`, and database name is also `magento`:
 
         mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 

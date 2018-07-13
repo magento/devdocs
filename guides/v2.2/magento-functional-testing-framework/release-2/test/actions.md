@@ -678,8 +678,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector1`|string|optional|A selector for the HTML element to drag.
 `selector2`|string|optional|A selector for the HTML element to drop onto.
-`x`|int|optional| X offset appllied to drag-and-drop destination.
-`y`|int|optional| Y offset appllied to drag-and-drop destination.
+`x`|int|optional| X offset applied to drag-and-drop destination.
+`y`|int|optional| Y offset applied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.

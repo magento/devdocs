@@ -212,7 +212,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69543 -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9704" target="_blank">9704</a>.*
 
-<!--- 70077 -->* Magento now correctly displays user names that exceed 20 characters.
+<!--- 70077 -->* Magento now correctly displays usernames that exceed 20 characters.
 
 <!--- 67522 -->* You can now upload `.apng` and `.ico` images as fav icons without error. *Fix submitted by community member <a href="https://github.com/WaPoNe" target="_blank">Michele Fantetti</a> in pull request <a href="https://github.com/magento/magento2/pull/8880" target="_blank">8880</a>.*
 

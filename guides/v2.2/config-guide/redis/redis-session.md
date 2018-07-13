@@ -35,7 +35,7 @@ where
 <td>session-save-redis-host</td>
 <td>host</td>
 <td>
-<p>Fully qualified host name, IP address, or absolute path if using UNIX sockets.</p>
+<p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p>
 </td>
 <td>localhost</td>
 </tr>

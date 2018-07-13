@@ -7,11 +7,11 @@ menu_title: Accordion widget
 version: 2.0
 github_link: javascript-dev-guide/widgets/widget_accordion.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html
 ---
 
-<h2>Overview</h2>
+## Overview
 
 Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
 

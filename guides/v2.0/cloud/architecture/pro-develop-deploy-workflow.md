@@ -46,7 +46,7 @@ Every time you push code from your local workstation to the remote environment o
 Build script actions:
 
 -  Site in the target environment continues to run during a build
--  Check and run {{site.data.var.ece}} patches and hot fixes
+-  Check and run {{site.data.var.ece}} patches and hotfixes
 -  Compile code with a build and deploy log
 -  Check for Configuration Management, static content deploy occurs during this phase
 -  Create or use a slug of unchanged code to speed up the process

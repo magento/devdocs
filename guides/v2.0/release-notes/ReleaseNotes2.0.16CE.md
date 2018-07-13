@@ -34,7 +34,7 @@ vulnerabilities. See [Magento 2.0.16 and 2.1.9 Security Patches](https://magento
 
 ## Fixed issue
 
-* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html).
+* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, the discontinued First-Class Mail Parcel service will change to First-Class Package Service – Retail. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html).
 
 <!--- 60835 -->* We’ve changed how Magento displays status updates during a product upgrade. Previously, potentially vulnerable information such as full paths and module names were displayed in the product GUI, potentially exposing this information to a malicious user. Magento now restricts this potentially vulnerable information to logs that are available to administrators only.   
 

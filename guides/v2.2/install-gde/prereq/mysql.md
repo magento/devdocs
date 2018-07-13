@@ -20,7 +20,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 ## General guidelines {#instgde-prereq-mysql-intro}
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Magento application requires MySQL 5.6.x.</p>
-  <p>Magention versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
+  <p>Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
   <p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies. </p>
 </div>
 
@@ -165,7 +165,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 5.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
 ## Installing and configuring MySQL 5.7 on CentOS {#instgde-prereq-mysql57-centos}
-This section discusses how to to install MySQL 5.7 on CentOS 6 or CentOS 7.
+This section discusses how to install MySQL 5.7 on CentOS 6 or CentOS 7.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The Magento application 2.1.2 and later are compatible with MySQL 5.7.
@@ -274,7 +274,7 @@ To configure a MySQL database instance:
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
+4.	Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
 		create database magento;
 		create user magento IDENTIFIED BY 'magento';

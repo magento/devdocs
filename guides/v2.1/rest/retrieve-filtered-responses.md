@@ -6,7 +6,7 @@ menu_title: Retrieve filtered responses
 menu_order: 3
 version: 2.1
 github_link: rest/retrieve-filtered-responses.md
-redirect_from: guides/v2.1/howdoi/webapi/filter-response.html
+redirect_from: /guides/v2.1/howdoi/webapi/filter-response.html
 ---
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} requests that return partial responses.

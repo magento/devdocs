@@ -125,7 +125,7 @@ Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ec
 To import the Magento database in {{site.data.var.ece}}, you must know:
 
 -   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh)
--   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
+-   The database name, username, and password of the [Cloud database]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
@@ -294,7 +294,7 @@ To verify everything imported properly, perform the following tasks in your loca
     magento-cloud environment:url
     ```
 
-1.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the user name and password of your {{site.data.var.ee}} system.
+1.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the username and password of your {{site.data.var.ee}} system.
 1.  Make sure settings in the Admin are the same as your {{site.data.var.ee}} system.
 1.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 1.  Make sure categories, products, and so on display as you expect.

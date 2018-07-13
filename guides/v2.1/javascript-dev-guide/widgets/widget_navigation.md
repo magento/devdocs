@@ -7,11 +7,11 @@ menu_title: Navigation widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_navigation.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html
 ---
 
-<h2>Overview</h2>
+## Overview
 Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento navigation extends the default functionality with the following:
 <ul>
 <li>Expanding all layers of the menu tree past the second layer.</li>

@@ -52,7 +52,7 @@ To set the timezone and weight units in your development system:
 
 	![Set locale options in the development system]({{ site.baseurl }}/common/images/config_split-deploy_simple_set-locale.png){:width="550px"}
 4.	From the **Timezone** list, click **GMT+00:00 (UTC)**.
-6.	Clear the **Use system value** check box next to the **Weight Unit** field.
+6.	Clear the **Use system value** checkbox next to the **Weight Unit** field.
 7.	From the **Weight Unit** list, click **kgs**.
 8.	Click **Save Config**.
 9.	If prompted, flush the Magento cache.

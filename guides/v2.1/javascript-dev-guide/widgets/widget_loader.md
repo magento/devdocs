@@ -7,11 +7,11 @@ menu_title: Loader widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_loader.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_loader.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_loader.html
 ---
 
-<h2>Overview</h2>
+## Overview
 The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
 The Loader widget source is <a href="{{ site.mage2000url }}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
@@ -61,7 +61,7 @@ The text that is displayed under the loader image. <br>
 <b>Default value</b>: <i>'Loading...'</i></li>
 </ul>
 
-<h2>Events</h2>
+## Events
 Loader is subscribed to the following events:
 <ul>
 <li><a href="#l_processStart">processStart</a></li>

@@ -55,7 +55,7 @@ To return information about all services:
 <p>You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} user to return information for most endpoints. See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-token.html">Token-based authentication</a> for more information. </p>
 </div>
 
-<h2>Related topics</h2>
+## Related topics
 
 [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
 

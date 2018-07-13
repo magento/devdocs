@@ -24,7 +24,7 @@ Your Cloud systems and services have been updated to the latest Redis and PHP-Re
 
 * Use an Integration branch to add the code through your local.
 * Patch using the CLI command `composer update` in a terminal.
-* Push your code to deploy and test in an Intergration environment.
+* Push your code to deploy and test in an Integration environment.
 * After testing completes, deploy your code to Staging and Production environments. For more information on deployments, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -37,7 +37,7 @@ See the following instructions based on your {{site.data.var.ece}} version:
 * 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}/cloud/project/project-patch.html) the deployment in your Integration environment.
 * 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
 
-  If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update complees, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
+  If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update completes, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
 
   * 2.1.4: `magento/magento-cloud-configuration 101.4.5` or later
   * 2.1.5: `magento/magento-cloud-configuration 101.5.4` or later
@@ -56,7 +56,7 @@ This information helps if you receive a number of Redis connection errors in you
 To resolve, we recommend enabling and using Configuration Management options to move your static content deployment from the Deploy to Build phase.
 
 1. Remove all static content first from `pub/static/frontend/*` and also from `var/view_preprocessed`.
-2. Enable and use the recommended [`scd-dump` command](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: `config.local.php` for 2.1.X or `config.php` for 2.2.X.
+2. Enable and use the recommended [`scd-dump` command]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for Configuration Management (Pipeline Deployment). Remember, you will need to add and push the file generated to Git: `config.local.php` for 2.1.X or `config.php` for 2.2.X.
 
 If you continue to encounter these issues after using this method of deployment, you can attempt the following work-around. However, this method will dramatically increase the static content deployment time as it reduces deployment to a single thread.
 

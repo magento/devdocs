@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 functional_areas:
   - Frontend
 ---
-<h2> What's in this topic </h2>
+## What's in this topic
 
 After you <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode and client-side (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development).
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.
@@ -39,7 +39,7 @@ The following is an illustration of how the process of making simple changes loo
 
 <img src="{{ site.baseurl }}/common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
 </li>
-<li markdown="1">[Clean static files cache]({{ page.baseurl }}/howdoi/clean_static_cache.html)</li>
+<li markdown="1">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)</li>
 <li>Refresh the page, and view the changes applied. For example:
 
 <img src="{{ site.baseurl }}/common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons">
@@ -60,7 +60,7 @@ The following is an illustration of how the process of making simple changes loo
 </li>
 </ol>
 
-If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in the [Clean static files cache]({{ page.baseurl }}/howdoi/clean_static_cache.html) topic. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
+If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in the [Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) topic. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
 <h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
@@ -96,7 +96,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Front-end development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
-<li markdown="1">[Clean static files cache]({{ page.baseurl }}/howdoi/clean_static_cache.html)
+<li markdown="1">[Clean static files cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache)
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 
@@ -118,7 +118,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 
 If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
 
-<h2>Recommended reading</h2>
+## Recommended reading
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

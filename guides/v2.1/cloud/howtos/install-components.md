@@ -44,7 +44,7 @@ If you already know the extension's Composer name and version, skip this step an
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
-When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ page.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from `config.local.php` used by [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html).
+When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ page.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings. This file differs from `config.local.php` used by [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html).
 
 To update `composer.json`:
 
@@ -159,7 +159,7 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
 ### Modify configurations {#configure}
 For projects using {{site.data.var.ece}} **before 2.1.4**, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
 
-For projects **2.1.4 and later**, you will update configurations according to [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#update) for `config.local.php`.
+For projects **2.1.4 and later**, you will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#update) for `config.local.php`.
 
 ## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:

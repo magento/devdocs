@@ -21,7 +21,7 @@ This page is a compilation of frequently asked coding questions by the Magento C
 * [Dependency Injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) - An important {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} used in Magento to handle dependencies across classes and modules.
 
 
-### In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?
+### In Magento 2, how can my extension distinguish between the {{site.data.var.ce}} and the {{site.data.var.ee}}?
 
 The correct edition can be obtained through `\Magento\Framework\App\ProductMetadataInterface::getEdition`.
 

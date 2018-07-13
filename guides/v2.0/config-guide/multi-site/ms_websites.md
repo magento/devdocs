@@ -122,7 +122,7 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 	![Select a scope]({{ site.baseurl }}/common/images/config_multi-site-scope.png){:width="250px"}
 
 3.	In the right pane, expand **Base URLs**.
-4.	In the Base URL section, clear the **Use Default** check box.
+4.	In the Base URL section, clear the **Use Default** checkbox.
 4.	Enter `http://french.magento.mg` as the following example shows.
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url.png){:width="650px"}
@@ -150,7 +150,7 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 
 	![Select the default config scope]({{ site.baseurl }}/common/images/config_multi-site-default.png){:width="250px"}
 3.	In the right pane, expand **Url Options**.
-4.	Clear the **Use system value** check box next to **Add Store Code to Urls**.
+4.	Clear the **Use system value** checkbox next to **Add Store Code to Urls**.
 5.	From the **Add Store Code to Urls** list, click **Yes** as the following figure shows.
 
 	![Add the store code to the store's base URL]({{ site.baseurl }}/common/images/config_multi-site-add-store-url.png){:width="550px"}

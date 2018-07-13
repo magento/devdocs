@@ -40,7 +40,7 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetup` class as a dependency injection.
+Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
@@ -55,25 +55,27 @@ use Magento\Framework\Setup\ModuleDataSetupInterface;
 
 class InstallData implements \Magento\Framework\Setup\InstallDataInterface
 {
-    private $eavSetup;
+    private $eavSetupFactory;
     
     private $eavConfig;
     
     private $attributeResource;
     
     public function __construct(
-        \Magento\Eav\Setup\EavSetup $eavSetup,
+        \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory,
         \Magento\Eav\Model\Config $eavConfig,
         \Magento\Customer\Model\ResourceModel\Attribute $attributeResource
     ) {
-        $this->eavSetup = $eavSetup;
+        $this->eavSetupFactory = $eavSetupFactory;
         $this->eavConfig = $eavConfig;
         $this->attributeResource = $attributeResource;
     }
     
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        $this->eavSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
+        $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
+
+        $eavSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
             // Attribute parameters
         ]);
         

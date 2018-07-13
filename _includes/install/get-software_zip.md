@@ -30,7 +30,7 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 	<td>Use the following steps:
 	<ol><li>Go to <a href="http://magento.com" target="_blank">www.magento.com</a></li>
 	<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
-	<li>Log in with your Magento user name and password.</li>
+	<li>Log in with your Magento username and password.</li>
 	<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 	<li>In the right pane, click <strong>Magento Enterprise Edition 2.X</strong> > <strong>Full Release</strong> or <strong>Magento Enterprise Edition 2.X</strong> > <strong>Full Release + Sample Data</strong> for the software.</li>
 	<li>Follow the instructions on your screen to complete the {{site.data.var.ee}} download:
@@ -43,3 +43,4 @@ Archives are available in the following formats: `.zip`, `.tar.bz2`, `.tar.gz`
 </tbody>
 </table>
 
+</div>

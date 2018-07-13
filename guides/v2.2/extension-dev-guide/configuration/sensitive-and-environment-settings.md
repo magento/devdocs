@@ -26,7 +26,7 @@ _Sensitive_ configuration values hold restricted or confidential information.
 Examples of sensitive information include:
 
 *	Keys (such as API keys)
-*	User names and passwords
+*	Usernames and passwords
 *	E-mail addresses
 *	Any personally identifiable information (e.g., address, phone number, date of birth, government identification number, etc.)
 
@@ -39,7 +39,7 @@ Examples of environment or system-specific values include:
 *	URLs
 *	IP addresses
 *	Ports
-*	Host names
+*	Hostnames
 *	Domain names
 *	Paths (e.g., custom paths, proxy host, proxy port)
 *	"modes" (e.g, sandbox mode, debug mode, test mode)

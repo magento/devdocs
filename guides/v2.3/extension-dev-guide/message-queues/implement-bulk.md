@@ -223,7 +223,7 @@ class Consumer
         $serializedData = $operation->getSerializedData();
         $unserializedData = $this->jsonHelper->jsonDecode($serializedData);
         try {
-            //add here your own logic for async opertions
+            //add here your own logic for async operations
         } catch (\Zend_Db_Adapter_Exception  $e) {
             //here sample how to process exceptions if they occured
             $this->logger->critical($e->getMessage());
@@ -335,7 +335,7 @@ The `queue_publisher.xml` file defines the exchange where a topic is published. 
 {% endhighlight %}
 
 #### Create `queue_topology.xml`
-The `queuetopology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
+The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">

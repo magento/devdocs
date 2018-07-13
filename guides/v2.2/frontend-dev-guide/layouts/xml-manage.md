@@ -10,13 +10,14 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This article describes the following typical {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization tasks:
 
 *	<a href="#layout_markup_columns">Set the page layout</a>
 *	<a href="#layout_markup_css">Include static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a>
 *	<a href="#layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a>
+*	<a href="#layout_markup_meta">Add meta tags to the head block</a>
 *	<a href="#create_cont">Create a container</a>
 *	<a href="#ref_container">Reference a container</a>
 *	<a href="#xml-manage-block">Create a block</a>
@@ -30,7 +31,7 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
+  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize your layout, create extending and overriding layout files in your custom theme.</p></span>
 </div>
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
@@ -93,6 +94,7 @@ In the terms of adding assets, you can add CSS files to be included for a specif
 A sample follows:
 
 {%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <css src="css/ie-9.css" ie_condition="IE 9" />
     </head>
@@ -128,9 +130,47 @@ To remove the static resources, linked in a page `<head>`, make a change similar
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
         <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
+</page>
 {%endhighlight xml%}
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
+
+<h2 id="layout_markup_meta">Add meta tags to the head block</h2>
+
+To add `<meta>` tags to the `<head>` element of your layout, create a theme-extending file similar to: `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`.
+
+By default, the class that renders the `<meta>` tags is `\Magento\Framework\View\Page\Config\Renderer`. This class can render five meta types and a catch-all (the default).
+1. og: 
+2. charset
+3. content_type
+4. x_ua_compatible
+5. media_type
+6. "default" case
+
+**Examples:**
+Use the following examples to include in your own layout themes.
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <head>
+        <!-- This will create a tag like '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">' -->
+        <meta name="x_ua_compatible" content="IE=edge,chrome=1"/>
+        
+	<!-- This will create a tag like '<meta property="og:type" content="article"/>'' -->
+        <meta name="og:type" content="article"/>
+        
+	<!-- This will create a tag like '<meta charset="UTF-8">' -->
+        <meta name="charset" content="UTF-8"/>
+        
+	<!-- This will create a tag like '<meta http-equiv="Content-Type" content="content-type-value"/>' -->
+        <meta name="content_type" content="content-type-value"/>
+        
+	<!-- This tag will not render (see \Magento\Framework\View\Page\Config\Renderer for details) -->
+        <meta name="media_type" content="any-value"/>
+        
+	<!-- This will create a tag like '<meta name="my_custom_type" content="my_custom_value"/>' -->
+        <meta name="my_custom_type" content="my_custom_value"/>
+   </head>
+{%endhighlight xml%}
 
 <h2 id="create_cont">Create a container</h2>
 

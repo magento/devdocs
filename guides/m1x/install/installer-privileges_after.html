@@ -64,7 +64,7 @@
     <h2 id="privs-after">Setting Privileges and Ownership After You Install Magento</h2>
     <p>If you have installed Magento, you can set file system privileges and ownership as follows:</p>
     <ul><li>For a dedicated Magento server, you set ownership of files and directory as the web server user. You set privileges as 500 (directories) and 400 (files).</li>
-        <li>For a hosted Magento server on which the web server runs as the logged-in user name, you set privileges as as 500 (directories) and 400 (files).</li></ul>
+        <li>For a hosted Magento server on which the web server runs as the logged-in username, you set privileges as 500 (directories) and 400 (files).</li></ul>
     <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: In both hosted and dedicated systems, you set the privileges for the <code>media/</code> and <code>var/</code> directories at 700/600 because they must be writable.</div>
 
     <p>Following is an explanation of the privileges:</p>
@@ -82,15 +82,15 @@
                 <li>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code><br />
                     <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding paths are samples only. The paths to these <code>.conf</code> files on your system might be different. You can use the command <code>whereis nginx</code> to find the location of the configuration files.</div></li></ul>
             <!-- <pre>ps -o "user group command" -C httpd,apache2</pre>
-            The value in the USER column is the web server user name.<br /> -->
+            The value in the USER column is the web server username.<br /> -->
             Typically, the Apache web server user on CentOS is <code>apache</code> and the Apache web server user on Ubuntu is <code>www-data</code>.</li>
-            <li>nginx: Open the nginx configuration file, typically <code>/etc/nginx/nginx.conf</code>. The <code>user</code> directive specifies the user name. It might run as the Apache user if Apache is installed on the same system.</li></ul>
+            <li>nginx: Open the nginx configuration file, typically <code>/etc/nginx/nginx.conf</code>. The <code>user</code> directive specifies the username. It might run as the Apache user if Apache is installed on the same system.</li></ul>
     </li>
         <!-- <ul><li>Apache:
         <pre>ps -o "user group command" -C httpd,apache2</pre>
-        The value in the USER column is the web server user name.<br />
+        The value in the USER column is the web server username.<br />
         Typically, the Apache web server user on CentOS is <code>httpd</code> and the Apache web server user on Ubuntu is <code>apache2</code>.</li>
-        <li>nginx: Open the nginx configuration file, typically <code>/etc/nginx/nginx.conf</code>. The <code>user</code> directive specifies the user name. It might run as the Apache user if Apache is installed on the same system.</li></ul>
+        <li>nginx: Open the nginx configuration file, typically <code>/etc/nginx/nginx.conf</code>. The <code>user</code> directive specifies the username. It might run as the Apache user if Apache is installed on the same system.</li></ul>
         </li> -->
         <li>Change to the Magento installation directory.<br />
             On CentOS, this is typically <code>/var/www/html/magento</code>. On Ubuntu, it is typically <code>/var/www/magento</code>.</li>
@@ -158,9 +158,9 @@ find media/ -type d -exec chmod 700 {} \;</pre></li></ol>
                 <ul class="level3"><li>Ubuntu: <code>grep User /etc/apache2/apache2.conf</code></li>
                     <li>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code></li></ul>
                 <!-- <pre>ps -o "user group command" -C httpd,apache2</pre>
-                The value in the USER column is the web server user name.<br /> -->
+                The value in the USER column is the web server username.<br /> -->
                 Typically, the Apache web server user on CentOS is <code>apache</code> and the Apache web server user on Ubuntu is <code>www-data</code>.</li>
-                <li>nginx: Open the nginx configuration file, typically <code>/etc/nginx/nginx.conf</code>. The <code>user</code> directive specifies the user name. It might run as the Apache user if Apache is installed on the same system.</li></ul>
+                <li>nginx: Open the nginx configuration file, typically <code>/etc/nginx/nginx.conf</code>. The <code>user</code> directive specifies the username. It might run as the Apache user if Apache is installed on the same system.</li></ul>
         </li>
         <li>As a user with <code>root</code> privileges, enter the following command from the Magento installation directory:<br />
             <code>chown -R <em>web-server-user-name</em> .</code>

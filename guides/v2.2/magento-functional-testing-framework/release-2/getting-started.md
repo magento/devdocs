@@ -98,7 +98,7 @@ Example: `MAGENTO_BASE_URL=http://magento.test`
 * `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
 Example: `MAGENTO_BACKEND_NAME=admin`
 
-* `MAGENTO_ADMIN_USERNAME` must contain the user name required for authorization in the Admin area.
+* `MAGENTO_ADMIN_USERNAME` must contain the username required for authorization in the Admin area.
 Example: `MAGENTO_ADMIN_USERNAME=admin`
 
 * `MAGENTO_ADMIN_PASSWORD` must contain the user password required for authorization in the Admin area.

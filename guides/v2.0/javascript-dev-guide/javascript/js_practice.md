@@ -7,14 +7,14 @@ menu_order: 25
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_practice.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 <h2 id="practice_overview">Overview</h2>
 This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
 
-<h2>Customize a default Magento jQuery widget</h2>
+## Customize a default Magento jQuery widget
 
 In their Orange theme, OrangeCo wants to remove the "Click on image to view it full sized" message displayed on the product page.
 

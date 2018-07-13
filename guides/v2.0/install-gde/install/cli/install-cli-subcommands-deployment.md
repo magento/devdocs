@@ -59,9 +59,9 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li>The database server's fully qualified host name or IP address.</li>
+		<ul><li>The database server's fully qualified hostname or IP address.</li>
 		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
-		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
+		<p><strong>Note</strong>: You can optionally specify the database server port in its hostname like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
 	</tr>
@@ -73,7 +73,7 @@ The following table discusses the meanings of installation parameters and values
 	</tr>
 	<tr>
 		<td><p>--db-user</p></td>
-		<td><p>User name of the Magento database instance owner.</p>
+		<td><p>Username of the Magento database instance owner.</p>
 			<p>Default is <code>root</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>

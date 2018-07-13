@@ -13,34 +13,36 @@ To get started, edit your local version of this file, using the {% glossarytoolt
 
 Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!
 
-<h2 id="overview">Overview</h2>
+## Overview 
 PROVIDE OVERVIEW OF TOPIC HERE
 
-<h2 id="H2">HEADING 2</h2>
+## HEADING 2 
 PROVIDE TEXT HERE FOR FIRST SECTION.
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>INSERT NOTE TEXT HERE</a>.</p>
+  <p>INSERT NOTE TEXT HERE.</p>
 
 </div>
 
-<h3 id="H3">HEADING 3</h3>
+### HEADING 3 
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
+TO HYPERLINK TO ANOTHER TOPIC... refer to the [NAME OF TOPIC OR BOOK]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html).
 
 
 
-<h2 id="H2">HEADING 2</h2>
+## HEADING 2 
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
-ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
+ADD DIAGRAM OR ILLUSTRATION
 
-<h2 id="book-related">Related topics</h2>
+![HOVER TEXT HERE]({{ site.baseurl }}/common/images/NAME_OF_IMAGE.jpg)
 
-* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
-* <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
+## Related topics 
+
+\* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
+\* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
 
 ## Collapsible Content
 
@@ -128,20 +130,17 @@ See the markdown version of this file for examples.
 
 ### Collapsible Group
 
-<div class="collapsible">
-  <b class="collapsible-title">Collapsible Topic 1</b>
-  <div class="collapsible-content">
-    <p>You can have multiple title-content pairs in a collapsible container.</p>
-  </div>
-  <b class="collapsible-title">Collapsible Topic 2</b>
-  <div class="collapsible-content">
-    <p>Each content is controlled by its preceding title. </p>
-  </div>
-  <b class="collapsible-title">Collapsible Topic 3</b>
-  <div class="collapsible-content">
-    <p>Clicking on each title will open its corresponding content and close any open contents.</p>
-  </div>
-</div>
+**Collapsible Topic 1**
+
+You can have multiple title-content pairs in a collapsible container.
+
+**Collapsible Topic 2**
+
+Each content is controlled by its preceding title.
+
+**Collapsible Topic 3**
+
+Clicking on each title will open its corresponding content and close any open contents.
 
 ### Tooltips
 
@@ -151,3 +150,7 @@ You can use a glossary term's UUID from the [Magento Glossary](https://magento.g
 
 * {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}
 * Inline {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}Markup{% endglossarytooltip %} text
+
+{% comment %}
+Test comment
+{% endcomment %}

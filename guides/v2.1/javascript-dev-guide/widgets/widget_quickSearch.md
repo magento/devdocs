@@ -7,13 +7,13 @@ menu_title: QuickSearch widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_quickSearch.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
 functional_areas:
   - Search
 ---
 
-<h2>Overview</h2>
+## Overview
 
 The quickSearch {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
 

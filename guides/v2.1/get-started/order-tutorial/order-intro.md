@@ -1,15 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Initial tasks
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 0
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-intro.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -33,6 +33,6 @@ The sample data defines a functional store, called Luma, that sells fitness clot
 
 * Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
 
-* Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
+* Find the Magento REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
 
 * Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.

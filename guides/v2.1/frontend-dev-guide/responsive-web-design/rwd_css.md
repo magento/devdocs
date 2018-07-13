@@ -11,7 +11,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the Magento Blank theme.
 
@@ -97,7 +97,7 @@ For grouping style rules in certain media queries the .media-width() mixin used.
 
 You can find more information about the Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} responsive mixin usage in <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).
 
-<h2>Related topics</h2>
+## Related topics
 
 *	<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html">CSS and LESS preprocessing</a>

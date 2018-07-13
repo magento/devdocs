@@ -31,7 +31,7 @@ A sample result follows:
 
 To create a cron job for the Magento file system owner, enter the following command as a user with `root` privileges:
 
-	crontab -u <Magento file system owner user name> -e
+	crontab -u <Magento file system owner username> -e
 
 For example,
 

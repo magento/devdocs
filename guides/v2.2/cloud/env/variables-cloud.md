@@ -28,7 +28,7 @@ Variable | Description
 `MAGENTO_CLOUD_VARIABLES` | A base64-encoded JSON object with key and value pairs, such as `"key":"value"`.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-When attempting to [use environment variables to override configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:` as in the following example.
+When attempting to [use environment variables to override configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:` as in the following example.
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 </div>
 

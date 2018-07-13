@@ -10,7 +10,7 @@ ee_only: true
 github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
 
-<h2> Timeline Dashboard </h2>
+##  Timeline Dashboard 
 
 <h3> Contents </h3>
 
@@ -52,7 +52,7 @@ These are the individual changes contained within an update.<br>
 <img src="img/Staging_Dashboard_0006_timeline_notes.jpg">
 <br>
 
-1. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scolling the timeline with scroll control, or the right arrow.
+1. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scrolling the timeline with scroll control, or the right arrow.
 
 
 #### Update schedule:

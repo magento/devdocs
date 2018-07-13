@@ -7,8 +7,8 @@ menu_order: 20
 version: 2.1
 github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_debug.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_debug.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_debug.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_debug.html
 functional_areas:
   - Testing
 ---
@@ -50,7 +50,7 @@ To find the source file of the used script:
 </ol>
 
 
-<h2>Locate JS component: example</h2>
+## Locate JS component: example
 
 As we discussed in the preceding section, you use browser debugging tools to define which JavaScript component or {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is used for an element. An example follows.
 To find what JS components are used for displaying the main navigation menu in the Luma theme:

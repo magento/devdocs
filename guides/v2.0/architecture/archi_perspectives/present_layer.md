@@ -27,7 +27,7 @@ Three types of Magento users interact with presentation layer code.
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user.
 Types of users and their associated areas include:
 
-* **Web users** interact with the store front, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation.
+* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation.
 These users work within the (`frontend`) area.
 
 * **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the front end.
@@ -60,7 +60,7 @@ Blocks can generate their content using static HTML, Knockout JS scripts, and PH
 
 ## How Presentation code calls other layers
 
-Presentation code typically calls service contracts, particularly for a store front.
+Presentation code typically calls service contracts, particularly for a storefront.
 However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the <i>business logic</i> layer.
 For example, the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI screens are often tightly linked to a specific implementation and are not generic across implementations.
 

@@ -16,7 +16,7 @@ functional_areas:
 
 Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
 
-For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
+For each individual task of a bulk operation, the system creates a message that is published in a [message queue]( {{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
 
 The primary Bulk Operation interface is `OperationInterface`. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:
 
@@ -77,7 +77,7 @@ To send this notification, use `OperationManagementInterface::changeOperationSta
 
 Magento provides database exception classes to simplify the process of identifying recoverable database errors in client code. In most cases, such errors happen due to some environment issues and can be fixed. The full path to these classes is `Magento\Framework\DB\Adapter\<class_name>`. These exceptions extend generic `\Zend_Db_Adapter_Exception`.
 
-{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %} class | Description of database error(s)
+Exception class | Description of database error(s)
 --- | ---
 ConnectionException	| SQLSTATE[HY000]: General error: 2006 MySQL server has gone away <BR>SQLSTATE[HY000]: General error: 2013 Lost connection to MySQL server during query
 LockWaitException | SQLSTATE[HY000]: General error: 1205 Lock wait timeout exceeded

@@ -108,7 +108,7 @@ For example, if you have a public URL `www.mymagento.biz`, enter a command simil
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
 
-If you do not have DNS set up for a public host name, enter a command similar to the following:
+If you do not have DNS set up for a public hostname, enter a command similar to the following:
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
@@ -171,7 +171,7 @@ To determine if the default VCL snippets are not uploaded, check the following:
 This section provides suggestions for resolving errors you might find using the `curl` command.
 
 ### Fastly-Module-Enabled is not present {#no-module}
-If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response headers, you need to verify the Fasty module is installed and selected.
+If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response headers, you need to verify the Fastly module is installed and selected.
 
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
@@ -179,7 +179,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 3. Ensure Fastly CDN is selected.
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
-5. Edit your `composer.json` and ensure the Fasty module is included with version. This file has all modules listed with versions.
+5. Edit your `composer.json` and ensure the Fastly module is included with version. This file has all modules listed with versions.
 
 	* In the "require" section, you should have `"fastly/magento2": <version number>`
 	* In the "repositories" section, you should have:
@@ -188,7 +188,7 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 						"type": "vcs",
 						"url": "https://github.com/fastly/fastly-magento2.git"
 				}
-6. If you use [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
+6. If you use [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
 
 	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
@@ -223,7 +223,7 @@ When you isolate the extension that is resetting Fastly headers, contact the ext
 ## Purges do not process {#purge}
 If you attempt to use a Fastly purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue. You may receive the error: "The purge request was not processed successfully."
 
-### Check Fasty credentials {#creds}
+### Check Fastly credentials {#creds}
 Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.
 
 1. Log in to your local Magento Admin as an administrator.

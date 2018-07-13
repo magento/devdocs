@@ -7,15 +7,15 @@ menu_order: 5
 version: 2.0
 github_link: javascript-dev-guide/javascript/js-resources.md
 redirect_from:
-  - guides/v2.0/config-guide/config/js-resources.html
-  - guides/v1.0/config-guide/config/js-resources.html
-  - guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
-  - guides/v2.3/javascript-dev-guide/javascript/requirejs_concept.html
+ - /guides/v2.0/config-guide/config/js-resources.html
+ - /guides/v1.0/config-guide/config/js-resources.html
+ - /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
+ - /guides/v2.3/javascript-dev-guide/javascript/requirejs_concept.html
 ---
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of how work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
+This topic describes the general concepts of how to work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
 
 To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
