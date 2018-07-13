@@ -7,11 +7,9 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-file.md
 ---
 
-## Overview
-
 The File component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="file">` form field.
 
-## File configuration
+## Configuration options
 
 Extends all `abstract` configuration.
 

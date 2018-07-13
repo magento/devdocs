@@ -236,7 +236,7 @@ To create an instance of the Form component, you need to do the following:
 </page>
 {% endhighlight %}
 
-## Configure the component
+### Configure the component
 
 Component could be configured in two ways:
 
@@ -318,7 +318,7 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-## Configure DataSource
+### Configure DataSource
 You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
@@ -377,13 +377,13 @@ Data provided by data source is shared and available for all components in the A
 
 Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components.
 
-## Replace instances of component
+### Replace instances of component
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Replacing principles are the same for all UI Components.</p>
 </div>
 
-### Global replacement
+#### Global replacement
 
 To replace all instances, globally, of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
 
@@ -399,7 +399,7 @@ To replace all instances, globally, of a UI Form with a custom implementation re
 </form>
 {% endhighlight %}
 
-### Single replacement
+#### Single replacement
 
 To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
 

@@ -7,13 +7,11 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-selectcolumn.md
 ---
 
-## Overview
-
 The SelectColumn component receives an array of values and displays the column with corresponding labels. The value-label correspondence is set in the component's configuration.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)
 
-## SelectColumn configuration
+## Configuration options
 
 Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
 
@@ -53,7 +51,7 @@ SelectColumn-specific configuration:
 </table>
 
 
-### `Option` interface
+### Option interface
 
 <table>
   <tr>

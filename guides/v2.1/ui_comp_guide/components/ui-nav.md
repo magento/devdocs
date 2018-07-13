@@ -7,8 +7,6 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-nav.md
 ---
 
-## Overview
-
 The Nav component implements tabs navigation.
 
 See the [Admin Design Pattern Library (Tabs)]({{ page.baseurl }}/pattern-library/containers/tabs/tabs.html) topic for information about the UI design patterns that can be implemented using the Nav component.

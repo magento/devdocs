@@ -8,18 +8,11 @@ github_link: ui_comp_guide/components/ui-form.md
 redirect_from: /guides/v2.1/ui-components/ui-form.html
 ---
 
-
-## Overview
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
 Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure).
 
-
-## Structure
-
-{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
-
-## Component options
+## Configuration options
 
 Form configuration extends the [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
@@ -215,9 +208,9 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
   </tbody>
 </table>
 
+## Examples
 
-
-## Create an instance of the Form component
+### Create an instance
 
 To create an instance of the Form component, you need to do the following:
 
@@ -239,7 +232,7 @@ Example:
 </page>
 {% endhighlight %}
 
-## Configure the Form component
+### Configure component
 
 Component could be configured in two ways:
 
@@ -321,7 +314,7 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-## Creating DataSource
+### Configure DataSource
 You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
@@ -380,7 +373,7 @@ Data provided by data source is shared and available for all components in the A
 
 Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components.
 
-## Replacing
+### Replace instances of component
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Replacing principles are the same for all UI Components.</p>
@@ -402,7 +395,7 @@ To replace all instances of a UI Form with a custom implementation redefine link
 </form>
 {% endhighlight %}
 
-## Instance Replacement
+#### Single replacement
 
 To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
 

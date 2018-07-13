@@ -7,20 +7,11 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-massactions.md
 ---
 
-## Overview
-
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 See the [Admin Design Pattern Library (MassActions)]({{ page.baseurl }}/pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the MassActions component.
 
-#### Component Elements (classes, files)
-
-The following are the component elements:
-
-* Constructor `app\code\Magento\Ui\view\base\web\js\grid\massactions.js`
-* Template: `app\code\Magento\Ui\view\base\web\templates\grid\actions.html`
-
-#### Dependencies on Other Components
+## Dependencies
 
 Dependency on the following components:
 
@@ -28,7 +19,7 @@ Dependency on the following components:
 * Modal window with confirmation: `app\code\Magento\Ui\view\base\web\js\modal\confirm.js`
 * Modal window with alert: `app\code\Magento\Ui\view\base\web\js\modal\alert.js`
 
-#### MassActions configuration
+## Configuration options
 
 Extends <code>Collapsible</code> configuration with the following options:
 <table>
@@ -64,7 +55,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
 </table>
 
-##### MassAction interface
+### MassAction interface
 
 <table>
   <tr>
@@ -105,19 +96,9 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
 </table>
 
+## Examples
 
-##### Methods and Events
-
-The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
-
-* <code>getAction</code> - returns the action instance found by the provided identifier
-* <code>addAction</code> - adds a new action to the actions
-* <code>applyAction</code> - applies the specified action as identifier action
-* <code>getSelections</code> - returns the object with current selections
-
-#### Example configuration modifications:
-
-##### Redefining the link to the template
+### Redefine the link to the template
 
 {% highlight xml %}
 <massaction name="listing_massaction">
@@ -130,7 +111,7 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
 </massaction>
 {% endhighlight %}
 
-##### Specifying action with confirmation
+### Specify action with confirmation
 
 {% highlight xml %}
 <massaction name="listing_massaction">
@@ -152,7 +133,7 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
 </massaction>
 {% endhighlight %}
 
-##### Action with a custom callback
+### Action with a custom callback
 
 Callback is provided by another component.
 
@@ -176,7 +157,7 @@ Callback is provided by another component.
 </massaction>
 {% endhighlight %}
 
-##### Instance replacement: one instance of a component
+### Instance replacement (one instance of a component)
 
 Redefine link to constructor.
 
@@ -189,3 +170,14 @@ Redefine link to constructor.
     </argument>
 </massaction>
 {% endhighlight %}
+
+## API reference
+
+### Methods and Events
+
+The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
+
+* <code>getAction</code> - returns the action instance found by the provided identifier
+* <code>addAction</code> - adds a new action to the actions
+* <code>applyAction</code> - applies the specified action as identifier action
+* <code>getSelections</code> - returns the object with current selections

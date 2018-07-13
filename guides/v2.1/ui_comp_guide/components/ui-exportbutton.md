@@ -7,15 +7,9 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-exportbutton.md
 ---
 
-## Overview
-
 The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).
 
-## Structure
-
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)
-
-## ExportButton configuration
+## Configuration options
 
 Extends all [UiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
@@ -71,7 +65,9 @@ ExportButton-specific configuration:
   </tr>
 </table>
 
-## How to use
+## Examples
+
+### Configure component
 
 To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
 
@@ -85,7 +81,7 @@ To enable the ExportButton сomponent, add the `exportButton` element with a `se
 </exportButton>
 {% endhighlight %}
 
-## Example
+### Using sales_order_grid.xml
 
 Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`
 
@@ -105,7 +101,7 @@ Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_gri
 
 By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} and Excel {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} export data formats.
 
-#### How to add new export format
+### Add new export format
 
 To add new export format:
 

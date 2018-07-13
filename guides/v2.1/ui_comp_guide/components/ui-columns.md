@@ -7,8 +7,6 @@ version: 2.1
 github_link: ui_comp_guide/components/ui-columns.md
 ---
 
-## Overview
-
 The Columns component is a collection of columns. It renders the `<table>` element and displays the records of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) in this table.
 
 ## Configuration options
