@@ -32,7 +32,7 @@ Magento Open Source 2.2.0 includes a wealth of new, exciting features, and hundr
 
 * **Substantial contributions from our Community members**. Our Community Engineering Team has been working with skilled and enthusiastic community members, and together they've added hundreds of pull requests to the Magento code base. For more information about our Community Engineering Team. see [Magento Community Engineering](https://github.com/magento-engcom).
 
-Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/).
+Looking for more information on these new features as well as many others? Check out  [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/).
 
 
 ## Security enhancements
@@ -241,7 +241,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 58345-->* Magento now displays out-of-stock products in the shopping cart. Previously, if a product’s status changed between the time you added it to the cart and you proceeded to check out, Magento removed the product from your cart. [GitHub-6583](https://github.com/magento/magento2/issues/6583)
 
-<!--- 60110-->* When you select `New Address` while reviewing order information during check out, Magento now profiles the user name and country fields, but leaves the address fields empty. Previously, Magento did not leave the address fields empty, and the checkout process failed. [GitHub-6869](https://github.com/magento/magento2/issues/6869)
+<!--- 60110-->* When you select `New Address` while reviewing order information during check out, Magento now profiles the username and country fields, but leaves the address fields empty. Previously, Magento did not leave the address fields empty, and the checkout process failed. [GitHub-6869](https://github.com/magento/magento2/issues/6869)
 
 <!--- 57682-->* Checkout agreement validation now works as expected after you change payment method. [GitHub-6224](https://github.com/magento/magento2/issues/6224)
 
@@ -481,6 +481,9 @@ This release contains hundreds of fixes and enhancements.
 
 <!---63154 -->* Magento now displays special characters in store names in email subject lines. Previously, special characters in the store name were converted to numerical character references in the email subject field. [GitHub-8094](https://github.com/magento/magento2/issues/8094)
 
+
+
+<!---69633 -->* Configuration paths `persistent_identifier` & `compression_threshold` for Redis Sessions have been corrected. *Fix submitted by community member <a href="https://github.com/LukeHandle" target="_blank">Luke Hanley</a> in pull request <a href="https://github.com/magento/magento2/pull/9368" target="_blank">9368</a>.* 
 
 
 #### Admin framework
@@ -777,7 +780,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---56961, 54795-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-<!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the [Admin Panel configuration settings](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
+<!--- 61867-->* Web API tokens now have a default expiration period: 4 hours for Admin tokens and 1 hour for Customer tokens. This can be changed in the [Admin Panel configuration settings]({{ site.baseurl }}/guides/v2.2/get-started/authentication/gs-authentication-token.html#admin-and-customer-access-tokens)
 
 <!--- 69610-->* You can now edit `authentication_lock` from the Admin. *Fix submitted by community member <a href="https://github.com/EliasKotlyar" target="_blank">Elias Kotlyar</a> in pull request <a href="https://github.com/magento/magento2/pull/9820" target="_blank">9820</a>.*
 
@@ -880,7 +883,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 ### Payment methods
 
-<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
+<!--- 72305-->* We’ve added support for the change to the USPS API that USPS implemented on September 1, 2017. After installing or upgrading to this release, Magento will display the Domestic rate for USPS, First-Class Mail Parcel as expected. Previously, the USPS First-Class Mail Parcel option was not available after September 1, 2017 on installations running Magento 2.x unless you applied the workaround described [here]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_USPS-patch-Sept2017.html). 
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options. [GitHub-5938](https://github.com/magento/magento2/issues/5938)
 
@@ -1001,7 +1004,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 This release includes substantial improvements to Magento caching, image processing, and re-indexing, among other enhancements.
 
 
-<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.0/config-guide/prod/prod_perf-optimize.html)  for further details.
+<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide]({{ site.baseurl }}/guides/v2.0/config-guide/prod/prod_perf-optimize.html)  for further details.
 
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants.
 
@@ -1162,7 +1165,7 @@ This release includes substantial improvements to Magento caching, image process
 
 <!---56914-->* Versioning of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} (including CSS, JS, font, and image files) is now enabled by default.
 
-<!---57904-->* We've improved the speed of static asset deployment. See <a href="http://devdocs.magento.com/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options.
+<!---57904-->* We've improved the speed of static asset deployment. See <a href="{{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html" target="_blank">Deploy static view files</a> for more information about available options.
 
 <!--- 52614 -->* The `setup:static-content:deploy` command now provides flags that you can use to exclude or include individual themes, areas, and locales. For more information, see [GitHub-4294](https://github.com/magento/magento2/issues/4294).
 
@@ -1316,12 +1319,12 @@ This release includes substantial improvements to Magento caching, image process
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}magento-system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](https://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 
 

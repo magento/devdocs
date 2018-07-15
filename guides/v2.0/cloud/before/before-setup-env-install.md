@@ -26,8 +26,8 @@ With your workspace prepared, install Magento on your local to verify custom cod
 
 To be able to customize the Magento software on your local machine, you should install it using the following information:
 
-*	Host name or IP address of your machine
-*	Admin user name, password, and URL you created earlier
+*	Hostname or IP address of your machine
+*	Admin username, password, and URL you created earlier
 *	Magento authentication keys for installing Magento locally
 
 ### Get Magento Admin environment variables {#variables}

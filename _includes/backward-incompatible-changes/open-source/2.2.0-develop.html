@@ -110,6 +110,10 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\File\Uploader::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\File\Uploader::getDispersionPath</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -230,6 +234,18 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Store\Model\Group::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Group::afterSave</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Store::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Store\Model\Store::getIsActive</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -322,6 +338,14 @@
         <td>Constant has been added.</td>
     </tr>
     <tr>
+        <td>Magento\ImportExport\Model\Import::FIELD_EMPTY_ATTRIBUTE_VALUE_CONSTANT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ImportExport\Model\Import::DEFAULT_EMPTY_ATTRIBUTE_VALUE_CONSTANT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\ImportExport\Helper\Report::getDelimiter</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -368,6 +392,14 @@
     <tr>
         <td>Magento\Directory\Model\Config\Source\Country\Full::toOptionArray</td>
         <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerImportExport\Model\Import\Customer::prepareCustomerData</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerImportExport\Model\Import\Customer::validateData</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Customer\Model\Customer::__construct</td>
@@ -486,6 +518,10 @@
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\CatalogImportExport\Model\Import\Product::getEmptyAttributeValueConstant</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogImportExport\Model\Export\Product::loadCollection</td>
         <td>[protected] Method has been added.</td>
     </tr>
@@ -530,6 +566,10 @@
         <td>[protected] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Model\Product::getFormattedPrice</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Model\Product::$_resource</td>
         <td>[protected] Property has been added.</td>
     </tr>
@@ -559,6 +599,14 @@
     </tr>
     <tr>
         <td>Magento\Catalog\Model\ResourceModel\Category\Collection::addNavigationMaxDepthFilter</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Type\Price::getFormattedTierPrice</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Type\Price::getFormattedPrice</td>
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
@@ -592,6 +640,10 @@
     <tr>
         <td>Magento\Catalog\Block\Product\View\Gallery::__construct</td>
         <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Product\View\Options\AbstractOptions::getFormattedPrice</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Block\Product\Compare\ListCompare::hasAttributeValueForProducts</td>
@@ -667,6 +719,22 @@
     </tr>
     <tr>
         <td>Magento\Framework\Exception\BulkException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Api\SortOrder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Api\SortOrderBuilder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Api\Search\FilterGroup</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Api\Search\FilterGroupBuilder</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1058,6 +1126,14 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogInventory\Api\Data\StockStatusInterface::STATUS_OUT_OF_STOCK</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Api\Data\StockStatusInterface::STATUS_IN_STOCK</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Catalog\Api\Data\CategoryInterface::KEY_PARENT_ID</td>
         <td>Constant has been added.</td>
     </tr>
@@ -1422,6 +1498,10 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\AsynchronousOperations\Api\OperationRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\AsynchronousOperations\Api\Data\AsyncResponseInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -1438,10 +1518,6 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\AsynchronousOperations\Api\Data\DetailedOperationStatusInterface</td>
-        <td>Interface was added.</td>
-    </tr>
-    <tr>
         <td>Magento\AsynchronousOperations\Api\Data\ItemStatusInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -1451,6 +1527,10 @@
     </tr>
     <tr>
         <td>Magento\AsynchronousOperations\Api\Data\OperationListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\AsynchronousOperations\Api\Data\OperationSearchResultsInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>

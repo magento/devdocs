@@ -25,9 +25,8 @@ The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% 
 
 * All accounts and integrations are assigned resources that they have access to. The API framework checks that any call has {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} to perform the request.
 
-* Any Magento or third-party service can be <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">configured as a web API</a> with a few lines of {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% endglossarytooltip %}.
+* Any Magento or third-party service can be <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">configured as a web API</a> with a few lines of {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}xml{% endglossarytooltip %}. To configure a web API, you define XML elements and attributes in a `webapi.xml` configuration file. If a service is not defined in a configuration file, it will not be exposed at all.
 
-	 To configure a web API, you define XML elements and attributes in a `webapi.xml` configuration file. If a service is not defined in a configuration file, it will not be exposed at all.
 * The framework is based on the CRUD (create, read, update, delete) & search model. The system does not currently support web hooks.
 
 * The framework supports field filtering of web API responses to conserve mobile bandwidth.
@@ -52,7 +51,7 @@ The APIs can be used to perform a wide array of tasks. For example:
 You must register a web service on {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Use the following general steps to set up Magento to enable web services.
 
 1. If you are using token-based authentication, create a web services user on Magento Admin by selecting **System > All Users > Add New User**. (If you are using session-based or OAuth authentication, you do not need to create the new user in the Admin.)
-2. Create a new integration on Magento Admin. To create an integration, click System > Integration > Add New Integration. Be sure to restrict which resources the integration can access.
+2. Create a new integration on Magento Admin. To create an integration, click **System > Integration > Add New Integration**. Be sure to restrict which resources the integration can access.
 3. Use a REST or SOAP client to configure authentication.
 
 See the User Guide for more information.

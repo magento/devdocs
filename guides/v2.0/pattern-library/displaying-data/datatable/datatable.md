@@ -30,7 +30,7 @@ This specification defines the following features for the data-table:
 	<li>Positioning of elements to allow for a more intuitive user experience</li>
 	<li>Pagination</li>
 	<li>Keyword Search</li>
-	<li>Allowing for user-defined number of of items per page</li>
+	<li>Allowing for user-defined number of items per page</li>
 	<li>Allowing users to go directly to a specific page</li>
 	<li>Filtering</li>
 	<li>Sortable columns</li>
@@ -116,7 +116,7 @@ A common {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endgl
 <img src="img/datatable08.jpg">
 <br />
 <br />
-Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
+Actions will be positioned above the table . Each table  will have it’s own set of actions, some tables will have no actions. This new proposal removes the submit button which is currently visible next to the "Actions" drop down selector. In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that any confirmations are needed for actions, modal dialogs will be used.
 <br />
 <br />
 <br />
@@ -184,7 +184,7 @@ The persistent header will reactivate when you scroll back up:
 <br />
 <br />
 
-For details about component's implementation see <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.
+For details about component's implementation see <a href="{{ site.baseurl }}/guides/v2.0/ui-components/ui-secondary-header.html">Sticky Header Component</a>.
 
 <h3>Multiple Data-tables on Page</h3>
 The header will stick to the first table until the user scrolls past the bottom of that table . The header will have the same behavior for each subsequent data-table.

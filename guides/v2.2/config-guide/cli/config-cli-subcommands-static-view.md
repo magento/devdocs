@@ -31,7 +31,7 @@ You must write static view files to the Magento file system manually using the c
 <div class="bs-callout bs-callout-warning" markdown="1">
 _Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{ page.baseurl }}/howdoi/clean_static_cache.html) for more information.
+You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for more information.
 </div>
 
 ## Deploy static view files {#config-cli-subcommands-staticview}
@@ -362,10 +362,10 @@ The following table explains this command's parameters and values.
         Define the deployment strategy. Use these options only if you have more than one locale.
 				<ul>
 					<li>
-						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
+	          Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.
 					</li>
 					<li>
-	          Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.
+						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
 					</li>
 					<li>
 						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a> to conserve disk space on the server.
@@ -384,7 +384,7 @@ The following table explains this command's parameters and values.
       </td>
       <td>
         <p>
-          Deploy files in any mode. (by default, the static content
+          Deploy files in any mode. (by default, the static
           content deployment tool can be run only in production
           mode. Use this option to run it in default or developer
           mode).

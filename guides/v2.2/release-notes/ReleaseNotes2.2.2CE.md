@@ -31,17 +31,17 @@ Look for the following highlights in this release:
 
 ### New Features
 
-* **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/overview.html) for more information.
+* **Advanced Reporting powered by Magento Business Intelligence**. Access easy-to-use order, product, and customer reports right from the Magento Admin to gain new insights and enable data-driven decision making. See [Advanced Reporting]({{ site.baseurl }}/guides/v2.2/advanced-reporting/overview.html) for more information.
 
 * **Magento Shipping** (powered by Temando). This new feature provides integrated advanced multi-carrier shipping and fulfillment. (In addition to these release notes, you can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).)
 
-* **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module](http://devdocs.magento.com/guides/v2.2/mrg/ce/instant-purchase/) for more information.
+* **Streamlined Instant Purchase checkout** (contributed by Creatuity). Our new streamlined Instant Purchase option uses previously stored payment credentials and shipping information to bypass steps in the checkout process. See [Instant Purchase module]({{ site.baseurl }}/guides/v2.2/mrg/ce/instant-purchase/) for more information.
 
 * **Integrated dotmailer marketing automation software**. Magento is one of the first ecommerce solutions to include the dotmailer marketing automation with their core product. See [Email Marketing Automation](http://docs.magento.com/m2/ce/user_guide/marketing/email-marketing-automation.html).  
 
-* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MTFT) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework](http://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/introduction.html).
+* **Magento Functional Testing Framework**.  The Magento Functional Testing Framework (MTFT) is our open-source, cross-platform testing solution. Its purpose is to facilitate functional testing and minimize efforts to perform regression testing. See [Introduction to Magento Functional Testing Framework]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/introduction.html).
 
-Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento 2.2 Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Open Source User Guide](http://docs.magento.com/m2/ce/user_guide/getting-started.html).
 
 
 ## Fixes and enhancements
@@ -68,7 +68,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-80209 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
 
-<!--- MAGETWO-82595 -->* You can now successfully upgrade from from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
+<!--- MAGETWO-82595 -->* You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request 11651*. [GitHub-11095](https://github.com/magento/magento2/issues/11095)
 
 <!--- MAGETWO-82634 -->* We've replaced `FollowSymLinks` with `SymLinksIfOwnerMatch` in the `htaccess` templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811)
 
@@ -300,7 +300,7 @@ Looking for more information on these new features as well as many others? Check
 
 <!--- MAGETWO-81594 -->*  Exception message was passed as a exception description argument instead of exception message. *Fix submitted by [Tim Bezhashvyly](https://github.com/tim-bezhashvyly) in pull request 11363*. [GitHub-6924](https://github.com/magento/magento2/issues/6924)
 
-<!--- MAGETWO-83310 -->* Importing an import file to update customer data no loner results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*.
+<!--- MAGETWO-83310 -->* Importing an import file to update customer data no longer results in the `entity fields` being removed if the columns were not present on the imported file. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request 11968*.
 
 
 ### Indexing
@@ -444,7 +444,7 @@ can find Magento Shipping-specific release notes in [Magento Shipping Release No
 
 **Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.
 
-**Workaround**: Use the static Swagger site at http://devdocs.magento.com/swagger to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.
+**Workaround**: Use the static Swagger site at {{ site.baseurl }}/swagger to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.
 
 
 ### Magento Shipping issues
@@ -1150,7 +1150,7 @@ For more information, [System Requirements]({{ site.baseurl }}/magento-system-re
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](https://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 
 

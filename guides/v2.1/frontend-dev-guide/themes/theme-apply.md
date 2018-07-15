@@ -32,7 +32,7 @@ To apply a theme:
 4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
 5. Click **Save Configuration**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-6. To see your changes applied, reload the store front pages.
+6. To see your changes applied, reload the storefront pages.
 
 
 ## Add a design exception {#theme-apply-except}
@@ -46,11 +46,11 @@ To add a design exception:
 5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
 6. Click **Save Configuration** or **Save and Continue**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-6. To see your changes applied, reload the store front pages.
+6. To see your changes applied, reload the storefront pages.
 
 
 ## Add a theme-independent logo {#theme-apply-logo}
-You might want to set a permanent store logo that displays on the store front no matter what theme is applied.
+You might want to set a permanent store logo that displays on the storefront no matter what theme is applied.
 To add a permanent theme-independent logo:
 
 2. In Admin, go to **CONTENT** > **Design** > **Configuration**
@@ -61,7 +61,7 @@ To add a permanent theme-independent logo:
 5. Optionally, specify the desired width, height, and the alternative text for the logo in the corresponding fields.
 7. Click **Save Configuration** or **Save and Continue**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-8. To see your changes applied, reload the store front pages.
+8. To see your changes applied, reload the storefront pages.
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
@@ -79,4 +79,4 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 ## Troubleshooting (if the changes do not get applied)
 
-If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ site.gdeurl21 }}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+If the changes you configure in the Admin are not applied after you clear the cache and reload the page, delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ site.gdeurl21 }}frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).

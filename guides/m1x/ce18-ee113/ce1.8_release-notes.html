@@ -373,7 +373,7 @@ Magento thanks Vinai Kopp for contributing to this fix. Link to the <a href="htt
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2336" target="_blank">MPERF-2336</a>)  -->You can now manage product ratings and reviews from the Admin Panel as well as from the web store.<br />
 Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. </li>
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2342" target="_blank">MPERF-2342</a>) When you create an order using the Admin Panel, the values for the default shipping address and default billing address display properly.<br />
-For example, if you clear the <strong>Same as Billing Address</strong> check box, the default shipping address displays.<br />
+For example, if you clear the <strong>Same as Billing Address</strong> checkbox, the default shipping address displays.<br />
 Magento thanks TBD for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/115" target="_blank">github issue</a>.</li> -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2354" target="_blank">MPERF-2354</a>)  -->Resolved an issue with <code>Mage_Page_Block_Template_Links::addLinkBlock</code> to enable you to sort an array of results by position.<br />
 Magento thanks Benjamin Marks for contributing to this fix. </li>
@@ -409,7 +409,7 @@ We thank Darryl Adia (from Ampersand Commerce) for contributing to this fix.</li
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2122" target="_blank">MPERF-2122</a>, <a href="https://jira.corp.x.com/browse/MPERF-2121" target="_blank">MPERF-2121</a>)  -->Resolved issues with the security of OAuth tokens and keys.</li>
 <li>A remote code execution vulnerability was fixed.<br />
 We thank Bastian Ike for contributing to this fix.<!-- (<a href="https://jira.corp.x.com/browse/MPERF-1758" target="_blank">Bug link</a>)</li> -->
-<li>The Magento Admin Panel and web stores no longer allow web browsers to store user names or passwords.</li>
+<li>The Magento Admin Panel and web stores no longer allow web browsers to store usernames or passwords.</li>
 <li>The Magento web store has additional Cross Site Request Forgery (CSRF) protections, meaning an imposter can no longer impersonate a newly registered customer and perform actions on the customer's behalf.</li>
 <li>The cryptographic methods used to store passwords were improved to enhance security.</li>
 </ul>
@@ -548,7 +548,7 @@ For example, this command no longer fails:<br />
 <ul><li>A customer's account created date is correct. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-756" target="_blank">Bug link</a>) --></li>
 <li>When a product price is set with website scope and an administrative user has access to only one website, the default price is taken from that website scope. Also, when saving the product on the website scope, the price is updated only in that scope and not in the default scope. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-630" target="_blank">Bug link</a>) --></li> 
 <li>An error no longer displays on your web store after a customer places an order. (The error message was <code>There has been an error processing your request. Please contact us or try again later</code>). <!-- (<a href="https://jira.corp.x.com/browse/MPERF-634" target="_blank">Bug link</a>) --></li> 
-<li>Restricted coupon codes work properly, even if the customer has selected the <strong>Remember me</strong> check box. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-734" target="_blank">Bug link</a>) --></li> 
+<li>Restricted coupon codes work properly, even if the customer has selected the <strong>Remember me</strong> checkbox. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-734" target="_blank">Bug link</a>) --></li>
 <li>Using the Table Rates shipping option, free shipping options work properly. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > <strong>SALES</strong> > <strong>Shipping Methods</strong>. In the right pane, expand <strong>Table Rates</strong>.) <!-- (<a href="https://jira.corp.x.com/browse/MPERF-737" target="_blank">Bug link</a>) --></li> 
 <li>Issues with shipping table rates have been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-870" target="_blank">Bug link</a>) --></li> 
 <li>Entering a value such as <code>10,50</code> (using a comma character and not a period) for <strong>Adjustment Fee</strong> now results in the correct amount of credit being applied to the transaction. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-763" target="_blank">Bug link</a>) --></li> 

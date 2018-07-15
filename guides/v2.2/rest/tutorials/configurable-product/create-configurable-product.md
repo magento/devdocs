@@ -5,6 +5,9 @@ title: Step 2. Create the configurable product
 menu_title: Step 2. Create the configurable product
 menu_order: 20
 level3_subgroup: configurable-product-tutorial
+return_to:
+  title: REST API Reference
+  url: rest/bk-rest.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-configurable-product.md
 functional_areas:
@@ -209,4 +212,4 @@ Before you using this code sample, verify that the attribute values are the same
 
   ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
-* On the Luma store front page, search for `Champ`. No results are returned.
+* On the Luma storefront page, search for `Champ`. No results are returned.

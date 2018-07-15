@@ -35,7 +35,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
 <p>You must define one interface for each data {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} for type hinting purposes. That is, the <code>getItems()</code> function in the
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
-   In <code>GroupSearchResultsInterface</code>, the<code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
+   In <code>GroupSearchResultsInterface</code>, the <code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
 </p>
 
 <h2 id="service-interfaces">Service interfaces</h2>

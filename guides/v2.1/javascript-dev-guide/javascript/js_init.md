@@ -45,7 +45,7 @@ When inserted in a certain element, the script is called only for this particula
 
 ##### How `data-mage-init` is processed {#init_process}
 
-On DOM ready, the `data-mage-init` attribute is parsed to extract components' names and configuration to be applied to the element.
+On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element.
 Depending on the type of the inserted JS component, processing is performed as follows:
 <ul>
 

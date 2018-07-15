@@ -108,7 +108,7 @@ For example, if you have a public URL `www.mymagento.biz`, enter a command simil
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -HFastly-Debug:1
 
-If you do not have DNS set up for a public host name, enter a command similar to the following:
+If you do not have DNS set up for a public hostname, enter a command similar to the following:
 
 	curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -HFastly-Debug:1
 
@@ -188,9 +188,9 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 						"type": "vcs",
 						"url": "https://github.com/fastly/fastly-magento2.git"
 				}
-6. If you use [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
+6. If you use [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
 
-	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-initial.html).
+	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-initial.html).
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) for instructions.
 

@@ -34,11 +34,6 @@ To use a custom implementation of an existing Magento JS component:
   <li markdown="1">Place the custom component source file in one of
   the following locations:
 <ul>
-  <li markdown="1">Place the custom component source file in one of
-  the following locations:
-  </li>
-</ul>
-<ul>
   <li markdown="1">Your theme JS files: `/web/js` or `/_/web/js`
   </li>
   <li>Your module view JS files:

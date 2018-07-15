@@ -121,7 +121,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
                <p>As a registered Magento user, you request a token from the Magento token service at the endpoint that is defined for your user type.</p>
             </li>
             <li>
-               <p>The token service returns a unique authentication token in exchange for a user name and password for a Magento account.</p>
+               <p>The token service returns a unique authentication token in exchange for a username and password for a Magento account.</p>
             </li>
             <li>
                <p>

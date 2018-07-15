@@ -5,6 +5,9 @@ title: Step 3. Create the simple products
 menu_title: Step 3. Create the simple products
 menu_order: 30
 level3_subgroup: configurable-product-tutorial
+return_to:
+  title: REST API Reference
+  url: rest/bk-rest.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-simple-products.md
 functional_areas:
@@ -232,4 +235,4 @@ Attribute | Medium Value | Large Value
 
   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/products-page-all.png)
 
-* On the Luma store front page, search for `Champ`. No results are returned.
+* On the Luma storefront page, search for `Champ`. No results are returned.

@@ -1,18 +1,30 @@
-| Item         | Information        |
-|--------------|--------------------|
-| Type of Doc  | <ul><li>- [ ] New topic</li><li>- [ ] Topic Update</li><li>- [ ] Other</li></ul>|
-| Magento 2 GitHub Issue | [link](https://github.com/magento/devdocs/pull/link) |
-| Magento 2 GitHub PR | [link](https://github.com/magento/devdocs/pull/link) |
-| Magento 2 version | <ul><li>- [ ] 2.1.X</li><li>- [ ] 2.2.X</li><li>- [ ] 2.3.X</li></ul> |
-| Back/Forward port | <ul><li>- [ ] back port</li><li>- [ ] forward port</li></ul> |
-| Notifications of Changes | <ul><li>- [ ] Changes to Admin interface?</li><li>- [ ] New software requirements?</li><li>- [ ] New REST endpoints or updated GraphQL query syntax?</li><li>- [ ] New command line option?</li></ul> |
+<!-- (REQUIRED) Provide information for the doc request including any Community code issues or PRs, Magento versions, or devdoc pages. -->
+Type of Doc:
+- [ ] New topic
+- [ ] Topic Update, Devdoc link:
+- [ ] Other
+
+Magento 2 GitHub Issue: https://github.com/magento/devdocs/issues/link
+
+Magento 2 GitHub PR: https://github.com/magento/devdocs/pull/link
+
+Magento 2 version:
+- [ ] 2.1.X
+- [ ] 2.2.X
+- [ ] 2.3.X
+- [ ] back port
+- [ ] forward port
+
+Notifications of Changes:
+- [ ] Changes to Admin interface?
+- [ ] New software requirements?
+- [ ] New REST endpoints or updated GraphQL query syntax?
+- [ ] New command line option?
 
 
-<!-- (REQUIRED) What new information or updates are required for your Community contribution? For content updates, include link to existing DevDoc page. -->
+<!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
 ## Content:
 
-
-DevDoc page/guide link for updates:
 
 <!-- (OPTIONAL) What other information can you provide? -->
 ## Additional information:

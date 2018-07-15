@@ -134,7 +134,7 @@ To avoid issues, we recommend you set `auto_increment_increment=3`.
 
 First, view the current value and verify if it is set to 3:
 
-	mysqladmin variables -u <root user name> -p | grep 'auto_increment'
+	mysqladmin variables -u <root username> -p | grep 'auto_increment'
 
 If necessary, set `auto_increment_increment` to 3:
 
@@ -173,13 +173,13 @@ To install the Magento Cloud CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		source /home/magento_user/.bashrc
+		source $HOME/.bashrc
 
 	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc){:target="_blank"}
 
-	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
+	You can also add the `$HOME/.magento-cloud/bin` to the Magento user's `PATH`:
 
-		export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+		export PATH=$PATH:$HOME/.magento-cloud/bin
 
 	Consult operating system documentation for details.
 

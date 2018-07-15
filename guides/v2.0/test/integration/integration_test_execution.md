@@ -70,7 +70,7 @@ CREATE DATABASE magento_integration_tests;
 GRANT ALL ON magento_integration_tests.* TO 'magento2_test_user'@'localhost' IDENTIFIED BY 'ftYx4pm6^x9.&^hB';
 ```
 
-Replace the example database and user name and the example password with something that matches your requirements and conventions.
+Replace the example database and username and the example password with something that matches your requirements and conventions.
 
 ### Configuring the framework to use the test database
 
@@ -292,7 +292,7 @@ There are many ways this problem can be resolved, but the easiest is to run the 
 
 ## Running Integration Tests in PHPStorm {#phpstorm-run}
 
-When writing new integration tests or during debugging, it is convenient to execute tests from within the the PHPStorm IDE.
+When writing new integration tests or during debugging, it is convenient to execute tests from within the PHPStorm IDE.
 
 Please ensure you have [prepared the integration test environment][setup] before starting.
 

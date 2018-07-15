@@ -6,3 +6,4 @@ To help export Production data as test data to use in Staging and Integration en
 * [Data Collection](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"} tool for generating and exporting data
 
 To migrate this data, see [Migrate and deploy static files and data]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
+</div>
