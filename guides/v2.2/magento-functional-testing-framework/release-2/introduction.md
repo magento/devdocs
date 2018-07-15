@@ -26,7 +26,7 @@ Because MFTF tests are written in XML, you no longer need to learn PHP to write 
 include note.html
 type="info"
 content="We are actively developing functional tests.
-Refer to _\<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf_ for examples."
+Refer to `_\<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf_` for examples."
 %}
 
 ## Audience
