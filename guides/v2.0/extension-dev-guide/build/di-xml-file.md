@@ -10,7 +10,7 @@ github_link: extension-dev-guide/build/di-xml-file.md
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{page.baseurl}}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{page.baseurl}}/extension-dev-guide/object-manager.html).
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html).
 
 ## Areas and application entry points
 
@@ -25,7 +25,7 @@ Magento loads The configuration in the following stages:
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-During [bootstrapping]({{page.baseurl}}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
+During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
@@ -143,7 +143,7 @@ Node Format:
 
 : `<argument xsi:type="number">{numericValue}</argument>`
 
-Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:taget="_blank"}.
+Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:target="_blank"}.
 
 ---
 
@@ -321,5 +321,5 @@ Also, every instance of `Magento\Filesystem` will get separate instance of `$ada
 
 **Related topics**
 
-* [ObjectManager]({{page.baseurl}}/extension-dev-guide/object-manager.html)
-* [Dependency injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html)
+* [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+* [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)

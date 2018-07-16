@@ -7,13 +7,13 @@ menu_order: 10
 version: 2.1
 github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_init.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 <h2 id="js_init_overview">Overview</h2>
 
-This topic talks about how to insert a [JavaScript component]({{site.gdeurl}}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
+This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
 
 It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.
 
@@ -149,7 +149,7 @@ require([
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
 
 {%highlight js%}
 

@@ -19,7 +19,7 @@ Build system
 Your build system does not have to have Magento installed on it. It needs only the Magento code but no database connection is required. Also, your build system doesn't need to be a physically separate server. 
 
 Staging system
-:	_Optional_. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doen't process orders from customers, it's identical to production.
+:	_Optional_. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doesn't process orders from customers, it's identical to production.
 
 Production system
 :	Your live store. You should make minimal configuration changes here and no changes to websites, stores, store views, products, or the catalog. You should make all those types of changes in your development system.

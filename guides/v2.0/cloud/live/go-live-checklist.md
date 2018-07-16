@@ -15,13 +15,13 @@ functional_areas:
 Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your `master` branch to the Production environment.
 
 ## Completely test in Production {#test}
-See [Test deployment]({{ page.baseurl}}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptence Tests (UAT), and performance testing.
+See [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html) for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.
 
 ## Go Live Prep call with support {#call}
 Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.
 
 ## Enter a ticket with domain names {#domainticket}
-You may [need information]({{ page.baseurl}}/cloud/live/live.html#goliveinfo) for this ticket.
+You may [need information]({{ page.baseurl }}/cloud/live/live.html#goliveinfo) for this ticket.
 
 1.	Log in to your [Magento Cloud account](https://accounts.magento.cloud){:target="_blank"}.
 2.	Click **Support** > **Submit ticket** from the top menu.
@@ -79,22 +79,22 @@ The following are recommended changes and checks:
 *	[Enable minification](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"} for JS, CSS, and HTTP
 
 ## Verify Fastly caching {#verifyfastly}
-Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl}}/cloud/live/stage-prod-test.html#fastly).
+Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see [Fastly testing]({{ page.baseurl }}/cloud/live/stage-prod-test.html#fastly).
 
 *	Make sure that pages are being correctly cached in the page cache and Fastly
 *	Make sure the Fastly Extension is up-to-date
 *	Make sure the Fastly VCL is up-to-date
 
 ## Performance testing {#performance}
-We recommend that you review the [Magento Performance Toolkit]({{site.mage2000url}}setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{ site.mage2000url }}setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 
-* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simiulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * [New Relic](https://support.newrelic.com/){:target="_blank"} (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
-* [Blackfire]({{ page.baseurl}}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
+* [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
 #### Next step:
-[Launch steps]({{ page.baseurl}}/cloud/live/launch-steps.html)
+[Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

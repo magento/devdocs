@@ -24,5 +24,5 @@ During the installation, the following message displays:
 
 ### Solution
 
-Set the [PHP timezone]({{ page.baseurl}}/install-gde/prereq/php-settings.html) properly.
+Set the [PHP timezone]({{ page.baseurl }}/install-gde/prereq/php-settings.html) properly.
 

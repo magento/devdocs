@@ -20,11 +20,11 @@ functional_areas:
 *	[Overview of Elasticsearch](#overview){:target="_blank"}
 *	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
 *	[Additional resources](#es-resources){:target="_blank"}
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Elasticsearch stopwords]({{page.baseurl}}/config-guide/elasticsearch/es-config-stopwords.html)
+*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
 
-<h2 id="overview">Overview of Elasticsearch</h2>
+## Overview of Elasticsearch {#overview}
 In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
@@ -52,7 +52,7 @@ We also support version 1.7 but recommend you use a later version.
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
-<img src="{{ site.baseurl}}/common/images/elastic_config.png" width="500px">
+<img src="{{ site.baseurl }}/common/images/elastic_config.png" width="500px">
 
 The preceding diagram shows:
 
@@ -74,7 +74,7 @@ Search requests are processed as follows:
 2.	The Elasticsearch web server (listening on port 443) proxies the request to the Elasticsearch server (by default, it listens on port 9200).
 3.	Access to Elasticsearch is further protected by HTTP Basic authentication.
 
-	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid user name and password.
+	For any request to reach Elasticsearch, it must travel over SSL *and* provide a valid username and password.
 4.	Elasticsearch processes the search request.
 5.	Communication returns along the same route, with the Elasticsearch web server acting as a secure reverse proxy.
 
@@ -153,10 +153,10 @@ To install Elasticsearch:
 
 
 ## Additional resources {#es-resources}
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
+For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target="_blank"}
 
 #### Next
 
-*	[Configure nginx and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-nginx.html)
-*	[Configure Apache and Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/es-config-apache.html)
-*	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
+*	[Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
+*	[Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Magento to use Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html)

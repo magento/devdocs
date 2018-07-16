@@ -268,11 +268,11 @@ npm install
 <!-- LINK DEFINITIONS -->
 
 <!-- External -->
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
 {:target="_blank"}
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{site.mage2100url}}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2100url }}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
 {:target="_blank"}
-[Deploy static view files]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
 {:target="_blank"}
 [fonctconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
 {:target="_blank"}

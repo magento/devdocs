@@ -1,10 +1,10 @@
 <div markdown="1">
 
-You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have [SSH configured]({{ page.baseurl}}/cloud/env/environments-ssh.html).
+You can also use SSH tunneling to connect to a service from your local development environment as if the service were local. Before tunneling, you need to have [SSH configured]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 
 Use a terminal application to log in and issue commands.
 
-  magento-cloud login
+    magento-cloud login
 
 First, you may want to check if any tunnels are already open using the following command:
 
@@ -48,6 +48,7 @@ Now you can connect to services as if they were running locally.
 
 For example, to connect to the database, use the following command:
 
-	mysql --host=127.0.0.1 --user='<database user name>' --pass='<user password>' --database='<name>' --port='<port>'
+	mysql --host=127.0.0.1 --user='<database username>' --pass='<user password>' --database='<name>' --port='<port>'
 
 Details about the service display if you use the `magento-cloud tunnel:info` command.
+</div>

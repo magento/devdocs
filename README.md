@@ -29,7 +29,7 @@ $ ruby -v
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
 1. Use Homebrew to install the latest stable version of Ruby:
  
-   ```shell
+   ```
    $ brew install ruby
    ```
 
@@ -47,6 +47,16 @@ $ gem install bundler
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
 
+### Install devdocs
+
+Clone or download the repository. The first time you are at the `devdocs` directory, run:
+
+```
+$ bundle install
+```
+
+Once you have completed preparing your environment, you can build locally and review the site in your browser.
+
 ### To build locally:
 
 #### Using rake
@@ -55,7 +65,7 @@ Once you have completed preparing your environment, you can build locally and re
 
 1. Run the rake task that installs all required dependencies and starts the [Jekyll](https://jekyllrb.com/) server:
 
-   ```shell
+   ```
    $ rake preview
    ```
 
@@ -71,7 +81,7 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
    $ bundle install
    ```
 
-2. To generate the local preview, run:
+1. To generate the local preview, run:
 
    ```
    $ bundle exec jekyll serve --incremental
@@ -101,22 +111,22 @@ The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
-     - community/
-     - swagger/
-     - vagrant/
-     - guides/m1x/
-     - guides/v2.0/
-     - guides/v2.1/
-    # - guides/v2.2/
-     - guides/v2.3/
+     - /community/
+     - /swagger/
+     - /vagrant/
+     - /guides/m1x/
+     - /guides/v2.0/
+     - /guides/v2.1/
+    # - /guides/v2.2/
+     - /guides/v2.3/
     
     # Excluded in config.yml
-     - scss/
-     - bin/
-     - node_modules/
-     - vendor/
-     - .*
-     - Rakefile
+     - /scss/
+     - /bin/
+     - /node_modules/
+     - /vendor/
+     - /.*
+     - /Rakefile
    ```
 
 1. Run the preview command:

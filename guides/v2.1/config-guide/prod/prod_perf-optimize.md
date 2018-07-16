@@ -41,7 +41,7 @@ After running `setup:di:compile` to generate classes, use composer to update the
 
 Run the following [composer command][composer-dump-autoload] to generate an optimized composer class map that supports faster auto-loading.
 
-	composer dump-autoload -o
+	composer dump-autoload -o --apcu
 
 ### Server - PHP Configuration
 
@@ -61,6 +61,13 @@ If you are on a low memory machine and you do not have many extensions or custom
 
 	opcache.memory_consumption=64
 	opcache.max_accelerated_files=60000
+
+We recommend enabling the [PHP APCu extension][php-apcu] for maximum performance. This extension caches file locations for opened files, increasing performance for Magento server calls (including pages, ajax calls, and endpoints).
+Edit your `apcu.ini` file to include the following:
+
+	extension=apcu.so
+	[apcu]
+	acp.enabled = 1
 
 ### Server - Redis Configuration & Tuning
 
@@ -110,11 +117,12 @@ Run the following commands to switch to production mode:
 bin/magento deploy:mode:set production
 ~~~
 
-[composer-install]: {{page.baseurl}}/install-gde/prereq/integrator_install.html
-[zip-install]: {{page.baseurl}}/install-gde/prereq/zip_install.html
-[config-varnish]: {{page.baseurl}}/config-guide/varnish/config-varnish.html
-[elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/es-overview.html
+[composer-install]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
+[config-varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
+[elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-overview.html
 [php-fpm]: https://php-fpm.org/
-[redis-session]: {{page.baseurl}}/config-guide/redis/redis-session.html
-[redis-default-cache]: {{page.baseurl}}/config-guide/redis/redis-pg-cache.html
+[redis-session]: {{ page.baseurl }}/config-guide/redis/redis-session.html
+[redis-default-cache]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [composer-dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload
+[php-apcu]: https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache

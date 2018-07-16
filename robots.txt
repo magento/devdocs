@@ -1,3 +1,2 @@
 User-agent: *
 Disallow: /guides/v2.3/
-Noindex: /guides/v2.0/

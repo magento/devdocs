@@ -28,7 +28,7 @@ The following environment variables are available for overriding administrative 
     </tr>
     <tr>
       <td><code>ADMIN_EMAIL</code></td>
-      <td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
+      <td>Administrative user's e-mail address. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails. See <a href="{{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</td>
     </tr>
     <tr>
       <td><code>ADMIN_LOCALE</code></td>
@@ -44,7 +44,7 @@ The following environment variables are available for overriding administrative 
     </tr>
     <tr>
       <td><code>ADMIN_USERNAME</code></td>
-      <td>User name for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
+      <td>Username for a Magento administrative user. This user is an administrator and can create other users, including other administrative users.</td>
     </tr>
   </tbody>
 </table>

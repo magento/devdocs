@@ -26,4 +26,4 @@ content='This table is updated when new commits are merged into the "2.3-develop
 
 <!-- LINK DEFINITIONS -->
 
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

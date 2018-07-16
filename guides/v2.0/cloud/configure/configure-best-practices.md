@@ -12,7 +12,7 @@ functional_areas:
   - Configuration
 ---
 
-For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with addtional content to post over time and across versions.
+For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
 
 ## Understanding marketing campaigns and promotions {#campaigns}
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
@@ -49,7 +49,7 @@ To edit Advanced Pricing and update Content Staging:
 For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html){:target="_blank"}. Click **Next** to walk through the steps.
 
 ## Example Price Rules {#price-rules}
-Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on on orders over $100 dollars, and so on.
+Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on orders over $100 dollars, and so on.
 
 To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules){:target="_blank"}.
 
@@ -62,7 +62,7 @@ The following provides an example of creating a Price Rule for a First Order Onl
 This ensures net-new customers or existing customers who have not made a purchase receive the discount only on their very first order. You could create banners and send email promotions for the first time purchase discount.
 
 ## Understanding websites, stores, and store views {#sites}
-Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{page.baseurl}}/cloud/project/project-multi-sites.html).
+Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
 
 You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.
 
@@ -71,12 +71,12 @@ Each website can include one or more _stores_ with different categories and arti
 You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
-* Single website with one store and two views for Engligh and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
+* Single website with one store and two views for English and Spanish locale. All article data, customers, checkout, and shopping cart are shared.
 
-  ![Store example 1]({{ site.baseurl}}/common/images/cloud_example-store1.png)
+  ![Store example 1]({{ site.baseurl }}/common/images/cloud_example-store1.png)
 * Single website with Store A for women's clothing with two views for English and Spanish, and Store B for children's clothing with a single store view in English. All article data, customers, checkout, and shopping cart are shared. The stores may have different domains and themes.
 
-  ![Store example 2]({{ site.baseurl}}/common/images/cloud_example-store2.png)
+  ![Store example 2]({{ site.baseurl }}/common/images/cloud_example-store2.png)
 * Two websites one for clothing and another for home decor with different catalogs and separate articles, customer data, and shopping cart. Each website could have multiple stores and views sharing articles, customer data, checkout, and shopping cart only within that website.
 
-  ![Store example 3]({{ site.baseurl}}/common/images/cloud_example-store3.png)
+  ![Store example 3]({{ site.baseurl }}/common/images/cloud_example-store3.png)

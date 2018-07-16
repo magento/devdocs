@@ -9,33 +9,33 @@ Web API is crucial for Magento because of the need to integrate with order manag
 
 There are many headless Magento installations in which a merchant partially uses Magento functionality, while the other pieces of an eCommerce website are provided by other systems.
 
-See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of web APIs in modern web applications.
+See [more details](https://en.wikipedia.org/wiki/Web_API) about the importance of web APIs in modern web applications.
 
 
 ### Components Dependencies
 
 The following diagram shows Web API component dependencies.
 
-![Web API components dependencies]({{site.baseurl}}/common/images/coding-standards/webapi-components-dependencies.png)
+![Web API components dependencies]({{ site.baseurl }}/common/images/coding-standards/webapi-components-dependencies.png)
 
 ### High-level Architecture
 
-The following image provides an overview of how Web APIs are processed.
+The following image provides an overview of how Web API requests are processed.
 
-![Web API request processing overview]({{site.baseurl}}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
+![Web API request processing overview]({{ site.baseurl }}/common/images/coding-standards/webapi-request-processing-high-level-overview.png)
 
 ### Extension Scenarios
 
 #### Declare a new REST and SOAP endpoint
 
-Any [service contract]({{page.baseurl}}/extension-dev-guide/service-contracts/service-contracts.html) can be [exposed as REST and SOAP]({{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html) endpoints via configuration in a module's `webapi.xml` file.
+Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html) can be [exposed as REST and SOAP]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html) endpoints via configuration in a module's `webapi.xml` file.
 
 #### Declare a new GraphQL query
 
 1. Create custom resolvers.
 1. Declare a custom query and all necessary types in `schema.graphqls`
 
-If the target module is called `MyModule`, then create the resolvers and configuration files in a a new module called `MyModuleGraphQl`.
+If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
 See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/index.html) for more information.
 
@@ -62,7 +62,7 @@ See the [GraphQL documentation](http://devdocs.magento.com/guides/v2.3/graphql/i
 
 The recommended approach for modifying an interface is to define a new endpoint. If you simply modify the schema, you might break existing integrations or extensions.
 
-To extend an interface, use [extension attributes]({{page.baseurl}}/extension-dev-guide/attributes.html).
+To extend an interface, use [extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html).
 
 #### Modify the schema of an existing GraphQL query
 
@@ -85,7 +85,7 @@ Any new design related to Web API must satisfy the following constraints to keep
     * The base class for GraphQL tests is: `\Magento\TestFramework\TestCase\GraphQlAbstract`
 1. Web API requests must be processed by custom front controllers with optimized routing to prevent the admin and store front areas from executing routers.
 1. Web API schema should be strictly typed. (All complex types should eventually be resolved to scalar types.)
-1. Authentication parameters must be be passed via headers.
+1. Authentication parameters must be passed via headers.
 1. Throttling must be configured by the system integrator. It is not supported by Magento
 1. Internal server errors must be masked and never shown to the user in production mode. In developer mode, original exceptions must never be masked and should be displayed along with the related stacktrace.
 1. Pagination must be supported by all list operations.

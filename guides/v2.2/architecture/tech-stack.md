@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 
 ## Overview
 
-This page summarizes the technologies we use. For more detailed information, see the [System Requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html).
+This page summarizes the technologies we use. For more detailed information, see the [System Requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html).
 
 Magento's highly modular structure includes the following open-source technologies.
 
@@ -40,8 +40,8 @@ Magento's highly modular structure includes the following open-source technologi
 
 ### Search
 
-* Solr (Magento Enterprise Edition only)
-* Elasticsearch (Magento Enterprise Edition version 2.1.x only)
+* Solr ({{site.data.var.ee}} (formerly Enterprise Edition (EE)) only)
+* Elasticsearch ({{site.data.var.ee}} (formerly Enterprise Edition (EE)) 2.1.x only)
 
 ### Additional technologies
 
@@ -67,7 +67,7 @@ Magento 2.2 and above only supports PHP7+ and is no longer compatible with HipHo
 Magento also provides automated testing suites that include unit, integration, functional and performance test scripts, as well as JavaScript tests and tools for static code analysis. Components include PHPUnit for the unit test framework and Selenium for the functional test framework.
 
 This framework is located in the `dev/tests` directory. The functional testing framework `mtf` can be found in a [separate repository](https://github.com/magento/mtf){:target="_blank"}.
-For more information, see the [Functional Testing Framework]({{page.baseurl}}/mtf/mtf_introduction.html) guide.
+For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
-<a href="{{page.baseurl}}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

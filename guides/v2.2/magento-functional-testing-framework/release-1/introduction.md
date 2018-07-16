@@ -6,10 +6,10 @@ github_link: magento-functional-testing-framework/release-1/introduction.md
 functional_areas:
     - Testing
 redirect_from:
-    - guides/v2.0/magento-functional-testing-framework/release-1/introduction.html
-    - guides/v2.1/magento-functional-testing-framework/release-1/introduction.html
-    - guides/v2.2/magento-functional-testing-framework/1.0/introduction.html
-    - guides/v2.2/magento-functional-testing-framework/introduction.html
+ - /guides/v2.0/magento-functional-testing-framework/release-1/introduction.html
+ - /guides/v2.1/magento-functional-testing-framework/release-1/introduction.html
+ - /guides/v2.2/magento-functional-testing-framework/1.0/introduction.html
+ - /guides/v2.2/magento-functional-testing-framework/introduction.html
 mftf-release: 1.0.0
 ---
 
@@ -88,7 +88,7 @@ Follow the [MFTF project] and [contribute on Github].
 <!-- LINK DEFINITIONS -->
 
 [contribute on Github]: ../contribution-guidelines.html
-[Functional Testing Framework]: {{page.baseurl}}/mtf/mtf_introduction.html
+[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 
 [`magento` repositories]: https://github.com/magento
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework

@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-We use [Composer]({{page.baseurl}}/cloud/reference/cloud-composer.html) for upgrades and patches to {{site.data.var.ece}} and recommend running the `composer update` command.
+We use [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html) for upgrades and patches to {{site.data.var.ece}} and recommend running the `composer update` command.
 
 {{site.data.var.ece}} checks for pending patches and updates when you push code changes to the remote environment. The upgrade instructions walk through preparing, updating, and verifying the upgrade.
 
@@ -23,8 +23,8 @@ Some restrictions in the core {{site.data.var.ee}} code base prevent you from up
 | Current Version | Upgrade Path |
 | --- | --- |
 | 2.1.3 and earlier | You must upgrade to version 2.1.4 or later before you continue. |
-| 2.1.4 and later | You can begin the upgrade to [ece-tools 2002.0.9]({{page.baseurl}}/cloud/composer-packages/ece-tools.html#v200209) and later. |
-| 2.2.x | You can begin the upgrade to [ece-tools 2002.0.8]({{page.baseurl}}/cloud/composer-packages/ece-tools.html#v200208) and later. |
+| 2.1.4 and later | You can begin the upgrade to [ece-tools 2002.0.9]({{ page.baseurl }}/cloud/composer-packages/ece-tools.html#v200209) and later. |
+| 2.2.x | You can begin the upgrade to [ece-tools 2002.0.8]({{ page.baseurl }}/cloud/composer-packages/ece-tools.html#v200208) and later. |
 
 ### Update the metapackage {#metapackage}
 We are deprecating the `magento/magento-cloud-configuration` and `magento/ece-patches` packages.

@@ -31,7 +31,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td><a href="https://github.com/magento/devdocs/issues/1276" target="\_blank">Menu widgets</a></td>
         <td>Small</td>
         <td>
-          <p>Help us improve the <a href="{{page.baseurl}}/javascript-dev-guide/widgets/widget_menu.html">Menu widget topic</a> by contributing working code samples and better descriptions of menu options.</p>
+          <p>Help us improve the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_menu.html">Menu widget topic</a> by contributing working code samples and better descriptions of menu options.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Sample code showing the use of the menu widget.</li>
@@ -71,7 +71,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td><a href="https://github.com/magento/devdocs/issues/1637" target="\_blank">Category attributes</a></td>
         <td>Medium</td>
         <td>
-          <p>Help us improve the <a href="{{page.baseurl}}/ui_comp_guide/howto/add_category_attribute.html">How to add a category attribute</a> topic by providing details about how to extend attributes.</p>
+          <p>Help us improve the <a href="{{ page.baseurl }}/ui_comp_guide/howto/add_category_attribute.html">How to add a category attribute</a> topic by providing details about how to extend attributes.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Provide an extended explanation of the parameters <code>(key => value)</code> for the <code>addAttribute</code> function.
@@ -90,7 +90,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td><a href="https://github.com/magento/devdocs/issues/434" target="\_blank">Logging</a></td>
         <td>Large</td>
         <td>
-          <p>Help us improve the <a href="{{page.baseurl}}/config-guide/log/log-intro.html">Custom logging</a> topic by adding more details and examples.</p>
+          <p>Help us improve the <a href="{{ page.baseurl }}/config-guide/log/log-intro.html">Custom logging</a> topic by adding more details and examples.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Describe what you can do with Magento's stock logger implementation and when you should extend it or implement your own.</li>

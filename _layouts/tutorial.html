@@ -18,7 +18,7 @@
         </li>
       {% for step in steps %}
         <li class="level1{% if step.url == page.url %}{% assign index = forloop.index %}  active{% endif %}">
-          <a href="{{ site.baseurl }}{{ step.url }}">{% if step.menu_title %}{{step.menu_title}}{% else %}{{step.title}}{% endif %}</a>
+          <a href="{{ site.baseurl }}{{ step.url }}">{% if step.menu_title %}{{ step.menu_title }}{% else %}{{step.title}}{% endif %}</a>
         </li>
       {% endfor %}
       </ul>

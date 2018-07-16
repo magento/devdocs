@@ -7,7 +7,7 @@ functional_areas:
   - Standards
 ---
 
-Please provide feedback for the article: [Admin Panel Placement and Design]({{page.baseurl}}/ext-best-practices/admin/placement-and-design.html) on this page via GitHub.
+Please provide feedback for the article: [Admin Panel Placement and Design]({{ page.baseurl }}/ext-best-practices/admin/placement-and-design.html) on this page via GitHub.
 
 You can leave high-level feedback for specific sections by clicking the Edit icon above, and adding comments beneath the relevant section name below.
 

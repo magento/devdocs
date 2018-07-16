@@ -166,6 +166,17 @@ The following test actions return a variable:
 
 Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
 
+## Actions handling data entities
+
+The following test actions handle data entities using [metadata](../metadata.html):
+
+* [createData](#createData)
+* [deleteData](#deleteData)
+* [updateData](#updateData)
+* [getData](#getData)
+
+Learn more in [Handling a REST API response](../metadata.html#rest-response).
+
 ## Reference
 
 The following list contains reference documentation about all action elements available in the MFTF.
@@ -455,7 +466,7 @@ Delete the entity that was previously created using [`createData`](#createdata) 
 
 #### Example of existing data deletion
 
-Delete an entity using [REST API]({{page.baseurl}}/rest/bk-rest.html) request to the corresponding route:
+Delete an entity using [REST API]({{ page.baseurl }}/rest/bk-rest.html) request to the corresponding route:
 
 ```xml
 <grabFromCurrentUrl regex="categories/id\/([\d]+)/" stepKey="grabId"/>
@@ -667,8 +678,8 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector1`|string|optional|A selector for the HTML element to drag.
 `selector2`|string|optional|A selector for the HTML element to drop onto.
-`x`|int|optional| X offset appllied to drag-and-drop destination.
-`y`|int|optional| Y offset appllied to drag-and-drop destination.
+`x`|int|optional| X offset applied to drag-and-drop destination.
+`y`|int|optional| Y offset applied to drag-and-drop destination.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -714,6 +725,19 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
 `locale`|string|optional|
+`stepKey`|string|required| A unique identifier of the action.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
+### generateDate
+
+Generates a date for use in `{$stepKey}` format in other test actions.
+
+Attribute|Type|Use|Description
+---|---|---|---
+`date`|string|required| Data input to parse, uses same functionality as php `strtotime()` function.
+`format`|string|required| Format to save given date in, uses same formatting as php `date()` function.
+`timezone`|string|optional| Timezone to use when generating date, defaults to `America/Los_Angeles`.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
@@ -841,6 +865,7 @@ Specifies a CLI command to execute in a Magento environment.
 Attribute|Type|Use|Description
 ---|---|---|---
 `command`|string |optional| CLI command to be executed in Magento environment.
+`arguments`|string |optional| Unescaped arguments to be passed in with CLI command. 
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.

@@ -10,11 +10,11 @@ functional_areas:
 
 {{site.data.var.ece}} enables you to assign environment variables to override configuration options:
 
--   [Application]({{page.baseurl}}/cloud/env/environment-vars_magento.html)—variables override application variables
--   [Build]({{page.baseurl}}/cloud/env/variables-build.html)—variables control build actions
--   [Cloud]({{page.baseurl}}/cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
--   [Deploy]({{page.baseurl}}/cloud/env/variables-deploy.html)—variables control deploy actions
--   [Post-deploy]({{page.baseurl}}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
+-   [Application]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables override application variables
+-   [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
+-   [Cloud]({{ page.baseurl }}/cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
+-   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
+-   [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
 
 Variables are _hierarchical_, which means that if a variable is not overridden, it is inherited from the parent environment.
 
@@ -34,7 +34,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Enable generation of static content when requested by a user. Pre-loading the cache using the [`post_deploy` hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
+Enable generation of static content when requested by a user. Pre-loading the cache using the [`post_deploy` hook]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
 ```yaml
 stage:

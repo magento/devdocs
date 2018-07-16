@@ -7,14 +7,14 @@ menu_order: 5
 version: 2.1
 github_link: javascript-dev-guide/javascript/js-resources.md
 redirect_from:
-  - guides/v2.0/config-guide/config/js-resources.html
-  - guides/v1.0/config-guide/config/js-resources.html
-  - guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
+ - /guides/v2.0/config-guide/config/js-resources.html
+ - /guides/v1.0/config-guide/config/js-resources.html
+ - /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
 ---
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of how work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
+This topic describes the general concepts of how to work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
 
 To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
@@ -28,8 +28,8 @@ In Magento, you can find the JS components on the following levels:
 
 *   {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}Library{% endglossarytooltip %} level (`lib/web`). Resources located here are available in any place in Magento.
 *	Module level (`<module_dir>/view/<areaname>/web`). If the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is enabled, resources added here are available in other modules and themes.
-*	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) themes.
-*	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html) themes.
+*	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
+*	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Library level can only contain core Magento resources. Do not put custom JS files in  the `lib/web` directory.
@@ -87,7 +87,7 @@ require(["jquery"], function($){
 {% endcollapsible %}
 
 
-These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{page.baseurl}}/javascript-dev-guide/javascript/requirejs_concept.html).
+These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html).
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
@@ -120,9 +120,9 @@ var config = {
 
 To be available for the entire Magento instance, RequireJS library is included in the following layout files:
 
- * For the `adminhtml` [area]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
+ * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
-    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{site.mage2000url}}app/code/Magento/Backend/view/adminhtml/layout/default.xml)
+    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/layout/default.xml)
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
@@ -156,7 +156,7 @@ To be available for the entire Magento instance, RequireJS library is included i
 </page>
 {%endhighlight%}
 
-* For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml).
+* For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml).
 
 ### Mapping JS resources {#m2devgde-js-resources-mapping}
 
@@ -184,10 +184,10 @@ All configurations are collected and executed in the following order:
 
 The `baseUrl` parameter for RequireJS is specified in the following files:
 
-* for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
-* for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{site.mage2000url}}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
+* for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
+* for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
 
 
 ## Related reading
 
-[About AMD modules and RequireJS]({{page.baseurl}}/javascript-dev-guide/javascript/requirejs_concept.html)
+[About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html)

@@ -44,12 +44,12 @@ The following table summarizes what you need to do.
 
 <tr>
 	<td>PHP 5.5.x AND Magento 2.0.7</td>
-<td> Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+<td> Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{ page.baseurl }}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
 	<td>PHP 5.5.x AND Updater 10.0.1</td>
-	<td>Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{page.baseurl}}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
+	<td>Download and install patch <code>MDVA-449</code> as detailed in this bulletin. Note: You must apply patch <code>MDVA-449</code>  whether you installed the Magento software using a <a href="{{ page.baseurl }}/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</td>
 </tr>
 
 <tr>
@@ -105,7 +105,7 @@ To apply this patch:
 		<td>Use the following steps:
 		<ol><li>Go to <a href="http://www.magento.com" target="_blank">www.magento.com</a></li>
 		<li>In the top horizontal navigation bar, click <strong>My Account</strong>.</li>
-		<li>Log in with your Magento user name and password.</li>
+		<li>Log in with your Magento username and password.</li>
 		<li>In the left navigation bar, click <strong>Downloads</strong>.</li>
 		<li>Click <strong>Magento Commerce</strong> <strong>2.X</strong> > <strong>Magento Commerce 2.x Release</strong> > <strong>Support Patches</strong></li>
 		<li>Follow the instructions on your screen to download patch <code>MDVA-449</code>.</li></ul>
@@ -131,7 +131,7 @@ To apply this patch:
 
 2.	Extract the patch in your Magento installation directory.
 
-	Log in as or change to the <a href="{{page.baseurl}}/install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
+	Log in as or change to the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a>. Use one of the following commands to extract the archive.
 
 	<table>
 	<tbody>

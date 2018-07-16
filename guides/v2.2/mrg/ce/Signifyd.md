@@ -6,7 +6,7 @@ menu_title: Signifyd
 menu_order: 2
 version: 2.2
 github_link: mrg/ce/Signifyd.md
-redirect_from: guides/v2.2/mrg/ee/Signifyd.html
+redirect_from: /guides/v2.2/mrg/ee/Signifyd.html
 ---
 
 
@@ -81,6 +81,6 @@ You can track [backward incompatible changes in patch releases](http://devdocs.m
 
 To improve the accuracy of Signifyd's transaction estimation, you may perform these operations (links lead to the Magento Developer Documentation Portal):
 
-- [Provide custom AVS/CVV mapping]({{page.baseurl}}/payments-integrations/signifyd/signifyd.html#provide-avscvv-response-codes)
+- [Provide custom AVS/CVV mapping]({{ page.baseurl }}/payments-integrations/signifyd/signifyd.html#provide-avscvv-response-codes)
 
-- [Retrieve payment method for a placed order]({{page.baseurl}}/payments-integrations/signifyd/signifyd.html#retrieve-payment-method-for-a-placed-order)
+- [Retrieve payment method for a placed order]({{ page.baseurl }}/payments-integrations/signifyd/signifyd.html#retrieve-payment-method-for-a-placed-order)

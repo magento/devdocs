@@ -5,7 +5,7 @@ contributor_name: Staffan Palopää from Vaimo
 contributor_link: http://www.vaimo.com/
 version: 2.1
 github_link: contributor-guide/contributing_docs.md
-redirect_from: guides/v2.0/extension-dev-guide/Contribute_edg.md
+redirect_from: /guides/v2.0/extension-dev-guide/Contribute_edg.md
 ---
 
 Share your knowledge with the community by contributing to Magento DevDocs! You can contribute by creating an issue or pull request (PR) on our [devdocs](https://github.com/magento/devdocs){:target="\_blank"} Github repository. We welcome all types of contributions; from minor typo fixes to new topics.
@@ -13,13 +13,13 @@ Share your knowledge with the community by contributing to Magento DevDocs! You 
 Magento's team of technical writers reviews all issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible. Working through the backlog takes time, though, so we appreciate your patience.
 
 <div class="bs-callout bs-callout-tip" id="tip" markdown="1">
-If you are not sure where to start contributing, you can review our list of [suggested topics]({{page.baseurl}}/contributor-guide/contributing_docs_suggested.html).
+If you are not sure where to start contributing, you can review our list of [suggested topics]({{ page.baseurl }}/contributor-guide/contributing_docs_suggested.html).
 </div>
 
-If you write and contribute a full topic, we will put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! We will also add your picture and a link to your Github account on the <a href="{{page.baseurl}}/contributor-guide/quarterly-contributors.html#top-recent-contributors">Top recent contributors</a> page.
+If you write and contribute a full topic, we will put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! We will also add your picture and a link to your Github account on the <a href="{{ page.baseurl }}/contributor-guide/quarterly-contributors.html#top-recent-contributors">Top recent contributors</a> page.
 
 ## Contribution guidelines
-We use [Markdown](http://daringfireball.net/projects/markdown/){:target="\_blank"} to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="\_blank"}. We have a <a href="{{page.baseurl}}/contributor-guide/templates/basic_template.html" target="\_blank">template</a> to make getting started easy.
+We use [Markdown](http://daringfireball.net/projects/markdown/){:target="\_blank"} to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html){:target="\_blank"}. We have a <a href="{{ page.baseurl }}/contributor-guide/templates/basic_template.html" target="\_blank">template</a> to make getting started easy.
 
 {% include note.html type="info" content="Refer to the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about licensing. All contributors are required to submit a click-through form to agree to the terms." %}
 

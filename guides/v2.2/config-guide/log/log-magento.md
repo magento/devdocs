@@ -1,1 +1,1 @@
-../../../v2.0/config-guide/log/log-magento.md
+../../../v2.1/config-guide/log/log-magento.md

@@ -22,7 +22,7 @@ Magento 2.1.3 introduced two endpoints that streamline the process of issuing a 
 Endpoint | Description
 --- | ---
 `POST /V1/order/<order_ID>/refund` | Issues an offline refund
-`POST /V1/invoice/<order_ID>/refund` | Issue a refund with an online payment system
+`POST /V1/invoice/<invoice_ID>/refund` | Issue a refund with an online payment system
 
 In this example, the customer did not like the fit of the Radiant T-M-Orange shirt and wants a refund.
 
@@ -82,7 +82,7 @@ Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endg
 
 ## Related topics
 
-* [Getting Started with Magento Web APIs]({{page.baseurl}}/get-started/bk-get-started-api.html)
+* [Getting Started with Magento Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Create a configurable product Tutorial](http://devdocs.magento.com/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html)
-* [REST API Reference Overview]({{page.baseurl}}/rest/bk-rest.html)
+* [REST API Reference Overview]({{ page.baseurl }}/rest/bk-rest.html)
 * [REST API documentation](http://devdocs.magento.com/swagger/){:target="_blank"}

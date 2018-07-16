@@ -50,7 +50,7 @@ To find the web server user's group:
 	Typically, the user and group name are both `apache`
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
-	Typically, the user name and the group name are both `www-data`
+	Typically, the username and the group name are both `www-data`
 
 ### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
 To put the Magento file system owner in the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
@@ -75,7 +75,7 @@ The following sample result shows the user's primary (`magento`) and secondary (
 	magento_user : magento_user apache
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Typically, the user name and primary group name are the same.
+Typically, the username and primary group name are the same.
 </div>
 
 To complete the task, restart the web server:
@@ -86,9 +86,9 @@ To complete the task, restart the web server:
 ### Step 4: Get the Magento software {#perms-get-software}
 If you haven't done so already, get the Magento software in one of the following ways:
 
-*	[Compressed archive]({{ page.baseurl}}/install-gde/prereq/zip_install.html)
-*	[Composer metapackage]({{ page.baseurl}}/install-gde/prereq/integrator_install.html)
-*	[Clone the repository (contributing developers only)]({{ page.baseurl}}/install-gde/prereq/dev_install.html)
+*	[Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
+*	[Composer metapackage]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
+*	[Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 ### Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}
 To set ownership and permissions before you install the Magento software:
@@ -107,5 +107,5 @@ To set ownership and permissions before you install the Magento software:
 ### Next step
 After you have set file system ownership and permissions, continue with any of the following:
 
-*	[Command-line installation]({{page.baseurl}}/install-gde/install/cli/install-cli.html)
-*	[Setup Wizard installation]({{page.baseurl}}/install-gde/install/web/install-web.html)
+*	[Command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli.html)
+*	[Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)

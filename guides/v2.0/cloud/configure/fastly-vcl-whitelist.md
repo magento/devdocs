@@ -21,7 +21,7 @@ You must have the following information to complete this VCL code snippet:
 * URL for the Magento Admin. If you changed this URL from `/admin`, you will need to modify the code in this example.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).
+This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 </div>
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
@@ -69,4 +69,4 @@ The default VCL snippets you uploaded included a prepended name of `magentomodul
 </div>
 
 ## Finish adding the VCL {#complete}
-When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{page.baseurl}}/cloud/configure/cloud-vcl-custom-snippets.html).
+When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

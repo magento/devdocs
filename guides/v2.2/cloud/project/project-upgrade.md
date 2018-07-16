@@ -9,7 +9,7 @@ This information details how to upgrade {{site.data.var.ece}} to 2.2.X from any 
 
 When you upgrade {{site.data.var.ece}}, you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already.
 
-Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{page.baseurl}}/cloud/reference/cloud-composer.html).
+Our upgrades are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 When upgrading from 2.0.X or 2.1.X to 2.2.X, please see [Upgrade from 2.0.X or 2.1.X](#old-version). For additional information on the release, see the [{{site.data.var.ece}} 2.2 Release Notes].
 
@@ -51,7 +51,7 @@ To upgrade from **2.1.X**:
 After completing your upgrade, you may also want to [Verify and upgrade your extensions](#extensions).
 
 ### Upgrade your PHP version {#php}
-{{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
+{{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
@@ -106,19 +106,19 @@ If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your 
     Do not commit or push changes to your branch yet. You still need to [Verify other changes](#verify-changes) and [Complete the upgrade](#upgrade).
     </div>
 
-**For Pro plan merchants:** When you are ready to deploy to Pro Staging and Production environments, you must enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) advising you need your hooks updated for {{site.data.var.ece}} 2.2.
+**For Pro plan merchants:** When you are ready to deploy to Pro Staging and Production environments, you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) advising you need your hooks updated for {{site.data.var.ece}} 2.2.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-**For Pro:** You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+**For Pro:** You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
 </div>
 
 ### Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
+The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ### Upgrade Fastly {#fastly}
-If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{page.baseurl}}/cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{page.baseurl}}/cloud/access-acct/fastly.html#upgrade).
+If you have not upgraded to the latest supported version of Fastly, you should do so. Check [Supported software versions]({{ page.baseurl }}/cloud/requirements/cloud-requirements.html#cloud-arch-software) for the latest version of Fastly we recommend. For instructions, see [Upgrade Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html#upgrade).
 
-If you do not upgrade your Fastly module, you will be missing vitual updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="\_blank"}.
+If you do not upgrade your Fastly module, you will be missing vital updates for Fastly and Magento services. You may also need to update the JSON format. This is already included in Fastly module v1.2.33 and later. For full details, see [Fastly upgrade documentation](https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md){:target="\_blank"}.
 
 ### Update .gitignore for new generated directory {#gitignore}
 With {{site.data.var.ece}} 2.2.X, the generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.
@@ -170,7 +170,7 @@ This section discusses how to verify your upgrade and to troubleshoot any issues
 
 To verify the upgrade in your integration, staging, or production system:
 
-1.  [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html).
+1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
 2.  Enter the following command from your Magento root directory to verify the installed version:
 
         php bin/magento --version
@@ -201,9 +201,9 @@ Important: For an upgrade, you will delete `config.php`. Once this file is added
 </div>
 
 ## Verify and upgrade your extensions {#extensions}
-You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
+You may need to upgrade any third-party extensions and modules that support v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} v2.2.
 
-We recommend [backing up your database]({{page.baseurl}}/cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
+We recommend [backing up your database]({{ page.baseurl }}/cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1. Create a new branch on your local.
 2. Disable your extensions as needed.
@@ -226,7 +226,7 @@ In some cases, an error similar to the following displays when you try to access
       Error log record number: <error number>
 
 ### View error details on the server
-To view the error in your integration system, [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html) and enter the following command:
+To view the error in your integration system, [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and enter the following command:
 
     vi /app/var/report/<error number>
 
@@ -239,8 +239,8 @@ One possible error occurs when the deployment hook failed, and therefore the dat
 
 To resolve the error:
 
-1.  [SSH to the server]({{page.baseurl}}/cloud/env/environments-ssh.html).
-2.  [Examine the logs]({{page.baseurl}}/cloud/trouble/environments-logs.html) to determine the source of the issue.
+1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
     For example, on a local branch, enter the following commands:
@@ -248,4 +248,4 @@ To resolve the error:
         git add -A && git commit -m "fixed deployment failure" && git push origin <branch name>
 
 ### Deployment error {#deploy-error}
-If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.

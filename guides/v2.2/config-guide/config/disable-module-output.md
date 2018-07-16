@@ -55,7 +55,7 @@ Run the following command to export the configuration changes:
 
 The results are written to the `<Magento_install_dir>/app/etc/config.php` file.
 
-For more information about this command, see [Export the configuration]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+For more information about this command, see [Export the configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 ## Disable module output in a simple deployment
 

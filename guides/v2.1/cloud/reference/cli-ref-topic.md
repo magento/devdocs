@@ -16,8 +16,8 @@ Also, you can use the Magento CLI commands, as needed, by defining `bin/magento`
 
 You can install the Magento Cloud CLI when setting up your local environment for development:
 
-* [Install Magento prerequisites]({{page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{page.baseurl}}/cloud/before/before-workspace-ssh.html)
+* [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+* [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
 
 #### To list all available commands:
 

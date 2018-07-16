@@ -28,7 +28,7 @@ The interface `BatchSizeManagementInterface` provides the ability to set the MEM
 {% highlight php %}
 namespace Magento\Framework\Indexer;
 
-use \Magento\Framework\DB\Adapter\AdapterInterface;
+use Magento\Framework\DB\Adapter\AdapterInterface;
 
 /**
  * Batch size manager can be used to ensure that MEMORY table has enough memory for data in batch.
@@ -138,5 +138,5 @@ The indexer table switching mechanism requires additional database storage.
 ### Related topics
 {:.no_toc}
 
-* [Indexing overview]({{page.baseurl}}/extension-dev-guide/indexing.html)
-* [Adding a custom indexer]({{page.baseurl}}/extension-dev-guide/indexing-custom.html)
+* [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
+* [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

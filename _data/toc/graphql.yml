@@ -44,7 +44,7 @@ pages:
             - label: BundleProduct endpoint
               url: /graphql/reference/bundle-product.html
 
-            - label: Categories endpoint
+            - label: Category endpoint
               url: /graphql/reference/categories.html
 
             - label: ConfigurableProduct endpoint

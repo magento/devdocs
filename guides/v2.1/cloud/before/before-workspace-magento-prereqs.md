@@ -21,7 +21,7 @@ functional_areas:
 ---
 
 #### Previous step:
-[Prepare for local environment setup]({{ page.baseurl}}/cloud/before/before-workspace.html)
+[Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
@@ -45,15 +45,15 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 
 ## Development tools {#devtools}
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
-	For more information, see [How Cloud uses Git]({{ page.baseurl}}/cloud/reference/git-integration.html).
+	For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
-	For more information, see [How Cloud uses Composer]({{ page.baseurl}}/cloud/reference/cloud-composer.html).
+	For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
-We strongly recommend installing [Nginx]({{ page.baseurl}}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl}}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
+We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
-Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl}}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl}}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
+Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
 
 The following packages may also be helpful for your PHP installation:
 
@@ -134,7 +134,7 @@ To avoid issues, we recommend you set `auto_increment_increment=3`.
 
 First, view the current value and verify if it is set to 3:
 
-	mysqladmin variables -u <root user name> -p | grep 'auto_increment'
+	mysqladmin variables -u <root username> -p | grep 'auto_increment'
 
 If necessary, set `auto_increment_increment` to 3:
 
@@ -155,13 +155,13 @@ If necessary, set `auto_increment_increment` to 3:
 		service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
-The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl}}/cloud/reference/cli-ref-topic.html).
+The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
 
 To install the Magento Cloud CLI:
 
-1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html).
+1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
 2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access, such as the home directory.
 
@@ -177,7 +177,7 @@ To install the Magento Cloud CLI:
 
 	For more information about the user shell profile, see [.bash_profile vs .bashrc](https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc){:target="_blank"}
 
-	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
+	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the username is `magento_user`, the command is similar to the following:
 
 		export PATH=$PATH:/home/magento_user/.magento-cloud/bin
 
@@ -190,11 +190,11 @@ To install the Magento Cloud CLI:
 ## Additional requirements for Magento Commerce {#commerce}
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-* [{{site.data.var.ee}} requirements]({{ page.baseurl}}/install-gde/system-requirements2.html)
-* [(Integrator) Integrator installation]({{ page.baseurl}}/install-gde/prereq/integrator_install.html)
+* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+* [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
 
 ## Additional options
-You can also install additional [optional software]({{ page.baseurl}}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
+You can also install additional [optional software]({{ page.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
 #### Next step:
-[Enable SSH keys]({{ page.baseurl}}/cloud/before/before-workspace-ssh.html)
+[Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)

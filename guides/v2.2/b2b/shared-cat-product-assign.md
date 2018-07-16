@@ -251,6 +251,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{page.baseurl}}/b2b/shared-catalog.html)
-* [Manage shared catalogs]({{page.baseurl}}/b2b/shared-cat-manage.html)
-* [Assign companies]({{page.baseurl}}/b2b/shared-cat-company.html)
+* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+* [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
+* [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)

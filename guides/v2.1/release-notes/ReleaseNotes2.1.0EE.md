@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.0EE.md
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl}}/release-notes/backward-incompatible-changes/index.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
@@ -859,7 +859,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 53865-->* The CC model now assigns cc data that is passed in the `additional_data` field.  <a href="https://github.com/magento/magento2/issues/4741" target="_blank"> (GITHUB-4741)</a>
 
-<!--- 51803-->* The Select All check box on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a>
+<!--- 51803-->* The Select All checkbox on the Cache Management page now works as expected. <a href="https://github.com/magento/magento2/issues/4080" target="_blank">(GITHUB-4080)</a>, <a href="https://github.com/magento/magento2/issues/3580" target="_blank"> (GITHUB-3580)</a>
 
 <!--- 41378-->* The {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} for Chinese translation now works as expected. <a href="https://github.com/magento/magento2/issues/1547" target="_blank"> (GITHUB-1547)</a>
 
@@ -994,7 +994,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 50498-->* The variations matrix is now populated as expected after you update a configurable product.
 
-<!--- 50461-->* The default address check boxes are  checked as expected on the Customer View page.
+<!--- 50461-->* The default address checkboxes are  checked as expected on the Customer View page.
 
 
 <!--- 50375-->* Magento now displays images for configurable product variations on the storefront.
@@ -1092,7 +1092,7 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 <!--- 48261-->* Fixed the test dev/tests/integration/testsuite/Magento/Framework/Filesystem/Driver/FileTest.php to properly set file permissions.
 
-<!--- 48803-->* The Use default value check box on a product in a non-default store view function properly.
+<!--- 48803-->* The Use default value checkbox on a product in a non-default store view function properly.
 
 <!--- 48809-->* Tests in `dev/tests/integration/testsuite/Magento/Catalog/Model/ProductTest.php` are executed as expected.
 
@@ -1263,11 +1263,11 @@ To view this setting in the Magento Admin, click **Stores** > Settings > **Confi
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 
 
-For more information, [System Requirements]({{ site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 
@@ -1277,6 +1277,6 @@ You can install Magento Magento Commerce 2.1 General Availability (GA) using Com
 {% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
-The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
