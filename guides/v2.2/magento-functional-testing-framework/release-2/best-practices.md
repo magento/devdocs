@@ -19,31 +19,31 @@ Check out our best practices below to ensure you're getting the absolute most ou
  Add additional explanation in comments if needed. 
 2. Provide default values for the arguments that apply to your most common case scenarios.
 
-## Action Groups vs Extends
+## `actionGroups` vs `extends`
 
-An action group is used to group a set of actions that will be used multiple times.
+An action group is used to group a set of actions to be reused multiple times.
 
-An extension is used when a test or action group needs to be repeated with the exception of a few steps.
+An [extension] is used when a test or action group needs to be repeated with the exception of a few steps.
 
-#### Signs that you should use 'extends'
-* If one of the below is true, you may want to use 'extends' to write a new test or action group
+### When to use `extends`
 
-1. You still want the original test to run, without any modifications to that test.
+Consider to use `extends` in your new test or action group when at least one of the following conditions is applicable to your case:
+
+1. You want to keep the original test; without any modifications to that test.
 2. You want to create a new test that follows the same path as the original test.
-3. You want a new action group that behaves similarly to an existing action group, but you don't want the functionality of the original action group to change.
+3. You want a new action group that behaves similar to the existing action group but you do not want to change the functionality of the original action group.
 
-#### Signs that you should not use 'extends'
-* If one of the below is true, you may want to avoid using extends outside of unique scenarios
+### When to avoid `extends`
 
-1. You want to change the functionality of the test/action group and don't want the original version to run.
-2. You plan on using merging on the base test/action group.
-    - Extends follows the merging pattern when creating a new test or action group.
-    - The following pattern is used when merging with extends:
-        1. Original test is merged
-        2. Extended test is created from merged original test
-        3. Extended test is merged
-        
-        In these cases you will end with the merged test and the extended merged test.
+Consider to avoid `extends` when at least one of the following conditions is applicable to your case:
+
+1. You want to change the functionality of the test or action group and do not need to run the original version.
+2. You plan to merge the base test or action group.
+
+The following pattern is used when merging with `extends`:
+1. Original test is merged
+2. Extended test is created from the merged original test
+3. Extended test is merged
 
 ## Annotation
 
@@ -147,18 +147,19 @@ Since the configurable product module could be disabled, this approach is more r
 
 <!-- Link definitions -->
 
-[Action group]: test/action-groups.html
 [`<after>`]: test/actions.html#before-and-after
-[annotations]: test/annotations.html
 [`<before>`]: test/actions.html#before-and-after
 [`<comment>`]: test/actions.html#comment
 [`<createData>`]: test/actions.html#createdata
 [`<deleteData>`]: test/actions.html#deletedata
-[entity]: data.html
-[merging]: merging.html
-[parameterized selectors]: section/parameterized-selectors.html
-[sections]: section.html
 [`<wait>`]: test/actions.html#wait
 [`<waitForElement>`]: test/actions.html#waitforelement
 [`<waitForElementVisible>`]: test/actions.html#waitforelementvisible
 [`<waitForLoadingMaskToDisappear>`]: test/actions.html#waitforloadingmasktodisappear
+[Action group]: test/action-groups.html
+[annotations]: test/annotations.html
+[entity]: data.html
+[extension]: extending.html
+[merging]: merging.html
+[parameterized selectors]: section/parameterized-selectors.html
+[sections]: section.html
