@@ -101,7 +101,7 @@ For Pro, you need to enter a ticket to have these files and settings pushed to S
 
   * [MySQL service]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) configuration for the database set in services.yaml
   * [Redis service]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) configuration for a backend caching solution set in services.yaml
-  * [Solr service](http://devdocs.magento.com/guides/v2.0/cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
+  * [Solr service]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html) configuration for search engines supported for {{site.data.var.ee}} 2.0 set in services.yaml
   * [Elasticsearch service]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) configuration for searches supported for {{site.data.var.ee}} 2.1 and later set in services.yaml
   * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) configuration for a messaging broker set in services.yaml
 * [routes.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) configures how Magento processes an incoming URL for your Integration environment

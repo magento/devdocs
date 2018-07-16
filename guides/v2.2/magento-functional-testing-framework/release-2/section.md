@@ -55,7 +55,6 @@ The format of a `<section>` is:
 
 The following conventions apply to MFTF sections:
 
-* `<section>` name is the same as the file name.
 * `<section>` name must be alphanumeric.
 * `*Section.xml` is stored in the _Section_ directory of a module.
 * The name format is `{Admin|Storefront}{SectionDescription}Section.xml`.

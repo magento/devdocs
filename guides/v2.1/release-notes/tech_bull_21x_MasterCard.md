@@ -108,7 +108,7 @@ To get patches for Magento 1.x Commerce or Open Source
 
 4.	Follow the prompts on your screen to download the Mastercard 2 Series BIN: Bank Identification Numbers Range Update patch for your version of Magento Commerce or Open Source.
 
-5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches](http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
+5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches]({{ site.baseurl }}/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
 
 
 

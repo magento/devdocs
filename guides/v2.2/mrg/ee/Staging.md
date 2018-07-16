@@ -95,7 +95,7 @@ You can manipulate the timeline view and the grid view of a dashboard in the `ap
     - `component` extends selection column, sets a CSS class specified in a value.
     - `updateTypesMap` declares an array that contains bound classes and values that indicate which CSS class must be applied. Depending on the `value` (obtained from backend), a CSS class from the `className` is applied to a stripe with update.
 
-[Learn more details about the timeline dashboard.](http://devdocs.magento.com/guides/v2.2/pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html)
+[Learn more details about the timeline dashboard.]({{ site.baseurl }}/guides/v2.2/pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.html)
 
 ## Manage future campaigns
 
@@ -260,7 +260,7 @@ You can extend and override layouts in the `view/adminhtml/layout` directory. Fo
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
 
 ### cron options
 

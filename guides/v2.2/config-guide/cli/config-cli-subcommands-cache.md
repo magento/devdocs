@@ -123,7 +123,7 @@ config_integration_api: 1
      config_webservice: 1
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
-This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.
+This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse effect on performance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Starting in version 2.2, you can enable or disable cache types _only_ using the command line. Before doing so, you must manually make `<your Magento install dir>/app/etc/env.php` writeable by the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).

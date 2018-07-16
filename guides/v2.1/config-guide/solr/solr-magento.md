@@ -19,7 +19,7 @@ functional_areas:
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
 In a future release, Solr compatibility will be removed.
 
-If possible, use [Elastic Search](http://devdocs.magento.com/guides/v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
+If possible, use [Elastic Search]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 </div>
 
 The following topics discuss how to configure Solr to work with {{site.data.var.ee}}:
@@ -108,7 +108,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Hostname</td>
-	<td>Enter the fully qualified host name or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
+	<td>Enter the fully qualified hostname or IP address of the machine running Solr. (If Solr is running on the same host as Magento, you can optionally use <code>localhost</code>.)</td>
 </tr>
 <tr>
 	<td>Solr Server Port</td>

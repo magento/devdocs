@@ -133,7 +133,7 @@ To migrate static files:
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 
-For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
+For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 

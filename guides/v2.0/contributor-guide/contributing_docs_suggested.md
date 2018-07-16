@@ -7,7 +7,14 @@ github_link: contributor-guide/contributing_docs_suggested.md
 
 Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need developer experts from the community to contribute to the documentation.
 
-If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="\_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com> or post a comment in the GitHub issue linked to the project title.
+If you are interested in working on one of these projects, open a [pull request on this page](https://github.com/magento/devdocs/tree/develop/guides/v2.0/contributor-guide/contributing_docs_suggested.md){:target="_blank"}. You can also email us at <DL-Magento-Doc-Feedback@magento.com>, chat us at [Community Engineering Slack channel](https://magentocommeng.slack.com/messages/CAN932A3H){:target="_blank"} , or post a comment in the GitHub issue linked to the project title.
+
+The following GitHub issues are a great place to start:
+
+* [Help Wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22){:target="_blank"}
+* [Good First Issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22){:target="_blank"}
+
+If you take the issue and provide a PR to resolve it, make sure to add the link to the issue in the description. You can earn Contribution Points for every submitted to and merged into DevDocs.
 
 {% include note.html type="info" content="All of the following suggestions come directly from the community." %}
 
@@ -26,22 +33,22 @@ If you are interested in working on one of these projects, open a [pull request 
          <th>Contributor</th>
       </tr>
    </thead>
-   <tbody>         
+   <tbody>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1276" target="\_blank">Menu widgets</a></td>
+        <td><a href="https://github.com/magento/devdocs/issues/1276" target="_blank">Menu widgets</a></td>
         <td>Small</td>
         <td>
           <p>Help us improve the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_menu.html">Menu widget topic</a> by contributing working code samples and better descriptions of menu options.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Sample code showing the use of the menu widget.</li>
-              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
+              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
             </ul>
         </td>
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1465" target="\_blank">Admin grids</a></td>
+        <td><a href="https://github.com/magento/devdocs/issues/1465" target="_blank">Admin grids</a></td>
         <td>Small</td>
         <td>
           <p>Help us improve DevDocs by creating a new topic that explains how to create a grid in the Admin interface.</p>
@@ -55,7 +62,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1437" target="\_blank">Price adjustments</a></td>
+        <td><a href="https://github.com/magento/devdocs/issues/1437" target="_blank">Price adjustments</a></td>
         <td>Medium</td>
         <td>
           <p>Help us improve DevDocs by creating a new topic about price adjustments.</p>
@@ -68,7 +75,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1637" target="\_blank">Category attributes</a></td>
+        <td><a href="https://github.com/magento/devdocs/issues/1637" target="_blank">Category attributes</a></td>
         <td>Medium</td>
         <td>
           <p>Help us improve the <a href="{{ page.baseurl }}/ui_comp_guide/howto/add_category_attribute.html">How to add a category attribute</a> topic by providing details about how to extend attributes.</p>
@@ -87,7 +94,7 @@ If you are interested in working on one of these projects, open a [pull request 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/434" target="\_blank">Logging</a></td>
+        <td><a href="https://github.com/magento/devdocs/issues/434" target="_blank">Logging</a></td>
         <td>Large</td>
         <td>
           <p>Help us improve the <a href="{{ page.baseurl }}/config-guide/log/log-intro.html">Custom logging</a> topic by adding more details and examples.</p>

@@ -229,7 +229,7 @@ Create a mixin as follows:
             var mixin = {
 
                 initialize: function () {
-                    this.visible = ko.observable(false); // set visible to be initially false to have your step show first
+                    this.isVisible = ko.observable(false); // set visible to be initially false to have your step show first
                     this._super();
 
                     return this;

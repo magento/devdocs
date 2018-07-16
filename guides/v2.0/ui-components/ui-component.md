@@ -20,7 +20,7 @@ Magento UI components are implemented as a standard {% glossarytooltip c1e4242b-
 Components are responsible for rendering result page fragments and providing/supporting further interactions of {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and server.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This guide is actual for Magento 2.0 UI components. You might be also interested in the [UI Components Guide for Magento 2.1](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html), as it has more conceptual topics.   
+This guide is actual for Magento 2.0 UI components. You might be also interested in the [UI Components Guide for Magento 2.1]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html), as it has more conceptual topics.   
 </div>
 
 

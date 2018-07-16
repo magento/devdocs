@@ -33,8 +33,8 @@ If you modified your [composer.json]({{ page.baseurl }}/cloud/cloud-composer.htm
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
 * `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
-* `config.local.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
-* `config.php` if you used [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
+* `config.local.php` if you used [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
+* `config.php` if you used [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
 * [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
 * [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) is updated and saved in `magento/`
 * [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
@@ -79,9 +79,9 @@ During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html
 *	Enable all modules to build
 *	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
 
-The build also checks for a [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it's completed in the deployment stage.
+The build also checks for a [configuration file]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it's completed in the deployment stage.
 
-Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
+Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hotfixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
 To build your site:
 
@@ -105,11 +105,11 @@ To build your site:
 
 		... more ...
 							)
-2.	Apply hot fixes and other patches provided to you:
+2.	Apply hotfixes and other patches provided to you:
 
 		git apply <path to patch>
 
-	For example, to apply hot fixes:
+	For example, to apply hotfixes:
 
 		git apply m2-hotfixes/<patch file name>
 

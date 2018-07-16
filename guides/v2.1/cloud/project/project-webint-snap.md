@@ -117,7 +117,7 @@ We provide two methods for creating and managing snapshots:
     ```
 
 ## Dump your database {#db-dump}
-You can create a copy of your database using [`magento/ece-tools`](http://devdocs.magento.com/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
+You can create a copy of your database using [`magento/ece-tools`]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html#ece-tools).
 
 #### To create a database dump:
 

@@ -17,8 +17,8 @@ functional_areas:
 
 This topic lists configuration paths for system-specific and sensitive settings:
 
-*	The [`magento app:config:dump` command](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes system-specific settings to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control. It also writes shared configuration for all Magento instances to `app/etc/config.php`, this file _should_ be in source control.
-*	The [`magento config:sensitive:set` command](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) writes sensitive settings to `app/etc/env.php`.
+*	The [`magento app:config:dump` command]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes system-specific settings to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control. It also writes shared configuration for all Magento instances to `app/etc/config.php`, this file _should_ be in source control.
+*	The [`magento config:sensitive:set` command]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html) writes sensitive settings to `app/etc/env.php`.
 
 	You can also set sensitive values using configuration variables as discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 

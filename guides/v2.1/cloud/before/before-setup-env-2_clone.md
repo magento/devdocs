@@ -72,13 +72,17 @@ To clone the project's `master` environment to your local:
 ## Change the Magento Admin URL, username, and password on master {#setvariables}
 We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
 
-* `ADMIN_EMAIL`: Administrative user's e-mail address. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
-* `ADMIN_USERNAME`: Username for a Magento administrative user. This user is an administrator and can create other users, including other administrative users. The default hardcoded username is `admin`. You can use `admin` or change it to another secure username.
-* `ADMIN_PASSWORD`: Administrative user's password. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.
-* `ADMIN_URL`: The relative URL by which to access the Magento Admin. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
+* `ADMIN_EMAIL`: The email address for the administrative user. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
+* `ADMIN_USERNAME`: Username for the administrative user. The administrative user
+can create other users, including other administrative users. The default
+hardcoded username is `Admin`. You can use this value, or change it to another secure username.
+* `ADMIN_PASSWORD`: Password for the administrative user. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You might
+need to contact the Project Owner for the updated password.
+* `ADMIN_URL`: The relative URL to access the Admin panel. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.
+Make note of any changed values so that you can use them when you install Magento from
+the command line and when you verify the installation.
 </div>
 
 ### List and review variables {#variablelist}
