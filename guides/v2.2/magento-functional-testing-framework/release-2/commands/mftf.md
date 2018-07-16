@@ -193,6 +193,11 @@ It also enables auto-completion in PhpStorm.
 
 `<path>` is a path to the PhpStorm folder containing a file `misc.xml` (typically located in `<project root>/.idea/`).
 
+#### Options
+Option | Description
+---|---
+`-f, --force` | Forces creation of the misc.xml file if one does not exist in the `path` given.
+
 #### Example
 
 ```bash
