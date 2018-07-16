@@ -1,1 +1,1 @@
-../../../../v2.1/pattern-library/general/accessibilityguideline/accessibilityguideline.md
+../../../../v2.1/pattern-library/general/accessibilityguideline/accessibilityGuideline.md
