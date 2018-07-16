@@ -12,6 +12,9 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Enhanced the [hooks property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks) so that you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.|2.1.x, 2.2.x|Major update|Jul 12
+Added MSI and bulk API endpoints to [List of REST endpoints by module](https://devdocs.magento.com/guides/v2.3/rest/list.html)|2.3.x|Technical changes|Jul 12
+Added [Security information](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#15-security) to Coding Standards [Technical Guidelines](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).|2.2.x|Major update|Jul 09
 The new [URL Rewrite module](https://devdocs.magento.com/guides/v2.2/cloud/configure/import-url-rewrites.html) helps to manage redirects in Magento Cloud without losing SEO rankings and traffic.|2.2.x|Major update|Jul 06
 
 {% collapsibleh2 June 2018 %}
