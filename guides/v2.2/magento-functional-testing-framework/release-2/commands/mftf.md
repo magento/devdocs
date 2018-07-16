@@ -34,9 +34,9 @@ The following is a list of the most used commands.
 
 #### Options
 
-Option | Description|
+Option | Description
 ---|---
-`-u, --upgrade`   | Upgrades existing MFTF tests according to last major release requirements. Only tests in the default location will be upgraded with this flag.
+`-u`, `--upgrade`   | Upgrades existing MFTF tests according to last major release requirements. Only tests in the default location will be upgraded with this flag.
 
 #### Build the project
 
