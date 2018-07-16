@@ -40,7 +40,7 @@ where
 <tr>
 <td>cache-backend-redis-server</td>
 <td>server</td>
-<td>Fully qualified host name, IP address, or an absolute path to a UNIX socket. The default value of <code>127.0.0.1</code> indicates Redis is installed on the Magento server.</td>
+<td>Fully qualified hostname, IP address, or an absolute path to a UNIX socket. The default value of <code>127.0.0.1</code> indicates Redis is installed on the Magento server.</td>
 <td><code>127.0.0.1</code></td>
 </tr>
 <tr>
@@ -91,7 +91,7 @@ where
 <tr>
 <td>page-cache-redis-server</td>
 <td>server</td>
-<td>Fully qualified host name, IP address, or an absolute path to a UNIX socket. The default value of <code>127.0.0.1</code> indicates Redis is installed on the Magento server.</td>
+<td>Fully qualified hostname, IP address, or an absolute path to a UNIX socket. The default value of <code>127.0.0.1</code> indicates Redis is installed on the Magento server.</td>
 <td><code>127.0.0.1</code></td>
 </tr>
 <tr>

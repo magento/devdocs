@@ -15,7 +15,7 @@ functional_areas:
 This topic contains the basic information about how to customize the view of an existing {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
 
 
-## Change the component's .js implementation and template
+## Change the component's .js implementation and template {#change-component}
 
 To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. To do this, take the following steps:
 

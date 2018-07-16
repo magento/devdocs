@@ -16,8 +16,12 @@ The changes are aggregated into two tables:
 
 {% include note.html
 type="warning"
-content="**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_."
+content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
+
+## 2.2.4 - 2.2.5 {#releases-2_2_4-2_2_5}
+
+{% include backward-incompatible-changes/open-source/2.2.4-2.2.5.html %}
 
 ## 2.2.3 - 2.2.4 {#releases-2_2_3-2_2_4}
 
@@ -51,5 +55,5 @@ content="**Temporary issue**: Added docblock tags like [@deprecated] are defined
 <!-- LINK DEFINITIONS -->
 
 [magento/magento2]: https://github.com/magento/magento2
-
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
 [@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

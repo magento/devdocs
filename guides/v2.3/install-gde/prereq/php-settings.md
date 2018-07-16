@@ -40,7 +40,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 </div>
 
 ## Step 1: Find PHP configuration files {#php-required-find}
-This section discusses how you find the configuration files necesary to update required settings.
+This section discusses how you find the configuration files necessary to update required settings.
 
 ### Find `php.ini` configuration file
 

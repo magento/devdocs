@@ -37,17 +37,17 @@ For all Starter environments and Pro Integration environments, pushing your Git 
 - [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables.
 -  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—defines how Magento processes an incoming URL.
 -  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—defines the services Magento uses by name and version. For example, this file may include versions of MySQL, PHP extensions, and Elasticsearch. These are referred to as *services*.
--  [`app/etc/config.php`](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html)—defines the [system-specific settings](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) Magento uses to configure your store. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If the file exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files. If you follow [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps.
+-  [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)—defines the [system-specific settings]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) Magento uses to configure your store. Magento auto-generates this file if it does not detect it during the build phase and includes a list of modules and extensions. If the file exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files. If you follow [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps.
 
    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-   The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [quick](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so doing it during the build phase reduces deployment and site downtime.
+   The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [quick]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so doing it during the build phase reduces deployment and site downtime.
    </div>
 
 ## Required files for your Git branch {#requiredfiles}
 Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:
 
 -  `auth.json`—in the root Magento directory. This file includes the Magento Authentication keys entered when creating the project. The file is generated as part of autoprovisioning a new project using a blank template. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
--  [`app/etc/config.php`](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
+-  [`app/etc/config.php`]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)—auto-generates during the build phase if it does not exist.
 -  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—updates and saves to the root directory.
 -  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—updates and saves `magento/`.
 -  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—updates and saves to `magento/`.
@@ -95,21 +95,21 @@ This phase also runs `composer install` to retrieve dependencies.
 During the build phase, the site is not in maintenance mode and will not be brought down if errors or issues occur. We build only what has changed since the last build.
 </div>
 
-This phase builds the codebase and runs hooks in the `build` section of `.magento.app.yaml`. The default Magento build hook is the `php ./vendor/bin/m2-ece-build` command and performs the following:
+This phase builds the codebase and runs hooks in the `build` section of `.magento.app.yaml`. The default Magento build hook is the `php ./vendor/bin/ece-tools` command and performs the following:
 
 -  Applies patches located in `vendor/magento/ece-patches`, as well as optional, project-specific patches in `m2-hotfixes`
 -  Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the Magento `generated/` directory, which includes `generated/code` and `generated/metapackage`) using `bin/magento setup:di:compile`.
--  Checks if the [`app/etc/config.php`]({{ page.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [Magento build options](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
+-  Checks if the [`app/etc/config.php`]({{ page.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
 
   <div class="bs-callout bs-callout-info" markdown="1">
-  The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [`quick`](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so initiating it during the build phase helps to reduce deployment and site downtime.
+  The `app/etc/config.php` file includes a _scopes_ setting that defines how static files deploy during the build phase. By default, the scope is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). Static file deployment takes a long time to complete, so initiating it during the build phase helps to reduce deployment and site downtime.
   </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 At this point, the cluster has not been created yet, so you should not try to connect to a database or assume anything was daemonized.
 </div>
 
-After the application builds, it is mounted on a **read-only file system**. You can configure specific mount points that are going to be read/write. You cannot FTP to the server and add modules. Instead, you must add code to your local repository and run `git push`, which builds and deploys the environment. For the project structure, see [Local project directory structure]({{ page.baseurl }}/cloud/project/project-start.html#cloud-structure-local).
+After the application builds, it is mounted on a **read-only file system**. You can configure specific mount points that are going to be read/write. You cannot FTP to the server and add modules. Instead, you must add code to your local repository and run `git push`, which builds and deploys the environment. For the project structure, see [Local project directory structure]({{ page.baseurl }}/cloud/project/project-start.html).
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
 The result of the build phase is a read-only file system referred to as a *slug*. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service did not change, it uses the slug from the archive.
@@ -147,7 +147,7 @@ The last step runs a deployment script, which you can use to anonymize data in d
 If the `app/etc/config.php` file does not exist in the codebase, static files are compressed using `gzip` and deployed during this phase. This increases the length of your deploy phase and site maintenance.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [Magento deploy variables](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html#deploy) to learn about customizing or disabling file compression.
+Refer to [Magento deploy variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#deploy) to learn about customizing or disabling file compression.
 </div>
 
 There are two default deploy hooks. The `pre-deploy.php` hook completes necessary cleanup and retrieval of resources and code generated in the build hook. The `php ./vendor/bin/m2-ece-deploy` hook runs a series of commands and scripts:
@@ -158,7 +158,7 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 
 -  The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
 
--  Uses scopes (`-s` flag in build scripts) with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`](http://devdocs.magento.com/guides/v2.2/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the `-s` flag for [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+-  Uses scopes (`-s` flag in build scripts) with a default setting of `quick` for static content deployment strategy. You can customize the strategy using the environment variable [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html). For details on these options and features, see [Static files deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) and the `-s` flag for [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment is not affected.</p>

@@ -17,7 +17,7 @@ This release updates the copyright date in every file. It does not contain any f
 </div>
 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
+Looking for the <a href="{{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Commerce (Cloud)  Release Notes</a>?
 
 
 ## System requirements

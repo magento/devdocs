@@ -21,7 +21,7 @@ The main purpose of data serialization is to convert data into a string using `s
 
 The other half of this process uses the `unserialize()` function to reverse the process and convert a serialized string back into string, integer, float, boolean, or array data.
 
-<div class class="bs-callout bs-callout-warning" markdown="1">
+<div class="bs-callout bs-callout-warning" markdown="1">
 
 For security reasons, `SerializerInterface` implementations, such as the Json and Serialize classes, should not serialize and unserialize objects.
 
@@ -116,7 +116,7 @@ public function loadDataFromCache()
 ## Backward Compatibility Note
 
 The `SerializerInterface` interface and its implementations only exist since Magento version 2.2.  
-Because of this, it is not posssible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.  
+Because of this, it is not possible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.  
 
 In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of `SerializerInterface`.  
 Instead, a runtime check if the `SerializerInterface` definition exists can made, and if it does, it can be instantiated by directly accessing the object manager using a static method. Alternatively a check against the Magento 2 version or the `magento/framework` composer package version would work, too.  

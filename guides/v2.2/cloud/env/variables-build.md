@@ -46,7 +46,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Themes include numerous files. Set this variable to `true` if you want to skip copying over theme files during build. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly deploy this theme with your code updates and deployments. To exclude the `magento/luma` theme:
+Themes include numerous files. Set this variable to `true` if you want to skip copying over theme files during build. This is helpful when static content deployment occurs during the build phase. Use commas to separate multiple theme locations. For example, the Luma theme is included with {{site.data.var.ece}}. You may not need to constantly build this theme with your code updates and deployments. To exclude the `magento/luma` theme:
 
 ```yaml
 stage:
@@ -54,12 +54,41 @@ stage:
     SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
 ```
 
+### `SCD_MATRIX`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during build. This is ideal if you want to speed up the build process by reducing the amount of unnecessary theme files. For example, you can build the _magento/backend_ theme in English and a custom theme in other languages.
+
+The following example builds the `magento/backend` theme with three locales:
+
+```yaml
+stage:
+  build:
+    SCD_MATRIX:
+      "magento/backend":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+```
+
+Also, you can choose to _not_ deploy a theme:
+
+```yaml
+stage:
+  build:
+    SCD_MATRIX:
+      "magento/backend": [ ]
+```
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
 -  **Version**—Magento 2.2.0 and later
 
-Customize the [deployment strategy](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+Customize the [deployment strategy]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 

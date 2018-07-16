@@ -158,4 +158,4 @@ This is how we write about money:
 
 * Do not indicate standard or daylight time. ... *Correct example:* Central Time is written as "CT", not "CST" or "CDT".
 
-* Do not use military time. ... *Inorrect example:* Using 19:40, instead of 7:40pm.
+* Do not use military time. ... *Incorrect example:* Using 19:40, instead of 7:40pm.

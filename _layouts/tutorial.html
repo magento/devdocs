@@ -6,14 +6,13 @@
   	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
   	<div class="sidebar-wrapper">
 
-      {% assign parent = page.breadcrumbs[0] %}
+
       {% assign steps = site.pages | where: "guide_version", page.guide_version | where: "level3_subgroup", page.level3_subgroup | sort: "menu_order" %}
       {% assign first_step = steps[0] %}
       <ul>
         <li class="level-0">
-          <a href="{{ page.baseurl }}/{{ parent.url }}">
-            <div class="back-link-subtitle">&larr; Return to</div>
-            <div class="back-link-title">{{ parent.title }}</div>
+          <a href="{{ page.baseurl }}/{{ page.return_to.url }}">
+            &larr; {{ page.return_to.title }}
           </a>
         </li>
       {% for step in steps %}

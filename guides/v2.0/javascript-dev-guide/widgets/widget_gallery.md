@@ -8,7 +8,7 @@ version: 2.0
 github_link: javascript-dev-guide/widgets/widget_gallery.md
 ---
 
-<h2>Overview</h2>
+## Overview
 
 The gallery {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a content area with images organized into preview and thumbnails blocks.
 

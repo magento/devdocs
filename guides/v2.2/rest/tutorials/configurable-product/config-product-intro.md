@@ -3,6 +3,11 @@ layout: tutorial
 group: rest
 title: Create a configurable product with REST APIs tutorial
 menu_title: Initial tasks
+menu_order: 0
+level3_subgroup: configurable-product-tutorial
+return_to:
+  title: REST API Reference
+  url: rest/bk-rest.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/config-product-intro.md
 functional_areas:
@@ -30,6 +35,6 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 ### Other resources
 
-* Magento uses [Swagger](https://swagger.io/){:target="_blank"} to provide REST API documentation. You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
+* Magento uses [Swagger](https://swagger.io/){:target="_blank"} to provide REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
 
 * Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.

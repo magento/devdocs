@@ -42,10 +42,15 @@ There are two types of patches:
 Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments. All environments are read-only. You must update locally and push the Git branch to deploy across all environments.
 </div>
 
-Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
+Our patches are Composer driven. When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. See [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
-The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+The environment variable `ADMIN_EMAIL` specifies the email address to send notifications
+about password resets or other verification requests. You must have access to this email
+address to respond to verification requests when you are upgrading or patching
+{{site.data.var.ece}}. For details on retrieving or setting the email address,
+see [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+
 
 ## Back up the database {#backup-db}
 
@@ -116,7 +121,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Patch vendor/magento/ece-tools
-This is only required when we release [vendor/magento/ece-tools updates](http://devdocs.magento.com/guides/v2.2/cloud/composer-packages/patch-notes.html).
+This is only required when we release [vendor/magento/ece-tools updates]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/patch-notes.html).
 
 1.  Open a terminal and [create a branch](#gen-getstarted) in your local environment.
 2.  Enter the following command to patch `vendor/magento/ece-tools`:
