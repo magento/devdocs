@@ -74,7 +74,9 @@ Create the `.../Foo/Test/AdminLoginTest.xml` file:
 <tests ...>
     <test name="AdminLoginTest">
             <annotations>
-                <group value="skip"/>
+                <skip>
+                    <issueId value="Issue#"/>
+                </skip>
             </annotations>
     </test>
 </tests>
@@ -93,7 +95,9 @@ The `AdminLoginTest` result corresponds to:
             <testCaseId value="MAGETWO-71572"/>
             <group value="example"/>
             <group value="login"/>
-            <group value="skip"/>
+            <skip>
+                <issueId value="Issue#"/>
+            </skip>
         </annotations>
     <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
     <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
