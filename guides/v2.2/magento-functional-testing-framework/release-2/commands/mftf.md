@@ -38,6 +38,12 @@ The following is a list of the most used commands.
 vendor/bin/mftf build:project
 ```
 
+#### Upgrade the project
+
+```bash
+vendor/bin/mftf build:project --upgrade
+```
+
 #### Generate all tests in PHP
 
 ```bash
@@ -69,6 +75,18 @@ vendor/bin/mftf run:tests
 
 Clone the example configuration files and build the Codeception project.
 
+#### Usage
+
+```bash
+vendor/bin/mftf build:project [option]
+```
+
+#### Options
+
+Option | Description
+---|---
+`-u`, `--upgrade` | Upgrades existing MFTF tests according to last major release requirements. Only tests in the default location will be upgraded with this flag. Example: `build:project --upgrade`.
+
 ### `generate:tests`
 
 #### Description
@@ -79,7 +97,7 @@ The path is set in the `TESTS_MODULE_PATH` [configuration] parameter.
 #### Usage
 
 ```bash
-vendor/bin/mftf generate:tests --[option] [<test name>] [<test name>]
+vendor/bin/mftf generate:tests [option] [test name] [test name]
 ```
 
 #### Options
@@ -148,7 +166,7 @@ content='The strings must be escaped and surrounded in quotes.'
 
 #### Description
 
-Generates suite(s) based on XML declarations.
+Generates one or more suites based on XML declarations.
 
 #### Usage
 
@@ -160,6 +178,25 @@ Generates suite(s) based on XML declarations.
 
 ```bash
 vendor/bin/mftf generate:suite suite1 suite2
+```
+
+### `generate:urn-catalog`
+
+#### Description
+
+Generates a URN catalog enabling PhpStorm to recognize and highlight URNs.
+It also enables auto-completion in PhpStorm.
+
+#### Usage
+
+`generate:urn-catalog <path>`
+
+`<path>` is a path to the PhpStorm folder containing a file `misc.xml` (typically located in `<project root>/.idea/`).
+
+#### Example
+
+```bash
+vendor/bin/mftf generate:urn-catalog /Users/user/Documents/Project/.idea/
 ```
 
 #### `reset`
@@ -239,6 +276,31 @@ Execute the `LoginCustomerTest.php` and `StorefrontCreateCustomerTest.php` tests
 
 ```bash
 vendor/bin/mftf run:group -k -- LoginCustomerTest StorefrontCreateCustomerTest
+```
+
+### `upgrade:tests`
+
+Applies all the MFTF major version upgrade scripts to test components in given path (`test.xml`, `data.xml`, etc).
+
+#### Usage
+
+`upgrade:tests <path>`
+
+`<path>` is the path that contains MFTF test components that need to be upgraded.
+The command searches recursively for any `*.xml` to attempt to upgrade.
+
+#### Examples
+
+To upgrade all test materials inside any `dev/tests/acceptance/tests` modules:
+
+```bash
+vendor/bin/mftf upgrade:tests /Users/user/magento2/dev/tests/acceptance/tests/
+```
+
+To upgrade all test materials inside the `Catalog` module:
+
+```bash
+vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test/Mftf
 ```
 
 <!-- LINK DEFINITIONS -->
