@@ -36,8 +36,9 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<!--- ENGCOM-1685 -->* Category\Collection::joinUrlRewrite should use the store set on the collection
-https://github.com/magento/magento2/issues/13704
+<!--- ENGCOM-1685 -->* Category\Collection::joinUrlRewrite should use the store set on the collection.
+
+[GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
 The problem is that Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite always use the store id from the store manager. I think that it should instead use the storeId set on the actual collection.
 
@@ -58,8 +59,7 @@ data-container="product-list"
 Actual result
 data-container="product-grid"
 
-
-https://github.com/magento/magento2/issues/15319
+[GitHub-15319](https://github.com/magento/magento2/issues/15319)
 
 https://github.com/magento/magento2/pull/15816
 
@@ -80,7 +80,7 @@ Priduct page price is using the hardcoded digits in js
 
 When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
 
-https://github.com/magento/magento2/issues/14249
+[GitHub-14249](https://github.com/magento/magento2/issues/14249)
 
 https://github.com/magento/magento2/pull/15926
  
@@ -94,7 +94,8 @@ https://github.com/magento/magento2/pull/14665
 Fix showing product name with special chars in mini cart.
 This code was used in html template to show product name
 
-https://github.com/magento/magento2/issues/13652
+[GitHub-13652](https://github.com/magento/magento2/issues/13652)
+
 
 Issue in product title with special chars in mini cart
 
@@ -135,7 +136,8 @@ https://github.com/ampulos
 ### Directory
 <!--- ENGCOM-1948 -->*
 
-https://github.com/magento/magento2/pull/16031
+[GitHub-16031](https://github.com/magento/magento2/issues/16031)
+
 
 Add new pattern to validate Canada Zip Codes
 
@@ -150,7 +152,8 @@ Hitesh
 hitesh-wagento
 
 
-https://github.com/magento/magento2/issues/13899
+[GitHub-13899](https://github.com/magento/magento2/issues/13899)
+
 
 
 
@@ -170,7 +173,9 @@ Leave at least one record after tebles cleanup.
 Oleksandr Kravchuk
 https://github.com/swnsma
 
-https://github.com/magento/magento2/issues/14465
+
+[GitHub-14465](https://github.com/magento/magento2/issues/14465)
+
 
 Product 'version_id' lost last 'auro_increment' value after MySQL restart.
 
@@ -179,7 +184,10 @@ Product 'version_id' lost last 'auro_increment' value after MySQL restart.
 
 <!--- ENGCOM-1410 -->*
 Prices aren't readable when using custom price symbol
-https://github.com/magento/magento2/pull/14902
+
+[GitHub-14902](https://github.com/magento/magento2/issues/14902)
+
+
 Yaroslav Rogoza
 https://github.com/rogyar
 
@@ -197,7 +205,8 @@ dmytro-ch
 
 the submenu relative to the "Bottoms 2" element in the image should be aligned next to it
 
-https://github.com/magento/magento2/issues/7897
+
+[GitHub-7897](https://github.com/magento/magento2/issues/7897)
 
 Steps to reproduce
 hover a menu item which contains some nested elements
@@ -214,9 +223,8 @@ Dmytro Cheshun
 dmytro-ch
 Malaysian (Malaysia) missing from locale list
 
-https://github.com/magento/magento2/issues/14089
 
-
+[GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
 #### Configuration framework
 
@@ -233,7 +241,8 @@ This fix preserves the group id.
 André Ferraz
 ferrazzuk
 
-https://github.com/magento/magento2/issues/14663
+[GitHub-14663](https://github.com/magento/magento2/issues/14663)
+
 
 
 
@@ -264,7 +273,8 @@ https://github.com/magento/magento2/pull/16601
 
  We waht to change the payment_html for banktransfer invoices. Unfortunately the instruction is also sent in invioce email. And there the customer already has paid the bill.
 Transport variable can not be altered in email_invoice_set_template_vars_before Event
-https://github.com/magento/magento2/issues/10210
+
+[GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
 gwharton
 
@@ -280,7 +290,8 @@ It is impossible to place an order from grouped product where subproducts qty le
 Yaroslav Rogoza
 rogyar
 
-https://github.com/magento/magento2/issues/14692
+[GitHub-14692](https://github.com/magento/magento2/issues/14692)
+
 Seems that this 'validate-grouped-qty' validation haven't sense because validation should be done on the child elements.
 
 And seems that current implementation is buggy. Seems that sense of this validation is check that sum of qty for all products is more then one. But what sense in it?
@@ -294,7 +305,10 @@ Yaroslav Rogoza
 rogyar
 
 https://github.com/magento/magento2/pull/15522
-https://github.com/magento/magento2/issues/9580
+
+[GitHub-9580](https://github.com/magento/magento2/issues/9580)
+
+
 Expected result
 The attribute trigger_recollect in a quote should be set to 0 (integer) at some time.
 Actual result
@@ -314,8 +328,8 @@ Fix unnecessary recalculation of product list pricing
 https://github.com/magento/magento2/pull/15445
 Unnecessary recalculation of large product list pricing causes huge slowdowns.
 
+[GitHub-14941](https://github.com/magento/magento2/issues/14941)
 
-https://github.com/magento/magento2/issues/14941
 
 Steps to reproduce
 Create a catalog where prices are including tax + prices are shown including tax.
@@ -340,7 +354,9 @@ Vishal Gelani
 gelanivishal
 
 
-https://github.com/magento/magento2/issues/15601
+[GitHub-15601](https://github.com/magento/magento2/issues/15601)
+
+
 The annotation for locale and timezone should be @param string|null $locale and @param string|null $timezone
 https://github.com/magento/magento2/pull/15668
 
@@ -357,7 +373,7 @@ gelanivishal
 
 The annotation for locale and timezone should be @param string|null $locale and @param string|null $timezone
 
-https://github.com/magento/magento2/issues/15601
+[GitHub-15601](https://github.com/magento/magento2/issues/15601)
 
 
 
@@ -368,7 +384,9 @@ Refactor javascript code of button split widget
 Format the javascript code in the template file spli.phtml for button widget
 
 
-https://github.com/magento/magento2/issues/15354
+
+[GitHub-15354](https://github.com/magento/magento2/issues/15354)
+
 Need to refactor template file and need to call js component which is already created
 magento2\app\code\Magento\Ui\view\base\web\js\grid\controls\button\split.js
 
@@ -392,7 +410,12 @@ Browsing through the source code, we found occurences of the word "Caterory" in 
 https://github.com/magento/magento2/pull/15767
 
 First PDF download / export after login
-https://github.com/magento/magento2/issues/15510
+
+
+[GitHub-15510](https://github.com/magento/magento2/issues/15510)
+
+
+
 
 Steps to reproduce
 Log in with an admin user who does not have the permissions Other Settings -> Notifications -> *
@@ -413,7 +436,8 @@ https://github.com/magento/magento2/pull/15796
 Hitesh
 hitesh-wagento
 
-https://github.com/magento/magento2/issues/15608
+
+[GitHub-15608](https://github.com/magento/magento2/issues/15608)
 
 
 Expected result
@@ -466,9 +490,8 @@ Piyush Dankhara
 dankhrapiyush
 
 https://github.com/magento/magento2/pull/16297
-https://github.com/magento/magento2/issues/6058
 
-
+[GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 <!--- ENGCOM-1881 -->*
 
@@ -477,7 +500,8 @@ limiter float too generic
 https://github.com/magento/magento2/pull/15880
 Hitesh
 hitesh-wagento
-https://github.com/magento/magento2/issues/15323
+
+[GitHub-15323](https://github.com/magento/magento2/issues/15323)
 
 Steps to reproduce
 inspect toolbar in product list
@@ -503,8 +527,8 @@ Tabs content has border
 Actual result
 Tabs content has no border
 
-https://github.com/magento/magento2/issues/14999
 
+[GitHub-14999](https://github.com/magento/magento2/issues/14999)
 
 
 
@@ -517,7 +541,8 @@ Resolve Knockout non-unique elements id in console error
 https://github.com/magento/magento2/pull/15834
 
 When enabling more than one payment methods from admin, It is giving an error in the console "Found elements with non-unique id billing-address-form "
-https://github.com/magento/magento2/issues/15348
+
+[GitHub-15348](https://github.com/magento/magento2/issues/15348)
 
 Multiple Payment Methods Enabled is giving error in console "Found 3 Elements with non - unique Id"
 
@@ -526,7 +551,10 @@ Multiple Payment Methods Enabled is giving error in console "Found 3 Elements wi
 <!--- ENGCOM-1989 -->*
 
 Added new less variables for primary button to change font-weight, font-size, font-family without changing default button attributes
-https://github.com/magento/magento2/issues/15832
+
+[GitHub-15832](https://github.com/magento/magento2/issues/15832)
+
+
 There is no @button-primary__font-weight for setting the font weight of the primary buttons.
 
 Expected result
@@ -548,7 +576,8 @@ https://github.com/magento/magento2/pull/15727
 Added some style to solve space issue on a category page with one column layout.
 
 
-https://github.com/magento/magento2/issues/12601
+[GitHub-12601](https://github.com/magento/magento2/issues/12601)
+
 
 A space between the category page and the main footer when applying specific settings
 
@@ -567,7 +596,8 @@ gelanivishal
 
 Customer who exceeded max login failures not able to login even after reset password
 
-https://github.com/magento/magento2/issues/15255
+[GitHub-15255](https://github.com/magento/magento2/issues/15255)
+
 
 Expected result
 Customer should be allowed to login successfully as Reset Password completed successfully.
@@ -583,7 +613,8 @@ chirag-wagento
 
 https://github.com/magento/magento2/pull/16264
 
-https://github.com/magento/magento2/issues/13415
+
+[GitHub-13415](https://github.com/magento/magento2/issues/13415)
 
 Steps to reproduce
 Go to Stores -> Configuration -> Sales -> Sales under Gift Options and set both Allow Gift Messages to YES
@@ -603,7 +634,8 @@ Refactor javascript validate code in Tax module.
 Vishal Gelani
 gelanivishal
 
-https://github.com/magento/magento2/issues/15352
+
+[GitHub-15352](https://github.com/magento/magento2/issues/15352)
 
 Use javascript inside .phtml file it's legacy code that we try to refactor according to Magento way.
 
@@ -622,7 +654,9 @@ Chirag Matholiya
 chirag-wagento
 
 
-https://github.com/magento/magento2/issues/15213
+[GitHub-15213](https://github.com/magento/magento2/issues/15213)
+
+
 Alignment & overlapping Issue on every Home page & category page of Hot Seller section
 
 Steps to reproduce
@@ -652,7 +686,8 @@ the first month is normal - the remaining corrupted
 month header repeat
 next month days not show
 
-https://github.com/magento/magento2/issues/7379
+
+[GitHub-7379](https://github.com/magento/magento2/issues/7379)
 
 https://github.com/magento/magento2/pull/16280
 
@@ -671,7 +706,8 @@ Prince Patel
 mageprince
 
 
-https://github.com/magento/magento2/issues/7399
+
+[GitHub-7399](https://github.com/magento/magento2/issues/7399)
 
 Modal UI: clickableOverlay option doesn't work
 
@@ -681,7 +717,8 @@ Modal UI: clickableOverlay option doesn't work
 <!--- ENGCOM-2167 -->*
 Estimate Shipping and Tax Form not works due to js error in collapsible.js
 
-https://github.com/magento/magento2/issues/8222
+[GitHub-8222](https://github.com/magento/magento2/issues/8222)
+
 The shipping and estimate tax form don't display the form with country, city, postcode fields.
 The form is in the dom, but hidden.
 The Cannot read property 'it/checkout/cart/block-shipping' of null javascript error appears in the console.
@@ -700,7 +737,9 @@ Newsletter subscription confirmation message does not display after clicking lin
 Rahul Kachhadiya
 https://github.com/rahul-kachhadiya
 
-https://github.com/magento/magento2/issues/14747
+
+[GitHub-14747](https://github.com/magento/magento2/issues/14747)
+
 Visit the store homepage.
 Enter a valid email address in the newsletter subscription box, press submit.
 In the subscription confirmation email, click on the link to confirm the subscription.
@@ -727,7 +766,8 @@ https://github.com/neeta-wagento
 added GNU Free Font to be used by sales PDFs
 The sales PDFs use the Libertine font which is not a unicode font and therefore it does not have full support of characters. It does not support Arabic, Russian, Greek, Indian or Thai alphabets and many more. For example it does not support the Indian rupee currency symbol ( ₹ ) and displays tofu boxes instead, which makes the PDF invoice totals illegible.
 
-https://github.com/magento/magento2/issues/12323
+[GitHub-12323](https://github.com/magento/magento2/issues/12323)
+
 
 Invoice PDF doesn't support Thai
 
@@ -735,9 +775,8 @@ Invoice and shipment PDF doesn't support Arabic
 
 https://github.com/magento/magento2/issues/9666
 
-https://github.com/magento/magento2/issues/12323
 
-
+[GitHub-12323](https://github.com/magento/magento2/issues/12323)
 
 Ross
 rossmc
@@ -787,7 +826,8 @@ Changes applied:
 Changed the return type for setQty method to the type it actually returns.
 Removed the hint for never thrown LocalizedException in PHPDocs of register and setQty methods.
 
-https://github.com/magento/magento2/issues/13992
+[GitHub-13992](https://github.com/magento/magento2/issues/13992)
+
 Dmytro Cheshun
 dmytro-ch
 https://github.com/magento/magento2/pull/15619
@@ -803,8 +843,8 @@ https://github.com/magento/magento2/pull/16281
 When submitting the search form in the header with the enter key on the keyboard, event handlers that were bound to the form submit (through jQuery) are fired twice.
 
 When submitting the search form in the header with the enter key on the keyboard, event handlers that were bound to the form submit (through jQuery) are fired twice.
-https://github.com/magento/magento2/issues/13793
 
+[GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
 Vishal Gelani
 gelanivishal
@@ -826,8 +866,8 @@ vijay-wagento
 
 Module Manager module grid is not working. Module Manager doesn't show module grid when going through below step:
 System > Tools > Web Setup Wizard > Module Manager
-https://github.com/magento/magento2/issues/15192
 
+[GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
 
 ###  Sitemap
@@ -838,7 +878,8 @@ https://github.com/magento/magento2/pull/15159
 Yaroslav Rogoza
 rogyar
 
-https://github.com/magento/magento2/issues/5768
+[GitHub-5768](https://github.com/magento/magento2/issues/5768)
+
 
 Steps to reproduce
 go to admin>store>configurtion>catalog>xml sitemap
@@ -863,7 +904,9 @@ This fix allows to generate correct response when user want to test method with 
 
 Magento
  REST API Schema (Swagger) is not compatible with Search Criteria
- https://github.com/magento/magento2/issues/11477
+
+[GitHub-11477](https://github.com/magento/magento2/issues/11477)
+
 
 Vishal Gelani
 gelanivishal
@@ -885,9 +928,8 @@ Karlasa
 
 Added translation possibility for moreButtonText
 
-https://github.com/magento/magento2/issues/16079
 
-
+[GitHub-16079](https://github.com/magento/magento2/issues/16079)
 
 
 
