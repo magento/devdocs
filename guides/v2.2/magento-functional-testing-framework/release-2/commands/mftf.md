@@ -90,6 +90,7 @@ Option | Description|
 `--force`    | Forces tests generation regardless of modules merge order in the Magento instance. Example: `generate:tests --force`.
 `--lines`    | Sets the number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
 `--tests`    | Defines the test configuration as a JSON string.
+`--debug`    | An option for giving more details (such as a filename where the error is located) when the test generation fails because of an invalid XML schema. This parameter takes extra processing time and should be used when the test generation has been already failed.
 
 #### Examples of the JSON configuration
 
