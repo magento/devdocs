@@ -200,8 +200,8 @@ Attribute|Type|Use
 
 ### skip
 
-The <skip> element is used to skip a test.
-It contains one or more child elements <issueId> to specify one or more issues that cause the test skipping.
+The `<skip>` element is used to skip a test.
+It contains one or more child elements `<issueId>` to specify one or more issues that cause the test skipping.
 
 ##### issueId
 
