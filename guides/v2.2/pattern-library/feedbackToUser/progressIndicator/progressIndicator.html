@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Progress Indicator | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -881,26 +881,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Progress Indicator</h1>
 
   
 
 
 </section>
 
-			<h2 id="progress-indicator">Progress indicator</h2>
-<p>Within the Magento application, users sometimes need to wait for a process to be completed by the system. In such case, it is best to communicate that to the user that the system is working the process that the user requested. There are two types of progress indicator: 1.) a progress bar and 2.) a spinner.</p>
+			<p>Within the Magento application, users sometimes need to wait for a process to be completed by the system. In such case, it is best to communicate that to the user that the system is working the process that the user requested. There are two types of progress indicator: 1.) a progress bar and 2.) a spinner.</p>
 
 <p>The use of progress indicator should follow this guideline.</p>
 
-<h3 id="when-to-use">When to Use</h3>
+<h2 id="when-to-use">When to Use</h2>
+
 <ul>
   <li>Use when needing to provide feedback to the user that a process is running, especially when user initiate the process.</li>
   <li>When a percentage of completion can be shown and the process , use a progress bar.</li>
   <li>When a percentage of completion cannot be shown or the process is relatively short, use a spinner.</li>
 </ul>
 
-<h3 id="when-not-to-use">When Not to Use</h3>
+<h2 id="when-not-to-use">When Not to Use</h2>
+
 <ul>
   <li>When process’ progress communicates well enough on its own.</li>
   <li>When process completes so quickly that it is distracting to show progress. If the task takes less than 500ms.</li>
@@ -910,15 +911,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>When you can use content from the operation to visualize progress.</li>
 </ul>
 
-<h3 id="behavior">Behavior</h3>
+<h2 id="behavior">Behavior</h2>
 
 <p>Progress indicator is read-only, not interactive.</p>
 
-<h4 id="spinner">Spinner</h4>
+<h3 id="spinner">Spinner</h3>
 
 <p>Spinner is a gif image.</p>
 
-<p><img src="img/Spinner-lg.gif" /></p>
+<p><img src="img/Spinner-lg.gif" alt="" /></p>
 
 <ol>
   <li>Process is triggered</li>
@@ -926,13 +927,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Once process is completed, the spinner disappear along with other indicative elements depending on the context.</li>
 </ol>
 
-<h4 id="progress-bar">Progress Bar</h4>
+<h3 id="progress-bar">Progress Bar</h3>
 
 <p>In general, it is not recommended to use the progress bar if the process can be completed under 3 seconds. To avoid flickering, the minimum time displayed of progress bar should be 3 seconds.</p>
 
 <p><strong>States Diagram</strong></p>
 
-<p><img src="img/progressbar-behavior-diagram.png" /></p>
+<p><img src="img/progressbar-behavior-diagram.png" alt="" /></p>
 
 <ol>
   <li>
@@ -944,13 +945,13 @@ This process trigger is what the user tell system to start process. It can be an
   </li>
 </ol>
 
-<p><img src="img/progressbar-starting-state.png" /></p>
+<p><img src="img/progressbar-starting-state.png" alt="" /></p>
 
 <ol>
   <li><strong>Progressing</strong></li>
 </ol>
 
-<p><img src="img/progressbar-progressing.png" /></p>
+<p><img src="img/progressbar-progressing.png" alt="" /></p>
 
 <ol>
   <li>
@@ -963,31 +964,31 @@ The progress bar will disappeared and is replaced with this error message.</p>
   </li>
 </ol>
 
-<p><img src="img/progressbar-failed.png" /></p>
+<p><img src="img/progressbar-failed.png" alt="" /></p>
 
-<h3 id="variations">Variations</h3>
+<h2 id="variations">Variations</h2>
 
-<p><img src="img/variations.png" /></p>
+<p><img src="img/variations.png" alt="" /></p>
 
-<h3 id="style">Style</h3>
+<h2 id="style">Style</h2>
 
-<h4 id="spinner-1">Spinner</h4>
+<h3 id="spinner-1">Spinner</h3>
 
 <p>The spinner can be any of these 4 sizes.</p>
 
-<p><img src="img/style-spinner.png" /></p>
+<p><img src="img/style-spinner.png" alt="" /></p>
 
-<h4 id="progress-bar-1">Progress Bar</h4>
+<h3 id="progress-bar-1">Progress Bar</h3>
 
-<p>*Refer to Messaging Pattern for final styling on error message.</p>
+<p>Refer to Messaging Pattern for final styling on error message.</p>
 
-<p><img src="img/style-progressbar.png" /></p>
+<p><img src="img/style-progressbar.png" alt="" /></p>
 
-<h3 id="assets">Assets</h3>
-<p>PSD files and gif images can be found here:
-<a href="src/magento-progressbar.zip">Download Progress Indicator PSD and GIF source</a></p>
+<h2 id="assets">Assets</h2>
 
-<p>For any other resources, please contact the Magento UX Design Team</p>
+<p><a href="src/magento-progressbar.zip">Download Progress Indicator PSD and GIF source</a>.</p>
+
+<p>For any other resources, please contact the Magento UX Design Team.</p>
 
 			
 		</div>

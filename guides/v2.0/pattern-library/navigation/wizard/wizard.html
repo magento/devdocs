@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Wizard | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -770,30 +770,30 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Wizard</h1>
 
   
 
 
 </section>
 
-			<h2 id="wizard">Wizard</h2>
-<p>Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.</p>
+			<p>Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.</p>
 
 <p>For solutions not described in this article or for further information, please contact the Magento UX Design Team.</p>
 
-<h3 id="when-to-use">When to Use</h3>
-<ul>
-  <li>Use this pattern when the user needs to go through a process to accomplish a task that is complex and contains several steps.</li>
-</ul>
+<h2 id="when-to-use">When to Use</h2>
 
-<h3 id="when-not-to-use">When Not to Use</h3>
+<p>Use this pattern when the user needs to go through a process to accomplish a task that is complex and contains several steps.</p>
+
+<h2 id="when-not-to-use">When Not to Use</h2>
+
 <ul>
   <li>The wizard bar should not co-exist with a button bar. Only one can be present per page/modal.</li>
   <li>Be careful when using this pattern. Wizard is a bad choice when users are experts and/or the task is done often, because Wizard has negative effect on efficiency and user control.</li>
 </ul>
 
-<h3 id="how-to-use">How to Use</h3>
+<h2 id="how-to-use">How to Use</h2>
+
 <ul>
   <li>Break up a task into logical, titled steps.</li>
   <li>Keep the number of steps at the minimum.</li>
@@ -803,103 +803,118 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Show a summary on the last page (if necessary).</li>
 </ul>
 
-<h3 id="structure">Structure</h3>
+<h2 id="structure">Structure</h2>
+
 <p>The whole structure must be responsive and fluid.</p>
 
-<p><img src="img/structure-wizard.jpg" /></p>
+<p><img src="img/structure-wizard.jpg" alt="" /></p>
 
-<p><strong>1. Wizard Title</strong>
-This would be the page/modal title</p>
+<p><strong>1. Wizard Title</strong></p>
 
-<p><strong>2. Wizard Progress</strong>
-Placement is always on the most left. The width is fluid, depending on the screen size. Must be in one line. The width can go as long to reach the buttons. But if there is not enough room, see <strong>Variation 4</strong> at the bottom of this document.</p>
+<p>This would be the page/modal title</p>
 
-<p><strong>3. Action Buttons and Links</strong>
-The additional links and buttons needed must be between the Wizard Progress and Next &amp; Back buttons.</p>
+<p><strong>2. Wizard Progress</strong></p>
 
-<p><strong>4. Next &amp; Back buttons</strong>
-These buttons must be present at all time and in every step of the wizard. If the button is not needed, it can be disabled. Placement is fixed at the most right of the whole container.</p>
+<p>Placement is always on the most left. The width is fluid, depending on the screen size. Must be in one line. The width can go as long to reach the buttons. But if there is not enough room, see <strong>Variation 4</strong> at the bottom of this document.</p>
 
-<p><strong>5. Step Labels</strong>
-These labels are optional. Although long labels are not recommended, it is possible. The labels can flow to the next line but only two lines permitted. Any extra text are not shown but the ‘…’ will be use to indicate that the label has extra text.</p>
+<p><strong>3. Action Buttons and Links</strong></p>
 
-<p><strong>6. Current Step Title</strong>
-This should always be in the format “Step #: Step Label”.</p>
+<p>The additional links and buttons needed must be between the Wizard Progress and Next &amp; Back buttons.</p>
 
-<h3 id="style">Style</h3>
-<p>Refer to below for basic styling. The special cases of styling can be found under variations.
-<img src="img/wizard-pattern-styles.jpg" /></p>
+<p><strong>4. Next &amp; Back buttons</strong></p>
 
-<h3 id="interaction-and-behavior">Interaction and Behavior</h3>
+<p>These buttons must be present at all time and in every step of the wizard. If the button is not needed, it can be disabled. Placement is fixed at the most right of the whole container.</p>
 
-<p><strong>Content Behavior</strong>
-User navigate between steps of the wizard by clicking ‘Back’ or ‘Next’ button.
+<p><strong>5. Step Labels</strong></p>
+
+<p>These labels are optional. Although long labels are not recommended, it is possible. The labels can flow to the next line but only two lines permitted. Any extra text are not shown but the ‘…’ will be use to indicate that the label has extra text.</p>
+
+<p><strong>6. Current Step Title</strong></p>
+
+<p>This should always be in the format “Step #: Step Label”.</p>
+
+<h2 id="style">Style</h2>
+<p>Refer to below for basic styling. The special cases of styling can be found under variations.</p>
+
+<p><img src="img/wizard-pattern-styles.jpg" alt="" /></p>
+
+<h2 id="interaction-and-behavior">Interaction and Behavior</h2>
+
+<p><strong>Content Behavior</strong></p>
+
+<p>User navigate between steps of the wizard by clicking ‘Back’ or ‘Next’ button.
 The ‘Back’ or ‘Next’ buttons should only change/refreshes the content area, not the whole page.</p>
 
-<p><strong>Fillings Animation</strong>
-No animation</p>
+<p><strong>Fillings Animation</strong></p>
 
-<p><strong>Back Buttons behavior</strong>
-In every first step, back button is disabled. In all other steps, back button becomes enabled.</p>
+<p>No animation</p>
 
-<p><strong>Next Buttons behavior</strong>
-If next button exist in the very last step, it should always be disabled. (Note: refer to variations section of this document, some cases may not have next button in last step.</p>
+<p><strong>Back Buttons behavior</strong></p>
+
+<p>In every first step, back button is disabled. In all other steps, back button becomes enabled.</p>
+
+<p><strong>Next Buttons behavior</strong></p>
+
+<p>If next button exist in the very last step, it should always be disabled. (Note: refer to variations section of this document, some cases may not have next button in last step.</p>
 
 <p>If a step required that the user complete the steps before proceeding, next button maybe disabled for that step.</p>
 
-<p><strong>Visited States behavior</strong>
-If the user is creating a new flow using wizard, the future steps can be disabled. But if a user is EDITING an existing flow using wizard, all steps in the progress-bar will be accessible. The visited states does NOT behave like a visited link. The system should remember if the flow have been visited before even though the visitation is not from the same browser session.</p>
+<p><strong>Visited States behavior</strong></p>
 
-<p><strong>Other Navigation</strong> (besides back and next buttons)
-<img src="img/wizard-pattern-behavior.jpg" /></p>
+<p>If the user is creating a new flow using wizard, the future steps can be disabled. But if a user is EDITING an existing flow using wizard, all steps in the progress-bar will be accessible. The visited states does NOT behave like a visited link. The system should remember if the flow have been visited before even though the visitation is not from the same browser session.</p>
 
-<h3 id="variations"> Variations </h3>
+<p><strong>Other Navigation</strong> (besides back and next buttons)</p>
 
-<h4>1. Basic Process (i.e. Deploy tool)</h4>
+<p><img src="img/wizard-pattern-behavior.jpg" alt="" /></p>
 
-<p>In the first step, back button is disabled. 
-<img src="img/Variation1.1.png" /></p>
+<h2 id="variations">Variations</h2>
 
-<p><img src="img/Variation1.2.png" /></p>
+<h3 id="1-basic-process-ie-deploy-tool">1. Basic Process (i.e. Deploy tool)</h3>
+
+<p>In the first step, back button is disabled.</p>
+
+<p><img src="img/Variation1.1.png" alt="" /></p>
+
+<p><img src="img/Variation1.2.png" alt="" /></p>
 
 <p>In the last step, next button is disabled.</p>
 
-<p><img src="img/Variation1.3.png" /></p>
+<p><img src="img/Variation1.3.png" alt="" /></p>
 
-<h4>2. Process with Save Functionality at Any Step</h4>
+<h3 id="2process-with-save-functionality-at-any-step">2.Process with Save Functionality at Any Step</h3>
 
-<p>In the first step, back button is disabled, and next button is enabled. Save button is present so the user who only need to edit specific step, can ‘Save’ right after they are done editing.
-<img src="img/Variation3.1.png" /></p>
+<p>In the first step, back button is disabled, and next button is enabled. Save button is present so the user who only need to edit specific step, can ‘Save’ right after they are done editing.</p>
 
-<p>Any other steps, Save button is present. Both ‘Back’ and ‘Next’ buttons are enabled.
-<img src="img/Variation3.2.png" /></p>
+<p><img src="img/Variation3.1.png" alt="" /></p>
 
-<p>‘Next’ button becomes disabled. The user will use ‘Save’ button for saving.
-<img src="img/Variation3.3.png" /></p>
+<p>Any other steps, Save button is present. Both ‘Back’ and ‘Next’ buttons are enabled.</p>
 
-<h4>3. Process with many steps that cannot fit in the given section</h4>
+<p><img src="img/Variation3.2.png" alt="" /></p>
+
+<p>‘Next’ button becomes disabled. The user will use ‘Save’ button for saving.</p>
+
+<p><img src="img/Variation3.3.png" alt="" /></p>
+
+<h3 id="3-process-with-many-steps-that-cannot-fit-in-the-given-section">3. Process with many steps that cannot fit in the given section</h3>
 
 <p>It is not recommended to have too many steps for a wizard. But if a use case arise such that your   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  will have many steps that cannot fit the available space, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.</p>
 
 <p>(for specific styling of this variation, refer to the link to .psd files in Assets.)</p>
 
-<p><img src="img/Variation4.png" /></p>
+<p><img src="img/Variation4.png" alt="" /></p>
 
-<h3 id="assets">Assets</h3>
+<h2 id="assets">Assets</h2>
+
+<ul>
+  <li><a href="src/wizard-pattern-styles.psd">Download Wizard Style - PSD source</a></li>
+  <li><a href="src/Variation1.psd">Download Variation 1 - PSD source</a></li>
+  <li><a href="src/Variation2.psd">Download Variation 2 - PSD source</a></li>
+  <li><a href="src/Variation3.psd">Download Variation 3 - PSD source</a></li>
+  <li><a href="src/Variation4.psd">Download Variation 4 - PSD source</a></li>
+</ul>
 
 <p>Please reach out to the Magento UX Design team if you need anything else.</p>
-
-<p><a href="src/wizard-pattern-styles.psd">Download Wizard Style - PSD source</a></p>
-
-<p><a href="src/Variation1.psd">Download Variation 1 - PSD source</a></p>
-
-<p><a href="src/Variation2.psd">Download Variation 2 - PSD source</a></p>
-
-<p><a href="src/Variation3.psd">Download Variation 3 - PSD source</a></p>
-
-<p><a href="src/Variation3.psd">Download Variation 4 - PSD source</a></p>
-
 
 			
 		</div>

@@ -878,14 +878,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="overview">Overview</h2>
-
-<p>Icons are used throughout the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
+			<p>Icons are used throughout the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  interface, often as a controls to initiate a function (such as “Filter”), or to direct the user to section (such as “Account”).</p>
 
 <p>Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their “use” to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.</p>
 
-<h2 id="how-icons-used">How icons are used</h2>
+<h2 id="how-icons-are-used">How icons are used</h2>
 
 <p>Icons may appear in a variety of sizes within the interface as controls for tools and functions and to assist in “way-finding” within the application.  Principles of a “Touch-Friendly” UI should be observed; icons should be large enough to provide a reasonable “touch-target” for the user.  The icon may be scaled at something less than this optimal size when coupled with a “target” area that provides this optimal size, such as an expand control used where the entire header row is clickable/tappable.</p>
 
@@ -908,28 +906,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="rules">Rules</h3>
 
 <ul>
-  <li>
-    <p>Icons should be designed on the 300px by 300px icon grid. <a href="src/Magento_icon_grid_300x300.ai">Download Icon Grid .ai file</a></p>
-  </li>
-  <li>
-    <p>Icons should be monochromatic.</p>
-  </li>
-  <li>
-    <p>Icons should look like they are part of the “family” of icons.</p>
-  </li>
-  <li>
-    <p>Line weights should be consistent with other icons in the   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
-.</p>
-  </li>
-  <li>
-    <p>Elements within the icon should be consistent with these elements icons in the library (i.e. “Arrows”).</p>
-  </li>
-  <li>
-    <p>Cantered or rotated elements should observe a 45 degree angle.</p>
-  </li>
-  <li>
-    <p>A limited perspective should be used.</p>
-  </li>
+  <li>Icons should be designed on the 300px by 300px icon grid. <a href="src/Magento_icon_grid_300x300.ai">Download Icon Grid .ai file</a></li>
+  <li>Icons should be monochromatic.</li>
+  <li>Icons should look like they are part of the “family” of icons.</li>
+  <li>Line weights should be consistent with other icons in the   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
+.</li>
+  <li>Elements within the icon should be consistent with these elements icons in the library (i.e. “Arrows”).</li>
+  <li>Cantered or rotated elements should observe a 45 degree angle.</li>
+  <li>A limited perspective should be used.</li>
 </ul>
 
 <p>Any icon that is intended for general use in the UI should be submitted to the Magento Product Team for review and inclusion to the ‘icon font’.</p>
@@ -981,12 +965,12 @@ Modern versions of assistive technologies will announce CSS generated content, a
 
   <h3 id="example-of-aria-hidden-attribute">Example of “aria-hidden” attribute</h3>
 
-  <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
-  <span class="o">.</span><span class="nx">icon</span><span class="o">-</span><span class="nx">star</span><span class="o">:</span><span class="nx">before</span> <span class="p">{</span> <span class="nx">content</span><span class="o">:</span> <span class="s2">"★ "</span><span class="p">;</span> <span class="p">}</span>
-<span class="o">&lt;/</span><span class="nx">style</span><span class="o">&gt;</span>
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+  <span class="nc">.icon-star</span><span class="nd">:before</span> <span class="p">{</span> <span class="nl">content</span><span class="p">:</span> <span class="s1">"★ "</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
 
-<span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;&lt;</span><span class="nx">span</span> <span class="k">class</span><span class="err">="</span><span class="nc">icon</span><span class="o">-</span><span class="nx">star</span><span class="s2">" aria-hidden="</span><span class="kc">true</span><span class="s2">"&gt;&lt;/span&gt;Favorite&lt;/span&gt;
-</span></code></pre></div>  </div>
+<span class="nt">&lt;span&gt;&lt;span</span> <span class="na">class=</span><span class="s">"icon-star"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/span&gt;</span>Favorite<span class="nt">&lt;/span&gt;</span>
+</code></pre></div>  </div>
 
   <p>From: <a href="http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html" target="_blank">http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html</a></p>
 
@@ -995,24 +979,19 @@ Modern versions of assistive technologies will announce CSS generated content, a
   <p>Icons, if in fonts or not, should be very descriptive, especially if they stand on their own. If in doubt, add a descriptive text so users can find out what it means. (In the pre-touch era of web design I’d just have recommended a `title attribute, but those times are over.)</p>
 
   <ol>
-    <li>
-      <p>Don’t ever use “regular letters” for icons. Use a service like Icomoon and use the private use area (PUA) of the font. Those areas are specifically made for this usage and don’t have any letters attached to it. Screen readers won’t read letters in the PUA.</p>
-    </li>
-    <li>
-      <p>Use colors with enough contrast for your icons.</p>
-    </li>
-    <li>
-      <p>Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.</p>
-    </li>
+    <li>Don’t ever use “regular letters” for icons. Use a service like Icomoon and use the private use area (PUA) of the font. Those areas are specifically made for this usage and don’t have any letters attached to it. Screen readers won’t read letters in the PUA.</li>
+    <li>Use colors with enough contrast for your icons.</li>
+    <li>Never use an icon without a text (that you may hide). As icons are not read out, we don’t have any hint for a screen reader user what actually is on the screen, an alternative text is important as long as the content doesn’t make sense without an icon at all.</li>
   </ol>
 
   <p>From: <a href="http://modernwebaccessibility.com/en/blog/demystify-speak-none" target="_blank">http://modernwebaccessibility.com/en/blog/demystify-speak-none</a></p>
 
   <h2 id="additional-resources">Additional resources</h2>
 
-  <p><a href="https://yatil.net/the-best-way-to-use-icon-fonts/" target="_blank">https://yatil.net/the-best-way-to-use-icon-fonts/</a></p>
-
-  <p><a href="http://pictos.cc/articles/using-icon-fonts/" target="_blank">http://pictos.cc/articles/using-icon-fonts/</a></p>
+  <ul>
+    <li><a href="https://yatil.net/the-best-way-to-use-icon-fonts/" target="_blank">https://yatil.net/the-best-way-to-use-icon-fonts/</a></li>
+    <li><a href="http://pictos.cc/articles/using-icon-fonts/" target="_blank">http://pictos.cc/articles/using-icon-fonts/</a></li>
+  </ul>
 </div>
 
 			

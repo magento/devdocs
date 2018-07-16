@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Date and Time Selector | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -881,47 +881,48 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Date and Time Selector</h1>
 
   
 
 
 </section>
 
-			<h2 id="date-and-time-selector">Date and time selector</h2>
-<p>This topic discusses design standards and rules for date and time selection in Magento. This article is related to the Form Elements pattern. Please refer to <a href="../form_elements/form_elements.html">Form Elements</a> for general rules on form usage and placement.</p>
+			<p>This topic discusses design standards and rules for date and time selection in Magento. This article is related to the Form Elements pattern. Please refer to <a href="../form_elements/form_elements.html">Form Elements</a> for general rules on form usage and placement.</p>
 
-<h3 id="whentouse">When to Use</h3>
-<ul>
-  <li>Use this element whenever a date, date range, time or time range needs to be gathered from the user.</li>
-</ul>
+<h2 id="when-to-use">When to Use</h2>
 
-<h3 id="variations">Variations</h3>
-<p><strong>Single Date Picker</strong></p>
+<p>Use this element whenever a date, date range, time or time range needs to be gathered from the user.</p>
 
-<p><img src="img/w-singledate.png" /></p>
+<h2 id="variations">Variations</h2>
 
-<p><strong>Date Range Picker</strong>
-<img src="img/w-daterange.png" /></p>
+<h3 id="single-date-picker">Single Date Picker</h3>
 
-<p><strong>Single Time Picker</strong></p>
+<p><img src="img/w-singledate.png" alt="" /></p>
 
-<p><img src="img/w-timepicker.png" /></p>
+<h3 id="date-range-picker">Date Range Picker</h3>
 
-<p><strong>Time Range Picker</strong></p>
+<p><img src="img/w-daterange.png" alt="" /></p>
 
-<p><img src="img/w-timerange.png" /></p>
+<h3 id="single-time-picker">Single Time Picker</h3>
 
-<p><strong>Single Date and Time Picker</strong></p>
+<p><img src="img/w-timepicker.png" alt="" /></p>
 
-<p><img src="img/w-date&amp;time.png" /></p>
+<h3 id="time-range-picker">Time Range Picker</h3>
 
-<p><strong>Date and Time Range Picker</strong></p>
+<p><img src="img/w-timerange.png" alt="" /></p>
 
-<p><img src="img/w-date&amp;timerange.png" /></p>
+<h3 id="single-date-and-time-picker">Single Date and Time Picker</h3>
 
-<p><strong>Formats</strong>
-Date:</p>
+<p><img src="img/w-date&amp;time.png" alt="" /></p>
+
+<h3 id="date-and-time-range-picker">Date and Time Range Picker</h3>
+
+<p><img src="img/w-date&amp;timerange.png" alt="" /></p>
+
+<h2 id="formats">Formats</h2>
+
+<p>Date:</p>
 
 <ul>
   <li>DD MMM YYYY (ie. 01 JAN 2014) The letters should be localized.</li>
@@ -930,15 +931,11 @@ Date:</p>
 <p>Time:</p>
 
 <ul>
-  <li>
-    <p>The examples in this article use the 12 hour clock format. It should be noted that the 24 hour format will be supported as well.</p>
-  </li>
-  <li>
-    <p>Time Zones are in UTC offset</p>
-  </li>
+  <li>The examples in this article use the 12 hour clock format. It should be noted that the 24 hour format will be supported as well.</li>
+  <li>Time Zones are in UTC offset</li>
 </ul>
 
-<p><strong>Interaction Overview</strong></p>
+<h2 id="interaction">Interaction</h2>
 
 <ul>
   <li>
@@ -948,144 +945,76 @@ Date:</p>
       <li>The Date/Time widget should animate down and be displayed underneath the field</li>
     </ul>
   </li>
-  <li>
-    <p>The user is free to select available dates by clicking on the date</p>
-  </li>
-  <li>
-    <p>Days in the calendar will have the following states, each with unique styles:</p>
-
+  <li>The user is free to select available dates by clicking on the date</li>
+  <li>Days in the calendar will have the following states, each with unique styles:
     <ul>
-      <li>
-        <p>Current day</p>
-      </li>
-      <li>
-        <p>Selected day(s)</p>
-      </li>
-      <li>
-        <p>Disabled day(s)</p>
-      </li>
-      <li>
-        <p>Hover state for days</p>
-      </li>
+      <li>Current day</li>
+      <li>Selected day(s)</li>
+      <li>Disabled day(s)</li>
+      <li>Hover state for days</li>
     </ul>
   </li>
-  <li>
-    <p>Month and Year will behave as drop selectors</p>
-  </li>
-  <li>
-    <p>Clicking the “Done” button, clicking outside the widget, or clicking outside the text field completes the entry with the field still in focus</p>
-  </li>
-  <li>
-    <p>The user has the ability to edit date/time via text field</p>
-  </li>
-  <li>
-    <p>For Ranges, the calendars will be sequential</p>
-  </li>
-  <li>
-    <p>When selecting a month/year in the To area, the month/year in the From area should update to the month immediately following the month/year selected in the To area</p>
-  </li>
+  <li>Month and Year will behave as drop selectors</li>
+  <li>Clicking the “Done” button, clicking outside the widget, or clicking outside the text field completes the entry with the field still in focus</li>
+  <li>The user has the ability to edit date/time via text field</li>
+  <li>For Ranges, the calendars will be sequential</li>
+  <li>When selecting a month/year in the To area, the month/year in the From area should update to the month immediately following the month/year selected in the To area</li>
 </ul>
 
-<p><strong>Disabled State</strong></p>
+<h2 id="disabled-state">Disabled State</h2>
 
 <p>The following applies to ranges only:</p>
 
 <ul>
-  <li>
-    <p>Months will appear in sequential order</p>
-  </li>
-  <li>
-    <p>The calendar/time widget will require a unique style for active and inactive areas</p>
-  </li>
-  <li>
-    <p>User will not be able to select date or time on the To area until selection is made on the From area first</p>
-  </li>
+  <li>Months will appear in sequential order</li>
+  <li>The calendar/time widget will require a unique style for active and inactive areas</li>
+  <li>User will not be able to select date or time on the To area until selection is made on the From area first</li>
 </ul>
 
-<p><img src="img/disabled-state.png" /></p>
+<p><img src="img/disabled-state.png" alt="" /></p>
 
 <p>(Styles will support a disabled state for areas which depend on sequence for ranges)</p>
 
-<p><strong>Time SelecTime Selection Behaviors</strong></p>
+<h2 id="time-selection-behaviors">Time Selection Behaviors</h2>
 
 <p>Within the calendar widget, the following will apply to time fields:</p>
 
 <ul>
-  <li>
-    <p>Tab order will be applied to time fields</p>
-  </li>
-  <li>
-    <p>(HH:MM:SS) and TimeZone Offset will assume text field behavior</p>
-  </li>
-  <li>
-    <p>Limited to numeric entry only</p>
-
+  <li>Tab order will be applied to time fields</li>
+  <li>(HH:MM:SS) and TimeZone Offset will assume text field behavior</li>
+  <li>Limited to numeric entry only
     <ul>
-      <li>
-        <p>1-12 for Hour (12 hour format), 1-24 for Hour (24 hour format)</p>
-      </li>
-      <li>
-        <p>1-60 for Minutes and Seconds</p>
-      </li>
+      <li>1-12 for Hour (12 hour format), 1-24 for Hour (24 hour format)</li>
+      <li>1-60 for Minutes and Seconds</li>
     </ul>
   </li>
-  <li>
-    <p>(12 hour format) AM/PM will behave as a dropdown</p>
-  </li>
-  <li>
-    <p>AM/PM should be removed for 24 hour format</p>
-  </li>
-  <li>
-    <p>Time Zone will be a dropdown selection</p>
-  </li>
+  <li>(12 hour format) AM/PM will behave as a dropdown</li>
+  <li>AM/PM should be removed for 24 hour format</li>
+  <li>Time Zone will be a dropdown selection</li>
 </ul>
 
-<p><strong>Text Field Entry &amp; Validation</strong></p>
+<h2 id="text-field-entry--validation">Text Field Entry &amp; Validation</h2>
 
 <ul>
-  <li>
-    <p>Users have the ability to click-in to the text field to add/edit the Date/Time at any time when the field is active</p>
-
+  <li>Users have the ability to click-in to the text field to add/edit the Date/Time at any time when the field is active
     <ul>
-      <li>
-        <p>Format will be enforced</p>
-      </li>
-      <li>
-        <p>Validation will require post-back</p>
-      </li>
-      <li>
-        <p>Refer to the Form Error Messaging pattern for additional details</p>
-      </li>
+      <li>Format will be enforced</li>
+      <li>Validation will require post-back</li>
+      <li>Refer to the Form Error Messaging pattern for additional details</li>
     </ul>
   </li>
-  <li>
-    <p>Tabbing out completes the entry, removing focus from the field</p>
-  </li>
-  <li>
-    <p>For date fields, user have the ability to enter any formats besides DD MMM YYY, and the system should automatically correct the date format. (For example: user enter 10/3/2013, and the system will make a guess and reformat to 3 OCT 2013 once on keystroke up.)</p>
-  </li>
+  <li>Tabbing out completes the entry, removing focus from the field</li>
+  <li>For date fields, user have the ability to enter any formats besides DD MMM YYY, and the system should automatically correct the date format. (For example: user enter 10/3/2013, and the system will make a guess and reformat to 3 OCT 2013 once on keystroke up.)</li>
   <li>Date format input accepted:
     <ul>
-      <li>
-        <p>MM/DD/YYYY **</p>
-      </li>
-      <li>
-        <p>MMM DD YYYY</p>
-      </li>
-      <li>
-        <p>DD MMM YYYY</p>
-      </li>
-      <li>
-        <p>DD/MM/YYYY **</p>
-      </li>
-      <li>
-        <p>YYYY/MM/DD</p>
-      </li>
+      <li>MM/DD/YYYY **</li>
+      <li>MMM DD YYYY</li>
+      <li>DD MMM YYYY</li>
+      <li>DD/MM/YYYY **</li>
+      <li>YYYY/MM/DD</li>
     </ul>
   </li>
-  <li>
-    <p>Date automatically correct for user and display:</p>
-
+  <li>Date automatically correct for user and display:
     <ul>
       <li>DD MMM YYYY</li>
     </ul>
@@ -1095,180 +1024,111 @@ Date:</p>
 <p><strong>Note:</strong></p>
 
 <p>MM/DD/YYYY can be confused with DD/MM/YYYY, so please assume the following:</p>
+
 <ul>
-  <li>
-    <p>If either MM or DD is above 12, then we can tell which one is the date vs month.</p>
-  </li>
-  <li>
-    <p>If both slots are below 12, make a guess based on the region. For example, if the user is in the US, guess MM/DD/YYYY format. If the user is in the London, guess DD/MM/YYYY. The more commonly used ones are DD/MM/YYYY.</p>
-  </li>
+  <li>If either MM or DD is above 12, then we can tell which one is the date vs month.</li>
+  <li>If both slots are below 12, make a guess based on the region. For example, if the user is in the US, guess MM/DD/YYYY format. If the user is in the London, guess DD/MM/YYYY. The more commonly used ones are DD/MM/YYYY.</li>
 </ul>
 
 <p>Field selection works the same as a typical text field with</p>
 
-<p><img src="img/selection-state.png" /></p>
+<p><img src="img/selection-state.png" alt="" /></p>
 
-<h3 id="style">Style</h3>
+<h2 id="style">Style</h2>
 
-<p><strong>Single Date Picker</strong>
-<img src="img/datepicker.png" /></p>
+<p><strong>Single Date Picker</strong></p>
 
-<p><strong>Date Range Picker</strong>
-<img src="img/rangedatepicker.png" /></p>
+<p><img src="img/datepicker.png" alt="" /></p>
+
+<p><strong>Date Range Picker</strong></p>
+
+<p><img src="img/rangedatepicker.png" alt="" /></p>
 
 <p><strong>Single Time Picker</strong></p>
 
-<p><img src="img/timepicker.png" /></p>
+<p><img src="img/timepicker.png" alt="" /></p>
 
 <p><strong>Time Range Picker</strong></p>
 
-<p><img src="img/timerangepicker.png" /></p>
+<p><img src="img/timerangepicker.png" alt="" /></p>
 
 <p><strong>Single Date and Time Picker</strong></p>
 
-<p><img src="img/date&amp;timepicker.png" /></p>
+<p><img src="img/date&amp;timepicker.png" alt="" /></p>
 
 <p><strong>Date and Time Range Picker</strong></p>
 
-<p><img src="img/rangedate&amp;timepicker.png" /></p>
+<p><img src="img/rangedate&amp;timepicker.png" alt="" /></p>
 
-<h3 id="accessibility">Accessibility</h3>
-<p><strong>Date or Time Input Fields</strong>
-<br /></p>
+<h2 id="accessibility">Accessibility</h2>
 
-<p>The initial text field assumes the typical tab orders used in form field pattern.
-<br /></p>
+<h3 id="date-or-time-input-fields">Date or Time Input Fields</h3>
 
-<p><strong>Date Picker Widget</strong>
-<br /></p>
+<p>The initial text field assumes the typical tab orders used in form field pattern.</p>
 
-<p>Reference:  <a href="http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker"> 
-http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker </a>
-<br /></p>
+<h3 id="date-picker-widget">Date Picker Widget</h3>
 
-<p><strong>General</strong>
-<br /></p>
+<p>Reference: <a href="http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker">Date Picker Widget</a></p>
 
 <p>As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are laid out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
- table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role=”row.”
-<br /></p>
+ table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role=”row.”</p>
 
-<p><strong>Keyboard Interactions</strong>
-<br /></p>
+<h3 id="keyboard-interactions">Keyboard Interactions</h3>
 
-<p>Keyboard navigation on days that are not included the currently displayed month should move to the month automatically and lead to the day in the next or previous month. <br /></p>
+<p>Keyboard navigation on days that are not included the currently displayed month should move to the month automatically and lead to the day in the next or previous month.</p>
 
 <ul>
-  <li>
-    <p>Space and/or Enter selects a day and deletes all multiple or range selection.</p>
-  </li>
-  <li>
-    <p>Left Arrow moves the focus to the left, continued to previous week and previous month.</p>
-  </li>
-  <li>
-    <p>Right Arrow moves the focus to right, continued to the next week and next month.</p>
-  </li>
-  <li>
-    <p>Up Arrow moves the focus to the same weekday in the previous week, continued to the previous month.</p>
-  </li>
-  <li>
-    <p>Down Arrow moves the focus to same weekday in the next week, continued to the next month.</p>
-  </li>
-  <li>
-    <p>Page Up moves the focus to same day in the previous month.</p>
-  </li>
-  <li>
-    <p>Page Down moves the focus to same day in the next month.</p>
-  </li>
-  <li>
-    <p>Shift+Page Up moves the focus to same day in the previous year.</p>
-  </li>
-  <li>
-    <p>Shift+Page Down moves the focus to same day in the next year.</p>
-  </li>
-  <li>
-    <p>Home moves the focus to the first day of the month.</p>
-  </li>
-  <li>
-    <p>End moves the focus to the last day of the month.</p>
-  </li>
-  <li>
-    <p>Ctrl+Home moves the focus to the first day of the year.</p>
-  </li>
-  <li>
-    <p>Ctrl+End moves the focus to the last day of the year.</p>
-  </li>
-  <li>
-    <p>Shift+Arrow performs continuous selection to the next/previous day/week/month.</p>
-  </li>
-  <li>
-    <p>Ctrl+Space multiple selection of certain days.</p>
-  </li>
-  <li>
-    <p>Esc closes a DatePicker that is opened as a Popup.</p>
-  </li>
+  <li>Space and/or Enter selects a day and deletes all multiple or range selection.</li>
+  <li>Left Arrow moves the focus to the left, continued to previous week and previous month.</li>
+  <li>Right Arrow moves the focus to right, continued to the next week and next month.</li>
+  <li>Up Arrow moves the focus to the same weekday in the previous week, continued to the previous month.</li>
+  <li>Down Arrow moves the focus to same weekday in the next week, continued to the next month.</li>
+  <li>Page Up moves the focus to same day in the previous month.</li>
+  <li>Page Down moves the focus to same day in the next month.</li>
+  <li>Shift+Page Up moves the focus to same day in the previous year.</li>
+  <li>Shift+Page Down moves the focus to same day in the next year.</li>
+  <li>Home moves the focus to the first day of the month.</li>
+  <li>End moves the focus to the last day of the month.</li>
+  <li>Ctrl+Home moves the focus to the first day of the year.</li>
+  <li>Ctrl+End moves the focus to the last day of the year.</li>
+  <li>Shift+Arrow performs continuous selection to the next/previous day/week/month.</li>
+  <li>Ctrl+Space multiple selection of certain days.</li>
+  <li>Esc closes a DatePicker that is opened as a Popup.</li>
 </ul>
 
 <p>Do not implement keyboard navigation schemes that would place more than one calendar day in the tab order at any time as this impacts the   <span term-uuid="f583cac1-8ed5-4305-8195-2d5630e72ba8" class="glossary-term" data-toggle="popover">usability</span>
- of keyboard navigation. For example, using HTML anchors for the gridcells places them all in the tab order impacting the usability of keyboard navigation.
-<br /></p>
+ of keyboard navigation. For example, using HTML anchors for the gridcells places them all in the tab order impacting the usability of keyboard navigation.</p>
 
-<p><strong>WAI-ARIA Roles, States, and Properties</strong>
-<br /></p>
+<h3 id="wai-aria-roles-states-and-properties">WAI-ARIA Roles, States, and Properties</h3>
 
 <ul>
-  <li>
-    <p>The current month should have a label representing the month and year. This should have a role header but is not essential. This “label” should have a unique ID.</p>
-  </li>
-  <li>
-    <p>If the author would like to ensure that a label is announced by a screen reader, as the label changes, the label should include live region properties: aria-live=”assertive” and aria-atomic=”true”</p>
-  </li>
-  <li>
-    <p>The container for the day of week headers and numeric days of the week should have a role of grid</p>
-  </li>
-  <li>
-    <p>The grid should have an aria-labelled by property with a value equivalent to the id of the label for the grid</p>
-  </li>
-  <li>
-    <p>Each name for the day of the week should have a role columnheader and they should not be navigable via the keyboard.</p>
-  </li>
-  <li>
-    <p>Each numeric day of the week should have the role gridcell.</p>
-  </li>
-  <li>
-    <p>When a day is selected it should have aria-selected=”true” otherwise it should be set to “false” or removed.</p>
-  </li>
-  <li>
-    <p>Changes in aria states, identified here, as well as focus, should be clearly styled to show the user where their point of regard is and what days are selected.</p>
-  </li>
+  <li>The current month should have a label representing the month and year. This should have a role header but is not essential. This “label” should have a unique ID.</li>
+  <li>If the author would like to ensure that a label is announced by a screen reader, as the label changes, the label should include live region properties: aria-live=”assertive” and aria-atomic=”true”</li>
+  <li>The container for the day of week headers and numeric days of the week should have a role of grid</li>
+  <li>The grid should have an aria-labelled by property with a value equivalent to the id of the label for the grid</li>
+  <li>Each name for the day of the week should have a role columnheader and they should not be navigable via the keyboard.</li>
+  <li>Each numeric day of the week should have the role gridcell.</li>
+  <li>When a day is selected it should have aria-selected=”true” otherwise it should be set to “false” or removed.</li>
+  <li>Changes in aria states, identified here, as well as focus, should be clearly styled to show the user where their point of regard is and what days are selected.</li>
 </ul>
 
-<p>When the datepicker is active a calendar day of the week should always have focus. This can be achieved by setting the tabindex on that day as appropriate and then using script to give it focus. Alternatively, the grid container could set aria-activedescendant to the id of the currently focused gridcell. Keep in mind that older browsers may not support aria-activedescendant.
-<br /></p>
+<p>When the datepicker is active a calendar day of the week should always have focus. This can be achieved by setting the tabindex on that day as appropriate and then using script to give it focus. Alternatively, the grid container could set aria-activedescendant to the id of the currently focused gridcell. Keep in mind that older browsers may not support aria-activedescendant.</p>
 
-<p><strong>Time Picker Widget</strong>
-<br /></p>
+<h3 id="time-picker-widget">Time Picker Widget</h3>
 
 <ul>
-  <li>
-    <p>(HH:MM:SS) will assume text field ‘s accessibility behavior</p>
-  </li>
-  <li>
-    <p>TimeZone Offset will assume dropdown accessibility behavior</p>
-  </li>
-  <li>
-    <p>AM/PM will assume dropdown accessibility behavior</p>
-  </li>
+  <li>(HH:MM:SS) will assume text field‘s accessibility behavior</li>
+  <li>TimeZone Offset will assume dropdown accessibility behavior</li>
+  <li>AM/PM will assume dropdown accessibility behavior</li>
 </ul>
 
-<p><br /></p>
+<h2 id="assets">Assets</h2>
 
-<h3 id="assets">Assets</h3>
-<p>PSD files can be found here:
-<a href="src/date&amp;timepicker.psd">Download Date&amp;Time PSD source</a></p>
+<p><a href="src/date&amp;timepicker.psd">Download Date&amp;Time PSD source</a>.</p>
 
-<h3 id="implementation">Implementation</h3>
-<p>Date and time selectors are implemented using the standard <a href="https://jqueryui.com/datepicker/" target="_blank">jQuery UI datepicker widget</a> and Magento <a href="https://github.com/magento/magento2/blob/2.0/lib/web/jquery/jquery-ui-timepicker-addon.js" target="_blank">addon</a>.</p>
+<h2 id="implementation">Implementation</h2>
+
+<p>Date and time selectors are implemented using the standard <a href="https://jqueryui.com/datepicker/">jQuery UI datepicker widget</a> and Magento <a href="https://github.com/magento/magento2/blob/2.2/lib/web/jquery/jquery-ui-timepicker-addon.js">addon</a>.</p>
 
 			
 		</div>

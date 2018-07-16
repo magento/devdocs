@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Expandable sections | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -885,39 +885,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Expandable sections</h1>
 
   
 
 
 </section>
 
-			<h2 id="expandable-sections">Expandable sections</h2>
-<p><em>(AKA Expand-Collapse, Collapsible panels)</em></p>
-
-<h3 id="contents">Contents</h3>
-
-<ul>
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#behavior">Appearance and behavior</a></li>
-  <li><a href="#function">Functional behavior</a></li>
-  <li><a href="#variations">Variations</a></li>
-  <li><a href="#assets">Assets</a></li>
-</ul>
-
-<h3 id="overview">Overview</h3>
+			<p><em>(AKA Expand-Collapse, Collapsible panels)</em></p>
 
 <p>Expandable sections are expandable content areas which are useful in cases where a lot of information must be accommodated in limited space, thereby reducing clutter and allowing you focus on the primary task. Typically the information to be accommodated can be separated into various sections and/or sub-sections, or topics.</p>
 
 <p><img src="img/example_general.png" alt="General example" /></p>
 
-<p class="bs-callout bs-callout-note"><strong>Note:</strong>
-Expandable sections should not be confused with the ‘Progressive Disclosure checkbox’ control.</p>
+<p class="bs-callout bs-callout-note"><strong>Note:</strong> Expandable sections should not be confused with the ‘Progressive Disclosure checkbox’ control.</p>
 
-<h3 id="behavior">Appearance and behavior</h3>
+<h2 id="appearance-and-behavior">Appearance and behavior</h2>
+
 <p>Required fields should not be located within a collapsed section, as this increases the chance of error for the user. If a field within a collapsed section is <em>made a required field</em> based on a User interaction, that section should be automatically expanded to reveal this requirement to the user. As a best practice, the first expandable section should be expanded by default. For pages with several expandable sections it is recommended to locate all required fields in a section that cannot be collapsed above the expandable sections.</p>
 
-<h4 id="position-and-dimensions">Position and dimensions</h4>
+<h3 id="position-and-dimensions">Position and dimensions</h3>
+
 <ul>
   <li>Expandable sections can exist with or without a left sidebar.</li>
   <li>A level 1 expandable section has 24px top padding and 30px bottom padding of the section title.</li>
@@ -930,7 +918,8 @@ Expandable sections should not be confused with the ‘Progressive Disclosure ch
   <li>The content areas in the expandable section have 30px padding at the top and bottom. <em>The current design proposal accommodates 4 levels of nested expandable sections.</em></li>
 </ul>
 
-<h4 id="visual-appearance">Visual appearance</h4>
+<h3 id="visual-appearance">Visual appearance</h3>
+
 <ul>
   <li>A simple expandable section is a container with a border, section header, and a toggle arrow (right aligned) to control the showing and hiding of content.
 <img src="img/simple.png" alt="Simple expandable section" /></li>
@@ -940,7 +929,8 @@ Expandable sections should not be confused with the ‘Progressive Disclosure ch
   <li>The section deader title font size is 17px semibold.</li>
 </ul>
 
-<h3 id="function">Functional behavior</h3>
+<h2 id="functional-behavior">Functional behavior</h2>
+
 <ul>
   <li>Expandable sections should expand to become visible when the heading or toggle arrow is clicked.</li>
   <li>Several expandable sections can be kept open at the same time.</li>
@@ -949,7 +939,8 @@ Expandable sections should not be confused with the ‘Progressive Disclosure ch
   <li>For nested panels, if a section is collapsed, all “nested” expandable sections within that section should be collapsed as well.</li>
 </ul>
 
-<h3 id="variations">Variations</h3>
+<h2 id="variations">Variations</h2>
+
 <ol>
   <li>Simple – section that contains a single level of expansion in a section (no nested expandable sub-sections).
 <img src="img/simple_exp.png" alt="Simple section" /></li>
@@ -959,11 +950,11 @@ Expandable sections should not be confused with the ‘Progressive Disclosure ch
 <img src="img/single_exp.png" alt="Single expandable section" /></li>
 </ol>
 
-<h3 id="assets">Assets</h3>
-
-<p>Please reach out to the Magento UX Design team if you need anything else.</p>
+<h2 id="assets">Assets</h2>
 
 <p><a href="src/Magento_expandable_section.zip">Download Expandable Section ZIP file</a></p>
+
+<p>Please reach out to the Magento UX Design team if you need anything else.</p>
 
 			
 		</div>

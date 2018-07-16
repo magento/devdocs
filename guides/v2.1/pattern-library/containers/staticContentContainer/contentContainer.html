@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Static Content Container | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -871,72 +871,63 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Static Content Container</h1>
 
   
 
 
 </section>
 
-			<h2 id="static-content-container">Static Content Container</h2>
-<p>Within the Magento application, it is often necessary to display static information to the users. These   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
- are considered Content Container and should follow the guideline in this article.</p>
+			<p>Within the Magento application, it is often necessary to display static information to the users. These   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
+ are considered Content Container and should follow the guideline in this article. For solutions not described in this article or for further information, please contact the Magento UX Design Team.</p>
 
-<p>For solutions not described in this article or for further information, please contact the Magento UX Design Team.</p>
+<h2 id="when-to-use">When to Use</h2>
 
-<h3 id="when-to-use">When to Use</h3>
-<ul>
-  <li>Use this pattern when we need to display static information to the users.</li>
-</ul>
+<p>Use this pattern when we need to display static information to the users.</p>
 
-<h3 id="when-not-to-use">When Not to Use</h3>
-<ul>
-  <li>Do not use this pattern if users need to be able to interact with the information.</li>
-</ul>
+<h2 id="when-not-to-use">When Not to Use</h2>
 
-<h3 id="rule">Rule</h3>
+<p>Do not use this pattern if users need to be able to interact with the information.</p>
+
+<h2 id="rule">Rule</h2>
+
 <p>The basic rule is that the content containers should have a title and a content below it. Refer to variations for the styling examples.</p>
 
-<h3 id="variations">Variations</h3>
+<h2 id="variations">Variations</h2>
 
-<h4 id="1-parent-and-child-containers">1. Parent and Child Containers</h4>
+<h3 id="parent-and-child-containers">Parent and Child Containers</h3>
 
-<p>The following example, shows two sets of parent &amp; child containers. Each parent containers has 2 children containers. There can be 1 or more children.</p>
+<p>The following example, shows two sets of parent &amp; child containers. Each parent containers has 2 children containers. There can be 1 or more children. It is not recommended to have more than one layer of parent-child (i.e. grand children are not recommended) But if there are exceptions made, the hierarchy should be shown clearly.</p>
 
-<p>It is not recommended to have more than one layer of parent-child (i.e. grand children are not recommended) But if there are exceptions made, the hierarchy should be shown clearly.</p>
-
-<p><strong>Structure</strong></p>
+<h4 id="structure">Structure</h4>
 
 <p>The parent container structure: title, rule, content.</p>
 
-<p><img src="img/Var1-structure.png" /></p>
+<p><img src="img/Var1-structure.png" alt="" /></p>
 
-<p><strong>Styling</strong></p>
+<h4 id="styling">Styling</h4>
 
-<p>Note that because the children containers can be any variations of other content containers, refer to other variations for styling.</p>
+<p>Note that because the children containers can be any variations of other content containers, refer to other variations for styling. <img src="img/Var1-style.png" alt="" /></p>
 
-<p><img src="img/Var1-style.png" /></p>
-
-<h4 id="2-title-with-body-of-text">2. Title with Body of Text</h4>
+<h3 id="title-with-body-of-text">Title with Body of Text</h3>
 
 <p><strong>Width:</strong> based on the page grid</p>
 
 <p><strong>Height:</strong> as needed</p>
 
-<p><img src="img/Var2-style.png" /></p>
+<p><img src="img/Var2-style.png" alt="" /></p>
 
-<h4 id="3-title-with-differentiated-rows">3. Title with Differentiated Rows</h4>
+<h3 id="title-with-differentiated-rows">Title with Differentiated Rows</h3>
 
 <p><strong>Width:</strong> based on the page grid</p>
 
 <p><strong>Height:</strong> as needed</p>
 
-<p>This is used to clearly separate information for users to easily digest. 
-The first row should be grey then, the rows alternate between grey and white.</p>
+<p>This is used to clearly separate information for users to easily digest. The first row should be grey then, the rows alternate between grey and white.</p>
 
-<p><img src="img/Var3-style.png" /></p>
+<p><img src="img/Var3-style.png" alt="" /></p>
 
-<h4 id="4-pricing-breakdown-chart">4. Pricing Breakdown chart</h4>
+<h3 id="pricing-breakdown-chart">Pricing Breakdown chart</h3>
 
 <p><strong>Width:</strong> based on the page grid</p>
 
@@ -944,13 +935,13 @@ The first row should be grey then, the rows alternate between grey and white.</p
 
 <p>This is used to clearly separate information for users to easily digest.</p>
 
-<p><img src="img/Var4-style.png" /></p>
+<p><img src="img/Var4-style.png" alt="" /></p>
 
-<h3 id="assets">Assets</h3>
-
-<p>Please reach out to the Magento UX Design team if you need anything else.</p>
+<h2 id="assets">Assets</h2>
 
 <p><a href="src/magento-static-content-container.psd">Download Static Content Container PSD source</a></p>
+
+<p>Please reach out to the Magento UX Design team if you need anything else.</p>
 
 			
 		</div>

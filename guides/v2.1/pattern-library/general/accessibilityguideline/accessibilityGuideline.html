@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Accessibility Guidelines | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -871,153 +871,155 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Accessibility Guidelines</h1>
 
   
 
 
 </section>
 
-			<h2 id="accessibility-guidelines">Accessibility guidelines</h2>
-<p>The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.</p>
+			<p>The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.</p>
 
-<h3 id="visual">Visual</h3>
-<p><strong>1. Be mindful of text length</strong></p>
+<h2 id="visual">Visual</h2>
+
+<h4 id="be-mindful-of-text-length">Be mindful of text length</h4>
 
 <p>Don’t make textual content too long or too short.</p>
 
-<p><strong>2. Provide adequate contrast</strong></p>
+<h4 id="provide-adequate-contrast">Provide adequate contrast</h4>
 
 <p>Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
 <a href="http://webaim.org/resources/contrastchecker/">http://webaim.org/resources/contrastchecker/</a>
 or here:
 <a href="http://www.paciellogroup.com/resources/contrastAnalyser">http://www.paciellogroup.com/resources/contrastAnalyser</a></p>
 
-<p>Acceptable	<br />
-<img src="img/largetext-sample1.png" /></p>
+<p>Acceptable</p>
 
-<p>Not Acceptable	<br />	 
-<img src="img/largetext-sample2.png" /></p>
+<p><img src="img/largetext-sample1.png" alt="Acceptable" /></p>
 
-<p><strong>3. Limit the use of CAPS</strong></p>
+<p>Not Acceptable</p>
+
+<p><img src="img/largetext-sample2.png" alt="Not Acceptable" /></p>
+
+<h4 id="limit-the-use-of-caps">Limit the use of CAPS</h4>
 
 <p>All caps can be difficult to read and can be read incorrectly by screen readers.</p>
 
-<p><strong>4. Use appropriate font size</strong></p>
+<h4 id="use-appropriate-font-size">Use appropriate font size</h4>
 
 <p>Large text: 18 px Bold (22 px Regular) or larger</p>
 
 <p>Normal text: 13-14 px</p>
 
-<p><strong>5. Consider reading order</strong></p>
+<h4 id="consider-reading-order">Consider reading order</h4>
 
 <p>The reading order should match the visual order.</p>
 
-<p><strong>6. Keep the focus indicator visible</strong></p>
+<h4 id="keep-the-focus-indicator-visible">Keep the focus indicator visible</h4>
 
 <p>Ensure keyboard users can visually identify a focused link.</p>
 
-<p><strong>7. Design a “skip to main content” link</strong></p>
+<h4 id="design-a-skip-to-main-content-link">Design a “skip to main content” link</h4>
 
 <p>A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.</p>
 
-<p>Examples</p>
+<p>Examples:</p>
 
-<p><a href="http://www.nomensa.com/">http://www.nomensa.com/</a></p>
+<ul>
+  <li><a href="http://www.nomensa.com/">http://www.nomensa.com/</a></li>
+  <li><a href="https://www.paypal.com/">https://www.paypal.com/</a></li>
+  <li><a href="http://www.standardchartered.com/en/">http://www.standardchartered.com/en/</a></li>
+  <li><a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/">http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/</a></li>
+  <li><a href="https://github.com/paypal/skipto">Skip-To Widget</a></li>
+</ul>
 
-<p><a href="https://www.paypal.com/">https://www.paypal.com/</a></p>
-
-<p><a href="http://www.standardchartered.com/en/">http://www.standardchartered.com/en/</a></p>
-
-<p><a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/">http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/</a></p>
-
-<p><a href="https://github.com/paypal/skipto">Skip-To Widget</a></p>
-
-<p><strong>8. Use animation, video and audio with caution</strong></p>
+<h4 id="use-animation-video-and-audio-with-caution">Use animation, video and audio with caution</h4>
 
 <p>If used, provide a play/pause button. Avoid flashing or strobing content, which can cause seizures. Provide captions and other alternatives for multimedia.</p>
 
-<p><strong>9. Don’t convey content with color alone</strong></p>
+<h4 id="dont-convey-content-with-color-alone">Don’t convey content with color alone</h4>
 
 <p>Evaluate the design in grayscale. Make sure to use both shapes and color to differentiate icons.</p>
 
-<p><strong>10. Use images to enhance the experience for users with full vision</strong></p>
+<h4 id="use-images-to-enhance-the-experience-for-users-with-full-vision">Use images to enhance the experience for users with full vision</h4>
 
-<p><strong>11. Make sure links are obvious</strong></p>
+<h4 id="make-sure-links-are-obvious">Make sure links are obvious</h4>
 
 <p>Differentiate link text from other text.</p>
 
-<p><strong>12. Do not use content that causes seizures.</strong></p>
+<h4 id="do-not-use-content-that-causes-seizures">Do not use content that causes seizures</h4>
 
-<h3 id="content">Content</h3>
-<p><strong>1. Ensure that link text makes sense by itself</strong></p>
+<h2 id="content">Content</h2>
+
+<h4 id="ensure-that-link-text-makes-sense-by-itself">Ensure that link text makes sense by itself</h4>
 
 <p>Avoid “Click Here” in link text. Ambiguous links such as “More” or “Continue” can also be confusing.</p>
 
-<p><strong>2. Provide text alternatives for non-text content.</strong></p>
+<h4 id="provide-text-alternatives-for-non-text-content">Provide text alternatives for non-text content</h4>
 
-<p><strong>3. Content should be present-able in different ways without losing meaning.</strong></p>
+<h4 id="content-should-be-present-able-in-different-ways-without-losing-meaning">Content should be present-able in different ways without losing meaning</h4>
 
-<p><strong>4. Content should appear and operate in predictable ways.</strong></p>
+<h4 id="content-should-appear-and-operate-in-predictable-ways">Content should appear and operate in predictable ways</h4>
 
-<h3 id="user-interaction">User Interaction</h3>
+<h2 id="user-interaction">User Interaction</h2>
 
-<p><strong>1. Use animation, video and audio with caution.</strong></p>
+<h4 id="use-animation-video-and-audio-with-caution-1">Use animation, video and audio with caution</h4>
 
 <p>If used, provide a play/pause button. Avoid flashing or strobing content, which can cause seizures.</p>
 
-<p><strong>2. Create design that adapts to phone and tablet form factors</strong></p>
+<h4 id="create-design-that-adapts-to-phone-and-tablet-form-factors">Create design that adapts to phone and tablet form factors</h4>
 
 <p>Don’t override native accessibility features.</p>
 
-<p><strong>3. Design accessible form controls</strong></p>
+<h4 id="design-accessible-form-controls">Design accessible form controls</h4>
 
 <p>Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.</p>
 
-<p><strong>4. Give users enough time to read and use content.</strong></p>
+<h4 id="give-users-enough-time-to-read-and-use-content">Give users enough time to read and use content</h4>
 
-<p><strong>5. Help users navigate and find content.</strong></p>
+<h4 id="help-users-navigate-and-find-content">Help users navigate and find content</h4>
 
-<h3 id="development">Development</h3>
+<h2 id="development">Development</h2>
 
 <p>(This section is high level only and is no way a complete list for engineering.)</p>
 
-<p><strong>1. Ensure that all content can be accessed with just the keyboard in a logical way using tab order</strong></p>
+<h4 id="ensure-that-all-content-can-be-accessed-with-just-the-keyboard-in-a-logical-way-using-tab-order">Ensure that all content can be accessed with just the keyboard in a logical way using tab order</h4>
 
 <p>Make sure dynamic interactions (hide/show, open/close, update) can be used with the keyboard itself, without any peripheral devices. The reading order should match the visual order.</p>
 
-<p><strong>2. Plan heading structure early</strong></p>
+<h4 id="plan-heading-structure-early">Plan heading structure early</h4>
 
 <p>Ensure all content and design fits under a logical heading structure.</p>
 
-<p><strong>3. Use true text whenever possible</strong></p>
+<h4 id="use-true-text-whenever-possible">Use true text whenever possible</h4>
 
 <p>True text enlarges better, loads faster, and is easier to translate. Use   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  to add visual style.</p>
 
-<p><strong>4. Support the link focus indicator</strong></p>
+<h4 id="support-the-link-focus-indicator">Support the link focus indicator</h4>
 
 <p>Make sure keyboard users can always visually identify a focused link.</p>
 
-<p><strong>5. Support a “skip to main content” link</strong></p>
+<h4 id="support-a-skip-to-main-content-link">Support a “skip to main content” link</h4>
 
 <p>A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.</p>
 
-<p><strong>6. Code accessible form controls</strong></p>
+<h4 id="code-accessible-form-controls">Code accessible form controls</h4>
 
 <p>Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.</p>
 
-<p><strong>7. Provide   <span term-uuid="9122e7d4-7db9-48b2-ad27-1af26bad1215" class="glossary-term" data-toggle="popover">alt text</span>
- if icons or glyphs are used without text</strong></p>
+<h4 id="provide---alt-text">Provide   <span term-uuid="9122e7d4-7db9-48b2-ad27-1af26bad1215" class="glossary-term" data-toggle="popover">alt text</span></h4>
+<p>if icons or glyphs are used without text</p>
 
 <p>Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.</p>
 
-<h3 id="resources">Resources</h3>
-<p>Overview: <a href="http://www.w3.org/WAI/WCAG20/glance/">http://www.w3.org/WAI/WCAG20/glance/</a></p>
+<h2 id="resources">Resources</h2>
 
-<p>Authoring Tool Accessibility Guidelines (ATAG) 1.0: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/">http://www.w3.org/TR/WCAG10-HTML-TECHS/</a></p>
-
-<p>Authoring Tool Accessibility Guidelines (ATAG) 2.0: <a href="http://www.w3.org/TR/WCAG20-HTML-TECHS/">http://www.w3.org/TR/WCAG20-HTML-TECHS/</a></p>
+<ul>
+  <li>Overview: <a href="http://www.w3.org/WAI/WCAG20/glance/">http://www.w3.org/WAI/WCAG20/glance/</a></li>
+  <li>Authoring Tool Accessibility Guidelines (ATAG) 1.0: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/">http://www.w3.org/TR/WCAG10-HTML-TECHS/</a></li>
+  <li>Authoring Tool Accessibility Guidelines (ATAG) 2.0: <a href="http://www.w3.org/TR/WCAG20-HTML-TECHS/">http://www.w3.org/TR/WCAG20-HTML-TECHS/</a></li>
+</ul>
 
 			
 		</div>

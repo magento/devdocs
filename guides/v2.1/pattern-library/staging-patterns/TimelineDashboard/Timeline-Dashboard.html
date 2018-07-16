@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Admin Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Timeline Dashboard | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -873,98 +873,102 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Magento Admin Pattern Library</h1>
+	<h1 class="page-heading">Timeline Dashboard</h1>
 
   
 
 
 </section>
 
-			<h2 id="timeline-dashboard">Timeline Dashboard</h2>
-
-<h3> Contents </h3>
-
-<ul>
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#when-to-use">When to Use / When Not to Use</a></li>
-  <li><a href="#terminology">Staging terminology and definitions</a></li>
-  <li><a href="#examples">Interaction and Behavior</a></li>
-  <li><a href="#assets">Assets</a></li>
-</ul>
-
-<h3 id="overview">Overview</h3>
-<p>This dashboard provides a page where events and processes can be viewed and managed in one place. <br /></p>
+			<p>This dashboard provides a page where events and processes can be viewed and managed in one place.</p>
 
 <p>Staging usage: Within Magento, users need to see which stage-able entities are published or scheduled to be published. Since most of Magento’s entities can be staged – the display of all this information is important to show users the full scope of updates at a glance.</p>
 
-<h3 id="when-to-use">When to Use / When Not to Use</h3>
-<p>Use when events and processes need to be displayed sequentially, along a timeline, and when multiple items are combined in one view. Example: Scheduled updates on staging. <br />
+<h2 id="when-to-use--when-not-to-use">When to Use / When Not to Use</h2>
+
+<p>Use when events and processes need to be displayed sequentially, along a timeline, and when multiple items are combined in one view. Example: Scheduled updates on staging.
 Do not use a timeline as an alternative display mode for tree, card or data table views.</p>
 
-<h3 id="terminology">Staging terminology and definitions</h3>
+<h2 id="staging-terminology-and-definitions">Staging terminology and definitions</h2>
 
-<h4 id="stage-able-entity">Stage-able entity:</h4>
-<p>A part of Magento that can be scheduled to change, within an update. Examples: Products, Categories<br /></p>
+<h3 id="stage-able-entity">Stage-able entity</h3>
 
-<h4 id="update">Update:</h4>
+<p>A part of Magento that can be scheduled to change, within an update. Examples: Products, Categories.</p>
+
+<h3 id="update">Update</h3>
+
 <p>A combination of changes to a stage-able   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
-. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent. <br /></p>
+. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent.</p>
 
-<h4 id="objects">Objects:</h4>
-<p>These are the individual changes contained within an update.<br /></p>
+<h3 id="objects">Objects</h3>
 
-<h3 id="examples">Interaction and Behavior</h3>
+<p>These are the individual changes contained within an update.</p>
 
-<h4 id="what-markers-mean-on-timeline">What markers mean on timeline:</h4>
+<h2 id="interaction-and-behavior">Interaction and Behavior</h2>
 
-<p><img src="img/Staging_Dashboard_0006_timeline_notes.jpg" />
-<br /></p>
+<h3 id="what-markers-mean-on-timeline">What markers mean on timeline</h3>
+
+<p><img src="img/Staging_Dashboard_0006_timeline_notes.jpg" alt="" /></p>
 
 <ol>
   <li>The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scrolling the timeline with scroll control, or the right arrow.</li>
 </ol>
 
-<h4 id="update-schedule">Update schedule:</h4>
-<p>As the default state, this view shows completed, active and scheduled updates on the dashboard. The timeline’s default date range is 1 week, which can be changed and customized.Updates are displayed in chronological order, with the most recent start date on top. 
-<img src="img/Updates-Scheduled.jpg" /></p>
+<h3 id="update-schedule">Update schedule</h3>
 
-<h4 id="update-summary-in-overlay-window">Update Summary, in Overlay Window:</h4>
-<p>When clicked, a bar on the timeline spawns an overlay window, showing a summary of the objects contained in the update.  The window includes controls to edit or preview the update.
-<img src="img/Timeline-Dashboard-summary.jpg" /></p>
+<p>As the default state, this view shows completed, active and scheduled updates on the dashboard. The timeline’s default date range is 1 week, which can be changed and customized.Updates are displayed in chronological order, with the most recent start date on top.</p>
 
-<h4 id="4-week-zoom-control">4-Week Zoom Control:</h4>
-<p>A slider control at the bottom of the page allows users to zoom out from 1 week to 4 weeks, viewing a bigger timeline of updates.
-<img src="img/4-week-zoom.jpg" /></p>
+<p><img src="img/Updates-Scheduled.jpg" alt="" /></p>
 
-<h4 id="load-more-control">“Load More” Control:</h4>
-<p>On the default timeline view, the number of updates displayed is set to 10. Clicking “Load More” adds more updates on the timeline. A grid menu control changes the number of items displayed per page. 
-<img src="img/load-more.jpg" /></p>
+<h3 id="update-summary-in-overlay-window">Update Summary, in Overlay Window</h3>
 
-<h4 id="horizontal-scrolling-for-future-updates">Horizontal Scrolling for Future Updates:</h4>
-<p>A horizontal scrollbar at the bottom of the timeline provides the capability to view future updates that do not fit inside the span of the page. This scrollbar is usually not displayed.
-<img src="img/scrolled-to-future.jpg" /></p>
+<p>When clicked, a bar on the timeline spawns an overlay window, showing a summary of the objects contained in the update.  The window includes controls to edit or preview the update.</p>
 
-<h4 id="prioritized-timeline-view-with-drag-and-drop">Prioritized Timeline View, with Drag and Drop:</h4>
-<p>This is a variation of the timeline. This view only appears when stage-able entities on the timeline need to be ordered by priority. In the example displayed below – the priority scale has been used to display the sort order of the rules. To re-arrange the order, an item on the timeline can be dragged and moved.
-<img src="img/priority-schedule.jpg" /></p>
+<p><img src="img/Timeline-Dashboard-summary.jpg" alt="" /></p>
 
-<h4 id="data-table-view">Data Table View:</h4>
-<p>This is an alternative view to the timeline in data table format. The functionalities of the timeline and the data table are consistent except for the pagination feature, which is used for data table view only.
-<img src="img/table-view.jpg" /></p>
+<h3 id="4-week-zoom-control">4-Week Zoom Control</h3>
 
-<h3 id="styling">Styling</h3>
+<p>A slider control at the bottom of the page allows users to zoom out from 1 week to 4 weeks, viewing a bigger timeline of updates.</p>
+
+<p><img src="img/4-week-zoom.jpg" alt="" /></p>
+
+<h3 id="load-more-control">“Load More” Control</h3>
+
+<p>On the default timeline view, the number of updates displayed is set to 10. Clicking “Load More” adds more updates on the timeline. A grid menu control changes the number of items displayed per page.</p>
+
+<p><img src="img/load-more.jpg" alt="" /></p>
+
+<h3 id="horizontal-scrolling-for-future-updates">Horizontal Scrolling for Future Updates</h3>
+
+<p>A horizontal scrollbar at the bottom of the timeline provides the capability to view future updates that do not fit inside the span of the page. This scrollbar is usually not displayed.</p>
+
+<p><img src="img/scrolled-to-future.jpg" alt="" /></p>
+
+<h3 id="prioritized-timeline-view-with-drag-and-drop">Prioritized Timeline View, with Drag and Drop</h3>
+
+<p>This is a variation of the timeline. This view only appears when stage-able entities on the timeline need to be ordered by priority. In the example displayed below – the priority scale has been used to display the sort order of the rules. To re-arrange the order, an item on the timeline can be dragged and moved.</p>
+
+<p><img src="img/priority-schedule.jpg" alt="" /></p>
+
+<h3 id="data-table-view">Data Table View</h3>
+
+<p>This is an alternative view to the timeline in data table format. The functionalities of the timeline and the data table are consistent except for the pagination feature, which is used for data table view only.</p>
+
+<p><img src="img/table-view.jpg" alt="" /></p>
+
+<h2 id="styling">Styling</h2>
 
 <h4 id="updates-schedule">Updates schedule:</h4>
-<p><img src="img/styles/style_staging_dashboard.jpg" /></p>
+<p><img src="img/styles/style_staging_dashboard.jpg" alt="" /></p>
 
 <h4 id="update-summary-in-overlay-window-1">Update Summary, in Overlay Window:</h4>
-<p><img src="img/styles/style-summary.jpg" /></p>
+<p><img src="img/styles/style-summary.jpg" alt="" /></p>
 
-<h3 id="assets">Assets</h3>
-
-<p>If you have questions about the Timeline Dashboard, please <a href="https://magento.com/company/contact-us">contact us.</a></p>
+<h2 id="assets">Assets</h2>
 
 <p><a href="src/timeline-dashboard.psd">Download Timeline Dashboard source</a></p>
+
+<p>If you have questions about the Timeline Dashboard, please <a href="https://magento.com/company/contact-us">contact us</a>.</p>
 
 			
 		</div>

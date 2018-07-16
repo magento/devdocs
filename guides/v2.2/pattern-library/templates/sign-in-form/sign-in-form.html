@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Sign-in form | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -881,32 +881,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Sign-in form</h1>
 
   
 
 
 </section>
 
-			<h2 id="sign-in-form">Sign-in form</h2>
-<p>“Sign in” is used to log into the system, or to recover a lost password.</p>
+			<p>“Sign in” is used to log into the system, or to recover a lost password.</p>
 
-<h3 id="when-to-use">When to Use</h3>
+<h2 id="when-to-use">When to Use</h2>
+
 <p>Use this pattern when user needs to sign into the system.</p>
 
-<h3 id="interaction">Interaction and Behavior</h3>
+<h2 id="interaction-and-behavior">Interaction and Behavior</h2>
 
-<h4 id="general">General:</h4>
+<h3 id="general">General</h3>
 
 <p>The user may “tab” to navigate the form in the following order:</p>
 
-<p>First tab = active “Username” field.
-Second tab = active “Password” field.
-Third tab = focus on “Sign in” button.
-Fourth tab = focus on hyperlink (“Forgot your password?”)
-Fifth tab = return to top of the order.</p>
+<ol>
+  <li>First tab = active “Username” field</li>
+  <li>Second tab = active “Password” field</li>
+  <li>Third tab = focus on “Sign in” button</li>
+  <li>Fourth tab = focus on hyperlink (“Forgot your password?”)</li>
+  <li>Fifth tab = return to top of the order.</li>
+</ol>
 
-<h4 id="initial-state">Initial state:</h4>
+<h3 id="initial-state">Initial state</h3>
 
 <p>In its initial state the sign-in   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  consists of</p>
@@ -918,24 +920,24 @@ Fifth tab = return to top of the order.</p>
   <li>a button to submit the user’s credentials – <strong>Sign in</strong></li>
 </ul>
 
-<p><img src="img/Sign-in_initial.png" /></p>
+<p><img src="img/Sign-in_initial.png" alt="" /></p>
 
-<h4 id="error-state">Error state:</h4>
+<h3 id="error-state">Error state</h3>
 
 <p>In the   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
  that invalid credentials are submitted the sign-in module consists of</p>
 
 <ul>
   <li>an alert message informing the user that either the Username or Password is invalid</li>
-  <li>two text fields – <strong>Username</strong> and <strong>Password</strong>, where the Username field will retain the initial entry as 
+  <li>two text fields – <strong>Username</strong> and <strong>Password</strong>, where the Username field will retain the initial entry as
 typed by the user and be the active field and the password field will be blank</li>
   <li>a link to retrieve the user’s password</li>
   <li>a button to submit the user’s credentials – <strong>Sign in</strong></li>
 </ul>
 
-<p><img src="img/Sign-in_error.png" /></p>
+<p><img src="img/Sign-in_error.png" alt="" /></p>
 
-<h4 id="password-retrieval">Password retrieval:</h4>
+<h3 id="password-retrieval">Password retrieval</h3>
 
 <p>If the user opts to retrieve their password via the hyperlink (“Forgot your password?”) the sign-in module will display</p>
 
@@ -946,9 +948,9 @@ typed by the user and be the active field and the password field will be blank</
   <li>a link to cancel the retrieval and return to the initial state of the sign-in module – “Back to Sign in”</li>
 </ul>
 
-<p><img src="img/Sign-in_password-retrieval.png" /></p>
+<p><img src="img/Sign-in_password-retrieval.png" alt="" /></p>
 
-<h4 id="confirmation-of-password-retrieval">Confirmation of password retrieval:</h4>
+<h3 id="confirmation-of-password-retrieval">Confirmation of password retrieval</h3>
 
 <p>Once a user submits their email address to retrieve their password, the module will provide a confirmation on the action via text in the module.</p>
 <ul>
@@ -957,9 +959,9 @@ typed by the user and be the active field and the password field will be blank</
   <li>a link to return to the initial state of the sign-in module – “Back to Sign in”</li>
 </ul>
 
-<p><img src="img/Sign-in_password-retrieval_confirmation.png" /></p>
+<p><img src="img/Sign-in_password-retrieval_confirmation.png" alt="" /></p>
 
-<h4 id="error-of-password-retrieval">Error of password retrieval:</h4>
+<h3 id="error-of-password-retrieval">Error of password retrieval</h3>
 
 <p>In the event that the user enters an invalid email address, either by mistyping or by entering an unregistered email address, the module will display an alert message.</p>
 <ul>
@@ -969,9 +971,9 @@ typed by the user and be the active field and the password field will be blank</
   <li>a link to cancel the retrieval and return to the initial state of the sign-in module – “Back to Sign in”</li>
 </ul>
 
-<p><img src="img/Sign-in_password-retrieval_error.png" /></p>
+<p><img src="img/Sign-in_password-retrieval_error.png" alt="" /></p>
 
-<h4 id="successful-sign-out">Successful sign-out:</h4>
+<h3 id="successful-sign-out">Successful sign-out</h3>
 
 <p>When the user signs out of the system they are presented with the sign-in module as follows</p>
 
@@ -982,9 +984,9 @@ typed by the user and be the active field and the password field will be blank</
   <li>a button to submit the user’s credentials – <strong>Sign in</strong>.</li>
 </ul>
 
-<p><img src="img/Sign-in_successful-signout.png" /></p>
+<p><img src="img/Sign-in_successful-signout.png" alt="" /></p>
 
-<h3 id="style">Style</h3>
+<h2 id="style">Style</h2>
 
 <p>Suggested specifications.</p>
 
@@ -992,34 +994,33 @@ typed by the user and be the active field and the password field will be blank</
 
 <h4 id="initial-state-1">Initial state:</h4>
 
-<p><img src="img/specs/Sign-in_initial-SPECS.png" /></p>
+<p><img src="img/specs/Sign-in_initial-SPECS.png" alt="" /></p>
 
 <h4 id="error-state-1">Error state:</h4>
 
-<p><img src="img/specs/Sign-in_error-SPECS.png" /></p>
+<p><img src="img/specs/Sign-in_error-SPECS.png" alt="" /></p>
 
 <h4 id="password-retrieval-1">Password Retrieval:</h4>
 
-<p><img src="img/specs/Sign-in_password-retrieval_SPECS.png" /></p>
+<p><img src="img/specs/Sign-in_password-retrieval_SPECS.png" alt="" /></p>
 
 <h4 id="confirmation-of-password-retrieval-1">Confirmation of password retrieval:</h4>
 
-<p><img src="img/specs/Sign-in_password-retrieval_confirmation-SPECS.png" /></p>
+<p><img src="img/specs/Sign-in_password-retrieval_confirmation-SPECS.png" alt="" /></p>
 
 <h4 id="error-of-password-retrieval-1">Error of password retrieval:</h4>
 
-<p><img src="img/specs/Sign-in_password-retrieval_error-SPECS.png" /></p>
+<p><img src="img/specs/Sign-in_password-retrieval_error-SPECS.png" alt="" /></p>
 
 <h4 id="successful-sign-out-1">Successful sign-out:</h4>
 
-<p><img src="img/specs/Sign-in_successful-signout-SPECS.png" /></p>
+<p><img src="img/specs/Sign-in_successful-signout-SPECS.png" alt="" /></p>
 
-<h3 id="assets">Assets</h3>
+<h2 id="assets">Assets</h2>
+
+<p><a href="src/magento-sign-in.psd">Download Sign-In form source</a>.</p>
 
 <p>For any questions or additional information about the sign-in module please contact the Magento User Experience and Product Design team.</p>
-
-<p><a href="src/magento-sign-in.psd">Download Sign-In form source</a></p>
-
 
 			
 		</div>

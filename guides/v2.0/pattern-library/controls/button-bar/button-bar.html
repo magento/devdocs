@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Button Bar | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -770,57 +770,58 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Button Bar</h1>
 
   
 
 
 </section>
 
-			<h2 id="button-bar">Button bar</h2>
-<p>Within Magento application, it is often necessary to provide users with page level actions. These actions should be contain in a button bar as described in this guideline.</p>
+			<p>Within Magento application, it is often necessary to provide users with page level actions. These actions should be contain in a button bar as described in this guideline.</p>
 
 <p>For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.</p>
 
-<h3 id="when-to-use">When to Use</h3>
+<h2 id="when-to-use">When to Use</h2>
+
 <ul>
   <li>When page level actions are necessary.</li>
 </ul>
 
-<h3 id="when-not-to-use">When Not to Use</h3>
+<h2 id="when-not-to-use">When Not to Use</h2>
+
 <ul>
   <li>When there is already a button bar.</li>
   <li>When there is a wizard bar.</li>
   <li>When buttons are needed but they are not page level buttons.</li>
 </ul>
 
-<h3 id="rules">Rules </h3>
+<h2 id="rules">Rules</h2>
 
-<h4 id="1-general-rules">1. General Rules</h4>
+<h3 id="general-rules">General Rules</h3>
+
 <ul>
   <li>Only one button bar is allowed per page.</li>
   <li>Either use a button bar or a wizard bar. Both cannot be on the page.</li>
-  <li>The buttons within the button bar must be one of the page-level buttons from <a href="../buttons/buttons.html"> buttons pattern.</a></li>
+  <li>The buttons within the button bar must be one of the page-level buttons from <a href="../buttons/buttons.html">buttons pattern</a>.</li>
   <li>All the buttons in button bar should be visible at all time.</li>
 </ul>
 
-<h4 id="2-location">2. Location</h4>
+<h3 id="location">Location</h3>
 
 <ul>
   <li>Button bar can be used in a page or a slide-in panel.</li>
   <li>Its location in either scenario must be right below the page title or the slide-in panel title.</li>
 </ul>
 
-<p><br />
-<strong>Button Bar Position in Page</strong><br /><br />
-<img src="img/position-in-page.jpg" /></p>
+<h4 id="button-bar-position-in-page">Button Bar Position in Page</h4>
 
-<p><br /></p>
+<p><img src="img/position-in-page.jpg" alt="" /></p>
 
-<p><strong>Button Bar Position in Slide-in Panel</strong><br /><br />
-<img src="img/position-in-modal.jpg" /></p>
+<h4 id="button-bar-position-in-slide-in-panel">Button Bar Position in Slide-in Panel</h4>
 
-<h4 id="3-page-level-button-order-and-priority---general-rules">3. Page Level Button Order and Priority - General Rules</h4>
+<p><img src="img/position-in-modal.jpg" alt="" /></p>
+
+<h3 id="page-level-button-order-and-priority---general-rules">Page Level Button Order and Priority - General Rules</h3>
 
 <ul>
   <li>There should never be more than one primary page level button on a single page.</li>
@@ -829,7 +830,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Buttons should be ordered by group as specified below. In situations where button groups do not apply, they should be ordered by importance.</li>
 </ul>
 
-<h4 id="4-ordering-of-button-bar">4. Ordering of Button Bar</h4>
+<h3 id="ordering-of-button-bar">Ordering of Button Bar</h3>
 
 <p>Page level buttons can be logically grouped as follows:</p>
 
@@ -839,68 +840,54 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Progress</li>
 </ul>
 
-<p><br /></p>
-
 <p>Groups can contain multiple CTAs but only one primary CTA. Groups should follow the below order:</p>
 
-<p><img src="img/buttonbar1.png" /></p>
+<p><img src="img/buttonbar1.png" alt="" /></p>
 
-<h4 id="5-ordering-by-importance">5. Ordering by Importance</h4>
+<h3 id="ordering-by-importance">Ordering by Importance</h3>
 
-<p>There should never be more than one primary page level CTA on the same page. Page
-level CTAs should assume an ascending order of importance from left to right wherever
-possible, i.e. least important buttons followed by most important.</p>
+<p>There should never be more than one primary page level CTA on the same page. Page level CTAs should assume an ascending order of importance from left to right wherever possible, i.e. least important buttons followed by most important.</p>
 
-<p><img src="img/buttonbar-importance.png" /></p>
+<p><img src="img/buttonbar-importance.png" alt="" /></p>
 
-<h3 id="style">Style</h3>
+<h2 id="style">Style</h2>
 
 <p>All buttons should be right aligned. The button bar is spread across 12 columns and should be fluid.</p>
 
-<p><img src="img/buttonbar-style.jpg" /></p>
+<p><img src="img/buttonbar-style.jpg" alt="" /></p>
 
-<h4 id="recommendation">Recommendation</h4>
+<h2 id="recommendation">Recommendation</h2>
 
 <ol>
-  <li>
-    <p>It is recommended that all buttons in button bar should only be in one line. Because the button bar is in fluid grid, it is possible for the buttons to be wrap around to the next line.</p>
-  </li>
-  <li>
-    <p>If you have multiple page-level buttons. We recommend using the split button rather having too many buttons that will clutter the page.</p>
-  </li>
+  <li>It is recommended that all buttons in button bar should only be in one line. Because the button bar is in fluid grid, it is possible for the buttons to be wrap around to the next line.</li>
+  <li>If you have multiple page-level buttons. We recommend using the split button rather having too many buttons that will clutter the page.</li>
 </ol>
 
-<p><img src="img/button-bar-with-splitbutton.jpg" /></p>
+<p><img src="img/button-bar-with-splitbutton.jpg" alt="" /></p>
 
-<h3 id="behavior">Behavior</h3>
-
-<h4 id="sticky-button-bar">Sticky button bar</h4>
+<h2 id="sticky-button-bar">Sticky button bar</h2>
 
 <p>To ensure page level actions are always visible, The button bar should stick to the top of a browser as the user scrolls and the top of button bar hits the top of browser.</p>
 
-<p><strong>1.Initial State</strong></p>
+<h3 id="initial-state">Initial State</h3>
 
-<p><img src="img/button-bar-sticky1.jpg" /></p>
+<p><img src="img/button-bar-sticky1.jpg" alt="" /></p>
 
-<p><br />
-<br /></p>
+<h3 id="after-user-scrolls-the-button-bar-sticks-to-the-browser">After user scrolls, the button bar sticks to the browser</h3>
 
-<p><strong>2.After user scrolls, the button bar sticks to the browser.</strong></p>
+<p><img src="img/button-bar-sticky2.jpg" alt="" /></p>
 
-<p><img src="img/button-bar-sticky2.jpg" /></p>
+<h2 id="accessibility">Accessibility</h2>
 
-<h3 id="accessibility">Accessibility</h3>
 <p>Buttons should make use of   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
  and   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
- so that button text is never dependent on a
-graphic asset.</p>
+ so that button text is never dependent on a graphic asset.</p>
 
-<h3 id="assets">Assets</h3>
+<h2 id="assets">Assets</h2>
+
+<p><a href="src/magento-button-bar.psd">Download Button Bar PSD source</a>.</p>
 
 <p>Please reach out to the Magento UX Design team if you need anything else.</p>
-
-<p><a href="src/magento-button-bar.psd">Download Button Bar PSD source</a></p>
-
 
 			
 		</div>

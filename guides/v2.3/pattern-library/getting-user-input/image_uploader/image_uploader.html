@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Admin Design Pattern Library | Magento 2 Developer Documentation</title>
+	<title>Image Uploader | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -885,90 +885,97 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Admin Design Pattern Library</h1>
+	<h1 class="page-heading">Image Uploader</h1>
 
   
 
 
 </section>
 
-			<h2 id="image-uploader">Image uploader</h2>
-<p>The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These images may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.</p>
+			<p>The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These images may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.</p>
 
-<h3 id="whentouse">When to Use</h3>
+<h2 id="when-to-use">When to Use</h2>
+
 <p>When it is desirable to allow users to upload a single image or multiple images for display within the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  or on the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">Storefront</span>
 .</p>
 
-<h3 id="whennottouse">When Not to Use</h3>
+<h2 id="when-not-to-use">When Not to Use</h2>
+
 <p>This pattern should be used specifically to upload images, and not to upload documents such as PDFs, WordDocs, Spreadsheets, etc. Please refer to the “File Upload” pattern.</p>
 
-<h3 id="variations">Variations</h3>
+<h2 id="variations">Variations</h2>
 
 <ol>
-  <li>
-    <p>Upload Single Image</p>
-  </li>
-  <li>
-    <p>Upload Multiple Images</p>
-  </li>
-  <li>
-    <p>Upload Video Content</p>
-  </li>
+  <li>Upload Single Image</li>
+  <li>Upload Multiple Images</li>
+  <li>Upload Video Content</li>
 </ol>
 
-<h3 id="behavior">Behavior</h3>
+<h2 id="behavior">Behavior</h2>
 
 <p><strong>Uploading via Browser</strong></p>
 
 <p>The Image Uploader allows the user to browse for images to upload to the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
  application. This can accommodate single or multiple image upload. To initiate this behavior the user clicking on the “Upload Image” link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.</p>
 
-<p><img src="img/image-uploader-browse.jpg" /></p>
+<p><img src="img/image-uploader-browse.jpg" alt="" /></p>
 
 <p><strong>Uploading via Drag and Drop</strong></p>
 
 <p>The user may also upload images (single or multiple) by dragging the desired images onto the Image Upload target area.</p>
 
-<p><img src="img/image-uploader-drag.jpg" /></p>
+<p><img src="img/image-uploader-drag.jpg" alt="" /></p>
 
-<p><strong>Uploading Video Content</strong>
-To upload a video to the Magento Admin application the user taps the “Add Video” button. 
-<img src="img/image-uploader-video-button.jpg" />
-image-uploader-video-uploaded.jpg</p>
+<p><strong>Uploading Video Content</strong></p>
+
+<p>To upload a video to the Magento Admin application the user taps the “Add Video” button.</p>
+
+<p><img src="img/image-uploader-video-button.jpg" alt="" /></p>
+
+<p><img src="img/image-uploader-video-uploaded.jpg.jpg" alt="" /></p>
 
 <p>A video settings panel is revealed that allows the user to provide the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- location of the video, write a description and upload a preview image for the video. The user taps the “Save” button to upload the information.
-<img src="img/image-uploader-video-panel.jpg" /></p>
+ location of the video, write a description and upload a preview image for the video. The user taps the “Save” button to upload the information.</p>
 
-<p>Once the video information is saved, the video settings panel closes and the user is returned to the image uploader (section) where the video preview image now appear.
-<img src="img/image-uploader-video-panel.jpg" /></p>
+<p><img src="img/image-uploader-video-panel.jpg" alt="" /></p>
+
+<p>Once the video information is saved, the video settings panel closes and the user is returned to the image uploader (section) where the video preview image now appear.</p>
+
+<p><img src="img/image-uploader-video-panel.jpg" alt="" /></p>
 
 <p>NOTE: Currently Magento 2 does not allow Drag and Drop for Video Content.</p>
 
-<p><strong>Drag to Arrange Order</strong>
-The order in which images are displayed can be arranged by dragging the image or video to the desired position.
-<img src="img/image-uploader-arrange.jpg" /></p>
+<p><strong>Drag to Arrange Order</strong></p>
 
-<p><strong>Image Settings</strong>
-In some areas of the Magento Admin application uploaded images my have additional settings that effect the display of these images on the Storefront (e.g. Product Creation). These settings can be accessed via the “gear” icon found on the image thumbnail.
-<img src="img/image-uploader-settings.jpg" /></p>
+<p>The order in which images are displayed can be arranged by dragging the image or video to the desired position.
+![](img/image-uploader-arrange.jpg”&gt;</p>
 
-<p><strong>Deleting an Image</strong>
-Likewise, an image may be removed from the Magento Admin application by tapping the “trashcan” icon.
-<img src="img/image-uploader-delete.jpg" /></p>
+<p><strong>Image Settings</strong></p>
 
-<h3 id="style">Dimensions</h3>
-<p><img src="img/multi-image-uploader-style.jpg" /></p>
+<p>In some areas of the Magento Admin application uploaded images my have additional settings that effect the display of these images on the Storefront (e.g. Product Creation). These settings can be accessed via the “gear” icon found on the image thumbnail.</p>
 
-<h3 id="accessibility">Accessibility</h3>
+<p><img src="img/image-uploader-settings.jpg" alt="" /></p>
+
+<p><strong>Deleting an Image</strong></p>
+
+<p>Likewise, an image may be removed from the Magento Admin application by tapping the “trashcan” icon.</p>
+
+<p><img src="img/image-uploader-delete.jpg" alt="" /></p>
+
+<h2 id="dimensions">Dimensions</h2>
+
+<p><img src="img/multi-image-uploader-style.jpg" alt="" /></p>
+
+<h2 id="accessibility">Accessibility</h2>
+
 <p>To initiate the uploader, the buttons should follow button accessibility guidelines: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms-graphical-buttons">http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms-graphical-buttons</a></p>
 
 <p>In the browser upload window, standard behavior should be kept.</p>
 
-<h3 id="assets">Assets</h3>
-<p>PSD files can be found here:
-<a href="src/Image_Video_Uploader.psd">Download Image Uploader PSD source</a></p>
+<h2 id="assets">Assets</h2>
+
+<p><a href="src/Image_Video_Uploader.psd">Download Image Uploader PSD source</a>.</p>
 
 			
 		</div>
