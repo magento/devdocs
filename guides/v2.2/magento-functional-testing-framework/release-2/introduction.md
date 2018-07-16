@@ -1,4 +1,4 @@
----
+ ---
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
@@ -76,14 +76,13 @@ Open the file and check the corresponding dependency:
 }
 ```
 
-## Contents of  <magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf
+## Contents of dev/tests/acceptance
 
 ```
 tests
     _data                       // Additional files required for tests (e.g. pictures, CSV files for import/export, etc.)
     _output                     // The directory is generated during test run. It contains testing reports.
     _suite                      // Test suites
-    functional                  // Functional acceptance tests
     _bootstrap.php              // Script that executes essential initialization routines
     functional.suite.dist.yml   // Codeception functional test suite configuration
 utils                           // Test running utilities
@@ -108,7 +107,7 @@ pre-install.php                 // Script that checks the environment on whether
 The MFTF supports three different locations for storing the tests and test artifacts:
 - `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`
 - `/app/code/<vendor_name>/<module_name>/Test/Mftf/`
-- `<vendor_name>/<module_name>/Test/Mftf`
+
 
 All tests and test data from these locations are merged in the order indicated in the above list.
 
