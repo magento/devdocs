@@ -16,8 +16,8 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you're using:
 
-*	[Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
-*	[CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
+1. [Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
+2. [CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
 
 ## Help if you're just starting out {#apache-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:

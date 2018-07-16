@@ -40,7 +40,7 @@ To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf7
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 {:.bs-callout .bs-callout-info}
-The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 

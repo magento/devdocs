@@ -109,8 +109,8 @@ To upgrade to Apache 2.4:
 
 		apt-get install -y apache2
 
-	{:.bs-callout .bs-callout-info}
-	If the `apt-get install` command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="&#95;blank"}.
+{:.bs-callout .bs-callout-info}
+If the `apt-get install` command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="&#95;blank"}.
 
 3.	Verify the installation.
 
