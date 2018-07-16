@@ -10,7 +10,7 @@ functional_areas:
 
 Bulk operations are actions that are performed on a large scale. Example bulk operations tasks include importing or exporting items, changing prices on a mass scale, and assigning products to a warehouse.
 
-For each indvidual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
+For each individual task of a bulk operation, the system creates a message that is published in a [message queue]( {{page.baseurl}}/config-guide/mq/rabbitmq-overview.html). A consumer runs in the background and processes the messages that it receives. Because tasks are processed in the background through the message queue system, when a merchant launches a bulk operation from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel, control is quickly returned to the merchant. In previous releases, the merchant could not use the Admin panel until all tasks were completed.
 
 The primary Bulk Operation interface is `OperationInterface`. It defines the getter and setter methods the bulk operation uses to create and process messages. The following interfaces are also used:
 
