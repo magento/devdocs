@@ -11,11 +11,14 @@ mftf-release: 2.3.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The MFTF allows you to merge test components defined in XML files such as [tests](./test.html), [pages](./page.html), [sections](./section.html), and [data](./data.html). You can create, delete, or update the component. It is useful for supporting rapid test creation for extensions and customizations.
+The MFTF allows you to merge test components defined in XML files such as [tests], [pages][page], [sections], and [data].
+You can create, delete, or update the component.
+It is useful for supporting rapid test creation for extensions and customizations.
 
 You can specify needed changes to an existing file and merge them to produce a modification of the original that incorporates the specified changes (the "delta").
 
-Merging operates at the XML tag level, triggered by our parser when there are two (or more) entities with the same name. Your update (XML node with changes) must have the same attribute `name` as its base node (target object to be changed).
+Merging operates at the XML tag level, triggered by our parser when there are two (or more) entities with the same name.
+Your update (XML node with changes) must have the same attribute `name` as its base node (target object to be changed).
 
 For example:
 * All tests with `<test name="SampleTest>` will be merged into one.
@@ -23,17 +26,20 @@ For example:
 * All sections with `<section name="SampleAction">` will be merged into one.
 * All data entities with `<entity name="sampleData" type="sample">` will be merged into one.
 
-Although a file name doesn't influence merging, we recommend using the same file names in merging updates. This makes it easier to search later on.
+Although a file name doesn't influence merging, we recommend using the same file names in merging updates.
+This makes it easier to search later on.
 
 ## Add a test
 
-You cannot add another [`<test>`](./test.html) using merging functionality. To add a `<test>`, create a new `*Test.xml` file or add a `<test>` node to an existing `*Test.xml` file.
+You cannot add another [`<test>`][tests] using merging functionality.
+To add a `<test>`, create a new `*Test.xml` file or add a `<test>` node to an existing `*Test.xml` file.
 
 ## Remove a test
 
-Tests cannot be removed while merging. If a [`<test>`](./test.html) must be skipped due to a module completely invalidating a function, you can add the test to the `skip` group.
+Tests cannot be removed while merging.
+If a [`<test>`][tests] must be skipped due to a module completely invalidating a function, you can add the test to the `skip` group.
 
-Learn more about running tests with different options using [robo](./commands/robo.html#run-all-generated-tests) or [codecept](./commands/codeception.html) commands.
+Learn more about running tests with different options using [`mftf`] or [`codecept`] commands.
 
 **Example**
 
@@ -106,7 +112,8 @@ The `AdminLoginTest` result corresponds to:
 
 Any change must include information about where it should be inserted relative to other test steps in the scope of the test.
 
-This is done using the `before` or `after` element. See the previous examples.
+This is done using the `before` or `after` element.
+See the previous examples.
 
 ### Add a test step
 
@@ -224,11 +231,53 @@ The `LogInAsAdminTest` result corresponds to:
 </test>
 ```
 
+### Add several test steps {#insert-after}
+
+**Use case**: Add several actions after the `click` (`stepKey="clickLogin"`) in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file) while merging with the `.../Foo/Test/LogInAsAdminTest.xml` file:
+
+```xml
+<tests ...>
+    <test name="LogInAsAdminTest">
+        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+    </test>
+</tests>
+```
+
+Create the `.../Foo/Test/LogInAsAdminTest.xml` file:
+
+```xml
+<tests ...>
+    <test name="LogInAsAdminTest" insertAfter="clickLogin">
+        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
+        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
+    </test>
+</tests>
+```
+
+The `LogInAsAdminTest` result corresponds to:
+
+```xml
+<test name="LogInAsAdminTest">
+        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
+        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
+        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+</test>
+```
+
 ## Merge pages
 
-Use [page](./page.html) merging to add or remove [sections](./section.html) in your module.
+Use [page] merging to add or remove [sections] in your module.
 
-To merge [pages](./page.html), the `page name` must be the same as in base module. `page name` is set in the `module` attribute.
+To merge [pages][page], the `page name` must be the same as in base module.
+`page name` is set in the `module` attribute.
 
 ### Add a section
 
@@ -293,13 +342,14 @@ The `BaseBackendPage` result corresponds to:
 
 ## Merge sections
 
-User merging to add, remove, or update [elements](././section.html#element-tag) in sections.
+User merging to add, remove, or update [elements] in sections.
 
 All sections with the same _file name_, _section name_, and _element name_ are merged during test generation.
 
 ### Add an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires a new `mergeElement` element in the `AdminLoginFormSection`. Add `mergeElement` to the `AdminLoginFormSection`:
+**Use case**: The `FooBackend` module extends the `Backend` module and requires a new `mergeElement` element in the `AdminLoginFormSection`.
+Add `mergeElement` to the `AdminLoginFormSection`:
 
 ```xml
 <sections ...>
@@ -334,7 +384,8 @@ The `AdminLoginFormSection` result corresponds to:
 
 ### Remove an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires deletion of `username` in the `AdminLoginFormSection`. Remove `username` from the `AdminLoginFormSection`:
+**Use case**: The `FooBackend` module extends the `Backend` module and requires deletion of `username` in the `AdminLoginFormSection`.
+Remove `username` from the `AdminLoginFormSection`:
 
 ```xml
 <sections ...>
@@ -367,7 +418,8 @@ The `AdminLoginFormSection` result corresponds to:
 
 ### Update an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires change of selector in `username` in the `AdminLoginFormSection`. Update `username` in the `AdminLoginFormSection` (the `.../Backend/Section/AdminLoginFormSection.xml` file):
+**Use case**: The `FooBackend` module extends the `Backend` module and requires change of selector in `username` in the `AdminLoginFormSection`.
+Update `username` in the `AdminLoginFormSection` (the `.../Backend/Section/AdminLoginFormSection.xml` file):
 
 ```xml
 <sections ...>
@@ -401,13 +453,15 @@ The `AdminLoginFormSection` result corresponds to:
 
 ## Merge data
 
-You can add or update `<data>` elements within an `<entity>`. Removal of individual `<data>` tags is not supported.
+You can add or update `<data>` elements within an `<entity>`.
+Removal of individual `<data>` tags is not supported.
 
 Entities and data with the same _file name_, _entity name and type_, and _data key_ are merged during test generation.
 
 ### Add data
 
-**Use case**: The `FooSample` module extends the `Sample` module and requires a new data item `thirdField` in the `_defaultSample` entity. Add `<data key="thirdField">field3</data>` to the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
+**Use case**: The `FooSample` module extends the `Sample` module and requires a new data item `thirdField` in the `_defaultSample` entity.
+Add `<data key="thirdField">field3</data>` to the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
 
 ```xml
 <entities ...>
@@ -440,7 +494,8 @@ The `_defaultSample` result corresponds to:
 
 ### Update data
 
-**Use case**: The `FooSample` module extends the `Sample` module and requires change of the `firstField` data item in the `_defaultSample` entity. Change `firstField` to `<data key="firstField">overrideField</data>` in the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
+**Use case**: The `FooSample` module extends the `Sample` module and requires change of the `firstField` data item in the `_defaultSample` entity.
+Change `firstField` to `<data key="firstField">overrideField</data>` in the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
 
 ```xml
 <entities ...>
@@ -470,5 +525,12 @@ The `_defaultSample` results corresponds to:
 </entity>
 ```
 
+<!-- Link definitions -->
 
-
+[`codecept`]: ./commands/codeception.html
+[`mftf`]: ./commands/mftf.html
+[data]: ./data.html
+[elements]: ./section.html#element-tag
+[page]: ./page.html
+[sections]: ./section.html
+[tests]: ./test.html

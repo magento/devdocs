@@ -49,7 +49,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Sender Email | `trans_email/ident_custom2/email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### Contacts sensitive and system-specific paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
 
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|--------------|

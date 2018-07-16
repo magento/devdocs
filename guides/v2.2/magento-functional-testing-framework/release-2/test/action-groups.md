@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/action-groups.md
 functional_areas:
  - Testing
-mftf-release: 2.1.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -190,6 +190,7 @@ It may contain one or more `<actionGroup>`.
 Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|required|Identifier of the action group.
+`extends`|string|optional|Identifies action group to extend.
 
 It may contain `<arguments>`.
 

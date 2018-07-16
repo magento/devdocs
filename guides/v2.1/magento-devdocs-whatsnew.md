@@ -12,6 +12,9 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added a topic about the [Magento binding syntax](https://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/magento-bindings.html).|2.2.x, 2.3.x|New topic|Jun 07
+Added a new topic describing how to [enable/disable logging](https://devdocs.magento.com/guides/v2.2/config-guide/cli/logging.html) with the Magento CLI.|2.2.x, 2.3.x|New topic|Jun 04
+Updated the storage capacity information for Magento Commerce Cloud Pro architecture information in the [Production Technology Stack](https://devdocs.magento.com/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack) documentation for Magento Cloud [v2.1](https://devdocs.magento.com/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack), [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack), and [v2.3](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).|2.x|Technical changes|Jun 04
 [These changes](https://devdocs.magento.com/guides/v2.1/config-guide/multi-site/ms_nginx.html) show users how to simplify Nginx configs to host multiple Magento websites and store views with one virtual host file. It allows to that Nginx configuration to stay much cleaner, and more maintainable.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 1
 
 {% collapsibleh2 May 2018 %}
