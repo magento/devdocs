@@ -2341,7 +2341,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank"><code class="highlighter-rouge">always_populate_raw_post_data = -1</code></a></p>
+    <p>Set <a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="&#95;blank"><code class="highlighter-rouge">always_populate_raw_post_data = -1</code></a></p>
 
     <p><code class="highlighter-rouge">always_populate_raw_post_data</code> is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate <code class="highlighter-rouge">$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.</p>
   </li>
@@ -2357,24 +2357,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
   <li>
-    <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank"><code class="highlighter-rouge">asp_tags</code></a></p>
+    <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="&#95;blank"><code class="highlighter-rouge">asp_tags</code></a></p>
 
     <p>If <code class="highlighter-rouge">asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
 
     <p><code class="highlighter-rouge">asp_tags</code> will be removed in PHP 7.</p>
   </li>
   <li>
-    <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
+    <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="&#95;blank"><code class="highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
 
-    <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
+    <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
 
-    <p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
+    <p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="&#95;blank"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
-</div>
+<p class="bs-callout bs-callout-info">To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in’s configuration. For more information, see the next section.</p>
 </div>
   </div>
 
@@ -2385,7 +2383,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <b class="collapsible-title">To find the PHP configuration file, php.ini: </b>
     <div class="collapsible-content"><p>To find the web server configuration, run a <a href="/guides/v2.1/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
 
-<p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
+<p><img src="/common/images/config_phpini-webserver.png" alt="" /></p>
 
 <p>To locate the PHP command-line configuration, enter</p>
 
@@ -2394,9 +2392,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Use the value of Loaded Configuration file.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
-</div>
+<p class="bs-callout bs-callout-info">If you have only one <code class="highlighter-rouge">php.ini</code> file, make the changes in that file. If you have two <code class="highlighter-rouge">php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
 </div>
   </div>
 
@@ -2434,7 +2430,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <b class="collapsible-title">To set PHP options: </b>
     <div class="collapsible-content"><ol>
   <li>Open a <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
-  <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
+  <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="&#95;blank">time zone settings</a></li>
   <li>
     <p>Locate the following setting and uncomment it if necessary:</p>
 

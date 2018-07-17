@@ -1542,11 +1542,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The sequence of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.</p>
 
-<p>To define a dependency in a patch, make a static reference to the patch class. The class can be in any module.</p>
+<p>To define a dependency in a patch, add the method <code class="highlighter-rouge">public static function getDependencies()</code>
+to the patch class and return the class names of the patches this patch depends on. The dependency can be in any module.</p>
 
-<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">[</span>
-  <span class="nx">\SomeVendor\SomeModule\Setup\Patch\Data\SomePatch</span><span class="o">::</span><span class="na">class</span>
-<span class="p">];</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">getDependencies</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="nx">\SomeVendor\SomeModule\Setup\Patch\Data\SomePatch</span><span class="o">::</span><span class="na">class</span>
+    <span class="p">];</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <p>The following code sample defines a data patch class that has a dependency.</p>

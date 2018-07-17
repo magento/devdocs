@@ -2344,24 +2344,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
   <li>
-    <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank"><code class="highlighter-rouge">asp_tags</code></a></p>
+    <p>Disable <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="&#95;blank"><code class="highlighter-rouge">asp_tags</code></a></p>
 
     <p>If <code class="highlighter-rouge">asp_tags are</code> enabled, errors display when accessing PHTML templates.</p>
 
     <p><code class="highlighter-rouge">asp_tags</code> were removed in PHP 7.</p>
   </li>
   <li>
-    <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
+    <p>Enable <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="&#95;blank"><code class="highlighter-rouge">opcache.save_comments</code></a>, which is required for Magento 2.1 and later.</p>
 
-    <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
+    <p>We recommend you enable the <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OpCache</a> for performance reasons. The OPcache is enabled in many PHP distributions.</p>
 
     <p>Magento 2.1 and later use PHP code comments for code generation.</p>
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
-</div>
+<p class="bs-callout bs-callout-info">To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in’s configuration. For more information, see the next section.</p>
 
 <h2 id="php-required-find">Step 1: Find PHP configuration files</h2>
 <p>This section discusses how you find the configuration files necessary to update required settings.</p>
@@ -2370,7 +2368,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To find the web server configuration, run a <a href="/guides/v2.3/install-gde/prereq/optional.html#install-optional-phpinfo"><code class="highlighter-rouge">phpinfo.php</code> file</a> in your web browser and look for the Loaded Configuration File as follows:</p>
 
-<p><img src="/common/images/config_phpini-webserver.png" width="700px" /></p>
+<p><img src="/common/images/config_phpini-webserver.png" alt="" /></p>
 
 <p>To locate the PHP command-line configuration, enter</p>
 
@@ -2379,9 +2377,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Use the value of Loaded Configuration file.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
-</div>
+<p class="bs-callout bs-callout-info">If you have only one <code class="highlighter-rouge">php.ini</code> file, make the changes in that file. If you have two <code class="highlighter-rouge">php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
 
 <h3 id="find-opcache-configuration-settings">Find OPcache configuration settings</h3>
 
@@ -2415,7 +2411,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Open a <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
-  <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a></li>
+  <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="&#95;blank">time zone settings</a></li>
   <li>
     <p>Locate the following setting and uncomment it if necessary:</p>
 
@@ -2469,7 +2465,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
   </li>
 </ol>
-
 
 			
 		</div>

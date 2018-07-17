@@ -1948,6 +1948,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       	<p>One way to update the database schema automatically is using the <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
     </tr>
     <tr>
+      <td><p>Compiled Config</p></td>
+      <td><p> compiled_config </p></td>
+      <td><p>Compilation configuration</p></td>
+    </tr>
+    <tr>
       <td><p>Entity attribute value (EAV)</p></td>
       <td><p>eav</p></td>
       <td><p>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).</p>
@@ -2005,6 +2010,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         block_html: 1
        collections: 1
             db_ddl: 1
+   compiled_config: 1
                eav: 1
          full_page: 1
          translate: 1
@@ -2089,6 +2095,7 @@ layout
 block_html
 collections
 db_ddl
+compiled_config
 eav
 full_page
 translate
