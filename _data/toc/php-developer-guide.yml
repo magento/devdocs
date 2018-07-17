@@ -176,7 +176,7 @@ pages:
           versions: ["2.3"]
           children:
 
-            - label: Delcarative schema overview
+            - label: Declarative schema overview
               url: /extension-dev-guide/declarative-schema/
 
             - label: Migrate install/upgrade scripts to declarative schema

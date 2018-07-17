@@ -2,7 +2,7 @@
 group: cloud
 title: GitHub integration
 version: 2.1
-github_link: cloud/project/project-integrate-github.md
+github_link: cloud/integrations/github-integration.md
 functional_areas:
   - Cloud
   - Setup
@@ -14,44 +14,21 @@ We strongly recommend you use a *private* GitHub repository.
 
 This integration enables you to:
 
-*	Create a new environment when you create a branch or opening a pull request on GitHub.
-*	Rebuild the environment when you push new code to GitHub.
-*	Delete the environment when you merge a pull request.
+-  Create a new environment when you create a branch
+-  Redeploy the environment when you merge a pull request
+-  Delete the environment when you delete the branch
 
 You must obtain a GitHub token and a webhook to continue the process.
 
-## Generate a GitHub token {#cloud-int-gh-token}
-To perform this task, you must be a member of a group with write access to the GitHub repository. (In other words, you must be able to push to the repository.)
+## Generate a GitHub token
+You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="\_blank"}.
 
-#### To generate a token:
-
-1.	Log in to GitHub.
-1.	In your personal settings, on the **Personal access tokens** tab page, click [**Generate new token**](https://github.com/settings/tokens/new){:target="_blank"}.
-1.	In the **Token description** field, enter a meaningful name.
-1.	Select checkboxes corresponding to how you intend to use the token:
-
-	*	To integrate with public repositories, select **public_repo**
-	*	To integrate with your personal, private repositories, select **repo**
-	*	To integrate with your organization's private repositories, select **repo** and **read:org**
-
-	The following figure shows an example of creating a token that can be used to integrate with a private repository to which you have write access:
-
-	![Create a GitHub token for a private repository]({{ site.baseurl }}/common/images/cloud_github-token.png){:width="600px"}
-1.	Click **Generate token**.
-1.	Copy the token to the clipboard.
-
-	![Create a GitHub token for a private repository]({{ site.baseurl }}/common/images/cloud_github-token-copy.png){:width="600px"}
-
-## Enable the GitHub integration {#cloud-int-gh-enable}
+## Enable the GitHub integration
 This section discusses how to enable the GitHub integration.
-
-### Get started
-To get started:
 
 {% include cloud/cli-get-started.md %}
 
-### Enable the integration
-To enable the GitHub integration for your environment:
+#### To enable the GitHub integration:
 
 1.	Enable the integration:
 

@@ -99,7 +99,7 @@ functional_areas:
    </tr>
 </table>
 
-<h2>Next step</h2>
+## Next step
 <ul>
    <li><a href="{{ page.baseurl }}/get-started/gs-web-api-response.html">Status codes and responses</a></li>
 </ul>

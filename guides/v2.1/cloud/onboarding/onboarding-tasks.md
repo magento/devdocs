@@ -28,15 +28,19 @@ creating Technical Admin users that can help with set up, customization, and
 development work.
 
 ## Project portal
-Once you have an account with a provisioned environment, you can use the
-Magento Project Portal that guides you through the process to build and launch
-your {{site.data.var.ece}} store. The portal provides a Getting Started guide
+Once you have an account, you can use the Magento Project Portal to manage the
+project for your {{site.data.var.ece}} store. The portal provides a Getting Started guide
 and an interactive workflow that helps project administrators, business users,
 and developers with the tasks required to develop, build, test, and launch your
 site.
 
-When you are logged into your Magento account, access the portal
-from the Magento tab on the My Account page. Click View Project Page in the
+**Open the Magento Project Portal**
+
+1. Log in to your Magento account.
+
+2. On the My Account page, click the Magento tab to see the projects in your account.
+
+3. **Click View Project Page** in the
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
 ## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
@@ -88,7 +92,7 @@ For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projec
 ## Sign up for Magento status {#status}
 Get updates about {{site.data.var.ece}}
 platform environments and related services from the
-[Status page](https://status.magento.cloud){:target="\_blank"} page.
+[Status page](https://status.magento.cloud){:target="\_blank"}.
 
 The page lists current status for all {{site.data.var.ece}} components and
 services followed by notifications about incident reports, service upgrades,
@@ -103,12 +107,10 @@ want to track. Sign up from the
 [Subscription page](https://status.magento.cloud/subscribe){:target="\_blank"}.
 
 ## Access your Magento Admin panel {#admin}
-Users that have administrative access to the Admin panel can add users, configure
-store services, complete store set up and customization work, and more.
+Users that have administrative access to the Admin panel can add users, configure store services, complete store set up and customization work, and more.
 
-For a new project, the first step after getting the welcome email is to secure
-Admin access to the project by changing the password on the Project Owner
-account.
+For a new project, the first step after getting the welcome email is to secure Admin access to the project by changing the password on the Project Owner
+account. The default username for this account is `Admin`.
 
 You can submit a password change request using either of the following methods:
 
