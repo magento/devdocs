@@ -135,6 +135,7 @@ The configuration to generate a single test in the suite:
 ```
 
 Complex configuration to generate few non-suite tests, a single test in a suite, and an entire suite:
+
 ```json
 {  
    "tests":[  
@@ -192,6 +193,12 @@ It also enables auto-completion in PhpStorm.
 `generate:urn-catalog <path>`
 
 `<path>` is a path to the PhpStorm folder containing a file `misc.xml` (typically located in `<project root>/.idea/`).
+
+#### Options
+
+Option | Description
+---|---
+`-f, --force` | Forces creation of the `misc.xml` file if it does not exist in the given `path`.
 
 #### Example
 
