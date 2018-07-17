@@ -117,9 +117,9 @@ You can submit a password change request using either of the following methods:
 -   Locate the welcome email sent to the Project Owner email address and
     follow the link to change your password.
 
--   Copy the store URL from the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
+-   Copy the store URL from the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html)
     into a browser. Then, append `/admin` to the end of the URL to open
-    the sign in page. Click the "Forgot password?" link to send a password
+    the sign in page. Click the **Forgot password?** link to send a password
     change request to the Project Owner email address.
 
 After you submit the password change request, check your email for the password
