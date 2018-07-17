@@ -15,9 +15,9 @@ Suites are essentially groups of tests that run in the specific conditions (prec
 They enable you including, excluding, and grouping tests for a customized test run when you need it.
 You can form suites using separate tests, groups, and modules.
 
-Each suite must be defined in the _\<magento 2 root\>/dev/tests/acceptance/tests/_suite/suite.xml_ file.
-The generated tests for each suite go into a separate directory under _\<magento 2 root\>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/\_generated_.
-By default, all generated tests are stored in the _default_ suite under _.../Magento/FunctionalTest/\_generated/default_
+Each suite must be defined in the `<magento 2 root>/dev/tests/acceptance/tests/_suite/suite.xml` file.
+The generated tests for each suite go into a separate directory under `<magento 2 root>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated/`.
+By default, all generated tests are stored in the _default_ suite under `.../Magento/FunctionalTest/_generated/default/`
 
 {%
 include note.html

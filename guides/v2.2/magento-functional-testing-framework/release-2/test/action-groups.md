@@ -21,7 +21,7 @@ The following diagram shows the structure of an MFTF action group:
 
 The following conventions apply to MFTF action groups:
 
--  All action groups are declared in XML files and stored in the _\<module\>/ActionGroup/_ directory.
+-  All action groups are declared in XML files and stored in the `<module>/ActionGroup/` directory.
 -  Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup.xml`.
 
 The XML format for the `actionGroups` declaration is:
