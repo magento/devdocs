@@ -297,7 +297,7 @@ Extend data to reuse entities in your module.
 
 ### Update a data entry
 
-__Use case__: Create the `DivPanelGreen` entity that is similar to the `DivPanel` entity but of a different color.
+__Use case__: Create an entity named `DivPanelGreen`, which is similar to the `DivPanel` entity, except that it is green.
 
 > Entities with "extends":
 
@@ -333,7 +333,7 @@ __Use case__: Create the `DivPanelGreen` entity that is similar to the `DivPanel
 
 ### Add a data entry
 
-__Use case__: Create the `DivPanelGreen` entity that is similar to the `DivPanel` entity but with a specific panel color.
+__Use case__: Create an entity named `DivPanelGreen`, which is similar to the `DivPanel` entity, except that it has a specific panel color.
 
 
 > Entities with "extends":
