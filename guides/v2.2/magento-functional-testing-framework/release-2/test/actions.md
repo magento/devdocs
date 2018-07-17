@@ -735,8 +735,8 @@ Generates a date for use in `{$stepKey}` format in other test actions.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`date`|string|required| Data input to parse, uses same functionality as php `strtotime()` function.
-`format`|string|required| Format to save given date in, uses same formatting as php `date()` function.
+`date`|string|required| Date input to parse. Uses the same functionality as the PHP `strtotime()` function.
+`format`|string|required| Format in which to save the given date. Uses the same formatting as the PHP `date()` function.
 `timezone`|string|optional| Timezone to use when generating date, defaults to `America/Los_Angeles`.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -865,7 +865,7 @@ Specifies a CLI command to execute in a Magento environment.
 Attribute|Type|Use|Description
 ---|---|---|---
 `command`|string |optional| CLI command to be executed in Magento environment.
-`arguments`|string |optional| Unescaped arguments to be passed in with CLI command. 
+`arguments`|string |optional| Unescaped arguments to be passed in with the CLI command. 
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.

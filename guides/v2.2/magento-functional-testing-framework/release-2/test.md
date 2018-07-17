@@ -20,7 +20,7 @@ Any failed [assertion] within a test constitutes a failed test.
 {%
 include note.html
 type = "info"
-content='`<before>` and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
+content='`<before>` and `<after>` hooks are not global within `<tests>`.
 They only apply to the `<test>` in which they are declared.
 
 The steps in `<after>` are run in both successful **and** failed test runs.'
@@ -62,7 +62,7 @@ The following conventions apply to MFTF tests:
 * All names within the framework are in the CamelCase format.
 * `<test>` name must be alphanumeric.
 * Each action and action group has its own identifier `<stepKey>` for reference purposes.
-* A test may have any number of [assertions][assertion], at any point within the `<test>`.
+* A test may have any number of [assertions][assertion] at any point within the `<test>`.
 * If `<test>` is included in `<suite>`, it **cannot be generated in isolation** to the rest of the contents of the suite (see [suites] for details).
 
 Multiple `<test>` tags per XML file can make it hard to find and organize tags.
@@ -88,7 +88,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|optional|The test identifier.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
-`insertBefore`|string|optional| This option is used for [merging]. It enables you to add all test actions contained in the test into test with the same name BEFORE the test step with `stepKey` that you assigned in `insertBefore`.
+`insertBefore`|string|optional| This option is used for [merging]. It enables you to add all test actions contained in the original test into a test with the same name BEFORE the test step with `stepKey` that you assigned in `insertBefore`.
 `insertAfter`|string|optional| Set `stepKey` of the test step after which you want to insert the test when [merging].
 `extends`|string|optional|A name of the parent test to [extend].
 
@@ -96,12 +96,10 @@ Attribute|Type|Use|Description
 
 ### annotations {#annotations-tag}
 
-Annotations are supported by both [Codeception] and [Allure].
+[Annotations] are supported by both [Codeception] and [Allure].
 
 Codeception annotations typically provide metadata and are able to influence test selection.
 Allure annotations provide metadata for reporting.
-
-See more about [Annotations].
 
 ### before {#before-tag}
 
@@ -144,7 +142,7 @@ Attribute|Type|Use
 `name`|string|optional| Name of the argument.
 `value`|string|optional| Value of the argument.
 
-See more about [Action groups][action group].
+See [Action groups][action group] for more information.
 
 <!-- Link definitions -->
 

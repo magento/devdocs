@@ -17,12 +17,12 @@ The Magento Functional Testing Framework (MFTF) introduces the command line inte
 {%
 include note.html
 type='info'
-content='`mftf` commands substitute the `robo` commands that were used in previous releases.'
+content='`mftf` commands replace the `robo` commands that were used in previous releases.'
 %}
 
 ## Command format
 
-Assuming that you are working in the project root directory in your terminal where you have installed the framework as a composer dependency, run commands using the following format:
+In the project root directory (where you have installed the framework as a composer dependency), run commands using the following format:
 
 ```bash
 vendor/bin/mftf command [options] [arguments]
@@ -30,38 +30,38 @@ vendor/bin/mftf command [options] [arguments]
   
 ## Useful commands
 
-The following is a list of the most used commands.
+Use the following commands to run commonly-performed tasks.
 
-#### Build the project
+### Build the project
 
 ```bash
 vendor/bin/mftf build:project
 ```
 
-#### Upgrade the project
+### Upgrade the project
 
 ```bash
 vendor/bin/mftf build:project --upgrade
 ```
 
-#### Generate all tests in PHP
+### Generate all tests in PHP
 
 ```bash
 vendor/bin/mftf generate:tests
 ```
-#### Generate one or more tests in PHP
+### Generate one or more tests in PHP
 
 ```bash
 vendor/bin/mftf generate:tests testName01 testName02 testName03
 ```
 
-#### Run and generate all tests that contain the `group="example"` annotation 
+### Run and generate all tests that contain the `group="example"` annotation 
 
 ```bash
 vendor/bin/mftf run:group example
 ```
 
-#### Run and generate all tests
+### Run and generate all tests
 
 ```bash
 vendor/bin/mftf run:tests
@@ -85,7 +85,7 @@ vendor/bin/mftf build:project [option]
 
 Option | Description
 ---|---
-`-u`, `--upgrade` | Upgrades existing MFTF tests according to last major release requirements. Only tests in the default location will be upgraded with this flag. Example: `build:project --upgrade`.
+`-u`, `--upgrade` | Upgrades existing MFTF tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: `build:project --upgrade`.
 
 ### `generate:tests`
 
@@ -104,11 +104,11 @@ vendor/bin/mftf generate:tests [option] [test name] [test name]
 
 Option | Description|
 ---|---
-`--config`   | Creates a single manifest file with a list of all tests by default: `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`. You can split it into multiple groups using `--config parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`. Available values: `default` (default), `singleRun`(same as `default`), and `parallel`. Example: `generate:tests --config parallel`.
-`--force`    | Forces tests generation regardless of modules merge order in the Magento instance. Example: `generate:tests --force`.
+`--config`   | Creates a single manifest file with a list of all tests. The default location is `tests/functional/Magento/FunctionalTest/_generated/testManifest.txt`.<br/> You can split it into multiple groups using `--config parallel`; the groups will be generated in `_generated/groups/` like `_generated/groups/group1.txt, group2.txt, ...`.</br> Available values: `default` (default), `singleRun`(same as `default`), and `parallel`.</br> Example: `generate:tests --config parallel`.
+`--force`    | Forces test generation, regardless of the module merge order defined in the Magento instance. Example: `generate:tests --force`.
 `--lines`    | Sets the number of lines that determines the group size when `--config parallel` is used. The __default value__ is `500`. Example: `generate:tests --config parallel --lines 400`
 `--tests`    | Defines the test configuration as a JSON string.
-`--debug`    | An option for giving more details (such as a filename where the error is located) when the test generation fails because of an invalid XML schema. This parameter takes extra processing time and should be used when the test generation has been already failed.
+`--debug`    | Returns additional debug information (such as the filename where an error occurred) when test generation fails because of an invalid XML schema. This parameter takes extra processing time. Use it after test generation has failed once.
 
 #### Examples of the JSON configuration
 
@@ -134,7 +134,7 @@ The configuration to generate a single test in the suite:
 }
 ```
 
-Complex configuration to generate few non-suite tests, a single test in a suite, and an entire suite:
+Complex configuration to generate a few non-suite tests, a single test in a suite, and an entire suite:
 
 ```json
 {  
@@ -152,7 +152,7 @@ Complex configuration to generate few non-suite tests, a single test in a suite,
 }
 ```
 
-The command that encodes the above configuration:
+The command that encodes this complex configuration:
 
 ```bash
 vendor/bin/mftf generate:tests --tests "{\r\n\"tests\":[\r\n\"general_test1\",\r\n\"general_test2\",\r\n\"general_test3\"\r\n],\r\n\"suites\":{\r\n\"sample\":[\r\n\"suite_test1\"\r\n],\r\n\"sample2\":null\r\n}\r\n}"
@@ -173,7 +173,8 @@ Generates one or more suites based on XML declarations.
 
 `generate:suite <suites> <suites> ...`
 
-`<suites>` is a placeholder for the suite name that you want to generate. If more than one, list them using the space separator.
+`<suites>` represents a suite name.
+To generate multiple suites, separate each name with a space.
 
 #### Example
 
@@ -185,14 +186,14 @@ vendor/bin/mftf generate:suite suite1 suite2
 
 #### Description
 
-Generates a URN catalog enabling PhpStorm to recognize and highlight URNs.
+Generates a URN catalog, enabling PhpStorm to recognize and highlight URNs.
 It also enables auto-completion in PhpStorm.
 
 #### Usage
 
 `generate:urn-catalog <path>`
 
-`<path>` is a path to the PhpStorm folder containing a file `misc.xml` (typically located in `<project root>/.idea/`).
+`<path>` is a path to the PhpStorm folder containing the `misc.xml` file (typically located in `<project root>/.idea/`).
 
 #### Options
 
@@ -210,7 +211,7 @@ vendor/bin/mftf generate:urn-catalog /Users/user/Documents/Project/.idea/
 
 #### Description
 
-Cleans any configuration files from the environment as well as any generated artifacts.
+Cleans any configuration files and generated artifacts from the environment.
 The `.env` file is not affected.
 
 #### Usage
@@ -221,7 +222,7 @@ The `.env` file is not affected.
 
 Option|Description
 ---|---
-`--hard` | The flag forces resetting the configuration files.
+`--hard` | Forces a reset of the configuration files.
 
 #### Example
 
@@ -241,7 +242,7 @@ Generates and executes the listed groups of tests using Codeception.
 
 Option | Description
 ---|---
-`-k, --skip-generate` | Skips generating from the source XML; executes the specified group(s) of tests that were generated previously.
+`-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
 
 #### Examples
 
@@ -269,7 +270,7 @@ Generates and executes tests by name using Codeception.
 
 Option | Description
 ---|---
-`-k, --skip-generate` | Skips generating from the source XML; executes the specified group(s) of tests that were generated previously.
+`-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests.
 
 #### Examples
 
@@ -287,18 +288,18 @@ vendor/bin/mftf run:group -k -- LoginCustomerTest StorefrontCreateCustomerTest
 
 ### `upgrade:tests`
 
-Applies all the MFTF major version upgrade scripts to test components in given path (`test.xml`, `data.xml`, etc).
+Applies all the MFTF major version upgrade scripts to test components in the given path (`test.xml`, `data.xml`, etc).
 
 #### Usage
 
 `upgrade:tests <path>`
 
 `<path>` is the path that contains MFTF test components that need to be upgraded.
-The command searches recursively for any `*.xml` to attempt to upgrade.
+The command searches recursively for any `*.xml` files to upgrade.
 
 #### Examples
 
-To upgrade all test materials inside any `dev/tests/acceptance/tests` modules:
+To upgrade all test components inside modules in the `dev/tests/acceptance/tests` directory:
 
 ```bash
 vendor/bin/mftf upgrade:tests /Users/user/magento2/dev/tests/acceptance/tests/

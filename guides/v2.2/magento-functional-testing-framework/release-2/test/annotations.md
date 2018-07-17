@@ -93,7 +93,7 @@ content="Group values cannot collide with [suite] names."
 
 {% include note.html
 type="tip"
-content="Add `<skip>` to the test if you want to skip it during test run."
+content="Add `<skip>` to the test to skip it during test run."
 %}
 
 Attribute|Type|Use|Definition
@@ -200,7 +200,7 @@ Attribute|Type|Use
 
 ### skip
 
-The `<skip>` element is used to skip a test.
+Use the `<skip>` element to skip a test.
 It contains one or more child elements `<issueId>` to specify one or more issues that cause the test skipping.
 
 ##### issueId

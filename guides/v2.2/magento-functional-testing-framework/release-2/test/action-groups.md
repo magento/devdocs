@@ -189,7 +189,7 @@ It may contain one or more `<actionGroup>`.
 Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|required|Identifier of the action group.
-`extends`|string|optional|Identifies action group to extend.
+`extends`|string|optional|Identifies the action group to extend.
 
 It may contain `<arguments>`.
 

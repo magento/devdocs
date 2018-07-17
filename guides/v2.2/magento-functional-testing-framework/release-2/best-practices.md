@@ -21,29 +21,28 @@ Check out our best practices below to ensure you're getting the absolute most ou
 
 ## `actionGroups` vs `extends`
 
-An action group is used to group a set of actions to be reused multiple times.
+Use an action group to wraps a set of actions to reuse them multiple times.
 
-An [extension] is used when a test or action group needs to be repeated with the exception of a few steps.
+Use an [extension] when a test or action group needs to be repeated with the exception of a few steps.
 
 ### When to use `extends`
 
-Consider to use `extends` in your new test or action group when at least one of the following conditions is applicable to your case:
+Use `extends` in your new test or action group when at least one of the following conditions is applicable to your case:
 
-1. You want to keep the original test; without any modifications to that test.
+1. You want to keep the original test without any modifications.
 2. You want to create a new test that follows the same path as the original test.
-3. You want a new action group that behaves similar to the existing action group but you do not want to change the functionality of the original action group.
+3. You want a new action group that behaves similarly to the existing action group, but you do not want to change the functionality of the original action group.
 
 ### When to avoid `extends`
 
-Consider to avoid `extends` when at least one of the following conditions is applicable to your case:
-
+Do not use `extends` in the following conditions:
 1. You want to change the functionality of the test or action group and do not need to run the original version.
 2. You plan to merge the base test or action group.
 
 The following pattern is used when merging with `extends`:
-1. Original test is merged
-2. Extended test is created from the merged original test
-3. Extended test is merged
+1. The original test is merged.
+2. The extended test is created from the merged original test.
+3. The extended test is merged.
 
 ## Annotation
 

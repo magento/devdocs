@@ -12,25 +12,25 @@ mftf-release: 2.3.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-There are cases when you need to create a bunch of tests that are very similar to each other.
-For example, only one or to parameters (for example, URL) must vary between tests.
-To avoid copy-pasting and save some time the Magento Functional Testing Framework (MFTF) enables you to extend the test components such as [test], [data], and [action group].
+There are cases when you need to create many tests that are very similar to each other.
+For example, only one or two parameters (for example, URL) might vary between tests.
+To avoid copy-pasting and to save some time the Magento Functional Testing Framework (MFTF) enables you to extend test components such as [test], [data], and [action group].
 You can create or update any component of the parent body in your new test/action group/entity.
 
-* A test starting with `<test name="SampleTest" extends="ParentTest">` creates a new test `SampleTest` that takes body of existing test `ParentTest` and adds to it the body of `SampleTest`.
-* An action group starting with `<actionGroup name="SampleActionGroup" extends="ParentActionGroup">` creates a new action group based on the `ParentActionGroup` but with the changes specified in `SampleActionGroup`.
+* A test starting with `<test name="SampleTest" extends="ParentTest">` creates a test `SampleTest` that takes body of existing test `ParentTest` and adds to it the body of `SampleTest`.
+* An action group starting with `<actionGroup name="SampleActionGroup" extends="ParentActionGroup">` creates an action group based on the `ParentActionGroup`, but with the changes specified in `SampleActionGroup`.
 * An entity starting with `<entity name="SampleEntity" extends="ParentEntity">` creates an entity `SampleEntity` that is equivalent to merging the `SampleEntity` with the `ParentEntity`.
 
 Specify needed variations for a parent object and produce a copy of the original that incorporates the specified changes (the "delta").
 
-Unlike merging the parent test (or action group) will still exist after the test generation.
+Unlike merging, the parent test (or action group) will still exist after the test generation.
 {:bs-callout bs-callout-info}
 
 ## Extending tests
 
 ### Update a test step
 
-__Use case__: Create two similar tests with different `url` in a test step.
+__Use case__: Create two similar tests with different `url` (`"{{AdminCategoryPage.url}}"` and `"{{OtherCategoryPage.url}}"`) in a test step.
 
 > Test with "extends":
 
@@ -78,7 +78,7 @@ __Use case__: Create two similar tests with different `url` in a test step.
 
 ### Add a test step
 
-__Use case__: Create two similar tests where the second test contains two more steps:
+__Use case__: Create two similar tests where the second test contains two additional steps:
 
 * `checkOption` before `click` (`stepKey="clickLogin"`)
 * `seeInCurrentUrl` after `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file)
@@ -126,7 +126,7 @@ __Use case__: Create two similar tests where the second test contains two more s
 
 ### Update a test annotation
 
-__Use case__: Create two similar tests where the second one contains two more actions in the `before` hook:
+__Use case__: Create two similar tests where the second one contains two additional actions in the `before` hook:
 
 * `checkOption` before `click` (`stepKey="clickLogin"`)
 * `seeInCurrentUrl` after `click` in the `LogInAsAdminTest` test (in the `.../Backend/Test/LogInAsAdminTest.xml` file)
@@ -240,8 +240,8 @@ Modify the action group to use another product.
 
 ### Add an action
 
-__Use case__: The `GetProductCount` action group grabs the count of products.
-Add a new test `VerifyProductCount` that will assert the count of products:
+__Use case__: The `GetProductCount` action group returns the count of products.
+Add a new test `VerifyProductCount` that asserts the count of products:
 
 > Action groups with "extends":
 

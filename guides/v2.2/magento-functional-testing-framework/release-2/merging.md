@@ -11,14 +11,14 @@ mftf-release: 2.3.0
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The MFTF allows you to merge test components defined in XML files such as [tests], [pages][page], [sections], and [data].
+The MFTF allows you to merge test components defined in XML files, such as [tests], [pages][page], [sections], and [data].
 You can create, delete, or update the component.
 It is useful for supporting rapid test creation for extensions and customizations.
 
 You can specify needed changes to an existing file and merge them to produce a modification of the original that incorporates the specified changes (the "delta").
 
 Merging operates at the XML tag level, triggered by our parser when there are two (or more) entities with the same name.
-Your update (XML node with changes) must have the same attribute `name` as its base node (target object to be changed).
+Your update (XML node with changes) must have the same attribute `name` as its base node (the target object to be changed).
 
 For example:
 * All tests with `<test name="SampleTest>` will be merged into one.
@@ -276,7 +276,7 @@ The `LogInAsAdminTest` result corresponds to:
 
 Use [page] merging to add or remove [sections] in your module.
 
-To merge [pages][page], the `page name` must be the same as in base module.
+To merge [pages][page], the `page name` must be the same as in the base module.
 `page name` is set in the `module` attribute.
 
 ### Add a section
@@ -342,7 +342,7 @@ The `BaseBackendPage` result corresponds to:
 
 ## Merge sections
 
-User merging to add, remove, or update [elements] in sections.
+Use merging to add, remove, or update [elements] in sections.
 
 All sections with the same _file name_, _section name_, and _element name_ are merged during test generation.
 
@@ -418,7 +418,7 @@ The `AdminLoginFormSection` result corresponds to:
 
 ### Update an element
 
-**Use case**: The `FooBackend` module extends the `Backend` module and requires change of selector in `username` in the `AdminLoginFormSection`.
+**Use case**: The `FooBackend` module extends the `Backend` module and requires change of a selector in `username` in the `AdminLoginFormSection`.
 Update `username` in the `AdminLoginFormSection` (the `.../Backend/Section/AdminLoginFormSection.xml` file):
 
 ```xml
@@ -494,7 +494,7 @@ The `_defaultSample` result corresponds to:
 
 ### Update data
 
-**Use case**: The `FooSample` module extends the `Sample` module and requires change of the `firstField` data item in the `_defaultSample` entity.
+**Use case**: The `FooSample` module extends the `Sample` module and requires changing the `firstField` data item in the `_defaultSample` entity.
 Change `firstField` to `<data key="firstField">overrideField</data>` in the `_defaultSample` (the `.../Sample/Data/SampleData.xml` file):
 
 ```xml
