@@ -93,7 +93,7 @@ Source code (`StorefrontCustomerSignInPage.xml` ):
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
     <page name="StorefrontCustomerSignInPage" url="/customer/account/login/" module="Magento_Customer">
         <section name="StorefrontCustomerSignInFormSection" />
     </page>
@@ -123,7 +123,7 @@ This section is declared in `.../Customer/Section/StorefrontCustomerSignInFormSe
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
     <section name="StorefrontCustomerSignInFormSection">
         <element name="emailField" type="input" selector="#email"/>
         <element name="passwordField" type="input" selector="#pass"/>

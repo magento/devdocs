@@ -30,7 +30,7 @@ The XML format for the `actionGroups` declaration is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+        xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
     <actionGroup name="">
         <arguments>
             <argument name=""/>
@@ -58,7 +58,7 @@ To create the `<actionGroup>` declaration:
     <?xml version="1.0" encoding="UTF-8"?>
 
     <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+            xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
         <actionGroup name="LoginToAdminActionGroup">
     ...
         </actionGroup>
@@ -87,7 +87,7 @@ To create the `<actionGroup>` declaration:
     <?xml version="1.0" encoding="UTF-8"?>
 
     <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+            xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
         <actionGroup name="LoginToAdminActionGroup">
             <arguments>
                 <argument name="adminUser" defaultValue="_defaultAdmin"/>
