@@ -1,4 +1,4 @@
- ---
+---
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
@@ -44,7 +44,7 @@ The purpose of MFTF is to:
 MFTF will enable you to:
 
 -   Test user interactions with web applications in testing.
--   Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf`.
+-   Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
 -   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
 -   Automate regression testing.
 
@@ -105,9 +105,8 @@ pre-install.php                 // Script that checks the environment on whether
 ## MFTF tests
 
 The MFTF supports two different locations for storing the tests and test artifacts:
-- The directory to create new tests: `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
-- The directory with the out of the box tests (fetched by the Composer): `<magento_root>/vendor/<vendor_name>/<module_name>/Test/Mftf/`.
-
+- `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` is the directory to create new tests.
+- `<magento_root>/vendor/<vendor_name>/<module_name>/Test/Mftf/` is the directory with the out of the box tests (fetched by the Composer).
 
 All tests and test data from these locations are merged in the order indicated in the above list.
 
@@ -130,7 +129,7 @@ The file structure under all three path cases is the same:
 
 ## MFTF on Github
 
-Follow the [MFTF project](https://github.com/magento/magento2-functional-testing-framework) and [contribute on Github](../contribution-guidelines.html).
+Follow the [MFTF project] and [contribute on Github].
 
 
 <!-- Link definitions -->
