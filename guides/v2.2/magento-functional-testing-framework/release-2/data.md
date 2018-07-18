@@ -49,11 +49,11 @@ In this example:
 userInput="{{_CREDS.MY_SECRET_TOKEN}}"
 ```
 
-In this example
+In this example:
 
 * `_CREDS` is a reference to the `dev/tests/acceptance/.credentials` file, where sensitive data and secrets are stored for use in a test.
 * `MY_SECRET_TOKEN` is the name of a key in the credentials variable. The corresponding value of the credential will be assigned to `userInput` as a result.
-* Credential values are not generated into a test but instead are dynamically retrieved, encrypted and decrypted when used by a specific action during the test's execution.
+* Credential values are not generated into a test. Instead, they are dynamically retrieved, encrypted and decrypted when used by a specific action during the test's execution.
 * References to credentials do not appear decrypted in the console, error logs or test reports, their values can only be seen decrypted in the .credentials file in which they are stored.
 
 ### Persist a data entity as a prerequisite of a test
