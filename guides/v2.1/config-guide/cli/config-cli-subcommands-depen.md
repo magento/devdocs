@@ -84,15 +84,15 @@ If no directory or filename is passed as an argument, the following application 
 			<th>Filename</th>
 		</tr>
 		<tr>
-			magento info:dependencies:show-modules</td>
+			<td>magento info:dependencies:show-modules</td>
 			<td>modules-dependencies.csv</td>
 		</tr>
 		<tr>
-			magento info:dependencies:show-modules-circular</td>
+			<td>magento info:dependencies:show-modules-circular</td>
 			<td>modules-circular-dependencies.csv</td>
 		</tr>
 		<tr>
-			magento info:dependencies:show-framework</td>
+			<td>magento info:dependencies:show-framework</td>
 			<td>framework-dependencies.csv</td>
 		</tr>
 	</tbody>
