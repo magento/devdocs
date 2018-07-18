@@ -43,11 +43,11 @@ To update the MFTF (via a command line interface):
     ```bash
     vendor/bin/mftf upgrade:tests app
     ```
-1. If using Phpstorm update the urn catalog:
+1. If you are using Phpstorm, update the urn catalog:
     ```bash
     vendor/bin/mftf generate:urn-catalog
     ```
-1. Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the [Changelog](../changelog.html).
+1. Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and review new MFTF release documentation in the [Changelog](../changelog.html).
 1. Generate newly pulled tests:
 
 	```bash
