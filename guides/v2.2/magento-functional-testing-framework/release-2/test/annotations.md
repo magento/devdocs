@@ -24,7 +24,7 @@ The following conventions apply to annotations in the Magento Functional Testing
 - There is no distinction made in XML between Codeception annotations and Allure annotations.
 - Each annotation contains only one value.
 If multiple annotation values are supported and required each value requires a separate annotation.
-- Tests must contain at least one of the following annotations: stories, title, description, severity.
+- Tests must contain all of the following annotations: stories, title, description, severity.
 
 Recommended use cases of the annotation types:
 - [stories] - report grouping, a set of tests that verify a story.

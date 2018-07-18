@@ -25,7 +25,7 @@ vendor/bin/codecept run functional
 
 ## Examples
 
-Run all tests in `dev/tests/acceptance/tests/functional/Magento/FunctionalTest`:
+Run all tests in `app/code`:
 
 ```bash
 vendor/bin/codecept run functional
