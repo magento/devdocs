@@ -30,7 +30,7 @@ They recently added support for [Codeception Test execution](https://blog.jetbra
 
 Configure the following settings in Magento as described below.
 
-### WYSIWYG settings
+he fo### WYSIWYG settings
 
 A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}.
 
@@ -68,21 +68,25 @@ git clone git@github.com:magento/magento2.git
 
 ### Step 2. Install dependencies
 
-```bash
-cd magento2/dev/tests/acceptance
-```
-```bash
-composer install
-```
+1. Change directories to _magento2_ (the project root).
+
+2. Run the `composer install` command.
+
+3. Change directories to _dev/tests/acceptance_.
+
+4. Run the `composer install` command. 
 
 ### Step 3. Build the project
 
-In _magento2/dev/tests/acceptance_, run the following command:
+In _magento2_ project root, run the following commands:
 
 ```bash
-vendor/bin/robo build:project
+vendor/bin/mftf build:project
 ```
-
+```bash
+vendor/bin/mftf generate:urn-catalog
+```
+If the file does not exist, add the `-f` option to `generate:urn-catalog` to create it.
 <div class="bs-callout bs-callout-tip" markdown="1">
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
 When added, you should be able to run the `robo`, `codecept`, and `phpunit` commands.
@@ -137,15 +141,15 @@ If you do not have access to your Magento installation and cannot complete the a
 
 ### Step 6. Generate existing tests
 
-In the `magento2/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
+In the `magento2` root directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
-vendor/bin/robo generate:tests
+vendor/bin/mftf generate:tests
 ```
 
 ### Step 7. Run tests
 
-To run tests you need a running Selenium server and a [`codecept`](commands/codeception.html) or [`robo`](commands/robo.html) with required parameters.
+To run tests, you need a running Selenium server and a [`codecept`](commands/codeception.html) or [`mftf`](commands/mftf.html) with required parameters.
 
 #### Run the Selenium server {#selenium-server}
 
