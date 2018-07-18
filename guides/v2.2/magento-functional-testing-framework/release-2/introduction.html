@@ -955,7 +955,7 @@ MFTF will make test creation easier for developers and will improve:</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We are actively developing functional tests.
-Refer to <em>&lt;magento2 root dir&gt;/dev/tests/acceptance/</em> for examples.</p>
+Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> for examples.</p>
 </div>
 
 <h2 id="audience">Audience</h2>
@@ -976,7 +976,7 @@ Refer to <em>&lt;magento2 root dir&gt;/dev/tests/acceptance/</em> for examples.<
 
 <ul>
   <li>Test user interactions with web applications in testing.</li>
-  <li>Write functional tests located in <em>&lt;magento2 root dir&gt;/dev/tests/acceptance/</em>.</li>
+  <li>Write functional tests located in <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code>.</li>
   <li>Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.</li>
   <li>Automate regression testing.</li>
 </ul>
@@ -989,7 +989,7 @@ Refer to <em>&lt;magento2 root dir&gt;/dev/tests/acceptance/</em> for examples.<
 
 <h2 id="find-your-mftf-version">Find your MFTF version</h2>
 
-<p>The MFTF is installed as a Composer dependency in <em>&lt;magento2 root dir&gt;/dev/tests/acceptance/composer.lock</em>.</p>
+<p>The MFTF is installed as a Composer dependency in <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/composer.lock</code>.</p>
 
 <p>Open the file and check the corresponding dependency:</p>
 
@@ -1014,7 +1014,6 @@ Refer to <em>&lt;magento2 root dir&gt;/dev/tests/acceptance/</em> for examples.<
     _data                       // Additional files required for tests (e.g. pictures, CSV files for import/export, etc.)
     _output                     // The directory is generated during test run. It contains testing reports.
     _suite                      // Test suites
-    functional                  // Functional acceptance tests
     _bootstrap.php              // Script that executes essential initialization routines
     functional.suite.dist.yml   // Codeception functional test suite configuration
 utils                           // Test running utilities
@@ -1038,11 +1037,10 @@ pre-install.php                 // Script that checks the environment on whether
 
 <h2 id="mftf-tests">MFTF tests</h2>
 
-<p>The MFTF supports three different locations for storing the tests and test artifacts:</p>
+<p>The MFTF supports two different locations for storing the tests and test artifacts:</p>
 <ul>
-  <li><code class="highlighter-rouge">/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/&lt;Module&gt;</code></li>
-  <li><code class="highlighter-rouge">/app/code/Magento/&lt;Module&gt;/Test/Mftf</code></li>
-  <li><code class="highlighter-rouge">/vendor/&lt;Module&gt;/Test/Mftf</code></li>
+  <li><code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> is the directory to create new tests.</li>
+  <li><code class="highlighter-rouge">&lt;magento_root&gt;/vendor/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> is the directory with the out of the box tests (fetched by the Composer).</li>
 </ul>
 
 <p>All tests and test data from these locations are merged in the order indicated in the above list.</p>
