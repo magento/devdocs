@@ -16,8 +16,8 @@ Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en
 
 Installation instructions vary based on which operating system you're using:
 
-1. [Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
-2. [CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
+*	[Ubuntu 16]({{ page.baseurl }}/install-gde/prereq/nginx.html#ubuntu-16)
+*	[CentOS 7]({{ page.baseurl }}/install-gde/prereq/nginx.html#centos-7)
 
 ## Help if you're just starting out {#apache-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
@@ -56,8 +56,8 @@ To install and configure `php-fpm`:
 		max_execution_time = 1800
 		zlib.output_compression = On
 
-{:.bs-callout .bs-callout-info}
-We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
+    {:.bs-callout .bs-callout-info}
+    We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
 
 4. Save and exit the editor.
 
@@ -115,8 +115,8 @@ For this example, we'll download and extract an archive.
 
     Replace `http://www.magento-dev.com` with your domain name.
 
-{:.bs-callout .bs-callout-info}
-You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
+    {:.bs-callout .bs-callout-info}
+    You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
 
 9. Switch to developer mode:
 
@@ -146,8 +146,8 @@ These instructions assume you're using the Ubuntu default location for the nginx
 			include /var/www/html/magento2/nginx.conf.sample;
 		}
 
-{:.bs-callout .bs-callout-info}
-The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
+    {:.bs-callout .bs-callout-info}
+    The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
 
 3. Replace `www.magento-dev.com` with your domain name. This must match the base URL you specified when installing Magento.
 
@@ -201,8 +201,8 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 		max_execution_time = 1800
 		zlib.output_compression = On
 
-{:.bs-callout .bs-callout-info}
-We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
+    {:.bs-callout .bs-callout-info}
+    We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html) for more information.
 
 5. Uncomment the session path directory and set the path:
 
@@ -304,8 +304,8 @@ For this example, we'll download and extract an archive.
 
     Replace `http://www.magento-dev.com` with your domain name.
 
-{:.bs-callout .bs-callout-info}
-You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
+    {:.bs-callout .bs-callout-info}
+    You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
 
 8. Switch Magento to developer mode:
 
@@ -335,8 +335,8 @@ These instructions assume you're using the CentOS default location for the nginx
 			include /usr/share/nginx/html/magento2/nginx.conf.sample;
 		}
 
-{:.bs-callout .bs-callout-info}
-The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
+    {:.bs-callout .bs-callout-info}
+    The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
 
 3. Replace `www.magento-dev.com` with your domain name.
 
@@ -362,7 +362,6 @@ To configure SELinux and firewalld:
 		yum -y install policycoreutils-python
 
 2. Run the following commands to change the security context for the Magento installation directory:
-
 
 		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
 		semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/var(/.*)?'
