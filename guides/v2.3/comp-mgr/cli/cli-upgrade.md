@@ -17,11 +17,11 @@ There are two ways to upgrade your Magento application to 2.3:
 2. Semi-automated: [Upgrade using the script].
 The upgrading scenario is the same from the system's point of view, excepting that several steps are automated using the PHP script.
 
-The both ways require to comply with the pre-upgrade checklist.
 {:.bs-callout .bs-callout-warning}
+The both ways require to comply with the pre-upgrade checklist.
 
-If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade. Instead, see [Update the Magento application].
 {:.bs-callout .bs-callout-info}
+If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade. Instead, see [Update the Magento application].
 
 ## Pre-upgrade checklist
 
@@ -53,8 +53,8 @@ php <your Magento install dir>/bin/magento maintenance:enable
 
 For additional options, see [Enable or disable maintenance mode].
 
-You can optionally create a [custom maintenance mode page].
 {:.bs-callout .bs-callout-info}
+You can optionally create a [custom maintenance mode page].
 
 ## Upgrade using the command line {#upgrade-cli-upgr}
    
@@ -163,9 +163,10 @@ To update the tool, follow the guidelines below.
   ```bash
   composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
   ```
-
-  If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
+  
   {:.bs-callout .bs-callout-info}
+  If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
+  
 
 - For the {{ site.data.var.ee }}
 
@@ -174,9 +175,9 @@ To update the tool, follow the guidelines below.
   ```bash
   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition=2.3.0 temp_dir --no-install
   ```
-
-  If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
+  
   {:.bs-callout .bs-callout-info}
+  If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
 
 #### Move the project to `<Magento install dir>/update`
 
@@ -192,8 +193,8 @@ rm -rf temp_dir
 
 ### Update metadata in `composer.json`
 
-It is a cosmetic change, not functional.
 {:.bs-callout .bs-callout-info}
+It is a cosmetic change, not functional.
 
 Update the `"name"`, `"version"`, and `"description"` fields in `<Magento install dir>/composer.json`.
 
@@ -215,8 +216,8 @@ rm -rf <Magento install dir>/var/page_cache/*
 rm -rf <Magento install dir>/generated/code/*
 ```
 
-If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
 {:.bs-callout .bs-callout-info}
+If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
     
 ### Update the database schema and data
 
@@ -268,7 +269,7 @@ When the script is run, the following steps will be executed:
 - Require the new version of the Magento metapackage
 - Update the `"require-dev"` section in `composer.json`
 - Add `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"` to the `"autoload":"psr-4"` section in `composer.json`
-- Back up and update `Magento/Updater` if it has been installed
+- Back up and update `magento/updater` if it has been installed
 - Update the `"name"`, `"version"`, and `"description"` fields in `composer.json`
 
 ### Download the upgrade script
@@ -306,8 +307,8 @@ rm -rf <Magento install dir>/var/page_cache/*
 rm -rf <Magento install dir>/generated/code/*
 ```
 
-If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
 {:.bs-callout .bs-callout-info}
+If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
     
 ### Update the database schema and data
 
