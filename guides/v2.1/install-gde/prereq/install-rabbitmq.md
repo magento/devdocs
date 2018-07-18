@@ -31,8 +31,9 @@ A basic message queue system can be implemented on {{site.data.var.ee}} using cr
 ## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
 To install RabbitMQ on Ubuntu 16 enter the following command:
-
-    sudo apt install -y rabbitmq-server
+```bash
+sudo apt install -y rabbitmq-server
+```
 
 This command also installs the required Erlang packages.
 
@@ -52,9 +53,12 @@ RabbitMQ was written using the Erlang programming language, which must be instal
 See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="&#95;blank"} for more information.
 
 Run the following commands to install this feature.
-
-1. `wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm`
-2. `rpm -Uvh erlang-solutions-1.0-1.noarch.rpm`
+```bash
+wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
+```
+```bash
+rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
+```
 
 ### Install RabbitMQ
 
@@ -63,8 +67,12 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="&#95;blank"}.
 2. Run the following commands as a user with root permissions:
 
-`rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc{:target="&#95;blank"}
-`yum install rabbitmq-server-3.5.6-1.noarch.rpm`
+```bash
+rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+```
+```bash
+yum install rabbitmq-server-3.5.6-1.noarch.rpm
+```
 
 Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="&#95;blank"} for more information.
 
