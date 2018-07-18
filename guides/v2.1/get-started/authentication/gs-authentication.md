@@ -157,7 +157,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
          <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
          <ol>
             <li>
-               <p>As a customer, you log in to the Magento storefront with your customer credentials. As an administrator, you log in to the Magento Magento Admin with your administrator credentials.</p>
+               <p>As a customer, you log in to the Magento storefront with your customer credentials. As an administrator, you log in to the Magento Admin with your administrator credentials.</p>
             </li>
             <li>
                <p>The Magento web API framework identifies you and controls access to the requested resource.

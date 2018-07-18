@@ -1,3 +1,4 @@
+
 ---
 group: mftf
 title: Input testing data
@@ -5,7 +6,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/data.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -33,15 +34,27 @@ In this example:
 * `name` is a `<data>` key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
 ****
-
+#### Environmental data
 ```xml
-userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}
+userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}"
 ```
 
 In this example:
 
 * `_ENV` is a reference to the `dev/tests/acceptance/.env` file, where basic environment variables are set.
 * `MAGENTO_ADMIN_USERNAME` is a name of an environment variable. The corresponding value will be assigned to `userInput` as a result.
+
+#### Sensitive data
+```xml
+userInput="{{_CREDS.MY_SECRET_TOKEN}}"
+```
+
+In this example:
+
+* `_CREDS` is a reference to the `dev/tests/acceptance/.credentials` file, where sensitive data and secrets are stored for use in a test.
+* `MY_SECRET_TOKEN` is the name of a key in the credentials variable. The corresponding value of the credential will be assigned to `userInput` as a result.
+* Credential values are not generated into a test. Instead, they are dynamically retrieved, encrypted and decrypted when used by a specific action during the test's execution.
+* References to credentials do not appear decrypted in the console, error logs or test reports, their values can only be seen decrypted in the .credentials file in which they are stored.
 
 ### Persist a data entity as a prerequisite of a test
 
@@ -189,7 +202,7 @@ Attributes|Type|Use|Description
 `name`|string|optional|Name of the `<entity>`.
 `type`|string|optional|Node containing the exact name of `<entity>` type. Used later to find specific Persistence Layer Model class. `type` in `<data>` can be whatever the user wants; There are no constraints. It is important when persisting data, depending on the `type` given, as it will try to match a metadata definition with the operation being done. Example: A `myCustomer` entity with `type="customer"`, calling `<createData entity="myCustomer"/>`, will try to find a metadata entry with the following attributes: `<operation dataType="customer" type="create">`.
 
-`<entity>` may contain one or more [`<data>`](#data-tag), [`<var>`](#var-tag), [`<required-entities>`](#requiredentity-tag), or [`<array>`](#array-tag) elements in any sequence.
+`<entity>` may contain one or more [`<data>`](#data-tag), [`<var>`](#var-tag), [`<required-entities>`](#requiredentities-tag), or [`<array>`](#array-tag) elements in any sequence.
 
 ### data {#data-tag}
 

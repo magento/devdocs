@@ -21,11 +21,8 @@ The following cache types mostly have impact on frontend development process:
 | Page cache                 | `full_page`          | Generated HTML pages. If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly. |
 | Translations               | `translate`          | Merged translations from all modules.                                                                                                                                                                                                                                                                                                             |
 
-<div class="bs-callout bs-callout-info" id="info" markdown ="1">
-<span class="glyphicon-class">
+{:.bs-callout .bs-callout-info}
 The full list of cache types can be found in the [Overview of cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
-</span>
-</div>
 
 ## Clean cache {#clean_cache}
 
@@ -45,7 +42,7 @@ You can clean generated static view files in any of the following ways:
 
 -   In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management** and click **Flush {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static Files{% endglossarytooltip %} Cache**.
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    {:.bs-callout .bs-callout-info}
     This option is only available in `developer` mode. Refer to the [static view files overview]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) for more information.
 
 -   Manually by clearing the `pub/static` and `var/view_preprocessed` directories and subdirectories _except_ for `pub/static/.htaccess`.
