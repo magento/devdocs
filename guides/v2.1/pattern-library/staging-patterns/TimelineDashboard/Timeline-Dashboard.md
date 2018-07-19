@@ -1,101 +1,93 @@
 ---
 group: pattern
-subgroup: Staging Patterns
-title: Magento Admin Pattern Library
-menu_title: Timeline Dashboard
-menu_order: 1
-menu_node: 
+title: Timeline Dashboard
 version: 2.1
 ee_only: true
 github_link: pattern-library/staging-patterns/TimelineDashboard/Timeline-Dashboard.md
 ---
+This dashboard provides a page where events and processes can be viewed and managed in one place.
 
-##  Timeline Dashboard 
+Staging usage: Within Magento, users need to see which stage-able entities are published or scheduled to be published. Since most of Magento’s entities can be staged – the display of all this information is important to show users the full scope of updates at a glance.
 
-<h3> Contents </h3>
+## When to Use / When Not to Use
 
-* <a href="#overview">Overview</a>
-* <a href="#when-to-use">When to Use / When Not to Use</a>
-* <a href="#terminology">Staging terminology and definitions</a>
-* <a href="#examples">Interaction and Behavior</a> 
-* <a href="#assets">Assets</a>
+Use when events and processes need to be displayed sequentially, along a timeline, and when multiple items are combined in one view. Example: Scheduled updates on staging.
+Do not use a timeline as an alternative display mode for tree, card or data table views.
 
-<h3 id="overview">Overview</h3>
-This dashboard provides a page where events and processes can be viewed and managed in one place. <br>
+## Staging terminology and definitions
 
-Staging usage: Within Magento, users need to see which stage-able entities are published or scheduled to be published. Since most of Magento’s entities can be staged – the display of all this information is important to show users the full scope of updates at a glance. 
+### Stage-able entity
 
+A part of Magento that can be scheduled to change, within an update. Examples: Products, Categories.
 
+### Update
 
-<h3 id="when-to-use">When to Use / When Not to Use</h3>
-Use when events and processes need to be displayed sequentially, along a timeline, and when multiple items are combined in one view. Example: Scheduled updates on staging. <br>
-Do not use a timeline as an alternative display mode for tree, card or data table views. 
+A combination of changes to a stage-able {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent.
 
-<h3 id="terminology">Staging terminology and definitions</h3>
+### Objects
 
-#### Stage-able entity:
-A part of Magento that can be scheduled to change, within an update. Examples: Products, Categories<br>
+These are the individual changes contained within an update.
 
-#### Update:
-A combination of changes to a stage-able {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent. <br>
+## Interaction and Behavior
 
-#### Objects: 
-These are the individual changes contained within an update.<br>
+### What markers mean on timeline
 
-
-
-<h3 id="examples">Interaction and Behavior</h3>
-
-#### What markers mean on timeline:
-
-
-<img src="img/Staging_Dashboard_0006_timeline_notes.jpg">
-<br>
+![](img/Staging_Dashboard_0006_timeline_notes.jpg)
 
 1. The user can scroll the timeline to see upcoming updates by tapping the arrow on an update, scrolling the timeline with scroll control, or the right arrow.
 
+### Update schedule
 
-#### Update schedule:
-As the default state, this view shows completed, active and scheduled updates on the dashboard. The timeline’s default date range is 1 week, which can be changed and customized.Updates are displayed in chronological order, with the most recent start date on top. 
-<img src="img/Updates-Scheduled.jpg">
+As the default state, this view shows completed, active and scheduled updates on the dashboard. The timeline’s default date range is 1 week, which can be changed and customized.Updates are displayed in chronological order, with the most recent start date on top.
 
-#### Update Summary, in Overlay Window:
+![](img/Updates-Scheduled.jpg)
+
+### Update Summary, in Overlay Window
+
 When clicked, a bar on the timeline spawns an overlay window, showing a summary of the objects contained in the update.  The window includes controls to edit or preview the update.
-<img src="img/Timeline-Dashboard-summary.jpg">
 
-#### 4-Week Zoom Control:
+![](img/Timeline-Dashboard-summary.jpg)
+
+### 4-Week Zoom Control
+
 A slider control at the bottom of the page allows users to zoom out from 1 week to 4 weeks, viewing a bigger timeline of updates.
-<img src="img/4-week-zoom.jpg">
 
-#### "Load More" Control:
-On the default timeline view, the number of updates displayed is set to 10. Clicking "Load More" adds more updates on the timeline. A grid menu control changes the number of items displayed per page. 
-<img src="img/load-more.jpg">
+![](img/4-week-zoom.jpg)
 
-#### Horizontal Scrolling for Future Updates:
+### "Load More" Control
+
+On the default timeline view, the number of updates displayed is set to 10. Clicking "Load More" adds more updates on the timeline. A grid menu control changes the number of items displayed per page.
+
+![](img/load-more.jpg)
+
+### Horizontal Scrolling for Future Updates
+
 A horizontal scrollbar at the bottom of the timeline provides the capability to view future updates that do not fit inside the span of the page. This scrollbar is usually not displayed.
-<img src="img/scrolled-to-future.jpg">
 
-#### Prioritized Timeline View, with Drag and Drop:
+![](img/scrolled-to-future.jpg)
+
+### Prioritized Timeline View, with Drag and Drop
+
 This is a variation of the timeline. This view only appears when stage-able entities on the timeline need to be ordered by priority. In the example displayed below – the priority scale has been used to display the sort order of the rules. To re-arrange the order, an item on the timeline can be dragged and moved.
-<img src="img/priority-schedule.jpg">
 
-#### Data Table View:
+![](img/priority-schedule.jpg)
+
+### Data Table View
+
 This is an alternative view to the timeline in data table format. The functionalities of the timeline and the data table are consistent except for the pagination feature, which is used for data table view only.
-<img src="img/table-view.jpg">
 
+![](img/table-view.jpg)
 
-
-<h3 id="styling">Styling</h3>
+## Styling
 
 #### Updates schedule:
-<img src="img/styles/style_staging_dashboard.jpg">
+![](img/styles/style_staging_dashboard.jpg)
 
 #### Update Summary, in Overlay Window:
-<img src="img/styles/style-summary.jpg">
+![](img/styles/style-summary.jpg)
 
+## Assets
 
-<h3 id="assets">Assets</h3>
+[Download Timeline Dashboard source](src/timeline-dashboard.psd)
 
-If you have questions about the Timeline Dashboard, please <a href="https://magento.com/company/contact-us">contact us.</a>
-
-<a href="src/timeline-dashboard.psd">Download Timeline Dashboard source</a>
+If you have questions about the Timeline Dashboard, please [contact us](https://magento.com/company/contact-us).

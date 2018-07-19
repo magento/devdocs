@@ -20,7 +20,20 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     composer require magento/extension-b2b
     ```
 
-2.  When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
+    If you get an error when trying to install the B2B module for local instance of Magento Commerce (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of you public_key and private_key for `username` and `password`:
+
+    ```
+    {
+       "http-basic": {
+          "repo.magento.com": {
+             "username": "<public_key>",
+             "password": "<private_key>"
+          }
+       }
+    }
+    ```
+
+2.  When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password. If you have stored your public and private keys in `auth.json`, you won't be asked to enter them here.
 
 3.  Run the following commands after Composer finishes updating modules:
 
