@@ -719,6 +719,17 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+### fillSecretField
+
+Attribute|Type|Use|Description
+---|---|---|---
+`selector`|string|optional|
+`selectorArray`|string|optional|
+`userInput`|string|optional|
+`stepKey`|string|required| A unique identifier of the action.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
 ### formatMoney
 
 Attribute|Type|Use|Description
