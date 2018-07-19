@@ -84,15 +84,15 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
 There are several ways to generate and execute your new test in the context of a suite:
 - Edit the appropriate `suite.xml` to include your test only and run:
   ```bash
-  vendor/bin/robo group <suiteName>
+  vendor/bin/mftf group <suiteName>
   ```
 - Temporarily add a group to your test like `<group value="foo">` and run:
   ```bash
-  vendor/bin/robo group foo
+  vendor/bin/mftf group foo
   ```
 - To limit generation to your suite/test combination, run in conjunction with the above:
   ```bash
-  vendor/bin/robo generate:suite <suite>
+  vendor/bin/mftf generate:suite <suite>
   ```
 - To generate any combination of suites and tests, use [`generate:tests`] with the `--tests` flag.
 
@@ -282,7 +282,7 @@ Attributes|Type|Use|Description
 [action groups]: test/action-groups.html
 [`<after>`]: #after-tag
 [`<before>`]: #before-tag
-[`generate:tests`]: commands/mftf.html#generate
+[`generate:tests`]: commands/mftf.html#generatetests
 [test]: test.html
 [`<test>`]: #test-tag
 [`<group>`]: #group-tag

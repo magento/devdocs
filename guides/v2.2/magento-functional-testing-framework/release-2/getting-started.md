@@ -6,6 +6,7 @@ github_link: magento-functional-testing-framework/release-2/getting-started.md
 functional_areas:
  - Testing
 mftf-release: 2.3.0
+redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
@@ -68,17 +69,17 @@ git clone git@github.com:magento/magento2.git
 
 ### Step 2. Install dependencies
 
-1. Change directories to _magento2_ (the project root).
+1. Change directories to `magento2/` (the project root).
 
 2. Run the `composer install` command.
 
-3. Change directories to _dev/tests/acceptance_.
+3. Change directories to `dev/tests/acceptance/`.
 
 4. Run the `composer install` command. 
 
 ### Step 3. Build the project
 
-In _magento2_ project root, run the following commands:
+In `magento2/` project root, run the following commands:
 
 ```bash
 vendor/bin/mftf build:project
@@ -90,11 +91,11 @@ If the file does not exist, add the `-f` option to `generate:urn-catalog` to cre
 
 {:.bs-callout .bs-callout-tip}
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
-When added, you should be able to run the `robo`, `codecept`, and `phpunit` commands.
+When added, you should be able to run the `mftf`, `codecept`, and `phpunit` commands.
 
 ### Step 4. Edit environment settings
 
-In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
+In the `magento2/dev/tests/acceptance/` directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
@@ -117,9 +118,8 @@ SELENIUM_PROTOCOL=http
 SELENIUM_PATH=/wd/hub
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
-</div>
 
 Your environment settings form the path to your running Selenium Server.
 Example:
@@ -129,7 +129,7 @@ http://127.0.0.1:4444/wd/hub
 
 ### Step 5. Make `command.php` visible in the Magento testing environment
 
-In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+In your Magento installation, navigate to the `magento2/dev/tests/acceptance/` directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
 
 ```bash
 cp .htaccess.sample .htaccess
@@ -170,7 +170,7 @@ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 vendor/bin/codecept run
 ```
 
-See more commands in [`robo`](commands/mftf.html) and [`codecept`](commands/codeception.html).
+See more commands in [`mftf`](commands/mftf.html) and [`codecept`](commands/codeception.html).
 
 ### Step 8. Generate reports {#allure}
 
@@ -183,4 +183,4 @@ If you want to see the reports in a GUI, run:
 vendor/bin/robo allure2:report
 ```
 
-See also [Allure `robo` commands](commands/mftf.html#allure-robo-commands) and [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).
+Learn more about [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).

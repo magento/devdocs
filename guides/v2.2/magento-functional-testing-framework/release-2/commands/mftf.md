@@ -299,16 +299,16 @@ The command searches recursively for any `*.xml` files to upgrade.
 
 #### Examples
 
-To upgrade all test components inside modules in the `dev/tests/acceptance/tests` directory:
+To upgrade all test components inside modules in the `dev/tests/acceptance/tests/` directory:
 
 ```bash
 vendor/bin/mftf upgrade:tests /Users/user/magento2/dev/tests/acceptance/tests/
 ```
 
-To upgrade all test materials inside the `Catalog` module:
+To upgrade all test components inside the `Catalog` module:
 
 ```bash
-vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test/Mftf
+vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test/Mftf/
 ```
 
 <!-- LINK DEFINITIONS -->
