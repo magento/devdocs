@@ -27,7 +27,7 @@ The following message displays to indicate authentication failed:
 	<html>
 	<head><title>401 Authorization Required</title></head>
 	<body bgcolor="white">
-	<center># 401 Authorization Required</center>
+	<center><h1>401 Authorization Required</h1></center>
 	</body>
 	</html>
 
