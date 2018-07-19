@@ -2385,9 +2385,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  zlib.output_compression = On
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info">
-      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
   </li>
   <li>
     <p>Save and exit the editor.</p>
@@ -2470,9 +2468,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <p>Replace <code class="highlighter-rouge">http://www.magento-dev.com</code> with your domain name.</p>
 
-    <div class="bs-callout bs-callout-info">
-      <p>You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
   </li>
   <li>
     <p>Switch to developer mode:</p>
@@ -2499,7 +2495,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Add the following configuration:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> upstream fastcgi_backend {
-     server  unix:/run/php/php7.0-fpm.sock;
+     server unix:/run/php/php7.0-fpm.sock;
  }
 
  server {
@@ -2511,9 +2507,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  }
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
   </li>
   <li>
     <p>Replace <code class="highlighter-rouge">www.magento-dev.com</code> with your domain name. This must match the base URL you specified when installing Magento.</p>
@@ -2585,9 +2579,7 @@ systemctl enable nginx
  zlib.output_compression = On
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info">
-      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
   </li>
   <li>
     <p>Uncomment the session path directory and set the path:</p>
@@ -2728,9 +2720,7 @@ systemctl enable php-fpm
 
     <p>Replace <code class="highlighter-rouge">http://www.magento-dev.com</code> with your domain name.</p>
 
-    <div class="bs-callout bs-callout-info">
-      <p>You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
   </li>
   <li>
     <p>Switch Magento to developer mode:</p>
@@ -2757,7 +2747,7 @@ systemctl enable php-fpm
     <p>Add the following configuration:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> upstream fastcgi_backend {
-     server  unix:/run/php-fpm/php-fpm.sock;
+     server unix:/run/php-fpm/php-fpm.sock;
  }
 
  server {
@@ -2769,9 +2759,7 @@ systemctl enable php-fpm
  }
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
   </li>
   <li>
     <p>Replace <code class="highlighter-rouge">www.magento-dev.com</code> with your domain name.</p>

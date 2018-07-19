@@ -2325,7 +2325,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento requires Apache 2.2.x or 2.4.x.</p>
 
-<h2 id="apache-help-beginner">Help if you're just starting out</h2>
+<h2 id="apache-help-beginner">Help if you’re just starting out</h2>
 <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
 <ul>
@@ -2336,9 +2336,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
-<p>This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.</p>
+<p>This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="&#95;blank">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a>.</p>
 
-<p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.</p>
+<p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Click to show Apache 2.4 instructions </b>
@@ -2443,10 +2443,7 @@ Allow from all
 </div>
   </div>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
 <h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
 <p>To verify the Apache version you’re currently running, enter:</p>
@@ -2457,14 +2454,14 @@ Allow from all
 <p>The result displays similar to the following:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server version: Apache/2.2.22 (Ubuntu)
-Server built:   Jul 22 2014 14:35:32
+Server built: Jul 22 2014 14:35:32
 </code></pre></div></div>
 
 <ul>
   <li>If Apache is <em>not</em> installed, see:
     <ul>
       <li><a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a></li>
-      <li><a href="#install-prereq-apache-centos">Installing Apache on CentOS</a></li>
+      <li>[Installing Apache on CentOS]{#install-prereq-apache-centos}</li>
     </ul>
   </li>
   <li>If Apache 2.2 is installed on Ubuntu 12 <em>and</em> you want to use   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
@@ -2500,7 +2497,7 @@ Server built:   Jul 22 2014 14:35:32
     <p>The result displays similar to the following:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server version: Apache/2.4.18 (Ubuntu)
-Server built:   2016-04-15T18:00:57
+Server built: 2016-04-15T18:00:57
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2635,12 +2632,12 @@ apt-get -y update
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install -y apache2
 </code></pre></div>    </div>
-
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
-</div>
   </li>
+</ol>
+
+<p class="bs-callout bs-callout-info">If the ‘apt-get install’ command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="&#95;blank">http://askubuntu.com</a>.</p>
+
+<ol>
   <li>
     <p>Verify the installation.</p>
 
@@ -2650,7 +2647,7 @@ apt-get -y update
     <p>Messages similar to the following should display:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server version: Apache/2.4.10 (Ubuntu)
-Server built:   Jul 22 2014 22:46:25
+Server built: Jul 22 2014 22:46:25
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2704,9 +2701,9 @@ Server built:   Jul 22 2014 22:46:25
 
 <div class="collapsible">
     <b class="collapsible-title">Click to install Apache on CentOS 6 or 7 </b>
-    <div class="collapsible-content"><p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.</p>
+    <div class="collapsible-content"><p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code class="highlighter-rouge">.htaccess</code>, which Magento uses to specify rewrite rules.</p>
 
-<p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.</p>
+<p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code class="highlighter-rouge">.htaccess</code> directives.</p>
 
 <h3 id="apache-install-centos">Installing Apache</h3>
 <ol>
@@ -2725,7 +2722,7 @@ Server built:   Jul 22 2014 22:46:25
     <p>Messages similar to the following display to confirm the installation was successful:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server version: Apache/2.2.15 (Unix)
-Server built:   Oct 16 2014 14:48:21
+Server built: Oct 16 2014 14:48:21
 </code></pre></div>    </div>
   </li>
   <li>
@@ -2733,10 +2730,7 @@ Server built:   Oct 16 2014 14:48:21
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p>
 
 <h3 id="enable-rewrites-and-htaccess-for-apache-22-including-centos-7">Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)</h3>
 <div>
@@ -2811,7 +2805,7 @@ Allow from all
 </div>
   </div>
 
-<h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
+<h2 id="solving-403-forbidden-errors-403-apache">Solving 403 (Forbidden) errors {#403-apache}</h2>
 
 <div class="collapsible">
     <b class="collapsible-title">Click to install solve 403 errors </b>
@@ -2822,8 +2816,8 @@ Allow from all
   <li><a href="#install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</a></li>
 </ul>
 
-<h4 id="install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</h4>
-<p>To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.</p>
+<h4 id="solving-403-forbidden-errors-for-apache-24-install-apache-403_24">Solving 403 Forbidden errors for Apache 2.4 {#install-apache-403_2.4}</h4>
+<p>To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="&#95;blank">Require directives</a>.</p>
 
 <p>For example:</p>
 
@@ -2835,13 +2829,10 @@ Allow from all
 &lt;/Directory&gt;
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="&#95;blank">Apache documentation</a>.</p>
 
-<h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
-<p>To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.</p>
+<h4 id="solving-403-forbidden-errors-for-apache-22-install-apache-403_22">Solving 403 Forbidden errors for Apache 2.2 {#install-apache-403_2.2}</h4>
+<p>To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="&#95;blank">Allow directive</a>.</p>
 
 <p>For example:</p>
 
@@ -2853,10 +2844,7 @@ Allow from all
 &lt;/Directory&gt;
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="&#95;blank">Apache documentation</a>.</p>
 </div>
   </div>
 
@@ -2870,7 +2858,6 @@ Allow from all
   <li><a href="/guides/v2.3/install-gde/prereq/optional.html">Installing optional software</a></li>
   <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
 </ul>
-
 
 			
 		</div>
