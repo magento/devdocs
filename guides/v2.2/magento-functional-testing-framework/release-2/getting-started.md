@@ -140,7 +140,7 @@ If you do not have access to your Magento installation and cannot complete the a
 
 ### Step 6. Generate existing tests
 
-In the `magento2` root directory, run the following command to generate tests as PHP classes from XML files:
+In the `magento2/` root directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
 vendor/bin/mftf generate:tests
@@ -172,15 +172,8 @@ vendor/bin/codecept run
 
 See more commands in [`mftf`](commands/mftf.html) and [`codecept`](commands/codeception.html).
 
-### Step 8. Generate reports {#allure}
+### Step 8. Generate reports {#reports}
 
-Install [Allure](https://docs.qameta.io/allure/latest/), a tool that generates testing reports in HTML.
-Testing reports are generated in a CLI during testing.
+The testing reports are generated in a CLI during testing.
 
-If you want to see the reports in a GUI, run:
-
-```bash
-vendor/bin/robo allure2:report
-```
-
-Learn more about [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).
+To generate HTML reports, use [Allure](https://docs.qameta.io/allure/latest/).
