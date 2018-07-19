@@ -2334,7 +2334,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The other optional utilities discussed in this topic might assist you with your installation; however, they are not required to install or use Magento.</p>
 
 <h2 id="install-optional-ntp">Installing and Configuring Network Time Protocol (NTP)</h2>
-<p><a href="http://www.ntp.org" target="_blank">NTP</a> enables servers to synchronize their system clocks using <a href="http://www.pool.ntp.org/en" target="_blank">globally available pool servers</a>. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.</p>
+<p><a href="http://www.ntp.org">NTP</a> enables servers to synchronize their system clocks using <a href="http://www.pool.ntp.org/en" target="&#95;blank">globally available pool servers</a>. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.</p>
 
 <p>If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.</p>
 
@@ -2342,7 +2342,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li><a href="#install-optional-ntp-ubuntu">Install and configure NTP on Ubuntu</a></li>
-  <li><a href="#install-optional-ntp-centos">Install and configure NTP on CentOS</a></li>
+  <li><a href="##install-optional-ntp-centos">Install and configure NTP on CentOS</a></li>
   <li><a href="#install-optional-ntp-servers">Use NTP pool servers</a></li>
 </ul>
 
@@ -2353,7 +2353,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install ntp
 </code></pre></div></div>
 
-<p>Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.</p>
+<p>Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a></p>
 
 <h3 id="install-optional-ntp-centos">Install and configure NTP on CentOS</h3>
 
@@ -2363,20 +2363,23 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Enter the following command to find the appropriate NTP software:</p>
 
-    <pre>yum search ntp</pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum search ntp
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>Select a package to install. For example, <code>ntp.x86_64</code>.</p>
+    <p>Select a package to install. For example, <code class="highlighter-rouge">ntp.x86_64</code>.</p>
   </li>
   <li>
     <p>Install the package.</p>
 
-    <pre>yum -y install ntp.x86_64</pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yum -y install ntp.x86_64
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Enter the following command so that NTP starts when the server starts.</p>
 
-    <pre>chkconfig ntpd on</pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chkconfig ntpd on
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Continue with the next section.</p>
@@ -2384,18 +2387,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="install-optional-ntp-servers">Use NTP pool servers</h3>
-<p>Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="_blank">pool servers</a> that are close to your servers’ time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="_blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.</p>
+<p>Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="&#95;blank">pool servers</a> that are close to your servers’ time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="&#95;blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.</p>
 
 <ol>
   <li>
-    <p>Open <code>/etc/ntp.conf</code> in a text editor.</p>
+    <p>Open <code class="highlighter-rouge">/etc/ntp.conf</code> in a text editor.</p>
   </li>
   <li>
     <p>Look for lines similar to the following:</p>
 
-    <pre>server 0.centos.pool.ntp.org
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server 0.centos.pool.ntp.org
 server 1.centos.pool.ntp.org
-server 2.centos.pool.ntp.org</pre>
+server 2.centos.pool.ntp.org
+</code></pre></div>    </div>
   </li>
   <li>
     <p>Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It’s a good idea to specify more than one.</p>
@@ -2403,46 +2407,46 @@ server 2.centos.pool.ntp.org</pre>
   <li>
     <p>An example of using three United States-based NTP servers follows:</p>
 
-    <pre>server 0.us.pool.ntp.org
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server 0.us.pool.ntp.org
 server 1.us.pool.ntp.org
-server 2.us.pool.ntp.org</pre>
+server 2.us.pool.ntp.org
+</code></pre></div>    </div>
   </li>
   <li>
-    <p>Save your changes to <code>/etc/ntp.conf</code> and exit the text editor.</p>
+    <p>Save your changes to <code class="highlighter-rouge">/etc/ntp.conf</code> and exit the text editor.</p>
   </li>
   <li>
     <p>Restart the service.</p>
 
-    <p>Ubuntu: <code>service ntp restart</code></p>
+    <p>Ubuntu: <code class="highlighter-rouge">service ntp restart</code></p>
 
-    <p>CentOS: <code>service ntpd restart</code></p>
+    <p>CentOS: <code class="highlighter-rouge">service ntpd restart</code></p>
   </li>
   <li>
-    <p>Enter <code>date</code> to check the server’s date.</p>
+    <p>Enter <code class="highlighter-rouge">date</code> to check the server’s date.</p>
 
     <p>If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.</p>
 
-    <p>Try the <code>ntpdate <em>[pool server hostname]</em></code> command. If it fails, search for the error it returns.</p>
+    <p>Try the <code class="highlighter-rouge">ntpdate _[pool server hostname]_</code> command. If it fails, search for the error it returns.</p>
 
     <p>If all else fails, try rebooting the server.</p>
   </li>
 </ol>
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+<p><a href="http://php.net/manual/en/function.phpinfo.php" target="&#95;blank"><code class="highlighter-rouge">phpinfo.php</code></a> displays a large amount of information about   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  and its extensions.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
-</div>
+<p class="bs-callout bs-callout-info">Use <code class="highlighter-rouge">phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
 
-<p>Add the following code anywhere in your web server’s docroot:</p>
-<pre>&lt;?php
+<p>Add the following code anywhere in your web server’s docroot:
+	&lt;?php</p>
 
-// Show all information, defaults to INFO_ALL
-phpinfo();</pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Show all information, defaults to INFO_ALL
+phpinfo();
+</code></pre></div></div>
 
-<p>For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.</p>
+<p>For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="&#95;blank">phpinfo manual page</a>.</p>
 
 <p>To view the results, enter the following   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  in your browser’s location or address field:</p>
@@ -2457,22 +2461,20 @@ phpinfo();</pre>
   <li>
     <p>Make sure your firewall allows traffic on port 80.</p>
 
-    <p><a href="https://help.ubuntu.com/community/UFW" target="_blank">Help for Ubuntu</a></p>
+    <p><a href="https://help.ubuntu.com/community/UFW" target="&#95;blank">Help for Ubuntu</a></p>
 
-    <p><a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">Help for CentOS</a></p>
+    <p><a href="http://wiki.centos.org/HowTos/Network/IPTables" target="&#95;blank">Help for CentOS</a></p>
   </li>
 </ul>
 
 <h2 id="install-optional-phpmyadmin">Install phpmyadmin</h2>
-<p><code class="highlighter-rouge">phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code>phpmyadmin</code> as the MySQL database administrative user.</p>
+<p><code class="highlighter-rouge">phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code class="highlighter-rouge">phpmyadmin</code> as the MySQL database administrative user.</p>
 
-<p>For more information about <code class="highlighter-rouge">phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
+<p>For more information about <code class="highlighter-rouge">phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="&#95;blank">phpmyadmin home page</a>.</p>
 
-<p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.</p>
+<p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="&#95;blank">phpmyadmin installation documentation</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
-</div>
+<p class="bs-callout bs-callout-info">Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
 
 <h2 id="install-optional-phpmyadmin-ubuntu">Install phpmyadmin on Ubuntu</h2>
 <p>To install phpmyadmin on Ubuntu:</p>
@@ -2494,7 +2496,7 @@ phpinfo();</pre>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s username and password.</p>
+    <p>When prompted, log in using your MySQL database <code class="highlighter-rouge">root</code> or administrative user’s username and password.</p>
   </li>
 </ol>
 
@@ -2562,7 +2564,7 @@ rpm -ivh epel-release-6-8.noarch.rpm
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s username and password.</p>
+    <p>When prompted, log in using your MySQL database <code class="highlighter-rouge">root</code> or administrative user’s username and password.</p>
   </li>
 </ol>
 
