@@ -11,7 +11,7 @@ functional_areas:
   - Theme
 ---
 
-<h2 id="theme-apply-overview">What's in this topic</h2>
+## What's in this topic {#theme-apply-overview}
 
 The topic describes how to apply a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for your store. This is a required step if you want a theme to be used on a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 Also, it gives information how to add a theme independent logo for your store.
@@ -22,7 +22,7 @@ Make sure that you [set]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcomma
 
 
 ## Apply a theme {#theme-apply-apply}
-After you <a href="{{ site.gdeurl21 }}frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+After you [add your theme to the file system]({{ site.gdeurl21 }}frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 To apply a theme:
 
@@ -65,9 +65,9 @@ To add a permanent theme-independent logo:
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>To delete the permanent logo, go to the same location, and click the "Delete image" icon in the bottom left corner of the logo preview.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+To delete the permanent logo, go to the same location, and click the "Delete image" icon in the bottom left corner of the logo preview.
+
 
 ## Clear the cache {#theme-apply-clear}
 If caching is enabled in Magento Admin, you must clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} after you apply the theme, add a design exception, add a logo, and perform other tasks.
