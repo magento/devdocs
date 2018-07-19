@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/getting-started.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
@@ -30,7 +30,7 @@ They recently added support for [Codeception Test execution](https://blog.jetbra
 
 Configure the following settings in Magento as described below.
 
-he fo### WYSIWYG settings
+### WYSIWYG settings
 
 A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}.
 
@@ -87,10 +87,10 @@ vendor/bin/mftf build:project
 vendor/bin/mftf generate:urn-catalog
 ```
 If the file does not exist, add the `-f` option to `generate:urn-catalog` to create it.
-<div class="bs-callout bs-callout-tip" markdown="1">
+
+{:.bs-callout .bs-callout-tip}
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
 When added, you should be able to run the `robo`, `codecept`, and `phpunit` commands.
-</div>
 
 ### Step 4. Edit environment settings
 
@@ -135,9 +135,8 @@ In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ di
 cp .htaccess.sample .htaccess
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-tip}
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
-</div>
 
 ### Step 6. Generate existing tests
 
@@ -171,7 +170,7 @@ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 vendor/bin/codecept run
 ```
 
-See more commands in [`robo`](commands/robo.html) and [`codecept`](commands/codeception.html).
+See more commands in [`robo`](commands/mftf.html) and [`codecept`](commands/codeception.html).
 
 ### Step 8. Generate reports {#allure}
 
@@ -184,4 +183,4 @@ If you want to see the reports in a GUI, run:
 vendor/bin/robo allure2:report
 ```
 
-See also [Allure `robo` commands](commands/robo.html#allure-robo-commands) and [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).
+See also [Allure `robo` commands](commands/mftf.html#allure-robo-commands) and [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).

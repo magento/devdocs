@@ -282,7 +282,7 @@ Attributes|Type|Use|Description
 [action groups]: test/action-groups.html
 [`<after>`]: #after-tag
 [`<before>`]: #before-tag
-[`generate:tests`]: commands/robo.html#generate
+[`generate:tests`]: commands/mftf.html#generate
 [test]: test.html
 [`<test>`]: #test-tag
 [`<group>`]: #group-tag
