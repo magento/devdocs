@@ -30,7 +30,7 @@ The following code sample illustrates the XSS-safe output in templates:
 <?php echo $block->getTitleHtml() ?>
 <?php echo $block->getHtmlTitle() ?>
 <?php echo $block->escapeHtml($block->getTitle()) ?>
-<h1><?php echo (int)$block->getId() ?></h1>
+# <?php echo (int)$block->getId() ?>
 <?php echo count($var); ?>
 <?php echo 'some text' ?>
 <?php echo "some text" ?>
