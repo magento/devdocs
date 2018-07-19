@@ -15,7 +15,7 @@ functional_areas:
 ---
 
 {:.bs-callout .bs-callout-info}
-If you must install both Apache and PHP, [nstall Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
+If you must install both Apache and PHP, [Install Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
 
 ## PHP versions supported {#php-support}
 {% include install/php_2.1.md %}
