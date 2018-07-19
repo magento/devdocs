@@ -16,7 +16,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
 1.  On your local workstation, perform an update using Composer.
 
     ```bash
-    composer update magento/magento-cloud-metapackage
+    composer update magento/ece-tools
     ```
 
     {: .bs-callout .bs-callout-info}

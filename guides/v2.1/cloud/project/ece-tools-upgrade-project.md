@@ -38,6 +38,9 @@ The following example places a constraint for the Magento Cloud metapackage to a
 },
 ```
 
+### Upgrade the project
+ 
+ 
 #### To upgrade project to use ece-tools:
 
 1.  Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
@@ -51,7 +54,7 @@ The following example places a constraint for the Magento Cloud metapackage to a
     ```bash
     composer update magento/magento-cloud-metapackage
     ```
- 
+  
 1.  Modify the build and deploy hook commands in the `magento.app.yaml` file.
 
     ```yaml

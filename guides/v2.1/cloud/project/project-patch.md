@@ -31,6 +31,7 @@ You can only apply patches during the build phase of redeployment.
 1.  After test validation, merge this branch to the Integration branch.
 
 #### To test if a patch can be applied using your local workstation:
+
 1.  From the project root, apply the patch.
 
     ```bash
