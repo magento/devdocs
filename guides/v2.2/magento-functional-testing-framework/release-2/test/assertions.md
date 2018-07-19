@@ -51,7 +51,7 @@ The following example shows a common test that gets text from a page and asserts
 <!-- Ensure that the value we grabbed matches our expectation -->
 <assertEquals message="This is an optional human readable hint that will be shown in the logs if this assert fails." stepKey="assertEquals1">
    <expectedResult type="string">Some String</expectedResult>
-   <actualResult type="variable">A long assert string {$stepKeyOfGrab} with an embedded variable reference.</actualResult>
+   <actualResult type="string">A long assert string {$stepKeyOfGrab} with an embedded variable reference.</actualResult>
 </assertEquals>
 ```
 
