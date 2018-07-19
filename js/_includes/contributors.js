@@ -174,10 +174,19 @@
     this.buildContributorsList = function ( contributors, settings ) {
       var output = '';
       contributors = contributors.slice( 0, settings.contributorsLimit );
+      contributors = this.sortContributors( contributors );
+      
       $.each(contributors, function (index, value) {
         output += plugin.buildContributor( value );
       });
       return '<div class="'+ settings.contributorsListClass + '" data-period="'+ settings.periodValue +'">' + output + '</div>';
+    }
+
+    this.sortContributors = function ( contributors ) {
+      // Sort by contributor.accepted
+      return contributors.sort( function( a,b ) {
+        return b.accepted - a.accepted;
+      });
     }
 
     // Builds contributor html string

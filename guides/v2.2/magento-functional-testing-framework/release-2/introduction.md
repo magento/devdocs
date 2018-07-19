@@ -1,4 +1,4 @@
- ---
+---
 group: mftf
 title: Introduction to the Magento Functional Testing Framework
 version: 2.2
@@ -26,7 +26,7 @@ Because MFTF tests are written in XML, you no longer need to learn PHP to write 
 include note.html
 type="info"
 content="We are actively developing functional tests.
-Refer to `_\<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf_` for examples."
+Refer to `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for examples."
 %}
 
 ## Audience
@@ -44,7 +44,7 @@ The purpose of MFTF is to:
 MFTF will enable you to:
 
 -   Test user interactions with web applications in testing.
--   Write functional tests located in _\<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf_.
+-   Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
 -   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
 -   Automate regression testing.
 
@@ -56,7 +56,7 @@ As a software engineer, perform regression testing before release to ensure that
 
 ## Find your MFTF version
 
-The MFTF is installed as a Composer dependency in _\ <magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/composer.lock_.
+The MFTF is installed as a Composer dependency in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/composer.lock`.
 
 Open the file and check the corresponding dependency:
 
@@ -104,10 +104,9 @@ pre-install.php                 // Script that checks the environment on whether
 
 ## MFTF tests
 
-The MFTF supports three different locations for storing the tests and test artifacts:
-- `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`
-- `/app/code/<vendor_name>/<module_name>/Test/Mftf/`
-
+The MFTF supports two different locations for storing the tests and test artifacts:
+- `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` is the directory to create new tests.
+- `<magento_root>/vendor/<vendor_name>/<module_name>/Test/Mftf/` is the directory with the out of the box tests (fetched by the Composer).
 
 All tests and test data from these locations are merged in the order indicated in the above list.
 
@@ -130,7 +129,7 @@ The file structure under all three path cases is the same:
 
 ## MFTF on Github
 
-Follow the [MFTF project](https://github.com/magento/magento2-functional-testing-framework) and [contribute on Github](../contribution-guidelines.html).
+Follow the [MFTF project] and [contribute on Github].
 
 
 <!-- Link definitions -->
