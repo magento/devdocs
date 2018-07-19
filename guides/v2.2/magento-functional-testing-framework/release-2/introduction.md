@@ -22,12 +22,9 @@ MFTF will make test creation easier for developers and will improve:
 
 Because MFTF tests are written in XML, you no longer need to learn PHP to write tests.
 
-{%
-include note.html
-type="info"
-content="We are actively developing functional tests.
-Refer to `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for examples."
-%}
+{:.bs-callout .bs-callout-info}
+We are actively developing functional tests.
+Refer to `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for examples.
 
 ## Audience
 
@@ -110,7 +107,7 @@ The MFTF supports two different locations for storing the tests and test artifac
 
 All tests and test data from these locations are merged in the order indicated in the above list.
 
-The file structure under all three path cases is the same:
+The file structure under the both path cases is the same:
 ```
 <Path>
 ├── ActionGroup
