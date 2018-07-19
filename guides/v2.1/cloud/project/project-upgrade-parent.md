@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-Upgrades and patches contains detailed release notes for the Cloud tools, and information on how to upgrade the ece-tools package, upgrade {{site.data.var.ece}}, and apply custom patches and hotfixes.
+Upgrades and patches contains detailed release notes for the ece-tools, and information on how to upgrade the ece-tools package, upgrade {{site.data.var.ece}}, and apply custom patches and hotfixes.
 
 {{site.data.var.ece}} checks for pending patches and updates whenever you push code changes to the remote environment.
 

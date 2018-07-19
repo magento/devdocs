@@ -1,6 +1,6 @@
 ---
 group: cloud
-title: Cloud tools release notes
+title: Release notes for ece-tools
 version: 2.2
 github_link: cloud/release-notes/cloud-tools.md
 redirect_from:
@@ -10,21 +10,21 @@ functional_areas:
   - Setup
   - Configuration
 ---
-The Cloud tools package, also known as _ece-tools_, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ee}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+The ece-tools package, also known as _ece-tools_, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ee}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
 
-You can list the available Cloud tools commands using:
+You can list the available ece-tools commands using:
 
 ```bash
 php ./vendor/bin/ece-tools list
 ```
 
-The following updates describe the latest improvements to the Cloud tools package, which update as needed through patching and product upgrades managed by the `magento-cloud-metapackage`. The Cloud tools package adheres to the version sequence:  `200<major>.<minor>.<patch>`.
+The following updates describe the latest improvements to the ece-tools package, which update as needed through patching and product upgrades managed by the `magento-cloud-metapackage`. The ece-tools package adheres to the version sequence:  `200<major>.<minor>.<patch>`.
 
 ## v2002.0.12
 
 #### New Features
 
--  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration from the Cloud tools `ece-tools` repository.
+-  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration from the Cloud `ece-tools` repository.
 
 -  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
@@ -61,7 +61,7 @@ to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain
 
 ## v2002.0.11
 
-{% include note.html type="info" content="The Cloud tools version 2002.0.11 is required for 2.2.4 compatibility. " %}
+{% include note.html type="info" content="The ece-tools version 2002.0.11 is required for 2.2.4 compatibility. " %}
 
 #### New features
 
