@@ -146,7 +146,7 @@ Product image sizes and other properties used on the {% glossarytooltip 1a70d3ac
 
 If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add `view.xml` using the following steps:
 
-1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
+1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache.html).)
 
 1.	Create the `etc` directory in your theme folder.
 
