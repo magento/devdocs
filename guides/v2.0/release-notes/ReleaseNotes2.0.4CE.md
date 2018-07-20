@@ -16,7 +16,7 @@ We are pleased to present Magento Open Source 2.0.4. This release includes all o
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
 <h4> Upgrade and Installation</h4>
 <!-- 50224 -->* Magento no longer creates store data inconsistently during installation. 
@@ -70,11 +70,11 @@ The following list provides an overview of the security issues fixed in this rel
 We recommend that you review Magento's <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.
 
 
-<h3>System requirements</h3>
+### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
-<h3>Installation instructions</h3>
+### Installation instructions
 
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Open Source 2.0.4 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.

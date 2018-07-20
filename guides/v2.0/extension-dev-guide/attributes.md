@@ -197,7 +197,7 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
 
-<h3>ExtensionInterfaces</h3>
+### ExtensionInterfaces
 
 An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example, in an unmodified installation, `CustomerExtensionInterface` will be generated, but will be empty:
 

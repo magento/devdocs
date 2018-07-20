@@ -40,7 +40,7 @@ All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-
   <p>You need to configure styles manually for components on storefront.</p>
 </div>
 
-<h3>Using UI component in layout file</h3>
+### Using UI component in layout file
 Using {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is as simple as adding the following code to the appropriate {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} section:
 
 `<uiСomponent name="some_ui_component_instance_name"/>`

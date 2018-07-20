@@ -39,7 +39,7 @@ The element's `id` is also used in deep linking: if the `id` of the content or t
 
 Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
 
-<h3>Initialize collapsible with header only</h3>
+### Initialize collapsible with header only
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
 <pre>
 $("#header").collapsible();

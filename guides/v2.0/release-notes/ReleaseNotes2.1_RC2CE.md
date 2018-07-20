@@ -23,7 +23,7 @@ We welcome your participation in this process!  Please open any Open Source  iss
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
 
-<h3>Highlights</h3>
+### Highlights
 
 Magento Open Source (formerly Community Edition) 2.1 includes several new and exciting features:
 
@@ -35,7 +35,7 @@ Magento Open Source (formerly Community Edition) 2.1 includes several new and ex
 
 
 
-<h3>Known issues</h3>
+### Known issues
 Magento Open Source 2.1, Release Candidate 2 includes the following known issues:
 
 
@@ -46,7 +46,7 @@ Magento Open Source 2.1, Release Candidate 2 includes the following known issues
 
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
 <!--- P0 issues -->
 <h4>Checkout</h4>
@@ -176,7 +176,7 @@ Magento Open Source 2.1, Release Candidate 2 includes the following known issues
 
 
 
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 

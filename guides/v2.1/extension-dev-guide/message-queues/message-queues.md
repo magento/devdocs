@@ -38,7 +38,7 @@ In an MySQL adapter environment, when a message is published to multiple queues,
 
 The procedure for instantiating a consumer differs, depending on which message queue system is being used.
 
-<h3>RabbitMQ</h3>
+### RabbitMQ
 This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`)listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 {% highlight php startinline=true %}
@@ -46,7 +46,7 @@ $this->consumerFactory->get('customer_created_listener')
     ->process();
 {% endhighlight %}
 
-<h3>MySQL adapter</h3>
+### MySQL adapter
 
 Implement `\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumberOfMessages)` to instantiate a consumer.
 

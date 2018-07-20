@@ -30,7 +30,7 @@ This Release Candidate is available from `repo.magento.com` if you have a Magent
 
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-<h3>Highlights</h3>
+### Highlights
 
 Magento Commerce 2.1 includes several new and exciting features:
 
@@ -46,7 +46,7 @@ Magento Commerce 2.1 includes several new and exciting features:
  
 
 
-<h3>Known issues</h3>
+### Known issues
 Magento 2.1 RC2 includes the following known issues:
 
 
@@ -57,7 +57,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 <!--- P0 issues -->
 
 <h4>Solr search</h4>
@@ -215,7 +215,7 @@ Magento 2.1 RC2 includes the following known issues:
 
 
 
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 

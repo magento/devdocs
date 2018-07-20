@@ -31,7 +31,7 @@ This Release Candidate is available from `repo.magento.com` if you have an Magen
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
-<h3>Highlights</h3>
+### Highlights
 
 Magento Commerce (formerly Enterprise Edition) 2.1 includes several new features:
 
@@ -46,7 +46,7 @@ Magento Commerce (formerly Enterprise Edition) 2.1 includes several new features
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
 
-<h3>Known issue</h3>
+### Known issue
 
 <b>Issue:</b> Enabling Varnish causes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a>
 
@@ -61,7 +61,7 @@ RewriteCond %{REQUEST_URI} /red-fruit.html
 RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
  
-<h3>Fixed issues</h3>
+### Fixed issues
 
 This release includes fixes for the following GitHub issues:
 
@@ -100,7 +100,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 40320 --> * Attribute 'setup_version' is missing for {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
 
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 

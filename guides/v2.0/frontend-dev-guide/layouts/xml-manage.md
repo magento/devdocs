@@ -90,7 +90,7 @@ The path to assets is specified relatively to one of the following locations:
 
 </ul>
 
-<h3>Adding conditional comments</h3>
+### Adding conditional comments
 <a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:

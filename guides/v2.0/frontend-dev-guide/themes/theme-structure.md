@@ -283,7 +283,7 @@ Static view files that can be accessed by a direct link from the storefront, are
   <p>To be actually accessible for browsers public static files are <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code>/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 </div>
 
-<h3>Dynamic view files</h3>
+### Dynamic view files
 View files that are processed or executed by the server in order to provide result to the client. These are: `.less` files, templates, and layouts.
 
 Dynamic view files are located in a theme directory as follows:

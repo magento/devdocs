@@ -23,7 +23,7 @@ We welcome your participation in this process!  Please open any Magento Open Sou
 Backward-incompatible changes are documented in <a href="{{ site.gdeurl21 }}release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
  
 
-<h3>Highlights</h3>
+### Highlights
 
 Magento Open Source 2.1 includes several new and exciting features:
 
@@ -36,7 +36,7 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
 <h4>Security enhancement</h4>
 
@@ -155,7 +155,7 @@ Magento Open Source 2.1 includes several new and exciting features:
 
 
 
-<h3>Known issues</h3>
+### Known issues
 Magento Community Edition 2.1, Release Candidate 3 includes the following known issues: 
 
 <!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. 
@@ -185,7 +185,7 @@ Magento Community Edition 2.1, Release Candidate 3 includes the following known 
 
 
 
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 

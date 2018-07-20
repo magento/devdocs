@@ -120,7 +120,7 @@ Conventionally page configuration files must be located as follows:
 </ul>
 
 
-<h3>Page configuration structure and allowed layout instructions</h3>
+### Page configuration structure and allowed layout instructions
 
 The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 
@@ -401,7 +401,7 @@ Conventionally generic layout files must be located as follows:
 </ul>
 
 
-<h3>Generic layout structure and allowed layout instructions</h3>
+### Generic layout structure and allowed layout instructions
 
 The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 

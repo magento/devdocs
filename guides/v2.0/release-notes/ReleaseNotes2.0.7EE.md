@@ -16,7 +16,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.7. 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
-<h3>Fixed issues</h3>
+### Fixed issues
 
 * Resolved multiple issues with the accurate display of the contents of the cart, mini cart, and checkout,  including:
 
@@ -35,12 +35,12 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 
 
-<h3>System requirements</h3>
+### System requirements
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="{{ site.baseurl }}/magento-system-requirements.html" target="_blank">System Requirements</a>.
 
 
-<h3>Installation instructions</h3>
+### Installation instructions
 
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Commerce 2.0.7 from an archive file.
@@ -104,7 +104,7 @@ To upgrade to Magento Commerce 2.0.7 using the command line:
 		php bin/magento cache:enable
 
 
-<h3>Migration toolkits</h3>
+### Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
