@@ -10,7 +10,7 @@ See one of the following sections:
 ### Get the Magento Open Source software using Composer {#install-ce-composer}
 {:.no_toc}
 
-This software is available from `repo.magento.com`. Before installing the Open Source software using Composer, familiarize yourself with the Composer metapackage  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run 
+This software is available from `repo.magento.com`. Before installing the Open Source software using Composer, familiarize yourself with the Composer metapackage  <a href="{{ page.baseurl }}/install-gde/composer.html" target="_blank">prerequisites</a>, then run 
 
 	composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=<version> <installation directory name>
 

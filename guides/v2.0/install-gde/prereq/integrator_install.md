@@ -27,7 +27,7 @@ The audience for this topic is anyone who downloads the Magento metapackage usin
 
 {% include install/prereq.md %}
 
-{% include install/composer-overview.html %}
+{% include install/composer-overview.md %}
 
 #### Next step
 [Install Composer]({{ page.baseurl }}/install-gde/prereq/integrator_install_composer.html)
