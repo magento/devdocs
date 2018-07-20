@@ -1182,7 +1182,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<h4 id="contents">Contents</h4>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-<p>Email templates are stored in the <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/view/frontend/email/order_new.html"><code>&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>.</p>
+<p>Email templates are stored in the <code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/view/frontend/email/order_new.html"><code class="highlighter-rouge">&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html</code></a>.</p>
 
 <p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.</p>
 
@@ -1233,8 +1233,8 @@ Make note of this path because you will need it later when you configure this ne
 <p>Every frontend email template includes a header and footer template using these two directives: <code class="highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="highlighter-rouge">{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Email/view/frontend/email/header.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a></li>
-  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Email/view/frontend/email/footer.html"><code>&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Email/view/frontend/email/header.html"><code class="highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html</code></a></li>
+  <li><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Email/view/frontend/email/footer.html"><code class="highlighter-rouge">&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html</code></a></li>
 </ul>
 
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
@@ -1244,10 +1244,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code class="highlighter-rouge">{{var store_hours}}</code> variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Information</strong> section.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> &gt; <b>Custom Variables</b>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> &gt; <strong>Custom Variables</strong>.</p>
 
 <p>To add a variable to your template content:</p>
 
@@ -1261,14 +1258,11 @@ Make note of this path because you will need it later when you configure this ne
   <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code class="highlighter-rouge">&amp;lt;!--@vars @--&amp;gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p>
 
 <h2 id="email-styles">Styles for email templates</h2>
 
-<p>Some email clients (for example, Gmail) support only CSS styles that have been applied as “inline” styles on the <code class="highlighter-rouge">style</code> attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to <code class="highlighter-rouge">style</code> attributes of the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
+<p>Some email clients (for example, Gmail) support only CSS styles that have been applied as “inline” styles on the <code class="highlighter-rouge">style</code> attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier">Emogrifier</a>Emogrifier library, which takes the HTML and CSS and adds all of the CSS styles to <code class="highlighter-rouge">style</code> attributes of the   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
  tags.</p>
 
 <h3 id="inline-styles">Inline styles</h3>
@@ -1282,7 +1276,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code class="highlighter-rouge">inlinecss</code> directive first looks for a <code class="highlighter-rouge">email-inline.less</code> file in <code class="highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/css/email-inline.less</code>. However because that file doesn’t exist, it will fall back to the <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code> file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.</p>
 
-<p>Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selectors" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.</p>
+<p>Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selectors&quot;" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.</p>
 
 <h3 id="non-inline-styles">Non-inline styles</h3>
 
@@ -1419,7 +1413,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <ul>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_email-extend.less"><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code class="highlighter-rouge">@import</code> directive that requests the <code class="highlighter-rouge">email-fonts.css</code> file.</p>
+    <p><a href="https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/blank/web/css/source/_email-extend.less"><code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code></a> contains the <code class="highlighter-rouge">@import</code> directive that requests the <code class="highlighter-rouge">email-fonts.css</code> file.</p>
 
     <p>The reason the contents of <code class="highlighter-rouge">email-fonts.css</code> are loaded using <code class="highlighter-rouge">@import</code> rather than being output directly into a <code class="highlighter-rouge">&lt;style&gt;</code> tag in the <code class="highlighter-rouge">&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
   </li>
@@ -1551,11 +1545,7 @@ Make note of this path because you will need it later when you configure this ne
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>
-Exception: argument value can contain spaces if it is enclosed in brackets.
-</p>
-</div>
+<p class="bs-callout bs-callout-info">Exception: argument value can contain spaces if it is enclosed in brackets.</p>
 
 <h2 id="supported-clients">Supported email clients and devices</h2>
 
