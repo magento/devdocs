@@ -694,8 +694,96 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h1 id="magento-functional-testing-framework-changelog">Magento Functional Testing Framework Changelog</h1>
 
-<h2 id="220">2.2.0</h2>
+<h2 id="230">2.3.0</h2>
 <h3 id="enhancements">Enhancements</h3>
+<ul>
+  <li>Traceability
+    <ul>
+      <li>MFTF now outputs generation run-time information, warnings, and errors to an <code class="highlighter-rouge">mftf.log</code> file.</li>
+      <li>Overall error messages for various generation errors have been improved. Usage of the <code class="highlighter-rouge">--debug</code> flag provides file-specific errors for all XML-related errors.</li>
+      <li>Allure Reports now require a unique <code class="highlighter-rouge">story</code> and <code class="highlighter-rouge">title</code> combination, to prevent collisions in Allure Report generation.</li>
+      <li>The <code class="highlighter-rouge">features</code> annotation now ignores user input and defaults to the module the test lives under (for clear Allure organization).</li>
+      <li>The <code class="highlighter-rouge">&lt;group value="skip"/&gt;</code> annotation has been replaced with a <code class="highlighter-rouge">&lt;skip&gt;</code> annotation, allowing for nested <code class="highlighter-rouge">IssueId</code> elements.</li>
+      <li>Tests now require the following annotations: <code class="highlighter-rouge">stories</code>, <code class="highlighter-rouge">title</code>, <code class="highlighter-rouge">description</code>, <code class="highlighter-rouge">severity</code>.
+        <ul>
+          <li>This will be enforced in a future major release.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Modularity
+    <ul>
+      <li>MFTF has been decoupled from MagentoCE:
+        <ul>
+          <li>MFTF can now generate and run tests by itself via <code class="highlighter-rouge">bin/mftf</code> commands.</li>
+          <li>It is now a top level MagentoCE dependency, and no longer relies on supporting files in MagentoCE.</li>
+          <li>It can be used as an isolated dependency for Magento projects such as extensions.</li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">generate:tests</code> now warns the user if any declared <code class="highlighter-rouge">&lt;page&gt;</code> has an inconsistent <code class="highlighter-rouge">module</code> (<code class="highlighter-rouge">Backend</code> vs <code class="highlighter-rouge">Magento_Backend</code>)</li>
+      <li>The <code class="highlighter-rouge">--force</code> flag now completely ignores checking of the Magento Installation, allowing generation of tests without a Magento Instance to be running.</li>
+    </ul>
+  </li>
+  <li>Customizability
+    <ul>
+      <li>Various test materials can now be extended via an <code class="highlighter-rouge">extends="ExistingMaterial"</code> attribute. This allows for creation of simple copies of any <code class="highlighter-rouge">entity</code>, <code class="highlighter-rouge">actionGroup</code>, or <code class="highlighter-rouge">test</code>, with small modifications.</li>
+      <li><code class="highlighter-rouge">test</code> and <code class="highlighter-rouge">actionGroup</code> deltas can now be provided in bulk via a <code class="highlighter-rouge">before/after</code> attribute on the <code class="highlighter-rouge">test</code> or <code class="highlighter-rouge">actionGroup</code> element. Deltas provided this way do not need individual <code class="highlighter-rouge">before/after</code> attributes, and are inserted sequentially.</li>
+      <li>Secure and sensitive test data can now be stored and used via a new <code class="highlighter-rouge">.credentials</code> file, with declaration and usage syntax similar to <code class="highlighter-rouge">.env</code> file references.</li>
+      <li>A new <code class="highlighter-rouge">&lt;generateDate&gt;</code> action has been added to allow users to create and use dates according to the given <code class="highlighter-rouge">date</code> and <code class="highlighter-rouge">format</code>.
+        <ul>
+          <li>See DevDocs for more information on all above <code class="highlighter-rouge">Customizability</code> features.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Maintainability
+    <ul>
+      <li>New <code class="highlighter-rouge">bin/mftf</code> commands have been introduced with parity to existing <code class="highlighter-rouge">robo</code> commands.
+        <ul>
+          <li><code class="highlighter-rouge">robo</code> commands are still supported, but will be deprecated in a future major release.</li>
+        </ul>
+      </li>
+      <li>The <code class="highlighter-rouge">mftf upgrade:tests</code> command has been introduced, which runs all test upgrade scripts against the provided path.
+        <ul>
+          <li>A new upgrade script was created to replace all test material schema paths to instead use a URN path.</li>
+        </ul>
+      </li>
+      <li>The <code class="highlighter-rouge">mftf generate:urn-catalog</code> command has been introduced to create a URN catalog in PHPStorm to support the above upgrade.</li>
+      <li>A warning is now shown on generation if a page’s url is referenced without specifying the url (<code class="highlighter-rouge">{{page}}</code> vs <code class="highlighter-rouge">{{page.url}}</code>).</li>
+      <li>An error is now thrown if any test materials contain any overriding element (eg different <code class="highlighter-rouge">&lt;element&gt;</code>s in a <code class="highlighter-rouge">&lt;section&gt;</code> with the same <code class="highlighter-rouge">name</code>)
+        <ul>
+          <li>This previously would cause the last read element to override the previous, causing a silent but potentially incorrect test addition.</li>
+        </ul>
+      </li>
+      <li>Test distribution algorithm for <code class="highlighter-rouge">--config parallel</code> has been enhanced to take average step length into account.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="fixes">Fixes</h3>
+<ul>
+  <li><code class="highlighter-rouge">_after</code> hook of tests now executes if a non test-related failure causes the test to error.</li>
+  <li>Fixed periods in Allure Report showing up as <code class="highlighter-rouge">•</code>.</li>
+  <li>Fixed Windows incompatibility of relative paths in various files.</li>
+  <li>Suites will no longer generate if they do not contain any tests.</li>
+  <li>Fixed an issue in generation where users could not use javascript variables in <code class="highlighter-rouge">executeJS</code> actions.</li>
+  <li>Fixed an issue in generation where entity replacement in action-groups replaced all entities with the first reference found.</li>
+  <li>Fixed an issue in generation where <code class="highlighter-rouge">createData</code> actions inside <code class="highlighter-rouge">actionGroups</code> could not properly reference the given <code class="highlighter-rouge">createDataKey</code>.</li>
+  <li>Fixed an issue where <code class="highlighter-rouge">suites</code> could not generate if they included an <code class="highlighter-rouge">actionGroup</code> with two arguments.</li>
+  <li>Fixed an issue in generation where calling the same entity twice (with different parameters) would replace both calls with the first resolved value.</li>
+  <li>The <code class="highlighter-rouge">magentoCLI</code> action now correctly executes the given command if the <code class="highlighter-rouge">MAGENTO_BASE_URL</code> contains <code class="highlighter-rouge">index.php</code> after the domain (ex <code class="highlighter-rouge">https://magento.instance/index.php</code>)</li>
+  <li>The <code class="highlighter-rouge">stepKey</code> attribute can no longer be an empty.</li>
+  <li>Variable substitution has been enabled for <code class="highlighter-rouge">regex</code> and <code class="highlighter-rouge">command</code> attributes in test actions.</li>
+</ul>
+
+<h3 id="github-issuespull-requests">GitHub Issues/Pull requests:</h3>
+<ul>
+  <li><a href="https://github.com/magento/magento2-functional-testing-framework/pull/161">#161</a> – MAGETWO-46837: Implementing extension to wait for readiness metrics.</li>
+  <li><a href="https://github.com/magento/magento2-functional-testing-framework/issues/72">#72</a> – declare(strict_types=1) causes static code check failure (fixed in <a href="https://github.com/magento/magento2-functional-testing-framework/pull/154">#154</a>)</li>
+</ul>
+
+<h2 id="220">2.2.0</h2>
+<h3 id="enhancements-1">Enhancements</h3>
 <ul>
   <li>Traceability
     <ul>
@@ -755,7 +843,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes">Fixes</h3>
+<h3 id="fixes-1">Fixes</h3>
 <ul>
   <li>Exception message for the <code class="highlighter-rouge">&lt;conditionalClick&gt;</code> action now correctly references the <code class="highlighter-rouge">selector</code> given.</li>
   <li>Usage of multiple parameterized elements in a <code class="highlighter-rouge">selector</code> now correctly resolves all element references.</li>
@@ -769,7 +857,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Mapping of the <code class="highlighter-rouge">&lt;magentoCLI&gt;</code> to the custom command has been fixed.</li>
 </ul>
 
-<h3 id="github-issuespull-requests">GitHub Issues/Pull requests:</h3>
+<h3 id="github-issuespull-requests-1">GitHub Issues/Pull requests:</h3>
 <ul>
   <li><a href="https://github.com/magento/magento2-functional-testing-framework/pull/89">#89</a> – Add ability to use array entities as arguments.</li>
   <li><a href="https://github.com/magento/magento2-functional-testing-framework/issues/68">#68</a> – Excessive double quotes are being generated in WaitForElementChange method arguments (fixed in <a href="https://github.com/magento/magento2-functional-testing-framework/pull/103">#103</a>)</li>
@@ -777,13 +865,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="212">2.1.2</h2>
-<h3 id="enhancements-1">Enhancements</h3>
+<h3 id="enhancements-2">Enhancements</h3>
 <ul>
   <li>Added support for PHP version 7.2</li>
 </ul>
 
 <h2 id="211">2.1.1</h2>
-<h3 id="enhancements-2">Enhancements</h3>
+<h3 id="enhancements-3">Enhancements</h3>
 <ul>
   <li>Modularity
     <ul>
@@ -802,7 +890,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-1">Fixes</h3>
+<h3 id="fixes-2">Fixes</h3>
 <ul>
   <li>Data returned by <code class="highlighter-rouge">grab</code> and <code class="highlighter-rouge">createData</code> actions can now be used in <code class="highlighter-rouge">&lt;actionGroup&gt;</code> test steps by their <code class="highlighter-rouge">stepKey</code> reference.</li>
   <li>Fixed an issue where <code class="highlighter-rouge">&lt;requiredEntity&gt;</code> elements inside <code class="highlighter-rouge">&lt;entity&gt;</code> data xml would overwrite one another when merged.</li>
@@ -818,7 +906,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="210">2.1.0</h2>
-<h3 id="enhancements-3">Enhancements</h3>
+<h3 id="enhancements-4">Enhancements</h3>
 <ul>
   <li>Traceability
     <ul>
@@ -870,7 +958,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-2">Fixes</h3>
+<h3 id="fixes-3">Fixes</h3>
 <ul>
   <li>Fixed an issue with using the character <code class="highlighter-rouge">-</code> in parameterized selector references.
     <ul>
@@ -880,13 +968,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Fixed an issue where entity substitution was not enabled in all <code class="highlighter-rouge">&lt;assert...&gt;</code> test actions.</li>
 </ul>
 
-<h3 id="github-issuespull-requests-1">GitHub Issues/Pull requests:</h3>
+<h3 id="github-issuespull-requests-2">GitHub Issues/Pull requests:</h3>
 <ul>
   <li><a href="https://github.com/magento/magento2-functional-testing-framework/issues/37">#37</a> – Unable to make API requests using self signed certificate to HTTPS domain (fixed in <a href="https://github.com/magento/magento2-functional-testing-framework/pull/39">#39</a>)</li>
 </ul>
 
 <h2 id="203">2.0.3</h2>
-<h3 id="enhancements-4">Enhancements</h3>
+<h3 id="enhancements-5">Enhancements</h3>
 <ul>
   <li>Readability
     <ul>
@@ -904,7 +992,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-3">Fixes</h3>
+<h3 id="fixes-4">Fixes</h3>
 <ul>
   <li>Fixed inability to use <code class="highlighter-rouge">&lt;actionGroup&gt;</code> with <code class="highlighter-rouge">&lt;arguments&gt;</code> in test hooks.</li>
   <li>Fixed inability to use <code class="highlighter-rouge">0</code> as data in an entity.</li>
@@ -917,7 +1005,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="202">2.0.2</h2>
 
-<h3 id="enhancements-5">Enhancements</h3>
+<h3 id="enhancements-6">Enhancements</h3>
 <ul>
   <li>Customizability
     <ul>
@@ -935,7 +1023,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-4">Fixes</h3>
+<h3 id="fixes-5">Fixes</h3>
 <ul>
   <li>Fixed inability to use <code class="highlighter-rouge">[]</code> characters within selector/url parameters.</li>
   <li>Fixed a bug where the <code class="highlighter-rouge">&lt;formatMoney&gt;</code> action did not return a variable for test use.</li>
@@ -944,14 +1032,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="201">2.0.1</h2>
 
-<h3 id="fixes-5">Fixes</h3>
+<h3 id="fixes-6">Fixes</h3>
 <ul>
   <li>Fixed an issue with <code class="highlighter-rouge">group</code> annotation.</li>
 </ul>
 
 <h2 id="200">2.0.0</h2>
 
-<h3 id="enhancements-6">Enhancements</h3>
+<h3 id="enhancements-7">Enhancements</h3>
 <ul>
   <li>Modularity
     <ul>
@@ -980,7 +1068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3 id="fixes-6">Fixes</h3>
+<h3 id="fixes-7">Fixes</h3>
 <ul>
   <li>Fixed the <code class="highlighter-rouge">unselectOption.parameterArray</code> property to work as expected.</li>
   <li>Fixed a crash if you had a system environment variable set with the same name as any variable in the <code class="highlighter-rouge">.env</code> file.</li>
