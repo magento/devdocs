@@ -549,7 +549,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition to the <a href="/guides/v2.3/install-gde/prereq/prereq-overview.html">standard Magento prerequisites</a>, make sure you have obtained and installed:</p>
 
 <ul>
-  <li><em>Authentication keys</em>. The Magento Open Source 2.3.0 Alpha Composer package is available to everyone. For access to the Magento Commerce 2.3.0 Alpha Composer package, contact <a href="https://magento.com/support">Magento Support</a>. See <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Get your authentication keys</a> for more information.</li>
+  <li><em>Open Source Access</em>. The Open Source 2.3.0 Alpha Composer package is available to everyone with Magento authentication keys. If you do not have authentication keys, see <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Get your authentication keys</a> for more information.</li>
+  <li><em>Commerce Access</em>. The Commerce 2.3.0 Alpha Composer package is only available to Magento partners, as well as approved merchant developers and independent extension developers. In addition, access is granted only to those who complete and sign <a href="https://partners.magento.com/portal/pre-release-agreement">Magento’s Pre-Release Software Agreement</a>. You will be notified of your approval to access the Magento Commerce 2.3.0 Alpha repository within three business days. After you receive approval you will be able to install Magento Commerce 2.3.0 Alpha using these installation instructions.</li>
   <li><em>PHP 7.1 or 7.2 and extensions</em>. See instructions here: <a href="/guides/v2.3/install-gde/prereq/php-ubuntu.html#instgde-prereq-php71-ubuntu">Install PHP 7.1 for Ubuntu</a> or <a href="/guides/v2.3/install-gde/prereq/php-centos.html#php-centos-71">Install PHP 7.1 for Centos</a>.</li>
   <li><em>Composer</em>. Install using:
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  curl <span class="nt">-sS</span> https://getcomposer.org/installer | <span class="nb">sudo </span>php <span class="nt">--</span> <span class="nt">--install-dir</span><span class="o">=</span>/usr/bin <span class="nt">--filename</span><span class="o">=</span>composer
@@ -559,27 +560,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="install-230-alpha">Install 2.3.0 Alpha</h2>
 
-<p class="bs-callout bs-callout-info">Currently, the Magento 2.3.0 Alpha is only available for Open Source modules. Alpha for Commerce, including the Magento Commerce for B2B extension, will be made available soon.</p>
-
 <ol>
   <li>
-    <p>Install the Open Source or Commerce alpha package.</p>
-
-    <div class="bs-callout bs-callout-warning" id="info">
-      <p>If you have installed a 2.3.0 alpha version before, run <code class="highlighter-rouge">composer clearcache</code> before installing again. If you don’t clear the cache, Composer will not download the latest alpha release from the repo. It will instead use your locally cached packages.</p>
-    </div>
+    <p>Install the Open Source or Commerce Alpha package.</p>
 
     <p><strong>Open Source</strong></p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-community-edition<span class="o">=</span>2.3.0-alpha &lt;install-directory-name&gt;
+
+    <p>Available to everyone with Magento authentication keys. If you do not have authentication keys, complete the instructions in <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">Get your authentication keys</a> before continuing.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-community-edition<span class="o">=</span>2.3.<span class="k">*</span> <span class="nt">--stability</span><span class="o">=</span>alpha &lt;install-directory-name&gt;
 </code></pre></div>    </div>
 
     <p><strong>Commerce</strong></p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition<span class="o">=</span>2.3.0-alpha &lt;install-directory-name&gt;
+
+    <p>Only available to Magento partners, merchant developers, and independent extension developers who have signed <a href="https://partners.magento.com/portal/pre-release-agreement">Magento’s Pre-Release Software Agreement</a> and been approved to access the Commerce 2.3.0 Alpha repositories. If you have not signed the pre-release software agreement and been granted access, you must do so before continuing.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer create-project <span class="nt">--repository</span><span class="o">=</span>https://repo.magento.com/ magento/project-enterprise-edition<span class="o">=</span>2.3.<span class="k">*</span> <span class="nt">--stability</span><span class="o">=</span>alpha &lt;install-directory-name&gt;
 </code></pre></div>    </div>
 
     <p>When prompted, enter your authentication keys. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
 
-    <p>If you encounter errors, such as <code class="highlighter-rouge">Could not find package...</code> or <code class="highlighter-rouge">...no matching package found</code>, make sure there aren’t any typos in your command. If you still encounter errors, you may not have access to our pre-release Composer repositories. Contact <a href="https://magento.com/support">Magento support</a> for help.</p>
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>If you encounter errors, such as <code class="highlighter-rouge">Could not find package...</code> or <code class="highlighter-rouge">...no matching package found</code>, make sure there aren’t any typos in your command. If you still encounter errors, you may not have access to our pre-release Composer repositories. Contact <a href="https://magento.com/support">Magento support</a> for help.</p>
+    </div>
   </li>
   <li>Set file permissions as follows:
     <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> cd /var/www/html/&lt;magento install directory&gt;</span>
@@ -602,8 +603,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <p><strong>Using the Web Setup Wizard.</strong> As an alternative to the CLI, use your browser to navigate to Magento’s setup wizard:</p>
 
-    <pre><code class="language-url"> http://&lt;Magento-host-or-IP&gt;/&lt;path-to-magento-root&gt;/setup
-</code></pre>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> http://&lt;Magento-host-or-IP&gt;/&lt;path-to-magento-root&gt;/setup
+</code></pre></div>    </div>
     <p>For example: <code class="highlighter-rouge">http://localhost/magento2ee/setup</code></p>
   </li>
   <li>
@@ -614,6 +615,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>When prompted, enter your authentication keys. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
   </li>
 </ol>
+
+<h2 id="b2b-for-commerce-230-alpha">B2B for Commerce 2.3.0 Alpha</h2>
+<p>B2B features are only included in Magento Commerce and are not available for Magento Open Source. Only users with access to the Magento Commerce 2.3 Alpha can evaluate and test B2B features. To install B2B for Commerce 2.3.0 Alpha, refer to <a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/install-extensions/b2b-installation.html">Install the B2B extension</a>.</p>
 
 			
 		</div>
