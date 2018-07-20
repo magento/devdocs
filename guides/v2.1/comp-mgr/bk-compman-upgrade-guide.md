@@ -65,7 +65,8 @@ Complete the tasks discussed in [Prerequisites].
 [Composer]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
 [Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html
 [Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
-[Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html {:target="_blank"}
+[Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html
+{:target="_blank"}
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Upgrade from CE to EE]: {{ page.baseurl }}/comp-mgr/upgrader/ce-ee-upgrade-start.html
 [upgrade the software manually]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html

@@ -38,13 +38,14 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 * To upgrade from {{ce}} to {{ee}}, see [Upgrade from Open Source to Commerce].
 
 {:.bs-callout .bs-callout-info}
-__System upgrade__ refers to updating the Magento 2.x core modules and other installed modules. To migrate from Magento 1.x to Magento 2, see the [Migration Guide].
+__System upgrade__ refers to updating the Magento 2.x core modules and other installed modules.
+To migrate from Magento 1.x to Magento 2, see the [Migration Guide].
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-For upgrade or update, you must use the same authentication keys you
-used to install the Magento software. For example, you *cannot* use
-{{ce}} authentication keys to update or upgrade {{ee}} or vice versa.
+For upgrade or update, you must use the same authentication keys you used to install the Magento software.
+For example, you *cannot* use {{ce}} authentication keys to update or upgrade {{ee}} or vice versa.
 You also *cannot* use:
+
 - Another user\'s authentication keys
 - [Shared account] authentication keys
 </div>
@@ -58,12 +59,13 @@ Complete the tasks discussed in [Prerequisites].
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
 
-[Composer]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
 [archive]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
+[command line]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
+[Composer]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html
+[Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
+[Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html
+{:target="_blank"}
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
-[Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html {:target="_blank"}
 [Upgrade from Open Source to Commerce]: {{ page.baseurl }}/comp-mgr/upgrader/ce-ee-upgrade-start.html
 [upgrade the software manually]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
-[command line]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
-[Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
-[Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html

@@ -7,6 +7,11 @@ functional_areas:
   - Upgrade
 ---
 
+<!-- Topic variables
+{% capture ce %}{{site.data.var.ce}}{% endcapture %}
+{% capture ee %}{{site.data.var.ee}}{% endcapture %}
+-->
+
 Upgrade Magento from the command line if you installed the software using any of the following:
 
 * Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
@@ -58,9 +63,9 @@ You can optionally create a [custom maintenance mode page].
 
 Backup the existing `composer.json` file in the Magento installation directory.
    
-### (Optional) To upgrade from {{ site.data.var.ce }} to {{ site.data.var.ee }}
+### (Optional) To upgrade from {{ ce }} to {{ ee }}
 
-If you are upgrading from {{ site.data.var.ce }} to {{ site.data.var.ee }}, deactivate the {{ site.data.var.ce }} update:
+If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
  
 ```bash
 composer remove magento/product-community-edition --no-update
@@ -70,15 +75,15 @@ composer remove magento/product-community-edition --no-update
 
 Require the Magento packages of the corresponding edition (`community` or `enterprise`) and version (`<2.3_version>`).
 
-#### (Optional) If you are upgrading from {{ site.data.var.ce }} to {{ site.data.var.ee }}
+#### (Optional) If you are upgrading from {{ ce }} to {{ ee }}
 
-If you are upgrading from {{ site.data.var.ce }} to {{ site.data.var.ee }}, deactivate the {{ site.data.var.ce }} update:
+If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
  
 ```bash
 composer remove magento/product-community-edition --no-update
 ```
 
-#### For {{ site.data.var.ce }}
+#### For {{ ce }}
 
 ```bash
 composer require magento/product-community-edition=2.3.0 --no-update
@@ -95,7 +100,7 @@ composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
 '
 %}
 
-#### For {{ site.data.var.ee }}
+#### For {{ ee }}
 
 ```bash
 composer require magento/product-enterprise-edition=2.3.0 --no-update
@@ -154,7 +159,7 @@ Backup and remove the `<Magento install dir>/update` directory.
 
 #### Create a Composer project
 
-- For {{ site.data.var.ce }}
+- For {{ ce }}
 
   Example for version 2.3.0:
 
@@ -166,7 +171,7 @@ Backup and remove the `<Magento install dir>/update` directory.
   If you need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
   
 
-- For {{ site.data.var.ee }}
+- For {{ ee }}
 
   Example for version 2.3.0:
 
@@ -339,6 +344,7 @@ Open your storefront to check if the upgrade was successful.
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [script]: https://raw.githubusercontent.com/magento/magento2/2.3-develop/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
+{:target="_blank"}
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html
