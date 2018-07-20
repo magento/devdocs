@@ -13,7 +13,7 @@ functional_areas:
 #### Contents
 
 ## Customize email templates {#customize-email-templates}
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`&lt;Magento_Sales_module_dir&gt;/view/frontend/email/order_new.html`]({{ site.mage2100url }}app/code/Magento/Sales/view/frontend/email/order_new.html). 
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2100url }}app/code/Magento/Sales/view/frontend/email/order_new.html). 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
@@ -22,7 +22,7 @@ You can add custom templates as physical files in your custom {% glossarytooltip
 ### Customize email templates using a theme {#customize-email-theme}
 Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
 
-[Template fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates){target="&#95;blank"} is supported for email templates, so parent themes of your current theme are searched for templates.
+[Template fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates){:target="_blank"} is supported for email templates, so parent themes of your current theme are searched for templates.
  
 ### Customize email templates using the Magento Admin {#customize-email-admin}
 
@@ -32,7 +32,7 @@ Any templates configured in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8
 2. Click **Add New Template**.
 3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
-    <br>![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template.png){:width="70%"}{height="70%"}
+    <br>![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template.png){:width="70%"}{:height="70%"}
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
 5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
@@ -45,15 +45,15 @@ Make note of this path because you will need it later when you configure this ne
     2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
     3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
     <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
-    <br>![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template.png){:width="70%"}{height="70%"}
+    <br>![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template.png){:width="70%"}{:height="70%"}
     4. Select your newly created template from the list.
     5. Click **Save Config**.
 
 ### Customize header and footer templates {#customize-header-footer}
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
-  * [`&lt;Magento_Email_module_dir&gt;/view/frontend/email/header.html`]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html)
-  * [`&lt;Magento_Email_module_dir&gt;/view/frontend/email/footer.html`]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html)
+  * [`<Magento_Email_module_dir>/view/frontend/email/header.html`]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html)
+  * [`<Magento_Email_module_dir>/view/frontend/email/footer.html`]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html)
 
 You can customize header and footer templates using either the [theme](#customize-email-theme) or [admin](#customize-email-admin) customization methods discussed previously.
 
@@ -70,7 +70,7 @@ To add a variable to your template content:
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Create a new template or edit an existing template.
 3. Click to place the cursor in the text in which to insert the variable.
-4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br>![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable.png){:width="70%"}{height="70%"}
+4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br>![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable.png){:width="70%"}{:height="70%"}
 
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
@@ -93,7 +93,7 @@ The `inlinecss` directive tells Magento which files to apply as inline styles on
 
 For example, let's say an email is being sent from a store configured with the Magento Luma theme. The `inlinecss` directive first looks for a `email-inline.less` file in `<Magento_Luma_theme_dir>/web/css/email-inline.less`. However because that file doesn't exist, it will fall back to the `<Magento_Blank_theme_dir>/web/css/email-inline.less` file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.
 
-Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors"){target="&#95;blank"} to see what CSS selectors are supported.
+Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors"){:target="_blank"} to see what CSS selectors are supported.
 
 ### Non-inline styles {#non-inline-styles}
 
@@ -220,12 +220,12 @@ Emails inherit the custom fonts that are defined by the {% glossarytooltip b0045
 
 Here is an overview of how the font structure for emails works:
 
-* [`&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less`]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
+* [`<Magento_Blank_theme_dir>/web/css/source/_email-extend.less`]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
 
   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
-    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_variables.less){target="&#95;blank"} defines which font is used in the `@font-family-name__base` variable.
-    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_typography.less){target="&#95;blank"} generates the `@font-face` rules which import the custom fonts.
+    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_variables.less){:target="_blank"} defines which font is used in the `@font-family-name__base` variable.
+    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_typography.less){:target="_blank"} generates the `@font-face` rules which import the custom fonts.
 
 If you want to change the font used for emails, do the following:
 
@@ -333,7 +333,7 @@ Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}
 
-We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/){target="&#95;blank"}. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
+We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/){:target="_blank"}. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
 
 * Supported Desktop Clients
     * Apple Mail 7 (OS X 10.9)
