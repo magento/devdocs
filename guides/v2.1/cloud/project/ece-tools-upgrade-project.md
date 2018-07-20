@@ -39,8 +39,9 @@ The following example places a constraint for the Magento Cloud metapackage to a
 ```
 
 ### Upgrade the project
- 
- 
+
+To upgrade your project to use the `ece-tools` package, you need to update the metapackage, update the `.magento.app.yaml` hooks properties, and run a composer update.
+
 #### To upgrade project to use ece-tools:
 
 1.  Update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file.
@@ -55,7 +56,7 @@ The following example places a constraint for the Magento Cloud metapackage to a
     composer update magento/magento-cloud-metapackage
     ```
   
-1.  Modify the build and deploy hook commands in the `magento.app.yaml` file.
+1.  Modify the hook commands in the `magento.app.yaml` file.
 
     ```yaml
     hooks:
@@ -68,6 +69,12 @@ The following example places a constraint for the Magento Cloud metapackage to a
         # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
         post_deploy: |
             php ./vendor/bin/ece-tools post-deploy
+    ```
+
+1.  It may be necessary to update `ece-tools`.
+
+    ```bash
+    composer update magento/ece-tools
     ```
 
 1.  Add and commit the code changes. In this example, the following files were updated:
