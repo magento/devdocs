@@ -14,15 +14,16 @@ Before you continue, to avoid errors during your installation or update, make su
 *	[Set a value for DATA_CONVERTER_BATCH_SIZE](#batch-size)
 *	[File system permissions](#perms) are set properly
 
-Do not continue without performing these checks. Failure to do so could result in errors.
 {:bs-callout bs-callout-warning}
+Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Set a value for DATA_CONVERTER_BATCH_SIZE {#batch-size}
 
 Magento {{ page.version }} includes security enhancements that require some data to be converted from serialized data format to JSON encoded format.
 This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.
 
-The following tables are affected the most: 
+The following tables are affected the most:
+
 * `catalogrule`
 * `core_config_data`
 * `magento_reward_history`
@@ -51,8 +52,8 @@ After your upgrade completes, you can unset the variable as follows:
 unset DATA_CONVERTER_BATCH_SIZE
 ```
 
-`DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 {:bs-callout bs-callout-info}
+`DATA_CONVERTER_BATCH_SIZE` requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.
 
 ### Magento file system owner and group {#magento-owner-group}
 
