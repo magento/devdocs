@@ -39,7 +39,7 @@ To get the Magento metapackage:
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/file-sys-perms-over.html).
 1.  Change to the web server docroot directory or a directory that you have configured as a virtual host docroot.
-1.  Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} Magento metapackage.
+1.  Create a new Composer project using the {{site.data.var.ce}} or {{site.data.var.ee}} metapackage.
 
     **{{site.data.var.ce}}**
     ```bash
@@ -82,7 +82,22 @@ There are two options for installing Magento:
 This example assumes that the Magento install directory is named `magento2ee`, the `db-host` is on the same machine (`localhost`), and that the `db-name`, `db-user`, and `db-password` are all `magento`:
 
 ```bash
-bin/magento setup:install --base-url=http://localhost/magento2ee --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --backend-frontname=admin --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+bin/magento setup:install \
+--base-url=http://localhost/magento2ee \
+--db-host=localhost \
+--db-name=magento \
+--db-user=magento \
+--db-password=magento \
+--backend-frontname=admin \
+--admin-firstname=admin \
+--admin-lastname=admin \
+--admin-email=admin@admin.com \
+--admin-user=admin \
+--admin-password=admin123 \
+--language=en_US \
+--currency=USD \
+--timezone=America/Chicago \
+--use-rewrites=1
 ```
 
 {:.bs-callout .bs-callout-tip}
