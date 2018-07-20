@@ -1078,8 +1078,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="checklist">Checklist</h2>
-<p>Before you continue, to avoid errors during your installation or update, make sure you verify <em>all</em> of the following:</p>
+			<p>Before you continue, to avoid errors during your installation or update, make sure you verify <em>all</em> of the following:</p>
 
 <ul>
   <li>You set up a <a href="#magento-owner-group">Magento file system owner</a> and shared that owner’s group with the web server user group</li>
@@ -1088,22 +1087,31 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="#perms">File system permissions</a> are set properly</li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
-</div>
+<p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
 
 <h3 id="batch-size">Set a value for DATA_CONVERTER_BATCH_SIZE</h3>
 
-<p>Magento 2.2 includes security enhancements that requires some data to be converted from serialized data format to JSON encoded format.
+<p>Magento 2.2 includes security enhancements that require some data to be converted from serialized data format to JSON encoded format.
 This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.</p>
 
-<p>One or more fields in the following tables are affected: <code class="highlighter-rouge">sales_order</code>, <code class="highlighter-rouge">sales_order_payment</code>, <code class="highlighter-rouge">quote</code>, <code class="highlighter-rouge">quote_payment</code>, <code class="highlighter-rouge">core_config_data</code>, <code class="highlighter-rouge">magento_reward_history</code>, <code class="highlighter-rouge">url_rewrite</code>, <code class="highlighter-rouge">salesrule</code>, and <code class="highlighter-rouge">catalogrule</code>.
-(This is not a complete list.)</p>
+<p>The following tables are affected the most:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">catalogrule</code></li>
+  <li><code class="highlighter-rouge">core_config_data</code></li>
+  <li><code class="highlighter-rouge">magento_reward_history</code></li>
+  <li><code class="highlighter-rouge">quote_payment</code></li>
+  <li><code class="highlighter-rouge">quote</code></li>
+  <li><code class="highlighter-rouge">sales_order_payment</code></li>
+  <li><code class="highlighter-rouge">sales_order</code></li>
+  <li><code class="highlighter-rouge">salesrule</code></li>
+  <li><code class="highlighter-rouge">url_rewrite</code></li>
+</ul>
 
 <p>If you have a large amount of data, you can improve performance by setting the value of an environment variable, <code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code>.
 By default, it’s set to a value of 50,000.</p>
 
-<p>To set the variable, before the upgrade starts enter the following command as the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
+<p>To set the variable, enter the following command as the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
  in a bash shell prompt:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span>DATA_CONVERTER_BATCH_SIZE &lt;value&gt;
 </code></pre></div></div>
@@ -1116,9 +1124,7 @@ By default, it’s set to a value of 50,000.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">unset </span>DATA_CONVERTER_BATCH_SIZE
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info">
-  <p><code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
-</div>
+<p><code class="highlighter-rouge">DATA_CONVERTER_BATCH_SIZE</code> requires memory; avoid setting it to a very large value (approximately 1GB) without testing it first.</p>
 
 <h3 id="magento-owner-group">Magento file system owner and group</h3>
 
@@ -1160,7 +1166,7 @@ Ownership determines <em>who</em> can perform actions on the file system; permis
 
 <p>To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider’s file manager application.</p>
 
-<p>For example, enter the following commands on a Linux system if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
+<p>For example, enter the following command if the Magento application is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-al</span> /var/www/html/magento2
 </code></pre></div></div>
 
@@ -1200,8 +1206,13 @@ drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
 </span></code></pre></div></div>
 
-<p>In the preceding example, the Magento file system owner is <code class="highlighter-rouge">magento_user</code>.
-Directories in the Magento file system have <code class="highlighter-rouge">drwxrwx---</code> permissions (775) and files have <code class="highlighter-rouge">-rw-rw-rw-</code> permissions (664).</p>
+<p>Here,</p>
+<ul>
+  <li>most of the files are <code class="highlighter-rouge">-rw-rw----</code>, which is 660</li>
+  <li><code class="highlighter-rouge">drwxrwx---</code> = 770</li>
+  <li><code class="highlighter-rouge">-rw-rw-rw-</code> = 666</li>
+  <li>the Magento file system owner is <code class="highlighter-rouge">magento_user</code>.</li>
+</ul>
 
 <p>To get more detailed information, you can optionally enter the following command:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-al</span> /var/www/html/magento2/pub

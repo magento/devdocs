@@ -128,6 +128,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <ul>
           <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
           
+          <li><a href="/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
           <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
           
           <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
@@ -1084,11 +1086,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<h2 id="upgrade-the-magento-application-and-modules">Upgrade the Magento application and modules</h2>
+			<!-- Topic variables
+
+
+-->
+
+<h2 id="upgrade-the-magento-application-and-modules">Upgrade the Magento application and modules</h2>
+
 <p>This topic discusses the ways you can:</p>
 
 <ul>
-  <li>Upgrade (that is, <em>patch</em>) the Magento software from version 2.0.0 to 2.0.1, for example</li>
+  <li>Upgrade (that is, <em>patch</em>) the Magento software from version 2.2.0 to 2.2.1, for example</li>
   <li>
     <p>Update any of the following:</p>
 
@@ -1102,39 +1110,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="upgrade-the-magento-application">Upgrade the Magento application</h2>
+
 <p>The way you upgrade (that is, patch) the Magento application depends on how you installed it:</p>
 
 <ul>
   <li>Magento Open Source and Magento Commerce: If you used <a href="/guides/v2.3/install-gde/prereq/integrator_install.html">Composer</a> to install the Magento application or if you downloaded an <a href="/guides/v2.3/install-gde/prereq/zip_install.html">archive</a>, use the <a href="/guides/v2.3/comp-mgr/upgrader/upgrade-start.html">System Upgrade utility</a> or the <a href="/guides/v2.3/comp-mgr/cli/cli-upgrade.html">command line</a>.</li>
   <li>Magento Open Source only: If you cloned the Magento 2 GitHub repository because you are contributing code to the Magento Open Source codebase, <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">upgrade the software manually</a>.</li>
-  <li>
-    <p>If your Magento root directory is <code class="highlighter-rouge">&lt;your Magento install directory/pub&gt;</code>, you can upgrade in any of the following ways:</p>
-
+  <li>If your Magento root directory is <code class="highlighter-rouge">&lt;your Magento install directory/pub&gt;</code>, you can upgrade in any of the following ways:
     <ul>
-      <li>
-        <p>For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.</p>
+      <li>For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.</li>
+    </ul>
 
-        <p>Run the System Upgrade utility as discussed in this topic using that subdomain or docroot.</p>
-      </li>
-      <li>
-        <p>Upgrade the Magento software using the <a href="/guides/v2.3/comp-mgr/cli/cli-upgrade.html">command line</a>.</p>
-      </li>
+    <p>Run the System Upgrade utility as discussed in this topic using that subdomain or docroot.</p>
+    <ul>
+      <li>Upgrade the Magento software using the <a href="/guides/v2.3/comp-mgr/cli/cli-upgrade.html">command line</a>.</li>
     </ul>
   </li>
   <li>To upgrade from Magento Open Source to Magento Commerce, see <a href="/guides/v2.3/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from Open Source to Commerce</a>.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p><em>System upgrade</em> refers to updating the Magento 2.x core modules and other installed modules. To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info"><strong>System upgrade</strong> refers to updating the Magento 2.x core modules and other installed modules.
+To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a>.</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento Open Source authentication keys to update or upgrade Magento Commerce or vice versa. You also <em>cannot</em> use:</p>
-    <ul><li>Another user's authentication keys</li>
-    	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
+  <p>For upgrade or update, you must use the same authentication keys you used to install the Magento software.
+For example, you <em>cannot</em> use Magento Open Source authentication keys to update or upgrade Magento Commerce or vice versa.
+You also <em>cannot</em> use:</p>
+
+  <ul>
+    <li>Another user's authentication keys</li>
+    <li><a target="_blank" href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html">Shared account</a> authentication keys</li>
+  </ul>
 </div>
 
 <h4 id="next-step">Next step</h4>
+
 <p>Complete the tasks discussed in <a href="/guides/v2.3/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
 
 <!-- ABBREVIATIONS -->

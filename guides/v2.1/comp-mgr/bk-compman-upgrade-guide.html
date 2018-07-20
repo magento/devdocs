@@ -1003,13 +1003,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>This topic discusses the ways you can:</p>
+			<!-- Topic variables
 
+
+-->
+
+<p>This topic discusses the ways you can:</p>
 <ul>
-  <li>Upgrade (that is, <em>patch</em>) the Magento software from version 2.0.0 to 2.0.1, for example</li>
-  <li>
-    <p>Update <em>components</em>, which can be any of the following:</p>
-
+  <li>Upgrade (that is, <em>patch</em>) the Magento software from version 2.1.0 to 2.1.1, for example</li>
+  <li>Update <em>components</em>, which can be any of the following:
     <ul>
       <li>Modules (extend Magento capabilities)</li>
       <li>Themes (change the look and feel of your storefront and Admin)</li>
@@ -1027,9 +1029,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Magento Open Source only: If you cloned the Magento 2 GitHub repository because you are contributing code to the Magento Open Source codebase, <a href="/guides/v2.1/install-gde/install/cli/dev_options.html">upgrade the software manually</a>.</p>
   </li>
-  <li>
-    <p>If your Magento root directory is <code class="highlighter-rouge">&lt;your Magento install directory/pub&gt;</code>, you can upgrade in any of the following ways:</p>
-
+  <li>If your Magento root directory is <code class="highlighter-rouge">&lt;your Magento install directory/pub&gt;</code>, you can upgrade in any of the following ways:
     <ul>
       <li>
         <p>For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.</p>
@@ -1044,17 +1044,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>To upgrade from Magento Open Source to Magento Commerce, see <a href="/guides/v2.1/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a>.</li>
 </ul>
 
-<!-- Available note types: "info", "warning", "tip" -->
+<p class="bs-callout bs-callout-info"><strong>System upgrade</strong> refers to updating the Magento 2.x core components and other installed components.
+To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><strong>System upgrade</strong> refers to updating the Magento 2.x core components and other installed components. To migrate from Magento 1.x to Magento 2, see the <a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a>.</p>
-</div>
-
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>For upgrade or update, you must use the same authentication keys you used to install the Magento software. For example, you <strong>cannot</strong> use Magento Open Source authentication keys to update or upgrade Magento Commerce or vice versa. You also <strong>cannot</strong> use:</p>
+<div class="bs-callout bs-callout-warning">
+  <p>content=”For upgrade or update, you must use the same authentication keys you used to install the Magento software.
+For example, you <strong>cannot</strong> use Magento Open Source authentication keys to update or upgrade Magento Commerce or vice versa.
+You also <strong>cannot</strong> use:</p>
   <ul>
     <li>Another user’s authentication keys</li>
-    <li><a target="_blank" href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html">Shared account</a> authentication keys</li>
+    <li><a target="_blank" href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html">Shared account</a> authentication keys”</li>
   </ul>
 </div>
 
@@ -1066,8 +1065,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Complete the tasks discussed in <a href="/guides/v2.1/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
 
-<!-- ABBREVIATIONS -->
+<!-- Tooltips -->
 
+<!-- Link definitions -->
 
 			
 		</div>
