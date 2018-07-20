@@ -1,4 +1,4 @@
-We recommend creating a back up of the project your project before an upgrade. Use the following steps to back up your Integration, Staging, and Production environments.
+We recommend creating a backup of your project before an upgrade. Use the following steps to back up your Integration, Staging, and Production environments.
 
 #### To back up your Integration environment database and code:
 
