@@ -15,10 +15,10 @@ Upgrade Magento from the command line if you installed the software using any of
 There are two ways to upgrade your Magento application to 2.3:
 1. Manual: [Upgrade using the command line].
 2. Semi-automated: [Upgrade using the script].
-The upgrading scenario is the same from the system's point of view, excepting that several steps are automated using the PHP script.
+The upgrading scenario is the same from the system's point of view except that several steps are automated using the PHP script.
 
 {:.bs-callout .bs-callout-warning}
-The both ways require to comply with the pre-upgrade checklist.
+Both ways require that you comply with the pre-upgrade checklist.
 
 {:.bs-callout .bs-callout-info}
 If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade. Instead, see [Update the Magento application].
@@ -32,12 +32,8 @@ Comply with the the [Update and upgrade checklist].
 This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`.
 If you did not do this, skip this section and continue with the next section.
 
-If you use pub as your Magento root directory: 
-
-* For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
-
-  Run the [System Upgrade utility] using that subdomain.
-* Use the [following procedure] to upgrade Magento using the command line.
+For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
+Run the [System Upgrade utility] using that subdomain.
 
 ### PHP and other environment settings
 
@@ -82,7 +78,7 @@ If you are upgrading from {{ site.data.var.ce }} to {{ site.data.var.ee }}, deac
 composer remove magento/product-community-edition --no-update
 ```
 
-#### For the {{ site.data.var.ce }}
+#### For {{ site.data.var.ce }}
 
 ```bash
 composer require magento/product-community-edition=2.3.0 --no-update
@@ -91,7 +87,7 @@ composer require magento/product-community-edition=2.3.0 --no-update
 {%
 include note.html
 type='tip'
-content=' To see a full list of available 2.3 versions, use:
+content='To see a full list of available 2.3 versions, use:
 
 ```bash
 composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
@@ -99,7 +95,7 @@ composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
 '
 %}
 
-#### For the {{ site.data.var.ee }}
+#### For {{ site.data.var.ee }}
 
 ```bash
 composer require magento/product-enterprise-edition=2.3.0 --no-update
@@ -152,25 +148,27 @@ Update the Magento updater if it is installed.
 It is located at `<Magento install dir>/update` when installed.
 To update the tool, follow the guidelines below.
 
-#### Backup and remove the `<Magento install dir>/update` directory
+#### Remove the old updater
+
+Backup and remove the `<Magento install dir>/update` directory.
 
 #### Create a Composer project
 
-- For the {{ site.data.var.ce }}
+- For {{ site.data.var.ce }}
 
-  Example for the 2.3.0 version:
+  Example for version 2.3.0:
 
   ```bash
   composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
   ```
   
   {:.bs-callout .bs-callout-info}
-  If need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
+  If you need to use a repository that contains non-public packages such as internal sandboxes, change the URL in `--repository` correspondingly.
   
 
-- For the {{ site.data.var.ee }}
+- For {{ site.data.var.ee }}
 
-  Example for the 2.3.0 version:
+  Example for version 2.3.0:
 
   ```bash
   composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition=2.3.0 temp_dir --no-install
@@ -194,7 +192,7 @@ rm -rf temp_dir
 ### Update metadata in `composer.json`
 
 {:.bs-callout .bs-callout-info}
-It is a cosmetic change, not functional.
+These changes are cosmetic, not functional.
 
 Update the `"name"`, `"version"`, and `"description"` fields in `<Magento install dir>/composer.json`.
 
@@ -204,7 +202,7 @@ Update the `"name"`, `"version"`, and `"description"` fields in `<Magento instal
 composer update
 ```
 
-### Clear `var` subdirectories
+### Clear `var` and `generated` subdirectories
 
 ```bash
 rm -rf <Magento install dir>/var/cache/*
@@ -217,7 +215,7 @@ rm -rf <Magento install dir>/generated/code/*
 ```
 
 {:.bs-callout .bs-callout-info}
-If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+If you use a cache storage other than the filesystem (for example, Redis or Memcached), you must manually clear the cache there too.
     
 ### Update the database schema and data
 
@@ -225,7 +223,7 @@ If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) 
 php bin/magento setup:upgrade
 ```
 
-### Put your storefront online (that is, cancel maintenance mode)
+### Disable maintenance mode
 
 ```bash
 php bin/magento maintenance:disable
@@ -264,7 +262,7 @@ follow the next steps:
 The script updates Magento with the 2.3 requirements.
 Run this script after upgrading to PHP 7.1/7.2.
 
-When the script is run, the following steps will be executed:
+The upgrade script performs the following tasks:
 - Back up `composer.json`
 - Require the new version of the Magento metapackage
 - Update the `"require-dev"` section in `composer.json`
@@ -295,7 +293,7 @@ php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' <op
 composer update
 ```
 
-### Clear `var` subdirectories
+### Clear `var` and `generated` subdirectories
 
 ```bash
 rm -rf <Magento install dir>/var/cache/*
@@ -308,7 +306,7 @@ rm -rf <Magento install dir>/generated/code/*
 ```
 
 {:.bs-callout .bs-callout-info}
-If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+If you use a cache storage other than the filesystem (for example, Redis or Memcached), you must manually clear the cache there too.
     
 ### Update the database schema and data
 
@@ -316,7 +314,7 @@ If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) 
 php bin/magento setup:upgrade
 ```
 
-### Put your storefront online (that is, cancel maintenance mode)
+### Disable maintenance mode
 
 ```bash
 php bin/magento maintenance:disable
@@ -336,12 +334,11 @@ Open your storefront to check if the upgrade was successful.
 
 <!-- Link definitions -->
 
-[script]: https://raw.githubusercontent.com/magento/magento2/2.3-develop/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
 [authentication keys]: {{ page.baseurl }}/install-gde/prereq/connect-auth.html
 [custom maintenance mode page]: {{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
-[following procedure]: #upgrade-cli-upgr
+[script]: https://raw.githubusercontent.com/magento/magento2/2.3-develop/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [Update and upgrade checklist]: ../prereq/prereq_compman-checklist.html

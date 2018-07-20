@@ -19,16 +19,24 @@ Do not continue without performing these checks. Failure to do so could result i
 
 ### Set a value for DATA_CONVERTER_BATCH_SIZE {#batch-size}
 
-Magento {{ page.version }} includes security enhancements that requires some data to be converted from serialized data format to JSON encoded format.
+Magento {{ page.version }} includes security enhancements that require some data to be converted from serialized data format to JSON encoded format.
 This conversion occurs during the upgrade and it can take a long time, depending on how much data is in your Magento database.
 
-One or more fields in the following tables are affected: `sales_order`, `sales_order_payment`, `quote`, `quote_payment`, `core_config_data`, `magento_reward_history`, `url_rewrite`, `salesrule`, and `catalogrule`.
-(This is not a complete list.)
+The following tables are affected the most: 
+* `catalogrule`
+* `core_config_data`
+* `magento_reward_history`
+* `quote_payment`
+* `quote`
+* `sales_order_payment`
+* `sales_order`
+* `salesrule`
+* `url_rewrite`
 
 If you have a large amount of data, you can improve performance by setting the value of an environment variable, `DATA_CONVERTER_BATCH_SIZE`.
 By default, it's set to a value of 50,000.
 
-To set the variable, before the upgrade starts enter the following command as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} in a bash shell prompt:
+To set the variable, enter the following command as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} in a bash shell prompt:
 ```bash
 export DATA_CONVERTER_BATCH_SIZE <value>
 ```
