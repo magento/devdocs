@@ -94,7 +94,7 @@ Directories in the Magento file system must be writable by the [Magento file sys
 
 To verify your file system permissions are set properly, either log in to the Magento server or use your hosting provider's file manager application.
 
-For example, enter the following commands on a Linux system if the Magento application is installed in `/var/www/html/magento2`:
+For example, enter the following command if the Magento application is installed in `/var/www/html/magento2`:
 ```bash
 ls -al /var/www/html/magento2
 ```
@@ -136,8 +136,11 @@ drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
 ```
 
-In the preceding example, the Magento file system owner is `magento_user`.
-Directories in the Magento file system have `drwxrwx---` permissions (775) and files have `-rw-rw-rw-` permissions (664).
+Here,
+- most of the files are `-rw-rw----`, which is 660
+- `drwxrwx---` = 770
+- `-rw-rw-rw-` = 666
+- the Magento file system owner is `magento_user`.
 
 To get more detailed information, you can optionally enter the following command:
 ```bash
