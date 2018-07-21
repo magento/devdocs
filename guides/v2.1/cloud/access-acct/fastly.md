@@ -62,10 +62,9 @@ file in that location. If you do not locate this file, please enter a ticket
 for [Support]({{ page.baseurl }}/cloud/trouble/trouble.html) asking to have the
 file added. We can help provide this credentials file.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Make note of which environment each set of credentials is used for. If you use
 the wrong credentials in an environment, you'll encounter issues with Fastly.
-</div>
 
 ## Get started {#cloud-fastly-start}
 You need to install Fastly in its own branch. Fine-tuning Fastly can be a
@@ -83,7 +82,7 @@ Integration and deploying across to your Staging and Production environments.
 For {{site.data.var.ece}} 2.2, install Fastly module 1.2.33 or later for all
 updated settings and full VCL snippet uploading support.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Don't configure the module in your local before building and deploying. You'll
 configure the module in those environments.
 
@@ -92,7 +91,6 @@ Configuration Management([2.1.X]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-
 [2.2.X]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm)).
 When you use the `app:config:dump` command, all configuration options for Fastly
 are locked and cannot be edited in Staging and Production.
-</div>
 
 
 We provide Fastly services only for your Staging and Production environments.
@@ -161,12 +159,11 @@ Configure the following features and enable additional [configuration options](h
 * [Configure backends and Origin shielding](#backend)
 * [Create custom error/maintenance page](#fastly-errpg)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:#info .bs-callout .bs-callout-info}
 *	Ignore the link to create a free Fastly account. We'll provide your Fastly
 credentials (Service ID and API token).
 *	With Fastly version 1.2.0 and later (we recommend 1.2.33 or later), use
 the **Upload VCL to Fastly** button to upload your default [VCL snippets](#custom-vcl).
-</div>
 
 ## Upload Fastly VCL snippets {#upload-vcl-snippets}
 You don't have to create or code VCL snippets. We provide a default set of snippets for
@@ -190,11 +187,10 @@ follows:
 
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}/common/images/cloud_upload-vcl-to-fastly.png)
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	{:#info .bs-callout .bs-callout-info}
   		If the **Upload VCL to Fastly** button does not display, you should
       upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33
       or later. The Fastly Composer name is `fastly/magento2`.
-	</div>
 
 2.	Once the upload completes, the modal automatically closes with a success
     message.
@@ -315,10 +311,10 @@ To create a custom error/maintenance page:
 3.	In the provided field, enter your HTML code.	The HTML you enter can be a  
     maximum of 65,535 bytes in length.
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	{:#info .bs-callout .bs-callout-info}
 	Avoid using images on your site in the event Fastly is not available. To use
   images, refer to [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/){:target="\_blank"}.
-	</div>
+
 4.	When you're done, click **Upload** to send your updates to Fastly.
 5.	Click **Save Config** at the top of the page.
 
@@ -370,10 +366,9 @@ add a CNAME record for your website that points to the Fastly service:
 `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site,
 you must add a CNAME record for each one.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="\_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS
-provider that supports forwarding DNS queries to use an apex domain.</p>
-</div>
+{:#info .bs-callout .bs-callout-info}
+This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){:target="\_blank"}> (also referred to as a _naked_ domain). You must use a DNS
+provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes.
 Use your preferred DNS provider.
