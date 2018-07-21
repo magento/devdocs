@@ -1,0 +1,2 @@
+{: .bs-callout .bs-callout-info}
+If you use a version of Cloud that does not contain the `ece-tools` package, then your project requires an [upgrade]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project).

@@ -15,6 +15,8 @@ You can upgrade your {{site.data.var.ece}} project template to version 2.2 from 
 
 If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
 
+{% include cloud/note-ece-tools-package.md %}
+
 ## Prepare the environment
 
 Upgrading from **2.0.X** requires the following tasks:
@@ -32,6 +34,8 @@ Upgrading from **2.1.X** requires the following tasks:
 -  Verify or set the `ADMIN_EMAIL` variable
 -  Upgrade to the latest supported version of Fastly
 -  Update the `.gitignore` file for new, generated directory
+
+{% include cloud/note-upgrade.md %}
 
 ### Upgrade PHP version
 {{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
@@ -175,21 +179,23 @@ Include the extensions in your go-live steps to the Production environment only 
 
 We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.2.
 
-## Troubleshoot your upgrade
+## Troubleshoot upgrade
 If the upgrade was not successful, you receive a message indicating an error occurred and you cannot access your storefront or the Magento Admin pane in a browser.
 
 ```terminal
 There has been an error processing your request
 Exception printing is disabled by default for security reasons.
-  Error log record number: <error_number>
+  Error log record number: <error number>
 ```
 
-You can see the error report about the failed operation by searching for the error number in the `./app/var/report/` directory. For example, if the deployment hook failed and the database had not yet been fully upgraded, the following error occurs:
+#### To resolve the error:
 
-```terminal
-a:4:{i:0;s:433:"Please upgrade your database: Run bin/magento setup:upgrade" from the Magento root directory.
-The following modules are outdated:
-  Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
-```
+1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and open the `./app/var/report/<error number>` file. 
 
-If you encounter a deployment error to the Pro Staging and Production environments, you need to have us update your `.magento.app.yaml` hooks. Please enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) advising you need your hooks updated in Staging and Production for {{site.data.var.ece}} 2.2.
+1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
+
+1.  Add, commit, and push code changes.
+
+    ```bash
+    git add -A && git commit -m "Fixed deployment failure" && git push origin <branch name>
+    ```

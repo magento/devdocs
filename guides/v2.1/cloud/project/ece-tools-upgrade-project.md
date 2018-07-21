@@ -71,7 +71,7 @@ To upgrade your project to use the `ece-tools` package, you need to update the m
             php ./vendor/bin/ece-tools post-deploy
     ```
 
-1.  It may be necessary to update `ece-tools`.
+1.  It may be necessary to update the `ece-tools` package.
 
     ```bash
     composer update magento/ece-tools
