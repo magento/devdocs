@@ -36,7 +36,7 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p>
+<p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts and managing blocks and their positions on pages in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p>
 </div>
 
 <h2 id="fedg-prereqs">Frontend development prerequisites</h2>

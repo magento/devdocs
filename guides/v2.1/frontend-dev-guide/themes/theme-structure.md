@@ -72,7 +72,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-          Module-specific styles, layouts, and templates.
+          Module-specific styles, layouts and templates.
       </td>
     </tr>
     <tr>

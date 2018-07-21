@@ -68,7 +68,7 @@ You can set up and run several shops through a single implementation of Magento.
 
 Each website can include one or more _stores_ with different categories and articles, with shared customer data, checkout, and shopping cart. For these stores, a customer can sign up once and shop across different catalogs of products with a single checkout.
 
-You can further create _store views_ for different languages, layouts, and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
+You can further create _store views_ for different languages, layouts and designs. Each view can have its own domain, look and feel, and language while sharing articles, customer data, checkout, and shopping cart.
 
 The following are examples to better explain:
 * Single website with one store and two views for English and Spanish locale. All article data, customers, checkout, and shopping cart are shared.

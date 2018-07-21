@@ -37,7 +37,7 @@ pages:
         - label: Apply and configure a storefront theme
           url: /frontend-dev-guide/themes/theme-apply.html
 
-        - label: Locate templates, layouts, and styles
+        - label: Locate templates, layouts and styles
           url: /frontend-dev-guide/themes/debug-theme.html
 
         - label: Magento theme structure
