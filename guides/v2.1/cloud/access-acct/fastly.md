@@ -367,7 +367,7 @@ add a CNAME record for your website that points to the Fastly service:
 you must add a CNAME record for each one.
 
 {:#info .bs-callout .bs-callout-info}
-This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){:target="\_blank"}> (also referred to as a _naked_ domain). You must use a DNS
+This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp){:target="\_blank"} (also referred to as a _naked_ domain). You must use a DNS
 provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes.
