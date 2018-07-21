@@ -15,7 +15,7 @@ We are pleased to present Magento Commerce 2.0.4. This release includes all of t
 
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-### Fixed issues
+<h3>Fixed issues</h3>
 
 <h4> Upgrade and Installation</h4>
 <!-- 50224 -->* Magento no longer creates store data inconsistently during installation. 
@@ -76,12 +76,12 @@ We recommend that you review Magento's <a href="https://magento.com/security/bes
 
 
 
-### System requirements
+<h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
-### Installation instructions
+<h3>Installation instructions</h3>
 
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Enterprise Edition 2.0.4 from an archive file.

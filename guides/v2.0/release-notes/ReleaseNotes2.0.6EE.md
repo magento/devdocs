@@ -21,14 +21,14 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 
 
-### Fixed issues
+<h3>Fixed issues</h3>
 
 
 <!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. Previously, this issue occurred with Magento instances running on GoDaddy. 
 
 
 
-### Functional enhancements
+<h3>Functional enhancements</h3>
 
 <!-- 52322 --> * Starting with Magento 2.0.6, Magento provides a more flexible way for you to set file ownership and permissions. Instead of setting permissions explicitly, you only need to make sure files and directories are writable for installation. We provide different suggestions for doing this, depending on whether you access your Magento server with one user account (typical of shared hosting) or two user accounts (typical of private hosting or having your own server). After installation, to further restrict access to files and directories, you can optionally create a file named `magento_umask` in your Magento root directory. By default, the `umask` is 002, which means that directories have 775 permissions and files have 664 permissions. For more details, see  <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system ownership and permissions</a>. 
 
@@ -73,12 +73,12 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
 
 
-### System requirements
+<h3>System requirements</h3>
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="{{ site.baseurl }}/magento-system-requirements.html" target="_blank">System Requirements</a>.
 
 
-### Installation instructions
+<h3>Installation instructions</h3>
 
 <h4>New installations</h4>
 New users can now complete a full installation of Magento Commerce 2.0.6 from an archive file.
@@ -117,7 +117,7 @@ Magento partners can download the release and the release notes in PDF format fr
 2.	Under Magento Commerce, choose **Magento Commerce 2.x**.
 3.	Find the **Magento Commerce 2.x Release**, and choose **Version 2.0.6**.
 
-### Migration toolkits
+<h3>Migration toolkits</h3>
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

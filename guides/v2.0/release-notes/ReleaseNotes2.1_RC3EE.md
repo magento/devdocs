@@ -30,7 +30,7 @@ This Release Candidate is available from `repo.magento.com` if you have a Commer
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.
 
-### Highlights
+<h3>Highlights</h3>
 
 Magento Enterprise Edition 2.1 includes several new and exciting features:
 
@@ -46,7 +46,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
  
 
 
-### Fixed issues
+<h3>Fixed issues</h3>
 
 <h4>Security enhancement</h4>
 
@@ -174,7 +174,7 @@ Magento Enterprise Edition 2.1 includes several new and exciting features:
 <!--- 54211 DUPLICATE-->
 
 
-### Known issues
+<h3>Known issues</h3>
 Magento Commerce 2.1, Release Candidate 3 includes the following known issues: 
 
 <!--- 54445-->* The process of uninstalling modules using command-line tools unexpectedly stalls. 
@@ -203,7 +203,7 @@ Magento Commerce 2.1, Release Candidate 3 includes the following known issues:
 <!--- 54320-->* The Category page displays the former price instead of the current price during scheduled updates. 
 
 
-### Technology stack
+<h3>Technology stack</h3>
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 

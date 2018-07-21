@@ -24,13 +24,13 @@ To ensure that your new string is added to the dictionary and translated, use th
 For example:
 
 {% highlight html+php %}
-	### <?php echo __('Create Backup') ?>
+	<h3><?php echo __('Create Backup') ?></h3>
 {% endhighlight html+php %}
 
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
 {% highlight html+php%}
-    ### <?php echo sprintf(__('Hello %s'), $yourVariable) ?>
+    <h3><?php echo sprintf(__('Hello %s'), $yourVariable) ?></h3>
 {% endhighlight html+php%}
 
 In this example, the <i>'Hello %s'</i> string is added to the dictionary when the i18n tool is run.
