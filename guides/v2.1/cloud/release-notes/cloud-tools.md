@@ -127,7 +127,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 </div>
 
 #### New features
--   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x. You must [upgrade to ece-tools]({{ site.baseurl }}/guides/v2.1/cloud/project/cloud-tools-upgrade.html) to use these features.
+-   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x. You must [upgrade to ece-tools]({{ site.baseurl }}/guides/v2.1/cloud/project/ece-tools-upgrade-project.html) to use these features.
 
 -   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis]({{ site.baseurl }}/guides/v2.1/cloud/env/working-with-variables.html#redis) page and default cache and Redis session storage using an environment variable.
 
