@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-You can upgrade your {{site.data.var.ece}} project template to version 2.1. If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
+You can upgrade the core {{site.data.var.ee}} code base to version 2.1. If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
 
 It is a best practice to verify the `ADMIN_EMAIL` variable, because it is required for upgrading and patching {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 

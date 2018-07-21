@@ -8,7 +8,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade your {{site.data.var.ece}} project template to version 2.2 from any of the following supported versions:
+You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from any of the following supported versions:
 
 -  2.0.14 and later
 -  2.1.7 and later
