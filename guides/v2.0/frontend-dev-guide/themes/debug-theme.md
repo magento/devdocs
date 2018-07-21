@@ -1,8 +1,8 @@
 ---
 group: fedg
 subgroup: A_Themes
-title: Locate templates, layouts, and styles
-menu_title: Locate templates, layouts, and styles
+title: Locate templates, layouts and styles
+menu_title: Locate templates, layouts and styles
 menu_order: 50
 version: 2.0
 github_link: frontend-dev-guide/themes/debug-theme.md

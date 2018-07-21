@@ -334,7 +334,7 @@ This would make the product page look like following:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
+  <p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts and styles</a>.</p></span>
 </div>
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>

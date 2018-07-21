@@ -79,7 +79,7 @@ The markup required for the drop-down is the following:
 
 ### Step 1: Define the layout blocks
 
-OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in
+OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts and styles</a> they find out that the original block responsible for displaying the header links is defined in
 
 `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`:
 

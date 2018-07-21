@@ -32,7 +32,7 @@ Static view files deployment is affected by Magento modes as follows:
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 {: .bs-callout .bs-callout-warning }
-_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on.
+_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts and so on.
 To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 <br/>
 You can clean generated static view files in several ways.
