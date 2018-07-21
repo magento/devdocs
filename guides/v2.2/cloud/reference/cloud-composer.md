@@ -45,7 +45,7 @@ The metapackage depends on the appropriate versions of [`vendor/magento/ece-patc
 This package depends on a floating version of `vendor/magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
 ## vendor/magento/ece-tools {#ece-tools}
-The ece-tools package, also known as _ece-tools_, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ee}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+The `ece-tools` package, also known as _ece-tools_, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ee}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
 
 ## vendor/magento/product-enterprise-edition {#cloud-composer-prodee}
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.

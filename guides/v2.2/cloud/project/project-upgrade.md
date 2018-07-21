@@ -15,8 +15,6 @@ You can upgrade your {{site.data.var.ece}} project template to version 2.2 from 
 
 If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
 
-{% include cloud/note-ece-tools-package.md %}
-
 ## Prepare the environment
 
 Upgrading from **2.0.X** requires the following tasks:
@@ -36,6 +34,8 @@ Upgrading from **2.1.X** requires the following tasks:
 -  Update the `.gitignore` file for new, generated directory
 
 {% include cloud/note-upgrade.md %}
+
+{% include cloud/note-ece-tools-package.md %}
 
 ### Upgrade PHP version
 {{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
@@ -163,8 +163,6 @@ For an upgrade, you delete the `config.php` file. Once this file is added to you
 
 ## Verify and upgrade your extensions {#extensions}
 If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for {{site.data.var.ee}} and {{site.data.var.ece}} version 2.2.
-
-We recommend [backing up your database]({{ page.baseurl }}/cloud/project/project-webint-snap.html#db-dump) prior to installing a number of extensions on your local and Integration environments.
 
 1.  Create a new branch on your local workstation.
 1.  Disable your extensions as needed.
