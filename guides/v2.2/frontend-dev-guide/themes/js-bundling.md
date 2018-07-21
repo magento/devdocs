@@ -26,7 +26,7 @@ To activate JavaScript bundling:
     ```
     
 <div class="bs-callout bs-callout-info" markdown="1">
-Enable Javascript Bundling configuration is not longer available in Magento version 2.2 and next version. 
+Javascript bundling configuration is not available in production mode. While it is available in developer mode.
 </div>    
 
 To optimize bundling, set the following settings to `Yes`:
@@ -37,8 +37,7 @@ To optimize bundling, set the following settings to `Yes`:
 
 ## How bundling works in Magento
 
-By default, Magento bundles all JavaScript files and loads them synchronously on every page load.
-This means that each bundle is loaded one after the other and causes delays for JavaScript behaviors on a page.
+When bundling is enabled, Javascript files are loaded in synchronously in the head on every page load. They become render-blocking assets, unlike the default where every module is requested individually and asynchronously.
 
 ### Excluding files
 
