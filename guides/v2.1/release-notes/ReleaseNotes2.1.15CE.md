@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.15CE.md
 *Patch code and release notes were published on .*
 
 
-We are pleased to present Magento Open Source  2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
+We are pleased to present Magento Open Source 2.1.15. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -26,8 +26,6 @@ Magento 2.1.14 contains 38 security fixes and enhancements.  The enhancements he
 In addition to security enhancements, this release contains the following functional fixes. 
 
 
-<!--- ENGCOM-902 -->* *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14096*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
-
 
 ### Setup
 
@@ -36,87 +34,19 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<!--- ENGCOM-1685 -->* Category\Collection::joinUrlRewrite should use the store set on the collection.
+<!--- ENGCOM-1685 -->* The `Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite` method now uses the `storeId` value  set on the actual collection of the store rather than the `storeId` retrieved from the store manager. *Fix submitted by [Alessandro Pagnin](https://github.com/alepane21) in pull request [13756](https://github.com/magento/magento2/pull/13756)*GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
-[GitHub-13704](https://github.com/magento/magento2/issues/13704)
-
-The problem is that Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite always use the store id from the store manager. I think that it should instead use the storeId set on the actual collection.
-
-Now joinUrlRewrite uses directly the storeManager, but if a store is set directly on the collection, it should use the store set, and not the default passed by the store manager.
-The method getStoreId(), if not set, already goes on fallback to the store manager and get the default, so it should be safe to directly use getStoreId().
-
-Alessandro Pagnin 
-https://github.com/alepane21
-
-
-<!--- ENGCOM-1842 -->*
-misleading data-container in product list
-
-Steps to reproduce
-inspect the product list and see data-container="product-grid"
-Expected result
-data-container="product-list"
-Actual result
-data-container="product-grid"
-
+<!--- ENGCOM-1842 -->* Magento now uses `data-container="product-list"` instead of  `data-container="product-grid"` when displaying a product list. *Fix submitted by [Viral Vasara](https://github.com/viral-wagento) in pull request [15816](https://github.com/magento/magento2/pull/15816)*
 [GitHub-15319](https://github.com/magento/magento2/issues/15319)
 
-https://github.com/magento/magento2/pull/15816
+<!--- ENGCOM-1907 -->* Magento has improved the accuracy of prices requiring more than two digits that are listed on the Product page. Previously, when a product price was represented by more than two digits (for example, $5.43), JavaScript settings always used the rounding logic for two digits only. (For example, the amount 9.4880 was displayed as 9.49.) *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15926](https://github.com/magento/magento2/pull/15926)*GitHub-14249](https://github.com/magento/magento2/issues/14249)
 
-Viral Vasara
-viral-wagento
-
-
-
-
-<!--- ENGCOM-1907 -->*
-
-Dmytro Cheshun
-dmytro-ch
-
-When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
-
-Priduct page price is using the hardcoded digits in js
-
-When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
-
-[GitHub-14249](https://github.com/magento/magento2/issues/14249)
-
-https://github.com/magento/magento2/pull/15926
  
 
 ### Cart and checkout
-<!--- ENGCOM-1269 -->*
 
+<!--- ENGCOM-1269 -->* The minicart now currently displays product names that contain special characters. *Fix submitted by [ampulos](https://github.com/ampulos) in pull request [14665](https://github.com/magento/magento2/pull/14665)*. [GitHub-13652](https://github.com/magento/magento2/issues/13652)
 
-https://github.com/magento/magento2/pull/14665
-
-Fix showing product name with special chars in mini cart.
-This code was used in html template to show product name
-
-[GitHub-13652](https://github.com/magento/magento2/issues/13652)
-
-
-Issue in product title with special chars in mini cart
-
-
-Steps to reproduce
-create a product titled Fusion Backpack ™
-go to front end the product title comes up correctly as Fusion Backpack ™ then add it to cart
-in the mini cart it shows it as Fusion Backpack ™ and not converting ™ to ™
-Expected result
-Mini cart should also show the correct product title after converting the html equivalent to characters
-
-
-ampulos
-https://github.com/ampulos
-
-
-
-
-
-
- 
 
 ### Cart and checkout
 
@@ -125,34 +55,12 @@ https://github.com/ampulos
 ### Configurable products
 
 
-
-
-
-
-
 ### Customers
 
 
 ### Directory
-<!--- ENGCOM-1948 -->*
 
-[GitHub-16031](https://github.com/magento/magento2/issues/16031)
-
-
-Add new pattern to validate Canada Zip Codes
-
-Postal code (zip code) for Canada should allow postal codes without space
-
-Zip code validation warning on adresses from Canada.
-Current validation is A1B 2C3
-This should also allow postal code without space A1B2C3
-
-
-Hitesh
-hitesh-wagento
-
-
-[GitHub-13899](https://github.com/magento/magento2/issues/13899)
+<!--- ENGCOM-1948 -->* Magento now supports Canadian Postal codes for Canada can now without space as expected.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16031](https://github.com/magento/magento2/pull/16031)*. [GitHub-13899](https://github.com/magento/magento2/issues/13899)
 
 
 
@@ -164,67 +72,16 @@ hitesh-wagento
 
 ### Framework
 
-<!--- ENGCOM-1262 -->*
-Fix empty changelog tables after MySQL restart
-https://github.com/magento/magento2/pull/14471
-Leave at least one record after tebles cleanup.
+<!--- ENGCOM-1262 -->* Magento now leaves at least one record after cleaning up the changelog tables after restarting MySQL. Previously, the product `version_id` lost the most recent the `auro_increment` value after restarting MySQL. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [14471](https://github.com/magento/magento2/pull/14471)*. [GitHub-14465](https://github.com/magento/magento2/issues/14465)
 
-
-Oleksandr Kravchuk
-https://github.com/swnsma
-
-
-[GitHub-14465](https://github.com/magento/magento2/issues/14465)
-
-
-Product 'version_id' lost last 'auro_increment' value after MySQL restart.
-
-
-
-
-<!--- ENGCOM-1410 -->*
-Prices aren't readable when using custom price symbol
-
+<!--- ENGCOM-1410 -->* Magento now displays custom price symbols as expected. Previously, when a merchant created variations for a configurable product, product prices were not readable if they contained a custom price symbol. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [14471](https://github.com/magento/magento2/pull/14471)*. 
 [GitHub-14902](https://github.com/magento/magento2/issues/14902)
 
+<!--- ENGCOM-1796 -->* Magento now correctly aligns submenus. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15714](https://github.com/magento/magento2/pull/15714)*. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
 
-Yaroslav Rogoza
-https://github.com/rogyar
-
-When creating configurations on a configurable product, while assigning prices to configurable products, prices aren's readable when using custom price symbol.
-
-Tommy Quissens
-https://github.com/quisse
+<!--- ENGCOM-1908 -->* Magento now supports Malaysian locales. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15927](https://github.com/magento/magento2/pull/15927)*. [GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
 
-<!--- ENGCOM-1796 -->*
-
-https://github.com/magento/magento2/pull/15714
-Dmytro Cheshun
-dmytro-ch
-
-the submenu relative to the "Bottoms 2" element in the image should be aligned next to it
-
-
-[GitHub-7897](https://github.com/magento/magento2/issues/7897)
-
-Steps to reproduce
-hover a menu item which contains some nested elements
-Expected result
-the submenu relative to the "Bottoms 2" element in the image should be aligned next to it
-
-
-
-<!--- ENGCOM-1908 -->*
-
-Add Malaysian Locale Code
-https://github.com/magento/magento2/pull/15927
-Dmytro Cheshun
-dmytro-ch
-Malaysian (Malaysia) missing from locale list
-
-
-[GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
 #### Configuration framework
 
@@ -233,683 +90,127 @@ Malaysian (Malaysia) missing from locale list
 
 <!--- ENGCOM-1337 -->*
 Preserve user group id when using /V1/customers/:customerId (PUT) 
-https://github.com/magento/magento2/pull/14757
+
 When you call /V1/customers/:customerId (PUT) and the customer has a group id already and you don't provide groupId in the request the customer group id is set to 1.
 This fix preserves the group id.
 
 
-André Ferraz
-ferrazzuk
 
-[GitHub-14663](https://github.com/magento/magento2/issues/14663)
+*Fix submitted by [André Ferraz](https://github.com/ferrazzuk) in pull request [14757](https://github.com/magento/magento2/pull/14757)*. [GitHub-14663](https://github.com/magento/magento2/issues/14663)
 
 
 
 
 
 ### General
-<!--- ENGCOM-1272 -->*
-Check if proExpected result
-Return a 404 page similar to the product page on /catalog/product/view/id/1
-Actual result
-The page shows up as it would on website 1 with the review form, product image, title, description, add to cart (which throws an error if you try to use it), etc.
-duct is assigned to current website 
-https://github.com/magento/magento2/pull/14673
-Checking if product is assigne to current website, before displaying "Write a review page".
 
-Write a Review page works on multistore for products that are not assigned to that store
+<!--- ENGCOM-1272 -->* Magento now checks that a product is assigned to a specific website in a multistore environment before a customer can write a product review. Previously, a customer could write a review for a product that was not assigned to the store they were logged in to..  *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [14673](https://github.com/magento/magento2/pull/14673)*.
 
-https://github.com/afirlejczyk
-afirlejczyk
+<!--- ENGCOM-2233 -->* The `transport` event parameter has been changed from type `Array()` to type `DataObject`. This is a reversion of a chnage that was made in an earlier release. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [16601](https://github.com/magento/magento2/pull/16601)*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
+<!--- ENGCOM-1639 -->* Merchants can now  place an order from grouped product where the quantity of subproducts is less than one unit. Previously, 
+you could not place an order from grouped product where subproducts quantity was less than one. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15407](https://github.com/magento/magento2/pull/15407)*. [GitHub-14692](https://github.com/magento/magento2/issues/14692)
 
+<!--- ENGCOM-1699 -->* Magento now sets the `trigger_recollect` attribute  back to 0 after collecting total amounts for the quote. Previously, Magento timed out if a customer tried to reload a quote. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15522](https://github.com/magento/magento2/pull/15522)*. [GitHub-9580](https://github.com/magento/magento2/issues/9580)
 
-
-<!--- ENGCOM-2233 -->*
-Fixed backwards incompatible change to Transport variable event parameters 
-
-https://github.com/magento/magento2/pull/16601
- the type of event parameter "transport" was incorrectly changed from type DataObject to Array(). This change corrects this back to DataObject.
-
- We waht to change the payment_html for banktransfer invoices. Unfortunately the instruction is also sent in invioce email. And there the customer already has paid the bill.
-Transport variable can not be altered in email_invoice_set_template_vars_before Event
-
-[GitHub-10210](https://github.com/magento/magento2/issues/10210)
-
-gwharton
-
-
-
-
-<!--- ENGCOM-1639 -->*
-
-Fix to allow use decimals less then 1 in subproducts qty 
-https://github.com/magento/magento2/pull/15407
-It is impossible to place an order from grouped product where subproducts qty less than one.
-
-Yaroslav Rogoza
-rogyar
-
-[GitHub-14692](https://github.com/magento/magento2/issues/14692)
-
-Seems that this 'validate-grouped-qty' validation haven't sense because validation should be done on the child elements.
-
-And seems that current implementation is buggy. Seems that sense of this validation is check that sum of qty for all products is more then one. But what sense in it?
-
-
-<!--- ENGCOM-1699 -->* Add resetting of triggerRecollection flag
-In order to prevent collecting totals a few times without necessity, the trigger for recollecting totals should be set to 0 right after the recollecting. Also, backported fix from the 2.2 version.
-
-
-Yaroslav Rogoza
-rogyar
-
-https://github.com/magento/magento2/pull/15522
-
-[GitHub-9580](https://github.com/magento/magento2/issues/9580)
-
-
-Expected result
-The attribute trigger_recollect in a quote should be set to 0 (integer) at some time.
-Actual result
-In all the magento code, I could only see the attribute trigger_recollect in a quote being set to 1, but never back to 0.
-
-
-
-
-
-
-
-
-
-<!--- ENGCOM-1693 -->*
-Fix unnecessary recalculation of product list pricing
-
-https://github.com/magento/magento2/pull/15445
-Unnecessary recalculation of large product list pricing causes huge slowdowns.
-
+<!--- ENGCOM-1693 -->* Magento no longer recalculates prices unnecessarily when refreshing the Catalog page, which has improved product performance. 
+*Fix submitted by [Jeroen Van Leusden](https://github.com/JeroenVanLeusden) in pull request [15445](https://github.com/magento/magento2/pull/15445)*.
 [GitHub-14941](https://github.com/magento/magento2/issues/14941)
 
 
-Steps to reproduce
-Create a catalog where prices are including tax + prices are shown including tax.
-Go to a category page and show 100 products per page.
-Expected result
-System does price calculation very efficiently
-Actual result
-It recalculates the tax while it shouldn't be doing that.
-
-https://github.com/JeroenVanLeusden
+<!--- ENGCOM-1777 -->* The annotation for the `formatDateTime` function in the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php` file has been corrected. The `locale` and `timezone` have been changed to `param string|null $locale` and `@param string|null $timezone`.  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15668](https://github.com/magento/magento2/pull/15668)*.[GitHub-15668](https://github.com/magento/magento2/issues/15668)
 
 
+<!--- ENGCOM-1778 -->* The annotation for the `formatDateTime` function in the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php` file has been corrected. The `locale` and `timezone` have been changed to `param string|null $locale` and `@param string|null $timezone`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15669](https://github.com/magento/magento2/pull/15669)*. [GitHub-15601](https://github.com/magento/magento2/issues/15601)
 
-
-
-<!--- ENGCOM-1777 -->*
-set correct annotation
-Set correct annotation to formatDateTime function in lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php file
-
-
-Vishal Gelani
-gelanivishal
-
-
-[GitHub-15601](https://github.com/magento/magento2/issues/15601)
-
-
-The annotation for locale and timezone should be @param string|null $locale and @param string|null $timezone
-https://github.com/magento/magento2/pull/15668
-
-
-
-
-<!--- ENGCOM-1778 -->*
-
-https://github.com/magento/magento2/pull/15669
-Set correct annotation to formatDateTime function in lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php file
-
-Vishal Gelani
-gelanivishal
-
-The annotation for locale and timezone should be @param string|null $locale and @param string|null $timezone
-
-[GitHub-15601](https://github.com/magento/magento2/issues/15601)
-
-
-
-
-<!--- ENGCOM-1804 -->*
-Refactor javascript code of button split widget
-
-Format the javascript code in the template file spli.phtml for button widget
-
-
-
+<!--- ENGCOM-1804 -->* We've refactored the JavaScript code in the `spli.phtml` template file for the button widget. *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15736](https://github.com/magento/magento2/pull/15736)*.
 [GitHub-15354](https://github.com/magento/magento2/issues/15354)
 
-Need to refactor template file and need to call js component which is already created
-magento2\app\code\Magento\Ui\view\base\web\js\grid\controls\button\split.js
+<!--- ENGCOM-1841 -->* The misspelling of *setCategoryIds* as *setCateroryIds* has been corrected to *setCategoryIds* throughout the source code. *Fix submitted by [Viral Vasara](https://github.com/viral-wagento) in pull request [15814](https://github.com/magento/magento2/pull/15814)*.
 
-Vijay Golani
-vijay-wagento
-https://github.com/magento/magento2/pull/15736
+<!--- ENGCOM-1859 -->* Customers can now successfully download and export PDFs after logging in. Previously, customers were redirected to the Admin when trying to download or export data to a PDF right after logging in. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15767](https://github.com/magento/magento2/pull/15767)*. [GitHub-15510](https://github.com/magento/magento2/issues/15510)
 
+<!--- ENGCOM-1849 -->* `select` elements now display with the styles you set in `_theme.less` as expected. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15796](https://github.com/magento/magento2/pull/15796)*. [GitHub-15608](https://github.com/magento/magento2/issues/15608)
 
 
 
-<!--- ENGCOM-1841 -->*
+<!--- ENGCOM-1930, ENGCOM-2096 -->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x. *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull requests [15874](https://github.com/magento/magento2/pull/15874) and[16297](https://github.com/magento/magento2/pull/16297)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
-https://github.com/magento/magento2/pull/15814
-Browsing through the source code, we found occurences of the word "Caterory" in tests, which seemed as if it would be a typo. Please have a look - and just close it, if we are wrong. ;) Thank you!!!
+* Customer Account Login page email field
+* Customer Account create page
+* Customer Authentication popup when the **Allow Guest Checkout** is  set to **No**
 
 
+<!--- ENGCOM-1881 -->* `.limiter` now has the same parent selectors (similar to `.pages`) to prevent clashes between styles and layouts. Previously, 
+`.limiter` was too generic and was used as single selector for floating the element. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15880](https://github.com/magento/magento2/pull/15880)*. [GitHub-15323](https://github.com/magento/magento2/issues/15323)
 
+<!--- ENGCOM-1903 -->* Changing the `@tab-content__border` variable now affects on the tabs content border as expected. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15917](https://github.com/magento/magento2/pull/15917)*. [GitHub-14999](https://github.com/magento/magento2/issues/14999)
 
+<!--- ENGCOM-1870 -->* The Multiple Payment Methods Enabled setting now works as expected. Previously, Magent threw this error when this setting was enabled: `Found 3 Elements with non - unique Id`. *Fix submitted by [Viral Vasara](https://github.com/viral-wagento) in pull request [15834](https://github.com/magento/magento2/pull/15834)*. [GitHub-15348](https://github.com/magento/magento2/issues/15348)
 
-<!--- ENGCOM-1859 -->* 1859
-https://github.com/magento/magento2/pull/15767
+<!--- ENGCOM-1989 -->* Primary buttons now have new LESS variables that permit you to change  font-weight, font-size, font-family without changing default button attributes. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [16037](https://github.com/magento/magento2/pull/16037)*.[GitHub-15832](https://github.com/magento/magento2/issues/15832)
 
-First PDF download / export after login
+<!--- ENGCOM-2048 -->* We've added a space between the category page and the main footer on pages using a single column layout. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15727](https://github.com/magento/magento2/pull/15727)* [GitHub-12601](https://github.com/magento/magento2/issues/12601)
 
+<!--- ENGCOM-2061 -->* Customers can now successfully log in after resetting their password. Previously, Magento displayed this error "You did not sign in correctly or your account is temporarily disabled" even though new password hash had been updated in the customer entity. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16255](https://github.com/magento/magento2/pull/16255)*. [GitHub-15255](https://github.com/magento/magento2/issues/15255)
 
-[GitHub-15510](https://github.com/magento/magento2/issues/15510)
+<!--- ENGCOM-2080 -->* Magento no longer displays duplicate element IDs forgift messages in the checkout page. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [16264](https://github.com/magento/magento2/pull/16264)*. [GitHub-13415](https://github.com/magento/magento2/issues/13415)
 
+<!--- ENGCOM-2068 -->* The JavaScript code in the `app/code/Magento/Tax/view/adminhtml/templates/class/page/edit.phtml` file has been refactored to meet Magento coding standards. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16270](https://github.com/magento/magento2/pull/16270)*. [GitHub-15352](https://github.com/magento/magento2/issues/15352)
 
+<!--- ENGCOM-2084 -->* Magento now correctly aligns page elements on  the home page and category page of Hot Seller section. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [16287](https://github.com/magento/magento2/pull/16287)*. [GitHub-15213](https://github.com/magento/magento2/issues/15213)
 
+<!--- ENGCOM-2108 -->* Fixed issues with the `jQuery UI DatePicker` display of sequential months. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16280](https://github.com/magento/magento2/pull/16280)*. [GitHub-7379](https://github.com/magento/magento2/issues/7379)
 
-Steps to reproduce
-Log in with an admin user who does not have the permissions Other Settings -> Notifications -> *
-Right after login try to download any PDF or export data
-Expected result
-Download of generated file
-Actual result
-Redirect to Admin Dashboard
-
-Sanjay Patel
-sanjay-wagento
-
-
-<!--- ENGCOM-1849 -->*
-Styling <select> by changing less variables in Luma theme… 
-https://github.com/magento/magento2/pull/15796
-
-Hitesh
-hitesh-wagento
-
-
-[GitHub-15608](https://github.com/magento/magento2/issues/15608)
-
-
-Expected result
-Have "select" elements with the styles you set in theme.less
-Actual result
-select" elements have different styles
-
-
-
-
-<!--- ENGCOM-1930 -->*
-
-Trim username on customer account login page 
-
-https://github.com/magento/magento2/pull/15874
-Trim email address on customer account login page generally when copy and paste.
-
-Description
-Trim email address by remove leading or trailing space on the customer account login page email field.
-
-Piyush Dankhara
-dankhrapiyush
-
-E11 user login email validation fails if field has leading or trailing space 
-Steps to reproduce
-Attempt login using IE with a valid user email but place a space either before or after the address.
-Try again with Chrome.
-Expected result
-Client-side email validation should work the same in IE11 as it does in Chrome.
-Actual result
-Using IE, client-side validation fails with "Please enter a valid email address (Ex: johndoe@domain.com)."
-Using Chrome, login succeeds. (padded whitespace is presumably trimmed?)
-
-
-<!--- ENGCOM-2096 -->*
-
-Trim email address in customer account create and login form 
-
-Description
-Trim email address by remove leading or trailing space on following forms.
-
-Customer account login page (Improved PR code #15874)
-Customer account create page
-Customer authentication popup in case Allow Guest Checkout set to No
-
-Client-side email validation should work the same in IE11 as it does in Chrome.
-
-
-Piyush Dankhara
-dankhrapiyush
-
-https://github.com/magento/magento2/pull/16297
-
-[GitHub-6058](https://github.com/magento/magento2/issues/6058)
-
-<!--- ENGCOM-1881 -->*
-
-limiter float too generic
-
-https://github.com/magento/magento2/pull/15880
-Hitesh
-hitesh-wagento
-
-[GitHub-15323](https://github.com/magento/magento2/issues/15323)
-
-Steps to reproduce
-inspect toolbar in product list
-compare styles of .limiter and .pages
-Expected result
-.limiter should have the same parent selectors like .pages to prevent clashes between styles and layouts
-Actual result
-.limiter is too generic and is used as single selector for floating the element
-
-
-
-<!--- ENGCOM-1903 -->*
-https://github.com/magento/magento2/pull/15917
-Hitesh
-hitesh-wagento
-
-Changing @tab-content__border variable has no effect in Blank theme
-
-
-Expected result
-Tabs content has border
-
-Actual result
-Tabs content has no border
-
-
-[GitHub-14999](https://github.com/magento/magento2/issues/14999)
-
-
-
-<!--- ENGCOM-1870 -->*
-contributor name: @viral-wagento
-contributor link: https://github.com/viral-wagento
-
-Resolve Knockout non-unique elements id in console error
-
-https://github.com/magento/magento2/pull/15834
-
-When enabling more than one payment methods from admin, It is giving an error in the console "Found elements with non-unique id billing-address-form "
-
-[GitHub-15348](https://github.com/magento/magento2/issues/15348)
-
-Multiple Payment Methods Enabled is giving error in console "Found 3 Elements with non - unique Id"
-
-
-
-<!--- ENGCOM-1989 -->*
-
-Added new less variables for primary button to change font-weight, font-size, font-family without changing default button attributes
-
-[GitHub-15832](https://github.com/magento/magento2/issues/15832)
-
-
-There is no @button-primary__font-weight for setting the font weight of the primary buttons.
-
-Expected result
-Possibility to change only primary button font-weight without changing regular button font-weight with less variables
-
-Actual result
-Primary button don't have specific variable and falling back to variable @button__font-weight
-
-Chirag Matholiya
-chirag-wagento
-
-https://github.com/magento/magento2/pull/16037
-
-
-
-<!--- ENGCOM-2048 -->*
-
-https://github.com/magento/magento2/pull/15727
-Added some style to solve space issue on a category page with one column layout.
-
-
-[GitHub-12601](https://github.com/magento/magento2/issues/12601)
-
-
-A space between the category page and the main footer when applying specific settings
-
-Sanjay Patel
-sanjay-wagento
-
-
-
-
-<!--- ENGCOM-2061 -->*
-
-unlock customer after password reset
-https://github.com/magento/magento2/pull/16255
-Vishal Gelani
-gelanivishal
-
-Customer who exceeded max login failures not able to login even after reset password
-
-[GitHub-15255](https://github.com/magento/magento2/issues/15255)
-
-
-Expected result
-Customer should be allowed to login successfully as Reset Password completed successfully.
-Actual result
-Customer receives error "You did not sign in correctly or your account is temporarily disabled" even though new password hash is updated in customer entity
-
-
-
-<!--- ENGCOM-2080 -->*
-Fix duplicate element id issue
-Chirag Matholiya
-chirag-wagento
-
-https://github.com/magento/magento2/pull/16264
-
-
-[GitHub-13415](https://github.com/magento/magento2/issues/13415)
-
-Steps to reproduce
-Go to Stores -> Configuration -> Sales -> Sales under Gift Options and set both Allow Gift Messages to YES
-Put something in cart and go to checkout or cart page
-Expected result
-Two forms for gift messages having fields with unique ids
-Actual result
-Two forms for gift messages having fields with non unique ids
-
-
-
-<!--- ENGCOM-2068 -->* Refactor validate code in Tax module
-
-https://github.com/magento/magento2/pull/16270
-
-Refactor javascript validate code in Tax module.
-Vishal Gelani
-gelanivishal
-
-
-[GitHub-15352](https://github.com/magento/magento2/issues/15352)
-
-Use javascript inside .phtml file it's legacy code that we try to refactor according to Magento way.
-
-
-
-
-
-
-
-<!--- ENGCOM-2084 -->*
-Solve overlapping Issue on category page
-
-https://github.com/magento/magento2/pull/16287
-
-Chirag Matholiya
-chirag-wagento
-
-
-[GitHub-15213](https://github.com/magento/magento2/issues/15213)
-
-
-Alignment & overlapping Issue on every Home page & category page of Hot Seller section
-
-Steps to reproduce
-On Home page there are issue worth alignment for after the second row of product listing (Hot seller section)
-On Category Page there are section name Hot seller that section also same issue
-Expected result
-It would be in same alignment either same as second row or first row but alignment will be same
-
-
-
-
-
-
-<!--- ENGCOM-2108 -->*
-
-
-widget (jQuery UI DatePicker) with numberOfMonths = 2 or more
-
-
-Steps to reproduce
-set options to widget 'numberOfMonths'=> array(1,3),
-set options on widget to any non-default values for 'numberOfMonths'
-Expected result
-jQuery UI DatePicker Widget with a list of months
-Actual result
-the first month is normal - the remaining corrupted
-month header repeat
-next month days not show
-
-
-[GitHub-7379](https://github.com/magento/magento2/issues/7379)
-
-https://github.com/magento/magento2/pull/16280
-
-Burlacu Vasilii
-vasilii-b
-
-<!--- ENGCOM-2244 -->*
-clickableOverlay-less-fix - added pointer-events rule to .modal- popup class to let user click deeper than modals and reach to overlay's div in modal-wrapper div
-
-
-Problem: modal's overlay div would not catch click event because is covered by modal's div above. That's why modal is would not fire close event when user is clicking outside modal.
-
-My proposition of solution for that issue is add pointer-events: none css rule to modals in theme's less files.
-
-Prince Patel
-mageprince
-
-
-
-[GitHub-7399](https://github.com/magento/magento2/issues/7399)
-
-Modal UI: clickableOverlay option doesn't work
+<!--- ENGCOM-2244 -->* The `clickableOverlay` option in modals now works as expected. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [16665](https://github.com/magento/magento2/pull/16665)*. [GitHub-7399](https://github.com/magento/magento2/issues/7399)
 
 
 
 ### JavaScript
-<!--- ENGCOM-2167 -->*
-Estimate Shipping and Tax Form not works due to js error in collapsible.js
+<!--- ENGCOM-2167 -->* The Shipping and Estimate Tax page now correctly displays country, city, and postal code fields. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16491](https://github.com/magento/magento2/pull/16491)*. [GitHub-8222](https://github.com/magento/magento2/issues/8222)
 
-[GitHub-8222](https://github.com/magento/magento2/issues/8222)
-
-The shipping and estimate tax form don't display the form with country, city, postcode fields.
-The form is in the dom, but hidden.
-The Cannot read property 'it/checkout/cart/block-shipping' of null javascript error appears in the console.
-
-
-https://github.com/magento/magento2/pull/16491
-
-Vishal Gelani
-gelanivishal
 
 
 ### Newsletter
-<!--- ENGCOM-2046 -->*
-https://github.com/magento/magento2/pull/15860
-Newsletter subscription confirmation message does not display after clicking link in email
-Rahul Kachhadiya
-https://github.com/rahul-kachhadiya
-
-
-[GitHub-14747](https://github.com/magento/magento2/issues/14747)
-
-Visit the store homepage.
-Enter a valid email address in the newsletter subscription box, press submit.
-In the subscription confirmation email, click on the link to confirm the subscription.
-Expected result
-Magento processes the subscription confirmation.
-Magento redirects the user to the homepage with a success message stating the subscription was successful.
-Actual result
-Magento processes the subscription confirmation.
-Magento redirects the user to the homepage, but there is no success message stating the subscription was successful.
-Furthermore, if you enter a search term and press submit on the search form, the newsletter confirmation message will appear on the search results page.
+<!--- ENGCOM-2046 -->* Magento now displays the newsletter subscription confirmation message  as expected after a customer clicks the confirmation link in the subscription confirmation email. *Fix submitted by [Rahul Kachhadiya](https://github.com/rahul-kachhadiya) in pull request [15860](https://github.com/magento/magento2/pull/15860)*. [GitHub-14747](https://github.com/magento/magento2/issues/14747)
 
 
 ### Quote
-<!--- ENGCOM-1962 -->*
-https://github.com/magento/magento2/pull/15829
-Error While Trying To Load Quote Item Collection Using Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()
 
-Neeta Kangiya
-https://github.com/neeta-wagento
+<!--- ENGCOM-1962 -->* Magento no longer throws an error when trying to load quote item collection using the `Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()` method. *Fix submitted by [Neeta Kangiya](https://github.com/neeta-wagento) in pull request [15829](https://github.com/magento/magento2/pull/15829)*.
+
 
 
 ###  Sales
-<!--- ENGCOM-1292 -->*
-added GNU Free Font to be used by sales PDFs
-The sales PDFs use the Libertine font which is not a unicode font and therefore it does not have full support of characters. It does not support Arabic, Russian, Greek, Indian or Thai alphabets and many more. For example it does not support the Indian rupee currency symbol ( ₹ ) and displays tofu boxes instead, which makes the PDF invoice totals illegible.
 
-[GitHub-12323](https://github.com/magento/magento2/issues/12323)
+<!--- ENGCOM-1292 -->* Magento now supports  GNU free fonts in invoice and shipment PDFs. Previously,  PDFs containing  Arabic, Russian, Greek, Indian or Thai alphabets did not correctly render those characters. *Fix submitted by [Ross](https://github.com/rossmc) in pull request [15829](https://github.com/magento/magento2/pull/15829)*. [GitHub-9666](https://github.com/magento/magento2/issues/9666), [GitHub-12323](https://github.com/magento/magento2/issues/12323)
 
 
-Invoice PDF doesn't support Thai
-
-Invoice and shipment PDF doesn't support Arabic 
-
-https://github.com/magento/magento2/issues/9666
+<!--- ENGCOM-1413 -->* An exported invoice's CSV file now contains information specific to the selected invoice only. Previously, when you selected **Invoices** > **Export** > **CSV**, and opened the CSV file, the exported file contained information from more than the selected invoice. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [14903](https://github.com/magento/magento2/pull/14903)*.
 
 
-[GitHub-12323](https://github.com/magento/magento2/issues/12323)
-
-Ross
-rossmc
-
-<!--- ENGCOM-1413 -->*
-Pass parameter for export button url 
-
-Pass parameter to export button url, configure button in invoice, shipment and creditmemo xml file
-
-Extra rExpected result
-Information related to one invoice only is displayed in CSV file
-
-Actual result
-Information related to both invoices from both orders is displayed in CSV file
-
-This issue is also reproducible for Shipments and Credit Memos
-
-ecords are in exported CSV file for order
-
-Steps to reproduce
-Log in to Admin
-Go to Sales > Orders
-Open one of the orders from preconditions
-Go to Invoices tab
-Click Export and select CSV
-Open exported CSV file
-
-
-Expected result
-Information related to one invoice only is displayed in CSV file
-
-Actual result
-Information related to both invoices from both orders is displayed in CSV file
-
-This issue is also reproducible for Shipments and Credit Memos
-
-Yaroslav Rogoza
-rogyar
-
-
-<!--- ENGCOM-1727 -->*
-Fix incorrect type hinting in PHPDocs
-Incorrect PHPdoc causes warnings in IDE.
-
-Changes applied:
-
-Changed the return type for setQty method to the type it actually returns.
-Removed the hint for never thrown LocalizedException in PHPDocs of register and setQty methods.
-
-[GitHub-13992](https://github.com/magento/magento2/issues/13992)
-
-Dmytro Cheshun
-dmytro-ch
-https://github.com/magento/magento2/pull/15619
+<!--- ENGCOM-1727 -->* The incorrect type hinting in PHPDocs has been corrected. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15619](https://github.com/magento/magento2/pull/15619)*. [GitHub-13992](https://github.com/magento/magento2/issues/13992)
 
 
 ### Search
-<!--- ENGCOM-2079 -->*
-
-Submitting search form (mini) with enter key fires event handlers bound by jquery twice
-
-https://github.com/magento/magento2/pull/16281
-
-When submitting the search form in the header with the enter key on the keyboard, event handlers that were bound to the form submit (through jQuery) are fired twice.
-
-When submitting the search form in the header with the enter key on the keyboard, event handlers that were bound to the form submit (through jQuery) are fired twice.
-
+<!--- ENGCOM-2079 -->* You can now use the Enter key to submit a search form. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16281](https://github.com/magento/magento2/pull/16281)*.
 [GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
-Vishal Gelani
-gelanivishal
 
 
 
 ### Setup
-<!--- ENGCOM-1856 -->*
-Error 500 in Module Manager
-
-https://github.com/magento/magento2/pull/15756
-
-https://github.com/magento/magento2/pull/15756
-
-
-Vijay Golani
-vijay-wagento
-
-
-Module Manager module grid is not working. Module Manager doesn't show module grid when going through below step:
-System > Tools > Web Setup Wizard > Module Manager
-
-[GitHub-15192](https://github.com/magento/magento2/issues/15192)
+<!--- ENGCOM-1856 -->* The Module Manager now correctly displays the list of modules (**System** > **Tools** > **Web Setup Wizard** > **Module Manager**). Previously, Magento threw a Error 500 when you tried to display the module list. *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15756](https://github.com/magento/magento2/pull/15756)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
 
 ###  Sitemap
-<!--- ENGCOM-1528 -->*Default schedule config for sitemap_generate job added
-
-https://github.com/magento/magento2/pull/15159
-
-Yaroslav Rogoza
-rogyar
-
-[GitHub-5768](https://github.com/magento/magento2/issues/5768)
-
-
-Steps to reproduce
-go to admin>store>configurtion>catalog>xml sitemap
-turn on generation and set up time.
-Expected result
-generate sitemap in magento root folder.
-Actual result
-no xml sitemap is found. 
-
-XML sitemap is not generated by schedule
+<!--- ENGCOM-1528 -->* XML sitemap generation can now be scheduled. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15159](https://github.com/magento/magento2/pull/15159)*. [GitHub-5768](https://github.com/magento/magento2/issues/5768)
 
 
 ### Swagger
 
-<!--- ENGCOM-1935 -->*
-https://github.com/magento/magento2/pull/15945
+<!--- ENGCOM-1935 -->* The REST API schema (Swagger) is now  compatible with Search Criteria. We've added a zero index to the array signifier in the `searchCriteria` parameters builder, which supports generation of the correct response when a user tests a  method with  search criteria parameters in Swagger. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15945](https://github.com/magento/magento2/pull/15945)*. [GitHub-11477](https://github.com/magento/magento2/issues/11477)
 
-Added zero index to array signifier in searchCriteria parameters builder
-
-This fix allows to generate correct response when user want to test method with some search criteria parameters in Swagger.
-
-
-Magento
- REST API Schema (Swagger) is not compatible with Search Criteria
-
-[GitHub-11477](https://github.com/magento/magento2/issues/11477)
-
-
-Vishal Gelani
-gelanivishal
 
 
 ### Swatches
@@ -921,15 +222,7 @@ gelanivishal
 
 ### Translations
 
-<!--- ENGCOM-2036 -->*
-https://github.com/magento/magento2/pull/16229
-Karla Saaremäe
-Karlasa
-
-Added translation possibility for moreButtonText
-
-
-[GitHub-16079](https://github.com/magento/magento2/issues/16079)
+<!--- ENGCOM-2036 -->* You can now translate the `moreButtonText` text string. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16229](https://github.com/magento/magento2/pull/16229)*. [GitHub-16079](https://github.com/magento/magento2/issues/16079)
 
 
 
