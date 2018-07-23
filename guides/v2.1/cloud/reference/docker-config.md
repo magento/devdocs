@@ -68,23 +68,23 @@ The Cloud Tools provides a `docker:build` command to generate the Docker Compose
     docker-compose up -d --build
     ``` 
 
-1. Start the Magento installer. These steps may take some time to complete.
+1. Install Magento in your Docker environment.
 
-    * Run build stage.
+    * Run the build command.
 
     ```bash
     docker-compose run build cloud-build
     ```
     
-    * Run deploy stage.
+    * After the build completes, run the deploy command:
     
     ```bash
     docker-compose run deploy cloud-deploy
     ```
 
-1. Open the `http://localhost:8080` or `https://localhost:8082` secure URL in a browser to access your local Magento Cloud template.
+1. Access your local Magento Cloud template by opening one of the following secure URLs in a browser: `http://localhost:8080` or `https://localhost`.
 
-1. Destroy your local Magento Cloud template.
+1. Remove all components of your local Magento Cloud template including containers, networks, volumes, and images.
 
     ```bash
     docker-compose down
