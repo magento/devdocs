@@ -723,7 +723,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
 
-15.3. XSS protection.
+15.3. (Cross-Site Scripting) XSS protection.
 
 15.3.1. Sanitize input; escape output.
 
@@ -753,7 +753,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
 
-15.7. CSRF protection.
+15.7. Cross-Site Request Forgery (CSRF) protection.
 
 15.7.1. CSRF tokens mechanism should be utilized.
 
@@ -761,15 +761,15 @@ class SampleEventObserverThatModifiesInputs
 
 15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
 
-15.9. LFI protection.
+15.9. Local File Inclusion (LFI) protection.
 
 15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
 
 15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
 
-15.10. RCE protection.
+15.10. Remote Code Execution (RCE) protection.
 
-15.10.1. SHOULD avoid usage of eval(), passthru(), system(), shell_exec()
+15.10.1. SHOULD NOT use eval(), passthru(), system(), shell_exec(), serialize(), unserialize(), md5(), srand(), mt_srand()
 
 15.10.2. SHOULD NOT directly pass user-submitted values to include*(), require*(), create_function(), fopen(), preg_replace()
 
