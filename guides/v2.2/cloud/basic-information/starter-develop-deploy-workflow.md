@@ -9,42 +9,17 @@ version: 2.0
 github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 ---
 
-Everything in {{site.data.var.ece}} is Git-driven. Your [project]({{ page.baseurl }}/cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.ece}} plan subscription, your deployment workflow may differ.
+The {{site.data.var.ece}} includes a single Git repository with a Production master that can be branched to create Staging and Integration environments for testing and development work. You can have up to four active environments, including a `master` environment for your production server. See [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) for an overview.
 
-The general workflow for all development and deployment includes:
-
-* Push code to the remote Git branch
-* Build and deploy processes run
-* The environments updated with code, services, and configurations
-
-The Starter plan gives you four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want.
-
-We **recommend creating a Staging branch** for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create from `staging` and use for all development, easily merging work up through `staging` then `master`.
-
-Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.
-
-The following diagram details the branch and environment relationships:
-
-![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
-
-You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following workflow and examples use a Production, Staging, and Integration architecture.
-</div>
-
-## Starter environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow.
+For your environments, we recommend following a Development > Staging > Production workflow to [develop](#development) and [deploy](#development) your site.
 
 * Production environment (live site) is your `master` Git branch with an associated full environment with all services
 * Staging environment is a Git branch we recommend you create called `staging`, to receive full services matching Production
 * Integration environments include two active branches we recommend created from `staging`
 
-For your branches, you can follow any methodology. One example follows an Agile methodology such as scrum to create [branches for every sprint]({{ page.baseurl }}/cloud/env/environments.html).
+For your branches, you can follow any methodology. For example, you can follow an Agile methodology such as scrum to create branches for every sprint.
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
-
-For detailed information, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html).
 
 ## Development workflow {#development}
 Development and deployment on Starter plans begin with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.

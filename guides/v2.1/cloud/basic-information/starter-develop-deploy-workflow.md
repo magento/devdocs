@@ -11,42 +11,17 @@ functional_areas:
   - Cloud
 ---
 
-Everything in {{site.data.var.ece}} is Git-driven. Your [project]({{ page.baseurl }}/cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. Every active Git branch has an associated full environment. Depending on your {{site.data.var.ece}} plan subscription, your deployment workflow may differ.
+The {{site.data.var.ece}} includes a single Git repository with a Production master that can be branched to create Staging and Integration environments for testing and development work. You can have up to four active environments, including a `master` environment for your production server. See [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) for an overview.
 
-The general workflow for all development and deployment includes:
-
-* Push code to the remote Git branch
-* Build and deploy processes run
-* The environments updated with code, services, and configurations
-
-The Starter plan gives you four active environments, including a `master` environment for your Production server. You have the option to use the remaining three active branches any way you want.
-
-We **recommend creating a Staging branch** for fully testing your code, extensions, integrations, and data as a near-production environment. This branch includes all services and features of your Production environment. The remaining branches you can create from `staging` and use for all development, easily merging work up through `staging` then `master`.
-
-Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. Only the Production and Staging environments have full services including Fastly and New Relic.
-
-The following diagram details the branch and environment relationships:
-
-![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
-
-You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The following workflow and examples use a Production, Staging, and Integration architecture.
-</div>
-
-## Starter environments and branches {#env-branches}
-For your environments, we recommend deploying and testing following a Development > Staging > Production workflow.
+For your environments, we recommend following a Development > Staging > Production workflow to [develop](#development) and [deploy](#development) your site.
 
 * Production environment (live site) is your `master` Git branch with an associated full environment with all services
 * Staging environment is a Git branch we recommend you create called `staging`, to receive full services matching Production
 * Integration environments include two active branches we recommend created from `staging`
 
-For your branches, you can follow any methodology. One example follows an agile methodology such as scrum to create [branches for every sprint]({{ page.baseurl }}/cloud/env/environments.html).
+For your branches, you can follow any methodology. For example, you can follow an Agile methodology such as scrum to create branches for every sprint.
 
 From each sprint, you can have branches for every user story. All the stories become testable. You can continually merge to the sprint branch and validate that on a continuous basis. When the sprint ends, there is no testing bottleneck, and you can just merge to master and put the whole sprint into production.
-
-For detailed information, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html).
 
 ## Development workflow {#development}
 Development and deployment on Starter plans begin with your initial project. You create your project with the "blank site", which is a {{site.data.var.ece}} template code repo with a fully prepared store. This creates a `master` branch of Git code in your Production environment.
@@ -69,7 +44,7 @@ You also have a few optional steps to help develop and test your code and store 
 This process assumes you would have your [local developer workspace]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
 
 ### Clone and branch {#clone-branch}
-When you created your project, a `master` branch was cloned using the {{site.data.var.ece}} Git repository. To start branching and working with code, you will need to clone the `master` to your local.
+When you created your project, you cloned the `master` branch from the {{site.data.var.ece}} Git repository. To start branching and working with code, clone the `master` to your local environment.
 
 The format of the Git clone command is:
 
@@ -78,7 +53,7 @@ The format of the Git clone command is:
 
 The first time you start working in branches for your Starter project, you need to create a Staging branch. This sets up a Staging environment with a code branch matching the Production `master` branch and environment.
 
-Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have four active Integration environments available. When you push your an active branch of Git code, one of these Integration environments automatically deploys your code to test.
+Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You can have up to three Active environments available to manage testing and development. When you push an active branch of Git code, one of these Integration environments automatically deploys your code to test.
 
 We walk you through the process when you [set up your local]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
 
@@ -141,18 +116,18 @@ The generated file is located in `app/etc/`:
 * For 2.1.4 and later: `config.local.php`
 * For 2.2 and later: `config.php`
 
-You will generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
+You generate the file in the Integration environment where you configured Magento. We walk you through the process of generating the file, adding it to your Git branch, and deploying it.
 
 **Important notes** on Configuration Management:
 
 * Any configuration setting included in the file is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using `scd-dump`.
 
-  For example, we will have you install a module for Fastly in your development environment. You will only configure this module in Staging and Production. Using `scd-dump` keeps those default fields editable.
+  For example, when you clone to create an integration branch, you install a module for Fastly in your development environment. However, you configure the Fastly module only in Staging and Production. Using `scd-dump` keeps those default fields editable.
 * This file can be long depending on the size of your deployment. The `scd-dump` command generates a far small file than `app:config:dump`.
 
 ![Generate configuration management file]({{ site.baseurl }}/common/images/cloud_workflow-config-mgmt.png)
 
-An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, will be generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You will not add this file to your code repository. You can also create environment variables with CLI commands in all {{site.data.var.ece}} versions.
+An additional feature of this command is part of {{site.data.var.ece}} 2.2. Any values determined to be sensitive data, like sandbox credentials for a PayPal module, are generated into another configuration file called `env.php` in `app/etc/`. This file remains in the exact environment it is created without traveling with your code. You do not add this file to your code repository. You can also create environment variables with CLI commands in all {{site.data.var.ece}} versions.
 
 ![Environment variables generate]({{ site.baseurl }}/common/images/cloud_workflow-env-variables.png)
 
@@ -177,7 +152,7 @@ For instructions, see [Install optional sample data]({{ page.baseurl }}/cloud/ho
 ![Install optional sample data]({{ site.baseurl }}/common/images/cloud_workflow-sample-data.png)
 
 ### Optional: Pull production data {#prod-data}
-We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.
+We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You can configure extensions in your local development branchThe {{site.data.var.ece}} includes a single Git repository with a Production master that can be branched to create Staging and Integration environments for testing and development work. See [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) for an overview.
 
 As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.
 
@@ -190,7 +165,7 @@ Prior to pushing the data to another environment, you should consider sanitizing
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Important: We don't recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
+Important: We don't recommend pushing a database from an Integration or Staging environment. This data overwrites your live Production data including sales, orders, new and updated customers, and much more.
 </div>
 
 ## Deployment workflow {#deploy}
@@ -219,7 +194,7 @@ When fully completed, your store comes back online, live, with all of your updat
 To learn more, see [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 ### Push to Staging and test {#staging}
-You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
+You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you must configure a few services including [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html), [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), and [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html). We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.
 
 Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.
 
