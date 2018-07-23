@@ -1794,6 +1794,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <th style="text-align: center">PluginA</th>
       <th style="text-align: center">PluginB</th>
       <th style="text-align: center">PluginC</th>
+      <th style="text-align: center">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -1802,24 +1803,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td style="text-align: center">10</td>
       <td style="text-align: center">20</td>
       <td style="text-align: center">30</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center"><strong>before</strong></td>
       <td style="text-align: center">beforeDispatch()</td>
       <td style="text-align: center">beforeDispatch()</td>
       <td style="text-align: center">beforeDispatch()</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center"><strong>around</strong></td>
+      <td style="text-align: center"><strong>around (first half)</strong></td>
       <td style="text-align: center"> </td>
-      <td style="text-align: center">aroundDispatch()</td>
-      <td style="text-align: center">aroundDispatch()</td>
+      <td style="text-align: center">aroundDispatch() [first half]</td>
+      <td style="text-align: center">aroundDispatch() [first half]</td>
+      <td style="text-align: center"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>original</strong></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">dispatch()</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><strong>around (second half)</strong></td>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center">aroundDispatch() [second half]</td>
+      <td style="text-align: center">aroundDispatch() [second half]</td>
+      <td style="text-align: center"> </td>
     </tr>
     <tr>
       <td style="text-align: center"><strong>after</strong></td>
       <td style="text-align: center">afterDispatch()</td>
       <td style="text-align: center">afterDispatch()</td>
       <td style="text-align: center">afterDispatch()</td>
+      <td style="text-align: center"> </td>
     </tr>
   </tbody>
 </table>
