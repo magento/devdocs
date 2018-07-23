@@ -24,7 +24,7 @@ To ensure that your new string is added to the dictionary and translated, use th
 For example:
 
 {% highlight html+php %}
-	<h3><?php echo __('Create Backup') ?></h3>
+    <h3><?php echo __('Create Backup') ?></h3>
 {% endhighlight html+php %}
 
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
@@ -78,7 +78,7 @@ Translated strings that originate from `.xml` files will not render unless they 
 In this example, you would use a call similar to the following to display the translated *Delete* string.
 
 {% highlight php startinline=true %}
-__($this->config->getData('label'))
+    __($this->config->getData('label'))
 {% endhighlight %}
 
 <h2 id="add_strings_js">Strings added in .js files</h2>
@@ -87,13 +87,13 @@ To ensure that the text you add in a <code>.js</code> file is collected by the i
 <li>Link the <code>mage/translate</code> library:
 
 {% highlight js%}
-	define (['jquery', 'mage/translate'], function ($) {...});
+    define (['jquery', 'mage/translate'], function ($) {...});
 {% endhighlight js%}
 </li>
 <li>Use the <code>$.mage.__('')</code> function when adding a string:
 
 {% highlight js%}
-	$.mage.__('<string>');
+    $.mage.__('<string>');
 {% endhighlight js%}
 
 If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:

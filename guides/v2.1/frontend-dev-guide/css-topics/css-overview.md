@@ -40,12 +40,12 @@ In the Blank theme, the buttons of the `.action.primary` class, so called *prima
 <div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}/common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button">
 </div>
-
+<br />
 OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:
-
-1. Create a new Orange theme, which inherits from the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
-2. In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:
-<pre>
+<ol>
+<li>Create a new Orange theme, which inherits from the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.</li>
+<li>In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:
+{% highlight css%}
 //  Primary button
 @button-primary__color: @color-white;
 @button-primary__hover__color: @color-white;
@@ -53,7 +53,9 @@ OrangeCo wants to change the color of the primary buttons to orange. To achieve 
 @button-primary__hover__background: @color-orange-red4;
 @button-primary__border: 1px solid @color-orange-red2;
 @button-primary__hover__border: 1px solid @color-orange-red2;
-</pre>
+{% endhighlight css%}
+</li>
+</ol> 
 
 When OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the primary buttons will look like on the following image:
 

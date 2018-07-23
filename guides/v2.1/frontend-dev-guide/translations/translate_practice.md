@@ -36,36 +36,34 @@ The following image shows a page where the strings meant to be changed are used:
 <div style="border: 1px solid #ABABAB">
 <img width="700px" src="{{ site.baseurl }}/common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed">
 </div>
-
+<br />
 To override the strings, OrangeCo plan to use the en_US dictionary file. 
 
 So OrangeCo take the following steps:
 
 <ol>
-
 <li>
 Run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code>orange</code> theme:
-<pre>
+{% highlight html+php %}
 {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}php{% endglossarytooltip %} magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
-</pre>
+{% endhighlight html+php %}
 </li>
 <li>
-
 Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv</code> file and add the following rows:
 
-<pre>
+{% highlight HTML%}
 "Add to Cart", "Purchase"
 "Add to Compare", "Compare"
 "Add to Wish List", "Wishlist"
-</pre>
+{% endhighlight HTML%}
 </li>
 
 </ol>
 
 Now you can run deploy command to get changes of localization,
-<pre>
+{% highlight HTML%}
 php bin/magento setup:static-content:deploy
-</pre>
+{% endhighlight HTML%}
 
 When the OrangeCo apply the orange theme, the custom strings are used instead default ones. 
 
