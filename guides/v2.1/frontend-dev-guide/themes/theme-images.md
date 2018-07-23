@@ -17,14 +17,14 @@ The properties of product images used on the {% glossarytooltip 1a70d3ac-6bd9-47
 
 The properties for the images displayed on the product pages are defined by the gallery widget options. The options of the widget can be configured in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} `view.xml` as well. For more details, view the [Gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html) topic.
 
-<h2 id="view_xml_structure">Configure image properties in view.xml</h2>
+## Configure image properties in view.xml {#view_xml_structure}
 
 The conventional location of `view.xml` for a theme is:
 {% raw %}
 	<theme_dir>/etc/view.xml
 {% endraw %}
 
-For example, here is the `view.xml` of the Magento Blank theme: <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml){target="&#95;blank"}.
 
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
@@ -79,7 +79,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
       </td>
       <td>
         The type of the images defined by the specified <code>id</code>. Allowed values:
-<ul>
+
 <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
 <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
 <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
@@ -93,7 +93,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
 </table>
 
 The following picture illustrates how image roles for product images are specified in the Magento Admin:
-<img src="{{ site.baseurl }}/common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
+![Setting image role in Magento Admin]({{ site.baseurl }}/common/images/fdg_theme_bck.png)
 
 Image properties are defined by the corresponding elements, for example:
 
@@ -245,7 +245,7 @@ Generally, product images are cached while saving the product. However, the `mag
 * After you import products, which might have images of various sizes
 * If images were resized or deleted manually from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} 
 
-Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images">`view.xml`</a> configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
+Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's [`view.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images) configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
 
 Command usage:
 

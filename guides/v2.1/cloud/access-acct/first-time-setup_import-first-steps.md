@@ -24,7 +24,7 @@ You can create a {{site.data.var.ece}} project from a blank template or by impor
 ## Prerequisites for importing code {#prereqs}
 Before you begin, do the following:
 
--   Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/project/project-integrate-github.html).
+-   Add the existing {{site.data.var.ee}} code to a Git repository. We recommend using [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html).
 -   Set up your [local development environment]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
 -   Gather required information:
 

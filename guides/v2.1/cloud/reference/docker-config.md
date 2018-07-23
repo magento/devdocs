@@ -19,7 +19,7 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
 - NGINX: magento/magento-cloud-docker-nginx
 - Varnish: magento/magento-cloud-docker-varnish
 
-The Cloud Tools provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
+The `ece-tools` package provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
 
 - PHP: `--php`
 - NGINX: `--nginx`
@@ -27,13 +27,18 @@ The Cloud Tools provides a `docker:build` command to generate the Docker Compose
 
 #### To launch the Cloud Docker environment:
 
-1. Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
-1. Add your credentials to `auth.json` file.
-1. Update the template dependencies.
+1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
+
+1.  Add your credentials to the `auth.json` file.
+
+1.  Update the template dependencies.
 
     ```bash
     composer install
     ```
+
+    {: .bs-callout .bs-callout-info}
+    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
 1. In your local environment, start the Docker configuration generator.
 
@@ -51,13 +56,13 @@ The Cloud Tools provides a `docker:build` command to generate the Docker Compose
     cp docker/global.php.dist docker/global.php
     ```
 
-1. Build Docker environment configuration files from raw configs.
+1. Convert Docker environment configuration files from the raw configs.
 
     ```bash
     vendor/bin/ece-tools docker:config:convert
     ```
     
-    This command will convert your raw `.php` configs to `.env` configs.
+    This converts your `.php` files to `.env` configuration files.
     
     * `docker/config.env`
     * `docker/global.env`
@@ -82,13 +87,18 @@ The Cloud Tools provides a `docker:build` command to generate the Docker Compose
     docker-compose run deploy cloud-deploy
     ```
 
-1. Access your local Magento Cloud template by opening one of the following secure URLs in a browser: `http://localhost:8080` or `https://localhost`.
+1. Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+ 
+    -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
+    -  [`https://localhost`](https://localhost){:target="\_blank"}
 
-1. Remove all components of your local Magento Cloud template including containers, networks, volumes, and images.
+#### To stop and remove the Cloud Docker environment:
 
-    ```bash
-    docker-compose down
-    ```
+Remove all components of your local Magento Cloud template including containers, networks, volumes, and images.
+
+```bash
+docker-compose down
+```
 
 ### Integration testing with Cloud tools
 Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:
