@@ -117,7 +117,7 @@ Run the following commands to switch to production mode:
 bin/magento deploy:mode:set production
 ~~~
 
-[composer-install]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[composer-install]: {{ page.baseurl }}/install-gde/composer.html
 [zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
 [config-varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
 [elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-overview.html

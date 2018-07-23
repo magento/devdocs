@@ -10,7 +10,7 @@ A component's root directory matches the component's name and contains all its s
   * For Admin themes, use `app/design/adminhtml`.
   * For language packages, use `app/i18n`.
 
-* `<Magento install directory>/vendor`: You will find this location for installations that use the [`composer create-project`]({{page.baseurl}}/install-gde/prereq/integrator_install.html) to install the Magento 2 metapackage (which downloads the CE or EE code). You will also find this location if you install Magento by extracting the [compressed Magento 2 archive]({{page.baseurl}}/install-gde/prereq/zip_install.html). 
+* `<Magento install directory>/vendor`: You will find this location for installations that use the [`composer create-project`]({{page.baseurl}}/install-gde/composer.html) to install the Magento 2 metapackage (which downloads the CE or EE code). You will also find this location if you install Magento by extracting the [compressed Magento 2 archive]({{page.baseurl}}/install-gde/prereq/zip_install.html). 
 
 Magento installs third-party components in the `vendor` directory. But we recommend adding your components to the `app/code` directory. If you put your component in the `vendor` directory, git will ignore it because Magento adds the `vendor` directory to the `.gitignore` file. 
 

@@ -60,7 +60,7 @@ Consult the following table for how to get started installing {{site.data.var.ce
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
 		<li>Upgrades the Magento application and extensions using the Web Setup Wizard or command line.</li></ol>
-		<td><p><a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
+		<td><p><a href="{{ page.baseurl }}/install-gde/composer.html">Get the metapackage</a></p></td>
 	</td>
 
 	</tr>
