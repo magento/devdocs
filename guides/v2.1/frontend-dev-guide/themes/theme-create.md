@@ -162,7 +162,7 @@ If the product image sizes of your theme differ from those of the parent theme, 
     ...
     ```
 
-For details about images configuration in the`view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
+For details about images configuration in the `view.xml` file, see the [Configure images properties for a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-images.html) topic.
 
 ## Create directories for static files {#fedg_theme_how-to_static}
 
