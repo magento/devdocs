@@ -707,7 +707,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.1. Use prepared statements for SQL queries.
 
-###15.2. Broken Authentication protection.
+15.2. Broken Authentication protection.
 
 15.2.1. Where possible, implement multi-factor authentication to prevent automated, credential stuffing, brute force, and stolen credential re-use attacks.
 
@@ -723,7 +723,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
 
-###15.3. XSS protection.
+15.3. XSS protection.
 
 15.3.1. Sanitize input; escape output.
 
@@ -737,7 +737,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.4. A module that introduces Admin Panel functionality should have ACL.
 
-###15.5. Misconfiguration protection.
+15.5. Misconfiguration protection.
 
 15.5.1. Do not include/require unused libraries/frameworks.
 
@@ -745,7 +745,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.5.3. Sending security directives to clients, e.g. [Security Headers](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project).
 
-###15.6. Sensitive Data Exposure protection.
+15.6. Sensitive Data Exposure protection.
 
 15.6.1. Exceptions/Notices/Warnings should be caught and logged.
 
@@ -753,7 +753,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
 
-###15.7. CSRF protection.
+15.7. CSRF protection.
 
 15.7.1. CSRF tokens mechanism should be utilized.
 
@@ -761,13 +761,13 @@ class SampleEventObserverThatModifiesInputs
 
 15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
 
-###15.9. LFI protection.
+15.9. LFI protection.
 
 15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
 
 15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
 
-###15.10. RCE protection.
+15.10. RCE protection.
 
 15.10.1. SHOULD avoid usage of eval(), passthru(), system(), shell_exec()
 
