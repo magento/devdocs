@@ -1,10 +1,6 @@
 ---
 group: install_pre
-subgroup: S_Integrator
-title: (Integrator) Integrator installation
-menu_title: (Integrator) Integrator installation
-menu_order: 1
-menu_node: parent
+title: Composer Installation
 version: 2.1
 github_link: install-gde/prereq/integrator_install.md
 functional_areas:
@@ -17,7 +13,6 @@ functional_areas:
   <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-## (Integrator) Overview of integrator installation
 This topic provides an overview of how to get either the {{site.data.var.ce}} or {{site.data.var.ee}} {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 ## Intended audience {#int-aud}
