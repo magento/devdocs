@@ -77,12 +77,12 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
       </tr><tr>
-         <td><code>Magento\Framework\AbstractModel</code>
+         <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\AbstractResource</code></td>
+         <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
          <td></td>
       </tr>
       <tr>
