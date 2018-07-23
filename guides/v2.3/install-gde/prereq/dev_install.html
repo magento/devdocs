@@ -833,6 +833,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="install-magento-using-composer">
+
+            
+
+            
+            <a href="/guides/v2.3/install-gde/composer.html">Install Magento using Composer</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="(easy)-install-the-magento-archive-on-your-server">
 
             
@@ -845,64 +859,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         </li>
         
         
-        
-        
-        <li class="nav-level2  " id="(integrator)-integrator-installation">
-
-            
-
-            
-            <a href="/guides/v2.3/install-gde/prereq/integrator_install.html">(Integrator) Integrator installation</a>
-            
-
-            
-            <ul>
-                
-
-                
-                
-                <li class="nav-level3  " id="install-composer">
-                    
-
-                    
-                    <a  href="/guides/v2.3/install-gde/prereq/integrator_install_composer.html">Install Composer</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="get-the-magento-open-source-metapackage">
-                    
-
-                    
-                    <a  href="/guides/v2.3/install-gde/prereq/integrator_install_ce.html">Get the Magento Open Source metapackage</a>
-                    
-
-                    
-                </li>
-                
-                
-
-                
-                
-                <li class="nav-level3  " id="get-the-magento-commerce-metapackage">
-                    
-
-                    
-                    <a  href="/guides/v2.3/install-gde/prereq/integrator_install_ee.html">Get the Magento Commerce metapackage</a>
-                    
-
-                    
-                </li>
-                
-                
-            </ul>
-            
-        </li>
         
         
         
@@ -2343,38 +2299,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>Before you continue, make sure you’ve done all of the following:</p>
 
   <ul>
-    <li>
-      <p>Set up a server that meets our <a href="/guides/v2.3/install-gde/system-requirements2.html">system requirements</a></p>
-
-      <p>For details, see <a href="/guides/v2.3/install-gde/prereq/prereq-overview.html">Prerequisites</a></p>
-    </li>
-    <li>
-      <p>Created the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></p>
-    </li>
+    <li>Set up a server that meets our <a href="/guides/v2.3/install-gde/system-requirements2.html">system requirements</a></li>
+    <li>Created the <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></li>
   </ul>
 </div>
 
 <div>
-
-  <h2 id="instgde-overview-composer">Composer and Magento</h2>
-
-  <p>We use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.</p>
-
-  <p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.</p>
-
-  <p>To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.</p>
-
-  <p>Composer provides you with the following advantages:</p>
+  <p>We use <a href="https://getcomposer.org/" target="\_blank">Composer</a> to manage Magento components and their dependencies. Using Composer to get the Magento software   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
+ provides the following advantages:</p>
 
   <ul>
-    <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-    <li>Component-based architecture with robust dependency management</li>
-    <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-    <li>Versioned dependencies</li>
-    <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-    <li>Supports the PHP Framework Interoperability standard</li>
+    <li>Reuse third-party libraries without bundling them with source code</li>
+    <li>Reduce extension conflicts and compatibility issues by using a component-based architecture with robust dependency management</li>
+    <li>Adhere to <a href="https://www.php-fig.org/" target="\_blank">PHP-Framework Interoperability Group (FIG)</a> standards</li>
+    <li>Repackage Magento Open Source with other components</li>
+    <li>Use the Magento software in a production environment</li>
   </ul>
 
+  <p class="bs-callout bs-callout-warning">You must create a Composer project from our metapackage if you want to use the Magento Web Setup Wizard to upgrade the Magento software and third-party extensions.</p>
 </div>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
