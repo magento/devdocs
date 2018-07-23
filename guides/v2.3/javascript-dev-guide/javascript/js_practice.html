@@ -813,10 +813,10 @@ The high level steps for this task are the following:</p>
 </ol>
 
 <p>Let’s look at each step in more detail.</p>
-<h3>Step 1: Define what is the default implementation</h3>
+<h3 id="step-1-define-what-is-the-default-implementation">Step 1: Define what is the default implementation</h3>
 <p>Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <a href="https://github.com/magento/magento2/blob/2.1/lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>, and the configuration path for it is <code class="highlighter-rouge">mage/gallery</code>.</p>
 
-<h3>Step 2: Add the custom script to the file system</h3>
+<h3 id="step-2-add-the-custom-script-to-the-file-system">Step 2: Add the custom script to the file system</h3>
 
 <p>For the jCarousel widget to be able to use the configuration passed to the gallery widget,
 OrangeCo needs to add a “wrapper” script.</p>
@@ -844,7 +844,7 @@ define([
 </li>
 </ul>
 
-<h3>Step 3: Update RequireJS configuration</h3>
+<h3 id="step-3-update-requirejs-configuration">Step 3: Update RequireJS configuration</h3>
 <p>In the <code class="highlighter-rouge">app/design/OrangeCo/orange</code> directory OrangeCo adds <code class="highlighter-rouge">requirejs-config.js</code> with the following content:</p>
 
 <pre>
