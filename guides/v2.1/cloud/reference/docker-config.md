@@ -62,7 +62,7 @@ The Cloud Tools provides a `docker:build` command to generate the Docker Compose
     * `docker/config.env`
     * `docker/global.env`
 
-1. Build files to containers and run in the background.
+1. Build files to containers and run Docker in the background.
 
     ```bash
     docker-compose up -d --build
@@ -70,13 +70,13 @@ The Cloud Tools provides a `docker:build` command to generate the Docker Compose
 
 1. Install Magento in your Docker environment.
 
-    * Run the build command.
+    * Build Magento inside of Docker container:
 
     ```bash
     docker-compose run build cloud-build
     ```
     
-    * After the build completes, run the deploy command:
+    * Deploy Magento inside of Docker container:
     
     ```bash
     docker-compose run deploy cloud-deploy
