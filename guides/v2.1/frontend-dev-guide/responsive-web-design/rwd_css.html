@@ -1143,7 +1143,35 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
 <p>Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the Magento basic Blank theme.</p>
+ <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the Magento Blank theme.</p>
+
+<h2>Mobile first</h2>
+
+<p>In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.</p>
+
+<p>The mobile and desktop styles are defined in separate files:</p>
+
+<ul>
+<li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles (768px and higher).</li>
+<li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
+</ul>
+
+<h2 id="fedg_rwd_css_break">Breakpoints</h2>
+
+<p>Breakpoints are used in the   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
+ code to set up the screen width at which the design switches from the mobile to the desktop version.</p>
+
+<p>The Blank and Luma themes use LESS variables to implement the following <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:</p>
+<ul>
+  <li><code>@screen__xxs</code>: 320px</li>
+  <li><code>@screen__xs</code>: 480px</li>
+  <li><code>@screen__s</code>: 640px</li>
+  <li><code>@screen__m</code>: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)</li>
+  <li><code>@screen__l</code>: 1024px</li>
+  <li><code>@screen__xl</code>: 1440px</li>
+</ul>
+
+<p>You can change these breakpoints and add new ones in your custom theme. For instructions see the <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a new breakpoint</a> topic.</p>
 
 <h2 id="lib_rwd">Media queries in Magento default themes</h2>
 
@@ -1151,47 +1179,67 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  of the <code>@media</code> rule, to adapt the   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  to the screen width.</p>
 
-<p>According to the approach implemented in the library, the <code>.media-width()</code>   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>
- can be used in any <code>.less</code> file in your theme, as many times as you need, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles.css</code> has only one call of each media query with all the rules there, instead of multiple calls for the same query.</p>
+<p>The approach implemented in the Magento UI library, uses <code>@media-common</code> style group separation and <code>.media-width()</code>   <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixins</span>
+ which can be used in any <code>.less</code> file in a theme, as many times as needed, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles-m.css</code> and <code>styles-l.css</code> both have only one call of each media query with all the rules there, instead of multiple calls for the same query.</p>
+
+<p>If working on a theme which inherits from either the Blank or Luma theme, it’s recommended to use <code>.media-width()</code> and style groups separation.  Otherwise the style rules will be added twice, once to <code>styles-m.css</code> and once more to <code>styles-l.css</code>.</p>
+
+<p>For LESS styles rules to be compiled to <code>styles-m.css</code> without a media query so that they apply to all screen widths use the <code>@media-common</code> style group separation.</p>
+
+<pre>
+//
+//  Common (style-m.css)
+//  _____________________________________________
+&amp; when (@media-common = true) {
+    // your code
+}
+</pre>
+
+<p>For grouping style rules in certain media queries the .media-width() mixin used.</p>
+
+<pre>
+.media-width(&lt;@extremum&gt;, &lt;@break&gt;);
+</pre>
+
+<p><code>@extremum: max|min</code> - sets whether to use min-width or max-width in media query condition. If <code>max</code> is used the compiled styles will be placed in <code>styles-m.css</code> with the appropriate media query. Whereas if <code>min</code> is used the compiled styles will be placed in <code>styles-l.css</code> with the appropriate media query.</p>
+
+<p><code>@break: value</code> - sets the value of breakpoint to compare with in media query condition.</p>
+
+<pre>
+//
+//  Mobile (style-m.css)
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    // your code
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    // your code
+}
+
+//
+//  Desktop (style-l.css)
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    // your code
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    // your code
+}
+</pre>
 
 <p>You can find more information about the Magento UI   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
  responsive mixin usage in <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).</p>
-
-<h2 id="fedg_rwd_css_break">Breakpoints</h2>
-
-<p>Breakpoints are used in the   <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span>
- code to set up the screen width at which the design switches from the mobile to the desktop version.</p>
-
-<p>The Blank and Luma themes implement the following <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:</p>
-<ul>
-  <li>320px</li>
-  <li>480px</li>
-  <li>640px</li>
-  <li>768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)</li> <li>1024px</li>
-  <li>1440px</li>
-</ul>
-
-<p>You can change these breakpoints and add new ones in your custom theme. For instructions see the <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a new breakpoint</a> topic.</p>
-
-<h2 id="mobile-first">Mobile first</h2>
-
-<p>In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.</p>
-
-<p>In the Blank theme, the mobile and desktop styles are defined in separate files:</p>
-
-<ul>
-<li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles (768px and higher).</li>
-<li><a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
-</ul>
 
 <h2 id="related-topics">Related topics</h2>
 
 <ul>
   <li><a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+  <li><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html">CSS and LESS preprocessing</a></li>
   <li><a href="/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
   <li><a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
 </ul>
-
 
 			
 		</div>
