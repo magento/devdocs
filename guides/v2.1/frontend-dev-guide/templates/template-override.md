@@ -18,8 +18,8 @@ This topic discusses the main concepts of how default templates work in the Mage
 
 Templates are usually initiated in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 Each layout block has an associated template. 
-The template is specified in the `template` attribute of the <block> layout instruction. 
-For example, from `[<Magento_Catalog_module_dir>/view/frontend/layout/catalog_category_view.xml]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml){:target="_blank"}`:
+The template is specified in the `template` attribute of the `<block>` layout instruction. 
+For example, from [`<Magento_Catalog_module_dir>/view/frontend/layout/catalog_category_view.xml`]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml){:target="_blank"}
 
 <pre>
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
@@ -31,10 +31,12 @@ The templates directory of `Magento_Catalog` is `<Magento_Catalog_module_dir>/vi
 
 The next section describes where templates can be located in general.
 
-## Conventional templates location {#template-convention} Templates are stored in the following locations:
+## Conventional templates location {#template-convention} 
 
-* <span id="module">Module templates: `<module_dir>/view/frontend/templates/<path_to_templates>`
-* <span id="theme">Theme templates: `<theme_dir>/<Namespace><Module>/templates/<path_to_templates>`
+Templates are stored in the following locations:
+
+* Module templates: `<module_dir>/view/frontend/templates/<path_to_templates>`
+* Theme templates: `<theme_dir>/<Namespace><Module>/templates/<path_to_templates>`
 
 Here `<path_to_templates>` might have several levels of directory nesting, or might be empty. Examples:
 
@@ -43,11 +45,11 @@ Here `<path_to_templates>` might have several levels of directory nesting, or mi
 
 ## Templates overriding {#override}
 For template files with the same name, the following is true: 
-theme templates override module templates, and those of a [child theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html){:target="_blank"} override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
+theme templates override module templates, and those of a [child theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) override parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to override one in your custom theme.
 
-Overriding templates is described with more details in the [Theme Inheritance article]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates){:target="_blank"}.
+Overriding templates is described with more details in the [Theme Inheritance article]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates).
 
 
 ## Root template {#root}
@@ -60,7 +62,7 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 ## Getting argument values from layout {#getter}
 
-Arguments values set in a layout file can be accessed in templates using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. There are more details in the [Layout instructions article]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#getter){:target="_blank"}.
+Arguments values set in a layout file can be accessed in templates using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. There are more details in the [Layout instructions article]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#getter).
 
 ## Related reading
 
