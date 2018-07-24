@@ -200,4 +200,4 @@ Where:
 [7]: https://marketplace.magento.com
 [8]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage
 [9]: https://getcomposer.org/doc/03-cli.md#create-project
-[10]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[10]: {{ page.baseurl }}/install-gde/composer.html

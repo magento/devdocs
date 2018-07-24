@@ -17,7 +17,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 - <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>
 
 
-<h2>High-level steps to create a theme and change styles</h2>
+## High-level steps to create a theme and change styles
 
 1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 1. In the file system, <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html" target="_blank">add a new theme</a> inheriting from Magento Blank or Luma.
@@ -29,7 +29,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 	- <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html">CSS chapter of this book</a>
 	- <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 
-<h2>Why do you need to create a custom theme?</h2>
+## Why do you need to create a custom theme?
 
 Magento provides two themes out of the box: Blank and Luma. If Magento is installed with sample data, the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} applied after installation is Luma. If no sample data is installed, the Blank theme is installed by default.
 
@@ -43,7 +43,7 @@ But if there is something you want to improve, the only recommended way is creat
 
 Making changes in the Magento out-of-the-box themes is a bad idea, because can result in your changes being overwritten during upgrade.
 
-<h2>Related topics</h2>
+## Related topics
 - <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html"> CSS in Magento themes</a>
 - <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a>
 - <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a>

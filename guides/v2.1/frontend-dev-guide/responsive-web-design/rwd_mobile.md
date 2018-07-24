@@ -10,10 +10,10 @@ redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.
 functional_areas:
   - Frontend
 ---
-<h2>What's in this topic</h2>
+## What's in this topic
 The topic describes how to create a responsive mobile-specific {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} using the default Magento approaches. 
 
-<h2>Creating a mobile-specific theme</h2>
+## Creating a mobile-specific theme
 
 To use all the responsive approaches implemented in the Magento out-of-the-box Blank and Luma themes, your theme should declare one of them as a <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>. 
 
@@ -34,7 +34,7 @@ This will remove the desktop-specific files from your theme.
 
 
 
-<h2>Recommended reading</h2>
+## Recommended reading
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a></li>
 </ul>

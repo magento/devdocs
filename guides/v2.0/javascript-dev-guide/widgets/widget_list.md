@@ -10,7 +10,7 @@ redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_list.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_list.html
 ---
-<h2>Overview</h2>
+## Overview
 
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 

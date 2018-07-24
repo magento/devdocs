@@ -140,7 +140,7 @@ Customers can access only resources with `self` permissions.
 For example, to make a web API call with a customer token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" -H "Authorization: Bearer asdf3hjklp5iuytre"`
 
-<h2>Related topics</h2>
+## Related topics
 [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html)
 
 [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

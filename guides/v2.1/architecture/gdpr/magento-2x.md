@@ -130,7 +130,7 @@ Magento 2 stores these customer attributes:
 
 #### `customer_address_entity` and reference tables
 
-The following columns in the `customer_address_entity`table contain customer information:
+The following columns in the `customer_address_entity` table contain customer information:
 
 Column | Data type
 --- | ---

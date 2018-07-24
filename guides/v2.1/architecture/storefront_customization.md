@@ -1,9 +1,7 @@
 ---
 group: arch-guide
-subgroup: Architectural Basics
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
-menu_order:
 version: 2.1
 github_link: architecture/storefront_customization.md
 ---
@@ -30,12 +28,11 @@ In addition to replacing CSS files, you might need to replace small amounts of H
 ### Replace Magento-Provided CSS, HTML, and JavaScript
 Delivering a sharply different shopping experience than the default Magento installation provides is a more substantial task. However, the tradeoff might be a more complicated experience integrating additional extensions into your installation in the future.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files; keep all JavaScript in JavaScript files.</p>
-</div>
+{:.bs-callout .bs-callout-tip}
+ Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files; keep all JavaScript in JavaScript files.
 
 ### Related topics
 
-[Frontend Developer Guide]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html)
+[Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html)
 
-[JavaScript Developer Guide]({{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html)
+[JavaScript Developer Guide]({{page.baseurl}}/javascript-dev-guide/bk-javascript-dev-guide.html)

@@ -32,7 +32,7 @@ The Schema Listener Tool cannot convert everything that can appear in a pre-Mage
 
 * The tool supports only DDL operations represented in `\Magento\Framework\DB\Adapter\Pdo\Mysql`. As a result, the tool ignores all custom DDL operations.
 * The tool ignores all raw SQL in your `InstallSchema` or `UpgradeSchema` scripts.
-* Any DDL statements in a `Recurring` file will not be transfered to the new schema, because this file should be designed to run during each installation or upgrade.
+* Any DDL statements in a `Recurring` file will not be transferred to the new schema, because this file should be designed to run during each installation or upgrade.
 * See [Configure declarative schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) if you need to make manual modifications to your schema.
 
 ## Convert install/upgrade data scripts to the data patch format

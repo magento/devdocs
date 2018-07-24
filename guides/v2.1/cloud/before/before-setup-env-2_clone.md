@@ -75,8 +75,7 @@ We recommend changing the following variables for the Magento Admin URL and admi
 * `ADMIN_EMAIL`: The email address for the administrative user. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
 * `ADMIN_USERNAME`: Username for the administrative user. The administrative user
 can create other users, including other administrative users. The default
-hardcoded username is the Project Owner email address. You can use this
-value, or change it to another secure username.
+hardcoded username is the Project Owner email address. You can use this value, or change it to another secure username.
 * `ADMIN_PASSWORD`: Password for the administrative user. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You might
 need to contact the Project Owner for the updated password.
 * `ADMIN_URL`: The relative URL to access the Admin panel. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.

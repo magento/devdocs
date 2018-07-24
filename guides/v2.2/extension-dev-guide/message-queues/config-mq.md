@@ -229,7 +229,7 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
 #### `connection` element
 {:.no_toc}
 
-The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a pushlisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
+The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
 
 | Attribute            | Description |
 | -------------------- | ----------- |

@@ -262,12 +262,15 @@ The prioritization rules for ordering plugins:
 
 Given the following plugins observing the same method with the following properties:
 
-|               | PluginA          | PluginB          | PluginC          |
-| :-----------: | :--------------: | :--------------: | :--------------: |
-| **sortOrder** | 10               | 20               | 30               |
-| **before**    | beforeDispatch() | beforeDispatch() | beforeDispatch() |
-| **around**    |                  | aroundDispatch() | aroundDispatch() |
-| **after**     | afterDispatch()  | afterDispatch()  | afterDispatch()  |
+|                          | PluginA          | PluginB                        | PluginC                        | Action           |
+| :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
+| **sortOrder**            | 10               | 20                             | 30                             |                  |
+| **before**               | beforeDispatch() | beforeDispatch()               | beforeDispatch()               |                  |
+| **around (first half)**  |                  | aroundDispatch() [first half]  | aroundDispatch() [first half]  |                  |
+| **original**             |                  |                                |                                | dispatch()       |
+| **around (second half)** |                  | aroundDispatch() [second half] | aroundDispatch() [second half] |                  |
+| **after**                | afterDispatch()  | afterDispatch()                | afterDispatch()                |                  |
+| :----------------------: | :--------------: | :----------------------------: | :----------------------------: | :--------------: |
 
 The execution flow will be as follows:
 

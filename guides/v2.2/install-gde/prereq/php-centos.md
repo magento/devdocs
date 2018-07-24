@@ -14,9 +14,8 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you must install both Apache and PHP, <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">install Apache</a> first.
-</div>
+{:.bs-callout .bs-callout-info}
+If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
 
 ## PHP versions supported {#php-support}
 {% include install/php_2.2.md %}
@@ -32,14 +31,13 @@ If you're new to all this and need some help getting started, we suggest the fol
 ## Verify PHP is installed {#centos-verify-php}
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, a message similar to the following displays:
 
-    PHP 7.0.20 (cli) (built: Jun  8 2017 09:31:38) ( NTS )
+    PHP 7.0.20 (cli) (built: Jun 8 2017 09:31:38) ( NTS )
     Copyright (c) 1997-2017 The PHP Group
     Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
       with Zend OPcache v7.0.20, Copyright (c) 1999-2017, by Zend Technologies
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
-</div>
+{:.bs-callout .bs-callout-info}
+The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
@@ -62,9 +60,8 @@ In this topic, we show how to install PHP using the [Inline with Upstream Stable
 
 Before you continue, review their [Getting Started topic](https://ius.io/GettingStarted){:target="&#95;blank"}.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.
-</div>
+{:.bs-callout .bs-callout-info}
+Magento does _not_ officially recommend using the IUS repository. We discuss it here for example purposes only.
 
 ## PHP 7.0 on CentOS {#php-centos-70}
 There is more than one way to install PHP 7.0 on CentOS; the following is a suggestion only. Consult a reference for additional options.
@@ -87,9 +84,8 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 
 		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
-	</div>
+	{:.bs-callout .bs-callout-info}
+  	The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 4.	Restart Apache: `service httpd restart`
 
@@ -99,13 +95,12 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 
     The following response indicates that PHP 7.0.3 is installed:
 
-		PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
+		PHP 7.0.3 (cli) (built: Feb 4 2016 08:51:10) ( NTS )
 		Copyright (c) 1997-2016 The PHP Group
 		Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
-    </div>
+    {:.bs-callout .bs-callout-info}
+        The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
 6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
@@ -189,9 +184,8 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
 		yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.</p>
-	</div>
+	{:.bs-callout .bs-callout-info}
+  	The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 4.	Restart Apache: `service httpd restart`
 
@@ -201,13 +195,12 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
     The following response indicates that PHP 7.1.6 is installed:
 
-		PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
+		PHP 7.1.6 (cli) (built: Jan 9 2017 09:23:16) ( NTS )
 		Copyright (c) 1997-2017 The PHP Group
 		Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
-    </div>
+    {:.bs-callout .bs-callout-info}
+    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
 6.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 

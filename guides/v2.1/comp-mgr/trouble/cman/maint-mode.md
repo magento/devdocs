@@ -15,9 +15,8 @@ This topic discusses how you can create a custom maintenance page to display to 
 
 Creating a custom page to which to {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} users prevents any access to the site and also informs your users that the site is undergoing maintenance.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You must perform the tasks in this section as a user with <code>root</code> privileges.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+You must perform the tasks in this section as a user with `root` privileges.
 
 See one of the following sections for more information:
 
@@ -49,7 +48,7 @@ body
 </style>
 </head>
 <body>
-<h1>Temporarily offline</h1>
+# Temporarily offline
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>

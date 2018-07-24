@@ -1847,7 +1847,7 @@ SuperagentHttpClient.prototype.execute = function (obj) {
     } else if (res && obj.on && obj.on.response) {
       var possibleObj;
 
-      // Already parsed by by superagent?
+      // Already parsed by superagent?
       if(res.body && Object.keys(res.body).length > 0) {
         possibleObj = res.body;
       } else {
