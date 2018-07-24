@@ -14,6 +14,7 @@ The following topics are included in this guide:
 
 - [Contribute to Magento 2 code](#contribute)
 - [Questions or enhancement requests?](#question)
+- [Accepted pull requests and ported code](#rules)
 - [Contribution requirements](#requirements)
 - [Fork a repository](#fork)
 - [Create a pull request](#pull_request)
@@ -43,6 +44,12 @@ We use this repository (the Magento 2 GitHub repository) to capture code and doc
 
 Submit feature requests or enhancement suggestions to the new [Magento 2 Feature Requests and Improvements forum](https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests){:target="\_blank"} (see details [here](https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96){:target="\_blank"}).
 
+## Accepted pull requests and ported code {#rules}
+
+Submit pull requests and ported code according to the following rules:
+
+- Pull requests and ported code only for critical issue/bug fixes for all supported release lines (lowest currently v2.1)
+- Pull requests with cleanup (typos, coding standards fixes) only to highest release line (currently 2.3)
 
 ## Contribution requirements {#requirements}
 
