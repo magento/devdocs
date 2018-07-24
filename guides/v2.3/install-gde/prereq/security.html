@@ -2282,11 +2282,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="install-prereq-selinux">SELinux</h2>
-<p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you’re using SELinux <em>and</em> Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
+<p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you’re using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">the CentOS wiki</a> to set up rules to enable communication.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">the CentOS wiki</a> to set up rules to enable communication.</p>
 
 <h3 id="suggestion-for-installing-the-magento-software-with-apache">Suggestion for installing the Magento software with Apache</h3>
 <p>If you choose to enable SELinux, you might have issues running the installer unless you change the <em>security context</em> of some directories as follows:</p>
@@ -2339,8 +2337,8 @@ chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/stat
 
 <ul>
   <li><a href="/guides/v2.3/install-gde/prereq/apache.html">Apache</a></li>
-  <li><a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP—Ubuntu</a></li>
-  <li><a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP—CentOS</a></li>
+  <li><a href="/guides/v2.3/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0—Ubuntu</a></li>
+  <li><a href="/guides/v2.3/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
   <li><a href="/guides/v2.3/install-gde/prereq/mysql.html">MySQL</a></li>
   <li><a href="/guides/v2.3/install-gde/prereq/optional.html">Installing optional software</a></li>
   <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
