@@ -19,10 +19,15 @@ The following relative paths are used for modules and themes:
 
 {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} directory. Usually used when talking about custom themes, or any theme in general.
 
+For Magento out of the box frontend themes,blank and luma themes, the absolute path usually is one of the following:
+
 For Magento out of the box {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} themes, the absolute path usually is one of the following:
 
  - `app/design/frontend/Magento/<theme>`
  - `vendor/magento/theme-frontend-<theme>`
+
+Where theme is name of theme, For example blank theme location would be,
+ - `vendor/magento/theme-frontend-blank`
 
 **- `<module_dir>`**
 
@@ -33,3 +38,7 @@ For Magento modules, usually one of the following:
 
  - `app/code/Magento/<Module>`
  - `vendor/magento/module-<module>-<name>`
+
+For Magento laungage packs comes with magento, usually one of the following:
+ - `app/code/Magento/language-<en_us>`
+ - `vendor/magento/language-<en_us>`
