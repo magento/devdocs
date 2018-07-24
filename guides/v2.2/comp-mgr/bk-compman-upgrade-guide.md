@@ -61,7 +61,7 @@ Complete the tasks discussed in [Prerequisites].
 
 [archive]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
 [command line]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
-[Composer]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[Composer]: {{ page.baseurl }}/install-gde/composer.html
 [Migration Guide]: {{ page.baseurl }}/migration/bk-migration-guide.html
 [Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
 [Shared account]: http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html

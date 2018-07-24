@@ -78,7 +78,7 @@ see [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html).
 When you sign up for a Pro or Starter subscription plan, we provision
 your initial project environment with a template {{site.data.var.ece}}
 repository to build and manage your site. For information about what is included
-in Pro and Starter plans, see [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ page.baseurl }}/cloud/basic-information/pro-architecture.html).
+in Pro and Starter plans, see [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
 You can use the Project Web Interface to manage your project, add user accounts,
 and begin developing your store(s). The Project Owner, Technical Admin users,

@@ -87,7 +87,7 @@ To complete the task, restart the web server:
 If you haven't done so already, get the Magento software in one of the following ways:
 
 *	[Compressed archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
-*	[Composer metapackage]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
+*	[Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)
 *	[Clone the repository (contributing developers only)]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 ### Step 5: Set ownership and permissions for the shared group {#perms-set-two-users}
