@@ -33,9 +33,11 @@ To extend the parent theme's styles in your theme:
 
 Extending a theme using <code>_extend.less</code> is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
 
-<div class="bs-callout bs-callout-info" id="info-extend-priority">
-<p>The rules and variables declared in <code>_extend.less</code> always have precedence over ones declared in <code>_theme.less</code></p>
-</div>
+{%
+include note.html
+type='info'
+content='The rules and variables declared in <code>_extend.less</code> always have precedence over ones declared in <code>_theme.less</code>'
+%}
 
 <h2 id="simple_override">Simplest way to override parent styles</h2>
 
