@@ -71,7 +71,8 @@ Use an upper case first letter for:
  - Test name attributes. Example: `<test name="TestAllTheThingsTest">`.
  - Data entity names. Example: `<entity name="OutOfStockProduct">`.
  - Page name. Example: `<page name="AdminLoginPage">`.
- - Section name. Example: `<actionGroup name="DeleteCategory">`.
+ - Section name. Example: `<section name="AdminCategorySidebarActionSection">`.
+ - Action group name. Example: `<actionGroup name="LoginToAdminActionGroup">`
  
 #### Lower case
  
