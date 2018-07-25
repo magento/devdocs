@@ -1,7 +1,7 @@
 ---
 group: extension-dev-guide
 title: Create custom cache engines
-version: 2.3
+version: 2.0
 github_link: extension-dev-guide/cache/partial-caching/database-caching.md
 redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
@@ -22,10 +22,9 @@ This topic discusses how to set up database caching and how to verify database c
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
 *	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
 
-<div class="bs-callout bs-callout-warning">
-Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use [Varnish] in production instead.
+{:.bs-callout .bs-callout-info}
+Database caching&mdash;like file-based caching&mdash; works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
 Varnish is designed to accelerate the HTTP protocol.
-</div>
 
 ## Prerequisites {#mage-cache-db-prereq}
 Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
@@ -70,6 +69,7 @@ To modify `di.xml`:
 
 4.	Replace the entire block with the following:
 
+    ```xml
 		<type name="Magento\Framework\App\Cache\Frontend\Pool">
         	<arguments>
             	<argument name="frontendSettings" xsi:type="array">
@@ -89,6 +89,7 @@ To modify `di.xml`:
          	   </argument>
         	</arguments>
     	</type>
+      ```
 
     where `<your cache id>` is your unique cache identifier.
 
@@ -145,7 +146,9 @@ Use the following steps:
 1.	If you haven't done so already, log in to the Magento server as, or switch to, the [Magento file system owner].
 2.	Clear the current cache directories:
 
+    ```bash
 		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
+    ```
 
 3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
 
@@ -155,11 +158,11 @@ Use the following steps:
 		ls <your Magento install dir>/var/cache/*
 		ls <your Magento install dir>/var/page_cache/*
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <span class="glyphicon-class">
-      Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
-      If you use the `default` cache frontend, you don't have this issue.</span>
-    </div>
+    {:.bs-callout .bs-callout-info}
+    <span class="glyphicon-class">
+    Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
+    If you use the `default` cache frontend, you don't have this issue.</span>
+
 3.	Verify both directories are empty; if not, edit `di.xml` again and correct any issues.
 4.	Use a database tool such as [phpMyAdmin] to verify there is data in the `cache` and `cache_tag` tables.
 
