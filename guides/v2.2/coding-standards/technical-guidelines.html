@@ -1296,7 +1296,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.</p>
 
-<p>15.3. XSS protection.</p>
+<p>15.3. Cross-Site Scripting (XSS) protection.</p>
 
 <p>15.3.1. Sanitize input; escape output.</p>
 
@@ -1326,13 +1326,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.</p>
 
-<p>15.7. CSRF protection.</p>
+<p>15.7. Cross-Site Request Forgery (CSRF) protection.</p>
 
 <p>15.7.1. CSRF tokens mechanism should be utilized.</p>
 
 <p>15.7.2. All data manipulation requests should be made with POST requests.</p>
 
 <p>15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.</p>
+
+<p>15.9. Local File Inclusion (LFI) protection.</p>
+
+<p>15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.</p>
+
+<p>15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.</p>
+
+<p>15.10. Remote Code Execution (RCE) protection.</p>
+
+<p>15.10.1. SHOULD NOT use eval(), passthru(), system(), shell_exec(), serialize(), unserialize(), md5(), srand(), mt_srand()</p>
+
+<p>15.10.2. SHOULD NOT directly pass user-submitted values to include<em>(), require</em>(), create_function(), fopen(), preg_replace()</p>
+
+<p>15.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.</p>
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
