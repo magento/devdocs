@@ -73,6 +73,8 @@ At minimum your adapter should implement the following methods:
 If you are integrating Magento entities such as variable and widget as plugins, your adapter must also implement the following methods:
 
 * `get( id )` - returns the editor by it element id
+* `getContent()` - returns the content stored in the WYSIWYG field
+* `setContent(content)` - replaces the entire contents of the WYSIWYG with the string content parameter
 * `insertContent( content )` - inserts content into the editor
 * `setCaretOnElement( targetElement )` - sets the caret location in the editor
 * `activeEditor()` - returns the active editor as an object with a `selection` property.
