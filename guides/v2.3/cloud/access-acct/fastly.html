@@ -2094,10 +2094,8 @@ file in that location. If you do not locate this file, please enter a ticket
 for <a href="/guides/v2.3/cloud/trouble/trouble.html">Support</a> asking to have the
 file added. We can help provide this credentials file.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Make note of which environment each set of credentials is used for. If you use
+<p class="bs-callout bs-callout-warning">Make note of which environment each set of credentials is used for. If you use
 the wrong credentials in an environment, you’ll encounter issues with Fastly.</p>
-</div>
 
 <h2 id="cloud-fastly-start">Get started</h2>
 <p>You need to install Fastly in its own branch. Fine-tuning Fastly can be a
@@ -2176,16 +2174,14 @@ Integration and deploying across to your Staging and Production environments.
 For Magento Commerce (Cloud) 2.2, install Fastly module 1.2.33 or later for all
 updated settings and full VCL snippet uploading support.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Don’t configure the module in your local before building and deploying. You’ll
+<p class="bs-callout bs-callout-warning">Don’t configure the module in your local before building and deploying. You’ll
 configure the module in those environments.</p>
 
-  <p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for
+<p>We recommend using the <code class="highlighter-rouge">bin/magento magento-cloud:scd-dump</code> command for
 Configuration Management(<a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.1.X</a>,
 <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm">2.2.X</a>).
 When you use the <code class="highlighter-rouge">app:config:dump</code> command, all configuration options for Fastly
 are locked and cannot be edited in Staging and Production.</p>
-</div>
 
 <p>We provide Fastly services only for your Staging and Production environments.
 You cannot use the Fastly service in Integration environments.</p>
@@ -2275,14 +2271,12 @@ cache, navigate back to <strong>Stores</strong> &gt; <strong>Configuration</stro
   <li><a href="#fastly-errpg">Create custom error/maintenance page</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <ul>
-    <li>Ignore the link to create a free Fastly account. We’ll provide your Fastly
+<ul id="info" class="bs-callout bs-callout-info">
+  <li>Ignore the link to create a free Fastly account. We’ll provide your Fastly
 credentials (Service ID and API token).</li>
-    <li>With Fastly version 1.2.0 and later (we recommend 1.2.33 or later), use
+  <li>With Fastly version 1.2.0 and later (we recommend 1.2.33 or later), use
 the <strong>Upload VCL to Fastly</strong> button to upload your default <a href="#custom-vcl">VCL snippets</a>.</li>
-  </ul>
-</div>
+</ul>
 
 <h2 id="upload-vcl-snippets">Upload Fastly VCL snippets</h2>
 <p>You don’t have to create or code VCL snippets. We provide a default set of snippets for
@@ -2308,11 +2302,9 @@ the following figure shows.</p>
 
     <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
 
-    <div class="bs-callout bs-callout-info" id="info">
   		If the <strong>Upload VCL to Fastly</strong> button does not display, you should
-      <p>upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33
+    <p id="info" class="bs-callout bs-callout-info">upgrade the Fastly extension to version 1.2.0 or later. We recommend 1.2.33
   or later. The Fastly Composer name is <code class="highlighter-rouge">fastly/magento2</code>.</p>
-    </div>
   </li>
   <li>
     <p>Once the upload completes, the modal automatically closes with a success
@@ -2450,10 +2442,8 @@ as the following figure shows.</p>
     <p>In the provided field, enter your HTML code.	The HTML you enter can be a<br />
 maximum of 65,535 bytes in length.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>Avoid using images on your site in the event Fastly is not available. To use
+    <p id="info" class="bs-callout bs-callout-info">Avoid using images on your site in the event Fastly is not available. To use
   images, refer to <a href="https://css-tricks.com/data-uris/" target="\_blank">Data URIs on the css-tricks site</a>.</p>
-    </div>
   </li>
   <li>When you’re done, click <strong>Upload</strong> to send your updates to Fastly.</li>
   <li>Click <strong>Save Config</strong> at the top of the page.</li>
@@ -2513,10 +2503,8 @@ add a CNAME record for your website that points to the Fastly service:
 <code class="highlighter-rouge">prod.magentocloud.map.fastly.net</code>. If you use multiple hostnames for your site,
 you must add a CNAME record for each one.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="\_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS
+<p id="info" class="bs-callout bs-callout-info">This does not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="\_blank">apex domain</a> (also referred to as a <em>naked</em> domain). You must use a DNS
 provider that supports forwarding DNS queries to use an apex domain.</p>
-</div>
 
 <p>The following list contains examples of DNS providers for informational purposes.
 Use your preferred DNS provider.</p>
