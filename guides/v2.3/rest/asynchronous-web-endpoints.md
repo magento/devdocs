@@ -43,9 +43,9 @@ Field name | Data type | Description
 `bulk_uuid` | String | A generated universally unique identifier
 `request_items` | Object | An array containing information about the status of the asynchronous request.
 `id` | Integer | A generated ID that identifies the request 
-`data_hash` | String | 
-`status` | String | 
-`errors` | Boolean | Indicates whether an error occurred during processing 
+`data_hash` | String | Reserved for future use. Currently, the value is always `null`. 
+`status` | String | Reserved for future use. Currently, the value is always `accepted`.
+`errors` | Boolean | Reserved for future use. Currently, the value is always `false`. If an error occurs, the system provides all error-related information as a standard `webapi` exception. 
 
 ## Sample usage
 
