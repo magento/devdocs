@@ -91,7 +91,7 @@ HtmlContent-specific options:
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="giftregistry">
-        <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
+       <argument name="block" xsi:type="object">Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry</argument>
     </htmlContent>
 </form>
 {%endhighlight%}
