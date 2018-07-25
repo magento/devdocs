@@ -1,9 +1,10 @@
 ---
 group: extension-dev-guide
 title: Message Queues
+ee_only: True
 version: 2.1
 github_link: extension-dev-guide/message-queues/message-queues.md
-redirect_from: /guides/v2.2/extension-dev-guide/message-queues.html
+redirect_from: /guides/v2.x/extension-dev-guide/message-queues.html
 ---
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
