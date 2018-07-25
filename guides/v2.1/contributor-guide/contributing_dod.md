@@ -10,7 +10,7 @@ github_link: contributor-guide/contributing_dod.md
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 
-### Overview
+## Overview
 
 The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base.
 The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.
@@ -23,14 +23,14 @@ At a high level, the criteria defined in our "definition of done" revolve around
 The following sections provide additional details about each of these criteria:
 
 
-### Functional Backward Compatibility
+## Functional Backward Compatibility
 
 Existing product features and functionality must be retained during any changes to the code.
 If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value".
 
 For more information, see [Magento's backward compatibility policy][1].
 
-### Documentation
+## Documentation
 
 All changes, additions, and extensions to the product should be documented by the author.
 The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
@@ -48,47 +48,46 @@ Any backwards-incompatible changes must also be recorded in the accompanying doc
 | ----------- | ------------------ | --------------------- |
 | description | example            | example               |
 
-### Tests 
+## Tests
 
-#### Automated Tests
+### Automated Tests
 
 Code changes must be covered by automated tests according to Classification of Magento Automated Tests.
-When choosing how to cover your changes pick the most lightweight (execution time wise) test type that will provide sufficient coverage.
-If you encounter an existing test that insufficiently covers your changes (a Unit test for a method that affects database for instance) you can delete that test but you must write a proper test to replace it.
+When choosing how to cover your changes, pick the most lightweight (execution time wise) test type that will provide sufficient coverage.
+If you encounter an existing test that insufficiently covers your changes, you can delete that test but you must write a proper test to replace it. For example, a method that interacts with database has a unit test. You can replace it with an integration test.
 
 Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
 Continuous integration enforces execution of all tests and author is accountable for broken builds.
 
-#### Functional Tests
+### Functional Tests
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.
 
 See [Functional Tests][2].
 
-#### Unit Tests
+### Unit Tests
 
 Cover classes and methods that:
 
- * have little to no dependencies on other classes
- * do not interact with resources like DB, file system, 3rd party systems etc.
- * underlying functionality cannot be properly covered indirectly by an integration test.
- * can be covered by black box test
+ * Have little to no dependencies
+ * Do not interact with resources like database, file system, 3rd party systems etc.
+ * Underlying functionality cannot be properly covered indirectly by an integration test
+ * Can be covered by a [black box test](https://en.wikipedia.org/wiki/Black-box_testing)
 
 Examples:
 
- * Utils (like Magento\Framework\Math\Random)
- * Simple classes that can also be used (at least initiated) independently (like Magento\Framework\Api\SortOrder)
- * Simple methods that are only affecting their own object (like Magento\TargetRule \Model\Rule::getActionSelectBind)
+ * Utils (like `\Magento\Framework\Math\Random`)
+ * Simple classes that can also be used (at least initiated) independently (like `\Magento\Framework\Api\SortOrder`)
  * Algorithms that perform calculation, parsing
 
 Code NOT to cover:
 
  * Classes/methods with numerous dependencies.
-	*	Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
+ * Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
  * Classes/methods interacting with resources directly or indirectly.
-	*	It is impossible to test the resources affected within a Unit test.
+ * It is impossible to test the resources affected within a Unit test.
  * Glue code.
-	*	Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
+ * Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
 
 Examples:
 
@@ -97,26 +96,26 @@ Examples:
  * Simple DTOs
  * Factories
 
-#### Integration Tests
+### Integration Tests
 
 Cover classes and methods that:
 
- * cannot be covered with a black box unit test
- * have a lot of dependencies (unit test would require complex mocking)
- * interact with resources (database, file system, 3rd party systems etc.).
+ * Cannot be covered with a black box unit test
+ * Have a lot of dependencies (unit test would require complex mocking)
+ * Interact with resources (database, file system, 3rd party systems etc.)
 
 Examples:
 
  * APIs
-	*	Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly), cover each implementation if an interface suggests multiple implementations.
+ * Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly), cover each implementation if an interface suggests multiple implementations.
  * SPIs
-	*	Same as APIs. Also it would be good to create tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure that the interface’s implementations can be swapped without breaking the application.
+ * Same as APIs. Also it would be good to create tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure that the interface’s implementations can be swapped without breaking the application.
  * Models/Resource Models
-	*	Usually have numerous dependencies, interacting with resources (DB, cache, file system, 3rd party systems etc.) and sometimes can substitute an API.
+ * Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API.
 
 See: [Running Integration Tests][3].
 
-#### Integrity Tests
+### Integrity Tests
 
 Code to cover:
 
@@ -133,7 +132,7 @@ Scan for declarations of templates and invoke "fallback" mechanism to ensure the
 
 Code to cover:
 
-* must cover all new code files (or whatever qualifies as "new").
+* Must cover all new code files (or whatever qualifies as "new").
 
 Expected code coverage: must cover all applicable files in entire code base.
 
@@ -143,7 +142,7 @@ Code to cover:
 
 * Must cover any formal backwards-incompatible changes on code level.
 For more information, see
-<a href="{{ page.baseurl }}/architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
+[Magento's backward compatibility policy]({{ page.baseurl }}/architecture/back-compatibility.html).
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 
@@ -155,18 +154,18 @@ Expected code coverage:
 Not all changes can be covered.
 For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
 
-#### Functional Manual Tests
+### Functional Manual Tests
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.
 
-### Review
+## Review
 A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review.
 The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
 * There are no unauthorized backward-incompatible functional changes
 * All changes are documented properly
 * All changes are covered with automated tests
-* Determine if code changes caused any failure in continuous integration builds.
+* Determine if code changes caused any failure in continuous integration builds
 
 The work cannot be considered as complete unless all the criteria are verified.
 
