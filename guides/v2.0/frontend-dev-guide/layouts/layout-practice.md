@@ -11,10 +11,10 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 This article features a step-by-step illustration of how a real-life {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
-<h2>Moving customer account links</h2>
+## Moving customer account links
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">

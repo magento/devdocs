@@ -8,18 +8,32 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about.
 We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## June 2018
+## July 2018
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Consolidated and simplified the Composer [installation instructions](https://devdocs.magento.com/guides/v2.2/install-gde/composer.html) for Magento.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 23
+Added the [CLI instructions](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html) for upgrading Magento to 2.3.|2.3.x|Major update|Jul 20
+Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html) for Commerce 2.3 Alpha.|2.3.x|Major update|Jul 20
+Updated [location](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html#mftf-tests) of the MFTF tests.|2.2.x, 2.3.x|Technical changes|Jul 18
+The default username for new Magento Commerce Cloud accounts has been changed from `Admin` to the Project Owner email address.|2.x|Technical changes|Jul 17
+Enhanced the [hooks property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks) so that you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.|2.1.x, 2.2.x|Major update|Jul 12
+Added MSI and bulk API endpoints to [List of REST endpoints by module](https://devdocs.magento.com/guides/v2.3/rest/list.html)|2.3.x|Technical changes|Jul 12
+Added [Security information](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#15-security) to Coding Standards [Technical Guidelines](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).|2.2.x|Major update|Jul 09
+The new [URL Rewrite module](https://devdocs.magento.com/guides/v2.2/cloud/configure/import-url-rewrites.html) helps to manage redirects in Magento Cloud without losing SEO rankings and traffic.|2.2.x|Major update|Jul 06
+
+{% collapsibleh2 June 2018 %}
+
+Description  | Versions applied to  | New or Updated | Date
+-------------|--------------|----------------------|--------
+Added information to set up and configure [Fastly Image Optimization](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-image-optimization.html).|2.1.x, 2.2.x, 2.3.x|Major update|Jun 29
+Update the Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html) to reflect the recent base template changes for version 2.1 and 2.2.|2.1.x, 2.2.x|Technical changes|Jun 28
 Added [Magento Commerce Release Notes (1.14 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html) and [Magento Open Source Release Notes (1.9 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html).||Major update|Jun 27
 Added Magento Commerce and Open Source 2.1.14 Release Notes. See [Magento Commerce 2.1.14 Release Notes](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html) and [Magento Open Source 2.1.14](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.14CE.html) for more information.|2.1.x|New topic|Jun 27
 Added Magento Commerce and Open Source 2.2.5 Release Notes. See [Magento Commerce 2.2.5 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.5EE.html) and [Magento Open Source 2.2.5](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.5CE.html) for more information.|2.2.x|New topic|Jun 27
-Update the Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html) to reflect the recent base template changes for version 2.1 and 2.2.|2.1.x, 2.2.x|Technical changes|Jun 28
-Added a new solution section for Redis to an [installation troubleshooting](https://devdocs.magento.com/guides/v2.1/install-gde/trouble/tshoot_wrong-mysql.html) topic.|2.1.x|Major update|Jun 25
 Added the backward incompatible changes for the Magento 2.1.14 release in [OpenSource](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html) and [Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html).|2.1.x|Major update|Jun 27
 Added the backward incompatible changes for the Magento 2.2.5 release in [OpenSource](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html) and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).|2.2.x|Major update|Jun 27
-Added information to set up and configure [Fastly Image Optimization](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-image-optimization.html).|2.1.x, 2.2.x, 2.3.x|Major update|Jun 29
+Added a new solution section for Redis to an [installation troubleshooting](https://devdocs.magento.com/guides/v2.1/install-gde/trouble/tshoot_wrong-mysql.html) topic.|2.1.x|Major update|Jun 25
 There is a new Cloud workflow to [add a `robots.txt` file and generate a `sitemap.xml` file]({{ site.baseurl }}/guides/v2.2/cloud/trouble/robots-sitemap.html) for a single domain configuration without requiring a change to the infrastructure.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
 Now you can [change store locales]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#change-locales) when using SCD_ON_DEMAND without using the exporting and importing configuration process.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 13
 The new Cloud tools command—`docker:build`—generates a [Docker Compose]({{ site.baseurl }}/guides/v2.2/cloud/reference/docker-config.html) configuration.|2.1.x, 2.2.x, 2.3.x|New topic|Jun 09
@@ -27,6 +41,7 @@ Added a topic about the [Magento binding syntax]({{ site.baseurl }}/guides/v2.2/
 Added a new topic describing how to [enable/disable logging]({{ site.baseurl }}/guides/v2.2/config-guide/cli/logging.html) with the Magento CLI.|2.2.x, 2.3.x|New topic|Jun 04
 Updated the storage capacity information for Magento Commerce Cloud Pro architecture information in the [Production Technology Stack]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack) documentation for Magento Cloud [v2.1]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack), [v2.2]({{ site.baseurl }}/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack), and [v2.3]({{ site.baseurl }}/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).|2.x|Technical changes|Jun 04
 [These changes]({{ site.baseurl }}/guides/v2.1/config-guide/multi-site/ms_nginx.html) show users how to simplify Nginx configs to host multiple Magento websites and store views with one virtual host file. It allows to that Nginx configuration to stay much cleaner, and more maintainable.|2.1.x, 2.2.x, 2.3.x|Technical changes|Jun 1
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 May 2018 %}
 
@@ -164,7 +179,7 @@ Added details about backward incompatible changes between 2.0.0 and 2.2.0 in [Op
 [Action Groups in the MFTF]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/cest/action-groups.html)|2.2.x|New|Dec 22
 Added a new section in the Magento Commerce (Cloud) guide for release notes related to the [`ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-patches.html) Composer package.|2.2.x|New, Updated|Dec 20
 Published release notes for the Magento Commerce (Cloud) [`ece-tools 2002.0.7`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-tools.html#v200207) Composer package.|2.2.x|Updated|Dec 20
-Added a new topic about setting up the [Bitbucket integration]({{ site.baseurl }}/guides/v2.2/cloud/project/bitbucket-integration.html) for Magento Commerce (Cloud).|2.x|New|Dec 18
+Added a new topic about setting up the [Bitbucket integration]({{ site.baseurl }}/guides/v2.2/cloud/integrations/bitbucket-integration.html) for Magento Commerce (Cloud).|2.x|New|Dec 18
 You must prepend [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#variables) with `env:` when using the Magento Commerce (Cloud) Project Web Interface to override configuration settings.|2.x|Updated|Dec 14
 Advanced reporting: [Overview]({{ site.baseurl }}/guides/v2.2/advanced-reporting/overview.html), [Modules]({{ site.baseurl }}/guides/v2.2/advanced-reporting/modules.html), [Data collection]({{ site.baseurl }}/guides/v2.2/advanced-reporting/data-collection.html), [Report XML]({{ site.baseurl }}/guides/v2.2/advanced-reporting/report-xml.html)|2.2.x|New|Dec 13
 Added info about backward incompatible changes ([Open Source 2.1.10 - 2.1.11]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html) and [Commerce 2.1.10-2.1.11]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html); [Open Source 2.2.1 - 2.2.2]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html) and [Commerce 2.2.1-2.2.2]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html); [B2B]({{ site.baseurl }}/guides/v2.2/release-notes/changes/b2b_changes.html))|2.1.x, 2.2.x|Updated|Dec 13

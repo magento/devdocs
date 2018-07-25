@@ -11,10 +11,10 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-overview.html
 functional_areas:
   - Frontend
 ---
-<h2>What's in this topic</h2>
+## What's in this topic
 This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-<h2>Introduction</h2>
+## Introduction
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
 <img src="{{ site.baseurl }}/common/images/layouts_block_containers_defn21.png"/>

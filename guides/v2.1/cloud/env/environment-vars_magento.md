@@ -8,7 +8,7 @@ functional_areas:
   - Configuration
 ---
 
-Users that have Admin access to the {{site.data.var.ece}} project can use the
+Users that have administrative access to the {{site.data.var.ece}} project can use the
 following project environment variables to override the configuration settings
 for the administrative user account and Admin panel. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 

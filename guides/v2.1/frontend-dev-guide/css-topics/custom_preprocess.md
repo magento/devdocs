@@ -12,7 +12,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This topic describes how to add a custom {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} preprocessor. Adding [Sass](http://sass-lang.com/) support is used as an example.
 

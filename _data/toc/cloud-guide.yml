@@ -45,9 +45,11 @@ pages:
 
         - label: Bitbucket integration
           url: /cloud/project/bitbucket-integration.html
+          versions: ["2.0"]
 
         - label: GitHub integration
           url: /cloud/project/project-integrate-github.html
+          versions: ["2.0"]
 
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
@@ -61,6 +63,16 @@ pages:
         - label: SendGrid
           url: /cloud/project/sendgrid.html
           versions: ["2.1","2.2","2.3"]
+
+    - label: Integrations
+      url: /cloud/integrations/cloud-integrations.html
+      versions: ["2.1","2.2","2.3"]
+      children:
+        - label: Bitbucket integration
+          url: /cloud/integrations/bitbucket-integration.html
+
+        - label: GitHub integration
+          url: /cloud/integrations/github-integration.html
 
     - label: Local environment setup
       url: /cloud/access-acct/first-time-setup.html
@@ -130,6 +142,10 @@ pages:
 
         - label: Install a theme
           url: /cloud/howtos/custom-theme.html
+
+        - label: Import URL Rewrites
+          url: /cloud/configure/import-url-rewrites.html
+          versions: ["2.2"]
 
     - label: Configure Fastly
       url: /cloud/basic-information/cloud-fastly.html

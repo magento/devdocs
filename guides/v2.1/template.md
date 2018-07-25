@@ -150,3 +150,7 @@ You can use a glossary term's UUID from the [Magento Glossary](https://magento.g
 
 * {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}
 * Inline {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}Markup{% endglossarytooltip %} text
+
+{% comment %}
+Test comment
+{% endcomment %}

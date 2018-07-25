@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -86,8 +86,8 @@ Use this environment variable to make sure message queues are running after a de
 stage: 
   deploy:
     CRON_CONSUMERS_RUNNER:
-      cron_run: true,
-      max_messages: 1000,
+      cron_run: true
+      max_messages: 1000
       consumers:
         - consumer1
         - consumer2

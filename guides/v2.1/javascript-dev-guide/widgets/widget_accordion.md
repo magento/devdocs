@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html
 ---
 
-<h2>Overview</h2>
+## Overview
 
 Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
 
@@ -21,7 +21,7 @@ The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{%
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 
-<h3>Initialize accordion in JS components</h3>
+### Initialize accordion in JS components
 
 <h4>Initialize accordion with <code>data-*</code> attributes specified</h4>
 Generally the accordion widget is instantiated like following:
@@ -107,7 +107,7 @@ $("#element").accordion({
  });
 </pre>
 
-<h3>Initialize accordion in a template</h3>
+### Initialize accordion in a template
 
 The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 

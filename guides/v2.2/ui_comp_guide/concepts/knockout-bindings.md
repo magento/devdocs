@@ -38,7 +38,7 @@ Function that is invoked after the element is rendered.
 {%highlight javascript%}
 <div afterRender="function (target, viewModel) {
     console.log('Rendered element:', target);
-    console.log('Associated view model:' viewModel);
+    console.log('Associated view model:', viewModel);
     console.log(this === viewModel);
 }"></div>
 {%endhighlight%}

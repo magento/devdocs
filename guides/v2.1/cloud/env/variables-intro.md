@@ -10,7 +10,7 @@ functional_areas:
 
 {{site.data.var.ece}} enables you to assign environment variables to override configuration options:
 
--   [Admin]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables override project ADMIN variables
+-   [ADMIN]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables override project ADMIN variables
 -   [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
 -   [Cloud]({{ page.baseurl }}/cloud/env/variables-cloud.html)—variables specific to {{site.data.var.ece}}
 -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
