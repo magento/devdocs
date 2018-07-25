@@ -23,7 +23,7 @@ The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{%
 
 ### Initialize accordion in JS components
 
-<h4>Initialize accordion with <code>data-*</code> attributes specified</h4>
+#### Initialize accordion with <code>data-*</code> attributes specified
 Generally the accordion widget is instantiated like following:
 <pre>
 $("#element").accordion();
@@ -95,7 +95,7 @@ Mark-up examples:
 {%endhighlight%}
 
 
-<h4>Initialize accordion with option</h4>
+#### Initialize accordion with option
 You can specify the header, content, trigger as options when you initialize the widget.
 For example:
 <pre>
