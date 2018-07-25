@@ -20,7 +20,7 @@ This topic discusses how to set up database caching and how to verify database c
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
 *	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout .bs-callout-warning}
 Database caching&mdash;like file-based caching&mdash; works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
 Varnish is designed to accelerate the HTTP protocol.
 
@@ -98,10 +98,9 @@ To modify `di.xml`:
 ## Database caching using a custom cache frontend {#mage-cache-db-env}
 This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
+{:.bs-callout .bs-callout-info #info}
 <span class="glyphicon-class">
   Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.</span>
-</div>
 
 To enable database caching using a custom cache frontend, you must modify `<your Magento install dir>/app/etc/env.php` as follows:
 
@@ -156,7 +155,7 @@ Use the following steps:
 		ls <your Magento install dir>/var/cache/*
 		ls <your Magento install dir>/var/page_cache/*
 
-    {:.bs-callout .bs-callout-info}
+    {:.bs-callout .bs-callout-info #info}
     <span class="glyphicon-class">
     Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
     If you use the `default` cache frontend, you don't have this issue.</span>
