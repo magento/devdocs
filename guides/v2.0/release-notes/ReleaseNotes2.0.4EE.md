@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: Magento Commerce 2.0.4 Release Notes 
@@ -14,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.4EE.md
 We are pleased to present Magento Commerce 2.0.4. This release includes all of the security enhancements and performance improvements of Magento 2.0.3, in improved packaging. **You must download and install 2.0.4 to ensure that you receive all the security enhancements of 2.0.3**. 
 
 
-Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 <h3>Fixed issues</h3>
 
@@ -79,7 +78,7 @@ We recommend that you review Magento's <a href="https://magento.com/security/bes
 
 <h3>System requirements</h3>
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+[System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
 <h3>Installation instructions</h3>
@@ -101,7 +100,7 @@ New users can now complete a full installation of Magento Enterprise Edition 2.0
 
 
 <h4>Upgrade existing installations</h4>
-If you installed Magento Commerce 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="http://devdocs.magento.com/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
+If you installed Magento Commerce 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="{{ site.baseurl }}/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.
 
 
 ##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
@@ -112,7 +111,7 @@ If you installed Magento Commerce 2.0.0 from an archive, you must perform some a
 
 3.	Click  **System Upgrade**. Follow the onscreen instructions to complete the upgrade.
 
-For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
+For more information, see <a href="{{ site.baseurl }}/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Upgrade the Magento installation and components</a>.
 
 ##### <b>Magento Partners</b>#####
 Magento partners can download the release and the release notes in PDF format from the Partner Portal.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: Use custom JavaScript
@@ -8,8 +7,8 @@ menu_title: Use custom JavaScript
 version: 2.0
 github_link: javascript-dev-guide/javascript/custom_js.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/custom_js.html
-  - guides/v1.0/frontend-dev-guide/javascript/custom_js.html
+ - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
+ - /guides/v1.0/frontend-dev-guide/javascript/custom_js.html
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
@@ -22,7 +21,7 @@ We strongly recommend not changing the source code of default Magento components
 To add a custom JS component (module), take the following steps:
 
 1. Place the custom component source file in one of the following locations:
-	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html). 
+	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html). 
 	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
 
 2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource.
@@ -79,7 +78,7 @@ var config = {
   "map": {
     "*": {
       "menu": "js/navigation-menu",
-      "mage/backend/menu": "js/navigation-menu",
+      "mage/backend/menu": "js/navigation-menu"
     }
   }
 };
@@ -140,7 +139,7 @@ Where the following notation is used:
   </li>
 </ul>
 
-For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
@@ -188,7 +187,7 @@ define([
 {% endhighlight %}
 
 
-For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h2 id="disable_default_js">Disable default Magento JS</h2>
 
@@ -218,6 +217,6 @@ $(mage.apply);
 
 #### Related topic
 
-- [JavaScript resources in Magento]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)
-- [About AMD modules and RequireJS]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html)
+- [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
+- [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html)
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Adapters
@@ -19,7 +18,7 @@ These classes allow you to use functionality from third-party libraries in your 
 You should always use {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} classes instead of directly using classes from third-party libraries.
 This reduces the change impact on your code when the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} changes in a third-party {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
-We recommend using adapter classes for [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
+We recommend using adapter classes for [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
 
 ## How to write
 
@@ -37,7 +36,7 @@ The [minifier](https://github.com/magento/magento2/tree/2.0/lib/internal/Magento
 
 The [`AdapterInterface`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php){:target="_blank"} for this class contains a `minify($content)` function that the [`CSSmin`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php){:target="_blank"} and [`JShrink`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php){:target="_blank"} implementation class define.
 
-The [jshrink](https://github.com/tedious/JShrink){:target="_blank"}(tedivm/jshrink) and [cssmin](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port){:target="_blank"}(tubalmartin/cssmin) libraries registered in the [`composer.json`](https://github.com/magento/magento2/blob/develop/composer.json){:target="_blank"} file provide the functionalities for the implementation classes.
+The [jshrink](https://github.com/tedious/JShrink){:target="_blank"}(tedivm/jshrink) and [cssmin](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port){:target="_blank"}(tubalmartin/cssmin) libraries registered in the [`composer.json`](https://github.com/magento/magento2/blob/2.0/composer.json){:target="_blank"} file provide the functionalities for the implementation classes.
 
 ### `Magento/Framework/Image`
 

@@ -9,7 +9,7 @@ Create checkout and OMS master databases as follows:
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same user names and passwords:
+4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
 		create database magento_quote;
 		GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
@@ -33,7 +33,7 @@ Create checkout and OMS master databases as follows:
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-## Configure Magento EE to use the master databases {#config-ee-multidb-master-cli}
+## Configure {{site.data.var.ee}} to use the master databases {#config-ee-multidb-master-cli}
 After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)
 
 ### First steps

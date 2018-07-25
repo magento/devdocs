@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: E_rwd
 title: JavaScript in Magento responsive design
@@ -8,20 +7,22 @@ menu_order: 3
 version: 2.0
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
+functional_areas:
+  - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
-This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
+This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
 
 
-<h2>Scripts general overview</h2>
+## Scripts general overview
 
 The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
 
 <ul>
-<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
-<li><a href="{{site.mage2000url}}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
+<li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
+<li><a href="{{ site.mage2000url }}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
 
 <li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code> and <code>menu.js</code></li>
 </ul>
@@ -90,7 +91,7 @@ In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navi
 The following image illustrates the mobile-view navigation menu.
 
 
-<img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/js_rwd_menu.png">
+<img style="border: 1px solid #ABABAB" src="{{ site.baseurl }}/common/images/js_rwd_menu.png">
 
 
 <h2 id="rwd_js_reuse">Re-using Magento scripts in your theme</h2>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 170_trouble
 title: Component deployment failure
@@ -8,35 +7,30 @@ menu_order: 15
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble_comp-deploy-fail.md
+functional_areas:
+  - Cloud
+  - Deploy
 ---
 
 This topic discusses how to recover from a failed component deployment. Typical examples are components that have dependencies that are not met by your environment; for example, incompatible {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} versions.
 
 You can recover from a failed deployment in any of the following ways:
 
-*   [Restore a snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) if you have one
+*   [Restore a snapshot]({{ page.baseurl }}/cloud/project/project-webint-snap.html) if you have one
 *   Remove the component from your environment's `composer.json` and redeploy the environment
 
-### Remove the component from `composer.json` and redeploy
+## Remove the component from `composer.json` and redeploy
 This section discusses how to remove the component from the root `composer.json` in your environment and redeploy the environment:
 
-#### Get started
-
-{% collapsible Click to expand/collapse content %}
+## Get started
 
 {% include cloud/cli-get-started.md %}
 
-{% endcollapsible %}
-
-#### Find a component's Composer name
-
-{% collapsible Click to expand/collapse content %}
+## Find a component's Composer name
 
 {% include cloud/composer-name.md %}
 
-{% endcollapsible %}
-
-#### Clear `var` directories
+## Clear `var` directories
 To clean up from the previous deployment, you must SSH to the environment and manually clear the contents of the Magento `var` directory.
 
 1.	Enter the following command to SSH to the current environment:
@@ -47,10 +41,7 @@ To clean up from the previous deployment, you must SSH to the environment and ma
 
 		rm -rf var/*
 
-#### Remove the component
-
-{% collapsible Click to expand/collapse content %}
-
+## Remove the component
 To remove the component:
 
 1.  Change to your environment's root directory if you haven't already done so.
@@ -69,9 +60,8 @@ To remove the component:
         git commit -m "<message>"
         git push origin <environment ID>
 
-{% endcollapsible %}
 
 #### Related topics
-*	[Manage your projects]({{page.baseurl}}cloud/project/projects.html)
-*	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
-*	[Tutorials]({{page.baseurl}}cloud/howtos/how-to.html)
+*	[Manage your projects]({{ page.baseurl }}/cloud/project/projects.html)
+*	[Manage your environments]({{ page.baseurl }}/cloud/env/environments.html)
+*	[Tutorials]({{ page.baseurl }}/cloud/howtos/how-to.html)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: JavaScript DocBlock standard
@@ -9,6 +8,8 @@ menu_order: 6
 version: 2.0
 github_link: coding-standards/docblock-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
+functional_areas:
+  - Standards
 ---
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>

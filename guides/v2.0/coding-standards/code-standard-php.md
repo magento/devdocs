@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: PHP coding standard
@@ -9,6 +8,8 @@ menu_order: 2
 version: 2.0
 github_link: coding-standards/code-standard-php.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-php.html
+functional_areas:
+  - Standards
 ---
 
 The Magento core development team uses the [PSR-1: Basic Coding Standard](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/){:target="_blank"}.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 090_configure
 title: Redirects
@@ -10,6 +9,9 @@ level3_menu_node: level3child
 level3_subgroup: routes
 version: 2.0
 github_link: cloud/project/project-routes-more-redir.md
+functional_areas:
+  - Cloud
+  - Setup
 ---
 
 ## Overview of redirection {#cloud-route-redir}
@@ -28,7 +30,7 @@ Using whole-route redirects, you can define very basic routes in `routes.yaml`. 
 	    to: http://www.{default}/
 
 ## Partial redirects {#cloud-route-partial}
-In the [`.magento/routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
+In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
 to existing routes:
 
 	http://{default}/:

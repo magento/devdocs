@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 13_DBProfiler
 title: Configure the database profiler
@@ -10,6 +9,10 @@ version: 2.0
 contributor_name: Atish Goswami
 contributor_link: http://atishgoswami.com
 github_link: config-guide/db-profiler/db-profiler.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## About the database profiler
@@ -89,4 +92,4 @@ echo "</table>";
 ## Step 3: View the results
 Go to any page in your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} to view the results. A sample follows:
 
-![Sample database profiler results]({{ site.baseurl }}common/images/config_db-profiler-results.png){:width="800px"}
+![Sample database profiler results]({{ site.baseurl }}/common/images/config_db-profiler-results.png){:width="800px"}

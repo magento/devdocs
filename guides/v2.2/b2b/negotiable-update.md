@@ -1,18 +1,20 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Update a negotiable quote
 menu_title: Update a negotiable quote
 menu_order: 33
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-update.md
+functional_areas:
+  - B2B
+  - Integration
 ---
 
-Merchants and buyers can edit a negotiable quote at various times during the quote's lifecycle. Both use the `PUT /V1/negotiableQuote/:quoteId` call to update the quote. This call is defined in the
+Sellers and buyers can edit a negotiable quote at various times during the quote's lifecycle. Both use the `PUT /V1/negotiableQuote/:quoteId` call to update the quote. This call is defined in the
 `quoteCartRepositoryV1` service and is functionally similar to the
 `PUT /V1/carts/mine` call.
 
@@ -24,8 +26,8 @@ Name | Description | Format | Requirements
 `is_regular_quote` | Flag for the negotiable quote | boolean | Optional
 `status` | One of `created`, `submitted_by_customer`, `submitted_by_admin`, `processing_by_customer`, `processing_by_admin`, `ordered`, `expired`, `declined`, `closed` | string | Optional
 `negotiated_price_type` | 1 - Percentage discount; 2 - Fixed price; 3 - proposed total | integer | Required to set a negotiated price
-`negotiated_price_value` | Discount amount defined by the merchant | number | Required to set a negotiated price
-`shipping_price` | Custom price for shipping defined by the merchant | number | Optional
+`negotiated_price_value` | Discount amount defined by the seller | number | Required to set a negotiated price
+`shipping_price` | Custom price for shipping defined by the seller | number | Optional
 `quote_name` | Name assigned to the negotiable quote | string | Optional
 `expiration_period` | Expiration date for the quote. The format must be `YYYY-MM-DD`. | string | Optional
 `email_notification_status`  | Recent notifications that have been sent | integer | Optional
@@ -45,12 +47,14 @@ Name | Description | Format | Requirements
 
 ### Set a negotiated price
 
-In every successful negotiate quote, the merchant must set the negotiated price.
+In every successful negotiate quote, the seller must set the negotiated price.
 
-The `negotiated_price_value` can have one of the following values:
+The `negotiated_price_type` can have one of the following values:
 
 `1` - Apply a percentage discount to the quote. The `negotiated_price_value`parameter indicates the percentage.
+
 `2` - Apply a fixed amount as a discount for the quote. The `negotiated_price_value`parameter specifies the amount of the discount.
+
 `3` - Set a proposed price for the entire quote. The `negotiated_price_value`parameter specifies the proposed price.
 
 **Service Name**
@@ -150,6 +154,7 @@ The buyer can add, update, or delete items from the quote under the following co
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{page.baseurl}}b2b/negotiable-manage.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

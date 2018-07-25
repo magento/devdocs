@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Date component
@@ -10,7 +9,7 @@ github_link: ui_comp_guide/components/ui-date.md
 
 ## Overview
 
-The Date component implements a custom date input field. It uses a date picker implementation provided by the [calendar widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_calendar.html).
+The Date component implements a custom date input field. It uses a date picker implementation provided by the [calendar widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html).
 
 
 ## Date configuration

@@ -1,53 +1,74 @@
 ---
-layout: default
 group: cloud
 subgroup: 170_trouble
-title: Add sitemap and robots.txt
+title: Add site map and search engine robots
 menu_title: Add sitemap and robots.txt
 menu_order: 40
 menu_node:
 version: 2.0
 github_link: cloud/trouble/robots-sitemap.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
+The `pub` directory is _read only_ in the {{site.data.var.ece}} Integration, Staging, and Production environments. An attempt to generate and write the `sitemap.xml` file to the root directory results in the following error:
 
-When creating and adding your sitemap and robots.txt to your store, you may run into issues due to the read-only environment. You may receive errors such as the following:
+```
+The path ".:///app/app/" is not writable.
+Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
+```
 
-    The path ".:///app/app/" is not writable.
-    Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
+To avoid this error, you can only write to specific directories, such as `var`, `pub/media`, or `app/etc`. When using {{site.data.var.ece}}, you must use a redirect in the _read-only_ environments.  Generate the files on your local workstation and upload them to one of the write-enabled directories using the following, appropriate environment:
 
-To best add these files, please review the steps below.
+-  For Starter, access the `staging` branch
+-  For Pro, access the `integration` branch
 
-For {{site.data.var.ece}} 2.2, you do not need to move the files or have a redirection added. If you used these workarounds before 2.2, you can return the files to the original locations and ticket to have the redirection removed.
+#### To add a `sitemap.xml` file:
 
-## Generate sitemap and robots {#generate}
-Access an environment fully configured for your site:
+1.  On your local branch, access the Magento Admin panel.
+1.  On the _Marketing_ menu, click **Site Map**.
+1.  In the _Site Map_ view, click **Add Sitemap**.
+1.  In the _New Site Map_ view, enter the following values:
 
-* For Starter, access an active development branch
-* For Pro, access your `master` environment in Integration
+    -  **Filename**:`sitemap.xml`
+    -  **Path**:`/pub/media/`
 
-Generate your `sitemap.xml` and `robots.txt`:
+1.  Click **Save & Generate**.
+1.  Import the generated files to the `pub/media` directory on the server.
+1.  Log in to the remote environment using SSH.
+1.  Move the files into the `/pub/media/` directory using the rsync command:
 
-1. Log into the Magento Admin.
-2. Navigate to **Marketing** > **Site Map**.
-3. Click **Add Sitemap** to generate a new site map. The file saves as `sitemap.xml`.
-4. Navigate to Stores > Configuration > Design.
-5. Select options and update `robots.txt`.
-6. Save your configuration.
+    ```bash
+    rsync -azvP pub/media/ <user_name>@<environment_IP_address>:pub/media/
+    ```
 
-For additional information, see [Using a Sitemap](http://docs.magento.com/m2/ee/user_guide/marketing/sitemap-xml.html){:target="_blank"} and [Search Engine Robots](http://docs.magento.com/m2/ee/user_guide/marketing/search-engine-robots.html){:target="_blank"}.
+1.  This results in a `www.example.com/media/sitemap.xml` path, so you must submit a Support ticket to apply a redirect for your generated files.
 
-## Add files to Git {#files}
-If you accessed the environment directoy, you need to transfer the files from the environment to your local. For example, you can use `rsync` or  `scd` through a terminal. If you completed the commands on your local, move the files to the correct location.
+{% include note.html type="warning" content="Do not change the location of the files during deployment." %}
 
-Move and add the files to your Git branch:
+#### To add a `robots.txt` file:
 
-1. Move the files into the `/pub/media/` directory. This is a writable directory for .
-2. Add the files to Git. For example:
+1.  On your local branch, access the Magento Admin panel.
+1.  On the _Content_ menu, click **Configuration**.
+1.  In the _Design Configuration_ view, click **Edit** for the Global Website.
+1.  In the _Main Website_ view, click **Search Engine Robots** in the _Other Settings_ section.
+1.  Select options and update the `robots.txt` file.
+1.  Click **Save Configuration**.
 
-    git add pub/media/sitemap.xml && git commit -m "Add sitemap" && git push origin master
+## Rewrite using Fastly VCL snippet
+You can generate the `sitemap.xml` file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
 
-    git add pub/media/robots.txt && git commit -m "Add robots" && git push origin master
-3. Push and merge your changes in development, Staging, and Production environments.
-4. Enter a [ticket with Support]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to have redirects added for `sitemap.xml` and `robots.txt`.
+#### To use a Fastly VCL snippet for redirect:
+Create a custom VCL snippet to rewrite the path for `sitemap.xml` to `/media/sitemap.xml` using the `type` and `content` key and value pairs.
 
-When the redirects are completed, keep these files updated in that file location for your Git branches during deployment.
+```json
+{ 
+  "name": "sitemapxml_rewrite",
+  "dynamic": "0",
+  "type": "recv",
+  "priority": "90",
+  "content": "if ( req.url.path ~ \"^/?sitemap.xml$\" ) { set req.url = \"/media/sitemap.xml\"; }" 
+}
+```
+
+{% include note.html type="tip" content="When you upgrade from Magento version 2.1 to version 2.2, enter a Support ticket to remove any existing redirects for these files." %}

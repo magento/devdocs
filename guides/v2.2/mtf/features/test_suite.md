@@ -1,9 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 45_Features
 title: Test suite in the Functional Testing Framework
-menu_title: Test suite
 version: 2.2
 github_link: mtf/features/test_suite.md
 ---
@@ -88,10 +85,12 @@ In `phpunit.xml`:
 
 To run a test suite enter the following commands from your terminal:
 
-{% highlight bash %}
-cd phpunit <magento2>/dev/tests/functional
+```bash
+cd <magento2>/dev/tests/functional
+```
+```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
-{% endhighlight %}
+```
 
 ## Rule {#rule}
 
@@ -357,10 +356,10 @@ class AssertProductView extends AbstractConstraint
 
 <!-- LINKS DEFINITION -->
 
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[variation]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[variation]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 
 [`scope = "testsuite"`]: #scope-testsuite
 [`scope = "testcase"`]: #scope-testcase

@@ -6,17 +6,17 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
     <title>Magento for Developers: Part 5&mdash;Magento Models and ORM Basics</title>
 
 </head>
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 
 
@@ -26,7 +26,7 @@
 <div id="content">
 <h1>Magento for Developers: Part 5&mdash;Magento Models and ORM Basics</h1>
 <p><em>by Alan Storm</em>, updated for Magento 1.12</p>
-<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-5.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}/magefordev/mage-for-dev-5.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
 
 <!-- Magento for Developers: Part 5&mdash;Magento Models and ORM Basics -->
@@ -51,27 +51,27 @@
 </ul>
 </div>
 
-<p class="para1">The implementation of a "Models Tier" is a huge part of any MVC framework.  It represents the data of your application, and most applications are useless without data.  Magento Models play an even bigger role, as they typically contain the "Business Logic" that's often relegated to the Controller or Helper methods in other PHP MVC frameworks.</p>
+<p class="para1">The implementation of a "Models Tier" is a huge part of any MVC framework. It represents the data of your application, and most applications are useless without data. Magento Models play an even bigger role, as they typically contain the "Business Logic" that's often relegated to the Controller or Helper methods in other PHP MVC frameworks.</p>
 
 <h2>Traditional PHP MVC Models</h2>
 
-<p>If the definition of MVC is somewhat fuzzy, the definition of a Model is even fuzzier.  Prior to the wide adoption of the MVC pattern by PHP developers, data access was usually raw SQL statements and/or an SQL abstraction layer.  Developers would write queries and not think too much about what objects they were modeling.</p>
+<p>If the definition of MVC is somewhat fuzzy, the definition of a Model is even fuzzier. Prior to the wide adoption of the MVC pattern by PHP developers, data access was usually raw SQL statements and/or an SQL abstraction layer. Developers would write queries and not think too much about what objects they were modeling.</p>
 
-<p>In this day and age, raw SQL is mostly frowned upon, but many PHP frameworks are still SQL centric.  Models will be objects that provide some layer of abstraction, but behind the scenes developers are still writing SQL and/or calling SQL like abstraction methods to read and write-down their data.</p>
+<p>In this day and age, raw SQL is mostly frowned upon, but many PHP frameworks are still SQL centric. Models will be objects that provide some layer of abstraction, but behind the scenes developers are still writing SQL and/or calling SQL like abstraction methods to read and write-down their data.</p>
 
-<p>Other frameworks eschew SQL and take the Object Relational Mapping (ORM) approach.  Here, a developer is dealing strictly with Objects.  Properties are set, and when a save method is called on the Object, the data is automatically written to the database.  Some ORMs will attempt to divine object properties from the database, others require the user to specify them in some way, (usually in an abstract data language such as YAML).  One of the most famous and popular implementations of this approach is ActiveRecord.  </p>
+<p>Other frameworks eschew SQL and take the Object Relational Mapping (ORM) approach. Here, a developer is dealing strictly with Objects. Properties are set, and when a save method is called on the Object, the data is automatically written to the database. Some ORMs will attempt to divine object properties from the database, others require the user to specify them in some way, (usually in an abstract data language such as YAML). One of the most famous and popular implementations of this approach is ActiveRecord.</p>
 
-<p>This definition of ORM should suffice for now, but like everything Computer Science these days, the strict definition of ORM has blurred over the years.  It's beyond the scope of this article to settle that dispute, but suffice it say we're generalizing a bit.</p>
+<p>This definition of ORM should suffice for now, but like everything Computer Science these days, the strict definition of ORM has blurred over the years. It's beyond the scope of this article to settle that dispute, but suffice it say we're generalizing a bit.</p>
 
 <h2>Magento Models</h2>
 
-<p>It should be no surprise that Magento takes the ORM approach.  While the Zend Framework SQL abstractions are available, most of your data access will be via the built in Magento Models, and Models you build yourself.  It should also come as no surprise that Magento has a highly flexible, highly abstract, concept of what a Model is.  </p>
+<p>It should be no surprise that Magento takes the ORM approach. While the Zend Framework SQL abstractions are available, most of your data access will be via the built in Magento Models, and Models you build yourself. It should also come as no surprise that Magento has a highly flexible, highly abstract, concept of what a Model is.</p>
 
 <h3>Anatomy of a Magento Model</h3>
 
-<p>Most Magento Models can be categorized in one of two ways.  There's a basic, ActiveRecord-like/one-object-one-table Model, and there's also an Entity Attribute Value (EAV) Model. Each Model also gets a Model Collection.  Collections are PHP objects used to hold a number of individual Magento Model instances.  The Magento team has implemented the PHP Standard Library interfaces of IteratorAggregate and Countable to allow each Model type to have it's own collection type.  If you're not familiar with the PHP Standard Library, think of Model Collections as arrays that also have methods attached.</p>
+<p>Most Magento Models can be categorized in one of two ways. There's a basic, ActiveRecord-like/one-object-one-table Model, and there's also an Entity Attribute Value (EAV) Model. Each Model also gets a Model Collection. Collections are PHP objects used to hold a number of individual Magento Model instances. The Magento team has implemented the PHP Standard Library interfaces of IteratorAggregate and Countable to allow each Model type to have it's own collection type. If you're not familiar with the PHP Standard Library, think of Model Collections as arrays that also have methods attached.</p>
 
-<p>Magento Models don't contain any code for connecting to the database.  Instead, each Model uses a <tt>modelResource</tt> class, that is used to communicate with the database server (via one read and one write adapter object).  By decoupling the logical Model and the code that talks to the database, it's theoretically possible to write new resource classes for a different database schemas and platforms while keeping your Models themselves untouched. </p>
+<p>Magento Models don't contain any code for connecting to the database. Instead, each Model uses a <tt>modelResource</tt> class, that is used to communicate with the database server (via one read and one write adapter object). By decoupling the logical Model and the code that talks to the database, it's theoretically possible to write new resource classes for a different database schemas and platforms while keeping your Models themselves untouched. </p>
 
 <h2>Enable developer mode</h2>
 <p>Something you should do in development&mdash;but <em>never</em> in production&mdash;is to enable Magento's <em>developer mode</em> which, among other things, displays exceptions in your browser. It's useful for debugging your code.</p>
@@ -81,7 +81,7 @@
 
 <h2>Creating a Basic Model</h2>
 
-<p>To begin, we're going to create a basic Magento Model.  PHP MVC tradition insists we model a weblog post.  The steps we'll need to take are</p>
+<p>To begin, we're going to create a basic Magento Model. PHP MVC tradition insists we model a weblog post. The steps we'll need to take are</p>
 
 <ol>
 <li>Create a new "Weblog" module</li>
@@ -97,9 +97,9 @@
 
 <h3>Create a Weblog Module</h3>
 
-<p>You should be an old hat at creating empty modules at this point, so we'll skip the details and assume you can create an empty module named Weblog.  After you've done that, we'll setup a route for an index Action Controller with an action named "testModel".  As always, the following examples assume a Package Name of "Magentotutorial".  </p>
+<p>You should be an old hat at creating empty modules at this point, so we'll skip the details and assume you can create an empty module named Weblog. After you've done that, we'll setup a route for an index Action Controller with an action named "testModel". As always, the following examples assume a Package Name of "Magentotutorial".</p>
 
-<p>In Magentotutorial/Weblog/etc/config.xml, setup the following route</p>
+<p>In `Magentotutorial/Weblog/etc/config.xml`, setup the following route</p>
 
 <pre>
 &lt;frontend>
@@ -124,7 +124,7 @@ class Magentotutorial_Weblog_IndexController extends Mage_Core_Controller_Front_
 }
 </pre>
 
-<p>at <tt>Magentotutorial/Weblog/controllers/IndexController.php</tt>.  Clear your Magento cache and load the following URL to ensure everything's been setup correctly.  </p>
+<p>at <tt>Magentotutorial/Weblog/controllers/IndexController.php</tt>. Clear your Magento cache and load the following URL to ensure everything's been setup correctly.</p>
 
 <pre>http://example.com/weblog/index/testModel</pre>
 
@@ -132,7 +132,7 @@ class Magentotutorial_Weblog_IndexController extends Mage_Core_Controller_Front_
 
 <h3>Creating the Database Table</h3>
 
-<p>Magento has a system for automatically creating and changing your database schemas, but for the time being we'll just manually create a table for our Model.  </p>
+<p>Magento has a system for automatically creating and changing your database schemas, but for the time being we'll just manually create a table for our Model.</p>
 
 <p>Using the command-line or your favorite MySQL GUI application, create a table with the following schema</p>
 <pre>
@@ -164,9 +164,9 @@ CREATE TABLE `blog_posts` (
 
 <pre>$model = Mage::getModel('weblog/blogpost');</pre>
 
-<p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>.  Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase).  The second part of the URI is the lowercase version of your Model name.</p>
+<p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
 
-<p>So, let's add the following XML to our module's config.xml.</p>
+<p>So, let's add the following XML to our module's `config.xml`.</p>
 <pre>
 &lt;global>
     &lt;!-- ... -->
@@ -184,9 +184,9 @@ CREATE TABLE `blog_posts` (
 &lt;/global>
 </pre>
 
-<p>The outer &lt;weblog /&gt; tag is your Group Name, which should match your module name.  &lt;class /&gt; is the BASE name all Models in the weblog group will have, also calles <strong>Class Prefix</strong>. The &lt;resourceModel /&gt; tag indicates which Resource Model that weblog group Models should use.  There's more on this below, but for now be content to know it's your Group Name, followed by a the literal string "resource".</p>
+<p>The outer &lt;weblog /&gt; tag is your Group Name, which should match your module name. &lt;class /&gt; is the BASE name all Models in the weblog group will have, also called <strong>Class Prefix</strong>. The &lt;resourceModel /&gt; tag indicates which Resource Model that weblog group Models should use. We talk more about this later on in this page. For now, remember your Group Name and the literal string "resource".</p>
 
-<p>So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model.  In your testModelAction method, use the following code</p>
+<p>So, we're not done yet, but let's see what happens if we clear our Magento cache and attempt to instantiate a blogpost Model. In your `testModelAction` method, use the following code</p>
 <pre>
     public function testModelAction() {
         $blogpost = Mage::getModel('weblog/blogpost');
@@ -206,7 +206,7 @@ include(Magentotutorial/Weblog/Model/Blogpost.php) [function.include]: failed to
 Magentotutorial_Weblog_Model_Blogpost
 </pre>
 
-<p>Magento is trying to __autoload include this Model, but can't find the file.  Let's create it!  Create the following class at the following location</p>
+<p>Magento is trying to __autoload include this Model, but can't find the file. Let's create it! Create the following class at the following location</p>
 
 <pre>File: app/code/local/Magentotutorial/Weblog/Model/Blogpost.php</pre>
 <pre>
@@ -221,29 +221,29 @@ class Magentotutorial_Weblog_Model_Blogpost extends Mage_Core_Model_Abstract
 
 <p>Reload your page, and the exception should be replaced with the name of your class. </p>
 
-<p>All basic Models that interact with the database should extend the <tt>Mage_Core_Model_Abstract</tt> class.  This abstract class forces you to implement a single method named <tt>_construct</tt> (<strong>NOTE:</strong> this is not PHP's constructor <tt>__construct</tt>).  This method should call the class's _init method with the same identifying URI you'll be using in the <tt>Mage::getModel</tt> method call.</p>
+<p>All basic Models that interact with the database should extend the <tt>Mage_Core_Model_Abstract</tt> class. This abstract class forces you to implement a single method named <tt>_construct</tt> (<strong>NOTE:</strong> this is not PHP's constructor <tt>__construct</tt>). This method should call the class's _init method with the same identifying URI you'll be using in the <tt>Mage::getModel</tt> method call.</p>
 
 <h3>The Global Config and Resources</h3>
 
-<p>So, we've setup our Model.  Next, we need to setup our Model Resource. Model Resources contain the code that actually talks to our database. In the last section, we included the following in our config.</p>
+<p>So, we've setup our Model. Next, we need to setup our Model Resource. Model Resources contain the code that actually talks to our database. In the last section, we included the following in our config.</p>
 
 <pre>
 &lt;resourceModel>weblog_resource</resourceModel>
 </pre>
 
-<p>The value in  &lt;resourceModel /&gt; will be used to instantiate a Model Resource class.  Although you'll never need to call it yourself, when any Model in the weblog group needs to talk to the database, Magento will make the following method call to get the Model resource</p>
+<p>The value in &lt;resourceModel /&gt; will be used to instantiate a Model Resource class. Although you'll never need to call it yourself, when any Model in the weblog group needs to talk to the database, Magento will make the following method call to get the Model resource</p>
 
 <pre>
 Mage::getResourceModel('weblog/blogpost');
 </pre>
 
-<p>Again, weblog is the Group Name, and blogpost is the Model.  The <tt>Mage::getResourceModel</tt> method will use the <tt>weblog/blogpost</tt> URI to inspect the global config and pull out the value in &lt;resourceModel&gt; (in this case, <tt>weblog_resource</tt>).  Then, a model class will be instantiated with the following URI</p>
+<p>Again, weblog is the Group Name, and blogpost is the Model. The <tt>Mage::getResourceModel</tt> method will use the <tt>weblog/blogpost</tt> URI to inspect the global config and pull out the value in &lt;resourceModel&gt; (in this case, <tt>weblog_resource</tt>). Then, a model class will be instantiated with the following URI</p>
 
 <pre>
 weblog_resource/blogpost
 </pre>
 
-<p>So, if you followed that all the way, what this means is, <strong>resource models are configured in the same section of the XML config as normal Models</strong>.  This can be confusing to newcomers and old-hands alike.</p>
+<p>So, if you followed that all the way, what this means is, <strong>resource models are configured in the same section of the XML config as normal Models</strong>. This can be confusing to newcomers and old-hands alike.</p>
 
 <p>So, with that in mind, let's configure our resource. In our &lt;models&gt; section add</p>
 
@@ -259,13 +259,13 @@ weblog_resource/blogpost
 &lt;/global>
 </pre>
 
-<p>You're adding the &lt;weblog_resource /&gt; tag, which is the value of the &lt;resourceModel /&gt; tag you just setup.  The value of &lt;class /&gt; is the base name that all your resource models will have, and should be named with the following format</p>
+<p>You're adding the &lt;weblog_resource /&gt; tag, which is the value of the &lt;resourceModel /&gt; tag you just setup. The value of &lt;class /&gt; is the base name that all your resource models will have, and should be named with the following format</p>
 
 <pre>
 Packagename_Modulename_Model_Resource
 </pre>
 
-<p>So, we have a configured resource, let's try loading up some Model data.  Change your action to look like the following</p>
+<p>So, we have a configured resource, let's try loading up some Model data. Change your action to look like the following</p>
 
 <pre>
 public function testModelAction() {
@@ -286,7 +286,7 @@ public function testModelAction() {
 
 <pre>Warning: include(Magentotutorial/Weblog/Model/Resource/Blogpost.php) [function.include]: failed to open stream: No such file ....</pre>
 
-<p>As you've likely intuited, we need to add a resource class for our Model.  <strong>Every</strong> Model has its own resource class.  Add the following class at at the following location</p>
+<p>As you've likely intuited, we need to add a resource class for our Model. <strong>Every</strong> Model has its own resource class. Add the following class at the following location</p>
 
 <pre>File: app/code/local/Magentotutorial/Weblog/Model/Resource/Blogpost.php</pre>
 <pre>
@@ -298,11 +298,11 @@ class Magentotutorial_Weblog_Model_Resource_Blogpost extends Mage_Core_Model_Res
 }
 </pre>
 
-<p>Again, the first parameter of the init method is the URL used to identify the <strong>Model</strong>.  The second parameter is the database field that uniquely identifies any particular column.  In most cases, this should be the primary key.  Clear your cache, reload, and you should see</p>
+<p>Again, the first parameter of the init method is the URL used to identify the <strong>Model</strong>. The second parameter is the database field that uniquely identifies any particular column. In most cases, this should be the primary key. Clear your cache, reload, and you should see</p>
 
 <pre>Can't retrieve entity config: weblog/blogpost</pre>
 
-<p>Another exception!  When we use the Model URI <tt>weblog/blogpost</tt>, we're telling Magento we want the Model Group <tt>weblog</tt>, and the <tt>blogpost</tt> <em>Entity</em>.  In the context of simple Models that extend <tt>Mage_Core_Model_Resource_Db_Abstract</tt>, an entity corresponds to a table.  In this case, the table named <tt>blog_post</tt> that we created above.  Let's add that entity to our XML config.</p>
+<p>Another exception! When we use the Model URI <tt>weblog/blogpost</tt>, we're telling Magento we want the Model Group <tt>weblog</tt>, and the <tt>blogpost</tt> <em>Entity</em>. In the context of simple Models that extend <tt>Mage_Core_Model_Resource_Db_Abstract</tt>, an entity corresponds to a table. In this case, the table named <tt>blog_post</tt> that we created above. Let's add that entity to our XML config.</p>
 
 <pre>
     &lt;models>
@@ -318,7 +318,7 @@ class Magentotutorial_Weblog_Model_Resource_Blogpost extends Mage_Core_Model_Res
     &lt;/models>
 </pre>
 
-<p>We've added a new &lt;entities /&gt; section to the resource Model section of our config.  This, in turn, has a section named after our entity (&lt;blogpost /&gt;) that specifies the name of the database table we want to use for this Model.</p>
+<p>We've added a new &lt;entities /&gt; section to the resource Model section of our config. This, in turn, has a section named after our entity (&lt;blogpost /&gt;) that specifies the name of the database table we want to use for this Model.</p>
 
 <p>Clear your Magento cache, cross your fingers, reload the page and ...</p>
 
@@ -332,15 +332,15 @@ array
   'timestamp' => string '2009-07-02 16:12:30' (length=19)
 </pre>
 
-<p>Eureka!  We've managed to extract our data and, more importantly, completely configure a Magento Model.</p>
+<p>Eureka! We've managed to extract our data and, more importantly, completely configure a Magento Model.</p>
 
 <h2>Basic Model Operations</h2>
 
-<p>All Magento Models inherit from the Varien_Object class.  This class is part of the Magento system library and <strong>not</strong> part of any Magento core module.  You can find this object at</p>
+<p>All Magento Models inherit from the Varien_Object class. This class is part of the Magento system library and <strong>not</strong> part of any Magento core module. You can find this object at</p>
 
 <pre>lib/Varien/Object.php</pre>
 
-<p>Magento Models store their data in a protected _data property.  The Varien_Object class gives us several methods we can use to extract this data.  You've already seen <tt>getData</tt>, which will return an array of key/value pairs.  This method can also be passed a string key to get a specific field.</p>
+<p>Magento Models store their data in a protected _data property. The Varien_Object class gives us several methods we can use to extract this data. You've already seen <tt>getData</tt>, which will return an array of key/value pairs. This method can also be passed a string key to get a specific field.</p>
 
 <pre>
 $model->getData();
@@ -359,7 +359,7 @@ $model->getOrigData('title');
 <pre>
 $model->getBlogpostId();
 $model->setBlogpostId(25);
-$model->unsetBlogpostId();
+$model->unsBlogpostId();
 if($model->hasBlogpostId()){...}
 </pre>
 
@@ -367,11 +367,11 @@ if($model->hasBlogpostId()){...}
 
 <h2>CRUD, the Magento Way</h2>
 
-<p>Magento Models support the basic Create, Read, Update, and Delete functionality of CRUD with <tt>load</tt>, <tt>save</tt>, and <tt>delete</tt> methods.  You've already seen the load method in action.   When passed a single parameter, the load method will return a record whose id field (set in the Model's resource) matches the passed in value.</p>
+<p>Magento Models support the basic Create, Read, Update, and Delete functionality of CRUD with <tt>load</tt>, <tt>save</tt>, and <tt>delete</tt> methods. You've already seen the load method in action. When passed a single parameter, the load method will return a record whose id field (set in the Model's resource) matches the passed in value.</p>
 
 <pre>$blogpost-&gt;load(1);</pre>
 
-<p>The save method will allow you to both INSERT a new Model into the database, or UPDATE an existing one.  Add the following method to your Controller</p>
+<p>The save method will allow you to both INSERT a new Model into the database, or UPDATE an existing one. Add the following method to your Controller</p>
 
 <pre>
 public function createNewPostAction() {
@@ -387,7 +387,7 @@ public function createNewPostAction() {
 
 <pre>http://example.com/weblog/index/createNewPost</pre>
 
-<p>You should now see an additional saved post in you database table.  Next, try the following to edit your post</p>
+<p>You should now see an additional saved post in your database table. Next, try the following to edit your post</p>
 
 <pre>
 public function editFirstPostAction() {
@@ -399,7 +399,7 @@ public function editFirstPostAction() {
 }
 </pre>
 
-<p>And finally, you can delete your post using very similar syntax.    </p>
+<p>And finally, you can delete your post using very similar syntax.</p>
 
 <pre>
 public function deleteFirstPostAction() {
@@ -412,9 +412,9 @@ public function deleteFirstPostAction() {
 
 <h2>Model Collections</h2>
 
-<p>So, having a single Model is useful, but sometimes we want to grab list of Models. Rather than returning a simple array of Models, each  Magento Model type has a unique collection object associated with it.  These objects implement the PHP IteratorAggregate and Countable interfaces, which means they can be passed to the <tt>count</tt> function, and used in <tt>for each</tt> constructs.  </p>
+<p>So, having a single Model is useful, but sometimes we want to grab list of Models. Rather than returning a simple array of Models, each Magento Model type has a unique collection object associated with it. These objects implement the PHP IteratorAggregate and Countable interfaces, which means they can be passed to the <tt>count</tt> function, and used in <tt>for each</tt> constructs.</p>
 
-<p>We'll cover Collections in full in a later article, but for now let's look at basic setup and usage.  Add the following action method to your Controller, and load it in your browser.</p>
+<p>We'll cover Collections in full in a later article, but for now let's look at basic setup and usage. Add the following action method to your Controller, and load it in your browser.</p>
 
 <pre>
 public function showAllBlogPostsAction() {
@@ -434,13 +434,13 @@ public function showAllBlogPostsAction() {
 
 <pre>Warning: include(Magentotutorial/Weblog/Model/Resource/Blogpost/Collection.php) [function.include]: failed to open stream</pre>
 
-<p>You're not surprised, are you?  We need to add a PHP class file that defines our Blogpost collection.  Every Model has a protected property named <tt>_resourceCollectionName</tt> that contains a URI that's used to identify our collection.</p>
+<p>You're not surprised, are you? We need to add a PHP class file that defines our Blogpost collection. Every Model has a protected property named <tt>_resourceCollectionName</tt> that contains a URI that's used to identify our collection.</p>
 
 <pre>
   protected '_resourceCollectionName' =&gt; string 'weblog/blogpost_collection'
 </pre>
 
-<p>By default, this is the same URI that's used to identify our Resource Model, with the string "_collection" appended to the end.  Magento considers Collections part of the Resource, so this URI is converted into the class name     </p>
+<p>By default, this is the same URI that's used to identify our Resource Model, with the string "_collection" appended to the end. Magento considers Collections part of the Resource, so this URI is converted into the class name.</p>
 
 <pre>Magentotutorial_Weblog_Model_Resource_Blogpost_Collection</pre>
 
@@ -455,8 +455,8 @@ class Magentotutorial_Weblog_Model_Resource_Blogpost_Collection extends Mage_Cor
 }
 </pre>
 
-<p>Just as with our other classes, we need to init our Collection with the Model URI. (weblog/blogpost).  Rerun your Controller Action, and you should see your post information.</p>
+<p>Just as with our other classes, we need to init our Collection with the Model URI. (weblog/blogpost). Rerun your Controller Action, and you should see your post information.</p>
 
 <h2>Wrapup</h2>
 
-<p>Congratulations, you've created and configured your first Magento Model.  In a later article we'll take a look at Magento's Entity Attribute Value Models (EAV), which expand on what we've learned here.</p>
+<p>Congratulations, you've created and configured your first Magento Model. In a later article we'll take a look at Magento's Entity Attribute Value Models (EAV), which expand on what we've learned here.</p>

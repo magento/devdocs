@@ -2,14 +2,15 @@
  
 1.	On your local system, find the integration server's SSH URL.
 
-		magento-cloud environment:ssh --pipe
+            magento-cloud environment:ssh --pipe
+		
 2.	Create `config.local.php` on the integration server.
 
-		ssh -k <SSH URL> "php bin/magento magento-cloud:scd-dump"
+		ssh <SSH URL> "php bin/magento magento-cloud:scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
 	<!-- A message similar to the following displays if you have any sensitive settings configured in your system:
 
@@ -20,3 +21,4 @@
 6.	Transfer `config.local.php` to your local system.
 
 		rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+</div>

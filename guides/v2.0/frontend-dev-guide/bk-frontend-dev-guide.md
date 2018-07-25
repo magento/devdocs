@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
@@ -8,6 +7,8 @@ menu_order: 1
 version: 2.0
 github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
+functional_areas:
+  - Frontend
 ---
 
 <h2 id="overview-introduction">Introduction</h2>
@@ -54,10 +55,10 @@ To use this guide, you must be familiar with:
 
 #### Related topics:
 
-*	<a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">Themes</a>
-*	<a href="{{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
-*	<a href="{{page.baseurl}}coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
-*	<a href="{{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
-*	[Translations]({{ page.baseurl }}frontend-dev-guide/translations/xlate.html)
+*	<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html">Themes</a>
+*	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
+*	<a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
+*	<a href="{{ page.baseurl }}/coding-standards/code-standard-javascript.html">JavaScript coding standard</a>
+*	<a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
+*	[Translations]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html)
 

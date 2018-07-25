@@ -1,15 +1,16 @@
 ---
-layout: default 
 group: compman
 subgroup: 06_UseExtMan
 title: Step 3. Data Option
 menu_title: Remove or Keep Data
-menu_node: 
+menu_node:
 menu_order: 50
 level3_menu_node: level3child
 level3_subgroup: step3-ext
 version: 2.2
 github_link: comp-mgr/extens-man/extensman-uninst-data.md
+functional_areas:
+  - Upgrade
 ---
 
 ## Step 3. Data Option
@@ -23,7 +24,7 @@ If the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% end
 
 If the extension has data to remove, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally remove database data">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}/common/images/cman_uninstall-data.png" width="600px" alt="You can optionally remove database data">
 
 Click one of the following:
 
@@ -32,5 +33,5 @@ Click one of the following:
 
 	You can click **Back** to back up the database first if you did not do so already.
 
-Continue with [Step 4. Uninstall]({{page.baseurl}}comp-mgr/extens-man/extensman-uninst-final.html)
+Continue with [Step 4. Uninstall]({{ page.baseurl }}/comp-mgr/extens-man/extensman-uninst-final.html)
 

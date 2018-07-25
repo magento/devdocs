@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Troubleshooting 503 errors
@@ -8,6 +7,10 @@ menu_order: 500
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/tshoot-varnish-503.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Backend Fetch Failed errors
@@ -27,6 +30,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 	*	CentOS 6: `/etc/sysconfig/varnish`
 	*	CentOS 7: `/etc/varnish/varnish.params`
+	*	Debian: `/etc/default/varnish`
 	*	Ubuntu: `/etc/default/varnish`
 
 2.	Search for the `http_resp_hdr_len` parameter.
@@ -63,10 +67,10 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
-This situation could happen because the default health check has a `timeout` value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is consindered unhealthy. Varnish serves stale content when the server is unhealthy.
+This situation could happen because the default health check has a `timeout` value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is considered unhealthy. Varnish serves stale content when the server is unhealthy.
 
 Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again).  However, you can use the following command to enable cache:
 
-`bin/magento cache:enable`
+    bin/magento cache:enable
 
-For more information about using the command line, see <a href="{{page.baseurl}}config-guide/cli/config-cli-commands.html">Get started with command-line configuration</a>.
+For more information about using the command line, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.

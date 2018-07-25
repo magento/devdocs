@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: List of REST endpoints by module
@@ -7,6 +6,8 @@ menu_title: List of REST endpoints by module
 menu_order: 3
 version: 2.1
 github_link: rest/list.md
+functional_areas:
+  - Integration
 ---
 
 ## List of REST endpoints for {{site.data.var.ee}} {#listee}
@@ -74,7 +75,7 @@ Additions since 2.0 are marked with asterisks (*).
 
 The {{site.data.var.ce}} REST APIs are available on all installations.
 
-Additions since 2.0 are marked with asterisks (*).
+Additions since 2.0 are marked with asterisks (*). Additions since 2.2 are marked with hash characters (#).
 
 ### Backend
 
@@ -240,6 +241,7 @@ Additions since 2.0 are marked with asterisks (*).
     PUT    /V1/customers/me/password
     GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
     PUT    /V1/customers/password
+    #POST  /V1/customers/resetPassword
     GET    /V1/customers/:customerId/confirm
     POST   /V1/customers/confirm
     PUT    /V1/customers/validate

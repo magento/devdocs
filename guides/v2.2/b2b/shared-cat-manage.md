@@ -1,20 +1,23 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Manage shared catalogs
 menu_title: Manage shared catalogs
 menu_order: 22
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
 github_link: b2b/shared-cat-manage.md
+functional_areas:
+  - B2B
+  - Catalog
+  - Integration
 ---
 
 ## Manage custom shared catalogs
 
-{{site.data.var.b2b}} provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users. The merchant assigns a custom shared catalog to specific companies as configured by admin. There can only be one public catalog, and it cannot be deleted.
+{{site.data.var.b2b}} provides two types of shared catalog: public and custom. A public catalog is the default shared catalog. It is automatically displayed to all guest customers and to logged-in customers that are not company users. The seller assigns a custom shared catalog to specific companies as configured by admin. There can only be one public catalog, and it cannot be deleted.
 
 **Service name**
 
@@ -143,7 +146,7 @@ Not applicable
 
 The following search returns all the custom shared catalogs (`type = 0`) in the system.
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -191,6 +194,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{page.baseurl}}b2b/shared-catalog.html)
-* [Assign categories and products]({{page.baseurl}}b2b/shared-cat-product-assign.html)
-* [Assign companies]({{page.baseurl}}b2b/shared-cat-company.html)
+* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+* [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)
+* [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)

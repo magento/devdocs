@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Architectural Layers
 title: Domain layer
@@ -46,6 +45,6 @@ Your strategy for calling another module's domain-layer code is highly dependent
 
 ## Related topics {#related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>

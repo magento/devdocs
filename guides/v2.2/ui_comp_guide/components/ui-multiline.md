@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Multiline component
@@ -13,7 +12,7 @@ github_link: ui_comp_guide/components/ui-multiline.md
 The Multiline component is a collection of form elements that displays multiple fields of the same type. For example, the **Street Address** fields.
 
 ## Multiline configuration
-Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Extends all [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 Multiline-specific options:
 

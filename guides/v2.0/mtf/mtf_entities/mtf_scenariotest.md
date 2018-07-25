@@ -1,10 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Scenario test
-menu_title: Scenario test
-menu_order: 10
 version: 2.0
 github_link: mtf/mtf_entities/mtf_scenariotest.md
 ---
@@ -336,8 +332,8 @@ On the previous example the `clean()` method:
 
 <!-- LINKS DEFINITIONS -->
 
-[injectable test]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
+[injectable test]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
 [test case]: #test-case
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 [test scenario]: #test-scenario
 [test step]: #test-step

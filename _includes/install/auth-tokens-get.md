@@ -9,10 +9,10 @@ To create authentication keys:
 
 3.  Click **Access Keys** in the Marketplace tab.
 
-	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}common/images/cloud_access-key.png){:width="500px"}
+	![Get your secure access keys on Magento Marketplace]({{ site.baseurl }}/common/images/cloud_access-key.png){:width="500px"}
 4.  Click **Create a New Access Key**. Enter a specific name for the keys (e.g., the name of the developer receiving the keys) and click **OK**.
 
-5.  New public and private keys are now associated with your account that you can click to copy. Save this information or keep the page open when working with your Magento project. Use the **Public key** as your user name and the **Private key** as your password.
+5.  New public and private keys are now associated with your account that you can click to copy. Save this information or keep the page open when working with your Magento project. Use the **Public key** as your username and the **Private key** as your password.
 
 ### Manage your authentication keys
 You can also disable or delete authentication keys. For example, you can disable or delete keys for security reasons after someone leaves your organization.
@@ -27,5 +27,6 @@ You cannot delete or disable keys you created by signing in to your [magento.com
 2.	Click **My Account** at the top of the page.
 3.	Click **Account Settings** > **Downloads Access Token**.
 
-	![Access your keys]({{ site.baseurl }}common/images/connect_keys1.png){:width="200px"}
+	![Access your keys]({{ site.baseurl }}/common/images/connect_keys1.png){:width="200px"}
 4.	Click **Generate new token** to replace and disable an existing token.
+</div>

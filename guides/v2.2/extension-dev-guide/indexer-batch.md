@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Indexer optimization
@@ -29,7 +28,7 @@ The interface `BatchSizeManagementInterface` provides the ability to set the MEM
 {% highlight php %}
 namespace Magento\Framework\Indexer;
 
-use \Magento\Framework\DB\Adapter\AdapterInterface;
+use Magento\Framework\DB\Adapter\AdapterInterface;
 
 /**
  * Batch size manager can be used to ensure that MEMORY table has enough memory for data in batch.
@@ -81,7 +80,7 @@ cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magent
 catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
 catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\BatchSizeCalculator` | batchSizes['decimal'], batchSizes['source'] | 1000, 1000
 
-Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristcs:
+Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristics:
 
 * 10 websites
 * 10 store groups
@@ -89,7 +88,7 @@ Changing the batch size can help you optimize indexer running time. For example,
 * 300 tier prices
 * About 40,000 products (of which 254 are configurable)
 
-reducing the batch size for `catalog_product_price` indexer from 5000 to 1000 decreases the execution time from about 4 hours to less than 2 hours. You can experiement to determine the ideal batch size. In general, halving the batch size can decrease the indexer execution time.
+reducing the batch size for `catalog_product_price` indexer from 5000 to 1000 decreases the execution time from about 4 hours to less than 2 hours. You can experiment to determine the ideal batch size. In general, halving the batch size can decrease the indexer execution time.
 
 The following examples illustrate how to define a custom batch size for configurable products. Add these samples to your  `{Your_Module_Name}/etc/di.xml`.
 
@@ -139,5 +138,5 @@ The indexer table switching mechanism requires additional database storage.
 ### Related topics
 {:.no_toc}
 
-* [Indexing overview]({{page.baseurl}}extension-dev-guide/indexing.html)
-* [Adding a custom indexer]({{page.baseurl}}extension-dev-guide/indexing-custom.html)
+* [Indexing overview]({{ page.baseurl }}/extension-dev-guide/indexing.html)
+* [Adding a custom indexer]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: Third-party licenses
 menu_title: Magento Open Source third-party licenses
@@ -23,7 +22,7 @@ composer/composer |1.4.1| MIT|[Source](https://github.com/composer/composer)|[Li
 monolog/monolog |1.23.0| MIT|[Source](https://github.com/Seldaek/monolog)|[License](https://github.com/Seldaek/monolog/blob/master/LICENSE)
 oyejorge/less.php |1.7.0| Apache-2.0|[Source](https://github.com/oyejorge/less.php)|[License](https://github.com/oyejorge/less.php/blob/master/LICENSE)
 paragonie/random_compat | 2.0.10 | MIT | [Source](https://github.com/paragonie/random_compat) | [License](https://github.com/paragonie/random_compat/blob/master/LICENSE)
-pelago/emogrifier |0.1.1| MIT|[Source](https://github.com/jjriv/emogrifier)|[License](https://github.com/jjriv/emogrifier/blob/master/LICENSE)
+pelago/emogrifier |2.0.0| MIT|[Source](https://github.com/jjriv/emogrifier)|[License](https://github.com/jjriv/emogrifier/blob/master/LICENSE)
 tubalmartin/cssmin |4.1.0| BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|No license
 braintree/braintree_php |3.22.0| MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
 symfony/console|2.8.22|MIT|[Source](https://github.com/symfony/console)|[License](https://github.com/symfony/console/blob/master/LICENSE)
@@ -37,13 +36,13 @@ symfony/polyfill-mbstring|1.3.0|MIT|[Source](https://github.com/symfony/polyfill
 symfony/polyfill-php54 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php54)|[License](https://github.com/symfony/polyfill-php54/blob/master/LICENSE)
 symfony/polyfill-php55 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php55)|[License](https://github.com/symfony/polyfill-php55/blob/master/LICENSE)
 symfony/polyfill-php70 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php70)|[License](https://github.com/symfony/polyfill-php70/blob/master/LICENSE)
-symfony/polyfill-72 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-72)|[License](https://github.com/symfony/polyfill-72/blob/master/LICENSE)
+symfony/polyfill-php72 |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-php72)|[License](https://github.com/symfony/polyfill-php72/blob/master/LICENSE)
 symfony/polyfill-xml |1.4.0|MIT|[Source](https://github.com/symfony/polyfill-xml)|[License](https://github.com/symfony/polyfill-xml/blob/master/LICENSE)
 symfony/process |2.8.20| MIT|[Source](https://github.com/symfony/process)|[License](https://github.com/symfony/process/blob/master/LICENSE)
 symfony/stopwatch |3.3.2| MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml |2.8.20| MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 phpseclib/phpseclib |2.0.6| MIT|[Source](https://github.com/phpseclib/phpseclib)|[License](https://github.com/phpseclib/phpseclib/blob/master/LICENSE)
-tedivm/jshrink |1.1.0| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink |1.1.0| BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 sjparkinson/static-review |4.1.1| MIT|[Source](https://github.com/sjparkinson/static-review)|[License](https://github.com/sjparkinson/static-review/blob/master/LICENSE)
 ramsey/uuid|3.6.1|MIT|[Source](https://github.com/ramsey/uuid) | [License](https://github.com/ramsey/uuid/blob/master/LICENSE)
 phpunit/phpunit |4.1.0| BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpunit)|[License](https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE)
@@ -55,7 +54,7 @@ lusitanian/oauth |0.8.10| MIT|[Source](https://github.com/Lusitanian/PHPoAuthLib
 sebastian/phpcpd|2.0.4|BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpcpd)|[License](https://github.com/sebastianbergmann/phpcpd/blob/master/LICENSE)
 trentrichardson/jquery-timepicker-addon|1.4.3|MIT|[Source](https://github.com/trentrichardson/jQuery-Timepicker-Addon)|[License](https://github.com/trentrichardson/jQuery-Timepicker-Addon/blob/master/LICENSE-MIT)
 jquery|1.11.0 |MIT|[Source](https://jquery.com/)|[License](https://jquery.org/license/)
-blueimp/jquery-file-upload|5.6.14|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://github.com/blueimp/jQuery-File-Upload/blob/master/LICENSE)
+blueimp/jquery-file-upload|5.6.14|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://github.com/blueimp/jQuery-File-Upload/blob/master/LICENSE.txt)
 jqueryui|1.10.4|MIT|[Source](https://github.com/jquery/jqueryui.com)|[License](https://github.com/jquery/jqueryui.com/blob/master/LICENSE.txt)
 bootstrap|3.1.0 |MIT|[Source](http://getbootstrap.com)|[License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 tiny_mce |3.4.7|GNU LGPL 2.1|[Source](https://www.tinymce.com)|[License](https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT)
@@ -79,7 +78,7 @@ sebastian/version |1.0.6| BSD-3-Clause|[Source](https://github.com/sebastianberg
 seld/cli-prompt|1.0.3| MIT|[Source](https://github.com/Seldaek/cli-prompt)|[License](https://github.com/Seldaek/cli-prompt/blob/master/LICENSE)
 seld/jsonlint |1.6.1| MIT|[Source](https://github.com/Seldaek/jsonlint)|[License](https://github.com/Seldaek/jsonlint/blob/master/LICENSE)
 seld/phar-utils|1.0.1|MIT|[Source](https://github.com/Seldaek/phar-utils)|[License](https://github.com/Seldaek/phar-utils/blob/master/LICENSE)
-Cm_RedisSession ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+Cm_RedisSession ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession#license) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
 knockoutjs|3.3.0 |MIT|[Source](http://knockoutjs.com/downloads/index.html)|[Source](https://github.com/knockout/knockout/blob/master/LICENSE)

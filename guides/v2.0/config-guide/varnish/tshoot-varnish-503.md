@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors
@@ -8,6 +7,10 @@ menu_order: 500
 menu_node:
 version: 2.0
 github_link: config-guide/varnish/tshoot-varnish-503.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
@@ -25,6 +28,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 	*	CentOS 6: `/etc/sysconfig/varnish`
 	*	CentOS 7: `/etc/varnish/varnish.params`
+	*	Debian: `/etc/default/varnish`
 	*	Ubuntu: `/etc/default/varnish`
 
 2.	Search for the `http_resp_hdr_len` parameter.

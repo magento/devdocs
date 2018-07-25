@@ -10,4 +10,5 @@ Storefront and Admin:
 *	Safari Mobile for iPhone 4 or later; iOS 7 or later, for mobile storefront
 *	Chrome for mobile latest&ndash;1 (Android 4 or later) for mobile storefront
 
-where _latest&ndash;1_ means one major version earlier than the latest released version.
+Here, _latest&ndash;1_ means one major version earlier than the latest released version.
+</div>

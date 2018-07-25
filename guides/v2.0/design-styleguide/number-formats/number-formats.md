@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Writing and Content
 title: Admin Number Formats
@@ -42,7 +41,7 @@ For more number formats, use the Associated Press (AP) Stylebook on first refere
 
 ## Addresses
 
-See [Addresses]({{page.baseurl}}design-styleguide/content-formats/content-formats.html#addresses) section in Content Formats.
+See [Addresses]({{ page.baseurl }}/design-styleguide/content-formats/content-formats.html#addresses) section in Content Formats.
 
 ## Percentages
 
@@ -159,4 +158,4 @@ This is how we write about money:
 
 * Do not indicate standard or daylight time. ... *Correct example:* Central Time is written as "CT", not "CST" or "CDT".
 
-* Do not use military time. ... *Inorrect example:* Using 19:40, instead of 7:40pm.
+* Do not use military time. ... *Incorrect example:* Using 19:40, instead of 7:40pm.

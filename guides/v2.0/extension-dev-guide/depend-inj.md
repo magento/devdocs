@@ -1,52 +1,54 @@
 ---
-layout: default
 group: extension-dev-guide
-subgroup: 99_Module Development
 title: Dependency injection
 menu_title: Dependency injection
-menu_order: 5
 version: 2.0
 github_link: extension-dev-guide/depend-inj.md
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
 
-## Dependency injection overview
+Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.
 
-Magento 2 uses *dependency injection* as an alternative to the Magento 1.x `Mage` class.
-[Dependency injection](https://en.wikipedia.org/wiki/Dependency_injection){:target="_blank"} is the concept of the external environment injecting dependencies for an object instead of that object manually creating them internally.
+Dependency Injection is a design pattern that allows an object A to declare its dependencies to an external object B that supplies those dependencies.
+The dependencies declared by A are usually class interfaces and the dependencies B provides are the concrete implementations for those interfaces.
 
-In simple terms, when object A requires object or value B to fulfill a function, then B is a dependency of A.
+This allows for loose coupling of code because object A no longer needs to be concerned with initializing its own dependencies.
+Object B decides which implementations to provide to object A based on a configuration or desired behavior.
+
+This is an important concept to understand for extension developers because it forms the basis of how Magento composes its classes.
 
 ## Dependency inversion principle
 
-When using dependency injection, we encourage you to follow the  [dependency inversion principle](http://www.oodesign.com/dependency-inversion-principle.html){:target="_blank"}, a coding principle that stipulates you use abstractions to reduce code dependencies.
-This means that high level classes should use the interface of a low level class instead of working with it directly.
+Follow the [dependency inversion principle] and use abstractions in your code to reduce code dependencies.
+This means that your high level classes should use the interfaces of low level classes instead of working with them directly.
 
-The [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file maps an interface dependency to a preferred implementation class.
+Using interfaces in your code reduces the risk of incompatibility bugs when Magento changes the underlying implementation of those interfaces.
+It also lets you focus on what a class does instead of how its implemented.
+
+Since the Magento codebase follows this principle, you can map your own implementation of a Magento interface to a dependent class or service using the [`di.xml`] file.
 
 ## Object manager
 
-The [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) is a Magento service class that helps instantiate objects at the beginning of the bootstrapping process.
+The [`ObjectManager`] is a Magento service class that instantiates objects at the beginning of the bootstrapping process.  
 
-During class construction, the object manager injects the appropriate dependency as defined in the [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html) file.
+Magento uses class constructor signatures to retrieve information about an object's constructor dependencies.
+When a class is constructed, the object manager injects the class's dependencies, defined in the `di.xml` file, into the class constructor.
 
-## Constructor signature dependencies
-
-Magento uses class constructor signatures, not [DocBlock]({{page.baseurl}}coding-standards/docblock-standard-general.html) annotations, to retrieve information about what dependencies to pass to an object's constructor.
-If your code follows the dependency inversion principle and uses interfaces instead of specific implementations, you do not have to worry about class definitions.
+Since the object manager provides its service indirectly, your class should not depend on the `ObjectManager` object itself.
+The only exceptions are custom factories with complex logic and integration tests that need environment setup.
 
 ## Compiling dependencies
-A [code compiler tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) collects all the dependency information in a class and stores that information in files.
-During class creation, the `ObjectManager` uses this information to create concrete objects in the application.
 
-In other words, the compiler helps generate all non-existing {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} service classes ([proxies]({{page.baseurl}}extension-dev-guide/proxies.html), [factories]({{page.baseurl}}extension-dev-guide/factories) and [interceptors]({{page.baseurl}}extension-dev-guide/plugins.html)) declared in code or configuration.
+Magento uses its [code compiler tool] to collect all class dependency information and stores it in files.
+During the class creation process, the object manager uses this information to create concrete objects in the application.
 
+Service classes that do not exist in the codebase, such as [proxies], [factories], and [interceptors] that are declared in code or in a configuration, are generated with the help of the compiler.
 
 ## Injection types used in Magento
 
-This section explains the two dependency injection types used in Magento using the following example:
+The following code sample highlights the two types of dependency injections used in Magento:
 
-{% highlight php startinline=true %}
+``` php
 namespace Magento\Backend\Model\Menu;
 class Builder
 {
@@ -67,56 +69,66 @@ class Builder
         // processCommand Code
     }
 }
-{% endhighlight %}
+```
 
 ### Constructor injection
 
-Magento uses constructor injection to provide dependencies through an object's class constructor.
-In the preceding example, `$menuItemFactory` and `$menu` are the dependencies provided to the class through its constructor.
+In the code sample, the `Builder` class declares its dependency on the `Factory` and `Menu` classes in its constructor.
+Magento uses the `di.xml` file to determine which implementations to inject into the `Builder` class.
+
+#### Optional dependencies
+
+Optional dependencies are objects that your class uses for specific methods and scenarios.
+If a class is expensive to instantiate and your class does not always use it, consider using a [proxy].
 
 You must use constructor dependency injection for all optional and required dependencies of an object.
 
-<div class="bs-callout bs-callout-info" id="proxy-info" markdown="1">
-  **Optional dependencies**\\
-  Optional dependencies are the objects that your class uses for specific methods and scenarios.
-  If your class does not always use these classes and instantiating them is expensive, consider using a [proxy]({{page.baseurl}}extension-dev-guide/proxies.html).
-</div>
-
 ### Method injection
 
-Method injection is when an object specifies a dependency in one of its methods instead of its constructor.
-In the example, above `$command` is the dependency passed into the class through the `processCommand` method.
+In the code sample, the `Builder` class is also dependent on the `CommandAbstract` class for its `processCommand()` method.
 
-When an object needs to act on a dependency, you can use method injection.
+Method injection involves passing in a dependency as a method parameter to use it in the class logic.
+When an object needs to perform actions on a dependency that cannot be injected, use method injection.
 
-## Injectable and newable objects
+## Dependency types
 
-**Injectable:** Service objects that are singletons obtained through dependency injection.
+### Injectable
+
+Injectable objects are singleton service objects obtained through dependency injection.
 The object manager uses the configuration in the `di.xml` file to create these objects and inject them into constructors.
 
-**Newable/non-injectable:** Objects obtained by creating a new class instance every time.
-Transient objects, such as those that require external input from the user or database, fall into this {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}.
-Attempts to inject these objects produce either an error that the object could not be created or an incorrect object that is incomplete.
+Injectable objects can depend on other injectable objects in their constructor as long as the dependency chain does not circle back to the original injectable object.
 
-For example, you cannot use a model object such as [`app/code/Magento/Catalog/Model/Product.php`]({{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php){:target="_blank"} for dependency injection.
-You need to provide a product id or explicitly request a new, empty instance of that object, and since you cannot specify this in the constructor signature, Magento cannot inject the object.
+### Newable/non-injectable
 
-## Rules for using dependency injection
+Newable, or non-injectable, objects are objects that cannot be injected.
+They are obtained by creating a new class instance every time they are needed.
 
-* Injectable objects may request other dependencies in their constructors if those objects are also injectable, but make sure you are not introducing circular dependencies.
-* If an injectable object needs to produce newable objects, it must ask for a [factory]({{page.baseurl}}extension-dev-guide/factories.html) in its constructor since factories are injectable.
-* If an injectable object needs to perform some actions on newable object, it must receive that object as a function method argument.
-* You can create newable objects in services with object [factories]({{page.baseurl}}extension-dev-guide/factories.html) or you can pass them in as method parameters.
-* Newable objects should not hold a field reference to an injectable object nor should they request one in their constructor. 
-* Classes must not ask for the ObjectManager itself to be passed as a constructor dependency. The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} to this rule are custom factories with more elaborate needs than the autogenerated factories can provide.
-* The ObjectManager may be used in integration tests to arrange the test environment.
+Transient objects, such as those that require external input from the user or database, fall into this category.
+If you attempt to inject these objects, you will either receive an incomplete, incorrect object or an error that the object could not be created.
+
+For example, you cannot depend on a model object, such as [`Product`], because you need to provide a product id or explicitly request a new, empty instance to get a `Product` object. 
+Since you cannot specify this data in the constructor signature, Magento cannot inject this object.
+
+To get around this limitation, injectable objects can depend on [factories] that produce newable objects.
 
 **Related topics**
 
-*	[The `di.xml` file]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html)
-*	[ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-*	[Plugins]({{page.baseurl}}extension-dev-guide/plugins.html)
-*	[Routing]({{page.baseurl}}extension-dev-guide/routing.html)
-*	[Magento application initialization and bootstrap]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html)
-* [Module Dependencies]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_depend.html)
-*	[Programming concepts]({{page.baseurl}}extension-dev-guide/api-concepts.html)
+*	[The `di.xml` file]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html)
+*	[ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+*	[Plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html)
+*	[Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
+*	[Magento application initialization and bootstrap]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
+* [Module Dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
+*	[Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
+
+[Dependency Injection]: https://en.wikipedia.org/wiki/Dependency_injection
+[dependency inversion principle]: http://www.oodesign.com/dependency-inversion-principle.html
+[`di.xml`]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html
+[`ObjectManager`]: {{ page.baseurl }}/extension-dev-guide/object-manager.html
+[code compiler tool]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html
+[proxies]: {{ page.baseurl }}/extension-dev-guide/proxies.html
+[proxy]: {{ page.baseurl }}/extension-dev-guide/proxies.html
+[factories]: {{ page.baseurl }}/extension-dev-guide/factories.html
+[interceptors]: {{ page.baseurl }}/extension-dev-guide/plugins.html
+[`Product`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php

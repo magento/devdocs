@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: Versioning
 title: Module version dependencies
@@ -19,7 +18,7 @@ To achieve this, all third-party modules must obey the following rules:
 
 1. You must specify the dependency on all modules listed in the 'require' section of your module's `composer.json` file.
 2. Do not specify a dependency on meta packages (e.g. 'product-community-edition').
-3. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
+3. Specify a module's MAJOR and optionally MINOR version number if you use any of that module's customization points.
 4. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
 
 ## Service Provider Interfaces
@@ -82,7 +81,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | **Javascript class** (marked with `@api`)                   | Inject in a constructor                                                                                 | MAJOR              |
 |                                                             | Extend from a class                                                                                     | MINOR              |
 |                                                             | Override a method                                                                                       | MINOR              |
-|                                                             | Subscribe to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} | MINOR              |
+|                                                             | Subscribe to an event  | MINOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **Virtual Type**                                            | Configure a virtual type in the `di.xml` file as a class dependency                                     | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |

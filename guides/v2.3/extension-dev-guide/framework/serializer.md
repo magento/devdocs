@@ -1,0 +1,1 @@
+../../../v2.2/extension-dev-guide/framework/serializer.md

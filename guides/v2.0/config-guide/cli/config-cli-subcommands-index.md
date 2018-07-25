@@ -1,24 +1,25 @@
 ---
-layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Manage the indexers
 menu_title: Manage the indexers
-menu_node: 
+menu_node:
 menu_order: 90
 version: 2.0
 github_link: config-guide/cli/config-cli-subcommands-index.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
+{% include config/cli-intro.md %}
 
-<h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
-To view the list of indexers to use in the commands discussed in this topic, enter
+## View a list of indexers
+To view a list of all indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 The list displays as follows:
 
@@ -31,22 +32,22 @@ The list displays as follows:
 	catalogrule_product                      Catalog Product Rule
 	catalogsearch_fulltext                   Catalog Search
 
-<h2 id="config-cli-subcommands-index-status">View indexer status</h2>
-This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).
+## View indexer status
+Use this command to view the status of all indexers or specific indexers. For example, find out if an indexer needs to be reindexed.
 
 Command options:
 
-	magento indexer:status [indexer]
+	bin/magento indexer:status [indexer]
 
-where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view status of all indexers.
+Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to view the status of all indexers.
 
-To view the list of indexers, enter
+To list all indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 A sample follows:
 
-	magento indexer:status
+	bin/magento indexer:status
 
 Sample result:
 
@@ -59,29 +60,26 @@ Sample result:
 	Catalog Product Rule:                              Reindex required
 	Catalog Search:                                    Reindex required
 
-Reindexing is discussed in the next section.
+## Reindex {#config-cli-subcommands-index-reindex}
+Use this command to reindex all or selected indexers one time only.
 
-<h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
-This command enables you to reindex all or selected indexers one time only.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command reindexes one time only. To keep indexers up-to-date, you must set up a <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg">cron job</a>.</p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
 </div>
 
 Command options:
 
-	magento indexer:reindex [indexer]
+	bin/magento indexer:reindex [indexer]
 
-where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
+Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to reindex all indexers.
 
-To view the list of indexers, enter
+To view a list of all indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 A sample follows:
 
-	magento indexer:reindex
+	bin/magento indexer:reindex
 
 Sample result:
 
@@ -94,29 +92,26 @@ Sample result:
 	Catalog Product Rule index has been rebuilt successfully in <time>
 	Catalog Search index has been rebuilt successfully in <time>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.</p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.
 </div>
 
-<h2 id="config-cli-subcommands-index-conf">Configure indexers</h2>
-This command enables you to set the following indexer options:
+## Configure indexers
+Use this command to set the following indexer options:
 
-*	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
-*	Update by schedule (`schedule`): Data is indexed according to the schedule set by your Magento cron job.
+-   **Update on save (`realtime`):** Indexed data is updated as soon as a change is made in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. (For example, the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} products index is reindex after products are added to a category in the Admin.) This is the default.
+-   **Update by schedule (`schedule`):** Data is indexed according to the schedule set by your Magento cron job.
 
-[More information about indexing]({{ page.baseurl }}extension-dev-guide/indexing.html)
+[Learn more about indexing]({{ page.baseurl }}/extension-dev-guide/indexing.html)
 
-<h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
-To view the current indexer configuration, enter
+### Display the current configuration
+To view the current indexer configuration:
 
-	magento indexer:show-mode [indexer]
+	bin/magento indexer:show-mode [indexer]
 
-where `[indexer]` is a space-separated list of indexers or omit `[indexer]` to show all indexers' modes.
+Where `[indexer]` is a space-separated list of indexers. Omit `[indexer]` to show all indexers' modes. For example, to show the mode of all indexers:
 
-For example, to show the mode of all indexers:
-
-	magento indexer:show-mode 
+	bin/magento indexer:show-mode
 
 Sample result:
 
@@ -129,24 +124,24 @@ Sample result:
 	Catalog Product Rule:                              Update on Save
 	Catalog Search:                                    Update on Save
 
-<h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
-To specify the indexer configuration, enter
+### Configure indexers
+To specify the indexer configuration:
 
-	magento indexer:set-mode {realtime|schedule} [indexer]
+	bin/magento indexer:set-mode {realtime|schedule} [indexer]
 
-where
+Where:
 
-`realtime` sets the selected indexers to update on save.
-`schedule` sets the specified indexers to save according to the cron schedule.
-`indexer` is a space-separated list of indexers or omit `indexer` to configure all indexers the same way.
+-   **`realtime`** - Sets the selected indexers to update on save.
+-   **`schedule`** - Sets the specified indexers to save according to the cron schedule.
+-   **`indexer`** - Is a space-separated list of indexers. Omit `indexer` to configure all indexers the same way.
 
-To view the list of indexers, enter
+To view the list of indexers:
 
-	magento indexer:info
+	bin/magento indexer:info
 
 For example, to change only the category products and product categories indexers to update on schedule, enter
 
-	magento indexer:set-mode schedule catalog_category_product catalog_product_category
+	bin/magento indexer:set-mode schedule catalog_category_product catalog_product_category
 
 Sample result:
 
@@ -155,15 +150,15 @@ Sample result:
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+-   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

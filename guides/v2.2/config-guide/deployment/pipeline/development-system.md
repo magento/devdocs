@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 045_pipeline
 title: Development System Setup
@@ -8,14 +7,19 @@ menu_node:
 menu_order: 1300
 version: 2.2
 github_link: config-guide/deployment/pipeline/development-system.md
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 You can have any number of development systems, provided the following is true of all of them:
 
 *	They all run Magento 2.2 or later
 *	All Magento code is under source control in the same repository as the build and production systems
-*	Each development system should use either [default mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-default) or [developer mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-developer)
-*	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
+*	Each development system should use either [default mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode) or [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode)
+*	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 *	Make sure all of the following are _excluded_ from source control:
 
 	*	`vendor` directory (and subdirectories)
@@ -24,7 +28,7 @@ You can have any number of development systems, provided the following is true o
 	*	`app/etc/env.php` file
 *	Make sure `app/etc/config.php` is _included_ in source control
 
-If you use Git, Magento's `.gitignore` provides most of the preceding. See the [`.gitignore` reference]({{ page.baseurl }}config-guide/prod/config-reference-gitignore.html) for more information.
+If you use Git, Magento's `.gitignore` provides most of the preceding. See the [`.gitignore` reference]({{ page.baseurl }}/config-guide/prod/config-reference-gitignore.html) for more information.
 
 #### Next step
-[Set up a build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)
+[Set up a build system]({{ page.baseurl }}/config-guide/deployment/pipeline/build-system.html)

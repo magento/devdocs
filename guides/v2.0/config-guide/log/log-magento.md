@@ -1,13 +1,16 @@
 ---
-layout: default
-group: config-guide 
+group: config-guide
 subgroup: 500_log
 title: Magento logging in more detail
 menu_title: Magento logging in more detail
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: config-guide/log/log-magento.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 
@@ -32,7 +35,7 @@ Log messages can be processed in many different ways. For example, you can store
 Other channels can have a different set of handlers and logic.
 
 ## Get started with logging {#config-log-start}
-To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. One way to do that is illustrated in our [database logging example]({{ page.baseurl }}config-guide/log/log-db.html).
+To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. One way to do that is illustrated in our [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
 
 Another way follows:
 
@@ -62,4 +65,4 @@ The preceding example shows that `SomeModel` receives a `\Psr\Log\LoggerInterfac
 [RFC 5424](https://tools.ietf.org/html/rfc5424){:target="_blank"} defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).
 
 #### Next
-[Example&mdash;logging database activity]({{ page.baseurl }}config-guide/log/log-db.html)
+[Example&mdash;logging database activity]({{ page.baseurl }}/config-guide/log/log-db.html)

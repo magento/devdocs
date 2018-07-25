@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 07_conf
 title: Magento's deployment configuration
@@ -8,6 +7,10 @@ menu_order: 1
 version: 2.2
 github_link: config-guide/config/config-php.md
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 
@@ -31,7 +34,7 @@ Together, `config.php` and `env.php` are referred to as Magento's _deployment co
 The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 </div>
 
-Unlike other [module configuration files]({{page.baseurl}}config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
+Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
 
 ## Details about the deployment configuration {#config-php-contents}
@@ -53,8 +56,8 @@ The following sections discusses the structure and contents of the deployment co
 
 Examples:
 
-* Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
-* Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
+* Uninstall components: <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
+* Enable or disable components: <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
 * Component Manager: coming soon
 * System Upgrade: coming soon
 
@@ -134,7 +137,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache</code></td>
       <td><pre>__/cache
  |__/frontend
-   |__/See <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">frontend options</a></pre></td>
+   |__/See <a href="{{ page.baseurl }}/config-guide/cache/cache-types.html">frontend options</a></pre></td>
     </tr>
     <tr>
       <td>Installation date</td>
@@ -153,7 +156,7 @@ The following table provides details about each `env.php` segment and its struct
       <td><code>cache_types</code></td>
       <td><pre>__/cache_types
  |-- &lt;enumerated {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types></pre></td>
-    </tr>     
+    </tr>
     <tr>
             <td>Message queues</td>
             <td><code>queue</code></td>
@@ -166,9 +169,9 @@ The following table provides details about each `env.php` segment and its struct
         |-- virtualhost
         |-- ssl
         </pre></td>
-          </tr>    
+          </tr>
   </tbody>
 </table>
 
 ## Related topic
-<a href="{{page.baseurl}}config-guide/config/config-files.html">Module configuration files</a>
+<a href="{{ page.baseurl }}/config-guide/config/config-files.html">Module configuration files</a>

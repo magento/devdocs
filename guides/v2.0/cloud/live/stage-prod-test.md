@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 160_deploy
 title: Test deployment
@@ -8,22 +7,18 @@ menu_order: 60
 menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-test.md
+functional_areas:
+  - Cloud
+  - Testing
+  - Deploy
 ---
 
 #### Previous step:
-[Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Migrate data and static files]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html)
 
-When your code, database, and data is successfully migrated to Staging or Production, use the URLs in your onboarding document to test your application. The onboarding document is available in your Magento Commerce (Cloud) OneDrive account.
+When your code, files, and data is successfully migrated to Staging or Production, use the environment URLs to test your site(s) and store(s). For a list of your URLs, see [Starter]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) and [Pro]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#pro-urls) access information.
 
-The URLs have the following format:
-
-*	Staging: `http[s]://staging.<domain>.<project ID>.ent.magento.cloud`
-*	Production:
-
-	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
-	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
-
-	The production URL is used by the content delivery network (CDN).
+The following information provides information on verifying logs, testing Fastly configurations, user acceptance testing (UAT), and more.
 
 ## Log files {#logs}
 If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the `var/log` directory.
@@ -32,7 +27,7 @@ The deployment log is located in `/var/log/platform/<prodject ID>/post_deploy.lo
 
 When accessing logs in Production, you may need to SSH into each of the three nodes to locate the logs.
 
-For more information, see [View logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html)
+For more information, see [View logs for troubleshooting]({{ page.baseurl }}/cloud/trouble/environments-logs.html)
 
 ## Check the code base {#codebase}
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
@@ -41,16 +36,22 @@ Verify your `master` code base correctly deployed to Staging and Production envi
 Check the Magento configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the `master` branch in Integration, Staging, and Production.
 
 ## Check Fastly caching {#fastly}
-Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
+Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
 
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
 
-For example:
+The following examples use Pro URLs. You can use any URL with the `dig` command.
 
 * Staging: `dig http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud`
 * Production: `dig http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
-Next, use a curl command to verify X-Magento-Tags exist and additional header information. The command format differs for Staging and Production:
+Next, use a `curl` command to verify X-Magento-Tags exist and additional header information. The format for the command is:
+
+	curl http[s]://<full site URL> -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1
+
+For Starter, enter the full site URL from your environment [Access info]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html#starter-urls) in the command to view the headers.
+
+For Pro Staging and Production, the command differs per server:
 
 * Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 * Production:
@@ -58,7 +59,7 @@ Next, use a curl command to verify X-Magento-Tags exist and additional header in
 	* The load balancer: `curl http[s]://<your domain>.c.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 	* A direct Origin node: `curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
 
-After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`  You can also add `--resolve` if your live URL isn't set up with DNS.
+After you are live, you can also check your live site: `curl https://<your domain> -k -vo /dev/null -HFastly-Debug:1`. You can also add `--resolve` if your live URL is not set up with DNS.
 
 Check the returned response headers and values:
 
@@ -78,10 +79,10 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching won't work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
+Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
 </div>
 
-The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}cloud/trouble/trouble_fastly.html).
+The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html).
 
 ## Complete UAT testing {#uat-testing}
 Complete User Acceptance Testing (UAT) on Staging and Production. The following tests are a quick list of possible tasks and areas to test as a Merchant and Customer. Your list may be longer and include additional tests for custom modules, extensions, and 3rd party integrations. When testing, use desktops, laptops, and mobile devices.
@@ -150,7 +151,7 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 <li>Check all themes and assets load correctly</li>
 <li>Verify CSS displays correctly, including responsive media sizes</li>
 <li>Check Terms & Conditions, refund policy, and other policy information</li>
-<li>Check contant information, links, and more about your company</li>
+<li>Check contact information, links, and more about your company</li>
 <li>Search for products and content, check filtering of results</li>
 <li>Verify the footer block and top navigation blocks</li>
 <li>Test the 404 and Maintenance pages</li>
@@ -201,17 +202,20 @@ Before launching, we highly recommend performing extensive traffic and performan
 
 Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
 
-We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/develop/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/2.0/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
 
 For best results, we recommend the following tools:
 
-* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simiulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
-* [Blackfire]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
+* [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
 * [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
+## Set up Magento Security Scan Tool {#security-scan}
+We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool]({{ page.baseurl }}/cloud/live/live.html#security-scan).
+
 #### Related topic
-* [Go live and launch]({{ page.baseurl }}cloud/live/live.html)
-* [Go live checklist]({{ page.baseurl }}cloud/live/go-live-checklist.html)
-* [Launch steps]({{ page.baseurl }}cloud/live/launch-steps.html)
+* [Go live and launch]({{ page.baseurl }}/cloud/live/live.html)
+* [Go live checklist]({{ page.baseurl }}/cloud/live/go-live-checklist.html)
+* [Launch steps]({{ page.baseurl }}/cloud/live/launch-steps.html)

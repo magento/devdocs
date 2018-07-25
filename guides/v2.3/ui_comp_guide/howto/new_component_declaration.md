@@ -1,0 +1,1 @@
+../../../v2.2/ui_comp_guide/howto/new_component_declaration.md

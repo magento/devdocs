@@ -4,7 +4,7 @@ You must create an SSH key pair on every machine and workspace you and your team
 
 The SSH keys require the following:
 
-* Set up SSH keys as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+* Set up SSH keys as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 * Create the keys using the email address used for the GitHub account.
 
 For more information on SSH keys, see the following:
@@ -13,7 +13,7 @@ For more information on SSH keys, see the following:
 *	[Manually generating your SSH key in Windows](https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows){:target="_blank"}
 *	[ssh-keygen man page](http://linux.die.net/man/1/ssh-keygen){:target="_blank"}
 
-### Locate an existing SSH key pair
+## Locate an existing SSH key pair {#existing}
 An existing SSH key pair is typically located in the `.ssh` subdirectory of the user's home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.
 
 You can quickly verify if you have SSH keys by entering commands using terminal access.
@@ -32,7 +32,7 @@ If you already have SSH keys, continue to:
 * [Add a public SSH key to your Magento account](#ssh-add-to-account) section
 * [Add your SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
-### Create a new SSH key pair {#ssh-create-new-key-pair}
+## Create a new SSH key pair {#ssh-create-new-key-pair}
 Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
 
 To create an SSH key pair:
@@ -76,7 +76,7 @@ To create an SSH key pair:
 
 6. [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
 
-#### Test the SSH keys
+### Test the SSH keys {#test}
 
 After adding the SSH keys, test the SSH connection to GitHub:
 
@@ -89,18 +89,19 @@ After adding the SSH keys, test the SSH connection to GitHub:
 3. If successful, you should receive a success message. If you receive a permission denied error, see [Error: Permission denied (publickey)](https://help.github.com/articles/error-permission-denied-publickey) troubleshooting on GitHub.
 
 
-### Add a public SSH key to your Magento account {#ssh-add-to-account}
+## Add a public SSH key to your Magento account {#ssh-add-to-account}
 You can add SSH keys to your account in any of the following ways:
 
 *	Using the [{{site.data.var.ece}} CLI](#add-key-cli)
 *	Using the [{{site.data.var.ece}} Web Interface](#add-key-web)
 
-#### Add a key using the CLI {#add-key-cli}
+### Add a key using the CLI {#add-key-cli}
 To add an SSH key using the CLI:
 
-1.	If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
+1.	Open a terminal application on your local.
+2.	If you haven't done so already, log in (or switch to) the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) to the server on which your SSH keys are located.
 
-2.	Log in to your project:
+3.	Log in to your project:
 
 		magento-cloud login
 
@@ -108,28 +109,27 @@ To add an SSH key using the CLI:
 
 		magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
 
-#### Add a key using the Web Interface {#add-key-web}
-To add an SSH key using the Web Interface:
+#### Add a key using the Project Web Interface {#add-key-web}
+You will select and add your SSH public key to each environment in your account.
+
+* Starter: Add to Master (Production) and any environments you create by branching from Master
+* Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.
+
+To add an SSH key using the Project Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
 
 	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key){:target="_blank"} to create them.
-2.	Using the link in your welcome e-mail, access your {{site.data.var.ece}} account.
+2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud){:target="_blank"}.
+3.	In your selected branch, an icon displays if you do not have an SSH key added.
 
-3.	Log in to your project using Bitbucket, GitHub, Google, or a user name and password.
+	![No SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-install.png)
+4.	Copy and paste the content of your public SSH key in the screen.
 
-	![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="350px"}
-4.	In the upper right corner of the page, click the **Account Settings** tab as the following figure shows.
+	![Add SSH key]({{ site.baseurl }}/common/images/cloud_ssh-key-add.png)
+5.	Follow the prompts on your screen to complete the task.
 
-	![Account settings]({{ site.baseurl }}common/images/cloud_acct-settings.png){:width="550px"}
-5.	Expand **SSH Keys**.
-
-6.	On the next page, click **Add a public key** as the following figure shows.
-
-	![Add an SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="550px"}
-7.	Follow the prompts on your screen to complete the task.
-
-### Set global Git variables
+## Set global Git variables
 Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.
 
 To set variables, enter the following commands on every workspace:
@@ -138,3 +138,4 @@ To set variables, enter the following commands on every workspace:
 	git config --global user.email <your e-mail address>
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
+</div>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: File Uploader Component
@@ -87,7 +86,7 @@ UI File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0
 
 <h2 id="example">Integration</h2>
 
-Here is an example of how File Uploader component integrates with <a href="{{page.baseurl}}ui-components/ui-form.html">Form</a> component:
+Here is an example of how File Uploader component integrates with <a href="{{ page.baseurl }}/ui-components/ui-form.html">Form</a> component:
 
 {% highlight xml %}
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">

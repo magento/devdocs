@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: jQuery widget coding standard
@@ -9,6 +8,8 @@ menu_order: 7
 version: 2.0
 github_link: coding-standards/code-standard-jquery-widgets.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-jquery-widgets.html
+functional_areas:
+  - Standards
 ---
 
 In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.

@@ -1,14 +1,17 @@
 ---
-layout: default
 group: config-guide
 subgroup: 03_Bootstrap
 title: Customize base directory paths (MAGE_DIRS)
 menu_title: Customize base directory paths (MAGE_DIRS)
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/bootstrap/mage-dirs.md
 redirect_from: /guides/v1.0/config-guide/bootstrap/mage-dirs.html
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>
@@ -19,7 +22,7 @@ Specify an associative array where keys are constants from <a href="{{ site.mage
 
 You can set `MAGE_DIRS` in any of the following ways:
 
-*	<a href="{{page.baseurl}}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
+*	<a href="{{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
 *	Use a custom entry point script such as the following:
 
 	{% highlight php startinline=true %}

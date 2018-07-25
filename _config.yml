@@ -1,31 +1,39 @@
 # Site settings
 encoding: "utf-8"
 title: Magento 2 Developer Documentation
+logo: DevDocs
 email: mailto:DL-Magento-Doc-Feedback@magento.com
 description: > # this means to ignore newlines until "baseurl:"
   Magento 2 Developer Documentation.
-baseurl: "/"
-# url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
+baseurl: ""
+url: "https://devdocs.magento.com" # the base hostname & protocol for your site
 # twitter_username: magento
 # github_username:  magento
+theme: devdocs
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # Version Switcher. Version numbers should be STRING
-version: "2.1"
+version: "2.2"
 versions:
    -
       name: "2.0"
-      url: guides/v2.0/
+      url: /guides/v2.0/
    -
       name: "2.1"
-      url: guides/v2.1/
+      url: /guides/v2.1/
    -
       name: "2.2"
-      url: guides/v2.2/
+      url: /guides/v2.2/
+   -
+      name: "2.3"
+      url: /guides/v2.3/
 
 # GitHub variables
-github: "https://github.com/magento/devdocs/tree/develop/guides/"
+github_repo: "https://github.com/magento/devdocs/"
+github_files: "https://github.com/magento/devdocs/blob/master/"
+github_link: true
+feedback_link: true
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
@@ -50,7 +58,7 @@ mage2200url: "https://github.com/magento/magento2/blob/2.2/"
 
 gdeurl23: "/guides/v2.3/"
 githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
-mage2300url: "https://github.com/magento/magento2/blob/develop/"
+mage2300url: "https://github.com/magento/magento2/blob/2.3-develop/"
 
 # Other variables
 namem2fedg: "Magento 2 Frontend Developer's Guide"
@@ -64,15 +72,28 @@ collections:
     output: true
     permalink: "/videos/:path/"
 
+plugins:
+  - jekyll-redirect-from
+
 
 defaults:
+
   -
     scope:
       path: ""
+    values:
+      layout: default
+      guide_version: "2.2"
+  -
+    scope:
+      path: "guides/m1x"
+    values:
+      layout: null
+  -
+    scope:
       type: videos
     values:
       layout: video
-      guide_version: "2.1"
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 
@@ -84,17 +105,17 @@ kramdown:
 
 incremental: false
 
-gems:
-  - jekyll-redirect-from
-
-
 algolia:
   application_id: 'E642SEDTHL'
   index_name: 'devdocs'
   api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
   lazy_update: false
-  excluded_files:
-    - guides/m1x
+  files_to_exclude:
+    - guides/m1x/**/*.html
+    - guides/m1x/**/*.md
     - swagger
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]
+google:
+  analytics: 'UA-66243208-1'
+
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]

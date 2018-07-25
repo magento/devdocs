@@ -1,10 +1,6 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Data set
-menu_title: Data set
-menu_order: 8
 version: 2.0
 github_link: mtf/mtf_entities/mtf_dataset.md
 ---
@@ -17,7 +13,7 @@ Each variation has constraints that are called at the end of the test flow.
 
 Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_dataset_dir.png"/></a>
+<a href="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"/></a>
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 
@@ -66,7 +62,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
-<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
 </tr>
 <tr>
 <td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
@@ -78,8 +74,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <td><code>price</code></td>
 <td>
 <ul>
-<li> <code>product/data/price/value</code> is processed by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{page.baseurl}}mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+<li> <code>product/data/price/value</code> is processed by a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
 </ul>
 </td>
 </tr>
@@ -255,13 +251,11 @@ Also, in similar cases you can use array type in a data set, like:
 
 For example, if a [test case] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate($price)
 {
     //
 }
-?>
 {%endhighlight php%}
 
 To assign it with `10` in one of the variations, add the following field to a variation of the corresponding data set:
@@ -274,13 +268,11 @@ To assign it with `10` in one of the variations, add the following field to a va
 
 In your test you often need to use injectable [fixture] instances. For example:
 
-{%highlight php%}
-<?php
+{%highlight php inline=true %}
 public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $product)
 {
     //
 }
-?>
 {%endhighlight php%}
 
 In this case, the ObjectManager sends data to the [InjectableFixture] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
@@ -366,13 +358,13 @@ If you want to extend variation in another module using [merging], you should us
 For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
 
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
  {%endhighlight xml%}
  
  the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
  
  {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
+ {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
   {%endhighlight xml%}
 
 <!-- LINK DEFINITIONS -->
@@ -381,13 +373,13 @@ For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfPr
 [extend an existing variation]: #extend_variation
 [merging]: #merge 
 
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[data source]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
-[fixture]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html
-[fixture field from its repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
+[constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[data source]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source
+[fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
+[fixture field from its repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_repositoy
 [InjectableFixture]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Fixture/InjectableFixture.php
-[repository]: {{page.baseurl}}mtf/mtf_entities/mtf_fixture-repo.html
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
+[repository]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
 
 <!-- ABBREVIATIONS -->
 

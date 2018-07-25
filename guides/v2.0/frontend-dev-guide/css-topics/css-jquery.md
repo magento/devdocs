@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS
 title: Using jQuery UI styles
@@ -7,9 +6,11 @@ menu_order: 5
 menu_title: Using jQuery UI styles
 version: 2.0
 github_link: frontend-dev-guide/css-topics/css-jquery.md
+functional_areas:
+  - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This topic provides an overview of how {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} UI styles are used in Magento out of the box, and how you can use them in a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
@@ -23,6 +24,6 @@ To use the jQuery styles, you need to define those which you need in your custom
 
 ## Recommended reading
 
-- [Define what styles you need to change]({{page.baseurl}}frontend-dev-guide/themes/debug-theme.html#debug-theme-style)
-- [Quick start guide to working with styles for a new theme]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_overview.html)
+- [Define what styles you need to change]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html#debug-theme-style)
+- [Quick start guide to working with styles for a new theme]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_overview.html)
 

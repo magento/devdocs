@@ -1,15 +1,16 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Manage company roles
 menu_title: Manage company roles
 menu_order: 14
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/roles.md
+functional_areas:
+  - B2B
 ---
 
 
@@ -23,7 +24,7 @@ Within a company, customers may have different job roles, levels of responsibili
 * Company user management
 * Company credit
 
-Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block accesss using web APIs, you must specify each resource individually.
+Each of these resources contains a hierarchy of other resources. When a Company Admin grants or blocks access to a resource from the store UI, the action applies to all sub-resources, unless explicitly overridden. However, if you grant or block access using web APIs, you must specify each resource individually.
 
 The following table lists all the resources that are available to the customers defined with a company. To visualize the resource hierarchy, log in to a store as the Company Admin and select **Roles and Permissions**, then click the **Edit** action next to the Default User role.
 
@@ -110,7 +111,7 @@ The following table lists the parameters defined in `RoleInterface`.
 
 This example creates a role named "Junior Buyer". It allows the assignee to access to all Sales resources except "View orders of subordinate users".
 
-All resouces that are not explicitly allowed are denied. You must specify the `Magento_Company::index` resource in all calls.
+All resources that are not explicitly allowed are denied. You must specify the `Magento_Company::index` resource in all calls.
 
 **Sample Usage**
 
@@ -501,6 +502,8 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 ### Return all information about a role
 
+This call returns the `id`, role name, and set of permissions defined within the specified `role_id`.
+
 **Sample Usage**
 
 `GET /V1/company/role/6`
@@ -694,7 +697,7 @@ None
 
 The following call returns all roles that have been created for a company  (`company_id` = `2`).
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
 **Sample Usage**
 
@@ -1204,7 +1207,7 @@ None
 
 ## Related information
 
-* [Integrate with the Company module]({{page.baseurl}}b2b/company.html)
-* [Manage company objects]({{page.baseurl}}b2b/company-object.html)
-* [Manage company users]({{page.baseurl}}b2b/company-users.html)
-* [Manage company structures]({{page.baseurl}}b2b/company-structures.html)
+* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+* [Manage company users]({{ page.baseurl }}/b2b/company-users.html)
+* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

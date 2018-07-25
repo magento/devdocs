@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
@@ -38,6 +37,5 @@ The following modules are described in detail:
 * RmaStaging
 * SalesRuleStaging
 * SearchStaging
-* Signifyd
 * Staging
 * WeeeStaging

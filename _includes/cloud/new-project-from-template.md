@@ -1,33 +1,27 @@
 <div markdown="1">
 
-To access your project for the first time:
+1. Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
+2. Click the _This project has no code yet_ link next to the Project name.
 
-1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
-2.  Click the **Projects** tab as the following figure shows.
+	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)
 
-	![Click the projects tab to access your Cloud project]({{ site.baseurl }}common/images/cloud_account_project.png){:width="550px"}
+3. Enter a name for the project.
 
-3.  Click the name of your project (initially, it's named **[Untitled Project]**).
-2.  When prompted, enter a name for your project and click **Next**.
+	![Project name]({{ site.baseurl }}/common/images/cloud_project_name.png)
 
-	![Enter a name for your project]({{ site.baseurl }}common/images/cloud_project_name.png){:width="550px"}
+4. Click **Create a blank site from a template** and click **Continue**. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.
 
-3.  Click **Create a blank site from a template** as the following figure shows.
+	![Create a site using the sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template.png){:width="650px"}
 
-	![Import a sample Magento project]({{ site.baseurl }}common/images/cloud_project_template.png){:width="650px"}
+5. When prompted, enter your {{site.data.var.ee}} [Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click **Finish**.
 
-4.  Click **Continue**.
-5.  When prompted, enter your Magento EE [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html) in the provided fields and click **Finish**.
-6.  Wait a few minutes while the project deploys.
+	![Enter your authentication keys]({{ site.baseurl }}/common/images/cloud-project-magento-auth-creds.png){:width="650px"}
 
-	During this time, the Web Interface displays messages similar to the following:
+	The keys are added to the `auth.json` file in the repository `master` branch, required for all created branches and deployments.
 
-	![Your sample Magento project]({{ site.baseurl }}common/images/cloud_project_template2.png){:width="650px"}
+6. Wait a few minutes while the project deploys. A status of _Pending_ displays until completed, similar to the following:
 
-7.  After the project deploys, **Success** displays next to the name of your project.
+	![Your sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template2.png){:width="650px"}
 
-	The following figure shows an example.
-
-	![You can now visit your site or configure your project]({{ site.baseurl }}common/images/cloud_project-options.png){:width="650px"}
-
-	You can now visit your site or configure your project.
+7. After the project deploys, **Success** displays next to the name of your project.
+</div>

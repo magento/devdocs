@@ -1,16 +1,12 @@
 ---
-layout: default
 group: mtf-guide
-subgroup: 50_Entities
 title: Page
-menu_title: Page
-menu_order: 6
 version: 2.0
 github_link: mtf/mtf_entities/mtf_page.md
 ---
 
 A page object is a class that serves to interact with the Magento page under test.
-A page serves as container for [blocks]({{page.baseurl}}mtf/mtf_entities/mtf_page.html).
+A page serves as container for [blocks]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html).
 
 In the functional tests, Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %} is used. Test uses block methods of page object class to interact with application under test.
 
@@ -66,12 +62,12 @@ The following table explains `<page>` attributes.
 |---|---|---|
 |`name`|Name of the page PHP class, that will be generated in `<magento2_root_dir>/dev/tests/functional/generated/Magento/<module>/Page/<area>/<name>.php`.|`WidgetInstanceIndex` |
 |`area`|The page usage area. Determines a [type of the page](#mtf_page_types). The directory with the name assigned to `area` will be created in the module. Value can be `Adminhtml` for the Admin area, or any other for another area.|`Adminhtml`. The page class will be generated in the `<magento2_root_dir>/dev/tests/functional/generated/Magento/Widget/Page/Adminhtml`. |
-|`mca`{:#mca}|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Considering that `area="Adminhtml"`, the Magento page under test is `http://example.com/admin/admin/widget_instance/index`|
+|`mca`|Path following the base URL for the Magento pages (storefront or Admin), or full URL for other pages. MCA is an abbreviation of the Module Controller Action.|`admin/widget_instance/index`. Considering that `area="Adminhtml"`, the Magento page under test is `http://example.com/admin/admin/widget_instance/index`|
 |`module`|Module where the page will be generated. |`Magento_Widget`. The page will be generated in the `<magento2_root_dir>/dev/tests/functional/Magento/Widget/Page`|
 
 {% include mtf/block_attributes.md %}
 
-Also, block can contain a `render` node. [Read about renders in the Block topic]({{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_render).
+Also, block can contain a `render` node. [Read about renders in the Block topic]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_render).
 
 {% include mtf/page-generator.html %}
 
@@ -87,19 +83,19 @@ Depending on `area` and `mca` attributes, page can be of one of the following ty
 
 Admin page has attribute `area="Adminhtml"` in `<page>` node of the page XML file. Generated page extends  [Magento\Mtf\Page\BackendPage][] class. You will log in automatically to the Admin.
 
-The page will be opened as a concatenation of `app_backend_url` from `<magento2_root_dir>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+The page will be opened as a concatenation of `app_backend_url` from `<magento2_root_dir>/dev/tests/functional/phpunit.xml` and `mca` link.
 
 ### Storefront page {#mtf_page_storefront}
 
 Storefront page is recognizable by `area` assigned any value except `Adminhtml`, *and* `mca` doesn't have `http`. This type of page extends class [Magento\Mtf\Page\FrontendPage][].
 
-Page will be opened as concatenation of `app_frontend_url` from `<magento2_root_dir>/dev/tests/functional/phpunit.xml` and [mca](#mca) link.
+Page will be opened as concatenation of `app_frontend_url` from `<magento2_root_dir>/dev/tests/functional/phpunit.xml` and `mca` link.
 
 ### External page {#mtf_page_extern}
 
 External page has `area` assigned any value except `Adminhtml`, *and* `mca` containing `http`. Generated page extends class [Magento\Mtf\Page\ExternalPage][].
 
-The page will be opened using [mca](#mca) link.
+The page will be opened using `mca` link.
 
 ## Merge pages {#mtf_page_merge}
 
@@ -120,7 +116,7 @@ To add blocks from different modules to the page, you can merge pages by followi
 * with the same name as the page you want to merge
 * with the same `mca`
 * the `module` and `area` attributes can be omitted
-  
+
 **Step 3.** Add blocks to the page
 
 **Step 4.** Run the page generator
@@ -171,7 +167,7 @@ We should create `dev/tests/functional/tests/app/Magento/Review/Test/Page/Produc
 And generate the updated page:
 
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
-    
+
 The result is in the `<magento2_root_dir>/dev/tests/functional/generated/Magento/Catalog/Test/Page/Product/CatalogProductView.php` with the following code:
 
 {%highlight php%}
@@ -297,7 +293,7 @@ class CatalogProductView extends FrontendPage
 ### Block overriding {#override-blocks}
 
 Your module can influence functionality of another module that is defined in a corresponding block of that module. In this case, you can override existing block by a block from your module.
- 
+
 To override blocks, follow:
 
 **Step 1.** [Create an XML page](#mtf_page_create) in your new module with the name of page you want to merge.
@@ -307,14 +303,14 @@ To override blocks, follow:
 * with the same name as the page you want to merge
 * with the same `mca`
 * without `module` and `area` attributes
-  
-**Step 3.** Add blocks that you want to override (indicating a block class with new behaviour)
+
+**Step 3.** Add blocks that you want to override (indicating a block class with new behavior)
 
 **Step 4.** Run the page generator.
 
 Let's see an example with the following use case:
 
-- A Magento_NewModule changes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} creation behaviour of a Magento_Catalog module.
+- A Magento_NewModule changes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} creation behavior of a Magento_Catalog module.
 - `editForm` block from page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit` must be changed according to new functionality.
 
 Let us see page `\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit`:
@@ -350,7 +346,7 @@ We shouldn't change the `editForm` block in the Magento_Catalog module because i
 Assume that we already created the new block `\Magento\NewModule\Test\Block\Adminhtml\Category\Edit\CategoryForm`.
 
 To use the `editForm` block from the Magento_NewModule, we must follow:
-  
+
 **Step 1.** Create a `CatalogCategoryEdit.xml` page in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/NewModule/Test/Page/Adminhtml` directory.
 
 **Step 2.** Assign page attributes
@@ -358,7 +354,7 @@ To use the `editForm` block from the Magento_NewModule, we must follow:
  * with the same name as the page you want to merge
  * with the same `mca`
  * without `module` and `area` attributes
-     
+
 {% highlight xml %}
 
 <?xml version="1.0" encoding="utf-8"?>
@@ -390,9 +386,7 @@ Now when you call `editForm` block from the `CatalogCategoryEdit` page, class `\
 
 <!-- LINK DEFINITIONS -->
 
-[Block]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
+[Block]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html
 [Magento\Mtf\Page\BackendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php
 [Magento\Mtf\Page\FrontendPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php
 [Magento\Mtf\Page\ExternalPage]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php
-
-

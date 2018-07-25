@@ -1,0 +1,1 @@
+../../../v2.2/config-guide/cache/static-content-signing.md

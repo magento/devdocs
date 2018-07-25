@@ -1,16 +1,19 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 4. Create a quote
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 4
-level3_menu_node:
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-create-quote.md
-ee_only: false
+functional_areas:
+  - Integration
+  - Orders
+  - Cart
 ---
 
 When a customer adds an item to their {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} for the first time, Magento creates a {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %}. Magento uses a quote to perform tasks such as
@@ -30,7 +33,7 @@ Magento identifies three types of users that can create a shopping cart:
 * A guest user. These users could be customers who haven't logged in yet, or they could be users who have no intention of creating an account. An anonymous user's cart is called a guest cart.
 
 ### Create a cart for a logged-in customer {#create-cart}
-This tutorial manages a the cart of a logged-in customer. Unless otherwise noted, all calls must specify customer's token `q0u66k8h42yaevtchv09uyy3y9gaj2ap` in the header.
+This tutorial manages the cart of a logged-in customer. Unless otherwise noted, all calls must specify customer's token `q0u66k8h42yaevtchv09uyy3y9gaj2ap` in the header.
 
 **Endpoint**
 

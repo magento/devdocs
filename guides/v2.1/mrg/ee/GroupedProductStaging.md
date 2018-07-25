@@ -1,10 +1,6 @@
 ---
-layout: default
 group: mrg
-subgroup: Commerce
 title: Magento_GroupedProductStaging module
-menu_title: GroupedProductStaging
-menu_order: 2
 version: 2.1
 ee_only: true
 github_link: mrg/ee/GroupedProductStaging.md
@@ -22,8 +18,8 @@ You can find the list of modules that have dependencies on the Magento_GroupedPr
 
 ## Extension points
 
-[The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GroupedProductStaging module.
+[The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_GroupedProductStaging module.
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

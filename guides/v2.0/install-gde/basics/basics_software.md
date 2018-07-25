@@ -1,16 +1,19 @@
 ---
-layout: default
 group: install2
 subgroup: Getting Started
 title: What is the software that the Magento server needs to run?
 menu_title: What is the software that the Magento server needs to run?
-menu_node: 
+menu_node:
 menu_order: 125
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_software.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_software.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} without informing engineering! -->
@@ -18,7 +21,7 @@ redirect_from: /guides/v1.0/install-gde/basics/basics_software.html
 
 
 
-The full list of software is listed in <a href="{{page.baseurl}}install-gde/system-requirements.html">System Requirements</a> but here are the essentials:
+The full list of software is listed in <a href="{{ page.baseurl }}/install-gde/system-requirements.html">System Requirements</a> but here are the essentials:
 
 *	Web server to display web pages. Currently, we've documented <a href="http://en.wikipedia.org/wiki/Apache_HTTP_Server" target="_blank">Apache</a> and plan to document other web servers in the near future.
 

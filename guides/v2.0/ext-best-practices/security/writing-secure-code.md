@@ -1,5 +1,4 @@
 ---
-layout: default
 group: ext-best-practices
 subgroup: Security
 title: Writing secure code
@@ -7,9 +6,11 @@ menu_title: Writing secure code
 menu_order: 2100
 version: 2.0
 github_link: ext-best-practices/security/writing-secure-code.md
-redirect_from: 
+redirect_from:
   - /guides/v2.0/extension-dev-guide/security/writing-secure-code.html
   - /guides/v2.1/extension-dev-guide/security/writing-secure-code.html
+functional_areas:
+  - Standards
 ---
 
 ## Overview

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
@@ -28,8 +27,8 @@ You can find the list of modules that have dependencies on the Magento_CatalogIm
 
 The Magento_CatalogImportExportStaging module does not provide any specific {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} points. You can extend it using the Magento extension mechanism.
 
-For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html) and [Magento dependency injection](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html).
+For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html) and [Magento dependency injection]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

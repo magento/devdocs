@@ -1,0 +1,1 @@
+../../../v2.2/comp-mgr/upgrader/upgrade-readiness.md

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Logical View
 title: Magento Framework
@@ -40,20 +39,23 @@ The Framework is responsible for operations that are useful for potentially all 
 Here is the Magento Framework folder structure:
 
 <pre>
-Lib/
-    ../Internal
-        ../Magento
-            ../Framework
+vendor/
+    ../magento
+        ../framework
+lib/
+    ../internal
+        ../LinLibertineFont
+    ../web
  </pre>
 
-* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and LESS/CSS.
+* `/vendor/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} rendering.
 
-* `/lib/internal/Magento/Framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} rendering.
+* `/lib/internal` contains some non-PHP as well as PHP components. Non-PHP framework libraries includes {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and LESS/CSS.
 
 * `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
+  <p>The <code>vendor/magento/framework</code> directory maps to the <code>Magento\Framework</code> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
 </div>
 
 ## Highlights of Magento Framework
@@ -71,30 +73,30 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Model</code>
+         <td><code>Magento\Framework\Model</code>
          </td>
          <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\AbstractModel</code>
+         <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\AbstractResource</code></td>
+         <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\Controller</code></td>
+         <td><code>Magento\Framework\Controller</code></td>
          <td>Contains classes to help return different types of results (for example, JSON and redirects).</td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\View</code></td>
+         <td><code>Magento\Framework\View</code></td>
          <td>Contains code to render pages and layouts.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Data</code></td>
+         <td><code>Magento\Framework\Data</code></td>
          <td>Contains additional classes that handle forms.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\URL</code></td>
+         <td><code>Magento\Framework\Url</code></td>
          <td>Contains code to look up other pages in Magento.</td>
       </tr>
    </tbody>

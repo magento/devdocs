@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Varnish
 title: Configure Magento to use Varnish
@@ -8,6 +7,10 @@ menu_order: 15
 menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-magento.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 ## Configure Magento to use Varnish {#config-varnish-magento}
 
@@ -29,12 +32,12 @@ To configure Magento to use Varnish:
 		</tr>
 	<tr>
 		<td>Access list</td>
-		<td><p>Enter the fully qualified host name, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
+		<td><p>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
 			<p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="&#95;blank">More information</a></p></td>
 	</tr>
 	<tr>
 		<td>Backend host</td>
-		<td><p>Enter the fully qualified host name or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
+		<td><p>Enter the fully qualified hostname or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
 		<p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="&#95;blank">More information</a></p></td>
 	</tr>
 	<tr>
@@ -59,7 +62,7 @@ bin/magento config:set --scope=default --scope-code=0 system/full_page_cache/cac
 </div>
 
 ## Export a Varnish configuration file
-This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">previous section</a>.
+This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">previous section</a>.
 
 To export a Varnish configuration file from the Admin panel:
 7.	Click one of the export buttons to create a <code>varnish.vcl</code> you can use with Varnish.
@@ -67,7 +70,7 @@ To export a Varnish configuration file from the Admin panel:
 	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
 
 	The following figure shows an example.<br><br>
-	<img src="{{ site.baseurl }}common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin">
+	<img src="{{ site.baseurl }}/common/images/config_varnish_admin_22.png" alt="Configure Magento to use Varnish in the Admin">
 
 8.	Back up your existing <code>default.vcl</code>. Then rename the <code>varnish.vcl</code> file you just exported to <code>default.vcl</code>. Then copy the file to the <code>/etc/varnish/</code>. directory.
 
@@ -82,7 +85,7 @@ To export a Varnish configuration file from the Admin panel:
 		   "localhost";
 		}
 
-10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{page.baseurl}}config-guide/varnish/config-varnish-advanced.html).
+10. If you want to customize the Vagrant health checks or grace mode or saint mode configuration, see [Advanced Varnish configuration]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html).
 
 11.	Restart Varnish and your web server:
 
@@ -106,5 +109,5 @@ Static files should not be cached by default, but if you want to cache them, you
 You need to make these changes before you configure Magento to use Varnish.
 
 ## Next steps
-<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a> (Optional)</p>
-<p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a></p>
+<p><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a> (Optional)</p>
+<p><a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a></p>

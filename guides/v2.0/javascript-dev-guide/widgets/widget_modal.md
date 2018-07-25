@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 3_Widgets
 title: Modal widget
@@ -8,8 +7,8 @@ menu_title: Modal widget
 version: 2.0
 github_link: javascript-dev-guide/widgets/widget_modal.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
 <h2 id="modal_overview">Overview</h2>
@@ -23,15 +22,15 @@ The Magento modal {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widg
 </ul>
 
 
-The modal widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal.js</code></a>
+The modal widget source is <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/modal/modal.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal.js</code></a>
 
 
 The widget uses the following templates:
 
-- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-popup.html</code></a> popup type template.
-- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-slide.html</code></a> slide type template.
+- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-popup.html</code></a> popup type template.
+- <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-slide.html</code></a> slide type template.
 
-The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{page.baseurl}}pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
+The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
 <h2 id="modal_initialize">Initialize the modal widget</h2>
 
@@ -44,7 +43,7 @@ $('#modal_content').modal({
 });
 </pre>
 
-For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="modal_options">Options</h2>
 The modal widget has the following options:

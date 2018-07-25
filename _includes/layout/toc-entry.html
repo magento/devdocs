@@ -1,0 +1,77 @@
+{% if entry.versions.size == nil or entry.versions contains page.guide_version %}
+{% capture entry_url%}/guides/v{{page.guide_version}}{{entry.url}}{%endcapture%}
+<li class="nav-level1 {% if page.url == entry_url %}active{% endif %} {{entry.class}}" id="{{ entry.label | replace: ' ','-' | downcase }}">
+    {% if entry.children.size > 0 %}
+    
+    {% endif %}
+
+    {% if entry.url %}
+    <a href="{% if entry.url contains 'http' %}{{entry.url}}{% else %}{{ page.baseurl }}{{entry.url}}{% endif %}">{{ entry.label }}</a>
+    {% else %}
+    <span>{{ entry.label }}</span>
+    {% endif %}
+
+    {% if entry.children.size > 0 %}
+    <ul>
+        {% for child in entry.children %}
+        {% if child.versions.size == nil or child.versions contains page.guide_version %}
+        {% capture entry_url%}/guides/v{{page.guide_version}}{{child.url}}{%endcapture%}
+        <li class="nav-level2 {% if page.url == entry_url %}active{% endif %} {{child.class}}" id="{{ child.label | replace: ' ','-' | downcase }}">
+
+            {% if child.children.size > 0 %}
+
+            {% endif %}
+
+            {% if child.url %}
+            <a href="{% if child.url contains 'http' %}{{child.url}}{% else %}{{ page.baseurl }}{{child.url}}{% endif %}">{{ child.label }}</a>
+            {% else %}
+            <span>{{ child.label }}</span>
+            {% endif %}
+
+            {% if child.children.size > 0 %}
+            <ul>
+                {% for child2 in child.children %}
+
+                {% if child2.versions.size == nil or child2.versions contains page.guide_version %}
+                {% capture entry_url%}/guides/v{{page.guide_version}}{{child2.url}}{%endcapture%}
+                <li class="nav-level3 {% if page.url == entry_url %}active{% endif %} {{child2.class}}" id="{{child2.label | replace: ' ','-' | downcase }}">
+                    {% if child2.children.size > 0 %}
+
+                    {% endif %}
+
+                    {% if child2.url %}
+                    <a  href="{% if child2.url contains 'http' %}{{child2.url}}{% else %}{{ page.baseurl }}{{child2.url}}{% endif %}">{{ child2.label }}</a>
+                    {% else %}
+                    <span>{{ child2.label }}</span>
+                    {% endif %}
+
+                    {% if child2.children.size > 0 %}
+                    <ul>
+                        {% for child3 in child2.children %}
+                        {% if child3.versions.size == nil or child3.versions contains page.guide_version %}
+                        {% capture entry_url%}/guides/v{{page.guide_version}}{{child3.url}}{%endcapture%}
+                        <li class="nav-level4 {% if page.url == entry_url %}active{% endif %} {{child3.class}}" id="{{child3.label | replace: ' ','-' | downcase }}">
+
+                        {% if child3.url %}
+                        <a  href="{% if child3.url contains 'http' %}{{child3.url}}{% else %}{{ page.baseurl }}{{child3.url}}{% endif %}">{{ child3.label }}</a>
+                        {% else %}
+                        <span>{{ child3.label }}</span>
+                        {% endif %}
+
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</li>
+{% endif %}

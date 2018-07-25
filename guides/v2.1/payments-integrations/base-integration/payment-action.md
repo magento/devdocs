@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: B_integration
 title: Add a payment action
@@ -7,26 +6,28 @@ menu_title: Add a payment action
 menu_order: 5
 version: 2.1
 github_link: payments-integrations/base-integration/payment-action.md
+functional_areas:
+  - Integration
 ---
 
 For each payment action available for the payment method, you must implement the following:
 
-- Creating a request with payment details. Described in [Get payment information from frontend to backend]({{page.baseurl}}payments-integrations/base-integration/get-payment-info.html).
-- Request processing using [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html) and [response validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html).
-- Specify and configure the gateway command. Described in the [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html#adding-gateway-commands) topic.
-- Add the command to the commands pool, as described in [Command Pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html#command-pool-configuration-for-a-particular-provider).
+- Creating a request with payment details. Described in [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html).
+- Request processing using [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html) and [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html).
+- Specify and configure the gateway command. Described in the [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html#adding-gateway-commands) topic.
+- Add the command to the commands pool, as described in [Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html#command-pool-configuration-for-a-particular-provider).
 
 
 ## Configure the command
 
 The gateway command for the payment action must be configured in the `di.xml` file of your module. Conventionally, its location must be `<your_module_dir>/etc/di.xml`
 
-Configure the command as described in [Gateway Command]({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#particular-gateway-commands).
+Configure the command as described in [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html).
 
 
 ## Example: `authorize` payment action for Braintree
 
-Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`): 
+Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`):
 
 {% highlight xml %}
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
@@ -72,9 +73,8 @@ The `BraintreeAuthorizeRequest` builder contains the following builders (`app/co
 
 The most important builder in this pool is `Magento\Braintree\Gateway\Request\PaymentDataBuilder`, the `payment` builder. It is responsible for the payment information part of the request.  
 
-Please see the [Get payment information from frontend to backend]({{page.baseurl}}payments-integrations/base-integration/get-payment-info.html) for details about how payment information can be handled.
+Please see the [Get payment information from frontend to backend]({{ page.baseurl }}/payments-integrations/base-integration/get-payment-info.html) for details about how payment information can be handled.
 
 ## Related topics
 
-- [Add a custom payment method to checkout]({{page.baseurl}}howdoi/checkout/checkout_payment.html): how to add a custom payment integration to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page.
-
+- [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page.

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: mrg
 subgroup: 20_Enterprise Edition
 ee_only: true
@@ -27,4 +26,4 @@ Extensions points for the Magento_CatalogUrlRewriteStaging module are not availa
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

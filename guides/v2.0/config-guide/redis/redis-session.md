@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 09_Redis
 title: Use Redis for session storage
@@ -8,10 +7,14 @@ menu_order: 10
 menu_node:
 version: 2.0
 github_link: config-guide/redis/redis-session.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
-Before you continue, [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install).
+Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -58,7 +61,7 @@ where
 	</tr>
 <tr>
 	<td>host</td>
-	<td><p>Fully qualified host name, IP address, or absolute path if using UNIX sockets.</p></td>
+	<td><p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p></td>
 	<td>127.0.0.1</td>
 </tr>
 <tr>
@@ -166,5 +169,5 @@ where
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>

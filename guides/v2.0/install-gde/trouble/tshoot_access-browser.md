@@ -1,14 +1,17 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 02_access
 title: Cannot access Magento software in a web browser
 menu_title: Cannot access Magento software in a web browser
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: install-gde/trouble/tshoot_access-browser.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 
@@ -26,7 +29,7 @@ Either upgrade {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% e
 #### Solution
 Try the following:
 
-*	Make sure [Apache server rewrites]({{page.baseurl}}install-gde/prereq/apache.html) are enabled.
+*	Make sure [Apache server rewrites]({{ page.baseurl }}/install-gde/prereq/apache.html) are enabled.
 
 	If Apache server rewrites are set incorrectly, static files aren't served from the correct location.
 

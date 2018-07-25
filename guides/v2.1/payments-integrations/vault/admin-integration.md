@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: C_vault
 title: Vault implementation for Admin
@@ -7,6 +6,8 @@ menu_title: Vault implementation for Admin
 menu_order: 25
 version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
+functional_areas:
+  - Integration
 ---
 
 To be able to use vault in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation, you need to take at least the following steps:
@@ -19,7 +20,7 @@ There are more details about these steps in the following sections.
 
 ## Component provider {#provider_admin}
 
-[Similar to the store front vault implementation]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
+[Similar to the storefront vault implementation]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
 
 
 Following is an example of a component provider for Admin:
@@ -103,7 +104,7 @@ This component will set public hash to a hidden input, when a user sets payment 
 
 Create a `.phtml` template for displaying token details and specify it in the [component provider](#provider_admin). 
 
-For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{site.mage2100url}}app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
+For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{ site.mage2100url }}app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
 
 In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
 specify the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} code and path to the template. 
@@ -126,7 +127,7 @@ Following is an example of such layout:
 According to this configuration the Magento_Vault {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will render vault payments and all depending JS components will be created.
 
 ## Specific vault configuration for Admin
-You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
+You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
 
 Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
 
@@ -145,4 +146,4 @@ Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
 {% endhighlight %}
 
 This configuration will be applied only in Admin panel.
-For more information about area-specific configuration see the [Configure payment method by area]({{page.baseurl}}payments-integrations/base-integration/admin-integration.html) topic.
+For more information about area-specific configuration see the [Configure payment method by area]({{ page.baseurl }}/payments-integrations/base-integration/admin-integration.html) topic.

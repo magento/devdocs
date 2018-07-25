@@ -1,0 +1,5 @@
+<div markdown="1">
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This is _not_ the same code backup performed by the [bin/magento setup:backup]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command. This command is intended to be used to back up code for examination by Magento Support.
+</div>

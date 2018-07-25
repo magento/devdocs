@@ -1,21 +1,23 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
-title: Manage comapany users
+title: Manage company users
 menu_title: Manage company users
 menu_order: 13
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
 github_link: b2b/company-users.md
+functional_areas:
+  - B2B
+  - Integration
 ---
 
-A company user is a customer that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with Magento {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
+A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{page.baseurl}}get-started/order-tutorial/order-create-customer.html) for an example of creating a standard customer.
+This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/get-started/order-tutorial/order-create-customer.html) for an example of creating a standard customer.
 </div>
 
 ## Manage company users
@@ -176,7 +178,7 @@ If you change the `status` to inactive, the account is locked. If the company us
 
 ### Delete a company user
 
-If the specified company user has child users, the system re-assigns the child users to the parent of the deleted user. The user account is deleted from Magento with all of its content, except quotes and orders. The user's orders and quotes remain visible to the merchant.
+If the specified company user has child users, the system re-assigns the child users to the parent of the deleted user. The user account is deleted from Magento with all of its content, except quotes and orders. The user's orders and quotes remain visible to the seller.
 
 Magento locks the deleted user's quotes and changes their status to Closed. The system does not allow to make changes on such quotes.
 
@@ -194,7 +196,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the Company module]({{page.baseurl}}b2b/company.html)
-* [Manage company objects]({{page.baseurl}}b2b/company-object.html)
-* [Manage company roles]({{page.baseurl}}b2b/roles.html)
-* [Manage company structures]({{page.baseurl}}b2b/company-structures.html)
+* [Integrate with the Company module]({{ page.baseurl }}/b2b/company.html)
+* [Manage company objects]({{ page.baseurl }}/b2b/company-object.html)
+* [Manage company roles]({{ page.baseurl }}/b2b/roles.html)
+* [Manage company structures]({{ page.baseurl }}/b2b/company-structures.html)

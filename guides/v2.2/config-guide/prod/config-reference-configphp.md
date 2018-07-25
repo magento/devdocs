@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 07_conf
 title: config.php reference
@@ -10,6 +9,10 @@ level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.2
 github_link: config-guide/prod/config-reference-configphp.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 The `config.php` file contains the following sections:

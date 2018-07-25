@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: JavaScript coding standard
@@ -9,6 +8,8 @@ menu_order: 5
 version: 2.0
 github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
+functional_areas:
+  - Standards
 ---
 
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.
@@ -273,9 +274,9 @@ Foo.prototype = {
     }
 };
 
-Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.
-
 {% endhighlight %}
+
+Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.
 
 ### Closures
 
@@ -363,8 +364,8 @@ var foo = 'bar',
 
 [jquery]: https://jquery.com/
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
-[jquery-widget-coding-standard]: {{page.baseurl}}coding-standards/code-standard-jquery-widgets.html
+[jquery-widget-coding-standard]: {{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
 [jscs]: http://jscs.info/
-[eslint-rules]: https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
-[jscs-rules]: https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
+[eslint-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[jscs-rules]: https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc

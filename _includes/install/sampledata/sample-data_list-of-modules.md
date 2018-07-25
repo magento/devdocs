@@ -1,6 +1,6 @@
 <div markdown="1">
 
-Magento CE and Magento EE:
+{{site.data.var.ce}} and {{site.data.var.ee}}:
 
 *	magento/module-bundle-sample-data
 *	magento/module-catalog-rule-sample-data
@@ -25,7 +25,7 @@ Magento CE and Magento EE:
 *	magento/sample-data
 *	magento/sample-data-media
 
-Magento EE only:
+{{site.data.var.ee}} only:
 
 *	magento/module-customer-balance-sample-data
 *	magento/module-gift-card-sample-data

@@ -1,1 +1,0 @@
-../../../v2.1/coding-standards/technical-guidelines/technical-guidelines.md

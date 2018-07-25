@@ -8,8 +8,8 @@ To update the production system:
 		cd <Magento root dir>
 		php bin/magento maintenance:enable
 
-	For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-maint.html).
-3.	If you use Magento EE, stop queue workers. TBD
+	For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
+3.	If you use {{site.data.var.ee}}, stop queue workers. TBD
 3.	Pull code from source control.
 
 	The Git command follows:

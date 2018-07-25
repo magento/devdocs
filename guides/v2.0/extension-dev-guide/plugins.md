@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
@@ -13,7 +12,7 @@ redirect_from:
 ---
 
 ### Overview
-A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any class or *interface*.
+A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
 
@@ -23,14 +22,14 @@ This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% en
 
 Plugins cannot be used with any of the following:
 
-* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
 * Final methods
 * Final classes
-* Any class that contains at least one final public method
 * Non-public methods
 * Static methods
 * `__construct`
 * Virtual types
+* Objects that are instantiated before `Magento\Framework\Interception` is bootstrapped
+* Objects that are not instantiated by the ObjectManager (e.g. by using `new` directly).
 
 ### Declaring a plugin
 
@@ -68,9 +67,7 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -80,7 +77,6 @@ class ProductPlugin
         return ['(' . $name . ')'];
     }
 }
-?>
 {% endhighlight %}
 
 #### After methods
@@ -90,9 +86,7 @@ These methods can be used to modify the results of an observed method and are re
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -102,7 +96,6 @@ class ProductPlugin
         return '|' . $result . '|';
     }
 }
-?>
 {% endhighlight %}
 
 #### Around methods
@@ -116,9 +109,7 @@ Before the list of the original method's arguments, around methods receive a `ca
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -133,16 +124,13 @@ class ProductPlugin
         return $returnValue;
     }
 }
-?>
 {% endhighlight %}
 
 When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Model;
 
 class MyUtility
@@ -156,9 +144,7 @@ class MyUtility
 
 If you wrapped this method with a plugin like below:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -174,9 +160,7 @@ Note the missing <code>= null</code>. Now, if the original method was called wit
 
 It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
 
-{% highlight PHP %}
-<?php
-
+{% highlight PHP inline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -245,8 +229,8 @@ For example, the developer can disable a global plugin in the {% glossarytooltip
 
 ### Related topics
 
-*  [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
-*  [Events and observers]({{page.baseurl}}extension-dev-guide/events-and-observers.html)
+*  [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+*  [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
 
 ### Related information
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 047_single-machine
 title: Single machine deployment
@@ -10,6 +9,11 @@ version: 2.2
 github_link: config-guide/deployment/single-machine.md
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
+functional_areas:
+  - Configuration
+  - Deploy
+  - System
+  - Setup
 ---
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.
@@ -87,15 +91,15 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 * [User Guide: Web Setup Wizard][3]
 * [Running the System Upgrade][9]
 
-[0]: {{page.baseurl}}
-[1]: {{page.baseurl}}comp-mgr/cli/cli-upgrade.html
-[2]: {{page.baseurl}}install-gde/install/cli/dev_update-magento.html
+[0]: {{ page.baseurl }}/
+[1]: {{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html
+[2]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [3]: http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
-[4]: {{page.baseurl}}install-gde/install/cli/install-cli-subcommands-maint.html
-[5]: {{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production
-[6]: {{page.baseurl}}install-gde/install/cli/dev_options.html
-[7]: {{page.baseurl}}install-gde/prereq/zip_install.html
-[8]: {{page.baseurl}}install-gde/prereq/integrator_install.html
-[9]: {{page.baseurl}}comp-mgr/upgrader/upgrade-start.html
-[10]: {{page.baseurl}}install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
-[11]: {{site.baseurl}}community/resources/#installdeploy
+[4]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
+[5]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
+[6]: {{ page.baseurl }}/install-gde/install/cli/dev_options.html
+[7]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
+[8]: {{ page.baseurl }}/install-gde/composer.html
+[9]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
+[10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
+[11]: {{ site.baseurl }}/community/resources/#installdeploy

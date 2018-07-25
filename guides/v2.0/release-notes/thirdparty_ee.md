@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 99_third
 menu_title: Magento Commerce third-party licenses
@@ -52,10 +51,10 @@ symfony/finder || MIT|[Source](https://github.com/symfony/finder)|[License](http
 symfony/process || MIT|[Source](https://github.com/symfony/process)|[License](https://github.com/symfony/process/blob/master/LICENSE)
 symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
-tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 tubalmartin/cssmin || BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
 Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
-Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/app/etc/modules/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 elasticsearch/elasticsearch || Apache-2.0|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
 guzzlehttp/ringphp || MIT|[Source](https://github.com/guzzle/RingPHP)|[License](https://github.com/guzzle/RingPHP/blob/master/LICENSE)
 guzzlehttp/streams || MIT|[Source](https://github.com/guzzle/streams)|[License](https://github.com/guzzle/streams/blob/master/LICENSE)

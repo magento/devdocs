@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Adding extension attributes to entity
@@ -62,23 +61,20 @@ We can add scalar and non-scalar extension attributes.
   <p>Non-scalar attribute can be represented by Data Object. </p>
 </div>
 
-{% highlight php %}
-    <?php
-       public function afterGet
-        (
-            \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-            \Magento\Catalog\Api\Data\ProductInterface $entity
-        ) {
-            $ourCustomData = $this->customDataRepository->get($entity->getId());
+{% highlight php inline=true %}
+public function afterGet
+(
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductInterface $entity
+) {
+    $ourCustomData = $this->customDataRepository->get($entity->getId());
 
-            $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-            $extensionAttributes->setOurCustomData($ourCustomData);
-            $entity->setExtensionAttributes($extensionAttributes);
+    $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
+    $extensionAttributes->setOurCustomData($ourCustomData);
+    $entity->setExtensionAttributes($extensionAttributes);
 
-            return $entity;
-        }
-
-    ?>
+    return $entity;
+}
 {% endhighlight %}
 
 It is the easiest way to add custom attributes. Because we need to know if {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} already has extension attributes.
@@ -88,24 +84,21 @@ AfterGetList is similar to afterGet.
 
 Likewise afterSave plugin should take data from entity and do some manipulations:
 
-{% highlight php %}
-    <?php
-           public function afterSave
-            (
-                \Magento\Catalog\Api\ProductRepositoryInterface $subject,
-                \Magento\Catalog\Api\Data\ProductInterface $entity
-            ) {
-                $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-                $ourCustomData = $extensionAttributes->getOurCustomData();
-                $this->customDataRepository->save($ourCustomData);
+{% highlight php inline=true %}
+public function afterSave
+(
+    \Magento\Catalog\Api\ProductRepositoryInterface $subject,
+    \Magento\Catalog\Api\Data\ProductInterface $entity
+) {
+    $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
+    $ourCustomData = $extensionAttributes->getOurCustomData();
+    $this->customDataRepository->save($ourCustomData);
 
-                return $entity;
-            }
-
-        ?>
+    return $entity;
+}
 {% endhighlight %}
 
-But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension atrributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
 
@@ -211,4 +204,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-<a href="https://github.com/magento-south/magento2-samples/tree/MAGETWO-55017/sample-external-links">Sample module on github</a>
+<a href="https://github.com/magento/magento2-samples/tree/master/sample-external-links">Sample module on github</a>

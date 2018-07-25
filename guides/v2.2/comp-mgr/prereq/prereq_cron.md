@@ -1,13 +1,14 @@
 ---
-layout: default
 group: compman
 subgroup: 02_prereq
 title: Set up cron for update and upgrade
 menu_title: Set up cron for update and upgrade
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.2
 github_link: comp-mgr/prereq/prereq_cron.md
+functional_areas:
+  - Upgrade
 ---
 
 To enable us to update or upgrade your system, you must have two cron jobs. Each cron job should run every minute.
@@ -18,6 +19,6 @@ The cron jobs schedule tasks for the Setup Wizard and for the updater applicatio
 
 {% include config/setup-cron_2.2_how-to.md %}
 
-For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html).
+For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 

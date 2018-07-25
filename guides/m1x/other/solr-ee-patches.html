@@ -7,16 +7,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl }}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
 	<title>Information About Enterprise Edition (EE) Patches for Apache Solr</title>
 
 </head>
 
 <body>
-	<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+	<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <a name="top"></a>
 
@@ -47,7 +47,7 @@
 
 <h3 id="fixed_solr_ee11200"><!-- (ID: SUPEE-111)-->Issues Fixed in the Magento EE 1.12.0.x Patch</h3>
 <ul><li><!-- (<a href="https://jira.corp.x.com/browse/SUP-4880" target="_blank">SUP-4880</a>)  -->Using layered navigation filtering returns the wrong results. (For example, filtering by brand has no effect.)</li>
-<li><!--( <a href="https://jira.corp.x.com/browse/SUP-4901" target="_blank">SUP-4901</a>)  -->Resolved an issue where search results don't display correctly after a Magento upgrade.</li>
+<li><!--(<a href="https://jira.corp.x.com/browse/SUP-4901" target="_blank">SUP-4901</a>)  -->Resolved an issue where search results don't display correctly after a Magento upgrade.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/SUP-5164" target="_blank">SUP-5164</a>)  -->Catalog navigation works properly.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-1417" target="_blank">MAGETWO-1417</a>)  -->Products display as expected in categories if the products have a Date attribute with the option <strong>Used for Sorting in Product Listing></strong> set to <strong>Yes</strong>. There are no exceptions in Magento logs after reindexing.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/SUPEE-646" target="_blank">SUPEE-646</a>)  -->Corrected the sort order of products searched by SKU.</li>
@@ -69,7 +69,7 @@ A message such as the following displays to confirm the patch installed successf
 <tt>Patch was applied/reverted successfully.</tt></li>
 <li>To reapply ownership to the files changed by the patch:
 <ol><li>Find the web server user: <tt>ps -o "user group command" -C httpd,apache2</tt><br />
-The value in the USER column is the web server user name.<br />
+The value in the USER column is the web server username.<br />
 Typically, the Apache web server user on CentOS is <tt>apache</tt> and the Apache web server user on Ubuntu is <tt>www-data</tt>.</li>
 <li>As the owner of the files in the Magento installation directory or as a user with <tt>root</tt> privileges, enter the following command from the Magento installation directory:<br />
 <tt>chown -R <em>web-server-user-name</em> .</tt>
@@ -160,7 +160,7 @@ A message such as the following displays to confirm the patch installed successf
 <tt>Patch was applied/reverted successfully.</tt></li>
 <li>To reapply ownership to the files changed by the patch:
 <ol><li>Find the web server user: <tt>ps -o "user group command" -C httpd,apache2</tt><br />
-The value in the USER column is the web server user name.<br />
+The value in the USER column is the web server username.<br />
 Typically, the Apache web server user on CentOS is <tt>apache</tt> and the Apache web server user on Ubuntu is <tt>www-data</tt>.</li>
 <li>As the owner of the files in the Magento installation directory or as a user with <tt>root</tt> privileges, enter the following command from the Magento installation directory:<br />
 <tt>chown -R <em>web-server-user-name</em> .</tt>
@@ -259,7 +259,7 @@ A message such as the following displays to confirm the patch installed successf
 <tt>Patch was applied/reverted successfully.</tt></li>
 <li>To reapply ownership to the files changed by the patch:
 <ol><li>Find the web server user: <tt>ps -o "user group command" -C httpd,apache2</tt><br />
-The value in the USER column is the web server user name.<br />
+The value in the USER column is the web server username.<br />
 Typically, the Apache web server user on CentOS is <tt>apache</tt> and the Apache web server user on Ubuntu is <tt>www-data</tt>.</li>
 <li>As the owner of the files in the Magento installation directory or as a user with <tt>root</tt> privileges, enter the following command from the Magento installation directory:<br />
 <tt>chown -R <em>web-server-user-name</em> .</tt><br />
@@ -332,7 +332,7 @@ A message such as the following displays to confirm the patch installed successf
 <tt>Patch was applied/reverted successfully.</tt></li>
 <li>To reapply ownership to the files changed by the patch:
 <ol><li>Find the web server user: <tt>ps -o "user group command" -C httpd,apache2</tt><br />
-The value in the USER column is the web server user name.<br />
+The value in the USER column is the web server username.<br />
 Typically, the Apache web server user on CentOS is <tt>apache</tt> and the Apache web server user on Ubuntu is <tt>www-data</tt>.</li>
 <li>As a user with <tt>root</tt> privileges, enter the following command from the Magento installation directory:<br />
 <tt>chown -R <em>web-server-user-name</em> .</tt><br />

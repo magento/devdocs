@@ -1,5 +1,4 @@
 ---
-layout: default
 group: soap
 subgroup: A_soap
 title: SOAP Reference
@@ -9,6 +8,8 @@ menu_order: 1
 menu_node: parent
 version: 2.1
 github_link: soap/bk-soap.md
+functional_areas:
+  - Integration
 ---
 ## Soap WSDL Endpoint Format
 

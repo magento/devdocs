@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 99_third
 menu_title: Magento Open Source third-party licenses
@@ -35,7 +34,7 @@ symfony/process |2.1| MIT|[Source](https://github.com/symfony/process)|[License]
 symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 phpseclib/phpseclib |2.0| MIT|[Source](https://github.com/phpseclib/phpseclib)|[License](https://github.com/phpseclib/phpseclib/blob/master/LICENSE)
-tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 sjparkinson/static-review |4.1| MIT|[Source](https://github.com/sjparkinson/static-review)|[License](https://github.com/sjparkinson/static-review/blob/master/LICENSE)
 phpunit/phpunit |4.1.0| BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpunit)|[License](https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE)
 squizlabs/php_codesniffer |1.5.3| BSD-3-Clause|[Source](https://github.com/squizlabs/PHP_CodeSniffer)|[License](https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt)
@@ -67,7 +66,7 @@ sebastian/exporter || BSD-3-Clause|[Source](https://github.com/sebastianbergmann
 sebastian/recursion-context || BSD-3-Clause|[Source](https://github.com/sebastianbergmann/recursion-context)|[License](https://github.com/sebastianbergmann/recursion-context/blob/master/LICENSE)
 sebastian/version || BSD-3-Clause|[Source](https://github.com/sebastianbergmann/version)|[License](https://github.com/sebastianbergmann/version/blob/master/LICENSE)
 seld/jsonlint || MIT|[Source](https://github.com/Seldaek/jsonlint)|[License](https://github.com/Seldaek/jsonlint/blob/master/LICENSE)
-Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/app/etc/modules/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
 knockoutjs|3.3.0 |MIT|[Source](http://knockoutjs.com/downloads/index.html)|[Source](https://github.com/knockout/knockout/blob/master/LICENSE)

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 50_Testing
 title: Web API functional testing
@@ -37,10 +36,9 @@ To keep your test environment clean, clear all entities created in fixture files
 
 <h2 id="create">How to Create a New Test</h2>
 
-All Web API functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform remote call.
+All Web API functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform the remote call.
 
-{% highlight php %}
-<?php
+{% highlight php inline=true %}
 namespace Magento\Webapi\Routing;
 
 class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
@@ -62,14 +60,12 @@ class CoreRoutingTest extends \Magento\TestFramework\TestCase\WebapiAbstract
         $item = $this->_webApiCall($serviceInfo, $requestData);
         $this->assertEquals('testProduct1', $item['name'], "Item was retrieved unsuccessfully");
     }
-} ?>
+}
 {% endhighlight %}
 
-The test above should is able to test SOAP and REST depending on what adapter is currently used by testing framework. $serviceInfo format is defined by Web API client adapter interface:
+The test above should be able to test SOAP and REST, depending on what adapter is currently used by the testing framework. The format of `$serviceInfo` is defined by the Web API client adapter interface:
 
-{% highlight php %}
-<?php
-
+{% highlight php inline=true %}
 namespace Magento\TestFramework\TestCase\Webapi;
 
 interface AdapterInterface
@@ -99,7 +95,6 @@ interface AdapterInterface
      */
     public function call($serviceInfo, $arguments = [], $storeCode = null, $integration = null);
 }
- ?>
 {% endhighlight %}
 
 <h2 id="howto">How to Run the Tests</h2>
@@ -114,8 +109,10 @@ interface AdapterInterface
 Now you are ready to run the tests.
 
 <h3 id="running">Running the Tests</h3>
-1. Copy `/dev/tests/api-functional/phpunit.xml.dist` to `/dev/tests/api-functional/phpunit.xml`
+1. Copy `/dev/tests/api-functional/phpunit.xml.dist` to `/dev/tests/api-functional/phpunit.xml`.
+
 	a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.
+
 	b. Choose the required Web API adapter, `rest` or `soap`, to be used and specify it in `TESTS_WEB_API_ADAPTER`.
 
 2. Copy `/dev/tests/api-functional/config/install-config-mysql.php.dist` to `/dev/tests/api-functional/config/install-config-mysql.php`.

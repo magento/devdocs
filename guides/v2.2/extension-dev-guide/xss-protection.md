@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: Security
 title: XSS prevention strategies
@@ -16,7 +15,7 @@ github_link: extension-dev-guide/xss-protection.md
 There are mainly three types of XSS vulnerabilities:
 
 * **Persisted XSS** - In this type of vulnerability, the source of unvalidated data comes from the Database or {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}Backend{% endglossarytooltip %} permanent store.
-* **Reflected (non-persistent) XSS** - This type of vulnerability occurs when data provided by a web client is used immediately by server-side scripts to parse and display a page to a user user without properly sanitizing the request.
+* **Reflected (non-persistent) XSS** - This type of vulnerability occurs when data provided by a web client is used immediately by server-side scripts to parse and display a page to a user without properly sanitizing the request.
 * **DOM XSS** - For this vulnerability, the malicious data does not touch the web server. Rather, it is being reflected by the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code, fully on the client side.
 
 
@@ -32,11 +31,11 @@ Any data you receive from an external source needs to be validated and sanitized
 
 Output processing involves sanitizing strings that may have come from external data sources before sending it to the browser to be rendered with templates. It is the main method of protecting your extension from XSS attacks.
 
-For more information, see the article on [templates XSS security]({{page.baseurl}}frontend-dev-guide/templates/template-security.html){:target="_blank"}.
+For more information, see the article on [templates XSS security]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html){:target="_blank"}.
 
 ### Using the Escaper classes
 
-Magento provides the [Escaper](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output. This class contains the following useful functions:
+Magento provides the [Escaper](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output. This class contains the following useful functions:
 
 * `escapeHtml()` - Used for escaping string inside HTML content.
 * `escapeHtmlAttr()` - Used for escaping strings in HTML tag attributes.
@@ -46,4 +45,4 @@ Magento provides the [Escaper](https://github.com/magento/magento2/blob/develop/
 
 ### Related Topics
 
-* [Templates XSS security]({{page.baseurl}}frontend-dev-guide/templates/template-security.html){:target="_blank"}
+* [Templates XSS security]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html){:target="_blank"}

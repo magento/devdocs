@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Design
 title: Admin Page Grids
@@ -9,6 +8,7 @@ menu_node:
 version: 2.0
 github_link: design-styleguide/pagegrid/pagegrid.md
 ---
+In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}, a grid is used on all pages to establish global layouts for page templates. The grid assigns a set number of columns and rows for a page, and designers can create a layout by dividing the columns into sections, where design patterns and content can be placed.
 
 <h2 id="page">Page Grid</h2>
 

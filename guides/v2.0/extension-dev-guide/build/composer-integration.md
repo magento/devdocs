@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 03_Build
 title: The composer.json file
@@ -13,13 +12,13 @@ redirect_from:
 ---
 
 ## Overview
-Magento 2 uses [Composer][0]{:target="_blank"}, a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependency manager, to package components and product editions.
+Magento 2 uses [Composer][0]{:target="\_blank"}, a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependency manager, to package components and product editions.
 
 Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
 
 The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	The Component Manager can update, uninstall, enable, or disable an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
+*	The Component Manager can update, uninstall, enable, or disable an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} if installed using Composer (including from [Packagist][2]{:target="\_blank"}, [Magento Marketplace][6]{:target="\_blank"}, or other source) *and* it has a `composer.json` file.
 *	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
@@ -35,8 +34,8 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 
 ## Project vs product
 
-In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
-The [installation instructions for system integrators][10] use the Magento CE and EE project packages to set up the Magento directory structure.
+In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="\_blank"} to set up the project structure.
+The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
 A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
 
@@ -125,7 +124,7 @@ The `composer.json` file for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7
 
 **Type:** `magento2-language`
 
-For language packages, you must use the correct [ISO code][4]{:target="_blank"} for the language code in the `composer.json` file.
+For language packages, you must use the correct [ISO code][4]{:target="\_blank"} for the language code in the `composer.json` file.
 
 ---
 
@@ -156,11 +155,11 @@ For example, the vendor name format for extensions released by Magento Inc is `m
 #### Magento Marketplace Extensions
 
 Magento Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
-If you plan to submit your extension to the [Magento Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
+If you plan to submit your extension to the [Magento Marketplace][7]{:target="\_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
 
 In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
 
-Please see the [Marketplace Documentation][5]{:target="_blank"} for more information about your unique vendor name.
+Please see the [Marketplace Documentation][5]{:target="\_blank"} for more information about your unique vendor name.
 
 ### package-name
 
@@ -179,7 +178,7 @@ Where:
   * `module-` for module extensions
   * `theme-` for theme extensions
   * `language-` for language extensions
-  * `product-` for [metapackages][8] such as Magento CE or Magento EE
+  * `product-` for [metapackages][8] such as {{site.data.var.ce}} or {{site.data.var.ee}}
 
 : `suffix` is a unique identifier for extensions of that type.
 
@@ -189,16 +188,16 @@ Where:
 ---
 
 **Next:**
-[Define your configuration files]({{page.baseurl}}extension-dev-guide/build/required-configuration-files.html)
+[Define your configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html)
 
 [0]: https://getcomposer.org/
-[1]: {{page.baseurl}}comp-mgr/compman-start.html
+[1]: {{ page.baseurl }}/comp-mgr/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
-[4]: http://www.iso.org/iso/home/standards/language_codes.html
-[5]: http://docs.magento.com/marketplace/user_guide/account/profile-company.html
+[4]: https://www.iso.org/iso-639-language-codes.html
+[5]: http://docs.magento.com/marketplace/user_guide/getting-started-seller.html
 [6]: https://marketplace.magento.com/
 [7]: https://marketplace.magento.com
-[8]: {{page.baseurl}}extension-dev-guide/package/package_module.html#package-metapackage
+[8]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html#package-metapackage
 [9]: https://getcomposer.org/doc/03-cli.md#create-project
-[10]: {{page.baseurl}}install-gde/prereq/integrator_install.html
+[10]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html

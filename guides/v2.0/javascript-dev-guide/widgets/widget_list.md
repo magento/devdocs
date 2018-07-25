@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 3_Widgets
 title: List widget
@@ -8,18 +7,18 @@ menu_title: List widget
 version: 2.0
 github_link: javascript-dev-guide/widgets/widget_list.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/widget_list.html
-  - guides/v1.0/frontend-dev-guide/javascript/widget_list.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_list.html
+ - /guides/v1.0/frontend-dev-guide/javascript/widget_list.html
 ---
-<h2>Overview</h2>
+## Overview
 
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
-The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is <a href="{{site.mage2000url}}lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.
+The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is <a href="{{ site.mage2000url }}lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.
 
 <h2 id="quicksearch_init">Initialize the list widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{page.baseurl}}javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="list_options">Options</h2>
 The list widget has the following options:

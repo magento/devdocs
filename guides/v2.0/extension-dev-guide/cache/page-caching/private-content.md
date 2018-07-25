@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 09_Full page caching
 title: Private content
@@ -24,7 +23,7 @@ redirect_from:
 
 Since private content is specific to individual users, it's reasonable to handle it on the client (i.e., web browser).
 
-Use our [customer-data](https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="&#95;blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
+Use our [customer-data](https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="&#95;blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
 
 This example shows a customer's name on a cacheable page.
 

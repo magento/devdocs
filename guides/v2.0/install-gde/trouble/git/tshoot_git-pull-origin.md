@@ -1,5 +1,4 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 10_github
 title: git pull origin develop fails when updating the Magento software
@@ -9,8 +8,12 @@ menu_order: 410
 version: 2.0
 github_link: install-gde/trouble/git/tshoot_git-pull-origin.md
 redirect_from:
-  -  /guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html
-  -  /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
+  - /guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html
+  - /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 ### Details

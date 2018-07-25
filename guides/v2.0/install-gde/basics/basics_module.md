@@ -1,15 +1,18 @@
 ---
-layout: default
 group: install2
 subgroup: Getting Started
 title: What's the difference between a module and a component?
 menu_title: What's the difference between a module and a component?
-menu_node: 
+menu_node:
 menu_order: 115
 level3_menu_node: level3child
 level3_subgroup: basics
 version: 2.0
 github_link: install-gde/basics/basics_module.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
  
 ## What's the difference between a module and a component?

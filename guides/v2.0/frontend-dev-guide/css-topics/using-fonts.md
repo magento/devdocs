@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: D_CSS
 title: Using custom fonts
@@ -7,8 +6,10 @@ menu_order: 6
 version: 2.0
 github_link: frontend-dev-guide/css-topics/using-fonts.md
 redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html
+functional_areas:
+  - Frontend
 ---
-<h2>What's in this topic</h2>
+## What's in this topic
 The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 
@@ -18,7 +19,7 @@ The Magento application contains a set of built-in fonts, but you can easily inc
 Place the font files to your theme directory under: <code>&lt;theme_dir&gt;/web/fonts</code>.
 
 <h3 id="ext_fonts">External fonts</h3>
-To use external fonts, include them in the page configuration file, as described in <a href="{{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
+To use external fonts, include them in the page configuration file, as described in <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.
 
 <h2 id="fonts">Include fonts</h2>
 

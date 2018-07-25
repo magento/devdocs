@@ -1,5 +1,4 @@
 ---
-layout: default
 group: arch-guide
 subgroup: Components
 title: Module dependency types
@@ -80,4 +79,4 @@ You can build dependencies between classes in the application layer, but these c
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: contributor
 subgroup: contributor
 title: Backward compatible development
@@ -119,7 +118,7 @@ Do not modify the types of thrown exceptions unless a new {% glossarytooltip 53d
 
 Add a new optional parameter to the constructor at the end of the arguments list instead of modifying the constructor.
 
-In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is `null`), fetch the dependency using `Magento\Framework\App\ObjectionManager::getInstance()`.
+In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is `null`), fetch the dependency using `Magento\Framework\App\ObjectManager::getInstance()`.
 
 {% collapsible Example Code %}
 {% highlight php startinline %}
@@ -337,6 +336,8 @@ Use the `@deprecated` tag to mark methods as deprecated and follow it up with an
 
 Use the  `@see` tag to recommend the new API to use instead of the old one.
 
+Preserve `@api` tag when deprecating `@api`-marked code.
+
 #### Deprecated tag in PHP
 
 ~~~
@@ -389,19 +390,19 @@ These backward incompatible changes do not need manual documentation:
 * Adding/removing a class/interface constant
 * Adding removing a class property
 
-Auto-generated [CE changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ce/216-develop.html)
+Auto-generated [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
 
-Auto-generated [EE changes](https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ee/216-develop.html)
+Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html)
 
 ### Where to document
 
 In the [DevDocs repository][devdocs-repo], manually add backward incompatible changes to the following file:
 
-`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes.md` 
+`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes/index.md` 
 
 Where: `<version>` is the MINOR version of the product (2.1, 2.2, 2.3, etc).
 
-Example: [`https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes.md`][2.2-bic-page].
+Example: [`https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md`][2.2-bic-page].
 
 Update the page for the *next* MINOR product release when working in the `develop` branch of Magento.
 
@@ -409,6 +410,6 @@ For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 
 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
-[versioning]: {{page.baseurl}}extension-dev-guide/versioning/index.html
+[versioning]: {{ page.baseurl }}/extension-dev-guide/versioning/index.html
 [devdocs-repo]: https://github.com/magento/devdocs
-[2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes.md
+[2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md

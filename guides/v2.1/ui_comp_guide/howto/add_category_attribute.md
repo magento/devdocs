@@ -1,9 +1,8 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: how tos
-title: How to add a Category Attribute
-menu_title: Creating and displaying a category attribute with UI Components
+title: Add a category attribute
+menu_title: Create and display a category attribute with UI components
 menu_order: 3
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
@@ -87,7 +86,7 @@ Here is a full example of adding a field under the "Display Settings" group. It 
 
 ## Step #3: Upgrade and Run
 
-[Upgrade the database schema]({{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to install the attribute [and clear your cache]({{page.baseurl}}/howdoi/php/php_clear-dirs.html#howdoi-clear-how).
+[Upgrade the database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to install the attribute [and clear your cache]({{ page.baseurl }}/howdoi/php/php_clear-dirs.html#howdoi-clear-how).
 
 ## How it works
 

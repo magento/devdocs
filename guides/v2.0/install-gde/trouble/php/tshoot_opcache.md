@@ -1,13 +1,16 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 10_php
 title: Resolve an illegal offset error
 menu_title: Resolve an illegal offset error
-menu_node: 
+menu_node:
 menu_order: 2
 version: 2.0
 github_link: install-gde/trouble/php/tshoot_opcache.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 In Magento 2.1 or later, when creating a new product in the Magento Admin, the following error might display:

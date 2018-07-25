@@ -1,5 +1,4 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: A_gateway
 title: Gateway Client
@@ -13,15 +12,15 @@ Gateway Client is a component of the Magento {% glossarytooltip 5b963536-8f03-45
 
 ## Basic interface 
 
-The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
+The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
 
-A gateway client receives a called [`Transfer`](#transfer_factory) object. The client may be configured with response converter using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
+A gateway client receives a called [`Transfer`](#transfer_factory) object. The client may be configured with response converter using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html).
 
 ## Default implementations
 The following gateway client implementations can be used out-of-the-box:
 
-* [\Magento\Payment\Gateway\Http\Client\Zend]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
-* [\Magento\Payment\Gateway\Http\Client\Soap]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
+* [\Magento\Payment\Gateway\Http\Client\Zend]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Http/Client/Zend.php)
+* [\Magento\Payment\Gateway\Http\Client\Soap]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Http/Client/Soap.php)
 
 ## Example
 Following is the illustration of how a Zend client can be added in `di.xml`:
@@ -39,11 +38,11 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
 
 ## Transfer Factory {#transfer_factory}
 
-Transfer Factory allows to create transfer object with all data from [request builders]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html). This object is then used by Gateway Client to process requests to payment processor.
+Transfer Factory allows to create transfer object with all data from [request builders]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html). This object is then used by Gateway Client to process requests to payment processor.
 
-Transfer Factory uses [Transfer Builder]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set required request parameters. 
+Transfer Factory uses [Transfer Builder]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Http/TransferBuilder.php) to set required request parameters. 
 
-The basic Transfer Factory interface is [Magento\Payment\Gateway\Http\TransferFactoryInterface]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Http/TransferFactoryInterface.php).
+The basic Transfer Factory interface is [Magento\Payment\Gateway\Http\TransferFactoryInterface]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Http/TransferFactoryInterface.php).
 
 The similar example of factory might looks like this:
 

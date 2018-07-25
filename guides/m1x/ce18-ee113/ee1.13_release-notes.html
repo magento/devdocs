@@ -5,10 +5,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl }}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
 	<title>Magento Enterprise Edition (EE) Release Notes (1.13 and later)</title>
 
 </head>
@@ -19,7 +19,7 @@
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <!-- Title: Magento Enterprise Edition (EE) Release Notes (1.13 and later) -->
 <!-- URL: ee113-later-release-notes -->
@@ -44,7 +44,7 @@
 <li><a href="#php54">PHP 5.4 Patch Available</a></li>
 <li><a href="#ee113-patches-how-to-get">How to get Patches for Magento EE</a></li> 
 </ul>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against EE 1.13.x as well.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against EE 1.13.x as well.</div>
 
 <h3 id="ee113-patches-connect-general">General Magento Connect Patches</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3941_EE_1.14.0.1_v1-2014-08-12-12-10-06.sh</p>
@@ -74,7 +74,7 @@ To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}i
 <p>Magento has fixed an issue that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
 <p>The issue affects EE versions 1.9.1.1 through 1.13.1.0.</p>
 <p>To get a fix for the issue, see <a href="{{ site.m1xgdeurl }}/other/discover-card-validation.html" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
 
 
 <h3 id="php54">PHP 5.4 Patch Available</h3>
@@ -175,7 +175,7 @@ For more information, see the <a href="http://www.magentocommerce.com/resources/
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-TBD" target="_blank">MPERF-TBD</a>)  -->Magento strongly recommends all merchants set <strong>Apply Customer Tax</strong> to <strong>After Discount</strong>, regardless of all other tax-related settings. This avoids issues with calculating the total product price.</li>
 </li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-348" target="_blank">MPERF-348</a>)  -->When you specify a tax rate, the <strong>State</strong> list is now available whenever you choose a country that has states.</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-353" target="_blank">MPERF-353</a>)  -->You can now specify the asterisk (<code>*</code>) wildcard character for the value of <strong>State</strong> when you set up a a new tax rate. This enables you to apply the same tax rate to all states or provinces in a particular country.</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-353" target="_blank">MPERF-353</a>)  -->You can now specify the asterisk (<code>*</code>) wildcard character for the value of <strong>State</strong> when you set up a new tax rate. This enables you to apply the same tax rate to all states or provinces in a particular country.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2353" target="_blank">MPERF-2353</a>)  -->Stores now display in the Admin Panel in <strong>System</strong> > <strong>Manage Stores</strong> as a three-column hierarchy, with the website in the left column, all stores associated with the website in the center column, and all store views associated with the store in the right column.<br />
 This makes it easier for you to browse your stores and understand which websites, store views, and stores are associated with each other. The updated Manage Stores page also displays the root category for each store and the code for each website and store view.<br />
 Magento thanks Fabrizio Branca for contributing to this fix. For more information, see <a href="http://www.fabrizio-branca.de/magento-website-store-groups-store-views.html" target="_blank">Fabrizio's blog post</a>.</li>
@@ -369,7 +369,7 @@ Magento thanks Vinai Kopp for contributing to this fix. Link to the <a href="htt
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2336" target="_blank">MPERF-2336</a>)  -->You can now manage product ratings and reviews from the Admin Panel as well as from the web store.<br />
 Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. </li>
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2342" target="_blank">MPERF-2342</a>) When you create an order using the Admin Panel, the values for the default shipping address and default billing address display properly.<br />
-For example, if you clear the <strong>Same as Billing Address</strong> check box, the default shipping address displays.<br />
+For example, if you clear the <strong>Same as Billing Address</strong> checkbox, the default shipping address displays.<br />
 Magento thanks TBD for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/115" target="_blank">github issue</a>.</li> -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2354" target="_blank">MPERF-2354</a>)  -->Resolved an issue with <code>Mage_Page_Block_Template_Links::addLinkBlock</code> to enable you to sort an array of results by position.<br />
 Magento thanks Benjamin Marks for contributing to this fix. </li>
@@ -575,7 +575,7 @@ Magento thanks Benjamin Marks for contributing to this fix. </li>
 <li>Product - Redirect - Category</li>
 <li>Product - Category - Redirect</li></ul>
 <p>In the event no URL key matches your priority setting, Magento continues through the priorities in order until a match is found.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: CMS URL keys are always prioritized last.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: CMS URL keys are always prioritized last.</div>
 
 
 <h4 id="ee113-11302-seo-moreinfo">For More Information about SEO</h4>
@@ -593,10 +593,10 @@ Magento thanks Benjamin Marks for contributing to this fix. </li>
 
 <h3 id="ee113-11302-patches">Patch Available for EE 1.13.0.2</h3>
 <p>The United States Postal Service (USPS) changed the names of their Priority and Express shipping options in their API on Sunday, July 28, 2013. Magento has a patch available; however, this patch is not included in new EE 1.13.0.2 installations.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you applied the patch before you upgraded to EE 1.13.0.2, you don't have to do anything.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you applied the patch before you upgraded to EE 1.13.0.2, you don't have to do anything.</div>
 
 <p>For new EE 1.13.0.2 installations to continue utilizing USPS Priority <em>and</em> Express mail methods, you must install the patch we've created to address the issue.</p>
-<p>Get the patch from the EE support portal by logging in to <a href="http://wwww.magentocommerce.com" target="_blank">magentocommerce.com</a>.</p>
+<p>Get the patch from the EE support portal by logging in to <a href="http://www.magentocommerce.com" target="_blank">magentocommerce.com</a>.</p>
 
 <h3 id="ee113-11302-changes">Changes in EE 1.13.0.2</h3>
 <ul><li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2188" target="_blank">MPERF-2188</a>, <a href="https://jira.corp.x.com/browse/MPERF-2170" target="_blank">MPERF-2170</a>, <a href="https://jira.corp.x.com/browse/MPERF-2171" target="_blank">MPERF-2171</a>).  -->You now have the option of specifying a store view when creating a URL redirect. There is also a Store column on the <strong>Catalog</strong> > <strong>URL Redirects</strong> page.<br />
@@ -611,7 +611,7 @@ This column specifies the store view for which the URL redirect is defined.</li>
 <li>The following apply to new products when you do not explicitly set a value for the <strong>URL key</strong> field:
 <ul><li>Duplicating a results in a URL key with an appended index number. For example, if you duplicate a product with a URL key of <code>testurlkey</code>, the new product's URL key might is <code>testurlkey-1</code>.</li>
 <li>If you create a new product with a name that matches an existing URL key, the new product's URL key has the product ID appended to it. For example, if there is currently a product with a URL of <code>product1</code> and you create a new product with the name <code>Product1</code> and the product has an ID of 500, the new product's URL key is <code>product1-500</code>.<br />
-	<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To avoid having Magento specify a URL key for you, you can enter one yourself. Make sure the URL key you specify is unique among all products, including products across store views.</div>
+	<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To avoid having Magento specify a URL key for you, you can enter one yourself. Make sure the URL key you specify is unique among all products, including products across store views.</div>
 </li></ul>
 </li>
 <li>The following apply to enabling the canonical meta tag options for categories and products:
@@ -700,14 +700,14 @@ In earlier EE versions, incorrect behavior was reported when the setting <strong
 <ul><li>Major overhaul of tax calculation formulas, correction of rounding errors, and additional assistance with configuration</li>
 <li><!-- EE -->Most indexing processes now run only to update products, categories, URL redirects, and so on that have changed&mdash;eliminating the need for manual full reindexing</li>
 <li><!-- EE -->Additional option of using Redis NoSQL for cache and session storage in multi-host deployments (recommended for new deployments)<br />
-To set up and use Redis with Magento, see <a href="http://devdocs.magento.com/guides/m1x/ce18-ee113/using_redis.html" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
+To set up and use Redis with Magento, see <a href="{{ site.baseurl }}/guides/m1x/ce18-ee113/using_redis.html" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
 <li><!-- EE -->Full page caching now invalidates only pages that are affected by product or category changes</li>
 <li>Optimized cache adapters for single-server systems</li>
 <li>Elimination of many types of database deadlocks</li>
 </ul>
 
 <h3 id="ce18-1800security">Security Enhancements</h3>
-<ul><li>The Magento Admin Panel and web stores no longer allow web browsers to store user names or passwords.</li>
+<ul><li>The Magento Admin Panel and web stores no longer allow web browsers to store usernames or passwords.</li>
 <li>The Magento web store has additional Cross Site Request Forgery (CSRF) protections, meaning an imposter can no longer impersonate a newly registered customer and perform actions on the customer's behalf.</li>
 <li>In earlier versions, Magento was vulnerable to a session fixation attack during the registration process. After logging in to their account, a registered user's session ID did not change. Therefore, if an attacker had knowledge of an unauthorized session ID and if that user successfully registers, the attacker was able to take over the newly registered account.<br />
 Now, the session ID changes after successful registration, making unauthorized use of an account impossible.</li>
@@ -719,7 +719,7 @@ Now, the session ID changes after successful registration, making unauthorized u
 <ul><li>Your store uses custom code that calls Magento full page caching functions</li>
 <li>You enabled the <strong>Use SID on Frontend</strong> configuration option<br />
 (In the Admin Panel, <strong>System</strong> > <strong>Configuration</strong> > WEB > <strong>Session Validation Settings</strong>, <strong>Use SID on Frontend</strong>.)</li></ul>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The potential vulnerability exists <em>only</em> if both of the preceding are true. Default Magento installations or installations that enable <strong>Use SID on Frontend</strong> but have no custom code with full page caching are at no risk.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The potential vulnerability exists <em>only</em> if both of the preceding are true. Default Magento installations or installations that enable <strong>Use SID on Frontend</strong> but have no custom code with full page caching are at no risk.</div>
 
 <p>If both of the preceding are true, Magento can be subjected to <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)" target="_blank">cross-site scripting</a> (XSS) attacks&mdash;a type of injection issue, which means that malicious code is injected into otherwise trusted web sites, generally in the form of a browser-side script.</p>
 <p><em>Issue</em>: Magento is subject to XSS attacks because the SID cookie value is not sanitized by default.</p>
@@ -868,7 +868,7 @@ For example, this command no longer fails:<br />
 <ul><li>A customer's account created date is correct. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-756" target="_blank">Bug link</a>) --></li>
 <li>When a product price is set with website scope and an administrative user has access to only one website, the default price is taken from that website scope. Also, when saving the product on the website scope, the price is updated only in that scope and not in the default scope. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-630" target="_blank">Bug link</a>) --></li> 
 <li>An error no longer displays on your web store after a customer places an order. (The error message was <code>There has been an error processing your request. Please contact us or try again later</code>). <!-- (<a href="https://jira.corp.x.com/browse/MPERF-634" target="_blank">Bug link</a>) --></li> 
-<li>Restricted coupon codes work properly, even if the customer has selected the <strong>Remember me</strong> check box. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-734" target="_blank">Bug link</a>) --></li> 
+<li>Restricted coupon codes work properly, even if the customer has selected the <strong>Remember me</strong> checkbox. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-734" target="_blank">Bug link</a>) --></li>
 <li>Using the Table Rates shipping option, free shipping options work properly. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > <strong>SALES</strong> > <strong>Shipping Methods</strong>. In the right pane, expand <strong>Table Rates</strong>.) <!-- (<a href="https://jira.corp.x.com/browse/MPERF-737" target="_blank">Bug link</a>) --></li> 
 <li>Issues with shipping table rates have been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-870" target="_blank">Bug link</a>) --></li> 
 <li>Reward Points are now granted one time per order, even when comments are added to the order later. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-742" target="_blank">Bug link</a>) --></li> 
@@ -892,7 +892,7 @@ For example, this command no longer fails:<br />
 <li>An issue that caused a fatal error in the web store for an item in a gift registry has been resolved. The issue occurred when the item was removed from a website after a user had added the item to their gift registry. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-854" target="_blank">Bug link</a>) --></li> 
 <li>UPS shipping labels have the word <code>SAMPLE</code> printed on them only when you request a sample label. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-856" target="_blank">Bug link</a>) --></li> 
 <li>Changes made to United States Post Office (USPS) APIs and rates have been incorporated in Magento. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-717" target="_blank">Bug link</a>) --></li> 
-<li>You can now process a return materials authorization (RMA) for an order that was shipped to multiple addresses. <!--( <a href="https://jira.corp.x.com/browse/MPERF-1688" target="_blank">Bug link</a>) --></li> 
+<li>You can now process a return materials authorization (RMA) for an order that was shipped to multiple addresses. <!--(<a href="https://jira.corp.x.com/browse/MPERF-1688" target="_blank">Bug link</a>) --></li>
 <li>The products in a customer's wish list no longer disappear after one or more products are edited by an administrator. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1651" target="_blank">Bug link</a>) --></li> 
 <li>Administrators can view the contents of a customer's shopping cart. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1650" target="_blank">Bug link</a>) --></li> 
 <li>The price of a simple product now displays properly when category permissions are enabled. (To set category permissions in the Admin Panel, click <strong>Catalog</strong> > <strong>Categories</strong> > <strong>Manage Categories</strong>, select a category, and click the <strong>Category Permissions</strong> tab.) <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1610" target="_blank">Bug link</a>) --></li> 
@@ -1018,10 +1018,10 @@ For more information about using the Solr search engine with Magento EE, see the
 <li>Request Path for any URL Redirect (formerly referred to as <em>URL Rewrite</em></li></ul>
 </li>
 <li><!-- EE -->There is a new management page in the Admin Panel: <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Index Management</strong>.</li>
-<li><!-- EE M-->The options on the <strong>System</strong> > <strong>Index Management</strong> are significantly different. In particular, because manual reindexing is no longer required for most indexers, there are fewer check boxes and the page mostly displays status information. </li>
+<li><!-- EE M-->The options on the <strong>System</strong> > <strong>Index Management</strong> are significantly different. In particular, because manual reindexing is no longer required for most indexers, there are fewer checkboxes and the page mostly displays status information. </li>
 <li>In the Admin Panel, <strong>Catalog</strong> > <strong>Manage Products</strong> > <em>edit-product</em> > <strong>General</strong> tab page option <strong>Create Permanent Redirect for old URL if URL key changed</strong> changes to <strong>Create Custom Redirect for old URL</strong>.<br />
 The feature behaves the same way; namely, selecting <strong>Yes</strong> creates a redirect for the old URL that points to the new URL if a page is moved.<br />
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The wording of this option is expected to change back to the previous wording in a subsequent release.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The wording of this option is expected to change back to the previous wording in a subsequent release.</div>
 
 </li>
 <li>The options <strong>Product URL Suffix</strong> and <strong>Category URL Suffix</strong> return an error if anything <em>except</em> alphanumerical characters or the underscore character are entered. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Search Engine Optimizations</strong>.) </li>
@@ -1031,3 +1031,5 @@ The feature behaves the same way; namely, selecting <strong>Yes</strong> creates
 
 
 
+</body>
+</html>

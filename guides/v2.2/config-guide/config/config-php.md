@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 07_conf
 title: Magento's deployment configuration
@@ -7,6 +6,10 @@ menu_title: Magento's deployment configuration
 menu_order: 1
 version: 2.2
 github_link: config-guide/config/config-php.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Purpose of the deployment configuration {#config-php-overview}
@@ -20,7 +23,7 @@ Magento's deployment configuration consists of the shared and system-specific co
 
   As of the 2.2 release, the `app/etc/config.php` file is no longer an entry in the `.gitignore` file.
   This was done to facilitate [pipeline deployment][pipeline-deployment].
-	
+
 * `app/etc/env.php` contains settings that are specific to the installation environment.
 
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
@@ -29,7 +32,7 @@ Together, `config.php` and `env.php` are referred to as Magento's _deployment co
 The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 </div>
 
-Unlike other [module configuration files]({{page.baseurl}}config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
+Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
 ## Details about the deployment configuration {#config-php-contents}
 `config.php` and `env.php` are {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.
@@ -43,17 +46,17 @@ On the next hierarchy level, items in each segment are ordered according to the 
 The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
 * <a href="#config-php-contents-config-php">Manage installed modules</a>
-* <a href="#config-php-contents-env-php">System-specific configuration</a>
+* <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html#app-etc-env-php">System-specific configuration</a>
 
 ## Manage installed modules {#config-php-contents-config-php}
 `config.php` lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).
 
 Examples:
 
-* Uninstall components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
-* Enable or disable components: <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
-* [Component Manager]({{ page.baseurl }}comp-mgr/module-man/compman-main-pg.html)
-* [System Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html)
+* Uninstall components: <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
+* Enable or disable components: <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
+* [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html)
+* [System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html)
 
 `config.php` snippet:
 
@@ -82,8 +85,8 @@ Disabled modules are not recognized by the Magento application; in other words, 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
 ## Related topic
-<a href="{{page.baseurl}}config-guide/config/config-files.html">Module configuration files</a>
+<a href="{{ page.baseurl }}/config-guide/config/config-files.html">Module configuration files</a>
 
-[config-php]: {{page.baseurl}}config-guide/prod/config-reference-configphp.html
-[env-php]: {{page.baseurl}}config-guide/prod/config-reference-envphp.html
-[pipeline-deployment]: {{page.baseurl}}config-guide/deployment/
+[config-php]: {{ page.baseurl }}/config-guide/prod/config-reference-configphp.html
+[env-php]: {{ page.baseurl }}/config-guide/prod/config-reference-envphp.html
+[pipeline-deployment]: {{ page.baseurl }}/config-guide/deployment/

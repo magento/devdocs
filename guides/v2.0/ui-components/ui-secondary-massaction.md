@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: MassActions Component
@@ -41,7 +40,7 @@ The following options are available:
 * selectProvider - option that defines the component with selections data
 * actions - array that contains initially available actions
 
-<h5>Methods and Events</h5>
+##### Methods and Events
 
 The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: Magento Open Source 2.1.2 Release Notes
@@ -14,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.2CE.md
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.2. This release includes security enhancements and several functional fixes.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html).
 
 ## Highlights
 
@@ -26,7 +25,7 @@ Magento 2.1.2 contains multiple bug fixes and enhancements, including
 * Compatible with <i>MySQL 5.7</i>.
 
 
-* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
+* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See <a href="{{ page.baseurl }}/mrg/intro.html" target="_blank">Module Reference Guide</a> for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -95,7 +94,7 @@ The following list provides an overview of the security issues fixed in this rel
 {:.no_toc} 
 
 
-<!--- 57362-->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.) 
+<!--- 57362-->*  Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this script to steal user information and cookies, or to bypass cross-site request forgery protection.) 
 
 <!--- 57804/1539-->* Fixed issue with cross-site scripting reflected in loading section of request.
 
@@ -141,7 +140,7 @@ We address the following functional issues in this release.
 	* change order status and state
 
 
-For more information on these API enhancements, see <a href="{{ page.baseurl }}mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
+For more information on these API enhancements, see <a href="{{ page.baseurl }}/mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.
 
 
 
@@ -231,14 +230,14 @@ For more information on these API enhancements, see <a href="{{ page.baseurl }}m
 
 
 
-* **Issue**:  Magento does not correctly display Product > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/comp-mgr/upgrader/upgrade.html" target="_blank">Component Manager and System Upgrade Guide: Step 4</a>.
+* **Issue**:  Magento does not correctly display Product > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see <a href="{{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html" target="_blank">Component Manager and System Upgrade Guide: Step 4</a>.
 <!--- 54618-->
 
 
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
-[System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
+[System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento 2.1.2 requirements have changed slightly from 2.1.1. This release supports PHP 5.6.5 and above instead of 5.6.x.</p>
@@ -251,6 +250,6 @@ Our technology stack is built on PHP and MySQL. For more information, see
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

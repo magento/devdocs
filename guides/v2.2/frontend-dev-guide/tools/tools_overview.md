@@ -1,5 +1,4 @@
 ---
-layout: default
 group: fedg
 subgroup: I_TOOLS
 title: Additional tools for frontend developers
@@ -8,6 +7,9 @@ menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: frontend-dev-guide/tools/tools_overview.md
+functional_areas:
+  - Frontend
+  - Tools
 ---
 
 
@@ -15,4 +17,4 @@ This chapter describes how to install and use additional tools that can make you
 
 **Chapter Contents**
 
-- [Using Grunt for Magento tasks](page.baseurl/frontend-dev-guide/tools/using_grunt.html)
+- [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)

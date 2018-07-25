@@ -38,7 +38,7 @@ They are listed here because the content has been well received within the Magen
 * *Presentation:* [Magento 2 Deployment: What you should know][4]{:target="_blank"} by Olga KopyLova
 * *Blog post* [Magento 2 deployment without the downtime][5]{:target="_blank"} by Robert Egginton
 * *Blog post* [Deploying Magento 2 - History & Overview][6]{:target="_blank"} by Matthias Walter
-* *Blog post* [Deploying Magento 2 using Capistrano][17]{:taget="_blank"} by David Alger
+* *Blog post* [Deploying Magento 2 using Capistrano][17]{:target="_blank"} by David Alger
 * *Blog post* [Deploying Magento 2 with Composer and Envoyer][16]{:target="_blank"} by Nick Rigby
 * *GitHub* [Magento 2 Docker][18]{:target="_blank"}
 
@@ -61,7 +61,7 @@ They are listed here because the content has been well received within the Magen
 *  *Presentation:* [Premium performance with PHP 7 and Varnish][15]{:target="_blank"} by Miguel Balparda 
 
 [0]: https://github.com/DavidLambauer/awesome-magento2 
-[1]: {{page.baseurl}}contributor-guide/contributing_docs.html
+[1]: {{ page.baseurl }}/contributor-guide/contributing_docs.html
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
 [3]: http://www.slideshare.net/vrann/mage-titans-usa-2016-magentofacebookrabbitmq
 [4]: http://www.slideshare.net/OlgaKopylova2/m2-deployment

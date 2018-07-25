@@ -1,75 +1,86 @@
 ---
-layout: default
 group: UI_Components_guide
-subgroup: concepts
-title: About the uiLayout service module
-menu_title: About the uiLayout service module
-menu_order: 90
+title: The uiLayout service object
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
-## Overview
-The `uiLayout` service {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is used to initialize UI components.
+The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.
+This object is defined in the [`layout.js`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
 
-The source file of the `uiLayout` module is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`.
+## `run()` method
 
-`uiLayout` source code is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`, in the Magento CE github repository: [app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js).
+The `run()` method is the class entry point represented by `uiLayout` and has the following signature:
 
-In a [typical UI component's configuration flow]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html), the `uiLayout` module is called by `app.js` (`<Ui_module_dir>/view/base/web/js/core/app.js`) and receives the component's configuration as a parameter.
+`run(nodes, parent, cached, merge)`
 
-In the same way, anyone who wants to create a component dynamically (from other components or the `<script/>` tag) can call `app.js` or `layout.js` and pass as a parameter the configuration of the desired component.
+| Parameter | Type    | Description                              |
+| --------- | ------- | ---------------------------------------- |
+| `nodes`   | Object  | Configuration object for a UI component  |
+| `parent`  | Object  | The parent component of the UI component |
+| `cached`  | Boolean | Determines if `nodes` should be cached   |
+| `merge`   | Boolean | Determines if `nodes` should be merged   |
+{:style="table-layout:auto;"}
 
-## Implementation details
+If `cached` is set to `true`, the key for the cache is constructed from the object keys in the `node` parameter.
+Use the `cached` and `merge` parameters when a UI component needs to be updated during runtime.
 
-The `uiLayout` module is a singleton. It returns `function run(nodes, parent, toCache, toMerge)`, where arguments are the following:
+### `nodes` configuration object
 
-* `{array} nodes`: array of configurations of the UI components that we want to initialize
-* `{string} parent`: parent component for that UI components
-* `{boolean} toCache`: defines whether argument `nodes` will be cached. The key for cache will be constructed from `nodes` object keys
-* `{boolean} toMerge`: defines whether the  argument `nodes` should be merged with the same one, that has been cached
+The `nodes` parameter is a JavaScript object used by the `run()` method to determine how a UI component is created.
 
-Arguments `toCache` and `toMerge` play together when a particular {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} instance need to be updated in runtime.
+This object can have the following properties:
 
-### The `nodes` argument
+| Property       | Type    | Description                                                                                          |
+| -------------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| `name`         | String  | Name of the component.                                                                               |
+| `parent`       | String  | Full name of the component's parent element.                                                         |
+| `template`     | String  | Path to the component's `.html` template.                                                            |
+| `config`       | Object  | Configuration properties for the UI component.                                                       |
+| `children`     | Object  | Configuration nodes for children components.                                                         |
+| `isTemplate`   | Boolean | Whether to save the configuration as a template.                                                     |
+| `nodeTemplate` | String  | The full name of a saved configuration template.                                                     |
+| `provider`     | String  | The full name of the DataSource UI component. This property is inherited from the parent if skipped. |
+{:style="table-layout:auto;"}
 
-Each item in `nodes` array is an object with the following properties:
+#### Naming
 
-* `{string} name`:the component name (short name). Its value is set to the `index` property of the UI component instance
+The name of the property is the shortened name of the component.
+It is used as the `index` property of the generated instance.
 
-  Note: The full name of the created UI component is formed by concatenating the `parent.name + '.' + name`, and then set as the `name` property. If an instance with the same full name already exists, `uiLayout` will skip its initialization.
+The full name of the created UI component is the concatenation of the parent's `name` property and the component's `name` property.
+If an instance with the same full name already exists, `uiLayout` will skip initialization.
 
-* `{string} parent`: the `name` of the component's parent element (full name). If the parent component is not yet initialized, then `uiLayout` waits for it to appear in the `uiRegistry`.
-* `{string} template`: a path to `.html` template
-* `{string} component`: path to the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} class (function-constructor) of the new component
-* `{object} config`: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
+#### Parent initialization
 
-      var config1 = {name: 'myComp1', config: {myProp: '123123'}}
+If the parent component is not yet initialized, `uiLayout` waits for it to appear in the `uiRegistry`.
 
-  and
+#### Configuration template
 
-      var config2 = {name: 'myComp1', myProp: '123123'}
+When `isTemplate` is set to `true`, `uiLayout` stores the configuration in a private `templates` variable instead of initializing the component.
 
-* `{array} children` - configuration of child elements, if there are any
-* `{boolean} isTemplate` - if the value is set to `true`, the component configuration will be stored by `uiLayout` in the private `templates` variable. Current UI component will be not initialized. New instances can be created dynamically based on this object
-* `{string} nodeTemplate` - a full name of component from `templates` private variable. This component's configuration will be used as a  configuration template for the current one
-* `{string} provider`- the full name of the DataSource UI component. If property is absent, then parent's `provider` will be inherited
+You can use this stored configuration to create dynamic component instances during runtime by specifying the full name of the configuration in `nodeTemplate`.
+If the configuration is found, `uiLayout` uses that configuration instead of the current values.
 
-## Example 1
 
-Let's consider a case when we want to create a UI component instance dynamically as a child of another UI component.
+## Code samples
 
-We can put the configuration of the desired UI component directly into `uiLayout`.
+The example module referenced in the following examples uses `OrangeCo` as its company value and `Sample` as the module name.
 
-We need to create the following files:
+It also assumes the existence of the following files:
 
-* `app/code/OrangeCo/Sample/view/<area>/web/js/my-new-component.js` - a JavaScript component
-* `app/code/OrangeCo/Sample/view/<area>/web/templtes/my-new-component/main-template.html` - a component `.html` template, that will be used on client side
-* `app/code/OrangeCo/Sample/view/<area>/web/js/sample.js`
+* `app/code/OrangeCo/Sample/view/base/web/js/my-new-component.js`
+* `app/code/OrangeCo/Sample/view/base/web/templates/my-new-component/main-template.html`
 
-The source of `app/code/OrangeCo/Sample/view/<area>/web/js/sample.js`:
+### Create a child component
 
-{%highlight js%}
+You can use `uiLayout` to create a UI component instance that is a child of another UI component.
+
+The following example creates an instance of the `my-new-component` component that is a child of the `uiCollection` component.
+
+**Example component file:** `app/code/OrangeCo/Sample/view/base/web/js/sample.js`
+
+``` js
 define([
     'uiLayout',
     'uiCollection'
@@ -87,41 +98,33 @@ define([
         },
         initialize: function () {
             this._super();
-            layout([this.my_newComponentConfig]); // this call creates a new myNewComponent component, that is stored in uiRegistry, like any other component. myNewComponent is the child of the current uiCollection component. The rendering of the myNewComponent template is performed to the general rules of child components' templates rendering in uiCollection
+            layout([this.myNewComponentConfig]);
 
             return this;
         }
     });
 });
+```
 
-{%endhighlight%}
+The component instance is created when `myNewComponentConfig` is passed on to the `uiLayout` service object:
 
-, where `${ $.name }` is ES6 template literal.
+`layout([this.myNewComponentConfig]);`
 
-The `layout([this.my_newComponentConfig])` call creates a new `myNewComponent` component, that is stored in `uiRegistry`, like any other component. `myNewComponent` is the child of the current `uiCollection` component, which means that it is added to the `elems` property of the current `uiCollection`. The rendering of the `myNewComponent` template is performed to the general rules of [child components' templates rendering in `uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html#uicollection_template).
+This instance is stored in the `uiRegistry` with other components and rendered using the logic for rendering `uiCollection` children templates.
 
 
-## Example 2
+### Use a configuration template
 
-Another option is to create a UI component using other components configuration as configuration template. We can only use a component, that has already been configured with `isTemplate: true` property.
+You can use the configuration of one UI component to create another UI component.
+The `isTemplate` configuration for the original UI component must be `true` to save its configuration as a template in `uiLayout`.
 
-In this example we want to add table rows.
+In the following example, a custom Table UI component is created using an existing configuration template with the name `my_row_template_component_name`.
 
-Let's suppose, the table is implemented by the `my_table` instance of the Table UI component. We will use the Row Template as a configuration template for the new Rows components.
+The [`mageUtils`](https://github.com/magento/magento2/tree/2.3-develop/lib/web/mage/utils) helper library is also used in this example to create the new component based on `myRowTemplateConfig`.
 
-The configuration of the `my_table` component is the following (supposing that we have previously created the `app/code/OrangeCo/Sample/view/<area>/web/js/table.js`):
+**Example component file:** `app/code/OrangeCo/Sample/view/base/web/js/table.js`
 
-{%highlight xml%}
-    <container name="my_table">
-        <item name="component">OrangeCo_Sample/js/table</item>
-    </container>
-{%endhighlight%}
-
-Let's suppose that Row Template full name is `my_row_template_component_name`.
-
-Then in our `table.js` we need to add the following:
-
-{%highlight js%}
+``` js
 define([
     'uiLayout',
     'uiCollection',
@@ -134,21 +137,18 @@ define([
             myRowTemplateConfig: {
                 parent: '${ $.name }',
                 nodeTemplate: 'my_row_template_component_name'
-            }
-        },
+        }
+    },
 
-        addRow: function (rowIndex) {
-            var objectFromTemplate,
-                myRowTemplateConfig = this.myRowTemplateConfig;
+    addRow: function (rowIndex) {
+        var objectFromTemplate,
+            myRowTemplateConfig = this.myRowTemplateConfig;
 
-            myRowTemplateConfig.name = rowIndex;
-            objectFromTemplate = utils.template(myRowTemplateConfig);
-            layout([objectFromTemplate]);
+        myRowTemplateConfig.name = rowIndex;
+        objectFromTemplate = utils.template(myRowTemplateConfig);
+        layout([objectFromTemplate]);
         }
     });
 });
-{%endhighlight%}
+```
 
-Now the `addRow()` method could be called from the `.html` template of the current component.
-
-In this example we use [`mageUtils`]({{site.mage2100url}}lib/web/mage/utils), the Magento internal JS library that provides a bunch of useful helpers without extending any built-in objects. Specifically, we use `utils.template(myRowTemplateConfig)` which creates a new  component based on `myRowTemplateConfig`.

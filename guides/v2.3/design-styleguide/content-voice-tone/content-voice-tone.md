@@ -1,0 +1,1 @@
+../../../v2.2/design-styleguide/content-voice-tone/content-voice-tone.md

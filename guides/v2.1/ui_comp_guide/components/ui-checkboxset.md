@@ -1,11 +1,10 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Checkboxset component
 menu_title: Checkboxset component
 version: 2.1
-github_link: ui_comp_guide/components/ui-сheckboxset.md
+github_link: ui_comp_guide/components/ui-checkboxset.md
 ---
 
 ## Overview

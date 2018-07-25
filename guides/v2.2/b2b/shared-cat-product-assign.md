@@ -1,15 +1,18 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Assign categories and products to a shared catalog
 menu_title: Assign categories and products
 menu_order: 23
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
 github_link: b2b/shared-cat-product-assign.md
+functional_areas:
+  - B2B
+  - Catalog
+  - Integration
 ---
 
 The shared catalog configuration process includes assigning categories and products to the shared catalog. To assign these items to a shared catalog, the following conditions must be met:
@@ -248,6 +251,6 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the SharedCatalog module]({{page.baseurl}}b2b/shared-catalog.html)
-* [Manage shared catalogs]({{page.baseurl}}b2b/shared-cat-manage.html)
-* [Assign companies]({{page.baseurl}}b2b/shared-cat-company.html)
+* [Integrate with the SharedCatalog module]({{ page.baseurl }}/b2b/shared-catalog.html)
+* [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
+* [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)

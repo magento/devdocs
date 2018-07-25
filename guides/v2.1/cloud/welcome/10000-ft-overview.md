@@ -1,1 +1,0 @@
-../../../v2.0/cloud/welcome/10000-ft-overview.md

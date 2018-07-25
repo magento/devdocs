@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 40_Authentication
 title: Session-based authentication
@@ -8,6 +7,8 @@ menu_order: 4
 version: 2.0
 github_link: get-started/authentication/gs-authentication-session.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-session.html
+functional_areas:
+  - Integration
 ---
 
 As a customer, you log in to the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} with your customer credentials. As an admin, you log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} with your {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} credentials.
@@ -36,4 +37,4 @@ The session based authentication functionality is restricted to only allow for A
 
 ## Related topic
 
-[Configure services as web APIs]({{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html)
+[Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

@@ -1,13 +1,16 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 20_other
 title: Known issues that affect installation
 menu_title: Known issues that affect installation
-menu_node: 
+menu_node:
 menu_order: 500
 version: 2.0
 github_link: install-gde/trouble/tshoot_install-issues.md
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 If you use the optional {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} `xdebug`, you can encounter exceptions:

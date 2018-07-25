@@ -1,13 +1,16 @@
 ---
-layout: default
 group: config-guide
 subgroup: 02_Security
 title: Prevent cache poisoning
 menu_title: Prevent cache poisoning
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/secy/secy-headers.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic discusses how to prevent {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} poisoning if you use the Microsoft Internet Information Server (IIS) web server. *Cache poisoning* is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name *page cache poisoning*.

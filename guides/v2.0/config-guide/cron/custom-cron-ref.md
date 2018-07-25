@@ -1,20 +1,23 @@
 ---
-layout: default
 group: config-guide
 subgroup: 12_cron
-title: Custom cron job and cron group reference 
-menu_title: Custom cron job and cron group reference 
+title: Custom cron job and cron group reference
+menu_title: Custom cron job and cron group reference
 menu_order: 2
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/cron/custom-cron-ref.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This topic helps you set up crontabs and optionally cron groups for custom modules. If your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} needs to schedule tasks periodically, you must set up a crontab for that module. A *crontab* is a cron job's configuration.
 
 You can optionally set up a custom group, which among other things enables you to run cron jobs defined in that group independently of other cron jobs.
 
-For a step-by-step tutorial, see [Configure custom cron jobs and cron groups (tutorial)]({{ page.baseurl }}config-guide/cron/custom-cron-tut.html).
+For a step-by-step tutorial, see [Configure custom cron jobs and cron groups (tutorial)]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html).
 
 ## Overview of cron {#config-cli-cron-overview}
 
@@ -105,14 +108,14 @@ where:
 |---|---|
 |`schedule_generate_every`|Frequency (in minutes) that schedules are written to the `cron_schedule` table.|
 |`schedule_ahead_for`|Time (in minutes) in advance that schedules are written to the `cron_schedule` table.|
-|`schedule_lifetime`|Schedule lifetime in minutes.|
+|`schedule_lifetime`|Window of time (in minutes) that cron job must start or will be considered missed ("too late" to run).|
 |`history_cleanup_every`|Time (in minutes) that cron history is kept in the database.|
 |`history_success_lifetime`|Time (in minutes) that the record of successfully completed cron jobs are kept in the database.|
 |`history_failure_lifetime`|Time (in minutes) that the record of failed cron jobs are kept in the database.|
 |`use_separate_process`|This feature is available only for Magento 2.1 and later.|
 
 #### Related topic
-[Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron-tut.html)
+[Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)
 
 
 

@@ -1,5 +1,4 @@
 ---
-layout: default
 group:
 subgroup: Testing
 title: Object Manager helper

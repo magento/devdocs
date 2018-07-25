@@ -1,15 +1,19 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 5. Add items to the cart
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 5
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-add-items.md
-ee_only: false
+functional_areas:
+  - Integration
+  - Orders
+  - Catalog
 ---
 
 This article shows how to add a simple product, a downloadable product, and a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} to the cart.
@@ -20,7 +24,7 @@ All calls are performed on behalf of a customer, and the customer's token is spe
 
 To add a {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} to a cart, you must provide a `sku`, the quantity, and the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} ID, which was generated when the cart was created.
 
-The following example adds an orange medium-sized  Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
+The following example adds an orange medium-sized Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
 
 **Endpoint**
 
@@ -210,7 +214,7 @@ The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sk
 
 To add a bundle product to a cart, you must specify the `sku` of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the `id` defined in the item's `product_links` object. The `product_links` object primarily describes the ordering and placement of options on the customization page, but it also links an item's `sku` and `id` to the `sku` of the bundle product.
 
-The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified respose:
+The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
 
 {% collapsible Show code sample %}
 {% highlight json %}
@@ -419,4 +423,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} as the customer and click on the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. These three items are displayed.
+{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} as the customer and click on the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. All the items you added are displayed.

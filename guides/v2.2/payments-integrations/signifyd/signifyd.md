@@ -1,17 +1,16 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: D_Signifyd
 title: Signifyd fraud protection
 menu_title: Signifyd fraud protection
 menu_node: parent
 version: 2.2
-github_link: payments-integrations/payments-integrations/signifyd/signifyd.md
+github_link: payments-integrations/signifyd/signifyd.md
 ---
 
 ## About this document
 
-This document provides additional technical details for integrating Magento with the [Signifyd fraud protection system]. The integration is based on the *Magento_Signifyd* module that uses the [Signifyd API].
+This document provides additional technical details for integrating Magento with the [Signifyd fraud protection system](https://www.signifyd.com/). The integration is based on the *Magento_Signifyd* module that uses the [Signifyd API](https://www.signifyd.com/docs/api/).
 
 ## Magento_Signifyd module overview
 
@@ -27,7 +26,7 @@ To improve the accuracy of Signifyd's transaction estimation, external integrati
 
 ### Provide AVS/CVV response codes
 
-A custom {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard], then register these mappings in the `config.xml` file of a custom payment module.
+A custom {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard](http://www.emsecommerce.net/avs_cvv2_response_codes.htm), then register these mappings in the `config.xml` file of a custom payment module.
 
 Below is an example of mapping registration:
 
@@ -53,7 +52,7 @@ The Signifyd service can retrieve the payment method of a placed order. The *Mag
 
     Magento\Signifyd\etc\signifyd_payment_mapping.xml
 
-To apply your mappings for the [Signifyd payment codes], follow these steps:
+To apply your mappings for the [Signifyd payment codes](https://www.signifyd.com/docs/api/#/reference/cases/create-a-case), follow these steps:
 
 1. Add `signifyd_payment_mapping.xml` to the custom payment method implementation
 
@@ -78,11 +77,3 @@ where:
 * `magento_code` attribute value should be the code for a custom payment method (the same as in the payment's `config.xml`).
 
 * `signifyd_code` attribute value should be one of the available Signifyd payment method codes.
-
-
-<!-- LINKS ADDRESSES -->
-[Signifyd fraud protection system]: (https://www.signifyd.com/)
-[Signifyd API]: (https://www.signifyd.com/docs/api/)
-[API docs]: (https://www.signifyd.com/docs/api/#/reference/cases/create-a-case)
-[Signifyd payment codes]: (https://www.signifyd.com/docs/api/#/reference/cases/create-a-case)
-[EMS standard]: (http://www.emsecommerce.net/avs_cvv2_response_codes.htm)

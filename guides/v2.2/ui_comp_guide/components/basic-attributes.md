@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Basic attributes
@@ -11,7 +10,7 @@ github_link: ui_comp_guide/components/basic-attributes.md
 
 ## Overview
 
-This topic describes the general UI components configuration attributes. There's a set of attributes available for all UI components, and a set of attributes which are specific for [basic components]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure) only. 
+This topic describes the general UI components configuration attributes. There's a set of attributes available for all UI components, and a set of attributes which are specific for [basic components]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) only. 
 
 ## General attributes 
 
@@ -51,7 +50,7 @@ The following attributes are available for all UI components, including the basi
 </table>
 
 
-## Basic components' options
+## Basic component options
 
 The following options are available for all basic components:
 
@@ -68,7 +67,7 @@ The following options are available for all basic components:
   </tr>
   <tr>
     <td><code>provider</code></td>
-    <td>The path in the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uiregistry.html">registry</a> to the linked data provider.</td>
+    <td>The path in the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiregistry.html">registry</a> to the linked data provider.</td>
     <td>String</td>
   </tr>
 </table>

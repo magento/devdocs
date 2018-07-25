@@ -1,5 +1,4 @@
 ---
-layout: default
 group: styleguide
 subgroup: Design
 title: Admin Iconography
@@ -67,7 +66,7 @@ Learn how to use the icon grid:
 
 ## Icon Fonts
 
-We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in <a href="https://github.com/magento/magento2/tree/develop/app/design/adminhtml/Magento/backend/web/fonts/admin-icons">in GitHub</a>.
+We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in <a href="https://github.com/magento/magento2/tree/2.0/app/design/adminhtml/Magento/backend/web/fonts/admin-icons">in GitHub</a>.
 
 If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:
 

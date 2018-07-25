@@ -1,5 +1,4 @@
 ---
-layout: default
 group: extension-dev-guide
 subgroup: 99_Module Development
 title: Configure services as web APIs
@@ -10,6 +9,8 @@ contributor_link: http://www.classyllama.com/
 version: 2.0
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
+functional_areas:
+  - Services
 ---
 
 <h2 id="overview-web-service">Overview</h2>
@@ -33,6 +34,9 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web
    </li>
    <li>
       <p><a href="#validate-webapi">webapi.xsd XML schema file</a></p>
+   </li>
+   <li>
+      <p><a href="#forced-parameters">Forcing Request Parameters</a></p>
    </li>
 </ul>
 <h2 id="configure-webapi">Configure a web API</h2>
@@ -181,7 +185,7 @@ Following are some examples of various types and what they would look like in th
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
                <p><strong>Note</strong>:The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
-                  <p>Any user that the framework cannot authenticate through existing <a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">authentication
+                  <p>Any user that the framework cannot authenticate through existing <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">authentication
                      mechanisms</a> is considered a guest user.</p>
 
             </li>
@@ -212,7 +216,7 @@ Following are some examples of various types and what they would look like in th
                <p><code>name</code>. String. Parameter name.</p>
             </li>
             <li>
-               <p><code>force</code>. Boolean.</p>
+               <p><code>force</code>. Boolean. <a href="#forced-parameters">Forcing Request Parameters</a></p>
             </li>
          </ul>
       </td>
@@ -220,7 +224,28 @@ Following are some examples of various types and what they would look like in th
 </table>
 <h2 id="sample-webapi">Sample webapi.xml file</h2>
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-<script src="https://gist.github.com/keharper/507f485712a496ad079a.js"></script>
+``` xml
+<?xml version="1.0"?>
+    <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <!-- Customer Group Service-->
+    <route url="/V1/customerGroups/:id" method="GET">
+        <service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Magento_Customer::group"/>
+        </resources>
+    </route>
+...
+    <route url="/V1/customers/me/billingAddress" method="GET">
+        <service class="Magento\Customer\Service\V1\CustomerAddressServiceInterface" method="getDefaultBillingAddress"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+</routes>
+```
 <p>In this <code>webapi.xml</code> example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -279,3 +304,32 @@ Following are some examples of various types and what they would look like in th
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
+<h2 id="forced-parameters">Forcing Request Paramters</h2>
+<p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
+   always used. For instance, in the example "/V1/customers/me/billingAddress" route above, the <code>customerId</code>
+   parameter is forced to match the ID of the currently logged in user.</p>
+<p>Additional parameter overrides can be registered via <code>di.xml</code> by adding new items to the
+   <code>paramOverriders</code> argument for <code>\Magento\Webapi\Controller\Rest\ParamsOverrider</code>. Parameter
+   overriders must implement <code>\Magento\Framework\Webapi\Rest\Request\ParamOverriderInterface</code>. An
+   example excerpt from <code>di.xml</code></p>
+``` xml
+<type name="Magento\Webapi\Controller\Rest\ParamsOverrider">
+    <arguments>
+        <argument name="paramOverriders" xsi:type="array">
+            <item name="%my_value%" xsi:type="object">VENDOR\MODULE\Controller\Rest\ParamOverriderMyValue</item>
+        </argument>
+    </arguments>
+</type>
+```
+<p>The above example create a new parameter override available for use in <code>webapi.xml</code>. The value passed for
+   <code>%my_value%</code> will be the return value of
+   <code>\VENDOR\MODULE\Controller\Rest\ParamOverriderMyValue::getOverriddenValue</code>. Example:</p>
+``` xml
+<route url="/V1/example/me/service" method="GET">
+    ...
+    <data>
+        <parameter name="myValue" force="true">%my_value%</parameter>
+    </data>
+    ...
+</route>
+```

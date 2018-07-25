@@ -7,10 +7,10 @@
 <head>
   <meta charset=utf-8>
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
-  <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-  <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/common/css/stylesheet.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+  <link rel="icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/common/css/favicon.ico" type="image/x-icon">
   <title>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</title>
 
 </head>
@@ -18,7 +18,7 @@
 <body>
 <a name="top"></a>
 
-<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content">
 
@@ -27,7 +27,7 @@
 <!-- URL: ce18-and-ee113-installing -->
 
 <h1>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</h1>
-<p><a href="{{ site.m1xgithuburl }}guides/m1x/install/installing_install.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}guides/m1x/install/installing_install.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
 
 <div class="toc"> <h4 class="toc">Contents</h4>
@@ -37,7 +37,7 @@
 <li><a href="#prepare">Preparing Your Server for Magento CE or EE</a></li>
 <li><a href="#install-magento">Installing Magento CE or EE</a></li>
 <li><a href="#verify">Verifying that Magento CE or Magento EE Installed Successfully</a></li>
-<li><a href="#install-cron">Setting Up Cron Jobs</a></li>
+<li><a href="#install-cron">Setting Up Cronjobs</a></li>
 <li><a href="#install-privs-after">Setting Magento File System Permissions and Ownership After Installation</a></li>
 <li><a href="#install-troubleshoot">Troubleshooting</a></li>
 </ul></div>
@@ -52,7 +52,7 @@
 <li>Set up a MySQL Magento database instance.</li>
 <li>Run the Magento installer to complete the installation.</li>
 <li>Verify that Magento installed correctly.</li></ol>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Perform <em>all installations</em> to Magento the latest version of CE 1.9 or Magento EE 1.14 to get the latest fixes, features, and security updates.</span></div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Perform <em>all installations</em> to Magento the latest version of CE 1.9 or Magento EE 1.14 to get the latest fixes, features, and security updates.</span></div>
 
 
 <h2 id="prereq">Prerequisites</h2>
@@ -77,7 +77,7 @@
 <li>nginx 1.7.x</li>
 <li>PHP 5.4 and required extensions</li>
 <li>MySQL database</li></ul>
-<strong>Notes</strong>: 
+<strong>Notes</strong>:
 <ul><li>Discussing how to configure Secure Sockets Layer (SSL) is beyond the scope of this guide. You can consult some general resources such as <a href="http://httpd.apache.org/docs/2.4/ssl/" target="_blank">Apache</a>, <a href="http://www.zytrax.com/tech/survival/ssl.html" target="_blank">zytrax.com</a>, or the <a href="https://www.openssl.org/docs" target="_blank">OpenSSL documentation page</a>.</li>
 <li>Discussing how to <a href="http://wiki.nginx.org/Install" target="_blank">install and configure nginx</a> is beyond the scope of this article.</li>
 <li>Review the MySQL developer site's recommendations for <a href="http://dev.mysql.com/doc/refman/5.0/en/password-security-user.html" target="_blank">MySQL password security</a>.</li>
@@ -90,7 +90,7 @@
 <li><a href="#install-create-db">Creating a Magento Database Instance</a></li>
 <li><a href="#install-extract-archive">Extracting the Magento Installation Archive</a></li>
 <li><a href="#install-sample">Installing Optional Sample Data</a></li></ol>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</div>
 
 
 <h3 id="install-prereq-selinux">SELinux Prerequisite</h3>
@@ -206,23 +206,23 @@ For example,
 <pre>service httpd restart</pre></li>
 <li>To use phpmyadmin, enter the following command in your browser's address or location field:<br />
 <pre>http://<em>host-or-ip-address</em>/phpmyadmin</pre></li>
-<li>When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.</li></ol>
+<li>When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.</li></ol>
 <p>To install phpmyadmin on Ubuntu:</p>
 <ol><li>Use the following command:
 <code>apt-get install phpmyadmin</code></li>
 <li>Follow the prompts on your screen to complete the installation.</li>
 <li>To use phpmyadmin, enter the following URL in your browser's address or location field:
 <code>http://<em>host-or-ip-address</em>/phpmyadmin</code>
-<li>When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.</li></ol>
+<li>When prompted, log in using your MySQL database <code>root</code> or administrative user's username and password.</li></ol>
 
 <h3 id="install-create-db">Creating a Magento Database Instance</h3>
 <p>This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance. If you choose to do that, skip this section and continue with <a href="#install-sample">Installing Optional Sample Data</a>.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</div>
 
 <p>To create a new database instance:</p>
 <ol><li>Log in to your database server as any user.</li>
 <li>Enter the following commands in the order shown to create a database instance named <code>magento</code>:
-<pre>mysql -u root -p 
+<pre>mysql -u root -p
 #Enter the remaining commands at the mysql> prompt.
 
 create database magento;
@@ -264,7 +264,7 @@ tar -zxf <em>magento-install-archive</em></pre></li></ul>
 <h3 id="install-sample">Installing Optional Sample Data</h3>
 <p>Magento provides sample data you can optionally install to give you an idea of what products look like in the Admin Panel and in your web store. You can use this sample data to learn how Magento works and to experiment with custom themes.</p>
 <p>You must install sample data on the file system and in the database <em>before</em> you install Magento.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: <em>Only if your database is shared between more than one Magento installation</em>. Database table names used by the sample data are not configurable. To use sample data with a new Magento installation, you must manually add a prefix to all sample data tables and use the same prefix when you install Magento.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: <em>Only if your database is shared between more than one Magento installation</em>. Database table names used by the sample data are not configurable. To use sample data with a new Magento installation, you must manually add a prefix to all sample data tables and use the same prefix when you install Magento.</div>
 
 <p>To skip sample data installation, continue with <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</p>
 <p>To install Magento sample data:</p>
@@ -336,12 +336,12 @@ ps -o "user group command" -C httpd,apache2<br />
 chown -R <em>your-user-name</em>:<em>web-server-group</em> magento<br />
 <br />
 #Ubuntu example<br />
-chown -R myuser:www-data magento</code></li> 
+chown -R myuser:www-data magento</code></li>
 </ol> -->
 
 <h2 id="install-magento">Installing Magento CE or EE</h2>
 <p>This section discusses how to run the Magento installer, using Magento EE as an example. The Magento CE installer has exactly the same options; only the appearance is different.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The procedure that follows assumes that your web server and database server are on the same host. If they are installed on different hosts, additional tasks are required. <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">Get help</a> before you continue your installation.</span></div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The procedure that follows assumes that your web server and database server are on the same host. If they are installed on different hosts, additional tasks are required. <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">Get help</a> before you continue your installation.</span></div>
 
 <p>To install Magento CE or EE:</p>
 <ol><li>Complete all of the tasks discussed earlier in this article.</li>
@@ -350,8 +350,8 @@ chown -R myuser:www-data magento</code></li>
 For example, if your web server is <code>http://www.example.com</code>, listens on port 80, and Magento is installed in the web server docroot's <code>magento</code> subdirectory, enter
 <pre>http://www.example.com/magento</pre>
 The following page displays.<br >
-<img src="{{ site.baseurl }}common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
-<li>Select the check box that indicates you agree to the terms and conditions, and click <strong>Continue</strong>.</li>
+<img src="{{ site.baseurl }}/common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
+<li>Select the checkbox that indicates you agree to the terms and conditions, and click <strong>Continue</strong>.</li>
 <li>On the Localization page, enter the following information.<br />
 <table>
 <tbody>
@@ -374,7 +374,7 @@ The following page displays.<br >
 </tbody>
 </table><br />
 The following figure shows an example of configuring Magento for US English in the US Central time zone and using the US Dollar as the default currency.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_localization.png" height="307px" width="600px"></li>
+<img src="{{ site.baseurl }}/common/images/m1x/install_localization.png" height="307px" width="600px"></li>
 <li>Click <strong>Continue</strong>.<br />
 The Configuration page displays. Each of its three sections is discussed in the following step.</li>
 <li>In the Configuration page, enter the following information:
@@ -391,7 +391,7 @@ The Configuration page displays. Each of its three sections is discussed in the 
 </tr>
 <tr>
   <td>Host</td>
-  <td>Enter the database server's fully qualified host name or IP address. Use the default setting of <strong>localhost</strong> if your database server is on the same host as your web server.</td>
+  <td>Enter the database server's fully qualified hostname or IP address. Use the default setting of <strong>localhost</strong> if your database server is on the same host as your web server.</td>
 </tr>
 <tr>
   <td>Database Name</td>
@@ -399,7 +399,7 @@ The Configuration page displays. Each of its three sections is discussed in the 
 </tr>
 <tr>
   <td>User Name</td>
-  <td>Enter the user name of the Magento database instance owner.</td>
+  <td>Enter the username of the Magento database instance owner.</td>
 </tr>
 <tr>
   <td>User Password</td>
@@ -414,7 +414,7 @@ The Configuration page displays. Each of its three sections is discussed in the 
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_configuration_database.png" height="274px" width="600px"></li>
+<img src="{{ site.baseurl }}/common/images/m1x/install_configuration_database.png" height="274px" width="600px"></li>
 <li>In the Web Access Options section, enter the following information.<br />
 <table>
 <tbody>
@@ -433,24 +433,24 @@ A sample follows.<br />
 </tr>
 <tr>
   <td>Enable Charts</td>
-  <td>Select the check box to display charts on the Admin Panel.</td>
+  <td>Select the checkbox to display charts on the Admin Panel.</td>
 </tr>
 <tr>
   <td>Skip Base URL Validation Before the Next Step</td>
-  <td>Clearing this check box validates your server's base URL by performing an HTTP GET. Clear this check box unless your web server's base URL is not verifiable; for example, in a development or test environment.</td>
+  <td>Clearing this checkbox validates your server's base URL by performing an HTTP GET. Clear this checkbox unless your web server's base URL is not verifiable; for example, in a development or test environment.</td>
 </tr>
 <tr>
   <td>Use Web Server (Apache) Rewrites</td>
-  <td>Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this check box only if you configured Apache to use server rewrites.</td>
+  <td>Select this checkbox to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this checkbox only if you configured Apache to use server rewrites.</td>
 </tr>
 <tr>
   <td>Use Secure URLs (SSL)</td>
-  <td>Select this check box only if your web server supports SSL.</td>
+  <td>Select this checkbox only if your web server supports SSL.</td>
 </tr>
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_web-access-options.png" height="344px" width="600px"></li>
+<img src="{{ site.baseurl }}/common/images/m1x/install_web-access-options.png" height="344px" width="600px"></li>
 <li>In the Session Storage Options section, click one of the following options:
 <ul><li><strong>File</strong> to store user session data on the file system in the <code>[your Magento install dir]/var/session</code> directory.<br />
 File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
@@ -460,7 +460,7 @@ Choose database storage if you have a clustered database; otherwise, there might
 </li>
 </li>
 <li>Click <strong>Continue</strong>.<br />
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: If errors display, you must resolve them before continuing.</span></div></li>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: If errors display, you must resolve them before continuing.</span></div></li>
 <li>In the Create Admin Account page, enter the following information.
 <table>
 <tbody>
@@ -482,7 +482,7 @@ Choose database storage if you have a clustered database; otherwise, there might
 </tr>
 <tr>
   <td>Username</td>
-  <td>Enter the Magento Admin Panel administrator's user name. (You can create additional Magento administrators later.)</td>
+  <td>Enter the Magento Admin Panel administrator's username. (You can create additional Magento administrators later.)</td>
 </tr>
 <tr>
   <td>Password</td>
@@ -500,10 +500,10 @@ Choose database storage if you have a clustered database; otherwise, there might
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_create-admin-account.png" height="511px" width="600px"></li>
+<img src="{{ site.baseurl }}/common/images/m1x/install_create-admin-account.png" height="511px" width="600px"></li>
 <li>Click <strong>Continue</strong>.<br />
 The following page displays to indicate a successful installation.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_confirm_mock.png" height="308px" width="600px"></li>
+<img src="{{ site.baseurl }}/common/images/m1x/install_confirm_mock.png" height="308px" width="600px"></li>
 </li></ol></ol>
 
 <h2 id="verify">Verifying that Magento CE or Magento EE Installed Successfully</h2>
@@ -515,7 +515,7 @@ The following page displays to indicate a successful installation.<br />
 <li>Log in to the Admin Panel as an administrator.</li>
 <li>Scroll to the bottom of the page; the version should display as 1.14 (Magento EE) or 1.9.0.0 (Magento CE).<br />
 The following figure shows an example.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li></ol>
+<img src="{{ site.baseurl }}/common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li></ol>
 <!-- <li>Create a simple product.
 <ol><li>In the Admin Panel, click <strong>Catalog</strong> > <strong>Manage Products</strong>.</li>
 <li>In the upper right corner, click <strong>Add Product</strong>.</li>
@@ -562,8 +562,8 @@ The following figure shows an example.<br />
 <li>Verify the product saved successfully without errors.</li>-->
 <p>Congratulations! You successfully installed Magento!</p>
 
-<h2 id="install-cron">Setting Up Cron Jobs</h2>
-<p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
+<h2 id="install-cron">Setting Up Cronjobs</h2>
+<p>Several Magento features require at least one cronjob, which schedules activities to occur in the future. A partial list of these activities follows:</p>
 <ul><li>Catalog price rules</li>
 <li>Newsletters</li>
 <li>Generating Google sitemaps</li>
@@ -573,24 +573,51 @@ The following figure shows an example.<br />
 <li>Automatic updating of currency rates</li>
 <li><em>Magento EE 1.14.1 and later, Magento CE 1.9.1 and later</em> All Magento e-mails (including order confirmation and transactional)</li>
 </ul>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento depends on proper cronjob configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</div>
+
+<p>Crontab files define tasks (cronjobs) that are performed at scheduled dates and times. Each user on a system has its own crontab file, and the cron daemon runs each cronjob as the user who owns the crontab. For Magento, this user is the web server.</p>
+
+<h3>Recommendations for cronjobs</h3>
+<p>Magento recommends splitting your cronjob on two tasks in your crontab for best performance and completing your cronjobs without issues:</p>
+<ul><li>Indexer Cronjob (<code>malways</code> mode) can take longer to execute and complete, skipping other cronjobs (<code>mdefault</code> mode) scheduled during the time that the indexer runs.</li>
+  <li>Cronjobs in <code>mdefault</code> scope may take longer to execute and complete, blocking others scheduled during the time it is still running.</li>
+</ul>
+
+<p>To split your <code>malways</code> and <code>mdefault</code> cronjob modes, use the following:</p>
+<pre>* * * * * /path/to/magento/cron.sh cron.php -mdefault
+* * * * * /path/to/magento/cron.sh cron.php -malways</pre>
+
+<p>Determine which of your cronjobs may be long-running and move them into separate crontabs. For example, imports, exports, and indexes can run long, blocking other cronjobs scheduled in that crontab.</p>
 
 <p>Magento recommends running cron every minute for EE and every five minutes for CE.</p>
-<p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its  own  crontab, and commands in any given crontab are executed as the user who owns the crontab.</p>
-<p>For Magento, this user is the web server. To determine your web server's user, enter the following command:
+
+<h3>Create cronjobs</h3>
+<p>First, determine your web server's user. SSH into the server and enter the following command:
 <pre>ps -o "user group command" -C httpd,apache2</pre>
-<p>In CentOS, the Apache user is typically <code>apache</code>; in Ubuntu, it's typically <code>www-data</code>.</p>
-<p>To create a cron job as the user who runs Apache, the following commands in the order shown:</p>
-<ol><!-- <li>Set executable permissions on <code>[your Magento install dir]/cron.sh</code>. (This is required to run the <a href="#install-cron">Magento cron job</a>.)
-<pre>[your Magento install dir]/chmod +x cron.sh</pre></li> -->
-<li>Create or edit a crontab for the Apache user:
+<p>In CentOS, the Apache user is typically <code>apache</code>. In Ubuntu, it's typically <code>www-data</code>. Enter this user in the commands for creating the crontabs and cronjobs.</p>
+
+<p>We recommend splitting the cronjob between two tasks to prevent the indexer blocking other <code>mdefault</code> jobs or an <code>mdefault</code> job blocking the indexer. These instructions include these commands.</p>
+
+<p>To create a cronjob as the user that runs Apache:</p>
+<ol>
+<li>Create or edit a crontab for the Apache user. This command opens a vim text editor with the username of the Apache user. You might need to choose a text editor first.<br />
 <pre>crontab -u <em>apache-user-name</em> -e</pre></li>
-<li>A text editor displays. (You might need to choose a text editor first.)<br />
-In the editor, enter the following:
-<pre>* * * * * /bin/sh /[your Magento install dir]/cron.sh</pre><br>
+<li>To split cronjobs for better performance, enter the following:
+<pre>* * * * * /bin/sh /path/to/magento/cron.sh cron.php -mdefault
+* * * * * /bin/sh /path/to/magento/cron.sh cron.php -malways</pre><br>
 For example, for CentOS,<br />
-<pre>* * * * *  /bin/sh /var/www/html/magento/cron.sh</pre></li>
-<li>Save your changes to the crontab and exit the editor.</li></ol>
+<pre>* * * * * /bin/sh /var/www/html/magento/cron.sh cron.php -mdefault
+* * * * * /bin/sh /var/www/html/magento/cron.sh cron.php -malways</pre></li>
+<li>If you do not want to split the cronjob, enter the following:
+<pre>* * * * * /bin/sh /path/to/magento/cron.sh</pre><br>
+For example, for CentOS,<br />
+<pre>* * * * * /bin/sh /var/www/html/magento/cron.sh</pre></li>
+<li>Save your changes to the crontab and exit the editor. For vim, press <code>:wp</code>.</li></ol>
+
+<p>To check if crons are running, you should see the following log files in the Magento directory about 10 minutes after the scheduled cron runs:</p>
+<pre>./cron.php.log
+./cron.sh.log
+</pre>
 
 <h2 id="install-privs-after">Setting Magento File System Permissions and Ownership After Installation</h2>
 <p>To secure your Magento installation after the installation, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
@@ -615,7 +642,7 @@ For example, for CentOS,<br />
 </tr>
 <tr>
   <td>You never advance past the installer's Configuration page.</td>
-  <td>Try selecting the <strong>Skip Base URL Validation Before the Next Step</strong> check box. If problems persist, <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">get help</a>.</td>
+  <td>Try selecting the <strong>Skip Base URL Validation Before the Next Step</strong> checkbox. If problems persist, <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">get help</a>.</td>
 </tr>
 </tbody>
 </table>

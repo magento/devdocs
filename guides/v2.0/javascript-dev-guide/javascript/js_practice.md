@@ -1,5 +1,4 @@
 ---
-layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
@@ -8,16 +7,16 @@ menu_order: 25
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_practice.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 <h2 id="practice_overview">Overview</h2>
-This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one. 
+This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
 
-<h2>Customize a default Magento jQuery widget</h2>
+## Customize a default Magento jQuery widget
 
-In their Orange theme, OrangeCo wants to remove the "Click on image to view it full sized" message displayed on the product page. 
+In their Orange theme, OrangeCo wants to remove the "Click on image to view it full sized" message displayed on the product page.
 
 The high-level steps for this task are the following:
 
@@ -29,14 +28,14 @@ Let's look at each step in more detail.
 
 <h3 id="define_script1">Step 1: Define how the message is output</h3>
 
-OrangeCo needs to define how the message is output. To do this, they take the following steps: 
+OrangeCo needs to define how the message is output. To do this, they take the following steps:
 
 <ol>
 <li>Open a product page.</li>
 <li>Select to view the page source.</li>
 <li>Search for the "Click on image to view it full sized" string. The illustration of the search result follows:
 <br>
-<img src="{{ site.baseurl }}common/images/fdg_js_pr1.png" alt="Page source search result">
+<img src="{{ site.baseurl }}/common/images/fdg_js_pr1.png" alt="Page source search result">
 </li>
 <li>View that it is output by <code>gallery.js</code>.
 
@@ -44,11 +43,11 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 </ol>
 
 
-We see that the script which OrangeCo needs to alter is `gallery.js`. 
+We see that the script which OrangeCo needs to alter is `gallery.js`.
 
-To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html#config_file">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
+To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html#locate_widget">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
 
-<img src="{{ site.baseurl }}common/images/fdg_pr_2.png" alt="RequireJS config file">
+<img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
 <h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
 
@@ -57,15 +56,15 @@ In the `app/design/OrangeCo/orange/web/js` OrangeCo adds `orange-gallery.js` wit
 define([
   'jquery',
   'jquery/ui',
-  'mage/gallery' 
+  'mage/gallery'
 ], function($){
- 
+
   $.widget('orange.gallery', $.mage.gallery, {
     _create: function() { // special method of jQuery UI Widgets
       this._setOption('controls', {'notice': {}});
     }
   });
- 
+
   return $.orange.gallery;
 });
 </pre>
@@ -94,16 +93,16 @@ The high level steps for this task are the following:
 
 Let's look at each step in more detail.
 <h3>Step 1: Define what is the default implementation</h3>
-Using the approach <a href="#define_sript">described in the previous section</a>, OrangeCo defines that the product images are displayed by `gallery.js`, and the configuration path for it is `mage/gallery`.
+Using the approach described in the previous section, OrangeCo defines that the product images are displayed by `gallery.js`, and the configuration path for it is `mage/gallery`.
 
 <h3>Step 2: Add the custom script to the file system</h3>
 
-For the jCarousel widget to be able to use the configuration passed to the gallery widget, 
-OrangeCo needs to add a "wrapper" script. 
+For the jCarousel widget to be able to use the configuration passed to the gallery widget,
+OrangeCo needs to add a "wrapper" script.
 
 To do this, OrangeCo adds the following files in the `app/design/OrangeCo/orange/web/js` directory:
 
-<ul> 
+<ul>
 <li>The jCarousel widget source file: <code>jquery.jcarousel.js</code></li>
 <li>A "wrapper" <code>orange-carousel.js</code> with the following content:
 <pre>
@@ -111,7 +110,7 @@ define([
   'jquery',
   'js/jquery.jcarousel'
 ], function($){
- 
+
   return function (config, element) {
    var jCarouselConfig = {
      list: '.items.thumbs',
@@ -141,4 +140,4 @@ var config = {
 </pre>
 
 ## Recommended reading ##
-<a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>
+<a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>

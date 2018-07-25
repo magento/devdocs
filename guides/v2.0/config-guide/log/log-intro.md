@@ -1,6 +1,5 @@
 ---
-layout: default
-group: config-guide 
+group: config-guide
 subgroup: 500_log
 title: Custom logging
 menu_title: Custom logging
@@ -8,6 +7,10 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: config-guide/log/log-intro.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 ## Logging overview {#config-log-over}
@@ -31,4 +34,4 @@ The [PSR-3 standard](https://zendframework.github.io/zend-log/psr3){:target="_bl
 This provides the ability for the implementation to be replaced easily without worry that such replacement may break the application code. It also guarantees a custom component will work even when the Magento log implementation is changed in a future version of the system.
 
 #### Next
-[Magento logging in more detail]({{ page.baseurl }}config-guide/log/log-magento.html)
+[Magento logging in more detail]({{ page.baseurl }}/config-guide/log/log-magento.html)

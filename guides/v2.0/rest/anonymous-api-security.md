@@ -1,5 +1,4 @@
 ---
-layout: default
 group: rest
 subgroup: A_rest
 title: Restricting access to anonymous web APIs
@@ -8,6 +7,8 @@ menu_node:
 menu_order: 6
 version: 2.0
 github_link: rest/anonymous-api-security.md
+functional_areas:
+  - Integration
 ---
 
 Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} without having to log in.
@@ -18,7 +19,7 @@ For this reason, by default, Magento 2 now prevents anonymous users from accessi
 
 The following table lists the APIs that are no longer available to an anonymous user by default:
 
-| Product | Module | {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} | Action |
+| Product | Module | API | Action |
 | --- | --- | --- | --- |
 | CE | Catalog | /V1/products | GET |
 | CE | Catalog | /V1/products/:sku | GET |
@@ -82,7 +83,7 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | CE | GiftMessage | /V1/guest-carts/:cartId/gift-message/:itemId | POST |
 | CE | Integration | /V1/integration/admin/token | POST |
 | CE | Integration | /V1/integration/customer/token | POST |
-| CE | {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}Quote{% endglossarytooltip %} | /V1/guest-carts/:cartId | GET |
+| CE | Quote | /V1/guest-carts/:cartId | GET |
 | CE | Quote | /V1/guest-carts | POST |
 | CE | Quote | /V1/guest-carts/:cartId | PUT |
 | CE | Quote | /V1/guest-carts/:cartId/order | PUT |

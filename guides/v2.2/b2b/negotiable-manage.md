@@ -1,15 +1,17 @@
 ---
-layout: default
 group: b2b
 subgroup: 10_REST
 title: Manage negotiable quotes
 menu_title: Manage negotiable quotes
 menu_order: 32
 version: 2.2
-ee_only: true
+ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
 github_link: b2b/negotiable-manage.md
+functional_areas:
+  - B2B
+  - Integration
 ---
 
 This topic describes the calls required to initiate a negotiable quote and to prepare it to be converted to an order.
@@ -41,7 +43,7 @@ Name | Description | Format | Requirements
 `comment`	| The comment to add to the quote.	| string | Optional
 `files` | An array of files to add to the quote | array | Optional
 
-The customer or the merchant can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
+The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
 
 The `files` array contains the following parameters
 
@@ -95,20 +97,20 @@ Requesting a negotiable quote requires an admin authorization token.
 
 Magento creates a negotiable quote in the `Created` state.
 
-### Submit a negotiable quote to a customer
+### Submit a negotiable quote to a buyer
 
-When you submit a negotiable quote to the customer, the status for the customer changes to "Updated". The customer can subsequently edit or update the quote.
+When you submit a negotiable quote to the buyer, the status for the buyer changes to "Updated". The buyer can subsequently edit or update the quote.
 
-The merchant can send a request to submit the quote to the customer. The request can be submitted only for quotes in the following system states:
+The seller can send a request to submit the quote to the buyer. The request can be submitted only for quotes in the following system states:
 
 * Created
 * Processing by admin
 * Submitted by customer
 
-When the quote is submitted to the customer:
+When the quote is submitted to the buyer:
 
 * Magento checks catalog prices (price per item), cart rules, and discounts then recalculates the prices and taxes. The shipping price and the negotiated price are not affected (if they are entered into the quote).
-* Items that are no longer active or available for this customer are removed from quote and prices are recalculated.
+* Items that are no longer active or available for this buyer are removed from quote and prices are recalculated.
 * The quote state is changed to Submitted by admin.
 
 **Service Name**
@@ -134,11 +136,11 @@ When the quote is submitted to the customer:
 
 ### Update a quote
 
-Use the `PUT /V1/negotiableQuote/:quoteId` call to update a quote. See [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html) for use cases.
+Use the `PUT /V1/negotiableQuote/:quoteId` call to update a quote. See [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html) for use cases.
 
 ### Recalculate prices
 
-The process of completing a negotiable quote can take days, or even longer. During that time, the prices for the items in the quote may have changed directly or indirectly.  For example, someone could have changed prices in the shared catalogs or adjusted price rules, and the prices in the negotiable quote are stale. This call refreshes item prices, taxes, discounts, cart rules in the negotiable quote. Quotes that are locked for the merchant will not be updated.
+The process of completing a negotiable quote can take days, or even longer. During that time, the prices for the items in the quote may have changed directly or indirectly.  For example, someone could have changed prices in the shared catalogs or adjusted price rules, and the prices in the negotiable quote are stale. This call refreshes item prices, taxes, discounts, cart rules in the negotiable quote. Quotes that are locked for the seller will not be updated.
 
 The request can be applied to one or more quotes at the same time.
 
@@ -179,7 +181,7 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 ### Decline a quote
 
-The merchant can send a request to decline the quote. The request can be submitted only for quotes in the following system states:
+The seller can send a request to decline the quote. The request can be submitted only for quotes in the following system states:
 
 * Created
 * Processing by admin
@@ -214,7 +216,7 @@ These tasks are not essential for completing a negotiable quote, but might be us
 
 ### List all comments for a quote
 
-Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A `creator_type` value of `3` indicates the customer made the comment. If the value is `2`, the merchant commented.
+Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A `creator_type` value of `3` indicates the buyer made the comment. If the value is `2`, the seller commented.
 
 **Sample Usage**
 
@@ -336,6 +338,7 @@ Not applicable
 {% endhighlight %}
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Update a negotiable quote]({{page.baseurl}}b2b/negotiable-update.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

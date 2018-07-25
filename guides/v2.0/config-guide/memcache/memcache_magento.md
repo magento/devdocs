@@ -1,13 +1,16 @@
 ---
-layout: default
 group: config-guide
 subgroup: 10_mem
 title: Configure Magento to use memcached
 menu_title: Configure Magento to use memcached
 menu_order: 30
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/memcache/memcache_magento.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 To configure Magento to use memcache:

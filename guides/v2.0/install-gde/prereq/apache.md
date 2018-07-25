@@ -1,13 +1,16 @@
 ---
-layout: default
 group: install_pre
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
-menu_order: 01
+menu_order: 1
 version: 2.0
 github_link: install-gde/prereq/apache.md
 redirect_from: /guides/v1.0/install-gde/prereq/apache.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 <h2 id="apache-support">Apache versions supported</h2>
@@ -17,10 +20,10 @@ Magento requires Apache 2.2.x or 2.4.x.
 <h2 id="apache-help-beginner">Help if you're just starting out</h2>
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	<a href="{{ page.baseurl }}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ page.baseurl }}/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ page.baseurl }}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ page.baseurl }}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
 This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.
@@ -88,8 +91,8 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+*	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
@@ -129,8 +132,8 @@ To upgrade to Apache 2.4:
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+*	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
@@ -166,8 +169,8 @@ Installing and configuring Apache is basically a three-step process: install the
 
 #### Next steps
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+*	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
 <h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
@@ -218,10 +221,10 @@ For example:
 
 #### Related topics:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ page.baseurl }}install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 

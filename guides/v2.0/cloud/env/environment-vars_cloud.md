@@ -1,15 +1,11 @@
 ---
-layout: default
 group: cloud
-subgroup: 120_env
-title: Magento Commerce (Cloud) environment variables
-menu_title: Magento Commerce (Cloud) environment variables
-menu_order: 93
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: vars
+title: Cloud variables
 version: 2.0
 github_link: cloud/env/environment-vars_cloud.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
 Environment variables that are specific to {{site.data.var.ece}} are prefixed with `MAGENTO_CLOUD_*`.
@@ -39,11 +35,16 @@ Environment variables that are specific to {{site.data.var.ece}} are prefixed wi
 -   **MAGENTO_CLOUD_VARIABLES**: A base64-encoded JSON object which keys are
     variables names and values are variable values (a string).
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:`. For example:
+![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
+</div>
+
 Since values can change over time, you should inspect the variable at runtime and use it to configure your application.
 
 For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve environment-related relationships as follows:
 
-{% highlight xml %}
+```php?start_inline=1
  /**
      * Get relationships information from MagentoCloud environment variable.
      *
@@ -53,11 +54,4 @@ For example, we use the **MAGENTO_CLOUD_RELATIONSHIPS** variable to retrieve env
     {
         return json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]), true);
     }
-
-{% endhighlight %}
-
-#### Related topics
-*   [Magento application environment variables]({{page.baseurl}}cloud/env/environment-vars_magento.html)
-*   [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*   [`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-*   [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
+```

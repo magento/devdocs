@@ -1,5 +1,4 @@
 ---
-layout: default
 group: cloud
 subgroup: 170_trouble
 title: View logs for troubleshooting
@@ -8,33 +7,41 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/trouble/environments-logs.md
+functional_areas:
+  - Cloud
+  - Configuration
 ---
 
-This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
+This topic discusses how you can use logs to troubleshoot problems related to Magento Commerce [build hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) and [deploy hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook).
 
-You may need to SSH into the environments to locate and view logs.
+You may need to SSH into the environments to locate and view logs. To locate the SSH command to access your environments, see the following:
 
-* [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int): Copy the link for the SSH command per environment through the Project Web Interface
-*	[Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage): `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-*	[Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod): `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+* Starter: For all environments, click Access Site for the environment in the Project Web Interface
+* Pro:
+
+  * Integration: Copy the link for the SSH command per environment through the Project Web Interface
+  *	Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+  *	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 
 ## Build logs
 After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of `git push`, so you can observe them in the terminal or capture them (along with error messages) with `git push > build.log 2>&1`.
 
+For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the Magento application root directory, that compiles both build and deploy actions into one file.
+
 ## Deploy logs {#log-deploy-log}
 You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.
 
+For 2.1.9 and later and 2.2.X, we include a `var/log/cloud.log` file inside the Magento application root directory, that compiles both build and deploy actions into one file.
+
 Logs from the deploy hook are located on the server in the following locations:
 
-*	Integration: `/tmp/log/deploy.log`
-*	Staging: `/var/log/platform/<prodject ID>/post_deploy.log`
-*	Production: `/var/log/platform/{1|2|3}.<prodject ID>/post_deploy.log`
+*	Integration: `/var/log/deploy.log`
+*	Staging: `/var/log/platform/<project ID>_stg/post_deploy.log`
+*	Production: `/var/log/platform/<project ID>/post_deploy.log`
 
 The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`.
 
 For example, on the Staging environment for project `yw1unoukjcawe`, the deploy log is located at `/var/log/platform/yw1unoukjcawe_stg/post_deploy.log`.
-
-For Production, you have a three node structure. Logs are available with specific information for that node. For example, on the Production environment for project `yw1unoukjcawe`, the deploy log is located at node 1 `/var/log/platform/1.yw1unoukjcawe/post_deploy.log`, node 2 `/var/log/platform/2.yw1unoukjcawe/post_deploy.log`, and node 3 `/var/log/platform/3.yw1unoukjcawe/post_deploy.log`.
 
 Logs for all deployments that have occurred on this environment are appended to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment.
 
@@ -57,8 +64,8 @@ The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.
 
 ## Application logs {#app-log}
-To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/ProjectID`.
+To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/<project ID>`.
 
-For Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`.
+For Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/<project ID>_stg`.
 
 Remember, when viewing the logs for Production, you have three nodes to check.

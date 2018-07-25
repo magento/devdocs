@@ -1,19 +1,22 @@
 ---
-layout: default
 group: install_trouble
 subgroup: 02_access
 title: Installation dependencies not met
 menu_title: Installation dependencies not met
-menu_node: 
+menu_node:
 menu_order: 10
 version: 2.0
 github_link: install-gde/trouble/tshoot_install_depend.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install_depend.html
+functional_areas:
+  - Install
+  - System
+  - Setup
 ---
 
 
 ### Details
-This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}install-gde/prereq/dev_install.html).
+This topic applies to you *only* if you [cloned the Magento 2 GitHub repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html).
 
 Errors similar to the following display when you run the Web Setup Wizard:
 
@@ -46,4 +49,4 @@ You must run `composer install` from *both* the `<your Magento install dir>` and
 
 ### Suggestion
 
-<a href="{{page.baseurl}}install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
+<a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.

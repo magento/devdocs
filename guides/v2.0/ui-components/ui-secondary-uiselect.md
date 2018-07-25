@@ -1,5 +1,4 @@
 ---
-layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
 title: UI-select Component
@@ -14,7 +13,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-uiselect.html
 
 <h3 id="uiselect">UI-select component</h3>
 
-The UI-select component is used to provide check box interface for a specific listing or a specific data set. The component allows selecting a collection of items.
+The UI-select component is used to provide checkbox interface for a specific listing or a specific data set. The component allows selecting a collection of items.
 
 The UI-select component has extended from the Abstract component.
 
@@ -219,4 +218,4 @@ Navigation keys:
 
 Here is an example of configuration of select component. It is used as column filter and has 3 levels of options, with not selectable label for every level, without checkboxes:
 
-<img src="{{site.baseurl}}common/images/ui-select.jpg" alt="view the configuration">
+<img src="{{ site.baseurl }}/common/images/ui-select.jpg" alt="view the configuration">

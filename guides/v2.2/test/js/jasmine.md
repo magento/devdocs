@@ -1,13 +1,11 @@
 ---
-layout: default
 group: jstf
-subgroup: Jasmine
 title: JavaScript unit testing with Jasmine
-menu_title: Jasmine
-menu_node: parent
-menu_order:
 version: 2.2
 github_link: test/js/jasmine.md
+functional_areas:
+  - Testing
+  - test
 ---
 
 Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for all tests, a theme, or a single test.
@@ -24,53 +22,63 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
-{%highlight bash%}
-$   npm install
-{%endhighlight%}
+```bash
+npm install
+```
 
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
-{%highlight bash%}
-$   php bin/magento setup:static-content:deploy -f
-{%endhighlight%}
+```bash
+php bin/magento setup:static-content:deploy -f
+```
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-**For CentOS users**<br/>
-If the command fails with error message: <br/>
-`/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory`<br/>
-install [fonctconfig library](https://www.freedesktop.org/wiki/Software/fontconfig/):{: target="_blank"}<br/>
-`$ yum install fontconfig` (CentOS)<br/>
-`$ apt-get install fontconfig` (Ubuntu)
-</div>
+{% include note.html
+type="tip"
+content="**For CentOS and Ubuntu users**<br/>
+If the command fails with the error message:
+```terminal
+/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
+```
+install [fontconfig library]:<br/>
+* CentOS:
+  ```bash
+  yum install fontconfig
+  ```
+* Ubuntu:
+  ```bash
+  apt-get install fontconfig
+  ``` 
+"
+%}
 
 Learn more in [Deploy static view files].
 
 ## Run tests
 
-`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in in the Magento root directory:
+`Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in the Magento root directory:
 
-{%highlight bash%}
-$   grunt spec:<THEME>
-{%endhighlight%}
+```bash
+grunt spec:<THEME>
+```
 
 Example:
 
-{%highlight bash%}
-$   grunt spec:backend
-{%endhighlight%}
+```bash
+grunt spec:backend
+```
 
 ## Write a test {#write-test}
 
 All tests are distributed through modules stored in `<magento_root_dir>/dev/tests/js/jasmine/tests`. Let's see how to write a test using an example of an existing test:
 
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]{:target="_blank"}
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]
 
 which tests a JS module:
 
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]{:target="_blank"}
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]
 
 in its static representations generated in [Step 6] previously:
 
@@ -90,7 +98,7 @@ In `<magento_root_dir>/dev/tests/js/jasmine/tests` create the test with appropri
 
 For our example we need to cover all static view files ending with `Magento_Ui/js/grid/columns/actions`.
 
-{% highlight js %}
+```js
 define([
     'Magento_Ui/js/grid/columns/actions'
 ], function (Actions) {
@@ -99,7 +107,7 @@ define([
     //Test code
     //...
 });
-{% endhighlight %}
+```
 
 ### Step 3. Write your Jasmine test code.
 
@@ -117,12 +125,7 @@ In `describe` you can use `beforeEach` and `afterEach` functions performing a pr
 
 {% collapsible See the full code of the test%}
 
-{% highlight js %}
-/**
- * Copyright © 2016 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
+```js
 define([
     'underscore',
     'Magento_Ui/js/grid/columns/actions'
@@ -204,7 +207,7 @@ define([
         });
     });
 });
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -220,7 +223,7 @@ This topic doesn't provide Jasmine test writing methodology.
 
 An error message appears:
 
-```error
+```terminal
 Loading "Gruntfile.js" tasks...ERROR
 
 >> Error: Cannot find module '<module>'
@@ -242,7 +245,7 @@ Warning: Task "spec" not found. Use --force to continue.
  
 An error message appears:
 
-```error
+```terminal
 Warning: Cannot read property 'pid' of undefined
 
 Use --force to continue. Aborted due to warnings.
@@ -252,22 +255,32 @@ Use --force to continue. Aborted due to warnings.
 
 Run in your terminal:
 
-{%highlight bash%}
-$   cd <magento_root>/node_modules/grunt-contrib-jasmine
-$   npm install
-{%endhighlight%}
+```bash
+cd <magento_root>/node_modules/grunt-contrib-jasmine
+```
+```bash
+npm install
+```
 
 <!-- LINK DEFINITIONS -->
 
 <!-- External -->
-[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
-[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
-
-[Deploy static view files]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]: {{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js
+{:target="_blank"}
+[`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2200url }}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
+{:target="_blank"}
+[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+{:target="_blank"}
+[fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
+{:target="_blank"}
 [Grunt]: http://gruntjs.com/
+{:target="_blank"}
 [Install grunt-cli]: http://gruntjs.com/getting-started
+{:target="_blank"}
 [Install Node.js]: https://nodejs.org/en/
+{:target="_blank"}
 [Learn more about testing with Jasmine.]: https://jasmine.github.io/edge/introduction.html
+{:target="_blank"}
 
 <!-- Internal -->
 [Step 6]: #prepare-step6

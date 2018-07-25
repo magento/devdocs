@@ -1,5 +1,4 @@
 ---
-layout: default
 group: release-notes
 subgroup: 02_rel-notes
 title: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes 
@@ -21,7 +20,7 @@ We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release ca
 
 We welcome your participation in this process! Magento Commerce customers can provide feedback in these two ways: 
 
-* Magento Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{page.baseurl}}contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
+* Magento Commerce GitHub repository.  For more information on how to provide feedback and contribute on GitHub, see <a href="{{ page.baseurl }}/contributor-guide/contributing.html" target="_blank">Code contributions</a>. 
 
 * Email to DL-Magento-2.1-Feedback@magento.com.
 
@@ -29,7 +28,7 @@ We welcome your participation in this process! Magento Commerce customers can pr
 This Release Candidate is available from `repo.magento.com` if you have an Magento Commerce license or GitHub  if you have previously signed an agreement to access Magento Commerce 2.0 beta software on GitHub.
 
 
-Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
+Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
 
 <h3>Highlights</h3>
@@ -124,7 +123,7 @@ See one of the following sections:
 *	[Upgrade to an RC with sample data](#upgrade-rc-samp)
 
 ## Install using Composer {#install-rc-composer}
-This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
+This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 <installation directory name>
 
@@ -138,12 +137,12 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 </div>
 
 ### Upgrade using the Setup Wizard
-Use the instructions in [Start System Upgrade]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
+Use the instructions in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade an existing installation from the GitHub repository
-Developers who contribute to the Open Source codebase can <a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
+Developers who contribute to the Open Source codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
-1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
+1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
 2.	Follow the instructions to pull the updates from the repository and update using Composer.
 
@@ -170,7 +169,7 @@ Developers who contribute to the Open Source codebase can <a href="{{page.baseur
 		composer require magento/product-enterprise-edition 2.1.0-rc1 --no-update
 		composer update
 	
-3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
+3.	If prompted, enter your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html).
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade

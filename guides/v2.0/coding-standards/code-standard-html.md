@@ -1,5 +1,4 @@
 ---
-layout: default
 group: coding-standards
 subgroup: 01_Coding standards
 title: HTML style guide
@@ -8,6 +7,8 @@ menu_title: HTML style guide
 menu_order: 9
 version: 2.0
 github_link: coding-standards/code-standard-html.md
+functional_areas:
+  - Standards
 ---
 
 This style guide defines Magento internal requirements for {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code style for teams that develop LESS and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code. We recommend that developers who create Magento extensions and customizations also use these standards.
@@ -103,7 +104,7 @@ Use no space before the colon and one space after the colon for the sake of read
 ## Block-level elements
 Use appropriate HTML5 elements for blocks. The following diagram shows how to define which HTML5 element to use for a block:
 
-<img src="{{ site.baseurl }}common/images/h5d-sectioning-flowchart.png">
+<img src="{{ site.baseurl }}/common/images/h5d-sectioning-flowchart.png">
 
 
 ## Class names

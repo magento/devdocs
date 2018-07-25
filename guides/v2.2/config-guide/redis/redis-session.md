@@ -1,20 +1,15 @@
 ---
-layout: default
 group: config-guide
-subgroup: 09_Redis
 title: Use Redis for session storage
-menu_title: Use Redis for session storage
-menu_order: 10
-menu_node:
 version: 2.2
 github_link: config-guide/redis/redis-session.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
-<h2 id="reds-cache-prereq">Prerequisite</h2>
-
-If Redis will be used for default or page caching, you must [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing. .
-
-<h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
+You must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
 Magento now provides command line options to configure Redis session storage. In previous releases, you edited the `<Magento install dir>app/etc/env.php` file. The command line provides validation and is the recommended configuration method, but you can still edit the `env.php` file.
 
@@ -40,7 +35,7 @@ where
 <td>session-save-redis-host</td>
 <td>host</td>
 <td>
-<p>Fully qualified host name, IP address, or absolute path if using UNIX sockets.</p>
+<p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p>
 </td>
 <td>localhost</td>
 </tr>
@@ -232,5 +227,5 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>

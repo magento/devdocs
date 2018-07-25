@@ -13,7 +13,7 @@
 	<tr>
 		<td>Your Store Address </td>
 		<td><p>Enter the URL, <em>including scheme and trailing slash</em>, by which users access your storefront.</p>
-		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
+		<p>For example, if your storefront hostname is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
 	</tr>
 	<tr>
 		<td>Magento Admin Address </td>
@@ -32,11 +32,11 @@
 		</tr>
 	<tr>
 		<td>HTTPS Options</td>
-		<td>Select the check box to enable the use of Secure Sockets Layer (SSL) in the indicated URL. Make sure your web server supports SSL before you select either check box.</td>
+		<td>Select the checkbox to enable the use of Secure Sockets Layer (SSL) in the indicated URL. Make sure your web server supports SSL before you select either checkbox.</td>
 	</tr>
 	<tr>
 		<td>Apache Rewrites</td>
-		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>.</td>
+		<td>Select this checkbox to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>.</td>
 	</tr>
 	<tr>
 		<td>Encryption Key</td>

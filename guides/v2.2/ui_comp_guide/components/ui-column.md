@@ -1,5 +1,4 @@
 ---
-layout: default
 group: UI_Components_guide
 subgroup: components
 title: Column component
@@ -9,11 +8,11 @@ github_link: ui_comp_guide/components/ui-column.md
 ---
 
 ## Overview
-The Column component implements a basic column in [Listing]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
+The Column component implements a basic column in [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 ## Configuration
 
-Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+Extends all [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 Column-specific configuration:
 
@@ -25,6 +24,12 @@ Column-specific configuration:
     <th>Default</th>
   </tr>
   <tr>
+    <td><code>component</code></td>
+    <td>The path to the component's <code>.js</code> file in terms of RequireJS.</td>
+    <td>String</td>
+    <td><code>Magento_Ui/js/grid/columns/column</code></td>
+  </tr>
+  <tr>
     <td><code>bodyTmpl</code></td>
     <td>Path to the template used for rendering column's fields in the table's body.</td>
     <td>String</td>
@@ -32,7 +37,7 @@ Column-specific configuration:
   </tr>
   <tr>
     <td><code>controlVisibility</code></td>
-    <td>Whether a user can control column's visibility handled by the <a href="{{page.baseurl}}ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>.</td>
+    <td>Whether a user can control column's visibility handled by the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>.</td>
     <td>Boolean</td>
     <td><code>true</code></td>
   </tr>
@@ -62,7 +67,7 @@ Column-specific configuration:
   </tr>
   <tr>
     <td><code>filter</code></td>
-    <td>Reference to one of the available filter types defined in the <a href="{{page.baseurl}}ui_comp_guide/components/ui-filters.html">Filters component</a>. If the value represents an object containing the <code>filterType</code> field, this object is considered as an extension of the referenced filter element. If there's no such field in the value object, it is considered as a definition of a custom filter element.</td>
+    <td>Reference to one of the available filter types defined in the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-filters.html">Filters component</a>. If the value represents an object containing the <code>filterType</code> field, this object is considered as an extension of the referenced filter element. If there's no such field in the value object, it is considered as a definition of a custom filter element.</td>
     <td>String | Object</td>
     <td></td>
   </tr>
@@ -92,7 +97,7 @@ Column-specific configuration:
   </tr>
   <tr>
     <td><code>statefull</code></td>
-    <td>Defined in the parent <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</td>
+    <td>Defined in the parent <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html">uiElement class</a>.</td>
     <td></td>
     <td><code>{visible: true, sorting: true}</code></td>
   </tr>

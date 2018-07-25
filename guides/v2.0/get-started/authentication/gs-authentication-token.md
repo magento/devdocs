@@ -1,5 +1,4 @@
 ---
-layout: default
 group: get-started
 subgroup: 40_Authentication
 title: Token-based authentication
@@ -8,6 +7,8 @@ menu_order: 1
 version: 2.0
 github_link: get-started/authentication/gs-authentication-token.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
+functional_areas:
+  - Integration
 ---
 
 To make a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call from a client such as a mobile application, you must supply an *access token* on the call. The token acts like an electronic key that lets you access the API.
@@ -23,7 +24,7 @@ Customer | Magento grants access to resources with the `anonymous` or `self` per
 
 ## Integration tokens
 
-When a merchant creates and activates an integration, Magento generates a consumer key, consumer secret, access token, and access token secret. All of these entities are used for [OAuth-based authentication]({{page.baseurl}}/get-started/authentication/gs-authentication-oauth.html), but token-based authentication requires only the access token.
+When a merchant creates and activates an integration, Magento generates a consumer key, consumer secret, access token, and access token secret. All of these entities are used for [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html), but token-based authentication requires only the access token.
 
 Use the following steps to generate an access token:
 
@@ -34,15 +35,15 @@ Use the following steps to generate an access token:
 5. Click **Save** to save your changes and return to the Integrations page.
 6. Click the **Activate** link in the grid that corresponds to the newly-created integration.
 7. Click **Allow** . A dialog similar to the following displays:
-![REST client]({{page.baseurl}}get-started/authentication/images/integration-tokens.png)
+![REST client]({{ page.baseurl }}/get-started/authentication/images/integration-tokens.png)
 
 The access token can be used in all calls made on behalf of the integration.
 
 ## Admin and customer access tokens
 
-Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the user name and password for a Magento account.
+Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique access token in exchange for the username and password for a Magento account.
 
-The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{page.baseurl}}rest/anonymous-api-security.html) contains a list of APIs that do not require a token.
+The Magento web API framework allows *guest users* to access resources that are configured with the permission level of anonymous. Guest users are users who the framework cannot authenticate through existing authentication mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission. [Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html) contains a list of APIs that do not require a token.
 
 Use the following calls to get an authentication token:
 
@@ -83,7 +84,7 @@ A access token request contains three basic elements:
    <tr>
       <td>Credentials</td>
       <td>
-         <p>The user name and password for a Magento account.</p>
+         <p>The username and password for a Magento account.</p>
          <p>To specify these credentials in a JSON request body, include <code>'{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
          <p> To specify these credentials in XML, include <code>&lt;login>&lt;username>customer1@example.com&lt;/username>&lt;password>customer1pw&lt;/password>&lt;/login></code> in the call.</p>
       </td>
@@ -94,7 +95,7 @@ A access token request contains three basic elements:
 
 The following image shows a token request for the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} account using a REST client:
 
-![REST client]({{page.baseurl}}get-started/authentication/images/gs_auth_token1.png)
+![REST client]({{ page.baseurl }}/get-started/authentication/images/gs_auth_token1.png)
 
 The following example uses the `curl` command to request a token for a customer account:
 
@@ -112,7 +113,7 @@ curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -d "<login><username>customer1@example.com</username><password>customer1pw</password></login>"
 ```
 
-For more information about the `curl` command, see [Use cURL to run the request]({{page.baseurl}}get-started/gs-curl.html)
+For more information about the `curl` command, see [Use cURL to run the request]({{ page.baseurl }}/get-started/gs-curl.html)
 
 ## Authentication token response {#auth-response}
 
@@ -139,9 +140,9 @@ Customers can access only resources with `self` permissions.
 For example, to make a web API call with a customer token:
 `curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" -H "Authorization: Bearer asdf3hjklp5iuytre"`
 
-<h2>Related topics</h2>
-[Construct a request]({{page.baseurl}}/get-started/gs-web-api-request.html)
+## Related topics
+[Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html)
 
-[Configure services as web APIs]({{page.baseurl}}extension-dev-guide/service-contracts/service-to-web-service.html)
+[Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)
 
-[Restricting access to anonymous web APIs]({{page.baseurl}}rest/anonymous-api-security.html)
+[Restricting access to anonymous web APIs]({{ page.baseurl }}/rest/anonymous-api-security.html)

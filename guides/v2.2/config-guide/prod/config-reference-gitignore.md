@@ -1,5 +1,4 @@
 ---
-layout: default
 group: config-guide
 subgroup: 07_conf
 title: .gitignore reference
@@ -10,6 +9,10 @@ level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.2
 github_link: config-guide/prod/config-reference-gitignore.md
+functional_areas:
+  - Configuration
+  - System
+  - Setup
 ---
 
 This reference shows suggested `.gitignore` files to use in a development system and in a build or production system.
@@ -89,7 +92,7 @@ atlassian*
 
 {% endcollapsible %}
 
-For reference, here is a [link to the latest Magento `.gitignore`](https://raw.githubusercontent.com/magento/magento2/develop/.gitignore){:target="_blank"}
+For reference, here is a [link to the latest Magento `.gitignore`](https://raw.githubusercontent.com/magento/magento2/2.2/.gitignore){:target="_blank"}
 
 ## .gitignore for build and production
 You should use the same `.gitignore` in both your build and production systems so they have the same files in source control.
