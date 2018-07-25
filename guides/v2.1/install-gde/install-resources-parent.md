@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-You can use the following resources at any time to help you with your Magento installation:
+You can use the following resources at any time to help you with your Magento installation.
 
 *	[Quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html)—a quick tutorial to get your installation off the ground quickly
 *	[Roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html)—a detailed reference of all your installation and post-installation options
