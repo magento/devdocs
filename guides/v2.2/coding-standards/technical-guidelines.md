@@ -773,6 +773,8 @@ class SampleEventObserverThatModifiesInputs
 
 15.10.2. SHOULD NOT directly pass user-submitted values to include*(), require*(), create_function(), fopen(), preg_replace()
 
+15.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.
+
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
