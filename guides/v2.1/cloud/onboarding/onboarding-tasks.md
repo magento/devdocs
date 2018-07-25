@@ -28,6 +28,7 @@ creating Technical Admin users that can help with set up, customization, and
 development work.
 
 ## Project portal
+
 Once you have an account, you can use the Magento Project Portal to manage the
 project for your {{site.data.var.ece}} store. The portal provides a Getting Started guide
 and an interactive workflow that helps project administrators, business users,
