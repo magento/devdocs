@@ -53,6 +53,8 @@ Any backwards-incompatible changes must also be recorded in the accompanying doc
 #### Automated Tests
 
 Code changes must be covered by automated tests according to Classification of Magento Automated Tests.
+When choosing how to cover your changes pick the most lightweight (execution time wise) test type that will provide sufficient coverage.
+If you encounter an existing test that insufficiently covers your changes (a Unit test for a method that affects database for instance) you can delete that test but you must write a proper test to replace it.
 
 Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
 Continuous integration enforces execution of all tests and author is accountable for broken builds.
@@ -65,27 +67,52 @@ See [Functional Tests][2].
 
 #### Unit Tests
 
-Code to cover:
+Cover classes and methods that:
 
-* new code (except auto-generated code) MUST BE covered by unit tests
-* modified legacy code:
+ * have little to no dependencies on other classes
+ * do not interact with resources like DB, file system, 3rd party systems etc.
+ * underlying functionality cannot be properly covered indirectly by an integration test.
+ * can be covered by black box test
 
-New and modified code MUST BE covered if it changes the system's behavior, and MAY BE covered if it does not change system's behavior (class/method renamed, class moved, other minor changes)
+Examples:
 
-In cases where it is impossible to cover, replace with integration tests.
+ * Utils (like Magento\Framework\Math\Random)
+ * Simple classes that can also be used (at least initiated) independently (like Magento\Framework\Api\SortOrder)
+ * Simple methods that are only affecting their own object (like Magento\TargetRule \Model\Rule::getActionSelectBind)
+ * Algorithms that perform calculation, parsing
 
-It is not necessary to cover classes created by auto-generation and methods that don't have any business logic.
+Code NOT to cover:
+
+ * Classes/methods with numerous dependencies.
+	*	Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)
+ * Classes/methods interacting with resources directly or indirectly.
+	*	It is impossible to test the resources affected within a Unit test.
+ * Glue code.
+	*	Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.
+
+Examples:
+
+ * Controllers - they can only be properly covered by functional tests because they are a glue that connects different app layers and only their final result matters
+ * Most models - they are usually having a lot of dependencies and are interacting with resources
+ * Simple DTOs
+ * Factories
 
 #### Integration Tests
 
-Code to cover:
+Cover classes and methods that:
 
-* Must cover code that interacts with operating system environment, database or any other 3rd-party system directly
-* Must cover code in "Model" layer that interacts with database indirectly
-* Must be used as alternative of unit tests in legacy code in the following cases:
+ * cannot be covered with a black box unit test
+ * have a lot of dependencies (unit test would require complex mocking)
+ * interact with resources (database, file system, 3rd party systems etc.).
 
-	*	If it is impossible to cover due to high code coupling
-	*	If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification
+Examples:
+
+ * APIs
+	*	Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly), cover each implementation if an interface suggests multiple implementations.
+ * SPIs
+	*	Same as APIs. Also it would be good to create tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure that the interface’s implementations can be swapped without breaking the application.
+ * Models/Resource Models
+	*	Usually have numerous dependencies, interacting with resources (DB, cache, file system, 3rd party systems etc.) and sometimes can substitute an API.
 
 See: [Running Integration Tests][3].
 
