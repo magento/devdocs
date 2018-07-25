@@ -69,6 +69,19 @@ Wysiwyg-specific options:
   </tr>
 </table>
 
+## Events
+
+* `tinymceBeforeSetContent` - fires before the contents are inserted into the editor
+* `tinymcePaste` - fires when a paste is done within the editor
+* `tinymceSaveContent` - fires when the contents in the editor are saved
+* `tinymceSaveContent` (`PostProcess`) - fires when the contents in the editor are being serialized
+* `tinymceUndo` - fires when the contents have been reverted to a previous state
+* `tinymceFocus` - fires when the editor is focused
+* `tinymceBlur` - fires when the editor is blurred
+* `tinymceChange` - fires when undo level is added to the editor
+* `wysiwygEditorInitialized` - fies when the WYSIWYG editor is initialized
+
+
 ## Add a default editor
 Adding the default Magento WYSIWYG editor to a page requires the following steps:
 
