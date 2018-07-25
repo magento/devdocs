@@ -72,7 +72,7 @@ Use an upper case first letter for:
  - Data entity names. Example: `<entity name="OutOfStockProduct">`.
  - Page name. Example: `<page name="AdminLoginPage">`.
  - Section name. Example: `<section name="AdminCategorySidebarActionSection">`.
- - Action group name. Example: `<actionGroup name="LoginToAdminActionGroup">`
+ - Action group name. Example: `<actionGroup name="LoginToAdminActionGroup">`.
  
 #### Lower case
  
