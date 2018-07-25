@@ -109,26 +109,30 @@ To create a pull request:
 
 After submitting your PR, you can head over to the Magento 2 repository’s [Pull Requests panel](https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr){:target="_blank"} to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.
 
-## Porting Pull Requests across Magento versions {#porting}
+## Porting code contributions across Magento versions {#porting}
 
-Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily? In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port.
+In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
 
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
-
-**Up-port** - If you have an issue fixed in a non-latest release line, as a best practice create a pull request to the latest branch in order to address that issue in an upcoming minor release. You want to create an up-port if the issue exists in a high release line. We recommend contributors create an up-port for every pull request delivered to a lower release line.
-
-**Back-port** - If you fixed an issue in a release line and there is a supported lower version release line, as a best practice create a pull request to that lower release line to address the issue. You want to create a back-port if the issue exists in a lower release line.
-
-You have two options for porting your code:
+We provide two options to back-ports and up-ports with your contributions:
 
 - [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
+
+<div class="bs-callout bs-callout-info" id="info">
+Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
+</div>
+
+### What are up-ports and back-ports?
+
+**Up-ports** contribute your code and fixes to a higher release line. If you have an issue fixed in a non-latest release line, as a best practice create a pull request to the latest branch in order to address that issue in an upcoming minor release. You want to create an up-port if the issue exists in a higher release line. For example, you may have contributed a fix to 2.1 and up-port to 2.2 and 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
+
+**Back-ports** contribute your code and fixes to a lower release line. If you fixed an issue in a release line and there is a supported lower version release line, as a best practice create a pull request to that lower release line to address the issue. You want to create a back-port if the issue exists in a lower release line. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
 
 ### Magento Porting Tool {#porting-tool}
 
 This tool ports fixes automatically across versions with a few simple steps. It allows you to create ports only for _merged_ pull requests.
 
-Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"}. The first time you visit, you need to login using GitHub and authorize with the password. The tool performs all actions using your token.
+Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"}. The first time you visit, you need to login and authorize with GitHub credentials. The tool performs all actions using your token.
 
 1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"} and **Login with GitHub**.
 1. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
@@ -136,14 +140,14 @@ Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.m
 1. Verify the summary of changesin **Port information**.
 1. Click **Create Job**. A job is created and started shortly after.
 
-![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png){:width="600px"}
+![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png)
 
 The results of porting include the following:
 
 - Done - Your port has been successfully created.
 - Fail - The patch failed to apply automatically, usually due to merge conflict.
 
-In case of failure, porting artifacts will be available for download:
+In case of failure, porting artifacts will be available for download and review:
 
 - Log - Includes information on actions and results. Find the reason why the porting job failed.
 - Patch - Use to manually apply the patch and resolve all merge conflicts.
@@ -162,7 +166,9 @@ The tool includes configuration settings through the gear icon located top right
 
 ### Manual porting {#manual-porting}
 
-Following is an example Forwardport pull request for https://github.com/magento/magento2/pull/13528 from the `2.2-develop` to `2.3-develop` branch:
+When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.
+
+The following is an example "Forwardport" pull request for https://github.com/magento/magento2/pull/13528 from the `2.2-develop` branch to the `2.3-develop` branch:
 
 1. Checkout the `2.3-develop` branch. Make sure that you have the latest changes from the magento/magento2 repository.
 1. Create a new branch for your fix: `git checkout -b up-port-pull-13528`.
