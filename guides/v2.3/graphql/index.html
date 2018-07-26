@@ -710,7 +710,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <ul>
   <li>
     <p><strong>EAV attributes</strong> are explicitly declared in the <code class="highlighter-rouge">schema.graphqls</code> files.
-For example, the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogGraphQl/etc/schema.graphqls"><code class="highlighter-rouge">Catalogschema.graphqlsfile</code></a> declares multiple EAV attributes.</p>
+For example, the <a href="https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogGraphQl/etc/schema.graphqls"><code class="highlighter-rouge">Catalogschema.graphqls</code></a> file declares multiple EAV attributes.</p>
   </li>
   <li>
     <p><strong>Custom attributes</strong> are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we’ve implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they’ll always be present.</p>
