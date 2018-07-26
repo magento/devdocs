@@ -28,6 +28,7 @@ creating Technical Admin users that can help with set up, customization, and
 development work.
 
 ## Project portal
+
 Once you have an account, you can use the Magento Project Portal to manage the
 project for your {{site.data.var.ece}} store. The portal provides a Getting Started guide
 and an interactive workflow that helps project administrators, business users,
@@ -78,7 +79,7 @@ see [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html).
 When you sign up for a Pro or Starter subscription plan, we provision
 your initial project environment with a template {{site.data.var.ece}}
 repository to build and manage your site. For information about what is included
-in Pro and Starter plans, see [Starter Architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ site.baseurl }}/cloud/basic-information/pro-architecture.html).
+in Pro and Starter plans, see [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
 You can use the Project Web Interface to manage your project, add user accounts,
 and begin developing your store(s). The Project Owner, Technical Admin users,

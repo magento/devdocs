@@ -65,7 +65,7 @@ This release contains numerous fixes and enhancements. This section includes onl
 
 <!--RFC-125-->* We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
 
-<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools) to get this update.
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
 <!-- 57167 -->* You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.
 
@@ -90,7 +90,7 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html#variables).
 
-* Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html#config).
+* Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html).
 
 * The command for generating `config.php` changed in 2.2 from `php bin/magento magento-cloud:scd-dump` to `php vendor/bin/m2-ece-scd-dump`.
 

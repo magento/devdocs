@@ -18,4 +18,4 @@ functional_areas:
 #### Related topics
 
 -   [Clone the Magento repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
--   [Get the Composer metapackage]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
+-   [Get the Composer metapackage]({{ page.baseurl }}/install-gde/composer.html)

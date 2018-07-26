@@ -12,7 +12,6 @@ functional_areas:
 ## What's in this topic
 Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
-
 <h2 id="simple_extend">Simplest way to extend parent styles</h2> 
 
 To extend the parent theme's styles in your theme:
@@ -33,6 +32,12 @@ To extend the parent theme's styles in your theme:
 </ol>
 
 Extending a theme using <code>_extend.less</code> is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
+
+{%
+include note.html
+type='info'
+content='The rules and variables declared in <code>_extend.less</code> always have precedence over ones declared in <code>_theme.less</code>'
+%}
 
 <h2 id="simple_override">Simplest way to override parent styles</h2>
 

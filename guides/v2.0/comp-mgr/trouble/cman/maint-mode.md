@@ -49,7 +49,7 @@ body
 </style>
 </head>
 <body>
-<h1>Temporarily offline</h1>
+# Temporarily offline
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>

@@ -456,7 +456,7 @@ After the page loads, you should notice the browser loading different dependenci
 
 ![TwiceAsFast](images/TwiceAsFast.png)
 
-The the page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.
+The page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.
 
 #### 7. Optimize the bundles
 

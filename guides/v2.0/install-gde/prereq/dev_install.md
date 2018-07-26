@@ -31,7 +31,7 @@ If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento softw
 ## Prerequisites
 {% include install/prereq.md %}
 
-{% include install/composer-overview.html %}
+{% include install/composer-overview.md %}
 
 ## Install Composer {#instgde-prereq-compose-install}
 {% include install/composer-clone.md %}
