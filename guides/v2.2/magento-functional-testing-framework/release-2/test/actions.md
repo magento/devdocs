@@ -63,7 +63,15 @@ Example with `after`:
 
 `myAction` will be executed after the action, which has `stepKey="fillField"`.
 
-## Example
+
+#### Example:
+
+```xml
+<waitForText userInput="Sample Text" selector="#page" stepKey="waitForText"/>
+```
+This action will wait for text "Sample Text" to appear in an element with the id of `page` before continuing.
+
+## Examples
 
 {%raw%}
 The following example contains four actions:
@@ -107,7 +115,7 @@ Here, `url` contains a pointer to a `url` attribute of the `StorefrontCustomerSi
 ### 2. Enter a customer's email  {#example-step2}
 
 ```xml
-<fillField  userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
+<fillField userInput="$$customer.email$$" selector="{{StorefrontCustomerSignInFormSection.emailField}}" stepKey="fillEmail"/>
 ```
 
 [`<fillField>`](#fillfield) fills a text field with the given string.
@@ -192,6 +200,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<acceptPopup stepKey="acceptPopup"/>
+```
+This action will accept the current popup visible on the page.
+
 ### amOnPage
 
 See [amOnPage docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnPage){:target="_blank"}.
@@ -202,6 +217,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required|A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<amOnPage url="/admin" stepKey="goToLogoutPage"/>
+```
+This action will open the page `(baseURL)/admin`.
 
 ### amOnSubdomain
 
@@ -214,6 +236,14 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<amOnSubdomain url="data" stepKey="changeSubdomain"/>
+<amOnPage url="/" stepKey="goToDataPage"/>
+```
+If the current base URL was `http://www.magento.com`, these actions would open the page `http://data.magento.com`.
+
 ### amOnUrl
 
 See [amOnUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#amOnUrl){:target="_blank"}.
@@ -224,6 +254,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<amOnUrl url="https://www.google.com/" stepKey="amOnUrl"/>
+```
+This action will take to you the URL `https://www.google.com/`.
 
 ### appendField
 
@@ -237,6 +274,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<appendField userInput="Suffix" selector="input#name" stepKey="appendSuffix"/>
+```
+This action would append the suffix `Suffix` to the current value of an input with an id of 'name'.
+
 ### attachFile
 
 See [attachFile docs on codeception.com](http://codeception.com/docs/modules/WebDriver#attachFile){:target="_blank"}.
@@ -249,6 +293,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<attachFile userInput="image.png" selector="input#imgUpload" stepKey="uploadFile"/>
+```
+This action would upload a file with the name of `image.png` to the input with the id of `imgUpload`.
+
 ### cancelPopup
 
 See [cancelPopup docs on codeception.com](http://codeception.com/docs/modules/WebDriver#cancelPopup){:target="_blank"}.
@@ -258,6 +309,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<cancelPopup stepKey="cancelPopup"/>
+```
+This action will cancel the current popup visible on the page.
 
 ### checkOption
 
@@ -269,6 +327,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<checkOption selector="input#checkbox" stepKey="checkCheckbox"/>
+```
+This action will ensure that the input with the id of `checkbox` is checked, regardless of whether it was already checked or not
 
 ### clearField
 
@@ -282,6 +347,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<appendField selector="input#name" stepKey="clearField"/>
+```
+This action will clear the field of an input with an id of `name`.
+
 ### click
 
 See [click docs on codeception.com](http://codeception.com/docs/modules/WebDriver#click){:target="_blank"}.
@@ -294,6 +366,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<click selector="button#clickable" stepKey="clickButton"/>
+```
+This action will click the button with the id of `clickable`.
 
 ### clickWithLeftButton
 
@@ -309,6 +388,23 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<clickWithLeftButton selector="button#clickable" stepKey="clickButton3"/>
+```
+This action will perform a left button click on an element with the id of `clickable`.
+
+```xml
+<clickWithLeftButton x="50" y="50" stepKey="clickButton3"/>
+```
+This action will perform a left button click that is 50px from the top of the window and 50px from the left of the window.
+
+```xml
+<clickWithLeftButton selector="button#clickable" x="50" y="50" stepKey="clickButton3"/>
+```
+This action will perform a left button click that is 50px from the top and 50px from the left of a button with the id of `clickable`.
+
 ### clickWithRightButton
 
 See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithRightButton){:target='"_blank"}.
@@ -323,6 +419,23 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<clickWithRightButton selector="button#clickable" stepKey="clickButton3"/>
+```
+This action will perform a right button click on an element with the id of `clickable`.
+
+```xml
+<clickWithRightButton x="50" y="50" stepKey="clickButton3"/>
+```
+This action will perform a right button click that is 50px from the top of the window and 50px from the left of the window.
+
+```xml
+<clickWithRightButton selector="button#clickable" x="50" y="50" stepKey="clickButton3"/>
+```
+This action will perform a left button click that is 50px from the top and 50px from the left of a button with the id of `clickable`.
+
 ### closeAdminNotification
 
 Remove from the DOM all elements with the CSS classes `.modal-popup` or `.modals-overlay`.
@@ -333,6 +446,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<closeAdminNotification stepKey="closeAdminNotification"/>
+```
+This action will remove all elements with the CSS classes `.modal-popup` or `.modals-overlay`.
+
 ### closeTab
 
 See [closeTab docs on codeception.com](http://codeception.com/docs/modules/WebDriver#closeTab){:target="_blank"}.
@@ -342,6 +462,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<closeTab stepKey="closeTab"/>
+```
+This action will close the current active tab and switch to the previous active tab.
 
 ### comment
 
@@ -356,15 +483,15 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+```xml
+<amOnPage url="/login" stepKey="goToLoginPage"/>
+<comment userInput="I am on the login page" stepKey="loginPageComment"/>
+```
+This action will leave a comment of `I am on the login page` after the `amOnPage` action in the generated php file
+
 ### conditionalClick
 
 Conditionally click on an element if, and only if, another element is visible or not.
-
-For example, to click on `#foo` if `#bar` is visible:
-
-```xml
-<conditionalClick selector="#foo" dependentSelector="#bar" visible="true" stepKey="click1"/>
-```
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -375,16 +502,17 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<conditionalClick selector="#foo" dependentSelector="#bar" visible="true" stepKey="click1"/>
+```
+This action will click on `#foo` if `#bar` is visible:
+
 ### createData
 
 Create an entity (for example, a category or product). In other words, make a `POST` request
 to the Magento API according to the data and metadata of the entity to be created.
-
-For example, you can create the entity with the name "SampleProduct":
-
-```xml
-<createData entity="SampleProduct" stepKey="createSampleProduct"/>
-```
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -393,6 +521,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<createData entity="SampleProduct" stepKey="createSampleProduct"/>
+```
+This action will create the entity with the name "SampleProduct":
 
 This action can optionally contain one or more `requiredEntity` child elements.
 
@@ -448,7 +583,7 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-#### Example of persisted data deletion
+#### Examples:
 
 Delete the entity that was previously created using [`createData`](#createdata) in the scope of the [test](../test.html#test-tag).
 
@@ -486,6 +621,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSee userInput="Sample title" selector="h2#title" stepKey="dontSeeTitle"/>
+```
+This action will be true only if there is no header with an id of `title` on the page that contains the text "Sample title".
+
 ### dontSeeCheckboxIsChecked
 
 See [dontSeeCheckboxIsChecked docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCheckboxIsChecked){:target="_blank"}.
@@ -496,6 +638,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<dontSeeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="checkboxNotChecked"/>
+```
+This action will be true only if a checkbox element with an id of `option1` is unchecked.
 
 ### dontSeeCookie
 
@@ -509,6 +658,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<dontSeeCookie userInput="cookie1" stepKey="cookie1NotPresent"/>
+```
+This action will be true only if there is no cookie with the given name `cookie1`.
+
+```xml
+<dontSeeCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="dontSeeCookieInExampleDomain"/>
+```
+This action will be true only if there is no cookie with the given name `cookie1` from the domain `www.example.com`.
+
 ### dontSeeCurrentUrlEquals
 
 See [dontSeeCurrentUrlEquals docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeCurrentUrlEquals){:target="_blank"}.
@@ -519,6 +680,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<dontSeeCurrentUrlEquals url="/admin" stepKey="notOnAdminPage"/>
+```
+This action will be true only if active window is not currently on the URL `(baseURL)/admin`.
 
 ### dontSeeCurrentUrlMatches
 
@@ -531,6 +699,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeCurrentUrlMatches regex="~$/users/(\d+)~" stepKey="dontSeeCurrentUrlMatches"/>
+```
+This action will be true only if active window is not currently on the URL that matches the regex expression `~$/users/(\d+)~`.
+
 ### dontSeeElement
 
 See [dontSeeElement docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeElement){:target="_blank"}.
@@ -542,6 +717,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<dontSeeElement selectore="div#box" stepKey="dontSeeBox"/>
+```
+This action will be true only if a div with an id of `box` is not available or invisible on the page.
 
 ### dontSeeElementInDOM
 
@@ -556,6 +738,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeElementInDOM selectore="div#box" stepKey="dontSeeBoxInDOM"/>
+```
+This action will be true only if a div with an id of `box` is not available on the page. The action would be false if the element was available on the page, but invisible.
+
 ### dontSeeInCurrentUrl
 
 See [dontSeeInCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInCurrentUrl){:target="_blank"}.
@@ -566,6 +755,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<dontSeeInCurrentUrl url="/users/" stepKey="dontSeeInCurrentUrl"/>
+```
+This action will be true only if the url of the current active tab does not contain the string `/users/`.
 
 ### dontSeeInField
 
@@ -580,6 +776,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeInField userInput="Sample text" selector="input#field" stepKey="dontSeeInField1"/>
+```
+This action will be true only if the input with an id of `field` does not contain the text "Sample text".
+
 ### dontSeeInFormFields
 
 See [dontSeeInFormFields docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInFormFields){:target="_blank"}.
@@ -592,6 +795,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeInFormFields selector="form[name=myform]" parameterArray="['input1' => 'value1', 'input2' => 'value2']" stepKey="dontSeeInFormFields"/>
+```
+This action will be true only if the form with the name `myform`, with the input elements of name `input1` and `input2`, do not have the values of `value1` and `value2` respectively.
+
 ### dontSeeInPageSource
 
 See [dontSeeInPageSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInPageSource){:target="_blank"}.
@@ -602,6 +812,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<dontSeeInPageSource userInput="Sample text" stepKey="dontSeeInPageSource"/>
+```
+This action will be true only if the page source does not contain the string "Sample text".
 
 ### dontSeeInSource
 
@@ -614,6 +831,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeInSource userInput="<h1>Sample text</h1>" stepKey="dontSeeInSource"/>
+```
+This action will be true only if the page does not contain the raw source code `<h1>Sample text</h1>`.
+
 ### dontSeeInTitle
 
 See [dontSeeInTitle docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeInTitle){:target="_blank"}.
@@ -625,6 +849,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeInTitle userInput="Page Title" stepKey="dontSeeInTitle"/>
+```
+This action will be true only if the title of the current active window does not contain the text "Page Title".
+
 ### dontSeeJsError
 
 Ensure that there are no JavaScript errors.
@@ -634,6 +865,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<dontSeeJsError stepKey="dontSeeJsError"/>
+```
+This action will be true only if there are no JavaScript errors.
 
 ### dontSeeLink
 
@@ -647,6 +885,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<dontSeeLink userInput="External link" stepKey="dontSeeLink"/>
+```
+This action will be true only if there is no hyperlink tag with the text "External link".
+
+```xml
+<dontSeeLink userInput="External link" url="/admin" stepKey="dontSeeAdminLink"/>
+```
+This action will be true only if there is no hyperlink tag with the text "External link" and the `href` attribute of `/admin`.
+
 ### dontSeeOptionIsSelected
 
 See [dontSeeOptionIsSelected docs on codeception.com](http://codeception.com/docs/modules/WebDriver#dontSeeOptionIsSelected){:target="_blank"}.
@@ -659,6 +909,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<dontSeeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="dontSeeJsOption1"/>
+```
+This action will be true only if the select element with an id of `myselect` does not have the option `option1` selected
+
 ### doubleClick
 
 See [doubleClick docs on codeception.com](http://codeception.com/docs/modules/WebDriver#doubleClick){:target="_blank"}.
@@ -669,6 +926,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<doubleClick selector="button#mybutton" stepKey="doubleClickButton"/>
+```
+This action will click the button with the id of `mybutton` twice in succession
 
 ### dragAndDrop
 
@@ -684,6 +948,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<dragAndDrop selector1="#block1" selector2="#block2" stepKey="dragAndDrop"/>
+```
+This action will click and drag the element with an id of `block1` to the middle of the element with an id of `block2`.
+
+```xml
+<dragAndDrop selector1="#block1" selector2="#block2" x="50" y="50" stepKey="dragAndDrop"/>
+```
+This action will click and drag the element with an id of `block1` to the middle of the element with an id of `block2` with a left offset of 50px and top offset of 50px.
+
 ### executeInSelenium
 
 See [executeInSelenium docs on codeception.com](http://codeception.com/docs/modules/WebDriver#executeInSelenium){:target="_blank"}.
@@ -695,6 +971,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<executeInSelenium function="function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver->get('http://google.com');}" stepKey="executeInSelenium"/>
+```
+This action will execute the Selenium function `function(\Facebook\WebDriver\Remote\RemoteWebDriver $webdriver) {$webdriver->get('http://google.com');}`.
+
 ### executeJS
 
 See [executeJS docs on codeception.com](http://codeception.com/docs/modules/WebDriver#executeJS){:target="_blank"}.
@@ -705,6 +988,15 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<executeJS function="return Math.floor(new Date() / 1000);" stepKey="returnTime"/>
+```
+This action will return the time in seconds since Unix Epoch (January 1, 1970)
+
+To access this value you would use `{$returnTime}` in later actions.
 
 ### fillField
 
@@ -719,6 +1011,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<fillField userInput="Sample text" selector="input#myfield" stepKey="fillField"/>
+```
+This action will fill in the field with an id of `myfield` with the text "Sample text"
+
 ### formatMoney
 
 Attribute|Type|Use|Description
@@ -731,17 +1030,7 @@ Attribute|Type|Use|Description
 
 ### getData
 
-Gets an entity (for example, a category, the Magento API according to the data and metadata of the entity type that is requested.
-
-For example, using `getData` in a test looks like this:
-
-```xml
-<getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
-    <requiredEntity createDataKey="productAttributeHandle"/>
-</getData>
-```
-
-The `ProductAttributeOptionGetter` entity must be defined in the corresponding [data `*.xml`](../data.html).
+Gets an entity (for example, a category), from the Magento API according to the data and metadata of the entity type that is requested.
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -751,6 +1040,17 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<getData entity="ProductAttributeOptionGetter" index="1" stepKey="getAttributeOption1Handle">
+    <requiredEntity createDataKey="productAttributeHandle"/>
+</getData>
+```
+This action would get the product attribute that was created using `<createData>` with the stepkey of `productAttributeHandle`.
+
+The `ProductAttributeOptionGetter` entity must be defined in the corresponding [data `*.xml`](../data.html).
 
 This action can optionally contain one or more [requiredEntity](#requiredentity) child elements.
 
@@ -766,6 +1066,15 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<grabAttributeFrom userInput="title" selector="input#myinput" stepKey="grabAttributeFrom"/>
+```
+This action would grab the `title` attribute from an input element with the id of `myinput`.
+
+To use this value later in a test you would call it using `{$grabAttributeFrom}`.
+
 ### grabCookie
 
 See [grabCookie docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabCookie){:target="_blank"}.
@@ -778,6 +1087,22 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<grabCookie userInput="cookie1" stepKey="grabCookie1"/>
+```
+This action will grab the cookie with the given name `cookie1`.
+
+To use this value later in a test you would call it using `{$grabCookie1}`.
+
+```xml
+<grabCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="grabCookieExampleDomain"/>
+```
+This action will grab the cookie with the given name `cookie1` from the domain `www.example.com`.
+
+To use this value later in a test you would call it using `{$grabCookieExampleDomain}`.
+
 ### grabFromCurrentUrl
 
 See [grabFromCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabFromCurrentUrl){:target="_blank"}..
@@ -788,6 +1113,15 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<grabFromCurrentUrl regex="~$/user/(\d+)/~" stepKey="grabFromCurrentUrl"/>
+```
+This action will grab the text from the current URL that matches the regex expression `~$/user/(\d+)/~`.
+
+To use this value later in a test you would call it using `{$grabFromCurrentUrl}`.
 
 ### grabMultiple
 
@@ -801,6 +1135,22 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<grabMultiple selector="div.myElement" stepKey="grabAllMyElements"/>
+```
+This action will grab every element on the page with the class `myElement` and return them as an array.
+
+To use these values later in a test you would call it using `{$grabAllMyElements}`.
+
+```xml
+<grabMultiple userInput="href" selector="a" stepKey="grabAllLinks"/>
+```
+This action will grab the href tag from every `a` element on the page as an array.
+
+To use these values later in a test you would call it using `{$grabAllLinks}`.
+
 ### grabPageSource
 
 See [grabPageSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabPageSource){:target="_blank"}.
@@ -810,6 +1160,15 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example
+
+```xml
+<grabPageSource stepKey="grabPageSource"/>
+```
+This action will grab the source code of the page.
+
+To use this string later in a test you would call it using `{$grabPageSource}`.
 
 ### grabTextFrom
 
@@ -821,6 +1180,15 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<grabTextFrom selector="h2#title" stepKey="grabTitle"/>
+```
+This action will store the text currently displayed by an h2 with the id of `title`.
+
+To use this string later in a test you would call it using `{$grabTitle}`.
 
 ### grabValueFrom
 
@@ -834,6 +1202,15 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<grabValueFrom selector="input#name" stepKey="grabInputName"/>
+```
+This action will store the value currently entered in the input with the id of `name`.
+
+To use this string later in a test you would call it using `{$grabInputName}`.
+
 ### loadSessionSnapshot
 
 See [loadSessionSnapshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#loadSessionSnapshot){:target="_blank"}.
@@ -844,6 +1221,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<loadSessionSnapshot userInput="savedSnapshot" stepKey="loadSnapshot"/>
+```
+This action will load all cookies saved via a `<saveSessionSnapshot>` action with the name of `savedSnapshot`.
 
 ### magentoCLI
 
@@ -856,6 +1240,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<magentoCLI command="indexer:reindex" stepKey="reindex"/>
+```
+This action will re-index all indices via the command line.
+
 ### makeScreenshot
 
 See [makeScreenshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#makeScreenshot){:target="_blank"}.
@@ -867,6 +1258,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<makeScreenshot userInput="example" stepKey="screenshotPage"/>
+```
+This action will take a screenshot of the page in its current state and save it to the directory `tests/_output/debug` under the name `example.png`.
+
 ### maximizeWindow
 
 See [maximizeWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#maximizeWindow){:target="_blank"}.
@@ -876,6 +1274,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<maximizeWindow stepKey="maximizeWindow"/>
+```
+This action will maximize the current window.
 
 ### moveBack
 
@@ -887,6 +1292,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<moveBack stepKey="moveBack"/>
+```
+This action will move back one page in history.
+
 ### moveForward
 
 See [moveForward docs on codeception.com](http://codeception.com/docs/modules/WebDriver#moveForward){:target="_blank"}..
@@ -896,6 +1308,11 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+```xml
+<moveForward stepKey="moveForward"/>
+```
+This action will move forward one page in history.
 
 ### moveMouseOver
 
@@ -910,6 +1327,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<moveMouseOver selector="div#product1" stepKey="hoverOverProduct"/>
+```
+This action will move the mouse cursor over the div element with an id of `product1`.
 
 ### mSetLocale
 
@@ -939,6 +1363,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<openNewTab stepKey="openNewTab"/>
+```
+This action will open a new browser tab and switch to it.
+
 ### parseFloat
 
 Parses float number with thousands separator.
@@ -959,6 +1390,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<pauseExecution stepKey="pause"/>
+```
+This action will cause test execution to stop until the `enter` key is pressed to continue.
 
 ### performOn
 
@@ -985,6 +1423,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<pressKey userInput="a" selector="#page" stepKey="pressA"/>
+```
+This action will press the `a` key on an element with the id of `page`.
+
+```xml
+<pressKey selector="#targetElement" parameterArray="[\Facebook\WebDriver\WebDriverKeys::ENTER]" stepKey="pressDelete"/>
+```
+This action uses key constants from the WebDriverKeys class to press the delete key on an element with an id of `targetElement`.
+
 ### reloadPage
 
 See [reloadPage docs on codeception.com](http://codeception.com/docs/modules/WebDriver#reloadPage){:target="_blank"}.
@@ -995,6 +1445,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<reloadPage stepKey="reloadPage"/>
+```
+This action will reload the current page.
+
 ### remove
 
 Removes action by its `stepKey`.
@@ -1002,6 +1459,13 @@ Removes action by its `stepKey`.
 Attribute|Type|Use|Description
 ---|---|---|---
 `keyForRemoval`|string|required| Set `stepKey` of the action you want to remove.
+
+#### Example:
+
+```xml
+<remove keyForRemoval="stepKeyToRemove"/>
+```
+This action will remove another action in the test with the key of `stepKeyToRemove`.
 
 ### resetCookie
 
@@ -1015,6 +1479,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<resetCookie userInput="cookie1" stepKey="grabCookie1"/>
+```
+This action will reset the cookie with the given name `cookie1`.
+
+```xml
+<resetCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="grabCookieExampleDomain"/>
+```
+This action will reset the cookie with the given name `cookie1` from the domain `www.example.com`.
+
 ### resizeWindow
 
 See [resizeWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#resizeWindow){:target="_blank"}.
@@ -1027,6 +1503,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<resizeWindow width="800" height="600" stepKey="resizeWindow"/>
+```
+This action will resize the current window to a width of 800px and a height of 600px.
+
 ### saveSessionSnapshot
 
 See [saveSessionSnapshot docs on codeception.com](http://codeception.com/docs/modules/WebDriver#saveSessionSnapshot){:target="_blank"}.
@@ -1037,6 +1520,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<saveSessionSnapshot userInput="savedSnapshot" stepKey="saveCurrentCookies"/>
+```
+This action will save all of the current cookies under the name `savedSnapshot`.
 
 ### scrollTo
 
@@ -1052,6 +1542,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<scrollTo selector="#anchor" stepKey="scrollToAnchor"/>
+```
+This action will move the page to the middle of an element with an id of `anchor`.
+
+```xml
+<scrollTo selector="#anchor" x="50" y="50" stepKey="scrollToAnchor2"/>
+```
+This action will move the page to the middle of an element with an id of `anchor`, with an offset of 50px from the top and 50px from the left.
+
 ### scrollToTopOfPage
 
 A convenience function that executes `window.scrollTo(0,0)` as JavaScript, thus returning to the top of the page.
@@ -1062,6 +1564,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<scrollToTopOfPage stepKey="scrollToTopOfPages"/>
+```
+This action will move the page to the uppermost, leftmost position.
+
 ### searchAndMultiSelectOption
 
 Search for and select options from a Magento multi-select drop-down menu.
@@ -1069,14 +1578,14 @@ For example, the drop-down menu you use to assign Products to Categories.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|required|The selector of a multi select HTML element (drop-down menu). 
+`selector`|string|required|The selector of a multi select HTML element (drop-down menu).
 `parameterArray`|array|required| Items to search and select in the selected drop-down menu.
-`requiredAction`|boolean|optional|Clicks **Done** after selections if `true`. 
+`requiredAction`|boolean|optional|Clicks **Done** after selections if `true`.
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
-Example:
+#### Example:
 
 ```xml
 <searchAndMultiSelectOption selector="#stuff" parameterArray="['Item 1', 'Item 2']" stepKey="searchAndMultiSelect1"/>
@@ -1103,6 +1612,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<see userInput="Sample title" selector="h2#title" stepKey="seeTitle"/>
+```
+This action will be true only if there is a header with an id of `title` on the page that contains the text "Sample title".
+
 ### seeCheckboxIsChecked
 
 See [seeCheckboxIsChecked docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCheckboxIsChecked){:target="_blank"}.
@@ -1113,6 +1629,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="checkboxChecked"/>
+```
+This action will be true only if a checkbox element with an id of option1 is checked.
 
 ### seeCookie
 
@@ -1126,6 +1649,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<seeCookie userInput="cookie1" stepKey="cookie1Present"/>
+```
+This action will be true only if there is a cookie with the given name `cookie1`.
+
+```xml
+<seeCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="seeCookieInExampleDomain"/>
+```
+This action will be true only if there is a cookie with the given name `cookie1` from the domain `www.example.com`.
+
 ### seeCurrentUrlEquals
 
 See [seeCurrentUrlEquals docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCurrentUrlEquals){:target="_blank"}.
@@ -1137,6 +1672,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeCurrentUrlEquals url="/admin" stepKey="onAdminPage"/>
+```
+This action will be true only if active window is currently on the URL `(baseURL)/admin`.
+
 ### seeCurrentUrlMatches
 
 See [seeCurrentUrlMatches docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeCurrentUrlMatches){:target="_blank"}.
@@ -1147,6 +1689,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeCurrentUrlMatches regex="~$/users/(\d+)~" stepKey="seeCurrentUrlMatches"/>
+```
+This action will be true only if active window is currently on the URL that matches the regex expression `~$/users/(\d+)~`.
 
 ### seeElement
 
@@ -1161,6 +1710,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeElement selectore="div#box" stepKey="seeBox"/>
+```
+This action will be true only if a div with an id of `box` is available and visible on the page.
+
 ### seeElementInDOM
 
 See [seeElementInDOM docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeElementInDOM){:target="_blank"}.
@@ -1173,6 +1729,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeElementInDOM selectore="div#box" stepKey="seeBoxInDOM"/>
+```
+This action will be true only if a div with an id of `box` is available on the page. The action would be true if the element was available on the page, but invisible.
+
 ### seeInCurrentUrl
 
 See [seeInCurrentUrl docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInCurrentUrl){:target="_blank"}.
@@ -1183,6 +1746,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeInCurrentUrl url="/users/" stepKey="seeInCurrentUrl"/>
+```
+This action will be true only if the url of the current active tab contains the string "/users/".
 
 ### seeInField
 
@@ -1197,6 +1767,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeInField userInput="Sample text" selector="input#field" stepKey="seeInField1"/>
+```
+This action will be true only if an input with an id of `field` contains the text “Sample text”.
+
 ### seeInFormFields
 
 See [seeInFormFields docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInFormFields){:target="_blank"}.
@@ -1209,6 +1786,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeInFormFields selector="form[name=myform]" parameterArray="['input1' => 'value1', 'input2' => 'value2']" stepKey="seeInFormFields"/>
+```
+This action will be true only if the form with the name `myform`, with the input elements of name `input1` and `input2`, have the values of `value1` and `value2` respectively.
+
 ### seeInPageSource
 
 See [seeInPageSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInPageSource){:target="_blank"}.
@@ -1219,6 +1803,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeInPageSource userInput="Sample text" stepKey="seeInPageSource"/>
+```
+This action will be true only if the page source contains the string "Sample text".
 
 ### seeInPopup
 
@@ -1231,6 +1822,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeInPopup userInput="Sample text" stepKey="seeInPopup"/>
+```
+This action will be true only if the current popup on the page contains the string "Sample text".
+
 ### seeInSource
 
 See [seeInSource docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeInSource){:target="_blank"}.
@@ -1241,6 +1839,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeInSource userInput="<h1>Sample text</h1>" stepKey="seeInSource"/>
+```
+This action will be true only if the page containa the raw source code `<h1>Sample text</h1>`.
 
 ### seeInTitle
 
@@ -1253,6 +1858,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<seeInTitle userInput="Page Title" stepKey="seeInTitle"/>
+```
+This action will be true only if the title of the current active window contains the text "Page Title".
+
 ### seeLink
 
 See [seeLink docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeLink){:target="_blank"}.
@@ -1264,6 +1876,18 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeLink userInput="External link" stepKey="seeLink"/>
+```
+This action will be true only if there is a hyperlink tag with the text "External link".
+
+```xml
+<seeLink userInput="External link" url="/admin" stepKey="seeAdminLink"/>
+```
+This action will be true only if there is a hyperlink tag with the text "External link" and the href attribute of `/admin`.
 
 ### seeNumberOfElements
 
@@ -1278,6 +1902,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<seeNumberOfElements userInput="10" selector=".product" stepKey="seeTenProducts"/>
+```
+This action will be true only if there are 10 elements with the class of `product` on the page.
+
+```xml
+<seeNumberOfElements userInput="[5, 10]" selector=".product" stepKey="seeTenProducts"/>
+```
+This action will be true only if there are between 5 and 10 elements with the class of `product` on the page.
+
 ### seeOptionIsSelected
 
 See [seeOptionIsSelected docs on codeception.com](http://codeception.com/docs/modules/WebDriver#seeOptionIsSelected){:target="_blank"}.
@@ -1289,6 +1925,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<seeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="seeOption1"/>
+```
+This action will be true only if the select element with an id of `myselect` has the option `option1` selected
 
 ### selectOption
 
@@ -1303,17 +1946,16 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<selectOption userInput="option1" selector="select#myselect" stepKey="selectOption1"/>
+```
+This action will select the option `option1` from a select element with an id of `myselect`.
+
 ### selectMultipleOptions
 
 Selects all given options in the given Magento drop-down element.
-
-Example:
-
-```xml
-<selectMultipleOptions filterSelector=".filter" optionSelector=".option" stepKey="selectMultipleOpts1">
-    <array>['opt1', 'opt2']</array>
-</selectMultipleOptions>
-```
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -1324,7 +1966,15 @@ Attribute|Type|Use|Description
 `after`|string|optional| `stepKey` of preceding action.
 
 It contains a child element `<array>` where you specify the options that must be selected using an array format like `['opt1', 'opt2']`.
-See the previous example.
+
+#### Example:
+
+```xml
+<selectMultipleOptions filterSelector=".filter" optionSelector=".option" stepKey="selectMultipleOpts1">
+    <array>['opt1', 'opt2']</array>
+</selectMultipleOptions>
+```
+This action would select the options `opt1` and `opt2` from the option tag with the class of `option` and a field element with the class of `filter`.
 
 ### setCookie
 
@@ -1339,6 +1989,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<setCookie userInput="cookieName" value="cookieValue" stepKey="setCookie"/>
+```
+This action will set a cookie with the name of `cookieName` and value of `cookieValue`.
+
 ### submitForm
 
 See [submitForm docs on codeception.com](http://codeception.com/docs/modules/WebDriver#submitForm){:target="_blank"}.
@@ -1352,6 +2009,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<submitForm selector="#loginForm" parameterArray="['username' => 'admin','password' => '123123q']" button="#submit" stepKey="submitForm"/>
+```
+This action will submit a value of `admin` for an input of name `username`, a value of `123123q` for an input of name `password` for a form with an id of `loginForm` and a submit button with an id of `submit`.
+
 ### switchToIFrame
 
 See [switchToIFrame docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToIFrame){:target="_blank"}.
@@ -1364,6 +2028,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<switchToIFrame userInput="embeddedFrame" stepKey="switchToIFrame"/>
+```
+This action will the focus to an iframe with the name attribute of `embeddedFrame`.
+
 ### switchToNextTab
 
 See [switchToNextTab docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToNextTab){:target="_blank"}.
@@ -1374,6 +2045,18 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Examples:
+
+```xml
+<switchToNextTab stepKey="switchToNextTab"/>
+```
+This action will switch to the next tab.
+
+```xml
+<switchToNextTab userInput stepKey="switchToNextTab2"/>
+```
+This action will switch to the second next tab.
 
 ### switchToPreviousTab
 
@@ -1386,6 +2069,18 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Examples:
+
+```xml
+<switchToPreviousTab stepKey="switchToPreviousTab"/>
+```
+This action will switch to the previous tab.
+
+```xml
+<switchToPreviousTab userInput stepKey="switchToPreviousTab2"/>
+```
+This action will switch to the second previous tab.
+
 ### switchToWindow
 
 See [switchToWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#switchToWindow){:target="_blank"}.
@@ -1396,6 +2091,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<switchToWindow userInput="newWindow" stepKey="switchToWindow"/>
+```
+This action will switch to a window with the `name` parameter of `newWindow`.
 
 ### typeInPopup
 
@@ -1408,6 +2110,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<typeInPopup userInput="Sample Text" stepKey="typeInPopup"/>
+```
+This action will type the text "Sample Text" into the current popup visible on the page.
+
 ### uncheckOption
 
 See [uncheckOption docs on codeception.com](http://codeception.com/docs/modules/WebDriver#uncheckOption){:target="_blank"}.
@@ -1418,6 +2127,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<uncheckOption selector="input#checkbox" stepKey="uncheckCheckbox"/>
+```
+This action will ensure that the input with the id of `checkbox` is unchecked, regardless of whether it was already checked or not.
 
 ### unselectOption
 
@@ -1432,6 +2148,12 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<unselectOption userInput="option1" selector="select#myselect" stepKey="unselectOption1"/>
+```
+This action will unselect the option `option1` from a select element with an id of `myselect`.
 
 ### updateData
 
@@ -1476,6 +2198,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<wait time="10" stepKey="waitTenSeconds"/>
+```
+This action would halt the test execution for 10 seconds before continuing.
+
 ### waitForAjaxLoad
 
 Wait for all AJAX calls to finish.
@@ -1486,6 +2215,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<waitForAjaxLoad stepKey="waitForAjaxLoad"/>
+```
+This action will wait for all AJAX calls to finish before continuing.
 
 ### waitForElementChange
 
@@ -1500,6 +2236,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<waitForElementChange selector="#changedElement" function="function(\WebDriverElement $el) {return $el->isDisplayed();}" stepKey="waitForElementChange"/>
+```
+This action will wait for an element with an id of `changedElement` to change to displayed before continuing.
+
 ### waitForElement
 
 See [waitForElement docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForElement){:target="_blank"}.
@@ -1511,6 +2254,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<waitForElement selector="#changedElement" stepKey="waitForElement"/>
+```
+This action will wait for an element with an id of `changedElement` to be appear on the page before continuing.
 
 ### waitForElementNotVisible
 
@@ -1524,6 +2274,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<waitForElementNotVisible selector="#changedElement" stepKey="waitForElement"/>
+```
+This action will wait for an element with an id of `changedElement` to become non-visible on the page before continuing.
+
 ### waitForElementVisible
 
 See [waitForElementVisible docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForElementVisible){:target="_blank"}.
@@ -1536,6 +2293,13 @@ Attribute|Type|Use|Description
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
 
+#### Example:
+
+```xml
+<waitForElementNotVisible selector="#changedElement" stepKey="waitForElement"/>
+```
+This action will wait for an element with an id of `changedElement` to become visible on the page before continuing.
+
 ### waitForJS
 
 See [waitForJS docs on codeception.com](http://codeception.com/docs/modules/WebDriver#waitForJS){:target="_blank"}.
@@ -1547,6 +2311,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<waitForJS function="return $.active == 0;" stepKey="waitForJS"/>
+```
+This action will wait for all jQuery AJAX requests to finish before continuing.
 
 ### waitForLoadingMaskToDisappear
 
@@ -1566,12 +2337,18 @@ The CSS class for loading masks is not used consistently throughout Magento. The
 //div[@data-role="spinner"]
 ```
 
-
 Attribute|Type|Use|Description
 ---|---|---|---
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<waitForLoadingMaskToDisappear stepKey="waitForLoadingMaskToDisappear"/>
+```
+This action will wait for all Magento loading overlays to disappear before continuing.
 
 ### waitForPageLoad
 
@@ -1583,6 +2360,13 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<waitForPageLoad stepKey="waitForPageLoad"/>
+```
+This action will wait for the current page to fully load before continuing.
 
 ### waitForText
 
