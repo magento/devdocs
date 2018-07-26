@@ -43,7 +43,7 @@ It is a best practice to verify the `ADMIN_EMAIL` variable, because it is requir
 
     `git add -A` is required to add all changed files to source control because of the way Composer marshals base packages. Both `composer install` and `composer update` marshal files from the base package (that is, `magento/magento2-base` and `magento/magento2-ee-base`) into the package root.
 
-    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.
+    The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in {{site.data.var.ee}}, so you must add the marshaled files to source control.
 
 1.  Wait for deployment to complete.
 
@@ -80,9 +80,7 @@ Exception printing is disabled by default for security reasons.
 
 #### To resolve the error:
 
-1.  Use SSH and log in to the remote server.
-
-1.  Open the `./app/var/report/<error number>` file. 
+1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file. 
 
 1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 

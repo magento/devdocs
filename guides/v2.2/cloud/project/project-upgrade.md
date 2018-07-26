@@ -99,7 +99,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
 
 ## Complete the upgrade
 
-1.  Change to your Magento base directory and set the upgrade version.
+1.  Change to your Magento root directory and set the upgrade version.
 
     ```bash
     composer require magento/magento-cloud-metapackage <requiredversion> --no-update
@@ -173,12 +173,12 @@ If you need to upgrade any third-party extensions and modules that support versi
 1.  Push to and test in your Integration environment.
 1.  Push to the Staging environment to test in a pre-production environment.
 
-Include the extensions in your go-live steps to the Production environment only after upgrading to version 2.2. We strongly recommend upgrading your Production environment before including upgraded extensions.
+We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your go-live process.
 
 We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.2.
 
 ## Troubleshoot upgrade
-If the upgrade was not successful, you receive a message indicating an error occurred and you cannot access your storefront or the Magento Admin pane in a browser.
+If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:
 
 ```terminal
 There has been an error processing your request
