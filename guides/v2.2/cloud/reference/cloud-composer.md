@@ -25,7 +25,7 @@ The `composer.lock` file stores a set of exact version dependencies that satisfy
 
 Command | Description
 --- | +---
-`composer update` | Updates to the latest versions of the dependencies. You must update every time you edit dependencies in the `composer.json` file. This updates the `composer.lock`file.
+`composer update` | Updates to the latest versions of the dependencies. You must update every time you edit dependencies in the `composer.json` file. This updates the `composer.lock` file.
 `composer install` | Reads the `composer.lock` file to download dependencies. You must keep an up-to-date copy of `composer.lock` in your {{site.data.var.ece}} repository.
 
 The workflow is as follows:
@@ -57,7 +57,7 @@ These files are location-dependent, and cannot reside in the `vendor` directory.
 
 One way in which {{site.data.var.ece}} deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment—specifically, the marshalling functionality of `magento/magento-composer-installer`—it is disabled.
 
-When upgrading to a new Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:
+When upgrading to a new {{site.data.var.ece}} version or adding, removing, or changing any packages that rely on file marshaling, you must:
 
 1.	Run `composer update` locally.
 
@@ -68,6 +68,6 @@ When upgrading to a new Cloud version or adding, removing, or changing any packa
 2.	Add and commit these updated files to your Cloud Git repository.
 3.	Push the changes to your Cloud Integration environment.
 
-For more information, see [Patch Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-patch.html).
+See [Patch Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-patch.html).
 
 This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check is whether all of the base package files were added to source control.
