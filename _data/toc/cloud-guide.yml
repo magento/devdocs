@@ -14,10 +14,10 @@ pages:
       url: /cloud/architecture/cloud-architecture.html
       children:
         - label: Starter architecture
-          url: /cloud/architecture/starter-architecture.html
+          url: /cloud/basic-information/starter-architecture.html
 
         - label: Starter develop and deploy workflow
-          url: /cloud/architecture/starter-develop-deploy-workflow.html
+          url: /cloud/basic-information/starter-develop-deploy-workflow.html
 
         - label: Pro architecture
           url: /cloud/architecture/pro-architecture.html
