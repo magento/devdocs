@@ -71,6 +71,12 @@ Wysiwyg-specific options:
 
 ## Events
 
+Events are dispatched by modules when certain actions are triggered. When an event is dispatched, it can pass data to any observers configured to watch that event.
+
+See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) to learn more about events and how to use them.
+
+The following are available events for use in the WYSIWYG component adapter for TinyMCE4:
+
 * `tinymceBeforeSetContent` - fires before the contents are inserted into the editor
 * `tinymcePaste` - fires when a paste is done within the editor
 * `tinymceSaveContent` - fires when the contents in the editor are saved
@@ -79,7 +85,7 @@ Wysiwyg-specific options:
 * `tinymceFocus` - fires when the editor is focused
 * `tinymceBlur` - fires when the editor is blurred
 * `tinymceChange` - fires when undo level is added to the editor
-* `wysiwygEditorInitialized` - fies when the WYSIWYG editor is initialized
+* `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
 
 
 ## Add a default editor
