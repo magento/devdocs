@@ -31,7 +31,7 @@ Upgrading from **2.1.X** requires the following tasks:
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
 -  Verify or set the `ADMIN_EMAIL` variable
 -  Upgrade to the latest supported version of Fastly
--  Update the `.gitignore` file for new, generated directory
+-  Add the new generated directory to the `.gitignore` file
 
 {% include cloud/note-upgrade.md %}
 
@@ -40,7 +40,7 @@ Upgrading from **2.1.X** requires the following tasks:
 ### Upgrade PHP version
 {{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
-* [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workspace
+* [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
 * [Migrating PHP](http://php.net/manual/en/migration71.php){:target="\_blank"}
 * [Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html#php)
 
@@ -53,7 +53,7 @@ If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Manageme
 #### To create a temporary `config.php` file:
 
 1.  Create a copy of `config.local.php` file and name it `config.php`.
-1.  Add this file in the `app/etc` folder.
+1.  Add this file to the `app/etc` folder.
 1.  Add and commit the file to your branch.
 1.  Push the file to your Integration branch.
 1.  Continue with the upgrade process.
@@ -63,7 +63,7 @@ After you finish upgrading, you can remove the `config.php` file and create a ne
 {: .bs-callout .bs-callout-warning}
 You can only delete this file to replace it this one time. After generating a correct `config.php` file, you cannot delete the file to generate a new one. For more information, see [Configuration Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html).
 
-### Update the application configuration
+### Update the .magento.app.yaml file
 If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
 
 1.  Modify the hook commands in the `magento.app.yaml` file.
@@ -123,7 +123,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
 
 1.  Wait for deployment to complete.
 
-1.  Verify the upgrade in your integration, staging, or production system by using SSH to log in and checking the version.
+1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
       php bin/magento --version
@@ -138,7 +138,7 @@ After upgrading, you need to create an updated `config.php` file. Complete any a
     ssh <SSH URL> "<Command>"
     ```
 
-    For example for Pro, to run the `scd-dump` on Integration branch
+    For example for Pro, to run the `scd-dump` on the `integration` branch:
 
     ```bash
     ssh <project-id-integration>@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"
@@ -188,7 +188,7 @@ Exception printing is disabled by default for security reasons.
 
 #### To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and open the `./app/var/report/<error number>` file. 
+1.  Using SSH, log in to the remote server and open the `./app/var/report/<error number>` file. 
 
 1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 
