@@ -1539,7 +1539,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.</p>
 
-<p>The Message Queue Framework (MQF) is a fully-functional system that allows a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
+<p>In Magento Commerce, the Message Queue Framework (MQF) is a fully-functional system that allows a   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses <a href="http://www.rabbitmq.com">RabbitMQ</a> as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.</p>
 
 <p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL   <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span>
@@ -1579,6 +1579,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="override-topic-configuration">Override topic configuration</h2>
+
 <p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'queue'</span> <span class="o">=&gt;</span>
@@ -1596,6 +1597,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.3/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a></li>
   <li><a href="/guides/v2.3/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
 </ul>
+
+<!-- Link definitions -->
 
 			
 		</div>

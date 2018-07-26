@@ -1304,7 +1304,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL   <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span>
  stores messages in the database. Three database tables (<code class="highlighter-rouge">queue</code>, <code class="highlighter-rouge">queue_message</code>, and <code class="highlighter-rouge">queue_message_status</code>) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.</p>
 
-<p>See <a href="/guides/v2.1/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.</p>
+<p>See <a href="/guides/v2.1/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a> for information about setting up the message queue system.</p>
 
 <h2 id="send-a-message-from-the-publisher-to-a-queue">Send a message from the publisher to a queue</h2>
 
@@ -1338,6 +1338,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="override-topic-configuration">Override topic configuration</h2>
+
 <p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'queue'</span> <span class="o">=&gt;</span>
@@ -1352,9 +1353,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a></li>
-  <li><a href="/guides/v2.1/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a></li>
+  <li><a href="/guides/v2.1/extension-dev-guide/message-queues/config-mq.html">Configure message queues</a></li>
   <li><a href="/guides/v2.1/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
 </ul>
+
+<!-- Link definitions -->
 
 			
 		</div>

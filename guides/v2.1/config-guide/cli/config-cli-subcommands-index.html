@@ -1716,14 +1716,20 @@ catalogsearch_fulltext                   Catalog Search
 
   <p>Sample result:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Category Products:                                 Reindex required
-Product Categories:                                Reindex required
-Product Price:                                     Reindex required
-Product EAV:                                       Reindex required
-Stock:                                             Reindex required
-Catalog Rule Product:                              Reindex required
-Catalog Product Rule:                              Reindex required
-Catalog Search:                                    Reindex required
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+----------------------+------------------+-----------+---------------------+---------------------+
+| Title                | Status           | Update On | Schedule Status     | Schedule Updated    |
++----------------------+------------------+-----------+---------------------+---------------------+
+| Catalog Product Rule | Reindex required | Save      |                     |                     |
+| Catalog Rule Product | Reindex required | Save      |                     |                     |
+| Catalog Search       | Ready            | Save      |                     |                     |
+| Category Products    | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
+| Customer Grid        | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Design Config Grid   | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Product Categories   | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
+| Product EAV          | Reindex required | Save      |                     |                     |
+| Product Price        | Reindex required | Save      |                     |                     |
+| Stock                | Reindex required | Save      |                     |                     |
++----------------------+------------------+-----------+---------------------+---------------------+
 </code></pre></div>  </div>
 
   <h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
