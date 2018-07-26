@@ -279,7 +279,7 @@ Attribute|Type|Use|Description
 ```xml
 <appendField userInput="Suffix" selector="input#name" stepKey="appendSuffix"/>
 ```
-This action would append the suffix `Suffix` to the current value of an input with an id of 'name'.
+This action would append the suffix `Suffix` to the current value of an input with an id of `name`.
 
 ### attachFile
 
@@ -298,7 +298,7 @@ Attribute|Type|Use|Description
 ```xml
 <attachFile userInput="image.png" selector="input#imgUpload" stepKey="uploadFile"/>
 ```
-This action would upload a file with the name of `image.png` to the input with the id of `imgUpload`.
+This action would upload a file with the name of `image.png` to an input with the id of `imgUpload`.
 
 ### cancelPopup
 
@@ -1734,7 +1734,7 @@ Attribute|Type|Use|Description
 ```xml
 <seeElementInDOM selectore="div#box" stepKey="seeBoxInDOM"/>
 ```
-This action will be true only if a div with an id of `box` is available on the page. The action would be true if the element was available on the page, but invisible.
+This action will be true only if a div with an id of `box` is available on the page. The action would also be true if the element was available on the page, but invisible.
 
 ### seeInCurrentUrl
 
