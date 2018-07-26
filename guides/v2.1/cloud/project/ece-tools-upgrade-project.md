@@ -7,21 +7,19 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-If you still use a version of Cloud that does not contain the`ece-tools`package, then your project requires an _upgrade_. We deprecated the `magento/magento-cloud-configuration` and `magento/ece-patches` packages in favor of the `ece-tools` package.
- 
- You must perform a one-time, manual step to update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file, located in the root directory. This constraint enables updates for Magento Cloud metapackages—including removing deprecated packages—without upgrading your current {{site.data.var.ee}} version.
- 
- If you have already performed this step and you need to update your current `ece-tools` package, see [Update ece-tools]({{page.baseurl}}/cloud/project/ece-tools-update.html).
+If you still use a version of {{site.data.var.ece}} that does not contain the `ece-tools` package, then your project requires an _upgrade_. We deprecated the `magento/magento-cloud-configuration` and `magento/ece-patches` packages in favor of the `ece-tools` package.
+
+You must perform a one-time, manual step to update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file, located in the root directory. This constraint enables updates for {{site.data.var.ece}} metapackages—including removing deprecated packages—without upgrading your current {{site.data.var.ee}} version. If your project contains the `ece-tools` package and you have updated the metapackage, you can skip the following upgrade and see [Update ece-tools]({{page.baseurl}}/cloud/project/ece-tools-update.html).
 
 {% include cloud/note-upgrade.md %}
 
-### Remove deprecated packages
-Before performing an upgrade to use the`ece-tools`package, check the `composer.json` file for the following deprecated packages and remove them:
+## Remove deprecated packages
+Before performing an upgrade to use the `ece-tools` package, check the `composer.json` file for the following deprecated packages and remove them:
 
 -  `magento-cloud-configuration`
 -  `magento/ece-patches`
  
-### Update the metapackage {#metapackage}
+## Update the metapackage {#metapackage}
 Each {{site.data.var.ee}} version requires a different constraint based on the following:
 
 ```
@@ -30,7 +28,7 @@ Each {{site.data.var.ee}} version requires a different constraint based on the f
 
 You can always find the latest metapackage constraint in the [`magento-cloud` template](https://github.com/magento/magento-cloud/blob/master/composer.json).
 
-The following example places a constraint for the Magento Cloud metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:
+The following example places a constraint for the {{site.data.var.ece}} metapackage to any version greater than or equal to the current version 2.2.0 and lower than next version 2.2.1:
 
 ```json
 "require": {
@@ -38,9 +36,9 @@ The following example places a constraint for the Magento Cloud metapackage to a
 },
 ```
 
-### Upgrade the project
+## Upgrade the project
 
-To upgrade your project to use the `ece-tools` package, you need to update the metapackage, update the `.magento.app.yaml` hooks properties, and run a composer update.
+To upgrade your project to use the `ece-tools` package, you need to update the metapackage, update the `.magento.app.yaml` hooks properties, and perform a Composer update.
 
 #### To upgrade project to use ece-tools:
 
@@ -85,7 +83,7 @@ To upgrade your project to use the `ece-tools` package, you need to update the m
     composer.lock
     ```
 
-1.  Push your code changes to the remote server and merge this branch to the Integration branch.
+1.  Push your code changes to the remote server and merge this branch with the `integration` branch.
 
     ```bash
     git push origin <branch name>

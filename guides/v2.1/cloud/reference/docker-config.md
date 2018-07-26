@@ -9,7 +9,7 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The Magento Cloud Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and Magento ece-tools.
+{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and {{site.data.var.ece}} `ece-tools` package.
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker){:target="\_blank"} contains build information for the following [Docker hub](https://hub.docker.com/r/magento/){:target="\_blank"} images:
 
@@ -18,7 +18,7 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
     -  PHP-FPM - version 7 and later
 -  NGINX:  magento/magento-cloud-docker-nginx
 
-The ece-tools provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
+The `ece-tools` package provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
 
 -  PHP: `--php`
 -  NGINX: `--nginx`

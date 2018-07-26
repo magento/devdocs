@@ -10,23 +10,23 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage dependencies and upgrades for the {{site.data.var.ece}} and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
-Composer is a dependency manager for PHP and manages the dependencies you require on the project level. This means that Composer combines all the required libraries and dependencies to manage them in one place.
+Composer manages required libraries and dependencies for your project and installs them in the `vendor` directory.
 
 ## Composer files
 For {{site.data.var.ece}}, we use the `composer.json` and `composer.lock` files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.
 
 Magento extension and module developers use the `composer.json` file to manage product installations and upgrades. See [Install, manage, and upgrade extensions]({{ page.baseurl }}/cloud/howtos/install-components.html).
 
-The file `composer.lock` file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
+The `composer.lock` file stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
 **Common commands**
 
 Command | Description
 --- | +---
-`composer update` | Updates to the latest versions of the dependencies. You must run update every time you edit dependencies in the `composer.json` file. This updates the `composer.lock`file.
-`composer install` | Reads the `composer.lock` file to download dependencies. You must keep an up-to-date copy of `composer.lock` in your Cloud Git repository.
+`composer update` | Updates to the latest versions of the dependencies. You must update every time you edit dependencies in the `composer.json` file. This updates the `composer.lock`file.
+`composer install` | Reads the `composer.lock` file to download dependencies. You must keep an up-to-date copy of `composer.lock` in your {{site.data.var.ece}} repository.
 
 The workflow is as follows:
 
@@ -67,7 +67,7 @@ To check for patches, you can check the `vendor/magento/magento-cloud-configurat
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.
 
 ## vendor/magento/ece-tools {#ece-tools}
-The`ece-tools`package, also known as _ece-tools_, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ee}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+The`ece-tools`package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
 
 ## Base packages and file marshalling
 Magento contains two base packages, `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} entry points, and so on.

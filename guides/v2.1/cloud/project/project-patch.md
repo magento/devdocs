@@ -7,14 +7,14 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-Sometimes we provide a custom patch to address a specific issue. Third-party extension developers can also provide a custom patch. Copy the custom patches to the `/m2-hotfixes` directory and test them on your local workstation.
+Sometimes we provide a custom patch to address a specific issue. Also, third-party extension developers can provide a custom patch. Copy the custom patch to the `/m2-hotfixes` directory and test it on your local workstation.
 
 {% include cloud/note-upgrade.md %}
 
 #### To apply and test a custom patch:
 You can only apply patches during the build phase of redeployment.
 
-1.  On your local workstation, create a branch from the Integration environment.
+1.  On your local workstation, create a branch based on the `integration` branch.
 
     ```bash
     magento-cloud environment:branch <branch-name>
@@ -28,7 +28,7 @@ You can only apply patches during the build phase of redeployment.
     git add -A && git commit -m "Apply patch" && git push origin <branch name>
     ```
 
-1.  After test validation, merge this branch to the Integration branch.
+1.  After test validation, merge this branch with the `integration` branch.
 
 #### To test if a patch can be applied using your local workstation:
 

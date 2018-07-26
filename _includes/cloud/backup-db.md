@@ -16,7 +16,7 @@ We recommend creating a backup of your project before an upgrade. Use the follow
 
     Optionally, you can omit `[--media]` if you have a large number of static files that are already in source control.
 
-#### To back up your Staging or Production environment database before deploying to those environments:
+#### To back up your Staging or Production environment database before deploying:
 
 1.  Use SSH to log in to the remote server.
 
@@ -26,6 +26,5 @@ We recommend creating a backup of your project before an upgrade. Use the follow
     vendor/bin/ece-tools db-dump
     ```
 
--   We recommend putting the application in maintenance mode before doing a database dump in Production environments.
--   The command creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. Refer to [Snapshot and backup management](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) for more information.
-
+-   We recommend setting the application in maintenance mode before doing a database dump in Production environments.
+-   This creates an `dump-<timestamp>.sql.gz` archive file in your local project directory. See [Snapshot and backup management](http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump).

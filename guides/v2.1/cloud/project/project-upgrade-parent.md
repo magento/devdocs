@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-Upgrades and patches contains detailed release notes for the ece-tools, and information on how to upgrade the ece-tools package, upgrade {{site.data.var.ece}}, and apply custom patches and hotfixes.
+The Upgrades and patches section contains detailed release notes for the ece-tools, and information on how to upgrade the ece-tools package, upgrade {{site.data.var.ece}}, and apply custom patches and hotfixes.
 
 {{site.data.var.ece}} checks for pending patches and updates whenever you push code changes to the remote environment.
 
@@ -20,6 +20,6 @@ Some restrictions in the core {{site.data.var.ee}} code base prevent you from up
 | 2.2.x | You can begin the upgrade to [ece-tools 2002.0.8]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v200208) and later. |
 
 {: .bs-callout .bs-callout-info}
-We combined the upgrade metapackages for tools and patches with the release of [ece-tools version 2002.0.8](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208), which helps to provide an easier process for future updates.
+We combined the upgrade metapackages for tools and patches with the release of [ece-tools version 2002.0.8](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208) to simplify the process for future updates.
 
 {% include cloud/note-ece-tools-package.md %}

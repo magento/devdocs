@@ -10,7 +10,7 @@ functional_areas:
   - Setup
   - Configuration
 ---
-The ece-tools package, also known as _ece-tools_, is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ee}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+The `ece-tools` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
 
 You can list the available ece-tools commands using:
 
@@ -22,7 +22,8 @@ The following updates describe the latest improvements to the ece-tools package,
 
 ## v2002.0.12
 
-{% include note.html type="info" content="The ece-tools version 2002.0.12 now supports Magento 2.1.14. " %}
+{:.bs-callout bs-callout-info}
+The ece-tools version 2002.0.12 now supports Magento 2.1.14.
 
 #### New Features
 
@@ -64,7 +65,8 @@ Cloud configuration:
 
 ## v2002.0.11
 
-{% include note.html type="info" content="The ece-tools version 2002.0.11 now supports Magento 2.1.13. " %}
+{:.bs-callout bs-callout-info}
+The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 #### New features
 

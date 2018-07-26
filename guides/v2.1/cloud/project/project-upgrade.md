@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-You can upgrade the core {{site.data.var.ee}} code base to version 2.1. If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
+You can upgrade the core {{site.data.var.ee}} code base to version 2.1. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first.
 
 It is a best practice to verify the `ADMIN_EMAIL` variable, because it is required for upgrading and patching {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
@@ -23,7 +23,7 @@ It is a best practice to verify the `ADMIN_EMAIL` variable, because it is requir
 
 ## Complete the upgrade
 
-1.  Change to your Magento base directory and set the upgrade version.
+1.  Change to your Magento root directory and set the upgrade version.
 
     ```bash
     composer require magento/magento-cloud-metapackage <requiredversion> --no-update
@@ -47,7 +47,7 @@ It is a best practice to verify the `ADMIN_EMAIL` variable, because it is requir
 
 1.  Wait for deployment to complete.
 
-1.  Verify the upgrade in your integration, staging, or production system by using SSH to log in and checking the version.
+1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
       php bin/magento --version
@@ -65,12 +65,12 @@ If you need to upgrade any third-party extensions and modules that support versi
 1.  Push to and test in your Integration environment.
 1.  Push to the Staging environment to test in a pre-production environment.
 
-Include the extensions in your going live steps to the Production environment only after upgrading Production to version 2.1. We strongly recommend upgrading your Production environment _before_ including upgraded extensions.
+We strongly recommend upgrading your Production environment _before_ including the upgraded extensions in your go-live process.
 
 We strongly recommend upgrading your Fastly module to v1.2.33 or later for {{site.data.var.ece}} 2.1.X.
 
 ## Troubleshoot upgrade
-If the upgrade was not successful, you receive a message indicating an error occurred and you cannot access your storefront or the Magento Admin pane in a browser.
+If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:
 
 ```terminal
 There has been an error processing your request
@@ -80,7 +80,9 @@ Exception printing is disabled by default for security reasons.
 
 #### To resolve the error:
 
-1.  [SSH to the server]({{ page.baseurl }}/cloud/env/environments-ssh.html) and open the `./app/var/report/<error number>` file. 
+1.  Use SSH and log in to the remote server.
+
+1.  Open the `./app/var/report/<error number>` file. 
 
 1.  [Examine the logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html) to determine the source of the issue.
 
