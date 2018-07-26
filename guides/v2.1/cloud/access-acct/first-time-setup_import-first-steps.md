@@ -36,9 +36,8 @@ To transfer the database dump and files to {{site.data.var.ece}}, you must know 
 
   magento-cloud environment:ssh --pipe
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You must enter all {{site.data.var.ece}} commands on the machine on which your Cloud SSH keys are stored. For more information, see [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html) and [SSH and sFTP]({{ page.baseurl }}/cloud/env/environments-ssh.html).
-</div>
 
 ### Database credentials {#db-creds}
 You need your {{site.data.var.ece}} database name and credentials so that you can import your {{site.data.var.ee}} data. You can find the name and credentials for your {{site.data.var.ece}} database in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable.

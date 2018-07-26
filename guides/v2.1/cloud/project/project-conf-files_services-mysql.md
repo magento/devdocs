@@ -29,9 +29,8 @@ You can optionally set up multiple databases as well as multiple users with diff
 
 To set up multiple databases and users, you must specify multiple endpoints. An _endpoint_ is a user who has privileges you specify.
 
-<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-You can't use multiple _databases_ with {{site.data.var.ee}} at this time. You can, however, create multiple endpoints to restrict access to the `main` database.
-</div>
+{:.bs-callout .bs-callout-warning}
+You cannot use multiple _databases_ with {{site.data.var.ee}} at this time. You **can** create multiple endpoints to restrict access to the `main` database.
 
 To specify user access, use the `endpoints` nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.
 

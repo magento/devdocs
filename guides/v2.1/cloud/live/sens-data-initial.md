@@ -21,9 +21,9 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 	2.	Change configuration settings on the Integration environment.
 	3.	Re-create and push the updated `config.local.php` to the Integration environment.
 
-<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
+<!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
-</div> -->
+-->
 
 For example, you may want to set the following settings:
 
