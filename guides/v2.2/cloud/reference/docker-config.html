@@ -1966,26 +1966,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="cloud-tools-release-notes">
+        <li class="nav-level2  " id="ece-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.2/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-
-            
-
-            
-            <a href="/guides/v2.2/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.2/cloud/release-notes/cloud-tools.html">ECE-tools release notes</a>
             
 
             
@@ -1994,12 +1980,54 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="upgrade-magento-commerce-(cloud)">
+        <li class="nav-level2  " id="upgrade-to-use-ece-tools">
 
             
 
             
-            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.2/cloud/project/ece-tools-upgrade-project.html">Upgrade to use ECE-tools</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="update-ece-tools-version">
+
+            
+
+            
+            <a href="/guides/v2.2/cloud/project/ece-tools-update.html">Update ECE-tools version</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="apply-custom-patches">
+
+            
+
+            
+            <a href="/guides/v2.2/cloud/project/project-patch.html">Apply custom patches</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="upgrade-magento-version">
+
+            
+
+            
+            <a href="/guides/v2.2/cloud/project/project-upgrade.html">Upgrade Magento version</a>
             
 
             
@@ -2040,7 +2068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>Magento Commerce (Cloud) provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The Magento Cloud Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and Magento Cloud Tools.</p>
+			<p>Magento Commerce (Cloud) provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The Magento Commerce (Cloud) Docker environment requires three, essential components: a Magento 2 template, Docker Compose, and Magento Commerce (Cloud) <code class="highlighter-rouge">ece-tools</code> package.</p>
 
 <p>The <a href="https://github.com/magento/magento-cloud-docker" target="\_blank">Magento Cloud Docker repository</a> contains build information for the following <a href="https://hub.docker.com/r/magento/" target="\_blank">Docker hub</a> images:</p>
 
@@ -2054,7 +2082,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>NGINX:  magento/magento-cloud-docker-nginx</li>
 </ul>
 
-<p>The Cloud Tools provides a <code class="highlighter-rouge">docker:build</code> command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:</p>
+<p>The <code class="highlighter-rouge">ece-tools</code> package provides a <code class="highlighter-rouge">docker:build</code> command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:</p>
 
 <ul>
   <li>PHP: <code class="highlighter-rouge">--php</code></li>
@@ -2103,7 +2131,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Open the <code class="highlighter-rouge">http://localhost:8080</code> URL in a browser to access your local Magento Cloud template.</li>
 </ol>
 
-<h3 id="integration-testing-with-cloud-tools">Integration testing with Cloud tools</h3>
+<h3 id="integration-testing-with-ece-tools">Integration testing with ece-tools</h3>
 <p>Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:</p>
 
 <ul>

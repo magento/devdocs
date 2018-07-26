@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Upgrade Magento Commerce (Cloud) | Magento 2 Developer Documentation</title>
+	<title>Upgrade Magento version | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -1962,26 +1962,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2  " id="cloud-tools-release-notes">
+        <li class="nav-level2  " id="ece-tools-release-notes">
 
             
 
             
-            <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">Cloud tools release notes</a>
-            
-
-            
-        </li>
-        
-        
-        
-        
-        <li class="nav-level2  " id="patch-magento-commerce-(cloud)">
-
-            
-
-            
-            <a href="/guides/v2.3/cloud/project/project-patch.html">Patch Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.3/cloud/release-notes/cloud-tools.html">ECE-tools release notes</a>
             
 
             
@@ -1990,12 +1976,54 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
-        <li class="nav-level2 active " id="upgrade-magento-commerce-(cloud)">
+        <li class="nav-level2  " id="upgrade-to-use-ece-tools">
 
             
 
             
-            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento Commerce (Cloud)</a>
+            <a href="/guides/v2.3/cloud/project/ece-tools-upgrade-project.html">Upgrade to use ECE-tools</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="update-ece-tools-version">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/project/ece-tools-update.html">Update ECE-tools version</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2  " id="apply-custom-patches">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/project/project-patch.html">Apply custom patches</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
+        <li class="nav-level2 active " id="upgrade-magento-version">
+
+            
+
+            
+            <a href="/guides/v2.3/cloud/project/project-upgrade.html">Upgrade Magento version</a>
             
 
             
@@ -2029,363 +2057,263 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Upgrade Magento Commerce (Cloud)</h1>
+	<h1 class="page-heading">Upgrade Magento version</h1>
 
   
 
 
 </section>
 
-			<p>This information details how to upgrade Magento Commerce (Cloud) to 2.2.X from any version, and upgrading to new 2.2.X versions.</p>
-
-<p>When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the <code class="highlighter-rouge">magento-cloud-metapackage</code>. Make sure that your project root folder contains an <code class="highlighter-rouge">auth.json</code> file for authentication.</p>
-
-<p>Our upgrades are Composer driven. For more information on Composer, see <a href="/guides/v2.3/cloud/reference/cloud-composer.html">Composer in Cloud</a>.</p>
-
-<p>When upgrading from 2.0.X or 2.1.X to 2.2.X, please see <a href="#old-version">Upgrade from 2.0.X or 2.1.X</a>. For additional information on the release, see the [Magento Commerce (Cloud) 2.2 Release Notes].</p>
-
-<div class="bs-callout bs-callout-warning">
-  <p>Always apply and test a patch your local system in an active branch. You can push and test in an Integration environment prior to deploying across all environments.</p>
-</div>
-
-<h2 id="upgradepaths">Supported upgrade paths to 2.2</h2>
-<p>You can directly upgrade to Magento Commerce (Cloud) 2.2 from the following versions:</p>
+			<p>You can upgrade the core Magento Commerce code base to version 2.2 from any of the following supported versions:</p>
 
 <ul>
-  <li>2.0.X versions: 2.0.14, 2.0.15, 2.0.16</li>
-  <li>2.1.X versions: 2.1.7, 2.1.8, 2.1.9</li>
+  <li>2.0.14 and later</li>
+  <li>2.1.7 and later</li>
 </ul>
 
-<p>We have heavily tested and verified upgrades to 2.2 from the latest three versions of 2.0.X and 2.1.X.</p>
+<p>If you need to upgrade from an older version than listed, you must upgrade to a supported version first.</p>
 
-<p>You can attempt to upgrade from any version directly to Magento Commerce (Cloud) 2.2. We cannot guarantee the results. For example, you should be able to upgrade from 2.0.10 or 2.1.4 directly to 2.2.</p>
+<h2 id="prepare-the-environment">Prepare the environment</h2>
 
-<p>If you prefer a secured and verified upgrade path, you can upgrade to one of the verified and tested versions, then directly upgrade to 2.2. For example, you could upgrade from 2.0.10 to 2.0.14, then upgrade to 2.2.</p>
-
-<p>When upgrading from any version to 2.2, please review the following sections to update your settings, make changes, and upgrade required software prior to upgrading Magento.</p>
-
-<h2 id="old-version">Upgrade from 2.0.X or 2.1.X</h2>
-<p>To upgrade from <strong>2.0.X</strong>:</p>
+<p>Upgrading from <strong>2.0.X</strong> requires the following tasks:</p>
 
 <ul>
-  <li><a href="#php">Upgrade your PHP version</a>: v2.2 supports PHP 7.0 and later</li>
-  <li><a href="#magento-app-yaml">.magento.app.yaml</a>: Update the file with new settings and required changes for hooks and environment variables</li>
-  <li><a href="#variable">Verify or set the ADMIN_EMAIL variable</a>: This variable is required for upgrades and patch to 2.2 and later</li>
-  <li><a href="#fastly">Upgrade Fastly</a>: Make sure you are upgraded to the latest supported version of Fastly</li>
+  <li>Upgrade your PHP version to 7.0 or later</li>
+  <li>Update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new settings for hooks and environment variables</li>
+  <li>Verify or set the <code class="highlighter-rouge">ADMIN_EMAIL</code> variable</li>
+  <li>Upgrade to the latest supported version of Fastly</li>
 </ul>
 
-<p>To upgrade from <strong>2.1.X</strong>:</p>
+<p>Upgrading from <strong>2.1.X</strong> requires the following tasks:</p>
 
 <ul>
-  <li><a href="#php">Upgrade your PHP version</a>: v2.2 supports PHP 7.0 and 7.1</li>
-  <li><a href="#config">Configuration Management</a>: Create a new <code class="highlighter-rouge">config.php</code> using the <code class="highlighter-rouge">config.local.php</code> to properly upgrade</li>
-  <li><a href="#magento-app-yaml">.magento.app.yaml</a>: Update the file with new settings and required changes for hooks and environment variables</li>
-  <li><a href="#variable">Verify or set the ADMIN_EMAIL variable</a>: This variable is required for upgrades and patch to 2.2 and later</li>
-  <li><a href="#fastly">Upgrade Fastly</a>: Make sure you are upgraded to the latest supported version of Fastly</li>
-  <li><a href="#gitignore">Update .gitignore for new generated directory</a>: With 2.2 and later, changes in generated folder require additions to <code class="highlighter-rouge">.gitignore</code></li>
+  <li>Upgrade your PHP version to 7.0 or later</li>
+  <li>Create a new <code class="highlighter-rouge">config.php</code> file</li>
+  <li>Update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new settings for hooks and environment variables</li>
+  <li>Verify or set the <code class="highlighter-rouge">ADMIN_EMAIL</code> variable</li>
+  <li>Upgrade to the latest supported version of Fastly</li>
+  <li>Add the new generated directory to the <code class="highlighter-rouge">.gitignore</code> file</li>
 </ul>
 
-<p>After completing your upgrade, you may also want to <a href="#extensions">Verify and upgrade your extensions</a>.</p>
+<p>Before beginning an upgrade or a patching process, create an active branch from the Integration environment and checkout the new branch to your local workstation. Dedicating a branch to the upgrade or the patch process helps to avoid interference with your work in progress.</p>
 
-<h3 id="php">Upgrade your PHP version</h3>
-<p>Magento Commerce (Cloud) 2.2 supports PHP 7.0 and 7.1. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
+<p class="bs-callout bs-callout-info">If you use a version of Magento Commerce (Cloud) that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <a href="/guides/v2.3/cloud/project/ece-tools-upgrade-project.html">upgrade</a>. If you currently use the <code class="highlighter-rouge">ece-tools</code> package and you need to update it, see <a href="/guides/v2.3/cloud/project/ece-tools-update.html">Update ece-tools version</a>.</p>
 
-<p>Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
+<h3 id="upgrade-php-version">Upgrade PHP version</h3>
+<p>Magento Commerce (Cloud) 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
 
 <ul>
-  <li><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workspace</li>
-  <li><a href="http://php.net/manual/en/migration70.php" target="\_blank">Migrating from PHP 5.6 to PHP 7.0.x</a></li>
+  <li><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workstation</li>
+  <li><a href="http://php.net/manual/en/migration71.php" target="\_blank">Migrating PHP</a></li>
   <li><a href="/guides/v2.2/install-gde/system-requirements-tech.html#php">Magento 2.2.x technology stack requirements</a></li>
 </ul>
 
-<h3 id="config">Configuration Management and upgrading</h3>
-<p>If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate <code class="highlighter-rouge">config.local.php</code> to a temporary <code class="highlighter-rouge">config.php</code> file to your Git branch. When you upgrade without having this file prepared, you will encounter an error with a list of steps to complete prior to upgrading.</p>
+<p class="bs-callout bs-callout-info">For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
 
-<p>Previous versions with Configuration Management use a <code class="highlighter-rouge">config.local.php</code> file for Configuration Management. Starting with 2.2.0, <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> uses a different file name of <code class="highlighter-rouge">config.php</code>.</p>
+<h3 id="configuration-management">Configuration management</h3>
+<p>If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate the <code class="highlighter-rouge">config.local.php</code> file. Previous versions with Configuration Management used a <code class="highlighter-rouge">config.local.php</code> file for Configuration Management. Starting with 2.2.0, <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> uses the <code class="highlighter-rouge">config.php</code> file.</p>
 
-<p>We recommend creating a temporary <code class="highlighter-rouge">config.php</code> file for your Git branch prior to upgrading:</p>
+<h4 id="to-create-a-temporary-configphp-file">To create a temporary <code class="highlighter-rouge">config.php</code> file:</h4>
 
 <ol>
-  <li>Create a copy of <code class="highlighter-rouge">config.local.php</code> and name it <code class="highlighter-rouge">config.php</code>. You should add this file in the <code class="highlighter-rouge">app/etc</code> folder.</li>
-  <li>Git add and commit the file to your branch.</li>
-  <li>Push the file to your Integration branch and environment.</li>
-  <li>Continue preparing and upgrade to 2.2.X.</li>
+  <li>Create a copy of <code class="highlighter-rouge">config.local.php</code> file and name it <code class="highlighter-rouge">config.php</code>.</li>
+  <li>Add this file to the <code class="highlighter-rouge">app/etc</code> folder.</li>
+  <li>Add and commit the file to your branch.</li>
+  <li>Push the file to your Integration branch.</li>
+  <li>Continue with the upgrade process.</li>
 </ol>
 
-<p>For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html#migrate">Migrate config.local.php to config.php</a>.</p>
+<p>After you finish upgrading, you can remove the <code class="highlighter-rouge">config.php</code> file and create a new, complete file. This file works exactly as <code class="highlighter-rouge">config.local.php</code>, with additional settings including a list of your enabled modules, additional configurations, and a different name.</p>
 
-<p>After you finish upgrading, you can remove <code class="highlighter-rouge">config.php</code> and create a new, complete file. For more information, see <a href="#configphp">Create a new config.php file</a>. This file works exactly as <code class="highlighter-rouge">config.local.php</code>, with additional settings including a list of your enabled modules, additional configurations, and a different name.</p>
+<p class="bs-callout bs-callout-warning">You can only delete this file to replace it this one time. After generating a correct <code class="highlighter-rouge">config.php</code> file, you cannot delete the file to generate a new one. For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management and Pipeline Deployment</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>You can only delete this file to replace it this one time. After generating a correct config.php file, you cannot delete the file to generate a new one. For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management and Pipeline Deployment</a>.</p>
-</div>
-
-<h3 id="magento-app-yaml">Update .magento.app.yaml</h3>
-<p>If you are upgrading from 2.0.X or 2.1.X to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you will encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
+<h3 id="update-the-magentoappyaml-file">Update the .magento.app.yaml file</h3>
+<p>If you are upgrading to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you may encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
 
 <ol>
-  <li>Locate and edit the <code class="highlighter-rouge">.magento.app.yaml</code> file in your Git branch.</li>
-  <li>For the PHP version, make sure it is 7.0: <code class="highlighter-rouge">type: php:7.0</code></li>
   <li>
-    <p>We have updated our build and deploy hooks. Locate the <code class="highlighter-rouge">hooks</code> section, and update the following:</p>
+    <p>Modify the hook commands in the <code class="highlighter-rouge">magento.app.yaml</code> file.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ```yaml
- hooks:
-     # We run build hooks before your application has been packaged.
-     build: |
-         php ./vendor/bin/ece-tools build
-     # We run deploy hook after your application has been deployed and started.
-     deploy: |
-         php ./vendor/bin/ece-tools deploy
-     # We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.
-     post_deploy: |
-         php ./vendor/bin/ece-tools post-deploy
- ```
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
+   <span class="s">We run build hooks before your application has been packaged.</span>
+  <span class="s">build</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="no">php ./vendor/bin/ece-tools build</span>
+  <span class="c1"># We run deploy hook after your application has been deployed and started.</span>
+  <span class="na">deploy</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="no">php ./vendor/bin/ece-tools deploy</span>
+  <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
+  <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Enter the following environment variables to the end of your file:</p>
+    <p>Add the following environment variables to the end of the <code class="highlighter-rouge">magento.app.yaml</code> file.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> variables:
-   env:
-     CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN: 'payment-broker.magento.com'
-     CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL: 'Magento_Enterprise_Cloud_BT'
-     CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE: 'Magento_Enterprise_Cloud'
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">variables</span><span class="pi">:</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN</span><span class="pi">:</span> <span class="s1">'</span><span class="s">payment-broker.magento.com'</span>
+    <span class="na">CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud_BT'</span>
+    <span class="na">CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud'</span>
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Save the file.</p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>Do not commit or push changes to your branch yet. You still need to <a href="#verify-changes">Verify other changes</a> and <a href="#upgrade">Complete the upgrade</a>.</p>
-    </div>
+    <p>Save the file. Do not commit or push changes to your branch yet.</p>
   </li>
 </ol>
 
-<p><strong>For Pro plan merchants:</strong> When you are ready to deploy to Pro Staging and Production environments, you must enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a> advising you need your hooks updated for Magento Commerce (Cloud) 2.2.</p>
+<h2 id="back-up-the-database">Back up the database</h2>
 
-<div class="bs-callout bs-callout-warning">
-  <p><strong>For Pro:</strong> You may encounter deployment errors for Pro to your Staging and Production environments if the hooks are not updated. Please enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a> advising you need your hooks updated in Staging and Production for Magento Commerce (Cloud) 2.2.</p>
-</div>
+<p>We recommend creating a backup of your project before an upgrade. Use the following steps to back up your Integration, Staging, and Production environments.</p>
 
-<h3 id="variable">Verify or set the ADMIN_EMAIL variable</h3>
-<p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce (Cloud). See <a href="/guides/v2.3/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
+<h4 id="to-back-up-your-integration-environment-database-and-code">To back up your Integration environment database and code:</h4>
 
-<h3 id="fastly">Upgrade Fastly</h3>
-<p>If you have not upgraded to the latest supported version of Fastly, you should do so. Check <a href="/guides/v2.3/cloud/requirements/cloud-requirements.html#cloud-arch-software">Supported software versions</a> for the latest version of Fastly we recommend. For instructions, see <a href="/guides/v2.3/cloud/access-acct/fastly.html#upgrade">Upgrade Fastly</a>.</p>
+<ol>
+  <li>
+    <p>Create a local backup of the remote database.</p>
 
-<p>If you do not upgrade your Fastly module, your upgraded instance will not have critical updates
-required to use Fastly and Magento services. You might also need to update the JSON format.
-This is already included in Fastly module v1.2.33 and later. For full details, see <a href="https://github.com/fastly/fastly-magento2/blob/00f2bf042e5f708a1c3e7f49ae4f0fe71a658a76/Documentation/Guides/MAGENTO-UPGRADES.md" target="\_blank">Fastly upgrade documentation</a>.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud db:dump
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Back up code and media.</p>
 
-<h3 id="gitignore">Update .gitignore for new generated directory</h3>
-<p>With Magento Commerce (Cloud) 2.2.X, the generated folders <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> have been moved to a <code class="highlighter-rouge">generated/</code> read-only directory. You should make sure the following lines are in your .gitignore file. If not, please add them and commit the changes with your branch.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:backup <span class="nt">--code</span> <span class="o">[</span><span class="nt">--media</span><span class="o">]</span>
+</code></pre></div>    </div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/generated/*
-!/generated/.htaccess
+    <p>Optionally, you can omit <code class="highlighter-rouge">[--media]</code> if you have a large number of static files that are already in source control.</p>
+  </li>
+</ol>
+
+<h4 id="to-back-up-your-staging-or-production-environment-database-before-deploying">To back up your Staging or Production environment database before deploying:</h4>
+
+<ol>
+  <li>
+    <p>Use SSH to log in to the remote server.</p>
+  </li>
+  <li>
+    <p>Create a database dump.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/ece-tools db-dump
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<ul>
+  <li>We recommend setting the application in maintenance mode before doing a database dump in Production environments.</li>
+  <li>This creates an <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code> archive file in your local project directory. See <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshot and backup management</a>.</li>
+</ul>
+
+<h2 id="complete-the-upgrade">Complete the upgrade</h2>
+
+<ol>
+  <li>
+    <p>Change to your Magento root directory and set the upgrade version.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; <span class="nt">--no-update</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Update the project.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer update
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add, commit, and push code changes.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Upgrade"</span> <span class="o">&amp;&amp;</span> git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
+
+    <p><code class="highlighter-rouge">git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code class="highlighter-rouge">composer install</code> and <code class="highlighter-rouge">composer update</code> marshal files from the base package (<code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>) into the package root.</p>
+
+    <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.</p>
+  </li>
+  <li>
+    <p>Wait for deployment to complete.</p>
+  </li>
+  <li>
+    <p>Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  php bin/magento <span class="nt">--version</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="create-a-new-configphp-file">Create a new config.php file</h2>
+<p>After upgrading, you need to create an updated <code class="highlighter-rouge">config.php</code> file. Complete any additional configuration changes through the Magento Admin in your Integration environment.</p>
+
+<ol>
+  <li>
+    <p>From the terminal, use an SSH command to generate the <code class="highlighter-rouge">/app/etc/config.php</code> file for the environment.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;SSH URL&gt; <span class="s2">"&lt;Command&gt;"</span>
+</code></pre></div>    </div>
+
+    <p>For example for Pro, to run the <code class="highlighter-rouge">scd-dump</code> on the <code class="highlighter-rouge">integration</code> branch:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;project-id-integration&gt;@ssh.us.magentosite.cloud <span class="s2">"php vendor/bin/m2-ece-scd-dump"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Transfer the <code class="highlighter-rouge">config.php</code> file to your local workstations using <code class="highlighter-rouge">rsync</code> or <code class="highlighter-rouge">scp</code>. You can only add this file to the branch locally.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add, commit, and push code changes.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Add system-specific configuration"</span> <span class="o">&amp;&amp;</span> git push origin master
+</code></pre></div>    </div>
+
+    <p>This generates an updated <code class="highlighter-rouge">/app/etc/config.php</code> file with a module list and configuration settings.</p>
+  </li>
+</ol>
+
+<p class="bs-callout bs-callout-warning">For an upgrade, you delete the <code class="highlighter-rouge">config.php</code> file. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.</p>
+
+<h2 id="extensions">Verify and upgrade your extensions</h2>
+<p>If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce (Cloud) version 2.2.</p>
+
+<ol>
+  <li>Create a new branch on your local workstation.</li>
+  <li>Disable your extensions as needed.</li>
+  <li>When available, download extension upgrades.</li>
+  <li>Install the upgrade as documented by the third-party documentation.</li>
+  <li>Enable and test the extension.</li>
+  <li>Add, commit, and push the code changes to the remote.</li>
+  <li>Push to and test in your Integration environment.</li>
+  <li>Push to the Staging environment to test in a pre-production environment.</li>
+</ol>
+
+<p>We strongly recommend upgrading your Production environment <em>before</em> including the upgraded extensions in your go-live process.</p>
+
+<p>We strongly recommend upgrading your Fastly module to v1.2.33 or later for Magento Commerce (Cloud) 2.2.</p>
+
+<h2 id="troubleshoot-upgrade">Troubleshoot upgrade</h2>
+<p>If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">There has been an error processing your request
+Exception printing is disabled by default for security reasons.
+</span><span class="gp">  Error log record number: &lt;error number&gt;</span>
 </code></pre></div></div>
 
-<h2 id="backup-db">Back up the database</h2>
+<h4 id="to-resolve-the-error">To resolve the error:</h4>
 
-<div>
-  <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>
+<ol>
+  <li>
+    <p>Using SSH, log in to the remote server and open the <code class="highlighter-rouge">./app/var/report/&lt;error number&gt;</code> file.</p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.3/cloud/trouble/environments-logs.html">Examine the logs</a> to determine the source of the issue.</p>
+  </li>
+  <li>
+    <p>Add, commit, and push code changes.</p>
 
-  <p>Back up your Integration environment database and code:</p>
-
-  <ol>
-    <li>
-      <p>Enter the following command to make a local backup of the remote database:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud db:dump
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Enter the following command to back up code and media:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento setup:backup --code [--media]
-</code></pre></div>      </div>
-
-      <p>You can optionally omit <code class="highlighter-rouge">[--media]</code> if you have a large number of static files that are already in source control.</p>
-    </li>
-  </ol>
-
-  <p>Back up your Staging or Production environment database before deploying to those environments:</p>
-
-  <ol>
-    <li>
-      <p><a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH to the server</a>.</p>
-    </li>
-    <li>
-      <p>Enter the following command to create a database dump:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/ece-tools db-dump
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <div class="bs-callout bs-callout-info">
-    <ul>
-      <li>We recommend putting the application in maintenance mode before doing a database dump in Production environments.</li>
-      <li>The command creates an archive in your local project directory called  <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code>. Refer to <a href="http://devdocs.magento.com/guides/v2.2/cloud/project/project-webint-snap.html#db-dump">Snapshot and backup management</a> for more information.</li>
-    </ul>
-  </div>
-
-  <h2 id="verify-changes">Verify other changes</h2>
-  <p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
-
-  <ol>
-    <li>If you haven’t done so already, change to your project root directory.</li>
-    <li>
-      <p>Enter the following command:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
-</code></pre></div>      </div>
-    </li>
-    <li>If there are changes you do <em>not</em> want to submit to source control, branch or stash them now.</li>
-  </ol>
-
-  <h2 id="upgrade">Complete the upgrade</h2>
-
-  <ol>
-    <li>
-      <p>Change to your Magento base directory and enter the following command:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
-composer update
-</code></pre></div>      </div>
-
-      <p>For example, to upgrade to version 2.2:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require magento/magento-cloud-metapackage 2.2.0 --no-update
-composer update
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Add, commit, and push your changes to initiate a deployment:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
-git commit -m "Upgrade"
-git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-
-      <p><code class="highlighter-rouge">git add -A</code> is required to add all changed files to source control because of the way Composer marshals base packages. Both <code class="highlighter-rouge">composer install</code> and <code class="highlighter-rouge">composer update</code> marshal files from the base package (that is, <code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>) into the package root.</p>
-
-      <p>The files Composer marshals belong to the new version of Magento, to overwrite the outdated version of those same files. Currently, marshaling is disabled in Magento Commerce, so you must add the marshaled files to source control.</p>
-    </li>
-    <li>
-      <p>Wait for deployment to complete.</p>
-    </li>
-    <li>
-      <p><a href="#upgrade-verify">Verify your upgrade</a>.</p>
-    </li>
-  </ol>
-
-  <h2 id="upgrade-verify">Verify your upgrade</h2>
-  <p>This section discusses how to verify your upgrade and to troubleshoot any issues you might find.</p>
-
-  <p>To verify the upgrade in your integration, staging, or production system:</p>
-
-  <ol>
-    <li><a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
-    <li>
-      <p>Enter the following command from your Magento root directory to verify the installed version:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento --version
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <h2 id="configphp">Create a new config.php file</h2>
-  <p>After fully upgrading, you need to create an updated <code class="highlighter-rouge">config.php</code> file. You will only complete these instructions once. Complete any additional configuration changes through the Magento Admin in your Integration environment.</p>
-
-  <ol>
-    <li>
-      <p>Open a terminal on your local and use an SSH command to generate <code class="highlighter-rouge">/app/etc/config.php</code> on the environment:</p>
-
-      <p><code class="highlighter-rouge">ssh &lt;SSH URL&gt; "&lt;Command&gt;"</code></p>
-
-      <p>For example for Pro, to run the <code class="highlighter-rouge">scd-dump</code> on Integration <code class="highlighter-rouge">master</code>:</p>
-
-      <p><code class="highlighter-rouge">ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php vendor/bin/m2-ece-scd-dump"</code></p>
-    </li>
-    <li>
-      <p>Transfer <code class="highlighter-rouge">config.php</code> to your local system using <code class="highlighter-rouge">rsync</code> or <code class="highlighter-rouge">scp</code>. You can only add this file to the Git branch through your local.</p>
-
-      <p><code class="highlighter-rouge">rsync &lt;SSH URL&gt;:app/etc/config.php ./app/etc/config.php</code></p>
-    </li>
-    <li>
-      <p>Add and push <code class="highlighter-rouge">config.php</code> to the Git master branch.</p>
-
-      <p><code class="highlighter-rouge">git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration" &amp;&amp; git push origin master</code></p>
-    </li>
-  </ol>
-
-  <p>An updated file is generated with a module list and configuration settings at <code class="highlighter-rouge">/app/etc/config.php</code>.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>Important: For an upgrade, you will delete <code class="highlighter-rouge">config.php</code>. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.</p>
-  </div>
-
-  <h2 id="extensions">Verify and upgrade your extensions</h2>
-  <p>You may need to upgrade any third-party extensions and modules that support v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce (Cloud) v2.2.</p>
-
-  <p>We recommend <a href="/guides/v2.3/cloud/project/project-webint-snap.html#db-dump">backing up your database</a> prior to installing a number of extensions on your local and Integration environments.</p>
-
-  <ol>
-    <li>Create a new branch on your local.</li>
-    <li>Disable your extensions as needed.</li>
-    <li>As available, download extension upgrades.</li>
-    <li>Install the upgrade on your local in the Git branch as documented by the third-party documentation.</li>
-    <li>Enable and test the extension locally.</li>
-    <li>Push the code to test in your Integration environment.</li>
-    <li>Push to Staging to test in a pre-production environment.</li>
-  </ol>
-
-  <p>Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.</p>
-
-  <h3 id="moreextensions">Additional extension upgrades</h3>
-  <p>We strongly recommend upgrading your Fastly module to v1.2.33 or later for Magento Commerce (Cloud) 2.2.</p>
-
-  <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
-  <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
-Exception printing is disabled by default for security reasons.
-  Error log record number: &lt;error number&gt;
-</code></pre></div>  </div>
-
-  <h3 id="view-error-details-on-the-server">View error details on the server</h3>
-  <p>To view the error in your integration system, <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
-</code></pre></div>  </div>
-
-  <h3 id="resolve-the-error">Resolve the error</h3>
-  <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
-
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
-The following modules are outdated:
-Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
-</code></pre></div>  </div>
-
-  <p>To resolve the error:</p>
-
-  <ol>
-    <li><a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
-    <li><a href="/guides/v2.3/cloud/trouble/environments-logs.html">Examine the logs</a> to determine the source of the issue.</li>
-    <li>
-      <p>After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.</p>
-
-      <p>For example, on a local branch, enter the following commands:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A &amp;&amp; git commit -m "fixed deployment failure" &amp;&amp; git push origin &lt;branch name&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
-
-  <h3 id="deploy-error">Deployment error</h3>
-  <p>If you encounter a deployment error to Pro Staging and Production environments, you need to have us update your <code class="highlighter-rouge">.magento.app.yaml</code> hooks. Please enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a> advising you need your hooks updated in Staging and Production for Magento Commerce (Cloud) 2.2.</p>
-</div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-A</span> <span class="o">&amp;&amp;</span> git commit <span class="nt">-m</span> <span class="s2">"Fixed deployment failure"</span> <span class="o">&amp;&amp;</span> git push origin &lt;branch name&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 			
 		</div>

@@ -615,7 +615,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!-- MAGECLOUD-1355 -->
 <ul>
-  <li>You can now <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must <a href="/guides/v2.2/cloud/project/project-patch.html#patch-magentoece-tools">patch magento/ece-tools</a> to get this update.</li>
+  <li>You can now <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs">manually reset stuck Magento cron jobs</a> using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must <a href="/guides/v2.2/cloud/project/project-patch.html">patch magento/ece-tools</a> to get this update.</li>
 </ul>
 
 <!-- 57167 -->
@@ -667,7 +667,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p><code class="highlighter-rouge">ADMIN_EMAIL</code> variable must be set. We require the <code class="highlighter-rouge">ADMIN_EMAIL</code> environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see <a href="/guides/v2.2/cloud/before/before-project-owner.html#variables">Add admin variables for Admin access</a>.</p>
   </li>
   <li>
-    <p>Update and include <code class="highlighter-rouge">config.php</code> and add a list of all modules. If you use Configuration Management with a <code class="highlighter-rouge">config.local.php</code> file, you must create a <code class="highlighter-rouge">config.php</code> and add it to your code. For instructions, see <a href="/guides/v2.2/cloud/project/project-upgrade.html#config">Configuration Management and upgrading</a>.</p>
+    <p>Update and include <code class="highlighter-rouge">config.php</code> and add a list of all modules. If you use Configuration Management with a <code class="highlighter-rouge">config.local.php</code> file, you must create a <code class="highlighter-rouge">config.php</code> and add it to your code. For instructions, see <a href="/guides/v2.2/cloud/project/project-upgrade.html">Configuration Management and upgrading</a>.</p>
   </li>
   <li>
     <p>The command for generating <code class="highlighter-rouge">config.php</code> changed in 2.2 from <code class="highlighter-rouge">php bin/magento magento-cloud:scd-dump</code> to <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code>.</p>
