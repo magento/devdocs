@@ -98,4 +98,4 @@ ActionsColumn-specific configuration:
 ## API reference
 
 Source files:
-- [`Magento_Ui_module_dir/pp/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)

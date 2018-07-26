@@ -145,4 +145,5 @@ Column-specific configuration:
 
 ## API reference
 
-JS constructor: `Magento/Ui/view/base/web/js/grid/columns/column.js`.
+Source files:
+- [`Magento/Ui/view/base/web/js/grid/columns/column.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/columns/column.js)

@@ -45,4 +45,4 @@ Bookmarks-specific configuration:
 ## API reference
 
 Source files:
-- [`Magento_Ui_module_dir/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js)

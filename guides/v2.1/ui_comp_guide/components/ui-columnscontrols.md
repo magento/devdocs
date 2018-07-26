@@ -46,3 +46,8 @@ ColumnsControls-specific configuration:
     <td><code>ui/grid/controls/columns</code></td>
   </tr>
 </table>
+
+## API reference
+
+Source files:
+- [`app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)

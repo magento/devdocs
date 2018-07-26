@@ -9,8 +9,6 @@ github_link: ui_comp_guide/components/ui-datecolumn.md
 
 The DateColumn component implements a table column that displays dates.
 
-DateColumn сonstructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/date.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
-
 ## Сonfiguration options
 
 Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
@@ -31,3 +29,8 @@ DateColumn specific configuration:
     <td><code>MMM d, YYYY h:mm:ss A</code></td>
   </tr>
 </table>
+
+## API
+
+Source files:
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/date.js`](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
