@@ -41,10 +41,27 @@ pages:
         - label: REST usage notes
           url: /rest/notes.html
 
-    - label: Create configurable products Tutorial
-      class: tutorial
-      url: /rest/tutorials/configurable-product/config-product-intro.html
-      versions: ["2.2", "2.3"]
+    - label: Tutorials
+      url: /rest/tutorials/index.html
+      versions: ["2.3"]
+      children:
+
+        - label: Prerequisite tasks
+          children:
+
+          - label: Generate an admin token
+            url: /rest/prerequisite-tasks/create-admin-token.html
+
+          - label: Create a customer and generate a customer token
+            url: /rest/prerequisite-tasks/create-customer.html
+
+        - label: Create configurable products Tutorial
+          class: tutorial
+          url: /rest/tutorials/configurable-product/config-product-intro.html
+
+        - label: Order processing with MSI
+          class: tutorial
+          url: /rest/tutorials/msi-order-processing/index.html
 
     - label: Modules
       children:
