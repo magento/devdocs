@@ -22,7 +22,7 @@ The following updates describe the latest improvements to the ece-tools package,
 
 ## v2002.0.12
 
-{:.bs-callout bs-callout-info}
+{:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.12 now supports Magento 2.1.14.
 
 #### New Features
@@ -65,7 +65,7 @@ Cloud configuration:
 
 ## v2002.0.11
 
-{:.bs-callout bs-callout-info}
+{:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 #### New features
