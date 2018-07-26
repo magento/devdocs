@@ -1,6 +1,6 @@
 ---
 group: cloud
-title: Cloud tools release notes
+title: Release notes for ece-tools
 version: 2.1
 github_link: cloud/release-notes/cloud-tools.md
 redirect_from:
@@ -10,16 +10,24 @@ functional_areas:
   - Setup
   - Configuration
 ---
+The `ece-tools` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
 
-{% include cloud/ece-tools.md %}
+You can list the available ece-tools commands using:
+
+```bash
+php ./vendor/bin/ece-tools list
+```
+
+The following updates describe the latest improvements to the ece-tools package, which update as needed through patching and product upgrades managed by the `magento-cloud-metapackage`. The ece-tools package adheres to the version sequence:  `200<major>.<minor>.<patch>`.
 
 ## v2002.0.12
 
-{% include note.html type="info" content="The Cloud tools version 2002.0.12 now supports Magento 2.1.14. " %}
+{:.bs-callout bs-callout-info}
+The ece-tools version 2002.0.12 now supports Magento 2.1.14.
 
 #### New Features
 
--  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration rom the Cloud tools `ece-tools` repository.
+-  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/reference/docker-config.html) configuration from the Cloud `ece-tools` repository.
 
 -  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
@@ -57,7 +65,8 @@ Cloud configuration:
 
 ## v2002.0.11
 
-{% include note.html type="info" content="The Cloud tools version 2002.0.11 now supports Magento 2.1.13. " %}
+{:.bs-callout bs-callout-info}
+The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 #### New features
 
@@ -120,7 +129,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 </div>
 
 #### New features
--   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x. You must [upgrade to ece-tools]({{ site.baseurl }}/guides/v2.1/cloud/project/project-patch.html#upgrade-to-ece-tools) to use these features.
+-   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x. You must [upgrade to ece-tools]({{ site.baseurl }}/guides/v2.1/cloud/project/ece-tools-upgrade-project.html) to use these features.
 
 -   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis]({{ site.baseurl }}/guides/v2.1/cloud/env/working-with-variables.html#redis) page and default cache and Redis session storage using an environment variable.
 
