@@ -577,19 +577,28 @@ Added/updated functionality should be covered by a functional autotest(s) relate
 <p>Code NOT to cover:</p>
 
 <ul>
-  <li>Classes/methods with numerous dependencies.</li>
-  <li>Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)</li>
-  <li>Classes/methods interacting with resources directly or indirectly.</li>
-  <li>It is impossible to test the resources affected within a Unit test.</li>
-  <li>Glue code.</li>
-  <li>Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.</li>
+  <li>Classes/methods with numerous dependencies.
+    <ul>
+      <li>Creation of Unit tests for such classes will result in creation of a lot of mocks and writing complex test logic (that most likely follows code to large extend and as a result we will have fragile and hard to maintain tests)</li>
+    </ul>
+  </li>
+  <li>Classes/methods interacting with resources directly or indirectly.
+    <ul>
+      <li>It is impossible to test the resources affected within a Unit test.</li>
+    </ul>
+  </li>
+  <li>Glue code.
+    <ul>
+      <li>Mostly passing data between collaborators and has no or small amount of logic so it can be covered indirectly by integration/functional tests.</li>
+    </ul>
+  </li>
 </ul>
 
 <p>Examples:</p>
 
 <ul>
-  <li>Controllers - they can only be properly covered by functional tests because they are a glue that connects different app layers and only their final result matters</li>
-  <li>Most models - they are usually having a lot of dependencies and are interacting with resources</li>
+  <li>Controllers - They can only be properly covered by functional tests because they are the “glue” that connects different app layers. Only controller final result matter.</li>
+  <li>Most models - They usually have many dependencies and interact with resources.</li>
   <li>Simple DTOs</li>
   <li>Factories</li>
 </ul>
@@ -600,19 +609,30 @@ Added/updated functionality should be covered by a functional autotest(s) relate
 
 <ul>
   <li>Cannot be covered with a black box unit test</li>
-  <li>Have a lot of dependencies (unit test would require complex mocking)</li>
+  <li>Have many dependencies (unit test would require complex mocking)</li>
   <li>Interact with resources (database, file system, 3rd party systems etc.)</li>
 </ul>
 
 <p>Examples:</p>
 
 <ul>
-  <li>APIs</li>
-  <li>Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly), cover each implementation if an interface suggests multiple implementations.</li>
-  <li>SPIs</li>
-  <li>Same as APIs. Also it would be good to create tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure that the interface’s implementations can be swapped without breaking the application.</li>
-  <li>Models/Resource Models</li>
-  <li>Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API.</li>
+  <li>APIs:
+    <ul>
+      <li>Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly).</li>
+      <li>Cover each implementation if an interface suggests multiple implementations.</li>
+    </ul>
+  </li>
+  <li>SPIs
+    <ul>
+      <li>Same as APIs.</li>
+      <li>We recommend creating tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure the interface’s implementations can be swapped without breaking the application.</li>
+    </ul>
+  </li>
+  <li>Models/Resource Models
+    <ul>
+      <li>Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API</li>
+    </ul>
+  </li>
 </ul>
 
 <p>See: <a href="/guides/v2.1/test/integration/integration_test_execution.html">Running Integration Tests</a>.</p>
@@ -625,12 +645,18 @@ Added/updated functionality should be covered by a functional autotest(s) relate
   <li>Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.</li>
 </ul>
 
-<p>Expected code coverage: must cover all files applicable to this convention.</p>
+<p>Expected code coverage:</p>
+
+<ul>
+  <li>Must cover all files applicable to this convention.</li>
+</ul>
 
 <p>For example:</p>
 
-<p>Scan for all XML-files of certain type and validate them using appropriate XML-schema
-Scan for declarations of templates and invoke “fallback” mechanism to ensure they resolve</p>
+<ul>
+  <li>Scan for all XML-files of certain type and validate them using appropriate XML-schema.</li>
+  <li>Scan for declarations of templates and invoke “fallback” mechanism to ensure they resolve.</li>
+</ul>
 
 <p><strong>Static Code Analysis</strong></p>
 
@@ -652,7 +678,7 @@ For more information, see
 <a href="/guides/v2.1/architecture/back-compatibility.html">Magento’s backward compatibility policy</a>.</li>
 </ul>
 
-<p>A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.</p>
+<p>A failure in a legacy test must provide comprehensive explanation of an alternative, if there is any.</p>
 
 <p>Expected code coverage:</p>
 
