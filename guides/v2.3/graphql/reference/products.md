@@ -130,7 +130,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
-This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids`attributes.
+This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids` attributes.
 
 
 ## ProductInterface {#ProductInterface}
