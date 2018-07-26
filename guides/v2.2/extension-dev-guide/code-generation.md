@@ -6,7 +6,7 @@ github_link: extension-dev-guide/code-generation.md
 ---
 
 ## Overview of code generation {#codegen-over}
-The Magento application generates code to create non-existent classes. As an example, look at the [\\Magento\\Customer\\Model\\Resource\\AddressRepository] constructor. A snippet follows:
+The Magento application generates code to create non-existent classes. As an example, look at the [Magento/Customer/Model/Resource/AddressRepository] constructor. A snippet follows:
 
 	...
 	    public function __construct(
@@ -51,8 +51,8 @@ When code changes as discussed in the preceding section, the Object Manager comp
 The code compiler creates `generated/metadata/global.php`, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. `di.xml` is the dependency injection configuration. There is a global `app/etc/di.xml` and there can one defined for every {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 <!-- Link Definitions -->
-[\\Magento\\Customer\\Model\\Resource\\AddressRepository]: {{ site.mage2000url }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
-{target="_blank"}
+[Magento/Customer/Model/Resource/AddressRepository]: {{ site.mage2000url }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php
+{:target="_blank"}
 [production mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [Instantiating objects with factories]: {{ page.baseurl }}/extension-dev-guide/factories.html
 [Proxies]: {{ page.baseurl }}/extension-dev-guide/proxies.html
