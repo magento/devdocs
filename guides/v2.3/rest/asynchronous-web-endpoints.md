@@ -18,11 +18,8 @@ Magento supports the following types of asynchronous requests:
 * DELETE
 * PATCH
 
-+{%
-+include note.html
-+type='info'
-+content='GET requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.'
-+%}
+{:.bs-callout .bs-callout-tip}
+GET requests are not supported. Although Magento does not currently implement any PATCH requests, they are supported in custom extensions.
 
 The route to all asynchronous calls contains the prefix `/async`, added before `/V1` of a standard synchronous endpoint. For example:
 
