@@ -63,14 +63,6 @@ Example with `after`:
 
 `myAction` will be executed after the action, which has `stepKey="fillField"`.
 
-
-#### Example:
-
-```xml
-<waitForText userInput="Sample Text" selector="#page" stepKey="waitForText"/>
-```
-This action will wait for text "Sample Text" to appear in an element with the id of `page` before continuing.
-
 ## Examples
 
 {%raw%}
@@ -277,9 +269,9 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<appendField userInput="Suffix" selector="input#name" stepKey="appendSuffix"/>
+<appendField userInput="Sample Text" selector="input#name" stepKey="appendSuffix"/>
 ```
-This action would append the suffix `Suffix` to the current value of an input with an id of `name`.
+This action would append the suffix "Sample Text" to the current value of an input with an id of `name`.
 
 ### attachFile
 
@@ -391,12 +383,12 @@ Attribute|Type|Use|Description
 #### Examples:
 
 ```xml
-<clickWithLeftButton selector="button#clickable" stepKey="clickButton3"/>
+<clickWithLeftButton selector="button#clickable" stepKey="clickButton1"/>
 ```
-This action will perform a left button click on an element with the id of `clickable`.
+This action will perform a left button click on the center of an element with the id of `clickable`.
 
 ```xml
-<clickWithLeftButton x="50" y="50" stepKey="clickButton3"/>
+<clickWithLeftButton x="50" y="50" stepKey="clickButton2"/>
 ```
 This action will perform a left button click that is 50px from the top of the window and 50px from the left of the window.
 
@@ -422,19 +414,19 @@ Attribute|Type|Use|Description
 #### Examples:
 
 ```xml
-<clickWithRightButton selector="button#clickable" stepKey="clickButton3"/>
+<clickWithRightButton selector="button#clickable" stepKey="clickButton1"/>
 ```
-This action will perform a right button click on an element with the id of `clickable`.
+This action will perform a right button click on the center of an element with the id of `clickable`.
 
 ```xml
-<clickWithRightButton x="50" y="50" stepKey="clickButton3"/>
+<clickWithRightButton x="50" y="50" stepKey="clickButton2"/>
 ```
 This action will perform a right button click that is 50px from the top of the window and 50px from the left of the window.
 
 ```xml
 <clickWithRightButton selector="button#clickable" x="50" y="50" stepKey="clickButton3"/>
 ```
-This action will perform a left button click that is 50px from the top and 50px from the left of a button with the id of `clickable`.
+This action will perform a right button click that is 50px from the top and 50px from the left of a button with the id of `clickable`.
 
 ### closeAdminNotification
 
@@ -487,7 +479,7 @@ Attribute|Type|Use|Description
 <amOnPage url="/login" stepKey="goToLoginPage"/>
 <comment userInput="I am on the login page" stepKey="loginPageComment"/>
 ```
-This action will leave a comment of `I am on the login page` after the `amOnPage` action in the generated php file
+This action will leave a comment of `I am on the login page` after the `amOnPage` action in the generated PHP file.
 
 ### conditionalClick
 
@@ -507,7 +499,7 @@ Attribute|Type|Use|Description
 ```xml
 <conditionalClick selector="#foo" dependentSelector="#bar" visible="true" stepKey="click1"/>
 ```
-This action will click on `#foo` if `#bar` is visible:
+This action will click on `#foo` if `#bar` is visible.
 
 ### createData
 
@@ -626,7 +618,7 @@ Attribute|Type|Use|Description
 ```xml
 <dontSee userInput="Sample title" selector="h2#title" stepKey="dontSeeTitle"/>
 ```
-This action will be true only if there is no header with an id of `title` on the page that contains the text "Sample title".
+This action will be true only if there is no h2 element with an id of `title` on the page that contains the text "Sample title".
 
 ### dontSeeCheckboxIsChecked
 
@@ -761,7 +753,7 @@ Attribute|Type|Use|Description
 ```xml
 <dontSeeInCurrentUrl url="/users/" stepKey="dontSeeInCurrentUrl"/>
 ```
-This action will be true only if the url of the current active tab does not contain the string `/users/`.
+This action will be true only if the url of the current active tab does not contain the string "/users/".
 
 ### dontSeeInField
 
@@ -871,7 +863,7 @@ Attribute|Type|Use|Description
 ```xml
 <dontSeeJsError stepKey="dontSeeJsError"/>
 ```
-This action will be true only if there are no JavaScript errors.
+This action will be true only if there are no JavaScript errors in the current active window.
 
 ### dontSeeLink
 
@@ -912,7 +904,7 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<dontSeeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="dontSeeJsOption1"/>
+<dontSeeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="dontSeeOption1"/>
 ```
 This action will be true only if the select element with an id of `myselect` does not have the option `option1` selected
 
@@ -932,7 +924,7 @@ Attribute|Type|Use|Description
 ```xml
 <doubleClick selector="button#mybutton" stepKey="doubleClickButton"/>
 ```
-This action will click the button with the id of `mybutton` twice in succession
+This action will click the button with the id of `mybutton` twice in succession.
 
 ### dragAndDrop
 
@@ -953,7 +945,7 @@ Attribute|Type|Use|Description
 ```xml
 <dragAndDrop selector1="#block1" selector2="#block2" stepKey="dragAndDrop"/>
 ```
-This action will click and drag the element with an id of `block1` to the middle of the element with an id of `block2`.
+This action will click and drag the element with an id of `block1` to the middle of an element with an id of `block2`.
 
 ```xml
 <dragAndDrop selector1="#block1" selector2="#block2" x="50" y="50" stepKey="dragAndDrop"/>
@@ -994,7 +986,7 @@ Attribute|Type|Use|Description
 ```xml
 <executeJS function="return Math.floor(new Date() / 1000);" stepKey="returnTime"/>
 ```
-This action will return the time in seconds since Unix Epoch (January 1, 1970)
+This action will return the time in seconds since Unix Epoch (January 1, 1970) using the JavaScript Date() function.
 
 To access this value you would use `{$returnTime}` in later actions.
 
@@ -1016,7 +1008,7 @@ Attribute|Type|Use|Description
 ```xml
 <fillField userInput="Sample text" selector="input#myfield" stepKey="fillField"/>
 ```
-This action will fill in the field with an id of `myfield` with the text "Sample text"
+This action will fill in the field with an id of `myfield` with the text "Sample text".
 
 ### formatMoney
 
@@ -1069,11 +1061,11 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<grabAttributeFrom userInput="title" selector="input#myinput" stepKey="grabAttributeFrom"/>
+<grabAttributeFrom userInput="title" selector="input#myinput" stepKey="grabAttributeFromInput"/>
 ```
 This action would grab the `title` attribute from an input element with the id of `myinput`.
 
-To use this value later in a test you would call it using `{$grabAttributeFrom}`.
+To use this value later in a test you would call it using `{$grabAttributeFromInput}`.
 
 ### grabCookie
 
@@ -1147,7 +1139,7 @@ To use these values later in a test you would call it using `{$grabAllMyElements
 ```xml
 <grabMultiple userInput="href" selector="a" stepKey="grabAllLinks"/>
 ```
-This action will grab the href tag from every `a` element on the page as an array.
+This action will grab the `href` tag from every `a` element on the page and return them as an array.
 
 To use these values later in a test you would call it using `{$grabAllLinks}`.
 
@@ -1166,7 +1158,7 @@ Attribute|Type|Use|Description
 ```xml
 <grabPageSource stepKey="grabPageSource"/>
 ```
-This action will grab the source code of the page.
+This action will grab the source code of the page and store it as text.
 
 To use this string later in a test you would call it using `{$grabPageSource}`.
 
@@ -1331,9 +1323,14 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<moveMouseOver selector="div#product1" stepKey="hoverOverProduct"/>
+<moveMouseOver selector="div#product1" stepKey="hoverOverProduct1"/>
 ```
 This action will move the mouse cursor over the div element with an id of `product1`.
+
+```xml
+<moveMouseOver selector="div#product1" x="50" y="50" stepKey="hoverOverProduct2"/>
+```
+This action will move the mouse cursor over the div element with an id of `product1` with an offset of 50px from the top and 50px from the left.
 
 ### mSetLocale
 
@@ -1465,7 +1462,7 @@ Attribute|Type|Use|Description
 ```xml
 <remove keyForRemoval="stepKeyToRemove"/>
 ```
-This action will remove another action in the test with the key of `stepKeyToRemove`.
+This action will remove another action in the test with the stepKey of `stepKeyToRemove`.
 
 ### resetCookie
 
@@ -1482,12 +1479,12 @@ Attribute|Type|Use|Description
 #### Examples:
 
 ```xml
-<resetCookie userInput="cookie1" stepKey="grabCookie1"/>
+<resetCookie userInput="cookie1" stepKey="resetCookie1"/>
 ```
 This action will reset the cookie with the given name `cookie1`.
 
 ```xml
-<resetCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="grabCookieExampleDomain"/>
+<resetCookie userInput="cookie1" parameterArray="['domainName' => '.example.com']" stepKey="resetCookieExampleDomain"/>
 ```
 This action will reset the cookie with the given name `cookie1` from the domain `www.example.com`.
 
@@ -1633,7 +1630,7 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<seeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="checkboxChecked"/>
+<seeCheckboxIsChecked userInput="Sample title" selector="input#option1" stepKey="seeCheckboxChecked"/>
 ```
 This action will be true only if a checkbox element with an id of option1 is checked.
 
@@ -1770,7 +1767,7 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<seeInField userInput="Sample text" selector="input#field" stepKey="seeInField1"/>
+<seeInField userInput="Sample text" selector="input#field" stepKey="seeInField"/>
 ```
 This action will be true only if an input with an id of `field` contains the text “Sample text”.
 
@@ -1910,7 +1907,7 @@ Attribute|Type|Use|Description
 This action will be true only if there are 10 elements with the class of `product` on the page.
 
 ```xml
-<seeNumberOfElements userInput="[5, 10]" selector=".product" stepKey="seeTenProducts"/>
+<seeNumberOfElements userInput="[5, 10]" selector=".product" stepKey="seeFiveToTenProducts"/>
 ```
 This action will be true only if there are between 5 and 10 elements with the class of `product` on the page.
 
@@ -1931,7 +1928,7 @@ Attribute|Type|Use|Description
 ```xml
 <seeOptionIsSelected userInput="option1" selector="select#myselect" stepKey="seeOption1"/>
 ```
-This action will be true only if the select element with an id of `myselect` has the option `option1` selected
+This action will be true only if the select element with an id of `myselect` has the option `option1` selected.
 
 ### selectOption
 
@@ -2054,9 +2051,9 @@ Attribute|Type|Use|Description
 This action will switch to the next tab.
 
 ```xml
-<switchToNextTab userInput stepKey="switchToNextTab2"/>
+<switchToNextTab userInput="3" stepKey="switchToThirdNextTab"/>
 ```
-This action will switch to the second next tab.
+This action will switch to the third next tab.
 
 ### switchToPreviousTab
 
@@ -2077,9 +2074,9 @@ Attribute|Type|Use|Description
 This action will switch to the previous tab.
 
 ```xml
-<switchToPreviousTab userInput stepKey="switchToPreviousTab2"/>
+<switchToPreviousTab userInput="3" stepKey="switchToThirdPreviousTab"/>
 ```
-This action will switch to the second previous tab.
+This action will switch to the third previous tab.
 
 ### switchToWindow
 
@@ -2203,7 +2200,7 @@ Attribute|Type|Use|Description
 ```xml
 <wait time="10" stepKey="waitTenSeconds"/>
 ```
-This action would halt the test execution for 10 seconds before continuing.
+This action will halt test execution for 10 seconds before continuing.
 
 ### waitForAjaxLoad
 
@@ -2221,7 +2218,7 @@ Attribute|Type|Use|Description
 ```xml
 <waitForAjaxLoad stepKey="waitForAjaxLoad"/>
 ```
-This action will wait for all AJAX calls to finish before continuing.
+This action will wait by default up to 30 seconds for all AJAX calls to finish before continuing.
 
 ### waitForElementChange
 
@@ -2241,7 +2238,7 @@ Attribute|Type|Use|Description
 ```xml
 <waitForElementChange selector="#changedElement" function="function(\WebDriverElement $el) {return $el->isDisplayed();}" stepKey="waitForElementChange"/>
 ```
-This action will wait for an element with an id of `changedElement` to change to displayed before continuing.
+This action will wait by default up to 30 seconds for an element with an id of `changedElement` to change to displayed before continuing.
 
 ### waitForElement
 
@@ -2260,7 +2257,7 @@ Attribute|Type|Use|Description
 ```xml
 <waitForElement selector="#changedElement" stepKey="waitForElement"/>
 ```
-This action will wait for an element with an id of `changedElement` to be appear on the page before continuing.
+This action will wait by default up to 30 seconds for an element with an id of `changedElement` to be appear on the page before continuing.
 
 ### waitForElementNotVisible
 
@@ -2277,9 +2274,9 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<waitForElementNotVisible selector="#changedElement" stepKey="waitForElement"/>
+<waitForElementNotVisible selector="#changedElement" stepKey="waitForElementNotVisible"/>
 ```
-This action will wait for an element with an id of `changedElement` to become non-visible on the page before continuing.
+This action will wait by default up to 30 seconds for an element with an id of `changedElement` to become non-visible on the page before continuing.
 
 ### waitForElementVisible
 
@@ -2296,9 +2293,9 @@ Attribute|Type|Use|Description
 #### Example:
 
 ```xml
-<waitForElementNotVisible selector="#changedElement" stepKey="waitForElement"/>
+<waitForElementVisible selector="#changedElement" stepKey="waitForElementVisible"/>
 ```
-This action will wait for an element with an id of `changedElement` to become visible on the page before continuing.
+This action will wait by default up to 30 seconds for an element with an id of `changedElement` to become visible on the page before continuing.
 
 ### waitForJS
 
@@ -2348,7 +2345,7 @@ Attribute|Type|Use|Description
 ```xml
 <waitForLoadingMaskToDisappear stepKey="waitForLoadingMaskToDisappear"/>
 ```
-This action will wait for all Magento loading overlays to disappear before continuing.
+This action will wait by default up to 30 seconds for all Magento loading overlays to disappear before continuing.
 
 ### waitForPageLoad
 
@@ -2366,7 +2363,7 @@ Attribute|Type|Use|Description
 ```xml
 <waitForPageLoad stepKey="waitForPageLoad"/>
 ```
-This action will wait for the current page to fully load before continuing.
+This action will wait by default up to 30 seconds for the current page to fully load before continuing.
 
 ### waitForText
 
@@ -2380,3 +2377,10 @@ Attribute|Type|Use|Description
 `stepKey`|string|required| A unique identifier of the action.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+#### Example:
+
+```xml
+<waitForText userInput="Sample Text" selector="#page" stepKey="waitForText"/>
+```
+This action will wait for text "Sample Text" to appear in an element with the id of `page` before continuing.
