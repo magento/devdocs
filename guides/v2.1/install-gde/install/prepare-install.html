@@ -2296,20 +2296,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.1/install-gde/prereq/dev_install.html">Install the Composer software</a>.</li>
   <li><a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Create the Magento file system owner</a> so Composer writes files to the web server docroot as the correct user.</li>
   <li>
-    <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code class="highlighter-rouge">/var/www/magento2/</code>).</p>
+    <p>Run the <a href="#install-composer-install"><code class="highlighter-rouge">composer install</code> command</a> from your Magento root directory (for example, <code class="highlighter-rouge">/var/www/magento2/</code>).</p>
 
     <p>The Magento root directory is a subdirectory of your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>If the following error displays, see <a href="/guides/v2.1/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
-  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
-</div>
+  		If the following error displays, see <a href="/guides/v2.1/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:
+  		file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
   </li>
 </ol>
 
 <p>For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
 
-<h2 id="install-composer-install">Run <code>composer install</code> to update dependencies</h2>
+<h2 id="install-composer-install">Run <code class="highlighter-rouge">composer install</code> to update dependencies</h2>
 <p>Update installation dependencies as follows:</p>
 
 <ol>
