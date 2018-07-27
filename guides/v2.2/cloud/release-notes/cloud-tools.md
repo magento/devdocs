@@ -150,6 +150,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 -   <!-- MAGECLOUD-1674 -->We added support for an earlier version of `symfony/yaml` to fix conflicts with some packages, which are not yet compatible with the latest version.
 
 ## v2002.0.8
+
 {:.bs-callout .bs-callout-info}
 We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 
@@ -280,6 +281,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 -   <!--MAGECLOUD-1020-->We fixed an issue that was causing redirect loops due to disabled by default secure admin.
 
 ## v2002.0.0
+
 {:.bs-callout .bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 

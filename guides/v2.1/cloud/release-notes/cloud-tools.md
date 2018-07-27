@@ -65,7 +65,7 @@ Cloud configuration:
 
 ## v2002.0.11
 
-{:.bs-callout bs-callout-info}
+{:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 #### New features
@@ -152,6 +152,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 -   <!-- MAGECLOUD-1674 -->We added support for an earlier version of `symfony/yaml` to fix conflicts with some packages, which are not yet compatible with the latest version.
 
 ## v2002.0.8
+
 {:.bs-callout .bs-callout-info}
 We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
 
