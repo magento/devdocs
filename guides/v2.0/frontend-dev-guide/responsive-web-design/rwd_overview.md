@@ -68,7 +68,7 @@ The width of the user’s screen that causes your responsive {% glossarytooltip 
 </table>
 
 
-<h2>Recommended reading</h2>
+## Recommended reading
 
 *	<a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html" target="_blank">Magento Themes</a>
 

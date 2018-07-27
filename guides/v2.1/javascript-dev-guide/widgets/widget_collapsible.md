@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html
 ---
 
-<h2>Overview</h2>
+## Overview
 <!-- used in {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} -->
 The Magento collapsible {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
@@ -39,17 +39,17 @@ The element's `id` is also used in deep linking: if the `id` of the content or t
 
 Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
 
-<h3>Initialize collapsible with header only</h3>
+### Initialize collapsible with header only
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
 <pre>
 $("#header").collapsible();
 </pre>
 
 
-<h2>Initialize collapsible in a template</h2>
+## Initialize collapsible in a template
 The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
-<h2>Options</h2>
+## Options
 
 The collapsible widget has the following options:
 

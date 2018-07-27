@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 
 ## REST responses {#rest-responses}
 
-Each web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call returns a HTTP status code and a response payload. When an error occcurs, the response body also returns an error message.
+Each web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call returns a HTTP status code and a response payload. When an error occurs, the response body also returns an error message.
 
 ### HTTP status codes {#http-status-codes}
 

@@ -6,7 +6,6 @@ github_link: frontend-dev-guide/layouts/layout-overview.md
 functional_areas:
   - Frontend
 ---
-
 ## What's in this topic
 
 This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.

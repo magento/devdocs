@@ -9,9 +9,8 @@ github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 functional_areas:
   - Frontend
 ---
-<h2>What's in this topic</h2>
+## What's in this topic
 Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
-
 
 <h2 id="simple_extend">Simplest way to extend parent styles</h2> 
 
@@ -33,6 +32,12 @@ To extend the parent theme's styles in your theme:
 </ol>
 
 Extending a theme using <code>_extend.less</code> is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
+
+{%
+include note.html
+type='info'
+content='The rules and variables declared in <code>_extend.less</code> always have precedence over ones declared in <code>_theme.less</code>'
+%}
 
 <h2 id="simple_override">Simplest way to override parent styles</h2>
 
@@ -107,7 +112,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 <li>Add your styles for the button component. If the file is left blank, then no styles are applied for the component.</li>
 </ol>
 
-<h2>Recommended reading</h2>
+## Recommended reading
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

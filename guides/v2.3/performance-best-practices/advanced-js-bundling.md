@@ -88,7 +88,7 @@ The following steps require you to install and have familiarity with the followi
 Full versions of the sample code used in this article are available here:
 - [build.js](samples/build.js){:target="_blank"}
 - [deps.js](samples/deps.js){:target="_blank"}
-- [deps-map.sh](samples/deps-map.sh){:target="_blank"}
+- [deps-map.sh](samples/deps-map.sh.txt){:target="_blank"}
 
 ### Part 1: Create a bundling configuration
 
@@ -456,7 +456,7 @@ After the page loads, you should notice the browser loading different dependenci
 
 ![TwiceAsFast](images/TwiceAsFast.png)
 
-The the page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.
+The page load time for an empty homepage is now twice as fast than using native Magento bundling. But we can do even better.
 
 #### 7. Optimize the bundles
 

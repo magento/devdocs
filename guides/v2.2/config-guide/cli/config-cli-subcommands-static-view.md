@@ -182,7 +182,7 @@ The following table explains this command's parameters and values.
           <code>frontend</code>.
         </p>
         <p>
-          For example, <code>--area adminthml</code>
+          For example, <code>--area adminhtml</code>
         </p>
       </td>
       <td>
