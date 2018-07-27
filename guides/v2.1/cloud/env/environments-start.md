@@ -184,8 +184,6 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 ## Interact with environments via CLI {#commands}
 After setting up your [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can interact with services and modify settings through your local to a remote environment.
 
-The following steps provide an example of accessing a database:
-
 {% include cloud/log-in-db.md %}
 
 ## SSH tunneling {#env-start-tunn}
