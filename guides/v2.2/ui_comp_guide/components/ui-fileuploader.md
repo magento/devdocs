@@ -230,3 +230,11 @@ Here is an example of how File Uploader component integrates with <a href="{{ pa
     </fieldset>
 </form>
 {% endhighlight %}
+
+## API reference
+
+Source files:
+- [`<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/element/file-uploader.js)
+- [`jquery/fileUploader/jquery.fileupload-fp`](https://github.com/magento/magento2ce/blob/2.2/lib/web/jquery/fileUploader/jquery.fileupload-fp.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`](https://github.com/magento/magento2ce/tree/2.2/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/uploader.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/preview.html)

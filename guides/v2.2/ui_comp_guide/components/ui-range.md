@@ -37,3 +37,8 @@ Range-specific configuration:
     <td><code>ui/grid/filters/elements/group</code></td>
   </tr>
 </table>
+
+## API reference
+
+Source files:
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)

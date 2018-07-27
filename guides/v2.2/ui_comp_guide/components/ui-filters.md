@@ -67,3 +67,8 @@ To add a new customer attribute to the customer grid and make it filterable, you
 3. Сreate etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
 4. Set is_used_in_grid to true for the attribute
 
+## API reference
+
+Source files:
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
+

@@ -410,3 +410,8 @@ To replace one instance of a UI Form Component redefine link to a constructor in
     </argument>
 </form>
 {% endhighlight %}
+
+## API reference
+
+Source files:
+- [app/code/Magento/Ui/view/base/web/js/form/form.js](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/form.js)

@@ -87,3 +87,9 @@ HtmlContent-specific options:
     </htmlContent>
 </form>
 {%endhighlight%}
+
+## API reference
+
+Source files:
+- [app/code/Magento/Ui/view/base/web/js/form/components/html.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/form/components/html.js)
+- [app/code/Magento/Ui/view/base/web/templates/content/content.html](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/content/content.html)

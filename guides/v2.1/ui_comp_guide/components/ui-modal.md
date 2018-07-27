@@ -151,6 +151,12 @@ The following sample is an example of the configuration for a simple modal windo
 
 ## API reference
 
+Source files:
+- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+
+### Methods and events
+
 - `actionCancel()` - returns all modal's child components to the state they had on modal open and closes the modal window.
 - `actionDone()` - validates the changes in the modal's child components and, if valid, closes the modal.
 - `closeModal()`: - closes the modal window.
@@ -159,7 +165,3 @@ The following sample is an example of the configuration for a simple modal windo
 - `setTitle()` - sets modal title.
 - `setSubTitle()` - sets modal sub title.
 - `toggleModal()` - toggles the modal window state (open/close).
-
-Source files:
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)

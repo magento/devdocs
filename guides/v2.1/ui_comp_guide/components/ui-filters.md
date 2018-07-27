@@ -55,3 +55,8 @@ Filters-specific configuration:
     <td>Contains definitions of the <code>text</code>, <code>select</code>,<code>dateRange</code> and <code>textRange</code> filter types.</td>
   </tr>
 </table>
+
+## API reference
+
+Source files:
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js](https://github.com/magento/magento2ce/blob/2.1/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)

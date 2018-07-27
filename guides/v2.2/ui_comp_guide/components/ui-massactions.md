@@ -173,6 +173,10 @@ Redefine link to constructor.
 
 ## API reference
 
+Source files:
+- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html](https://github.com/magento/magento2ce/blob/2.2/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+
 ### Methods and events
 
 The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
