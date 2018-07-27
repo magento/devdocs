@@ -44,7 +44,7 @@ The purpose of MFTF is to:
 MFTF will enable you to:
 
 -   Test user interactions with web applications in testing.
--   Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
+-   Write functional tests located in `Test/Mftf/` in [module directory]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html#where-do-modules-live).
 -   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
 -   Automate regression testing.
 
@@ -56,9 +56,9 @@ As a software engineer, perform regression testing before release to ensure that
 
 ## Find your MFTF version
 
-The MFTF is installed as a Composer dependency in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/composer.lock`.
+The MFTF is installed as a Composer dependency in `<magento_root>/app/code/dev/Tests/acceptance/` directory.
 
-Open the file and check the corresponding dependency:
+Open the file 'composer.lock' and check the corresponding dependency:
 
 ```json
 {
@@ -67,7 +67,7 @@ Open the file and check the corresponding dependency:
         ...
         {
             "name": "magento/magento2-functional-testing-framework",
-            "version": "2.0.2",
+            "version": "2.1.2",
             ...
         }
         ...
