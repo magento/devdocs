@@ -127,9 +127,9 @@ Example:
 http://127.0.0.1:4444/wd/hub
 ```
 
-### Step 5. [Optional] Copy `command.php` into Magento installation.
+### Step 5. [Optional] Copy `command.php` into Magento installation
 
-If you are installing the MFTF not from your Magento installation, locate the `command.php` file in MFTF:
+If you are installing the MFTF not from your Magento installation, locate the `command.php` file in the MFTF:
 
 ```
 magento2-functional-testing-framework/etc/config/command.php
@@ -141,7 +141,7 @@ And copy it into your Magento installation under:
 magento2ce/dev/tests/acceptance/utils/command.php
 ```
 
-If you are installing MFTF from inside your Magento installation, this is automatically done when you run `vendor/bin/mftf build:project`.
+If you are installing the MFTF from inside your Magento installation, this is automatically done when you run `vendor/bin/mftf build:project`.
 
 {:.bs-callout .bs-callout-tip}
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
