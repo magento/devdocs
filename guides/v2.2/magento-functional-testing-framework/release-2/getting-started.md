@@ -5,7 +5,8 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/getting-started.md
 functional_areas:
  - Testing
-mftf-release: 2.0.2
+mftf-release: 2.3.0
+redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html
 ---
 
 _This topic was updated after {{page.mftf-release}} MFTF release._
@@ -15,7 +16,7 @@ _This topic was updated after {{page.mftf-release}} MFTF release._
 
 Make sure that you've installed and set up the following software:
 
-* [PHP version supported by Magento instance under test]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
+* [PHP version supported by Magento instance under test]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
 * [Composer v1.3.x+](https://getcomposer.org/download/)
 * [Java v1.8.x+](https://www.java.com/en/download/)
 * [Selenium Server Standalone v3.6.0+](#selenium-server)
@@ -68,29 +69,33 @@ git clone git@github.com:magento/magento2.git
 
 ### Step 2. Install dependencies
 
-```bash
-cd magento2/dev/tests/acceptance
-```
-```bash
-composer install
-```
+1. Change directories to `magento2/` (the project root).
+
+2. Run the `composer install` command.
+
+3. Change directories to `dev/tests/acceptance/`.
+
+4. Run the `composer install` command. 
 
 ### Step 3. Build the project
 
-In _magento2/dev/tests/acceptance_, run the following command:
+In `magento2/` project root, run the following commands:
 
 ```bash
-vendor/bin/robo build:project
+vendor/bin/mftf build:project
 ```
+```bash
+vendor/bin/mftf generate:urn-catalog
+```
+If the file does not exist, add the `-f` option to `generate:urn-catalog` to create it.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{:.bs-callout .bs-callout-tip}
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
-When added, you should be able to run the `robo`, `codecept`, and `phpunit` commands.
-</div>
+When added, you should be able to run the `mftf`, `codecept`, and `phpunit` commands.
 
 ### Step 4. Edit environment settings
 
-In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
+In the `magento2/dev/tests/acceptance/` directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
@@ -98,7 +103,7 @@ Example: `MAGENTO_BASE_URL=http://magento.test`
 * `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
 Example: `MAGENTO_BACKEND_NAME=admin`
 
-* `MAGENTO_ADMIN_USERNAME` must contain the user name required for authorization in the Admin area.
+* `MAGENTO_ADMIN_USERNAME` must contain the username required for authorization in the Admin area.
 Example: `MAGENTO_ADMIN_USERNAME=admin`
 
 * `MAGENTO_ADMIN_PASSWORD` must contain the user password required for authorization in the Admin area.
@@ -113,9 +118,8 @@ SELENIUM_PROTOCOL=http
 SELENIUM_PATH=/wd/hub
 ```
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Only change or specify `SELENIUM_*` values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.
-</div>
 
 Your environment settings form the path to your running Selenium Server.
 Example:
@@ -125,7 +129,7 @@ http://127.0.0.1:4444/wd/hub
 
 ### Step 5. [Optional] Copy `command.php` into Magento installation.
 
-If you are not installing MFTF from your inside your Magento installation, locate the `command.php` file in MFTF:
+If you are installing the MFTF not from your Magento installation, locate the `command.php` file in MFTF:
 
 ```
 magento2-functional-testing-framework/etc/config/command.php
@@ -139,21 +143,20 @@ magento2ce/dev/tests/acceptance/utils/command.php
 
 If you are installing MFTF from inside your Magento installation, this is automatically done when you run `vendor/bin/mftf build:project`.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-tip}
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
-</div>
 
 ### Step 6. Generate existing tests
 
-In the `magento2/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
+In the `magento2/` root directory, run the following command to generate tests as PHP classes from XML files:
 
 ```bash
-vendor/bin/robo generate:tests
+vendor/bin/mftf generate:tests
 ```
 
 ### Step 7. Run tests
 
-To run tests you need a running Selenium server and a [`codecept`](commands/codeception.html) or [`robo`](commands/robo.html) with required parameters.
+To run tests, you need a running Selenium server and a [`codecept`](commands/codeception.html) or [`mftf`](commands/mftf.html) with required parameters.
 
 #### Run the Selenium server {#selenium-server}
 
@@ -175,17 +178,15 @@ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 vendor/bin/codecept run
 ```
 
-See more commands in [`robo`](commands/robo.html) and [`codecept`](commands/codeception.html).
+See more commands in [`mftf`](commands/mftf.html) and [`codecept`](commands/codeception.html).
 
-### Step 8. Generate reports {#allure}
+### Step 8. Generate reports {#reports}
 
-Install [Allure](https://docs.qameta.io/allure/latest/), a tool that generates testing reports in HTML.
-Testing reports are generated in a CLI during testing.
+The testing reports are generated in a CLI during testing.
 
-If you want to see the reports in a GUI, run:
+To generate the reports in HTML, use [Allure](https://docs.qameta.io/allure/latest/).
+For example, to generate the reports when you are in the `magento2 root directory`, run:
 
 ```bash
-vendor/bin/robo allure2:report
+allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/tests/acceptance/tests/_output/allure-report/ --clean
 ```
-
-See also [Allure `robo` commands](commands/robo.html#allure-robo-commands) and [Report structure](https://docs.qameta.io/allure/latest/#_report_structure).

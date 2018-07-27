@@ -20,8 +20,12 @@ The changes are aggregated into two tables:
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
+When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
 </div>
+
+## 2.1.13 - 2.1.14    {#releases-2_1_13-2_1_14}
+
+{% include backward-incompatible-changes/commerce/2.1.13-2.1.14.html %}
 
 ## 2.1.12 - 2.1.13    {#releases-2_1_12-2_1_13}
 
@@ -82,5 +86,5 @@ The changes are aggregated into two tables:
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./open-source.html
-
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

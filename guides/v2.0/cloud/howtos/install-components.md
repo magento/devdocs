@@ -42,7 +42,7 @@ If you already know the module's Composer name and version, skip this step and c
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
-When adding the module to `composer.json`, the file [`app/etc/config.php`]({{page.baseurl}}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings.
+When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ page.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings.
 
 To update `composer.json`:
 
@@ -70,7 +70,7 @@ To update `composer.json`:
     git push origin <environment ID>
     ```
 
-If there are errors, see [module deployment failure]({{page.baseurl}}/cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [module deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
 
 <div class="bs-callout bs-callout-warning">
 When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the module is not in the file, the module won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the module properly loads. This command uses the `composer.lock` file.
@@ -80,7 +80,7 @@ When installing and adding the module, you must add the `composer.lock` to your 
 To verify the module installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.  Open a terminal.
-1.  [Checkout the branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
+1.  [Checkout the branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
 1.  List all enabled modules:
 
     ```bash
@@ -150,7 +150,7 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
     git push origin <environment ID>
     ```
 
-1.  [Complete deployment]({{page.baseurl}}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
+1.  [Complete deployment]({{ page.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
 To change settings for your modules and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an module or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
@@ -180,4 +180,4 @@ To update an module:
 
 1.  Wait for the project to deploy and verify in your environment.
 
-If there are errors, see [Component deployment failure]({{page.baseurl}}/cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [Component deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).

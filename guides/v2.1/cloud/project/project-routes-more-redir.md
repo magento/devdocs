@@ -30,7 +30,7 @@ Using whole-route redirects, you can define very basic routes in `routes.yaml`. 
 	    to: http://www.{default}/
 
 ## Partial redirects {#cloud-route-partial}
-In the [`.magento/routes.yaml`]({{page.baseurl}}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
+In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
 to existing routes:
 
 	http://{default}/:
@@ -45,8 +45,9 @@ This format is more rich and works with any type of route, including routes serv
 
 Two keys are available under `redirects`:
 
- * `expires`: optional, the duration the redirect is cached. Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
- * `paths`: the paths to which to apply redirections.
+ * `expires`: Optional, the duration that the redirect is cached.
+ Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
+ * `paths`: The paths to apply the redirects to.
 
 Each rule under `paths` is defined by:
 

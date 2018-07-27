@@ -9,9 +9,9 @@ version: 2.0
 github_link: cloud/trouble/pro-env-management.md
 ---
 
-For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{page.baseurl}}/cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
+For existing Pro plans, you previously had to access Staging and Production environments using SSH access or entering tickets. We have added additional features to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) to directly manage these environments without SSH for specific options.
 
-To add these environments to the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html), review this entire document to complete a few preparation steps and enter a ticket.
+To add these environments to the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html), review this entire document to complete a few preparation steps and enter a ticket.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Please be aware, your ticket will be added to a queue for updating existing Pro projects. The process may take some time to complete. We will update your tickets with details, timing, and updates.
@@ -52,7 +52,7 @@ You will continue to use SSH for:
 * Deploy code to Staging and Production
 
 ### Branch changes {#branches}
-When converted, your branches will be updated. The current branhces include a repository for Integration, Staging, and Production. Each repository has a `master` branch with deployment targets configured for Staging and Production.
+When converted, your branches will be updated. The current branches include a repository for Integration, Staging, and Production. Each repository has a `master` branch with deployment targets configured for Staging and Production.
 
 After the conversion, the three repositories are merged into a single repository. You will have the following branches and environments:
 
@@ -93,7 +93,7 @@ After the conversion, the three repositories are merged into a single repository
 
 In the Project Web Interface, you will see the following environments and branches:
 
-![Pro branch hierarchy]({{ site.baseurl}}/common/images/cloud_project-pro.png)
+![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)
 
 Be aware, the following actions will trigger a redeploy of the environment. This redeploy is much shorter, not pushing code or data changes.
 
@@ -126,7 +126,7 @@ We recommend verifying your user account access and permissions set in the Maste
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the **Projects** tab and the name of your project.
 3. Click Master to open the environment information and settings.
-4. Click ![configure your project]({{ site.baseurl}}/common/images/cloud_edit-project.png) **Configure environment**.
+4. Click ![configure your project]({{ site.baseurl }}/common/images/cloud_edit-project.png) **Configure environment**.
 5. Click the **Users** tab to review the user accounts and permission configurations.
 6. You can add users if needed. Click **Add User**, enter an email address, and select a permission. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only).
 7. To modify the environment permissions for a user, select Edit for the account and change the permissions. These include Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). Select a permission and save.
@@ -145,16 +145,16 @@ When we convert your project to the new Project Web Interface, we add variables 
 For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an `env.php` file, the file continues working after converting. You can add and manage these variables using the Magento Cloud CLI tool directly into the Staging and Production environments.
 
 ## Enter a ticket for updating the Project Web Interface {#enable}
-Enter a [Support ticket]({{page.baseurl}}/cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
+Enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) with the suggested title "Connect Stg / Prod to Project's UI". In the ticket, request to have your project enabled with Staging and Production in the UI.
 
 We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.
 
-When done, you can access review your project through the [Project Web Interface]({{page.baseurl}}/cloud/project/projects.html).
+When done, you can access review your project through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
 
 ## (Optional) Migrate environment variables
 After conversion, you can manually migrate specific environment variables for Staging and Production.
 
-1.  Open a terminal and [checkout a branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
+1.  Open a terminal and [checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
 1.  List all environment variables.
 
     ```
@@ -168,6 +168,6 @@ After conversion, you can manually migrate specific environment variables for St
 1.  Enter the variable name and value.
 1.  Select the **Override** checkbox if you want variables in the Project Web Interface to override local CLI or database values.
 
-When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children of Integration `master`. For more information, see [Pro architecture]({{page.baseurl}}/cloud/architecture/pro-architecture.html).
+When accessing the Project Web Interface, you should see a hierarchy of branches starting from Production to Staging to Integration. Any branches you create display as children of Integration `master`. For more information, see [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
-![Pro branch hierarchy]({{ site.baseurl}}/common/images/cloud_project-pro.png)
+![Pro branch hierarchy]({{ site.baseurl }}/common/images/cloud_project-pro.png)

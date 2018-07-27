@@ -93,7 +93,7 @@ Look for the following highlights in this release:
 <!--- MAGETWO-58034 -->*  Magento now saves selected product options when you edit a product page. Previously, Magento did not save configurable options. 
 
 
-<!--- MAGETWO-71515 -->*  When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be **as low as** as the lowest price.   Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with with the lowest available price.
+<!--- MAGETWO-71515 -->*  When a simple child product on a configurable product has a lower price (either regular, or special price) than the other options (variations), the configurable product without any selected options now indicates that the price could be **as low as** as the lowest price.   Previously, if a simple child product has a price that is lower than the other options, and no options on the configurable product have been selected yet, the configurable product will be shown with the lowest available price.
 
 
 
@@ -241,7 +241,7 @@ Look for the following highlights in this release:
 ## Known issue
 <!--- MAGETWO-85164 -->**Issue**: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
 
-**Workaround**: Use the Devdocs [static Swagger site](http://devdocs.magento.com/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
+**Workaround**: Use the Devdocs [static Swagger site]({{ site.baseurl }}/swagger/index_21.html) to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance. 
 
 
 <!--- NOT NEEDED   MAGETWO-83263 MAGETWO-71185  MAGETWO-84545 MAGETWO-72376   MAGETWO-69512 MAGETWO-69344  MAGETWO-69107   MAGETWO-67681    MAGETWO-65466 MAGETWO-65049    MAGETWO-64429 MAGETWO-64459  MAGETWO-64126 MAGETWO-63226 MAGETWO-62621  MAGETWO-61164  MAGETWO-77969    MAGETWO-71576 MAGETWO-82539 MAGETWO-82242  MAGETWO-71522  MAGETWO-75526-->
@@ -458,14 +458,14 @@ The following table identifies contributions from our community members. This ta
 
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl}}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 {% include install/releasenotes/ee_install_21.md %}
 
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 An updated version of this toolkit is typically available several days after the patch release.
 

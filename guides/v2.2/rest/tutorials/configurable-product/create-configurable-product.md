@@ -5,6 +5,9 @@ title: Step 2. Create the configurable product
 menu_title: Step 2. Create the configurable product
 menu_order: 20
 level3_subgroup: configurable-product-tutorial
+return_to:
+  title: REST API Reference
+  url: rest/bk-rest.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-configurable-product.md
 functional_areas:
@@ -18,7 +21,7 @@ The sample payload does not contain the price or the size. These attributes will
 The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching. This value will be changed for the simple products.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{page.baseurl}}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 </div>
 
 **Endpoint**
@@ -207,6 +210,6 @@ Before you using this code sample, verify that the attribute values are the same
 
 * Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
-  ![Product page with configurable product]({{page.baseurl}}/rest/images/products-page.png)
+  ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
-* On the Luma store front page, search for `Champ`. No results are returned.
+* On the Luma storefront page, search for `Champ`. No results are returned.

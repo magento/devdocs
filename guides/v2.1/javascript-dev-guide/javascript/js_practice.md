@@ -7,14 +7,14 @@ menu_order: 25
 version: 2.1
 github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_practice.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 <h2 id="practice_overview">Overview</h2>
 This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
 
-<h2>Customize a default Magento jQuery widget</h2>
+## Customize a default Magento jQuery widget
 
 In their Orange theme, OrangeCo wants to remove the "Click on image to view it full sized" message displayed on the product page.
 
@@ -35,9 +35,9 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 <li>Select to view the page source.</li>
 <li>Search for the "Click on image to view it full sized" string. The illustration of the search result follows:
 <br>
-<img src="{{ site.baseurl}}/common/images/fdg_js_pr1.png" alt="Page source search result">
+<img src="{{ site.baseurl }}/common/images/fdg_js_pr1.png" alt="Page source search result">
 </li>
-<li>View that it is output by <code>gallery.js</code>.
+<li>View that it is output by <a href="{{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>.
 
 </li>
 </ol>
@@ -45,9 +45,9 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 
 We see that the script which OrangeCo needs to alter is `gallery.js`.
 
-To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#config_file">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
+To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#config_file">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
 
-<img src="{{ site.baseurl}}/common/images/fdg_pr_2.png" alt="RequireJS config file">
+<img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
 <h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
 
@@ -93,7 +93,7 @@ The high level steps for this task are the following:
 
 Let's look at each step in more detail.
 <h3>Step 1: Define what is the default implementation</h3>
-Using the approach described in the previous section, OrangeCo defines that the product images are displayed by `gallery.js`, and the configuration path for it is `mage/gallery`.
+Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <a href="{{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>, and the configuration path for it is `mage/gallery`.
 
 <h3>Step 2: Add the custom script to the file system</h3>
 
@@ -140,4 +140,4 @@ var config = {
 </pre>
 
 ## Recommended reading ##
-<a href="{{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>
+<a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>

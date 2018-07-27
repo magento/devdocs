@@ -14,12 +14,11 @@ functional_areas:
   - Standards
 ---
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
-  <p></p>
-We want your feedback; please do a pull request on <a href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md" target="_blank">feedback-placement-and-design.md</a> and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
-  </p>
-</div>
+{:.bs-callout .bs-callout-info}
+  DRAFT/PROPOSAL: This Best Practices Guide is a first draft! The guide combines Best Practices that we have heard the community ask for, along with guidelines that our Magento UX, Engineering, and Product teams are working on.
+  
+We want your feedback; please do a pull request on [feedback-placement-and-design.md](https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/admin/feedback-placement-and-design.md){target="&#95;blank"} and let us know what your best practices are, your challenges, and how you would like Magento to help standardize (where needed).
+  
 
 Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.
 
@@ -39,11 +38,11 @@ This guide provides best practices, guidelines, and tips for creating Magento ex
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "menu_node","parent" | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{page.baseurl}}/{{ node.github_link | replace: ".md",".html" }})
+*  [{{ node.menu_title }}]({{ page.baseurl }}/{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}
 
 ### Related Content
 
-* [Admin Design Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
-* [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
-* [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.
+* [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html) - An in depth guide to the design patterns used in the Admin.
+* [PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html) - An in depth guide to creating Magento components.
+* [Frontend Developer Guide]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html) - An in depth guide to creating a Magento storefront theme.

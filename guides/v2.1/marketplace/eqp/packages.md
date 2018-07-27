@@ -11,7 +11,7 @@ Use this resource to initiate and manage all aspects of submitting a package to 
 
 * **Marketing information**—Includes package descriptions, image assets for logos and galleries, pricing information, support and installation services offered, and various guides—user, installation, and reference in PDF.
 
-Before submitting a package, you must first [upload your files]({{page.baseurl}}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
+Before submitting a package, you must first [upload your files]({{ page.baseurl }}/marketplace/eqp/files.html) and associate the ID returned by the `/rest/v1/files/uploads` endpoint with your package using JSON parameters in the request body.
 
 You can also check package submission status and retrieve reports about technical and marketing issues discovered during the EQP process.
 
@@ -19,7 +19,7 @@ A successful submission results in a package being published on the [Magento Mar
 
 ## EQP review process
 
-The EQP review process inlcudes two steps:
+The EQP review process includes two steps:
 
 * In **technical review**, we preform all automated testing. This step also involves manual testing after all automated tests run.
 * In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
@@ -62,7 +62,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |options|object|GET, POST, PUT|marketing|A set of options this package supports. Refer to [Additional notes](#additional-notes).|
 |submission_id|string|GET, PUT|-|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|
 |item_id|string|GET, POST, PUT|-|A developer-defined unique ID assigned to the package (if available). If it is being supplied, it must be unique for every POST request.|
-|action|object|POST, PUT|-|The action to be taken during a package submission (POST or PUT). Refer to [Package submission](#package-submission).|
+|action|object|POST, PUT|-|The action to be taken during a package submission (POST or PUT). Refer to [Package submission](#package-submissions).|
 |eqp_status|object|GET|-|The current status of the package in the EQP process. Refer to [Get package details](#get-package-details).|
 |offset|integer|GET|-|In combination with the `limit` parameter, it can be used for paging the collection of packages. Refer to [Get package details](#get-package-details). Default value is 0.|
 |limit|integer|GET|-|Along with `offset`, it can be used for paging the collection of packages. Default value is 20. Specifying -1 implies unlimited.|
@@ -73,7 +73,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 
 ### Additional notes
 
-* For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submission) section.
+* For required fields in a POST or PUT operation, refer to the [Package submissions](#package-submissions) section.
 * The EQP Kind column indicates which part of the EQP pipeline will need to use or review the field values.
 * The list of valid values for `license_type` are:
     * `afl`—Academic Free License 3.0 (AFL)
@@ -787,7 +787,7 @@ curl -X GET \
 <div class="bs-callout bs-callout-info" markdown="1">
 * The previous example shows one product only, but an array of products can be returned.
 * The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
-* The code, documentation, and media artifact files have additonal info indicating meta-information on these files, including their current malware status.
+* The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 * The `eqp_status` field will indicate the current state of the package in the EQP process.
 </div>
 

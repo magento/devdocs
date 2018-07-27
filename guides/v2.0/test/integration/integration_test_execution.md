@@ -6,15 +6,15 @@ contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 github_link: test/integration/integration_test_execution.md
 redirect_from:
-  - guides/v2.0/test/integration/integration_test_setup.html
-  - guides/v2.1/test/integration/integration_test_setup.html
-  - guides/v2.2/test/integration/integration_test_setup.html
-  - guides/v2.0/test/integration/integration_test_execution_cli.html
-  - guides/v2.1/test/integration/integration_test_execution_cli.html
-  - guides/v2.2/test/integration/integration_test_execution_cli.html
-  - guides/v2.0/test/integration/integration_test_execution_phpstorm.html
-  - guides/v2.1/test/integration/integration_test_execution_phpstorm.html
-  - guides/v2.2/test/integration/integration_test_execution_phpstorm.html
+ - /guides/v2.0/test/integration/integration_test_setup.html
+ - /guides/v2.1/test/integration/integration_test_setup.html
+ - /guides/v2.2/test/integration/integration_test_setup.html
+ - /guides/v2.0/test/integration/integration_test_execution_cli.html
+ - /guides/v2.1/test/integration/integration_test_execution_cli.html
+ - /guides/v2.2/test/integration/integration_test_execution_cli.html
+ - /guides/v2.0/test/integration/integration_test_execution_phpstorm.html
+ - /guides/v2.1/test/integration/integration_test_execution_phpstorm.html
+ - /guides/v2.2/test/integration/integration_test_execution_phpstorm.html
 functional_areas:
   - Testing
   - test
@@ -70,7 +70,7 @@ CREATE DATABASE magento_integration_tests;
 GRANT ALL ON magento_integration_tests.* TO 'magento2_test_user'@'localhost' IDENTIFIED BY 'ftYx4pm6^x9.&^hB';
 ```
 
-Replace the example database and user name and the example password with something that matches your requirements and conventions.
+Replace the example database and username and the example password with something that matches your requirements and conventions.
 
 ### Configuring the framework to use the test database
 
@@ -292,7 +292,7 @@ There are many ways this problem can be resolved, but the easiest is to run the 
 
 ## Running Integration Tests in PHPStorm {#phpstorm-run}
 
-When writing new integration tests or during debugging, it is convenient to execute tests from within the the PHPStorm IDE.
+When writing new integration tests or during debugging, it is convenient to execute tests from within the PHPStorm IDE.
 
 Please ensure you have [prepared the integration test environment][setup] before starting.
 
@@ -307,12 +307,12 @@ Then configure the integration test configuration file to be used.
 
 The only difference in the run configuration is the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.
 
-<img src="{{ site.baseurl}}/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
+<img src="{{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
 
 <!-- LINK DEFINITIONS -->
 
 [setup]: #setup
 [cli run]: #cli-run
-[phpstorm run]: {{page.baseurl}}/test/unit/unit_test_execution_phpstorm.html
+[phpstorm run]: {{ page.baseurl }}/test/unit/unit_test_execution_phpstorm.html
 
 [PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html

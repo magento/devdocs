@@ -1,11 +1,7 @@
 ---
 group: arch-guide
-subgroup: Components
 title: Module relationships
 menu_title: Module relationships
-menu_order: 5
-level3_menu_node: level3child
-level3_subgroup: modules
 version: 2.1
 github_link: architecture/archi_perspectives/components/modules/mod_relationships.md
 redirect_from:
@@ -45,7 +41,7 @@ Similarly, in a case where module A reacts to module B and module C customizes m
 
 ### A and C customize B
 
-<p>If both module A and C customize module B, be careful about how these customizations are implemented so that you avoid conflicts (see below).</p>
+If both module A and C customize module B, be careful about how these customizations are implemented so that you avoid conflicts (see below).
 
 ![Module relationship scenarios: A and C customize B]({{site.baseurl}}/common/images/archi_third_relate.png)
 
@@ -57,4 +53,6 @@ If module A replaces module B, it needs to be able to do so in such a way that o
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+[Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
+
+

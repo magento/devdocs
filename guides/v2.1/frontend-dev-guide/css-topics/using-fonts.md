@@ -11,14 +11,14 @@ functional_areas:
 The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 {:.bs-callout .bs-callout-tip}
-If you are new to Magento theme development, see [Create a theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html) to get familiar with the basics.
+If you are new to Magento theme development, see [Create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html) to get familiar with the basics.
 
 To ensure the stability of your customizations and prevent upgrades from overwriting your customizations, do not change the default Magento theme files. You must include custom fonts in the your theme's stylesheet.
 
 1. Add font files to your local theme directory. For example, `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/fonts`.
 
     {:.bs-callout .bs-callout-info}
-    To add _external_ fonts, add font references to the page configuration file as described in [Include static resources (JavaScript, CSS, fonts)]({{page.baseurl}}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css).
+    To add _external_ fonts, add font references to the page configuration file as described in [Include static resources (JavaScript, CSS, fonts)]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css).
 
 1. If you build a theme using the Magento UI library, declare the font by adding the `.lib-font-face` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} to the `app/design/frontend/<your_vendor_name>/<your_theme_name>/web/css/source/_typography.less` file:
 
@@ -26,8 +26,8 @@ To ensure the stability of your customizations and prevent upgrades from overwri
     .lib-font-face(
         @family-name:'<any_font_name>',
         @font-path: '@{baseDir}fonts/<path_to_font_file>',
-        @font-weight: <a href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank"><font_weight></a>,
-        @font-style: <a href="http://www.w3schools.com/cssref/pr_font_font-style.asp" target="_blank"><font_style></a>
+        @font-weight: <font_weight>,
+        @font-style: <font_style>
     );
     ```
 

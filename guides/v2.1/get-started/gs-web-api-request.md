@@ -14,137 +14,49 @@ To configure a web API, developers define some of the elements of each API call 
 
 ## Overview {#request-overview}
 
-Each Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} call contains of a combination of these elements:
-<ul>
-   <li><a href="#verbs">HTTP verb</a></li>
-   <li><a href="#endpoints">Endpoint</a></li>
-   <li><a href="#http-headers">HTTP headers</a></li>
-   <li><a href="#payload">Call payload</a></li>
-</ul>
-The following table and the sections that follow the table describe these API call elements:
-<table style="width:75%">
-   <tr bgcolor="lightgray">
-      <th>Element</th>
-      <th>Specifies</th>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#verbs">HTTP&nbsp;verb</a></p>
-      </td>
-      <td>
-         <p>The action to perform against the endpoint.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#endpoints">Endpoint</a></p>
-      </td>
-      <td>
-         <p>A combination of the <i>server</i> that fulfills a request, the web service, and the <i>resource</i> against which the request is being made.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#http-headers">HTTP&nbsp;headers</a></p>
-      </td>
-      <td>
-         <p>The authentication token, the call request and response formats,
-            and other information.
-         </p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="#payload">Call&nbsp;payload</a></p>
-      </td>
-      <td>
-         <p>A set of input parameters and attributes that you supply with the request.
-            API operations have both
-            <em>required</em> and
-            <em>optional</em> inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.
-         </p>
-      </td>
-   </tr>
-</table>
+The following table and the sections that follow the table describe {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} call elements:
+
+Element | Specifies
+--- | ---
+[HTTP verb](#verbs) | The action to perform against the endpoint.
+[Endpoint](#endpoints) | A combination of the _server_ that fulfills a request, the web service, and the _resource_ against which the request is being made.
+[HTTP headers](#http-headers) | The authentication token, the call request and response formats, and other information.
+[Call payload](#payload) | A set of input parameters and attributes that you supply with the request. API operations have both **required** and **optional** inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.
 
 ### HTTP verb {#verbs}
-<p>Specify one of these HTTP verbs in the request:</p>
-<ul>
-   <li><code>GET</code>.
-   Requests transfer of a current representation of the
-      target resource. If you omit the verb, <code>GET</code> is the default.
-   </li>
-   <li><code>PUT</code>.
-   Requests that the state of the target resource be
-      created or replaced with the state defined by the representation
-      enclosed in the request message payload.
-   </li>
-   <li><code>POST</code>.
-   Requests that the origin server accept the
-      representation enclosed in the request as data to be processed by the
-      target resource.
-   </li>
-   <li><code>DELETE</code>.
-   Requests that the origin server delete the target
-      resource.
-   </li>
-</ul>
+
+Specify one of these HTTP verbs in the request:
+
+* `GET`. Requests transfer of a current representation of the target resource. If you omit the verb, `GET` is the default.
+* `PUT`. Requests that the state of the target resource be created or replaced with the state defined by the representation enclosed in the request message payload.
+* `POST`. Requests that the origin server accept the representation enclosed in the request as data to be processed by the target resource.
+* `DELETE`. Requests that the origin server delete the target resource.
 
 ### Endpoint {#endpoints}
-An endpoint is a combination of the _server_ that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.
+An endpoint is a combination of the _server_ that fulfills a request, the web service, the store code, the resource against which the request is being made, and any template parameters.
 
-For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is `magento.ll/index.php/`, the web service is `rest`, the resource is `/V1/customerGroups`, and the template parameter is `id`.
+For example, in the `http://magento.ll/index.php/rest/default/V1/customerGroups/:id` endpoint, the server is `magento.ll/index.php/`, the web service is `rest`, the resource is `/V1/customerGroups`, and the template parameter is `id`.
+
+A store code can have one of the following values.
+
+* The store's assigned store code.
+* `default`. This is the default value when no store code is provided.
+* `all`. This value only applies to endpoints defined in the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Product modules. If this value is specified, the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call affects all of the merchant's stores.
 
 ### HTTP headers {#http-headers}
 
-<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+To specify an HTTP header in a cURL command, use the `-H` option.
+</div>
+
 Specify one or more of the following HTTP headers in your web API calls:
-<table style="width:100%">
-   <tr bgcolor="lightgray">
-      <th>HTTP header</th>
-      <th>Description</th>
-      <th>Syntax</th>
-   </tr>
-   <tr>
-      <td>
-         <pre>Authorization</pre>
-      </td>
-      <td><p>Required. Specifies the authentication token that proves you as the owner of a Magento
-         account. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.
-         </p>
-      </td>
-      <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
-      <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{page.baseurl}}/get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
-   </tr>
-   <tr>
-      <td><pre>Accept</pre>
-      </td>
-      <td><p>Optional. Specifies the format of the response body. Default is <code>JSON</code>.</p></td>
-      <td>
-      <pre>Accept: application/&lt;FORMAT&gt;</pre>
-      <p>Where
-         <code>&lt;FORMAT&gt;</code> is either
-         <code>JSON</code>or
-         <code>XML</code>.</p>
-         <p>If you omit this header, the response is returned in JSON format.</p></td>
-   </tr>
-   <tr>
-      <td>
-         <p>
-            <code>Content-Type</code>
-         </p>
-      </td>
-      <td><p>Required for operations with a request body. Specifies the format of the request body.</p></td>
-      <td>
-     <pre>Content-Type:application/&lt;FORMAT&gt;</pre>
-     <p>Where
-         <code>&lt;FORMAT&gt;</code>is either
-         <code>JSON</code>or
-         <code>XML</code>.
-      </p></td>
-   </tr>
-</table>
+
+HTTP header | Description | Syntax
+--- | --- | ---
+`Authorization` | Required. Specifies the authentication token that proves you as the owner of a Magento account. You specify the token in the `Authorization` request header with the `Bearer` HTTP authorization scheme. | `Authorization: Bearer <TOKEN>` <br/><br/>`<TOKEN>` is the authentication token returned by the Magento token service. See [Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html).
+`Accept` | Optional. Specifies the format of the response body. Default is `JSON`. | `Accept: application/<FORMAT>` <br/><br/>`<FORMAT>` is either `JSON` or `XML`.
+`Content-Type` | Required for operations with a request body. Specifies the format of the request body. | `Content-Type:application/<FORMAT>` <br/><br/>`<FORMAT>` is either `JSON` or `XML`.
+
 
 ### Call payload {#payload}
 The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
@@ -228,7 +140,7 @@ $httpHeaders->addHeaders([
 ]);
 </pre>
 <li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{page.baseurl}}/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{ page.baseurl }}/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
@@ -257,4 +169,4 @@ $response = $client->send($request);
 </ol>
 
 ## Next step
-Run the web API call through a <a href="{{page.baseurl}}/get-started/gs-curl.html">cURL command</a> or a REST client.
+Run the web API call through a <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL command</a> or a REST client.

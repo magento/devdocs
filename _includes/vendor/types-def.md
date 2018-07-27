@@ -14,3 +14,5 @@ where
 		<span class="glyphicon-class">
   		<p>Currently, themes are located under <code>&lt;your Magento install dir>/app/design/frontend</code> or <code>&lt;your Magento install dir>/app/design/adminhtml</code></p></span>
 	</div>
+	
+</div>

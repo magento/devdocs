@@ -11,7 +11,7 @@ functional_areas:
 ---
 
 Store customers must have the ability to enable and disable credit cards details storing.
-Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation.
+Magento out-of-the-box provides mechanisms for adding this ability, but you still need to add modifications in your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation.
 
 These modifications are the following:
 
@@ -23,9 +23,9 @@ The following paragraphs describe these points in details.
 
 ## Add vault enabling controls
 
-Add the vault enabling controls to the payment form. In the following example, a check box bound to the Vault enabler is added.
+Add the vault enabling controls to the payment form. In the following example, a checkbox bound to the Vault enabler is added.
 
-Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
+Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
 {% highlight html %}
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
@@ -55,9 +55,9 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site
 
 The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %}. 
 
-Magento has a default vault enabler {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{site.mage2100url}}app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
+Magento has a default vault enabler {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2100url }}app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
 
-Example: [the Braintree payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
+Example: [the Braintree payment UI component]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
 
 {% highlight javascript %}
 define([
@@ -112,7 +112,7 @@ define([
 
 ## Add request data builder
 
-Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{page.baseurl}}/payments-integrations/payment-gateway/request-builder.html). 
+Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html). 
 
 You can create a new request builder, or update the existing request builder of the payment method.
 
@@ -162,6 +162,6 @@ Example from the Braintree `di.xml`:
 
 ## What's next
 
-[Storing and processing the payment related data]({{page.baseurl}}/payments-integrations/vault/payment-token.html)
+[Storing and processing the payment related data]({{ page.baseurl }}/payments-integrations/vault/payment-token.html)
 
 

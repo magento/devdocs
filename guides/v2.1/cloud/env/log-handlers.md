@@ -11,9 +11,9 @@ functional_areas:
 
 You can configure logging handlers to send messages to a remote logging server. Logging handler pushes build and deploy logs to other systems, similarly to the way you can push logs to Slack and email. Simply enable a _syslog_ handler, which is ideal for logging messages related to hardware, or a Graylog Extended Log Format (GELF) handler, which is ideal for logging messages from software applications.
 
-The following example configures both of these handlers by adding the configuration to the `.magento.env.yaml` file. For the minimum logging level (`min_level`), see [Set up notifications—Log levels]({{page.baseurl}}/cloud/env/setup-notifications.html#log-levels).
+The following example configures both of these handlers by adding the configuration to the `.magento.env.yaml` file. For the minimum logging level (`min_level`), see [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels).
 
-```
+```yaml
 log:
   syslog:
     ident: "<syslog-ident>"

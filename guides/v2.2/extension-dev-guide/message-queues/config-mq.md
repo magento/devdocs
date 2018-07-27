@@ -229,7 +229,7 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
 #### `connection` element
 {:.no_toc}
 
-The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a pushlisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
+The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
 
 | Attribute            | Description |
 | -------------------- | ----------- |
@@ -239,9 +239,9 @@ The `connection` element is a subnode of the `publisher` element. There must not
 
 ### Updating `queue.xml` {#updatequeuexml}
 
-See [Migrate message queue configuration]({{page.baseurl}}/extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
+See [Migrate message queue configuration]({{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
 
 ### Related Topics
-*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
+*	<a href="{{ page.baseurl }}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>

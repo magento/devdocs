@@ -1,31 +1,25 @@
 ---
 group: pattern
-subgroup: Getting User Input
-title: Admin Design Pattern Library
-menu_title: Row Pattern (Table)
-menu_order: 4
-menu_node:
+title: Row Pattern (Table)
 version: 2.1
 github_link: pattern-library/getting-user-input/row_pattern/row_pattern.md
 ---
-
-## Row Pattern
 The "row pattern" (also referred to as _table light_ and _mini grid_) is used in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface wherever the User is expected to want to input tabular data. This pattern allows the user to add as many rows of data as they desire. "Light tables" are used when the User needs to add/edit a relatively small amount of items (rows).
 
 The pattern supports following actions:
 
-- Add new row
-- Remove row
-- Rearrange/drag the rows
-- Edit fields in a row
-- Pagination (for 20 > more rows)
+* Add new row
+* Remove row
+* Rearrange/drag the rows
+* Edit fields in a row
+* Pagination (for 20 > more rows)
 
 The pattern does _not_ support:
 
-- Filtering, sorting, searching the table
-- Adding, removing, rearranging of _columns_
+* Filtering, sorting, searching the table
+* Adding, removing, rearranging of _columns_
 
-<h3 id="anatomy">Anatomy of a Row Pattern</h3>
+## Anatomy of a Row Pattern
 
 May include any of the following elements:
 
@@ -41,43 +35,40 @@ May include any of the following elements:
 
 All these elements are optional, depending on the functions needed.
 
+## Behavior and Interaction
 
-<h3 id="behavior">Behavior and Interaction</h3>
+The Row Pattern, by default, will display one row to indicate to the User that data input is available (or required). A link beneath this initial input row will allow the User to add an additional row if desired.
 
-* The Row Pattern, by default, will display one row to indicate to the User that data input is available (or required). A link beneath this initial input row will allow the User to add an additional row if desired.
+Each row will have a delete control on the far right, often represented by a _"trash can"_ icon. This will allow the User to remove any unwanted rows, along with any data that has been input into them (prior to saving the form).
 
-* Each row will have a delete control on the far right, often represented by a _"trash can"_ icon. This will allow the User to remove any unwanted rows, along with any data that has been input into them (prior to saving the form).
+The delete control _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
 
-* The delete contol _CAN_ allow the user to remove all rows, even the initial row displayed upon page load.
+The "Add" link however should always be present to allow the user to add a row, even in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of deleting all rows.
 
-* The "Add" link however should always be present to allow the user to add a row, even in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of deleting all rows.     
+![](img/behavior.png)
 
-<img src="img/behavior.png">
+## Pagination
 
-<h3 id="pagination">Pagination</h3>
-For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appeneded to allow the user to rearrange the rows.
+For better performance, the Row Pattern pagination should be enabled automatically whenever 20 (or more) rows are present. Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
-<img src="img/pagination.png">
+![](img/pagination.png)
 
-Once pagination is enabled an "Order" column should be appeneded to allow the user to rearrange the rows.
+Once pagination is enabled an "Order" column should be appended to allow the user to rearrange the rows.
 
-<img src="img/drag.png">
+![](img/drag.png)
 
+## Examples
 
-<h3 id="examples">Examples</h3>
-Typically the Row Pattern will span either 8 or 12 colums for the page grid, depending on the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the page or panel on which it appears. The Row Pattern should accomodate all typical form elements as are necessary, but discretion should be used to insure the elements within the row are easy to read and interact with and do not become to cramped within the space.
+Typically the Row Pattern will span either 8 or 12 colums for the page grid, depending on the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the page or panel on which it appears. The Row Pattern should accommodate all typical form elements as are necessary, but discretion should be used to insure the elements within the row are easy to read and interact with and do not become to cramped within the space.
 
-<img src="img/row-examples.png">
+![](img/row-examples.png)
 
-
-<h3 id="accessibility">Accessibility</h3>
+## Accessibility
 
 The form drop down, scroll area, and selections should be accessible via keyboard.
 
-Follow this form control accessibility guideline: 
- <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms">http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms <a>
+Follow this form control accessibility guideline: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms](http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms)
 
+## Assets
 
-<h3 id="assets">Assets</h3>
-PSD files can be found here:
-<a href="src/Magento_Row_pattern_src.zip">Download Row Pattern ZIP file</a>
+[Download Row Pattern ZIP file](src/Magento_Row_pattern_src.zip).

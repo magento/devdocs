@@ -14,9 +14,8 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you must install both Apache and PHP, [install Apache]({{page.baseurl}}/install-gde/prereq/apache.html) first.
-</div>
+{:.bs-callout .bs-callout-info}
+If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
 
 ## PHP versions supported {#php-support}
 {% include install/php_2.2.md %}
@@ -24,10 +23,10 @@ If you must install both Apache and PHP, [install Apache]({{page.baseurl}}/insta
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	[Is the Magento software installed already?]({{page.baseurl}}/install-gde/basics/basics_magento-installed.html)
-*	[What is the software that the Magento server needs to run?]({{page.baseurl}}/install-gde/basics/basics_software.html)
-*	[What operating system is my server running?]({{page.baseurl}}/install-gde/basics/basics_os-version.html)
-*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl}}/install-gde/basics/basics_login.html)
+*	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+*	[What is the software that the Magento server needs to run?]({{ page.baseurl }}/install-gde/basics/basics_software.html)
+*	[What operating system is my server running?]({{ page.baseurl }}/install-gde/basics/basics_os-version.html)
+*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#ubuntu-verify-php}
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, a message similar to the following displays:
@@ -37,11 +36,10 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, a me
     Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
       with Zend OPcache v7.0.21-1~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}
-</div>
+{:.bs-callout .bs-callout-info}
+The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}
 
-If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
+If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
 If PHP is *not* installed, see one of the following sections:
 
@@ -58,9 +56,8 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The last command installs all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
-    </div>
+    {:.bs-callout .bs-callout-info}
+    The last command installs all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions). The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 2.	Verify that PHP 7.0 is installed properly:
 
@@ -72,11 +69,10 @@ If PHP is *not* installed, see one of the following sections:
 		Copyright (c) 1997-2017 The PHP Group
 		Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.21-1~ubuntu16.04.1+deb.sury.org+1, Copyright (c) 1999-2016, by Zend Technologies
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
-    </div>
+    {:.bs-callout .bs-callout-info}
+    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
-3.	Verify that all [required PHP extensions]({{ page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
@@ -133,7 +129,7 @@ If PHP is *not* installed, see one of the following sections:
     Zend OPcache
     </pre>
 
-4.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
+4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
@@ -147,9 +143,8 @@ If PHP is *not* installed, see one of the following sections:
 		sudo apt-get -y update
 		sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-mcrypt php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The last command installs all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
-    </div>
+    {:.bs-callout .bs-callout-info}
+    The last command installs all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions). The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 2.	Verify that PHP 7.1 is installed properly:
 
@@ -161,11 +156,10 @@ If PHP is *not* installed, see one of the following sections:
 		Copyright (c) 1997-2017 The PHP Group
 		Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.7-1~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
-    </div>
+    {:.bs-callout .bs-callout-info}
+    The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 
-3.	Verify that all [required PHP extensions]({{ page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
 
 		php -me
 
@@ -222,16 +216,16 @@ If PHP is *not* installed, see one of the following sections:
     Zend OPcache
     </pre>
 
-4.	Continue with [Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html).
+4.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 {% endcollapsible %}
 
 #### Next
-[Required PHP settings]({{ page.baseurl}}/install-gde/prereq/php-settings.html)
+[Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
-*	[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-*	[PHP 7.0&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos.html)
-*	[Configuring security options]({{page.baseurl}}/install-gde/prereq/security.html)
-*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+*	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+*	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
+*	[PHP 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{ page.baseurl }}/install-gde/prereq/security.html)
+*	[Installing optional software]({{ page.baseurl }}/install-gde/prereq/optional.html)

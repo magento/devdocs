@@ -17,9 +17,9 @@ The following properties are used for linking observable properties and methods 
 - `links` 
 - `listens`
 
-These properties are processed by the `initLinks()` method of the [`uiElement` class]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
+These properties are processed by the `initLinks()` method of the [`uiElement` class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
 
-Linking properties are set in [UI components configuration files]({{page.baseurl}}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
+Linking properties are set in [UI components configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
 
 ## List of linking properties 
 
@@ -55,7 +55,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{site.mage2100url}}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
+For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
 ### `imports` 
 The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
@@ -87,7 +87,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{site.mage2100url}}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
 
 ### `links`
 
@@ -120,7 +120,7 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For an example of `links` usage in Magento code see [`text.js`, line 19]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
+For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
 
 ### `listens`
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
@@ -154,7 +154,7 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{site.mage2100url}}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
+For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
 
 ## Template strings usage {#string_templ}
 

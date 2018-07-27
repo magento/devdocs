@@ -12,7 +12,7 @@ The changes are aggregated into two tables:
 
 {% include note.html
 type="warning"
-content="**Temporary issue**: Added docblock tags like [@deprecated] are defined as _Class was added_ or _Method has been added_."
+content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
 
 ## 2.2.0 - 2.3-develop
@@ -26,4 +26,5 @@ content='This table is updated when new commits are merged into the "2.3-develop
 
 <!-- LINK DEFINITIONS -->
 
-[@deprecated]: {{page.baseurl}}/coding-standards/docblock-standard-general.html#deprecated
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

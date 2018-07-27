@@ -15,8 +15,8 @@ This topic describes how to create custom vault payments UI components, that are
 ## Token component provider {#token_provider}
 
 The main logic for displaying tokens on checkout page is located in
-[Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create a token component provider. It should implement the 
-[TokenUiComponentProviderInterface]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
+[Vault TokensConfigProvider]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create a token component provider. It should implement the 
+[TokenUiComponentProviderInterface]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
 
 ``` php?start_inline=1
 interface TokenUiComponentProviderInterface
@@ -79,9 +79,9 @@ In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvide
 
 ## JavaScript component for vault 
 
-In you custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
+In your custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
-The component should extend [vault.js]({{site.mage2100url}}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
+The component should extend [vault.js]({{ site.mage2100url }}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
 {% highlight javascript %}
 define([
@@ -100,4 +100,4 @@ define([
 
 ## What's next
 
-[Display stored tokens for customer and process their deleting]({{page.baseurl}}/payments-integrations/vault/customer-stored-payments.html).
+[Display stored tokens for customer and process their deleting]({{ page.baseurl }}/payments-integrations/vault/customer-stored-payments.html).

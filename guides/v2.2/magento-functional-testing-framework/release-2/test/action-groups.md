@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test/action-groups.md
 functional_areas:
  - Testing
-mftf-release: 2.1.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -21,9 +21,8 @@ The following diagram shows the structure of an MFTF action group:
 
 The following conventions apply to MFTF action groups:
 
--  All action groups are declared in XML files and stored in the _\<module\>/ActionGroup/_ directory.
+-  All action groups are declared in XML files and stored in the `<module>/ActionGroup/` directory.
 -  Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup.xml`.
--  The file name and the [`<actionGroup>`](#actiongroup-tag) name are the same.
 
 The XML format for the `actionGroups` declaration is:
 
@@ -31,7 +30,7 @@ The XML format for the `actionGroups` declaration is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
     <actionGroup name="">
         <arguments>
             <argument name=""/>
@@ -59,7 +58,7 @@ To create the `<actionGroup>` declaration:
     <?xml version="1.0" encoding="UTF-8"?>
 
     <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+            xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
         <actionGroup name="LoginToAdminActionGroup">
     ...
         </actionGroup>
@@ -88,7 +87,7 @@ To create the `<actionGroup>` declaration:
     <?xml version="1.0" encoding="UTF-8"?>
 
     <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+            xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
         <actionGroup name="LoginToAdminActionGroup">
             <arguments>
                 <argument name="adminUser" defaultValue="_defaultAdmin"/>
@@ -190,6 +189,7 @@ It may contain one or more `<actionGroup>`.
 Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|required|Identifier of the action group.
+`extends`|string|optional|Identifies the action group to extend.
 
 It may contain `<arguments>`.
 

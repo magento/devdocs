@@ -44,7 +44,7 @@ If you already know the extension's Composer name and version, skip this step an
 {% include cloud/composer-name.md %}
 
 ### Step 2: Update Magento's `composer.json` {#update}
-When adding the module to `composer.json`, the file [`app/etc/config.php`]({{page.baseurl}}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
+When adding the module to `composer.json`, the file [`app/etc/config.php`]({{ page.baseurl }}/config-guide/config/config-php.html) will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) (Pipeline Deployment) values too.
 
 To update `composer.json`:
 
@@ -72,7 +72,7 @@ To update `composer.json`:
     git push magento <environment ID>
     ```
 
-If there are errors, see [extension deployment failure]({{page.baseurl}}/cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [extension deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
 
 <div class="bs-callout bs-callout-warning">
 When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
@@ -82,7 +82,7 @@ When installing and adding the module, you must add the `composer.lock` to your 
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
 
 1.  Open a terminal.
-1.  [Checkout the branch]({{page.baseurl}}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
+1.  [Checkout the branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
 1.  List all enabled modules:
     
     ```bash
@@ -97,7 +97,7 @@ The extension name is in the format `<VendorName>_<ComponentName>`. It will not 
 To manage your extensions, you can enable and disable or change settings per environment.
 
 ### Enable and disable extensions {#enable-disable}
-To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
+To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have `config.php` in your Git branch and implementation. If you do not use [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) or `config.php`, we strongly recommend you do.
 
 Trying to enable and disable extensions not following this method can lead to permissions and other issues.
 
@@ -128,10 +128,10 @@ Trying to enable and disable extensions not following this method can lead to pe
     ```
 
 1.  Push your updates to the Git branch.
-1.  [Complete deployment]({{page.baseurl}}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
+1.  [Complete deployment]({{ page.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
-You will update configurations according to [Configuration Management](http://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#update) for `config.php`.
+You will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#update) for `config.php`.
 
 ## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:
@@ -161,4 +161,4 @@ To update an extension:
 
 1.  Wait for the project to deploy and verify in your environment.
 
-If there are errors, see [Component deployment failure]({{page.baseurl}}/cloud/trouble/trouble_comp-deploy-fail.html).
+If there are errors, see [Component deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).

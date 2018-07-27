@@ -21,18 +21,18 @@ functional_areas:
 
 {{site.data.var.ece}} supports variables for environments, projects, and applications. These variables affect all aspects of build, deployment, and configuration settings.
 
-* [Magento application environment variables]({{ page.baseurl}}/cloud/env/environment-vars_magento.html)
-* [Magento Commerce (Cloud) environment variables]({{ page.baseurl}}/cloud/env/environment-vars_cloud.html)
+* [Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
+* [Magento Commerce (Cloud) environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
 
-You can create all variables using the Magento Cloud CLI in all Starter environments and Pro Integration environments. You can create environment variables through the Project Web Interface for all Starter and Pro environments (created after October 23, 2017 or [updated]({{ page.baseurl}}/cloud/trouble/pro-env-management.html)).
+You can create all variables using the Magento Cloud CLI in all Starter environments and Pro Integration environments. You can create environment variables through the Project Web Interface for all Starter and Pro environments (created after October 23, 2017 or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html)).
 
 ## Additional information {#magevar}
 For additional information on Magento variables for v2.1.X and later, see the following:
 
-* [Sensitive and system-specific](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-sens.html)
-* [Sensitive configuration paths reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-payment.html)
-* [Other configuration paths reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-most.html)
-* [System settings reference](http://devdocs.magento.com/guides/v2.1/config-guide/prod/config-reference-var-name.html)
+* [Sensitive and system-specific]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-sens.html)
+* [Sensitive configuration paths reference]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-payment.html)
+* [Other configuration paths reference]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-most.html)
+* [System settings reference]({{ site.baseurl }}/guides/v2.1/config-guide/prod/config-reference-var-name.html)
 
 To use a configuration path as a variable:
 
@@ -108,7 +108,7 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Project Web Interface: Add environment variables {#projectweb}
-You can add environment variables for active environments through the Project Web Interface. To create variables through the Project Web Interface, see [Set environment variables]({{page.baseurl}}/cloud/project/project-webint-basic.html#project-conf-env-var).
+You can add environment variables for active environments through the Project Web Interface. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.

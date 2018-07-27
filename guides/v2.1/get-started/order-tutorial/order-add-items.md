@@ -1,15 +1,15 @@
 ---
 layout: tutorial
 group: get-started
-subgroup:
 title: Step 5. Add items to the cart
 subtitle: Order Processing with REST APIs Tutorial
-menu_title:
+return_to:
+  title: REST APIs
+  url: get-started/rest_front.html
 menu_order: 5
 level3_subgroup: order-tutorial
 version: 2.1
 github_link: get-started/order-tutorial/order-add-items.md
-ee_only: False
 functional_areas:
   - Integration
   - Orders
@@ -423,4 +423,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} as the customer and click on the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. These three items are displayed.
+{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} as the customer and click on the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. All the items you added are displayed.

@@ -11,11 +11,11 @@ github_link: ui_comp_guide/components/ui-actionscolumn.md
 
 The ActionsColumns component implements a table's column responsible for displaying and performing a list of record-related actions.
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
 
 ## Configuration options
 
-Extends all [Column]({{page.baseurl}}/ui_comp_guide/components/ui-column.html) configuration.
+Extends all [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html) configuration.
 
 ActionsColumn-specific configuration:
 
@@ -70,7 +70,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>callback</code></td>
     <td>Custom action's handler.</td>
-    <td><a href="{{page.baseurl}}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
+    <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
     <td>Optional</td>
   </tr>
   <tr>

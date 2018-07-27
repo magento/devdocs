@@ -7,13 +7,13 @@ menu_order: 10
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_init.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 <h2 id="js_init_overview">Overview</h2>
 
-This topic talks about how to insert a [JavaScript component]({{site.gdeurl}}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
+This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
 
 It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.
 
@@ -45,7 +45,7 @@ When inserted in a certain element, the script is called only for this particula
 
 ##### How `data-mage-init` is processed {#init_process}
 
-On DOM ready, the `data-mage-init` attribute is parsed to extract components' names and configuration to be applied to the element.
+On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element.
 Depending on the type of the inserted JS component, processing is performed as follows:
 <ul>
 
@@ -149,7 +149,7 @@ require([
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html) widget is initialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html) widget is initialized on the `[data-role=example]` element as illustration):
 
 {%highlight js%}
 

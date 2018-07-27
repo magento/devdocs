@@ -42,7 +42,7 @@ The format of a `<section>` is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="">
         <element name="" type="" selector="" />
         <element name="" type="" selector="" parameterized="true"/>
@@ -55,7 +55,6 @@ The format of a `<section>` is:
 
 The following conventions apply to MFTF sections:
 
-* `<section>` name is the same as the file name.
 * `<section>` name must be alphanumeric.
 * `*Section.xml` is stored in the _Section_ directory of a module.
 * The name format is `{Admin|Storefront}{SectionDescription}Section.xml`.
@@ -70,7 +69,7 @@ Example (`.../Catalog/Section/AdminCategorySidebarActionSection.xml` file):
 <?xml version="1.0" encoding="utf-8"?>
 
 <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
     <section name="AdminCategorySidebarActionSection">
         <element name="addRootCategoryButton" type="button" selector="#add_root_category_button" timeout="30"/>
         <element name="addSubcategoryButton" type="button" selector="#add_subcategory_button" timeout="30"/>
@@ -149,6 +148,6 @@ Whenever the `signIn` button is used in a test, the MFTF will add a 30 second `w
 {% endraw %}
 
 
-<!-- Link definitioins -->
+<!-- Link definitions -->
 
 [waitForPageLoad]: test/actions.html#waitforpageload

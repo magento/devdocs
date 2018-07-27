@@ -229,7 +229,7 @@ class Consumer
         $serializedData = $operation->getSerializedData();
         $unserializedData = $this->jsonHelper->jsonDecode($serializedData);
         try {
-            //add here your own logic for async opertions
+            //add here your own logic for async operations
         } catch (\Zend_Db_Adapter_Exception  $e) {
             //here sample how to process exceptions if they occured
             $this->logger->critical($e->getMessage());
@@ -292,7 +292,7 @@ The message queue topology must be configured to implement bulk operations. Crea
 * `queue_publisher.xml`
 * `queue_topology.xml`
 
-For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}/extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
+For more information about the `di.xml` file, see [Dependency Injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html).
 
 #### Create `communication.xml`
 
@@ -341,7 +341,7 @@ The `queue_publisher.xml` file defines the exchange where a topic is published. 
 {% endhighlight %}
 
 #### Create `queue_topology.xml`
-The `queuetopology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
+The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
@@ -353,6 +353,6 @@ The `queuetopology.xml` file defines the message routing rules and declares queu
 
 #### Related Topics
 
-* [Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-* [Bulk Operations]({{page.baseurl}}/extension-dev-guide/message-queues/bulk-operations.html)
-* [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)
+* [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+* [Bulk Operations]({{ page.baseurl }}/extension-dev-guide/message-queues/bulk-operations.html)
+* [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

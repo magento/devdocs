@@ -1,6 +1,6 @@
 # Magento Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases.
+Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contributions Guide](https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md).
 
 To contribute, please fork the `develop` branch.
 
@@ -28,8 +28,8 @@ $ ruby -v
 
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
 1. Use Homebrew to install the latest stable version of Ruby:
- 
-   ```shell
+
+   ```
    $ brew install ruby
    ```
 
@@ -47,6 +47,16 @@ $ gem install bundler
 
 Once you have completed preparing your environment, you can build locally and review the site in your browser.
 
+### Install devdocs
+
+Clone or download the repository. The first time you are at the `devdocs` directory, run:
+
+```
+$ bundle install
+```
+
+Once you have completed preparing your environment, you can build locally and review the site in your browser.
+
 ### To build locally:
 
 #### Using rake
@@ -55,7 +65,7 @@ Once you have completed preparing your environment, you can build locally and re
 
 1. Run the rake task that installs all required dependencies and starts the [Jekyll](https://jekyllrb.com/) server:
 
-   ```shell
+   ```
    $ rake preview
    ```
 
@@ -71,11 +81,11 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
    $ bundle install
    ```
 
-2. To generate the local preview, run:
+1. To generate the local preview, run:
 
    ```
    $ bundle exec jekyll serve --incremental
-    
+
     Configuration file: /Users/username/Github/devdocs/_config.yml
                 Source: /Users/username/Github/devdocs
            Destination: /Users/username/Github/devdocs/_site
@@ -91,7 +101,7 @@ If rake fails on your environment, generate the preview [using jekyll](#using-je
 
 1. Press `Ctrl+C` in the serve terminal to stop the server.
 
-> ***TIP***  
+> ***TIP***
 > Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Changing the `_config.yml` file requires a fresh build. Using the `--incremental` option limits re-builds to posts and pages that have changed.
 
 ### To minimize build time locally:
@@ -101,22 +111,22 @@ The following example will generate Magento 2.2 documentation only.
 
    ```yaml
     exclude:
-     - community/
-     - swagger/
-     - vagrant/
-     - guides/m1x/
-     - guides/v2.0/
-     - guides/v2.1/
-    # - guides/v2.2/
-     - guides/v2.3/
-    
+     - /community/
+     - /swagger/
+     - /vagrant/
+     - /guides/m1x/
+     - /guides/v2.0/
+     - /guides/v2.1/
+    # - /guides/v2.2/
+     - /guides/v2.3/
+
     # Excluded in config.yml
-     - scss/
-     - bin/
-     - node_modules/
-     - vendor/
-     - .*
-     - Rakefile
+     - /scss/
+     - /bin/
+     - /node_modules/
+     - /vendor/
+     - /.*
+     - /Rakefile
    ```
 
 1. Run the preview command:
@@ -128,7 +138,7 @@ The following example will generate Magento 2.2 documentation only.
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
    * Generates a new preview and opens the landing page in a web browsers.
-   
+
 If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
 
 ## Build using Docker

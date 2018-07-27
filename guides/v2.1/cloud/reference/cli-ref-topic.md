@@ -10,14 +10,12 @@ redirect_from:
   - /guides/v2.1/cloud/cli-ref/cli-ref-topic.html
 ---
 
-The Magento Cloud CLI is a cloud-specific version of the Magento CLI provided to support commands that include Magento management and Git interactions. You can install and use these commands for all {{site.data.var.ece}} Starter and Pro Integration environments. You cannot use these commands for the Pro Staging and Production environments.
-
-Also, you can use the Magento CLI commands, as needed, by defining `bin/magento` when entering commands.
+The Magento Cloud CLI is the utility for managing Magento Cloud projects and environments, which implements many features of the Project Web UI and more. This utility provides an advanced management interface for developers, DevOps and system administrators, for doing routines and automation tasks. You can install and use this utility for all {{site.data.var.ece}} Starter and Pro Integration environments. You cannot use these commands for the Pro Staging and Production environments which aren't listed in the cloud UI.
 
 You can install the Magento Cloud CLI when setting up your local environment for development:
 
-* [Install Magento prerequisites]({{page.baseurl}}/cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{page.baseurl}}/cloud/before/before-workspace-ssh.html)
+* [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+* [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
 
 #### To list all available commands:
 
@@ -172,6 +170,9 @@ If your Magento Cloud CLI is up to date, you see the following response:
 
 ```bash
 magento-cloud update
+```
+
+```terminal
 Checking for Magento Cloud CLI updates (current version: X.XX.X)
 No updates found
 ```

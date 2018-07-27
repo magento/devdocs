@@ -19,11 +19,11 @@ Also, it gives information how to add a theme independent logo for your store.
 
 ## Prerequisites
 
-Make sure that you [set]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
 
 ## Apply a theme {#theme-apply-apply}
-After you <a href="{{page.baseurl}}/frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+After you <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 To apply a theme:
 
@@ -32,7 +32,7 @@ To apply a theme:
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-6. To see your changes applied, reload the store front pages.
+6. To see your changes applied, reload the storefront pages.
 
 
 ## Add a design exception {#theme-apply-except}
@@ -45,11 +45,11 @@ To add a design exception:
 5. In the **Search String** box specify the user-agent using either normal strings or regular expressions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save Config**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-6. To see your changes applied, reload the store front pages.
+6. To see your changes applied, reload the storefront pages.
 
 
 ## Add a theme-independent logo {#theme-apply-logo}
-You might want to set a permanent store logo, that displays on the store front no matter what theme is applied.
+You might want to set a permanent store logo, that displays on the storefront no matter what theme is applied.
 To add a permanent theme-independent logo:
 
 1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
@@ -59,12 +59,12 @@ To add a permanent theme-independent logo:
 6. Upload the file.
 7. Click **Save Config**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>.
-8. To see your changes applied, reload the store front pages.
+8. To see your changes applied, reload the storefront pages.
 
 The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.</p>
+  <p>To delete the permanent logo, go to the same location, select the checkbox next to the logo image, and click <b>Delete</b>.</p>
 </div>
 
 ## Clear the cache {#theme-apply-clear}
@@ -79,6 +79,6 @@ A system message notifies you that invalidated cache types must be refreshed.
 
 If the changes you configure in the Admin are not applied after you clear the cache and reload the page, try the following:
 
-- Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{page.baseurl}}/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+- Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:<theme_name>` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
 
-- In your Magento database, in the `theme` table, check if the `type` value for your custom theme is "0". If it is "1" or "2", change it to "0". You can use a database tool such as [phpMyAdmin]({{page.baseurl}}/install-gde/prereq/optional.html#install-optional-phpmyadmin) or do it manually from the command line.
+- In your Magento database, in the `theme` table, check if the `type` value for your custom theme is "0". If it is "1" or "2", change it to "0". You can use a database tool such as [phpMyAdmin]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin) or do it manually from the command line.

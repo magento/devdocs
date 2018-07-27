@@ -11,7 +11,7 @@ github_link: extension-dev-guide/indexing-custom.md
 ---
 
 ## Adding a custom indexer {#m2devgde-indexing-custom}
-This topic discusses how to create a custom indexer. We've recently made a performance improvment that enables you to declare one or more *shared* indexers; if one of the shared indexes is already up-to-date, it doesn't need to be reindexed.
+This topic discusses how to create a custom indexer. We've recently made a performance improvement that enables you to declare one or more *shared* indexers; if one of the shared indexes is already up-to-date, it doesn't need to be reindexed.
 
 To implement your own indexer, add the following code in your module:
 
@@ -65,7 +65,7 @@ Assuming your module is named `<VendorName>_Merchandizing`, you must write the a
 {% highlight php startinline %}
 <VendorName>\Merchandizing\Model\Indexer;
 
-class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framework\Mview\ActionInterface
+class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Framework\Mview\ActionInterface
 {
     public function executeFull(); //Should take into account all placed orders in the system
     public function executeList($ids); //Works with a set of placed orders (mass actions and so on)

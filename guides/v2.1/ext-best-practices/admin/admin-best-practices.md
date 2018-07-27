@@ -18,16 +18,15 @@ This section of the Best Practices Guide discusses the Admin, the UI panel used 
 
 This is an important section to read, because what {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers choose to do (or not do) when coding to integrate their extensions has a big impact on the look and feel of the Admin UI.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Remember that most merchants have multiple extensions installed, and most of these extensions are exposed through the Admin. In order to prevent a cluttered Admin, please follow the guidelines, and communicate with Magento and the community when you have questions.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+  Remember that most merchants have multiple extensions installed, and most of these extensions are exposed through the Admin. In order to prevent a cluttered Admin, please follow the guidelines, and communicate with Magento and the community when you have questions.
 
-For additional information on design topics for the Admin, read the [Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) and the [Admin Style Guide]({{page.baseurl}}/design-styleguide/bk-styleguide.html).
+For additional information on design topics for the Admin, read the [Admin Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html) and the [Admin Style Guide]({{ page.baseurl }}/design-styleguide/bk-styleguide.html).
 
 ### Articles
 
 {% assign subgroup = site.pages | where: "guide_version", page.guide_version | where:"group","ext-best-practices" | where: "subgroup","01_Admin" | where: "menu_node",null | sort: "menu_order" %}
 
 {% for node in subgroup %}
-*  [{{ node.menu_title }}]({{page.baseurl}}/{{ node.github_link | replace: ".md",".html" }})
+*  [{{ node.menu_title }}]({{ page.baseurl }}/{{ node.github_link | replace: ".md",".html" }})
 {% endfor %}

@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{page.baseurl}}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{page.baseurl}}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -17,8 +17,8 @@ stage:
 
 For more information about customizing the build and deploy process:
 
--  [Manage build and deploy actions]({{page.baseurl}}/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{page.baseurl}}/cloud/reference/discover-deploy.html)
+-  [Manage build and deploy actions]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)
+-  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
 
 ### `CACHE_CONFIGURATION`
 
@@ -38,14 +38,30 @@ stage:
           backend: file
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file.
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    CACHE_CONFIGURATION:
+      _merge: true
+      frontend:
+        default:
+          backend:
+            database: 10
+        page_cache:
+          backend:
+            database: 11
+```
 
 ### `CLEAN_STATIC_FILES`
 
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Cleans the [generated static view files]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action such as enabling or disabling a component. We recommend the default value _true_ in development. The supported values are `true` and `false`.
+Cleans the [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action such as enabling or disabling a component. We recommend the default value _true_ in development. The supported values are `true` and `false`.
 
 ```yaml
 stage:
@@ -53,7 +69,7 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{page.baseurl}}/howdoi/clean_static_cache.html) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 ### `CRON_CONSUMERS_RUNNER`
 
@@ -64,20 +80,20 @@ Use this environment variable to make sure message queues are running after a de
 
 -   `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -   `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
--   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers. Refer to [List consumers]({{page.baseurl}}/config-guide/mq/manage-mysql.html#list-consumers) for more information.
+-   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers. Refer to [List consumers]({{ page.baseurl }}/config-guide/mq/manage-mysql.html#list-consumers) for more information.
 
 ```yaml
 stage: 
   deploy:
     CRON_CONSUMERS_RUNNER:
-      cron_run: true,
-      max_messages: 1000,
+      cron_run: true
+      max_messages: 1000
       consumers:
         - consumer1
         - consumer2
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{page.baseurl}}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
 
 ### `CRYPT_KEY`
 
@@ -85,6 +101,32 @@ By default, the deployment process overwrites all settings in the `env.php` file
 -  **Version**—Magento 2.1.4 and later
 
 Use the Project Web UI to set this value. When you move the database from one environment to another without an installation process, you need the corresponding cryptographic information. Magento uses the encryption key value set in the Web UI as the `crypt/key` value in the `env.php` file. This does not overwrite an existing encryption key value in the `env.php` file.
+
+### `DATABASE_CONFIGURATION`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+If you defined a database in the [relationships property]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_value'
+```
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_new_value'
+      _merge: true
+```
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -121,7 +163,25 @@ stage:
         port: 1234
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file.
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+        QUEUE_CONFIGURATION:
+          _merge: true
+          amqp:
+            host: changed1.host
+            port: 5672
+          amqp2:
+            host: changed2.host2
+            port: 12345
+          mq:
+            host: changedmq.host
+            port: 1234
+```
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
@@ -166,12 +226,41 @@ stage:
     SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
 ```
 
+### `SCD_MATRIX`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.1.4 and later
+
+You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
+
+The following example deploys the `magento/backend` theme with three locales:
+
+```yaml
+stage:
+  deploy:
+    SCD_MATRIX:
+      "magento/backend":
+        language:
+          - en_US
+          - fr_FR
+          - af_ZA
+```
+
+Also, you can choose to _not_ deploy a theme:
+
+```yaml
+stage:
+  deploy:
+    SCD_MATRIX:
+      "magento/backend": [ ]
+```
+
 ### `SCD_STRATEGY`
 
 -  **Default**—`quick`
 -  **Version**—Magento 2.2.0 and later
 
-Allows you to customize the [deployment strategy](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+Allows you to customize the [deployment strategy]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html) for static content. See [Deploy static view files]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
 
 Use these options _only_ if you have more than one locale:
 
@@ -200,7 +289,7 @@ stage:
     SCD_THREADS: 2
 ```
 
-To further reduce deployment time, we recommend using [Configuration Management]({{page.baseurl}}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
+To further reduce deployment time, we recommend using [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 
 ### `SEARCH_CONFIGURATION`
 
@@ -220,7 +309,18 @@ stage:
      elasticsearch_server_timeout: '15'
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    SEARCH_CONFIGURATION:
+      engine: elasticsearch
+      elasticsearch_server_port: '1234'
+      _merge: true
+```
 
 ### `SESSION_CONFIGURATION`
 
@@ -246,7 +346,18 @@ stage:
       save: redis
 ```
 
-By default, the deployment process overwrites all settings in the `env.php` file. 
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+  deploy:
+    SESSION_CONFIGURATION:
+      _merge: true
+      redis:
+        max_concurrency: 10
+```
 
 ### `SKIP_SCD`
 

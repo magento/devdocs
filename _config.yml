@@ -26,12 +26,12 @@ versions:
       name: "2.2"
       url: /guides/v2.2/
    -
-      name: "2.3 Pre-release"
+      name: "2.3"
       url: /guides/v2.3/
 
 # GitHub variables
 github_repo: "https://github.com/magento/devdocs/"
-github: "https://github.com/magento/devdocs/tree/develop/guides/"
+github_files: "https://github.com/magento/devdocs/blob/master/"
 github_link: true
 feedback_link: true
 
@@ -84,6 +84,11 @@ defaults:
     values:
       layout: default
       guide_version: "2.2"
+  -
+    scope:
+      path: "guides/m1x"
+    values:
+      layout: null
   -
     scope:
       type: videos

@@ -21,7 +21,7 @@ Look for the following highlights in this release:
 
 * **Enhancements that help close cross-site request forgery (CSRF), unauthorized data leaks, and authenticated Admin user remote code execution vulnerabilities**. See [Magento Security Center](https://magento.com/security/patches/magento-223-2112-and-2018-security-update) for more information.
 
-<!--- MAGETWO-84775 -->* **Support for Elasticsearch 5.x**. See [Install and configure Elasticsearch](http://devdocs.magento.com/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by community member <a href="https://github.com/afoucret" target="_blank">Aurélien Foucret</a>.*
+<!--- MAGETWO-84775 -->* **Support for Elasticsearch 5.x**. See [Install and configure Elasticsearch]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html) for more information about using Elasticsearch with Magento. *Fix submitted by community member <a href="https://github.com/afoucret" target="_blank">Aurélien Foucret</a>.*
 
 * **Change to Magento Admin to support recent USPS shipping changes**. On February 23, 2018, USPS removed APIs that support the creation of shipping labels without postage. In response, we’ve removed this functionality from the Magento Admin. Consequently, you cannot create and print shipping labels that do not have postage applied. If you require USPS postage printing capabilities, please visit [Magento Shipping](https://magento.com/products/shipping) to learn more, and explore various shipping extensions on Magento Marketplace. 
 
@@ -38,11 +38,11 @@ See [Magento Security Center](https://magento.com/security/patches/magento-223-2
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl}}/install-gde/system-requirements-tech.html)
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html)
 
 
 
-For more information, [System Requirements]({{ site.baseurl}}/magento-system-requirements.html).
+For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
@@ -52,6 +52,6 @@ You can install Magento Commerce 2.2.x using Composer.
 {% include install/releasenotes/ee_install_21.md %}
 
 ## Migration toolkits
-The <a href="{{ page.baseurl}}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl}}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

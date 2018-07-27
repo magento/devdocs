@@ -57,7 +57,7 @@ To fork a repository on Github, do the following:
 
 ### Update the fork with the latest changes
 
-As community and Magento writers’ changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts.
+As community and Magento writers’ changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts.
 To see if your fork is outdated, open the fork page in GitHub and if at the top displays the following message:
 
 ``` 
@@ -140,7 +140,7 @@ Label| Description
 **acknowledged**| The Magento Team has validated the issue and an internal ticket has been created.
 **needsUpdate**| The Magento Team needs additional information from the reporter to properly prioritize and process the issue or pull request.
 **cannot reproduce**| The Magento Team has not confirmed that this issue contains the minimum required information to reproduce. 
-**non-issue**| The Magento Team has not recognised any issue according to provided information.
+**non-issue**| The Magento Team has not recognized any issue according to provided information.
 
 ### Domains Impacted
 
@@ -165,9 +165,9 @@ Label| Description
 [labels]: #labels
 [pull]: #pull-request
 
-[Definition of Done]: {{page.baseurl}}/contributor-guide/contributing_dod.html
-[documentation update]: {{page.baseurl}}/contributor-guide/contributing_docs.html
-[Magento coding standards]: {{page.baseurl}}/coding-standards/bk-coding-standards.html
+[Definition of Done]: {{ page.baseurl }}/contributor-guide/contributing_dod.html
+[documentation update]: {{ page.baseurl }}/contributor-guide/contributing_docs.html
+[Magento coding standards]: {{ page.baseurl }}/coding-standards/bk-coding-standards.html
 
 [devdocs mftf]: https://github.com/magento/devdocs/tree/develop/guides/v2.3/magento-functional-testing-framework
 [existing issues]: https://github.com/magento/magento2-functional-testing-framework/issues?q=is%3Aopen+is%3Aissue
@@ -178,7 +178,7 @@ Label| Description
 [MFTF repository]: https://github.com/magento/magento2-functional-testing-framework
 [Travis CI]: https://travis-ci.com/magento/magento2-functional-testing-framework/pull_requests
 
-<!-- Abbreviataion -->
+<!-- Abbreviation -->
 
 *[FIFO]: first-in, first-out
 *[MFTF]: Magento Functional Testing Framework

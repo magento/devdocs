@@ -16,13 +16,13 @@ functional_areas:
 
 When the seller and buyer user agree on the quoted products and their prices, the negotiated quote is ready to be converted to an order.
 
-During the standard checkout process, Magento refreshes and recalculates all product and shipping prices as well as taxes. This process is different for the quote that has a negotiated price (discounted offer from the seller). The system keeps the quoted price, but checks the tax amounts. If the tax amounts are outdated, Magento recalculates them and updatesnthe quote totals. These tax adjustments can change the order grand total. The order and invoice are created with the recalculated taxes and new grand total. All other prices in the quote remain unchanged.
+During the standard checkout process, Magento refreshes and recalculates all product and shipping prices as well as taxes. This process is different for the quote that has a negotiated price (discounted offer from the seller). The system keeps the quoted price, but checks the tax amounts. If the tax amounts are outdated, Magento recalculates them and updates the quote totals. These tax adjustments can change the order grand total. The order and invoice are created with the recalculated taxes and new grand total. All other prices in the quote remain unchanged.
 
 The same rule is applied when the quote has the proposed shipping price and the shipping taxes change on the checkout. The buyer pays the updated price, but this does not affect the other quote amounts.
 
 The following diagram illustrates the workflow for {{site.data.var.b2b}} negotiable quote checkouts:
 
-![Checkout process]({{page.baseurl}}/b2b/images/quote-checkout-process.png)
+![Checkout process]({{ page.baseurl }}/b2b/images/quote-checkout-process.png)
 
 ## Manage shipping addresses
 
@@ -966,7 +966,7 @@ Not applicable
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}/b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{page.baseurl}}/b2b/negotiable-manage.html)
-* [Update a negotiable quote]({{page.baseurl}}/b2b/negotiable-update.html)
-* [Place a negotiable quote order]({{page.baseurl}}/b2b/negotiable-order-workflow.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+* [Update a negotiable quote]({{ page.baseurl }}/b2b/negotiable-update.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

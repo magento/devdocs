@@ -3,7 +3,7 @@ group: mftf
 title: Best practices
 version: 2.2
 github_link: magento-functional-testing-framework/release-2/best-practices.md
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 functional_areas:
  - Testing
 ---
@@ -18,6 +18,31 @@ Check out our best practices below to ensure you're getting the absolute most ou
 1. [Action group] names should be sufficiently descriptive to inform a test writer of what the action group does and when it should be used.
  Add additional explanation in comments if needed. 
 2. Provide default values for the arguments that apply to your most common case scenarios.
+
+## `actionGroups` vs `extends`
+
+Use an action group to wraps a set of actions to reuse them multiple times.
+
+Use an [extension] when a test or action group needs to be repeated with the exception of a few steps.
+
+### When to use `extends`
+
+Use `extends` in your new test or action group when at least one of the following conditions is applicable to your case:
+
+1. You want to keep the original test without any modifications.
+2. You want to create a new test that follows the same path as the original test.
+3. You want a new action group that behaves similarly to the existing action group, but you do not want to change the functionality of the original action group.
+
+### When to avoid `extends`
+
+Do not use `extends` in the following conditions:
+1. You want to change the functionality of the test or action group and do not need to run the original version.
+2. You plan to merge the base test or action group.
+
+The following pattern is used when merging with `extends`:
+1. The original test is merged.
+2. The extended test is created from the merged original test.
+3. The extended test is merged.
 
 ## Annotation
 
@@ -121,18 +146,19 @@ Since the configurable product module could be disabled, this approach is more r
 
 <!-- Link definitions -->
 
-[Action group]: test/action-groups.html
 [`<after>`]: test/actions.html#before-and-after
-[annotations]: test/annotations.html
 [`<before>`]: test/actions.html#before-and-after
 [`<comment>`]: test/actions.html#comment
 [`<createData>`]: test/actions.html#createdata
 [`<deleteData>`]: test/actions.html#deletedata
-[entity]: data.html
-[merging]: merging.html
-[parameterized selectors]: section/parameterized-selectors.html
-[sections]: section.html
 [`<wait>`]: test/actions.html#wait
 [`<waitForElement>`]: test/actions.html#waitforelement
 [`<waitForElementVisible>`]: test/actions.html#waitforelementvisible
 [`<waitForLoadingMaskToDisappear>`]: test/actions.html#waitforloadingmasktodisappear
+[Action group]: test/action-groups.html
+[annotations]: test/annotations.html
+[entity]: data.html
+[extension]: extending.html
+[merging]: merging.html
+[parameterized selectors]: section/parameterized-selectors.html
+[sections]: section.html

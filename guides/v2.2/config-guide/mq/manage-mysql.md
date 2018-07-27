@@ -33,16 +33,16 @@ The following shows a `crontab` configuration for running consumers in our imple
 <div class="bs-callout bs-callout-tip" id="info" markdown="1">
 How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.
 
-It can be configured in Admin Panel **Stores > Configurtion > Advanced > System > Cron configuration options for group: consumers**
+It can be configured in Admin Panel **Stores > Configuration > Advanced > System > Cron configuration options for group: consumers**
 
-See [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
+See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
 </div>
 
 You can also use a process manager such as [Supervisor](http://supervisord.org/index.html) to monitor the status of processes. The manager can use the command line to restart the processes as needed.
 
 ### Configuration
 
-#### Behaviour by default
+#### Behavior by default
 
 * Cron job `consumers_runner` is enabled
 * Cron job `consumers_runner` runs all defined consumers
@@ -95,7 +95,7 @@ Use the following command to return a list of message queue consumers:
     ./bin/magento queue:consumers:list
 
 #### Related Topics
-*   [Message Queues Overview]({{page.baseurl}}/config-guide/mq/rabbitmq-overview.html)
-*   [Configure and run cron]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-cron.html)
-*   [Command-line configuration]({{page.baseurl}}/config-guide/cli/config-cli-subcommands.html)
-*   [Message Queues]({{page.baseurl}}/extension-dev-guide/message-queues/message-queues.html)
+*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+*   [Command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html)
+*   [Message Queues]({{ page.baseurl }}/extension-dev-guide/message-queues/message-queues.html)

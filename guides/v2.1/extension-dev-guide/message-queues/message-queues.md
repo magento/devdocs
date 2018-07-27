@@ -20,10 +20,10 @@ In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
-See <a href="{{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.
+See <a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.
 
 
-<h2>Send a message from the publisher to a queue</h2>
+## Send a message from the publisher to a queue
 
 The following code sends a message to the queue. The `publish` method is defined in `PublisherInterface`
 
@@ -34,7 +34,7 @@ $publisher->publish($topic, $message)
 In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
 
 
-<h2>Instantiate a consumer</h2>
+## Instantiate a consumer
 
 The procedure for instantiating a consumer differs, depending on which message queue system is being used.
 
@@ -57,7 +57,7 @@ Perform the following actions:
 3. Decode the message using topic name taken from the `\Magento\Framework\MessageQueue\ConsumerConfigurationInterface`.
 4. Invoke callback  `Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback` and pass the decoded data as an argument.
 
-<h2>Override topic configuration</h2>
+## Override topic configuration
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
 {% highlight php startinline=true %}
@@ -72,6 +72,6 @@ The following sample introduces a runtime configuration that allows you to redef
 
 #### Related Topics
 
-*	<a href="{{page.baseurl}}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
+*	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a>
+*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
