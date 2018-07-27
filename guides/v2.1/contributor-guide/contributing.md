@@ -116,7 +116,7 @@ After submitting your PR, you can head over to the Magento 2 repository’s [Pul
 
 In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
 
-We provide two options to back-ports and up-ports with your contributions:
+We provide two options to create back-ports and up-ports for your code contributions:
 
 - [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
@@ -127,9 +127,11 @@ Creating back-ports and up-ports are recommended and a best practice, but not re
 
 ### What are up-ports and back-ports?
 
-**Up-ports** contribute your code and fixes to a higher release line. If you have an issue fixed in a non-latest release line, as a best practice create a pull request to the latest branch in order to address that issue in an upcoming minor release. You want to create an up-port if the issue exists in a higher release line. For example, you may have contributed a fix to 2.1 and up-port to 2.2 and 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
+As a best practice, we recommend creating back-ports and up-ports for your code contributions.
 
-**Back-ports** contribute your code and fixes to a lower release line. If you fixed an issue in a release line and there is a supported lower version release line, as a best practice create a pull request to that lower release line to address the issue. You want to create a back-port if the issue exists in a lower release line. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
+**Back-ports** (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
+
+**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.1 and up-port to 2.2 and 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
 
 ### Magento Porting Tool {#porting-tool}
 
@@ -159,9 +161,9 @@ The **Activity Log** provides a tracked list of all ported pull requests and det
 
 The tool includes configuration settings through the gear icon located top right.
 
-- Use my fork as target - When checked, your fork is used to push the result. This is selected by default.
-- Target options - If you do not use your fork as a target (not checked), manually specify an organization and repository for ported commits.
-- Porting strategy
+- **Use my fork as target** - When checked, your fork is used to push the result. This is selected by default.
+- **Target options** - If you do not use your fork as a target (not checked), manually specify an organization and repository for ported commits.
+- **Porting strategy** - Sets the git commands and method for committing the code port:
     - `git am` – Recommended. When selected, authorship and original commit message will be saved. This command is used to port.
     - `git apply` – A new commit will be created with a default message. GitHub provided patch is applied with `git apply`. **Important**: This is an experimental strategy and results may vary.
 
@@ -171,7 +173,7 @@ The tool includes configuration settings through the gear icon located top right
 
 When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.
 
-The following is an example "Forwardport" pull request for https://github.com/magento/magento2/pull/13528 from the `2.2-develop` branch to the `2.3-develop` branch:
+The following is an example "Forwardport" (up-port) pull request for https://github.com/magento/magento2/pull/13528 from the `2.2-develop` branch to the `2.3-develop` branch:
 
 1. Checkout the `2.3-develop` branch. Make sure that you have the latest changes from the magento/magento2 repository.
 1. Create a new branch for your fix: `git checkout -b up-port-pull-13528`.
@@ -180,7 +182,7 @@ The following is an example "Forwardport" pull request for https://github.com/ma
 1. Create a pull request from `<your-fork>:up-port-pull-13528` to m`agento:2.3-develop`.
 1. In the up-port pull request description, add the full path to the original pull request (for example: https://github.com/magento/magento2/pull/13528) to help the Magento team link these pull requests.
 
-Up-port to 2.3-develop branch from 2.2-develop branch git commands:
+The following git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
 
 ```
 git checkout 2.3-develop
@@ -189,7 +191,7 @@ curl -L https://github.com/magento/magento2/pull/<PR_NUMBER>.patch | git am
 git push origin up-port-pull-<PR_NUMBER>:up-port-pull-<PR_NUMBER>
 ```
 
-Backport to `2.2-develop` branch from `2.3-develop` branch git commands:
+The following git commands detail how to back-port to `2.2-develop` branch from `2.3-develop` branch:
 
 ```
 git checkout 2.2-develop
