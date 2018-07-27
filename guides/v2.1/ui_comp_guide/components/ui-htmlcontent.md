@@ -9,7 +9,7 @@ github_link: ui_comp_guide/components/ui-htmlcontent.md
 
 ## Overview
 
-The HtmlContent UI component provides the ability to process and render a layout structure or a Magento block directly inside a UI component configuration. Content for the component is processed on the server side, but rendered on the client-side.
+The HtmlContent UI component provides the ability to process and render a layout structure or a Magento block directly inside a UI component configuration. The block for the component is processed on the server side, but the HTML content inside the block (using Knockout bindings as applicable) is rendered on the client-side.
 
 The layout structure inside HtmlContent must contain only one top-level block. The top-level block may contain as many child blocks or containers as required.
 All blocks inside HtmlContent are integrated into the layout, so external blocks can refer to them and vice verse.
