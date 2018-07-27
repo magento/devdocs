@@ -1466,7 +1466,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue.xsd"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:Communication/etc/communication.xsd"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">"synchronous.rpc.test"</span> <span class="na">request=</span><span class="s">"string"</span> <span class="na">response=</span><span class="s">"string"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;handler</span> <span class="na">name=</span><span class="s">"processRpcRequest"</span> <span class="na">type=</span><span class="s">"Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler"</span> <span class="na">method=</span><span class="s">"process"</span><span class="nt">/&gt;</span>
   <span class="nt">&lt;/topic&gt;</span>
@@ -1543,7 +1543,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h4 class="no_toc" id="example-queue_consumer-file">Example <code class="highlighter-rouge">queue_consumer</code> file</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue_consumer.xsd"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/consumer.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"basic.consumer"</span> <span class="na">queue=</span><span class="s">"basic.consumer.queue"</span> <span class="na">handler=</span><span class="s">"LoggerClass::log"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"synchronous.rpc.test"</span> <span class="na">queue=</span><span class="s">"synchronous.rpc.test.queue"</span> <span class="na">handler=</span><span class="s">"LoggerClass::log"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"rpc.test"</span> <span class="na">queue=</span><span class="s">"queue.for.rpc.test.unused.queue"</span> <span class="na">consumerInstance=</span><span class="s">"Magento\Framework\MessageQueue\BatchConsumer"</span> <span class="na">connection=</span><span class="s">"amqp"</span><span class="nt">/&gt;</span>
@@ -1600,7 +1600,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h4 class="no_toc" id="example-queue_topologyxml-file">Example <code class="highlighter-rouge">queue_topology.xml</code> file</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue_topology.xsd"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/topology.xsd"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;exchange</span> <span class="na">name=</span><span class="s">"magento-topic-based-exchange1"</span> <span class="na">type=</span><span class="s">"topic"</span> <span class="na">connection=</span><span class="s">"db"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;binding</span> <span class="na">id=</span><span class="s">"topicBasedRouting2"</span> <span class="na">topic=</span><span class="s">"anotherTopic"</span> <span class="na">destinationType=</span><span class="s">"queue"</span> <span class="na">destination=</span><span class="s">"topic-queue1"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
@@ -1779,7 +1779,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h4 class="no_toc" id="example-queue_publisherxml-file">Example <code class="highlighter-rouge">queue_publisher.xml</code> file</h4>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/queue_publisher.xsd"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/publisher.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;publisher</span> <span class="na">topic=</span><span class="s">"magento.testModuleSynchronousAmqp.api.serviceInterface.execute"</span> <span class="na">disabled=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;publisher</span> <span class="na">topic=</span><span class="s">"asynchronous.test"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;connection</span> <span class="na">name=</span><span class="s">"amqp"</span> <span class="na">exchange=</span><span class="s">"magento"</span> <span class="na">disabled=</span><span class="s">"false"</span><span class="nt">/&gt;</span>

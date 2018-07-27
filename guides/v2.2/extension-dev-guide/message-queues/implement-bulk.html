@@ -1752,8 +1752,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The <code class="highlighter-rouge">queue_publisher.xml</code> file defines the exchange where a topic is published. Create this file with the following contents:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/consumer.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">"&lt;consumer_name&gt;"</span> <span class="na">queue=</span><span class="s">"&lt;queue_name&gt;"</span> <span class="na">connection=</span><span class="s">"amqp"</span> <span class="na">consumerInstance=</span><span class="s">"Magento\Framework\MessageQueue\Consumer"</span> <span class="na">handler=</span><span class="s">"Consumer_Class::Consumer_method"</span><span class="nt">/&gt;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework-message-queue:etc/publisher.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;publisher</span> <span class="na">topic=</span><span class="s">"&lt;topic_name&gt;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;connection</span> <span class="na">name=</span><span class="s">"amqp"</span> <span class="na">exchange=</span><span class="s">"&lt;exchange&gt;"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/publisher&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h4 id="create-queue_topologyxml">Create <code class="highlighter-rouge">queue_topology.xml</code></h4>
