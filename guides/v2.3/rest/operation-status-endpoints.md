@@ -69,7 +69,7 @@ Field name | Data type | Description
 `topic_name` | String | The message queue topic 
 `serialized_data` | String | 
 `result_serialized_data` | String | 
-`status` | Integer | The operation status </br>* `1` = Complete </br>* `2` = The operation failed, but you can try to perform it again</br>* `3` = The operation failed. You must change something to retry it.</br>* `4` = Open</br>* `5` = Rejected
+`status` | Integer | The operation status <br/>* `1` = Complete <br/>* `2` = The operation failed, but you can try to perform it again<br/>* `3` = The operation failed. You must change something to retry it.<br/>* `4` = Open<br/>* `5` = Rejected
 `result_message` | String | Describes the result of the operation. If successful, the value contains the string `Service execution success` as well as the method that executed the operation.
 `error_code` | Integer | 
 `extension_attributes | Object | Lists extension attributes 
