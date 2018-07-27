@@ -29,6 +29,12 @@ content="We are actively developing functional tests.
 Refer to `Test/Mftf/` in [magneto modules directories]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html#where-do-modules-live) for examples."
 %}
 
+{%
+include note.html
+type="info"
+content="At the moment only three modules have MFTF tests: [Sales](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/Sales/Test/Mftf), [SalesRule](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/SalesRule/Test/Mftf) and [Persistent](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/Persistent/Test/Mftf)."
+%}
+
 ## Audience
 
 This MFTF guide is intended for Magento developers and software engineers, such as QA specialists, PHP developers, and system integrators.
