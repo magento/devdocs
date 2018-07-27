@@ -11,7 +11,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 This topic discusses the main concepts of how default templates work in the Magento application. 
 
 <h2 id="template-layout">How templates are initiated</h2>

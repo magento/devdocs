@@ -28,6 +28,7 @@ creating Technical Admin users that can help with set up, customization, and
 development work.
 
 ## Project portal
+
 Once you have an account, you can use the Magento Project Portal to manage the
 project for your {{site.data.var.ece}} store. The portal provides a Getting Started guide
 and an interactive workflow that helps project administrators, business users,
@@ -78,7 +79,7 @@ see [Create and manage users]({{ page.baseurl }}/cloud/project/user-admin.html).
 When you sign up for a Pro or Starter subscription plan, we provision
 your initial project environment with a template {{site.data.var.ece}}
 repository to build and manage your site. For information about what is included
-in Pro and Starter plans, see [Starter Architecture]({{ site.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ site.baseurl }}/cloud/basic-information/pro-architecture.html).
+in Pro and Starter plans, see [Starter Architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) and [Pro Architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
 You can use the Project Web Interface to manage your project, add user accounts,
 and begin developing your store(s). The Project Owner, Technical Admin users,
@@ -92,7 +93,7 @@ For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projec
 ## Sign up for Magento status {#status}
 Get updates about {{site.data.var.ece}}
 platform environments and related services from the
-[Status page](https://status.magento.cloud){:target="\_blank"} page.
+[Status page](https://status.magento.cloud){:target="\_blank"}.
 
 The page lists current status for all {{site.data.var.ece}} components and
 services followed by notifications about incident reports, service upgrades,
@@ -110,16 +111,16 @@ want to track. Sign up from the
 Users that have administrative access to the Admin panel can add users, configure store services, complete store set up and customization work, and more.
 
 For a new project, the first step after getting the welcome email is to secure Admin access to the project by changing the password on the Project Owner
-account.
+account. The default username for this account is the Project Owner email address.
 
 You can submit a password change request using either of the following methods:
 
 -   Locate the welcome email sent to the Project Owner email address and
     follow the link to change your password.
 
--   Copy the store URL from the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html).
+-   Copy the store URL from the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html)
     into a browser. Then, append `/admin` to the end of the URL to open
-    the sign in page. Click the "Forgot password?" link to send a password
+    the sign in page. Click the **Forgot password?** link to send a password
     change request to the Project Owner email address.
 
 After you submit the password change request, check your email for the password

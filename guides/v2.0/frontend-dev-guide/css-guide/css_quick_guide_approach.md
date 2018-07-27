@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-guide/css_quick_guide_approach.md
 functional_areas:
   - Frontend
 ---
-<h2>What's in this topic</h2>
+## What's in this topic
 Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the <a href="{{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html">LESS compilation mode</a>. What's next? Where to add the style changes? This topic gives quick answers.
 
 
@@ -107,7 +107,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 <li>Add your styles for the button component. If the file is left blank, then no styles are applied for the component.</li>
 </ol>
 
-<h2>Recommended reading</h2>
+## Recommended reading
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

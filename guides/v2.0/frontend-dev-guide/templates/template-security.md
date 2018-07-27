@@ -5,13 +5,13 @@ title: Templates XSS security
 menu_title: Templates XSS security
 menu_order: 5
 version: 2.0
-github_link: frontend-dev-guide/templates/template-overview.md
+github_link: frontend-dev-guide/templates/template-security.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-security.html
 functional_areas:
   - Frontend
 ---
 
-<h2>Security measures against XSS attacks</h2>
+## Security measures against XSS attacks
 
 To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:
 
@@ -31,7 +31,7 @@ The following code sample illustrates the XSS-safe output in templates:
 <?php echo $block->getTitleHtml() ?>
 <?php echo $block->getHtmlTitle() ?>
 <?php echo $block->escapeHtml($block->getTitle()) ?>
-<h1><?php echo (int)$block->getId() ?></h1>
+# <?php echo (int)$block->getId() ?>
 <?php echo count($var); ?>
 <?php echo 'some text' ?>
 <?php echo "some text" ?>

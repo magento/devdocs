@@ -45,9 +45,11 @@ pages:
 
         - label: Bitbucket integration
           url: /cloud/project/bitbucket-integration.html
+          versions: ["2.0"]
 
         - label: GitHub integration
           url: /cloud/project/project-integrate-github.html
+          versions: ["2.0"]
 
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
@@ -61,6 +63,16 @@ pages:
         - label: SendGrid
           url: /cloud/project/sendgrid.html
           versions: ["2.1","2.2","2.3"]
+
+    - label: Integrations
+      url: /cloud/integrations/cloud-integrations.html
+      versions: ["2.1","2.2","2.3"]
+      children:
+        - label: Bitbucket integration
+          url: /cloud/integrations/bitbucket-integration.html
+
+        - label: GitHub integration
+          url: /cloud/integrations/github-integration.html
 
     - label: Local environment setup
       url: /cloud/access-acct/first-time-setup.html
@@ -362,14 +374,22 @@ pages:
     - label: Upgrades and Patches
       url: /cloud/project/project-upgrade-parent.html
       children:
-        - label: Cloud tools release notes
+        - label: ECE-tools release notes
           url: /cloud/release-notes/cloud-tools.html
           versions: ["2.1","2.2","2.3"]
 
-        - label: Patch Magento Commerce (Cloud)
+        - label: Upgrade to use ECE-tools
+          url: /cloud/project/ece-tools-upgrade-project.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Update ECE-tools version
+          url: /cloud/project/ece-tools-update.html
+          versions: ["2.1","2.2","2.3"]
+
+        - label: Apply custom patches
           url: /cloud/project/project-patch.html
 
-        - label: Upgrade Magento Commerce (Cloud)
+        - label: Upgrade Magento version
           url: /cloud/project/project-upgrade.html
 
         - label: Upgrade from 2.0.4 (Cloud)

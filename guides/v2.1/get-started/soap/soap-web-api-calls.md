@@ -59,7 +59,7 @@ The WSDL URL follows the following pattern:
 You must specify each service version in the endpoint URL.
 
 This way, you can have a strict contract between your application and the service provider.
-<h3>Service class-to-service name conversion rules</h3>
+### Service class-to-service name conversion rules
 
 Service names use the following conventions:
 

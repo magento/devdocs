@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 functional_areas:
   - Frontend
 ---
-<h2> What's in this topic </h2>
+## What's in this topic
 
 After you <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode and client-side (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development).
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.
@@ -118,7 +118,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 
 If your Magento instance uses the client-side compilation mode, simple changes are applied at once. In case of more sophisticated changes, you might need to manually clean the theme sub-directory in the <code>pub/static/frontend</code> directory. There are more details about these types of changes and about the client-side mode implementation in the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#css_debug_client" target="_blank">Styles debugging</a> topic.
 
-<h2>Recommended reading</h2>
+## Recommended reading
 <ul>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
 <li><a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>

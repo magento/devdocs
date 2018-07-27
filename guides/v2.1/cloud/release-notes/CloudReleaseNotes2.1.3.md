@@ -22,7 +22,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
 ## Required update to `.magento.app.yaml`
-Before you [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-prod).
+Before you [upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-prod).
 
 ### Get started
 
@@ -56,7 +56,7 @@ Before you [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to ve
                 passthru: "/static/$resource"
     ~~~
 4.	Save your changes to `.magento.app.yaml` and exit the text editor.
-5.	You may now [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
+5.	You may now [upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html) to version 2.1.3 or 2.0.11.
 
 
 {% endcollapsible %}
