@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/getting-started.md
 functional_areas:
  - Testing
-mftf-release: 2.3.0
+mftf-release: 2.3.1
 redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html
 ---
 
@@ -16,16 +16,14 @@ _This topic was updated after {{page.mftf-release}} MFTF release._
 
 Make sure that you've installed and set up the following software:
 
-* [PHP version supported by Magento instance under test]({{ page.baseurl }}/install-gde/system-requirements-tech.html#php)
-* [Composer v1.3.x+](https://getcomposer.org/download/)
-* [Java v1.8.x+](https://www.java.com/en/download/)
-* [Selenium Server Standalone v3.6.0+](#selenium-server)
-* [ChromeDriver v2.33+](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+* [PHP version supported by Magento instance under test]
+* [Composer v1.3.x+]
+* [Java v1.8.x+]
+* [Selenium Server Standalone v3.6.0+]
+* [ChromeDriver v2.33+]
 
-### Recommendations
-
-We recommend using [PHPStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
-They recently added support for [Codeception Test execution](https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/), which is helpful when debugging.
+{:.bs-callout .bs-callout-tip}
+[PhpStorm] recently added support for [Codeception Test execution], which is helpful when debugging.
 
 ## Prepare Magento
 
@@ -77,7 +75,7 @@ git clone git@github.com:magento/magento2.git
 
 4. Run the `composer install` command. 
 
-### Step 3. Build the project
+### Step 3. Build the project {#build-project}
 
 In `magento2/` project root, run the following commands:
 
@@ -141,7 +139,7 @@ And copy it into your Magento installation under:
 magento2ce/dev/tests/acceptance/utils/command.php
 ```
 
-If you are installing the MFTF from inside your Magento installation, this is automatically done when you run `vendor/bin/mftf build:project`.
+If you are installing the MFTF from inside your Magento installation, this is automatically done when you [build the project].
 
 {:.bs-callout .bs-callout-tip}
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
@@ -156,13 +154,13 @@ vendor/bin/mftf generate:tests
 
 ### Step 7. Run tests
 
-To run tests, you need a running Selenium server and a [`codecept`](commands/codeception.html) or [`mftf`](commands/mftf.html) with required parameters.
+To run tests, you need a running Selenium server and a [`codecept`] or [`mftf`] with required parameters.
 
 #### Run the Selenium server {#selenium-server}
 
-1. [Download the latest Selenium Server](http://www.seleniumhq.org/download/).
+1. [Download the latest Selenium Server].
 
-2. [Download a Selenium web driver for your web browser](http://docs.seleniumhq.org/about/platforms.jsp) into the same directory that contains the Selenium server.
+2. [Download a Selenium web driver for your web browser] into the same directory that contains the Selenium server.
 
 3. Add the directory with the web driver to `PATH`.
 
@@ -178,15 +176,31 @@ java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 vendor/bin/codecept run
 ```
 
-See more commands in [`mftf`](commands/mftf.html) and [`codecept`](commands/codeception.html).
+See more commands in [`mftf`] and [`codecept`].
 
 ### Step 8. Generate reports {#reports}
 
 The testing reports are generated in a CLI during testing.
 
-To generate the reports in HTML, use [Allure](https://docs.qameta.io/allure/latest/).
+To generate the reports in HTML, use [Allure].
 For example, to generate the reports when you are in the `magento2 root directory`, run:
 
 ```bash
 allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/tests/acceptance/tests/_output/allure-report/ --clean
 ```
+
+<!-- Link definitions -->
+
+[`codecept`]: commands/codeception.html
+[`mftf`]: commands/mftf.html
+[Allure]: https://docs.qameta.io/allure/latest/
+[build the project]: #build-project
+[ChromeDriver v2.33+]: https://sites.google.com/a/chromium.org/chromedriver/downloads
+[Codeception Test execution]: https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/
+[Composer v1.3.x+]: https://getcomposer.org/download/
+[Download a Selenium web driver for your web browser]: http://docs.seleniumhq.org/about/platforms.jsp
+[Download the latest Selenium Server]: http://www.seleniumhq.org/download/
+[Java v1.8.x+]: https://www.java.com/en/download/
+[PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
+[PHPStorm]: https://www.jetbrains.com/phpstorm/
+[Selenium Server Standalone v3.6.0+]: #selenium-server
