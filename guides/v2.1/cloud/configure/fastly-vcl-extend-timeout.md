@@ -26,7 +26,7 @@ To extend the timeout for the Magento Admin to Staging and Production environmen
 
 Create an `extendtimeout.json` file with the following JSON content:
 
-{% highlight json %}
+```json
 {
   "name": "extendtimeout",
   "dynamic": "0",
@@ -34,7 +34,7 @@ Create an `extendtimeout.json` file with the following JSON content:
   "priority": "100",
   "content": "if ( req.url ~ \"^/(index\\.php/)?admin(_.*)?/\" ) { set bereq.first_byte_timeout = 600s; }"
 }
-{% endhighlight %}
+```
 
 Review the following values for the code to determine if you need to make changes:
 

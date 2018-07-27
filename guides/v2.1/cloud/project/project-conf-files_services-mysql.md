@@ -74,18 +74,18 @@ In the preceding example, the endpoint (that is, user) `reporter` has `ro` privi
 ## Add MySQL in services.yaml and .magento.app.yaml {#settings}
 To enable MySQL, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
-{% highlight yaml %}
+```yaml
 mysql:
     type: mysql:10.0
     disk: 2048
-{% endhighlight %}
+```
 
 To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
 
-{% highlight yaml %}
+```yaml
 relationships:
     database: "mydatabase:mysql"
-{% endhighlight %}
+```
 
 Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
@@ -106,7 +106,7 @@ To verify this information used for configurations and settings:
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for MySQL:
 
-```
+```json
 {
   "database": [
     {

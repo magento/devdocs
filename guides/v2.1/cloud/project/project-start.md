@@ -87,7 +87,7 @@ Logs for all deployments that have occurred on this environment are appended to 
 
 The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:
 
-{% highlight xml %}
+```xml
 [2016-10-11 22:15:38] Starting pre-deploy.
 ...
 [2016-10-11 22:15:39] Pre-deploy complete.
@@ -98,7 +98,7 @@ The actual log output is highly verbose to allow troubleshooting. The following 
 ... more ...
 
 [2016-10-11 22:15:46] Deployment complete.
-{% endhighlight %}
+```
 
 The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.
