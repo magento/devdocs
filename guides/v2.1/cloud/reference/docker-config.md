@@ -27,7 +27,7 @@ The `ece-tools` package provides a `docker:build` command to generate the Docker
 
 ## Launch a Cloud Docker environment, `ece-tools` v2002.0.13 and later
 
-Use `ece tools` v2002.0.13 or later to generate the Docker compose configuration, convert `.php` configuration files to `.env` files, and install {{site.data.var.ece}} on a read-only file system in the Docker container.
+Use `ece tools` v2002.0.13 or later to generate the Docker compose configuration, convert `.php` configuration files to `.env` files, install {{site.data.var.ece}}, and deploy to a read-only file system in the Docker container.
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 
@@ -91,7 +91,7 @@ Use `ece tools` v2002.0.13 or later to generate the Docker compose configuration
 
 ## Launch a Cloud Docker environment, `ece-tools` v2002.0.12
 
-Use `ece-tools` 2002.0.12 to generate the Docker compose configuration and install {{site.data.var.ece}} on a writeable file system in the Docker container. To install to a read-only file system, upgrade to `ece-tools` v2002.0.13 or later.
+Use `ece-tools` 2002.0.12 to generate the Docker compose configuration and deploy {{site.data.var.ece}} to a writeable file system in the Docker container. To deploy to a read-only file system, upgrade to `ece-tools` v2002.0.13 or later.
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 1.  Add your credentials to `auth.json` file.
