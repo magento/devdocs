@@ -7,7 +7,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2 id="fedg_layout_xml-instruc_overview">What's in this topic</h2>
+## What's in this topic {#fedg_layout_xml-instruc_overview}
 
 
 There are two possible ways to customize page layout in Magento:
@@ -24,7 +24,7 @@ Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instr
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> topic.
 
 
-<h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
+## Common layout instructions {#fedg_layout_xml-instruc_ex}
 
 Use the following layout instructions to customize your layout:
 

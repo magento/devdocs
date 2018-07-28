@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="config-files-overview">Overview of module configuration files</h2>
+## Overview of module configuration files {#config-files-overview}
 The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
 You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
@@ -31,7 +31,7 @@ Following are common terms used in this topic:
       <dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
 
-<h2 id="config-files-loadmerge">Configuration load and merge</h2>
+## Configuration load and merge {#config-files-loadmerge}
 This section discusses how configuration files are loaded and merged.
 
 <h3 id="config-files-load">How Magento loads configuration files</h3>
@@ -56,7 +56,7 @@ Magento's merge algorithm follows:
 
 After configuration files are merged, the resulting document contains all nodes from the original files.
 
-<h2 id="config-files-classes">Configuration types, objects, and interfaces</h2>
+## Configuration types, objects, and interfaces {#config-files-classes}
 The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:
 
 * <a href="#config-files-classes-objects">Configuration types and objects</a>

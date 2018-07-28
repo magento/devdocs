@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 <div class="bs-callout bs-callout-info" id="info">
    <p>Do not use the ObjectManager helper class for classes with a small number of dependencies.</p>
 </div>
-<h2 id="help">ObjectManager methods</h2>
+## ObjectManager methods {#help}
 <p>The ObjectManager public interface methods are:</p>
 <ul>
    <li><a href="#getobject">getObject method</a>. Creates class instances with automatically mocked dependencies.</li>

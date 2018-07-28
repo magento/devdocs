@@ -24,7 +24,7 @@ Once it is expanded, the content can be updated using Ajax. The collapsed/expand
 The collapsible widget source is <a href="{{ site.mage2000url }}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
 
 
-<h2 id="collaps_init_js">Initialize collapsible in JS</h2>
+## Initialize collapsible in JS {#collaps_init_js}
 Generally the collapsible widget is instantiated like following:
 <pre>
 $("#element").collapsible();
@@ -459,7 +459,7 @@ $("#element").collapsible("option","trigger",".trigger");
 
 
 
-<h2 id="collaps_methods">Methods</h2>
+## Methods {#collaps_methods}
 
 <ul>
 <li><a href="#collaps_activate">activate()</a></li>
@@ -533,7 +533,7 @@ $("#element").collapsible("forceDeactivate");
 </pre>
 
 
-<h2 id="collapsible_events">Events</h2>
+## Events {#collapsible_events}
 
 <h3 id="c_beforeOpen"><code>beforeOpen callback</code></h3>
 Called before the content is opened. 

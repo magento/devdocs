@@ -16,7 +16,7 @@ redirect_from:
 *   <a href="#composer">Create a Magento Composer file</a>
 *   <a href="#packaging">Package and publish your extension</a>
 
-<h2 id="package-over">Overview of packaging</h2>
+## Overview of packaging {#package-over}
 The Magento application uses {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages to distribute, install, and upgrade components in an application instance.
 
 To package a component, you must:
@@ -28,7 +28,7 @@ To package a component, you must:
     Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.
 
 
-<h2 id="composer">Create a Magento Composer file</h2>
+## Create a Magento Composer file {#composer}
 The Magento `composer.json` file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
@@ -126,7 +126,7 @@ The following example is a `composer.json` file for a module:
 
 {% endhighlight %}
 
-<h2 id="packaging">Package and publish your extension</h2>
+## Package and publish your extension {#packaging}
 Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:
 
     zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'

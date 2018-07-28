@@ -27,7 +27,7 @@ We also distinguish the third type of layout files, *generic layouts*. They are 
 
 This article gives a comprehensive description of each layout file type.
 
-<h2 id="layout-types-page">Page layout</h2>
+## Page layout {#layout-types-page}
 Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. 
 
 Allowed layout instructions:
@@ -106,7 +106,7 @@ Sample page layout declaration file:
 </page_layouts>
 {%endhighlight xml%}
 
-<h2 id="layout-types-conf">Page configuration</h2>
+## Page configuration {#layout-types-conf}
 
 The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.
 
@@ -387,7 +387,7 @@ The following table describes the instructions specific for page configuration f
   </tbody>
 </table>
 
-<h2 id="layout-types-gen">Generic layout</h2>
+## Generic layout {#layout-types-gen}
 
 Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. 
 

@@ -84,6 +84,6 @@ Find block of elements for the Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d7
 
 Enter actual data in `value` attribute of corresponding `field` element.
 
-<h2 id="mtf_install_pre">Next Steps</h2>
+## Next Steps {#mtf_install_pre}
 
 [Prepare Magento application &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_magento.html)

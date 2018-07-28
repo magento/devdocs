@@ -34,16 +34,16 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 -   Logs of failures
 
-<h2 id="mtf_intro_audi">Audience</h2>
+## Audience {#mtf_intro_audi}
 
 This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} developers, and system integrators.
 
-<h2 id="mtf_intro_goal">Goal</h2>
+## Goal {#mtf_intro_goal}
 
 Facilitate functional testing and minimize efforts to perform
 regression testing.
 
-<h2 id="mtf_intro_scope">Scope</h2>
+## Scope {#mtf_intro_scope}
 
 FTF is purposed to test user interactions with web application under
 test.
@@ -81,7 +81,7 @@ For other tests please see the following topics:
 - <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 
 
-<h2 id="mtf_intro_github-link">FTF on GitHub</h2>
+## FTF on GitHub {#mtf_intro_github-link}
 
 Follow the FTF project and contribute on GitHub
 <https://github.com/magento/mtf>.

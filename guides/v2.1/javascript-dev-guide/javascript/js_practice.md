@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
-<h2 id="practice_overview">Overview</h2>
+## Overview {#practice_overview}
 This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
 
 ## Customize a default Magento jQuery widget
@@ -83,7 +83,7 @@ var config = {
 
 The new behavior is applied once the store pages are reloaded.
 
-<h2 id="use_custom_widget">Add and use a custom widget (jCarousel)</h2>
+## Add and use a custom widget (jCarousel) {#use_custom_widget}
 OrangeCo wants to use the <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel widget</a> to display product images on product pages.
 The high level steps for this task are the following:
 

@@ -12,7 +12,7 @@ functional_areas:
   - System
   - Setup
 ---
-<h2 id="config-varnish-config-web">Configure your web server</h2>
+## Configure your web server {#config-varnish-config-web}
 Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.
 
 In the sections that follow, we use port 8080 as an example.
@@ -35,7 +35,7 @@ on Debian and Ubuntu
 
 
 
-<h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
+## Modify the Varnish system configuration {#config-varnish-config-sysvcl}
 To modify the Varnish system configuration:
 
 1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
@@ -113,7 +113,7 @@ This should display error messages.
 			<li><a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/sec-sel-policy-customizing.html" target="_blank">CentOS documentation</a></li></ul>
 </div>
 
-<h2 id="config-varnish-verify">Verify Varnish is working</h2>
+## Verify Varnish is working {#config-varnish-verify}
 The following sections discuss how you can verify that Varnish is working but *without* configuring Magento to use it. You should try this before you configure Magento.
 
 Perform the tasks discussed in the following sections in the order shown:
@@ -160,7 +160,7 @@ If you don't see output for `varnishd`, make sure Varnish is running.
 
 <a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a>
 
-<h2 id="config-varnish-install">Install the Magento 2 software</h2>
+## Install the Magento 2 software {#config-varnish-install}
 Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.
 
 Possible error installing Magento:
@@ -178,7 +178,7 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 	     .first_byte_timeout = 600s;
 	}
 
-<h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
+## Verify HTTP response headers {#config-varnish-verify-headers}
 Now you can verify that Varnish is serving pages by looking at {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} response headers returned from any Magento page.
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.

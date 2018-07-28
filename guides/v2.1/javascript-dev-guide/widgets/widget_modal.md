@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
-<h2 id="modal_overview">Overview</h2>
+## Overview {#modal_overview}
 
 The Magento modal {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
@@ -32,7 +32,7 @@ The widget uses the following templates:
 
 The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
-<h2 id="modal_initialize">Initialize the modal widget</h2>
+## Initialize the modal widget {#modal_initialize}
 
 To initialize the widget in your script, use the following general notation:
 <pre>
@@ -45,7 +45,7 @@ $('#modal_content').modal({
 
 For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
-<h2 id="modal_options">Options</h2>
+## Options {#modal_options}
 The modal widget has the following options:
 <ul>
 <li><a href="#modal_autoopen">autoOpen</a></li>
@@ -154,7 +154,7 @@ The type of window: popup or slide.
 
 **Default value**: `popup`
 
-<h2 id="modal_methods">Methods</h2>
+## Methods {#modal_methods}
 The modal widget has the following methods:
 <ul>
 <li><a href="#modal_close">closeModal()</a></li>
@@ -168,7 +168,7 @@ Open the modal window.
 <h3 id="modal_close"><code>closeModal()</code></h3>
 Close the modal window.
 
-<h2 id="modal_events">Events</h2>
+## Events {#modal_events}
 
 The modal widget is subscribed to the following events:
 <ul>
@@ -208,7 +208,7 @@ Called when the modal window is opened.
 
 
 
-<h2 id="key_navigation">Keyboard navigation</h2>
+## Keyboard navigation {#key_navigation}
 - the ESC key: close the current modal window
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)

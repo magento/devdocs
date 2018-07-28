@@ -20,11 +20,11 @@ Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %
 
 The dropdownDialog widget source is located in <a href="{{ site.mage2000url }}lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.
 
-<h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
+## Initialize the dropdownDialog widget {#dialog_init}
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
-<h2 id="dialog_options">Options</h2>
+## Options {#dialog_options}
  
 Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:
 <ul>
@@ -139,7 +139,7 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 **Default value**: 500
 
 
-<h2 id="dialog_methods">Methods</h2>
+## Methods {#dialog_methods}
 Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> methods, though some of them are customized. 
 
 

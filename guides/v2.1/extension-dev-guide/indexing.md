@@ -116,7 +116,7 @@ You can reindex by:
 *	Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg), which is preferred because indexing runs every minute.
 *	Using the [`magento indexer:reindex [indexer]`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex) command, which reindexes selected indexers, or all indexers, one time only.
 
-<h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
+## Magento indexers {#m2devgde-indexing-outofbox}
 The Magento application implements the following indexers:
 
 <table>

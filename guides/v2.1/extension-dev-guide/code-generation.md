@@ -8,7 +8,7 @@ version: 2.1
 github_link: extension-dev-guide/code-generation.md
 ---
 
-<h2 id="codegen-over">Overview of code generation</h2>
+## Overview of code generation {#codegen-over}
 The Magento application generates code to create non-existent classes. As an example, look at the <a href="{{ site.mage2000url }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:
 
 	...
@@ -48,7 +48,7 @@ Code generation is required in Magento 2. Generating code assures you of the fol
 	All generated Factories work the same way. After you know how one Factory works, you know how they all work.
 
 
-<h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
+## Object Manager responsibility for code compilation {#codegen-om}
 When code changes as discussed in the preceding section, the Object Manager compiles it.
 
 

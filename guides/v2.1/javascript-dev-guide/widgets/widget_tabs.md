@@ -11,14 +11,14 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
-<h2 id="fedg_tabs-widget_overview">Overview</h2>
+## Overview {#fedg_tabs-widget_overview}
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
 
 The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>.
 
 
-<h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
+## Initialize the tabs widget {#fedg_tabs_init}
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
@@ -44,7 +44,7 @@ Phtml template file examples using script:
 </script>
 {%endhighlight%}
 
-<h2 id="fedg_tabs_options">Options</h2>
+## Options {#fedg_tabs_options}
 
 The tabs widget has the following options:
 
@@ -220,7 +220,7 @@ The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widge
 **Default value**: `[data-role=trigger]`
 
 
-<h2 id="tabs_methods">Methods</h2>
+## Methods {#tabs_methods}
 
 The tabs widget has the following methods:
 <ul>
@@ -243,7 +243,7 @@ The tabs widget has the following methods:
 <h3 id="fedg_tabs_options-disable"><code>disable()</code></h3>
 `disable(index)` disables the tab with the corresponding `index`.
 
-<h2 id="fedg_tabs_events-methods">Events</h2>
+## Events {#fedg_tabs_events-methods}
 Tabs is subscribed to the same events as the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget:
 
 <ul>

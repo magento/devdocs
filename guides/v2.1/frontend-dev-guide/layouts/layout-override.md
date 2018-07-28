@@ -11,7 +11,7 @@ functional_areas:
   - Frontend
 ---
 
-<h2 id="fedg_layout_override_overview">What's in this topic</h2>
+## What's in this topic {#fedg_layout_override_overview}
 
 Not all layout customizations can be performed by <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">theme</a> layout file of <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">base</a> {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
 
@@ -42,7 +42,7 @@ Examples of customizations that involve overriding layouts:
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
 
-<h2 id="fedg_layout_override_howto">How to override a layout</h2>
+## How to override a layout {#fedg_layout_override_howto}
 
 This section discusses how to override:
 
@@ -105,7 +105,7 @@ These files override the following layouts:
 </div>
 
 
-<h2 id="override-mistake">Customization mistakes</h2>
+## Customization mistakes {#override-mistake}
 
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 

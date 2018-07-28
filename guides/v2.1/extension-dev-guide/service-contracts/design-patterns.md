@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
          <p>Service contract data interfaces are now mutable.</p>
 </div>
 
-<h2 id="top-level-msc">Interface types and locations</h2>
+## Interface types and locations {#top-level-msc}
 <p>A {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
 <p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.</p>
 <p>
@@ -27,7 +27,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    <p>For example, the interfaces in the <b>Magento\Customer\Api</b> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
                   </p>
     -->
-<h2 id="data-interfaces">Data interfaces</h2>
+## Data interfaces {#data-interfaces}
 <p>Define data interfaces in the <b>Api/Data</b> subdirectory for a module.</p>
 <p>For example, the data interfaces for the Customer module are in the <b>/app/code/Magento/Customer/Api/Data</b> subdirectory.</p>
 
@@ -38,7 +38,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    In <code>GroupSearchResultsInterface</code>, the <code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
 </p>
 
-<h2 id="service-interfaces">Service interfaces</h2>
+## Service interfaces {#service-interfaces}
 <p>Service interfaces include several interface subtypes:</p>
 <ul>
    <li>Repository interfaces</li>

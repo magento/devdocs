@@ -16,7 +16,7 @@ redirect_from: /guides/v1.0/get-started/web-api-functional-testing.html
 The Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} testing framework allows you to test Magento {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
 
-<h2 id="details">Implementation Details</h2>
+## Implementation Details {#details}
 
 The Web API functional testing framework depends on the integration testing framework and reuses most of classes implemented there.
 
@@ -34,7 +34,7 @@ Do not define fixtures in `dev/tests/api-functional`. Instead, they must be take
 
 To keep your test environment clean, clear all entities created in fixture files or within tests itself from the DB after test execution. This can be done either directly in tearDown or by a corresponding rollback for the fixture file. This file should be named the same as a fixture, but with `_rollback` suffix.
 
-<h2 id="create">How to Create a New Test</h2>
+## How to Create a New Test {#create}
 
 All Web API functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform the remote call.
 
@@ -97,7 +97,7 @@ interface AdapterInterface
 }
 {% endhighlight %}
 
-<h2 id="howto">How to Run the Tests</h2>
+## How to Run the Tests {#howto}
 <h3 id="prereq">Prerequisites</h3>
 1. Install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Soap {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 

@@ -172,12 +172,12 @@ To complete the script:
 	Stop Solr: `/etc/init.d/solr stop`
 *	Restart Solr: `/etc/init.d/solr restart`
 
-<!-- <h2 id="next"></a>Next steps</h2>
+<!-- ## </a>Next steps {#next}
 For additional information about Solr, see the following:
 
 *	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with {{site.data.var.ee}}</a>
 *	<a href="http://wiki.apache.org/solr/#Operations_and_Production" target="_blank">Customize Solr</a> -->
 
-<!-- <h2 id="related">Related Information</h2>
+<!-- ## Related Information {#related}
 *	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank">Frequently Asked Questions (FAQ) About Using Solr with {{site.data.var.ee}}</a>
 *	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and {{site.data.var.ee}} Best Practices</a> -->
