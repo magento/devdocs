@@ -63,7 +63,7 @@ The alert widget has the following options:
 <li><a href="#alert_title">title</a></li>
 </ul>
 
-<h3 id="alert_actions"><code>actions</code></h3>
+### <code>actions</code> {#alert_actions}
 
 Widget callbacks.
 
@@ -76,28 +76,28 @@ actions: {
 }
 {% endhighlight %}
 
-<h3 id="alert_autoopen">autoOpen</h3>
+### autoOpen {#alert_autoopen}
 Automatically open the alert window when the widget is initialized.
 
 **Type**: Boolean 
 
 **Default value**: `false`
 
-<h3 id="alert_clickableOverlay">clickableOverlay</h3>
+### clickableOverlay {#alert_clickableOverlay}
 Close the alert window when a user clicks on the overlay.
 
 **Type**: Boolean 
 
 **Default value**: `true`
 
-<h3 id="alert_content"><code>content</code></h3>
+### <code>content</code> {#alert_content}
 
 The text displayed in the alert window.
 
 
 **Type**: String.
 
-<h3 id="alert_focus"><code>focus</code></h3>
+### <code>focus</code> {#alert_focus}
 The selector of the element to be in focus when the alert window opens.
 If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set `focus` to `none`.
 
@@ -105,7 +105,7 @@ If `focus` is not specified or set to empty string, the focus is on the close bu
 
 **Default value**: `''`
 
-<h3 id="alert_title"><code>title</code></h3>
+### <code>title</code> {#alert_title}
 The title of the alert window.
 
 

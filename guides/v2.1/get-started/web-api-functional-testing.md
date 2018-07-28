@@ -21,7 +21,7 @@ The Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endgloss
 The Web API functional testing framework depends on the integration testing framework and reuses most of classes implemented there.
 
 
-<h3 id="custom">Custom Annotations for Data Fixtures</h3>
+### Custom Annotations for Data Fixtures {#custom}
 
 In the Web API functional tests only, the custom annotation  `@magentoApiDataFixture` is available for declaring fixtures. The difference of this annotation from `@magentoDataFixture` is that the fixture will be committed and accessible during HTTP requests made within the test body. The usage rules of `@magentoApiDataFixture` are the same as `@magentoDataFixture` usage rules.
 
@@ -98,7 +98,7 @@ interface AdapterInterface
 {% endhighlight %}
 
 ## How to Run the Tests {#howto}
-<h3 id="prereq">Prerequisites</h3>
+### Prerequisites {#prereq}
 1. Install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Soap {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
@@ -108,7 +108,7 @@ interface AdapterInterface
 2. Before running the functional tests you need to clear your {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 Now you are ready to run the tests.
 
-<h3 id="running">Running the Tests</h3>
+### Running the Tests {#running}
 1. Copy `/dev/tests/api-functional/phpunit.xml.dist` to `/dev/tests/api-functional/phpunit.xml`.
 
 	a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.

@@ -23,7 +23,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
    <li><a href="#getCollectionMock">getCollectionMock method</a>. Lists mocked constructor arguments.</li>
    <li><a href="#getConstructArguments">getConstructArguments method</a>. Creates collection instances that contain specified elements.</li>
 </ul>
-<h3 id="getobject">getObject method</h3>
+### getObject method {#getobject}
 <p>Creates mocks for all constructor dependencies and applies any specified custom mocks from <code>$arguments</code> array.</p>
 <p>Also, instantiates the required <code>$className</code> by using constructor with already existing mocks.</p>
 <p><b>Syntax:</b></p>
@@ -46,7 +46,7 @@ $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool',
      $arguments);
 </pre>
 
-<h3 id="getCollectionMock">getCollectionMock method</h3>
+### getCollectionMock method {#getCollectionMock}
 <p>Retrieves a collection instance with mocked getIterator method.</p>
 <p><b>Syntax:</b></p>
 <pre>
@@ -69,7 +69,7 @@ $optionCollection =
      $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection',
           array($options));
 </pre>
-<h3 id="getConstructArguments">getConstructArguments method</h3>
+### getConstructArguments method {#getConstructArguments}
 <p>Lists dependency mocks for a specified class.</p>
 <p><b>Syntax:</b></p>
 <pre>

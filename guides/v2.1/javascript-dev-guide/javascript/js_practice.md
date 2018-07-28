@@ -26,7 +26,7 @@ The high-level steps for this task are the following:
 
 Let's look at each step in more detail.
 
-<h3 id="define_script1">Step 1: Define how the message is output</h3>
+### Step 1: Define how the message is output {#define_script1}
 
 OrangeCo needs to define how the message is output. To do this, they take the following steps:
 
@@ -49,7 +49,7 @@ To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get
 
 <img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
-<h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
+### Step 2: Add the custom widget extending the gallery widget {#add_code1}
 
 In the `app/design/OrangeCo/orange/web/js` OrangeCo adds `orange-gallery.js` with the following content:
 <pre>
@@ -69,7 +69,7 @@ define([
 });
 </pre>
 
-<h3 id="config1">Step 3: Update the RequireJS configuration</h3>
+### Step 3: Update the RequireJS configuration {#config1}
 OrangeCo adds the custom `app/design/OrangeCo/orange/requirejs-config.js` with the following content:
 <pre>
 var config = {

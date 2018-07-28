@@ -39,13 +39,13 @@ After you've tested the Solr solution, you should perform the following tasks to
 	SELinux settings are entirely up to you; Magento does not recommend either enabling it or disabling it. Because SELinux is very complex, make sure you have an experienced system administrator who can configure it.
 *	Script Solr startup and shutdown as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>
 
-<h3 id="cores">Multiple core configuration</h3>
+### Multiple core configuration {#cores}
 
 If you have created multiple cores, make sure the value of the `maxBooleanClauses` parameter is the same on each. This parameter is defined in each core's `solrconfig.xml` file. Solr uses the value defined for the core that initialized most recently as the value for all cores. The default value for the Magento installation is 10240.
 
 If one or more of the `maxBooleanClauses` parameters is set too low, the search results page could display no results.
 
-<h3 id="solr-script">Script Solr startup and shutdown</h3>
+### Script Solr startup and shutdown {#solr-script}
 In a production environment, you should start and stop Solr using a script.
 
 <div class="bs-callout bs-callout-info" id="info">

@@ -192,7 +192,7 @@ The process for customizing your module includes
 * [Pre-configure the integration](#preconfig)
 
 
-<h3 id="resources">Define the required resources</h3>
+### Define the required resources {#resources}
 The `etc/integration/api.xml` file defines which {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} resources the integration has access to.
 
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
@@ -217,7 +217,7 @@ In the following example, the test integration requires access to the following 
 </integrations>
 {% endhighlight %}
 
-<h3 id="preconfig">Pre-configure the integration</h3>
+### Pre-configure the integration {#preconfig}
 
 Your module can optionally provide a configuration file `config.xml` so that the integration can be automatically pre-configured with default values. To enable this feature, create the `config.xml` file in the `etc/integration` directory.
 

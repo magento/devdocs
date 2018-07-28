@@ -16,7 +16,7 @@ You can run a single test independently, many tests together (that is, a test su
 
 FTF does not contain tests. All functional tests are located in `<magento2 root dir>/dev/tests/functional/`. 
 
-<h3 id="mtf_intro_extratools">What tools should I use to run tests with FTF?</h3>
+### What tools should I use to run tests with FTF? {#mtf_intro_extratools}
 
 -   [PHPUnit][] (downloaded via {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} during installation)
 
@@ -24,7 +24,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 -   Web browser
 
-<h3 id="mtf_intro_mtf-output">What do I have as output after running tests with FTF?</h3>
+### What do I have as output after running tests with FTF? {#mtf_intro_mtf-output}
 
 -   Tested application
 
@@ -60,13 +60,13 @@ Relative to your software development lifecycle, the FTF can help you:
 
 1.    During the maintenance phase, for periodic automated regression testing.
 
-<h3 id="mtf_intro_scope_use-case-ex">FTF use cases examples</h3>
+### FTF use cases examples {#mtf_intro_scope_use-case-ex}
 
 1.    As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).
 
 1.    As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.
 
-<h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
+### Non-functional testing {#mtf_intro_scope_non-func-test}
 
 FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 

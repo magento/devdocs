@@ -22,7 +22,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 
 ## What is an API? {#api-definition}
 <p>An application programming interface (API) is a set of interfaces and their implementations that a module provides to other modules.</p>
-<h3 id="api-types">API types</h3>
+### API types {#api-types}
 <p>The following items are considered types of APIs:</p>
 <ul>
    <li>Directory structure</li>

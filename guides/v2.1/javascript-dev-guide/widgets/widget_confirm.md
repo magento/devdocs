@@ -67,7 +67,7 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 <li><a href="#confirm_title">title</a></li>
 </ul>
 
-<h3 id="confirm_actions"><code>actions</code></h3>
+### <code>actions</code> {#confirm_actions}
 Widget callbacks.
 
 **Type**: Object
@@ -81,14 +81,14 @@ actions: {
 }
 {% endhighlight %}
 
-<h3 id="confirm_autoopen">autoOpen</h3>
+### autoOpen {#confirm_autoopen}
 Automatically open the confirmation window when the widget is initialized.
 
 **Type**: Boolean
 
 **Default value**: `false`
 
-<h3 id="confirm_clickableOverlay">clickableOverlay</h3>
+### clickableOverlay {#confirm_clickableOverlay}
 Close the confirmation window when a user clicks on the overlay.
 
 **Type**: Boolean
@@ -96,13 +96,13 @@ Close the confirmation window when a user clicks on the overlay.
 **Default value**: `true`
 
 
-<h3 id="confirm_content"><code>content</code></h3>
+### <code>content</code> {#confirm_content}
 
 The confirmation window content.
 
 **Type**: String.
 
-<h3 id="confirm_focus"><code>focus</code></h3>
+### <code>focus</code> {#confirm_focus}
 The selector of the element to be in focus when the confirmation window opens.
 If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
 
@@ -110,7 +110,7 @@ If `focus` is not specified or set to empty string, the focus is on close button
 
 **Default value**: `''`
 
-<h3 id="confirm_title"><code>title</code></h3>
+### <code>title</code> {#confirm_title}
 The title of the confirmation window.
 
 

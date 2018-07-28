@@ -34,7 +34,7 @@ Following are common terms used in this topic:
 ## Configuration load and merge {#config-files-loadmerge}
 This section discusses how configuration files are loaded and merged.
 
-<h3 id="config-files-load">How Magento loads configuration files</h3>
+### How Magento loads configuration files {#config-files-load}
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 * Primary configuration (<a href="{{ site.mage2000url }}app/etc/di.xml" target="_blank">app/etc/di.xml</a>). This file is used to bootstrap Magento.
@@ -45,7 +45,7 @@ Magento loads configuration files in the following order (all paths are relative
 
 *     `<component-name>`: Name of your component as defined in <a href="{{ site.mage2000url }}composer.json" target="_blank">composer.json</a>.
 
-<h3 id="config-files-load-merge-merge">Configuration file merge</h3>
+### Configuration file merge {#config-files-load-merge-merge}
 Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in `$idAttributes` array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.
 
 Magento's merge algorithm follows:
@@ -62,7 +62,7 @@ The following sections provide information about configuration types, their corr
 * <a href="#config-files-classes-objects">Configuration types and objects</a>
 * <a href="#config-files-classes-int">Configuration interfaces</a>
 
-<h3 id="config-files-classes-objects">Configuration types and objects</h3>
+### Configuration types and objects {#config-files-classes-objects}
 The following table shows each configuration type and the Magento configuration object to which it relates.
 
 <table>
@@ -111,7 +111,7 @@ The following table shows each configuration type and the Magento configuration 
       </tbody>
 </table>
 
-<h3 id="config-files-classes-int">Configuration interfaces</h3>
+### Configuration interfaces {#config-files-classes-int}
 You can interact with configuration files using interfaces under <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
 
 `Magento\Framework\Config` provides the following interfaces:

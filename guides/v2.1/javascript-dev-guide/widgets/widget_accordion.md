@@ -120,7 +120,7 @@ Accordion options coincide with <a href="{{ page.baseurl }}/javascript-dev-guide
 <li><a href="#collaps_open">openOnFocus</a></li>
 </ul>
 
-<h3 id="collaps_active"><code>active</code></h3>
+### <code>active</code> {#collaps_active}
 
 Defines which tab is active when the widget gets instantiated.
 
@@ -135,7 +135,7 @@ $("#element").accordion({ active: [0,1]});
 </pre>
 
 
-<h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
+### <code>multipleCollapsible</code> {#collaps_multi}
 Defines if multiple panels can be expanded at the same time.
 
 **Type**: Boolean
@@ -155,7 +155,7 @@ var multipleCollapsible = $("#element").accordion("option","multipleCollapsible"
 $("#element").tabs("option","multipleCollapsible",false);
 </pre>
 
-<h3 id="collaps_open"><code>openOnFocus</code></h3>
+### <code>openOnFocus</code> {#collaps_open}
 
 For keyboard navigation defines if the accordion expands when the title gets in focus.
 
@@ -174,7 +174,7 @@ The custom accordion methods are the following:
 <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3 id="meth_act"><code>activate(index)</code></h3>
+### <code>activate(index)</code> {#meth_act}
 Activate a tab with the specified `index`.
 
 **Type**: Number, Array.
@@ -188,7 +188,7 @@ $( "#element" ).accordion( "activate", 1 );
 $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
-<h3 id="meth_deact"><code>deactivate(index)</code></h3>
+### <code>deactivate(index)</code> {#meth_deact}
 Deactivate a tab with the specified `index`.
 
 

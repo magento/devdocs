@@ -31,7 +31,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 <p>Define data interfaces in the <b>Api/Data</b> subdirectory for a module.</p>
 <p>For example, the data interfaces for the Customer module are in the <b>/app/code/Magento/Customer/Api/Data</b> subdirectory.</p>
 
-<h3 id="search-results-interfaces">Data search results interfaces</h3>
+### Data search results interfaces {#search-results-interfaces}
 <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
 <p>You must define one interface for each data {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} for type hinting purposes. That is, the <code>getItems()</code> function in the
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
@@ -47,7 +47,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
 </ul>
 <p>For file names and coding standards, follow the defined <a href="{{ page.baseurl }}/coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
 <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
-<h3 id="repository-interfaces">Repository interfaces</h3>
+### Repository interfaces {#repository-interfaces}
 <p>Repository interfaces provide access to persistent data entities.</p>
 <p>For example, persistent data entities for the Customer module include Customer, Address, and Group. Consequently, repository interfaces for the Customer module are:</p>
 <ul>
@@ -106,7 +106,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
    </tr>
 </table>
 <p>Each data entity has a corresponding interface. Consequently, the <code>get()</code> function in the corresponding interface, for example, can return the exact type.</p>
-<h3 id="management-interfaces">Management interfaces</h3>
+### Management interfaces {#management-interfaces}
 <p>Management interfaces provide management functions that are not related to repositories. For example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -130,7 +130,7 @@ redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-pattern
       </td>
    </tr>
 </table>
-<h3 id="related-topics">Related topics</h3>
+### Related topics {#related-topics}
 <ul>
    <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
    <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>

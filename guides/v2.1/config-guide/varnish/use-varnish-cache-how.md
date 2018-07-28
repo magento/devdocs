@@ -33,7 +33,7 @@ More detail is provided in the sections that follow.
 ## Caching by browser request {#config-varnish-cache-browser}
 This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser's local {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 
-<h3 id="config-varnish-cache-browser-first">First browser request</h3>
+### First browser request {#config-varnish-cache-browser-first}
 `nginx.conf.sample` and `.htaccess` provide options for client caching. When the first request is made from a browser for a cacheable object, Varnish delivers it to the client.
 
 The following figure shows an example using a browser inspector.
@@ -46,7 +46,7 @@ The preceding example shows a request for the {% glossarytooltip 1a70d3ac-6bd9-4
 	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>
 </div>
 
-<h3 id="config-varnish-cache-browser-second">Second browser request</h3>
+### Second browser request {#config-varnish-cache-browser-second}
 If the same browser requests the same page again, these assets are delivered from the local browser cache, as the following figure shows.
 
 <p><img src="{{ site.baseurl }}/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache"></p>

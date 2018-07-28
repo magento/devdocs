@@ -14,7 +14,7 @@ functional_areas:
 ## Overview of translations {#m2devgde-xlate-intro}
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.
 
-<h3 id="translate_terms">Terms used</h3>
+### Terms used {#translate_terms}
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
 
 	"Add to Cart","Zum Warenkorb hinzufügen"
@@ -104,7 +104,7 @@ The Magento application automatically assembles translation dictionaries located
 
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
-<h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
+### The dictionary generator tool {#m2devgde-xlate-generatortool}
 <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.
 
 ## Language packages {#m2devgde-xlate-languagepack}

@@ -34,21 +34,21 @@ Menu widget options mostly coincide with the options of the {% glossarytooltip 5
 
 </ul>
 
-<h3 id="m_delay"><code>delay</code></h3>
+### <code>delay</code> {#m_delay}
 Set the delay length of opening submenu.
 
 **Type**: Number
 
 **Default value**: `300`
 
-<h3 id="m_responsive"><code>responsive</code></h3>
+### <code>responsive</code> {#m_responsive}
 Setting the default responsive handler for the navigation widget.
 
 **Type**: Boolean.
 
 **Default value**: `false`
 
-<h3 id="m_expanded"><code>expanded</code></h3>
+### <code>expanded</code> {#m_expanded}
 Display top level navigational items in mobile menu or all items.
 
 **Type**: Boolean.

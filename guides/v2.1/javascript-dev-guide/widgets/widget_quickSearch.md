@@ -36,7 +36,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 </ul>
 
 
-<h3 id="q_autocomplete"><code>autocomplete</code></h3>
+### <code>autocomplete</code> {#q_autocomplete}
 Attaches the `autocomplete` attribute to the search field.
 
 **Type**: String
@@ -46,7 +46,7 @@ Attaches the `autocomplete` attribute to the search field.
 **Accepted values**: `off`, `on`
 
 
-<h3 id="q_formSelector"><code>formSelector</code></h3>
+### <code>formSelector</code> {#q_formSelector}
 The form selector containing the search input field.
 
 **Type**: String 
@@ -54,42 +54,42 @@ The form selector containing the search input field.
 **Default value**: No form by default.
 
 
-<h3 id="q_minSearchLength"><code>minSearchLength</code></h3>
+### <code>minSearchLength</code> {#q_minSearchLength}
 Minimum number of characters required before the auto suggest triggers.
 
 **Type**: Integer
 
 **Default value**: `2`
 
-<h3 id="q_responseFieldElements"><code>responseFieldElements</code></h3>
+### <code>responseFieldElements</code> {#q_responseFieldElements}
 Selector for the response elements.
 
 **Type**: String
 
 **Default Value**: `ul li`
 
-<h3 id="q_searchLabel"><code>searchLabel</code></h3>
+### <code>searchLabel</code> {#q_searchLabel}
 Selector of a search input label.
 
 **Type**: String
 
 **Default value**: `[data-role=minisearch-label]`
 
-<h3 id="q_selectClass"><code>selectClass</code></h3>
+### <code>selectClass</code> {#q_selectClass}
 Class assigned to the selected suggested term.
 
 **Type**: String
 
 **Default value**: `selected`
 
-<h3 id="q_submitBtn"><code>submitBtn</code></h3>
+### <code>submitBtn</code> {#q_submitBtn}
 Disable the submit button. 
 
 **Type**: String
 
 **Default value**: `button[type="submit"]`
 
-<h3 id="q_template"><code>template</code></h3>
+### <code>template</code> {#q_template}
 Template responsible for rendering returned data (suggested terms).
 
 **Type**: String

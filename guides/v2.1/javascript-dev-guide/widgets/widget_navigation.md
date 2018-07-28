@@ -34,7 +34,7 @@ The navigation widget has the following options:
 <li><a href="#n_responsiveAction">responsiveAction</a></li>
 </ul>
 
-<h3 id="n_breakpoint"><code>breakpoint</code></h3>
+### <code>breakpoint</code> {#n_breakpoint}
 
 Width of user's window in px for which the menu switches between mobile view and desktop view.
 
@@ -42,7 +42,7 @@ Width of user's window in px for which the menu switches between mobile view and
 
 **Default value**: `768`
 
-<h3 id="n_container"><code>container</code></h3>
+### <code>container</code> {#n_container}
 
 Container to track the menu overflow on responsive navigation.
 
@@ -50,7 +50,7 @@ Container to track the menu overflow on responsive navigation.
 
 **Default value**: `#menu`
 
-<h3 id="n_maxItems"><code>maxItems</code></h3>
+### <code>maxItems</code> {#n_maxItems}
 
 The number of top level navigational items in main menu.
 
@@ -58,7 +58,7 @@ The number of top level navigational items in main menu.
 
 **Default value**: `null`
 
-<h3 id="n_moreText"><code>moreText</code></h3>
+### <code>moreText</code> {#n_moreText}
 
 Set the text for the overflow menu (i.e. more)
 
@@ -66,7 +66,7 @@ Set the text for the overflow menu (i.e. more)
 
 **Default value**: `more`
 
-<h3 id="n_responsiveAction"><code>responsiveAction</code></h3>
+### <code>responsiveAction</code> {#n_responsiveAction}
 
 The default responsive handler for the navigation widget.
 
@@ -84,8 +84,8 @@ The default responsive handler for the navigation widget.
 </ul>
 
 
-<h3 id="nav_setMaxItems"><code>setMaxItems()</code></h3>
+### <code>setMaxItems()</code> {#nav_setMaxItems}
 Moves the list items that are more than the total max item number set by the user option.
 
-<h3 id="nav_setupMoreMenu"><code>setupMoreMenu()</code></h3>
+### <code>setupMoreMenu()</code> {#nav_setupMoreMenu}
 Builds the more overflowing menu by cloning the main menu items.

@@ -49,7 +49,7 @@ This section discusses how to override:
 *	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">Base layout</a>
 *	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">Theme layout</a>
 
-<h3 id="fedg_layout_override_default">Override base layouts</h3>
+### Override base layouts {#fedg_layout_override_default}
 
 To add an overriding base layout file (to override a base layout provided by the module):
 
@@ -74,7 +74,7 @@ These files override the following layouts:
 <li><code>&lt;module_dir&gt;/view/frontend/layout/&lt;layout2&gt;.xml</code></li>
 </ul>
 
-<h3 id="fedg_layout_override_theme">Override theme layouts</h3>
+### Override theme layouts {#fedg_layout_override_theme}
 
 To add an overriding theme file (to override a parent theme layout):
 

@@ -27,7 +27,7 @@ The following topics discuss how to configure Solr to work with {{site.data.var.
 * <a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a>
 * <a href="#config-solr-magento">Configure Magento to work with Solr</a>
 
-<h3 id="config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</h3>
+### Copy the Magento Solr configuration and start Solr {#config-solr-copy-config-files}
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -86,7 +86,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
 	</div>
 
-<h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
+### Configure Magento to work with Solr {#config-solr-magento}
 This section discusses how to configure {{site.data.var.ee}} to use the Solr search engine.
 
 To configure Magento to work with Solr:

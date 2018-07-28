@@ -100,7 +100,7 @@ This way your custom JS component is used instead of the {% glossarytooltip 3425
 ## Extend a default JS component {#extend_js}
 You can add a custom JS component/widget, which will extend a default Magento component/widget.
 
-<h3 id="extend_js_widget">Extend Magento widget</h3>
+### Extend Magento widget {#extend_js_widget}
 
 To extend a default Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} widget, create `<your_widget_name>.js` with the following contents:
 
@@ -136,7 +136,7 @@ Where the following notation is used:
 
 For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
-<h3 id="extend_js_component">Extend a default Ui component</h3>
+### Extend a default Ui component {#extend_js_component}
 
 To extend a default JS Ui component, your custom script must contain the following:
 

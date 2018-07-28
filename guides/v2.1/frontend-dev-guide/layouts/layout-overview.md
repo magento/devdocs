@@ -64,7 +64,7 @@ For details, refer to <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/lay
 
 In this guide we use *layout files* when talking about concepts which are similarly applied to all of these types of layout files.
 
-<h3 id="layout-loc">Module and theme layout files</h3>
+### Module and theme layout files {#layout-loc}
 
 The following terms are used to distinguish layouts provided by different application components:
 

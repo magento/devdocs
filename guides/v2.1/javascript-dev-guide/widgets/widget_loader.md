@@ -27,7 +27,7 @@ The loader widget has the following options:
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_icon"><code>icon</code></h3>
+### <code>icon</code> {#l_icon}
 The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
 
 **Type**: String 
@@ -35,7 +35,7 @@ The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossaryt
 **Default value**: No image by default.
 
 
-<h3 id="l_template"><code>template</code></h3>
+### <code>template</code> {#l_template}
 {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} wrapper for the output, or a DOM element selector. 
 
 **Default value**:
@@ -48,7 +48,7 @@ The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossaryt
 '&lt;/div&gt;'
 </pre>
 
-<h3 id="l_texts"><code>texts</code></h3>
+### <code>texts</code> {#l_texts}
 
 An object that contains translations for loader text:
 <ul>
@@ -69,8 +69,8 @@ Loader is subscribed to the following events:
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_processStart"><code>processStart</code></h3>
+### <code>processStart</code> {#l_processStart}
 Display the loader. Can be triggered on any page element.
 
-<h3 id="l_processStop"><code>processStop</code></h3>
+### <code>processStop</code> {#l_processStop}
 Hide the loader. Can be triggered on any page element.
