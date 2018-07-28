@@ -11,13 +11,13 @@ functional_areas:
   - Frontend
 ---
 
-<h2 id="preproc_over">What's in this topic</h2>
+## What's in this topic {#preproc_over}
 
 The topic describes how stylesheets are preprocessed and compiled to {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} in the Magento application. It provides the theoretical background a {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer needs to debug stylesheets effectively.
 
 
 
-<h2 id="css_preprocess_terms">Terms used</h2>
+## Terms used {#css_preprocess_terms}
 <table>
 <tr>
 <th>
@@ -57,7 +57,7 @@ The root source files for the Blank theme:
 </table>
 
 
-<h2 id="less_modes">LESS compilation modes</h2>
+## LESS compilation modes {#less_modes}
 
 In the Magento application, the following modes of compiling <code>.less</code> files to CSS are implemented:
 
@@ -201,7 +201,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 
 This way Magento will skip the `@import` directive while resolving paths to the local resources.
 
-<h2 id="fedg_css-magento-import">The @magento_import directive</h2>
+## The @magento_import directive {#fedg_css-magento-import}
 
 <p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
 The standard <code>@import</code> directive includes a single file, which is found according to the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
