@@ -20,7 +20,7 @@ The first constructor parameter has a type of `Magento\Customer\Model\AddressFac
 
 Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.
 
-<h3 id="codegen-over-when">When is code generated?</h3>
+### When is code generated? {#codegen-over-when}
 Provided the Magento application is not set for <a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, code is generated when the Magento application cannot find a class when executing code.
 
 In particular,
@@ -33,12 +33,12 @@ In particular,
 
 You can also use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, "compiling" your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} optimizations.
 
-<h3 id="codegen-over-why">Why should you regenerate code?</h3>
+### Why should you regenerate code? {#codegen-over-why}
 Suppose a Factory or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Factory or Proxy exists on the file system, it is not regenerated. However, the Factory or Proxy implementation is now incomplete because it does not have the new methods. In this case, you must regenerate the Factory or Proxy class.
 
 If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.
 
-<h3 id="codegen-over-adv">Advantages of generating code</h3>
+### Advantages of generating code {#codegen-over-adv}
 Code generation is required in Magento 2. Generating code assures you of the following:
 
 *	The code is correct. You don’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon, and you don’t have to write tests for the generated code.

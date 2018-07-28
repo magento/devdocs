@@ -80,7 +80,7 @@ To set the compilation mode, do the following:
 <li>To save the settings, click <b>Save Config</b>.</li>
 </ol>
 
-<h3 id="server-side">Server-side LESS compilation</h3>
+### Server-side LESS compilation {#server-side}
 
 The following paragraph describes how the LESS preprocessor works in server-side compilation mode.
 For each CSS file included in the layouts, LESS preprocessor does the following:
@@ -140,7 +140,7 @@ Alternatively, to streamline the process of applying and debugging styles custom
 See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html) topic for details how to install, configure and use Grunt.
 
 
-<h3 id="client-side">Client-side LESS compilation</h3>
+### Client-side LESS compilation {#client-side}
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
 
 <ul>
@@ -210,7 +210,7 @@ The standard <code>@import</code> directive includes a single file, which is fou
 <code>@magento_import</code> can be used in the root source files of a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} only.
 
 
-<h3 id="magento-import-usage">@magento_import rules of usage</h3>
+### @magento_import rules of usage {#magento-import-usage}
 
 To include a <code>.less</code> file using the <code>@magento_import</code> directive:
 
@@ -242,7 +242,7 @@ The best practice is to specify the file extension in the path, though technical
 
 </ol>
 
-<h3 id="magento_import_example">@magento_import processing</h3>
+### @magento_import processing {#magento_import_example}
 
 In the scope of static resources preprocessing, the built-in LESS preprocessor does the following:
 

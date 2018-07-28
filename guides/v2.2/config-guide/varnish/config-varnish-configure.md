@@ -49,7 +49,7 @@ To modify the Varnish system configuration:
 
 3.	Save your changes to the Varnish configuration file and exit the text editor.
 
-<h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
+### Modify <code>default.vcl</code> {#config-varnish-config-default}
 This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.
 
 To minimally configure Varnish:
@@ -111,7 +111,7 @@ Perform the tasks discussed in the following sections in the order shown:
 *	<a href="#config-varnish-verify-start">Start Varnish</a>
 *	<a href="#config-varnish-verify-netstat">netstat</a>
 
-<h3 id="config-varnish-verify-start">Start Varnish</h3>
+### Start Varnish {#config-varnish-verify-start}
 Enter `service varnish start`
 
 If Varnish fails to start as a service, start it from the command line as follows:
@@ -132,7 +132,7 @@ If Varnish fails to start as a service, start it from the command line as follow
 		Child (29805) said
 		Child (29805) said Child starts
 
-<h3 id="config-varnish-verify-netstat">netstat</h3>
+### netstat {#config-varnish-verify-netstat}
 Log in to the Varnish server and enter the following command:
 
 	netstat -tulpn
