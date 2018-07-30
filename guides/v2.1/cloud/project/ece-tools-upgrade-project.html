@@ -2029,10 +2029,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Before beginning an upgrade or a patching process, create an active branch from the Integration environment and checkout the new branch to your local workstation. Dedicating a branch to the upgrade or the patch process helps to avoid interference with your work in progress.</p>
 
 <h2 id="remove-deprecated-packages">Remove deprecated packages</h2>
-<p>Before performing an upgrade to use the <code class="highlighter-rouge">ece-tools</code> package, check the <code class="highlighter-rouge">composer.json</code> file for the following deprecated packages and remove them:</p>
+<p>Before performing an upgrade to use the <code class="highlighter-rouge">ece-tools</code> package, check the <code class="highlighter-rouge">composer.lock</code> file for the following deprecated packages:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">magento-cloud-configuration</code></li>
+  <li><code class="highlighter-rouge">magento/magento-cloud-configuration</code></li>
   <li><code class="highlighter-rouge">magento/ece-patches</code></li>
 </ul>
 
@@ -2083,6 +2083,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="c1"># We run post deploy hook to clean and warm the cache. Available with ECE-Tools 2002.0.10.</span>
     <span class="na">post_deploy</span><span class="pi">:</span> <span class="pi">|</span>
         <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check for and remove the <a href="#remove-deprecated-packages">deprecated packages</a>. The deprecated packages can prevent a successful upgrade.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer remove magento/magento-cloud-configuration
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer remove magento/ece-patches
 </code></pre></div>    </div>
   </li>
   <li>
