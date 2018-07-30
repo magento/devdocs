@@ -25,9 +25,15 @@ The `ece-tools` package provides a `docker:build` command to generate the Docker
 - NGINX: `--nginx`
 - MariaDB: `--db`
 
-## Launch a Cloud Docker environment, `ece-tools` v2002.0.13 and later
+## Launch Docker configuration
 
-Use `ece tools` v2002.0.13 or later to generate the Docker compose configuration, convert `.php` configuration files to `.env` files, install {{site.data.var.ece}}, and deploy to a read-only file system in the Docker container.
+You can use the `ece-tools` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
+
+-  If you use `ece tools` v2002.0.13 or later, {{site.data.var.ece}} deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
+
+-  If you use `ece-tools` v2002.0.12, {{site.data.var.ece}} deploys to a writeable file system in the Docker container. This version does not support the `docker:config:convert` command.
+
+#### To launch Docker with `ece-tools` v2002.0.13 and later:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 
@@ -64,7 +70,7 @@ Use `ece tools` v2002.0.13 or later to generate the Docker compose configuration
     vendor/bin/ece-tools docker:config:convert
     ```
 
-    This converts your `.php` files to `.env` configuration files.
+    This converts your PHP files to ENV configuration files.
 
     * `docker/config.env`
     * `docker/global.env`
@@ -89,12 +95,12 @@ Use `ece tools` v2002.0.13 or later to generate the Docker compose configuration
     docker-compose run deploy cloud-deploy
     ```
 
-## Launch a Cloud Docker environment, `ece-tools` v2002.0.12
-
-Use `ece-tools` 2002.0.12 to generate the Docker compose configuration and deploy {{site.data.var.ece}} to a writeable file system in the Docker container. To deploy to a read-only file system, upgrade to `ece-tools` v2002.0.13 or later.
+#### To launch Docker with `ece-tools` v2002.0.12 and later:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
+
 1.  Add your credentials to `auth.json` file.
+
 1.  Update the template dependencies.
 
     ```bash
@@ -137,15 +143,16 @@ Use `ece-tools` 2002.0.12 to generate the Docker compose configuration and deplo
     -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
     -  [`https://localhost`](https://localhost){:target="\_blank"}
 
-## Stop and remove the Cloud Docker environment
+## Stop and remove the Docker configuration
 
-Remove all components of your local Magento Cloud template including containers, networks, volumes, and images.
+Remove all components of your local Magento Cloud Docker instance including containers, networks, volumes, and images.
 
 ```bash
 docker-compose down
 ```
 
-## Integration testing with ece-tools
+## Use the `ece-tools` package for integration testing
+
 Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:
 
 -  2-layer configuration for Docker build and Travis CI
