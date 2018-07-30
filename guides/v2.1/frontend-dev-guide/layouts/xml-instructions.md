@@ -300,7 +300,7 @@ Example:
 
 To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
-### &lt;referenceBlock&gt; and &lt;referenceContainer&gt; {#fedg_layout_xml-instruc_ex_ref}
+### fedg_layout_xml-instruc_ex_ref
 <p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
 <p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
 
