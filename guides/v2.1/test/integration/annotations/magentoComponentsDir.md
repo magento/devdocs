@@ -1,20 +1,16 @@
 ---
 group: integration-testing
 version: 2.1
-title: Component Registrar Annotation
-github_link: /test/integration/annotations/magentoComponentsDir.md
+title: Component registrar annotation
+github_link: test/integration/annotations/magentoComponentsDir.md
 ---
 
-Sometimes, tests require fixture components to be registered in the application for the period of the test run, so fixture data could be asserted in the tests.
-Though Magento application allows registration of components, it does not allow un-registration of registered components.
-It means that using only Magento application features, fixture components would remain registered for whole test suite run and could impact other tests.
-
-`@magentoComponentsDir` annotation allows to register fixture components with un-registration after the test is finished.
-This annotation allows to register all components in a specified directory recursively.
+When your test design require to register the fixture components and unregister them after the test execution, use the `@magentoComponentsDir` annotation.
+It enables you to register recursively all the components at a specified directory.
 
 ## Format
 
-> Register fixture components
+> Registration of the fixture components at the `<dir_path>` directory
 
 ```php?start_inline=1
 /**
@@ -22,22 +18,37 @@ This annotation allows to register all components in a specified directory recur
 */
 ```
 
-Here, `<dir_path>` is a path to the directory with fixture components.
-Each component that should be registered must contain a file called `registration.php` file.
+Here, `<dir_path>` is the path to the directory with the fixture components.
+Each component to be registered must contain the `registration.php` file.
 
-## Usage
+## Scope
 
-> Register fixture components
+The annotation is available on different levels: for a test case and for a test method.
+
+### Test case
+
+The `@magentoComponentsDir` annotation for the entire test case is applicable for all test methods in the test case.
+
+### Test method
+
+The `@magentoComponentsDir` annotation for a test method configures the test to run with the registered components located in the specified directories.
+The test method annotation automatically contains the `@magentoComponentsDir` annotations specified for the parent test case.
+
+## Example
+
+The following example demonstrates the usage of the `@magentoComponentsDir` annotation in different scopes.
+ 
+> Example of `Magento/Foo/_files/modules/moduleOne/registration.php`
 
 ```php?start_inline=1
-// Magento/Foo/_files/modules/moduleOne/registration.php
- 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Magento_FooOne',
     __DIR__
 );
 ```
+
+> Fixture components registration using the annotation
 
 ```php?start_inline=1
 namespace Magento\Foo;
@@ -52,9 +63,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
      */
     public function testOne()
     {
-        /**
-         * Registered components from Magento/Foo/_files/modules and Magento/Foo/_files/themes
-         */
+       ...   // Here you can use the registered components from 'Magento/Foo/_files/modules' and 'Magento/Foo/_files/themes'
     }
  
     /**
@@ -63,20 +72,18 @@ class BarTest extends \PHPUnit_Framework_TestCase
      */
     public function testTwo()
     {
-        /**
-        * Registered components from Magento/Foo/_files/modules, Magento/Foo/_files/libs and Magento/Baz/_files/languages
-        */
+       ...   // Here you can use the registered components from 'Magento/Foo/_files/modules', 'Magento/Foo/_files/libs', and 'Magento/Baz/_files/languages'
     }
 }
 ```
 
-### Registration of themes
+## Theme registration
 
-Themes require additional registration (in database) in most of cases.
+In most cases, a theme must be registered in the database.
+The `@magentoComponentsDir` annotation is NOT responsible for this.
 
-`@magentoComponentsDir` annotation is NOT responsible for this and this is up to the developer of the test to determine whether to register themes in the DB or not.
-The reason for such distinction of responsibilities is that themes registration may require special pre-conditions and it's impossible to re-register themes w/o resetting whole application.
-Additionally, it breaks DB integrity, so the developer must also use `@magentoDbIsolation` annotation in this case.
+Each time you register the theme, you have to reset the entire application.
+Use the [`@magentoDbIsolation`] annotation to keep the DB integrity in safe.
 
 > Example
 
@@ -89,7 +96,7 @@ use Magento\Backend\App\Area\FrontNameResolver as BackendFrontNameResolver;
 class BarTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Just adding fixture themes to the list of available themes in the application
+     * Add fixture themes to the list of available themes in the application
      *
      * @magentoComponentsDir Magento/Foo/_files/themes
      * @magentoDbIsolation enabled
@@ -105,7 +112,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
     }
  
     /**
-     * Additionally to registering fixture theme(s), set one of them to the default theme for the store
+     * Set a default theme for the store
      *
      * @magentoComponentsDir Magento/Foo/_files/themes
      * @magentoDbIsolation enabled
@@ -116,7 +123,6 @@ class BarTest extends \PHPUnit_Framework_TestCase
  
         $themes = [BackendFrontNameResolver::AREA_CODE => 'Magento/test_theme'];
         $design = $objectManager->create('Magento\Theme\Model\View\Design', ['themes' => $themes]);
-        // this can't be done once themes registration already happened, so should be done before
         $objectManager->addSharedInstance($design, 'Magento\Theme\Model\View\Design');
  
         /** @var \Magento\Theme\Model\Theme\Registration $registration */
@@ -129,3 +135,7 @@ class BarTest extends \PHPUnit_Framework_TestCase
     }
 }
 ```
+
+<!-- Link definitions -->
+
+[`@magentoDbIsolation`]: ./magentoDbIsolation.html
