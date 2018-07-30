@@ -36,7 +36,7 @@ We _strongly recommend_ you use Varnish in production. The built-in full-page ca
 
 For more information about Varnish, see:
 
-*	[wikipedia]
+*	[Wikipedia]
 *	[The Big Varnish Picture]
 *	[Varnish startup options]
 *	[Varnish and Website Performance]
@@ -111,7 +111,7 @@ We know of the following issues with Varnish:
 [Varnish Cache]: https://www.varnish-cache.org/
 {:target="_blank"}
 [database]: {{ page.baseurl }}/config-guide/database/database.html
-[wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
+[Wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
 {:target="_blank"}
 [The Big Varnish Picture]: https://www.varnish-cache.org/docs/trunk/users-guide/intro.html
 {:target="_blank"}

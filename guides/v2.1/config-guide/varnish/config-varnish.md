@@ -23,7 +23,7 @@ We _strongly recommend_ you use Varnish (or [Redis]) in production. The built-in
 
 For more information about Varnish, see:
 
-*	[wikipedia]
+*	[Wikipedia]
 *	[The Big Varnish Picture]
 *	[Varnish startup options]
 *	[Varnish and Website Performance]
@@ -87,7 +87,7 @@ We know of the following issues with Varnish:
 {:target="_blank"}
 [Redis]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [database]: {{ page.baseurl }}/config-guide/database/database.html
-[wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
+[Wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
 {:target="_blank"}
 [The Big Varnish Picture]: https://www.varnish-cache.org/docs/trunk/users-guide/intro.html
 {:target="_blank"}
