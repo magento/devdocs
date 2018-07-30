@@ -95,6 +95,9 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     docker-compose run deploy cloud-deploy
     ```
 
+1.  Open the `http://localhost:8080` URL in a browser to access your local Magento Cloud template.
+
+
 #### To launch Docker with `ece-tools` v2002.0.12 and later:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
@@ -137,11 +140,6 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
 1.  Open the `http://localhost:8080` URL in a browser to access your local Magento Cloud template.
 
-
-1. Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
-
-    -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
-    -  [`https://localhost`](https://localhost){:target="\_blank"}
 
 ## Stop and remove the Docker configuration
 
