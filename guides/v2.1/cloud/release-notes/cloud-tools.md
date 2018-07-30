@@ -65,7 +65,7 @@ Cloud configuration:
 
 ## v2002.0.11
 
-{:.bs-callout bs-callout-info}
+{:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 #### New features
@@ -124,9 +124,8 @@ The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 ## v2002.0.9
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) to get this and all future updates.
-</div>
 
 #### New features
 -   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x. You must [upgrade to ece-tools]({{ site.baseurl }}/guides/v2.1/cloud/project/ece-tools-upgrade-project.html) to use these features.
@@ -153,9 +152,9 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 -   <!-- MAGECLOUD-1674 -->We added support for an earlier version of `symfony/yaml` to fix conflicts with some packages, which are not yet compatible with the latest version.
 
 ## v2002.0.8
-<div class="bs-callout bs-callout-info" markdown="1">
+
+{:.bs-callout .bs-callout-info}
 We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
-</div>
 
 #### New features
 -   <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->**Improved logging**
@@ -282,9 +281,8 @@ We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this r
 -   <!--MAGECLOUD-1020-->We fixed an issue that was causing redirect loops due to disabled by default secure admin.
 
 ## v2002.0.0
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
-</div>
 
 ### Initial release
 Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.

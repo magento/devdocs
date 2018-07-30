@@ -59,11 +59,9 @@ We hope you have a good working knowledge of Git. Need some help? Don't worry, w
 
 To get started with Git, you should have [Git installed](https://git-scm.com/downloads){:target="\_blank"} on your local.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, {{site.data.var.ee}} adds two additional requirements:</p>
-  <ul><li>The <code>/</code> character isn't allowed.</li>
-  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
-</div>
+{:.bs-callout .bs-callout-info}
+In addition to Git requirements for valid branch names, {{site.data.var.ee}} adds two additional requirements:
+The `/` character is not allowed. Branch names must be case-insensitively unique. In other words, if you have a branch named `CaSe`, you cannot create another branch named `case`.
 
 You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.
 
@@ -82,9 +80,8 @@ This software is *not* upgradable but versions for the following software is con
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) 3.5
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, 2.4, and 5.2
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Elasticsearch 5.2 is only available for 2.2.3 and higher.
-</div>
 
 For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
 

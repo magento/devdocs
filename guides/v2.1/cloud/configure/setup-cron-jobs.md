@@ -40,9 +40,8 @@ crons:
         cmd: "php bin/magento cron:run"
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 We use only this one cron for cloud due to the read-only nature of the environments. This is different from {{site.data.var.ee}} which has three default cron jobs.
-</div>
 
 Magento uses a five value specification for a cron job. The numbers per each `* * * * *` is as follows:
 
@@ -82,9 +81,8 @@ With the settings:
 ## Add cron jobs to .magento.app.yaml {#add-cron}
 You should add all cron jobs to your [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) file in the `crons` section.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The default cron interval for all environments provisioned in the us-3, eu-3, and ap-3 regions is 1 minute. The default cron interval in all other regions is 5 minutes for Pro Integration environments and 1 minute for Pro Staging and Production environments. You cannot configure more frequent intervals than the default minimums.
-</div>
 
 We include a default cron job for Magento in the default file:
 

@@ -66,9 +66,8 @@ For Pro, the deployment log for Staging and Production is located in `/var/log/p
 
 Magento logs are located in the `<magento root dir>/var/log` directory.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{:.bs-callout .bs-callout-tip}
 You can also [set up log-based Slack and email notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html).
-</div>
 
 ## Build logs {#build-log}
 After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of `git push`, so you can observe them in the terminal or capture them (along with error messages) with `git push > build.log 2>&1`.
@@ -92,7 +91,7 @@ Logs for all deployments that have occurred on this environment are appended to 
 
 The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:
 
-{% highlight xml %}
+```xml
 [2016-10-11 22:15:38] Starting pre-deploy.
 ...
 [2016-10-11 22:15:39] Pre-deploy complete.
@@ -103,7 +102,7 @@ The actual log output is highly verbose to allow troubleshooting. The following 
 ... more ...
 
 [2016-10-11 22:15:46] Deployment complete.
-{% endhighlight %}
+```
 
 The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.

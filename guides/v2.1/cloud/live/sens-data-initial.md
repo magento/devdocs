@@ -13,7 +13,7 @@ Configuration management exports your configurations to a file for pushing acros
 This example shows how to use the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm) for managing the configuration:
 
 1.	Enter your configurations in your Integration environment Admin panel.
-2.	Create `config.local.php` and transfer it to your local system.
+2.	Create `config.local.php` and transfer it to your local workstation.
 3.	Push `config.local.php` to the branch and Integration environment.
 4.	Verify your settings are not editable in the Admin panel. Any configurations exported to `config.local.php` make those fields in the Admin panel read-only and disabled for edits.
 5.	Update and modify configurations again in Integration and recreate the file to update in Git:
@@ -21,9 +21,9 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 	2.	Change configuration settings on the Integration environment.
 	3.	Re-create and push the updated `config.local.php` to the Integration environment.
 
-<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
+<!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
-</div> -->
+-->
 
 For example, you may want to set the following settings:
 
@@ -69,12 +69,10 @@ To change locale and static file optimization settings:
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
 10.	Log out of the Magento Admin.
 
-## Export values and transfer config.local.php to your local system {#export}
+## Export values and transfer config.local.php to your local workstation {#export}
 This step creates and transfers the `config.local.php` configuration file on the Integration environment using a command you run on your local machine.
 
-This procedure corresponds to step 2 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
-
-To create and transfer `config.local.php`:
+This procedure corresponds to step 2 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local workstation so you can add it to Git.
 
 {% include cloud/sens-data-create-config-local.md %}
 
@@ -114,7 +112,7 @@ The following snippet from `config.local.php` shows an example of changing the d
 </pre>
 
 ## Push and deploy config.local.php to environments {#deploy}
-Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+Now that you've created `config.local.php` and transferred it to your local workstation, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 The following command adds, commits, and pushes to master:
 
@@ -155,7 +153,7 @@ Before you can change settings on the Integration environment, delete `app/etc/c
 
 To delete `config.local.php`:
 
-1.	On your local system, make sure you're on the `master` branch.
+1.	On your local workstation, make sure you're on the `master` branch.
 2.	SSH to the integration server:
 
 		magento-cloud ssh
@@ -189,7 +187,7 @@ To change values in the Integration environment Magento Admin:
 ### Generate a new version of config.local.php {#regenerate}
 To generate a new file:
 
-1.	On your local system, find the integration server's SSH URL.
+1.	On your local workstation, find the integration server's SSH URL.
 
 		magento-cloud environment:ssh --pipe
 2.	Create `config.local.php` on the integration server.
@@ -200,7 +198,7 @@ To generate a new file:
 
 		ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 5.	If you haven't done so already, change to the project root directory.
-6.	Transfer `config.local.php` to your local system.
+6.	Transfer `config.local.php` to your local workstation.
 
 		rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
 
