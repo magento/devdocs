@@ -1750,71 +1750,63 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p>Magento Commerce (Cloud) enables you to administer users by assigning them one or more roles. A <em>role</em> provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.</p>
 
-<div>
+<p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+<h2 id="cloud-role-acct-owner">Account owner role</h2>
+<p>The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the Magento Commerce (Cloud) account through the account creation process.</p>
 
-    <p>We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.</p>
+<p>The account has super user access and additional capabilities for managing all aspects of your project and environments.</p>
 
-    <p>If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
-  </div>
+<h2 id="cloud-role-project">Project-level roles</h2>
+<p>You can assign users to the following roles per project:</p>
 
-  <h2 id="cloud-role-acct-owner">Account owner role</h2>
-  <p>The Account Owner is the only user with the Account Owner role. This user can perform any task in any project or environment, including deleting it. The account is associated with the email address, name, and information for the person who registered the Magento Commerce (Cloud) account through the account creation process.</p>
+<ul>
+  <li>Project administrator (also referred to as <em>super user</em>) can change settings and execute actions on any environment, including creating and restoring snapshots.</li>
+  <li>Project reader can view all environments in a project but cannot execute any actions on them.</li>
+</ul>
 
-  <p>The account has super user access and additional capabilities for managing all aspects of your project and environments.</p>
+<h2 id="cloud-role-env">Environment-level roles</h2>
+<p>A project reader can have one of the following roles per environment:</p>
 
-  <h2 id="cloud-role-project">Project-level roles</h2>
-  <p>You can assign users to the following roles per project:</p>
+<ul>
+  <li>Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.</li>
+  <li>Environment contributor can push code to this environment and branch the environment.</li>
+  <li>Environment reader can view this environment only.</li>
+</ul>
 
-  <ul>
-    <li>Project administrator (also referred to as <em>super user</em>) can change settings and execute actions on any environment, including creating and restoring snapshots.</li>
-    <li>Project reader can view all environments in a project but cannot execute any actions on them.</li>
-  </ul>
-
-  <h2 id="cloud-role-env">Environment-level roles</h2>
-  <p>A project reader can have one of the following roles per environment:</p>
-
-  <ul>
-    <li>Environment administrator can change settings and execute actions on this environment, including merging with the parent environment.</li>
-    <li>Environment contributor can push code to this environment and branch the environment.</li>
-    <li>Environment reader can view this environment only.</li>
-  </ul>
-
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
   <p>We recommend you limit the environment administrator role to as few users as possible.</p>
 </div>
 
-  <h2 id="role-management-best-practices">Role management best practices</h2>
-  <p>When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the <code class="highlighter-rouge">master</code> environment.</p>
+<h2 id="role-management-best-practices">Role management best practices</h2>
+<p>When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the <code class="highlighter-rouge">master</code> environment.</p>
 
-  <p>For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to “Contributor”.</p>
+<p>For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to “Contributor”.</p>
 
-  <div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-warning">
     <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
 </div>
 
-  <h2 id="create-and-manage-users">Create and manage users</h2>
-  <p>You can create and manage users using the Magento Cloud CLI or the Web Interface.</p>
+<h2 id="create-and-manage-users">Create and manage users</h2>
+<p>You can create and manage users using the Magento Cloud CLI or the Web Interface.</p>
 
-  <h3 id="cloud-user-mg-cli">Manage users with the CLI</h3>
-  <p>You can use the Magento Commerce (Cloud) command line client to fully manage your users and integrate this with any other automated system.</p>
+<h3 id="cloud-user-mg-cli">Manage users with the CLI</h3>
+<p>You can use the Magento Commerce (Cloud) command line client to fully manage your users and integrate this with any other automated system.</p>
 
-  <p>Available commands:</p>
+<p>Available commands:</p>
 
-  <ul>
-    <li><code class="highlighter-rouge">magento-cloud user:add</code> adds a user to the project</li>
-    <li><code class="highlighter-rouge">magento-cloud user:delete</code> deletes a user</li>
-    <li><code class="highlighter-rouge">magento-cloud user:list [users]</code> lists project users</li>
-    <li><code class="highlighter-rouge">magento-cloud user:role</code> views or change a user’s role</li>
-  </ul>
+<ul>
+  <li><code class="highlighter-rouge">magento-cloud user:add</code> adds a user to the project</li>
+  <li><code class="highlighter-rouge">magento-cloud user:delete</code> deletes a user</li>
+  <li><code class="highlighter-rouge">magento-cloud user:list [users]</code> lists project users</li>
+  <li><code class="highlighter-rouge">magento-cloud user:role</code> views or change a user’s role</li>
+</ul>
 
-  <p>For example, the following command adds the project administrator (<code class="highlighter-rouge">admin</code>) role to <code class="highlighter-rouge">alice@example.com</code> and gives her <code class="highlighter-rouge">contributor</code> privileges to the <code class="highlighter-rouge">development</code> environment:</p>
+<p>For example, the following command adds the project administrator (<code class="highlighter-rouge">admin</code>) role to <code class="highlighter-rouge">alice@example.com</code> and gives her <code class="highlighter-rouge">contributor</code> privileges to the <code class="highlighter-rouge">development</code> environment:</p>
 
-  <p>The following prompts are displayed:</p>
+<p>The following prompts are displayed:</p>
 
-  <pre class="no-copy">magento-cloud user:add
+<pre class="no-copy">magento-cloud user:add
 
 Email address: alice@example.com
 The user's project role can be 'viewer' ('v') or 'admin' ('a').
@@ -1828,62 +1820,61 @@ Adding users can result in additional charges.
 Are you sure you want to add this user? [Y/n]
 User alice@example.com created</pre>
 
-  <p>After this has been done, the user will receive an e-mail asking her to confirm
+<p>After this has been done, the user will receive an e-mail asking her to confirm
 her details and register an account name and a password.</p>
 
-  <p>To change Alice’s role on the environment <code class="highlighter-rouge">development</code> to <code class="highlighter-rouge">admin</code>, use the following command:</p>
+<p>To change Alice’s role on the environment <code class="highlighter-rouge">development</code> to <code class="highlighter-rouge">admin</code>, use the following command:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud user:role alice@example.com --level environment --environment development --role admin
-</code></pre></div>  </div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud user:role alice@example.com --level environment --environment development --role admin
+</code></pre></div></div>
 
-  <p>Use <code class="highlighter-rouge">magento-cloud list</code> to get the full list of commands.</p>
+<p>Use <code class="highlighter-rouge">magento-cloud list</code> to get the full list of commands.</p>
 
-  <h3 id="cloud-user-webinterface">Manage users with the Web Interface</h3>
+<h3 id="cloud-user-webinterface">Manage users with the Web Interface</h3>
 
-  <p>To create user accounts using the Web Interface:</p>
+<p>To create user accounts using the Web Interface:</p>
 
-  <ol>
-    <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
-    <li>
-      <p>Click the <strong>Projects</strong> tab as the following figure shows.</p>
+<ol>
+  <li>Log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce (Cloud) account</a>.</li>
+  <li>
+    <p>Click the <strong>Projects</strong> tab as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_account_project.png" alt="Click the projects tab to access your Cloud project" width="550px" /></p>
-    </li>
-    <li>Click the name of your project.</li>
-    <li>
-      <p>Click the configure project button next to project name in the top navigation bar as the following figure shows.</p>
+    <p><img src="/common/images/cloud_account_project.png" alt="Click the projects tab to access your Cloud project" width="550px" /></p>
+  </li>
+  <li>Click the name of your project.</li>
+  <li>
+    <p>Click the configure project button next to project name in the top navigation bar as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_project_gear.png" alt="Configure the project" width="184px" /></p>
-    </li>
-    <li>
-      <p>In the right pane, click <strong>Add Users</strong>.</p>
+    <p><img src="/common/images/cloud_project_gear.png" alt="Configure the project" width="184px" /></p>
+  </li>
+  <li>
+    <p>In the right pane, click <strong>Add Users</strong>.</p>
 
-      <p><img src="/common/images/cloud_project-config.png" alt="Start creating users" width="500px" /></p>
-    </li>
-    <li>
-      <p>Click <strong>Add User</strong>.</p>
+    <p><img src="/common/images/cloud_project-config.png" alt="Start creating users" width="500px" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Add User</strong>.</p>
 
-      <p><img src="/common/images/cloud_project-add-superuser.png" alt="Add users" width="500px" /></p>
-    </li>
-    <li>Enter the user’s e-mail address.</li>
-    <li>
-      <p>Select the access for the account:</p>
+    <p><img src="/common/images/cloud_project-add-superuser.png" alt="Add users" width="500px" /></p>
+  </li>
+  <li>Enter the user’s e-mail address.</li>
+  <li>
+    <p>Select the access for the account:</p>
 
-      <ul>
-        <li>For a project administrator account, select the <strong>Super User</strong> checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.</li>
-        <li>Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.</li>
-      </ul>
-    </li>
-    <li>Click <strong>Add User</strong>.</li>
-  </ol>
+    <ul>
+      <li>For a project administrator account, select the <strong>Super User</strong> checkbox. This provides Admin rights for all settings and environments. If not selected, the account has only view options for all environments on a project.</li>
+      <li>Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.</li>
+    </ul>
+  </li>
+  <li>Click <strong>Add User</strong>.</li>
+</ol>
 
-  <p>The users you add receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
+<p>The users you add receive an e-mail inviting them to join the Magento Commerce (Cloud) project. The user must follow the prompts to register an account and verify their e-mail address. They receive access based on the set project and environment permissions.</p>
 
-  <h2 id="rebuild">Rebuild the environment</h2>
-  <p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds are triggered when you push a new commit to an environment. To be able to rebuild without new code changes, use the command <code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code> to create an empty commit and “force” rebuilding the environment.</p>
+<h2 id="rebuild">Rebuild the environment</h2>
+<p>After a new user is added to an environment, the environment must be rebuilt. Rebuilds are triggered when you push a new commit to an environment. To be able to rebuild without new code changes, use the command <code class="highlighter-rouge">git commit --allow-empty -m "redeploy" &amp;&amp; git push &lt;branch name&gt;</code> to create an empty commit and “force” rebuilding the environment.</p>
 
-  <p>When the environment rebuild is complete, allow a short time for the routes to update fully and for the new user to be able to use SSH access.</p>
-</div>
+<p>When the environment rebuild is complete, allow a short time for the routes to update fully and for the new user to be able to use SSH access.</p>
 
 			
 		</div>

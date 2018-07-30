@@ -2103,158 +2103,144 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="pro">Pro plan projects</h2>
 <p>For Pro plan projects, make sure to complete all development and merging of your code to the <code class="highlighter-rouge">master</code> branch in the Integration environment. Only the <code class="highlighter-rouge">master</code> branch is deployed to Staging then Production.</p>
 
-<div>
+<p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+<p>For <strong>first time setup</strong> to migrate your database and deploy code to Staging or Production, you will:</p>
 
-    <p>We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.</p>
+<ol>
+  <li>Create a support ticket to <a href="#pro-yaml">migrate deployment hooks</a>. In this ticket, include your public SSH keys to add to Staging and Production.</li>
+  <li>Get your <a href="#pro-urls">access URLs and SSH</a> for Staging and Production.</li>
+  <li>Set up your <a href="#ssh-agent">SSH agent</a> for Staging and Production.</li>
+</ol>
 
-    <p>If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
-  </div>
+<p>If your project was created before October 23, 2017, you also need to set up <a href="#pro-remote">remote Git repositories</a> on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.</p>
 
-  <p>For <strong>first time setup</strong> to migrate your database and deploy code to Staging or Production, you will:</p>
+<p>If you haven’t done so already, upload any <a href="/guides/v2.2/cloud/access-acct/fastly.html#upload-vcl-snippets">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
 
-  <ol>
-    <li>Create a support ticket to <a href="#pro-yaml">migrate deployment hooks</a>. In this ticket, include your public SSH keys to add to Staging and Production.</li>
-    <li>Get your <a href="#pro-urls">access URLs and SSH</a> for Staging and Production.</li>
-    <li>Set up your <a href="#ssh-agent">SSH agent</a> for Staging and Production.</li>
-  </ol>
+<h3 id="pro-yaml">Migrate your <code class="highlighter-rouge">.magento.app.yaml</code> file</h3>
+<p><strong>Important:</strong> If you have <strong>not modified</strong> the default deployment hooks or configurations, skip this step and continue with <a href="#pro-urls">Get your Pro access URLs</a>. Only migrate the file if you modified the deployment hooks or added configuration updates.</p>
 
-  <p>If your project was created before October 23, 2017, you also need to set up <a href="#pro-remote">remote Git repositories</a> on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.</p>
+<p>For technical reasons, you must enter a Support ticket to add your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file to Staging and Production environments. This affects all Pro projects created before and after October 23, 2017.</p>
 
-  <p>If you haven’t done so already, upload any <a href="/guides/v2.2/cloud/access-acct/fastly.html#upload-vcl-snippets">Fastly VCL snippets</a> in your Integration environment <code class="highlighter-rouge">master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
+<p>You can request that we push <code class="highlighter-rouge">.magento.app.yaml</code>, <code class="highlighter-rouge">services.yaml</code>, and <code class="highlighter-rouge">routes.yaml</code>, set up cron jobs, and enable Xdebug and PHPUnit, which assists you in troubleshooting coding issues encountered during deployment. Because of the memory requirements, we recommend you disable Xdebug before your site is live.</p>
 
-  <h3 id="pro-yaml">Migrate your <code class="highlighter-rouge">.magento.app.yaml</code> file</h3>
-  <p><strong>Important:</strong> If you have <strong>not modified</strong> the default deployment hooks or configurations, skip this step and continue with <a href="#pro-urls">Get your Pro access URLs</a>. Only migrate the file if you modified the deployment hooks or added configuration updates.</p>
+<p>If you added your SSH keys to the Staging and Production environments, you can also directly SSH into the environment to use the Git CLI commands for deployments.</p>
 
-  <div>
+<p class="bs-callout bs-callout-info">Optionally, you can replace the <code class="highlighter-rouge">hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you use the shell script.</p>
 
-    <p>For technical reasons, you must enter a Support ticket to add your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file to Staging and Production environments. This affects all Pro projects created before and after October 23, 2017.</p>
+<h3 id="pro-urls">Get your Pro access URLs</h3>
+<p>For Pro projects created <strong>after October 23, 2017</strong>, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.</p>
 
-    <p>You can request that we push <code class="highlighter-rouge">.magento.app.yaml</code>, <code class="highlighter-rouge">services.yaml</code>, and <code class="highlighter-rouge">routes.yaml</code>, set up cron jobs, and enable Xdebug and PHPUnit, which assists you in troubleshooting coding issues encountered during deployment. Because of the memory requirements, we recommend you disable Xdebug before your site is live.</p>
+<p><img src="/common/images/cloud_project-access.png" alt="Access your project" /></p>
 
-    <p>If you added your SSH keys to the Staging and Production environments, you can also directly SSH into the environment to use the Git CLI commands for deployments.</p>
+<p>For Pro projects created <strong>before October 23, 2017</strong>, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You’ll use this information for accessing the environments.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-  <p>Optionally, you can replace the <code>hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you use the shell script.</p>
-</div>
+<ul>
+  <li>
+    <p>Git URL format:</p>
 
-    <h3 id="pro-urls">Get your Pro access URLs</h3>
-    <p>For Pro projects created <strong>after October 23, 2017</strong>, you can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link.</p>
+    <ul>
+      <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
+      <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>SSH URL format:</p>
 
-    <p><img src="/common/images/cloud_project-access.png" alt="Access your project" /></p>
+    <ul>
+      <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Web URL format:</p>
 
-    <p>For Pro projects created <strong>before October 23, 2017</strong>, you would need to access the information we provided when creating your account. This information is typically provided in a OneDrive onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You’ll use this information for accessing the environments.</p>
+    <ul>
+      <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="pro-remote">Set up Pro remote Git repositories</h3>
+<p>For Pro projects created <strong>after October 23, 2017</strong>, you do not need to complete this step. Your Staging and Production environments are branches of <code class="highlighter-rouge">master</code> with configured deployment targets. You can simply merge code to these environments from Integration <code class="highlighter-rouge">master</code>. You can also use the Project Web Interface to merge your code without SSH or Git commands.</p>
+
+<p>For Pro projects created <strong>before October 23, 2017</strong>, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.</p>
+
+<p>When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environments and push code and migrate data and files using Git commands.</p>
+
+<p>Using a terminal connection, enter Git commands to add the remote repositories.</p>
+
+<p>The Git command syntax is:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+</code></pre></div></div>
+
+<p>The following commands are examples for setting up remotes on Staging and Production:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+</code></pre></div></div>
+
+<h2 id="ssh-agent">Set up your SSH agent and add the SSH key</h2>
+<p>You only need to set up your SSH agent on these servers once. SSH agent helps contain is a background program that handles passwords for your SSH private keys.</p>
+
+<p><strong>How it works!</strong> After you configure the agent and settings, you can migrate files easier using SSH or <code class="highlighter-rouge">scp</code> between servers. The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system, helping you connect using your local private SSH key. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.</p>
+
+<p>You can use any terminal client you prefer for SSH access, or see our <a href="/guides/v2.2/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
+
+<p>To set up an SSH agent:</p>
+
+<ol>
+  <li>In a terminal client, log in to your local system.</li>
+  <li>
+    <p>Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add -l
+</code></pre></div>    </div>
+
+    <p>One of the following messages displays:</p>
 
     <ul>
       <li>
-        <p>Git URL format:</p>
+        <p>Displays a working and running SSH agent: <code class="highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
 
-        <ul>
-          <li>Staging: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-          <li>Production: <code class="highlighter-rouge">git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
-        </ul>
+        <p>Skip to step 4.</p>
       </li>
       <li>
-        <p>SSH URL format:</p>
+        <p>The SSH agent has not started: <code class="highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
 
-        <ul>
-          <li>Staging: <code class="highlighter-rouge">&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-          <li>Production: <code class="highlighter-rouge">&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        </ul>
-      </li>
-      <li>
-        <p>Web URL format:</p>
-
-        <ul>
-          <li>Staging: <code class="highlighter-rouge">http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-          <li>Production: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-        </ul>
+        <p>Continue with step 3.</p>
       </li>
     </ul>
+  </li>
+  <li>
+    <p>To start the SSH agent, enter the following command:</p>
 
-    <h3 id="pro-remote">Set up Pro remote Git repositories</h3>
-    <p>For Pro projects created <strong>after October 23, 2017</strong>, you do not need to complete this step. Your Staging and Production environments are branches of <code class="highlighter-rouge">master</code> with configured deployment targets. You can simply merge code to these environments from Integration <code class="highlighter-rouge">master</code>. You can also use the Project Web Interface to merge your code without SSH or Git commands.</p>
-
-    <p>For Pro projects created <strong>before October 23, 2017</strong>, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.</p>
-
-    <p>When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environments and push code and migrate data and files using Git commands.</p>
-
-    <p>Using a terminal connection, enter Git commands to add the remote repositories.</p>
-
-    <p>The Git command syntax is:</p>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval $(ssh-agent -s)
 </code></pre></div>    </div>
 
-    <p>The following commands are examples for setting up remotes on Staging and Production:</p>
+    <p>The agent starts and displays the process ID (PID).</p>
+  </li>
+  <li>
+    <p>Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa
 </code></pre></div>    </div>
 
-    <h2 id="ssh-agent">Set up your SSH agent and add the SSH key</h2>
-    <p>You only need to set up your SSH agent on these servers once. SSH agent helps contain is a background program that handles passwords for your SSH private keys.</p>
+    <p>A message similar to the following displays:</p>
 
-    <p><strong>How it works!</strong> After you configure the agent and settings, you can migrate files easier using SSH or <code class="highlighter-rouge">scp</code> between servers. The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system, helping you connect using your local private SSH key. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-    <p>You can use any terminal client you prefer for SSH access, or see our <a href="/guides/v2.2/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
+<p>For more information on setting up SSH, see <a href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.</p>
 
-    <p>To set up an SSH agent:</p>
+<p>If you have a Pro project created <strong>before October 23, 2017</strong>, you need to enter a ticket with your public key to have it added to Staging and Production.</p>
 
-    <ol>
-      <li>In a terminal client, log in to your local system.</li>
-      <li>
-        <p>Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add -l
-</code></pre></div>        </div>
-
-        <p>One of the following messages displays:</p>
-
-        <ul>
-          <li>
-            <p>Displays a working and running SSH agent: <code class="highlighter-rouge">2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
-
-            <p>Skip to step 4.</p>
-          </li>
-          <li>
-            <p>The SSH agent has not started: <code class="highlighter-rouge">Could not open a connection to your authentication agent.</code></p>
-
-            <p>Continue with step 3.</p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <p>To start the SSH agent, enter the following command:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval $(ssh-agent -s)
-</code></pre></div>        </div>
-
-        <p>The agent starts and displays the process ID (PID).</p>
-      </li>
-      <li>
-        <p>Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/.ssh/id_rsa
-</code></pre></div>        </div>
-
-        <p>A message similar to the following displays:</p>
-
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-</code></pre></div>        </div>
-      </li>
-    </ol>
-
-    <p>For more information on setting up SSH, see <a href="/guides/v2.2/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> as part of your local setup. For Starter and Pro projects, you can add your SSH public key to all Integration, Staging and Production environments.</p>
-
-    <p>If you have a Pro project created <strong>before October 23, 2017</strong>, you need to enter a ticket with your public key to have it added to Staging and Production.</p>
-
-    <h4 id="next-step">Next step</h4>
-    <p><a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></p>
-  </div>
-</div>
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></p>
 
 			
 		</div>

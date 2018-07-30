@@ -2028,7 +2028,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>Enter your configurations in your Integration environment Admin panel.</li>
-  <li>Create <code class="highlighter-rouge">config.local.php</code> and transfer it to your local system.</li>
+  <li>Create <code class="highlighter-rouge">config.local.php</code> and transfer it to your local workstation.</li>
   <li>Push <code class="highlighter-rouge">config.local.php</code> to the branch and Integration environment.</li>
   <li>Verify your settings are not editable in the Admin panel. Any configurations exported to <code class="highlighter-rouge">config.local.php</code> make those fields in the Admin panel read-only and disabled for edits.</li>
   <li>Update and modify configurations again in Integration and recreate the file to update in Git:
@@ -2040,10 +2040,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
+<!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 . For more information, see [Sensitive and system-specific](/guides/v2.1/config-guide/prod/config-reference-sens.html).
-</div> -->
+-->
 
 <p>For example, you may want to set the following settings:</p>
 
@@ -2106,48 +2106,47 @@ This example shows how you can set and lock configuration values for everything 
   <li>Log out of the Magento Admin.</li>
 </ol>
 
-<h2 id="export">Export values and transfer config.local.php to your local system</h2>
+<h2 id="export">Export values and transfer config.local.php to your local workstation</h2>
 <p>This step creates and transfers the <code class="highlighter-rouge">config.local.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
 
-<p>This procedure corresponds to step 2 in the <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.local.php</code>, transfer it to your local system so you can add it to Git.</p>
+<p>This procedure corresponds to step 2 in the <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.local.php</code>, transfer it to your local workstation so you can add it to Git.</p>
 
-<p>To create and transfer <code class="highlighter-rouge">config.local.php</code>:</p>
+<h4 id="to-create-and-transfer-configlocalphp">To create and transfer <code class="highlighter-rouge">config.local.php</code>:</h4>
 
-<div>
+<ol>
+  <li>
+    <p>On your local workstation, find the integration server SSH URL.</p>
 
-  <ol>
-    <li>
-      <p>On your local system, find the integration server’s SSH URL.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    magento-cloud environment:ssh --pipe
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    magento-cloud environment:ssh --pipe
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Create <code class="highlighter-rouge">config.local.php</code> on the integration server.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;SSH URL&gt; "php bin/magento magento-cloud:scd-dump"
-</code></pre></div>      </div>
+    <p>For example,</p>
 
-      <p>For example,</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
-</code></pre></div>      </div>
-
-      <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
+    <!-- A message similar to the following displays if you have any sensitive settings configured in your system:
 
 <pre class="no-copy">
 The configuration file doesn't contain the sensitive data by security reason. The sensitive data can be stored in the next environment variables:
 CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
-    </li>
-    <li>If you haven’t done so already, change to the project root directory.</li>
-    <li>
-      <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
+  </li>
+  <li>
+    <p>Change to the project root directory.</p>
+  </li>
+  <li>
+    <p>Transfer the <code class="highlighter-rouge">config.local.php</code> file to your local workstation.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
-</code></pre></div>      </div>
-    </li>
-  </ol>
-</div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <p>The following snippet from <code class="highlighter-rouge">config.local.php</code> shows an example of changing the default locale to <code class="highlighter-rouge">en_GB</code> and changing static file optimization settings:</p>
 
@@ -2185,7 +2184,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
 </pre>
 
 <h2 id="deploy">Push and deploy config.local.php to environments</h2>
-<p>Now that you’ve created <code class="highlighter-rouge">config.local.php</code> and transferred it to your local system, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
+<p>Now that you’ve created <code class="highlighter-rouge">config.local.php</code> and transferred it to your local workstation, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
 
 <p>The following command adds, commits, and pushes to master:</p>
 
@@ -2234,7 +2233,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
 <p>To delete <code class="highlighter-rouge">config.local.php</code>:</p>
 
 <ol>
-  <li>On your local system, make sure you’re on the <code class="highlighter-rouge">master</code> branch.</li>
+  <li>On your local workstation, make sure you’re on the <code class="highlighter-rouge">master</code> branch.</li>
   <li>
     <p>SSH to the integration server:</p>
 
@@ -2286,7 +2285,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
 
 <ol>
   <li>
-    <p>On your local system, find the integration server’s SSH URL.</p>
+    <p>On your local workstation, find the integration server’s SSH URL.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:ssh --pipe
 </code></pre></div>    </div>
@@ -2304,7 +2303,7 @@ CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</pre> -->
   </li>
   <li>If you haven’t done so already, change to the project root directory.</li>
   <li>
-    <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local system.</p>
+    <p>Transfer <code class="highlighter-rouge">config.local.php</code> to your local workstation.</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync &lt;SSH URL&gt;:app/etc/config.local.php ./app/etc/config.local.php
 </code></pre></div>    </div>

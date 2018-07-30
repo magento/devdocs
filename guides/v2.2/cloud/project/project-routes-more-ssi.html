@@ -2077,18 +2077,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can activate or deactivate SSI on a per-route basis in your
 <code class="highlighter-rouge">.magento/routes.yaml</code>; for example:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"http://{default}/":
-    type: upstream
-    upstream: "myapp:php"
-    cache:
-      enabled: false
-    ssi:
-        enabled: true
-"http://{default}/time.php":
-    type: upstream
-    upstream: "myapp:php"
-    cache:
-      enabled: true
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="s2">"</span><span class="s">http://{default}/"</span><span class="pi">:</span>
+<span class="err">	</span>    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+<span class="err">	</span>    <span class="na">upstream</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myapp:php"</span>
+<span class="err">	</span>    <span class="na">cache</span><span class="pi">:</span>
+<span class="err">	</span>      <span class="na">enabled</span><span class="pi">:</span> <span class="no">false</span>
+<span class="err">	</span>    <span class="na">ssi</span><span class="pi">:</span>
+<span class="err">	</span>        <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
+<span class="err">	</span><span class="s2">"</span><span class="s">http://{default}/time.php"</span><span class="pi">:</span>
+<span class="err">	</span>    <span class="na">type</span><span class="pi">:</span> <span class="s">upstream</span>
+<span class="err">	</span>    <span class="na">upstream</span><span class="pi">:</span> <span class="s2">"</span><span class="s">myapp:php"</span>
+<span class="err">	</span>    <span class="na">cache</span><span class="pi">:</span>
+<span class="err">	</span>      <span class="na">enabled</span><span class="pi">:</span> <span class="no">true</span>
 </code></pre></div></div>
 
 <p>SSI enables you to include in your HTML response directives that cause the
@@ -2098,13 +2098,15 @@ server fill in parts of the HTML, respecting the your <a href="/guides/v2.2/clou
 
 <p>Add the following to any page, such as <code class="highlighter-rouge">/index.php</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
-<span class="o">&lt;!--</span><span class="err">#</span><span class="k">include</span> <span class="k">virtual</span><span class="o">=</span><span class="s2">"time.php"</span> <span class="o">--&gt;</span></code></pre></figure>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
+<span class="o">&lt;!--</span><span class="c1">#include virtual="time.php" --&gt;
+</span></code></pre></div></div>
 
 <p>Add the following to <code class="highlighter-rouge">time.php</code>:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nb">header</span><span class="p">(</span><span class="s2">"Cache-Control: max-age=600"</span><span class="p">);</span>
-<span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span></code></pre></figure>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">header</span><span class="p">(</span><span class="s2">"Cache-Control: max-age=600"</span><span class="p">);</span>
+<span class="k">echo</span> <span class="nb">date</span><span class="p">(</span><span class="nx">DATE_RFC2822</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p>Browse to the page on which you added the control. Refresh the page several times and notice that the time at the top of the page changes but the time on the bottom changes only every 600 seconds.</p>
 

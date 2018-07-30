@@ -2030,9 +2030,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><strong>Production</strong>—Provides a single environment and <code class="highlighter-rouge">master</code> branch deployed to dedicated Infrastructure-as-a-Service (IaaS) containers.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To manage Staging and Production environment settings through the Project Web Interface for Pro projects <strong>created before October 23, 2017</strong>, you must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">request an update</a>. If you do not request the update, you must submit tickets to modify settings, variables, and routes.</p>
-</div>
+<p class="bs-callout bs-callout-info">To manage Staging and Production environment settings through the Project Web Interface for Pro projects <strong>created before October 23, 2017</strong>, you must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">request an update</a>. If you do not request the update, you must submit tickets to modify settings, variables, and routes.</p>
 
 <p><img src="/common/images/cloud_pro-branch-architecture-legacy.png" alt="High-level view of Pro architecture (legacy) flow" /></p>
 
@@ -2091,9 +2089,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). It provides up to six environments, each as an active Git branch with the same name as the environment. Each environment includes a web server, database, and configured services to fully test your site.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>The Integration environment does not support all services. For example, Fastly is not accessible in Integration.</p>
-</div>
+<p class="bs-callout bs-callout-info">The Integration environment does not support all services. For example, Fastly is not accessible in Integration.</p>
 
 <h4 id="branches">Branches</h4>
 <p>You can have an unlimited number of <em>inactive</em> Git branches to store code, but to access, view, and test inactive branches you must activate them. Use the <code class="highlighter-rouge">magento-cloud environment:activate</code> command to activate the environment.</p>
@@ -2108,9 +2104,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Push code changes, which automatically build and deploy to the Integration environment for testing</li>
 </ol>
 
-<div class="bs-callout bs-callout-info">
-  <p>We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for local environment setup</a> and <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.1/cloud/before/before-workspace.html">Prepare for local environment setup</a> and <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
 
 <h2 id="cloud-arch-stage">Staging environment</h2>
 <p>The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment, including Fastly, New Relic, Blackfire, and search, and shares the same dedicated IaaS hardware as the Production environment.</p>
@@ -2120,9 +2114,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>When you update your project to manage the <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="highlighter-rouge">master</code> branch called <code class="highlighter-rouge">staging</code> that contains all user access settings and environment variables for your Staging environment.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.1/cloud/live/stage-prod-test.html">Test  deployment</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.1/cloud/live/stage-prod-test.html">Test  deployment</a>.</p>
 
 <h2 id="cloud-arch-prod">Production environment</h2>
 <p>The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.</p>
@@ -2132,9 +2124,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>When you update your project to manage the <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="highlighter-rouge">master</code> branch called <code class="highlighter-rouge">production</code> that contains all user access settings and environment variables for your Production environment.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.1/cloud/live/live.html">Go Live and launch</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.1/cloud/live/live.html">Go Live and launch</a>.</p>
 
 <h3 id="advantage-of-redundant-hardware">Advantage of redundant hardware</h3>
 <p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce (Cloud) runs a triple-redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>

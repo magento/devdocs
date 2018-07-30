@@ -2072,9 +2072,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>A <em>snapshot</em> is a complete backup of an environment that includes all persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes. Because an environment deploys as a read-only file system, restoring a snapshot is very fast.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See <a href="#rollback-code">Rollbacks to remove code</a>.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See <a href="#rollback-code">Rollbacks to remove code</a>.</p>
 
 <p>You have up to <strong>7 days</strong> to <em>restore</em> a snapshot.</p>
 
@@ -2210,18 +2208,14 @@ Waiting for the snapshot to complete...
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info">
-  <ul>
-    <li>We recommend putting the application in maintenance mode before doing a database dump in Production environments.</li>
-    <li>The command creates an archive in your local project directory called  <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code>.</li>
-    <li>If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (<code class="highlighter-rouge">/var/log/cloud.log</code>).</li>
-    <li>For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a <code class="highlighter-rouge">var/dbdump.lock</code> file to prevent running the command on more than one node.</li>
-  </ul>
-</div>
+<ul class="bs-callout bs-callout-info">
+  <li>We recommend putting the application in maintenance mode before doing a database dump in Production environments.</li>
+  <li>The command creates an archive in your local project directory called  <code class="highlighter-rouge">dump-&lt;timestamp&gt;.sql.gz</code>.</li>
+  <li>If an error occurs during the dump, the command deletes the dump file to conserve disk space. Review the logs for details (<code class="highlighter-rouge">/var/log/cloud.log</code>).</li>
+  <li>For Pro Production environments, this command dumps only from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. It generates a <code class="highlighter-rouge">var/dbdump.lock</code> file to prevent running the command on more than one node.</li>
+</ul>
 
-<div class="bs-callout bs-callout-tip">
-  <p>If you want to push this data into an environment, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
-</div>
+<p class="bs-callout bs-callout-tip">If you want to push this data into an environment, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
 
 <h2 id="rollback-code">Rollbacks to remove code</h2>
 <p>We recommend creating a snapshot of the environment and a backup of the database prior to deployments.</p>

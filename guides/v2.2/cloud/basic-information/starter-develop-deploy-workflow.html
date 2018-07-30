@@ -2090,9 +2090,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You can manage all of your environments including Production and Staging directly through the <a href="/guides/v2.2/cloud/project/project-webint-basic.html">Project Web Interface</a>, through the store and Admin panel using provided URLs, and using SSH and the <a href="/guides/v2.2/cloud/reference/cli-ref-topic.html">Magento Cloud command-line</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The following workflow and examples use a Production, Staging, and Integration architecture.</p>
-</div>
+<p class="bs-callout bs-callout-info">The following workflow and examples use a Production, Staging, and Integration architecture.</p>
 
 <h2 id="env-branches">Starter environments and branches</h2>
 <p>For your environments, we recommend deploying and testing following a Development &gt; Staging &gt; Production workflow.</p>
@@ -2176,9 +2174,7 @@ git pull origin &lt;environment ID&gt;
 
 <p>And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Do not complete any configurations on your local yet.</p>
-</div>
+<p class="bs-callout bs-callout-info">Do not complete any configurations on your local yet.</p>
 
 <p><img src="/common/images/cloud_workflow-push-code.png" alt="Develop code and push to deploy" /></p>
 
@@ -2257,27 +2253,20 @@ git pull origin &lt;environment ID&gt;
 
 <p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.</p>
 
-<div>
+<p>To help export Production data as test data to use in Staging and Integration environments, <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
 
-  <p>To help export Production data as test data to use in Staging and Integration environments, <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
+<ul>
+  <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html#config-cli-spt-utils-db">CLI commands</a> (Recommended) to export a protected backup of customer and store data using your Magento encryption key</li>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="_blank">Data Collection</a> tool for generating and exporting data</li>
+</ul>
 
-  <ul>
-    <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html#config-cli-spt-utils-db">CLI commands</a> (Recommended) to export a protected backup of customer and store data using your Magento encryption key</li>
-    <li><a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="_blank">Data Collection</a> tool for generating and exporting data</li>
-  </ul>
-
-  <p>To migrate this data, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
-</div>
+<p>To migrate this data, see <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
 
 <p><img src="/common/images/cloud_workflow-data-code-process.png" alt="Pull and sanitize production data" /></p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">using support utilities</a> or developing a script to scrub out customer data.</p>
-</div>
+<p class="bs-callout bs-callout-info">Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">using support utilities</a> or developing a script to scrub out customer data.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Important: We don’t recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Important: We don’t recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.</p>
 
 <h2 id="deploy">Deployment workflow</h2>
 <p>As we detailed in the architecture information, Magento Commerce (Cloud) is Git driven. Deploying Magento Commerce (Cloud) is part of your Git push processes for branches.</p>

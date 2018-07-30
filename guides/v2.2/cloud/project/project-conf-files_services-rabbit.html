@@ -2075,21 +2075,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We support RabbitMQ version 3.5.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="/guides/v2.1/cloud/env/working-with-variables.html#queue"><code class="highlighter-rouge">QUEUE_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="/guides/v2.1/cloud/env/working-with-variables.html#queue"><code class="highlighter-rouge">QUEUE_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
 
 <h2 id="settings">Add RabbitMQ in services.yaml and .magento.app.yaml</h2>
 <p>To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to the <code class="highlighter-rouge">.magento/services.yaml</code> file.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">rabbitmq</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">rabbitmq</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">rabbitmq</span>
-    <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
+    <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
+</code></pre></div></div>
 
 <p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">relationships</span><span class="pi">:</span>
-    <span class="na">rabbitmq</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rabbitmq:rabbitmq"</span></code></pre></figure>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">relationships</span><span class="pi">:</span>
+    <span class="na">rabbitmq</span><span class="pi">:</span> <span class="s2">"</span><span class="s">rabbitmq:rabbitmq"</span>
+</code></pre></div></div>
 
 <p>Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see <a href="/guides/v2.2/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
@@ -2110,63 +2110,53 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for RabbitMQ:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-   <span class="s2">"rabbitmq"</span> : <span class="o">[</span>
-      <span class="o">{</span>
-         <span class="s2">"password"</span> : <span class="s2">"guest"</span>,
-         <span class="s2">"ip"</span> : <span class="s2">"246.0.129.2"</span>,
-         <span class="s2">"scheme"</span> : <span class="s2">"amqp"</span>,
-         <span class="s2">"port"</span> : 5672,
-         <span class="s2">"host"</span> : <span class="s2">"rabbitmq.internal"</span>,
-         <span class="s2">"username"</span> : <span class="s2">"guest"</span>
-      <span class="o">}</span>
-   <span class="o">]</span>
-<span class="o">}</span></code></pre></figure>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+   "rabbitmq" : [
+      {
+         "password" : "guest",
+         "ip" : "246.0.129.2",
+         "scheme" : "amqp",
+         "port" : 5672,
+         "host" : "rabbitmq.internal",
+         "username" : "guest"
+      }
+   ]
+}
+```{: .no-copy}
 
-<h2 id="connect">Connect to RabbitMQ for debugging</h2>
-<p>For debugging purposes, it’s sometimes useful to directly connect to a service instance in one of the following ways:</p>
+## Connect to RabbitMQ for debugging {#connect}
+For debugging purposes, it's sometimes useful to directly connect to a service instance in one of the following ways:
 
-<ul>
-  <li><a href="#cloud-rabbitmq-conn-loc">Connect from your local development environment</a></li>
-  <li><a href="#cloud-rabbitmq-conn-cont">Connect from the application</a></li>
-  <li><a href="#cloud-rabbitmq-conn-php">Connect from your PHP application</a></li>
-</ul>
+*   [Connect from your local development environment](#cloud-rabbitmq-conn-loc)
+*   [Connect from the application](#cloud-rabbitmq-conn-cont)
+*   [Connect from your PHP application](#cloud-rabbitmq-conn-php)
 
-<h3 id="cloud-rabbitmq-conn-loc">Connect from your local development environment</h3>
-<p>You can do this using <a href="/guides/v2.2/cloud/env/environments-start.html#env-start-tunn">SSH tunneling</a>:</p>
+### Connect from your local development environment {#cloud-rabbitmq-conn-loc}
+You can do this using [SSH tunneling](/guides/v2.2/cloud/env/environments-start.html#env-start-tunn):
 
-<ol>
-  <li>SSH into the Integration environment with RabbitMQ installed and configured.</li>
-  <li>
-    <p>Login to the Magento Cloud CLI and project:</p>
+1. SSH into the Integration environment with RabbitMQ installed and configured.
+2. Login to the Magento Cloud CLI and project:
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> magento-cloud login
-</code></pre></div>    </div>
-  </li>
-  <li>Use <code class="highlighter-rouge">magento-cloud tunnel:open</code> to open a tunnel to the app. For information on this command, add <code class="highlighter-rouge">--help</code>.</li>
-  <li>
-    <p>Use the following command to pretty-print your relationships. This lets you see which username and password to use, and you can verify the remote service’s port.</p>
+        magento-cloud login
+2. Use `magento-cloud tunnel:open` to open a tunnel to the app. For information on this command, add `--help`.
+2. Use the following command to pretty-print your relationships. This lets you see which username and password to use, and you can verify the remote service's port.
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p>Use the <code class="highlighter-rouge">ssh -L</code> command to enable local port forwarding to RabbitMQ as follows:</p>
+        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
+3. Use the `ssh -L` command to enable local port forwarding to RabbitMQ as follows:
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -L &lt;port number&gt;:mq.internal:&lt;port number&gt; &lt;project ID&gt;-&lt;branch ID&gt;@ssh.us.magentosite.cloud
-</code></pre></div>    </div>
-  </li>
-  <li>While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the <code class="highlighter-rouge">localhost:&lt;portnumber</code> using the username and password you found in the relationship variable. For this example, you would use <code class="highlighter-rouge">localhost:5672</code>.</li>
-</ol>
+        ssh -L &lt;port number&gt;:mq.internal:&lt;port number&gt; &lt;project ID&gt;-&lt;branch ID&gt;@ssh.us.magentosite.cloud
+4. While the session is open, you can start a RabbitMQ client of your choice from your local workstation, configured to connect to the `localhost:&lt;portnumber` using the username and password you found in the relationship variable. For this example, you would use `localhost:5672`.
 
-<h3 id="cloud-rabbitmq-conn-cont">Connect from the application</h3>
-<p>To connect to RabbitMQ running in an application, you should install a client like <a href="https://github.com/dougbarth/amqp-utils" target="_blank">amqp-utils</a> as a project dependency in your <code class="highlighter-rouge">.magento.app.yaml</code> file.</p>
+### Connect from the application {#cloud-rabbitmq-conn-cont}
+To connect to RabbitMQ running in an application, you should install a client like [amqp-utils](https://github.com/dougbarth/amqp-utils){:target="_blank"} as a project dependency in your `.magento.app.yaml` file.
 
-<p>For example,</p>
+For example,
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">dependencies</span><span class="pi">:</span>
-  <span class="na">ruby</span><span class="pi">:</span>
-    <span class="na">amqp-utils</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0.5.1"</span></code></pre></figure>
+```yaml
+dependencies:
+  ruby:
+    amqp-utils: "0.5.1"
+</code></pre></div></div>
 
 <p>Then, when you SSH into your   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  container, you enter any <code class="highlighter-rouge">amqp-</code> command available to manage your queues.</p>

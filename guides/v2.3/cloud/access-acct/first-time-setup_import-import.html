@@ -2068,11 +2068,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following instructions walk-through importing your Magento Commerce code into your current project code. When importing, you are force pushing your existing code in a Git repository over the Magento Commerce (Cloud)’s Git <code class="highlighter-rouge">master</code> branch.</p>
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>Warning: When you force push code from an existing Git branch to your Magento Commerce (Cloud) project, you overwrite the project code in <code class="highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.</p>
-
-  <p>Before you continue, make sure there is nothing in your Magento Commerce (Cloud) project you want to keep.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Warning: When you force push code from an existing Git branch to your Magento Commerce (Cloud) project, you overwrite the project code in <code class="highlighter-rouge">master</code>. Any data, websites, stores, and so on will be lost.
+Before you continue, make sure there is nothing in your Magento Commerce (Cloud) project you want to keep.</p>
 
 <h2 id="required-information">Required information</h2>
 <p>Before you continue, make sure you have the <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-prepare.html">encryption key</a> from your Magento Commerce system.</p>
@@ -2185,9 +2182,7 @@ Environment routes:
   <li>The database name, username, and password of the <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-first-steps.html#db-creds">Cloud database</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.</p>
-</div>
+<p class="bs-callout bs-callout-info">This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.</p>
 
 <p>When importing data, you will need to drop and create a new database. If you have done any data you want to keep, <a href="/guides/v2.3/cloud/project/project-webint-snap.html">create a backup</a> of the database.</p>
 
@@ -2266,9 +2261,7 @@ Environment routes:
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE core_config_data SET value='&lt;Cloud unsecure base URL&gt;' WHERE path='web/unsecure/base_url';
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-warning" id="warning">
-      <p>The base URL <em>must</em> end with a <code class="highlighter-rouge">/</code> character.</p>
-    </div>
+    <p class="bs-callout bs-callout-warning">The base URL <em>must</em> end with a <code class="highlighter-rouge">/</code> character.</p>
   </li>
   <li>
     <p>Confirm the change by entering the following command:</p>
@@ -2280,9 +2273,7 @@ Environment routes:
   <li>Continue with the next section.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.</p>
-</div>
+<p class="bs-callout bs-callout-info">For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.</p>
 
 <h2 id="encryption-key">Add the Magento encryption key</h2>
 <p>The Magento Commerce encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
@@ -2313,9 +2304,7 @@ Environment routes:
   <li>
     <p>Save your changes to <code class="highlighter-rouge">env.php</code> and exit the text editor.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p>Make sure to add this key to the <code class="highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
-    </div>
+    <p class="bs-callout bs-callout-info">Make sure to add this key to the <code class="highlighter-rouge">env.php</code> file for all environments: Integration, Staging, and Production.</p>
   </li>
 </ol>
 

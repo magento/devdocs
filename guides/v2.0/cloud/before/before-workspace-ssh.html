@@ -1760,195 +1760,192 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments through the Project Web Interface or via SSH and CLI commands.</li>
 </ul>
 
-<div>
+<p>You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Commerce (Cloud) and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.</p>
 
-  <p>You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Commerce (Cloud) and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.</p>
+<p>The SSH keys require the following:</p>
 
-  <p>The SSH keys require the following:</p>
+<ul>
+  <li>Set up SSH keys as the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Create the keys using the email address used for the GitHub account.</li>
+</ul>
 
-  <ul>
-    <li>Set up SSH keys as the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Create the keys using the email address used for the GitHub account.</li>
-  </ul>
+<p>For more information on SSH keys, see the following:</p>
 
-  <p>For more information on SSH keys, see the following:</p>
+<ul>
+  <li><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">Connecting to GitHub with SSH</a></li>
+  <li><a href="https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows" target="_blank">Manually generating your SSH key in Windows</a></li>
+  <li><a href="http://linux.die.net/man/1/ssh-keygen" target="_blank">ssh-keygen man page</a></li>
+</ul>
 
-  <ul>
-    <li><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">Connecting to GitHub with SSH</a></li>
-    <li><a href="https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-windows" target="_blank">Manually generating your SSH key in Windows</a></li>
-    <li><a href="http://linux.die.net/man/1/ssh-keygen" target="_blank">ssh-keygen man page</a></li>
-  </ul>
+<h2 id="existing">Locate an existing SSH key pair</h2>
+<p>An existing SSH key pair is typically located in the <code class="highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
 
-  <h2 id="existing">Locate an existing SSH key pair</h2>
-  <p>An existing SSH key pair is typically located in the <code class="highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
+<p>You can quickly verify if you have SSH keys by entering commands using terminal access.</p>
 
-  <p>You can quickly verify if you have SSH keys by entering commands using terminal access.</p>
+<p>To check for SSH keys, enter the following command:</p>
 
-  <p>To check for SSH keys, enter the following command:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls ~/.ssh
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls ~/.ssh
-</code></pre></div>  </div>
+<p>If you have SSH keys, a directory listing is displayed similar to the following:</p>
 
-  <p>If you have SSH keys, a directory listing is displayed similar to the following:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id_rsa  id_rsa.pub  known_hosts
+</code></pre></div></div>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id_rsa  id_rsa.pub  known_hosts
-</code></pre></div>  </div>
+<p>If you don’t have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See <a href="#ssh-create-new-key-pair">Create a new SSH key pair</a>.</p>
 
-  <p>If you don’t have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See <a href="#ssh-create-new-key-pair">Create a new SSH key pair</a>.</p>
+<p>If you already have SSH keys, continue to:</p>
+<ul>
+  <li><a href="#ssh-add-to-account">Add a public SSH key to your Magento account</a> section</li>
+  <li><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account</a></li>
+</ul>
 
-  <p>If you already have SSH keys, continue to:</p>
-  <ul>
-    <li><a href="#ssh-add-to-account">Add a public SSH key to your Magento account</a> section</li>
-    <li><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account</a></li>
-  </ul>
+<h2 id="ssh-create-new-key-pair">Create a new SSH key pair</h2>
+<p>Use the <code class="highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
 
-  <h2 id="ssh-create-new-key-pair">Create a new SSH key pair</h2>
-  <p>Use the <code class="highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
+<p>To create an SSH key pair:</p>
 
-  <p>To create an SSH key pair:</p>
+<ol>
+  <li>
+    <p>The command syntax follows, entering the email used for your GitHub account:</p>
 
-  <ol>
-    <li>
-      <p>The command syntax follows, entering the email used for your GitHub account:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-keygen -t rsa
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-keygen -t rsa
-</code></pre></div>      </div>
-
-      <p>GitHub also uses the key length <code class="highlighter-rouge">-b 4096</code> in the command.
+    <p>GitHub also uses the key length <code class="highlighter-rouge">-b 4096</code> in the command.
  Follow the prompts to complete the key.</p>
-    </li>
-    <li>
-      <p>When prompted to “Enter a file in which to save the key,” press Enter to save the file to the default location. The prompt displays the location.</p>
-    </li>
-    <li>
-      <p>When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.</p>
-    </li>
-    <li>
-      <p>After creating the SSH key pair, start the ssh-agent:</p>
+  </li>
+  <li>
+    <p>When prompted to “Enter a file in which to save the key,” press Enter to save the file to the default location. The prompt displays the location.</p>
+  </li>
+  <li>
+    <p>When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.</p>
+  </li>
+  <li>
+    <p>After creating the SSH key pair, start the ssh-agent:</p>
 
-      <p>For Mac or Linux:</p>
+    <p>For Mac or Linux:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ eval "$(ssh-agent -s)"  For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
  Host *
      AddKeysToAgent yes
      UseKeychain yes
      IdentityFile ~/.ssh/id_rsa
-</code></pre></div>      </div>
+</code></pre></div>    </div>
 
-      <p>For Windows:</p>
+    <p>For Windows:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ eval $(ssh-agent -s)
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="highlighter-rouge">id_rsa</code> with that file name.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> $ eval $(ssh-agent -s)
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace <code class="highlighter-rouge">id_rsa</code> with that file name.</p>
 
-      <p>For Mac:</p>
+    <p>For Mac:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-add -K ~/.ssh/id_rsa
-</code></pre></div>      </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-add -K ~/.ssh/id_rsa
+</code></pre></div>    </div>
 
-      <p>For Windows or Linux:</p>
+    <p>For Windows or Linux:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-add ~/.ssh/id_rsa
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account.</a> The instructions include Mac, Windows, and Linux.</p>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh-add ~/.ssh/id_rsa
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/">Add your SSH key to your GitHub account.</a> The instructions include Mac, Windows, and Linux.</p>
+  </li>
+</ol>
 
-  <h3 id="test">Test the SSH keys</h3>
+<h3 id="test">Test the SSH keys</h3>
 
-  <p>After adding the SSH keys, test the SSH connection to GitHub:</p>
+<p>After adding the SSH keys, test the SSH connection to GitHub:</p>
 
-  <ol>
-    <li>
-      <p>In the terminal, enter the following command:</p>
+<ol>
+  <li>
+    <p>In the terminal, enter the following command:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -T git@github.com
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="highlighter-rouge">yes</code> to continue.</p>
-    </li>
-    <li>
-      <p>If successful, you should receive a success message. If you receive a permission denied error, see <a href="https://help.github.com/articles/error-permission-denied-publickey">Error: Permission denied (publickey)</a> troubleshooting on GitHub.</p>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ssh -T git@github.com
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>You may see a warning that the authenticity of the host can’t be established followed by an RSA fingerprint. Enter <code class="highlighter-rouge">yes</code> to continue.</p>
+  </li>
+  <li>
+    <p>If successful, you should receive a success message. If you receive a permission denied error, see <a href="https://help.github.com/articles/error-permission-denied-publickey">Error: Permission denied (publickey)</a> troubleshooting on GitHub.</p>
+  </li>
+</ol>
 
-  <h2 id="ssh-add-to-account">Add a public SSH key to your Magento account</h2>
-  <p>You can add SSH keys to your account in any of the following ways:</p>
+<h2 id="ssh-add-to-account">Add a public SSH key to your Magento account</h2>
+<p>You can add SSH keys to your account in any of the following ways:</p>
 
-  <ul>
-    <li>Using the <a href="#add-key-cli">Magento Commerce (Cloud) CLI</a></li>
-    <li>Using the <a href="#add-key-web">Magento Commerce (Cloud) Web Interface</a></li>
-  </ul>
+<ul>
+  <li>Using the <a href="#add-key-cli">Magento Commerce (Cloud) CLI</a></li>
+  <li>Using the <a href="#add-key-web">Magento Commerce (Cloud) Web Interface</a></li>
+</ul>
 
-  <h3 id="add-key-cli">Add a key using the CLI</h3>
-  <p>To add an SSH key using the CLI:</p>
+<h3 id="add-key-cli">Add a key using the CLI</h3>
+<p>To add an SSH key using the CLI:</p>
 
-  <ol>
-    <li>Open a terminal application on your local.</li>
-    <li>
-      <p>If you haven’t done so already, log in (or switch to) the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> to the server on which your SSH keys are located.</p>
-    </li>
-    <li>
-      <p>Log in to your project:</p>
+<ol>
+  <li>Open a terminal application on your local.</li>
+  <li>
+    <p>If you haven’t done so already, log in (or switch to) the <a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a> to the server on which your SSH keys are located.</p>
+  </li>
+  <li>
+    <p>Log in to your project:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Add the key:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add the key:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
-</code></pre></div>      </div>
-    </li>
-  </ol>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud ssh-key:add ~/.ssh/id_rsa.pub
+</code></pre></div>    </div>
+  </li>
+</ol>
 
-  <h4 id="add-key-web">Add a key using the Project Web Interface</h4>
-  <p>You will select and add your SSH public key to each environment in your account.</p>
+<h4 id="add-key-web">Add a key using the Project Web Interface</h4>
+<p>You will select and add your SSH public key to each environment in your account.</p>
 
-  <ul>
-    <li>Starter: Add to Master (Production) and any environments you create by branching from Master</li>
-    <li>Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.</li>
-  </ul>
+<ul>
+  <li>Starter: Add to Master (Production) and any environments you create by branching from Master</li>
+  <li>Pro: Add to Master Integration environment. After your Staging and Production environments are provisioned, you can add the SSH keys to those environments.</li>
+</ul>
 
-  <p>To add an SSH key using the Project Web Interface:</p>
+<p>To add an SSH key using the Project Web Interface:</p>
 
-  <ol>
-    <li>
-      <p>Copy your SSH public key to the clipboard.</p>
+<ol>
+  <li>
+    <p>Copy your SSH public key to the clipboard.</p>
 
-      <p>If you don’t already have SSH keys on that machine, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a> to create them.</p>
-    </li>
-    <li>Login and access your project through the <a href="https://accounts.magento.cloud" target="_blank">Project Web Interface</a>.</li>
-    <li>
-      <p>In your selected branch, an icon displays if you do not have an SSH key added.</p>
+    <p>If you don’t already have SSH keys on that machine, see <a href="https://help.github.com/articles/generating-an-ssh-key" target="_blank">GitHub documentation</a> to create them.</p>
+  </li>
+  <li>Login and access your project through the <a href="https://accounts.magento.cloud" target="_blank">Project Web Interface</a>.</li>
+  <li>
+    <p>In your selected branch, an icon displays if you do not have an SSH key added.</p>
 
-      <p><img src="/common/images/cloud_ssh-key-install.png" alt="No SSH key" /></p>
-    </li>
-    <li>
-      <p>Copy and paste the content of your public SSH key in the screen.</p>
+    <p><img src="/common/images/cloud_ssh-key-install.png" alt="No SSH key" /></p>
+  </li>
+  <li>
+    <p>Copy and paste the content of your public SSH key in the screen.</p>
 
-      <p><img src="/common/images/cloud_ssh-key-add.png" alt="Add SSH key" /></p>
-    </li>
-    <li>Follow the prompts on your screen to complete the task.</li>
-  </ol>
+    <p><img src="/common/images/cloud_ssh-key-add.png" alt="Add SSH key" /></p>
+  </li>
+  <li>Follow the prompts on your screen to complete the task.</li>
+</ol>
 
-  <h2 id="set-global-git-variables">Set global Git variables</h2>
-  <p>Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.</p>
+<h2 id="set-global-git-variables">Set global Git variables</h2>
+<p>Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.</p>
 
-  <p>To set variables, enter the following commands on every workspace:</p>
+<p>To set variables, enter the following commands on every workspace:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name "&lt;your name&gt;"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name "&lt;your name&gt;"
 git config --global user.email &lt;your e-mail address&gt;
-</code></pre></div>  </div>
+</code></pre></div></div>
 
-  <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
-</div>
+<p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
 
 <h4 id="next-step">Next step:</h4>
 <p><a href="/guides/v2.0/cloud/before/before-workspace-file-sys-owner.html">Set up the Magento file system owner</a></p>

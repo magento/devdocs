@@ -1761,47 +1761,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>As you make changes to these settings, the branch redeploys to the environment. You can make these setting changes for all Starter and Pro environments.</p>
 
-<div>
+<p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+<h2 id="project-access">Access your project and environments</h2>
+<p>The Project Web Interface provides several ways to access your project and environments:</p>
 
-    <p>We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.</p>
+<ul>
+  <li>Storefront URL for each active environment</li>
+  <li>Secure Shell (SSH) link for SSH access via terminal application</li>
+  <li>Clone the project using the Magento Cloud CLI or Git</li>
+</ul>
 
-    <p>If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
-  </div>
+<p>To access projects and environments through the Project Web Interface:</p>
 
-  <h2 id="project-access">Access your project and environments</h2>
-  <p>The Project Web Interface provides several ways to access your project and environments:</p>
+<ol>
+  <li><a href="https://accounts.magento.cloud">Log in to your project</a>.</li>
+  <li>
+    <p>Click <strong>Access Project</strong> for a list of URLs and SSH.</p>
 
-  <ul>
-    <li>Storefront URL for each active environment</li>
-    <li>Secure Shell (SSH) link for SSH access via terminal application</li>
-    <li>Clone the project using the Magento Cloud CLI or Git</li>
-  </ul>
+    <p><img src="/common/images/cloud_project-access.png" alt="Access your project by URL or SSH" width="600px" /></p>
+  </li>
+</ol>
 
-  <p>To access projects and environments through the Project Web Interface:</p>
+<p>For more information about using SSH, see <a href="/guides/v2.0/cloud/env/environments-ssh.html#magento-cli">SSH to an environment</a>. To clone the project using either the Magento Commerce (Cloud) CLI or Git, use the links in the field under the branch name.</p>
 
-  <ol>
-    <li><a href="https://accounts.magento.cloud">Log in to your project</a>.</li>
-    <li>
-      <p>Click <strong>Access Project</strong> for a list of URLs and SSH.</p>
+<p>The following figure shows an example.</p>
 
-      <p><img src="/common/images/cloud_project-access.png" alt="Access your project by URL or SSH" width="600px" /></p>
-    </li>
-  </ol>
+<p><img src="/common/images/cloud_project-clone.png" alt="Clone the project" width="600px" /></p>
 
-  <p>For more information about using SSH, see <a href="/guides/v2.0/cloud/env/environments-ssh.html#magento-cli">SSH to an environment</a>. To clone the project using either the Magento Commerce (Cloud) CLI or Git, use the links in the field under the branch name.</p>
+<p>Click either <strong>CLI</strong> or <strong>Git</strong> to display the appropriate clone command. Use the <img src="/common/images/cloud_copy-to-clipboard.png" alt="Copy to clipboard" /> (Copy to clipboard) button to copy the command to the clipboard.</p>
 
-  <p>The following figure shows an example.</p>
-
-  <p><img src="/common/images/cloud_project-clone.png" alt="Clone the project" width="600px" /></p>
-
-  <p>Click either <strong>CLI</strong> or <strong>Git</strong> to display the appropriate clone command. Use the <img src="/common/images/cloud_copy-to-clipboard.png" alt="Copy to clipboard" /> (Copy to clipboard) button to copy the command to the clipboard.</p>
-
-  <h2 id="project-conf-env-set">Configure environment settings</h2>
-  <p>You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a>.</p>
-  <table>
+<h2 id="project-conf-env-set">Configure environment settings</h2>
+<p>You can set environment settings for the following table of settings. These settings affect your Starter environments and Pro Integration environments. To modify settings for Pro plan Staging and Production environments, you need to enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a>.</p>
+<table>
 	<tbody>
 		<tr>
 			<th style="width= 300px;">Option</th>
@@ -1821,139 +1813,135 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tbody>
 </table>
 
-  <h3 id="email">Configure emails for testing</h3>
-  <p>One of these environment variables enables or disables outgoing emails for the environment. If you wanted to test email notifications for the environment, you need to set this option On.</p>
+<h3 id="email">Configure emails for testing</h3>
+<p>One of these environment variables enables or disables outgoing emails for the environment. If you wanted to test email notifications for the environment, you need to set this option On.</p>
 
-  <ol>
-    <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
-    <li>Select the Settings tab.</li>
-    <li>
-      <p>For the <strong>Outgoing emails</strong> option, select the toggle to On.</p>
+<ol>
+  <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
+  <li>Select the Settings tab.</li>
+  <li>
+    <p>For the <strong>Outgoing emails</strong> option, select the toggle to On.</p>
 
-      <p><img src="/common/images/cloud_project-conf-env.png" alt="Set outgoing emails" /></p>
-    </li>
-  </ol>
+    <p><img src="/common/images/cloud_project-conf-env.png" alt="Set outgoing emails" /></p>
+  </li>
+</ol>
 
-  <p>Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a>.</p>
+<p>Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a>.</p>
 
-  <h2 id="project-conf-env-var">Set environment and project variables</h2>
-  <p>You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see <a href="/guides/v2.0/cloud/env/variables-intro.html">Overview of environment variables</a>.</p>
+<h2 id="project-conf-env-var">Set environment and project variables</h2>
+<p>You can set project wide and environment specific variables through the Project Web Interface. Variables can be either text or JSON format. For more information on variables, see <a href="/guides/v2.0/cloud/env/variables-intro.html">Overview of environment variables</a>.</p>
 
-  <p>For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add <em>environment variables</em> for sensitive data like payment method information. <em>Project variables</em> are set across all branches and environments.</p>
+<p>For an example of variables, we walk you through creating Magento Admin variables through Onboarding and project creation tasks. You may want to add <em>environment variables</em> for sensitive data like payment method information. <em>Project variables</em> are set across all branches and environments.</p>
 
-  <p>To view or edit environment variables, you must have at minimum the project reader role with <a href="/guides/v2.0/cloud/project/user-admin.html#cloud-role-env">environment admin</a> privileges.</p>
+<p>To view or edit environment variables, you must have at minimum the project reader role with <a href="/guides/v2.0/cloud/project/user-admin.html#cloud-role-env">environment admin</a> privileges.</p>
 
-  <p>For new Pro projects <strong>created after October 23, 2017</strong>, you can add variables for all environments through the Project Web Interface.</p>
+<p>For new Pro projects <strong>created after October 23, 2017</strong>, you can add variables for all environments through the Project Web Interface.</p>
 
-  <div>
+<p>If you want to add the same variables to your Integration, Staging, and Production environments, we recommend adding all of the variables one at a time to the Integration environment. After you finish adding variables, push the changes to the Staging and Production environments.</p>
 
-    <p>If you want to add the same variables to your Integration, Staging, and Production environments, we recommend adding all of the variables one at a time to Integration. After you finish adding variables, trigger a deployment to Staging and production. All variables will be inherited from Integration.</p>
-  </div>
+<h3 id="env">Environment variable</h3>
+<p>To set environment specific variables in the Project Web Interface:</p>
 
-  <h3 id="env">Environment variable</h3>
-  <p>To set environment specific variables in the Project Web Interface:</p>
+<ol>
+  <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
+  <li>Select the Variables tab.</li>
+  <li>Click <strong>Add Variable</strong>.</li>
+  <li>In the <strong>Name</strong> field, enter a variable name. For example, to set the Magento Admin default account password, enter <code class="highlighter-rouge">ADMIN_PASSWORD</code>.</li>
+  <li>
+    <p>In the <strong>Value</strong> field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.</p>
 
-  <ol>
-    <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
-    <li>Select the Variables tab.</li>
-    <li>Click <strong>Add Variable</strong>.</li>
-    <li>In the <strong>Name</strong> field, enter a variable name. For example, to set the Magento Admin default account password, enter <code class="highlighter-rouge">ADMIN_PASSWORD</code>.</li>
-    <li>
-      <p>In the <strong>Value</strong> field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.</p>
+    <p><img src="/common/images/cloud_env-var.png" alt="Set environment variables" /></p>
+  </li>
+  <li>As needed, select options for <strong>JSON value</strong>, <strong>Visible during build</strong>, and <strong>Visible during runtime</strong>. If you do not have Super User access, you may only see the JSON value option.</li>
+  <li>Click <strong>Add Variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
+</ol>
 
-      <p><img src="/common/images/cloud_env-var.png" alt="Set environment variables" /></p>
-    </li>
-    <li>As needed, select options for <strong>JSON value</strong>, <strong>Visible during build</strong>, and <strong>Visible during runtime</strong>. If you do not have Super User access, you may only see the JSON value option.</li>
-    <li>Click <strong>Add Variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
-  </ol>
-
-  <div class="bs-callout bs-callout-warning">
-    <p>If you’re attempting to <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">override Magento configuration settings</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code>. For example:
+<div class="bs-callout bs-callout-warning">
+  <p>If you’re attempting to <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">override Magento configuration settings</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code>. For example:
 <img src="/common/images/cloud_env_var_example.png" alt="Environment variable example" /></p>
-  </div>
-
-  <h3 id="project">Project variable</h3>
-  <p>To set project variables in the Project Web Interface:</p>
-
-  <ol>
-    <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
-    <li>Select the Variables tab.</li>
-    <li>Click <strong>Add Variable</strong>.</li>
-    <li>In the <strong>Name</strong> field, enter a variable name. For example, to set the Magento Admin email for the default account, enter <code class="highlighter-rouge">ADMIN_EMAIL</code>.</li>
-    <li>
-      <p>In the <strong>Value</strong> field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.</p>
-
-      <p><img src="/common/images/cloud_project_variable.png" alt="Set project variables" /></p>
-    </li>
-    <li>As needed, select options for <strong>JSON value</strong>, <strong>Visible during build</strong>, and <strong>Visible during runtime</strong>. If you do not have Super User access, you may only see the JSON value option.</li>
-    <li>Click <strong>Add Variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
-  </ol>
-
-  <h2 id="project-conf-env-route">Configure routes</h2>
-  <p>Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>. These routes (or URLs) are used to access your Magento storefront.</p>
-
-  <ol>
-    <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
-    <li>Select the Routes tab.</li>
-    <li>Select <strong>Add Route</strong>.</li>
-    <li>Enter a URL. You can use <code class="highlighter-rouge">{default}</code> in the URL, which is a placeholder for the default domain.</li>
-    <li>Select a <strong>Type</strong>: Upstream for applications or Redirect.</li>
-    <li>
-      <p>To configure an Upstream route:</p>
-
-      <ol>
-        <li>Enter the <strong>Upstream</strong> route.</li>
-        <li>Use the toggle to enable or disable the <strong>Cache</strong> for the route.</li>
-        <li>Enter the cookies to list: No cookies, All cookies, or Specify a specific cookie. You can enter multiple specific cookies.</li>
-        <li>For Headers to Whitelist, select Default Headers or Specify a header. You can enter multiple headers.</li>
-        <li>Use the toggle to enable or disable the Server-Side Includes (<strong>SSI</strong>).</li>
-      </ol>
-    </li>
-    <li>To configure a Redirect, enter a URL to <strong>Redirect to</strong>. You can use <code class="highlighter-rouge">{default}</code> in the URL, which is a placeholder for the default domain.</li>
-    <li>Click <strong>Add Route</strong> to save. The setting is saved and deployed to the environment.</li>
-  </ol>
-
-  <p><img src="/common/images/cloud_routes.png" alt="Configure a route" /></p>
-
-  <h2 id="project-conf-hist">View environment history</h2>
-  <p>An environment’s history includes:</p>
-
-  <ul>
-    <li>Initial creation</li>
-    <li>Snapshots</li>
-    <li>Syncs and merges</li>
-    <li>Code pushes</li>
-  </ul>
-
-  <p>To view an environment’s history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see <a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a>.</p>
-
-  <p>The following figure shows a sample history.</p>
-
-  <p><img src="/common/images/cloud_environment-history.png" alt="Sample environment history" /></p>
-
-  <p>The history shows, from oldest to newest:</p>
-
-  <ul>
-    <li>Environment branched from <code class="highlighter-rouge">FeatureX</code></li>
-    <li>Environment synced with the parent</li>
-    <li>Environment snapshot created</li>
-  </ul>
-
-  <p>We recommend <a href="/guides/v2.0/cloud/project/project-webint-snap.html">creating a snapshot</a> before you make any code changes.</p>
-
-  <ul>
-    <li>Environment variable added</li>
-    <li>Environment snapshot created</li>
-  </ul>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
-    <li><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a></li>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-  </ul>
 </div>
+
+<h3 id="project">Project variable</h3>
+<p>To set project variables in the Project Web Interface:</p>
+
+<ol>
+  <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
+  <li>Select the Variables tab.</li>
+  <li>Click <strong>Add Variable</strong>.</li>
+  <li>In the <strong>Name</strong> field, enter a variable name. For example, to set the Magento Admin email for the default account, enter <code class="highlighter-rouge">ADMIN_EMAIL</code>.</li>
+  <li>
+    <p>In the <strong>Value</strong> field, enter the value for the variable. For example, enter a valid email address accessible for reset email notifications.</p>
+
+    <p><img src="/common/images/cloud_project_variable.png" alt="Set project variables" /></p>
+  </li>
+  <li>As needed, select options for <strong>JSON value</strong>, <strong>Visible during build</strong>, and <strong>Visible during runtime</strong>. If you do not have Super User access, you may only see the JSON value option.</li>
+  <li>Click <strong>Add Variable</strong>. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.</li>
+</ol>
+
+<h2 id="project-conf-env-route">Configure routes</h2>
+<p>Routes allow you to set redirects or upstream settings for applications for your specific environment. For full details on routes, see <a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a>. These routes (or URLs) are used to access your Magento storefront.</p>
+
+<ol>
+  <li><a href="#project-access">Access your project</a> and select a specific environment.</li>
+  <li>Select the Routes tab.</li>
+  <li>Select <strong>Add Route</strong>.</li>
+  <li>Enter a URL. You can use <code class="highlighter-rouge">{default}</code> in the URL, which is a placeholder for the default domain.</li>
+  <li>Select a <strong>Type</strong>: Upstream for applications or Redirect.</li>
+  <li>
+    <p>To configure an Upstream route:</p>
+
+    <ol>
+      <li>Enter the <strong>Upstream</strong> route.</li>
+      <li>Use the toggle to enable or disable the <strong>Cache</strong> for the route.</li>
+      <li>Enter the cookies to list: No cookies, All cookies, or Specify a specific cookie. You can enter multiple specific cookies.</li>
+      <li>For Headers to Whitelist, select Default Headers or Specify a header. You can enter multiple headers.</li>
+      <li>Use the toggle to enable or disable the Server-Side Includes (<strong>SSI</strong>).</li>
+    </ol>
+  </li>
+  <li>To configure a Redirect, enter a URL to <strong>Redirect to</strong>. You can use <code class="highlighter-rouge">{default}</code> in the URL, which is a placeholder for the default domain.</li>
+  <li>Click <strong>Add Route</strong> to save. The setting is saved and deployed to the environment.</li>
+</ol>
+
+<p><img src="/common/images/cloud_routes.png" alt="Configure a route" /></p>
+
+<h2 id="project-conf-hist">View environment history</h2>
+<p>An environment’s history includes:</p>
+
+<ul>
+  <li>Initial creation</li>
+  <li>Snapshots</li>
+  <li>Syncs and merges</li>
+  <li>Code pushes</li>
+</ul>
+
+<p>To view an environment’s history, log into your project and select an environment. The page displays a general history of actions completed on the page. For a detailed list of completed actions during build and deployment, we recommend reviewing logs directly on the servers. For more information on logs, see <a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a>.</p>
+
+<p>The following figure shows a sample history.</p>
+
+<p><img src="/common/images/cloud_environment-history.png" alt="Sample environment history" /></p>
+
+<p>The history shows, from oldest to newest:</p>
+
+<ul>
+  <li>Environment branched from <code class="highlighter-rouge">FeatureX</code></li>
+  <li>Environment synced with the parent</li>
+  <li>Environment snapshot created</li>
+</ul>
+
+<p>We recommend <a href="/guides/v2.0/cloud/project/project-webint-snap.html">creating a snapshot</a> before you make any code changes.</p>
+
+<ul>
+  <li>Environment variable added</li>
+  <li>Environment snapshot created</li>
+</ul>
+
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/project/project-start.html">Project structure</a></li>
+  <li><a href="/guides/v2.0/cloud/project/user-admin.html">Create and manage users</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+</ul>
 
 			
 		</div>

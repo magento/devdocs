@@ -2077,9 +2077,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><strong>Global Master</strong>—Provides a <code class="highlighter-rouge">master</code> branch deployed to Platform-as-a-Service (PaaS) containers.</li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-  <p>For Pro projects <strong>created before October 23, 2017</strong>, the architecture is slightly different. See <a href="/guides/v2.2/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>.</p>
-</div>
+<p class="bs-callout bs-callout-warning">For Pro projects <strong>created before October 23, 2017</strong>, the architecture is slightly different. See <a href="/guides/v2.2/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>.</p>
 
 <p>The following table summarizes the differences between environments:</p>
 
@@ -2152,9 +2150,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The Integration environment runs in a Linux container (LXC) on a grid of servers known as Platform-as-a-Service (PaaS). Each environment includes a web server and database to test your site.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.</p>
-</div>
+<p class="bs-callout bs-callout-info">The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.</p>
 
 <h3 id="global-master">Global Master</h3>
 <p>The Global Master branch is a part of the Integration environment. You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.</p>
@@ -2166,9 +2162,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.2/cloud/live/stage-prod-test.html">Test deployment</a>.</p>
-</div>
+<p class="bs-callout bs-callout-warning">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.2/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.2/cloud/live/stage-prod-test.html">Test deployment</a>.</p>
 
 <h2 id="cloud-arch-prod">Production environment</h2>
 <p>The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.</p>

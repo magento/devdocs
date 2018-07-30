@@ -2068,17 +2068,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<div class="bs-callout bs-callout-warning">
-  <p>We merged <code class="highlighter-rouge">vendor/magento/ece-patches</code> with <a href="/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208"><code class="highlighter-rouge">vendor/magento/ece-tools v2002.0.8</code></a>. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
-</div>
+			<p class="bs-callout bs-callout-warning">We merged <code class="highlighter-rouge">vendor/magento/ece-patches</code> with <a href="/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208"><code class="highlighter-rouge">vendor/magento/ece-tools v2002.0.8</code></a>. You no longer need to update the <code class="highlighter-rouge">vendor/magento/ece-patches</code> package separately.</p>
 
-<div>
-  <p>This package contains patch files that are specific to Magento Commerce (Cloud). Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Magento Commerce (Cloud) code. Using <code class="highlighter-rouge">composer update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
+<p>This package contains patch files that are specific to Magento Commerce (Cloud). Patches are separate from tools, allowing you to apply patch updates without requiring a full upgrade and install of all Magento Commerce (Cloud) code. Using <code class="highlighter-rouge">composer update</code> automatically runs tools to check for available patches and to run them with build and deploy scripts.</p>
 
-  <p>Versions are specified as <code class="highlighter-rouge">10&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
+<p>Versions are specified as <code class="highlighter-rouge">10&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</code>.</p>
 
-  <p>These updates strictly contain improvements to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder. To check for available patches, you can check in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder.</p>
-</div>
+<p>These updates strictly contain improvements to Magento Commerce (Cloud). Patches are available in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder. To check for available patches, you can check in the <code class="highlighter-rouge">vendor/magento/ece-patches</code> folder.</p>
 
 <h2 id="v10204">v102.0.4</h2>
 
@@ -2122,10 +2118,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Removed patch; fixing bug in <code class="highlighter-rouge">colinmollenhour/credis</code> v1.6 to enable support for Magento Commerce (Cloud) 2.2.1.</li>
 </ul>
 
-<h2 id="v10200">v102.0.0</h2>
-<div class="bs-callout bs-callout-warning">
-  <p>This package is no longer compatible with other versions of Magento Commerce (Cloud) and <strong>should not</strong> be used.</p>
-</div>
+<h2 class="bs-callout bs-callout-warning" id="v10200">v102.0.0</h2>
+<p>This package is no longer compatible with other versions of Magento Commerce (Cloud) and <strong>should not</strong> be used.</p>
 
 <h3 id="initial-release">Initial release</h3>
 <p>Initial release of <code class="highlighter-rouge">ece-tools</code> for Magento Commerce (Cloud) 2.2.0.</p>

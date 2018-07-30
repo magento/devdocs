@@ -2089,18 +2089,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>Open <code class="highlighter-rouge">app/etc/env.php</code> in a text editor.</li>
-  <li>Verify the existing value of <code class="highlighter-rouge">key</code> for <code class="highlighter-rouge">crypt</code>. The value should be your <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">Magento Commerce key</a>.</li>
-</ol>
+  <li>
+    <p>Verify the existing value of <code class="highlighter-rouge">key</code> for <code class="highlighter-rouge">crypt</code>. The value should be your <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">Magento Commerce key</a>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-          <span class="s1">'crypt'</span> <span class="o">=&gt;</span>
-          <span class="k">array</span> <span class="p">(</span>
-            <span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;your encryption key&gt;'</span><span class="p">,</span>
-          <span class="p">),</span>
-        <span class="p">);</span>
-        </code></pre></figure>
-
-<ol>
+    <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+      <span class="s1">'crypt'</span> <span class="o">=&gt;</span>
+      <span class="k">array</span> <span class="p">(</span>
+        <span class="s1">'key'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;your encryption key&gt;'</span><span class="p">,</span>
+      <span class="p">),</span>
+    <span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
   <li>If the value is incorrect, add the key value, and save your changes to <code class="highlighter-rouge">env.php</code>.</li>
   <li>Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.</li>
 </ol>

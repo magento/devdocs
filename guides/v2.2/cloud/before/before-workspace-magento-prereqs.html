@@ -2077,9 +2077,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, Nginx, and database on the VM via SSH.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.</p>
 
 <h2 id="vm">Virtual machine or container (host)</h2>
 <p>To best develop and manage your host, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.</p>
@@ -2165,9 +2163,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Regardless of database, for <strong>Pro plans</strong> you need to modify the <code class="highlighter-rouge">auto_increment_increment</code> value.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>For <strong>Pro plans</strong>, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.</p>
-</div>
+<p class="bs-callout bs-callout-warning">For <strong>Pro plans</strong>, the Production environment has a three node infrastructure that uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.</p>
 
 <p>These example instructions detail how to install and create a MariaDB database for Magento on your local:</p>
 
@@ -2226,9 +2222,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>As a user with <code class="highlighter-rouge">root</code> privileges, open <code class="highlighter-rouge">/etc/my.cnf</code> in a text editor.</p>
 
-    <div class="bs-callout bs-callout-info" id="info">
   		On Ubuntu 16, the path is typically <code class="highlighter-rouge">/etc/mysql/mysql.conf.d/mysqld.cnf</code>.
-    </div>
   </li>
   <li>
     <p>Add or edit the following line in the <code class="highlighter-rouge">[mysqld]</code> section:</p>

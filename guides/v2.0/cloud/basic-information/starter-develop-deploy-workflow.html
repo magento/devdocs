@@ -1942,17 +1942,14 @@ git pull origin &lt;environment ID&gt;
 
 <p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.</p>
 
-<div>
+<p>To help export Production data as test data to use in Staging and Integration environments, <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
 
-  <p>To help export Production data as test data to use in Staging and Integration environments, <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities</a>:</p>
+<ul>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html#config-cli-spt-utils-db">CLI commands</a> (Recommended) to export a protected backup of customer and store data using your Magento encryption key</li>
+  <li><a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="_blank">Data Collection</a> tool for generating and exporting data</li>
+</ul>
 
-  <ul>
-    <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html#config-cli-spt-utils-db">CLI commands</a> (Recommended) to export a protected backup of customer and store data using your Magento encryption key</li>
-    <li><a href="http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html" target="_blank">Data Collection</a> tool for generating and exporting data</li>
-  </ul>
-
-  <p>To migrate this data, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
-</div>
+<p>To migrate this data, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
 
 <p><img src="/common/images/cloud_workflow-data-code-process.png" alt="Pull and sanitize production data" /></p>
 

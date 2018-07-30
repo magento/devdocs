@@ -1764,262 +1764,253 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>You cannot create branches from Pro plan Staging and Production <code class="highlighter-rouge">master</code>. These environments include <code class="highlighter-rouge">master</code> branches that you deploy updated Git code to from Integration <code class="highlighter-rouge">master</code>.</p>
 </div>
 
-<div>
+<p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+<h2 id="project-branch-add">Add or delete an environment</h2>
+<p>Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master.</p>
 
-    <p>We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.</p>
+<ul>
+  <li>For Starter, we recommend you create a <code class="highlighter-rouge">staging</code> branch from Master, then branch from <code class="highlighter-rouge">staging</code> for development.</li>
+  <li>For Pro, you want to branch from Development (Integration <code class="highlighter-rouge">master</code>).</li>
+</ul>
 
-    <p>If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
-  </div>
+<p>For branching strategies, review <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter</a> and <a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
 
-  <h2 id="project-branch-add">Add or delete an environment</h2>
-  <p>Complete development of code and added extensions in a branch and, when complete, merge (<code class="highlighter-rouge">git push</code>) the branch with its parent or master.</p>
+<p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can <a href="/guides/v2.0/cloud/env/environments-start.html#env-delete">delete it entirely</a> using the CLI.</p>
 
-  <ul>
-    <li>For Starter, we recommend you create a <code class="highlighter-rouge">staging</code> branch from Master, then branch from <code class="highlighter-rouge">staging</code> for development.</li>
-    <li>For Pro, you want to branch from Development (Integration <code class="highlighter-rouge">master</code>).</li>
-  </ul>
+<p>If you need additional environments for development, enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> for more information.</p>
 
-  <p>For branching strategies, review <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter</a> and <a href="/guides/v2.0/cloud/basic-information/starter-develop-deploy-workflow.html">Pro</a> architecture overviews.</p>
+<h2 id="add">Add a branch</h2>
+<p>To add a branch:</p>
 
-  <p>Your account supports a limited number of active Git branches and an unlimited number of inactive branches. Manage active and inactive branches by deleting a branch. When deleted, it is deactivated and still listed in the project branches list. You can either activate the branch later or you can <a href="/guides/v2.0/cloud/env/environments-start.html#env-delete">delete it entirely</a> using the CLI.</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>
+    <p>In the left navigation bar, click the name of the parent environment.</p>
 
-  <p>If you need additional environments for development, enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a> for more information.</p>
+    <p>Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you’re about to create.</p>
+  </li>
+  <li>Click <img src="/common/images/cloud_branch-icon.png" alt="Create a branch" width="30px" />.</li>
+  <li>
+    <p>In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.</p>
 
-  <h2 id="add">Add a branch</h2>
-  <p>To add a branch:</p>
-
-  <ol>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
-    <li>
-      <p>In the left navigation bar, click the name of the parent environment.</p>
-
-      <p>Your new branch is cloned from this environment. Choose a parent environment that is similar to the environment you’re about to create.</p>
-    </li>
-    <li>Click <img src="/common/images/cloud_branch-icon.png" alt="Create a branch" width="30px" />.</li>
-    <li>
-      <p>In the provided field, enter a branch name. In many cases, the environment name is the same as its ID.</p>
-
-      <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" id="info">
    		<p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
    		<p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code>{ }</code>), parentheses, asterisk (<code>*</code>), angle brackets (<code>&lt; &gt;</code>), ampersand (<code>&amp;</code>), percent (<code>%</code>), and other characters.</p>
  	</div>
-    </li>
-    <li>Click <strong>Branch</strong>.</li>
-    <li>
-      <p>Wait while the environment deploys.</p>
+  </li>
+  <li>Click <strong>Branch</strong>.</li>
+  <li>
+    <p>Wait while the environment deploys.</p>
 
-      <p>During deployment, its status is <strong>In process</strong>, as the following figure shows.</p>
+    <p>During deployment, its status is <strong>In process</strong>, as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_branch-deploy.png" alt="Branch is deploying" /></p>
+    <p><img src="/common/images/cloud_branch-deploy.png" alt="Branch is deploying" /></p>
 
-      <p>After a successful deployment, the status changes to <strong>Success</strong>:</p>
+    <p>After a successful deployment, the status changes to <strong>Success</strong>:</p>
 
-      <p><img src="/common/images/cloud_branch-success.png" alt="Branch is deploying" /></p>
-    </li>
-    <li>
-      <p>Continue with one of the following:</p>
+    <p><img src="/common/images/cloud_branch-success.png" alt="Branch is deploying" /></p>
+  </li>
+  <li>
+    <p>Continue with one of the following:</p>
 
-      <ul>
-        <li><a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a></li>
-        <li><a href="/guides/v2.0/cloud/howtos/how-to.html">How tos and tutorials</a></li>
-      </ul>
-    </li>
-  </ol>
+    <ul>
+      <li><a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a></li>
+      <li><a href="/guides/v2.0/cloud/howtos/how-to.html">How tos and tutorials</a></li>
+    </ul>
+  </li>
+</ol>
 
-  <h2 id="inactive">Delete to make a branch inactive</h2>
-  <p>To delete an environment and make it inactive:</p>
+<h2 id="inactive">Delete to make a branch inactive</h2>
+<p>To delete an environment and make it inactive:</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
-    <li>In the left pane, click the name of the branch to delete.</li>
-    <li>
-      <p>Click <strong>Configure environment</strong> as the following figure shows.</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>In the left pane, click the name of the branch to delete.</li>
+  <li>
+    <p>Click <strong>Configure environment</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_project-env.png" alt="Configure environment" /></p>
-    </li>
-    <li>Click the <strong>Settings</strong> tab.</li>
-    <li>
-      <p>Click <strong>Delete</strong> next to the environment’s status, as the following figure shows.</p>
+    <p><img src="/common/images/cloud_project-env.png" alt="Configure environment" /></p>
+  </li>
+  <li>Click the <strong>Settings</strong> tab.</li>
+  <li>
+    <p>Click <strong>Delete</strong> next to the environment’s status, as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_env-delete.png" alt="Delete an environment" /></p>
+    <p><img src="/common/images/cloud_env-delete.png" alt="Delete an environment" /></p>
 
-      <p>A deleted (that is, inactive) environment displays with its name stricken out as the following figure shows.</p>
+    <p>A deleted (that is, inactive) environment displays with its name stricken out as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_environment-deleted.png" alt="Delete an environment" /></p>
-    </li>
-  </ol>
+    <p><img src="/common/images/cloud_environment-deleted.png" alt="Delete an environment" /></p>
+  </li>
+</ol>
 
-  <h2 id="project-branch-sync">Sync from the environment’s parent</h2>
-  <p>Syncing an environment (or branch) is the same as <code class="highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.</p>
+<h2 id="project-branch-sync">Sync from the environment’s parent</h2>
+<p>Syncing an environment (or branch) is the same as <code class="highlighter-rouge">git pull origin &lt;parent&gt;</code>. You sync to get updated code from a parent environment. You can use this feature through the interface for all Starter and Pro environments.</p>
 
-  <p>For Pro plan, you can also sync from Staging and Production to your Integration <code class="highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
+<p>For Pro plan, you can also sync from Staging and Production to your Integration <code class="highlighter-rouge">master</code> branch. This sync only pulls and pushes code, not data. To sync data, you will need to dump the database data and push it to another environment’s database. For more information, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy static files and data</a>.</p>
 
-  <p>To sync an environment with its parent:</p>
+<p>To sync an environment with its parent:</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
-    <li>In the left pane, click the name of the branch you want to sync.</li>
-    <li>
-      <p>Click <img src="/common/images/cloud_environment-sync.png" alt="Sync an environment" width="30px" /> (sync).</p>
+<ol>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>In the left pane, click the name of the branch you want to sync.</li>
+  <li>
+    <p>Click <img src="/common/images/cloud_environment-sync.png" alt="Sync an environment" width="30px" /> (sync).</p>
 
-      <p>The following prompt displays:</p>
+    <p>The following prompt displays:</p>
 
-      <p><img src="/common/images/cloud_environment-sync2.png" alt="Choose what to sync" /></p>
-    </li>
-    <li>Select the checkbox next to each item to sync and click <strong>Sync</strong>.</li>
-  </ol>
+    <p><img src="/common/images/cloud_environment-sync2.png" alt="Choose what to sync" /></p>
+  </li>
+  <li>Select the checkbox next to each item to sync and click <strong>Sync</strong>.</li>
+</ol>
 
-  <h2 id="project-branch-merge">Merge with the environment’s parent</h2>
-  <p>Merging an environment is the same as <code class="highlighter-rouge">git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to <code class="highlighter-rouge">master</code>. You can also deploy to Staging and Production using the merge command.</p>
+<h2 id="project-branch-merge">Merge with the environment’s parent</h2>
+<p>Merging an environment is the same as <code class="highlighter-rouge">git push origin</code>. You merge to push updated code from an environment to its parent environment (that is, a Git branch). You can merge this code up through the parent-child relationships to <code class="highlighter-rouge">master</code>. You can also deploy to Staging and Production using the merge command.</p>
 
-  <p>To merge an environment with its parent:</p>
+<p>To merge an environment with its parent:</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
-    <li>In the left pane, click the name of the branch you want to merge.</li>
-    <li>Click <img src="/common/images/cloud_environment-merge.png" alt="Merge an environment" width="30px" /> (merge).</li>
-    <li>Click <strong>Merge</strong> to confirm the action.</li>
-  </ol>
+<ol>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>In the left pane, click the name of the branch you want to merge.</li>
+  <li>Click <img src="/common/images/cloud_environment-merge.png" alt="Merge an environment" width="30px" /> (merge).</li>
+  <li>Click <strong>Merge</strong> to confirm the action.</li>
+</ol>
 
-  <h2 id="logs">View logs</h2>
-  <p>Through the Project Web Interface, you can review various logs for environments including build, deploy, and deployment history.</p>
+<h2 id="logs">View logs</h2>
+<p>Through the Project Web Interface, you can review various logs for environments including build, deploy, and deployment history.</p>
 
-  <p>For <strong>Starter</strong> environments, you can review build and deploy logs and the deployment history. These environments include Master (Production) and all branches created from it.</p>
+<p>For <strong>Starter</strong> environments, you can review build and deploy logs and the deployment history. These environments include Master (Production) and all branches created from it.</p>
 
-  <p>For <strong>Pro</strong> environments, you can review the following logs per environment:</p>
+<p>For <strong>Pro</strong> environments, you can review the following logs per environment:</p>
 
-  <ul>
-    <li>Integration: Build and deploy and deployment history</li>
-    <li>Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
-    <li>Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
-  </ul>
+<ul>
+  <li>Integration: Build and deploy and deployment history</li>
+  <li>Staging: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
+  <li>Production: Build logs and deployment history. You need to SSH into the server to view deploy logs.</li>
+</ul>
 
-  <p>If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">enter a ticket for updating</a> your project interface.</p>
+<p>If you do not see your Pro plan Staging and Production environments in the Project Web Interface, you need to <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">enter a ticket for updating</a> your project interface.</p>
 
-  <ol>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
-    <li>In the left pane, click an environment to review logs for.</li>
-    <li>The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.</li>
-    <li>To view the build log, select the Success or Failure link per deployment record on the account.</li>
-  </ol>
+<ol>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-access">Log in to your project</a>.</li>
+  <li>In the left pane, click an environment to review logs for.</li>
+  <li>The right pane provides a deployment history of one entry per action attempted including syncs, merges, branches, snapshots, and more.</li>
+  <li>To view the build log, select the Success or Failure link per deployment record on the account.</li>
+</ol>
 
-  <h2 id="private">Pull code from a private Git repository</h2>
-  <p>Your Magento Commerce (Cloud) project can include code located in a private Git repository. For example, a you may have code for a custom module or theme in a private repo. To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code class="highlighter-rouge">composer.json</code>.</p>
+<h2 id="private">Pull code from a private Git repository</h2>
+<p>Your Magento Commerce (Cloud) project can include code located in a private Git repository. For example, a you may have code for a custom module or theme in a private repo. To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code class="highlighter-rouge">composer.json</code>.</p>
 
-  <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.</p>
+<p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository. GitHub allows you to use a deploy key for one repository only.</p>
 
-  <p>If your project needs to access multiple repositories, you can choose to
+<p>If your project needs to access multiple repositories, you can choose to
 attach an SSH key to an automated user account. Because this account won’t
 be used by a human, it’s referred to as a <a href="https://developer.github.com/guides/managing-deploy-keys/" target="_blank"><em>machine user</em></a>. You can then add the
 machine account as collaborator or add the machine user to a team with
 access to the repositories it needs to manipulate.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
 We highly recommend adding and merging this code to your project Git repositories. If you do not configure the connection, you will have build issues.
 </div>
 
-  <h3 id="ssh">Find your deploy key</h3>
-  <p>To find your project SSH public key (also referred to as a <em>deploy key</em>):</p>
+<h3 id="ssh">Find your deploy key</h3>
+<p>To find your project SSH public key (also referred to as a <em>deploy key</em>):</p>
 
-  <ol>
-    <li>Log in to your project using the Web Interface.</li>
-    <li>Click <strong>Configure Project</strong>.</li>
-    <li>
-      <p>Click <strong>Deploy Key</strong>.</p>
+<ol>
+  <li>Log in to your project using the Web Interface.</li>
+  <li>Click <strong>Configure Project</strong>.</li>
+  <li>
+    <p>Click <strong>Deploy Key</strong>.</p>
 
-      <p>The following figure shows an example.</p>
+    <p>The following figure shows an example.</p>
 
-      <p><img src="/common/images/cloud_deploy-key.png" alt="Deploy Key" width="500px" /></p>
-    </li>
-    <li>Copy the deploy key to the clipboard.</li>
-    <li>See <a href="#cloud-deploykey-github">Enter your GitHub deploy key</a>.</li>
-  </ol>
+    <p><img src="/common/images/cloud_deploy-key.png" alt="Deploy Key" width="500px" /></p>
+  </li>
+  <li>Copy the deploy key to the clipboard.</li>
+  <li>See <a href="#cloud-deploykey-github">Enter your GitHub deploy key</a>.</li>
+</ol>
 
-  <h3 id="cloud-deploykey-github">Enter your GitHub deploy key</h3>
-  <p>On GitHub, deploy keys are read-only by default. Your Magento project won’t push code to the private repository.</p>
+<h3 id="cloud-deploykey-github">Enter your GitHub deploy key</h3>
+<p>On GitHub, deploy keys are read-only by default. Your Magento project won’t push code to the private repository.</p>
 
-  <p>To enter your project’s public key as a GitHub deploy key:</p>
+<p>To enter your project’s public key as a GitHub deploy key:</p>
 
-  <ol>
-    <li>Log in to your GitHub repository as its administrator.</li>
-    <li>
-      <p>Click <strong>Settings</strong> as the following figure shows.</p>
+<ol>
+  <li>Log in to your GitHub repository as its administrator.</li>
+  <li>
+    <p>Click <strong>Settings</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_gh-settings.png" alt="GitHub settings" width="650px" /></p>
+    <p><img src="/common/images/cloud_gh-settings.png" alt="GitHub settings" width="650px" /></p>
 
-      <div class="bs-callout bs-callout-info" id="info">
+    <div class="bs-callout bs-callout-info" id="info">
   		<p>If you don't see this option, you're not the repository administrator and you cannot complete this task. Ask your GitHub project administrator to do this.</p>
 </div>
-    </li>
-    <li>
-      <p>On the Settings page, in the left navigation bar, click <strong>Deploy Keys</strong> as the following figure shows.</p>
+  </li>
+  <li>
+    <p>On the Settings page, in the left navigation bar, click <strong>Deploy Keys</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_gh-deploy-key.png" alt="GitHub deploy key" width="200px" /></p>
-    </li>
-    <li>Click <strong>Add deploy key</strong>.</li>
-    <li>Follow the prompts on your screen to complete the task.</li>
-  </ol>
+    <p><img src="/common/images/cloud_gh-deploy-key.png" alt="GitHub deploy key" width="200px" /></p>
+  </li>
+  <li>Click <strong>Add deploy key</strong>.</li>
+  <li>Follow the prompts on your screen to complete the task.</li>
+</ol>
 
-  <p>In <code class="highlighter-rouge">composer.json</code>, use the <code class="highlighter-rouge">&lt;user&gt;@&lt;host&gt;:&lt;.git&lt;/code&gt;</code> format, or <code class="highlighter-rouge">ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.</p>
+<p>In <code class="highlighter-rouge">composer.json</code>, use the <code class="highlighter-rouge">&lt;user&gt;@&lt;host&gt;:&lt;.git&lt;/code&gt;</code> format, or <code class="highlighter-rouge">ssh://&lt;user&gt;@&lt;host&gt;:&lt;port&gt;/&lt;path&gt;.git</code> if using a non-standard port.</p>
 
-  <h3 id="cloud-deploykey-bb">Enter your Bitbucket deployment key</h3>
-  <p>To enter your project’s public key as a Bitbucket deploy key:</p>
+<h3 id="cloud-deploykey-bb">Enter your Bitbucket deployment key</h3>
+<p>To enter your project’s public key as a Bitbucket deploy key:</p>
 
-  <ol>
-    <li>Log in to your Bitbucket repository as its administrator.</li>
-    <li>
-      <p>In the left navigation bar, click <strong>Settings</strong> as the following figure shows.</p>
+<ol>
+  <li>Log in to your Bitbucket repository as its administrator.</li>
+  <li>
+    <p>In the left navigation bar, click <strong>Settings</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_bb-settings.png" alt="Bitbucket settings" /></p>
-    </li>
-    <li>
-      <p>Click General &gt; <strong>Deployment Keys</strong> as the following figure shows.</p>
+    <p><img src="/common/images/cloud_bb-settings.png" alt="Bitbucket settings" /></p>
+  </li>
+  <li>
+    <p>Click General &gt; <strong>Deployment Keys</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_bb-deploy-key.png" alt="Bitbucket deploy key" /></p>
-    </li>
-    <li>Click <strong>Add Key</strong>.</li>
-    <li>Follow the prompts on your screen to complete the task.</li>
-  </ol>
+    <p><img src="/common/images/cloud_bb-deploy-key.png" alt="Bitbucket deploy key" /></p>
+  </li>
+  <li>Click <strong>Add Key</strong>.</li>
+  <li>Follow the prompts on your screen to complete the task.</li>
+</ol>
 
-  <h2 id="security">Secure your environments and branches</h2>
-  <p>You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.</p>
+<h2 id="security">Secure your environments and branches</h2>
+<p>You can access your project and environments from any location through a web browser using the Project Web Interface. You may have security set for your Production environment, stores, and sites. This section helps you secure your Integration and Staging environments for strictly your developers, DBAs, and more.</p>
 
-  <p>To secure your Starter environments and Pro Integration environments:</p>
+<p>To secure your Starter environments and Pro Integration environments:</p>
 
-  <ol>
-    <li>Log into your <a href="https://accounts.magento.cloud">Project Web Interface</a>.</li>
-    <li>Select an environment / branch.</li>
-    <li>Click Configure Environment.</li>
-    <li>On the <strong>Settings</strong> tab, click <strong>ON</strong> for <strong>HTTP access control</strong> to enable secure access. You can choose between credentials or IP addresses to filter for access.</li>
-    <li>To filter by credentials, click <strong>Add Login</strong>, enter a username and password, and click again <strong>Add Login</strong> to add.</li>
-    <li>
-      <p>To filter by IP address, enter the IP addresses in a list with <code class="highlighter-rouge">deny</code> or <code class="highlighter-rouge">allow</code>. For example:</p>
+<ol>
+  <li>Log into your <a href="https://accounts.magento.cloud">Project Web Interface</a>.</li>
+  <li>Select an environment / branch.</li>
+  <li>Click Configure Environment.</li>
+  <li>On the <strong>Settings</strong> tab, click <strong>ON</strong> for <strong>HTTP access control</strong> to enable secure access. You can choose between credentials or IP addresses to filter for access.</li>
+  <li>To filter by credentials, click <strong>Add Login</strong>, enter a username and password, and click again <strong>Add Login</strong> to add.</li>
+  <li>
+    <p>To filter by IP address, enter the IP addresses in a list with <code class="highlighter-rouge">deny</code> or <code class="highlighter-rouge">allow</code>. For example:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 123.456.789.111/29 allow
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 123.456.789.111/29 allow
  123.456.789.112/29 allow
  234.123.567.111/29 allow
  0.0.0.0/0 deny
-</code></pre></div>      </div>
-    </li>
-    <li>Click <strong>Save</strong>.</li>
-  </ol>
+</code></pre></div>    </div>
+  </li>
+  <li>Click <strong>Save</strong>.</li>
+</ol>
 
-  <p>The branch redeploys to update the environment security and settings.</p>
+<p>The branch redeploys to update the environment security and settings.</p>
 
-  <p>To secure Pro plan Staging environment, enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a>. Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.</p>
+<p>To secure Pro plan Staging environment, enter a <a href="/guides/v2.0/cloud/trouble/trouble.html">Support ticket</a>. Provide the user credentials and/or IP addresses to allow or deny. If you have security settings entered for an existing Integration environment, in the ticket ask to have the secure settings copied to Staging.</p>
 
-  <p>We recommend testing your environments after completing security settings.</p>
+<p>We recommend testing your environments after completing security settings.</p>
 
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
-    <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a></li>
-    <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
-  </ul>
-</div>
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Project backup and restore (snapshot)</a></li>
+  <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
+</ul>
 
 			
 		</div>

@@ -2075,10 +2075,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<div class="bs-callout bs-callout-warning">
-  <p>When attempting to <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">use environment variables to override configuration settings</a> using the <a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code> as in the following example.
+<p class="bs-callout bs-callout-warning">When attempting to <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">use environment variables to override configuration settings</a> using the <a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-conf-env-var">Project Web Interface</a>, you must prepend the variable name with <code class="highlighter-rouge">env:</code> as in the following example.
 <img src="/common/images/cloud_env_var_example.png" alt="Environment variable example" /></p>
-</div>
 
 <p>Since values can change over time, it is best to inspect the variable at runtime and use it to configure your application. For example, we use the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> variable to retrieve environment-related relationships as follows:</p>
 

@@ -340,44 +340,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>When logged in, you should see a project named and ready to access.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in Magento Commerce (Cloud). If you have an existing Magento deployment, import code, extensions, themes, and data after fully deploying this base Magento code.</p>
-</div>
+<p class="bs-callout bs-callout-info">We recommend always starting with the blank site from a template as your initial project option. Completely deploy this code across your entire environment from Integration to Staging to Production for a clear experience with deployment in Magento Commerce (Cloud). If you have an existing Magento deployment, import code, extensions, themes, and data after fully deploying this base Magento code.</p>
 
-<div>
+<ol>
+  <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
+  <li>
+    <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
 
-  <ol>
-    <li>Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the <em>Access your project now</em> link. Or you can log in to <a href="https://accounts.magento.cloud" target="_blank">your Magento Commerce account</a>.</li>
-    <li>
-      <p>Click the <em>This project has no code yet</em> link next to the Project name.</p>
+    <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
+  </li>
+  <li>
+    <p>Enter a name for the project.</p>
 
-      <p><img src="/common/images/cloud_project_empty.png" alt="Project without code" /></p>
-    </li>
-    <li>
-      <p>Enter a name for the project.</p>
+    <p><img src="/common/images/cloud_project_name.png" alt="Project name" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
 
-      <p><img src="/common/images/cloud_project_name.png" alt="Project name" /></p>
-    </li>
-    <li>
-      <p>Click <strong>Create a blank site from a template</strong> and click <strong>Continue</strong>. We recommend starting with the Magento template as your initial project option. If you have an existing Magento deployment, you can later import code, extensions, themes, and data after fully deploying this base Magento code.</p>
+    <p><img src="/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
+  </li>
+  <li>
+    <p>When prompted, enter your Magento Commerce <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
 
-      <p><img src="/common/images/cloud_project_template.png" alt="Create a site using the sample Magento project" width="650px" /></p>
-    </li>
-    <li>
-      <p>When prompted, enter your Magento Commerce <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Magento authentication keys</a> in the provided fields. You created these keys earlier in the Magento Marketplace. Enter the private and public keys and click <strong>Finish</strong>.</p>
+    <p><img src="/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
 
-      <p><img src="/common/images/cloud-project-magento-auth-creds.png" alt="Enter your authentication keys" width="650px" /></p>
+    <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
+  </li>
+  <li>
+    <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
 
-      <p>The keys are added to the <code class="highlighter-rouge">auth.json</code> file in the repository <code class="highlighter-rouge">master</code> branch, required for all created branches and deployments.</p>
-    </li>
-    <li>
-      <p>Wait a few minutes while the project deploys. A status of <em>Pending</em> displays until completed, similar to the following:</p>
-
-      <p><img src="/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
-    </li>
-    <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
-  </ol>
-</div>
+    <p><img src="/common/images/cloud_project_template2.png" alt="Your sample Magento project" width="650px" /></p>
+  </li>
+  <li>After the project deploys, <strong>Success</strong> displays next to the name of your project.</li>
+</ol>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html">Install Magento prerequisites</a></p>

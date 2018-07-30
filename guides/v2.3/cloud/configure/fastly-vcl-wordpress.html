@@ -2073,9 +2073,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Account access and URL to the Magento Admin for the Staging or Production environment</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This information is just the code portion for setting up your VCL. Use this information with <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">This information is just the code portion for setting up your VCL. Use this information with <a href="/guides/v2.3/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h2 id="edge-dictionary">Create Wordpress Edge Dictionary</h2>
 <p>Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of URLs to redirect to a Wordpress backend. You may only want to create the edge dictionary in your Production environment. You can also create it in Staging for testing if needed.</p>
@@ -2097,13 +2095,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Create an <code class="highlighter-rouge">wordpress.json</code> file with the following JSON content:</p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wordpress"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"dynamic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"recv"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"if ( req.url.path ~ </span><span class="se">\"</span><span class="s2">^</span><span class="se">\\</span><span class="s2">/?([^:</span><span class="se">\/\\</span><span class="s2">s]+).*$</span><span class="se">\"</span><span class="s2"> ) { if ( table.lookup(wordpress_urls, re.group.1, </span><span class="se">\"</span><span class="s2">NOTFOUND</span><span class="se">\"</span><span class="s2">) != </span><span class="se">\"</span><span class="s2">NOTFOUND</span><span class="se">\"</span><span class="s2"> ) { set req.http.X-WP = </span><span class="se">\"</span><span class="s2">1</span><span class="se">\"</span><span class="s2">; } }"</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Review the following values for the code to determine if you need to make changes:</p>
 
@@ -2114,9 +2113,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">content</code>: The code that runs. The code extracts the first part <code class="highlighter-rouge">mypath</code> of the path <code class="highlighter-rouge">/mypath/someotherpath</code>.  It then compares that path against the Edge Dictionary <code class="highlighter-rouge">wordpress_urls</code>. If a match is found, the visitor is redirected to the Wordpress backend.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
-</div>
+<p class="bs-callout bs-callout-info">The default VCL snippets you uploaded included a prepended name of <code class="highlighter-rouge">magentomodule_</code> with a priority of 50. For your custom VCL snippets, <strong>do not use the <code class="highlighter-rouge">magentomodule_</code> name</strong>. Also consider the priority of your custom snippets if they should override the default snippets.</p>
 
 <h2 id="wordpress">Configure Wordpress</h2>
 <p>For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request:</p>

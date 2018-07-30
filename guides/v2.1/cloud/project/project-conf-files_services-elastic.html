@@ -2033,48 +2033,48 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later. Refer to <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elasticsearch information</a> to learn more. For Magento Commerce (Cloud) 2.0.X, you can use <a href="/guides/v2.0/cloud/project/project-conf-files_services-solr.html">Solr</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you’re upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es">the 2.1.3 Release Notes</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">If you’re upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in <a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es">the 2.1.3 Release Notes</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If you prefer using an existing search service, like Elasticsearch, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="/guides/v2.1/cloud/env/working-with-variables.html#search"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
-</div>
+<p class="bs-callout bs-callout-warning">If you prefer using an existing search service, like Elasticsearch, instead of relying on Magento Commerce (Cloud) to create it for you, use the <a href="/guides/v2.1/cloud/env/working-with-variables.html#search"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></a> environment variable to connect it to your site.</p>
 
 <h2 id="settings">Add Elasticsearch in services.yaml and .magento.app.yaml</h2>
 <p>To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">elasticsearch</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">elasticsearch</span><span class="pi">:</span>
    <span class="na">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
-   <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span></code></pre></figure>
+   <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
+</code></pre></div></div>
 
 <p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">relationships</span><span class="pi">:</span>
-    <span class="na">elasticsearch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch:elasticsearch"</span></code></pre></figure>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">relationships</span><span class="pi">:</span>
+    <span class="na">elasticsearch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">elasticsearch:elasticsearch"</span>
+</code></pre></div></div>
 
 <p>Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see <a href="/guides/v2.1/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
 <h3 id="addplugins">Add Elasticsearch plugins</h3>
 <p>Optionally, you can add the plugins through the <code class="highlighter-rouge">.magento/services.yaml</code> file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">elasticsearch</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">elasticsearch</span><span class="pi">:</span>
    <span class="na">type</span><span class="pi">:</span> <span class="s">elasticsearch:1.7</span>
    <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
    <span class="na">configuration</span><span class="pi">:</span>
     <span class="na">plugins</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">analysis-icu</span>
-      <span class="pi">-</span> <span class="s">lang-python</span></code></pre></figure>
+      <span class="pi">-</span> <span class="s">lang-python</span>
+</code></pre></div></div>
 
 <p>For example, if you are using <a href="https://github.com/Smile-SA/elasticsuite" target="\_blank">Smile ElasticSuite</a>, you should add the following plugins:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">elasticsearch</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">elasticsearch</span><span class="pi">:</span>
    <span class="na">type</span><span class="pi">:</span> <span class="s">elasticsearch:2.4</span>
    <span class="na">disk</span><span class="pi">:</span> <span class="s">1024</span>
    <span class="na">configuration</span><span class="pi">:</span>
     <span class="na">plugins</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">analysis-icu</span>
-      <span class="pi">-</span> <span class="s">analysis-phonetic</span></code></pre></figure>
+      <span class="pi">-</span> <span class="s">analysis-phonetic</span>
+</code></pre></div></div>
 
 <p>The following are supported Elasticsearch plugins for version 2.4:</p>
 
@@ -2103,9 +2103,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
 <p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You will use this information to <a href="#configure">complete Elasticsearch configuration</a> in the Admin Panel.</p>
-</div>
+<p class="bs-callout bs-callout-info">You will use this information to <a href="#configure">complete Elasticsearch configuration</a> in the Admin Panel.</p>
 
 <p>To verify this information used for configurations and settings:</p>
 
@@ -2121,21 +2119,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Elasticsearch:</p>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="s2">"elasticsearch"</span> : <span class="o">[</span>
-      <span class="o">{</span>
-         <span class="s2">"host"</span> : <span class="s2">"elasticsearch.internal"</span>,
-         <span class="s2">"ip"</span> : <span class="s2">"250.0.97.96"</span>,
-         <span class="s2">"scheme"</span> : <span class="s2">"http"</span>,
-         <span class="s2">"port"</span> : <span class="s2">"9200"</span>
-      <span class="o">}</span>
-   <span class="o">]</span>,</code></pre></figure>
+<p><code class="no-copy highlighter-rouge">
+"elasticsearch" : [
+      {
+         "host" : "elasticsearch.internal",
+         "ip" : "250.0.97.96",
+         "scheme" : "http",
+         "port" : "9200"
+      }
+   ],
+</code></p>
 
 <h2 id="configure">Configure Elasticsearch for your site</h2>
 <p>The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code>. See <a href="/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a> to complete your Admin configurations.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.</p>
 
 			
 		</div>

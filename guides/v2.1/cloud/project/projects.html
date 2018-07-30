@@ -2026,95 +2026,87 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We provide a Project Web Interface and CLI commands to fully manage all aspects of your project. You have full access to all environments for Starter and Pro environments. You may need to continue to use SSH and CLI commands for some aspects of Pro plan Staging and Production environments.</p>
 
-<div>
+<p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
+<p>To manage your project, environment, and branches, see:</p>
 
-    <p>We can update Pro projects created before October 23, 2017. All new Pro projects include these features. Your ticket will be queued for update, which may take time to complete. We will keep you updated through the process.</p>
+<ul>
+  <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Configure your project</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
+  <li><a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a></li>
+  <li>Manage branches with the <a href="/guides/v2.1/cloud/project/project-webint-branch.html">Project Web Interface</a> or <a href="/guides/v2.1/cloud/env/environments-start.html">CLI commands</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
+</ul>
 
-    <p>If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
-  </div>
+<h3 id="variables">Project and environment variables</h3>
+<p>The following sections detail more about project and environment variables:</p>
 
-  <p>To manage your project, environment, and branches, see:</p>
+<ul>
+  <li><a href="/guides/v2.1/cloud/env/variables-intro.html">Overview of environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
+  <li><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of configuration management</a></li>
+</ul>
 
-  <ul>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Configure your project</a></li>
-    <li><a href="/guides/v2.1/cloud/project/project-start.html">Project structure</a></li>
-    <li><a href="/guides/v2.1/cloud/project/user-admin.html">Create and manage users</a></li>
-    <li>Manage branches with the <a href="/guides/v2.1/cloud/project/project-webint-branch.html">Project Web Interface</a> or <a href="/guides/v2.1/cloud/env/environments-start.html">CLI commands</a></li>
-    <li><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and backup management</a></li>
-  </ul>
+<h3 id="upgrade">Upgrade and patch</h3>
+<p>To upgrade and patch Magento, see:</p>
 
-  <h3 id="variables">Project and environment variables</h3>
-  <p>The following sections detail more about project and environment variables:</p>
+<ul>
+  <li><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
+  <li><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
+</ul>
 
-  <ul>
-    <li><a href="/guides/v2.1/cloud/env/variables-intro.html">Overview of environment variables</a></li>
-    <li><a href="/guides/v2.1/cloud/env/environment-vars_cloud.html">Magento Commerce (Cloud) environment variables</a></li>
-    <li><a href="/guides/v2.1/cloud/env/environment-vars_magento.html">Magento application environment variables</a></li>
-    <li><a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration management</a></li>
-    <li><a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of configuration management</a></li>
-  </ul>
+<h2 id="login">Access the Project Web Interface</h2>
+<p>With your Magento Commerce (Cloud) account created, you can log into the Project Web Interface at <a href="https://accounts.magento.cloud" target="\_blank">https://accounts.magento.cloud</a>.</p>
 
-  <h3 id="upgrade">Upgrade and patch</h3>
-  <p>To upgrade and patch Magento, see:</p>
+<p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
 
-  <ul>
-    <li><a href="/guides/v2.1/cloud/project/project-upgrade.html">Upgrade and test Magento Commerce</a></li>
-    <li><a href="/guides/v2.1/cloud/project/project-patch.html">Patch and test Magento Commerce</a></li>
-  </ul>
+<h2 id="integrations">Blackfire and New Relic credentials</h2>
+<p>Your project includes <a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire</a> and <a href="/guides/v2.1/cloud/project/new-relic.html">New Relic</a> services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.</p>
 
-  <h2 id="login">Access the Project Web Interface</h2>
-  <p>With your Magento Commerce (Cloud) account created, you can log into the Project Web Interface at <a href="https://accounts.magento.cloud" target="\_blank">https://accounts.magento.cloud</a>.</p>
+<ul>
+  <li><a href="https://blackfire.io/magento">Blackfire.io Profiler</a> provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.</li>
+  <li><a href="https://newrelic.com">New Relic APM</a> provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. <em>Do not install</em> the New Relic module with this service in Magento Commerce (Cloud).</li>
+</ul>
 
-  <p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
+<p>To review your integration tokens, IDs, and more:</p>
 
-  <h2 id="integrations">Blackfire and New Relic credentials</h2>
-  <p>Your project includes <a href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Blackfire</a> and <a href="/guides/v2.1/cloud/project/new-relic.html">New Relic</a> services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.</p>
+<ol>
+  <li>As the Magento Commerce (Cloud) Account Owner, log in to your Magento Commerce project.</li>
+  <li>
+    <p>In the upper right corner, click <strong>&lt;your name&gt;</strong> &gt; <strong>Account Settings</strong>.</p>
 
-  <ul>
-    <li><a href="https://blackfire.io/magento">Blackfire.io Profiler</a> provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.</li>
-    <li><a href="https://newrelic.com">New Relic APM</a> provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. <em>Do not install</em> the New Relic module with this service in Magento Commerce (Cloud).</li>
-  </ul>
+    <p><img src="/common/images/cloud_acct-settings-option.png" alt="Go to account settings" /></p>
+  </li>
+  <li>
+    <p>On your account page, click <strong>View Details</strong> for your project to open general settings and plan details.</p>
 
-  <p>To review your integration tokens, IDs, and more:</p>
+    <p><img src="/common/images/cloud_blackfire-edit-details.png" alt="View your project details" /></p>
+  </li>
+  <li>
+    <p>On your project details page, scroll to and expand <strong>Blackfire</strong> and <strong>New Relic</strong> to review your credentials.</p>
 
-  <ol>
-    <li>As the Magento Commerce (Cloud) Account Owner, log in to your Magento Commerce project.</li>
-    <li>
-      <p>In the upper right corner, click <strong>&lt;your name&gt;</strong> &gt; <strong>Account Settings</strong>.</p>
+    <p><img src="/common/images/cloud_blackfire-account-info.png" alt="Your Blackfire credentials" /></p>
+  </li>
+</ol>
 
-      <p><img src="/common/images/cloud_acct-settings-option.png" alt="Go to account settings" /></p>
-    </li>
-    <li>
-      <p>On your account page, click <strong>View Details</strong> for your project to open general settings and plan details.</p>
+<h2 id="project">Access the project and environments</h2>
+<p>When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company’s project. A Magento Solution Partner may see multiple projects for all of the clients they support.</p>
 
-      <p><img src="/common/images/cloud_blackfire-edit-details.png" alt="View your project details" /></p>
-    </li>
-    <li>
-      <p>On your project details page, scroll to and expand <strong>Blackfire</strong> and <strong>New Relic</strong> to review your credentials.</p>
+<p>Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.</p>
 
-      <p><img src="/common/images/cloud_blackfire-account-info.png" alt="Your Blackfire credentials" /></p>
-    </li>
-  </ol>
+<p>For <strong>Starter</strong>, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
 
-  <h2 id="project">Access the project and environments</h2>
-  <p>When you first login, a list of projects you have access to displays. As a Project Owner, you may only see your company’s project. A Magento Solution Partner may see multiple projects for all of the clients they support.</p>
+<p><img src="/common/images/cloud_project-starter.png" alt="Starter branch hierarchy" /></p>
 
-  <p>Click on a project to access branches and more. On the page, you will see a hierarchy of environments named by the Git branch.</p>
+<p>For <strong>Pro</strong>, you will see a hierarchy of branches starting from Production to Staging to Integration. The <img src="/common/images/cloud_icon-enterprise.png" alt="Enterprise icon" /> icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see <a href="/guides/v2.1/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
 
-  <p>For <strong>Starter</strong>, you will see a hierarchy of branches starting from Master (Production). Any branches you create display as children from Master. We recommend creating a Staging branch, then branching from that for your Integration development. For more information, see <a href="/guides/v2.1/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
+<p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
 
-  <p><img src="/common/images/cloud_project-starter.png" alt="Starter branch hierarchy" /></p>
+<p>The following table details the branches for Pro:</p>
 
-  <p>For <strong>Pro</strong>, you will see a hierarchy of branches starting from Production to Staging to Integration. The <img src="/common/images/cloud_icon-enterprise.png" alt="Enterprise icon" /> icon indicates these branches deploy to a dedicated server, used by Staging and Production. Any branches you create display as children from Integration. For more information, see <a href="/guides/v2.1/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
-
-  <p><img src="/common/images/cloud_project-pro.png" alt="Pro branch hierarchy" /></p>
-
-  <p>The following table details the branches for Pro:</p>
-
-  <table>
+<table>
 <thead>
 <tr>
 <th style="width: 125px;">Branch</th>
@@ -2146,43 +2138,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tbody>
 </table>
 
-  <p>If you are an existing Pro merchant, and have not ticketed to <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">add Staging and Production</a> to your UI, you will see only Integration <code class="highlighter-rouge">master</code> and any created branches.</p>
+<p>If you are an existing Pro merchant, and have not ticketed to <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">add Staging and Production</a> to your UI, you will see only Integration <code class="highlighter-rouge">master</code> and any created branches.</p>
 
-  <p><img src="/common/images/cloud_project-pro-old.png" alt="Pro branch hierarchy (original)" /></p>
+<p><img src="/common/images/cloud_project-pro-old.png" alt="Pro branch hierarchy (original)" /></p>
 
-  <p>To access an environment store and admin, select a branch and click <strong>Access Site</strong>. A list of store URLs and SSH command display. Select the URL to view the store in that environment.</p>
+<p>To access an environment store and admin, select a branch and click <strong>Access Site</strong>. A list of store URLs and SSH command display. Select the URL to view the store in that environment.</p>
 
-  <p><img src="/common/images/cloud_project-access.png" alt="Access your project" /></p>
+<p><img src="/common/images/cloud_project-access.png" alt="Access your project" /></p>
 
-  <p>The Pro plan Production environment includes three nodes that you can access using the following links:</p>
+<p>The Pro plan Production environment includes three nodes that you can access using the following links:</p>
 
-  <ul>
-    <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-    <li>
-      <p>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></p>
+<ul>
+  <li>Load balancer URL: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
+  <li>
+    <p>Direct access to one of the three redundant servers: <code class="highlighter-rouge">http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></p>
 
-      <p>The production URL is used by the content delivery network (CDN).</p>
-    </li>
-  </ul>
+    <p>The production URL is used by the content delivery network (CDN).</p>
+  </li>
+</ul>
 
-  <p>If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.</p>
+<p>If you have inactive Git branches of code, you can toggle displaying the branches in the hierarchy.</p>
 
-  <p><img src="/common/images/cloud_show-inactive.png" alt="Show or hide inactive branches" /></p>
+<p><img src="/common/images/cloud_show-inactive.png" alt="Show or hide inactive branches" /></p>
 
-  <h2 id="configure">Configure environments</h2>
-  <p>You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click <strong>Configure environment</strong> to create and manage <a href="/guides/v2.1/cloud/env/environments.html"><em>environments</em></a>, each of which corresponds to a Git branch.</p>
+<h2 id="configure">Configure environments</h2>
+<p>You can manage variables and settings for Production, Staging, and Integration environments through this interface, or with CLI commands. Click <strong>Configure environment</strong> to create and manage <a href="/guides/v2.1/cloud/env/environments.html"><em>environments</em></a>, each of which corresponds to a Git branch.</p>
 
-  <p><img src="/common/images/cloud_project-env.png" alt="Access your project" /></p>
+<p><img src="/common/images/cloud_project-env.png" alt="Access your project" /></p>
 
-  <p>This displays the following page, which enables you to configure settings, [variables](/guides/v2.1/cloud/project/project-conf-files_magento-app.html, <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">routes</a>, and <a href="/guides/v2.1/cloud/project/user-admin.html">users</a>.</p>
+<p>This displays the following page, which enables you to configure settings, [variables](/guides/v2.1/cloud/project/project-conf-files_magento-app.html, <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">routes</a>, and <a href="/guides/v2.1/cloud/project/user-admin.html">users</a>.</p>
 
-  <p><img src="/common/images/cloud_project-conf-env.png" alt="configure environments" /></p>
+<p><img src="/common/images/cloud_project-conf-env.png" alt="configure environments" /></p>
 
-  <h2 id="configure-the-project">Configure the project</h2>
-  <p>Click <img src="/common/images/cloud_edit-project.png" alt="edit project" /> (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).</p>
+<h2 id="configure-the-project">Configure the project</h2>
+<p>Click <img src="/common/images/cloud_edit-project.png" alt="edit project" /> (edit) to display users and deploy keys associated with the project. You can modify access and permissions across the entire project and per environment (or branch).</p>
 
-  <p><img src="/common/images/cloud_project-config.png" alt="configure project" /></p>
-</div>
+<p><img src="/common/images/cloud_project-config.png" alt="configure project" /></p>
 
 			
 		</div>

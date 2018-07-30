@@ -2102,56 +2102,51 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For detailed information of the process, see <a href="/guides/v2.3/cloud/architecture/pro-develop-deploy-workflow.html">Pro Develop and Deploy Workflow</a>.</p>
 
 <h3 id="hooks">Enter a ticket for deploying hooks</h3>
-<div>
+<p>For technical reasons, you must enter a Support ticket to add your <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file to Staging and Production environments. This affects all Pro projects created before and after October 23, 2017.</p>
 
-  <p>For technical reasons, you must enter a Support ticket to add your <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file to Staging and Production environments. This affects all Pro projects created before and after October 23, 2017.</p>
+<p>You can request that we push <code class="highlighter-rouge">.magento.app.yaml</code>, <code class="highlighter-rouge">services.yaml</code>, and <code class="highlighter-rouge">routes.yaml</code>, set up cron jobs, and enable Xdebug and PHPUnit, which assists you in troubleshooting coding issues encountered during deployment. Because of the memory requirements, we recommend you disable Xdebug before your site is live.</p>
 
-  <p>You can request that we push <code class="highlighter-rouge">.magento.app.yaml</code>, <code class="highlighter-rouge">services.yaml</code>, and <code class="highlighter-rouge">routes.yaml</code>, set up cron jobs, and enable Xdebug and PHPUnit, which assists you in troubleshooting coding issues encountered during deployment. Because of the memory requirements, we recommend you disable Xdebug before your site is live.</p>
+<p>If you added your SSH keys to the Staging and Production environments, you can also directly SSH into the environment to use the Git CLI commands for deployments.</p>
 
-  <p>If you added your SSH keys to the Staging and Production environments, you can also directly SSH into the environment to use the Git CLI commands for deployments.</p>
+<p class="bs-callout bs-callout-info">Optionally, you can replace the <code class="highlighter-rouge">hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you use the shell script.</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>Optionally, you can replace the <code>hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you use the shell script.</p>
-</div>
+<h3 id="git-ssh">Git and SSH URLs</h3>
+<p>For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce.</p>
 
-  <h3 id="git-ssh">Git and SSH URLs</h3>
-  <p>For Pro, locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Commerce.</p>
+<p>After you know these URLs, you can access those environments without further intervention.</p>
 
-  <p>After you know these URLs, you can access those environments without further intervention.</p>
+<ul>
+  <li>Use the URLs to access the store as a customer.</li>
+  <li>Use the URL /admin to access the Admin panel.</li>
+  <li>(Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.</li>
+</ul>
 
-  <ul>
-    <li>Use the URLs to access the store as a customer.</li>
-    <li>Use the URL /admin to access the Admin panel.</li>
-    <li>(Pro) Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.</li>
-  </ul>
+<p>For more information, see <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH and sFTP</a>.</p>
 
-  <p>For more information, see <a href="/guides/v2.3/cloud/env/environments-ssh.html">SSH and sFTP</a>.</p>
+<h2 id="read-only">Read-only environments</h2>
+<p>You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments through the Magento Admin or using environment variables.</p>
 
-  <h2 id="read-only">Read-only environments</h2>
-  <p>You should always deploy code by pushing your local Git branch to your environments. You should only directly modify configurations for a few key extensions directly in your Staging and Production environments through the Magento Admin or using environment variables.</p>
+<p>Always update your code in a branch on your local environment, push to Git, and complete the full deployment when you need to do the following:</p>
 
-  <p>Always update your code in a branch on your local environment, push to Git, and complete the full deployment when you need to do the following:</p>
+<ul>
+  <li>Add extensions</li>
+  <li>Add 3rd party integrations</li>
+  <li>Fix issues and check errors</li>
+</ul>
 
-  <ul>
-    <li>Add extensions</li>
-    <li>Add 3rd party integrations</li>
-    <li>Fix issues and check errors</li>
-  </ul>
+<h2 id="next-steps">Next steps</h2>
+<p>To learn more, check the following:</p>
 
-  <h2 id="next-steps">Next steps</h2>
-  <p>To learn more, check the following:</p>
-
-  <ul>
-    <li><a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a></li>
-    <li><a href="/guides/v2.3/cloud/deploy/continuous-deployment.html">Continuous integration</a></li>
-    <li><a href="/guides/v2.3/cloud/live/live-prot.html">Protective block</a></li>
-    <li><a href="/guides/v2.3/cloud/live/live-sanity-check.html">Build and deploy to your local</a></li>
-    <li><a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy</a></li>
-    <li><a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></li>
-    <li><a href="/guides/v2.3/cloud/live/stage-prod-test.html">Test deployment</a></li>
-    <li><a href="/guides/v2.3/cloud/live/live.html">Go live and launch</a></li>
-  </ul>
-</div>
+<ul>
+  <li><a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a></li>
+  <li><a href="/guides/v2.3/cloud/deploy/continuous-deployment.html">Continuous integration</a></li>
+  <li><a href="/guides/v2.3/cloud/live/live-prot.html">Protective block</a></li>
+  <li><a href="/guides/v2.3/cloud/live/live-sanity-check.html">Build and deploy to your local</a></li>
+  <li><a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy</a></li>
+  <li><a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></li>
+  <li><a href="/guides/v2.3/cloud/live/stage-prod-test.html">Test deployment</a></li>
+  <li><a href="/guides/v2.3/cloud/live/live.html">Go live and launch</a></li>
+</ul>
 
 			
 		</div>

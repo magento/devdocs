@@ -2077,9 +2077,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
 </code></pre></div>    </div>
 
-    <div class="bs-callout bs-callout-info" id="info">
-      <p><code class="highlighter-rouge">magento-cloud environment:list</code> displays environment hierarchies whereas <code class="highlighter-rouge">git branch</code> does not. If you have any nested environments, use <code class="highlighter-rouge">magento-cloud environment:list</code>.</p>
-    </div>
+    <p class="bs-callout bs-callout-info"><code class="highlighter-rouge">magento-cloud environment:list</code> displays environment hierarchies whereas <code class="highlighter-rouge">git branch</code> does not. If you have any nested environments, use <code class="highlighter-rouge">magento-cloud environment:list</code>.</p>
   </li>
   <li>
     <p>Fetch remote branches:</p>
@@ -2108,10 +2106,8 @@ need to contact the Project Owner for the updated password.</li>
   <li><code class="highlighter-rouge">ADMIN_URL</code>: The relative URL to access the Admin panel. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.</domain></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Make note of any changed values so that you can use them when you install Magento from
+<p class="bs-callout bs-callout-info">Make note of any changed values so that you can use them when you install Magento from
 the command line and when you verify the installation.</p>
-</div>
 
 <h3 id="variablelist">List and review variables</h3>
 <p>If you’re not sure whether or not the <code class="highlighter-rouge">master</code> branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables.</p>
@@ -2126,9 +2122,7 @@ the command line and when you verify the installation.</p>
 
 <p>You can also <a href="https://accounts.magento.cloud" target="\_blank">log into your project</a> in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon <img src="/common/images/cloud_edit-project.png" alt="Configure your environment" /> next to the Project name. Click the <strong>Variables</strong> tab and review any configured variables there.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.</p>
 
 <h3 id="cli">Add variables using the CLI</h3>
 <p>To set variables using the CLI (with example values used):</p>

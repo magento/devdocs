@@ -2026,9 +2026,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The <code class="highlighter-rouge">.magento.app.yaml</code> has many default values, see <a href="https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml" target="\_blank">a sample <code class="highlighter-rouge">.magento.app.yaml</code> file</a>. Make sure to review the <code class="highlighter-rouge">.magento.app.yaml</code> for your installed version. This file can differ across Magento Commerce (Cloud) versions.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For Pro projects **created before October 23, 2017**, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">For Pro projects <strong>created before October 23, 2017</strong>, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
 <h2 id="properties">Properties</h2>
 <p>Use the following properties to build your application configuration file. The <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">type</code>, <code class="highlighter-rouge">disk</code>, and one <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">worker</code> block is required.</p>
@@ -2379,9 +2377,7 @@ type: php:5.6
 
 <p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
 
-<div class="bs-callout bs-callout-warning" markdow="1">
-Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
-</div>
+<p class="bs-callout bs-callout-warning">Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
 
 <p>For example, if you need to increase the PHP memory limit:</p>
 

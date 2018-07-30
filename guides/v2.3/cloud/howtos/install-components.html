@@ -2083,68 +2083,63 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="getstarted">Create a branch for adding or updating the extension</h2>
 <p>We recommend using a branch for adding or updating, configuring, and testing your extension.</p>
 
-<div>
+<ol>
+  <li>Log in to your local development system, or switch to, the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
+  <li>Change to a directory to which the Magento file system owner has write access.</li>
+  <li>
+    <p>Enter the following command in a terminal to log in to your project:</p>
 
-  <ol>
-    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.3/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Change to a directory to which the Magento file system owner has write access.</li>
-    <li>
-      <p>Enter the following command in a terminal to log in to your project:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List your projects. With the project ID, you can complete additional commands.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud login
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>List your projects. With the project ID, you can complete additional commands.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:list
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
+  <li>
+    <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>Change to a project directory. For example, <code class="highlighter-rouge">cd /var/www/html/magento2</code></li>
-    <li>
-      <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:list
-</code></pre></div>      </div>
+  	<code class="highlighter-rouge">magento-cloud environment:list</code>—displays environment hierarchies whereas the <code class="highlighter-rouge">git branch</code> command does not.
+  </li>
+  <li>
+    <p>Fetch origin branches to get the latest code:</p>
 
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
-</div>
-    </li>
-    <li>
-      <p>Fetch origin branches to get the latest code:</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
+</code></pre></div>    </div>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre></div>      </div>
+    <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
+  </li>
+  <li>
+    <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
-      <p>To create a new environment, use <code class="highlighter-rouge">magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
-    </li>
-    <li>
-      <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create a <a href="/guides/v2.3/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-    <li>
-      <p>Create a <a href="/guides/v2.3/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre></div>      </div>
-    </li>
-  </ol>
-</div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <h2 id="install">Install an extension</h2>
 <p><a href="#install">Extension installation</a> uses the following steps:</p>
@@ -2160,44 +2155,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="compose">Step 1: Get the extension’s Composer name and version</h3>
 <p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
 
-<div>
+<p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
-  <p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
+<h4 id="to-get-the-modules-composer-name-from-magento-marketplace">To get the module’s Composer name from Magento Marketplace:</h4>
 
-  <p>To get the module’s Composer name from Magento Marketplace:</p>
+<ol>
+  <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the username and password you used to purchase the component.</li>
+  <li>
+    <p>In the upper right corner, click <strong>&lt;your username&gt;</strong> &gt; <strong>My Account</strong> as the following figure shows.</p>
 
-  <ol>
-    <li>Log in to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a> with the username and password you used to purchase the component.</li>
-    <li>
-      <p>In the upper right corner, click <strong>&lt;your username&gt;</strong> &gt; <strong>My Account</strong> as the following figure shows.</p>
+    <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
+  </li>
+  <li>
+    <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-account.png" alt="Access your Marketplace account" width="650px" /></p>
-    </li>
-    <li>
-      <p>On the My Account page, click <strong>My Purchases</strong> as the following figure shows.</p>
+    <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
+  </li>
+  <li>
+    <p>On the My Purchases page, click <strong>Technical Details</strong> for the module you purchased as the following figure shows.</p>
 
-      <p><img src="/common/images/cloud_marketplace-purch-history.png" alt="Marketplace purchase history" width="650px" /></p>
-    </li>
-    <li>
-      <p>On the My Purchases page, click <strong>Technical Details</strong> for the module you purchased as the following figure shows.</p>
+    <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the module's Composer name" width="200px" /></p>
+  </li>
+  <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
+  <li>Open a text editor.</li>
+  <li>Paste the module name in the text editor.</li>
+  <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
+  <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
+  <li>
+    <p>Append the version number to the component name after the colon.</p>
 
-      <p><img src="/common/images/cloud_marketplace-download-invoice.png" alt="Technical details shows the module's Composer name" width="200px" /></p>
-    </li>
-    <li>Click <strong>Copy</strong> to copy the component name to the clipboard.</li>
-    <li>Open a text editor.</li>
-    <li>Paste the module name in the text editor.</li>
-    <li>Append a colon character (<code class="highlighter-rouge">:</code>) to the component name.</li>
-    <li>In <strong>Technical Details</strong> on the My Purchases page, click <strong>Copy</strong> to copy the version to the clipboard.</li>
-    <li>
-      <p>Append the version number to the component name after the colon.</p>
+    <p>A sample follows:</p>
 
-      <p>A sample follows:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pixlee/magento2:1.0.1
-</code></pre></div>      </div>
-    </li>
-  </ol>
-</div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pixlee/magento2:1.0.1
+</code></pre></div>    </div>
+  </li>
+</ol>
 
 <h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
 <p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.3/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> (Pipeline Deployment) values too.</p>
@@ -2232,9 +2224,7 @@ git push magento &lt;environment ID&gt;
 
 <p>If there are errors, see <a href="/guides/v2.3/cloud/trouble/trouble_comp-deploy-fail.html">extension deployment failure</a>.</p>
 
-<div class="bs-callout bs-callout-warning">
-When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in Magento Commerce (Cloud). This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
-</div>
+<p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="highlighter-rouge">composer.lock</code> to your Git branch for deployment. If the extension is not in the file, the extension won’t load in Magento Commerce (Cloud). This ensures when the <code class="highlighter-rouge">composer install</code> command is used, the extension properly loads. This command uses the <code class="highlighter-rouge">composer.lock</code> file.</p>
 
 <h3 id="verify">Step 3: Verify the extension</h3>
 <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>

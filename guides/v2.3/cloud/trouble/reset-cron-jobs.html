@@ -2078,20 +2078,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="solution">Solution</h2>
 <p>To resolve this issue, you must reset the cron job(s) using the <code class="highlighter-rouge">cron:unlock</code> command. This command changes the status of the cron job in the database, ending the job forcefully to allow other scheduled jobs to continue.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <ul>
-    <li>
-      <p>Running this command without the <code class="highlighter-rouge">--job-code</code> option resets <em>all</em> cron jobs, including those currently running, so we recommend using it only in exceptional cases, such as after you have verified that all cron jobs must be reset. Re-deployment runs this command by default to reset cron jobs, so they recover appropriately after the environment is back up.</p>
-    </li>
-    <li>
-      <p>Avoid using this solution when indexers are running.</p>
-    </li>
-  </ul>
-</div>
+<p class="bs-callout bs-callout-warning">Running this command without the <code class="highlighter-rouge">--job-code</code> option resets <em>all</em> cron jobs, including those currently running, so we recommend using it only in exceptional cases, such as after you have verified that all cron jobs must be reset. Re-deployment runs this command by default to reset cron jobs, so they recover appropriately after the environment is back up. Avoid using this solution when indexers are running.</p>
 
 <ol>
   <li>
-    <p>Open a terminal and use your  <a href="/guides/v2.3/cloud/env/environments-ssh.html#ssh">SSH</a> keys to connect to the affected environment.</p>
+    <p>Open a terminal and use your <a href="/guides/v2.3/cloud/env/environments-ssh.html#ssh">SSH</a> keys to connect to the affected environment.</p>
   </li>
   <li>
     <p>Get the MySQL database credentials:</p>

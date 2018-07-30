@@ -2080,9 +2080,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To complete configuration management tasks, you must have a project reader role with <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-role-env">environment administrator</a> privileges.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For extended technical information, see <a href="/guides/v2.2/config-guide/deployment/pipeline/">Pipeline Deployment</a>. When configuring and using these features, follow this topic specifically. Magento Commerce (Cloud) provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.</p>
-</div>
+<p class="bs-callout bs-callout-info">For extended technical information, see <a href="/guides/v2.2/config-guide/deployment/pipeline/">Pipeline Deployment</a>. When configuring and using these features, follow this topic specifically. Magento Commerce (Cloud) provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.</p>
 
 <h2 id="cloud-confman-over">How it works</h2>
 <p>The database contains default configurations for your Magento store. When you update the configurations in the Integration, Staging, and Production environments using the Magento Admin, you generate a file of all Magento configuration settings into a single text file: <code class="highlighter-rouge">app/etc/config.php</code>.</p>
@@ -2094,9 +2092,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>—Exports every configuration setting, including modified and default settings</li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
-  <p>For Magento Commerce (Cloud), we <strong>do not recommend</strong> using the <code class="highlighter-rouge">app:config:dump</code> command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.</p>
-</div>
+<p class="bs-callout bs-callout-warning">For Magento Commerce (Cloud), we <strong>do not recommend</strong> using the <code class="highlighter-rouge">app:config:dump</code> command. This command pulls and locks all values in a read-only state. This affects Fastly and other important modules.</p>
 
 <p>Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments. And every time you run this command, any new configurations are appended to your config.php file. If you need to modify or delete an existing configuration, you must edit the file manually.</p>
 
@@ -2118,9 +2114,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Sensitive values are <em>not</em> stored in <code class="highlighter-rouge">app/etc/config.php</code>. Any sensitive configurations should export to <code class="highlighter-rouge">app/etc/config.php</code> during the <code class="highlighter-rouge">scd-dump</code> process. You can also create environment variables using CLI commands or the Project Web Interface.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>You can set <em>any</em> value using environment variables, but we recommend using environment variables for sensitive values.</p>
-</div>
+<p class="bs-callout bs-callout-info">You can set <em>any</em> value using environment variables, but we recommend using environment variables for sensitive values.</p>
 
 <p>For a list of configurable settings, see <a href="#cloud-clp-settings">Configuration settings you can change</a> and <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">System settings reference</a>.</p>
 
@@ -2129,9 +2123,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>If you generate a <code class="highlighter-rouge">config.php</code> file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.</p>
 
-<div class="bs-callout bs-callout-info">
-  <p>Before deploying static files, the build and deploy phases compress static content using <code class="highlighter-rouge">gzip</code>. Compressing static files reduces server loads and increases site performance. Refer to <a href="/guides/v2.2/cloud/env/environment-vars_magento.html#build">Magento build options</a> to learn about customizing or disabling file compression.</p>
-</div>
+<p class="bs-callout bs-callout-info">Before deploying static files, the build and deploy phases compress static content using <code class="highlighter-rouge">gzip</code>. Compressing static files reduces server loads and increases site performance. Refer to <a href="/guides/v2.2/cloud/env/environment-vars_magento.html#build">Magento build options</a> to learn about customizing or disabling file compression.</p>
 
 <h2 id="configuration-selection-flow">Configuration selection flow</h2>
 <p>All system configurations are set during deployment according to the following override scheme:</p>
@@ -2257,11 +2249,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>While you can manually edit the <code class="highlighter-rouge">config.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.</p>
-
-  <p>Never delete the <code class="highlighter-rouge">config.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
-</div>
+<p class="bs-callout bs-callout-warning">While you can manually edit the <code class="highlighter-rouge">config.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the <code class="highlighter-rouge">config.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
 
 <h2 id="migrate-configurations">Migrate configurations</h2>
 <p>If you upgrade to Magento Commerce (Cloud) 2.2 or later, you may want to migrate settings from the <code class="highlighter-rouge">config.local.php</code> file to your new <code class="highlighter-rouge">config.php</code> file. If the configuration settings in your Magento Admin panel match the contents of the file, follow the instructions to generate and add the <code class="highlighter-rouge">config.php</code> file.</p>
@@ -2303,11 +2291,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Push code changes to the remote.</li>
 </ol>
 
-<div class="bs-callout bs-callout-warning">
-  <p>While you can manually edit the <code class="highlighter-rouge">config.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.</p>
-
-  <p>Never delete the <code class="highlighter-rouge">config.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
-</div>
+<p class="bs-callout bs-callout-warning">While you can manually edit the <code class="highlighter-rouge">config.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the <code class="highlighter-rouge">config.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
 
 			
 		</div>

@@ -2087,9 +2087,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.3/cloud/integrations/bitbucket-integration.html">Bitbucket</a> if you need a Git repo</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Commerce (Cloud) does <em>not</em> support the <a href="/guides/v2.3/config-guide/multi-master/multi-master.html">split database performance solution</a> at this time.</p>
-</div>
+<p class="bs-callout bs-callout-info">Magento Commerce (Cloud) does <em>not</em> support the <a href="/guides/v2.3/config-guide/multi-master/multi-master.html">split database performance solution</a> at this time.</p>
 
 <h3 id="git">What is Git</h3>
 <p>Git is the heart of all your code in repositories. It acts as a version control system through branches from a parent. Multiple developers can work together in personal branches all merging into the same parent. You can also work on features at the same time in multiple branches.</p>
@@ -2104,11 +2102,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To get started with Git, you should have <a href="https://git-scm.com/downloads" target="\_blank">Git installed</a> on your local.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Commerce adds two additional requirements:</p>
-  <ul><li>The <code>/</code> character isn't allowed.</li>
-  	<li>Branch names must be case-insensitively unique. In other words, if you have a branch named <code>_CaSe_</code>, you cannot create another branch named <code>_case_</code>.</li></ul>
-</div>
+<p class="bs-callout bs-callout-info">In addition to Git requirements for valid branch names, Magento Commerce adds two additional requirements:
+The <code class="highlighter-rouge">/</code> character is not allowed. Branch names must be case-insensitively unique. In other words, if you have a branch named <code class="highlighter-rouge">CaSe</code>, you cannot create another branch named <code class="highlighter-rouge">case</code>.</p>
 
 <p>You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. We walk you through the process of setting this up with your local.</p>
 
@@ -2132,9 +2127,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.3/cloud/project/project-conf-files_services-elastic.html">Elasticsearch</a> 1.4, 1.7, 2.4, and 5.2</li>
 </ul>
 
-<div class="bs-callout bs-callout-info">
-  <p>Elasticsearch 5.2 is only available for 2.2.3 and higher.</p>
-</div>
+<p class="bs-callout bs-callout-info">Elasticsearch 5.2 is only available for 2.2.3 and higher.</p>
 
 <p>For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see <a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Fastly in Cloud</a>.</p>
 

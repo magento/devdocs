@@ -2080,9 +2080,7 @@ following command:</p>
 
 <p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>You can’t use multiple <em>databases</em> with Magento Commerce at this time. You can, however, create multiple endpoints to restrict access to the <code class="highlighter-rouge">main</code> database.</p>
-</div>
+<p class="bs-callout bs-callout-warning">You cannot use multiple <em>databases</em> with Magento Commerce at this time. You <strong>can</strong> create multiple endpoints to restrict access to the <code class="highlighter-rouge">main</code> database.</p>
 
 <p>To specify user access, use the <code class="highlighter-rouge">endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
 
@@ -2129,23 +2127,23 @@ following command:</p>
 <h2 id="settings">Add MySQL in services.yaml and .magento.app.yaml</h2>
 <p>To enable MySQL, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">mysql</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mysql</span><span class="pi">:</span>
     <span class="na">type</span><span class="pi">:</span> <span class="s">mysql:10.0</span>
-    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span></code></pre></figure>
+    <span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
+</code></pre></div></div>
 
 <p>To configure the relationships for the environment variable, set a relationship in your <code class="highlighter-rouge">.magento.app.yaml</code> in the Git branch. For example:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">relationships</span><span class="pi">:</span>
-    <span class="na">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span></code></pre></figure>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">relationships</span><span class="pi">:</span>
+    <span class="na">database</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mydatabase:mysql"</span>
+</code></pre></div></div>
 
 <p>Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see <a href="/guides/v2.3/cloud/project/project-conf-files_services.html"><code class="highlighter-rouge">services.yaml</code></a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <ul>
-    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-    <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html#disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
-  </ul>
-</div>
+<ul class="bs-callout bs-callout-info">
+  <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code class="highlighter-rouge">DEFINER</code></a> access control mechanism for stored procedures and views.</li>
+  <li>MySQL errors such as <code class="highlighter-rouge">PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html#disk"><code class="highlighter-rouge">.magento/services.yaml</code></a>.</li>
+</ul>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
 <p>We use the Magento Commerce (Cloud) environment variable <a href="/guides/v2.3/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
@@ -2164,23 +2162,23 @@ following command:</p>
 
 <p>The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for MySQL:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
-  "database": [
-    {
-      "host": "database.internal",
-      "ip": "192.0.2.150",
-      "password": "",
-      "path": "main",
-      "port": 3306,
-      "query": {
-          "is_master": true
-      },
-      "scheme": "mysql",
-      "username": "user"
-    }
-  ]
-}
-</code></pre></div></div>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"database"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"database.internal"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"192.0.2.150"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"main"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">3306</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"query"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"is_master"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"scheme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mysql"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 			
 		</div>

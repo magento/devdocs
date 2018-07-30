@@ -1757,24 +1757,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To create a new <code class="highlighter-rouge">auth.json</code> in the event you don’t have one:</p>
 
-<div>
+<p>Because the Composer repository that contains Magento Commerce (Cloud) requires authentication, you must add a file named <code class="highlighter-rouge">auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code class="highlighter-rouge">auth.json</code>, the Magento software won’t download.</p>
 
-  <p>Because the Composer repository that contains Magento Commerce (Cloud) requires authentication, you must add a file named <code class="highlighter-rouge">auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code class="highlighter-rouge">auth.json</code>, the Magento software won’t download.</p>
+<p>Add <code class="highlighter-rouge">auth.json</code> in your Magento Commerce (Cloud) project root folder if there isn’t one already.</p>
 
-  <p>Add <code class="highlighter-rouge">auth.json</code> in your Magento Commerce (Cloud) project root folder if there isn’t one already.</p>
+<p>Replace the values in the following sample with your Magento Commerce (Cloud) public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
 
-  <p>Replace the values in the following sample with your Magento Commerce (Cloud) public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
-
-  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
    </span><span class="s2">"http-basic"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="s2">"repo.magento.com"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
          </span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your public key&gt;"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;your private key&gt;"</span><span class="w">
       </span><span class="p">}</span><span class="w">
    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</div>
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
 <p>This section discusses how to update:</p>
