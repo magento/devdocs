@@ -253,7 +253,7 @@ The following tables give a detailed description of the results you can get usin
    </tbody>
 </table>
 
-### &lt;action&gt; {#fedg_layout_xml-instruc_ex_act}
+### fedg_layout_xml-instruc_ex_act
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
@@ -348,7 +348,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;
     <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
 </ul>  
 
-### &lt;move&gt; {#fedg_layout_xml-instruc_ex_mv}
+### fedg_layout_xml-instruc_ex_mv
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
 
@@ -402,7 +402,7 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
-### &lt;remove&gt; {#fedg_layout_xml-instruc_ex_rmv}
+### fedg_layout_xml-instruc_ex_rmv
 
 `<remove>` is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
 For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
@@ -425,7 +425,7 @@ Example of usage:
 </page>
 {%endhighlight xml%}
 
-### &lt;update&gt; {#fedg_layout_xml-instruc_ex_upd}
+### fedg_layout_xml-instruc_ex_upd
 
 Includes a certain layout file.
 
@@ -437,7 +437,7 @@ Used as follows:
 
 The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
-### &lt;argument&gt; {#argument}
+### argument
 Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
  
 <table>
@@ -512,7 +512,7 @@ $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 ...
 {%endhighlight %}
 
-### &lt;arguments&gt; {#arguments}
+### arguments
 
 <code>&lt;arguments&gt;</code> is a required container for <code>&lt;argument&gt;</code>. It does not have its own attributes.
 
