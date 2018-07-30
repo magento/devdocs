@@ -44,7 +44,7 @@ When setting up access and tokens for Magento GitHub repositories, we recommend 
 
 Two-factor authentication adds an additional layer of security beyond just a username/password when you access GitHub. With 2FA enabled, you log into a service with your credentials then complete an additional step providing a 2FA code. This second form of authentication helps us ensure that a malicious user will not be able to gain access to your GitHub account or any private Magento GitHub repositories.
 
-For details, see [this GitHub guide](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) to protecting your account with 2FA.
+For details, see [this GitHub guide](https://help.github.com/articles/configuring-two-factor-authentication-via-a-totp-mobile-app/) to protect your account with 2FA.
 
 ## Questions or enhancement requests? {#question}
 
