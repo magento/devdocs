@@ -1,6 +1,6 @@
 ---
 group: cloud
-title: Update ECE-tools version
+title: Update ece-tools version
 version: 2.1
 github_link: cloud/project/ece-tools-update.md
 functional_areas:
