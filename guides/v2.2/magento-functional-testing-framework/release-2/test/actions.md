@@ -366,6 +366,11 @@ Attribute|Type|Use|Description
 ```
 This action will click the button with the id of `clickable`.
 
+```xml
+<click selectorArray="['link' => 'Login']" stepKey="clickButton2"/>
+```
+This action will click on a link with the text of "login" using a [strict selector](http://codeception.com/docs/modules/WebDriver#locating-elements){:target="_blank"}.
+
 ### clickWithLeftButton
 
 See [clickWithLeftButton docs on codeception.com](http://codeception.com/docs/modules/WebDriver#clickWithLeftButton){:target="_blank"}.
@@ -479,7 +484,7 @@ Attribute|Type|Use|Description
 <amOnPage url="/login" stepKey="goToLoginPage"/>
 <comment userInput="I am on the login page" stepKey="loginPageComment"/>
 ```
-This action will leave a comment of `I am on the login page` after the `amOnPage` action in the generated PHP file.
+This action will leave a comment of "I am on the login page" after the `amOnPage` action in the generated PHP file.
 
 ### conditionalClick
 
@@ -618,7 +623,7 @@ Attribute|Type|Use|Description
 ```xml
 <dontSee userInput="Sample title" selector="h2#title" stepKey="dontSeeTitle"/>
 ```
-This action will be true only if there is no h2 element with an id of `title` on the page that contains the text "Sample title".
+This action will be true only if there is no h2 element with an id of `title` containing the text "Sample title" on the page.
 
 ### dontSeeCheckboxIsChecked
 
