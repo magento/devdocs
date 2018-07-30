@@ -500,30 +500,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>The following topics are included in this guide:</p>
 
 <ul>
-  <li>
-    <p><a href="#contribute">Contribute to Magento 2 code</a></p>
-  </li>
-  <li>
-    <p><a href="#question">Questions or enhancement requests?</a></p>
-  </li>
-  <li>
-    <p><a href="#requirements">Contribution requirements</a></p>
-  </li>
-  <li>
-    <p><a href="#fork">Fork a repository</a></p>
-  </li>
-  <li>
-    <p><a href="#pull_request">Create a pull request</a></p>
-  </li>
-  <li>
-    <p><a href="#report">Report an issue</a></p>
-  </li>
-  <li>
-    <p><a href="#triage">Help triage issues</a></p>
-  </li>
-  <li>
-    <p><a href="#labels">Labels applied by the Community Engineering Team</a></p>
-  </li>
+  <li><a href="#contribute">Contribute to Magento 2 code</a></li>
+  <li><a href="#question">Questions or enhancement requests?</a></li>
+  <li><a href="#rules">Accepted pull requests and ported code</a></li>
+  <li><a href="#requirements">Contribution requirements</a></li>
+  <li><a href="#fork">Fork a repository</a></li>
+  <li><a href="#pull_request">Create a pull request</a></li>
+  <li><a href="#porting">Porting pull requests across Magento versions</a></li>
+  <li><a href="#report">Report an issue</a></li>
+  <li><a href="#triage">Help triage issues</a></li>
+  <li><a href="#labels">Labels applied by the Community Engineering Team</a></li>
 </ul>
 
 <h2 id="contribute">Contribute to Magento 2 code</h2>
@@ -531,7 +517,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Use the <a href="#fork">fork</a> and <a href="#pull_request">pull</a> model to contribute to the Magento 2 codebase.
 This contribution model allows contributors to maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to <em>pull</em> a set of changes (hence the phrase <em>pull request</em>).</p>
 
-<p>Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions.</p>
+<p>Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions. We recommend also creating back-ports and up-ports as needed with your pull requests if the issue occurs in higher or lower line releases.</p>
 
 <p>The Community Engineering Team reviews all issues and contributions submitted by the community developers. During the review we might require clarifications from the contributor. If there is no response from the contributor in two weeks (14 days) time, the issue is closed.</p>
 
@@ -543,14 +529,57 @@ This contribution model allows contributors to maintain their own copy of the fo
 
 <h2 id="question">Questions or enhancement requests?</h2>
 
-<p>We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="_blank">Stack Exchange </a> and the <a href="https://community.magento.com/" target="_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.</p>
+<p>We use this repository (the Magento 2 GitHub repository) to capture code and documentation issues. We recommend that you post all questions to a question-and-answer site, such as <a href="https://magento.stackexchange.com/" target="\_blank">Stack Exchange</a> and the <a href="https://community.magento.com/" target="\_blank">Magento Forums</a>, where Magento community members can quickly provide recommendations and advice.</p>
 
-<p>Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="_blank">here</a>).</p>
+<p>Submit feature requests or enhancement suggestions to the new <a href="https://community.magento.com/t5/Magento-2-Feature-Requests-and/idb-p/feature-requests" target="\_blank">Magento 2 Feature Requests and Improvements forum</a> (see details <a href="https://community.magento.com/t5/News-Announcements/Improvements-to-GitHub-Management/m-p/44572#M96" target="\_blank">here</a>).</p>
+
+<h2 id="rules">Accepted pull requests and ported code</h2>
+
+<p>Please review the following supported and accepted pull request rules. We defined these rules to simplify and accelerate your submissions, follow code consistency, manage current and backlog tasks, and so on.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th style="text-align: center">Fix for Existing Issue</th>
+      <th style="text-align: center">Test Coverage</th>
+      <th style="text-align: center">Refactoring</th>
+      <th style="text-align: center">New Feature</th>
+      <th style="text-align: center">Code Cleanup</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2.1</td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
+    </tr>
+    <tr>
+      <td>2.2</td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
+      <td style="text-align: center"><img src="/common/images/red-x.png" alt="No" /></td>
+    </tr>
+    <tr>
+      <td>2.3</td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+      <td style="text-align: center"><img src="/common/images/green-check.png" alt="Yes" /></td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="requirements">Contribution requirements</h2>
 
 <ol>
-  <li>Contributions must adhere to <a href="/guides/v2.2/coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.</li>
+  <li>Contributions must adhere to <a href="/guides/v2.2/coding-standards/bk-coding-standards.html" target="\_blank">Magento coding standards</a>.</li>
   <li>Refer to the Magento development team’s <a href="/guides/v2.2/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, and solid code. We encourage you to use this as well!</li>
   <li>Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.</li>
   <li>Commits must be accompanied by meaningful commit messages.</li>
@@ -558,22 +587,21 @@ This contribution model allows contributors to maintain their own copy of the fo
   <li>PRs that include new logic or new features must be submitted along with:
     <ul>
       <li>Unit/integration test coverage (we will be releasing more information about writing test coverage in the near future).</li>
-      <li>Proposed <a href="/guides/v2.2/contributor-guide/contributing_docs.html" target="_blank">documentation</a> updates. <a href="/" target="_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.</li>
+      <li>Proposed <a href="/guides/v2.2/contributor-guide/contributing_docs.html" target="\_blank">documentation</a> updates. <a href="/" target="\_blank">Documentation</a> contributions can be submitted <a href="https://github.com/magento/devdocs" target="\_blank">here</a>.</li>
     </ul>
   </li>
-  <li>For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.</li>
-  <li>
-    <p>To report a bug, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">guidelines about bugfix issues</a>.</p>
-  </li>
-  <li>All automated tests must pass successfully (all builds on <a href="https://travis-ci.org/magento/magento2" target="_blank">Travis CI</a> must be green).</li>
+  <li>For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="\_blank">open an issue</a> and discuss it with us first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.</li>
+  <li>To report a bug, please <a href="https://github.com/magento/magento2/issues" target="\_blank">open an issue</a>, and follow these <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines" target="\_blank">guidelines about bugfix issues</a>.</li>
+  <li>All automated tests must pass successfully (all builds on <a href="https://travis-ci.org/magento/magento2" target="\_blank">Travis CI</a> must be green).</li>
 </ol>
 
 <h2 id="fork">Fork a repository</h2>
+
 <p>To fork a repository on Github:</p>
 
 <ol>
   <li>Create or log in to your account on GitHub.</li>
-  <li>Navigate to the <a href="https://github.com/magento/magento2" target="_blank">Magento 2 repository</a>.</li>
+  <li>Navigate to the <a href="https://github.com/magento/magento2" target="\_blank">Magento 2 repository</a>.</li>
   <li>
     <p>Click <strong>Fork</strong> at the top right: <br /><img src="/common/images/fork.png" alt="fork a repository" /></p>
   </li>
@@ -581,6 +609,7 @@ This contribution model allows contributors to maintain their own copy of the fo
 </ol>
 
 <h3 id="sync">Update the fork with the latest changes</h3>
+
 <p>As community and Magento writers’ changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if a <code class="highlighter-rouge">This branch is NUMBER commits behind magento:2.2-develop.</code> message is displayed at the top of the page. If so, your fork must be updated.</p>
 
 <p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.github.com/articles/syncing-a-fork" target="_blank">GitHub documentation</a>. Make sure to update from the correct branch!</p>
@@ -618,7 +647,109 @@ magento:2.2-develop is up to date with all commits from &lt;your fork&gt;:2.2-de
 
 <p>After submitting your PR, you can head over to the Magento 2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see your PR. Your PR undergoes automated testing, and if it passes, the Community Engineering Team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.</p>
 
+<h2 id="porting">Porting code contributions across Magento versions</h2>
+
+<p>In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?</p>
+
+<p>We provide two options to create back-ports and up-ports for your code contributions:</p>
+
+<ul>
+  <li><a href="#porting-tool">Magento Porting Tool</a> - Quick and easy method with a few clicks in a Magento tool</li>
+  <li><a href="#porting-manual">Manual porting</a> - Manual process requiring a strong understanding of git</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
+</div>
+
+<h3 id="what-are-up-ports-and-back-ports">What are up-ports and back-ports?</h3>
+
+<p>As a best practice, we recommend creating back-ports and up-ports for your code contributions.</p>
+
+<p><strong>Back-ports</strong> (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.</p>
+
+<p><strong>Up-ports</strong> (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.1 and up-port to 2.2 and 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.</p>
+
+<h3 id="porting-tool">Magento Porting Tool</h3>
+
+<p>This tool ports fixes automatically across versions with a few simple steps. It allows you to create ports only for <em>merged</em> pull requests.</p>
+
+<p>Access the tool at <a href="https://porting.engcom.dev.magento.com/" target="_blank">porting.engcom.dev.magento.com</a>. The first time you visit, you need to login and authorize with GitHub credentials. The tool performs all actions using your token.</p>
+
+<ol>
+  <li>Visit <a href="https://porting.engcom.dev.magento.com/" target="_blank">porting.engcom.dev.magento.com</a> and <strong>Login with GitHub</strong>.</li>
+  <li>Copy and paste the pull request URL in <strong>Select Pull Request for porting</strong> and click <strong>Next</strong>.</li>
+  <li>Select the target version for your port: <strong>Up Port</strong> or <strong>Back Port</strong>.</li>
+  <li>Verify the summary of changesin <strong>Port information</strong>.</li>
+  <li>Click <strong>Create Job</strong>. A job is created and started shortly after.</li>
+</ol>
+
+<p><img src="/common/images/porting-tool-steps.png" alt="Magento Porting Tool" /></p>
+
+<p>The results of porting include the following:</p>
+
+<ul>
+  <li>Done - Your port has been successfully created.</li>
+  <li>Fail - The patch failed to apply automatically, usually due to merge conflict.</li>
+</ul>
+
+<p>In case of failure, porting artifacts will be available for download and review:</p>
+
+<ul>
+  <li>Log - Includes information on actions and results. Find the reason why the porting job failed.</li>
+  <li>Patch - Use to manually apply the patch and resolve all merge conflicts.</li>
+</ul>
+
+<p>The <strong>Activity Log</strong> provides a tracked list of all ported pull requests and details. You can track the port job status and view results. Refresh and review the list automatically per a selected interval (10 sec, 30 sec, 1 min, 5 min) or manually.</p>
+
+<p>The tool includes configuration settings through the gear icon located top right.</p>
+
+<ul>
+  <li><strong>Use my fork as target</strong> - When checked, your fork is used to push the result. This is selected by default.</li>
+  <li><strong>Target options</strong> - If you do not use your fork as a target (not checked), manually specify an organization and repository for ported commits.</li>
+  <li><strong>Porting strategy</strong> - Sets the git commands and method for committing the code port:
+    <ul>
+      <li><code class="highlighter-rouge">git am</code> – Recommended. When selected, authorship and original commit message will be saved. This command is used to port.</li>
+      <li><code class="highlighter-rouge">git apply</code> – A new commit will be created with a default message. GitHub provided patch is applied with <code class="highlighter-rouge">git apply</code>. <strong>Important</strong>: This is an experimental strategy and results may vary.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="/common/images/porting-tool-setting.png" alt="Magento Porting Tool Settings" width="600px" /></p>
+
+<h3 id="manual-porting">Manual porting</h3>
+
+<p>When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.</p>
+
+<p>The following is an example “Forwardport” (up-port) pull request for https://github.com/magento/magento2/pull/13528 from the <code class="highlighter-rouge">2.2-develop</code> branch to the <code class="highlighter-rouge">2.3-develop</code> branch:</p>
+
+<ol>
+  <li>Checkout the <code class="highlighter-rouge">2.3-develop</code> branch. Make sure that you have the latest changes from the magento/magento2 repository.</li>
+  <li>Create a new branch for your fix: <code class="highlighter-rouge">git checkout -b up-port-pull-13528</code>.</li>
+  <li>Apply changes from the existing pull request: <code class="highlighter-rouge">curl -L https://github.com/magento/magento2/pull/13528.patch | git am</code>.</li>
+  <li>Push changes to your repository: <code class="highlighter-rouge">git push origin up-port-pull-13528:up-port-pull-13528</code>.</li>
+  <li>Create a pull request from <code class="highlighter-rouge">&lt;your-fork&gt;:up-port-pull-13528</code> to m<code class="highlighter-rouge">agento:2.3-develop</code>.</li>
+  <li>In the up-port pull request description, add the full path to the original pull request (for example: https://github.com/magento/magento2/pull/13528) to help the Magento team link these pull requests.</li>
+</ol>
+
+<p>The following git commands detail how to up-port to <code class="highlighter-rouge">2.3-develop</code> branch from <code class="highlighter-rouge">2.2-develop</code> branch:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout 2.3-develop
+git checkout -b up-port-pull-&lt;PR_NUMBER&gt;
+curl -L https://github.com/magento/magento2/pull/&lt;PR_NUMBER&gt;.patch | git am
+git push origin up-port-pull-&lt;PR_NUMBER&gt;:up-port-pull-&lt;PR_NUMBER&gt;
+</code></pre></div></div>
+
+<p>The following git commands detail how to back-port to <code class="highlighter-rouge">2.2-develop</code> branch from <code class="highlighter-rouge">2.3-develop</code> branch:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout 2.2-develop
+git checkout -b back-port-pull-&lt;PR_NUMBER&gt;
+curl -L https://github.com/magento/magento2/pull/&lt;PR_NUMBER&gt;.patch | git am
+git push origin back-port-pull-&lt;PR_NUMBER&gt;:back-port-pull-&lt;PR_NUMBER&gt;
+</code></pre></div></div>
+
 <h2 id="report">Report an issue</h2>
+
 <p>If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.</p>
 
 <p>Before creating an issue:</p>
@@ -626,7 +757,7 @@ magento:2.2-develop is up to date with all commits from &lt;your fork&gt;:2.2-de
 <ol>
   <li>Read the <a href="https://github.com/magento/magento2/wiki/Issue-reporting-guidelines">issue reporting guidelines</a> to learn how to create an issue that can be processed in a timely manner.</li>
   <li>Check the <a href="/">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.</li>
-  <li>Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody’s work.</li>
+  <li>Check the <a href="https://github.com/magento/magento2/issues" target="_blank">existing issues</a> to make sure you are not duplicating somebody’s work.</li>
 </ol>
 
 <p>To add an issue:</p>
@@ -638,7 +769,7 @@ magento:2.2-develop is up to date with all commits from &lt;your fork&gt;:2.2-de
   <li>Click <strong>Submit new issue</strong>.</li>
 </ol>
 
-<h2 id="triage">Help triage issues <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a></h2>
+<p>Help triage issues <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a> {#triage}</p>
 
 <p>In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/magento/magento2" target="_blank">subscribe to Magento on CodeTriage</a>.</p>
 

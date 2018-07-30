@@ -548,6 +548,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 </div>
 
+<h2 id="database">Database maintenance schedule</h2>
+
+<p>We recommend performing periodic database backups for your Staging and Production instances. Due to the I/O intensive nature of backup operations, you may encounter slower backups and potential issues. Running database processes for multiple environments at the same time may potentially run slower due to contention for available resources.</p>
+
+<p>For better performance, schedule your backups to run in succession, one at a time, at off-peak times. This method avoids I/O contention and reduces time to complete, especially for smaller instances, larger databases, and so on.</p>
+
+<p>For example, we recommend scheduling a backup of your Production database followed up by the Staging database when your stores encounter lower visits.</p>
+
 			
 		</div>
 		<!-- /.content-wrap -->
