@@ -1,12 +1,9 @@
-<div markdown="1">
-
 This topic discusses how to test patches to your Magento Commerce (Cloud) system locally before you push them to the remote server. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. If you upgrade a Cloud patch without upgrading the full Magento Commerce application, see [Upgrade a Magento Commerce patch](#upgrade-patch). To upgrade and test a full Magento Commerce version (including patches and hotfixes), see [Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info}
 We recommend installing full Magento Commerce upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
-</div>
 
 There are two types of patches:
 
@@ -22,9 +19,8 @@ There are two types of patches:
 
     Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning}
 Always test a patch your local system. When complete, push the local Git branch to deploy your Integration environment. Resolve any issues before you deploy to Staging or Production.
-</div>
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
@@ -215,4 +211,3 @@ After you've successfully tested a custom patch locally and on your integration 
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
-</div>

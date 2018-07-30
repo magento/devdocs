@@ -23,7 +23,7 @@ We recommend using a branch for adding, configuring, and testing your theme.
 ## Install a theme manually {#manual}
 To install a theme manually, you must have the theme's code, either in a compressed archive or in a directory structure similar to the following:
 
-{% highlight xml %}
+```xml
 <VendorName>
   ├── composer.json
       ├── etc
@@ -37,7 +37,7 @@ To install a theme manually, you must have the theme's code, either in a compres
           ├── fonts
           ├── images
           └── js
-{% endhighlight %}
+```
 
 To install a theme manually:
 

@@ -51,6 +51,5 @@ When setting up your SSH, review our information at [SSH and sFTP]({{ page.baseu
 ## Git integrations {#integrations}
 We support using either [Github]({{ page.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 To integrate other git repositories with your {{site.data.var.ece}} project using Github or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).
-</div>

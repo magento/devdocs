@@ -40,7 +40,7 @@ During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html
 ## magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
 The `vendor/magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="\_blank"} and does not contain any code.
 
-The metapackage depends on the appropriate versions of [`vendor/magento/ece-patches`](#ece-patches), [`vendor/magento/ece-tools`](#ece-tools), and [`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
+The metapackage depends on the appropriate versions of `vendor/magento/ece-patches`, [`vendor/magento/ece-tools`](#ece-tools), and [`vendor/magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. For example, to use {{site.data.var.ee}} version 2.2.0, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.2.0.
 
 This package depends on a floating version of `vendor/magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 

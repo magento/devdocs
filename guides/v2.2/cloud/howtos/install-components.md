@@ -74,9 +74,8 @@ To update `composer.json`:
 
 If there are errors, see [extension deployment failure]({{ page.baseurl }}/cloud/trouble/trouble_comp-deploy-fail.html).
 
-<div class="bs-callout bs-callout-warning">
+{:.bs-callout .bs-callout-warning}
 When installing and adding the module, you must add the `composer.lock` to your Git branch for deployment. If the extension is not in the file, the extension won't load in {{site.data.var.ece}}. This ensures when the `composer install` command is used, the extension properly loads. This command uses the `composer.lock` file.
-</div>
 
 ### Step 3: Verify the extension {#verify}
 To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
