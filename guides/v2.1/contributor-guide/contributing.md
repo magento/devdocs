@@ -18,7 +18,7 @@ The following topics are included in this guide:
 - [Contribution requirements](#requirements)
 - [Fork a repository](#fork)
 - [Create a pull request](#pull_request)
-- [Porting pull requests across Magento versions](#porting)
+- [Porting code contributions across Magento versions](#porting)
 - [Report an issue](#report)
 - [Help triage issues](#triage)
 - [Labels applied by the Community Engineering Team](#labels)
@@ -142,7 +142,7 @@ Access the tool at [porting.engcom.dev.magento.com](https://porting.engcom.dev.m
 1. Visit [porting.engcom.dev.magento.com](https://porting.engcom.dev.magento.com/){:target="_blank"} and **Login with GitHub**.
 1. Copy and paste the pull request URL in **Select Pull Request for porting** and click **Next**.
 1. Select the target version for your port: **Up Port** or **Back Port**.
-1. Verify the summary of changesin **Port information**.
+1. Verify the summary of changes in **Port information**.
 1. Click **Create Job**. A job is created and started shortly after.
 
 ![Magento Porting Tool]({{ site.baseurl }}/common/images/porting-tool-steps.png)

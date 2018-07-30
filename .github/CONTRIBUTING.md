@@ -62,8 +62,11 @@ To preview your changes in HTML output, follow the instructions in the [README](
 
 Edit and add content to existing pages. For new topics, we provide templates to help get you started:
 
-* [General topic template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
-* Tutorial templates: These templates provide example formats and styles for step-by-step instructions (like how-tos). Templates include a [first introduction topic](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-first.html), [middle topic](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-middle.html) for each step, and a [final step topic](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-last.html).
+* **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
+* **Tutorial templates**: These templates provide example formats and styles for step-by-step instructions (like how-tos). Each file adds navigation buttons when content is generated. Templates include:
+  - First introduction topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-first.md) | [HTML](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-first.html): Introduction to a tutorial for prerequisites and listing steps
+  - Middle topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-middle.md) |  [HTML](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-middle.html): Use for each step in a tutorial.
+  - Final step topic - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/tutorial-template-last.md) | [HTML](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/tutorial-template-last.html): Use for the last step of the tutorial.
 
 ### Edit metadata
 The Markdown (.md) file's metadata is a set of YAML key-value pairs. The metadata section is located at the top of each file.
@@ -96,7 +99,7 @@ GitHub issues use templates for requested information. Enter as much information
 You have a couple of options to enter an issue:
 * Have general feedback? Create an issue on [GitHub DevDocs](https://GitHub.com/magento/devdocs/issues/new/choose).
 * Have feedback on a specific DevDocs page? Click the **Report an Issue** link at the top right of the page to report on the currently open topic.
-* Have a Community code contribution? Create an issue to [request DevDocs content](https://GitHub.com/magento/devdocs/issues/new?template=COMMUNITY_ISSUE_TEMPLATE.md).
+* Have a Community code contribution that needs documentation? Create an issue to [request DevDocs content](https://GitHub.com/magento/devdocs/issues/new?template=COMMUNITY_ISSUE_TEMPLATE.md).
 
 ## Contact DevDocs
 
