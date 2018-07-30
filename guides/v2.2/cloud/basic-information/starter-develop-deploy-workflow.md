@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 010_welcome
 title: Starter develop and deploy workflow
-menu_title: Starter develop and deploy workflow
-menu_order: 25
-menu_node:
 version: 2.0
 github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 ---
@@ -84,8 +80,7 @@ We recommend using a branching strategy with your development work. Using one br
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
 {:.bs-callout .bs-callout-info}
-Do not complete any configurations in your local environment yet.
-
+Do not complete any configurations in your local workstation yet.
 
 ![Develop code and push to deploy]({{ site.baseurl }}/common/images/cloud_workflow-push-code.png)
 

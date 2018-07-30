@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 010_welcome
 title: Starter develop and deploy workflow
-menu_title: Starter develop and deploy workflow
-menu_order: 25
-menu_node:
 version: 2.1
 github_link: cloud/basic-information/starter-develop-deploy-workflow.md
 functional_areas:
@@ -86,7 +82,7 @@ We recommend using a branching strategy with your development work. Using one br
 Repeat this workflow until your store is ready—fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
 {:.bs-callout .bs-callout-info}
-Do not complete any configurations on your local environment yet.
+Do not complete any configurations on your local workstation yet.
 
 ![Develop code and push to deploy]({{ site.baseurl }}/common/images/cloud_workflow-push-code.png)
 
@@ -173,7 +169,6 @@ As you develop features, add extensions, and design themes, having real data to 
 
 {:.bs-callout .bs-callout-info}
 Before pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
-
 
 We do not recommend pushing a database from an Integration or Staging environment to a Production environment. If you do, the data from the Integration or Staging environment overwrites your live Production data including sales, orders, new and updated customers, and much more.
 

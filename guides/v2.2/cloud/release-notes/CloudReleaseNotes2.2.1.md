@@ -14,9 +14,8 @@ redirect_from:
 
 We are pleased to present {{site.data.var.ece}} 2.2.1. This release includes numerous functional fixes and enhancements.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 We strongly recommend upgrading to Fastly v1.2.33 module for all Magento Commerce (Cloud) implementations that run on 2.0.x, 2.1.x, and 2.2.x. This version includes updates and additions to increase stability, performance, and resolve issues with caching shopping carts. This version of Fastly has specific updates for Magento.
-</div>
 
 ## Highlights {#highlights}
 

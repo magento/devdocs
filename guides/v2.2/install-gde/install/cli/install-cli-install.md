@@ -15,24 +15,21 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
-</div>
+{:.bs-callout .bs-callout-tip}
+  Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
-<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
+## Before you start your installation {#instgde-install-cli-prereq}
 
 Before you begin, make sure that:
 
-1.	Your system meets the requirements discussed in <a href="{{ page.baseurl }}/install-gde/system-requirements.html">Magento system requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ page.baseurl }}/install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-3.	You took your first installation steps as discussed in <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Your install or upgrade path</a>.
-4.	After you log in to the Magento server, <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
-5.	Review the information discussed in <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>.
+1.	Your system meets the requirements discussed in [Magento system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
+2.	You completed all prerequisite tasks discussed in [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html).
+3.	You took your first installation steps as discussed in [Your install or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html).
+4.	After you log in to the Magento server, [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+5.	Review the information discussed in [Get started with the command-line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html).
 
-<div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class"></span>
-  <p>You must install Magento from its <code>bin</code> subdirectory.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+  You must install Magento from its `bin` subdirectory.
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -42,11 +39,10 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Correct mistakes in previous installations
 *	Install Magento in a different database instance
 
-<div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class"></span>
-  <p>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</p>
-  <p>See also <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+  By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional `cleanup-database` parameter to change this behavior.
+  
+  See also [Update, reinstall, uninstall]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html).
 
 {% include install/fully-secure.md %}
 
@@ -74,23 +70,19 @@ You can run the following commands to find values for some required arguments:
 </tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+If an error displays when you run these commands, make sure you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
 
 
-<h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
+## Install the Magento software from the command line {#instgde-install-cli-magento}
 The format of the install command follows:
 
 	magento setup:install --<option>=<value> ... --<option>=<value>
 
-The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.
+The following table discusses the meanings of installation option names and values. Examples are provided in [Sample localhost installations](#install-cli-example).
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 <table>
 	<col width="35%">
 	<col width="55%">
@@ -311,15 +303,12 @@ The following table discusses the meanings of installation option names and valu
 	</tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To enable or disable modules after installing Magento, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-  	</span>
-</div>
+{:.bs-callout .bs-callout-info}
+To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 {% include install/sens-data.md %}
 
-<h4 id="install-cli-example">Sample localhost installations</h4>
+#### Sample localhost installations {install-cli-example}
 
 **Example 1**
 
@@ -403,10 +392,8 @@ Messages similar to the following display to indicate a successful installation:
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+The command must be entered either on a single line or, as in the preceding example, with a `\` character at the end of each line.
 
 #### Next step
 *	If you have one user account to access the Magento server, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
@@ -418,17 +405,17 @@ Messages similar to the following display to indicate a successful installation:
 
 *	[Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)
 *	[Display or change the Admin URI]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html)
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
+*	[Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 *	[Uninstall modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html)
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	[Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+*	[Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html)
+*	[Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
 *	[Update the Magento database schema and data]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html">Configure the store</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a>
+*	[Configure the store]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html)
+*	[Create a Magento administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)
 *	[Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html)
 *	[Uninstall themes]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
 *	[Uninstall language packages]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-langpk.html)
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	[Uninstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)
+*	[Update the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
+*	[Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)

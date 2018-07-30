@@ -53,6 +53,7 @@ The `bin/magento` tool provides a common entry point to execute any of the tests
 Each of the test types listed above corresponds to a subdirectory in `<magento2 root dir>/dev/tests`.
 
     dev/tests  
+    ├── acceptance      (since v2.2.4)
     ├── api-functional  
     ├── functional  
     ├── integration  

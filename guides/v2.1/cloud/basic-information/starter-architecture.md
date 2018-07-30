@@ -1,10 +1,6 @@
 ---
 group: cloud
-subgroup: 010_welcome
 title: Starter architecture
-menu_title: Starter architecture
-menu_order: 20
-menu_node:
 version: 2.1
 github_link: cloud/basic-information/starter-architecture.md
 functional_areas:
@@ -16,10 +12,6 @@ All of your code is contained in the {{site.data.var.ece}} Starter project. The 
 All environments are in PaaS (Platform-as-a-Service) containers. These containers are deployed inside highly restricted containers on a grid of servers. These environments are read-only, accepting deployed code changes from branches pushed from your local workspace.
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
-
-{:.bs-callout .bs-callout-info}
-The following architecture information uses an architecture including Production, Staging, and Integration environments.
-
 
 ![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
 
@@ -43,7 +35,6 @@ We walk you through [deploying to Staging]({{ page.baseurl }}/cloud/live/stage-p
 
 {:.bs-callout .bs-callout-warning}
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
-
 
 ## Integration environment {#cloud-arch-int}
 

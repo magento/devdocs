@@ -37,19 +37,16 @@ A project reader can have one of the following roles per environment:
 * Environment contributor can push code to this environment and branch the environment.
 * Environment reader can view this environment only.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend you limit the environment administrator role to as few users as possible.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+We recommend you limit the environment administrator role to as few users as possible.
 
 ## Role management best practices
 When a development team works on a project, the team leader can be the project administrator and decide which roles to give his team members. One team member can contribute to one environment, another member can administer a different environment, and the customer can be a reader of the `master` environment.
 
 For your users to be able to see everything but only commit to a specific branch, change their permission level on that environment to "Contributor".
 
-
-<div class="bs-callout bs-callout-warning">
-    <p>An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in <code>.magento.app.yaml</code> by specifying <code>ssh: contributor</code>.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+An environment contributor can push code to the environment, but that user role does not have SSH access to the environment. By default, only environment administrators have SSH access. You can change the behavior in `.magento.app.yaml` by specifying `ssh: contributor`.
 
 ## Create and manage users
 You can create and manage users using the Magento Cloud CLI or the Web Interface.

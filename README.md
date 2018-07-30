@@ -1,8 +1,12 @@
 # Magento Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contributions Guide](https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md).
+Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/develop/.github/CONTRIBUTING.md).
 
-To contribute, please fork the `develop` branch.
+## Contributors
+
+Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
+
+!(https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
 # Building this site
 

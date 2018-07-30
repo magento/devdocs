@@ -351,9 +351,8 @@ You can also create and push a `php.ini` file that is appended to the configurat
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 
-<div class="bs-callout bs-callout-warning" markdow="1">
+{:.bs-callout .bs-callout-warning}
 Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
-</div>
 
 For example, if you need to increase the PHP memory limit:
 

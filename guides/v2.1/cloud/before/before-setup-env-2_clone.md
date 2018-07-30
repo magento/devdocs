@@ -58,9 +58,8 @@ To clone the project's `master` environment to your local:
 
 		magento-cloud environment:list
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	{:.bs-callout .bs-callout-info}
 	`magento-cloud environment:list` displays environment hierarchies whereas `git branch` does not. If you have any nested environments, use `magento-cloud environment:list`.
-	</div>
 
 8.	Fetch remote branches:
 
@@ -80,10 +79,9 @@ hardcoded username is the Project Owner email address. You can use this value, o
 need to contact the Project Owner for the updated password.
 * `ADMIN_URL`: The relative URL to access the Admin panel. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Make note of any changed values so that you can use them when you install Magento from
 the command line and when you verify the installation.
-</div>
 
 ### List and review variables {#variablelist}
 If you're not sure whether or not the `master` branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables.
@@ -96,9 +94,8 @@ To set Admin variables, you will use this command format:
 
 You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
-</div>
+{: .bs-callout .bs-callout-warning}
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 
 ### Add variables using the CLI {#cli}
 To set variables using the CLI (with example values used):
