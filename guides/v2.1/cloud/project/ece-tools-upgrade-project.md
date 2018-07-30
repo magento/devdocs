@@ -9,16 +9,16 @@ functional_areas:
 ---
 If you still use a version of {{site.data.var.ece}} that does not contain the `ece-tools` package, then your project requires an _upgrade_. We deprecated the `magento/magento-cloud-configuration` and `magento/ece-patches` packages in favor of the `ece-tools` package.
 
-You must perform a one-time, manual step to update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file, located in the root directory. This constraint enables updates for {{site.data.var.ece}} metapackages—including removing deprecated packages—without upgrading your current {{site.data.var.ee}} version. If your project contains the `ece-tools` package and you have updated the metapackage, you can skip the following upgrade and see [Update ece-tools]({{page.baseurl}}/cloud/project/ece-tools-update.html).
+You must perform a one-time, manual step to update the `magento/magento-cloud-metapackage` version constraint in the `composer.json` file, located in the root directory. This constraint enables updates for {{site.data.var.ece}} metapackages—including removing deprecated packages—without upgrading your current {{site.data.var.ee}} version. If your project contains the `{{site.data.var.ct}}` package and you have updated the metapackage, you can skip the following upgrade and see [Update {{site.data.var.ct}}]({{page.baseurl}}/cloud/project/ece-tools-update.html).
 
 {% include cloud/note-upgrade.md %}
 
 ## Remove deprecated packages
-Before performing an upgrade to use the `ece-tools` package, check the `composer.json` file for the following deprecated packages and remove them:
+Before performing an upgrade to use the `{{site.data.var.ct}}` package, check the `composer.lock` file for the following deprecated packages:
 
--  `magento-cloud-configuration`
+-  `magento/magento-cloud-configuration`
 -  `magento/ece-patches`
- 
+
 ## Update the metapackage {#metapackage}
 Each {{site.data.var.ee}} version requires a different constraint based on the following:
 
@@ -69,7 +69,17 @@ To upgrade your project to use the `ece-tools` package, you need to update the m
             php ./vendor/bin/ece-tools post-deploy
     ```
 
-1.  It may be necessary to update the `ece-tools` package.
+1.  Check for and remove the [deprecated packages](#remove-deprecated-packages). The deprecated packages can prevent a successful upgrade.
+
+    ```bash
+    composer remove magento/magento-cloud-configuration
+    ```
+
+    ```bash
+    composer remove magento/ece-patches
+    ```
+
+1.  It may be necessary to update the `{{site.data.var.ct}}` package.
 
     ```bash
     composer update magento/ece-tools
