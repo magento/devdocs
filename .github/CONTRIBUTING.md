@@ -16,7 +16,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ## Get started
 
-* Make sure you have a [GitHub account](https://github.com/signup/free). We recommend adding [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#two-factor) to your account. Partners are required to add 2FA protection when contributing to Magento respositories.
+* Make sure you have a [GitHub account](https://github.com/signup/free). We recommend adding [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#two-factor)(2FA) to your account. Partners are required to add 2FA protection when contributing to Magento respositories.
 * Make sure you sign the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca).
 * Check the [guidelines](#contribution-guidelines).
 * [Fork and clone](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](GitHub.com/magento/devdocs). [Sync](https://help.github.com/articles/syncing-a-fork/) as needed.
@@ -25,7 +25,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 **Note:** If you have not signed the [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca), the PR will provide a link to complete. All contributors are required to submit the form and agree to the terms to complete it.
 
-**Tip:** If you are not sure where to start contributing, check out our GitHub issues labeled [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+**Tip![:]()** If you are not sure where to start contributing, check out our GitHub issues labeled [help wanted](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [good first issue](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
 
 ## Contribution guidelines
 We use [Markdown](http://daringfireball.net/projects/markdown/) to write our documentation, which is a simple markup language that we convert to HTML using [Kramdown](http://kramdown.gettalong.org/syntax.html).
