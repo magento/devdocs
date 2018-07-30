@@ -57,7 +57,7 @@ to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain
 
 -  <!-- MAGECLOUD-2034 -->Fixed an issue when using SCD with multiple locales, which generated the same `js-translation.json` file for each locale.
 
-- <!-- MAGECLOUD-2033  -->Optimized the `support:db:dump` command to avoid locking tables and increase speed.
+- <!-- MAGECLOUD-2033  -->Optimized the `db:dump` command in the `ece-tools` package to avoid locking tables and increase speed.
 
 ## v2002.0.11
 
