@@ -1917,27 +1917,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
-<p><a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an <em>HTTP accelerator</em> or <em>caching HTTP reverse proxy</em>). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.</p>
+<p><a target="_blank" href="https://www.varnish-cache.org/">Varnish Cache</a> is an open source web application accelerator (also referred to as an <em>HTTP accelerator</em> or <em>caching HTTP reverse proxy</em>). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike web servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.</p>
 
 <p>Magento 2 supports Varnish 4.x and 5.0.</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>We <em>strongly recommend</em> you use Varnish in production. The built-in full-page caching (to either the file system or <a href="/guides/v2.2/config-guide/database/database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
-</div>
+<p class="bs-callout bs-callout-warning">We <em>strongly recommend</em> you use Varnish in production. The built-in full-page caching (to either the file system or <a href="/guides/v2.2/config-guide/database/database.html">database</a>) is much slower than Varnish, and Varnish is designed to accelerate HTTP traffic.</p>
 
 <p>For more information about Varnish, see:</p>
 
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/Varnish_%28software%29" target="_blank">wikipedia</a></li>
-  <li><a href="https://www.varnish-cache.org/docs/trunk/users-guide/intro.html" target="_blank">The Big Varnish Picture</a></li>
-  <li><a href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options" target="_blank">Varnish startup options</a></li>
-  <li><a href="https://www.varnish-cache.org/docs/trunk/users-guide/performance.html#users-performance" target="_blank">Varnish and Website Performance</a></li>
+  <li><a target="_blank" href="https://en.wikipedia.org/wiki/Varnish_%28software%29">Wikipedia</a></li>
+  <li><a target="_blank" href="https://www.varnish-cache.org/docs/trunk/users-guide/intro.html">The Big Varnish Picture</a></li>
+  <li><a target="_blank" href="https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options">Varnish startup options</a></li>
+  <li><a target="_blank" href="https://www.varnish-cache.org/docs/trunk/users-guide/performance.html#users-performance">Varnish and Website Performance</a></li>
 </ul>
 
 <h2 id="varnish-arch">Varnish topology diagram</h2>
 <p>The following figure shows a basic view of Varnish in your Magento topology.</p>
 
-<p><img src="/common/images/varnish_basic.png" width="400px" alt="Basic Varnish diagram" /></p>
+<p><img width="400px" src="/common/images/varnish_basic.png" alt="Basic Varnish diagram" /></p>
 
 <p>In the preceding figure, users’ HTTP requests over the internet result in numerous requests for CSS, HTML, JavaScript, and images (referred to collectively as <em>assets</em>). Varnish sits in front of the web server and proxies these requests to the web server.</p>
 
@@ -1963,19 +1961,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
-		<li>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
-</div>
+<ul class="bs-callout bs-callout-info" id="info">
+  <li>Except where noted, you must enter all commands discussed in this topic as a user with <code class="highlighter-rouge">root</code> privileges.</li>
+  <li>This topic is written for Varnish on CentOS and Apache 2.2. If you’re setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.</li>
+</ul>
 
 <h2 id="config-varnish-issues">Known issues</h2>
 <p>We know of the following issues with Varnish:</p>
 
 <ul>
   <li>
-    <p><a href="https://www.varnish-cache.org/docs/3.0/phk/ssl.html" target="_blank">Varnish does not support SSL</a></p>
+    <p><a target="_blank" href="https://www.varnish-cache.org/docs/3.0/phk/ssl.html">Varnish does not support SSL</a></p>
 
-    <p>As an alternative, use SSL termination or an <a href="https://en.wikipedia.org/wiki/TLS_termination_proxy" target="_blank">SSL termination proxy</a>.</p>
+    <p>As an alternative, use SSL termination or an <a target="_blank" href="https://en.wikipedia.org/wiki/TLS_termination_proxy">SSL termination proxy</a>.</p>
   </li>
   <li>
     <p>If you manually delete the contents of the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/cache</code> directory, you must restart Varnish.</p>
@@ -2002,6 +2000,10 @@ Varnish cache server
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.2/config-guide/varnish/config-varnish-install.html">Install Varnish</a></p>
+
+<!-- Link Definitions -->
+
+<!-- image Definitions -->
 
 			
 		</div>
