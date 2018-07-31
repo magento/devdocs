@@ -14,16 +14,11 @@ Magento generates a `bulkUuid` each time it executes an [asynchronous API reques
 * `GET /V1/bulk/:bulkUuid/status`
 * `GET /V1/bulk/:bulkUuid/detailed-status` 
 
+## Get the status summary
 
-### Get the status summary
+The `GET /V1/bulk/:bulkUuid/status` endpoint returns the simplified status of the specified operation.
 
-Returns the status of the operation:
-
-```
-GET /V1/bulk/:bulkUuid/status
-```
-
-#### Response:
+**Response**
 
 ```json
 {
@@ -44,15 +39,11 @@ GET /V1/bulk/:bulkUuid/status
 }
 ```
 
-### Get the Detailed Status
+## Get the Detailed Status
 
-Returns detailed information about operations status. The `operations_list` array contains the message queue `topic_name` and `result_serialized_data` for each operation.
- 
-```
-GET /V1/bulk/:bulkUuid/detailed-status
-```
+The `GET /V1/bulk/:bulkUuid/detailed-status` endpoint returns detailed information about an operation's status. The `operations_list` array contains the message queue `topic_name` and `result_serialized_data` for each operation.
 
-#### Response:
+**Response**
 
 ```json
 {
