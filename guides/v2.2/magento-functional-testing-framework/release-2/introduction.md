@@ -26,7 +26,13 @@ Because MFTF tests are written in XML, you no longer need to learn PHP to write 
 include note.html
 type="info"
 content="We are actively developing functional tests.
-Refer to `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for examples."
+Refer to `Test/Mftf/` in [magneto modules directories]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html#where-do-modules-live) for examples."
+%}
+
+{%
+include note.html
+type="info"
+content="At the moment only three modules have MFTF tests: [Sales](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/Sales/Test/Mftf), [SalesRule](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/SalesRule/Test/Mftf) and [Persistent](https://github.com/magento/magento2/tree/2.2-develop/app/code/Magento/Persistent/Test/Mftf)."
 %}
 
 ## Audience
@@ -44,7 +50,7 @@ The purpose of MFTF is to:
 MFTF will enable you to:
 
 -   Test user interactions with web applications in testing.
--   Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
+-   Write functional tests located in `Test/Mftf/` in [module directory]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html#where-do-modules-live).
 -   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
 -   Automate regression testing.
 
@@ -56,9 +62,9 @@ As a software engineer, perform regression testing before release to ensure that
 
 ## Find your MFTF version
 
-The MFTF is installed as a Composer dependency in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/composer.lock`.
+The MFTF is installed as a Composer dependency in `<magento_root>/app/code/dev/Tests/acceptance/` directory.
 
-Open the file and check the corresponding dependency:
+Open the file 'composer.lock' and check the corresponding dependency:
 
 ```json
 {
@@ -67,7 +73,7 @@ Open the file and check the corresponding dependency:
         ...
         {
             "name": "magento/magento2-functional-testing-framework",
-            "version": "2.0.2",
+            "version": "2.1.2",
             ...
         }
         ...
