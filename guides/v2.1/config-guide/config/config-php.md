@@ -28,6 +28,18 @@ Magento's deployment configuration consists of the shared and system-specific co
 	`config.php` contains the list of installed modules, themes, and language packages; and shared configuration settings
 *	`<Magento base dir>/app/etc/env.php`, which contains system-specific settings, such as:
 
+	*	Database credentials and connection settings	
+	*	i18n TBD	
+	*	Cache storage settings	
+	*	Session storage settings	
+	*	[x-frame-options]({{ page.baseurl }}config-guide/secy/secy-xframe.html) setting	
+	*	Enabled cache types	
+	*	Your encryption key	
+	*	Web routing parameters (base URLs, Magento Admin URI)	
+	*	[Magento mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html)	
+	*	Magento installation date	
+	*	System-specific and sensitive configuration settings TBD
+
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
