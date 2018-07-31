@@ -24,11 +24,11 @@ A shared catalog must be assigned to one or more companies before it can be acce
 
 **REST endpoints**
 
-{% highlight json %}
+```json
 POST /V1/sharedCatalog/:sharedCatalogId/assignCompanies
 POST /V1/sharedCatalog/:sharedCatalogId/unassignCompanies
 GET  /V1/sharedCatalog/:sharedCatalogId/companies
-{% endhighlight %}
+```
 
 **Company parameters**
 
@@ -52,7 +52,7 @@ If a specified company is already assigned to a different shared catalog, this r
 
 **Payload**
 
-{% highlight json %}
+```json
 
 {
   "companies": [
@@ -64,7 +64,7 @@ If a specified company is already assigned to a different shared catalog, this r
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -80,7 +80,7 @@ When you unassign a company from a custom catalog, the system automatically assi
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "companies": [
     {
@@ -88,7 +88,7 @@ When you unassign a company from a custom catalog, the system automatically assi
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 

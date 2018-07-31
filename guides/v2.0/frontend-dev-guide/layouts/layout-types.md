@@ -41,7 +41,7 @@ Sample page layout:
 
 `<Magento_Theme_module_dir>/view/frontend/page_layout/2columns-left.xml`
 
-{%highlight xml%}
+```xml
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
     <update handle="1column"/>
     <referenceContainer name="columns">
@@ -53,7 +53,7 @@ Sample page layout:
         </container>
     </referenceContainer>
 </layout>
-{%endhighlight xml%}
+```
 
 <h3 id="layout-types-page-conv">Page layout files conventional location</h3>
 
@@ -89,7 +89,7 @@ Sample page layout declaration file:
 
     <Magento_Theme_module_dir>/view/frontend/layouts.xml
 
-{%highlight xml%}
+```xml
 <page_layouts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/PageLayout/etc/layouts.xsd">
     <layout id="1column">
         <label translate="true">1 column</label>
@@ -104,7 +104,7 @@ Sample page layout declaration file:
         <label translate="true">3 columns</label>
     </layout>
 </page_layouts>
-{%endhighlight xml%}
+```
 
 <h2 id="layout-types-conf">Page configuration</h2>
 
@@ -477,7 +477,7 @@ none
 
 Sample generic layout:
 
-{%highlight xml%}
+```xml
 <layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
     <update handle="formkey"/>
     <update handle="adminhtml_googleshopping_types_block"/>
@@ -485,5 +485,5 @@ Sample generic layout:
         <block class="Magento\Backend\Block\Widget\Grid\Container" name="googleshopping.types.container" template="Magento_Backend::widget/grid/container/empty.phtml"/>
     </container>
 </layout>
-{%endhighlight xml%}
+```
 

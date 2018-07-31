@@ -18,7 +18,7 @@ Index data can be always re-created from the original data using certain algorit
 
 You can extend the current indexer declaration with an optional <fieldset> element.
 
-{% highlight XML%}
+```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../Indexer/etc/indexer.xsd">
@@ -47,7 +47,7 @@ You can extend the current indexer declaration with an optional <fieldset> eleme
         <structure class="Magento\Framework\Indexer\GridStructure" /><!-- optional --><!-- creating flat table for index (or in other index database) -->
     </indexer>
 </config>
-{% endhighlight %}
+```
 
 Where:
 

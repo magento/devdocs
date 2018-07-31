@@ -30,7 +30,7 @@ Before you using this code sample, verify that the attribute values are the same
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "product": {
     "sku": "MS-Champ",
@@ -81,12 +81,12 @@ Before you using this code sample, verify that the attribute values are the same
   }
 }
 
-{% endhighlight  %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
     "id": 2078,
     "sku": "MS-Champ",
@@ -203,7 +203,7 @@ Before you using this code sample, verify that the attribute values are the same
         }
     ]
 }
-{% endhighlight  %}
+```
 {% endcollapsible %}
 
 ## Verify this step

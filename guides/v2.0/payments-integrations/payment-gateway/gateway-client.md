@@ -25,7 +25,7 @@ The following gateway client implementations can be used out-of-the-box:
 ## Example
 Following is the illustration of how a Zend client can be added in `di.xml`:
 
-{% highlight xml %}
+```xml
 ...
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
     <arguments>
@@ -34,7 +34,7 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
     </arguments>
 </virtualType>
 ...
-{% endhighlight %}
+```
 
 ## Transfer Factory {#transfer_factory}
 

@@ -23,15 +23,15 @@ To ensure that your new string is added to the dictionary and translated, use th
 
 For example:
 
-{% highlight html+php %}
+```php
 	<h3><?php echo __('Create Backup') ?></h3>
-{% endhighlight html+php %}
+```
 
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
-{% highlight html+php%}
+```php
     <h3><?php echo sprintf(__('Hello %s'), $yourVariable) ?></h3>
-{% endhighlight html+php%}
+```
 
 In this example, the <i>'Hello %s'</i> string is added to the dictionary when the i18n tool is run.
 
@@ -48,29 +48,29 @@ To ensure that the text you add in `.html` templates of UI components is added t
 
 - when a string is added in the scope of an HTML element:
  
-{% highlight HTML%}
+```HTML
     <span data-bind="i18n: 'Sign In'"></span>
-{% endhighlight HTML%}
+```
 
 - when a string is added with no binding to an HTML element:
 
-{% highlight HTML%}
+```HTML
     <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
-{% endhighlight HTML%}	
+```	
 
 - when a string is added as an attribute of an HTML element:
 
-{% highlight HTML%}
+```HTML
     <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
-{% endhighlight HTML%}
+```
 
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>
 
 To ensure that the text you add in UI components configuration `.xml` files is added to the dictionary, use the `translate` attribute: set `translate=true` for the corresponding element. The following code sample is an illustration:
 
-{% highlight xml%}
+```xml
     <item name="label" xsi:type="string" translate="true">Delete</item>
-{% endhighlight xml%}
+```
 
 In this example, the *Delete* string is added to the dictionary when the i18n tool is run.
 
@@ -79,21 +79,21 @@ To ensure that the text you add in a <code>.js</code> file is collected by the i
 <ol>
 <li>Link the <code>mage/translate</code> library:
 
-{% highlight js%}
+```js
 	define (['jquery', 'mage/translate'], function ($) {...});
-{% endhighlight js%}
+```
 </li>
 <li>Use the <code>$.mage.__('')</code> function when adding a string:
 
-{% highlight js%}
+```js
 	$.mage.__('<string>');
-{% endhighlight js%}
+```
 
 If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
 
-{% highlight js%}
+```js
     $.mage.__('Hello %1').replace('%1', yourVariable);
-{% endhighlight js%}
+```
 
 In this example, the <i>'Hello %1'</i> string is added to the dictionary when the i18n tool is run.
 

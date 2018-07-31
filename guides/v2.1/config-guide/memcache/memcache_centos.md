@@ -108,7 +108,7 @@ At the `mysql` prompt, enter the following commands:
 
 Create `cache-test.php` in your web server's docroot:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 if (class_exists('Memcache')) {
     $meminstance = new Memcache();
 } else {
@@ -136,7 +136,7 @@ if (!$result) {
 }
 print "got result from memcached\n";
 return 0;
-{% endhighlight %}
+```
 
 where `<memcache hostname or ip>` is either `localhost`, `127.0.0.1`, or the memcache hostname or IP address. `<memcache port>` is its listen port; by default, `11211`.
 

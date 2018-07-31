@@ -17,7 +17,7 @@ Add the [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depen
 
 The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml#L10)):
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeFacade" type="Magento\Payment\Model\Method\Adapter">
     <arguments>
         <argument name="code" xsi:type="const">Magento\Braintree\Model\Ui\ConfigProvider::CODE</argument>
@@ -28,7 +28,7 @@ The following sample is an illustration of such configuration ([app/code/Magento
         <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 The following arguments must be configured (all arguments are mandatory):
 
@@ -46,7 +46,7 @@ Let's look closer at the value handlers pool of a payment method. This pool enab
 
 For example, the `can_void` configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration ([app/code/Magento/Braintree/etc/di.xml#L296]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml#L296)):
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeValueHandlerPool" type="Magento\Payment\Gateway\Config\ValueHandlerPool">
     <arguments>
         <argument name="handlers" xsi:type="array">
@@ -56,17 +56,17 @@ For example, the `can_void` configuration option might depend on payment transac
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 Pay attention, that you must always specify the default handler. In the example it is config reader for Braintree:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeConfigValueHandler" type="Magento\Payment\Gateway\Config\ConfigValueHandler">
     <arguments>
         <argument name="configInterface" xsi:type="object">Magento\Braintree\Gateway\Config\Config</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 In your configuration you can use default [Magento\Payment\Gateway\Config\Config]({{ site.mage2100url }}app/code/Magento/Payment/Gateway/Config/Config.php). Or you can add a custom config interface. It must implement the `Magento\Payment\Gateway\ConfigInterface` interface.
 
@@ -120,7 +120,7 @@ class CountryValidator extends AbstractValidator
 
 Then, the newly created validator needs to be added to the global pool of validators:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
     <arguments>
         <argument name="validators" xsi:type="array">
@@ -128,7 +128,7 @@ Then, the newly created validator needs to be added to the global pool of valida
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 ## What's next
 

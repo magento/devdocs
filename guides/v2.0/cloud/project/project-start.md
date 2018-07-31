@@ -21,7 +21,7 @@ When you create your project, you receive a cloned repository of {{site.data.var
 ## Local project directory structure {#cloud-structure-local}
 Not including the Magento application itself, your local project has the following structure:
 
-{% highlight xml %}
+```xml
 ├── .git
 ├── .gitignore
 ├── .magento
@@ -34,7 +34,7 @@ Not including the Magento application itself, your local project has the followi
 ├── magento-vars.php
 ├── php.ini
 └── README.md
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
@@ -101,7 +101,7 @@ Logs for all deployments that have occurred on this environment are appended to 
 
 The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:
 
-{% highlight xml %}
+```xml
 [2016-10-11 22:15:38] Starting pre-deploy.
 ...
 [2016-10-11 22:15:39] Pre-deploy complete.
@@ -112,7 +112,7 @@ The actual log output is highly verbose to allow troubleshooting. The following 
 ... more ...
 
 [2016-10-11 22:15:46] Deployment complete.
-{% endhighlight %}
+```
 
 The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.

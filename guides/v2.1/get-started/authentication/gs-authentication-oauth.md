@@ -229,7 +229,7 @@ The credentials are posted to `endpoint.php`. You should also see another pop-up
 ### checklogin.php
 
 {% collapsible Click to expand %}
-{% highlight php %}
+```php
 <?php
 require './vendor/autoload.php';
 
@@ -260,12 +260,12 @@ $accessToken = $oAuthClient->requestAccessToken(
 );
 
 header("location: $callback");
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### endpoint.php
 {% collapsible Click to expand %}
-{% highlight php %}
+```php
 <?php
 session_id('test');
 session_start();
@@ -282,12 +282,12 @@ session_write_close();
 
 header("HTTP/1.0 200 OK");
 echo "Response";
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### login.php
 {% collapsible Click to expand %}
-{% highlight php %}
+```php
 <?php
 $consumerKey = $_REQUEST['oauth_consumer_key'];
 $callbackUrl = urlencode(urldecode($_REQUEST['success_call_back']));
@@ -322,7 +322,7 @@ echo <<<HTML
     </tr>
 </table>
 HTML;
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### OauthClient.php
@@ -330,7 +330,7 @@ HTML;
 Change the instances of `http://magento.host` in this example to a valid base URL.
 
 {% collapsible Click to expand %}
-{% highlight php %}
+```php
 <?php
 
 use OAuth\Common\Consumer\Credentials;
@@ -504,7 +504,7 @@ class OauthClient extends AbstractService
         return $authorizationHeader;
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Related topics

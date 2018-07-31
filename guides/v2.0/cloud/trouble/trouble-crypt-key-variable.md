@@ -31,13 +31,13 @@ To verify and update the encryption key environment variable:
 2.  Open `app/etc/env.php` in a text editor.
 3.  Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
 
-        {% highlight php startinline=true %}
+        ```php?start_inline=1
         return array (
           'crypt' =>
           array (
             'key' => '<your encryption key>',
           ),
         );
-        {% endhighlight %}
+        ```
 4.  If the value is incorrect, add the key value, and save your changes to `env.php`.
 5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.

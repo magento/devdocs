@@ -67,7 +67,7 @@ Having created the component provider, you need to add it to the list of availab
 
 In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvider` component provider is added to this list:
 
-{% highlight xml %}
+```xml
 <type name="Magento\Vault\Model\Ui\TokensConfigProvider">
     <arguments>
         <argument name="tokenUiComponentProviders" xsi:type="array">
@@ -75,7 +75,7 @@ In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvide
         </argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 ## JavaScript component for vault 
 
@@ -83,7 +83,7 @@ In your custom module directory, create the component’s `.js` file. It must be
 
 The component should extend [vault.js]({{ site.mage2100url }}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
-{% highlight javascript %}
+```javascript
 define([
     'Magento_Vault/js/view/payment/method-renderer/vault',
 ], function (VaultComponent) {
@@ -96,7 +96,7 @@ define([
         ...
     });
 });
-{% endhighlight %}
+```
 
 ## What's next
 

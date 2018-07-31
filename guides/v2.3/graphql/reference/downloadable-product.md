@@ -47,7 +47,7 @@ Field | Type | Description
 
 The following query returns information about downloadable product `240-LV04`, which is defined in the sample data.
 
-{% highlight json %}
+```json
 {
   products(filter:
     {sku: {eq:"240-LV04"}}
@@ -92,4 +92,4 @@ The following query returns information about downloadable product `240-LV04`, w
        }
    }
 }
-{% endhighlight %}
+```

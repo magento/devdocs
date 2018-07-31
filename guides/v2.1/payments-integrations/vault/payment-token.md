@@ -85,7 +85,7 @@ The created response handler must be added to the handler chain in the DI config
 
 Example of the Braintriee `di.xml`:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">
     <arguments>
         <argument name="handlers" xsi:type="array">
@@ -95,7 +95,7 @@ Example of the Braintriee `di.xml`:
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 The persistence layer for Payment Token is implemented in the [Vault Module]({{ site.mage2100url }}app/code/Magento/Vault).
 

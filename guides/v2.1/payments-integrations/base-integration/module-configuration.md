@@ -29,7 +29,7 @@ Specify these dependencies in your `composer.json` and `module.xml` files.
 
 In your `%Vendor_Module%/composer.json` file, specify the dependencies like in the following example:
 
-{% highlight json %}
+```json
 {
     ...
     "require": {
@@ -42,7 +42,7 @@ In your `%Vendor_Module%/composer.json` file, specify the dependencies like in t
     ...
 
 }
-{% endhighlight %}
+```
 
 For details about composer.json see [The composer.json]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html) file topic.
 
@@ -50,7 +50,7 @@ For details about composer.json see [The composer.json]({{ page.baseurl }}/exten
 
 Add the same dependencies in `%Vendor_Module%/etc/module.xml` like in the following example:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Vendor_Module" setup_version="2.0.0">
         <sequence>
@@ -62,7 +62,7 @@ Add the same dependencies in `%Vendor_Module%/etc/module.xml` like in the follow
         </sequence>
     </module>
 </config>
-{% endhighlight %}
+```
 
 Your payment method implementation might require adding more dependencies.
 

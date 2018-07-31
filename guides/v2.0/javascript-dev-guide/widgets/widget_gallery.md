@@ -41,7 +41,7 @@ Example of declarative initialization:
 
  `<Magento_Catalog_module_dir>/view/frontend/templates/product/view/gallery.phtml`
 
-{%highlight js%}
+```js
 <script type="text/x-magento-init">
     {
          {
@@ -94,7 +94,7 @@ Example of declarative initialization:
     }
 </script>
 
-{%endhighlight%}
+```
 
 
 ## Options {#gallery_options}
@@ -114,7 +114,7 @@ Array of images to display.
 
 Where `image` is an object with keys:
 
-{%highlight js%}
+```js
 {
     "thumb": "<small_image_url>",
     "img": "<small_image_url>",
@@ -122,7 +122,7 @@ Where `image` is an object with keys:
     "caption": "<message>",
     "isMain": "<true/false>"
 }
-{%endhighlight%}
+```
 
 The `thumb`, `img`, and `full` are full paths to proper image files.
 
@@ -131,7 +131,7 @@ The `thumb`, `img`, and `full` are full paths to proper image files.
 Set the caption for a specific image in the `data` field.
 Example of the runtime initialization with the `caption` option specified:
 
-{%highlight js%}
+```js
 galleryInstance({
     data: [
         {
@@ -141,7 +141,7 @@ galleryInstance({
         }
     ]
 });
-{%endhighlight%}
+```
 
 ### `options` {#options}
 Set of options available for the Preview region.
@@ -414,7 +414,7 @@ Set of options that could be dynamically set while page is resizing.
 
 Set as follows:
 
-{%highlight js%}
+```js
 "breakpoints": {
     "%breakpoint_name%": {
         "conditions": {
@@ -423,7 +423,7 @@ Set as follows:
         "options": {...}
     }
 }
-{%endhighlight%}
+```
 
 Where the options are as follows:
 
@@ -436,7 +436,7 @@ Gallery and magnifier options can be set in the `view.xml` configuration file of
 
 The general gallery options are set as follows:
 
-{%highlight xml%}
+```xml
 
 <var name="gallery">
     <var name="%option1%">%option1_value%</var>
@@ -444,11 +444,11 @@ The general gallery options are set as follows:
 ...
 </var>
 
-{%endhighlight%}
+```
 
 The fullscreen and breakpoints options are set in a similar way:
 
-{%highlight xml%}
+```xml
 
 <var name="fullscreen">
     <var name="%fullscreen_option1%">%option1_value%</var>
@@ -461,7 +461,7 @@ The fullscreen and breakpoints options are set in a similar way:
 ...
 </var>
 
-{%endhighlight%}
+```
 
 For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
 
@@ -470,34 +470,34 @@ For illustration of setting gallery option in `view.xml`, you can reference to t
 
 Gallery methods are placed in data storage of the `gallery` object. To initialize the API, on the gallery object, call the `data` method with `gallery` as argument. The illustration follows:
 
-{% highlight php%}
+```php
 var api = $(element).data('gallery');
 
 //or
 
 var api = $('[data-gallery-role="gallery"]').data('gallery');
 
-{% endhighlight %}
+```
 
 This method returns JS object that contains {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} functions.
 
 
 To ensure that the gallery is fully formed, wrap your code with {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} handler function and add it to the `gallery:loaded` event:
 
-{% highlight php %}
+```php
 
     $(element).on('gallery:loaded', function () {
         var api = $(element).data('gallery');
         /* api methods calls */
     });
 
-{% endhighlight php%}
+```
 
 Then to call a method, use the following notation:
 
-{% highlight php %}
+```php
     api.%method_name%();
-{% endhighlight php%}
+```
 
 All available methods are listed in the following paragraph.
 
@@ -557,23 +557,23 @@ Add new items to the gallery.
 
 Example:
 
-{% highlight php %}
+```php
 api.updateData([{
     img: 'image1.jpg',
     thumb: 'thumb1.jpg',
     caption: 'caption'
 }]);
-{% endhighlight php %}
+```
 
 #### `updateOptions()` {#gallery_updateOptions}
 Updates options of active breakpoint or default gallery options, if there is no active breakpoint.
 
 Example:
 
-{% highlight php%}
+```php
 
 api.updateOptions([{
     nav: 'dots'
 }]);
 
-{% endhighlight %}
+```

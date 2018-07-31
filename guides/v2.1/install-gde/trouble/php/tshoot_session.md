@@ -15,11 +15,11 @@ functional_areas:
 
 **Symptom**: At the last step of installing Magento 2, the following {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} displays:
 
-{% highlight PHP %} 
+```PHP 
 exception 'Exception' with message 'Warning: SessionHandler::read():
 open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74' 
 in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
-{% endhighlight %} 
+``` 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

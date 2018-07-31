@@ -38,7 +38,7 @@ website_id` | Int | ID of the website that generated the gift card
 
 The following query returns information about gift card product `GiftCard25`. (It is not defined in the sample data.)
 
-{% highlight json %}
+```json
 {
    products(filter: {sku: {eq: "GiftCard25"}})
    {
@@ -67,4 +67,4 @@ The following query returns information about gift card product `GiftCard25`. (I
        }
    }
 }
-{% endhighlight %}
+```

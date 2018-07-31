@@ -49,7 +49,7 @@ Below are ways of improving code to help simplify documentation:
 * Break down a method into smaller methods with descriptive names.
   See example below:
 
-  {% highlight php startinline=true %}
+  ```php?start_inline=1
   public function getPrice()
   {
       $price = 0;
@@ -70,7 +70,7 @@ Below are ways of improving code to help simplify documentation:
     }
     return 0;
   }
-  {% endhighlight %}
+  ```
 
 ### Include all the necessary details
 
@@ -92,7 +92,7 @@ If description or short description happens to be the first one after DocBlock o
 
 **DocBlock Header in a PHP-file**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Short description...
  *
@@ -101,13 +101,13 @@ If description or short description happens to be the first one after DocBlock o
  *
  * License notice...
  */
-{% endhighlight %}
+```
 
 
 **DocBlock Header in an XML-file**
 
 
-{% highlight xml %}
+```xml
 
 /**
  * Short description...
@@ -118,7 +118,7 @@ If description or short description happens to be the first one after DocBlock o
  * License notice...
  */
 -->
-{% endhighlight %}
+```
 
 ### License Notice and Copyright
 
@@ -136,7 +136,7 @@ Use the following templates for the license notice and copyright blocks:
 
 **Template for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Files**
 
-{% highlight php %}
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
@@ -154,11 +154,11 @@ interface MetadataObjectInterface
 {
    ...
 }
-{% endhighlight %}
+```
 
 **Template for {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} Files**
 
-{% highlight xml %}
+```xml
 
 <?xml version="1.0"?>
 <!--
@@ -167,17 +167,17 @@ interface MetadataObjectInterface
  * See COPYING.txt for license details.
  */
 -->
-{% endhighlight %}
+```
 
 **Template for JS Files**
 
-{% highlight js %}
+```js
 
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
-{% endhighlight %}
+```
 
 ## Code structural elements
 {:#code-elements}
@@ -191,7 +191,7 @@ So in general case, classes that are declared in dedicated files, must have one 
 
 **DocBlock for a Class**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Autoloader with class map capability
@@ -200,7 +200,7 @@ So in general case, classes that are declared in dedicated files, must have one 
  */
 class Autoload
 {
-{% endhighlight %}
+```
 
 
 But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element.
@@ -212,7 +212,7 @@ So there are two solutions possible:
 **DocBlock with Included Script File**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Magento integration Magento test framework (MTF) bootstrap
@@ -229,13 +229,13 @@ namespace Magento\Test;
  */
 class Bootstrap
 {
-{% endhighlight %}
+```
 
 
 **DocBlock with Included Class File**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 namespace Magento\Framework\Profiler\Adapter;
 
 /**
@@ -256,7 +256,7 @@ class Csv extends \Magento\Framework\Profiler\AdapterAbstract
 }
 
 require_once __DIR__ . '/../../functions.php';
-{% endhighlight %}
+```
 
 
 ### Classes and interfaces
@@ -285,7 +285,7 @@ The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% e
 **Example of a Method DocBlock**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 use Magento\Logger;
 use Magento\Math\Random;
 use Magento\Stdlib\DateTime as StdlibDateTime;
@@ -306,7 +306,7 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 {
 
 }
-{% endhighlight %}
+```
 
 
 ### Class attributes
@@ -317,7 +317,7 @@ Class attributes must have type declaration using `@var` tag.
 **Example of Class Attribute**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 // ...
 namespace Magento;
 
@@ -327,7 +327,7 @@ class Profiler
      * @var Profiler
      */
     protected static $instance = null;
-{% endhighlight %}
+```
 
 
 ### Functions and methods
@@ -390,7 +390,7 @@ Functions and methods must have:
 
 **Example of a Method DocBlock**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Merge the config XML files
@@ -418,7 +418,7 @@ protected function merge($configFiles)
     }
     $this->_dom = $domConfig->getDom();
 }
-{% endhighlight %}
+```
 
 
 #### Divergence in @throws tag
@@ -427,7 +427,7 @@ protected function merge($configFiles)
 In general, use the `@throws` tag when the code uses *throw*:
 
 **Example of Throwing Exception Explicitly**
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Set an arbitrary value to specified element
  *
@@ -452,7 +452,7 @@ public function setAttribute($elementId, $attribute, $value)
     }
     return $this;
 }
-{% endhighlight %}
+```
 
 
 In this general case, if an exception is thrown in a sub-routine, then `@throws` must not be used in the parent method.
@@ -463,7 +463,7 @@ For example:
 **Throwing Exception Implicitly**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Recursively delete directory from storage
  *
@@ -494,7 +494,7 @@ public function deleteDirectory($path)
         $io->rmdir($this->getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
     }
 }
-{% endhighlight %}
+```
 
 
 #### @return tag
@@ -512,7 +512,7 @@ Constants must have short description.
 For example, a global constant:
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Directory separator shorthand
  */
@@ -525,7 +525,7 @@ class Profiler
      * Separator literal to assemble timer identifier from timer names
      */
     const NESTING_SEPARATOR = '->';
-{% endhighlight %}
+```
 
 
 ### DocBlock templates
@@ -558,7 +558,7 @@ Rules for usage of the tag:
 * Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
 
 **DocBlock for the Interface**
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Interface for mutable value object for integer values
  */
@@ -582,10 +582,10 @@ interface MutableInterface
      */
     public function setVal($value);
 }
-{% endhighlight %}
+```
 
 **DocBlock for the implementation**
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Limited mutable value object for integer values
  */
@@ -607,7 +607,7 @@ class LimitedMutableClass implements MutableInterface
     {
     }
 }
-{% endhighlight %}
+```
 
 ### @api tag
 {:#api}
@@ -633,7 +633,7 @@ Motivation behind the added `@deprecated` tag MUST be explained.
 
 For example:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Get some object
  *
@@ -668,7 +668,7 @@ public function setScopedPrice($price, $scopeType, $scopeId)
 {
     ...
 }
-{% endhighlight %}
+```
 
 ### @var inline tag
 {:#var}
@@ -679,10 +679,10 @@ This tag declares variables that will emerge in next lines of code as follows:
 **Inline Type Hinting**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /** @var libXMLError $error */
 foreach ($errors as $error) {
-{% endhighlight %}
+```
 
 
 Some IDEs understand a different notation, where type is specified after variable name.
@@ -691,10 +691,10 @@ This notation is also valid:
 **Inline Type Hinting Variation**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /** @var $error libXMLError */
 foreach ($errors as $error) {
-{% endhighlight %}
+```
 
 ### @see tag
 {:#see}
@@ -704,13 +704,13 @@ Besides the normal way of using `@see` tag as [recommended by phpDocumentor](htt
 Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * @var $this ClassOne
  * @see ClassTwo
  * @see FooInterface
  */
-{% endhighlight %}
+```
 
 
 ### Other tags
@@ -727,7 +727,7 @@ Any other valid DocBlock tags may be specified, if author deems necessary, but o
 If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * ...
  *
@@ -735,7 +735,7 @@ If there are two or more tags together in one DocBlock, their values may be padd
  * @return bool
  * @link   http://example.com
  */
-{% endhighlight %}
+```
 
 
 ### Formatting consistency
@@ -748,7 +748,7 @@ For example, padding for visual alignment can be done in two ways consistently:
 **Correct – align everything:**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * ...
  *
@@ -758,13 +758,13 @@ For example, padding for visual alignment can be done in two ways consistently:
  * @return int
  * @see    _insertChild() for position explanation
  */
-{% endhighlight %}
+```
 
 
 **Also correct – don't align anything:**
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * ...
  *
@@ -775,12 +775,12 @@ For example, padding for visual alignment can be done in two ways consistently:
  * @see _insertChild() for position explanation
  */
 public function reorderChild($parentId, $childId, $position)
-{% endhighlight %}
+```
 
 
 **Incorrect – align only partially:**
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * ...
  *
@@ -790,4 +790,4 @@ public function reorderChild($parentId, $childId, $position)
  * @return int
  * @see _insertChild() for position explanation
  */
-{% endhighlight %}
+```

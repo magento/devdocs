@@ -33,7 +33,7 @@ A parent theme is specified in the child theme `theme.xml` declaration file.
 Example:
 the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/OrangeCo/orange/theme.xml` as follows:
 
-{% highlight xml %}
+```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>Orange</title>
      <parent>Magento/blank</parent>
@@ -41,7 +41,7 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
          <preview_image>media/preview.jpg</preview_image>
      </media>
 </theme>
-{% endhighlight xml %}
+```
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>A parent and a child theme can belong to different vendors. For example, your custom theme can inherit from the Magento Blank theme.</p>
@@ -147,13 +147,13 @@ To add an extending layout file:
 OrangeCo decided they should remove the "Report bugs" link from the footer, defined in `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`
 To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml` :
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name='report.bugs' remove='true'/>
     </body>
 </page>
-{%endhighlight xml%}
+```
 
 
 For more information about extending layout refer to the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.

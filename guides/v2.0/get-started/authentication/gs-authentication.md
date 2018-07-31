@@ -43,7 +43,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 
 <h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
 
-{% highlight XML %}
+```XML
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->
@@ -87,7 +87,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 ..........
 .....
 ...
-{% endhighlight %}
+```
 
 For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 

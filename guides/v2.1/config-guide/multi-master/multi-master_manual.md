@@ -126,7 +126,7 @@ This script removes foreign keys that refer to non-sales tables from the sales d
 
 Create the following script and give it a name like `1_foreign-sales.sql`. Replace `<your main Magento DB name>` with the name of your Magento database.
 
-{% highlight sql %}
+```sql
 use <your main Magento DB name>;
 ALTER TABLE salesrule_coupon_aggregated_order DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_ORDER_STORE_ID_STORE_STORE_ID;
 ALTER TABLE salesrule_coupon_aggregated DROP FOREIGN KEY SALESRULE_COUPON_AGGREGATED_STORE_ID_STORE_STORE_ID;
@@ -173,7 +173,7 @@ ALTER TABLE magento_sales_shipment_grid_archive DROP FOREIGN KEY MAGENTO_SALES_S
 ALTER TABLE downloadable_link_purchased_item DROP FOREIGN KEY DL_LNK_PURCHASED_ITEM_ORDER_ITEM_ID_SALES_ORDER_ITEM_ITEM_ID;
 ALTER TABLE downloadable_link_purchased DROP FOREIGN KEY DOWNLOADABLE_LINK_PURCHASED_ORDER_ID_SALES_ORDER_ENTITY_ID;
 ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID;
-{% endhighlight %}
+```
 
 ### Configure the sales database {#config-ee-multidb-sql-oms-run}
 Run the preceding script:
@@ -206,24 +206,24 @@ Run the following `mysqldump` commands, one at a time, from the command shell. I
 *   `<path>` with a writable file system path
 
 **Script 1**
-{% highlight sql %}
+```sql
 mysqldump -u <your database root username> -p <your main magento DB name> sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order > /<path>/sales.sql
-{% endhighlight %}
+```
 
 **Script 2**
-{% highlight sql %}
+```sql
 mysqldump -u <your database root username> -p <your main magento DB name> magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive > /<path>/salesarchive.sql
-{% endhighlight %}
+```
 
 **Script 3**
-{% highlight sql %}
+```sql
 mysqldump -u <your database root username> -p <your main magento DB name> magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address > /<path>/customercustomattributes.sql
-{% endhighlight %}
+```
 
 **Script 4**
-{% highlight sql %}
+```sql
 mysqldump -u <your database root username> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
-{% endhighlight %}
+```
 
 ### Restore sales data {#sql-sales-restore}
 This script restores sales data in your quote database.
@@ -240,12 +240,12 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 #### Restore the data
 Run the following commands:
 
-{% highlight sql %}
+```sql
 mysql -u <root username> -p <your sales DB name> < /<path>/sales.sql
 mysql -u <root username> -p <your sales DB name> < /<path>/sequence.sql
 mysql -u <root username> -p <your sales DB name> < /<path>/salesarchive.sql
 mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattributes.sql
-{% endhighlight %}
+```
 
 where
 
@@ -274,12 +274,12 @@ This script removes foreign keys that refer to non-quote tables from quote table
 
 Create the following script and give it a name like `2_foreign-key-quote.sql`:
 
-{% highlight SQL %}
+```SQL
 use <your Magento main DB name>;
 ALTER TABLE quote DROP FOREIGN KEY QUOTE_STORE_ID_STORE_STORE_ID;
 ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID;
 ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
-{% endhighlight %}
+```
 
 Run the script as follows:
 
@@ -326,7 +326,7 @@ This script sales and quote tables from the Magento database. Replace <your main
 
 Create the following script and give it a name like `3_drop-tables.sql`:
 
-{% highlight sql %}
+```sql
 use <your Magento main DB name>;
 SET foreign_key_checks = 0;
 DROP TABLE magento_customercustomattributes_sales_flat_quote; 
@@ -394,7 +394,7 @@ DROP TABLE sequence_rma_item_1;
 DROP TABLE sequence_shipment_0;                                       
 DROP TABLE sequence_shipment_1;     
 SET foreign_key_checks = 1;
-{% endhighlight %}
+```
 
 Run the script as follows:
 
@@ -426,7 +426,7 @@ The final step in manually splitting databases is to add connection and resource
 
 Locate the block starting with `'default'` (under `'connection'`) and add `'checkout'` and `'sales'` sections. Replace sample values with values appropriate for your site.
 
-{% highlight php startinline=true %}
+```php?start_inline=1
  'default' => 
       array (
         'host' => 'localhost',
@@ -461,12 +461,12 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'chec
         'active' => '1',
       ),
     ),
-{% endhighlight %}
+```
 
 ### Update resources
 Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` sections to it as follows:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 'resource' => 
   array (
@@ -482,7 +482,7 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
     array (
       'connection' => 'sales',
     ),
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Reference scripts {#split-db-ref}
@@ -506,7 +506,7 @@ To use these scripts:
 ### Remove foreign keys (sales tables)
 This script is the removes foreign keys that refer to non-sales tables from the sales database. 
 
-{% highlight sql %}
+```sql
 select concat(
     'ALTER TABLE ',
     replace(for_name, '<your main magento DB name>/', ''),
@@ -529,12 +529,12 @@ from information_schema.INNODB_SYS_FOREIGN
 where for_name like  '<your main magento DB name>/|magento_sales|_%' escape '|'
     and ref_name not like  '<your main magento DB name>/|sales|_%' escape '|'
 ;
-{% endhighlight %}
+```
 
 ### Remove foreign keys (quote tables)
 This script removes foreign keys that refer to non-quote tables from quote tables. 
 
-{% highlight sql %}
+```sql
 select concat(
     'ALTER TABLE ',
     replace(for_name, '<your main magento DB name>/', ''),
@@ -568,12 +568,12 @@ from information_schema.INNODB_SYS_FOREIGN
 where for_name like '<your main magento DB name>/%'
     and ref_name like '<your main magento DB name>/magento_customercustomattributes\_%'
 ;
-{% endhighlight %}
+```
 
 ### Drop sales tables
 This script drops sales tables from the Magento database. 
 
-{% highlight SQL %}
+```SQL
 use <your main magento DB name>;
 select ' SET foreign_key_checks = 0;' as querytext
 union all
@@ -602,7 +602,7 @@ where table_schema = '<your main magento DB name>'
 and table_name like 'sequence/_%' escape '/'
 union all
 select 'SET foreign_key_checks = 1;';
-{% endhighlight %}
+```
 
 ### Drop quote tables
 Drop all tables that start with `quote_`.

@@ -185,7 +185,7 @@ Magento Commerce 2.1, Release Candidate 3 includes the following known issues:
 
 **Method 2:** You can manually create the file using this format:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 {
     "http-basic": {
@@ -196,7 +196,7 @@ Magento Commerce 2.1, Release Candidate 3 includes the following known issues:
     }
 }
 
-{% endhighlight %}
+```
 
 
 

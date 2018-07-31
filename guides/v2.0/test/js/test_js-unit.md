@@ -37,7 +37,7 @@ This organization enables testing of `RequireJS` modules without any additional 
 
 For example, `<magento2_root_dir>/dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js`:
 
-{% highlight JavaScript %}
+```JavaScript
 var IdNormalizerTest = TestCase('IdNormalizerTest');
 
 IdNormalizerTest.prototype.setUp = function() {
@@ -48,7 +48,7 @@ IdNormalizerTest.prototype.setUp = function() {
 
     this.normalizer = defineArgs[0]; // Now we have object to be tested
 };
-{% endhighlight %}
+```
 
 ## Configuration files {#config-files}
 
@@ -60,7 +60,7 @@ Both files reside in the `<magento2_root_dir>/dev/tests/js` directory.
 
 `<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 return array(
     'server' => 'http://localhost:9876',
     'proxy' => array(array('matcher' => '/lib/web/*', 'server' => '%s/test/%s/lib/web/')),
@@ -73,7 +73,7 @@ return array(
     'test' => array('/dev/tests/js/testsuite'),
     'serve' => array('/lib/web/mage/calendar')
 );
-{% endhighlight %}
+```
 
 For a description of these configuration parameters, see [Configuration file for test runner].
 
@@ -89,14 +89,14 @@ Parameters are the following:
 
 `<magento2_root_dir>/dev/tests/js/jsTestDriverOrder.php` specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 return array(
     '/lib/web/globalize/globalize.js',
     '/lib/web/jquery/jquery.js',
     '/lib/web/jquery/ui/jquery-ui.js',
     ...
 );
-{% endhighlight %}
+```
 
 The array applies load ordering to the files specified by the `load` parameter in the `jsTestDriver.php` or `jsTestDriver.php.dist` file.
 
@@ -182,7 +182,7 @@ The contents of `jsTestDriver.conf` resembles this:
 
 **Generated jsTestDriver.conf file:**
 
-{% highlight yaml %}
+```yaml
 server: http://localhost:9876
 proxy:
   - {matcher: "/lib/web/*", server: "http://localhost:9876/test/C:/git/magento2/lib/web/"}
@@ -196,7 +196,7 @@ test:
 serve:
   - ../../../lib/web/mage/calendar/calendar.js
   ...
-{% endhighlight %}
+```
 
 ## Step 4. Use PhpStorm to run unit tests {#phpstorm}
 

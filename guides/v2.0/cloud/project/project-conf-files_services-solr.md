@@ -40,30 +40,30 @@ For more information about Solr, see the following:
 ## Add Solr in services.yaml and .magento.app.yaml {#settings}
 To enable Solr, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
-{% highlight yaml %}
+```yaml
 mysearch:
     type: solr:4.10
     disk: 1024
-{% endhighlight %}
+```
 
 If you want to provide your own Solr configuration, you can add a `core_config` key in your `.magento/services.yaml`:
 
-{% highlight yaml %}
+```yaml
 mysearch:
     type: solr:4.10
     disk: 1024
     configuration:
         core_config: !archive "<directory>"
-{% endhighlight %}
+```
 
 The `directory` parameter points to the Magento `vendor/magento/module-solr/conf` directory, relative to the `.magento` directory, in the Git repository. This directory contains the Magento schema.
 
 To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
 
-{% highlight yaml %}
+```yaml
 relationships:
     solr: "mysearch:solr"
-{% endhighlight %}
+```
 
 Merge and deploy the code to set the configurations for Solr. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
@@ -79,7 +79,7 @@ To verify this information used for configurations and settings:
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Solr:
 
-{% highlight bash %}
+```bash
 {
     "solr": [
         {
@@ -90,12 +90,12 @@ The response includes all relationships for services and configuration data for 
         }
     ]
 }
-{% endhighlight %}
+```
 
 <!-- The following info is from Platform.sh and may not be required for Magento Cloud:
 You can then use the service in a configuration file similar to the following:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 $relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
 if (!$relationships) {
   return;
@@ -107,7 +107,7 @@ foreach ($relationships['solr'] as $endpoint) {
   $container->setParameter('solr_host', $endpoint['host']);
   $container->setParameter('solr_port', $endpoint['port']);
 }
-{% endhighlight %} -->
+``` -->
 
 #### Related topics
 *	[`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)

@@ -28,17 +28,17 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 
 * {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} names must consist of one or more non-abbreviated English word and in camelcase format.
   
-  {% highlight javascript %}
+  ```javascript
 
 (function($) {
     $.widget('mage.accordion', $.ui.accordion, {
         // ... My custom code ...
     });
-  {% endhighlight %}
+  ```
 
 * Widget names should be verbose enough to fully describe their purpose and behavior.
 
-  {% highlight javascript %}
+  ```javascript
 // Declaration of the frontend.advancedEventTrigger widget
 (function($) {
     "use strict";
@@ -47,7 +47,7 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
         // ... My custom code ...
     });
 }) (jQuery);
-  {% endhighlight %}
+  ```
 
 ## Instantiation and resources
 
@@ -63,7 +63,7 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
   * Using `data-mage-init` minimizes the inline JavaScript code footprint.
   * You can modify widget initialization parameters.
 
-  {% highlight javascript %}
+  ```javascript
 // Widget initialization using the data-mage-init attribute
 <form data-mage-init="{form:[], validation:{ignore:':hidden'}}"></form>
 
@@ -75,11 +75,11 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
         }
     });
 })(jQuery);
-  {% endhighlight %}
+  ```
 
 * You can declare callback methods inline JavaScript but not methods and widgets.
 
-  {% highlight javascript %}
+  ```javascript
 // Widget initialization and configuration
 $('selector').mage('dialog', {
     close: function(e) {
@@ -105,7 +105,7 @@ $.widget('mage.dialog', $.ui.dialog, {
         .extend('dialog', 'dialog',
             '<?php echo $this->getViewFileUrl('Enterprise_\*Module\*::page/js/dialog.js') ?>')
 })(jQuery);
-  {% endhighlight %}
+  ```
 
 ## Development standards
 
@@ -113,7 +113,7 @@ $.widget('mage.dialog', $.ui.dialog, {
   
   Widgets should not have responsibilities not related to the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} described by the widget.
 
-  {% highlight javascript %}
+  ```javascript
 // Widget "dialog" that is responsible
 // only for opening content in an interactive overlay.
 $.widget('mage.dialog', {
@@ -130,11 +130,11 @@ $('selector')
     .mage('dialog')
         .find('form')
             .mage('validation');
-  {% endhighlight %}
+  ```
 
 * Widget properties that modify the widget's behavior must be located in the widget's options to make them configurable and reusable.
   
-  {% highlight javascript %}
+  ```javascript
 //Declaration of the backend.dialog widget
 $.widget('mage.dialog', {
     options: {
@@ -150,11 +150,11 @@ $('selector').mage('dialog', {
     modal: true,
     autoOpen: false
 });
-  {% endhighlight %}
+  ```
 
 * Widget communications must be handled by jQuery events
 
-  {% highlight html %}
+  ```html
 
 <body>
   ...
@@ -166,9 +166,9 @@ $('selector').mage('dialog', {
   ...
 </body>
 
-  {% endhighlight %}
+  ```
 
-  {% highlight javascript %}
+  ```javascript
 
 // Declaration of the mage.form widget
 $.widget("mage.form," {
@@ -188,7 +188,7 @@ $.widget("mage.form," {
     }
 });
 
-  {% endhighlight %}
+  ```
 
 * You must use [DOM event bubbling][dom-event-bubbling]{:target="_blank"} to perform one-way communication between a child widget and its parent widget.
 
@@ -234,7 +234,7 @@ $.widget("mage.form," {
   
   Properties without an underscore prefix are accessible using the jQuery Widget factory public API.
 
-  {% highlight javascript %}
+  ```javascript
 // Declaration of the backend.accordion widget
 $.widget('mage.accordion', {
     _create: function() {
@@ -242,7 +242,7 @@ $.widget('mage.accordion', {
         this.icon = $(this.options.icon).prependTo(this.header);
       }
 });
-    {% endhighlight %}
+    ```
 
 * Start a widget's element selection with `this.element`
 * Widgets must not interact with DOM elements selected using `this.element.parent()`, `this.element('selector')`, or `this.element.closest('selector')`.
@@ -254,12 +254,12 @@ $.widget('mage.accordion', {
 * Use the `_setOption` method to process required, immediate state changes.
 * Use the public widget API to call widget methods to allow chaining widget methods.
   
-  {% highlight javascript %}
+  ```javascript
 // Call the 'open' method on the menu widget using the public widgets API
 $('selector')
 .menu('open')
 .addClass('ui-state-active');
-  {% endhighlight %}
+  ```
 
 * Handle widget initialization if there is a logical action to perform on successive calls to the widget with no arguments.
   

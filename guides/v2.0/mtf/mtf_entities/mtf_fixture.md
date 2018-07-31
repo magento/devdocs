@@ -58,7 +58,7 @@ This tool creates a new fixture using data from a database table you specified u
 
 Following is the generated Widget fixture located in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
-{% highlight xml%}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -87,7 +87,7 @@ Following is the generated Widget fixture located in `<magento2_root_dir>/dev/te
     </fixture>
 </config>
 
-{% endhighlight xml%}
+```
 
 To generate PHP classes, enter the following commands in the order shown:
 
@@ -147,7 +147,7 @@ We also defined a new field, `layout_updates` on the UI but this field is absent
 
 Let's manually add a new field and `group` attribute to the `Widget.xml`. See what we have now.
 
-{% highlight xml%}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -177,7 +177,7 @@ Let's manually add a new field and `group` attribute to the `Widget.xml`. See wh
     </fixture>
 </config>
 
-{% endhighlight xml%}
+```
 
 To apply the changes, enter the following commands:
 
@@ -190,11 +190,11 @@ Now we have a new fixture for Widget. All fields are defined and ready to take t
 
 For this goal, link to the repository where all test data has already been defined.
 
-{% highlight xml%}
+```xml
 
 <field name="layout_updates" repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates" group="storefront_properties" />
 
-{% endhighlight xml%}
+```
 
 Repository is located in `Repository` directory of corresponding module. `Repository` directory contains a subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.
 
@@ -202,7 +202,7 @@ The repository is located in `<magento2_root_dir>/dev/tests/functional/app/Magen
 
 Following is the code of `LayoutUpdates.xml`. It specifies two data sets that you can choose to define in your test.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" ?>
 <!--
 /**
@@ -231,7 +231,7 @@ Following is the code of `LayoutUpdates.xml`. It specifies two data sets that yo
     </repository>
 </config>
 
-{% endhighlight xml %}
+```
 
 To apply changes, enter following commands:
 
@@ -250,7 +250,7 @@ All data source logic is defined in a PHP file which must be linked as specified
 
 It is located in `Fixture` directory of corresponding module. That contains subdirectory with the name of fixture, and source class in it with the name of fixture field. See the following example.
 
-{% highlight xml%}
+```xml
 
 <field name="layout_updates"
        is_required="0"
@@ -258,11 +258,11 @@ It is located in `Fixture` directory of corresponding module. That contains subd
        source="Magento\Widget\Test\Fixture\Widget\LayoutUpdates"
        group="storefront_properties" />
 
-{% endhighlight%}
+```
 
 Let's see our data source file `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
-{% highlight php %}
+```php
 
 <?php
 /**
@@ -311,7 +311,7 @@ class LayoutUpdates extends DataSource
     }
 }
 
-{% endhighlight %}
+```
 
 To apply the changes, enter the following commands:
 
@@ -331,7 +331,7 @@ We have a module that adds new field to Widget module.
 
 We can create file that adds field `new_field` to our widget fixture.
 
-{% highlight xml %}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -347,7 +347,7 @@ We can create file that adds field `new_field` to our widget fixture.
     </fixture>
 </config>
 
-{% endhighlight xml %}
+```
 
 To apply the changes, enter the following commands:
 
@@ -362,7 +362,7 @@ Let's assume that you want to add new fixture based on our `Widget.xml` fixture 
 
 To do that you should supplement your `Widget.xml` code with `extends` attribute in `<fixture>` node. As you already know, `extends` value stores a link to the class from which you want to extend your fixture.
 
-{% highlight xml %}
+```xml
 
 <?xml version="1.0" encoding="utf-8"?>
 <!--
@@ -382,7 +382,7 @@ To do that you should supplement your `Widget.xml` code with `extends` attribute
     </fixture>
 </config>
 
-{% endhighlight xml %}
+```
 
 In this example you will create a new fixture PHP class AdWidget that extends Widget fixture. It creates a fixture with the same name, and a field named `custom_field`.
 

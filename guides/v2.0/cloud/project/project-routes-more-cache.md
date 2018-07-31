@@ -19,7 +19,7 @@ functional_areas:
 ## Set up caching {#cloud-cache-setup}
 Enable caching in your Magento application's `.magento/routes.yaml` as follows:
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
     upstream: php:php
@@ -28,12 +28,12 @@ http://{default}/:
         headers: [ "Accept", "Accept-Language", "X-Language-Locale" ]
         cookies: ["*"]
         default_ttl: 60
-{% endhighlight %}
+```
 
 ## Route-based caching {#cloud-cache-route}
 If you need fine-grained caching, you can set up caching rules for several routes separately as the following example shows:
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
   type: upstream
   upstream: php:php
@@ -51,7 +51,7 @@ http://{default}/path/more/:
   upstream: php:php
   cache:
     enabled: true
-{% endhighlight %}
+```
 
 The preceding example caches the following routes:
 
@@ -79,12 +79,12 @@ The parameters `headers` and
 
 The default value for these keys follows:
 
-{% highlight yaml %}
+```yaml
 cache:
   enabled: true
   headers: ["Accept-Language", "Accept"]
   cookies: ["*"]
-{% endhighlight %}
+```
 
 ## Cache attributes {#cloud-cache-attrib}
 We support the following attributes:
@@ -102,11 +102,11 @@ Defines on which values the cache key must depend.
 
 For example, if the `headers` key is the following:
 
-{% highlight yaml %}
+```yaml
 cache:
   enabled: true
   headers: ["Accept"]
-{% endhighlight %}
+```
 
 Then {{site.data.var.ee}} will cache a different response for each value of the `Accept` HTTP header.
 
@@ -115,11 +115,11 @@ The `cookies` key define on which values the cache key must depend.
 
 For example:
 
-{% highlight yaml %}
+```yaml
 cache:
   enabled: true
   cookies: ["value"]
-{% endhighlight %}
+```
 
 The cache key depends on the value of the `value` cookie in the request.
 

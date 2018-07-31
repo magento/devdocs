@@ -45,7 +45,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "items": [
     {
@@ -65,7 +65,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
     }
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 

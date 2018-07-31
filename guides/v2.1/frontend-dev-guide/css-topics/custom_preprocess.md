@@ -52,7 +52,7 @@ You can view the default Magento processors for reference: [lib/internal/Magento
 The content of your `di.xml` will be similar to the following:
 
 **`<your_module_dir>/etc/di.xml`**
-{%highlight xml%}
+```xml
 
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
@@ -94,7 +94,7 @@ The content of your `di.xml` will be similar to the following:
         </arguments>
     </type>
 </config>
-{%endhighlight%}
+```
 
 
 ## Related reading

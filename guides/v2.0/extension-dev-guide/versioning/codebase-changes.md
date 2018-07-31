@@ -52,7 +52,7 @@ When Magento deprecates the API or customization point in favor of a new impleme
 
 **Deprecated Code Example**
 
-{% highlight php startinline %}
+```php?start_inline=1
 
 /**
  * @deprecated since 2.1.0
@@ -63,7 +63,7 @@ public function save()
     // ...
 }
 
-{% endhighlight %}
+```
 
 ## Version increase scenarios
 

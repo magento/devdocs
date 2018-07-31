@@ -43,7 +43,7 @@ To allow only whitelisted IPs access to Staging and Production environments, you
 
 Create an `allowlist.json` file with the following JSON content:
 
-{% highlight json %}
+```json
 {
   "name": "allowlist",
   "dynamic": "0",
@@ -51,7 +51,7 @@ Create an `allowlist.json` file with the following JSON content:
   "priority": "5",
   "content": "if ((req.url ~ \"^/admin\") && !(client.ip ~ whitelist) && !req.http.Fastly-FF) { error 403 \"Forbidden\"; }"
 }
-{% endhighlight %}
+```
 
 Review the following values for the code to determine if you need to make changes:
 

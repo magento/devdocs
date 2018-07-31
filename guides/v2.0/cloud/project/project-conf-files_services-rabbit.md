@@ -27,18 +27,18 @@ If you prefer using an existing AMQP-based service, like RabbitMQ, instead of re
 ## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
 To enable RabbitMQ, add the following code with your installed version and allocated disk space in MB to the `.magento/services.yaml` file.
 
-{% highlight yaml %}
+```yaml
 rabbitmq:
     type: rabbitmq
     disk: 1024
-{% endhighlight %}
+```
 
 To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
 
-{% highlight yaml %}
+```yaml
 relationships:
     rabbitmq: "rabbitmq:rabbitmq"
-{% endhighlight %}
+```
 
 Merge and deploy the code to set the configurations for RabbitMQ. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
@@ -54,7 +54,7 @@ To verify this information used for configurations and settings:
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for RabbitMQ:
 
-{% highlight bash %}
+```bash
 {
    "rabbitmq" : [
       {
@@ -67,7 +67,7 @@ The response includes all relationships for services and configuration data for 
       }
    ]
 }
-{% endhighlight %}
+```
 
 ## Connect to RabbitMQ for debugging {#connect}
 For debugging purposes, it's sometimes useful to directly connect to a service instance in one of the following ways:
@@ -97,11 +97,11 @@ To connect to RabbitMQ running in an application, you should install a client li
 
 For example,
 
-{% highlight yaml %}
+```yaml
 dependencies:
   ruby:
     amqp-utils: "0.5.1"
-{% endhighlight %}
+```
 
 Then, when you SSH into your {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} container, you enter any `amqp-` command available to manage your queues.
 

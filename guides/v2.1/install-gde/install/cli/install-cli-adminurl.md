@@ -32,12 +32,12 @@ A sample result follows:
 
 You can also view the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
   'backend' =>
   array (
     'frontName' => 'admin_1wgrah',
   ),
-{% endhighlight %}
+```
 
 <h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
 To change the Admin URI, use the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.

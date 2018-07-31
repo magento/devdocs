@@ -100,7 +100,7 @@ In `<magento_root_dir>/dev/tests/js/jasmine/tests` create the test with appropri
 
 For our example we need to cover all static view files ending with `Magento_Ui/js/grid/columns/actions`.
 
-{% highlight js %}
+```js
 define([
     'Magento_Ui/js/grid/columns/actions'
 ], function (Actions) {
@@ -109,7 +109,7 @@ define([
     //Test code
     //...
 });
-{% endhighlight %}
+```
 
 ### Step 3. Write your Jasmine test code.
 
@@ -127,7 +127,7 @@ In `describe` you can use `beforeEach` and `afterEach` functions performing a pr
 
 {% collapsible See the full code of the test%}
 
-{% highlight js %}
+```js
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -214,7 +214,7 @@ define([
         });
     });
 });
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 

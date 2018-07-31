@@ -24,7 +24,7 @@ Currently Inline Edit is not presented in definition.xml. It is used as a plugin
 
 To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:
 
-{% highlight xml %}
+```xml
 <columns name="cms_page_columns">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -38,7 +38,7 @@ To enable Inline Edit component for the grid, it is declared as a plugin for Lis
     </argument>
 ..
 </columns>
-{% endhighlight %}
+```
 
 The configuration of the component can include:
 
@@ -60,13 +60,13 @@ The configuration of the component can include:
     
   * clientConfig - is responsible for editor communication with {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %}. Contains nodes with url's where requests for storing and validating data are sent:
 
-    {% highlight XML%}
+    ```XML
     <item name="clientConfig" xsi:type="array">
         <item name="saveUrl" xsi:type="url" path="cms/page/inlineEdit" />
         <item name="validateUrl" xsi:type="string">/path/to</item>
         <item name="validateBeforeSave" xsi:type="boolean">false</item>
     </item>
-    {% endhighlight%}
+    ```
 
     
   * viewConfig - is responsible for editor UI
@@ -75,7 +75,7 @@ The configuration of the component can include:
    
 With configuration above, the Inline Edit will be enabled. But it also must start editing in response to some user action, for example when clicking somewhere on the row.
 
-{% highlight xml %}
+```xml
 <columns name="cms_page_columns">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -94,13 +94,13 @@ With configuration above, the Inline Edit will be enabled. But it also must star
         </item>
     </argument>
 </column>
-{% endhighlight%}
+```
 
 Note that this is not the configuration of the Inline Edit itself, but the configuration of the Column component, to interact with the Inline Edit.
 
 With the above configuration, the Inline Edit will be enabled, but all row cells will be read-only during the Inline edit. To make specific column editable, next configuration can be used:
 
-{% highlight xml %}
+```xml
 <column name="name">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -115,11 +115,11 @@ With the above configuration, the Inline Edit will be enabled, but all row cells
     ..
     </argument>
 </column>
-{% endhighlight %}
+```
 
 Or as a short alternative:
 
-{% highlight xml %}
+```xml
 <column name="name">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -129,7 +129,7 @@ Or as a short alternative:
         ..
     </argument>
 </column>
-{% endhighlight %}
+```
 
 The configuration for the specific column editor can include:
 
@@ -141,7 +141,7 @@ The configuration for the specific column editor can include:
 
 Additional examples:
  * - Example of the templates configuration (fieldTmpl for the edited cell, and rowTmpl for the whole edited row)
-{% highlight xml %}
+```xml
 <columns name="cms_page_columns">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -159,14 +159,14 @@ Additional examples:
     </argument>
 ..
 </columns>
-{% endhighlight %}
+```
  ** - Example of the editor type configuraion - let's add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)
-{% highlight xml%}
+```xml
 <item name="editor" xsi:type="array">
     <item name="component" xsi:type="string">Magento_Ui/js/form/element/colorpicker</item>
     <item name="template" xsi:type="string">ui/form/element/colorpicker</item>
 </item>
-{% endhighlight %}
+```
  
 #### Inline Edit JS Component Structure
 

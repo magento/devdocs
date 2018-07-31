@@ -145,17 +145,17 @@ To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&g
 You can import local and remote `.less` and `.css` files in your `.less` Magento stylesheets by using the standard LESS [`@import` directive](http://lesscss.org/features/#import-directives-feature).
 According to the `@import` syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:
 
-{%highlight css%}
+```css
 @import 'source/lib/_lib';
 @import (css) 'styles';
-{%endhighlight%}
+```
 
 But in process of resolving the file path, Magento adds the `.less` extension for the imported files in all `@import` entrees. So in the processed files, the statements from the previous example will look like following:
 
-{%highlight css%}
+```css
 @import 'source/lib/_lib.less';
 @import (css) 'styles.less';
-{%endhighlight%}
+```
 
 As a result, the processed files are different from the source files. So in the [client-side compilation mode](#client-side) or when using [grunt commands]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html), Magento cannot use symlinks to the source files. Instead it uses the copies of processed files, and they are published to the `pub/static` directory. In case of importing CSS resources, this also results in not finding and not importing the required files.
 
@@ -163,9 +163,9 @@ As a result, the processed files are different from the source files. So in the 
 
 If you need to import a remote CSS file in your `.less` source, use `url()` notation. For example, to import a Google font, use the following notation:
 
-{%highlight css%}
+```css
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
-{%endhighlight%}
+```
 
 This way Magento will skip the `@import` directive while resolving paths to the local resources.
 

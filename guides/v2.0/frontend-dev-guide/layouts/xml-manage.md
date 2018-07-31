@@ -43,11 +43,11 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 <b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b>
 
-{%highlight xml%}
+```xml
 <page layout="2columns-left" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 ...
 </page>
-{%endhighlight xml%}
+```
 
 
 <h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
@@ -57,7 +57,7 @@ The following file is a sample of a file you must add:
 
 <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <!-- Add local resources -->
@@ -73,7 +73,7 @@ The following file is a sample of a file you must add:
         <link rel="stylesheet" type="text/css" src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
     </head>
 </page>
-{%endhighlight xml%}
+```
 
 
 When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.
@@ -95,20 +95,20 @@ The path to assets is specified relatively to one of the following locations:
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
-{%highlight xml%}
+```xml
     <head>
         <css src="css/ie-9.css" ie_condition="IE 9" />
     </head>
 </page>
-{%endhighlight xml%}
+```
 
 This adds an IE conditional comment in the generated HTML, like in the following example:
 
-{%highlight html%}
+```html
 <!--[if IE 9]>
 <link rel="stylesheet" type="text/css" media="all" href="<your_store_web_address>/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css" />
 <![endif]-->
-{%endhighlight html%}
+```
 
 In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.
 
@@ -118,7 +118,7 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
    <head>
         <!-- Remove local resources -->
@@ -131,7 +131,7 @@ To remove the static resources, linked in a page `<head>`, make a change similar
         <remove src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"/>
         <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
-{%endhighlight xml%}
+```
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
@@ -139,9 +139,9 @@ Note, that if a static asset is added with a module path (for example `Magento_C
 
 Use the following sample to create (declare) a container:
 
-{%highlight xml%}
+```xml
 <container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" />
-{%endhighlight xml%}
+```
 
 <h2 id="ref_container">Reference a container</h2>
 
@@ -149,7 +149,7 @@ To update a container use the <a href="{{ page.baseurl }}/frontend-dev-guide/lay
 
 Example: add links to the page header panel.
 
-{%highlight xml%}
+```xml
 <referenceContainer name="header.panel">
     <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
         <arguments>
@@ -157,7 +157,7 @@ Example: add links to the page header panel.
         </arguments>
     </block>
 </referenceContainer>
-{%endhighlight xml%}
+```
 
 <h2 id="xml-manage-block">Create a block</h2>
 
@@ -165,7 +165,7 @@ Blocks are created (declared) using the <a href="{{ page.baseurl }}/frontend-dev
 
 Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
 
-{%highlight xml%}
+```xml
 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
     <arguments>
         <argument name="at_call" xsi:type="string">getSku</argument>
@@ -173,7 +173,7 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
         <argument name="css_class" xsi:type="string">sku</argument>
     </arguments>
 </block>
-{%endhighlight xml%}
+```
 
 
 <h2 id="xml-manage-ref-block">Reference a block</h2>
@@ -182,13 +182,13 @@ To update a block use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts
 
 Example: pass the image to the `logo` block.
 
-{%highlight xml%}
+```xml
 <referenceBlock name="logo">
     <arguments>
         <argument name="logo_file" xsi:type="string">images/logo.png</argument>
     </arguments>
 </referenceBlock>
-{%endhighlight xml%}
+```
 
 ## Set a block template {#set_template}
 
@@ -201,19 +201,19 @@ Both approaches are demonstrated in the following examples of changing the templ
 
 **Example 1:**
 
-{%highlight xml%}
+```xml
  <referenceBlock name="page.main.title" template="%Namespace_Module::new_template.phtml%"/>
-{%endhighlight%}
+```
 
 **Example 2:** 
 
-{%highlight xml%}
+```xml
  <referenceBlock name="page.main.title">
      <arguments>
          <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
      </arguments>
  </referenceBlock>
-{%endhighlight%}
+```
 
 In both example, the template is specified according to the following:
 
@@ -233,7 +233,7 @@ Example: change the value of the existing block argument and add a new argument.
 
 Initial block declaration:
 
-{%highlight xml%}
+```xml
 ...
 <block class="Namespace_Module_Block_Type" name="block.example">
     <arguments>
@@ -241,11 +241,11 @@ Initial block declaration:
     </arguments>
 </block>
 ...
-{%endhighlight xml%}
+```
 
 Extending layout:
 
-{%highlight xml%}
+```xml
 ...
 <referenceBlock name="block.example">
     <arguments>
@@ -256,7 +256,7 @@ Extending layout:
     </arguments>
 </referenceBlock> 
 ...
-{%endhighlight xml%}
+```
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
@@ -269,14 +269,14 @@ Example 1: Set a CSS class and add an attribute for the product page using `<arg
 
 Extending layout:
 
-{%highlight xml%}
+```xml
 <referenceBlock name="page.main.title">
     <arguments>
         <argument name="css_class" xsi:type="string">product</argument>
         <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
     </arguments>
 </referenceBlock>
-{%endhighlight xml%}
+```
 
 Example 2: Set a page title using `<action>`. 
 
@@ -288,7 +288,7 @@ Example 2: Set a page title using `<action>`.
 
 Extending layout:
 
-{%highlight xml%}
+```xml
 	...
 	<referenceBlock name="page.main.title">
 	    <action method="setPageTitle">
@@ -296,7 +296,7 @@ Extending layout:
 	    </action>
 	</referenceBlock>
 	...
-{%endhighlight xml%}
+```
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
@@ -316,7 +316,7 @@ In the Magento Blank theme these elements are located as follows:
 Let's place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
 To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
 
-{%highlight xml%}
+```xml
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <move element="product.info.stock.sku" destination="product.info.price" after="product.price.final"/>
@@ -324,7 +324,7 @@ To do this, add the extending `catalog_product_view.xml` in the `app/design/fron
     </body>
 </page>
 
-{%endhighlight xml%}
+```
 
 This would make the product page look like following:
 
@@ -343,7 +343,7 @@ Elements are removed using the `remove` attribute for the `<referenceBlock>` and
 
 This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
 ...
@@ -353,7 +353,7 @@ This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default
 ...
     </body>
 </page>
-{%endhighlight xml%}
+```
 
 
 To remove the block, add the extending `default.xml` in your theme:
@@ -361,7 +361,7 @@ To remove the block, add the extending `default.xml` in your theme:
 
 In this file, reference the element having added the `remove` attribute:
 
-{%highlight xml%}
+```xml
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
@@ -371,7 +371,7 @@ In this file, reference the element having added the `remove` attribute:
     </body>
 </page>
 
-{%endhighlight xml%}
+```
 
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>

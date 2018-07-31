@@ -19,7 +19,7 @@ The tag *scope* provides a mechanism for a cache type.
 
 To create a new cache type:
 
-{% highlight php startinline %}
+```php?start_inline=1
 class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Frontend\Decorator\TagScope
 {
   const TYPE_IDENTIFIER = '%cache_type_id%';
@@ -30,7 +30,7 @@ class %Namespace%\%Module%\Model\Cache\Type extends \Magento\Framework\Cache\Fro
     parent::__construct($cacheFrontendPool->get(self::TYPE_IDENTIFIER), self::CACHE_TAG);
   }
 }
-{% endhighlight %}
+```
 
 You must specify the following parameters:
 

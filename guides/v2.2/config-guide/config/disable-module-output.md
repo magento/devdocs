@@ -31,13 +31,13 @@ To disable module output in pipeline or any other deployment with multiple insta
 
 Archive the original `config.xml` file. Then add lines similar to the following to the `<Magento_install_dir>/vendor/magento/module-backend/etc/config.xml` file, directly under the `<default>` element:
 
-{% highlight xml %}
+```xml
 <advanced>
     <modules_disable_output>
         <Magento_Newsletter>1</Magento_Newsletter>
     </modules_disable_output>
 </advanced>
-{% endhighlight %}
+```
 
 Here:
 

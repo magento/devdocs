@@ -25,7 +25,7 @@ Currently the following filter types are supported:
 Example:
 `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <container name="page_listing_top">
         <filters name="listing_filters">
@@ -54,4 +54,4 @@ Example:
         </filters>
     </container>
 </listing>
-{% endhighlight %}
+```

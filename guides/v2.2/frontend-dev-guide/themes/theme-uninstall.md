@@ -65,14 +65,14 @@ Take the following steps:
 1. Open the `<Magento root dir>/composer.json` file.
 2. Find a line with a reference to theme package and delete it. The reference would look like following:
 
-   {%highlight json%}
+   ```json
    ...
    "require": {
     ...
        "<vendor>/<theme-name>": "<version>"
    },
    ...
-   {%endhighlight%}
+   ```
  
 3. To update the project dependencies, run:  
  

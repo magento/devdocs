@@ -35,13 +35,13 @@ Plugins cannot be used with any of the following:
 
 A plugin for a class object is declared in the <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-{% highlight xml %} 
+```xml 
 <config>
     <type name="{ObservedType}">
       <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" />
     </type>
 </config>
-{% endhighlight %}
+```
 
 You must specify these elements:
 
@@ -67,7 +67,7 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -77,7 +77,7 @@ class ProductPlugin
         return ['(' . $name . ')'];
     }
 }
-{% endhighlight %}
+```
 
 #### After methods
 After methods run following the completion of the observed method. These methods must have the same name as the observed method with 'after' as the prefix.
@@ -86,7 +86,7 @@ These methods can be used to modify the results of an observed method and are re
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -96,7 +96,7 @@ class ProductPlugin
         return '|' . $result . '|';
     }
 }
-{% endhighlight %}
+```
 
 #### Around methods
 Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
@@ -109,7 +109,7 @@ Before the list of the original method's arguments, around methods receive a `ca
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Plugin;
 
 class ProductPlugin
@@ -124,13 +124,13 @@ class ProductPlugin
         return $returnValue;
     }
 }
-{% endhighlight %}
+```
 
 When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the original signature of the method with regards to default parameters and type hints.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Model;
 
 class MyUtility
@@ -140,11 +140,11 @@ class MyUtility
         //do something
     }
 }
-{% endhighlight %}
+```
 
 If you wrapped this method with a plugin like below:
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -154,13 +154,13 @@ class MyUtilityPlugin
       //do something
     }
 }
-{% endhighlight %}
+```
 
 Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
 
 It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Plugin;
 
 class MyUtilityPlugin
@@ -171,7 +171,7 @@ class MyUtilityPlugin
       $proceed(...$args);
     }
 }
-{% endhighlight %}
+```
 
 ### Prioritizing plugins
 

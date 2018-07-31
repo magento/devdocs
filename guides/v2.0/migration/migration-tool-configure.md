@@ -47,7 +47,7 @@ To create a configuration file:
 
 5.	Specify the following at minimum:
 
-{% highlight xml %}
+```xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root"/>
 </source>
@@ -57,7 +57,7 @@ To create a configuration file:
 <options>
     <crypt_key />
 </options>
-{% endhighlight %}
+```
 
 The `<crypt_key>` tag is mandatory to fill. It can be found in `local.xml` file which is located in the directory of Magento 1 instance at `app/etc/local.xml` in `<key>` tag
 
@@ -69,7 +69,7 @@ Optional parameters:
 
 For example, if your database owner's username is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
-{% highlight xml %}
+```xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root" password="pass"/>
 </source>
@@ -80,7 +80,7 @@ For example, if your database owner's username is `root` with password `pass` an
     <source_prefix>magento1</source_prefix>
     <crypt_key>f3e25abe619dae2387df9fs594f01985</crypt_key>
 </options>
-{% endhighlight %}
+```
 
 When finished, save your changes to `config.xml` and exit the text editor.
 

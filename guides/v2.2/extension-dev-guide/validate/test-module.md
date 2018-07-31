@@ -25,13 +25,13 @@ For further testing with the Magento functional testing frameworks, see
 ## Test using {{site.data.var.ce}} {#test-comm}
 Test your component by deploying {{site.data.var.ce}} and adding the component to the project's <code>composer.json</code>.
 
-{% highlight JSON %}
+```JSON
 "require": {
     "magento/magento-composer-installer": "*",
     "magento/product-community-edition": "2.0.0",
     "yourvendorname/module-one": "0.1.1"
 },
-{% endhighlight %}
+```
 
 Remember to [register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
 

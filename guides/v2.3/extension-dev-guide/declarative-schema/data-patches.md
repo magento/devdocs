@@ -30,7 +30,7 @@ public static function getDependencies()
 The following code sample defines a data patch class that has a dependency.
 
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 <?php
     /**
      * Copyright © Magento, Inc. All rights reserved.
@@ -118,7 +118,7 @@ The following code sample defines a data patch class that has a dependency.
             return [];
         }
     }
-{% endhighlight %}
+```
 
 ## Will old scripts work in newer versions?
 

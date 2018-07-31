@@ -88,7 +88,7 @@ UI File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0
 
 Here is an example of how File Uploader component integrates with <a href="{{ page.baseurl }}/ui-components/ui-form.html">Form</a> component:
 
-{% highlight xml %}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     ...
     <fieldset name="foo">
@@ -112,4 +112,4 @@ Here is an example of how File Uploader component integrates with <a href="{{ pa
         </field>
     </fieldset>
 </form>
-{% endhighlight %}
+```

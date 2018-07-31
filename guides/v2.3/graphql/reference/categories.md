@@ -64,7 +64,7 @@ Attribute | Data type | Description
 
 The response can contain up to ten nested `children` options that allow you to return multiple levels of the category tree. In most cases, the entire category tree can be returned in a single call. The following response definition returns two levels of categories:
 
-{% highlight json %}
+```json
 {
   category_tree {
     id
@@ -77,13 +77,13 @@ The response can contain up to ten nested `children` options that allow you to r
     }
   }
 }
-{% endhighlight %}
+```
 
 ## Sample Query
 
 The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the "Women" category.
 
-{% highlight json %}
+```json
 {
   category(id: 20) {
     products {
@@ -120,4 +120,4 @@ The following query returns information about category ID `20` and four levels o
       }
   }
 }
-{% endhighlight %}
+```

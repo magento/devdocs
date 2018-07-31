@@ -29,21 +29,21 @@ For example, here is the `view.xml` of the Magento Blank theme: [`app/design/fro
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
-{% highlight xml %}
+```xml
 <images module="Magento_Catalog">
 ...
 <images/>
-{% endhighlight xml %}
+```
 
 Image properties are configured for each image type defined by the `id` and `type` attributes of the `<image>` element:
 
-{% highlight xml %}
+```xml
 <images module="Magento_Catalog">
 	<image id="unique_image_id" type="image_type">
 	...
 	</image>
 <images/>
-{% endhighlight xml %}
+```
 
 <br>
 The following table describes the attributes in detail:
@@ -97,14 +97,14 @@ The following picture illustrates how image roles for product images are specifi
 
 Image properties are defined by the corresponding elements, for example:
 
-{% highlight xml %}
+```xml
 <images module="Magento_Catalog">
     <image id="unique_image_id" type="image">
         <width>100</width> <!-- Image width in px --> 
         <height>100</height> <!-- Image height in px -->
     </image>
 </images>
-{% endhighlight xml %}
+```
 
 <br>
 

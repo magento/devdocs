@@ -38,7 +38,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "WS12-M-Orange",
@@ -46,11 +46,11 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
     "quote_id": "4"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "item_id": 7,
   "sku": "WS12-M-Orange",
@@ -59,7 +59,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
   "product_type": "simple",
   "quote_id": "4"
 }
-{% endhighlight %}
+```
 
 ### Add a downloadable product to a cart {#add-downloadable}
 
@@ -79,7 +79,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "240-LV08",
@@ -87,11 +87,11 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
     "quote_id": "4"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "item_id": 8,
   "sku": "240-LV08",
@@ -110,7 +110,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Add a configurable product to a cart {#add-configurable}
 
@@ -120,7 +120,7 @@ In this example, we'll add the Chaz Kangeroo Hoodie (`sku: MH01`) configurable p
 
 The `GET /V1/configurable-products/:sku/children` call returns information about each combination of color and size, 15 in all for `MH01`. The following sample shows the returned values for `size` and `color` for a small gray Chaz Kangeroo Hoodie.
 
-{% highlight json %}
+```json
 {
   "custom_attributes": [
     {
@@ -133,7 +133,7 @@ The `GET /V1/configurable-products/:sku/children` call returns information about
     }
   ]
 }
-{% endhighlight %}
+```
 
 We now know the values for `option_value` for `size` and `color` are `168` and `52`, so we're ready to add the product to the cart.
 
@@ -149,7 +149,7 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "MH01",
@@ -172,11 +172,11 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
     "extension_attributes": {}
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
     "item_id": 13,
     "sku": "MH01-S-Gray",
@@ -200,7 +200,7 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
         }
     }
 }
-{% endhighlight %}
+```
 
 
 ### Add a bundle product to a cart {#add-bundle}
@@ -217,7 +217,7 @@ To add a bundle product to a cart, you must specify the `sku` of the bundle prod
 The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 [
   {
     "option_id": 1,
@@ -308,7 +308,7 @@ The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` cal
     ]
   }
 ]
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 For this example, we'll configure the Sprite Yoga Companion Kit as follows:
@@ -332,7 +332,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 **Payload**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 {
     "cartItem": {
@@ -368,13 +368,13 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
   "item_id": 9,
   "sku": "24-WG080-24-WG084-24-WG088-24-WG082-blue-24-WG086",
@@ -418,7 +418,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
     }
   }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Verify this step {#verify-step}

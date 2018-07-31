@@ -42,7 +42,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 The payload contains the shipping address.
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {  "address": {
       "region": "New York",
       "region_id": 43,
@@ -61,7 +61,7 @@ The payload contains the shipping address.
       "same_as_billing": 1
   }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 **Response**
@@ -69,7 +69,7 @@ The payload contains the shipping address.
 Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates & Yoga item does not have a shipping charge because the customer downloads this item.
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 [
     {
@@ -97,7 +97,7 @@ Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Co
         "price_incl_tax": 5
     }
 ]
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 
@@ -120,7 +120,7 @@ Magento returns a list of payment options and calculates the order totals.
 **Payload**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 {  "addressInformation": {
 	  "shipping_address": {
@@ -157,7 +157,7 @@ Magento returns a list of payment options and calculates the order totals.
   "shipping_method_code": "bestway"
   }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 **Response**
@@ -167,7 +167,7 @@ The subtotal of the order is $160, and shipping charges are $5. The grand total 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in the next step.
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 {
     "payment_methods": [
@@ -334,7 +334,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 

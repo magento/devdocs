@@ -114,7 +114,7 @@ The Schema for configuration file `config.xsd` is placed under `etc/directory`. 
 Default configuration file can be replaced by custom one using CLI (see <a href="{{ page.baseurl }}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
-{% highlight xml %}
+```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="settings">
         <step title="Settings step">
@@ -153,7 +153,7 @@ Configuration file has the following structure:
         ...
     </options>
 </config>
-{% endhighlight %}
+```
 
 * steps - describes all steps that are processed during migration
 
@@ -176,14 +176,14 @@ You can also connect to a database using the TLS protocol (i.e., using public/pr
 
 For example:
 
-{% highlight xml %}
+```xml
 <source>
     <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </source>
 <destination>
     <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </destination>
-{% endhighlight %}
+```
 
 </div>
 
@@ -199,7 +199,7 @@ Steps related classes are located in the src/Migration/Step directory.
 
 To execute a Step class, the class must be defined in config.xml file.
 
-{% highlight xml %}
+```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="mode_name">
         <step title="Step Name">
@@ -211,7 +211,7 @@ To execute a Step class, the class must be defined in config.xml file.
     </steps>
     ...
 </config>
-{% endhighlight %}
+```
 
 Every stage class must implement StageInterface.
 
@@ -235,11 +235,11 @@ Visualization of the running step is provided by Symfony's ProgressBar component
 
 Main methods for use are:
 
-{% highlight xml %}
+```xml
 $this->progress->start();
 $this->progress->advance();
 $this->progress->finish();
-{% endhighlight %}
+```
 
 ## Stages
 
@@ -278,7 +278,7 @@ Settings migration mode of this tool is used to transfer following entities:
 
 All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="settings.xsd">
     <key>
@@ -297,7 +297,7 @@ All store configuration keeps its data in core_config_data table in database. se
         </transform>
     </value>
 </settings>
-{% endhighlight %}
+```
 
 Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column of core_config_data table. <code>&lt;ignore&gt;</code> rules make the tool not to transfer some setting. Wildcards can be used in this node. All other settings not listed in <code>&lt;ignore&gt;</code> node, will be migrated. If path of some setting is changed in Magento 2, it should be added to //key/rename node, where old path indicates in //key/rename/path node and new path indicates in //key/rename/to node.
 
@@ -313,7 +313,7 @@ Map step is responsible for transferring most of data from Magento 1 to Magento 
 
 Map file has the next format:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="map.xsd">
     <source>
@@ -363,7 +363,7 @@ Map file has the next format:
         </field_rules>
     </destination>
 </map>
-{% endhighlight %}
+```
 
 Areas:
 

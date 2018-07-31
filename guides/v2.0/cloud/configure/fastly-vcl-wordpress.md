@@ -41,7 +41,7 @@ For this example, you may only want to run it against the Production server. You
 
 Create an `wordpress.json` file with the following JSON content:
 
-{% highlight json %}
+```json
 {
   "name": "wordpress",
   "dynamic": "0",
@@ -49,7 +49,7 @@ Create an `wordpress.json` file with the following JSON content:
   "priority": "5",
   "content": "if ( req.url.path ~ \"^\\/?([^:\/\\s]+).*$\" ) { if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" ) { set req.http.X-WP = \"1\"; } }"
 }
-{% endhighlight %}
+```
 
 Review the following values for the code to determine if you need to make changes:
 

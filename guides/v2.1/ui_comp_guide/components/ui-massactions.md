@@ -119,7 +119,7 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
 
 ##### Redefining the link to the template
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -128,11 +128,11 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```
 
 ##### Specifying action with confirmation
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -150,13 +150,13 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 ##### Action with a custom callback
 
 Callback is provided by another component.
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -174,13 +174,13 @@ Callback is provided by another component.
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 ##### Instance replacement: one instance of a component
 
 Redefine link to constructor.
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -188,4 +188,4 @@ Redefine link to constructor.
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```

@@ -62,7 +62,7 @@ To push best-selling products to the top of a category listing, process statisti
 
 Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class:
 
-{% highlight php startinline %}
+```php?start_inline=1
 <VendorName>\Merchandizing\Model\Indexer;
 
 class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Framework\Mview\ActionInterface
@@ -72,22 +72,22 @@ class Popular implements \Magento\Framework\Indexer\ActionInterface, \Magento\Fr
     public function executeRow($id); //Works in runtime for a single order using plugins
     public function execute($ids); //Used by mview, allows you to process multiple placed orders in the "Update on schedule" mode
 }
-{% endhighlight %}
+```
 
 Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Indexer/etc/indexer.xsd">
   <indexer id="merchandizing_popular" view_id="merchandizing_popular_order" class="Vendor\Merchandizing\Model\Indexer\Popular">
     <title translate="true">Popular Products</title>
     <description translate="true">Sort products in a category by popularity</description>
   </indexer>
 </config>
-{% endhighlight %}
+```
 
 Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd">
   <view id=" merchandizing_popular_order" class="Vendor\Merchandizing\Model\Indexer\Popular" group="indexer">
     <subscriptions>
@@ -95,7 +95,7 @@ Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sa
     </subscriptions>
   </view>
 </config>
-{% endhighlight %}
+```
 
 These settings start `<VendorName>\Merchandizing\Model\Indexer\Popular::execute` method every time an order is changed.
 

@@ -34,7 +34,7 @@ The `queue.xml` file can contain the following elements:
 
 Each `queue.xml` file must contain the following lines:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
@@ -43,7 +43,7 @@ Each `queue.xml` file must contain the following lines:
 .
 </config>
 
-{% endhighlight %}
+```
 
 <h3>publisher element</h3>
 The `publisher` element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.
@@ -144,7 +144,7 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 </table>
 
 ## Sample `queue.xml` file
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
     <publisher name="test-publisher-1" connection="rabbitmq" exchange="magento"/>
     <publisher name="test-publisher-2" connection="db" exchange="magento"/>
@@ -155,7 +155,7 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
     <bind queue="test-queue-1" exchange="magento" topic="customer.created" />
     <bind queue="test-queue-2" exchange="magento" topic="customer.deleted" />
 </config>
-{% endhighlight %}
+```
 
 #### Related Topics
 *	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>

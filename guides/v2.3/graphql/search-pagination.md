@@ -89,7 +89,7 @@ The following sections provide examples of each type of search. These examples u
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-{% highlight json %}
+```json
 {
     products(
       search: "Yoga pants"
@@ -114,7 +114,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
         }
       }
 }
-{% endhighlight  %}
+```
 
 The search returns 45 items.
 
@@ -129,7 +129,7 @@ The following sample query returns a list of products that meets the following c
 
 The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-{% highlight json %}
+```json
 {
     products(
       search: "Messenger"
@@ -164,11 +164,11 @@ The response for each item includes the `name`, `sku`, `price` and `description`
         }
     }
 }
-{% endhighlight %}
+```
 
 The query returns the following:
 
-{% highlight json %}
+```json
 {
   "data": {
     "products": {
@@ -207,14 +207,14 @@ The query returns the following:
     }
   }
 }
-{% endhighlight %}
+```
 
 
 ### Simple search using a timestamp
 
 The following search finds all products that were added after the specified time (midnight, November 1, 2017).
 
-{% highlight json %}
+```json
 {
     products(
       filter: {
@@ -245,13 +245,13 @@ The following search finds all products that were added after the specified time
         }
       }
 }
-{% endhighlight %}
+```
 
 ### Simple Logical OR search
 
 The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
-{% highlight json %}
+```json
 {
     products(
       filter: {
@@ -285,7 +285,7 @@ The following example searches for all products whose `sku` begins with the stri
         }
       }
 }
-{% endhighlight %}
+```
 
 The query returns 8 items.
 
@@ -293,7 +293,7 @@ The query returns 8 items.
 
 This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
-{% highlight json %}
+```json
 {
     products(
       filter: {
@@ -327,6 +327,6 @@ This query searches for products that have `name` that ends with `Orange` or has
         }
       }
 }
-{% endhighlight %}
+```
 
 The query returns 4 items.

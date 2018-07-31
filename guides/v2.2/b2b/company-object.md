@@ -25,13 +25,13 @@ This section describes the REST endpoints used to manage `Company` objects.
 
 **REST Endpoints**
 
-{% highlight json %}
+```json
 POST /V1/company/
 PUT /V1/company/:companyId
 GET /V1/company/:companyId
 DELETE /V1/company/:companyId
 GET /V1/company/
-{% endhighlight %}
+```
 
 **CompanyInterface Parameters**
 
@@ -93,7 +93,7 @@ The following example creates a company and assigns the default shared catalog (
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "company": {
     "company_name": "Test company",
@@ -112,11 +112,11 @@ The following example creates a company and assigns the default shared catalog (
   }
 }
 
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 2,
   "company_name": "Test company",
@@ -142,7 +142,7 @@ The following example creates a company and assigns the default shared catalog (
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Update the company
 
@@ -154,7 +154,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "company": {
   	"id": 2,
@@ -176,11 +176,11 @@ The following call changes the company status to Rejected (`2`) and explains why
 
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 2,
   "company_name": "Test company",
@@ -206,7 +206,7 @@ The following call changes the company status to Rejected (`2`) and explains why
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Return all information about a company
 
@@ -221,7 +221,7 @@ None
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 2,
   "status": 0,
@@ -248,7 +248,7 @@ None
     }
   }
 }
-{% endhighlight %}
+```
 
 
 ### Delete a company
@@ -284,7 +284,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
     "items": [
         {
@@ -362,7 +362,7 @@ None
     },
     "total_count": 2
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Related information

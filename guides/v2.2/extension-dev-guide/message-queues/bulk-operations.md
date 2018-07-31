@@ -85,7 +85,7 @@ DeadlockException	| SQLSTATE[40001]: Serialization failure: 1213 Deadlock found 
 
 The following pseudocode illustrates how to recover from database-related errors.
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 <?php
 namespace example;
 use Magento\Framework\DB\Adapter\LockWaitException;
@@ -96,7 +96,7 @@ try {
 } catch (LockWaitException $exception) {
     // try to recover from exception
 }
-{% endhighlight %}
+```
 
 
 See [Create a publisher]( {{ page.baseurl }}/extension-dev-guide/message-queues/implement-bulk.html#createconsumer) for a detailed example of a consumer.

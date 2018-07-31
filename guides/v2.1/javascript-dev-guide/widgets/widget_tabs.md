@@ -34,7 +34,7 @@ Where:
 
 Phtml template file examples using script:
 
-{%highlight html%}
+```html
 <script>
     require([
         'jquery',
@@ -42,7 +42,7 @@ Phtml template file examples using script:
         $("#element").tabs();
     });
 </script>
-{%endhighlight%}
+```
 
 <h2 id="fedg_tabs_options">Options</h2>
 

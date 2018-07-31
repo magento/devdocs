@@ -66,13 +66,13 @@ The Company Admin controls the possible actions for each customer within the com
 
 **REST Endpoints**
 
-{% highlight json %}
+```json
 POST /V1/company/role/
 PUT /V1/company/role/:id
 GET /V1/company/role/:roleId
 DELETE /V1/company/role/:roleId
 GET /V1/company/role/
-{% endhighlight %}
+```
 
 **RoleInterface Parameters**
 
@@ -119,7 +119,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "role": {
     "role_name":"Junior Buyer",
@@ -134,12 +134,12 @@ All resources that are not explicitly allowed are denied. You must specify the `
     "company_id": 2
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
   "id": 6,
   "role_name": "Junior Buyer",
@@ -298,7 +298,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
   "company_id": 2,
   "extension_attributes": []
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Update a role
@@ -313,7 +313,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "role": {
     "id": 6,
@@ -333,12 +333,12 @@ This example call adds access to all Negotiable Quote resources except "View quo
     "company_id": 2
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
   "id": 6,
   "role_name": "Junior Buyer",
@@ -497,7 +497,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
   "company_id": 2,
   "extension_attributes": []
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Return all information about a role
@@ -515,7 +515,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
   "id": 6,
   "role_name": "Junior Buyer",
@@ -674,7 +674,7 @@ None
   "company_id": 2,
   "extension_attributes": []
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Delete a role
@@ -710,7 +710,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 {
     "items": [
@@ -1202,7 +1202,7 @@ None
     "total_count": 3
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Related information

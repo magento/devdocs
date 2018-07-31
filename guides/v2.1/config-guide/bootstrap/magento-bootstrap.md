@@ -43,7 +43,7 @@ The assertions that the Magento application is installed and not in maintenance 
 
 Sample entry point script that modifies the bootstrap object:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 use Magento\Framework\App\Bootstrap;
 require __DIR__ . '/app/bootstrap.php';
 $params = $_SERVER;
@@ -53,7 +53,7 @@ $bootstrap = Bootstrap::create(BP, $params);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication('Magento\Framework\App\Http');
 $bootstrap->run($app);
-{% endhighlight %}
+```
 
 ## Default exception handling {#config-boot-exception}
 The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:

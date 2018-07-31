@@ -57,7 +57,7 @@ Task: In the Customer form, replace the select field with a custom UI component.
 
 The Customer form configuration is defined in `<Magento_Customer_module_dir>/view/base/ui_component/customer_form.xml`. The default configuration of the select field we will extend is following:
 
-{%highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <fieldset name="customer">
@@ -87,13 +87,13 @@ The Customer form configuration is defined in `<Magento_Customer_module_dir>/vie
         </fieldset>
     </argument>
 </form>
-{%endhighlight%}
+```
 
 The custom component we create extends Select, and is also a simple component (does not have child components), so we use the `<component>` element for its declaration. To add the declaration, we need to create the `customer_form.xml` file in the custom module, and put it in the same location relative to the module directory as the original `customer_form.xml` resides. So the custom form configuration file will be: `<YourVendor_YourModule_dir>/view/base/ui_component/customer_form.xml`.
 
 We copy the `<field>` configuration, remove the `<select>` node and its configuration, and replace it with `<component>` and its configuration:
 
-{%highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <fieldset name="customer">
@@ -129,5 +129,5 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
         </fieldset>
     </argument>
 </form>
-{%endhighlight%}
+```
 

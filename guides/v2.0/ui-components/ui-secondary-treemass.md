@@ -22,7 +22,7 @@ To enable Massaction Component for your Listing instance it should be declared a
 Example:
 `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_listing.xml`
 
-{% highlight XML %}
+```XML
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -79,7 +79,7 @@ Example:
         </argument>
     </action>
 </massaction>
-{% endhighlight%}
+```
 
 #### Configuration
 Component can be configured in two ways:
@@ -127,7 +127,7 @@ Example of configuration modifications:
 
 * Redefining the link to the template
 
-{% highlight XML %}
+```XML
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -136,11 +136,11 @@ Example of configuration modifications:
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```
 
 * Specifying action with confirmation
 
-{% highlight XML %}
+```XML
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -158,13 +158,13 @@ Example of configuration modifications:
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 * Action with a custom callback
 
 Callback is provided by another component.
 
-{% highlight XML %}
+```XML
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -182,13 +182,13 @@ Callback is provided by another component.
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 #### Instance Replacement: One Instance of a Component
 
 Redefine link to constructor:
 
-{% highlight XML %}
+```XML
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -196,4 +196,4 @@ Redefine link to constructor:
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```

@@ -27,7 +27,7 @@ To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> 
 
 The following code sample illustrates the XSS-safe output in templates:
 
-{% highlight php %}
+```php
 <?php echo $block->getTitleHtml() ?>
 <?php echo $block->getHtmlTitle() ?>
 <?php echo $block->escapeHtml($block->getTitle()) ?>
@@ -37,7 +37,7 @@ The following code sample illustrates the XSS-safe output in templates:
 <?php echo "some text" ?>
 <a href="<?php echo $block->escapeXssInUrl($block->getUrl()) ?>"><?php echo $block->getAnchorTextHtml() ?
 ></a>
-{% endhighlight %}
+```
 
 #### Escape functions for templates
 
@@ -53,31 +53,31 @@ For the following output cases, use the specified function to generate XSS-safe 
 **Case:** JSON output\\
 **Function:** No function needed for JSON output.
 
-{% highlight html %}
+```html
   <!-- In this example $postData is a JSON string -->
   <button class="action" data-post='<?php /* @noEscape */ echo $postData ?>' />
-{% endhighlight %}
+```
 
 **Case:** String output that should not contain HTML\\
 **Function:** `escapeHtml` 
 
-{% highlight html %}
+```html
   <span class="label"><?php echo $block->escapeHtml($block->getLabel()) ?></span>
-{% endhighlight %}
+```
 
 **Case:** {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} output\\
 **Function:** `escapeUrl`
 
-{% highlight html %}
+```html
   <a href="<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>">Some Link</a>
-{% endhighlight %}
+```
 
 **Case:** HTML attributes\\
 **Function:** `escapeQuote`
 
-{% highlight html %}
+```html
   <span class="<?php $block->escapeQuote($block->getSpanClass()) ?>">Product Description</span>
-{% endhighlight %}
+```
 
 #### Static Test
 

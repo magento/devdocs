@@ -48,7 +48,7 @@ Field | Type | Description
 
 The following query returns information about bundle product `24-WG080`, which is defined in the sample data.
 
-{% highlight json %}
+```json
 {
    products(filter: {sku:
     {eq: "24-WG080"}
@@ -94,4 +94,4 @@ The following query returns information about bundle product `24-WG080`, which i
    }
 }
 
-{% endhighlight %}
+```

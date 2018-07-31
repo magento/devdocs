@@ -20,7 +20,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
 
 **extension_attributes.xml**
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Api/etc/extension_attributes.xsd">
   <extension_attributes for="Magento\Quote\Api\Data\CartInterface">
     <attribute code="demo" type="string" />
@@ -29,7 +29,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
       <attribute code="demo" type="string" />
   </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 ## Step 2: Configure the fieldset
 {:#step-2}
@@ -39,7 +39,7 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 **fieldset.xml**
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataObject/etc/fieldset.xsd">
   <scope id="global">
     <fieldset id="sales_convert_quote">
@@ -49,14 +49,14 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
     </fieldset>
   </scope>
 </config>
-{% endhighlight %}
+```
 
 ## Step 3: Copy the fieldset
 {:#step-3}
 
 The following code snippets highlight the code pieces needed to copy a fieldset using the `\Magento\Framework\DataObject\Copy` class.
 
-{% highlight php startinline %}
+```php?start_inline=1
 ...
 
 /**
@@ -92,7 +92,7 @@ private function copyQuoteToOrder($quote, $order)
 }
 
 ...
-{% endhighlight %}
+```
 
 
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].

@@ -41,7 +41,7 @@ For this example, you may only want to run it against the Production server. You
 
 Create an `badreferer.json` file with the following JSON content:
 
-{% highlight json %}
+```json
 {
   "name": "badreferer",
   "dynamic": "0",
@@ -49,7 +49,7 @@ Create an `badreferer.json` file with the following JSON content:
   "priority": "5",
   "content": "set req.http.Referer-Host = regsub(req.http.Referer, \"^https?://?([^:/\\s]+).*$\", \"\\1\"); if (table.lookup(referer_blocklist, req.http.Referer-Host)) { error 403 \"Forbidden\"; }"
 }
-{% endhighlight %}
+```
 
 Review the following values for the code to determine if you need to make changes:
 

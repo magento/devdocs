@@ -35,16 +35,16 @@ The following example shows how to insert a dynamic date control at the top of a
 
 Add the following to any page, such as `/index.php`:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 echo date(DATE_RFC2822);
 <!--#include virtual="time.php" -->
-{% endhighlight %}
+```
 
 Add the following to `time.php`:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 header("Cache-Control: max-age=600");
 echo date(DATE_RFC2822);
-{% endhighlight %}
+```
 
 Browse to the page on which you added the control. Refresh the page several times and notice that the time at the top of the page changes but the time on the bottom changes only every 600 seconds.

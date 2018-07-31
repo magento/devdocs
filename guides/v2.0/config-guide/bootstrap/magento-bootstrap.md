@@ -45,7 +45,7 @@ To run the Magento application, the following actions are implemented in <a href
 
 Sample entry point script that modifies the bootstrap object:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 use Magento\Framework\App\Bootstrap;
 require __DIR__ . '/app/bootstrap.php';
 $params = $_SERVER;
@@ -55,7 +55,7 @@ $bootstrap = Bootstrap::create(BP, $params);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication('Magento\Framework\App\Http');
 $bootstrap->run($app);
-{% endhighlight %}
+```
 
 <h2 id="config-boot-exception">Default exception handling</h2>
 The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:

@@ -51,7 +51,7 @@ Now create two files:
 `Learning/GreetingMessage/registration.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
@@ -62,7 +62,7 @@ Now create two files:
   'Learning_GreetingMessage',
   __DIR__
 );
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 <br/>
@@ -70,7 +70,7 @@ Now create two files:
 `Learning/GreetingMessage/etc/module.xml`
 
 {% collapsible Show code %}
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -82,7 +82,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
   <module name="Learning_GreetingMessage" setup_version="0.0.1">
   </module>
 </config>
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Step 2: Create an InstallSchema script
@@ -97,7 +97,7 @@ $ mkdir Setup
 Create the file `Setup/InstallSchema.php`.
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
 * Copyright © 2016 Magento. All rights reserved.
 * See COPYING.txt for license details.
@@ -141,7 +141,7 @@ class InstallSchema implements InstallSchemaInterface
           $setup->getConnection()->createTable($table);
       }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 Let’s take a minute to look at the code.
@@ -160,7 +160,7 @@ You can find various examples of DDL in the Magento 2 core code.
 Let’s create the `Setup/InstallData.php` file:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -200,7 +200,7 @@ class InstallData implements InstallDataInterface
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Step 4: Add a new module and verify that a table with data was created
@@ -268,7 +268,7 @@ First, change the version in the `etc/module.xml` file to 0.0.2:
 Then create the file `Setup/UpgradeSchema.php`:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -308,7 +308,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $setup->endSetup();
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 Review the “version_compare” line.
@@ -321,7 +321,7 @@ That’s why we put upgrades into “if” clauses.
 To create the `Setup/UpgradeData.php` file:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -359,7 +359,7 @@ class UpgradeData implements UpgradeDataInterface
         $setup->endSetup();
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Step 7: Run the upgrade scripts and verify that the table has changed

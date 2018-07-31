@@ -24,7 +24,7 @@ The following image is an illustration of a grid with a sticky header:
 
 To enable the sticky header functionality for a certain grid, declare it as a child element in the grid configuration file using the following notation:
 
-{% highlight xml %}
+```xml
     <container name="sticky">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -34,7 +34,7 @@ To enable the sticky header functionality for a certain grid, declare it as a ch
             </item>
         </argument>
     </container>
-{% endhighlight %}
+```
 
 Where the following should be specified:
 
@@ -45,7 +45,7 @@ Where the following should be specified:
 
 Enabling a sticky header for the CMS pages grid, configured in `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`:
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
         <container name="listing_top">
          ..
@@ -60,7 +60,7 @@ Enabling a sticky header for the CMS pages grid, configured in `<Magento_Cms_mod
             </argument>
         </container>
     </listing>
-{% endhighlight %}
+```
 
 <h2 id="sticky_config">Sticky header configuration</h2>
 
@@ -69,7 +69,7 @@ Any component of a sticky header can use a particular, not default template. Thi
 **Example**
 The toolbar component should use the `ui/grid/sticky/toolbar` template for the sticky header.
 `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`:
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
         <container name="listing_top">
             <argument name="data" xsi:type="array">
@@ -81,7 +81,7 @@ The toolbar component should use the `ui/grid/sticky/toolbar` template for the s
             ..
         </container name="listing_top">
     </listing>
-{% endhighlight %}
+```
 
 <h2 id="sticky_elements">Component elements</h2>
 The sticky header component consists of the following elements:

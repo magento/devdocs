@@ -40,13 +40,13 @@ Now create two files:
 
 {% collapsible Show source code %}
 
-  {% highlight php startinline=true %}
+  ```php?start_inline=1
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Learning_Js',
     __DIR__
 );
-  {% endhighlight %}
+  ```
 
 {% endcollapsible %}
 
@@ -55,13 +55,13 @@ Now create two files:
 `app/code/Learning/Js/etc/module.xml`
 
 {% collapsible Show source code  %}
-  {%highlight xml %}
+  ```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Learning_Js" setup_version="0.0.1">
     </module>
 </config>
-  {% endhighlight %}
+  ```
 {% endcollapsible %}
 
 ## Step 2: Create a requirejs-config.js and a JavaScript module file
@@ -77,7 +77,7 @@ $ mkdir app/code/Learning/Js/view/fronted
 Add the file `app/code/Learning/Js/view/frontend/requirejs-config.js`:
 
 {% collapsible Show source code %}
-  {% highlight javascript %}
+  ```javascript
 var config = {
     map: {
         '*': {
@@ -85,7 +85,7 @@ var config = {
         }
     }
 };
-  {% endhighlight %}
+  ```
 {% endcollapsible %}
 
 Then add the JavaScript module:
@@ -98,7 +98,7 @@ $ mkdir app/code/Learning/Js/view/frontend/web/js
 And finally, add the file `app/code/Learning/Js/view/frontend/web/js/hello.js`:
 
 {% collapsible Show source code %}
-  {% highlight javascript %}
+  ```javascript
 define([
     "jquery"
 ], function($){
@@ -108,7 +108,7 @@ define([
         }
     }
 )
-  {% endhighlight %}
+  ```
 {% endcollapsible %}
 
 ## Step 3: Create a layout update to add a template that will enable the JavaScript module
@@ -124,7 +124,7 @@ $ mkdir app/code/Learning/Js/view/frontend/layout
 And the add the file `catalog_product_view.xml`:
 
 {% collapsible Show source code %}
-  {% highlight xml %}
+  ```xml
 
 <?xml version="1.0"?>
 <page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -135,7 +135,7 @@ And the add the file `catalog_product_view.xml`:
     </body>
 </page>
 
-  {% endhighlight %}
+  ```
 {% endcollapsible %}
 
 ## Step 4: Create a template file
@@ -150,11 +150,11 @@ $ mkdir app/code/Learning/Js/view/frontend/templates
 In the templates directory, add the file `app/code/Learning/Js/view/frontend/templates/hello.phtml`:
 
 {% collapsible Show source code %}
-  {% highlight html %}
+  ```html
 <div data-mage-init='{"hello": {"message": "HELLO WORLD!"}}'>
     Content
 </div>
-  {% endhighlight %}
+  ```
 {% endcollapsible %}
 
 This code enables our module.

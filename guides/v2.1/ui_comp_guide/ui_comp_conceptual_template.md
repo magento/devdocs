@@ -85,11 +85,11 @@ For highlighted code blocks use the `highlight` Liquid tag.
 
 *Example:*
 
-{% highlight html %}
+```html
 <div class="container">
   <h4 class="title">Title</h4>
   <div class="content">
     <p>Paragraph content.</p>
   </div>
 </div>
-{% endhighlight %}
+```

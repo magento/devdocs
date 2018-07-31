@@ -34,11 +34,11 @@ In `<magento_2_root_dir>/dev/tests/functional/phpunit.xml`, you can set a preset
 
 Set a preset, which is a list of dispatched [events][event] and an [observers][observer] to handle them:
 
-{% highlight xml %}
+```xml
 <php>
     <env name="events_preset" value="<preset_name>" />
 </php>
-{% endhighlight xml %}
+```
 
 Replace `<preset_name>` with a name of preset that you want to use.
 
@@ -46,11 +46,11 @@ Replace `<preset_name>` with a name of preset that you want to use.
 
 Set the value of `<env name="log_directory">` to the directory in which to store your reports.
 
-{% highlight xml %}
+```xml
 <php>
     <env name="log_directory" value="<your_directory_path>" />
 </php>
-{% endhighlight %}
+```
 
 The default path is `<magento_2_root_dir>/dev/tests/functional/var/log`.
 
@@ -60,7 +60,7 @@ An event preset specifies observers and dispatched events handled by them. `<mag
 
 **Format of a preset**:
 
-{% highlight xml %}
+```xml
 <preset name="...">
     <observer class="Magento\Mtf\System\Observer\...">
         <tag name="..." />
@@ -70,11 +70,11 @@ An event preset specifies observers and dispatched events handled by them. `<mag
         <tag name="..." />
     </observer>
 </preset>
-{% endhighlight %}
+```
 
 **Example**:
 
-{% highlight xml %}
+```xml
 <preset name="custom">
     <observer class="Magento\Mtf\System\Observer\SourceCode">
         <tag name="exception" />
@@ -88,7 +88,7 @@ An event preset specifies observers and dispatched events handled by them. `<mag
         <tag name="curl_failed" />
     </observer>
 </preset>
-{% endhighlight %}
+```
 
 **Explanation of the example**:
 
@@ -120,7 +120,7 @@ A tag contains name of an event. When you want to process any event by a particu
 
 In terms of XML, it is represented as an element `<tag />` in `events.xml`. `<tag />` is a child element of an `<observer>` element. See the following example:
 
-{% highlight xml %}
+```xml
 <observer class="Magento\Mtf\System\Observer\ClientError">
     <tag name="page_changed" />
     <tag name="exception" />
@@ -140,7 +140,7 @@ In terms of XML, it is represented as an element `<tag />` in `events.xml`. `<ta
 <observer class="Magento\Mtf\System\Observer\CurlResponse">
     <tag name="curl_failed" />
 </observer>
-{% endhighlight %}
+```
 
 As you can see, a tag contains one required attribute `name`, where a name of event must be assigned.
 
@@ -159,14 +159,14 @@ It has two arguments:
 
 Example of use:
 
-{% highlight php %}
+```php
 <?php
 
 if (!strpos($response, 'data-ui-id="messages-message-success"')) {
     $this->_eventManager->dispatchEvent(['curl_failed'], [$response]);
     throw new \Exception('Product creation by curl handler was not successful!');
 }
-{% endhighlight %}
+```
 
 ## Examples {#examples}
 
@@ -203,7 +203,7 @@ Step 2. Open `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`.
 
 Step 3. Add a preset with required observers and tags.
 
-{% highlight xml %}
+```xml
 <preset name="custom">
     <observer class="Magento\Mtf\System\Observer\SourceCode">
         <tag name="failure" />
@@ -212,7 +212,7 @@ Step 3. Add a preset with required observers and tags.
         <tag name="failure" />
     </observer>
 </preset>
-{% endhighlight xml %}
+```
 
 ### Edit a preset {#edit-preset}
 
@@ -246,7 +246,7 @@ Step 1. [Dispatch][dispatch] the events `click_before`, `click_after` and `set_v
 
 Step 2. In the `base` preset, add required observer and event tags.
 
-{% highlight xml %}
+```xml
 <preset name="base">
     ...
     <observer class="Magento\Mtf\System\Observer\Screenshot">
@@ -256,7 +256,7 @@ Step 2. In the `base` preset, add required observer and event tags.
     </observer>
     ...
 </preset>
-{% endhighlight %}
+```
 
 ### Create and apply a custom observer {#add-custom-observer}
 
@@ -288,7 +288,7 @@ The following example shows how to use a custom observer in the example with the
 
 Step 1. Create an observer class `\Magento\Mtf\System\Observer\WebapiResponse` that stores incoming events in JSON files.
 
-{% highlight php %}
+```php
 <?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -324,7 +324,7 @@ class WebapiResponse extends AbstractObserver
         );
     }
 }
-{% endhighlight %}
+```
 
 Step 2. [Dispatch][dispatch] an event `webapi_failed` in the `\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()` [handler] for failed responses.
 
@@ -347,7 +347,7 @@ Step 3. Add the observer and the tag to the `base` preset in `events.xml`.
 
 In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `<preset name="base">` an observer `<observer class="Magento\Mtf\System\Observer\WebapiResponse">` with a tag `<tag name="webapi_failed" />`:
 
-{% highlight xml %}
+```xml
 <preset name="base">
 ...
     <observer class="Magento\Mtf\System\Observer\WebapiResponse">
@@ -355,7 +355,7 @@ In `<magento_2_root_dir>/dev/tests/functional/etc/events.xml`, add to a preset `
     </observer>
 ...
 <preset />
-{% endhighlight xml %}
+```
 
 <!-- LINK DEFINITIONS -->
 

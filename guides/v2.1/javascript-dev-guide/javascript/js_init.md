@@ -84,7 +84,7 @@ Such a component does not require either <code>config</code> or <code>element</c
 
 To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
 
-{%highlight html%}
+```html
 <script type="text/x-magento-init">
 {
     // components initialized on the element defined by selector
@@ -98,7 +98,7 @@ To call a JS component on a HTML element without direct access to the element or
     }
 }
 </script>
-{%endhighlight%}
+```
 
 Where:
 <ul>
@@ -109,7 +109,7 @@ Where:
 
 The following is a working code sample of a widget call using `<script>`. Here the `accordion` and `navigation` widgets are added to the element with the `#main-container` selector, and the `pageCache` script is inserted with no binding to any element.
 
-{%highlight html%}
+```html
 <script type="text/x-magento-init">
 {
     "#main-container": {
@@ -121,13 +121,13 @@ The following is a working code sample of a widget call using `<script>`. Here t
     }
 }
 </script>
-{%endhighlight%}
+```
 
 ### Imperative notation {#init_script}
 
 Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init"` attribute, is the imperative notation. The syntax is following:
 
-{%highlight html%}
+```html
 <script>
 require([
     'jquery',
@@ -144,22 +144,22 @@ require([
     });
 });
 </script>
-{%endhighlight%}
+```
 
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
 To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
 
-{%highlight js%}
+```js
 
 $('[data-role=example]').accordion();
 
-{%endhighlight%}
+```
 
 To initialize a {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} with options, use notation similar to the following:
 
-{%highlight js%}
+```js
 
 $(function () { // to ensure that code evaluates on page load
     $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
@@ -171,13 +171,13 @@ $(function () { // to ensure that code evaluates on page load
         });
 });
 
-{% endhighlight %}
+```
 
 In a similar way, you can initialize any JS component that a returns callback function accepting a `config` object and `element` (a DOM node).
 
 For example:
 
-{%highlight js%}
+```js
 define ([
     'jquery',
     'mage/gallery/gallery'
@@ -196,4 +196,4 @@ define ([
             });
     });
 });
-{%endhighlight%}
+```

@@ -94,7 +94,7 @@ This step shows a simple class to create a cron job. The class only writes a row
         mkdir /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron && cd /var/www/html/magento2/app/code/Magento/SampleMinimal/Cron
 2.  Created a file named `Test.php` in that directory with the following contents:
 
-{% highlight php %}
+```php
 <?php
 namespace Magento\SampleMinimal\Cron;
 use \Psr\Log\LoggerInterface;
@@ -117,7 +117,7 @@ class Test {
     }
 
 }
-{% endhighlight %}
+```
 
 <!-- ?> -->
 
@@ -130,7 +130,7 @@ class Test {
 
 Create `crontab.xml` as follows in the `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc` directory:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
     <group id="default">
@@ -139,7 +139,7 @@ Create `crontab.xml` as follows in the `/var/www/html/magento2/app/code/Magento/
         </job>
     </group>
 </config>
-{% endhighlight %}
+```
 
 The preceding `crontab.xml` runs the `Magento/SampleMinimal/Cron/Test.php` class once per minute, resulting in a row being added to the `cron_schedule` table.
 
@@ -200,7 +200,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
 3.  Exit the text editor.
 4.  Create `/var/www/html/magento2/app/code/Magento/SampleMinimal/etc/cron_groups.xml` with the following contents:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/cron_groups.xsd">
     <group id="custom_crongroup">
@@ -212,7 +212,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
         <history_failure_lifetime>600</history_failure_lifetime>
     </group>
 </config>
-{% endhighlight %}
+```
 
 For a description of what the options mean, see [Configure custom cron jobs and cron groups reference]({{ page.baseurl }}/config-guide/cron/custom-cron-ref.html).
 

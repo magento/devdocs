@@ -39,7 +39,7 @@ The markup, that is needed for a drop-down:
 
 OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
 
-{%highlight xml%}
+```xml
 ...
     <referenceBlock name="top.links">
         <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
@@ -55,7 +55,7 @@ OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html"
         <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link" template="account/link/authorization.phtml"/>
     </referenceBlock>
 ...
-{%endhighlight xml%}
+```
 
 <h4>Step 2: Define the templates</h4>
 
@@ -64,7 +64,7 @@ defines the template which is used for rearranging the links:
 
 `<Magento_Customer_module_dir>/view/frontend/templates/account/customer.phtml`
 
-{%highlight html%}
+```html
 <?php if($block->customerLoggedIn()): ?>
     <li class="customer-welcome">
         <span class="customer-name"
@@ -102,7 +102,7 @@ defines the template which is used for rearranging the links:
         <?php endif; ?>
     </li>
 <?php endif; ?>
-{%endhighlight php%}
+```
 
 <h4>Step 3: Extend the base layout to add a block</h4>
 
@@ -112,7 +112,7 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
 
     app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="header.panel">
@@ -124,7 +124,7 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
         </referenceContainer>
     </body>
 </page>
-{%endhighlight xml%}
+```
 
 <h4>Step 4: Move links</h4>
 
@@ -132,7 +132,7 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 
 `app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml`
 
-{%highlight xml%}
+```xml
     <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
         <body>
             <referenceBlock name="header.links">
@@ -150,7 +150,7 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
             <move element="authorization-link" destination="top.links" after="-"/>
         </body>
     </page>
-{%endhighlight xml%}
+```
 
 Now the customer links look like following:
 

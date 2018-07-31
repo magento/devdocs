@@ -35,7 +35,7 @@ However, the dependency rules are different:
 * If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
 
   **API dependency example**
-{% highlight JSON %}
+```JSON
 {
     ...
     "require": {
@@ -43,10 +43,10 @@ However, the dependency rules are different:
     },
     ...
 }
-{% endhighlight %}
+```
 * If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
    **SPI dependency example**
-{% highlight JSON %}
+```JSON
 {
     ...
     "require": {
@@ -55,7 +55,7 @@ However, the dependency rules are different:
     ...
 }
 
-{% endhighlight %}
+```
 
 ## Determine module dependency
 

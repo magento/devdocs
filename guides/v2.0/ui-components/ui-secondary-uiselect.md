@@ -21,7 +21,7 @@ Example integration:
 
 `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
             <filterSelect name="uiSelect">
                 <argument name="optionsProvider" xsi:type="configurableObject">
@@ -37,7 +37,7 @@ Example integration:
                 </argument>
             </filterSelect>
 </listing>
-{% endhighlight %}
+```
 
 #### Configuration
 
@@ -81,11 +81,11 @@ Navigation keys:
         
     Code samples available in the default configuration:
     
-    {% highlight javascript %}
+    ```javascript
     imports: {
         options: '${ $.optionsConfig.name }:options'
     }
-    {% endhighlight %}
+    ```
 
 * actions option
 
@@ -93,7 +93,7 @@ Navigation keys:
     
     Code samples available in the default configuration:
     
-    {% highlight javascript %}
+    ```javascript
     actions: [{
                     value: 'selectAll',
                     label: $t('Select all')
@@ -107,7 +107,7 @@ Navigation keys:
                     value: 'deselectPage',
                     label: $t('Deselect all on this page')
                 }],
-    {% endhighlight %}
+    ```
     
 <h2 id="structure">Component options</h2>
 

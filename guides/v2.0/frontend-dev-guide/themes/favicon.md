@@ -51,14 +51,14 @@ To add favicon icons of other sizes, take the following steps:
 
 For example, if you added a `favicon-32x32.png` icon and want it to be used as a 32x32 favicon, your `default_head_blocks.xml` would be like following:
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <link src="Magento_Theme::favicon-32x32.png" rel="icon" sizes="32x32" />
     </head>
 </page>
 
-{%endhighlight%}
+```
 
 For your changes to be applied, clear the brower cache, and the following directories on the server (do not delete the `.htaccess` file!): 
 

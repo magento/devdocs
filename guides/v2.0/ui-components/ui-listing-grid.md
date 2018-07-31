@@ -18,7 +18,7 @@ Example configuration of Listing Component instance:
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
 
-{% highlight xml%}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="context" xsi:type="configurableObject">
         <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\Context</argument>
@@ -42,7 +42,7 @@ Example configuration of Listing Component instance:
         </item>
     </argument>
 </listing>
-{% endhighlight %}
+```
 
 #### Data Source
 
@@ -52,7 +52,7 @@ The listing component requires the data source to be properly configured and ass
 
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <dataSource name="cms_page_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
@@ -72,4 +72,4 @@ The listing component requires the data source to be properly configured and ass
         </argument>
     </dataSource>
 </listing>    
-{% endhighlight %}    
+```    
