@@ -2068,30 +2068,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>You can upgrade the core Magento Commerce code base to version 2.2 from any of the following supported versions:</p>
+			<p>You can upgrade the core Magento Commerce code base to version 2.2 from versiobn 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.</p>
+
+<p>Prepare your environment with the following tasks:</p>
 
 <ul>
-  <li>2.0.14 and later</li>
-  <li>2.1.7 and later</li>
-</ul>
-
-<p>If you need to upgrade from an older version than listed, you must upgrade to a supported version first.</p>
-
-<h2 id="prepare-the-environment">Prepare the environment</h2>
-
-<p>Upgrading from <strong>2.0.X</strong> requires the following tasks:</p>
-
-<ul>
-  <li>Upgrade your PHP version to 7.0 or later</li>
-  <li>Update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new settings for hooks and environment variables</li>
-  <li>Verify or set the <code class="highlighter-rouge">ADMIN_EMAIL</code> variable</li>
-  <li>Upgrade to the latest supported version of Fastly</li>
-</ul>
-
-<p>Upgrading from <strong>2.1.X</strong> requires the following tasks:</p>
-
-<ul>
-  <li>Upgrade your PHP version to 7.0 or later</li>
+  <li>Upgrade your PHP version to 7.1 or later</li>
   <li>Create a new <code class="highlighter-rouge">config.php</code> file</li>
   <li>Update the <code class="highlighter-rouge">.magento.app.yaml</code> file with new settings for hooks and environment variables</li>
   <li>Verify or set the <code class="highlighter-rouge">ADMIN_EMAIL</code> variable</li>
@@ -2104,7 +2086,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">If you use a version of Magento Commerce (Cloud) that does not contain the <code class="highlighter-rouge">ece-tools</code> package, then your project requires an <a href="/guides/v2.2/cloud/project/ece-tools-upgrade-project.html">upgrade</a>. If you currently use the <code class="highlighter-rouge">ece-tools</code> package and you need to update it, see <a href="/guides/v2.2/cloud/project/ece-tools-update.html">Update ece-tools version</a>.</p>
 
 <h3 id="upgrade-php-version">Upgrade PHP version</h3>
-<p>Magento Commerce (Cloud) 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
+<p>Magento Commerce (Cloud) 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:</p>
 
 <ul>
   <li><a href="/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php">PHP</a> information for your local Magento workstation</li>
@@ -2135,6 +2117,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If you are upgrading to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you may encounter errors. Magento Commerce (Cloud) 2.2.X has new settings in the file.</p>
 
 <ol>
+  <li>
+    <p>Update the PHP options.</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">php:7.1</span>
+</code></pre></div>    </div>
+  </li>
   <li>
     <p>Modify the hook commands in the <code class="highlighter-rouge">magento.app.yaml</code> file.</p>
 
