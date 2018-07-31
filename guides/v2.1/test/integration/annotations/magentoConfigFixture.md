@@ -5,12 +5,12 @@ title: Configuration Fixture Annotation
 github_link: /test/integration/annotations/magentoConfigFixture.md
 ---
 
-Integration testing framework allows Magento configuration values to be set for individual tests, then reverted to their original state following test execution.
-Annotation `@magentoConfigFixture` is used for this purpose.
+The Integration Testing Framework (ITF) enables you to set the Magento configuration values for individual tests and revert them after the test execution.
+Use the `@magentoConfigFixture` annotation for this purpose.
 
 ## Format
 
-> Fixture for the configuration option
+> Code format for a fixture setting the configuration option
 
 ```php?start_inline=1
 /**
@@ -19,17 +19,28 @@ Annotation `@magentoConfigFixture` is used for this purpose.
 ```
 
 Here,
-* `<store_code>` is a store code in which specified fixture value take effect. When omitted, configuration option is considered to have global scope.
-  Reserved value current can be used to specify the current store.
-* `<config_path>` is XPath of the configuration option.
+* `<store_code>` is a code of the store to be configured.
+ If it is not specified, the configuration option is applied globally.
+ To specify the current store, use `current`.
+* `<config_path>` is XPath of the configuration option. See [configuration reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) for available options.
 * `<config_value>` is a fixture value for the configuration option.
+
+## Principles
+
+1. The `@magentoConfigFixture` is applicable in scope of a test method only.
+It is not available on a test case level.
+2. You can declare more than one configuration option for a test.
 
 ## Usage
 
-The annotation can be used multiple times in one test to declare required precondition values for multiple configuration options.
-For example:
+The following example demonstrates the `testConfigFixtures` test that uses the special Magento configuration, where:
 
-> Configuration values setup
+- `web/unsecure/base_url` equals `http://example.com/` globally
+- `web/secure/base_url` equals `https://example.com/` globally
+- `dev/restrict/allow_ips` equals `192.168.0.1` for the current store
+- `dev/restrict/allow_ips` equals `192.168.0.2` for the `admin_store` store
+
+The test asserts that the specified configuration options have been applied.
 
 ```php?start_inline=1
 class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit_Framework_TestCase
@@ -61,6 +72,3 @@ class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit_Framework_TestCa
     }
 }
 ```
-
-Unlike `@magentoDataFixture`, the `@magentoConfigFixture` cannot be used on test case level.
-{:.bs-callout .bs-call-info}
