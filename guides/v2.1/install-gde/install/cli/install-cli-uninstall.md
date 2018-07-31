@@ -48,10 +48,10 @@ To reinstall the Magento software as a system integrator:
 		git pull origin develop
 		php bin/magento setup:uninstall
 
-	{:.bs-callout .bs-callout-info}
+	<div class="bs-callout bs-callout-info" markdown="1">
 	*   If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
 	*   To use your existing Magento software version , omit the `git pull origin develop` command.
-
+	</div>
 3.	Install the Magento software:
 
 	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
@@ -75,10 +75,10 @@ However, in some situations (particularly, deploying Magento to production), you
 
 	magento setup:upgrade --keep-generated
 
-{:.bs-callout .bs-callout-warning}
-    The optional `--keep-generated` option should be used _only_ in limited circumstances by experienced system integrators. `--keep-generated` should _never_ be used in a development environment.
-
-Improper use of this optional parameter can cause errors during code execution.
+<div class="bs-callout bs-callout-warning">
+    <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
+    <p>Improper use of this optional parameter can cause errors during code execution.</p>
+</div>
 
 
 6.	Install the Magento software:
