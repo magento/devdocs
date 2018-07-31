@@ -7,7 +7,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -61,18 +61,15 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Determines whether to clean the existing [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) before deploying updated static content generated during the build or deploy phase. We recommend the default value _true_ in development. When this variable is set to `false`, previously existing static content files are overwritten only if a newer version is being generated.
-
-If you create static content using another process outside of Magento, you might want to change the value to `false` to keep the content from getting deleted by Magento static content deployments.
+Cleans the [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action such as enabling or disabling a component. We recommend the default value _true_ in development. The supported values are `true` and `false`.
 
 ```yaml
 stage:
   deploy:
-    CLEAN_STATIC_FILES: true
+    CLEAN_STATIC_FILES: false
 ```
 
-Failure to clean static view files before deploying can cause problems if you
-deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
+Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 ### `CRYPT_KEY`
 
@@ -112,7 +109,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.x
 
-Generates symlinks for the `var/generation` and `var/di` generated folders.
+Generates symlinks for the `var/generation` and `var/di` generated folders. 
 
 ```yaml
 stage:
@@ -215,7 +212,7 @@ Themes include numerous files. Set this variable to `true` if you want to skip c
 ```yaml
 stage:
   deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
 ```
 
 ### `SCD_MATRIX`
@@ -249,7 +246,7 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**:
+-  **Default**: 
     -  `1`—Starter environments and Pro Integration environments
     -  `3`—Pro Staging and Production environments
 -  **Version**—Available in all versions
@@ -306,7 +303,7 @@ Configure Redis session storage. You must specify the `save`, `redis`, `host`, `
 stage:
   deploy:
     SESSION_CONFIGURATION:
-      redis:
+      redis: 
         bot_first_lifetime: 100
         bot_lifetime: 10001
         database: 0
