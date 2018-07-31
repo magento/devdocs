@@ -9,11 +9,10 @@ functional_areas:
   - Integration
 ---
 
-The Status Operation Search endpoint allows you to search for bulk operation statuses.
+The Status Operation Search endpoint (`GET /V1/bulk/?searchCriteria`) allows you to search for bulk operation statuses.
 
-`GET /V1/bulk/?searchCriteria`
 
-You can specify the following fields to filter on all available operation statuses:
+You can specify any of the following fields to filter on operation statuses:
  
  * `start_time` - The time that a bulk operation started.
  * `status` - The operation status:
