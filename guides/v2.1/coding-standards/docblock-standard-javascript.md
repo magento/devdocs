@@ -189,7 +189,7 @@ Polygon.prototype.getSides = function() {};
 
 Used with `@constructor` to indicate that a class implements an interface.
 
-```
+```javascript
 
 /**
  * A shape.
