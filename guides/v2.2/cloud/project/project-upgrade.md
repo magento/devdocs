@@ -8,25 +8,11 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from any of the following supported versions:
+You can upgrade the core {{site.data.var.ee}} code base to version 2.2 from versiobn 2.1.7 and later. If you need to upgrade from an older version, you must upgrade to a supported version first.
 
--  2.0.14 and later
--  2.1.7 and later
+Prepare your environment with the following tasks:
 
-If you need to upgrade from an older version than listed, you must upgrade to a supported version first.
-
-## Prepare the environment
-
-Upgrading from **2.0.X** requires the following tasks:
-
--  Upgrade your PHP version to 7.0 or later
--  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
--  Verify or set the `ADMIN_EMAIL` variable
--  Upgrade to the latest supported version of Fastly
-
-Upgrading from **2.1.X** requires the following tasks:
-
--  Upgrade your PHP version to 7.0 or later
+-  Upgrade your PHP version to 7.1 or later
 -  Create a new `config.php` file
 -  Update the `.magento.app.yaml` file with new settings for hooks and environment variables
 -  Verify or set the `ADMIN_EMAIL` variable
@@ -38,7 +24,7 @@ Upgrading from **2.1.X** requires the following tasks:
 {% include cloud/note-ece-tools-package.md %}
 
 ### Upgrade PHP version
-{{site.data.var.ece}} 2.2 supports PHP 7.0 and 7.1. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
+{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
 
 * [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
 * [Migrating PHP](http://php.net/manual/en/migration71.php){:target="\_blank"}
@@ -65,6 +51,12 @@ You can only delete this file to replace it this one time. After generating a co
 
 ### Update the .magento.app.yaml file
 If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
+
+1.  Update the PHP options.
+
+    ```yaml
+    type: php:7.1
+    ```
 
 1.  Modify the hook commands in the `magento.app.yaml` file.
 
