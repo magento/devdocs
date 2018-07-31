@@ -52,6 +52,12 @@ You can only delete this file to replace it this one time. After generating a co
 ### Update the .magento.app.yaml file
 If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html) or you may encounter errors. {{site.data.var.ece}} 2.2.X has new settings in the file.
 
+1.  Update the PHP options.
+
+    ```yaml
+    type: php:7.1
+    ```
+
 1.  Modify the hook commands in the `magento.app.yaml` file.
 
     ```yaml
