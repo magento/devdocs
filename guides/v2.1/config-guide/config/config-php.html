@@ -1687,6 +1687,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
   <li>
     <p><code class="highlighter-rouge">&lt;Magento base dir&gt;/app/etc/env.php</code>, which contains system-specific settings, such as:</p>
+
+    <ul>
+      <li>Database credentials and connection settings</li>
+      <li>i18n TBD</li>
+      <li>Cache storage settings</li>
+      <li>Session storage settings</li>
+      <li><a href="/guides/v2.1/config-guide/secy/secy-xframe.html">x-frame-options</a> setting</li>
+      <li>Enabled cache types</li>
+      <li>Your encryption key</li>
+      <li>Web routing parameters (base URLs, Magento Admin URI)</li>
+      <li><a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">Magento mode</a></li>
+      <li>Magento installation date</li>
+      <li>System-specific and sensitive configuration settings TBD</li>
+    </ul>
   </li>
 </ul>
 
@@ -1704,7 +1718,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0//lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
 
 <p>On the next hierarchy level, items in each segment are ordered according to the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  sequence definition, which is obtained by merging all modules’ configuration files, with the   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
