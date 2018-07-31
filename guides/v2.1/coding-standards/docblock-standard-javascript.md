@@ -37,7 +37,7 @@ JSDoc comments requirements:
 
 Example:
 
-{% highlight javascript %}
+```javascript
 
 /**
 * A testJSDoc comment should begin with a slash and 2 asterisks.
@@ -45,7 +45,7 @@ Example:
 * @desc Block tags should always start on their own line.
 */
 
-{% endhighlight%}
+```
 
 Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} from JSDoc comments to validate and optimize the code.
 
@@ -53,7 +53,7 @@ Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}met
 
 If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * Illustrates line wrapping for long param/return descriptions.
@@ -67,13 +67,13 @@ project.MyClass.prototype.method = function(foo) {
     return 5;
 };
 
-{% endhighlight%}
+```
 
 ### Class comments {#frontend-dev-guide-javascript-js-coding-docblock-classcomments}
 
 Classes must be documented with a description, and appropriate type tags.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * Class making something fun and easy.
@@ -85,13 +85,13 @@ project.MyClass = function(arg1, arg2) {
     // ...
 };
 
-{% endhighlight%}
+```
 
 ### Method and function comments {#frontend-dev-guide-javascript-js-coding-docblock-methodcomments}
 
 A description must be provided along with parameters. Method descriptions should start with a sentence written in the third person declarative voice.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * Operates on an instance of MyClass and returns something.
@@ -104,11 +104,11 @@ function someMethod(obj) {
     // ...
 }
 
-{% endhighlight%}
+```
 
 ### Property comments {#frontend-dev-guide-javascript-js-coding-docblock-propertycomments}
 
-{% highlight javascript %}
+```javascript
 
 /**
  * Maximum number of things per pane.
@@ -117,7 +117,7 @@ function someMethod(obj) {
  */
 project.MyClass.prototype.someProperty = 4;
 
-{% endhighlight%}
+```
 
 ### JSDoc tag reference {#frontend-dev-guide-javascript-js-coding-docblock-tagreference}
 
@@ -125,7 +125,7 @@ project.MyClass.prototype.someProperty = 4;
 
 Marks a variable read-only and suitable for inlining. Generates warnings if it is rewritten. Constants should also be ALL_CAPS, but the annotation should help eliminate reliance on the naming convention.
 
-{% highlight javascript %}
+```javascript
 
 /** @const */ var DEFAULT_TIMEZONE = 'GMT';
  
@@ -139,13 +139,13 @@ Marks a variable read-only and suitable for inlining. Generates warnings if it i
  */
 mynamespace.DEFAULT_TIMEZONE = 'GMT';
 
-{% endhighlight%}
+```
 
 #### @extends {#frontend-dev-guide-javascript-js-coding-docblock-extends}
 
 Used with `@constructor` to indicate that a class inherits from another class.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * Immutable empty node list.
@@ -157,14 +157,14 @@ project.MyClass.EmptyNodeList = function() {
     // ...
 };
 
-{% endhighlight%}
+```
 
 
 #### @interface {#frontend-dev-guide-javascript-js-coding-docblock-interface}
 
 Used to indicate that the function defines an interface.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * A shape.
@@ -183,13 +183,13 @@ Shape.prototype.draw = function() {};
 function Polygon() {};
 Polygon.prototype.getSides = function() {};
 
-{% endhighlight%}
+```
 
 #### @implements {#frontend-dev-guide-javascript-js-coding-docblock-implements}
 
 Used with `@constructor` to indicate that a class implements an interface.
 
-{% highlight javascript %}
+```
 
 /**
  * A shape.
@@ -208,7 +208,7 @@ Square.prototype.draw = function() {
     // ...
 };
 
-{% endhighlight%}
+```
 
 #### @lends {#frontend-dev-guide-javascript-js-coding-docblock-lends}
 
@@ -218,7 +218,7 @@ Please note that the name in braces is not a type name like in other annotations
 
 Please refer to <a href ="https://code.google.com/p/jsdoc-toolkit/wiki/TagLends" target="_blank">JSDoc Toolkit</a> for more information about this annotation.
 
-{% highlight javascript %}
+```javascript
 
 project.MyClass.extend(
     Button.prototype,
@@ -227,13 +227,13 @@ project.MyClass.extend(
     }
 );
 
-{% endhighlight%}
+```
 
 #### @override {#frontend-dev-guide-javascript-js-coding-docblock-override}
 
 Indicates that a method or property of a subclass intentionally hides a method or property of the superclass. If no other documentation is included, the method or property also inherits documentation from its superclass.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * @return {string} Human-readable representation of project.SubClass.
@@ -243,7 +243,7 @@ project.SubClass.prototype.toString() {
     // ...
 };
 
-{% endhighlight%}
+```
 
 #### @param {#frontend-dev-guide-javascript-js-coding-docblock-param}
 
@@ -251,7 +251,7 @@ Used with method, function and constructor calls to document the arguments of a 
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the parameter.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * Queries a Storage for items.
@@ -264,7 +264,7 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
    // ...
 };
 
-{% endhighlight%}
+```
 
 #### @return {#frontend-dev-guide-javascript-js-coding-docblock-return}
 
@@ -272,7 +272,7 @@ Used with method and function calls to document the return type. When writing de
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the return value.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * @return {string} The hex ID of the last item.
@@ -282,13 +282,13 @@ namespace.Storage.prototype.getLastId = function() {
     return id;
 };
 
-{% endhighlight%}
+```
 
 #### @this {#frontend-dev-guide-javascript-js-coding-docblock-this}
 
 The type of the object in whose context a particular method is called. Required when the this {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} is referenced from a function that is not a prototype method.
 
-{% highlight javascript %}
+```javascript
 
 pinto.chat.RosterWidget.extern('getRosterElement',
     /**
@@ -302,13 +302,13 @@ pinto.chat.RosterWidget.extern('getRosterElement',
     }
 );
 
-{% endhighlight%}
+```
 
 #### @type {#frontend-dev-guide-javascript-js-coding-docblock-type}
 
 Identifies the type of a variable, property, or expression.
 
-{% highlight javascript %}
+```javascript
 
 /**
  * The message hex ID.
@@ -317,13 +317,13 @@ Identifies the type of a variable, property, or expression.
  */
 var hexId = hexId;
 
-{% endhighlight%}
+```
 
 #### @typedef {#frontend-dev-guide-javascript-js-coding-docblock-typedef}
 
 This annotation can be used to declare an alias of a more complex type.
 
-{% highlight javascript %}
+```javascript
 
 /** @typedef {(string|number)} */
 namespace.NumberLike;
@@ -333,7 +333,7 @@ namespace.readNumber = function(x) {
     // ...
 }
 
-{% endhighlight%}
+```
 
 
 ### JavaScript types {#frontend-dev-guide-javascript-js-coding-docblock-jstypes}
