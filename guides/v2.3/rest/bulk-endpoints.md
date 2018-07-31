@@ -9,13 +9,10 @@ functional_areas:
   - Integration
 ---
 
-Bulk API endpoints differ from other endpoints in that they combine multiple calls of the same type as an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.
+Bulk API endpoints differ from other endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.
 
-{%
-include note.html
-type='info'
-content='GET requests are not supported.'
-%}
+{:.bs-callout .bs-callout-tip}
+GET requests are not supported.
 
 ### Routes
 
@@ -74,11 +71,8 @@ The payload of a bulk request contains an array of request bodies. For example, 
 ]
 ```
 
-{%
-include note.html
-type='info'
-content='The second and third requests are duplicates.'
-%}
+{:.bs-callout .bs-callout-tip}
+The second and third requests are duplicates.
 
 ### Responses
 
