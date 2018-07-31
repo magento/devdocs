@@ -61,7 +61,7 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Determines whether to clean the existing [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) before deploying updated static content generated during the build or deploy phase. We recommend the default value _true_ in development. The supported values are `true` and `false`.
+Determines whether to clean the existing [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) before deploying updated static content generated during the build or deploy phase. We recommend the default value _true_ in development. When this variable is set to `false`, previously existing static content files are overwritten only if a newer version is being generated.
 
 If you create static content using another process outside of Magento, you might want to change the value to `false` to keep the content from getting deleted by Magento static content deployments.
 
