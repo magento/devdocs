@@ -304,7 +304,7 @@ Following are some examples of various types and what they would look like in th
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
-<h2 id="forced-parameters">Forcing Request Paramters</h2>
+<h2 id="forced-parameters">Forcing Request Parameters</h2>
 <p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
    always used. For instance, in the example "/V1/customers/me/billingAddress" route above, the <code>customerId</code>
    parameter is forced to match the ID of the currently logged in user.</p>
