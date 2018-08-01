@@ -290,7 +290,7 @@ Attribute|Type|Use|Description
 ```xml
 <attachFile userInput="image.png" selector="input#imgUpload" stepKey="uploadFile"/>
 ```
-This action would upload a file with the name of `image.png` to an input with the id of `imgUpload`.
+This action would upload a file in the `tests/_data` directory with the name of `image.png` to an input with the id of `imgUpload`.
 
 ### cancelPopup
 
@@ -484,7 +484,7 @@ Attribute|Type|Use|Description
 <amOnPage url="/login" stepKey="goToLoginPage"/>
 <comment userInput="I am on the login page" stepKey="loginPageComment"/>
 ```
-This action will leave a comment of "I am on the login page" after the `amOnPage` action in the generated PHP file.
+This action will leave a comment of "I am on the login page" after the `amOnPage` action in the generated PHP file and will be displayed in test execution.
 
 ### conditionalClick
 
