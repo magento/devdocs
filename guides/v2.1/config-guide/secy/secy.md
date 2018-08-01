@@ -14,5 +14,5 @@ functional_areas:
 ---
 
 ## Security settings
-*	<a href="{{ page.baseurl }}/config-guide/secy/secy-cron.html">Secure cron.php</a>
-*	<a href="{{ page.baseurl }}/config-guide/secy/secy-xframe.html">X-Frame-Options header</a>
+*	[Secure cron.php]({{ page.baseurl }}/config-guide/secy/secy-cron.html)
+*	[X-Frame-Options header]({{ page.baseurl }}/config-guide/secy/secy-xframe.html)
