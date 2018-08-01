@@ -153,7 +153,7 @@ This step shows how to verify the custom cron job successfully using a SQL query
 1.  Run Magento cron jobs:
 
         php /var/www/html/magento2/bin/magento cron:run
-2.  Enter the `magento cron:run` command two or three times. 
+2.  Enter the `magento cron:run` command two or three times.
 
     The first time you enter the command, it queues jobs; subsequently, the cron jobs are run. You must enter the command _at least_ twice.
 2.  Run the SQL query `SELECT * from cron_schedule WHERE job_code like '%custom%'` as follows:
@@ -210,6 +210,7 @@ This step shows how to optionally set up a custom cron group. You should set up 
         <history_cleanup_every>10</history_cleanup_every>
         <history_success_lifetime>60</history_success_lifetime>
         <history_failure_lifetime>600</history_failure_lifetime>
+        <use_separate_process>1</use_separate_process>
     </group>
 </config>
 {% endhighlight %}
@@ -242,4 +243,3 @@ This step shows how to verify your custom cron group using the {% glossarytoolti
 
 
 {% endcollapsible %}
-

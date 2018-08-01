@@ -18,46 +18,44 @@ functional_areas:
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-install-magento-prereq}
-Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
+Before you use this command, you must [install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html).
 
 ## Update the Magento software {#instgde-install-magento-update}
 To update the Magento software:
 
 *	If you installed the software from an archive or if you used 'composer-create-project', use the Component Manager or System Upgrade utilities.
-*	If you are a contributing developer (that is, you used `git clone`), see <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
+*	If you are a contributing developer (that is, you used `git clone`), see [Contributing developers—update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 ## Reinstall the Magento software {#instgde-install-magento-reinstall}
 This section discusses how to uninstall and then reinstall the Magento software with the latest version.
 
 The way you reinstall the Magento application from the command line depends on your role:
 
-*	If you installed the software from an archive or if you used 'composer-create-project', see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.
-*	If you're a contributing developer (that is, you started using `composer clone`), see <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Contributing developers&mdash;update, reinstall Magento</a>.
+*	If you installed the software from an archive or if you used 'composer-create-project', see [Reinstall as a system integrator](#instgde-install-reinst-update-sys).
+*	If you're a contributing developer (that is, you started using `composer clone`), see [Contributing developers—update, reinstall Magento]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 
 ### Reinstall as a system integrator {#instgde-install-reinst-update-sys}
 To reinstall the Magento software as a system integrator:
 
-1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.
+1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the [switch to the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
 		git pull origin develop
 		php bin/magento setup:uninstall
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
-  				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
+	<div class="bs-callout bs-callout-info" markdown="1">
+	*   If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
+	*   To use your existing Magento software version , omit the `git pull origin develop` command.
 	</div>
-
 3.	Install the Magento software:
 
-	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
-	*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
+	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
+	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 ## Uninstall the Magento software {#instgde-install-uninstall}
 Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var`.
@@ -85,8 +83,8 @@ However, in some situations (particularly, deploying Magento to production), you
 
 6.	Install the Magento software:
 
-	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
-	*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
+	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
+	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

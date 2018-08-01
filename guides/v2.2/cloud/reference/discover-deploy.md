@@ -74,6 +74,7 @@ Integration build and deployment consists of the following phases:
 For detailed instructions, see [Build and deploy full steps](#steps).
 
 ### Phase 1: Code and configuration validation {#cloud-deploy-over-phases-conf}
+
 When you initially set up a project from a template, we retrieve the code from the [the {{site.data.var.ee}} template](https://github.com/magento/magento-cloud){:target="\_blank"}. This code repo is cloned to your project as the `master` branch.
 
 -  **For Starter**—`master` branch is your Production environment.
@@ -107,6 +108,7 @@ At this point, the cluster has not been created yet, so you should not try to co
 After the application builds, it is mounted on a **read-only file system**. You can configure specific mount points that are going to be read/write. You cannot FTP to the server and add modules. Instead, you must add code to your local repository and run `git push`, which builds and deploys the environment. For the project structure, see [Local project directory structure]({{ page.baseurl }}/cloud/project/project-start.html).
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
+
 The result of the build phase is a read-only file system referred to as a *slug*. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service did not change, it uses the slug from the archive.
 
 -  Makes continuous integration build faster by reusing unchanged code
@@ -122,6 +124,7 @@ The slug includes all files and folders **excluding the following** mounts confi
 -  `"pub/static": "shared:files/static"`
 
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
+
 Now we provision your applications and all of the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you need:
 
 -  Mounts each service in a container (web server, Elasticsearch, RabbitMQ)
@@ -131,7 +134,9 @@ Now we provision your applications and all of the {% glossarytooltip 74d6d228-34
 {:.bs-callout .bs-callout-info}
 Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are _read-only_. A read-only system guarantees deterministic deployments and dramatically improves your site security because no process can write to the file system. It also works to ensure your code is identical in the Integration, Staging, and Production environments.
 
+
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
+
 {:.bs-callout .bs-callout-info}
 This phase puts the application in maintenance mode until deployment is complete.
 
@@ -156,6 +161,7 @@ There are two default deploy hooks. The `pre-deploy.php` hook completes necessar
 Our deploy script uses the values defined by configuration files in the `.magento` directory, then the script deletes the directory and its contents. Your local development environment is not affected.
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
+
 While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic arrives at your newly created cluster.
 
 Successful deployment removes the maintenance mode to allow for normal access and creates backup (BAK) files for the `app/etc/env.php` and the `app/etc/config.php` configuration files.
@@ -165,6 +171,7 @@ If you enabled static content generation using the `SCD_ON_DEMAND` variable and 
 To review build and deploy logs, see [Use logs for troubleshooting]({{ page.baseurl }}/cloud/trouble/environments-logs.html).
 
 ### Build and deploy full steps {#steps}
+
 With an understanding of the process, we provide the following instructions for build and deploy for your local, Integration, Staging, and finally Production:
 
 -  [Build and deploy to your local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
