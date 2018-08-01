@@ -51,7 +51,7 @@ The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 To install MySQL 5.7 on Ubuntu 16:
 
-1.	Enter the following command:
+1. Enter this command:
 
 		sudo apt install -y mysql-server mysql-client
 
@@ -59,11 +59,11 @@ To install MySQL 5.7 on Ubuntu 16:
 
         sudo service mysql start
 
-3.	Secure the installation.
+3. Secure the installation:
 
 		sudo mysql_secure_installation
 
-4.	Test the installation by entering the following command:
+4. Test the installation:
 
 		mysql -u root -p
 
@@ -83,16 +83,16 @@ To install MySQL 5.7 on Ubuntu 16:
 
 		mysql>
 
-5.	If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} that is larger than the default, 16MB.
+5. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} that is larger than the default, 16MB.
 
 	{% include install/mysql_max-allowed-packet-ubuntu.md %}
 
-6.	[Configure the Magento database instance](#instgde-prereq-mysql-config).
+6. [Configure the Magento database instance](#instgde-prereq-mysql-config).
 
 ### Installing MySQL 5.6 on Ubuntu 14 {#instgde-prereq-mysql56ubu14}
 To install MySQL 5.6 on Ubuntu 14:
 
-1.	Enter the following command:
+1. Enter this command:
 
 		apt-get -y install mysql-server-5.6 mysql-client-5.6
 
@@ -100,11 +100,11 @@ To install MySQL 5.6 on Ubuntu 14:
 
         sudo service mysql start
 
-3.	Secure the installation.
+3. Secure the installation:
 
 		mysql_secure_installation
 
-4.	Test the installation by entering the following command:
+4. Test the installation by entering the following command:
 
 		mysql -u root -p
 
@@ -124,17 +124,17 @@ To install MySQL 5.6 on Ubuntu 14:
 
 		mysql>
 
-5.	If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} that is larger than the default, 16MB.
+5. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} that is larger than the default, 16MB.
 
 	{% include install/mysql_max-allowed-packet-ubuntu.md %}
 
-6.	[Configure the Magento database instance](#instgde-prereq-mysql-config).
+6. [Configure the Magento database instance](#instgde-prereq-mysql-config).
 
 ### Installing MySQL 5.6 on Ubuntu 12 {#instgde-prereq-mysql56ubu12}
 
 To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubuntu.com](http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04){:target="&#95;blank"}.
 
-1.	Enter the following commands in the order shown:
+1. Enter the following commands in the order shown:
 
 		apt-get -y update
 		apt-add-repository ppa:ondrej/mysql-5.6
@@ -145,11 +145,11 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
         sudo service mysql start
 
-3.	Secure the installation.
+3. Secure the installation:
 
 		mysql_secure_installation
 
-4.	Test the installation by entering the following command:
+4. Test the installation by entering the following command:
 
 		mysql -u root -p
 
@@ -169,11 +169,11 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
 		mysql>
 
-5.	If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} that is larger than the default, 16MB.
+5. If you expect to import large numbers of products into Magento, you can increase the value for [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} that is larger than the default, 16MB.
 
 	{% include install/mysql_max-allowed-packet-ubuntu.md %}
 
-6.	[Configure the Magento database instance](#instgde-prereq-mysql-config).
+6. [Configure the Magento database instance](#instgde-prereq-mysql-config).
 
 ## Installing and configuring MySQL 5.7 on CentOS {#instgde-prereq-mysql57-centos}
 This section discusses how to install MySQL 5.7 on CentOS 6 or CentOS 7.
@@ -202,12 +202,12 @@ As a user with `root` privileges, enter the following commands in the order show
 Continue with the next section.
 
 ### Install and configure MySQL 5.7 on CentOS 6 or 7 {#mysql57-centos-config}
-1.	Enter the following commands in the order shown:
+1. Enter the following commands in the order shown:
 
 		yum -y install mysql-community-server
 		service mysqld start
 
-2.	Verify the version using the following command:
+2. Verify the version using the following command:
 
 		mysql --version
 
@@ -215,41 +215,41 @@ Continue with the next section.
 
 		mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
 
-3.	Enter the following command to get the temporary database `root` user password:
+3. Enter the following command to get the temporary database `root` user password:
 
 		grep 'temporary password' /var/log/mysqld.log
-4.	Enter the following command to secure the installation:
+4. Enter the following command to secure the installation:
 
 		mysql_secure_installation
 
 	Follow the prompts on your screen to set a new password and configure other options.
-5.	Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
+5. Configure MySQL 5.7 as discussed in [Configuring the Magento database instance](#instgde-prereq-mysql-config).
 
 ## Installing and configuring MySQL 5.6 on CentOS {#instgde-prereq-mysql-centos}
 The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux](http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/){:target="&#95;blank"}.
 
-1.	*CentOS 6* Install the MySQL database:
+1. *CentOS 6* Install the MySQL database:
 
 		yum -y update
 		sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
 		sudo yum -y install mysql-server
 
-2.	*CentOS 7* Install the MySQL database:
+2. *CentOS 7* Install the MySQL database:
 
 		yum -y update
 		sudo wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el7-5.noarch.rpm
 		sudo yum -y install mysql-server
 
 
-2.	Start MySQL.
+2. Start MySQL:
 
 		service mysqld start
 
-3.	Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
+3. Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
 
 		mysql_secure_installation
 
-4.	Verify the MySQL server version.
+4. Verify the MySQL server version.
 
 		mysql -u root -p
 
@@ -267,37 +267,37 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 
 		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-5.	If you expect to import large numbers of products into Magento, you can configure MySQL to use the [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} parameter. We recommend a value of at least 16MB.
+5. If you expect to import large numbers of products into Magento, you can configure MySQL to use the [`max_allowed_packet`](http://dev.mysql.com/doc/refman/5.6/en/program-variables.html){:target="&#95;blank"} parameter. We recommend a value of at least 16MB.
 
 	{% include install/mysql_max-allowed-packet-centos.md %}
 
-6.	Configure the Magento database instance as discussed in the next section.
+6. Configure the Magento database instance as discussed in the next section.
 
 ## Configuring the Magento database instance {#instgde-prereq-mysql-config}
 This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance.
 
 To configure a MySQL database instance:
 
-1.	Log in to your database server as any user.
-2.	Enter the following command to get to a MySQL command prompt:
+1. Log in to your database server as any user.
+2. Enter the following command to get to a MySQL command prompt:
 
 		mysql -u root -p
 
-3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
+3. Enter the MySQL `root` user's password when prompted.
+4. Enter the following commands in the order shown to create a database instance named `magento` with username `magento`:
 
 		create database magento;
 		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 
-5.	Enter `exit` to quit the command prompt.
+5. Enter `exit` to quit the command prompt.
 
-6.	Verify the database:
+6. Verify the database:
 
 		mysql -u magento -p
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
-7.	If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
+7. If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:
