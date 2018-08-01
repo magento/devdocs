@@ -104,7 +104,7 @@ To install MySQL 5.6 on Ubuntu 14:
 
 		mysql_secure_installation
 
-4. Test the installation by entering the following command:
+4. Test the installation:
 
 		mysql -u root -p
 
@@ -149,7 +149,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
 		mysql_secure_installation
 
-4. Test the installation by entering the following command:
+4. Test the installation:
 
 		mysql -u root -p
 
@@ -207,7 +207,7 @@ Continue with the next section.
 		yum -y install mysql-community-server
 		service mysqld start
 
-2. Verify the version using the following command:
+2. Verify the version:
 
 		mysql --version
 
@@ -215,10 +215,10 @@ Continue with the next section.
 
 		mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
 
-3. Enter the following command to get the temporary database `root` user password:
+3. Get the temporary database `root` user password:
 
 		grep 'temporary password' /var/log/mysqld.log
-4. Enter the following command to secure the installation:
+4. Secure the installation:
 
 		mysql_secure_installation
 
@@ -249,7 +249,7 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 
 		mysql_secure_installation
 
-4. Verify the MySQL server version.
+4. Verify the MySQL server version:
 
 		mysql -u root -p
 
@@ -279,7 +279,7 @@ This section discusses how to create a new database instance for Magento. Althou
 To configure a MySQL database instance:
 
 1. Log in to your database server as any user.
-2. Enter the following command to get to a MySQL command prompt:
+2. Get to a MySQL command prompt:
 
 		mysql -u root -p
 
