@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
-<h2 id="modal_overview">Overview</h2>
+## Overview {#modal_overview}
 
 The Magento modal {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
@@ -32,7 +32,7 @@ The widget uses the following templates:
 
 The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a> 
 
-<h2 id="modal_initialize">Initialize the modal widget</h2>
+## Initialize the modal widget {#modal_initialize}
 
 To initialize the widget in your script, use the following general notation:
 <pre>
@@ -45,7 +45,7 @@ $('#modal_content').modal({
 
 For details about how to initialize the widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
-<h2 id="modal_options">Options</h2>
+## Options {#modal_options}
 The modal widget has the following options:
 <ul>
 <li><a href="#modal_autoopen">autoOpen</a></li>
@@ -61,14 +61,14 @@ The modal widget has the following options:
 </ul>
 
 
-<h3 id="modal_autoopen">autoOpen</h3>
+### autoOpen {#modal_autoopen}
 Automatically open the modal window when the widget is initialized.
 
 **Type**: Boolean 
 
 **Default value**: `false`
 
-<h3 id="modal_buttons"><code>buttons</code></h3>
+### <code>buttons</code> {#modal_buttons}
 Array of buttons for action pane.
 
 **Type**: Array 
@@ -93,7 +93,7 @@ buttons: [{
 }]
 </pre>
 
-<h3 id="modal_clickableOverlay">clickableOverlay</h3>
+### clickableOverlay {#modal_clickableOverlay}
 Close the modal window when a user clicks on the overlay.
 
 **Type**: Boolean 
@@ -101,7 +101,7 @@ Close the modal window when a user clicks on the overlay.
 **Default value**: `true`
 
 
-<h3 id="modal_focus"><code>focus</code></h3>
+### <code>focus</code> {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
 
@@ -110,35 +110,35 @@ Selector to focusing when a modal window opens or 'none' if focusing is not nece
 **Default value**: `''`
 
 
-<h3 id="modal_innerScroll"><code>innerScroll</code></h3>
+### <code>innerScroll</code> {#modal_innerScroll}
 Modal scroll position.
 
 **Type**: Boolean 
 
 **Default value**: `false`
 
-<h3 id="modal_modalClass"><code>modalClass</code></h3>
+### <code>modalClass</code> {#modal_modalClass}
 Custom classes for modal window.
 
 **Type**: String 
 
 **Default value**: empty
 
-<h3 id="modal_modalLeftMargin"><code>modalLeftMargin</code></h3>
+### <code>modalLeftMargin</code> {#modal_modalLeftMargin}
 Sets a margin between slide modal windows.
 
 **Type**: Number 
 
 **Default value**: 45
 
-<h3 id="modal_responsive"><code>responsive</code></h3>
+### <code>responsive</code> {#modal_responsive}
 Turn popup modal window to slide panel on small screens. Available if the `type` option is set to `modal`.
 
 **Type**: Boolean 
 
 **Default value**: `false`
 
-<h3 id="modal_title"><code>title</code></h3>
+### <code>title</code> {#modal_title}
 Translated title for popup window.
 
 **Type**: String 
@@ -146,7 +146,7 @@ Translated title for popup window.
 **Default value**: empty
 
 
-<h3 id="modal_type"><code>type</code></h3>
+### <code>type</code> {#modal_type}
 
 The type of window: popup or slide.
 
@@ -154,21 +154,21 @@ The type of window: popup or slide.
 
 **Default value**: `popup`
 
-<h2 id="modal_methods">Methods</h2>
+## Methods {#modal_methods}
 The modal widget has the following methods:
 <ul>
 <li><a href="#modal_close">closeModal()</a></li>
 <li><a href="#modal_open">openModal()</a></li>
 </ul>
 
-<h3 id="modal_open"><code>openModal()</code></h3>
+### <code>openModal()</code> {#modal_open}
 Open the modal window.
 
 
-<h3 id="modal_close"><code>closeModal()</code></h3>
+### <code>closeModal()</code> {#modal_close}
 Close the modal window.
 
-<h2 id="modal_events">Events</h2>
+## Events {#modal_events}
 
 The modal widget is subscribed to the following events:
 <ul>
@@ -197,18 +197,18 @@ $('#modal_content').modal({
 });
 </pre>
 
-<h3 id="modal_closed"><code>closed</code></h3>
+### <code>closed</code> {#modal_closed}
 Called when the modal window is closed.
 
-<h3 id="modal_opened"><code>opened</code></h3>
+### <code>opened</code> {#modal_opened}
 Called when the modal window is opened.
 
-<h3 id="modal_opened"><code>always</code></h3>
+### <code>always</code> {#modal_opened}
 ....
 
 
 
-<h2 id="key_navigation">Keyboard navigation</h2>
+## Keyboard navigation {#key_navigation}
 - the ESC key: close the current modal window
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)

@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
-<h2 id="practice_overview">Overview</h2>
+## Overview {#practice_overview}
 This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
 
 ## Customize a default Magento jQuery widget
@@ -26,7 +26,7 @@ The high-level steps for this task are the following:
 
 Let's look at each step in more detail.
 
-<h3 id="define_script1">Step 1: Define how the message is output</h3>
+### Step 1: Define how the message is output {#define_script1}
 
 OrangeCo needs to define how the message is output. To do this, they take the following steps:
 
@@ -49,7 +49,7 @@ To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get
 
 <img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
-<h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
+### Step 2: Add the custom widget extending the gallery widget {#add_code1}
 
 In the `app/design/OrangeCo/orange/web/js` OrangeCo adds `orange-gallery.js` with the following content:
 <pre>
@@ -69,7 +69,7 @@ define([
 });
 </pre>
 
-<h3 id="config1">Step 3: Update the RequireJS configuration</h3>
+### Step 3: Update the RequireJS configuration {#config1}
 OrangeCo adds the custom `app/design/OrangeCo/orange/requirejs-config.js` with the following content:
 <pre>
 var config = {
@@ -83,7 +83,7 @@ var config = {
 
 The new behavior is applied once the store pages are reloaded.
 
-<h2 id="use_custom_widget">Add and use a custom widget (jCarousel)</h2>
+## Add and use a custom widget (jCarousel) {#use_custom_widget}
 OrangeCo wants to use the <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel widget</a> to display product images on product pages.
 The high level steps for this task are the following:
 

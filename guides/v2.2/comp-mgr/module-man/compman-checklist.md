@@ -11,10 +11,10 @@ functional_areas:
   - Upgrade
 ---
 
-<h2 id="compman-overview">Overview of the Module Manager</h2>
+## Overview of the Module Manager {#compman-overview}
 This section discusses how to start the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Manager, which updates or uninstalls *modules* (custom code that extends Magento capabilities)
 
-<h2 id="compman-prereq">Prerequisites</h2>
+## Prerequisites {#compman-prereq}
 Before continuing, complete all tasks discussed in <a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.
 
 ## Module Manager checklist

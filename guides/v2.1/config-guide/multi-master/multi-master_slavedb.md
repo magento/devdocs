@@ -22,7 +22,7 @@ Setting up database replication provides the following benefits:
 
 MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master. 
 
-<h2 id="config-ee-multidb-slave-conf">Configure database replication</h2>
+## Configure database replication {#config-ee-multidb-slave-conf}
 An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:
 
 *	<a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a>

@@ -41,7 +41,7 @@ Enter the following commands as a user with `root` privileges:
 		yum -y update
 		yum -y upgrade
 
-<h2 id="instgde-prereq-check">Prerequisite check</h2>
+## Prerequisite check {#instgde-prereq-check}
 
 To check your system for prerequisites, enter the following commands:
 
