@@ -48,7 +48,7 @@ The Magento application 2.1.2 and later are compatible with MySQL 5.7.
 
 To install MySQL 5.7 on Ubuntu 16:
 
-1.	Enter the following command:
+1.	Enter this command:
 
 		sudo apt install -y mysql-server mysql-client
 
@@ -56,7 +56,7 @@ To install MySQL 5.7 on Ubuntu 16:
 
         sudo service mysql start
 
-3.	Secure the installation.
+3.	Secure the installation:
 
 		sudo mysql_secure_installation
 
@@ -89,7 +89,7 @@ To install MySQL 5.7 on Ubuntu 16:
 ### Installing MySQL 5.6 on Ubuntu 14 {#instgde-prereq-mysql56ubu14}
 To install MySQL 5.6 on Ubuntu 14:
 
-1.	Enter the following command:
+1.	Enter this command:
 
 		apt-get -y install mysql-server-5.6 mysql-client-5.6
 
@@ -97,7 +97,7 @@ To install MySQL 5.6 on Ubuntu 14:
 
         sudo service mysql start
 
-3.	Secure the installation.
+3.	Secure the installation:
 
 		mysql_secure_installation
 
@@ -142,7 +142,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 
         sudo service mysql start
 
-3.	Secure the installation.
+3.	Secure the installation:
 
 		mysql_secure_installation
 
@@ -204,7 +204,7 @@ Continue with the next section.
 		yum -y install mysql-community-server
 		service mysqld start
 
-2.	Verify the version using the following command:
+2.	Verify the version:
 
 		mysql --version
 
@@ -212,10 +212,10 @@ Continue with the next section.
 
 		mysql  Ver 14.14 Distrib 5.7.12, for Linux (x86_64) using  EditLine wrapper
 
-3.	Enter the following command to get the temporary database `root` user password:
+3.	Get the temporary database `root` user password:
 
 		grep 'temporary password' /var/log/mysqld.log
-4.	Enter the following command to secure the installation:
+4.	Secure the installation:
 
 		mysql_secure_installation
 
@@ -238,15 +238,15 @@ The following procedure is based on [Install MySQL Server 5.6 in CentOS 6.x and 
 		sudo yum -y install mysql-server
 
 
-2.	Start MySQL.
+2.	Start MySQL:
 
 		service mysqld start
 
-3.	Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
+3.	Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration:
 
 		mysql_secure_installation
 
-4.	Verify the MySQL server version.
+4.	Verify the MySQL server version:
 
 		mysql -u root -p
 
@@ -276,7 +276,7 @@ This section discusses how to create a new database instance for Magento. Althou
 To configure a MySQL database instance:
 
 1.	Log in to your database server as any user.
-2.	Enter the following command to get to a MySQL command prompt:
+2.	Get to a MySQL command prompt:
 
 		mysql -u root -p
 
