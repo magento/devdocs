@@ -5,13 +5,15 @@ title: Data fixture annotation
 github_link: /test/integration/annotations/magentoDataFixture.md
 ---
 
-> "One of the most time-consuming parts of writing tests is writing the code to set the world up in a known state and then return it to its original state when the test is complete.
-This known state is called the fixture of the test." http://www.phpunit.de/manual/current/en/fixtures.html
-
-Using data fixtures for integration tests is an elegant solution (at least versus writing a bunch of "undo" code in a test) to prepare database data as a precondition for a specific test or test case and then revert it automatically.
-Annotation `@magentoDataFixture` is used for that purpose.
+Use data fixtures in integration tests to prepare the database for testing.
+The Integration Testing Framework reverts the database to its initial state automatically.
+A data fixture is a PHP script that sets data you want to reuse in your test.
+The script can be defined in a separate file or as a local method in the test case.
+To set up the date fixture, use the `@magentoDataFixture` annotation.
 
 ## Format
+
+`@magentoDataFixture` takes an argument that points to the data fixture as a filename a local method.
 
 > Data fixture annotation
 
@@ -22,31 +24,40 @@ Annotation `@magentoDataFixture` is used for that purpose.
  ```
  
 Here,
- * `<script_filename>` is a PHP script filename
+ * `<script_filename>` is a filename of the PHP script
  * `<method_name>` is a name of the method declared in the current class
  
-## Requirements
+## Principles
  
-Direct usage of a database connection is prohibited in fixtures because this introduces dependency on the database structure and potentially on the database vendor.
-Only the application (model) API should be used to implement data fixture scripts or methods.
+1. Do not use direct connection to a database in fixtures.
+It introduces a dependency on the database structure and potentially on the database vendor.
+
+2. Use the application (model) API to implement your data fixtures.
  
 ## Usage
  
-Fixtures can be declared in two different ways:
-* as a PHP script file, which can be reused by multiple tests
-* as a method of a test case class
- 
-### Fixture script file
- 
-The integration testing framework supports data fixtures as dedicated PHP scripts that can be reused by multiple tests.
- 
-A fixture script declaration specifies filename:
-* relatively to the dev/tests/integration/testsuite directory
-* containing only forward slashes ("/") with no preceding slash
+Fixtures can be declared in two ways:
 
-The designated file is included as a PHP-script and executed.
+- as a PHP script file that is used by other tests and test cases.
+- as a local method that is used by other tests in the test cases.
+ 
+### Fixture as a separate file
+ 
+Define the fixture in a separate file when you want to reuse it in different test cases.
+ 
+To declare the fixture, use the following convention:
+* a path that is relative to the `dev/tests/integration/<testsuite directory>`
+* containing only forward slashes `/` with no preceding slash. Example: `Magento/Core/Model/Layout/_files/layout_custom_handle.php`
 
-> Fixture Script File Content
+The ITF includes the declared PHP script to your test and executes it during test run.
+
+#### Example
+
+__Use case__: Verify the `getSortOrder()` method that gets the value of `sort_order`.
+
+Create a data fixture as a separate file called `layout_custom_handle.php` that sets `sort_order` to `456`.
+
+> The `layout_custom_handle.php` file content:
 
 ```php?start_inline=1
 <?php
@@ -59,9 +70,9 @@ $model->setData(array(
 $model->save();
 ```
 
-To include this file, specify it for a test or test case as follows:
+Declare the fixture in your test case using the `@magentoDataFixture` annotation.
 
-> Fixture Script File Usage
+> The test case that uses the data fixture:
 
 ```php?start_inline=1
 /**
@@ -79,7 +90,7 @@ class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
 }
 ```
 
-### Fixture method
+### Fixture as a method
 
 A method of the current test case class must be declared as `public` and `static`.
 
@@ -99,7 +110,7 @@ class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
         $model->setData(array(
             'handle'     => 'default',
             'xml'        => '<layout/>',
-            'sort_order' => 123,
+            'sort_order' => 123
         ));
         $model->save();
         self::$_modelId = $model->getId();
@@ -117,15 +128,17 @@ class Magento_Core_Model_Layout_UpdateTest extends PHPUnit_Framework_TestCase
 
 ### Fixture per Test vs. per Test Case
 
-The @magentoDataFixture can be specified for a particular test or for an entire test case. The basic rules for fixture annotation on these different levels are:
+The `@magentoDataFixture` can be specified for a particular test or for an entire test case.
+The basic rules for fixture annotation on these different levels are:
 
-Fixtures declared at the test level have priority over fixtures declared at the test case level.
-Tests inherit test case fixtures, unless a test has its own specifically declared fixtures.
-Declarations on the test case level don't affect tests with their own fixture annotation.
-The algorithm responsible uses the following logic:
+- Fixtures declared at the test level have priority over fixtures declared at the test case level.
+- Tests inherit test case fixtures, unless a test has its own specifically declared fixtures.
+- Declarations on the test case level don't affect tests with their own fixture annotation.
 
-If @magentoDataFixture appears in a doc comment for a particular test, the framework reverts all applied fixtures (if any) and applies the prescribed method-level ones. Upon a test completion, test-level fixtures are reverted.
-If @magentoDataFixture appears in a doc comment for an entire test case, the framework applies the prescribed fixtures before every test of the test case, which declares no method-level fixtures, if class-level fixtures have not been applied yet (or have been already reverted). After the final test of the test case, all class-level fixtures are reverted.
+The responsible algorithm uses the following logic:
+
+- If `@magentoDataFixture` appears in a doc comment for a particular test, the framework reverts all applied fixtures (if any) and applies the prescribed method-level ones. Upon a test completion, test-level fixtures are reverted.
+- If `@magentoDataFixture` appears in a doc comment for an entire test case, the framework applies the prescribed fixtures before every test of the test case, which declares no method-level fixtures, if class-level fixtures have not been applied yet (or have been already reverted). After the final test of the test case, all class-level fixtures are reverted.
 The integration testing framework uses DB transactions to revert applied fixtures.
 
 ### Fixture Rollbacks
