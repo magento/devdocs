@@ -10,7 +10,7 @@ redirect_from: /guides/v1.0/migration/migration-overview-how.html
 
 This document uses the following terminology to discuss the Data Migration Tool:
 
-* **Step** - unique migration task that must be executed in a prescribed order
+* **Step** - unique migration task that must be executed in a fprescribed order
 * **Map** - set of rules that describe connections between Magento 1.x and Magento 2.x data structures
 * **Mode** - represented by a separate Data Migration Tool command; defines the basic mode of operation as:
   * *Settings* - migrates the system configuration and website-related settings

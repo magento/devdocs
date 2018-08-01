@@ -78,28 +78,28 @@ To illustrate, assume there is a theoretical `RequestInterface` with two methods
 
 For example:
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 interface RequestInterface
 {
     public function getPathInfo();
     public function getParam($name);
 }
-{%endhighlight%}
+```
 
 Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 class HttpRequest implements RequestInterface
 {
     public function getPathInfo() {...}
     public function getParam($name) {...}
     public function getParams() {...}
 }
-{%endhighlight%}
+```
 
 Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.  
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 class MyClass
 {
     /**
@@ -119,11 +119,11 @@ class MyClass
         }
     }
 }
-{%endhighlight%}
+```
 
 This completely defeats the purpose of the interface. A better solution might be the following:
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 public function doSomething()
 {
     foreach (['foo', 'bar'] as $paramName) {
@@ -131,7 +131,7 @@ public function doSomething()
         // ... some more code
     }
 }
-{%endhighlight%}
+```
 
 The second example method `doSomething()` does not call the `getParams()` method. 
 
@@ -172,25 +172,25 @@ Try to use a few getters as possible. Instead, use methods that tell the objects
 
 Consider moving the code in that needs the value into a class that has the data available as the following example shows:
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 function extractMatchingDocuments(Document $searchDoc, array $documents)
 {
     return array_filter($documents, function (Document $doc) use ($searchDoc){
         return $doc->getFieldValue() === $searchDoc->getFieldValue();
     });
 }
-{%endhighlight%}
+```
 
 The following example moves the comparison into a `matches()` method on the `Document` class instead.
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 function extractMatchingDocuments(Document $searchDoc, array $documents)
 {
     return array_filter($documents, function (Document $doc) use ($searchDoc){
         return $searchDoc->matches($doc);
     });
 }
-{%endhighlight%}
+```
 
 ### The Law of Demeter
 
@@ -204,13 +204,13 @@ The principle explicitly states that no method can be called on objects that are
 
 The following example violates the Law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
 
-{%highlight php startinline=true %}
+```php?start_inline=1
 function isJsonResponse(Response $response)
 {
     $headers = $response->getHeaders();
     return $headers->getByName('Content-Type') === 'application/json';
 }
-{%endhighlight%}
+```
 
 The solution is to add the method `isJsonResponse()` to the response object instead.
 

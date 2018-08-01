@@ -39,7 +39,7 @@ To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instan
 
 Another way follows:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 class SomeModel
  {
      private $logger;
@@ -58,7 +58,7 @@ class SomeModel
          }
      }
  }
-{% endhighlight %}
+```
 
 The preceding example shows that `SomeModel` receives a `\Psr\Log\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it's logged to a method `critical` (`$this->logger->critical($e);`).
 

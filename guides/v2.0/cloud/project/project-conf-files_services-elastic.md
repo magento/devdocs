@@ -29,25 +29,25 @@ If you prefer using an existing search service, like Elasticsearch, instead of r
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
 To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
-{% highlight yaml %}
+```yaml
 elasticsearch:
    type: elasticsearch:1.7
    disk: 1024
-{% endhighlight %}
+```
 
 To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
 
-{% highlight yaml %}
+```yaml
 relationships:
     elasticsearch: "elasticsearch:elasticsearch"
-{% endhighlight %}
+```
 
 Merge and deploy the code to set the configurations for Elasticsearch. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ### Add Elasticsearch plugins {#addplugins}
 Optionally, you can add the plugins through the `.magento/services.yaml` file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
 
-{% highlight yaml %}
+```yaml
 elasticsearch:
    type: elasticsearch:1.7
    disk: 1024
@@ -55,11 +55,11 @@ elasticsearch:
     plugins:
       - analysis-icu
       - lang-python
-{% endhighlight %}
+```
 
 For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, you should add the following plugins:
 
-{% highlight yaml %}
+```yaml
 elasticsearch:
    type: elasticsearch:2.4
    disk: 1024
@@ -67,7 +67,7 @@ elasticsearch:
     plugins:
       - analysis-icu
       - analysis-phonetic
-{% endhighlight %}
+```
 
 The following are supported Elasticsearch plugins for version 2.4:
 
@@ -107,7 +107,7 @@ To verify this information used for configurations and settings:
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Elasticsearch:
 
-{% highlight bash %}
+```bash
 "elasticsearch" : [
       {
          "host" : "elasticsearch.internal",
@@ -116,7 +116,7 @@ The response includes all relationships for services and configuration data for 
          "port" : "9200"
       }
    ],
-{% endhighlight %}
+```
 
 ## Configure Elasticsearch for your site {#configure}
 The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.

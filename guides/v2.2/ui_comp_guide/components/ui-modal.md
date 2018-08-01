@@ -29,7 +29,7 @@ The modal UI component comprises the following files:
 
 Component's options are set in the configuration `.xml` file as follows:
 
-{%highlight xml%}
+```xml
  <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -40,7 +40,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </modal>
-{%endhighlight%}
+```
 
 Extends UiCollection configuration.
 
@@ -94,7 +94,7 @@ Modal-specific configuration:
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
-{%highlight xml%}
+```xml
 <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -153,7 +153,7 @@ The following sample is an example of the configuration for a simple modal windo
         </item>
     </argument>
 </button>
-{%endhighlight%}
+```
 
 
 ## Public API (JS)

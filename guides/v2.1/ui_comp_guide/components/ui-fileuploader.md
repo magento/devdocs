@@ -196,7 +196,7 @@ Fileuploader-specific configuration:
 
 Here is an example of how File Uploader component integrates with [Form]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html) component:
 
-{% highlight xml %}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     ...
     <fieldset name="foo">
@@ -220,4 +220,4 @@ Here is an example of how File Uploader component integrates with [Form]({{ site
         </field>
     </fieldset>
 </form>
-{% endhighlight %}
+```

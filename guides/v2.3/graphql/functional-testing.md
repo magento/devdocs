@@ -13,7 +13,7 @@ All GraphQL functional tests should inherit from the generic test case `Magento\
 
 The following test verifies that the schema returns the correct attribute type, given the `attribute_code` and corresponding `entity_type`.
 
-{% highlight php inline=true %}
+```php?start_inline=1
 namespace Magento\GraphQl\Catalog;
 
 use Magento\TestFramework\TestCase\GraphQlAbstract;
@@ -78,7 +78,7 @@ QUERY;
         $this->assertAttributeType($attributeTypes, $expectedAttributeCodes, $entityType, $response);
     }
 
-{% endhighlight %}
+```
 
 ## Using the default GraphQlQueryTest
 

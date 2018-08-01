@@ -10,7 +10,7 @@ redirect_from: /guides/v2.0/ui-library/ui-definition.html
 
 ---
 
-{% highlight XML %}
+```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
@@ -117,4 +117,4 @@ redirect_from: /guides/v2.0/ui-library/ui-definition.html
         </xs:complexContent>
     </xs:complexType>
 </xs:schema>
-{% endhighlight %}   
+```   

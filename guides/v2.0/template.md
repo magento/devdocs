@@ -115,14 +115,14 @@ See the markdown version of this file for examples.
 
 **Highlighted Code**
 
-{% highlight html %}
+```html
 <div class="collapsible">
   <h4 class="collapsible-title">Collapsible Title</h4>
   <div class="collapsible-content">
     <p>Put collapsible content here.</p>
   </div>
 </div>
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 

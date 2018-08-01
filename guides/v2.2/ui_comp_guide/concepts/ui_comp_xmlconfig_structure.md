@@ -165,7 +165,7 @@ This topic describes the basic elements used in XML configuration files for decl
 
 ## Example of the basic UI components configuration structure
 
-{%highlight xml%}
+```xml
 
 <form>
     <arguments name=“data”>
@@ -189,4 +189,4 @@ This topic describes the basic elements used in XML configuration files for decl
     </fieldset>
 </form>
 
-{%endhighlight%}
+```

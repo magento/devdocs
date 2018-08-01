@@ -21,13 +21,13 @@ A magic method, whose name is the same as the consumer name, is used as a callba
 
 The following shows a `crontab` group entry:
 
-{% highlight xml %}
+```xml
 <group id="default">
     <job name="consumerCustomerCreatedListener" instance="Magento\MessageQueue\Model\ConsumerRunner" method="customerCreatedListener">
         <schedule>0 0 * * *</schedule>
     </job>
 </group>
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-tip" id="info" markdown="1">
 How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.

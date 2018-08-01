@@ -22,13 +22,13 @@ The following shows a `crontab` configuration for running consumers in our imple
 
 */app/code/Magento/MessageQueue/etc/crontab.xml*
 
-{% highlight xml %}
+```xml
 ...
 <job name="consumers_runner" instance="Magento\MessageQueue\Model\Cron\ConsumersRunner" method="run">
     <schedule>* * * * *</schedule>
 </job>
 ...
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-tip" id="info" markdown="1">
 How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.
@@ -52,7 +52,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 
-{% highlight php %}
+```php
 ...
     'cron_consumers_runner' => array(
         'cron_run' => false,
@@ -63,7 +63,7 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
         )
     ),
 ...
-{% endhighlight %}
+```
 
 * `cron_run` - the option for enabling/disabling cron job `consumers_runner`, by default is true.
 * `max_messages` - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.

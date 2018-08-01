@@ -106,7 +106,7 @@ See [Varnish module collection](https://github.com/varnish/varnish-modules) for 
 The following code example shows the code that must be added to your VCL file to enable saint mode. Place the `import` statements and `backend` definitions at the top of the file.
 
 {% collapsible Click to show/hide %}
-{% highlight cpp %}
+```cpp
 
 import saintmode;
 import directors;
@@ -169,7 +169,7 @@ sub vcl_backend_response {
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 #### Final step

@@ -46,7 +46,7 @@ Copy `/dev/tests/functional/.htaccess.sample` to `/dev/tests/functional/.htacces
 
 In `nginx.conf`, add declaration blocks for each command listed in `/dev/tests/functional/.htaccess.sample` using the following example:
 
-{% highlight nginx %}
+```nginx
 
 location ~* ^/dev/tests/functional/utils($|/) {
     root $MAGE_ROOT;
@@ -66,7 +66,7 @@ location ~* ^/dev/tests/functional/utils($|/) {
         include        fastcgi_params;
     }
 
-{% endhighlight %}
+```
 
 
 [&lt;&lt; Adjust configuration]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html)

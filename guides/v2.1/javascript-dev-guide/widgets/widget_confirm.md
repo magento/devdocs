@@ -22,7 +22,7 @@ The confirmation widget can be initialized with or without binding to a certain 
 
 **Example1**: initialization on an element
 
-{% highlight js %}
+```js
 $('#confirm_init').confirm({
     title: 'Confirmation title',
     actions: {
@@ -31,10 +31,10 @@ $('#confirm_init').confirm({
         always: function(){}
     }
 });
-{% endhighlight %}
+```
 
 **Example2**: standalone initialization
-{% highlight js %}
+```js
 
 require([
     'Magento_Ui/js/modal/confirm'
@@ -51,7 +51,7 @@ require([
     });
 
 });
-{% endhighlight %}
+```
 
 
 For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
@@ -73,13 +73,13 @@ Widget callbacks.
 **Type**: Object
 
 **Default value**:
-{% highlight js %}
+```js
 actions: {
     confirm: function(){},
     cancel: function(){},
     always: function(){}
 }
-{% endhighlight %}
+```
 
 ### autoOpen {#confirm_autoopen}
 Automatically open the confirmation window when the widget is initialized.

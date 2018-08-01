@@ -51,7 +51,7 @@ Always use the `SerializerInterface` for serializing and unserializing.
 
 Declare `SerializerInterface` as a [constructor dependency]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get an instance of a serializer class.
 
-{% highlight php startinline %}
+```php?start_inline=1
 use Magento\Framework\Serialize\SerializerInterface;
 
 ...
@@ -67,11 +67,11 @@ public function __construct(SerializerInterface $serializer) {
   $this->serializer = $serializer;
 }
 
-{% endhighlight %}
+```
 
 \\
 The following example shows how to use a serializer's `serialize()` and `unserialize()` functions to store and retrieve array data from a cache:
-{% highlight php startinline %}
+```php?start_inline=1
 
 ...
 
@@ -111,7 +111,7 @@ public function loadDataFromCache()
 
 ...
 
-{% endhighlight %}
+```
 
 ## Backward Compatibility Note
 
@@ -124,7 +124,7 @@ If the interface does not exist or an earlier version of Magento 2 is being exec
 
 Here is an example:
 
-{% highlight php startinline %}
+```php?start_inline=1
 
 ```
 /**
@@ -142,6 +142,6 @@ Here is an example:
 }
 ```
 
-{% endhighlight %}
+```
 
 

@@ -63,7 +63,7 @@ With this service you can:
       <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
       <td>Array of items with a format according to <a href="{{ site.mage2200url }}app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
       <td>
-      {% highlight json %}
+      ```json
       [
           {
               "order_item_id": 1,
@@ -74,7 +74,7 @@ With this service you can:
           "qty": 0.5
           }
           ]
-      {% endhighlight %}
+      ```
       </td>
       <td>Optional (required, when invoice must contain particular order items.</td>
       <td><code>[]</code></td>
@@ -108,12 +108,12 @@ With this service you can:
       <td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
       <td>A format according to <a href="{{ site.mage2200url }}app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
       <td>
-      {% highlight json %}
+      ```json
       {
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
-      {% endhighlight %}
+      ```
       </td>
       <td>Optional</td>
       <td><code>null</code></td>
@@ -143,14 +143,14 @@ The service returns an identifier of the created Invoice.
 
 [`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/order/:orderId/invoice" method="POST">
     <service class="Magento\Sales\Api\InvoiceOrderInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -164,9 +164,9 @@ The service returns an identifier of the created Invoice.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/InvoiceOrderInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -176,9 +176,9 @@ The service returns an identifier of the created Invoice.
 
 {% collapsible Click to show/hide included code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/InvoiceOrder.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -186,11 +186,11 @@ The service returns an identifier of the created Invoice.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -283,7 +283,7 @@ With this service you can:
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+        ```json
         [
             {
                  "order_item_id": 1,
@@ -294,7 +294,7 @@ With this service you can:
             "qty": 0.5
             }
         ]
-        {% endhighlight %}
+        ```
       </td>
       <td>
         Optional (required, when a Credit Memo must contain
@@ -387,12 +387,12 @@ With this service you can:
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+        ```json
         {
             "comment": "The first Credit Memo",
             "is_visible_on_front": true
         }
-        {% endhighlight %}
+        ```
       </td>
       <td>
         Optional
@@ -415,13 +415,13 @@ With this service you can:
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+        ```json
         {
         "shipping_amount": 10.00,
         "adjustment_positive": 5.00,
         "adjustment_negative": 5.00
         }
-        {% endhighlight %}
+        ```
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
         area. If shipping amount is not specified, then shipping
@@ -453,14 +453,14 @@ The service returns an identifier of a created Credit Memo.
 
 [`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundInvoiceInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -474,9 +474,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -486,9 +486,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/RefundInvoice.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -496,11 +496,11 @@ The service returns an identifier of a created Credit Memo.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -587,7 +587,7 @@ With the RefundOrder service you can:
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+        ```json
         [
             {
                  "order_item_id": 1,
@@ -598,7 +598,7 @@ With the RefundOrder service you can:
                  "qty": 0.5
             }
         ]
-        {% endhighlight %}
+        ```
       </td>
       <td>
         Optional (required, when a Credit Memo must contain
@@ -666,12 +666,12 @@ With the RefundOrder service you can:
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+        ```json
         {
             "comment": "The first Credit Memo",
             "is_visible_on_front": true
         }
-        {% endhighlight %}
+        ```
       </td>
       <td>
         Optional
@@ -694,13 +694,13 @@ With the RefundOrder service you can:
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+        ```json
         {
         "shipping_amount": 10.00,
         "adjustment_positive": 5.00,
         "adjustment_negative": 5.00
         }
-        {% endhighlight %}
+        ```
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
         area. If shipping amount is not specified, then shipping
@@ -732,14 +732,14 @@ The service returns an identifier of a created Credit Memo.
 
 [`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/order/:orderId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundOrderInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -753,9 +753,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -765,9 +765,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/RefundOrder.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -775,11 +775,11 @@ The service returns an identifier of a created Credit Memo.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -831,7 +831,7 @@ With the ShipOrder service you can:
       <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
       <td>Array of items with a format according to <a href="{{ site.mage2200url }}app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
       <td>
-        {% highlight json %}
+        ```json
         [
             {
                 "order_item_id": 1,
@@ -842,7 +842,7 @@ With the ShipOrder service you can:
                 "qty": 0.5
             }
         ]
-        {% endhighlight %}
+        ```
       </td>
       <td>Optional (required, when a shipment document must contain particular order items)</td>
       <td><code>[]</code></td>
@@ -870,12 +870,12 @@ With the ShipOrder service you can:
         <a href="{{ site.mage2200url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
         interface.</td>
       <td>
-      {% highlight json %}
+      ```json
       {   
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
-      {% endhighlight %}
+      ```
       </td>
       <td> Optional </td>
       <td> <code>null</code> </td>
@@ -886,7 +886,7 @@ With the ShipOrder service you can:
       <td> Array of objects with a format according to
         <a href="{{ site.mage2200url }}app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
       <td>
-      {% highlight json %}
+      ```json
       [
           {
               "track_number": "132456789",
@@ -894,7 +894,7 @@ With the ShipOrder service you can:
               "carrier_code": "usps"
           }
       ]
-      {% endhighlight %}
+      ```
       </td>
       <td> Optional </td>
       <td> <code>[]</code> </td>
@@ -905,7 +905,7 @@ With the ShipOrder service you can:
       <td> Array of objects with a format according to
         <a href="{{ site.mage2200url }}app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
       <td>
-      {% highlight json %}
+      ```json
       [
           {
               "extension_attributes":
@@ -919,7 +919,7 @@ With the ShipOrder service you can:
               }
            }
       ]
-      {% endhighlight %}
+      ```
       </td>
       <td>Optional</td>
       <td><code>[]</code></td>
@@ -952,14 +952,14 @@ The service returns the identifier of a created shipment.
 
 [`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/order/:orderId/ship" method="POST">
     <service class="Magento\Sales\Api\ShipOrderInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -973,9 +973,9 @@ The service returns the identifier of a created shipment.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Api/ShipOrderInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -985,9 +985,9 @@ The service returns the identifier of a created shipment.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/app/code/Magento/Sales/Model/ShipOrder.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -995,11 +995,11 @@ The service returns the identifier of a created shipment.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 

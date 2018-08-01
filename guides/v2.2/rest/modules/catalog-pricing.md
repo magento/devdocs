@@ -61,7 +61,7 @@ You can set multiple special prices in a single call, as shown in the example be
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "prices": [
     {
@@ -88,7 +88,7 @@ You can set multiple special prices in a single call, as shown in the example be
   ]
 }
 
-{% endhighlight %}
+```
 
 **Response**
 
@@ -104,7 +104,7 @@ The following call returns the special price information for three SKU values.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "skus": [
     "24-WB06",
@@ -112,11 +112,11 @@ The following call returns the special price information for three SKU values.
     "24-WG080"
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
     {
         "price": 29.949999999999999,
@@ -140,7 +140,7 @@ The following call returns the special price information for three SKU values.
         "price_to": "2017-07-16 23:59:59"
     }
 ]
-{% endhighlight %}
+```
 
 ### Delete a special price
 
@@ -152,7 +152,7 @@ If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Mag
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "prices": [
     {
@@ -178,7 +178,7 @@ If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Mag
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -232,7 +232,7 @@ The `POST /V1/products/tier-prices` call adds new tier prices or updates existin
 
 **Payload**
 
-{% highlight json %}
+```json
 
 {
   "prices": [
@@ -262,7 +262,7 @@ The `POST /V1/products/tier-prices` call adds new tier prices or updates existin
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -280,7 +280,7 @@ The following example removes the $10 tier price for `sku` 24-UG04 and changes t
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "prices": [
     {
@@ -301,7 +301,7 @@ The following example removes the $10 tier price for `sku` 24-UG04 and changes t
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -317,18 +317,18 @@ Magento returns all active tier prices for the specified list of `skus`.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "skus": [
     "24-UG04",
     "24-UG01"
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
     {
         "price": 8,
@@ -363,7 +363,7 @@ Magento returns all active tier prices for the specified list of `skus`.
         "quantity": 3
     }
 ]
-{% endhighlight %}
+```
 
 ### Delete tier prices
 
@@ -375,7 +375,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "prices": [
     {
@@ -388,7 +388,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -435,7 +435,7 @@ The following example sets the base price for a simple and a downloadable produc
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "prices": [
   {
@@ -450,7 +450,7 @@ The following example sets the base price for a simple and a downloadable produc
   }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -465,18 +465,18 @@ The following example returns the base prices for a simple and a downloadable pr
 `POST /V1/products/base-prices-information`
 
 **Payload**
-{% highlight json %}
+```json
 {
   "skus": [
     "24-UG04",
     "240-LV06"
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
   {
     "price": 12,
@@ -489,7 +489,7 @@ The following example returns the base prices for a simple and a downloadable pr
     "sku": "240-LV06"
   }
 ]
-{% endhighlight %}
+```
 
 ## Manage cost values
 
@@ -528,7 +528,7 @@ The following example sets the cost value for a simple and a downloadable produc
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "prices": [
     {
@@ -543,7 +543,7 @@ The following example sets the cost value for a simple and a downloadable produc
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -558,18 +558,18 @@ The following example returns the cost values for a simple and a downloadable pr
 `POST /V1/products/cost-information`
 
 **Payload**
-{% highlight json %}
+```json
 {
   "skus": [
     "24-WB03",
     "240-LV09"
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
   {
     "cost": 18,
@@ -582,7 +582,7 @@ The following example returns the cost values for a simple and a downloadable pr
     "sku": "240-LV09"
   }
 ]
-{% endhighlight %}
+```
 
 ### Delete cost values
 
@@ -593,14 +593,14 @@ The following example deletes the previously-defined cost values for a simple an
 `POST /V1/products/cost-delete`
 
 **Payload**
-{% highlight json %}
+```json
 {
   "skus": [
     "24-WB03",
     "240-LV09"
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 

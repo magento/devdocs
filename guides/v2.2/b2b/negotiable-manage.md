@@ -22,7 +22,7 @@ All negotiable quote calls require an admin authorization token.
 
 **REST Endpoints**
 
-{% highlight http %}
+```http
 POST /V1/negotiableQuote/request
 POST /V1/negotiableQuote/submitToCustomer
 POST /V1/negotiableQuote/decline
@@ -30,7 +30,7 @@ POST /V1/negotiableQuote/pricesUpdated
 GET /V1/negotiableQuote/:quoteId/comments
 GET /V1/negotiableQuote/attachmentContent
 PUT /V1/negotiableQuote/:quoteId/shippingMethod
-{% endhighlight %}
+```
 
 **NegotiableQuoteManagementInterface Parameters**
 
@@ -77,7 +77,7 @@ Requesting a negotiable quote requires an admin authorization token.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 3,
   "quoteName": "First quote",
@@ -89,7 +89,7 @@ Requesting a negotiable quote requires an admin authorization token.
     }
   ]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -123,12 +123,12 @@ When the quote is submitted to the buyer:
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 3,
   "comment": "It'd be our pleasure. Please proceed with your order."
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -150,11 +150,11 @@ The request can be applied to one or more quotes at the same time.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteIds": [3]
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -170,11 +170,11 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "shippingMethod": "fixedrate"
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -199,12 +199,12 @@ When you decline a quote, all custom pricing will be removed from the quote. The
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 80,
   "reason": "Your order is too large. "
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -228,7 +228,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 [
   {
     "entity_id": 6,
@@ -305,7 +305,7 @@ Not applicable
     "attachments": []
   }
 ]
-{% endhighlight %}
+```
 
 
 ### Retrieve a negotiable quote attachment
@@ -324,7 +324,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "quoteId": 2,
   "quoteName": "First quote",
@@ -335,7 +335,7 @@ Not applicable
     }
   ]
 }
-{% endhighlight %}
+```
 ## Related information
 
 * [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)

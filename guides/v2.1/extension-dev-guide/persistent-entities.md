@@ -62,7 +62,7 @@ Repository functions should operate on data interfaces. In your repository funct
 
 Example:
 
-{% highlight php startinline=true%}
+```php?start_inline=1
 $customerModel = $this->customerFactory->create(['data' => $customerData]);
 
 /** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */
@@ -71,7 +71,7 @@ $customerResource->save($customerModel);
 $customerResource->load($customerModel, $entityId);
 
 $customerResource->delete($customerModel);
-{% endhighlight %}
+```
 
 #### Related topics
 {:.no_toc}

@@ -199,7 +199,7 @@ To determine which resources an integration needs access to, review the permissi
 
 In the following example, the test integration requires access to the following resources in the Sales module:
 
-{% highlight xml %}
+```xml
 <integrations>
     <integration name="testIntegration">
         <resources>
@@ -215,7 +215,7 @@ In the following example, the test integration requires access to the following 
         </resources>
     </integration>
 </integrations>
-{% endhighlight %}
+```
 
 ### Pre-configure the integration {#preconfig}
 
@@ -227,7 +227,7 @@ Your module can optionally provide a configuration file `config.xml` so that the
 
 The  file defines which API resources the integration has access to.
 
-{% highlight xml %}
+```xml
 <integrations>
    <integration name="TestIntegration">
        <email></email>
@@ -235,7 +235,7 @@ The  file defines which API resources the integration has access to.
        <identity_link_url></identity_link_url>
    </integration>
 </integrations>
-{% endhighlight %}
+```
 
 <table>
 <tr>

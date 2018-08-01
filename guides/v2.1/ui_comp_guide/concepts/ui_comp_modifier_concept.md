@@ -31,7 +31,7 @@ In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Mo
 
 Sample modifier:
 
-{% highlight php%}
+```php
 
 <?php
 
@@ -84,13 +84,13 @@ class Example extends AbstractModifier
         return $data;
     }
 }
-{%endhighlight%}
+```
 
 **Step 2**
 
 Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following:
 
-{% highlight xml %}
+```xml
 <virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">
      <arguments>
          <argument name="modifiers" xsi:type="array">
@@ -101,7 +101,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
          </argument>
      </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 , where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type).
 

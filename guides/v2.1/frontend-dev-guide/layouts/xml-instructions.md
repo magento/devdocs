@@ -171,13 +171,13 @@ A structure without content that holds other layout elements such as blocks and 
 </table>
 
 Sample of usage in layout:
-{%highlight xml%}
+```xml
 ...
 <container name="div.sidebar.additional" htmlTag="div" htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
     <container name="sidebar.additional" as="sidebar_additional" label="Sidebar Additional"/>
 </container>
 ...
-{%endhighlight xml%}
+```
 
 This would add a new column to the page layout.
 
@@ -267,7 +267,7 @@ Calls public methods on the block API.
 
 Example:
 
-{%highlight xml%}
+```xml
 <block class="Magento\Module\Block\Class" name="block">
     <action method="setText">
         <argument name="text" translate="true" xsi:type="string">Text</argument>
@@ -276,7 +276,7 @@ Example:
         <argument name="enabled" xsi:type="boolean">true</argument>
     </action>
 </block>
-{%endhighlight xml%}
+```
 
 
 <p><code>&lt;action&gt;</code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action&gt;</code>, they are passed as one array.</p>
@@ -352,9 +352,9 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
 
-{%highlight xml%}
+```xml
 <move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/>
-{%endhighlight xml%}
+```
 
 
 <ul>
@@ -409,7 +409,7 @@ For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute
 
 Example of usage:
 
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
    <head>
         <!-- Remove local resources -->
@@ -423,7 +423,7 @@ Example of usage:
         <remove src="http://fonts.googleapis.com/css?family=Montserrat" /> 
    </head>
 </page>
-{%endhighlight xml%}
+```
 
 ### fedg_layout_xml-instruc_ex_upd
 
@@ -431,9 +431,9 @@ Includes a certain layout file.
 
 Used as follows:
 
-{%highlight xml%}
+```xml
 <update handle="{name_of_handle_to_include}"/>
-{%endhighlight xml%}
+```
 
 The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
@@ -471,23 +471,23 @@ Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&
 </table>
 
 To pass multiple arguments use the following construction:
-{%highlight xml%}
+```xml
 <arguments>
    <argument></argument>
    <argument></argument>
    ...
 </arguments>
-{%endhighlight xml%}
+```
 
 To pass an argument that is an array use the following construction:
 
-{%highlight xml%}
+```xml
 <argument>
    <item></item>
    <item></item>
    ...
 </argument>
-{%endhighlight xml%}
+```
 
 <p id="getter">Arguments values set in a layout file can be accessed in <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
@@ -495,22 +495,22 @@ To pass an argument that is an array use the following construction:
 Example:
 Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
 
-{%highlight xml%}
+```xml
 ...
 <arguments>
     <argument name="css_class" xsi:type="string">header links</argument>
 </arguments>
 ...
-{%endhighlight xml%}
+```
 
 
 Using the value of <code>css_class</code> in <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
 
-{%highlight php%}
+```php
 ...
 $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 ...
-{%endhighlight %}
+```
 
 ### arguments
 
@@ -518,10 +518,10 @@ $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 
 Example:
 
-{%highlight xml%}
+```xml
 ...
 <arguments>
     <argument name="css_class" xsi:type="string">header links</argument>
 </arguments>
 ...
-{%endhighlight xml%}
+```

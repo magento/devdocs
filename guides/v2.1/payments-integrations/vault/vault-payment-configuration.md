@@ -21,7 +21,7 @@ Additional configuration might be required depending on your implementation.
 
 The following example is the `config.xml` file of the Braintree payment method: 
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
@@ -36,7 +36,7 @@ The following example is the `config.xml` file of the Braintree payment method:
         </payment>
     </default>
 </config>
-{% endhighlight %}
+```
 
 In this example `braintree_cc_vault` is the unique payment code of the vault implementation for Braintree.
 

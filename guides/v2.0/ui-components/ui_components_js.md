@@ -41,11 +41,11 @@ The `.js` file of the bookmark component is [Magento/Ui/view/base/web/js/grid/co
 
 So the `component` property is set in the `.xml` configuration file like following:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
         <item name="component" xsi:type="string">Magento_Ui/js/grid/controls/bookmarks/bookmarks</item>
 </argument>
-{% endhighlight xml%}
+```
 
  - `template`: path to the component's `.html` template.
 
@@ -53,20 +53,20 @@ Example:
 
 The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
         <item name="template" xsi:type="string">ui/grid/controls/bookmarks/bookmarks</item>
 </argument>
-{% endhighlight xml%}
+```
 
  - children: is a general name for the nested components of a certain component. Children can be specified in the `.xml` configuration of the parent component (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
  - `name`: the name of the component specified in the `.xml` configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
 For example, [`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`]({{ site.mage2000url }}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57):
 
-{%highlight xml%} 
+```xml 
 <component name="columns_controls">
-{%endhighlight xml%} 
+``` 
 
 In the run-time `columns_controls` is transformed to the following string: `cms_block_listing.cms_block_listing.listing_top.columns_controls`. 
 
@@ -88,19 +88,19 @@ The following properties are used for linking observable properties and methods 
 
 Example of setting `exports` in a component's `.js` file:
 
-{% highlight js%}
+```js
 {
   'exports': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Here `visible` is the `key`, `${ $.provider }.visibility` is the `value`.
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="exports" xsi:type="array">
@@ -108,7 +108,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
                     </item>
        </item>
 </argument>
-{% endhighlight xml%}
+```
 
 In this example, `visible` is the `key`, `sample_config.sample_provider.visibility` is the `value`.
 
@@ -119,17 +119,17 @@ In this example, `visible` is the `key`, `sample_config.sample_provider.visibili
 
 Example of using `imports` in a component's `.js` file:
 
-{% highlight js%}
+```js
 {
   'imports': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Example of using `imports` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="imports" xsi:type="array">
@@ -137,7 +137,7 @@ Example of using `imports` in a component's configuration `.xml` file:
                     </item>
        </item>
 </argument>
-{% endhighlight xml%}
+```
 
 
 - `links`: used for mutual tracking property changes. `links`'s value is an object, composed of the following:
@@ -147,17 +147,17 @@ Example of using `imports` in a component's configuration `.xml` file:
 
 Example of using `links` in a component's `.js` file:
 
-{% highlight js%}
+```js
 {
   'links': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Example of using `links` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="links" xsi:type="array">
@@ -165,7 +165,7 @@ Example of using `links` in a component's configuration `.xml` file:
                     </item>
        </item>
 </argument>
-{% endhighlight xml%}
+```
 
 - `listens`: used to track the changes of a component's property.
   - `key` - name of the internal property which listens to the changes.
@@ -173,17 +173,17 @@ Example of using `links` in a component's configuration `.xml` file:
 
 Example of using `listens` in a component's `.js` file :
 
-{% highlight js%}
+```js
 {
   'listens': {
    'visible': '${ $.provider }.visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Example of using `listens` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
        <item name="config" xsi:type="array">
                     <item name="listens" xsi:type="array">
@@ -191,7 +191,7 @@ Example of using `listens` in a component's configuration `.xml` file:
                     </item>
        </item>
 </argument>
-{% endhighlight xml%}
+```
 
 
 ## Frequently used additional components {#comp_additional}
@@ -222,16 +222,16 @@ All the components described in this section are aliases in terms of RequireJS. 
 
 Example for the `uiClass` property request:
 
-{%highlight js%}
+```js
 define( ['uiClass'], function (abstractClass) {
     return abstractClass.extend({ 
       ... // needed methods here
    };
 });
-{%endhighlight js%}
+```
 
 Example of using the `uiClass` property in a configuration file:
-{%highlight js%}
+```js
   <container name="some_custom_component">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -239,7 +239,7 @@ Example of using the `uiClass` property in a configuration file:
             </item>
         </argument>
     </container>
-{%endhighlight js%}
+```
 
 ## JS UI components debugging {#comp_debug}
 This section describes how to define what UI components are used on a particular page and what data they use.

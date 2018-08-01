@@ -43,23 +43,23 @@ $ mkdir Learning/HelloPage
 ```
 
 Now create two files:
-{% highlight console %}
+```console
 Learning/HelloPage/registration.php
 Learning/HelloPage/etc/module.xml
-{% endhighlight %}
+```
 
 #### registration.php
-{% highlight php %}
+```php
 <?php /**
 * Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
 */
 \Magento\Framework\Component\ComponentRegistrar::register( \Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_HelloPage',
 __DIR__
 );
-{% endhighlight %}
+```
 
 #### module.xml
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -70,7 +70,7 @@ __DIR__
     <module name="Learning_HelloPage" setup_version="0.0.1">
     </module>
 </config>
-{% endhighlight %}
+```
 
 ## Add a routes.xml file
 Before we create the file, let’s take a brief look at how routing works in Magento 2. Each area (in our case, frontend and adminhtml) has a corresponding merged `routes.xml` file, which is merged from the `etc/&lt;area&gt;/routes.xml` file from every module. That `routes.xml` file contains information about all registered routes and frontNames. Recall that a frontName is the first part of a route.
@@ -79,7 +79,7 @@ So, we should register it in the `routes.xml` file and associate it with a modul
 
 Now, since we’re working in the frontend area, we’ll add the `etc/frontend/routes.xml` file for our `Learning_HelloPage` module:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -93,7 +93,7 @@ Now, since we’re working in the frontend area, we’ll add the `etc/frontend/r
         </route>
     </router>
 </config>
-{% endhighlight %}
+```
 
 We added a new route here called “learning” (note it does not have to match the module name) and a new `frontName`. Often the route and `frontName` are the same – for example, “catalog” – but it is not required.
 When Magento 2 sees a URL like `test/chunk2/chunk3`, it will check whether our module `Learning_HelloPage` has a folder, `Controller/Chunk2`, and an action file, `Chunk3.php`.
@@ -111,7 +111,7 @@ $ mkdir Controller/Page
 
 Let’s create an action file `Controller/Page/View.php`:
 
-{% highlight php %}
+```php
 <?php /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -146,7 +146,7 @@ class View extends \Magento\Framework\App\Action\Action
 
 return $result->setData($data);
 } }
-{% endhighlight %}
+```
 
 Note we created a JSON-type page. This can be seen in the results factory that we specify in our constructor. In order to activate our module and our page we should run the Magento setup upgrade:
 

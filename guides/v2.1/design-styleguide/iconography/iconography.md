@@ -93,14 +93,14 @@ Modern versions of assistive technologies will announce CSS generated content, a
 
 **Code sample:**
 
-{% highlight php %}
+```php
 <style>
   .icon-star:before { content: "★ "; }
 </style>
 
 <span><span class="icon-star" aria-hidden="true"></span>Favorite</span>
 
-{% endhighlight %}
+```
 
 *Source:* <a href="http://www.filamentgroup.com/lab/bulletproof_icon_fonts.html">filament group's "Bulletproof Accessible Icon Fonts"</a>
 

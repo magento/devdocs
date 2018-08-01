@@ -30,7 +30,7 @@ A custom {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment metho
 
 Below is an example of mapping registration:
 
-{%highlight xml startinline=1%}
+```xml
 <default>
     <payment>
         <custom_payment>
@@ -42,7 +42,7 @@ Below is an example of mapping registration:
         </custom_payment>
     </payment>
 </default>
-{%endhighlight%}
+```
 
 These steps are enough to provide custom AVS/CVV mapping for payment integrations. Everything else, like mapper initialization, will be provided by the *Magento_Signifyd* infrastructure.
 
@@ -60,7 +60,7 @@ To apply your mappings for the [Signifyd payment codes](https://www.signifyd.com
 
 For example:
 
-{%highlight xml startinline=1%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd">
     <payment_method_list>
@@ -70,7 +70,7 @@ For example:
         </payment_method>
     </payment_method_list>
 </config>
-{%endhighlight%}
+```
 
 where:
 

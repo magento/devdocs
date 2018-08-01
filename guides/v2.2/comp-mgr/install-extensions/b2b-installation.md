@@ -89,10 +89,10 @@ Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql
 ### Add message consumers to cron
 You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:
 
-{%highlight xml%}
+```xml
 * * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice &
-{%endhighlight%}
+```
 
 ### Specify parameters for message consumers
 Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:

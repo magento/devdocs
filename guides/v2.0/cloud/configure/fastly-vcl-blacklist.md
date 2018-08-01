@@ -42,7 +42,7 @@ To block blacklisted IPs from access to Staging and Production environments, you
 
 Create an `blocklist.json` file with the following JSON content:
 
-{% highlight json %}
+```json
 {
   "name": "blocklist",
   "dynamic": "0",
@@ -50,7 +50,7 @@ Create an `blocklist.json` file with the following JSON content:
   "priority": "5",
   "content": "if ( client.ip ~ blocklist) { error 403 \"Forbidden\"; }"
 }
-{% endhighlight %}
+```
 
 Review the following values for the code to determine if you need to make changes:
 

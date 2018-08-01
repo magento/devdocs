@@ -80,7 +80,7 @@ Instead of adding parameters to protected methods, Create a new method with a ne
 Declare the new method as private if possible.
 
 {% collapsible Example Code %}
-{% highlight php startinline %}
+```php?start_inline=1
 /**
  * @deprecated This method is not intended for usage in child classes
  * @see updateScopedPrice($price, $storeId)
@@ -95,7 +95,7 @@ private function updateScopedPrice($price, $storeId)
     // Updated logic that takes into account $storeId
 } 
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 #### Modifying the default values of optional arguments in public and protected methods 
@@ -121,7 +121,7 @@ Add a new optional parameter to the constructor at the end of the arguments list
 In the constructor body, if the new dependency is not provided (i.e. the value of the introduced argument is `null`), fetch the dependency using `Magento\Framework\App\ObjectManager::getInstance()`.
 
 {% collapsible Example Code %}
-{% highlight php startinline %}
+```php?start_inline=1
 class ExistingClass
 {
     /** @var \New\Dependency\Interface */
@@ -178,7 +178,7 @@ class ExistingClassTest extends \PHPUnit_Framework_TestCase
         ...
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 #### Removing or renaming public and protected properties

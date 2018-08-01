@@ -33,7 +33,7 @@ To create a maintenance page and redirect to it, first create a maintenance page
 
 Add to it the following contents:
 
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@ body
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>
-{% endhighlight %}
+```
 
 ## Custom maintenance page for Apache {#compman-trouble-maint-apache}
 This section discusses how to create a custom maintenance page and how to redirect traffic to it.

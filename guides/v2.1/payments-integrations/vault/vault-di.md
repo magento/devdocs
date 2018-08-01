@@ -18,7 +18,7 @@ To add a payment facade for the vault payment, create a [virtual type]({{ page.b
 
 Example of the vault payment facade configuration for Braintree:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeCreditCardVaultFacade" type="Magento\Vault\Model\Method\Vault">
     <arguments>
         <argument name="config" xsi:type="object">BraintreeVaultPaymentConfig</argument>
@@ -27,7 +27,7 @@ Example of the vault payment facade configuration for Braintree:
         <argument name="code" xsi:type="const">Magento\Braintree\Model\Ui\ConfigProvider::CC_VAULT_CODE</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 This {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} is similar to the [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
 
@@ -37,7 +37,7 @@ To enable vault usage for the payment method, set the `can_authorize_vault` opti
 
 Following is an example from Braintree configuration:
 
-{% highlight xml %}
+```xml
 <payment>
     <braintree>
         <model>BraintreeFacade</model>
@@ -47,7 +47,7 @@ Following is an example from Braintree configuration:
         ...
     </braintree>
 </payment>
-{% endhighlight %}
+```
 
 
 ## Add a gateway command for vault
@@ -58,7 +58,7 @@ All available commands you can find in the [VaultPaymentInterface]({{ site.mage2
 
 Example: a gateway command for the authorize action is added for the Braintree vault 
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeVaultAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
         <argument name="requestBuilder" xsi:type="object">BraintreeVaultAuthorizeRequest</argument>
@@ -68,14 +68,14 @@ Example: a gateway command for the authorize action is added for the Braintree v
         <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\ResponseValidator</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 
 This command is similar to the payment provider authorize command. But it uses own [request builders]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html) and [response handlers]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html).
 
 The following sample from Braintree configuration illustrates how to add the `authorize` payment action to command pool:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
     <arguments>
         <argument name="commands" xsi:type="array">
@@ -85,7 +85,7 @@ The following sample from Braintree configuration illustrates how to add the `au
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 
 ## Add command manager
@@ -94,13 +94,13 @@ You also need to create a command manager for vault. It is configured with the p
 
 Example of adding a command manager for Braintree vault:
  
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeCommandManager" type="Magento\Payment\Gateway\Command\CommandManager">
     <arguments>
         <argument name="commandPool" xsi:type="object">BraintreeCommandPool</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 
 Command manager must be added to the command manager pool. This pool is available for vault instance and enables performing payment provider actions.
@@ -109,7 +109,7 @@ There are two ways to add command manager to the pool:
 
 * Add to default `CommandManagerPool` implementation. Example:
 
-{% highlight xml %}
+```xml
 <type name="Magento\Payment\Gateway\Command\CommandManagerPool">
     <arguments>
         <argument name="executors" xsi:type="array">
@@ -117,11 +117,11 @@ There are two ways to add command manager to the pool:
         </argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 * Create custom command manager pool. Example:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeCcVaultCommandManagerPool" type="Magento\Payment\Gateway\Command\CommandManagerPool">
     <arguments>
         <argument name="executors" xsi:type="array">
@@ -136,7 +136,7 @@ There are two ways to add command manager to the pool:
         <argument name="commandManagerPool" xsi:type="object">BraintreeCcVaultCommandManagerPool</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 In the first case, this pool can be used in any {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to perform vault payment commands. In the second case, only specific vault payment integration can use this pool. 
 

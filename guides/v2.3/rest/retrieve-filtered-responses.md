@@ -39,13 +39,13 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 `GET http://<host>/rest/default/V1/products/24-MB01?fields=sku,price,name`
 
 {% collapsible Sample output %}
-{% highlight json %}
+```json
 {
   "sku": "24-MB01"
   "name": "Joust Duffle Bag"
   "price": 24.99
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Simple fields and top-level objects with all fields
@@ -55,7 +55,7 @@ The following example returns only the customer first name, last name, and the e
 `GET http:/<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
 
 {% collapsible Sample output %}
-{% highlight json %}
+```json
 {
 "customer_firstname": "Veronica"
 "customer_lastname": "Costello"
@@ -77,7 +77,7 @@ The following example returns only the customer first name, last name, and the e
   "telephone": "(555) 229-3326"
   }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Top-level object with selected fields
@@ -87,7 +87,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
 `GET http://<host>/rest/default/V1/shipment/2?fields=items[name,qty,sku]`
 
 {% collapsible Sample output %}
-{% highlight json %}
+```json
 "items": [
    {
      "name": "Minerva LumaTech&trade; V-Tee-XS-Blue",
@@ -95,7 +95,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
      "sku": "WS08-XS-Blue",
    }
  ]
- {% endhighlight %}
+ ```
  {% endcollapsible %}
 
 ## Nested objects
@@ -109,7 +109,7 @@ This example returns only the following:
 `GET http://<host>/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]`
 
 {% collapsible Sample output %}
-{% highlight json %}
+```json
 {
   "sku": "MT12"
   "name": "Cassius Sparring Tank"
@@ -124,7 +124,7 @@ This example returns only the following:
       }
   }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## POST operation
@@ -133,23 +133,23 @@ The following POST operation and payload creates a {% glossarytooltip 8d40d668-4
 
 `POST http://<host>/rest/V1/categories?fields=id,parent_id,name`
 
-{% highlight json %}
+```json
 {
   "category": {
     "name": "New Category",
     "is_active": true
   }
 }
-{% endhighlight %}
+```
 
 {% collapsible Sample output %}
-{% highlight json %}
+```json
 {
 "id": 43
 "parent_id": 2
 "name": "New Category"
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Using with searchCriteria
@@ -161,7 +161,7 @@ The following query returns only the `sku` and `name` parameters for product ite
 `GET http://<host>/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&searchCriteria[filter_groups][0][filters][0][value]=86&searchCriteria[filter_groups][0][filters][0][condition_type]=finset&fields=items[sku,name]`
 
 {% collapsible Sample output %}
-{% highlight json %}
+```json
 {
 "items":
   {
@@ -201,7 +201,7 @@ The following query returns only the `sku` and `name` parameters for product ite
     "name": "Didi Sport Watch"
   }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Related topics

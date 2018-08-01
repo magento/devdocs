@@ -52,11 +52,11 @@ Examples:
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}.
 - Called in script:
 
-{%highlight js%}
+```js
 require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
    });
 
-{%endhighlight%}
+```
 
 
 {% collapsible Example 2 %}
@@ -65,11 +65,11 @@ require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
 - Called in script:
 
-{%highlight js%}
+```js
 require(["js/theme.js"], function(){
    });
 
-{%endhighlight%}
+```
 
 {% endcollapsible %}
 
@@ -79,11 +79,11 @@ require(["js/theme.js"], function(){
 - File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
 - Called in script:
 
-{%highlight js%}
+```js
 require(["jquery"], function($){
    });
 
-{%endhighlight%}
+```
 
 {% endcollapsible %}
 
@@ -96,23 +96,23 @@ To build a dependency on the third-party plugin, specify a <a href="http://requi
 
  - `requirejs-config.js`
 
-{%highlight js%}
+```js
 var config = {
   "shim": {
     "3-rd-party-plugin": ["jquery"]
   }
 };
-{%endhighlight%}
+```
 
 
  - `<third-party-plugin>.js`
 
-{%highlight js%}
+```js
 !(function($){
   // plugin code
   // where $ == jQuery
 })(jQuery);
-{%endhighlight%}
+```
 
 
 ## RequireJS library
@@ -124,7 +124,7 @@ To be available for the entire Magento instance, RequireJS library is included i
  * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
     [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/layout/default.xml)
-{%highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <title>Magento Admin</title>
@@ -155,7 +155,7 @@ To be available for the entire Magento instance, RequireJS library is included i
         </referenceContainer>
     </body>
 </page>
-{%endhighlight%}
+```
 
 * For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml).
 

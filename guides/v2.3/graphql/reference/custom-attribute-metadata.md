@@ -14,7 +14,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Request**
 
-{% highlight json %}
+```json
 {
   customAttributeMetadata(attributes:
   [
@@ -49,12 +49,12 @@ The following query returns the attribute type for various custom and EAV attrib
     }
   }
  }
- {% endhighlight %}
+ ```
 
 The key you're storing EAV attributes under
 **Response**
 
-{% highlight json %}
+```json
 {
   "data": {
     "customAttributeMetadata": {
@@ -88,7 +88,7 @@ The key you're storing EAV attributes under
     }
   }
 }
-{% endhighlight %}
+```
 
 
 ## Supported attributes

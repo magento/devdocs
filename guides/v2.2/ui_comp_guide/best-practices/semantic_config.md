@@ -23,7 +23,7 @@ The main advantages of the new structure are described in the following sections
 ## Readability
 All components options are separate nodes, and a node's purpose is defined by its name. The number of abstract-named nodes like `<item>` or `<argument>` is minimized.
 {% collapsible Illustration %}
-{% highlight xml%}
+```xml
 <field name="default_billing" formElement="checkbox">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -66,7 +66,7 @@ All components options are separate nodes, and a node's purpose is defined by it
         </imports>
     </settings>
 </field>
-{%endhighlight%}
+```
 {% endcollapsible %}
 
 ## Autocomplete

@@ -19,7 +19,7 @@ The magnifier widget is initialized as described in [JavaScript initialization](
 
 When initializing the gallery Widget on an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} element, magnifier initialization is also available. Following is the example of gallery initialization with magnifier:
 
-{%highlight js%}
+```js
 <script type="text/x-magento-init">
 "<element_selector>": {
         "mage/gallery/gallery": {
@@ -43,7 +43,7 @@ When initializing the gallery Widget on an {% glossarytooltip a2aff425-07dd-4bd6
         }
    }
 </script>
-{% endhighlight %}
+```
 
 ## Options {#magnifier_options}
 

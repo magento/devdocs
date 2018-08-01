@@ -27,7 +27,7 @@ A publisher's duties include scheduling a bulk operation. It must generate a `bu
 The following code sample shows how these duties can be completed.
 
 {% collapsible Code sample: %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 <?php
 /**
@@ -153,7 +153,7 @@ class ScheduleBulk
         }
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Create a consumer {#createconsumer}
@@ -161,7 +161,7 @@ class ScheduleBulk
 A consumer class receives messages from the message queue and changes the status after it is processed. The following example defines a consumer that handles price update bulk operations.
 
 {% collapsible Code sample: %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 <?php
 /**
@@ -279,7 +279,7 @@ class Consumer
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Configure message queues {#configmq}
@@ -298,19 +298,19 @@ For more information about the `di.xml` file, see [Dependency Injection]({{ page
 
 The `communication.xml` file defines aspects of the message queue system that apply to all topics for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Create this file with the following contents:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
     <topic name="<your_topic_name>" request="Magento\AsynchronousOperations\Api\Data\OperationInterface">
         <handler name="<your_handler_name>" type="<Consumer_Class>" method="<consumer_method>" />
     </topic>
 </config>
-{% endhighlight %}
+```
 
 #### Create `di.xml`
 
 Add the following type to the module's `di.xml` file.
 
-{% highlight xml %}
+```xml
 <type name="Magento\Framework\MessageQueue\MergerFactory">
     <arguments>
         <argument name="mergers" xsi:type="array">
@@ -318,40 +318,40 @@ Add the following type to the module's `di.xml` file.
         </argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 #### Create `queue_consumer.xml`
 
 The `queue_consumer.xml` file defines the relationship between a queue and its consumer. Create this file with the following contents:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
     <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="<Consumer_Class>::<Consumer_method>"/>
 </config>
-{% endhighlight %}
+```
 
 #### Create `queue_publisher.xml`
 
 The `queue_publisher.xml` file defines the exchange where a topic is published. Create this file with the following contents:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
     <publisher topic="<topic_name>">
         <connection name="amqp" exchange="<exchange>" />
     </publisher>
 </config>
-{% endhighlight %}
+```
 
 #### Create `queue_topology.xml`
 The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
     <exchange name="magento" type="topic" connection="amqp">
         <binding id="defaultBinding" topic="" destinationType="queue" destination="<queue_name>"/>
     </exchange>
 </config>
-{% endhighlight %}
+```
 
 #### Related Topics
 

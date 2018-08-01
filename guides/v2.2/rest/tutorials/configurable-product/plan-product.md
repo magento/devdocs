@@ -70,7 +70,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 
 The `attribute_set_id` for the Top attribute set is `9`.
 
-{% highlight json %}
+```json
 {
     "items": [
         {
@@ -95,7 +95,7 @@ The `attribute_set_id` for the Top attribute set is `9`.
     },
     "total_count": 1
 }
-{% endhighlight %}
+```
 
 ### Get the list of attributes defined in an attribute searchCriteria {#get-attributes}
 

@@ -27,7 +27,7 @@ Add the vault enabling controls to the payment form. In the following example, a
 
 Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
-{% highlight html %}
+```html
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
     <fieldset data-bind="attr: {class: 'fieldset payment items' + getCode(), id: 'payment_form_' + getCode()}">
         <legend class="legend">
@@ -49,7 +49,7 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ sit
     </fieldset>
     ...
 </form>
-{% endhighlight %}
+```
 
 ## Modifying the payment component
 
@@ -59,7 +59,7 @@ Magento has a default vault enabler {% glossarytooltip 9bcc648c-bd08-4feb-906d-1
 
 Example: [the Braintree payment UI component]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
 
-{% highlight javascript %}
+```javascript
 define([
     ...
     'Magento_Braintree/js/view/payment/method-renderer/cc-form',
@@ -108,7 +108,7 @@ define([
         }
     });
 });
-{% endhighlight %}
+```
 
 ## Add request data builder
 
@@ -149,7 +149,7 @@ class VaultDataBuilder implements BuilderInterface
 The builder must be added to the payment authorize request in the DI configuration. 
 Example from the Braintree `di.xml`:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">
@@ -158,7 +158,7 @@ Example from the Braintree `di.xml`:
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 ## What's next
 

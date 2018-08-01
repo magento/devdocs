@@ -23,7 +23,7 @@ implements `CommandPoolInterface` and takes a list of commands as an optional ar
 ## Command pool configuration for a particular provider
 Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider's {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} configuration ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml)).
 
-{% highlight xml %}
+```xml
 ...
 <!-- BrainreeCommandPool - a command pool for the Braintree payments provider -->
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
@@ -45,6 +45,6 @@ Following is an example of the command pool configuring for the Braintree paymen
     </arguments>
 </virtualType>
 ...
-{% endhighlight %}
+```
 
 (The code sample is from {{site.data.var.ce}} v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1.)

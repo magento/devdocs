@@ -45,7 +45,7 @@ Now, create two files:
 `etc/module.xml`
 
 {% collapsible Show code %}
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -58,7 +58,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
   <module name="Learning_ClothingMaterial" setup_version="0.0.1">
   </module>
 </config>
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 <br/>
@@ -66,7 +66,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 `registration.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -76,7 +76,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     'Learning_ClothingMaterial',
     __DIR__
 );
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Step 2 Create an InstallData script
@@ -88,7 +88,7 @@ Therefore we use InstallData instead of InstallSchema.
 Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -154,7 +154,7 @@ class InstallData implements InstallDataInterface
         );
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 <br/>
@@ -195,7 +195,7 @@ Next, we need to create the source model:
 `app/code/Learning/ClothingMaterial/Model/Attribute/Source/Material.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -226,7 +226,7 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 <br/>
@@ -240,7 +240,7 @@ Now we will create a backend model:
 `app/code/Learning/ClothingMaterial/Model/Attribute/Backend/Material.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -269,7 +269,7 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBacke
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 <br/>
@@ -288,7 +288,7 @@ Make sure to check the `eav_attribute_set` table for the right ID.
 And finally, we create a frontend model to make our value bold:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+```php?start_inline=1
 namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
 class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend
@@ -299,7 +299,7 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFron
         return "<b>$value</b>";
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 <br/>

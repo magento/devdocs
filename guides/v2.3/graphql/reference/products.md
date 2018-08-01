@@ -33,12 +33,12 @@ Attribute |  Description
 
 The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 
-{% highlight json %}
+```json
 filter: {
        sku: {like: "24-MB%"}
        price: {lt: "50"}
        }
-{% endhighlight %}
+```
 
 See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information about the operators.
 
@@ -99,13 +99,13 @@ The following attributes are not used in responses:
 
 The system returns a `Products` object containing the following information:
 
-{% highlight json %}
+```json
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
 filters: [LayerFilter]
 sort_fields: SortFields
-{% endhighlight %}
+```
 
 Each attribute is described below:
 
@@ -346,7 +346,7 @@ You can review several general interest `products` queries at [Searches and pagi
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-{% highlight json %}
+```json
 {
     products (
         filter: {
@@ -376,4 +376,4 @@ The following query returns layered navigation for products that have a `sku` co
         }
     }
 }
-{% endhighlight %}
+```

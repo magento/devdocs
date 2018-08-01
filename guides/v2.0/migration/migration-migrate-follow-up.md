@@ -41,7 +41,7 @@ If your Magento 1 server has the time zone set to anything other than UTC, you m
 
 In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to `map-customer.xml`:
 
-{% highlight xml %}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="../map.xsd">
   <!--...-->
@@ -57,4 +57,4 @@ In the following example, the Magento 1 server timezone is UTC-7. To convert the
       </field_rules>
   </destination>
 </map>
-{% endhighlight %}
+```

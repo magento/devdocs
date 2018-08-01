@@ -72,7 +72,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
 
 2. Configure it using the following example:
 
-{% highlight xml %}
+```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>New theme</title> <!-- your theme's name -->
      <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
@@ -80,7 +80,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
          <preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
      </media>
  </theme>
-{% endhighlight %}
+```
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
@@ -95,7 +95,7 @@ To distribute your theme as a package, add a `composer.json` file to the theme d
 
 Example of a theme `composer.json`:
 
-{% highlight json %}
+```json
 {
     "name": "magento/theme-frontend-luma",
     "description": "N/A",
@@ -116,7 +116,7 @@ Example of a theme `composer.json`:
         ]
     }
 }
-{% endhighlight %}
+```
 
 You can find details about the Composer integration in the Magento system in <a href="{{ page.baseurl }}/extension-dev-guide/build/composer-integration.html">Composer integration</a>.
 
@@ -124,7 +124,7 @@ You can find details about the Composer integration in the Magento system in <a 
 
 To register your theme in the system, in your theme directory add a `registration.php` file with the following content:
 
-{% highlight php %}
+```php
 
 <?php
 /**
@@ -137,7 +137,7 @@ To register your theme in the system, in your theme directory add a `registratio
     __DIR__
 );
 
-{% endhighlight %}
+```
 
 Where `<Vendor>` is your vendor name, `<theme>` is the theme code.
 
@@ -159,14 +159,14 @@ If the product image sizes of your theme differ from those of the parent theme, 
 3.	Configure all storefront product image sizes in `view.xml`.
 For example, you can make the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:
 
-{% highlight XML%}
+```XML
 ...
     <image id="category_page_grid" type="small_image">
         <width>250</width>
         <height>250</height>
     </image>
 ...
-{% endhighlight XML%}
+```
 
 For details about images configuration in `view.xml`, see the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.
 
@@ -245,7 +245,7 @@ To declare a theme logo, add an <a href="{{ page.baseurl }}/frontend-dev-guide/l
 
 For example, if your logo file is `my_logo.png` sized 300x300px, you need to declare it as follows:  
 
-{% highlight xml %}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="logo">
@@ -257,7 +257,7 @@ For example, if your logo file is `my_logo.png` sized 300x300px, you need to dec
         </referenceBlock>
     </body>
 </page>		
-{% endhighlight %}
+```
 
 Declaring the logo size is optional.
 

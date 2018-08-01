@@ -17,7 +17,7 @@ The Resize Component is responsible for resizing listing columns. The Resize com
 
 Resize can be switched on for any listing column like this:
 
-{% highlight xml %}
+```xml
 <column name="creation_time">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -26,7 +26,7 @@ Resize can be switched on for any listing column like this:
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 resizeDefaultWidth - set width value in pixels.
 

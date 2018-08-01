@@ -109,7 +109,7 @@ Its implementation allows to retrieve errors codes from a response.
 
 First, create a new code provider. It can be a simple class with a public method that should return a list of error codes by the provided response:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 class ErrorCodeProvider
 {
     /**
@@ -136,12 +136,12 @@ class ErrorCodeProvider
         return $result;
     }
 }
-{% endhighlight %}
+```
 
 
 Then add the created provider as a dependency to the `GeneralResponseValidator` class:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 class GeneralResponseValidator extends AbstractValidator
 {
     public function __construct(
@@ -175,7 +175,7 @@ class GeneralResponseValidator extends AbstractValidator
         return $this->createResult($isValid, $errorMessages, $errorCodes);
     }
 }
-{% endhighlight %}
+```
 
 The `GeneralResponseValidator` returns an implementation of [`\Magento\Payment\Gateway\Validator\ResultInterface`]({{ site.mage2300url }}app/code/Magento/Payment/Gateway/Validator/ResultInterface.php)
 and the `\Magento\Payment\Gateway\Command\GatewayCommand` uses method `ResultInterface::getErrorCodes()` method to map error codes to user-friendly messages.

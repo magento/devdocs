@@ -51,7 +51,7 @@ In particular:
 
 A sample follows:
 
-{% highlight JSON %}
+```JSON
 
 	{
     "name": "your-name/module-Acme",
@@ -81,7 +81,7 @@ A sample follows:
     }
     }
 
-{% endhighlight %}
+```
 
 where:
 

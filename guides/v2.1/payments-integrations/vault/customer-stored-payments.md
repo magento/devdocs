@@ -87,7 +87,7 @@ Next, you need to create the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b62
 
 Example ([vault_cards_listaction.xml]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
 
-{% highlight xml %}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
@@ -97,7 +97,7 @@ Example ([vault_cards_listaction.xml]({{ site.mage2100url }}app/code/Magento/Bra
         </referenceContainer>
     </body>
 </page>
-{% endhighlight %}
+```
 
 In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 

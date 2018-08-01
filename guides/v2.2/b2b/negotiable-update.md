@@ -67,7 +67,7 @@ The `negotiated_price_type` can have one of the following values:
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quote": {
       "id": 6,
@@ -79,7 +79,7 @@ The `negotiated_price_type` can have one of the following values:
       }
     }
 }
-{% endhighlight %}
+```
 
 ### Add a new quote item to the negotiable quote
 
@@ -94,7 +94,7 @@ The buyer can add, update, or delete items from the quote under the following co
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "24-MB01",
@@ -102,11 +102,11 @@ The buyer can add, update, or delete items from the quote under the following co
     "quote_id": "7"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
     "item_id": 18,
     "sku": "24-MB01",
@@ -124,7 +124,7 @@ The buyer can add, update, or delete items from the quote under the following co
         }
     }
 }
-{% endhighlight %}
+```
 
 
 ### Change the quote expiration date
@@ -135,7 +135,7 @@ The buyer can add, update, or delete items from the quote under the following co
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quote": {
       "id": 6,
@@ -146,7 +146,7 @@ The buyer can add, update, or delete items from the quote under the following co
       }
     }
 }
-{% endhighlight %}
+```
 
 **Response**
 

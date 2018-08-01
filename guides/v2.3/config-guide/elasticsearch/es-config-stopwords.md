@@ -106,13 +106,13 @@ To change the directory:
 
 2.	Change the value of `fileDir` to the desired directory:
 
-{% highlight xml %}
+```xml
 
 <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
     <arguments>
         <argument name="fileDir" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 Save your changes to `di.xml` and exit the text editor.

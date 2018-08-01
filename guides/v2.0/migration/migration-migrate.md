@@ -41,9 +41,9 @@ In addition to the command arguments mentioned here, see [Common arguments]({{ p
 
 Below is a typical command example:
 
-{% highlight bash %}
+```bash
 bin/magento migrate:<mode> [-r|--reset] {<path to config.xml>}
-{% endhighlight bash %}
+```
 
 where:
 

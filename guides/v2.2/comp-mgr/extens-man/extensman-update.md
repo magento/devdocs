@@ -27,7 +27,7 @@ If the update is successful, a page similar to the following displays.
 
 Messages similar to the following display in the Console Log:
 
-{% highlight xml %}
+```xml
 [2016-07-27 20:36:03 UTC] Job "setup:maintenance:enable []" has started
 Enabled maintenance mode
 
@@ -62,7 +62,7 @@ Downloading: Connecting... Downloading: 0%..... Downloading: 100%
 Generating autoload files
 
 [2016-07-27 15:38:36 CDT] Composer update completed successfully
-{% endhighlight %}
+```
 
 ### Failure
 If the update fails, click **Rollback** to restore an earlier backup. Messages display in the Console Log as shown in the following figure.

@@ -33,19 +33,19 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 Example of setting `exports` in a component's `.js` file:
 
-{% highlight js%}
+```js
 {
   'exports': {
    'visible': '${ $.provider }:visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Here `visible` is the `key`, `${ $.provider }:visibility` is the `value`. The value of the local `visible` property is assigned to the `visibility` property of the `provider` component. The latter is changed automatically if the value of `visible` changes if the local `visible` property is observable (which it isn't given only the code example above).
 
 Example of setting `exports` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
     <item name="config" xsi:type="array">
         <item name="exports" xsi:type="array">
@@ -53,7 +53,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
         </item>
     </item>
 </argument>
-{% endhighlight xml%}
+```
 
 For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
@@ -65,19 +65,19 @@ The `imports` property is used for tracking changes of an external entity proper
 
 Example of using `imports` in a component's `.js` file:
 
-{% highlight js%}
+```js
 {
   'imports': {
    'visible': '${ $.provider }:visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Here the value of the `visibility` property of the `provider` component is assigned to the local `visible` property. If the latter is a ko or ko-es5 observable, the local property is automatically updated if `visibility` changes.
 
 Example of using `imports` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
     <item name="config" xsi:type="array">
         <item name="imports" xsi:type="array">
@@ -85,7 +85,7 @@ Example of using `imports` in a component's configuration `.xml` file:
         </item>
     </item>
 </argument>
-{% endhighlight xml%}
+```
 
 For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
 
@@ -98,19 +98,19 @@ The `links` property is used for cross tracking properties changes: both linked 
 
 Example of using `links` in a component's `.js` file:
 
-{% highlight js%}
+```js
 {
   'links': {
    'visible': '${ $.provider }:visibility'
   }
 }
-{% endhighlight js%}
+```
 
 Here the local `visible` property is linked with the `visibility`  property of the provider component. If any of them is a ko or ko-es5 observable and changes, the other is changed automatically. If a non-observable linked property is changed the other is not updated automatically.
 
 Example of using `links` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
     <item name="config" xsi:type="array">
         <item name="links" xsi:type="array">
@@ -118,7 +118,7 @@ Example of using `links` in a component's configuration `.xml` file:
         </item>
     </item>
 </argument>
-{% endhighlight xml%}
+```
 
 For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
 
@@ -130,13 +130,13 @@ The `listens` property is used to track the changes of a component's property. `
 
 Example of using `listens` in a component's `.js` file :
 
-{% highlight js%}
+```js
 {
   'listens': {
    '${ $.provider }:visibility': 'visibilityChanged'
   }
 }
-{% endhighlight js%}
+```
 
 Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It recieves the new value as an argument. If the local property is not a function, it will be set to the new value.
 The external property has to be an observable in order for `listens` to have any effect.
@@ -144,7 +144,7 @@ The external property has to be an observable in order for `listens` to have any
 
 Example of using `listens` in a component's configuration `.xml` file:
 
-{% highlight xml%}
+```xml
 <argument name="data" xsi:type="array">
     <item name="config" xsi:type="array">
         <item name="listens" xsi:type="array">
@@ -152,7 +152,7 @@ Example of using `listens` in a component's configuration `.xml` file:
         </item>
     </item>
 </argument>
-{% endhighlight xml%}
+```
 
 For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
 

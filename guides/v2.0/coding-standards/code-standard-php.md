@@ -30,10 +30,10 @@ This includes references to:
 
 Examples:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
   $this->get(ClassName::class);
-{% endhighlight %}
+```
 
-{% highlight php startinline=true %}
+```php?start_inline=1
   $this->get(\Magento\Path\To\Class::class);
-{% endhighlight %}
+```

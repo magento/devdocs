@@ -65,7 +65,7 @@ You specify input parameters in the URI. For example, in the `GET/V1/customers/:
 
 You specify input attributes in a JSON- or XML-formatted request body. For example, in the `POST /V1/customers` call, you must specify a request body like this:
 
-{% highlight json %}
+```json
 {
     "customers": {
         "customer": {
@@ -93,7 +93,7 @@ You specify input attributes in a JSON- or XML-formatted request body. For examp
         ]
     }
 }
-{% endhighlight %}
+```
 
 This JSON-formatted request body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.
 

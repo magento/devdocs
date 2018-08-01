@@ -62,7 +62,7 @@ Authorization Bearer <customer token>
 ```
 
 **Payload 1**
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "24-UG02",
@@ -70,11 +70,11 @@ Authorization Bearer <customer token>
     "quote_id": "5"
   }
 }
-{% endhighlight %}
+```
 
 **Response 1**
 
-{% highlight json %}
+```json
 {
     "item_id": 12,
     "sku": "24-UG02",
@@ -84,11 +84,11 @@ Authorization Bearer <customer token>
     "product_type": "simple",
     "quote_id": "5"
 }
-{% endhighlight %}
+```
 
 **Payload 2**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "24-UG03",
@@ -96,12 +96,12 @@ Authorization Bearer <customer token>
     "quote_id": "5"
   }
 }
-{% endhighlight %}
+```
 
 
 **Response 2**
 
-{% highlight json %}
+```json
 {
     "item_id": 13,
     "sku": "24-UG03",
@@ -111,7 +111,7 @@ Authorization Bearer <customer token>
     "product_type": "simple",
     "quote_id": "5"
 }
-{% endhighlight %}
+```
 
 ### Set the shipping address
 
@@ -130,7 +130,7 @@ Authorization Bearer <customer token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {  "address": {
       "region": "California",
       "region_id": 12,
@@ -149,11 +149,11 @@ Authorization Bearer <customer token>
       "same_as_billing": 1
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 [
     {
         "carrier_code": "flatrate",
@@ -180,7 +180,7 @@ Authorization Bearer <customer token>
         "price_incl_tax": 5
     }
 ]
-{% endhighlight %}
+```
 
 ### Set shipping and billing information
 
@@ -192,7 +192,7 @@ You can also set shipping and billing information after initiating a negotiable 
 
 **Payload**
 
-{% highlight json %}
+```json
 {
 "addressInformation": {
   "shipping_address": {
@@ -229,12 +229,12 @@ You can also set shipping and billing information after initiating a negotiable 
   "shipping_method_code": "bestway"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 {
     "payment_methods": [
         {
@@ -380,7 +380,7 @@ You can also set shipping and billing information after initiating a negotiable 
         }
     }
 }
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### View the cart
@@ -405,7 +405,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 {
     "id": 5,
@@ -585,7 +585,7 @@ None
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 
@@ -616,13 +616,13 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 5,
   "quoteName": "Discount request",
   "comment": "Requesting a 2.5% discount"
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -645,7 +645,7 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quote": {
       "id": 5,
@@ -657,7 +657,7 @@ Authorization Bearer <admin token>
       }
     }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -682,12 +682,12 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quoteId": 5,
   "comment": "We have applied a 2.5% discount to your order."
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -715,7 +715,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+```json
 
 {
     "id": 4,
@@ -931,7 +931,7 @@ None
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ### Set the payment information and place the order
@@ -951,13 +951,13 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {  "paymentMethod": {
     "po_number": "12345",
     "method": "companycredit"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -983,14 +983,14 @@ Authorization Bearer <admin token>
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "value": 363.80,
   "currency": "USD",
   "operationType": 4,
   "comment": "Order #3 reimbursed"
 }
-{% endhighlight %}
+```
 
 **Response**
 

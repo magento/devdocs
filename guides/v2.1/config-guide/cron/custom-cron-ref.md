@@ -35,7 +35,7 @@ To configure a cron group for your module, create a `crontab.xml` file in your m
 
 For one group, the file should have the following contents:
 
-{%highlight xml%}
+```xml
 <config>
     <group id="<group_name>">
         <job name="<job_name>" instance="<classpath>" method="<method>">
@@ -43,7 +43,7 @@ For one group, the file should have the following contents:
         </job>
     </group>
 </config>
-{%endhighlight%}
+```
 
 where:
 
@@ -57,7 +57,7 @@ where:
 
 The resulting `crontab.xml` with two groups may look like this:
 
-{%highlight xml%}
+```xml
 <config>
     <group id="default">
         <job name="<job_1_name>" instance="<classpath>" method="<method_name>">
@@ -76,7 +76,7 @@ The resulting `crontab.xml` with two groups may look like this:
         </job>
     </group>
 </config>
-{%endhighlight%}
+```
 
 As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
 
@@ -88,7 +88,7 @@ You may declare a new group and specify its configuration options (all of which 
 
 Below is an example of the `cron_groups.xml` file:
 
-{%highlight xml%}
+```xml
 <config>
     <group id="<group_name>">
         <schedule_generate_every>1</schedule_generate_every>
@@ -100,7 +100,7 @@ Below is an example of the `cron_groups.xml` file:
         <use_separate_process>1</use_separate_process>
     </group>
 </config>
-{%endhighlight%}
+```
 
 where:
 

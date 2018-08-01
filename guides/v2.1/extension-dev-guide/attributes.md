@@ -46,7 +46,7 @@ Customer attributes are created inside of `InstallData` and `UpgradeData` script
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 </div>
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 namespace My\Module\Setup;
 
 use Magento\Customer\Model\Customer;
@@ -84,7 +84,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
         $this->attributeResource->save($attribute);
     }
 }
-{% endhighlight %}
+```
 
 
 
@@ -100,7 +100,7 @@ Most likely, you will want to extend interfaces defined in the `Api/Data` direct
 
 You must create a `<Module>/etc/extension_attributes.xml` file to define a module's extension attributes:
 
-{% highlight XML %}
+```XML
 <config>
     <extension_attributes for="Path\To\Interface">
         <attribute code="name_of_attribute" type="datatype">
@@ -113,7 +113,7 @@ You must create a `<Module>/etc/extension_attributes.xml` file to define a modul
         </attribute>
     </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 where:
 
@@ -178,7 +178,7 @@ The system uses a join directive to add external attributes to a collection and 
 
 In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` is being added to the `Magento\Catalog\Api\Data\ProductInterface`.
 
-{% highlight XML %}
+```XML
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
     <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
         <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
@@ -186,7 +186,7 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
         </join>
     </attribute>
 </extension_attributes>
-{% endhighlight %}
+```
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property comes from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
@@ -196,7 +196,7 @@ Individual fields that are defined as extension attributes can be restricted, ba
 
 The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
-{% highlight XML %}
+```XML
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
@@ -206,7 +206,7 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
         </attribute>
     </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<magento_base_url>/rest/V1/products/<sku>` request will receive product information similar to the following:
 
@@ -253,11 +253,11 @@ An `ExtensionInterface` will be empty if no extension attributes have been added
 
 However, if an extension similar to the following has been defined, the interface will not be empty:
 
-{% highlight XML %}
+```XML
 <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
     <attribute code="attributeName" type="Magento\Some\Type[]" />
 </extension_attributes>
-{% endhighlight %}
+```
 
 ### Troubleshoot EAV attributes {#troubleshooting}
 If you have issues when using `setup:upgrade`, verify `__construct` uses the method `EavSetupFactory` not `EavSetup`. You should not directly inject `EavSetup` in extension code. Check your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.

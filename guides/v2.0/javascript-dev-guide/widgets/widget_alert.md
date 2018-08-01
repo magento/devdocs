@@ -21,7 +21,7 @@ The alert widget can be initialized with or without binding to a certain element
 
 **Example1**: initialization on an element
 
-{% highlight js %}
+```js
 $('#init_element').alert({
     title: 'Warning',
     content: 'Warning content',
@@ -29,11 +29,11 @@ $('#init_element').alert({
         always: function(){}
     }
 });
-{% endhighlight %}
+```
 
 **Example2**: standalone initialization
 
-{% highlight js %}
+```js
 require([
     'Magento_Ui/js/modal/alert'
 ], function(alert) { // Variable that represents the `alert` function
@@ -47,7 +47,7 @@ require([
     });
  
 });
-{% endhighlight %}
+```
 
 For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
@@ -70,11 +70,11 @@ Widget callbacks.
 **Type**: Object.
 
 **Default value**: 
-{% highlight js %}
+```js
 actions: {
     always: function(){}
 }
-{% endhighlight %}
+```
 
 <h3 id="alert_autoopen">autoOpen</h3>
 Automatically open the alert window when the widget is initialized.

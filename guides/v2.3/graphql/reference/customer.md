@@ -68,7 +68,7 @@ The following call returns information about the logged-in customer.
 
 **Request**
 
-{% highlight json %}
+```json
 {
   customer
   {
@@ -89,7 +89,7 @@ The following call returns information about the logged-in customer.
     }
    }
 }
-{% endhighlight %}
+```
 
 **Response**
 

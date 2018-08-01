@@ -53,19 +53,19 @@ The software version can be found in the source code of any {% glossarytooltip 3
 
 It can be declared as the version of the component:
 
-{% highlight JSON %}
+```JSON
 "name": "acme/foo",
 "version": 1.2.0
-{% endhighlight %}
+```
 
 Or it can be used to declare a dependency on a particular version of a component:
 
-{% highlight JSON %}
+```JSON
 "require": {
     "acme/foo": "1.2.*",
     "acme/bar": "2.2.0"
 }
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`

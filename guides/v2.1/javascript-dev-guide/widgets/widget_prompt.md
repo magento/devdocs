@@ -25,7 +25,7 @@ The prompt widget can be initialized with or without binding to a certain elemen
 
 **Example1**: initialization on an element
 
-{% highlight js %}
+```js
 $('#prompt_init').prompt({
     title: 'Prompt title',
     actions: {
@@ -34,11 +34,11 @@ $('#prompt_init').prompt({
         always: function(){}
     }
 });
-{% endhighlight js %}
+```
 
 **Example2**: standalone initialization
 
-{% highlight js %}
+```js
 require([
     'Magento_Ui/js/modal/prompt'
 ], function(prompt) { // Variable that represents the `prompt` function
@@ -54,7 +54,7 @@ require([
     });
 
 });
-{% endhighlight %}
+```
 
 For details about how to initialize a widget in a `.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
@@ -75,13 +75,13 @@ Widget callbacks.
 **Type**: Object.
 
 **Default value**:
-{% highlight js %}
+```js
 actions: {
     confirm: function(){},
     cancel: function(){},
     always: function(){}
 }
-{% endhighlight %}
+```
 
 ### autoOpen {#prompt_autoopen}
 Automatically open the prompt window when the widget is initialized.

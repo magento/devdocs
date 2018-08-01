@@ -121,7 +121,7 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 
 *Example:*
 
-{% highlight html %}
+```html
 {%raw%}
 ```html
 <div class="container">
@@ -132,7 +132,7 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 </div>
 ```
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 
@@ -151,7 +151,7 @@ Use these messages to highlight or bring attention to a piece of information.
 
 **Notes:**
 
-{% highlight liquid %}
+```liquid
 {%raw%}
 {%
 include note.html
@@ -159,7 +159,7 @@ type='info'
 content='This is a note callout. You can use these to provide important information on a topic.'
 %}
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 
@@ -171,7 +171,7 @@ content='This is a note callout. You can use these to provide important informat
 
 **Warnings:**
 
-{% highlight liquid %}
+```liquid
 {%raw%}
 {%
 include note.html
@@ -179,7 +179,7 @@ type='warning'
 content='This is a warning callout. This can be used to convey important information to the reader.'
 %}
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 
@@ -191,7 +191,7 @@ content='This is a warning callout. This can be used to convey important informa
 
 **Tips:**
 
-{% highlight liquid %}
+```liquid
 {%raw%}
 {%
 include note.html
@@ -199,7 +199,7 @@ type='tip'
 content='This is a tip callout. These can be used to provide useful tips or interesting facts on a topic.'
 %}
 {%endraw%}
-{% endhighlight %}
+```
 
 *Output:*
 

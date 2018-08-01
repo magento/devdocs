@@ -70,7 +70,7 @@ HtmlContent-specific options:
 
 ### How to render layout in scope of UI configuration
 
-{%highlight xml%}
+```xml
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="customer_edit_tab_view">
@@ -83,15 +83,15 @@ HtmlContent-specific options:
        </block>
     </htmlContent>
 </form>
-{%endhighlight%}
+```
 
 ## How to render simple magento block in scope of UI configuration
 
-{%highlight xml%}
+```xml
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="giftregistry">
         <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
     </htmlContent>
 </form>
-{%endhighlight%}
+```

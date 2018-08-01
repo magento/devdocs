@@ -24,7 +24,7 @@ For each particular integration with a payment provider, gateway commands are ad
 
 In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml#L131)):
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
         <argument name="requestBuilder" xsi:type="object">BraintreeAuthorizeRequest</argument>
@@ -34,7 +34,7 @@ In the following example the `BraintreeAuthorizeCommand` gateway command is adde
         <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\ResponseValidator</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 (The code sample is from {{site.data.var.ce}} v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)
 

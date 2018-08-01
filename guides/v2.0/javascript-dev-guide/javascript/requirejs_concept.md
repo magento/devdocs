@@ -33,7 +33,7 @@ Following is the conventional location of `requirejs-config.js` (RequireJS confi
 
 Lets look at an example, the Catalog module. In the `<Magento_Catalog_module_dir>/view/base/requirejs-config.js` file we see the configuration variable:
 
-{%highlight js%}
+```js
 var config = {
     map: {
         '*': {
@@ -49,7 +49,7 @@ var config = {
         'Magento_Catalog/catalog/product'
     ]
 };
-{%endhighlight%}
+```
 
 
 The `config` variable contains properties with the `map` and `deps` keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the `map` property contains an object with the keys that are aliases to files and values that are real paths to files.
@@ -60,7 +60,7 @@ The merged configuration will be loaded on the page right after `require.js` and
 
 Example of how aliases can be used. Open a browser console on any Magento page and type:
 
-{%highlight js%}
+```js
 
 	require(['productGallery']); // load the module on the page
 	var gallery1 = require('productGallery');
@@ -68,7 +68,7 @@ Example of how aliases can be used. Open a browser console on any Magento page a
 	console.log(gallery1); // it does not return a simple type
     console.log(gallery1 === gallery2); // they are the same
 
-{%endhighlight%}
+```
 
 
 Tip: One more way that you can use `require` object is to retrieve a current configuration during runtime. Just type in a browser console:

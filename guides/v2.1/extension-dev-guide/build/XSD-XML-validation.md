@@ -52,18 +52,18 @@ where
 ### Referencing a XSD from another XSD
 Use URN notation to reference schema from inside a XSD document:
 
-{% highlight XML %}
+```XML
 
 <xs:redefine schemaLocation="urn:magento:framework:Config/etc/view.xsd">
 
 
-{% endhighlight %}
+```
 
 The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using `libxml_set_external_entity_loader`:
 
-{% highlight XML %}
+```XML
 libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', 'registerEntityLoader']);
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

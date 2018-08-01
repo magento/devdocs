@@ -178,7 +178,7 @@ This section contains code sample snippets to refer to when configuring database
 <h3 id="mage-cache-db-config-default">Sample <code>di.xml</code> for the default cache frontend</h3>
 `di.xml` snippet:
 
-{% highlight XML %}
+```XML
  <type name="Magento\Framework\App\Cache\Frontend\Pool">
         <arguments>
             <argument name="frontendSettings" xsi:type="array">
@@ -198,12 +198,12 @@ This section contains code sample snippets to refer to when configuring database
             </argument>
         </arguments>
  </type>
-{% endhighlight %}
+```
 
 <h3 id="mage-cache-db-config-custom">Sample <code>env.php</code> for a custom cache frontend</h3>
 `env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
  'cache' => [
      'frontend' => [
         'magento_cache' => [
@@ -252,4 +252,4 @@ This section contains code sample snippets to refer to when configuring database
           ],
       ],
   ],
-{% endhighlight %}
+```

@@ -48,7 +48,7 @@ The [`AdapterInterface`](https://github.com/magento/magento2/blob/2.0/lib/intern
 
 The code below describes an interface for an adapter that parses {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
 
-{% highlight php startinline %}
+```php?start_inline=1
 /**
  * Interface for markdown library adapters
  */
@@ -64,13 +64,13 @@ interface AdapterInterface
      */
     public function parse($text);
 }
-{% endhighlight %}
+```
 
 <br/>
 
 The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}.
 
-{% highlight php startinline %}
+```php?start_inline=1
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;
 
 use \Michelf\Markdown;
@@ -92,22 +92,22 @@ class PhpMarkdown implements AdapterInterface
         return Markdown::defaultTransform($text);
     }
 }
-{% endhighlight %}
+```
 
 <br/>
 
 To configure the ObjectManager to use the PhpMarkdown implementation when the AdapterInterface class is requested as a dependency, add the following code in your di.xml file.
 
-{% highlight php startinline %}
+```php?start_inline=1
 <preference for="MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface" type="MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown\PhpMarkdown" />
-{% endhighlight %}
+```
 
 <br/>
 
 The code below is an alternate implementation class of the `AdapterInterface` that uses the [Ciconia](https://github.com/kzykhys/Ciconia){:target="_blank"} library to parse markdown into HTML.
 This code differs from the previous implementations in that an instance of the `Ciconia` class is a constructor dependency.
 
-{% highlight php startinline %}
+```php?start_inline=1
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\Ciconia;
 use Ciconia\Ciconia;
 use MyCompany\MyModule\Markdown\Parser\Adapter\AdapterInterface;
@@ -141,14 +141,14 @@ class CiconiaParser implements AdapterInterface
         return $this->parser->render($text);
     }
 }
-{% endhighlight %}
+```
 
 <br/>
 
 The following {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} entries belong in the `di.xml` file.
 They describe to the ObjectManager how to create the third-party and adapter classes.
 
-{% highlight xml %}
+```xml
 <virtualType name="defaultCiconia" type="Ciconia\Ciconia" shared="false">
    <arguments>
        <argument name="renderer" xsi:type="null"/>
@@ -159,4 +159,4 @@ They describe to the ObjectManager how to create the third-party and adapter cla
        <argument name="parser" xsi:type="object">defaultCiconia</argument>
    </arguments>
 </type>
-{% endhighlight %}
+```

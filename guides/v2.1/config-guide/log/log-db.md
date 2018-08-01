@@ -32,11 +32,11 @@ to
 
 After that, add the following block to configure file-based logging:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 <type name="Magento\Framework\DB\Logger\File">
     <arguments>
         <argument name="logAllQueries" xsi:type="boolean">true</argument>
         <argument name="debugFile" xsi:type="string">log/db.log</argument>
     </arguments>
 </type>
-{% endhighlight %}
+```

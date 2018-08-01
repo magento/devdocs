@@ -60,7 +60,7 @@ Accordions support arbitrary markup, but the following requirements should be ke
 
 Mark-up examples:
 
-{%highlight html%}
+```html
 <div id="element">
     <div data-role="collapsible">
         <div data-role="trigger">
@@ -92,7 +92,7 @@ Mark-up examples:
     });
 </script>
 
-{%endhighlight%}
+```
 
 
 <h4>Initialize accordion with option</h4>

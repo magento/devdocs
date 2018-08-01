@@ -74,13 +74,13 @@ Error text is typically:
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
 Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:
 
-{% highlight PHP inline=true %}
+```php?start_inline=1
 <img
     class="product-image"
     src="<%- data.url %>"
     data-position="<%- data.position %>"
     alt="<%- data.label %>" />
-{% endhighlight %}
+```
 
 More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.
 

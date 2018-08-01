@@ -37,7 +37,7 @@ Configurations of the routes are stored in `routes.xml` in the scopes area.
 
 Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} routers use routes. Typically, the configuration for a route is in the following format:
 
-{% highlight XML %}
+```XML
 <config>
     <router id="%routerId%">
         <route id="%routeId%" frontName="%frontName%">
@@ -45,7 +45,7 @@ Only the standard {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}fron
         </route>
     </router>
 </config>
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><code>%routeId%</code> must be at least three characters in length and can consist of the following characters: <code>A-Z, a-z, 0-9, _</code>.</p>

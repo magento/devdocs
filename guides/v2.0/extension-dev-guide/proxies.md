@@ -16,7 +16,7 @@ If a class's constructor is particularly resource-intensive, this can lead to un
 
 As an example, consider the following two classes:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 class SlowLoading
 {
     public function __construct()
@@ -50,7 +50,7 @@ class FastLoading
         return $this->slowLoading->getValue();
     }
 }
-{% endhighlight %}
+```
 
 Assume that class `SlowLoading` has a non-trivial performance impact when instantiated (perhaps due to a complex database query or a call to a third-party web API). Because of the dependency injection in the constructor of `FastLoading`, this impact is incurred if `FastLoading` is instantiated.  Note, however, that the `SlowLoading` instance is used only in the method `getSlowValue`, meaning that the resource cost is unnecessary if this method is never called on the `FastLoading` object.
 
@@ -61,13 +61,13 @@ Proxies are generated code and therefore do not need to be manually written.  (S
 
 Using the preceding example, a proxy can be passed into the constructor arguments instead of the original class, using DI configuration as follows:
 
-{% highlight XML %}
+```XML
 <type name="FastLoading">
     <arguments>
         <argument name="slowLoading" xsi:type="object">SlowLoading\Proxy</argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 With the proxy used in place of `SlowLoading`, the `SlowLoading` class will not be instantiated&mdash;and therefore, the resource intensive constructor operations not performed&mdash;until the `SlowLoading` object is used (that is, if the `getSlowValue` method is called).
 

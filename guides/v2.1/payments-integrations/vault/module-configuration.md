@@ -16,7 +16,7 @@ You need to add dependencies on the Magento_Vault module in the payment method's
 
 `app/code/Magento/Braintree/composer.json`:
 
-{% highlight json %}
+```json
 {
     "name": "magento/module-braintree",
     ...
@@ -27,10 +27,10 @@ You need to add dependencies on the Magento_Vault module in the payment method's
     }
     ...
 }
-{% endhighlight %}
+```
 
 `app/code/Magento/Braintree/etc/module.xml`:
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Magento_Braintree" setup_version="2.0.0">
         <sequence>
@@ -40,7 +40,7 @@ You need to add dependencies on the Magento_Vault module in the payment method's
         </sequence>
     </module>
 </config>
-{% endhighlight %}
+```
 
 ## What's next
 

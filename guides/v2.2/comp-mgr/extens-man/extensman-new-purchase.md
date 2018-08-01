@@ -22,7 +22,7 @@ If the list of purchases is correct, click **Install**.
 
 Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:
 
-{% highlight xml %}
+```xml
 [2016-07-28 15:18:03 UTC] Job "setup:maintenance:enable []" has started
 Enabled maintenance mode
 
@@ -91,7 +91,7 @@ Module 'Magento_NewRelicReporting':
 Module 'Magento_CatalogSampleData':
 Installing data...
 ... more ...
-{% endhighlight %}
+```
 
 When the installation is complete, a page similar to the following displays:
 

@@ -59,7 +59,7 @@ For more information about backward compatibility, see [Magento’s backward com
   </tr>
   <tr>
     <td>
-    {% highlight php %}
+    ```php
     [
         'general' => [
             'name' => 'Category',
@@ -69,10 +69,10 @@ For more information about backward compatibility, see [Magento’s backward com
         ],
         ...
     ]
-    {% endhighlight %}
+    ```
     </td>
     <td>
-    {% highlight php %}
+    ```php
     [
         'general' => [
             'name' => 'Category',
@@ -85,7 +85,7 @@ For more information about backward compatibility, see [Magento’s backward com
         ],
         ...
     ]
-    {% endhighlight %}
+    ```
     </td>
   </tr>
 </table>

@@ -21,7 +21,7 @@ This section is responsible for holding all product data that come from the serv
 
 The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service]{:target="_blank"} to initialize the repository when the data storage cache itself initializes:
 
-{% highlight js %}
+```js
 define([
     'Magento_Catalog/js/product/storage/storage-service'
 ]), function(storage){
@@ -55,13 +55,13 @@ define([
     }
 
 }
-{% endhighlight %}
+```
 
 ## Use the repository
 
 Subscribe a callback function to the product repository data to work with the cached data from recent server requests.
 
-{% highlight js %}
+```js
 
 ...
 
@@ -76,13 +76,13 @@ dataCollectionHandler: function(data){
 
 ...
 
-{% endhighlight %}
+```
 
 ## Get data from the server
 
 Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs. 
 
-{% highlight js %}
+```js
 
 ...
 
@@ -94,7 +94,7 @@ idsStorageHandler: function(idsStorage, currency, storeId){
 
 ...
 
-{% endhighlight %}
+```
 
 | Parameter  | Description                                     |
 | ---------- | ----------------------------------------------- |
@@ -114,7 +114,7 @@ For UI Components, add this information in the [`dataProvider`][datasource-compo
 
 The following example is from the [recently-viewed widget][recently-viewed-widget]{:target="_blank"}:
 
-{% highlight xml %}
+```xml
 
 <argument name="dataProvider" xsi:type="configurableObject">
     <argument name="data" xsi:type="array">
@@ -133,7 +133,7 @@ The following example is from the [recently-viewed widget][recently-viewed-widge
     </argument>
 </argument>
 
-{% endhighlight %}
+```
 
 This sets the appropriate information inside the `updateRequestConfig` object in the product storage configuration(`productStorageConfig` in the example code).
 
@@ -141,7 +141,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
 
 {% collapsible Show Object Structure %}
 
-{% highlight js %}
+```js
 [
    item_id: {
         //@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface
@@ -190,7 +190,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
         'store_id': ... //integer
    }  
 ]
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
