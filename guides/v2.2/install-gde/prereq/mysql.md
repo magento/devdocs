@@ -52,7 +52,7 @@ To install MySQL 5.7 on Ubuntu 16:
 
 		sudo apt install -y mysql-server mysql-client
 
-2. Start MySQL
+2. Start MySQL:
 
         sudo service mysql start
 
@@ -93,7 +93,7 @@ To install MySQL 5.6 on Ubuntu 14:
 
 		apt-get -y install mysql-server-5.6 mysql-client-5.6
 
-2. Start MySQL
+2. Start MySQL:
 
         sudo service mysql start
 
@@ -138,7 +138,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from [askubunt
 		apt-get -y update
 		apt-get -y install mysql-server
 
-2. Start MySQL
+2. Start MySQL:
 
         sudo service mysql start
 
