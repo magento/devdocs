@@ -28,8 +28,9 @@ After a test case execution, the application and the related objects are reiniti
 It isolates the application objects from the influence of the executed test cases.
 The test case isolation is mandatory; it cannot be disabled.
 
+{:.bs-callout .bs-callout-warning}
 Do not share and do not rely on sharing the application objects between test cases.
-{:.bs-callout .bs-call-warning}
+
 
 ### In a test
 
@@ -66,8 +67,8 @@ Although `@magentoAppIsolation` cannot be changed at the test case level, develo
 
 You can use non-isolated tests unless they do not modify or utilize the same application areas: the same attributes of the application object, the same paths in the current configuration, or the current scope ("store").
 
+{:.bs-callout .bs-callout-tip}
 We recommended to force the application isolation if any application objects were intentionally modified within the test case.
-{:.bs-callout .bs-call-tip}
 
+{:.bs-callout .bs-callout-info}
 The order of test execution can vary depending on the version of PHPUnit being used.
-{:.bs-callout .bs-call-info}

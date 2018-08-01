@@ -164,7 +164,7 @@ Method|`Magento_Catalog_Model_ProductTest::prepareProduct`|`Magento_Catalog_Mode
 
 Relying on and modifying application state from within a fixture is prohibited.
 
-The limitation is dictated by the compatibility requirements with the [application isolation annotation], which may reset application state at any time.
+The limitation is dictated by the compatibility requirements with the [application isolation annotation][magentoAppIsolation], which may reset application state at any time.
 
 For example, the following fixture results passing to curresponding test is prohibited:
 
@@ -187,7 +187,7 @@ Session fixtures must not use `Mage::getSingleton()` to instantiate a necessary 
 
 This restriction is necessitated by the way PHPUnit backs up global variables, including the superglobal variable [`$_SESSION`].
 A conflict arises because Magento's abstract session model refers to session data by reference (`$this->_data = &$_SESSION[$namespace]`), which is no longer accurate after something is assigned to the `$_SESSION` variable.
-Therefore, when using Mage::getSingleton(), a session model with a snapshot of the session data (rather than a reference to the current data) will be placed into the registry, polluting the following test with old session data.
+Therefore, when using `Mage::getSingleton()`, a session model with a snapshot of the session data (rather than a reference to the current data) will be placed into the registry, polluting the following test with old session data.
 
 <!-- Link definitions -->
 

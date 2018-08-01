@@ -22,7 +22,7 @@ Annotation `@magentoDbIsolation` is used for that purpose.
 ## Test case isolation
 
 There can be cases when multiple tests perform changes to the database and rely on the changes made by each other.
-For example, entity CRUD tests are performed in predefined sequence: create -> read -> update -> delete.
+For example, entity CRUD tests are performed in predefined sequence: _create -> read -> update -> delete_.
 Every next test relies on a database state left from the previous one.
 If at any point of that sequence (after create) a test fails, the database will be polluted with saved data.
 To not obfuscate such tests with error-prone cleanup logic, entire sequence of test can be implemented as a separate test case with `@magentoDbIsolation` enabled on a class level.
@@ -106,6 +106,6 @@ public function testGetNewIncrementId()
 }
 ```
 
+{:.bs-callout .bs-callout-info}
 Before implementation of this annotation, db isolation of a test used to be done using `@magentoDataFixture` annotation with an empty fixture.
 Usage of empty fixture workaround is prohibited now in favor of `@magentoDbIsolation` annotation.
-{:.bs-callout .bs-call-info}
