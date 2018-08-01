@@ -2351,22 +2351,16 @@ mysql&gt;
   <li>
     <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div>
+    <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
 
-      <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
-</code></pre></div>      </div>
-
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre></div>    </div>
   </li>
-</ol>
-<p>&lt;/div&gt;</p>
-
-<ol>
-  <li><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</li>
+  <li>
+    <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
+  </li>
 </ol>
 
 <h3 id="instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</h3>
@@ -2411,22 +2405,16 @@ mysql&gt;
   <li>
     <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div>
+    <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
 
-      <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
-</code></pre></div>      </div>
-
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre></div>    </div>
   </li>
-</ol>
-<p>&lt;/div&gt;</p>
-
-<ol>
-  <li><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</li>
+  <li>
+    <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
+  </li>
 </ol>
 
 <h3 id="instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</h3>
@@ -2475,22 +2463,16 @@ mysql&gt;
   <li>
     <p>If you expect to import large numbers of products into Magento, you can increase the value for <a href="http://dev.mysql.com/doc/refman/5.6/en/program-variables.html" target="&#95;blank"><code class="highlighter-rouge">max_allowed_packet</code></a> that is larger than the default, 16MB.</p>
 
-    <div>
+    <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
 
-      <p>To increase the value, open <code class="highlighter-rouge">/etc/mysql/mysql.cnf</code> in a text editor and locate the value for <code class="highlighter-rouge">max_allowed_packet</code>. Save your changes to <code class="highlighter-rouge">mysql.cnf</code>, close the text editor, and restart MySQL (<code class="highlighter-rouge">service mysql restart</code>).</p>
+    <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
 
-      <p>To optionally verify the value you set, enter the following command at a <code class="highlighter-rouge">mysql&gt;</code> prompt:</p>
-
-      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
-</code></pre></div>      </div>
-
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> SHOW VARIABLES LIKE 'max_allowed_packet';
+</code></pre></div>    </div>
   </li>
-</ol>
-<p>&lt;/div&gt;</p>
-
-<ol>
-  <li><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</li>
+  <li>
+    <p><a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.</p>
+  </li>
 </ol>
 
 <h2 id="instgde-prereq-mysql57-centos">Installing and configuring MySQL 5.7 on CentOS</h2>
