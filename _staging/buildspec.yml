@@ -12,10 +12,9 @@ phases:
   build:
     commands:
       - echo "******** Building Jekyll site ********"
-      - jekyll build --baseurl $CODEBUILD_SOURCE_VERSION
+      - jekyll build
   post_build:
     commands:
       # - echo "******** Uploading to S3 ********"
       # Use the --delete option to remove deleted local files from the S3 bucket
       - aws s3 sync _site/ s3://jekyll-site-demo-staging/$CODEBUILD_SOURCE_VERSION --delete
-
