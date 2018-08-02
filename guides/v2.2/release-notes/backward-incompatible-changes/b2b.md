@@ -10,14 +10,25 @@ This topic provides details about backward incompatible changes related to {{sit
 
 All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.b2b}}, consider [changes in {{site.data.var.ce}}] and [changes in {{site.data.var.ee}}].
-</div>
 
 The changes are aggregated into two tables:
 
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
+
+## 1.0.4 - 1.0.5 {#releases-1_0_4-1_0_5}
+
+{% include backward-incompatible-changes/b2b/1.0.4-1.0.5.html %}
+
+## 1.0.3 - 1.0.4 {#releases-1_0_3-1_0_4}
+
+{% include backward-incompatible-changes/b2b/1.0.3-1.0.4.html %}
+
+## 1.0.2 - 1.0.3 {#releases-1_0_2-1_0_3}
+
+{% include backward-incompatible-changes/b2b/1.0.2-1.0.3.html %}
 
 ## 1.0.1 - 1.0.2 {#releases-1_0_1-1_0_2}
 
@@ -31,5 +42,3 @@ The changes are aggregated into two tables:
 
 [changes in {{site.data.var.ce}}]: open-source.html
 [changes in {{site.data.var.ee}}]: commerce.html
-[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
-[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated
