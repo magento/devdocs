@@ -18,7 +18,7 @@ You can follow the same approach when customizing Magento JavaScript, or <a href
 
 For information about how JS resources are located and configured, see <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript</a>
 
-<h2 id="#js_contents">What's in this chapter</h2>
+## What's in this chapter {##js_contents}
 Topics of this chapter describe the following:
 
 - [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
@@ -29,7 +29,7 @@ Topics of this chapter describe the following:
 
 
 
-<h2 id="js_terms">Terms used</h2>
+## Terms used {#js_terms}
 
 <table>
 <tr>

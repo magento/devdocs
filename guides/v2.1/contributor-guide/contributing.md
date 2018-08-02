@@ -26,6 +26,7 @@ The following topics are included in this guide:
 ## Contribute to Magento 2 code {#contribute}
 
 Use the [fork](#fork) and [pull](#pull_request) model to contribute to the Magento 2 codebase.
+
 This contribution model allows contributors to maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
 Contributions can take the form of new components or features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations, or just good suggestions. We recommend also creating back-ports and up-ports as needed with your pull requests if the issue occurs in higher or lower line releases.
@@ -226,7 +227,7 @@ To add an issue:
 1. Fill in the Title and Issue description.
 1. Click **Submit new issue**.
 
-Help triage issues <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a> {#triage}
+## Help triage issues {#triage} <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a>
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){:target="_blank"}.
 

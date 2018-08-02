@@ -11,7 +11,7 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
-<h2 id="js_init_overview">Overview</h2>
+## Overview {#js_init_overview}
 
 This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
 
