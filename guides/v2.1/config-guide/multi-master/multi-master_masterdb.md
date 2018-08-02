@@ -27,9 +27,9 @@ This topic discusses how to get started with the split database solution by:
 </div>
 
 ## Install the {{site.data.var.ee}} software {#config-ee-multidb-master-install}
-You can enable split databases at any time after you install the {{site.data.var.ee}} software; in other words, you can add split databases to a {{site.data.var.ee}} system that already has checkout and order data. Use the instructions in the {{site.data.var.ee}} README or the <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">installation guide</a> to install the {{site.data.var.ee}} software using a single master database.
+You can enable split databases at any time after you install the {{site.data.var.ee}} software; in other words, you can add split databases to a {{site.data.var.ee}} system that already has checkout and order data. Use the instructions in the {{site.data.var.ee}} README or the [installation guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) to install the {{site.data.var.ee}} software using a single master database.
 
 {% include config/split-db.md %}
 
 #### Next step
-<a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+[Verify split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html)

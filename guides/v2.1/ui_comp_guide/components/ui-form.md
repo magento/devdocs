@@ -123,7 +123,7 @@ Form-specific configuration:
           receives the notification. Can use string templates.
           </li>
         </ul>
-For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+For more details see the [Linking properties of UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) topic.
       </td>
       <td>
         Object
@@ -156,7 +156,7 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
           tracked for changes. Can use string templates.
           </li>
         </ul>
-For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+For more details see the [Linking properties of UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) topic.
       </td>
       <td>
         Object

@@ -82,7 +82,7 @@ where
 <tr>
 	<td>persistent_identifier</td>
 	<td><p>Unique string to enable persistent connections (for example, <code>sess-db0</code>).</p>
-		<p><a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p></td>
+		<p>[Known issues with <code>phpredis</code> and <code>php-fpm</code>](https://github.com/nicolasff/phpredis/issues/70" target="_blank).</p></td>
 	<td>empty</td>
 </tr>
 <tr>
@@ -93,8 +93,8 @@ where
 </tr>
 <tr>
 	<td>compression_threshold</td>
-	<td><p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features" target="_blank"><code>suhosin.session.encrypt = On</code></a>).</p>
-	<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18" target="_blank">Known issue with strings of more than 64KB</a>.</p></td>
+	<td><p>Set to <code>0</code> to disable compression (recommended when [<code>suhosin.session.encrypt = On</code>](http://suhosin.org/stories/howtos.html#encryption-features" target="_blank)).</p>
+	<p>[Known issue with strings of more than 64KB](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18" target="_blank).</p></td>
 		<td>2048</td>
 </tr>
 <tr>
@@ -169,5 +169,5 @@ where
 
 #### Related topics
 
- *  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+ *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

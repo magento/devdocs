@@ -24,8 +24,8 @@ If possible, use [Elastic Search]({{ site.baseurl }}/guides/v2.1/config-guide/el
 
 The following topics discuss how to configure Solr to work with {{site.data.var.ee}}:
 
-* <a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a>
-* <a href="#config-solr-magento">Configure Magento to work with Solr</a>
+* [Copy the Magento Solr configuration and start Solr](#config-solr-copy-config-files)
+* [Configure Magento to work with Solr](#config-solr-magento)
 
 ### Copy the Magento Solr configuration and start Solr {#config-solr-copy-config-files}
 Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.
@@ -60,7 +60,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 
 		name=magento2
 
-	<a href="https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&redirect=Core+Discovery+%284.3+and+beyond%29" target="_blank">More information about core.properties</a>
+	[More information about core.properties](https://wiki.apache.org/solr/Core%20Discovery%20%284.4%20and%20beyond%29?action=show&redirect=Core+Discovery+%284.3+and+beyond%29" target="_blank)
 3.	Save your changes to `core.properties` and exit the text editor.
 
 3.  *Task for Tomcat 6 with CentOS only*
@@ -83,7 +83,7 @@ Magento comes packaged with a sample Solr configuration you can use and customiz
 		java -jar start.jar
 
 	<div class="bs-callout bs-callout-warning">
-			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="{{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script">Script Solr startup and shutdown</a>.</p>
+			<p>This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in [Script Solr startup and shutdown]({{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script).</p>
 	</div>
 
 ### Configure Magento to work with Solr {#config-solr-magento}
@@ -116,7 +116,7 @@ To configure Magento to work with Solr:
 </tr>
 <tr>
 	<td>Solr Server Username</td>
-	<td><em>Optional.</em> Enter a username for <a href="http://wiki.apache.org/solr/SolrSecurity" target="_blank">Solr authentication</a>, if desired.</td>
+	<td><em>Optional.</em> Enter a username for [Solr authentication](http://wiki.apache.org/solr/SolrSecurity" target="_blank), if desired.</td>
 </tr>
 <tr>
 	<td>Solr Server Password</td>
@@ -159,9 +159,9 @@ The button changes as follows.
  <td><p>The test connection failed. Try the following:</p>
 	<ul><li>Examine the command window in which you started Solr for stack traces and exceptions. You must resolve those before you continue.<br />
 	In particular, make sure you started Solr as a user with <code>root</code> privileges.</li>
-	<li>Verify that <a href="http://php.net/manual/en/filesystem.configuration.php" target="_blank"><code>allow_url_fopen = On</code></a> is present in your server's <code>php.ini</code>.<br />
-	If you are not sure where <code>php.ini</code> is located, you can <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">create a <code>phpinfo.php</code> page</a> to locate it.</li>
-	<li>Make sure that <a href="{{ page.baseurl }}/config-guide/solr/solr-overview.html#prereq-secy">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
+	<li>Verify that [<code>allow_url_fopen = On</code>](http://php.net/manual/en/filesystem.configuration.php" target="_blank) is present in your server's <code>php.ini</code>.<br />
+	If you are not sure where <code>php.ini</code> is located, you can [create a <code>phpinfo.php</code> page](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank) to locate it.</li>
+	<li>Make sure that [UNIX firewall and SELinux]({{ page.baseurl }}/config-guide/solr/solr-overview.html#prereq-secy) are both disabled, or set up rules to enable Solr and Magento to communicate with each other.</li>
 	<li>Verify the value of the <strong>Solr Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
 	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Solr Server Port</strong> field is not being used by another process.<br />
 	For example, to see if Solr is running on its default port, use the following command:
@@ -187,11 +187,11 @@ To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{%
 		The following figure shows an example.<br />
 		<img src="{{ site.baseurl }}/common/images/solr_refresh-cache.png" width="600px">
 
-To clean the cache using the command line, use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean">`magento cache:clean`</a> command.
+To clean the cache using the command line, use the [`magento cache:clean`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean) command.
 
 To reindex using the command line:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Enter the following command to reindex all indexers:
 
 		php <your Magento install dir>/bin magento indexer:reindex
@@ -203,7 +203,7 @@ To reindex using the command line:
 3.	Wait while the indexers are reindexed.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Solr.</p>
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Solr.</p>
 </div>
 
 ## Verify Solr is working {#solr-verify}
@@ -219,4 +219,4 @@ The following excerpt from the Solr command window shows the same search:
 
 
 #### Next step
-<a href="{{ page.baseurl }}/config-guide/solr/solr-script.html">Prepare Solr for production</a>
+[Prepare Solr for production]({{ page.baseurl }}/config-guide/solr/solr-script.html)

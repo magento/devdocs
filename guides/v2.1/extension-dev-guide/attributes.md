@@ -147,7 +147,7 @@ where:
 <tr>
 <td><p>reference_table</p></td>
 <td>
-<p>The table involved in a join operation. See <a href="#search">Searching extension attributes</a> for details.</p>
+<p>The table involved in a join operation. See [Searching extension attributes](#search) for details.</p>
 </td>
 <td><code>admin_user</code></td>
 </tr>

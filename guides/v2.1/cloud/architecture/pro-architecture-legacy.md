@@ -31,8 +31,8 @@ The following table summarizes the differences between environments:
     <tr>
       <td>Supports settings management in the UI?</td>
       <td>Yes</td>
-      <td>Not by default (<a href="{{ page.baseurl }}/cloud/trouble/pro-env-management.html">requires an update</a>)</td>
-      <td>Not by default (<a href="{{ page.baseurl }}/cloud/trouble/pro-env-management.html">requires an update</a>)</td>
+      <td>Not by default ([requires an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html))</td>
+      <td>Not by default ([requires an update]({{ page.baseurl }}/cloud/trouble/pro-env-management.html))</td>
     </tr>
     <tr>
       <td>Supports multiple environments/branches?</td>

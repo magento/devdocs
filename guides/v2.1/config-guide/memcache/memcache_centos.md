@@ -16,7 +16,7 @@ functional_areas:
 {% include config/php-memcache.md %}
 
 ## Install and configure memcached on CentOS {#config-memcache-install}
-This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.
+This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the [memcached wiki](https://github.com/memcached/old-wiki" target="_blank).
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
@@ -48,7 +48,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
             CACHESIZE="1GB"
     3.  Locate the value for `OPTIONS` and change it to `localhost` or `127.0.0.1`
 
-    For more information about configuring memcached, see <a href="https://code.google.com/p/memcached/wiki/NewConfiguringServer" target="_blank">the memcached wiki</a>.
+    For more information about configuring memcached, see [the memcached wiki](https://code.google.com/p/memcached/wiki/NewConfiguringServer" target="_blank).
 
 4.  Save your changes to `memcached` and exit the text editor.
 5.  Restart memcached.
@@ -91,7 +91,7 @@ To verify memcached is recognized by the web server:
 
 The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script first searches the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
 
-<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04" target="_blank">More details about this test</a>
+[More details about this test](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04" target="_blank)
 
 Create the MySQL database:
 
@@ -172,7 +172,7 @@ Flush the memcache storage and quit Telnet:
     flush_all
     quit
 
-<a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
+[Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank)
 
 #### Next step
-<a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+[Configure Magento to use memcached]({{ page.baseurl }}/config-guide/memcache/memcache_magento.html)

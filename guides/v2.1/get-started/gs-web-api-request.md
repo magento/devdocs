@@ -100,7 +100,7 @@ This JSON-formatted request body includes a `customer` object with the customer 
 ## Construct a request {#construct-request}
 This example shows you how to construct a REST web API call to create an account.
 
-<ol><li>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
+<ol><li>Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank) configuration file.</li>
 <li><p>Find the route element that defines the <code>createAccount</code> call:</p>
 <pre>
 &lt;route url="/V1/customers" method="POST">
@@ -115,7 +115,7 @@ This example shows you how to construct a REST web API call to create an account
 <pre>POST /V1/customers</pre></li>
 <li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
 <p>In this example, the service interface is the <code>AccountManagementInterface</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file.</p>
-<p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+<p>Open the [AccountManagementInterface.php]({{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank) file and find the <code>createAccount</code> method, as follows:</p>
 <pre>public function createAccount(
         \Magento\Customer\Api\Data\CustomerInterface $customer,
         $password = null,
@@ -123,7 +123,7 @@ This example shows you how to construct a REST web API call to create an account
     );</pre>
 <p>The <code>createAccount</code> call requires a <code>customer</code> data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
 </li>
-<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} request body on the call.</p></li>
+<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a [JSON](http://www.json.com/" target="_blank) or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} request body on the call.</p></li>
 </ol>
 
 ### Customers Search API request example {#customers-search-api-request-example}
@@ -139,8 +139,8 @@ $httpHeaders->addHeaders([
    'Content-Type' => 'application/json'
 ]);
 </pre>
-<li><p>Open the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file and find the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank">CustomerRepositoryInterface</a> interface with the <code>getList</code> method.</p></li>
-<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See <a href="{{ page.baseurl }}/rest/performing-searches.html" target="_blank">searchCriteria usage</a>.</p></li>
+<li><p>Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank) configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php" target="_blank) interface with the <code>getList</code> method.</p></li>
+<li><p>Set the headers, URI and method to a request object. Use URI <code>/V1/customers/search</code> and method <code>GET</code> values. Also, the <code>searchCriteria</code> parameter should be used to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html" target="_blank).</p></li>
 <pre>
 $request = new \Zend\Http\Request();
 $request->setHeaders($httpHeaders);
@@ -169,4 +169,4 @@ $response = $client->send($request);
 </ol>
 
 ## Next step
-Run the web API call through a <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL command</a> or a REST client.
+Run the web API call through a [cURL command]({{ page.baseurl }}/get-started/gs-curl.html) or a REST client.

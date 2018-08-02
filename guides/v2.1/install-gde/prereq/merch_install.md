@@ -29,7 +29,7 @@ Magento requires the following software to run:
   <p>We recommend you contact GoDaddy support to verify all of the preceding are installed and get their assistance if any of the software is not installed.</p>
 </div>
 
-For complete details, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html">System requirements</a>.
+For complete details, see [System requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ## Step 2: Start the cPanel configuration utility {#newbie-cpanel}
 To start configuring your hosted system:

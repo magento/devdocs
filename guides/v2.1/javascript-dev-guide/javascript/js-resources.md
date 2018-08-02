@@ -16,7 +16,7 @@ redirect_from:
 
 This topic describes the general concepts of how to work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
 
-To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
+To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org" target="_blank).
 
 RequireJS improves the perceived page load, time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
 
@@ -91,7 +91,7 @@ These relative paths are also used in for [mapping and setting `paths` in requir
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
-To build a dependency on the third-party plugin, specify a <a href="http://requirejs.org/docs/api.html#config-shim" target="_blank">shim</a> in the following configuration files:
+To build a dependency on the third-party plugin, specify a [shim](http://requirejs.org/docs/api.html#config-shim" target="_blank) in the following configuration files:
 
  - `requirejs-config.js`
 

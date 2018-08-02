@@ -27,10 +27,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
           <li>
-            <a href="https://magento.com/business-needs/b2b-commerce">B2B module</a>
+            [B2B module](https://magento.com/business-needs/b2b-commerce)
           </li>
           <li>
-            <a href="https://magento.com/products/business-intelligence/essentials">BI Essentials</a>
+            [BI Essentials](https://magento.com/products/business-intelligence/essentials)
           </li>
         </ul>
       </td>
@@ -43,10 +43,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
+            [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html) (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            [Blackfire.io]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) Enterprise (Performance Testing)
           </li>
         </ul>
       </td>
@@ -57,10 +57,10 @@ github_link: cloud/basic-information/cloud-plans.md
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN) and DDoS protection with generous bandwidth allowances</li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
+            [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html) (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
           </li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
+            [Blackfire.io]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) Enterprise (Performance Testing)
           </li>
         </ul>
       </td>

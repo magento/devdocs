@@ -13,7 +13,7 @@ functional_areas:
 
 ## Security measures against XSS attacks
 
-To prevent <a href="https://en.wikipedia.org/wiki/Cross-site_scripting">XSS</a> issues Magento recommends the following rules for escaping output in templates:
+To prevent [XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) issues Magento recommends the following rules for escaping output in templates:
 
 * If a method indicates that the contents is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output)
 
@@ -69,7 +69,7 @@ For the following output cases, use the specified function to generate XSS-safe 
 **Function:** `escapeUrl`
 
 {% highlight html %}
-  <a href="<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>">Some Link</a>
+  [Some Link](<?php echo $block->escapeUrl($block->getCategoryUrl()) ?>)
 {% endhighlight %}
 
 **Case:** HTML attributes\\

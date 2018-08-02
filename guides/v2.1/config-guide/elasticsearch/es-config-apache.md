@@ -118,10 +118,10 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 {% include config/es-elasticsearch-magento.md %}
 
 ## Secure communication with Apache {#es-ws-secure-apache}
-This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:
+This section discusses how to secure communication between Apache and Elasticsearch using [HTTP Basic](http://tools.ietf.org/html/rfc2617" target="_blank) authentication with Apache. For more options, consult one of the following resources:
 
-*	<a href="http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">Apache 2.2 authentication and authorization tutorial</a>
-*	<a href="http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank">Apache 2.4 authentication and authorization tutorial</a>
+*	[Apache 2.2 authentication and authorization tutorial](http://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank)
+*	[Apache 2.4 authentication and authorization tutorial](http://httpd.apache.org/docs/2.4/howto/auth.html" target="_blank)
 
 See one of the following sections:
 
@@ -167,4 +167,4 @@ This section discusses how to specify who can access the Apache server.
 {% include config/es-verify-proxy.md %}
 
 #### Next
-<a href="{{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a>
+[Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)

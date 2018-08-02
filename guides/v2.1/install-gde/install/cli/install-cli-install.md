@@ -130,9 +130,9 @@ Any options that contain spaces or special characters must be enclosed in either
 	</tr>
 	<tr>
 		<td><p>--backend-frontname</p></td>
-		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
+		<td><p>Uniform Resource Identifier ([URI](http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank)) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
-			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the [magento info:adminuri]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html) command.</p>
 			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -140,7 +140,7 @@ Any options that contain spaces or special characters must be enclosed in either
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified hostname or IP address.</li>
-		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the [PHP <code>PDO_MYSQL</code> documentation](http://php.net/manual/en/ref.pdo-mysql.php" target="_blank).</li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its hostname like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
@@ -215,28 +215,28 @@ Any options that contain spaces or special characters must be enclosed in either
 	</tr>
 	<tr>
 		<td><p>--admin-use-security-key</p></td>
-		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>. This is the default.</p>
+		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent [cross-site script forgery attacks](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank). This is the default.</p>
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<!-- <tr>
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>To enable and disable modules after installing Magento, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>To enable and disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).</p>
+		<p>For important information about module dependencies, see [About enabling and disabling modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules).</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
 		<td>disable_modules=&lt;list>}</td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>To enable and disable modules after installing Magento, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>To enable and disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).</p>
+		<p>For important information about module dependencies, see [About enabling and disabling modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules).</p></td>
 		<td>No</td>
 	</tr> -->
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the [database]({{ page.baseurl }}/config-guide/cache/caching-database.html). Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
@@ -244,7 +244,7 @@ Any options that contain spaces or special characters must be enclosed in either
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt [sensitive data](#sens-data) in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -254,7 +254,7 @@ Any options that contain spaces or special characters must be enclosed in either
 	</tr>
 	<tr>
 		<td><p>--db-init-statements</p></td>
-		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to [this one](http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank) before you set any values.</p>
 			<p>Default is <code>SET NAMES utf8;</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -265,7 +265,7 @@ Any options that contain spaces or special characters must be enclosed in either
 	</tr>
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>{{site.data.var.ee}} only. Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See <a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about installing and configuring RabbitMQ.</p>
+<td><p>{{site.data.var.ee}} only. Do not use the `--amqp` options unless you have already set up an installation of RabbitMQ. See [RabbitMQ installation]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html) for more information about installing and configuring RabbitMQ.</p>
 <p>The hostname where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>

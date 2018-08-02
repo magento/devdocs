@@ -15,19 +15,19 @@ functional_areas:
 
 This article describes the following typical {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization tasks:
 
-*	<a href="#layout_markup_columns">Set the page layout</a>
-*	<a href="#layout_markup_css">Include static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a>
-*	<a href="#layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a>
-*	<a href="#create_cont">Create a container</a>
-*	<a href="#ref_container">Reference a container</a>
-*	<a href="#xml-manage-block">Create a block</a>
-*	<a href="#set_template">Set a block's template</a>
-*	<a href="#layout_markup_modify-block">Modify block arguments</a>
-*	<a href="#xml-manage-ref-block">Reference a block</a>
-*	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
-*	<a href="#layout_markup_rearrange">Rearrange elements</a>
-*	<a href="#layout_markup_remove_elements">Remove elements</a>
-*	<a href="#layout_markup_replace_elements">Replace elements</a>
+*	[Set the page layout](#layout_markup_columns)
+*	[Include static resources (JavaScript, CSS, fonts) in &lt;head&gt;](#layout_markup_css)
+*	[Remove static resources (JavaScript, CSS, fonts) in &lt;head&gt;](#layout_markup_css_remove)
+*	[Create a container](#create_cont)
+*	[Reference a container](#ref_container)
+*	[Create a block](#xml-manage-block)
+*	[Set a block's template](#set_template)
+*	[Modify block arguments](#layout_markup_modify-block)
+*	[Reference a block](#xml-manage-ref-block)
+*	[Use block object methods to set block properties](#layout_markup_block-properties)
+*	[Rearrange elements](#layout_markup_rearrange)
+*	[Remove elements](#layout_markup_remove_elements)
+*	[Replace elements](#layout_markup_replace_elements)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -52,7 +52,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 
 ## Include static resources (JavaScript, CSS, fonts) {#layout_markup_css}
 
-JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
+JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a [page configuration]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank) file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
 <code>&lt;theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
@@ -91,7 +91,7 @@ The path to assets is specified relatively to one of the following locations:
 </ul>
 
 ### Adding conditional comments
-<a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
+[Conditional comments](http://en.wikipedia.org/wiki/Conditional_comment" target="_blank) are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
@@ -147,7 +147,7 @@ Use the following sample to create (declare) a container:
 
 ## Reference a container {#ref_container}
 
-To update a container use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
+To update a container use the [`<referenceContainer>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank) instruction.
 
 Example: add links to the page header panel.
 
@@ -163,7 +163,7 @@ Example: add links to the page header panel.
 
 ## Create a block {#xml-manage-block}
 
-Blocks are created (declared) using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
+Blocks are created (declared) using the [`<block>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank) instruction.
 
 Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
 
@@ -180,7 +180,7 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
 
 ## Reference a block {#xml-manage-ref-block}
 
-To update a block use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
+To update a block use the [`<referenceBlock>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank) instruction.
 
 Example: pass the image to the `logo` block.
 
@@ -264,8 +264,8 @@ Extending layout:
 
 There are two ways to access block object methods:
 
-- using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for `<block>` or `<referenceBlock>`
-- using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
+- using the [<code>&lt;argument&gt;</code>]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#argument) instruction for `<block>` or `<referenceBlock>`
+- using the [<code>&lt;action&gt;</code>]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act) instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
 
 Example 1: Set a CSS class and add an attribute for the product page using `<argument>`.
 
@@ -304,8 +304,8 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent.
-* <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
+* [`<move>` instruction]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank): allows changing elements' order and parent.
+* [`before` and `after` attributes of `<block>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank): allows changing elements' order within one parent.
 
 <p></p>
 Example of `<move>` usage:
@@ -334,7 +334,7 @@ This would make the product page look like following:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
+  <p>To learn how to locate the layout file you need to customize, see [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank).</p></span>
 </div>
 
 ## Remove elements {#layout_markup_remove_elements}
@@ -378,11 +378,11 @@ In this file, reference the element having added the `remove` attribute:
 
 ## Replace elements {#layout_markup_replace_elements}
 
-To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
+To replace an element, [remove it]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank) and add a new one.
 
 
 #### Related topics:
 
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
-*	<a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	[Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank)
+*	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank)
 

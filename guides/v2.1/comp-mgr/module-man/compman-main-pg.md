@@ -28,8 +28,8 @@ To choose whether to upgrade or uninstall components:
 		<td><p>Magento Marketplace Account section</p></td>
 		<td><p>Shows when you last synchronized with your Magento Marketplace account. To get the latest information about available component versions, you must synchronize with Connect.</p>
 			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p>
-			<p>New Updates and New Purchases displays the number of each to install; click <strong>Install</strong> to select updates or purchases to install and see <a href="#compman-access-new">Install new purchases</a>.</p>
-			<p>Click <strong>Reset</strong> to log in with a different set of <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">Marketplace credentials</a>.</p>
+			<p>New Updates and New Purchases displays the number of each to install; click <strong>Install</strong> to select updates or purchases to install and see [Install new purchases](#compman-access-new).</p>
+			<p>Click <strong>Reset</strong> to log in with a different set of [Marketplace credentials]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).</p>
 		</td>
 	</tr>
 	<tr>
@@ -47,7 +47,7 @@ To choose whether to upgrade or uninstall components:
 	</tr>
 	<tr>
 		<td><p>Actions</p></td>
-		<td><p>Displays a list of actions available for that component type. <a href="#compman-access-types">Details about available actions</a>.</p>
+		<td><p>Displays a list of actions available for that component type. [Details about available actions](#compman-access-types).</p>
 			<p>The following figure shows an example.</p>
 			<img src="{{ site.baseurl }}/common/images/cman_actions.png" alt="You can enable, disable, or update components">
 			

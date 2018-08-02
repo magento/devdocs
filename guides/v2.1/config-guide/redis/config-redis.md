@@ -14,7 +14,7 @@ functional_areas:
 ---
 
 ## Overview of the Redis solution {#config-redis-over}
-<a href="http://redis.io/" target="_blank">Redis</a> is an optional backend cache solution to replace <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.
+[Redis](http://redis.io/" target="_blank) is an optional backend cache solution to replace [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank), which is used in Magento 2 by default.
 
 ### Issues with `Zend_Cache_Backend_File`
 
@@ -25,7 +25,7 @@ functional_areas:
 * The TwoLevels {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.  
 Further, memcached itself has limitations such as a maximum object size and fixed bucket sizes which also contribute to difficult maintenance.
 
-* The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %} adds additional load to the master database server. Additionally, there is no reliable method for `memcached` replication.
+* The [Zend TwoLevels backend](http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank) does not scale well because using the database as part of the {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %} adds additional load to the master database server. Additionally, there is no reliable method for `memcached` replication.
 
 ### Why Redis is better
 Advantages of Redis include:
@@ -44,25 +44,25 @@ Advantages of Redis include:
 
 <div class="bs-callout bs-callout-info" id="info">
    <span class="glyphicon-class">
-   <p>Starting in Magento 2.0.6, you can use either Redis or <a href="{{ page.baseurl }}/config-guide/memcache/memcache.html">memcached</a> for session storage. Earlier issues with the Redis session handler and session locking have been resolved.</p></span>
+   <p>Starting in Magento 2.0.6, you can use either Redis or [memcached]({{ page.baseurl }}/config-guide/memcache/memcache.html) for session storage. Earlier issues with the Redis session handler and session locking have been resolved.</p></span>
 </div>
 
 ## Install Redis {#config-redis-install}
 Installing and configuring the Redis software is beyond the scope of this guide. Consult resources such as:
 
-*	<a href="http://redis.io/download" target="_blank">Download Redis page</a>
-*	<a href="http://redis.io/topics/quickstart" target="_blank">Redis quick start</a>
-*	<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis" target="_blank">digitalocean</a>
-*	<a href="http://redis.io/documentation" target="_blank">Redis documentation page</a>
+*	[Download Redis page](http://redis.io/download" target="_blank)
+*	[Redis quick start](http://redis.io/topics/quickstart" target="_blank)
+*	[digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis" target="_blank)
+*	[Redis documentation page](http://redis.io/documentation" target="_blank)
 
 ## For more information {#config-redis-info}
 You can find more information about configuring Redis from the following:
 
-*	<a href="http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank">David Alger</a>
-*	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
+*	[David Alger](http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank)
+*	[TechyTalk](http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank)
 <!-- *	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em> -->
 
 #### Next
 
-*	<a href="{{ page.baseurl }}/config-guide/redis/redis-pg-cache.html">Use Redis for the Magento page and default cache</a>
-*	<a href="{{ page.baseurl }}/config-guide/redis/redis-session.html">Use Redis for session storage</a>
+*	[Use Redis for the Magento page and default cache]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html)
+*	[Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)

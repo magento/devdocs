@@ -31,13 +31,13 @@ To configure Magento to use Varnish:
 		</tr>
 	<tr>
 		<td>Access list</td>
-		<td><p>Enter the fully qualified hostname, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
-			<p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="&#95;blank">More information</a></p></td>
+		<td><p>Enter the fully qualified hostname, IP address, or [Classless Inter-Domain Routing (CIDR)](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="&#95;blank) notation IP address range for which to invalidate content.</p>
+			<p>[More information](https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="&#95;blank)</p></td>
 	</tr>
 	<tr>
 		<td>Backend host</td>
 		<td><p>Enter the fully qualified hostname or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
-		<p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="&#95;blank">More information</a></p></td>
+		<p>[More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="&#95;blank)</p></td>
 	</tr>
 	<tr>
 		<td>Backend port</td>
@@ -60,7 +60,7 @@ Where `magento` is the name of your database.
 </div>
 
 ## Export a Varnish configuration file
-This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the <a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">previous section</a>.
+This step is optional and should only be necessary if you changed the backend host and/or port number that you specified in the [previous section]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html).
 
 To export a Varnish configuration file from the Admin panel:
 
@@ -86,4 +86,4 @@ To export a Varnish configuration file from the Admin panel:
 		service httpd restart
 
 #### Last step
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>
+[Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

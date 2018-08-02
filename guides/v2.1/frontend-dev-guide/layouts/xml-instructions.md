@@ -14,30 +14,30 @@ There are two possible ways to customize page layout in Magento:
 * Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
 * Altering templates
 
-To change the page wireframe, modify the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> files. 
+To change the page wireframe, modify the [page layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank) files; all other customizations are performed in the [page configuration]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank) or [generic layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank) files. 
 
 Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.
 
-The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the <a href="{{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> topic.
+The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the [Layout file types]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html" target="_blank) topic.
 
 
 ## Common layout instructions {#fedg_layout_xml-instruc_ex}
 
 Use the following layout instructions to customize your layout:
 
-*  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a>
-*  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
-*  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
-*  <a href="#argument"><code>&lt;argument&gt;</code></a>
-*  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
+*  [<code>&lt;block&gt;</code>](#fedg_layout_xml-instruc_ex_block)
+*  [<code>&lt;container&gt;</code>](#fedg_layout_xml-instruc_ex_cont)
+*  [<code>before</code> and <code>after</code> attributes](#fedg_xml-instrux_before-after)
+*  [<code>&lt;action&gt;</code>](#fedg_layout_xml-instruc_ex_act)
+*  [<code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code>](#fedg_layout_xml-instruc_ex_ref)
+*  [<code>&lt;move&gt;</code>](#fedg_layout_xml-instruc_ex_mv)
+*  [<code>&lt;remove&gt;</code>](#fedg_layout_xml-instruc_ex_rmv)
+*  [<code>&lt;update&gt;</code>](#fedg_layout_xml-instruc_ex_upd)
+*  [<code>&lt;argument&gt;</code>](#argument)
+*  [<code>&lt;arguments&gt;</code>](#arguments)
 
 ### &lt;block&gt; {#fedg_layout_xml-instruc_ex_block}
 
@@ -69,13 +69,13 @@ Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-2
       </tr>
       <tr class="even">
          <td><code>before</code></td>
-         <td><p>Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td><p>Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
       <tr class="odd">
          <td><code>after</code></td>
-         <td>Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
@@ -100,7 +100,7 @@ Blocks employ templates to generate {% glossarytooltip a2aff425-07dd-4bd6-9671-2
    </tbody>
 </table>
 
-To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
+To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
 ### &lt;container&gt; {#fedg_layout_xml-instruc_ex_cont}
 A structure without content that holds other layout elements such as blocks and containers.
@@ -127,13 +127,13 @@ A structure without content that holds other layout elements such as blocks and 
       </tr>
       <tr class="even">
          <td><code>before</code></td>
-         <td>Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details.</td>
          <td>Possible values: element name or dash (-).</td>
          <td>no</td>
       </tr>
       <tr class="odd">
          <td><code>after</code></td>
-         <td>Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details.</td>
          <td>Possible values: element name or dash (-).</td>
          <td>no</td>
       </tr>
@@ -257,7 +257,7 @@ The following tables give a detailed description of the results you can get usin
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
- <p>The <code>&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code>&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code></a> to access block public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p></span>
+ <p>The <code>&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the [<code>&lt;argument&gt;</code>](#argument) for [<code>&lt;block&gt;</code>](#fedg_layout_xml-instruc_ex_block) or [<code>&lt;referenceBlock&gt;</code>](#fedg_layout_xml-instruc_ex_ref) to access block public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.</p></span>
 </div>
 
 Calls public methods on the block API.
@@ -298,13 +298,13 @@ Example:
    </tbody>
 </table>
 
-To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
+To pass parameters, use the [<code>&lt;argument&gt;&lt;/argument&gt;</code>](#argument) instruction.
 
 ### fedg_layout_xml-instruc_ex_ref
 <p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
 <p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
 
-To pass parameters to a block use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
+To pass parameters to a block use the [<code>&lt;argument&gt;&lt;/argument&gt;</code>](#argument) instruction.
 
 <table>
    <tbody>
@@ -405,7 +405,7 @@ Sets the declared block or container element as a child of another element in th
 ### fedg_layout_xml-instruc_ex_rmv
 
 `<remove>` is used only to remove the static resources linked in a page <code>&lt;head&gt;</code> section.
-For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>.
+For removing blocks or containers, use the <code>&lt;remove&gt;</code> attribute for [<code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code>](#fedg_layout_xml-instruc_ex_ref).
 
 Example of usage:
 
@@ -435,10 +435,10 @@ Used as follows:
 <update handle="{name_of_handle_to_include}"/>
 {%endhighlight xml%}
 
-The specified <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
+The specified [handle]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank) is "included" and executed recursively.
 
 ### argument
-Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments&gt;</code></a>.
+Used to pass an argument. Must be always enclosed in[<code>&lt;arguments&gt;</code>](#arguments).
  
 <table>
    <tbody>
@@ -489,11 +489,11 @@ To pass an argument that is an array use the following construction:
 </argument>
 {%endhighlight xml%}
 
-<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
+<p id="getter">Arguments values set in a layout file can be accessed in [templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html" target="_blank) using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
 
 Example:
-Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+Setting a value of <code>css_class</code> in the <code>[app/code/Magento/Theme/view/frontend/layout/default.xml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank)</code> layout file:
 
 {%highlight xml%}
 ...
@@ -504,7 +504,7 @@ Setting a value of <code>css_class</code> in the <code><a href="{{ site.mage2000
 {%endhighlight xml%}
 
 
-Using the value of <code>css_class</code> in <code><a href="{{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+Using the value of <code>css_class</code> in <code>[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank)</code>:
 
 {%highlight php%}
 ...

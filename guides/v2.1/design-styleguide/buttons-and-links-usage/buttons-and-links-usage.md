@@ -79,10 +79,10 @@ Links can be used as content links (for site navigation) and non-primary CTAs. W
     </ul>
     <em>Example:</em>
       <ul style="list-style-type:none">
-        <li><strong>No</strong> – “<a href="javascript:void(0);">Download FAQs (.PDF)</a>”</li>
-        <li><strong>No</strong> – “<a href="javascript:void(0);">Download FAQs (.pdf)</a>”</li>
-        <li><strong>No</strong> – “<a href="javascript:void(0);">Download faqs-bh-v1.pdf</a>”</li>
-        <li>Yes – “<a href="javascript:void(0);">Download FAQs (PDF)</a>”</li>
+        <li><strong>No</strong> – “[Download FAQs (.PDF)](javascript:void(0);)”</li>
+        <li><strong>No</strong> – “[Download FAQs (.pdf)](javascript:void(0);)”</li>
+        <li><strong>No</strong> – “[Download faqs-bh-v1.pdf](javascript:void(0);)”</li>
+        <li>Yes – “[Download FAQs (PDF)](javascript:void(0);)”</li>
       </ul>
   </li>
 </ul>

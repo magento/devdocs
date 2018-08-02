@@ -13,7 +13,7 @@ functional_areas:
 ## What's in this topic
 
 <p>
-The topic describes how to install, configure and use <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a> for compiling <code>.less</code> files in Magento 2. </p>
+The topic describes how to install, configure and use [Grunt JavaScript task runner](http://gruntjs.com/" target="_blank) for compiling <code>.less</code> files in Magento 2. </p>
 
 
 ## Prerequisites
@@ -25,7 +25,7 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 
 <ol>
 <li>
-Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
+Install [node.js](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank) to any location on your machine.
 </li>
 <li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br>
 <pre>
@@ -77,14 +77,14 @@ Where the following notation is used:
 <code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
 </li>
 <li>
-<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory. You need to specify all [root source files of the theme]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank). If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html" target="_blank) from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
 </li>
 
 </ul>
 </li>
 <li id="livereload">
-(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://livereload.com/extensions/" target="_blank">LiveReload extension</a> in your browser.
+(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/" target="_blank) in your browser.
 
 </li>
 </ol>
@@ -167,7 +167,7 @@ The following shows which Grunt tasks to use for debugging:
 <li>
 After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
 
-<li>After you <a href="{{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
+<li>After you [customize the root source files or move the files included to the root files]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the <code>exec</code> command and reload the page.</li>
 
 
 </ul>
@@ -177,7 +177,7 @@ If you have LiveReload installed, run the <code>grunt watch</code> command, and 
 <li>
 After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
 
-<li>After you <a href="{{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
+<li>After you [customize the root source files or move the files included to the root files]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
 
 </ul>
 

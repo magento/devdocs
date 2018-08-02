@@ -13,13 +13,13 @@ redirect_from:
 
 ## Overview {#fedg_tabs-widget_overview}
 
-The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
+The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the [Magento collapsible widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank).
 
-The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>.
+The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/tabs.js]({{ site.mage2000url }}lib/web/mage/tabs.js" target="_blank).
 
 
 ## Initialize the tabs widget {#fedg_tabs_init}
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank) topic.
 
 
 Generally the tabs widget is instantiated like following:
@@ -48,23 +48,23 @@ Phtml template file examples using script:
 
 The tabs widget has the following options:
 
-* <a href="#fedg_tabs_options-active">active</a>
-* <a href="#fedg_tabs_options-ajaxUrlElement">ajaxUrlElement</a>
-* <a href="#fedg_tabs_options-ajaxContent">ajaxContent</a>
-* <a href="#fedg_tabs_options-animate">animate</a>
-* <a href="#fedg_tabs_options-closedState">closedState</a>
-* <a href="#fedg_tabs_options-collapsible">collapsible</a>
-* <a href="#fedg_tabs_options-collapsibleElement">collapsibleElement</a>
-* <a href="#fedg_tabs_options-content">content</a>
-* <a href="#fedg_tabs_options-disabled">disabled</a>
-* <a href="#fedg_tabs_options-disabledState">disabledState</a>
-* <a href="#fedg_tabs_options-header">header</a>
-* <a href="#fedg_tabs_options-icons">icons</a>
-* <a href="#fedg_tabs_options-loadingClass">loadingClass</a>
-* <a href="#fedg_tabs_options-openedState">openedState</a>
-* <a href="#fedg_tabs_options-openOnFocus">openOnFocus</a>
-* <a href="#fedg_tabs_options-saveState">saveState</a>
-* <a href="#fedg_tabs_options-trigger">trigger</a>
+* [active](#fedg_tabs_options-active)
+* [ajaxUrlElement](#fedg_tabs_options-ajaxUrlElement)
+* [ajaxContent](#fedg_tabs_options-ajaxContent)
+* [animate](#fedg_tabs_options-animate)
+* [closedState](#fedg_tabs_options-closedState)
+* [collapsible](#fedg_tabs_options-collapsible)
+* [collapsibleElement](#fedg_tabs_options-collapsibleElement)
+* [content](#fedg_tabs_options-content)
+* [disabled](#fedg_tabs_options-disabled)
+* [disabledState](#fedg_tabs_options-disabledState)
+* [header](#fedg_tabs_options-header)
+* [icons](#fedg_tabs_options-icons)
+* [loadingClass](#fedg_tabs_options-loadingClass)
+* [openedState](#fedg_tabs_options-openedState)
+* [openOnFocus](#fedg_tabs_options-openOnFocus)
+* [saveState](#fedg_tabs_options-saveState)
+* [trigger](#fedg_tabs_options-trigger)
 
 ### <code>active</code> {#fedg_tabs_options-active}
 
@@ -76,7 +76,7 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 
 ### <code>ajaxUrlElement</code> {#fedg_tabs_options-ajaxUrlElement}
 Selector for the tab element, which contains the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for the Ajax request.
-The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: String
 
@@ -84,14 +84,14 @@ The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widge
 
 ### <code>ajaxContent</code> {#fedg_tabs_options-ajaxContent}
 Defines if the content is loaded by Ajax request.
-The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: Boolean
 
 **Default value**: `false`
 
 ### <code>animate</code> {#fedg_tabs_options-animate}
-Specifies if the collapse/expand actions are performed with animation. The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+Specifies if the collapse/expand actions are performed with animation. The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**:
 Multiple types are supported:
@@ -107,7 +107,7 @@ easing: &lt;String&gt;,
 &lt;propToAnimate&gt;: &lt;howToAnimate&gt;
 }
 </pre>
-For details about the object passed, see <a href="http://api.jquery.com/animate/" target="_blank">jQuery.animate()</a>.
+For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/" target="_blank).
 </li>
 </ul>
 
@@ -122,7 +122,7 @@ Class assigned to the tab being closed.
 
 ### <code>collapsible</code> {#fedg_tabs_options-collapsible}
 
-If this option is set to false, the content is not collapsed when the panel is active. The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+If this option is set to false, the content is not collapsed when the panel is active. The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: Boolean
 
@@ -137,7 +137,7 @@ Selector of the element for which the collapsible widget is initialized.
 
 ### <code>content</code> {#fedg_tabs_options-content}
 
-Selector for the content element, searched for using `.find()` on the main collapsible element. The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+Selector for the content element, searched for using `.find()` on the main collapsible element. The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: String
 
@@ -161,7 +161,7 @@ Class assigned to the tab being currently disabled.
 ### <code>header</code> {#fedg_tabs_options-header}
 
 Selector for the header element, searched for using `.find()` on the main collapsible element.
-The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: String
 
@@ -170,7 +170,7 @@ The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widge
 ### <code>icons</code> {#fedg_tabs_options-icons}
 
 The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and appended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
-The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: String
 
@@ -201,7 +201,7 @@ Used for setting keyboard navigation. Defines if the tab is expanded when its he
 ### <code>saveState</code> {#fedg_tabs_options-saveState}
 
 Specifies if the state is saved in the local storage if the browser supports it. Otherwise will be saved into a cookie.
-The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**: Boolean
 
@@ -210,7 +210,7 @@ The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widge
 ### <code>trigger</code> {#fedg_tabs_options-trigger}
 
 Selector for the trigger element, applied using `.find()` on the main collapsible element. If the trigger is not found, the header becomes a trigger.
-The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs.
+The option of the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget used by tabs.
 
 **Type**:
 
@@ -224,10 +224,10 @@ The option of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widge
 
 The tabs widget has the following methods:
 <ul>
-<li><a href="#fedg_tabs_methods-activate">activate()</a></li>
-<li><a href="#fedg_tabs_methods-enable">enable()</a></li>
-<li><a href="#fedg_tabs_methods-deactivate">deactivate()</a></li>
-<li><a href="#fedg_tabs_options-disable">disable()</a></li>
+<li>[activate()](#fedg_tabs_methods-activate)</li>
+<li>[enable()](#fedg_tabs_methods-enable)</li>
+<li>[deactivate()](#fedg_tabs_methods-deactivate)</li>
+<li>[disable()](#fedg_tabs_options-disable)</li>
 </ul>
 ### <code>activate()</code> {#fedg_tabs_methods-activate}
 
@@ -244,11 +244,11 @@ The tabs widget has the following methods:
 `disable(index)` disables the tab with the corresponding `index`.
 
 ## Events {#fedg_tabs_events-methods}
-Tabs is subscribed to the same events as the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget:
+Tabs is subscribed to the same events as the [collapsible]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank) widget:
 
 <ul>
-<li><a href="#fedg_tabs_beforeOpen_callback">beforeOpen callback</a></li>
-<li><a href="#fedg_tabs_dimensionsChanged">dimensionsChanged</a></li>
+<li>[beforeOpen callback](#fedg_tabs_beforeOpen_callback)</li>
+<li>[dimensionsChanged](#fedg_tabs_dimensionsChanged)</li>
 </ul>
 
 ### <code>beforeOpen callback</code> {#fedg_tabs_beforeOpen_callback}

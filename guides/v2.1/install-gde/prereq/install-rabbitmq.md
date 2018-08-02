@@ -117,8 +117,8 @@ where:
 <td>amqp-virtualhost</td>
 <td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
 <p>For additional information, see RabbitMQ documentation:</p>
-<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
-<li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
+<ul><li>[Virtual hosts](https://www.rabbitmq.com/vhosts.html" target="&#95;blank)</li>
+<li>[Access control](https://www.rabbitmq.com/access-control.html" target="&#95;blank)</li></ul></td>
 </tr>
 </table>
 

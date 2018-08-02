@@ -69,4 +69,4 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 
 ## Continue your upgrade {#ce-ee-continue}
-From here, your upgrade is the same as any other upgrade. Continue with <a href="{{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a>.
+From here, your upgrade is the same as any other upgrade. Continue with [Step 1. Select versions to upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-main-pg.html).

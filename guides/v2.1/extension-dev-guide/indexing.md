@@ -18,7 +18,7 @@ Without indexing, Magento would have to calculate the price of every product on 
 
 <dl><dt>Dictionary</dt>
 
-<dd>Original data entered to the system. Dictionaries are organized in <a href="http://en.wikipedia.org/wiki/Database_normalization" target="_blank">normal form</a> to facilitate maintenance (updating the data).</dd>
+<dd>Original data entered to the system. Dictionaries are organized in [normal form](http://en.wikipedia.org/wiki/Database_normalization" target="_blank) to facilitate maintenance (updating the data).</dd>
 
 <dt>Index</dt>
 
@@ -44,7 +44,7 @@ The following components are involved in the indexing process:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+		<td>[Magento_Indexer]({{ site.mage2000url }}app/code/Magento/Indexer" target="_blank)</td>
 		<td>Implements:<ul>
 <li>indexer declaration</li>
 <li>indexer running</li>
@@ -52,10 +52,10 @@ The following components are involved in the indexing process:
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+		<td>[Magento\Framework\Mview]({{ site.mage2000url }}lib/internal/Magento/Framework/Mview" target="_blank)</td>
 		<td><ul>
 <li>Allows tracking database changes for a certain {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} (product, {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}, etc.) and running change handler.</li>
-<li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
+<li>Emulates the [materialized view](http://en.wikipedia.org/wiki/Materialized_view" target="_blank) technology for MySQL using triggers and separate materialization process (provides executing {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
 	</tr>
 </tbody></table>
 
@@ -130,61 +130,61 @@ The Magento application implements the following indexers:
 	<tr>
 		<td>Design Config Grid</td>
 		<td><code>design_config_grid</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank">Magento\Theme\Model\Indexer\Design\Config</a></td>
+		<td>[Magento\Theme\Model\Indexer\Design\Config]({{ site.mage2100url }}app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank)</td>
 		<td></td>
 	</tr>
 		<tr>
 		<td>Customer Grid</td>
 		<td><code>customer_grid</code></td>
-		<td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Indexer/Action/Entity.php" target="_blank">Magento\Framework\Indexer\Action\Entity</a></td>
+		<td>[Magento\Framework\Indexer\Action\Entity]({{ site.mage2100url }}lib/internal/Magento/Framework/Indexer/Action/Entity.php" target="_blank)</td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Category products</td>
 		<td><code>catalog_category_product</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+		<td>[Magento\Catalog\Model\Indexer\Category\Product]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank)</td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product categories</td>
 		<td><code>catalog_product_category</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Category</a></td>
+		<td>[Magento\Catalog\Model\Indexer\Product\Category]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank)</td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product price</td>
 		<td><code>catalog_product_price</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
+		<td>[Magento\Catalog\Model\Indexer\Product\Price]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank)</td>
 		<td>Pre-calculates product prices</td>
 	</tr>
 	<tr>
 		<td>Product entity attribute value</td>
 		<td><code>catalog_product_attribute</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Eav.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Eav</a></td>
+		<td>[Magento\Catalog\Model\Indexer\Product\Eav]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Eav.php" target="_blank)</td>
 		<td>Reorganizes the EAV product structure to flat structure</td>
 	</tr>
 	<tr>
 		<td>Stock</td>
 		<td><code>cataloginventory_stock</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
+		<td>[Magento\CatalogInventory\Model\Indexer\Stock]({{ site.mage2100url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank)</td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td><code>catalogrule_rule</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
+		<td>[Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer]({{ site.mage2100url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank)</td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td><code>catalogrule_product</code></td>
-		<td><a href="{{ site.mage2100url  }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+		<td>[Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer]({{ site.mage2100url  }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank)</td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td><code>catalogsearch_fulltext</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
+		<td>[Magento\CatalogSearch\Model\Indexer\Fulltext]({{ site.mage2100url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank)</td>
 		<td></td>
 	</tr>
 	</tbody>

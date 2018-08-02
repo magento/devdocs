@@ -257,7 +257,7 @@ The  file defines which API resources the integration has access to.
 <tr>
 <td>endpoint_url</td>
 <td><p>Optional. The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
-<p>See <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</p></td>
+<p>See [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html) for details.</p></td>
 </tr>
 <tr>
 <td>identity_link_url</td>

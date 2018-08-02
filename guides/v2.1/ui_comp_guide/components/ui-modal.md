@@ -66,7 +66,7 @@ Modal-specific configuration:
   </tr>
   <tr>
     <td><code>options</code></td>
-    <td>Configuration passed to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
+    <td>Configuration passed to the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).</td>
     <td>Object</td>
     <td></td>
   </tr>

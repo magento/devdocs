@@ -270,17 +270,17 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11378">11378</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10441" target="_blank">10441</a></td>
+    <td>[10441](https://github.com/magento/magento2/issues/10441" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/raumatbel">Raul Mateos</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11451">11451</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11328" target="_blank">11328</a></td>
+    <td>[11328](https://github.com/magento/magento2/issues/11328" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">@adrian-martinez-interactiv4</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11674">11674</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7591" target="_blank">7591</a></td>
+    <td>[7591](https://github.com/magento/magento2/issues/7591" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>
@@ -290,32 +290,32 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11523">11523</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10301" target="_blank">10301</a></td>
+    <td>[10301](https://github.com/magento/magento2/issues/10301" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/osrecio">Oscar Recio</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11753">11753</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7927" target="_blank">7927</a></td>
+    <td>[7927](https://github.com/magento/magento2/issues/7927" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/osrecio">Oscar Recio</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11590">11590</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11586" target="_blank">11586</a></td>
+    <td>[11586](https://github.com/magento/magento2/issues/11586" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">@adrian-martinez-interactiv4</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11761">11761</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11322" target="_blank">11322</a></td>
+    <td>[11322](https://github.com/magento/magento2/issues/11322" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11640">11640</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/9007" target="_blank">9007</a></td>
+    <td>[9007](https://github.com/magento/magento2/issues/9007" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/nmalevanec">Malyovanets Nickolas</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11611">11611</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/6891" target="_blank">6891</a></td>
+    <td>[6891](https://github.com/magento/magento2/issues/6891" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/mrodespin">Marc Rodriguez</a></td>
   </tr>
   <tr>
@@ -325,7 +325,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11758">11758</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11729" target="_blank">11729</a></td>
+    <td>[11729](https://github.com/magento/magento2/issues/11729" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/hauso">HausO</a></td>
   </tr>
   <tr>
@@ -335,17 +335,17 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11844">11844</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/4808" target="_blank">4808</a></td>
+    <td>[4808](https://github.com/magento/magento2/issues/4808" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/raumatbel">Raul Mateos</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11848">11848</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7640" target="_blank">7640</a></td>
+    <td>[7640](https://github.com/magento/magento2/issues/7640" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11932">11932</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10185" target="_blank">10185</a></td>
+    <td>[10185](https://github.com/magento/magento2/issues/10185" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
   <tr>
@@ -355,7 +355,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11890">11890</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/8799" target="_blank">8799</a></td>
+    <td>[8799](https://github.com/magento/magento2/issues/8799" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/raumatbel">Raul Mateos</a></td>
   </tr>
   <tr>
@@ -365,7 +365,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11960">11960</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11898" target="_blank">11898</a></td>
+    <td>[11898](https://github.com/magento/magento2/issues/11898" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/osrecio">Oscar Recio</a></td>
   </tr>
   <tr>
@@ -375,32 +375,32 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12022">12022</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7995" target="_blank">7995</a></td>
+    <td>[7995](https://github.com/magento/magento2/issues/7995" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/crissanclick">Cristian Sanclemente</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11316">11316</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/5439" target="_blank">5439</a></td>
+    <td>[5439](https://github.com/magento/magento2/issues/5439" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/osrecio">Oscar Recio</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11786">11786</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/8846" target="_blank">8846</a></td>
+    <td>[8846](https://github.com/magento/magento2/issues/8846" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/gomencal">gonzalopelon</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12040">12040</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11996" target="_blank">11996</a></td>
+    <td>[11996](https://github.com/magento/magento2/issues/11996" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/manuelson">Manu Gonzalez Rodriguez</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12045">12045</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/7903" target="_blank">7903</a></td>
+    <td>[7903](https://github.com/magento/magento2/issues/7903" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/lionelalvarez">@lionelalvarez</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11861">11861</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11697" target="_blank">11697</a></td>
+    <td>[11697](https://github.com/magento/magento2/issues/11697" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/adrian-martinez-interactiv4">@adrian-martinez-interactiv4</a></td>
   </tr>
   <tr>
@@ -410,12 +410,12 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11432">11432</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/11022" target="_blank">11022</a></td>
+    <td>[11022](https://github.com/magento/magento2/issues/11022" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/davidverholen">David Verholen</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11596">11596</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10032" target="_blank">10032</a></td>
+    <td>[10032](https://github.com/magento/magento2/issues/10032" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/PieterCappelle">Pieter Cappelle</a></td>
   </tr>
   <tr>
@@ -425,7 +425,7 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11631">11631</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/9830" target="_blank">9830</a>, <a href="https://github.com/magento/magento2/issues/10530" target="_blank">10530</a></td>
+    <td>[9830](https://github.com/magento/magento2/issues/9830" target="_blank), [10530](https://github.com/magento/magento2/issues/10530" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/rogyar">Yaroslav Rogoza</a></td>
   </tr>
   <tr>
@@ -435,17 +435,17 @@ The following table identifies contributions from our community members. This ta
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/12115">12115</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/6597" target="_blank">6597</a>, <a href="https://github.com/magento/magento2/issues/8094" target="_blank">8094</a></td>
+    <td>[6597](https://github.com/magento/magento2/issues/6597" target="_blank), [8094](https://github.com/magento/magento2/issues/8094" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/ihor-sviziev">Ihor Sviziev</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11901">11901</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/10767" target="_blank">10767</a></td>
+    <td>[10767](https://github.com/magento/magento2/issues/10767" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/tr33m4n">Daniel Doyle</a></td>
   </tr>
   <tr>
     <td><a target="_blank" href="https://github.com/magento/magento2/pull/11919">11919</a></td>
-    <td><a href="https://github.com/magento/magento2/issues/8172" target="_blank">8172</a>, <a href="https://github.com/magento/magento2/issues/8089" target="_blank">8089</a>, <a href="https://github.com/magento/magento2/issues/10507" target="_blank">10507</a></td>
+    <td>[8172](https://github.com/magento/magento2/issues/8172" target="_blank), [8089](https://github.com/magento/magento2/issues/8089" target="_blank), [10507](https://github.com/magento/magento2/issues/10507" target="_blank)</td>
     <td><a target="_blank" href="https://github.com/lewisvoncken">Mr. Lewis</a></td>
   </tr>
   <tr>
@@ -458,18 +458,18 @@ The following table identifies contributions from our community members. This ta
 
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html" target="_blank).
 
 {% include install/releasenotes/ee_install_21.md %}
 
 
 
 ## Migration toolkits
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html" target="_blank) helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html" target="_blank). Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool" target="_blank).
 
 An updated version of this toolkit is typically available several days after the patch release.
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration" target="_blank) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 Dear community members, thank you for your suggestions and bug reports. 

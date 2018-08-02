@@ -28,11 +28,11 @@ The following table discusses the bootstrap parameters you can set:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
+		<td>[MAGE_DIRS]({{ page.baseurl }}/config-guide/bootstrap/mage-dirs.html)</td>
 		<td>Specifies custom directory and URL paths</td>
 	</tr>	
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
+		<td>[MAGE_PROFILER]({{ page.baseurl }}/config-guide/bootstrap/mage-profiler.html)</td>
 		<td>Enables dependency graphs and HTML profiling</td>
 	</tr>
 

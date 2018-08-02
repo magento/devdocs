@@ -55,7 +55,7 @@ For example, to use the Chrome inspector:
 
 7.	To view HTTP response headers, click the page URL (in the Name column).
 
-	You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.
+	You can view HTTP headers which are discussed in more detail in [Verify HTTP response headers](#config-varnish-final-verify-headers).
 
 ### Verify the Magento cache {#config-varnish-final-verify-cache}
 Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
@@ -72,9 +72,9 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
+	<p>If you encounter 503 (Backend Fetch Failed) errors, see [Troubleshooting 503 (Service Unavailable) errors]({{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html).</p>
 </div>
 
 #### Next steps
-*	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
-*	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>
+*	[How Magento cache clearing works with Varnish]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html)
+*	[How Varnish caching works]({{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html)

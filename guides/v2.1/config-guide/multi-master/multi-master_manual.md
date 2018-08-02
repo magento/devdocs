@@ -108,7 +108,7 @@ Sales database table names start with:
 *   The `magento_customercustomattributes_sales_flat_order` table is also affected
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
+  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).</p>
 </div>
 
 For more information, see:
@@ -262,7 +262,7 @@ where
 This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see <a href="#split-db-ref">Reference scripts</a>.</p>
+  <p>This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).</p>
 </div>
 
 Quote database table names start with `quote`. The `magento_customercustomattributes_sales_flat_quote` and `magento_customercustomattributes_sales_flat_quote_address` tables are also affected
@@ -609,4 +609,4 @@ Drop all tables that start with `quote_`.
 {% endcollapsible %}
 
 #### Next step
-<a href="{{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html">Verify split databases</a>
+[Verify split databases]({{ page.baseurl }}/config-guide/multi-master/multi-master_verify.html)

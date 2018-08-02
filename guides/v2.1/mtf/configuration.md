@@ -35,13 +35,13 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
     <td><code>app_frontend_url</code></td>
     <td>URL to Magento storefront under test.</td>
     <td><code>http://&lt;name&gt;.&lt;domain&gt;/</code></td>
-    <td><a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_frontend" target="_blank">Set URL for Magento storefront under test</a></td>
+    <td>[Set URL for Magento storefront under test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_frontend" target="_blank)</td>
 </tr>
 <tr>
     <td><code>app_backend_url</code></td>
     <td>URL to Magento Admin under test.</td>
     <td><code>"http://&lt;name&gt;.&lt;domain&gt;/&lt;path to Admin&gt;/"</code></td>
-    <td><a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend" target="_blank">Set URL for Magento Admin URL under test</a></td>
+    <td>[Set URL for Magento Admin URL under test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_phpunitxml_backend" target="_blank)</td>
 </tr>
 <tr>
     <td><code>testsuite_rule</code></td>
@@ -59,13 +59,13 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
     <td><code>log_directory</code></td>
     <td>Path to a directory with testing reports.</td>
     <td><code>"&lt;path to the reporting directory&gt;"</code></td>
-    <td><a href="http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory" target="_blank">Set a reporting directory</a></td>
+    <td>[Set a reporting directory](http://localhost:4000/guides/v2.0/mtf/features/reporting.html#report-directory" target="_blank)</td>
 </tr>
 <tr>
     <td><code>events_preset</code></td>
     <td>Name of a reporting event preset.</td>
     <td><code>"&lt;event preset name&gt;"</code></td>
-    <td><a href="{{ page.baseurl }}/mtf/features/reporting.html#set-preset" target="_blank">Set a preset</a></td>
+    <td>[Set a preset]({{ page.baseurl }}/mtf/features/reporting.html#set-preset" target="_blank)</td>
 </tr>
 <tr>
     <td><code>module_whitelist</code></td>
@@ -83,23 +83,23 @@ The `<magento2_root_dir>/dev/tests/functional/phpunit.xml` contains PHPUnit conf
     <td><code>credentials_file_path</code></td>
     <td>Path to the file with credentials required by services such as payment and shipment.</td>
     <td><code>"./credentials.xml.dist"</code></td>
-    <td><a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html" target="_blank">Edit <code>credentials.xml</code> to work with Magento modules that require credentials</a></td>
+    <td>[Edit <code>credentials.xml</code> to work with Magento modules that require credentials]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html" target="_blank)</td>
 </tr>
 <tr>
     <td><code>mage_mode</code></td>
-    <td>Magento mode (<a href="{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html" target="_blank">About Magento modes</a>).</td>
+    <td>Magento mode ([About Magento modes]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html" target="_blank)).</td>
     <td><code>"default", "developer", "production"</code></td>
-    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it. <a href="{{ site.mage2100url }}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php">Open an example</a></td>
+    <td>This parameter is intended to be used directly in a test. The FTF doesn't use it. [Open an example]({{ site.mage2100url }}dev/tests/functional/tests/app/Magento/PageCache/Test/TestCase/FlushAdditionalCachesTest.php)</td>
 </tr>
 <tr>
     <td><code>module_filter</code></td>
-    <td>Applicable for <a href="{{ page.baseurl }}/mtf/features/test_suite.html">test suites</a> only. Enables you to select test cases for specific modules. <a href="{{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about the &lt;module&gt; filter in a test suite.</a></td>
+    <td>Applicable for [test suites]({{ page.baseurl }}/mtf/features/test_suite.html) only. Enables you to select test cases for specific modules. [Learn more about the &lt;module&gt; filter in a test suite.]({{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite" target="_blank)</td>
     <td><code>"Magento_&lt;name_of_module&gt;"</code></td>
     <td>Use it when you don't want to modify the test suite. </td>
 </tr>
 <tr>
     <td><code>module_filter_strict</code></td>
-    <td>Applicable for a <a href="{{ page.baseurl }}/mtf/features/test_suite.html">tests suite</a> only. It has the same effect as <code>strict</code> in the <code>&lt;module&gt;</code>. <a href="{{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite" target="_blank">Learn more about <code>strict</code> parameter of the &lt;module&gt; filter in a test suite.</a></td>
+    <td>Applicable for a [tests suite]({{ page.baseurl }}/mtf/features/test_suite.html) only. It has the same effect as <code>strict</code> in the <code>&lt;module&gt;</code>. [Learn more about <code>strict</code> parameter of the &lt;module&gt; filter in a test suite.]({{ page.baseurl }}/mtf/features/test_suite.html#scope-testsuite" target="_blank)</td>
     <td><code>"1"</code>, <code>"0"</code></td>
     <td>Use it when you don't want to modify the test suite.</td>
 </tr>

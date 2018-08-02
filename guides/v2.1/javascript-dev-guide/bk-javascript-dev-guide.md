@@ -9,11 +9,11 @@ github_link: javascript-dev-guide/bk-javascript-dev-guide.md
 ---
 
 ## Introduction {#overview-introduction}
-By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} files, and to manage dependencies of JavaScript resources.
+By default, the Magento application uses the [RequireJS file and module loader](http://requirejs.org/" target="_blank) to optimize the time of loading pages with included {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} files, and to manage dependencies of JavaScript resources.
 
-You can follow the same approach when customizing Magento JavaScript, or <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.
+You can follow the same approach when customizing Magento JavaScript, or [disable all the default scripts and their load by RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank).
 
-For information about how JS resources are located and configured, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html" target="_blank">JavaScript resources</a> topic in the Configuration Guide.
+For information about how JS resources are located and configured, see the [JavaScript resources]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html" target="_blank) topic in the Configuration Guide.
 
 ## What's in this guide {##js_contents}
 Topics of this book describe the following:
@@ -42,7 +42,7 @@ Description
 <i>JavaScript component (JS component)</i>
 </td>
 <td>
-Any separate <code>.js</code> file decorated as <a href="http://requirejs.org/docs/whyamd.html#amd" target="_blank">AMD module</a>.
+Any separate <code>.js</code> file decorated as [AMD module](http://requirejs.org/docs/whyamd.html#amd" target="_blank).
 </td>
 </tr>
 
@@ -51,7 +51,7 @@ Any separate <code>.js</code> file decorated as <a href="http://requirejs.org/do
 <i>Ui component</i>
 </td>
 <td>
-JS component located in the <a href="{{ site.mage2100url }}app/code/Magento/Ui" target="_blank"><code>Magento_Ui</code></a> module, in the <a href="{{ site.mage2100url }}app/code/Magento/Ui/view" target="_blank">app/code/Magento/Ui/view</a> directory.
+JS component located in the [<code>Magento_Ui</code>]({{ site.mage2100url }}app/code/Magento/Ui" target="_blank) module, in the [app/code/Magento/Ui/view]({{ site.mage2100url }}app/code/Magento/Ui/view" target="_blank) directory.
 </td>
 </tr>
 
@@ -60,7 +60,7 @@ JS component located in the <a href="{{ site.mage2100url }}app/code/Magento/Ui" 
 <i>jQuery UI widget</i>
 </td>
 <td>
-A JS <code>component/widget</code> provided by <a href="{{ site.mage2100url }}lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
+A JS <code>component/widget</code> provided by [jQuery UI library used in Magento]({{ site.mage2100url }}lib/web/jquery/jquery-ui-1.9.2.js" target="_blank).
 </td>
 </tr>
 <tr>
@@ -68,7 +68,7 @@ A JS <code>component/widget</code> provided by <a href="{{ site.mage2100url }}li
 <i>jQuery widget</i>
 </td>
 <td>
-Custom widget created using jQuery UI Widget Factory and decorated as AMD {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Many Magento JS components are jQuery widgets. Check <a href="https://jqueryui.com/widget/" target="_blank">jQuery Widget</a>
+Custom widget created using jQuery UI Widget Factory and decorated as AMD {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Many Magento JS components are jQuery widgets. Check [jQuery Widget](https://jqueryui.com/widget/" target="_blank)
 </td>
 </tr>
 </table>

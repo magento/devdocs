@@ -30,10 +30,10 @@ You must manage your Elasticsearch stopwords using `.csv` files located in the `
 
 For more information about how Elasticsearch uses stopwords, see the following resources:
 
-*	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html" target="_blank">Stopwords: Performance Versus Precision</a>
-*	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html" target="_blank">Pros and Cons of Stopwords</a>
-*	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html" target="_blank">Using Stopwords</a>
-*	<a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html" target="_blank">Stopwords and Performance</a>
+*	[Stopwords: Performance Versus Precision](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords.html" target="_blank)
+*	[Pros and Cons of Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/pros-cons-stopwords.html" target="_blank)
+*	[Using Stopwords](https://www.elastic.co/guide/en/elasticsearch/guide/current/using-stopwords.html" target="_blank)
+*	[Stopwords and Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/stopwords-performance.html" target="_blank)
 
 ## Configure stopwords {#config-stopwords}
 Elasticsearch stopwords are located in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory. Magento ships with one `.csv` file containing stopwords for our default locales and an additional file, `stopwords.csv`, which has stopwords for any locale that is not represented by another `.csv` file.

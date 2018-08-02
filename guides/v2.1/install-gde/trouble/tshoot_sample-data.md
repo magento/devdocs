@@ -37,7 +37,7 @@ Error in the console log during sample data installation using the Setup Wizard:
 These exceptions result from file system permissions settings.
 
 #### Solution
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with `root` privileges.
+[Set file system ownership and permissions again]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms) as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
 If you're currently set for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode), sample data installation fails if you use the [`magento sampledata:deploy`]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html) command:
@@ -64,8 +64,8 @@ During installation of optional sample data, a  message similar to the following
 
 During sample data installation, disable SELinux using a resource such as:
 
-*	<a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a>
-*	<a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a>
+*	[crypt.gen.nz](http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank)
+*	[CentOS documentation](https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank)
 
 ### Symptom (develop branch) {#trouble-samp-dev}
 Other errors display, such as:

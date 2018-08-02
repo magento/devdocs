@@ -47,59 +47,59 @@ The following table summarizes the available commands. Commands are shown in sum
 		</tr>
 
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">magento setup:install</a></td>
+		<td>[magento setup:install]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)</td>
 		<td><p>Installs the Magento software</p></td>
 		<td><p>None</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">magento setup:uninstall</a></td>
+		<td>[magento setup:uninstall]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)</td>
 		<td><p>Removes the Magento software.</p></td>
 		<td><p>Magento software installed</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">magento setup:upgrade</a></td>
+		<td>[magento setup:upgrade]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)</td>
 		<td><p>Updates the Magento software.</p></td>
 		<td><p>Deployment configuration</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html">magento maintenance:{enable|disable}</a></td>
+		<td>[magento maintenance:{enable|disable}]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html)</td>
 		<td><p>Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Magento Admin or storefront).</p></td>
 		<td><p>Magento software installed</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a></td>
+		<td>[magento setup:config:set]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)</td>
 		<td><p>Creates or updates the deployment configuration.</p></td>
 		<td><p>None</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">magento module:{enable|disable}</a></td>
+		<td>[magento module:{enable|disable}]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)</td>
 		<td><p>Enable or disable modules.</p></td>
 		<td><p>None</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html">magento setup:store-config:set</a></td>
+		<td>[magento setup:store-config:set]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html)</td>
 		<td><p>Sets storefront-related options, such as base URL, language, timezone, and so on.</p></td>
 		<td><ul><li>Deployment configuration</li>
 			<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
 				</ul></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a></td>
+		<td>[magento setup:db-schema:upgrade]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)</td>
 		<td><p>Updates the Magento database schema.</p></td>
 		<td><p>Deployment configuration</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-data:upgrade</a></td>
+		<td>[magento setup:db-data:upgrade]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)</td>
 		<td><p>Updates the Magento database data.</p></td>
 		<td><p>Deployment configuration</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html#instgde-cli-dbconfig">magento setup:db:status</a></td>
+		<td>[magento setup:db:status]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html#instgde-cli-dbconfig)</td>
 		<td><p>Checks if the database is up-to-date with the code.</p></td>
 		<td><p>Deployment configuration</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html">magento admin:user:create</a></td>
+		<td>[magento admin:user:create]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)</td>
 		<td><p>Creates a Magento administrator.</p></td>
 		<td><p>All of the following:</p>
 			<ul><li>Deployment configuration</li>
@@ -108,12 +108,12 @@ The following table summarizes the available commands. Commands are shown in sum
 				</ul></td>
 	</tr>
 	<tr>
-		<td><a href="#instgde-cli-help">magento list</a></td>
+		<td>[magento list](#instgde-cli-help)</td>
 		<td><p>Lists all available commands.</p></td>
 		<td><p>None</p></td>
 	</tr>
 	<tr>
-		<td><a href="#instgde-cli-help">magento help</a></td>
+		<td>[magento help](#instgde-cli-help)</td>
 		<td><p>Provides help for the specified command.</p></td>
 		<td><p>None</p></td>
 	</tr>

@@ -13,7 +13,7 @@ Each variation has constraints that are called at the end of the test flow.
 
 Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"/></a>
+[<img src="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"/>]({{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png)
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 
@@ -62,7 +62,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
-<td>field is assigned with <code>simple-product-%isolation%</code>. <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation">More info about <code>%isolation%</code></a>.</td>
+<td>field is assigned with <code>simple-product-%isolation%</code>. [More info about <code>%isolation%</code>]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture-repo.html#mtf_repo_isolation).</td>
 </tr>
 <tr>
 <td><code>name</code></td><td>field is assigned with <code>Simple Product %isolation%</code></td>
@@ -74,8 +74,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 <td><code>price</code></td>
 <td>
 <ul>
-<li> <code>product/data/price/value</code> is processed by a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source">data source</a> <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
-<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html">constraint</a>.</li>
+<li> <code>product/data/price/value</code> is processed by a [data source]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_source) <code>Magento\Catalog\Test\Fixture\Product\Price</code> and is assigned <code>10000</code></li>
+<li><code>product/data/price/dataset</code> is assigned with a data set <code>drop_down_with_one_option_fixed_price</code> from the <code>Magento\Catalog\Test\Repository\CatalogProductSimple\Price</code> repository. This data set is used by a [constraint]({{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html).</li>
 </ul>
 </td>
 </tr>
@@ -155,7 +155,7 @@ The following table shows structure of the data set:
 <td><code>data</code> </td>
 <td>Data to be used by a test case. </td>
 <td><ul>
-<li><code>name</code> - a name of variable with extra data. <a href="#data_node">More details.</a> Required.</li>
+<li><code>name</code> - a name of variable with extra data. [More details.](#data_node) Required.</li>
 <li><code>xsi:type</code> - a type of the value.
 The following data types are available:
 <ul>

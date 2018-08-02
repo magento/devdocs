@@ -260,20 +260,20 @@ The module is now complete. Your module's directory structure under `app/code` s
         |-- Controller
         |   |-- Adminhtml
         |       |-- HelloWorld
-        |           `-- <a href="#controlleradminhtmlhelloworldindexphp">Index.php</a>
+        |           `-- [Index.php](#controlleradminhtmlhelloworldindexphp)
         |-- etc
         |   |-- adminhtml
-        |   |   |-- <a href="#etcadminhtmlmenuxml">menu.xml</a>
-        |   |   `-- <a href="#etcadminhtmlroutesxml">routes.xml</a>
-        |   `-- <a href="#etcmodulexml">module.xml</a>
+        |   |   |-- [menu.xml](#etcadminhtmlmenuxml)
+        |   |   `-- [routes.xml](#etcadminhtmlroutesxml)
+        |   `-- [module.xml](#etcmodulexml)
         |-- view
         |   |-- adminhtml
         |       |-- layout
-        |       |    `-- <a href="#viewadminhtmllayoutexampleadminnewpagehelloworldindexxml">exampleadminnewpage_helloworld_index.xml</a>
+        |       |    `-- [exampleadminnewpage_helloworld_index.xml](#viewadminhtmllayoutexampleadminnewpagehelloworldindexxml)
         |       `-- templates
-        |           `-- <a href="#viewadminhtmltemplateshelloworldphtml">helloworld.phtml</a>
-        |-- <a href="#composerjson">composer.json</a>
-        `-- <a href="#registrationphp">registration.php</a>
+        |           `-- [helloworld.phtml](#viewadminhtmltemplateshelloworldphtml)
+        |-- [composer.json](#composerjson)
+        `-- [registration.php](#registrationphp)
   </pre>
   <script>
     //Javascript to make the code blocks open on anchor click

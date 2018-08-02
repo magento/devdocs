@@ -15,13 +15,13 @@ functional_areas:
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-store-prereq}
-Before you run this command, you must do all of the following *or* you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>:
+Before you run this command, you must do all of the following *or* you must [install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html):
 
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	[Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
+*	[Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
 
 {% include install/fully-secure.md %}
 
