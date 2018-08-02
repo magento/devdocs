@@ -5,11 +5,19 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/introduction.md
 functional_areas:
     - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.1
 ---
 
 _The latest MFTF release is [{{page.mftf-release}}]._
 {: style="text-align: right"}
+
+{% include note.html
+type='info'
+content='Availability in the Magento codebase:
+- The latest release available in the Magento 2.2 codebase (the `2.2-develop` branch) is MFTF 2.2.0.
+- The latest release available in the Magento 2.3 codebase (the `2.3-develop` branch) is MFTF 2.3.0.
+'
+%}
 
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases.
 MFTF will make test creation easier for developers and will improve:
@@ -22,12 +30,9 @@ MFTF will make test creation easier for developers and will improve:
 
 Because MFTF tests are written in XML, you no longer need to learn PHP to write tests.
 
-{%
-include note.html
-type="info"
-content="We are actively developing functional tests.
-Refer to `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for examples."
-%}
+{:.bs-callout .bs-callout-info}
+We are actively developing functional tests.
+Refer to `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` for examples.
 
 ## Audience
 
@@ -67,7 +72,7 @@ Open the file and check the corresponding dependency:
         ...
         {
             "name": "magento/magento2-functional-testing-framework",
-            "version": "2.0.2",
+            "version": "2.3.0",
             ...
         }
         ...
@@ -110,7 +115,7 @@ The MFTF supports two different locations for storing the tests and test artifac
 
 All tests and test data from these locations are merged in the order indicated in the above list.
 
-The file structure under all three path cases is the same:
+The file structure under the both path cases is the same:
 ```
 <Path>
 ├── ActionGroup

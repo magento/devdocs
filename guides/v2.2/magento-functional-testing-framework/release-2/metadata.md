@@ -52,7 +52,7 @@ The following diagram demonstrates the XML structure of a metadata file:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <operations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/DataGenerator/etc/dataOperation.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:DataGenerator/etc/dataOperation.xsd">
     <operation name=""
                dataType=""
                type=""
