@@ -36,7 +36,7 @@ The Community Engineering Team reviews all issues and contributions submitted by
 Often when the Community Engineering Team works on reviewing the suggested changes, we will add a label to the issue to indicate certain information, like the status or who is working the issue. If you're ever curious what the different labels mean, see the [table](#labels) below for an explanation of each one.
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>Please refer to <a href="http://www.magento.com/legaldocuments/mca">Magento Contributor Agreement</a> for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
+<p>Please refer to [Magento Contributor Agreement](http://www.magento.com/legaldocuments/mca) for detailed information about the License Agreement. All contributors are required to submit a click-through form to agree to the terms. </p>
 </div>
 
 ## GitHub and Two-Factor Authentication {#two-factor}
@@ -227,7 +227,7 @@ To add an issue:
 1. Fill in the Title and Issue description.
 1. Click **Submit new issue**.
 
-## Help triage issues {#triage} <a href="https://www.codetriage.com/magento/magento2" target="_blank"><img src="https://www.codetriage.com/magento/magento2/badges/users.svg" /></a>
+## Help triage issues {#triage} [<img src="https://www.codetriage.com/magento/magento2/badges/users.svg" />](https://www.codetriage.com/magento/magento2" target="_blank)
 
 In addition to contributing code, you can help to triage issues. This can include reproducing bug reports or asking for vital information, such as affected versions or instructions to reproduce bugs. If you would like to start triaging issues, one easy way to get started is to [subscribe to Magento on CodeTriage](https://www.codetriage.com/magento/magento2){:target="_blank"}.
 

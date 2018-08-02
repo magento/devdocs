@@ -11,40 +11,40 @@ redirect_from:
  - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 ## Overview
-Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:
+Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/" target="_blank). As extra functionality it implements the following:
 <ul>
 <li>triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening</li>
 <li>delaying to automatically close the drop-down on mouse out</li>
 <li>clicking outside the area closes the drop-down</li>
 </ul>
 
-The dropdownDialog widget source is located in <a href="{{ site.mage2000url }}lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.
+The dropdownDialog widget source is located in [lib/web/mage/dropdown.js]({{ site.mage2000url }}lib/web/mage/dropdown.js" target="_blank).
 
 ## Initialize the dropdownDialog widget {#dialog_init}
 
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank) topic.
 
 ## Options {#dialog_options}
  
-Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:
+Magento customized Dialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/" target="_blank) options, plus several custom options:
 <ul>
-<li><a href="#d_autoPosition">autoPosition</a></li>
-<li><a href="#d_autoSize">autoSize</a></li>
-<li><a href="#d_closeOnClickOutside">closeOnClickOutside</a></li>
-<li><a href="#d_closeOnMouseLeave">closeOnMouseLeave</a></li>
-<li><a href="#d_createTitleBar">createTitleBar</a></li>
-<li><a href="#d_defaultDialogClass">defaultDialogClass</a></li>
-<li><a href="#d_dialogContentClass">dialogContentClass</a></li>
-<li><a href="#d_parentClass">parentClass</a></li>
-<li><a href="#d_triggerClass">triggerClass</a></li>
-<li><a href="#d_triggerEvent">triggerEvent</a></li>
-<li><a href="#d_triggerTarget">triggerTarget</a></li>
+<li>[autoPosition](#d_autoPosition)</li>
+<li>[autoSize](#d_autoSize)</li>
+<li>[closeOnClickOutside](#d_closeOnClickOutside)</li>
+<li>[closeOnMouseLeave](#d_closeOnMouseLeave)</li>
+<li>[createTitleBar](#d_createTitleBar)</li>
+<li>[defaultDialogClass](#d_defaultDialogClass)</li>
+<li>[dialogContentClass](#d_dialogContentClass)</li>
+<li>[parentClass](#d_parentClass)</li>
+<li>[triggerClass](#d_triggerClass)</li>
+<li>[triggerEvent](#d_triggerEvent)</li>
+<li>[triggerTarget](#d_triggerTarget)</li>
 </ul>
 
 Description of each option as follows below location.
 
 ### <code>autoPosition</code> {#d_autoPosition}
-Specifies if the <a href="http://api.jqueryui.com/dialog/#option-position" target="_blank"><code>position</code></a> option is used for calculating the drop-down offset. 
+Specifies if the [<code>position</code>](http://api.jqueryui.com/dialog/#option-position" target="_blank) option is used for calculating the drop-down offset. 
 
 If set to `false` (default value), then `position` rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the `position` rules.  
 
@@ -55,7 +55,7 @@ If set to `false` (default value), then `position` rules are not used and the dr
 
 ### <code>autoSize</code> {#d_autoSize}
 
-Specifies if the size of the drop-down is defined by widget options (<a href="http://api.jqueryui.com/dialog/#option-height" target="_blank">height</a>, <a href="http://api.jqueryui.com/dialog/#option-width" target="_blank">width</a>, <a href="http://api.jqueryui.com/dialog/#option-minHeight" target="_blank">minHeight</a>, <a href="http://api.jqueryui.com/dialog/#option-minWidth" target="_blank">minWidth</a>).
+Specifies if the size of the drop-down is defined by widget options ([height](http://api.jqueryui.com/dialog/#option-height" target="_blank), [width](http://api.jqueryui.com/dialog/#option-width" target="_blank), [minHeight](http://api.jqueryui.com/dialog/#option-minHeight" target="_blank), [minWidth](http://api.jqueryui.com/dialog/#option-minWidth" target="_blank)).
 
 **Type**: Boolean
 
@@ -77,7 +77,7 @@ Specifies if the drop-down is closed on mouse click outside the drop-down.
 **Default value**: `true`
 
 ### <code>createTitleBar</code> {#d_createTitleBar}
-Defines if the <a href="http://api.jqueryui.com/dialog/#option-title" target="_blank">title</a> option is used for displaying the title bar.
+Defines if the [title](http://api.jqueryui.com/dialog/#option-title" target="_blank) option is used for displaying the title bar.
 
 **Type**: Boolean
 
@@ -140,13 +140,13 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 
 
 ## Methods {#dialog_methods}
-Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> methods, though some of them are customized. 
+Magento customized dropdownDialog widget has default [jQuery UI Dialog widget](http://api.jqueryui.com/dialog/" target="_blank) methods, though some of them are customized. 
 
 
 Customized public methods:
 <ul>
-<li><a href="#d_open">open()</a></li>
-<li><a href="#d_close">close()</a></li>
+<li>[open()](#d_open)</li>
+<li>[close()](#d_close)</li>
 </ul>
 
 ### <code>open()</code> {#d_open}

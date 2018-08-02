@@ -77,7 +77,7 @@ return;
 </li>
 
 <li>If none of the previous cases is true, the component is executed with no further processing.
-Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
+Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is [using the &lt;script&gt; tag](#init_script).</li>
 </ul>
 
 #### Declarative notation using the `<script type="text/x-magento-init" />` tag {decl_tag}
@@ -102,7 +102,7 @@ To call a JS component on a HTML element without direct access to the element or
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
+<li><code>&lt;element_selector&gt;</code> is a [selector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li>
 </ul>

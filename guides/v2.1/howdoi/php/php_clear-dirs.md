@@ -10,9 +10,9 @@ github_link: howdoi/php/php_clear-dirs.md
 ---
 
 #### Contents
-*	<a href="#howdoi-clear-over">Overview of directory clearing</a>
-*	<a href="#howdoi-clear-what">What directories to clear</a>
-*	<a href="#howdoi-clear-how">How to clear the directories</a>
+*	[Overview of directory clearing](#howdoi-clear-over)
+*	[What directories to clear](#howdoi-clear-what)
+*	[How to clear the directories](#howdoi-clear-how)
 
 ## Overview of directory clearing {#howdoi-clear-over}
 While you're developing Magento components (modules, themes, and language packages), your rapidly changing environment requires you to periodically clear certain directories and caches. Otherwise, your code runs with exceptions and won't function properly.
@@ -49,7 +49,7 @@ When you're developing Magento components (modules, themes, and language package
 	</tr>
 	<tr>
 		<td>var/generation</td>
-		<td>Contains <a href="{{ page.baseurl }}/extension-dev-guide/code-generation.html">generated code</a>.</td>
+		<td>Contains [generated code]({{ page.baseurl }}/extension-dev-guide/code-generation.html).</td>
 	</tr>
 	<tr>
 		<td>var/di</td>
@@ -73,12 +73,12 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank) declared in a class or a proxy declared in [<code>di.xml</code>]({{ site.mage2000url }}app/etc/di.xml#L25" target="_blank))</li></ul> </td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
 		<td>Change any <code>di.xml</code></td>
-		<td>var/di, var/generation; also, run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> again</td>
+		<td>var/di, var/generation; also, run the [code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html) again</td>
 	</tr>
 	<tr>
 		<td>Add, remove, enable, or disable modules</td>
@@ -100,7 +100,7 @@ The following table provides guidelines on what you should clear and when.
 </table>
 
 ## How to clear the directories {#howdoi-clear-how}
-To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
+To only clear directories and not perform other actions, log in to the Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html) and clear directories using a command like the following:
 
 	rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
 
@@ -114,22 +114,22 @@ You can also use the following command-line tools clear some directories for you
 			<th>What it clears</th>
 		</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html">magento setup:upgrade</a></td>
+		<td>[magento setup:upgrade]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)</td>
 		<td>Updates the Magento database schema and data.</td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">magento setup:di:compile</a></td>
+		<td>[magento setup:di:compile]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)</td>
 		<td>Generates code.</td>
 		<td>var/generation (after which compiles code again)</td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html">magento deploy:mode:set {mode}</a></td>
+		<td>[magento deploy:mode:set {mode}]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)</td>
 		<td>Changes from developer mode to production mode and vice versa.</td>
 		<td>var/di, var/generation, var/view_preprocessed</td>
 	</tr>
 	<tr>
-		<td><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">magento cache:clean [type]</a></td>
+		<td>[magento cache:clean [type]]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)</td>
 		<td>Cleans the cache.</td>
 		<td>var/cache, var/page_cache</td>
 	</tr>

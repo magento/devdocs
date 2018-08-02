@@ -272,201 +272,201 @@ The following table identifies contributions from our community members. This ta
      <th>Contributing community member</th>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12033" target="_blank">12033</a></td>
+    <td>[12033](https://github.com/magento/magento2/pull/12033" target="_blank)</td>
     <td>9869</td>
-     <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
+     <td>[enriquei4](https://github.com/enriquei4" target="_blank)</td>
   </tr>
 <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12373" target="_blank">12373</a></td>
+    <td>[12373](https://github.com/magento/magento2/pull/12373" target="_blank)</td>
     <td>10765</td>
-     <td><a href="https://github.com/Zefiryn" target="_blank">Zefiryn</a></td>
+     <td>[Zefiryn](https://github.com/Zefiryn" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12043" target="_blank">12043</a></td>
+    <td>[12043](https://github.com/magento/magento2/pull/12043" target="_blank)</td>
     <td>9410, 10707, 10737, 11032</td>
-     <td><a href="https://github.com/gomencal" target="_blank">gonzalopelon</a></td>
+     <td>[gonzalopelon](https://github.com/gomencal" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12135" target="_blank">12135</a></td>
+    <td>[12135](https://github.com/magento/magento2/pull/12135" target="_blank)</td>
     <td>10210</td>
-     <td><a href="https://github.com/RomaKis" target="_blank">Roman K.</a></td>
+     <td>[Roman K.](https://github.com/RomaKis" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/11807" target="_blank">11807</a></td>
+    <td>[11807](https://github.com/magento/magento2/pull/11807" target="_blank)</td>
     <td>11341</td>
-     <td><a href="https://github.com/manuelson" target="_blank">Manu Gonzalez Rodriguez</a></td>
+     <td>[Manu Gonzalez Rodriguez](https://github.com/manuelson" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12041" target="_blank">12041</a></td>
+    <td>[12041](https://github.com/magento/magento2/pull/12041" target="_blank)</td>
     <td>11825, 11908</td>
-     <td><a href="https://github.com/osrecio" target="_blank">Oscar Recio</a></td>
+     <td>[Oscar Recio](https://github.com/osrecio" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12246" target="_blank">12246</a></td>
+    <td>[12246](https://github.com/magento/magento2/pull/12246" target="_blank)</td>
     <td>NA</td>
-     <td><a href="https://github.com/pmclain" target="_blank">Patrick McLain</a></td>
+     <td>[Patrick McLain](https://github.com/pmclain" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12137" target="_blank">12137</a></td>
+    <td>[12137](https://github.com/magento/magento2/pull/12137" target="_blank)</td>
     <td>9768</td>
-     <td><a href="https://github.com/RomaKis" target="_blank">Roman K.</a></td>
+     <td>[Roman K.](https://github.com/RomaKis" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12519" target="_blank">12519</a></td>
+    <td>[12519](https://github.com/magento/magento2/pull/12519" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/lfluvisotto" target="_blank">Leandro F. L.</a></td>
+     <td>[Leandro F. L.](https://github.com/lfluvisotto" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/11860" target="_blank">11860</a></td>
+    <td>[11860](https://github.com/magento/magento2/pull/11860" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a></td>
+     <td>[adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4" target="_blank)</td>
   </tr>
   <tr>
-    <td><a href="https://github.com/magento/magento2/pull/12522" target="_blank">12522</a></td>
+    <td>[12522](https://github.com/magento/magento2/pull/12522" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/atishgoswami" target="_blank">Atish Goswami</a></td>
+     <td>[Atish Goswami](https://github.com/atishgoswami" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12321" target="_blank">12321</a></td>
+  <td>[12321](https://github.com/magento/magento2/pull/12321" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/angelo983" target="_blank">angelo983</a></td>
+     <td>[angelo983](https://github.com/angelo983" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/11436" target="_blank">11436</a></td>
+  <td>[11436](https://github.com/magento/magento2/pull/11436" target="_blank)</td>
     <td>11409</td>
-     <td><a href="https://github.com/adrian-martinez-interactiv4" target="_blank">adrian-martinez-interactiv4</a></td>
+     <td>[adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12548" target="_blank">12548</a></td>
+  <td>[12548](https://github.com/magento/magento2/pull/12548" target="_blank)</td>
     <td>8009</td>
-     <td><a href="https://github.com/ajpevers" target="_blank">Anton Evers</a></td>
+     <td>[Anton Evers](https://github.com/ajpevers" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12050" target="_blank">12050</a></td>
+  <td>[12050](https://github.com/magento/magento2/pull/12050" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/convenient" target="_blank">Luke Rodgers</a></td>
+     <td>[Luke Rodgers](https://github.com/convenient" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12558" target="_blank">12558</a></td>
+  <td>[12558](https://github.com/magento/magento2/pull/12558" target="_blank)</td>
     <td>12268</td>
-     <td><a href="https://github.com/roma84" target="_blank">Chumak Roman</a></td>
+     <td>[Chumak Roman](https://github.com/roma84" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12579" target="_blank">12579</a></td>
+  <td>[12579](https://github.com/magento/magento2/pull/12579" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/JeroenVanLeusden" target="_blank">Jeroen</a></td>
+     <td>[Jeroen](https://github.com/JeroenVanLeusden" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12368" target="_blank">12368</a></td>
+  <td>[12368](https://github.com/magento/magento2/pull/12368" target="_blank)</td>
     <td>8069</td>
-     <td><a href="https://github.com/nemesis-back" target="_blank">IvanK</a></td>
+     <td>[IvanK](https://github.com/nemesis-back" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/11618" target="_blank">11618</a></td>
+  <td>[11618](https://github.com/magento/magento2/pull/11618" target="_blank)</td>
     <td>6770</td>
-     <td><a href="https://github.com/raumatbel" target="_blank">Raul Mateos</a></td>
+     <td>[Raul Mateos](https://github.com/raumatbel" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12611" target="_blank">12611</a></td>
+  <td>[12611](https://github.com/magento/magento2/pull/12611" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/slackerzz" target="_blank">Lorenzo Stramaccia</a></td>
+     <td>[Lorenzo Stramaccia](https://github.com/slackerzz" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12629" target="_blank">12629</a></td>
+  <td>[12629](https://github.com/magento/magento2/pull/12629" target="_blank)</td>
     <td>12627</td>
-     <td><a href="https://github.com/quisse" target="_blank">Tommy Quissens</a></td>
+     <td>[Tommy Quissens](https://github.com/quisse" target="_blank)</td>
   </tr>
 <tr>
-<td><a href="https://github.com/magento/magento2/pull/12840" target="_blank">12840</a></td>
+<td>[12840](https://github.com/magento/magento2/pull/12840" target="_blank)</td>
     <td>8415</td>
-     <td><a href="https://github.com/duckchip" target="_blank">Tristan Hofman</a></td>
+     <td>[Tristan Hofman](https://github.com/duckchip" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12930" target="_blank">12930</a></td>
+  <td>[12930](https://github.com/magento/magento2/pull/12930" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/jameshalsall" target="_blank">James Halsall</a></td>
+     <td>[James Halsall](https://github.com/jameshalsall" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12959" target="_blank">12959</a></td>
+  <td>[12959](https://github.com/magento/magento2/pull/12959" target="_blank)</td>
     <td>10812</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
+     <td>[Danny Verkade](https://github.com/dverkade" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12958" target="_blank">12958</a></td>
+  <td>[12958](https://github.com/magento/magento2/pull/12958" target="_blank)</td>
     <td>9243</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
+     <td>[Danny Verkade](https://github.com/dverkade" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12956" target="_blank">12956</a></td>
+  <td>[12956](https://github.com/magento/magento2/pull/12956" target="_blank)</td>
     <td>10682</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
+     <td>[Danny Verkade](https://github.com/dverkade" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12962" target="_blank">12962</a></td>
+  <td>[12962](https://github.com/magento/magento2/pull/12962" target="_blank)</td>
     <td>7441</td>
-     <td><a href="https://github.com/wardcapp" target="_blank">wardcapp</a></td>
+     <td>[wardcapp](https://github.com/wardcapp" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12952" target="_blank">12952</a></td>
+  <td>[12952](https://github.com/magento/magento2/pull/12952" target="_blank)</td>
     <td>9969</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
+     <td>[Danny Verkade](https://github.com/dverkade" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12954" target="_blank">12954</a></td>
+  <td>[12954](https://github.com/magento/magento2/pull/12954" target="_blank)</td>
     <td>2156</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
+     <td>[Danny Verkade](https://github.com/dverkade" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/12991" target="_blank">12991</a></td>
+  <td>[12991](https://github.com/magento/magento2/pull/12991" target="_blank)</td>
     <td>12967</td>
-     <td><a href="https://github.com/ihor-sviziev" target="_blank">Ihor Sviziev</a></td>
+     <td>[Ihor Sviziev](https://github.com/ihor-sviziev" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13020" target="_blank">13020</a></td>
+  <td>[13020](https://github.com/magento/magento2/pull/13020" target="_blank)</td>
     <td>12393</td>
-     <td><a href="https://github.com/dverkade" target="_blank">Danny Verkade</a></td>
+     <td>[Danny Verkade](https://github.com/dverkade" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13261" target="_blank">13261</a></td>
+  <td>[13261](https://github.com/magento/magento2/pull/13261" target="_blank)</td>
     <td>10168</td>
-     <td><a href="https://github.com/PieterCappelle" target="_blank">Pieter Cappelle</a></td>
+     <td>[Pieter Cappelle](https://github.com/PieterCappelle" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13367" target="_blank">13367</a></td>
+  <td>[13367](https://github.com/magento/magento2/pull/13367" target="_blank)</td>
     <td>8621</td>
-     <td><a href="https://github.com/enriquei4" target="_blank">enriquei4</a></td>
+     <td>[enriquei4](https://github.com/enriquei4" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13489" target="_blank">13489</a></td>
+  <td>[13489](https://github.com/magento/magento2/pull/13489" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+     <td>[Sergey P](https://github.com/simpleadm" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13532" target="_blank">13532</a></td>
+  <td>[13532](https://github.com/magento/magento2/pull/13532" target="_blank)</td>
     <td>10738</td>
-     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+     <td>[Pieter Hoste](https://github.com/hostep" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13543" target="_blank">13543</a></td>
+  <td>[13543](https://github.com/magento/magento2/pull/13543" target="_blank)</td>
     <td>6207</td>
-     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+     <td>[Pieter Hoste](https://github.com/hostep" target="_blank)</td>
   </tr>
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13549" target="_blank">13549</a></td>
+  <td>[13549](https://github.com/magento/magento2/pull/13549" target="_blank)</td>
     <td>10565</td>
-     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
+     <td>[Pieter Hoste](https://github.com/hostep" target="_blank)</td>
  </tr>
 
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13490" target="_blank">13490</a></td>
+  <td>[13490](https://github.com/magento/magento2/pull/13490" target="_blank)</td>
     <td>6457, 6729, 7362</td>
-     <td><a href="https://github.com/simpleadm" target="_blank">Sergey P</a></td>
+     <td>[Sergey P](https://github.com/simpleadm" target="_blank)</td>
  </tr>
 
 <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13916" target="_blank">13916</a></td>
+  <td>[13916](https://github.com/magento/magento2/pull/13916" target="_blank)</td>
     <td>N/A</td>
-     <td><a href="https://github.com/northernco" target="_blank">Northern eCommerce</a></td>
+     <td>[Northern eCommerce](https://github.com/northernco" target="_blank)</td>
  </tr>
 
  </table>
@@ -476,7 +476,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank).
 
 
 ## Installation

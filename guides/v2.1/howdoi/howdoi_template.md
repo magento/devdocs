@@ -34,7 +34,7 @@ INTRODUCTORY TEXT, EXPLAIN WHAT YOUR ARTICLE IS ABOUT
 
 <!-- Image link -->
 
-Please submit all images to our <a href="https://github.com/magento/devdocs/tree/develop/common/images">`common/images`</a> directory.
+Please submit all images to our [`common/images`](https://github.com/magento/devdocs/tree/develop/common/images) directory.
 
 Format the link as follows:
 

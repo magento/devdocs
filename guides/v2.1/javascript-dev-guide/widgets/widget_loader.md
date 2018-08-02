@@ -14,17 +14,17 @@ redirect_from:
 ## Overview
 The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
-The Loader widget source is <a href="{{ site.mage2000url }}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
+The Loader widget source is [lib/web/mage/loader.js]({{ site.mage2000url }}lib/web/mage/loader.js" target="_blank).
 
 ## Initialize the loader widget {#loader_init}
-The loader widget is initialized as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
+The loader widget is initialized as described in [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank).
 
 ## Options {#loader_options}
 The loader widget has the following options:
 <ul>
-<li><a href="#l_icon">icon</a></li>
-<li><a href="#l_template">template</a></li>
-<li><a href="#l_texts">texts</a></li>
+<li>[icon](#l_icon)</li>
+<li>[template](#l_template)</li>
+<li>[texts](#l_texts)</li>
 </ul>
 
 ### <code>icon</code> {#l_icon}
@@ -64,9 +64,9 @@ The text that is displayed under the loader image. <br>
 ## Events
 Loader is subscribed to the following events:
 <ul>
-<li><a href="#l_processStart">processStart</a></li>
-<li><a href="#l_processStop">processStop</a></li>
-<li><a href="#l_texts">texts</a></li>
+<li>[processStart](#l_processStart)</li>
+<li>[processStop](#l_processStop)</li>
+<li>[texts](#l_texts)</li>
 </ul>
 
 ### <code>processStart</code> {#l_processStart}

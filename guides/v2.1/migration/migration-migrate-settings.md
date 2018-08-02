@@ -48,7 +48,7 @@ The `Migration completed` message is displayed after the settings are transferre
 
 You may ignore, rename or change the system configurations when migrating settings. For this, specify your custom rules in the `settings.xml` file.
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 
 2.	Change to the following directory:
 
@@ -72,4 +72,4 @@ For more details, see the [Settings migration mode]({{ page.baseurl }}/migration
 
 ## Next migration step
 
-* <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">Migrate data</a>
+* [Migrate data]({{ page.baseurl }}/migration/migration-migrate-data.html)

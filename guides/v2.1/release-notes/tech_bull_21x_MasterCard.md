@@ -50,7 +50,7 @@ Consult the following tables for guidelines for Magento 1.x EE and CE fixes.
 
       <tr>
     <td>1.5.0.0 - 1.9.2.4</td>
-    <td>Install <a href="https://magento.com/tech-resources/download" target="_blank">Patch 8967</a>.</td>
+    <td>Install [Patch 8967](https://magento.com/tech-resources/download" target="_blank).</td>
       </tr>
 
 <tr>

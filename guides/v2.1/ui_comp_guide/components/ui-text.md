@@ -42,7 +42,7 @@ Extends all [uiElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielem
   </tr>
   <tr>
     <td><code>links</code> <li><code>value</code></li></td>
-    <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
+    <td>[Links]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html) the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
     <td>Object<li>String</li></td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>

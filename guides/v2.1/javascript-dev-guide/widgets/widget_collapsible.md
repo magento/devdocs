@@ -17,11 +17,11 @@ The Magento collapsible {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 
 
 Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
 
-To "bind" several instances of collapsible widget, the <a href="#fedg_collaps_collateral"><code>collateral</code></a> option is used.
+To "bind" several instances of collapsible widget, the [<code>collateral</code>](#fedg_collaps_collateral) option is used.
 
 Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
 
-The collapsible widget source is <a href="{{ site.mage2000url }}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
+The collapsible widget source is [lib/web/mage/collapsible.js]({{ site.mage2000url }}lib/web/mage/collapsible.js" target="_blank).
 
 
 ## Initialize collapsible in JS {#collaps_init_js}
@@ -37,7 +37,7 @@ If you need to be able to save the expanded/collapsed state, the element must ha
 The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
 
-Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
+Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See [Accordion widget initialization]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank) for details.
 
 ### Initialize collapsible with header only
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
@@ -47,29 +47,29 @@ $("#header").collapsible();
 
 
 ## Initialize collapsible in a template
-The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
+The collapsible widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` tag, as described in [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank).
 
 ## Options
 
 The collapsible widget has the following options:
 
 <ul>
-<li><a href="#fedg_collaps_active">active</a> </li>
-<li><a href="#fedg_collaps_ajaxUrlElement">ajaxUrlElement</a></li>
-<li><a href="#fedg_collaps_ajaxContent">ajaxContent</a></li>
-<li><a href="#fedg_collaps_animate">animate</a></li>
-<li><a href="#fedg_collaps_collapsible">collapsible</a></li>
-<li><a href="#fedg_collaps_collateral">collateral</a></li>
-<li><a href="#fedg_collaps_content">content</a></li>
-<li><a href="#fedg_collaps_closedState">closedState</a></li>
-<li><a href="#fedg_collaps_disabled">disabled</a></li>
-<li><a href="#fedg_collaps_disabledState">disabledState</a></li>
-<li><a href="#fedg_collaps_header">header</a></li>
-<li><a href="#fedg_collaps_icons">icons</a></li>
-<li><a href="#fedg_collaps_loadingClass">loadingClass</a></li>
-<li><a href="#fedg_collaps_openedState">openedState</a></li>
-<li><a href="#fedg_collaps_saveState">saveState</a></li>
-<li><a href="#fedg_collaps_trigger">trigger</a></li>
+<li>[active](#fedg_collaps_active) </li>
+<li>[ajaxUrlElement](#fedg_collaps_ajaxUrlElement)</li>
+<li>[ajaxContent](#fedg_collaps_ajaxContent)</li>
+<li>[animate](#fedg_collaps_animate)</li>
+<li>[collapsible](#fedg_collaps_collapsible)</li>
+<li>[collateral](#fedg_collaps_collateral)</li>
+<li>[content](#fedg_collaps_content)</li>
+<li>[closedState](#fedg_collaps_closedState)</li>
+<li>[disabled](#fedg_collaps_disabled)</li>
+<li>[disabledState](#fedg_collaps_disabledState)</li>
+<li>[header](#fedg_collaps_header)</li>
+<li>[icons](#fedg_collaps_icons)</li>
+<li>[loadingClass](#fedg_collaps_loadingClass)</li>
+<li>[openedState](#fedg_collaps_openedState)</li>
+<li>[saveState](#fedg_collaps_saveState)</li>
+<li>[trigger](#fedg_collaps_trigger)</li>
 
 </ul>
 
@@ -127,7 +127,7 @@ easing: &lt;String&gt;,
 &lt;propToAnimate&gt;: &lt;howToAnimate&gt;
 }
 </pre>
-For details about the object passed, see <a href="http://api.jquery.com/animate/" target="_blank">jQuery.animate()</a>.
+For details about the object passed, see [jQuery.animate()](http://api.jquery.com/animate/" target="_blank).
 </li>
 </ul>
 
@@ -462,12 +462,12 @@ $("#element").collapsible("option","trigger",".trigger");
 ## Methods {#collaps_methods}
 
 <ul>
-<li><a href="#collaps_activate">activate()</a></li>
-<li><a href="#collaps_deactivate">deactivate()</a></li>
-<li><a href="#collaps_disable">disable()</a> </li>
-<li><a href="#collaps_enable">enable()</a></li>
-<li><a href="#collaps_forceActivate">forceActivate()</a></li>
-<li><a href="#collaps_forceDeactivate">forceDeactivate()</a></li>
+<li>[activate()](#collaps_activate)</li>
+<li>[deactivate()](#collaps_deactivate)</li>
+<li>[disable()](#collaps_disable) </li>
+<li>[enable()](#collaps_enable)</li>
+<li>[forceActivate()](#collaps_forceActivate)</li>
+<li>[forceDeactivate()](#collaps_forceDeactivate)</li>
 </ul>
 
 

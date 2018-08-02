@@ -70,7 +70,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>callback</code></td>
     <td>Custom action's handler.</td>
-    <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
+    <td>[ColumnAction]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action) | Array &lt;ColumnAction&gt;  </td>
     <td>Optional</td>
   </tr>
   <tr>

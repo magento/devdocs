@@ -15,13 +15,13 @@ functional_areas:
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Prerequisites {#instgde-cli-subcommands-configphp-prereq}
 There are no prerequisites for using this command.
 
 ## Create or update the Magento deployment configuration {#instgde-cli-subcommands-configphp}
-<a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
+[Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html) provides the information Magento needs to initialize and bootstrap.
 
 You can use this command if:
 
@@ -48,7 +48,7 @@ The following table discusses the meanings of installation parameters and values
 
 	<tr>
 		<td><p>--backend-frontname</p></td>
-		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin.</p>
+		<td><p>Uniform Resource Identifier ([URI](http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank)) to access the Magento Admin.</p>
 			<p>To prevent exploits, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -56,7 +56,7 @@ The following table discusses the meanings of installation parameters and values
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified hostname or IP address.</li>
-		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
+		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the [PHP <code>PDO_MYSQL</code> documentation](http://php.net/manual/en/ref.pdo-mysql.php" target="_blank).</li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its hostname like <code>www.example.com:9000</code></p>
 </td>
 		<td><p>No</p></td>
@@ -89,7 +89,7 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the [database]({{ page.baseurl }}/config-guide/cache/caching-database.html). Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 
     <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow oe you have a clustered database.</li>
     
@@ -98,26 +98,26 @@ The following table discusses the meanings of installation parameters and values
 	</tr>
 	<tr>
 		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>If you have one, specify a key to encrypt [sensitive data](#sens-data) in the Magento database. If you don't have one, Magento generates one for you.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<!-- <tr>
 		<td>enable_modules=&lt;list></td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see [About enabling and disabling modules](#instgde-cli-subcommands-dep-config-enable-modules).</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
 		<td>disable_modules=&lt;list></td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see [About enabling and disabling modules](#instgde-cli-subcommands-dep-config-enable-modules).</p></td>
 		<td>No</td>
 	</tr> -->
 	<tr>
 		<td><p>--db-init-statements</p></td>
 		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.</p>
 			<p>Default is <code>SET NAMES utf8;</code>.</p>
-			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
+			<p>Consult a reference similar to [this one](http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank) before you set any values.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -133,8 +133,8 @@ The following table discusses the meanings of installation parameters and values
 
 If applicable, continue your Magento software installation:
 
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">Command line installation</a>
-*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard installation</a>
+*	[Command line installation]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html)
+*	[Setup Wizard installation]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 <!-- ## About enabling and disabling modules {#instgde-cli-subcommands-dep-config-enable-modules}
 {% include install/enable-disable-modules.html %} -->

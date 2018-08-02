@@ -35,7 +35,7 @@ An *extension* is a component that are packaged for sale on Magento Marketplace.
 
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
+<p>You must follow a [PSR compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.</p>
 </div>
 
 
@@ -52,6 +52,6 @@ Modules are declared in the `module.xml` file. Here is a minimal example:
 
 ## What's Next?
 
-Get your feet wet quickly and build <a href="{{ page.baseurl }}/extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.
+Get your feet wet quickly and build [a simple Magento module]({{ page.baseurl }}/extension-dev-guide/build_a_simple_module.html).
 
-Or jump right in and use <a href="{{ page.baseurl }}/extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.
+Or jump right in and use [a worksheet]({{ page.baseurl }}/extension-dev-guide/worksheet.html) that steps you through a complete best practice method to build, test, and package a Magento module.

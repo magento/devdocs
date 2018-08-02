@@ -25,19 +25,19 @@ If possible, use [Elastic Search]({{ site.baseurl }}/guides/v2.1/config-guide/el
 After you've tested the Solr solution, you should perform the following tasks to get it ready for production:
 
 *	See more Solr configuration options in the {{site.data.var.ee}} User Guide (available with the {{site.data.var.ee}} release)
-*	Set up <a href="https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank">firewall rules</a> to enable Solr and Magento to communicate
+*	Set up [firewall rules](https://fedoraproject.org/wiki/How_to_edit_iptables_rules" target="_blank) to enable Solr and Magento to communicate
 *	Implement a custom web application deployed to a scalable application server
 *	Consider a dedicated Solr server, or at least deploying Solr to a different server than Magento
-*	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
+*	Consider scalability by [clustering Solr](https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank)
 *	[Customize Solr](http://wiki.apache.org/solr){:target="_blank"}
 
 	<div class="bs-callout bs-callout-warning">
-		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the [Apache Solr Wiki](http://wiki.apache.org/solr/" target="_blank).</p>
 	</div>
-*	If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other
+*	If you choose to enable SELinux, set up [rules](http://wiki.centos.org/HowTos/SELinux" target="_blank) to allow Magento and Solr to communicate with each other
 
 	SELinux settings are entirely up to you; Magento does not recommend either enabling it or disabling it. Because SELinux is very complex, make sure you have an experienced system administrator who can configure it.
-*	Script Solr startup and shutdown as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>
+*	Script Solr startup and shutdown as discussed in [Script Solr startup and shutdown](#solr-script)
 
 ### Multiple core configuration {#cores}
 
@@ -110,7 +110,7 @@ All parameters shown in the following table are required.
 
   For <code>-DSTOP.KEY=</code>, specify a string. If you omit a value for <code>-DSTOP.KEY=</code>, Jetty generates a random key you must enter to stop Jetty.
 
-  For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.
+  For more information, see [Securing Jetty](https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank).
 </td>
 </tr>
 <tr>
@@ -175,9 +175,9 @@ To complete the script:
 <!-- ## </a>Next steps {#next}
 For additional information about Solr, see the following:
 
-*	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with {{site.data.var.ee}}</a>
-*	<a href="http://wiki.apache.org/solr/#Operations_and_Production" target="_blank">Customize Solr</a> -->
+*	For more information about performance, see "Using Solr as a Search Engine" in [Maximizing Performance and Scalability with {{site.data.var.ee}}](http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank)
+*	[Customize Solr](http://wiki.apache.org/solr/#Operations_and_Production" target="_blank) -->
 
 <!-- ## Related Information {#related}
-*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank">Frequently Asked Questions (FAQ) About Using Solr with {{site.data.var.ee}}</a>
-*	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and {{site.data.var.ee}} Best Practices</a> -->
+*	[Frequently Asked Questions (FAQ) About Using Solr with {{site.data.var.ee}}](http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank)
+*	[Solr and {{site.data.var.ee}} Best Practices](http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank) -->

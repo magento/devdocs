@@ -35,20 +35,20 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
    </thead>
    <tbody>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1276" target="_blank">Menu widgets</a></td>
+        <td>[Menu widgets](https://github.com/magento/devdocs/issues/1276" target="_blank)</td>
         <td>Small</td>
         <td>
-          <p>Help us improve the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_menu.html">Menu widget topic</a> by contributing working code samples and better descriptions of menu options.</p>
+          <p>Help us improve the [Menu widget topic]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_menu.html) by contributing working code samples and better descriptions of menu options.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Sample code showing the use of the menu widget.</li>
-              <li>Sample code showing the use of other widgets that are not documented, including <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">dropdowndialog</a></code> and <code><a href="{{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">list</a></code>.</li>
+              <li>Sample code showing the use of other widgets that are not documented, including <code>[dropdowndialog]({{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html)</code> and <code>[list]({{ site.baseurl }}/guides/v2.0/javascript-dev-guide/widgets/widget_list.html)</code>.</li>
             </ul>
         </td>
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1465" target="_blank">Admin grids</a></td>
+        <td>[Admin grids](https://github.com/magento/devdocs/issues/1465" target="_blank)</td>
         <td>Small</td>
         <td>
           <p>Help us improve DevDocs by creating a new topic that explains how to create a grid in the Admin interface.</p>
@@ -62,7 +62,7 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1437" target="_blank">Price adjustments</a></td>
+        <td>[Price adjustments](https://github.com/magento/devdocs/issues/1437" target="_blank)</td>
         <td>Medium</td>
         <td>
           <p>Help us improve DevDocs by creating a new topic about price adjustments.</p>
@@ -75,10 +75,10 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/1637" target="_blank">Category attributes</a></td>
+        <td>[Category attributes](https://github.com/magento/devdocs/issues/1637" target="_blank)</td>
         <td>Medium</td>
         <td>
-          <p>Help us improve the <a href="{{ page.baseurl }}/ui_comp_guide/howto/add_category_attribute.html">How to add a category attribute</a> topic by providing details about how to extend attributes.</p>
+          <p>Help us improve the [How to add a category attribute]({{ page.baseurl }}/ui_comp_guide/howto/add_category_attribute.html) topic by providing details about how to extend attributes.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Provide an extended explanation of the parameters <code>(key => value)</code> for the <code>addAttribute</code> function.
@@ -94,10 +94,10 @@ If you take the issue and provide a PR to resolve it, make sure to add the link 
         <td></td>
       </tr>
       <tr>
-        <td><a href="https://github.com/magento/devdocs/issues/434" target="_blank">Logging</a></td>
+        <td>[Logging](https://github.com/magento/devdocs/issues/434" target="_blank)</td>
         <td>Large</td>
         <td>
-          <p>Help us improve the <a href="{{ page.baseurl }}/config-guide/log/log-intro.html">Custom logging</a> topic by adding more details and examples.</p>
+          <p>Help us improve the [Custom logging]({{ page.baseurl }}/config-guide/log/log-intro.html) topic by adding more details and examples.</p>
           <p><strong>Acceptance criteria:</strong></p>
             <ul>
               <li>Describe what you can do with Magento's stock logger implementation and when you should extend it or implement your own.</li>

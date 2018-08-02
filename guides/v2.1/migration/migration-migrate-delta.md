@@ -59,6 +59,6 @@ If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endg
 
 ## Related topics
 
-* <a href="{{ page.baseurl }}/migration/migration-manually.html">Data that needs to be migrated manually</a>
+* [Data that needs to be migrated manually]({{ page.baseurl }}/migration/migration-manually.html)
 
-* <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">End migration</a>
+* [End migration]({{ page.baseurl }}/migration/migration-migrate-after.html)

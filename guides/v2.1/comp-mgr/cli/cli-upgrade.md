@@ -13,14 +13,14 @@ You can upgrade Magento from the command line if you installed the software usin
 * Installed the compressed archive
 
 <div class="bs-callout bs-callout-info" id="info">
- 	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a>.</li>
+ 	<ul><li>If you cloned the Magento 2 GitHub repository, you <em>cannot</em> use this method to upgrade; instead, see [Update the Magento application]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).</li>
  		<li>If you configured Magento use use <code>pub</code> as its root directory, see the next section.</li>
- 		<li>If you're upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see <a href="{{ page.baseurl }}/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a> instead of this topic.</li></ul>
+ 		<li>If you're upgrading to Magento 2.1 (including a Release Candidate) from Magento 2.0.7 or earlier <em>and</em> you installed sample data, see [Command-line upgrade to Magento 2.1 with sample data]({{ page.baseurl }}/comp-mgr/cli/cli-rc1-samp.html) instead of this topic.</li></ul>
 </div>
 
 <div class="bs-callout bs-callout-warning">
-    <ul><li>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
-    	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{ page.baseurl }}/release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
+    <ul><li>If you're upgrading to version 2.1, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).</li>
+    	<li>If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the [Technical Bulletin (1/28/16)]({{ page.baseurl }}/release-notes/tech_bull_201-upgrade.html).</li></ul>
 </div>
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
@@ -40,7 +40,7 @@ If you use `pub/` as your Magento root directory:
 To prevent access to your store while it's being upgraded, put your store in maintenance mode.
 
 <div class="bs-callout bs-callout-info" id="info">
-  	<p>You can optionally create a <a href="{{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html">custom maintenance mode page</a>.</p>
+  	<p>You can optionally create a [custom maintenance mode page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).</p>
 </div>
 
 To enable maintenance mode:

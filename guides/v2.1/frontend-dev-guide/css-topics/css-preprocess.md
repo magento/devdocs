@@ -29,9 +29,9 @@ Description
 <p>Root source files</p>
 </td>
 <td>
-<p>The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled.
+<p>The <code>.less</code> files from which the <code>.css</code> files [included in layout]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html" target="_blank) are compiled.
 
-For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+For example, in one of the [layout files of the Magento Blank theme](https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank), the following <code>.css</code> files are included:
 
 <pre>
     &lt;head&gt;
@@ -44,9 +44,9 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0
 The root source files for the Blank theme are:
 
 <ul>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less</a></code></li>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less</a></code></li>
-<li><code><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">&lt;Magento_Blank_theme_dir&gt;/web/css/print.less</a></code></li>
+<li><code>[&lt;Magento_Blank_theme_dir&gt;/web/css/styles-m.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank)</code></li>
+<li><code>[&lt;Magento_Blank_theme_dir&gt;/web/css/styles-l.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank)</code></li>
+<li><code>[&lt;Magento_Blank_theme_dir&gt;/web/css/print.less]({{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less" target="_blank)</code></li>
 </ul>
 </p>
 </td>
@@ -87,13 +87,13 @@ In server-side LESS compilation mode, to have your changes applied, clear `pub/s
 <div class="bs-callout bs-callout-info" id="info">
 <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories.</p>
 </div>
-Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
+Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the [Grunt JavaScript task runner](http://gruntjs.com/" target="_blank).
 
 See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html) topic for details on how to install, configure, and use Grunt.
 
 ### Client-side LESS compilation {#client-side}
 
-The client-side compilation flow is similar to the server-side flow. The difference is in the set of files, published to `pub/static` on the <a href="#compile_last">last step</a>. In the client-side mode, these files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
+The client-side compilation flow is similar to the server-side flow. The difference is in the set of files, published to `pub/static` on the [last step](#compile_last). In the client-side mode, these files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 *   Root source (.less) files with resolved `@magento_import` directive
 *   [Symlinks](http://en.wikipedia.org/wiki/Symbolic_link){:target="_blank"} to the root source file that do not contain `@magento_import`

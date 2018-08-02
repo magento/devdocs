@@ -37,7 +37,7 @@ The <code>acl.xml</code> file defines the access control list (ACL) for a given 
 `acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
 
 #### Sample customer acl.xml
-For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <code><a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a></code>.
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <code>[acl.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank)</code>.
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
@@ -115,7 +115,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
          <p>Mobile application</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-token.html">token-based authentication</a> to make web API calls using a mobile application. The token acts like an electronic key that provides access to the API(s).</p>
+         <p>Registered users use [token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) to make web API calls using a mobile application. The token acts like an electronic key that provides access to the API(s).</p>
          <ol>
             <li>
                <p>As a registered Magento user, you request a token from the Magento token service at the endpoint that is defined for your user type.</p>
@@ -137,7 +137,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
          <p>Third-party application</p>
       </td>
       <td>
-         <p>Third-party applications use <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> to access the web APIs.</p>
+         <p>Third-party applications use [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html) to access the web APIs.</p>
          <ol>
             <li>
                <p>The third-party Integration registers with Magento.</p>
@@ -153,7 +153,7 @@ Each type of client has a preferred authentication method. To authenticate, use 
          <p>JavaScript widget on the Magento storefront or Magento Admin</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento storefront or Magento Admin.</p>
+         <p>Registered users use [session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html) to log in to the Magento storefront or Magento Admin.</p>
          <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
          <ol>
             <li>

@@ -6,7 +6,7 @@ github_link: marketplace/eqp/api.md
 ---
 
 <div class="bs-callout bs-callout-info">
-These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to <a href="mailto:marketplace-eqp-apis@magento.com">marketplace-eqp-apis@magento.com</a>.
+These APIs are not yet public. This is a preview of version 1.0. Please send all feedback to [marketplace-eqp-apis@magento.com](mailto:marketplace-eqp-apis@magento.com).
 </div>
 
 The Magento Extension Quality Program (EQP) REST APIs provide access to the [Magento Developer Portal](https://developer.magento.com).

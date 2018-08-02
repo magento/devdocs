@@ -13,22 +13,22 @@ functional_areas:
 ---
 
 ## Prerequisites {#instgde-cli-uninst-prereq}
-Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
+Before you use this command, you must [install the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html).
 
 ## Overview of uninstalling modules {#instgde-cli-uninst-mod-over}
 This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules' code, database schema, and database data. You can create backups first so you can recover the data at a later time.
 
-You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.
+You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module></code>.</p>
-  <p>As an alternative, you can <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
+  <p>As an alternative, you can [disable]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) non-Composer modules.</p></span>
 </div>
 
 ## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Uninstall modules {#instgde-cli-uninst-mod-uninst}
 Command usage:
@@ -83,9 +83,9 @@ The module uninstall command performs the following tasks:
 
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.
+	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank).
 4.	Removes the specified modules from the `setup_module` database table.
-4.	Removes the specified modules from the module list in the <a href="{{ page.baseurl }}/config-guide/config/config-php.html">deployment configuration</a>.
+4.	Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
 5.	Removes code from the codebase using `composer remove`.
 
 	<div class="bs-callout bs-callout-info" id="info">
@@ -94,7 +94,7 @@ The module uninstall command performs the following tasks:
 	</div>
 5.	Cleans the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 6.	Updates generated classes.
-6.	If `--clear-static-content` is specified, cleans <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.
+6.	If `--clear-static-content` is specified, cleans [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview).
 7.	Takes the store out of maintenance mode.
 
 For example, if you attempt to uninstall a module that another module depends on, the following message displays:

@@ -15,27 +15,27 @@ The Magento system uses a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02
 
 This guide discusses the following widgets:
 <ul>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html" target="_blank">Accordion widget</a> </li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_alert.html" target="_blank">Alert widget</a> </li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html" target="_blank">Calendar widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Collapsible widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_confirm.html" target="_blank">Confirm widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_dialog.html" target="_blank">DropdownDialog widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html" target="_blank">Gallery widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_list.html" target="_blank">List widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_loader.html" target="_blank">Loader widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_menu.html" target="_blank">Menu widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html" target="_blank">Modal widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_navigation.html" target="_blank">Navigation widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_prompt.html" target="_blank">Prompt widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_quickSearch.html" target="_blank">QuickSearch widget</a></li>
-<li><a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Tabs widget</a></li>
+<li>[Accordion widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_accordion.html" target="_blank) </li>
+<li>[Alert widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_alert.html" target="_blank) </li>
+<li>[Calendar widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html" target="_blank)</li>
+<li>[Collapsible widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank)</li>
+<li>[Confirm widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_confirm.html" target="_blank)</li>
+<li>[DropdownDialog widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_dialog.html" target="_blank)</li>
+<li>[Gallery widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery.html" target="_blank)</li>
+<li>[List widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_list.html" target="_blank)</li>
+<li>[Loader widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_loader.html" target="_blank)</li>
+<li>[Menu widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_menu.html" target="_blank)</li>
+<li>[Modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html" target="_blank)</li>
+<li>[Navigation widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_navigation.html" target="_blank)</li>
+<li>[Prompt widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_prompt.html" target="_blank)</li>
+<li>[QuickSearch widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_quickSearch.html" target="_blank)</li>
+<li>[Tabs widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html" target="_blank)</li>
 
 </ul>
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} options added in later versions might be unavailable.</p>
+  <p>Magento 2 supports [jQuery UI 1.9.2](http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank), {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} options added in later versions might be unavailable.</p>
 </div>
 
 <div class="bs-callout bs-callout-info" id="info">

@@ -15,24 +15,24 @@ redirect_from:
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
-The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is <a href="{{ site.mage2000url }}lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.
+The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is [lib/web/mage/list.js]({{ site.mage2000url }}lib/web/mage/list.js" target="_blank).
 
 ## Initialize the list widget {#quicksearch_init}
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank) topic.
 
 ## Options {#list_options}
 The list widget has the following options:
 <ul>
-<li><a href="#l_addButton">addButton</a></li>
-<li><a href="#l_destinationSelector">destinationSelector</a></li>
-<li><a href="#l_itemCount">itemCount</a></li>
-<li><a href="#l_itemIndex">itemIndex</a></li>
-<li><a href="#l_maxItems">maxItems</a></li>
-<li><a href="#l_maxItemsAlert">maxItemsAlert</a></li>
-<li><a href="#l_removeButton">removeButton</a></li>
-<li><a href="#l_template">template</a></li>
-<li><a href="#l_templateClass">templateClass</a></li>
-<li><a href="#l_templateWrapper">templateWrapper</a></li>
+<li>[addButton](#l_addButton)</li>
+<li>[destinationSelector](#l_destinationSelector)</li>
+<li>[itemCount](#l_itemCount)</li>
+<li>[itemIndex](#l_itemIndex)</li>
+<li>[maxItems](#l_maxItems)</li>
+<li>[maxItemsAlert](#l_maxItemsAlert)</li>
+<li>[removeButton](#l_removeButton)</li>
+<li>[template](#l_template)</li>
+<li>[templateClass](#l_templateClass)</li>
+<li>[templateWrapper](#l_templateWrapper)</li>
 </ul>
 
 Detailed description of each option follows.
@@ -112,10 +112,10 @@ Element holding the template.
 
 The list widget has the following methods:
 <ul>
-<li><a href="#list_addItem">addItem</a></li>
-<li><a href="#list_checkLimit">checkLimit()</a></li>
-<li><a href="#list_handleAdd">handleAdd</a></li>
-<li><a href="#list_removeItem">removeItem()</a></li>
+<li>[addItem](#list_addItem)</li>
+<li>[checkLimit()](#list_checkLimit)</li>
+<li>[handleAdd](#list_handleAdd)</li>
+<li>[removeItem()](#list_removeItem)</li>
 </ul>
 
 ### <code>addItem()</code> {#list_addItem}

@@ -43,7 +43,7 @@ MultiselectColumn-specific configuration:
   </tr>
   <tr>
     <td><code>controlVisibility</code></td>
-    <td>Whether a user can control column's visibility handled by the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>.</td>
+    <td>Whether a user can control column's visibility handled by the [ColumnsControls component]({{ page.baseurl }}/ui_comp_guide/components/ui-columnscontrols.html).</td>
     <td>String</td>
     <td><code>false</code></td>
   </tr>

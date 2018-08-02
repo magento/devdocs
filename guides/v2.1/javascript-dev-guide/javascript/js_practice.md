@@ -37,7 +37,7 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 <br>
 <img src="{{ site.baseurl }}/common/images/fdg_js_pr1.png" alt="Page source search result">
 </li>
-<li>View that it is output by <a href="{{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>.
+<li>View that it is output by [<code>gallery.js</code>]({{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank).
 
 </li>
 </ol>
@@ -45,7 +45,7 @@ OrangeCo needs to define how the message is output. To do this, they take the fo
 
 We see that the script which OrangeCo needs to alter is `gallery.js`.
 
-To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#config_file">can be reached from the page source view or from the file system</a>. According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
+To be able to extend `gallery.js`, OrangeCo needs to know the path to it. To get this info, they refer to `requirejs-config.js`, which [can be reached from the page source view or from the file system]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#config_file). According to the configuration, the path for `gallery` is `mage/gallery`. The illustration follows:
 
 <img src="{{ site.baseurl }}/common/images/fdg_pr_2.png" alt="RequireJS config file">
 
@@ -84,7 +84,7 @@ var config = {
 The new behavior is applied once the store pages are reloaded.
 
 ## Add and use a custom widget (jCarousel) {#use_custom_widget}
-OrangeCo wants to use the <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel widget</a> to display product images on product pages.
+OrangeCo wants to use the [jCarousel widget](http://sorgalla.com/jcarousel/" target="_blank) to display product images on product pages.
 The high level steps for this task are the following:
 
 1. Define how product images are displayed by default.
@@ -93,7 +93,7 @@ The high level steps for this task are the following:
 
 Let's look at each step in more detail.
 ### Step 1: Define what is the default implementation
-Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <a href="{{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank"><code>gallery.js</code></a>, and the configuration path for it is `mage/gallery`.
+Using the approach described in the previous section, OrangeCo defines that the product images are displayed by [<code>gallery.js</code>]({{ site.mage2100url }}lib/web/mage/gallery/gallery.js" target="_blank), and the configuration path for it is `mage/gallery`.
 
 ### Step 2: Add the custom script to the file system
 
@@ -140,4 +140,4 @@ var config = {
 </pre>
 
 ## Recommended reading ##
-<a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>
+[Use custom JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html" target="_blank)

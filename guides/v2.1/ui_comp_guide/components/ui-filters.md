@@ -33,7 +33,7 @@ Filters-specific configuration:
     <td><code>chipsConfig</code></td>
     <td>Configuration passed to the <code>FiltersChips</code> component.</td>
     <td>Object</td>
-    <td>Configuration that is passed to the <a href="{{ page.baseurl }}/ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>.</td>
+    <td>Configuration that is passed to the [FiltersChips component]({{ page.baseurl }}/ui_comp_guide/components/ui-filterschips.html).</td>
   </tr>
   <tr>
     <td><code>statefull</code></td>

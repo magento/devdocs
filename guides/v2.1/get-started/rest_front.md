@@ -20,29 +20,29 @@ The caller issues an HTTP request, which contains the following elements:
 
 Magento returns a response payload as well as an HTTP status code.
 
-This guide introduces web API, REST, and cURL command concepts. It shows you how to authenticate and construct and run REST {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls. You run REST web API calls through <a href="{{ page.baseurl }}/get-started/gs-curl.html">cURL commands</a> or a REST client.
+This guide introduces web API, REST, and cURL command concepts. It shows you how to authenticate and construct and run REST {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls. You run REST web API calls through [cURL commands]({{ page.baseurl }}/get-started/gs-curl.html) or a REST client.
 
 
 Read the following sections to get up and running with the Magento web APIs:
 <ul>
    <li>
       <p>
-         <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html"> Authentication</a>
+         [ Authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
       </p>
    </li>
    <li>
       <p>
-         <a href="{{ page.baseurl }}/get-started/gs-web-api-request.html">Construct a request</a>
+         [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html)
       </p>
    </li>
    <li>
       <p>
-         <a href="{{ page.baseurl }}/get-started/gs-curl.html">Use cURL to run the request</a>
+         [Use cURL to run the request]({{ page.baseurl }}/get-started/gs-curl.html)
       </p>
    </li>
    <li>
       <p>
-         <a href="{{ page.baseurl }}/get-started/gs-web-api-response.html">Review the response</a>
+         [Review the response]({{ page.baseurl }}/get-started/gs-web-api-response.html)
       </p>
    </li>
 
@@ -51,7 +51,7 @@ Read the following sections to get up and running with the Magento web APIs:
    <!--
       <li>
          <p>
-            <a href="{{ page.baseurl }}/get-started/soap/soap-web-api-calls.html">SOAP web API calls</a>
+            [SOAP web API calls]({{ page.baseurl }}/get-started/soap/soap-web-api-calls.html)
          </p>
       </li>
       -->
