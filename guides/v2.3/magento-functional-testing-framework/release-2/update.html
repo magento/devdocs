@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -694,37 +708,52 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>Magento tests and the framework are stored in different repositories.</p>
 
 <p>Magento tests are stored in the same repository as the Magento code base. When you pull changes in the Magento code, you’re potentially pulling corresponding tests as well.</p>
 
-<p>The MFTF is installed separately as a dependency using Composer. When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory. This ensures that the MFTF is up to date.</p>
+<p>The MFTF is installed separately as a dependency using Composer. When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2</code> root directory. This ensures that the MFTF is up to date.</p>
 
-<h2 id="update-the-mftf">Update the MFTF</h2>
+<h2 id="update-the-mftf-to-230">Update the MFTF to 2.3.0</h2>
 
 <p>To update the MFTF (via a command line interface):</p>
 
 <ol>
   <li>When you update Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
   <li>
+    <p>Starting at the <code class="highlighter-rouge">magento2</code> root directory remove the vendor folder:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rm <span class="nt">-rf</span> vendor/
+</code></pre></div>    </div>
+  </li>
+  <li>Run <code class="highlighter-rouge">composer update</code> to get the latest framework version:</li>
+  <li>
     <p>Go to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory:</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>dev/tests/acceptance
 </code></pre></div>    </div>
   </li>
-  <li>Update your own tests, including data, metadata, etc. if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and see new MFTF release documentation in the <a href="../changelog.html">Changelog</a>.</li>
-  <li>
-    <p>Run <code class="highlighter-rouge">composer update</code> to get the latest framework version:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> composer update
+  <li>Remove the vendor folder <code class="highlighter-rouge">rm -rf vendor/</code></li>
+  <li>Run <code class="highlighter-rouge">composer update</code> to install dependencies at that level.</li>
+  <li>Go back to the root magento folder
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">cd</span> ../../..
 </code></pre></div>    </div>
   </li>
+  <li>Run the <code class="highlighter-rouge">upgrade:tests</code> using the new command line tool:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/mftf upgrade:tests app
+</code></pre></div>    </div>
+  </li>
+  <li>If you are using Phpstorm, update the urn catalog:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/mftf generate:urn-catalog
+</code></pre></div>    </div>
+  </li>
+  <li>Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and review new MFTF release documentation in the <a href="../changelog.html">Changelog</a>.</li>
   <li>
     <p>Generate newly pulled tests:</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/robo generate:tests
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/mftf generate:tests
 </code></pre></div>    </div>
   </li>
 </ol>

@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -694,7 +708,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.1.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>In the MFTF, you can re-use a group of <a href="./actions.html" target="_blank">actions</a>, such as logging in as an administrator or a customer, declared in an XML file when you need to perform the same sequence of actions multiple times.</p>
 
@@ -814,7 +828,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following conventions apply to MFTF action groups:</p>
 
 <ul>
-  <li>All action groups are declared in XML files and stored in the <em>&lt;module&gt;/ActionGroup/</em> directory.</li>
+  <li>All action groups are declared in XML files and stored in the <code class="highlighter-rouge">&lt;module&gt;/ActionGroup/</code> directory.</li>
   <li>Every file name ends with <code class="highlighter-rouge">ActionGroup</code>, such as <code class="highlighter-rouge">LoginToAdminActionGroup.xml</code>.</li>
 </ul>
 
@@ -823,7 +837,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;actionGroups</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">""</span><span class="nt">/&gt;</span>
@@ -851,7 +865,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;actionGroups</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"LoginToAdminActionGroup"</span><span class="nt">&gt;</span>
 ...
     <span class="nt">&lt;/actionGroup&gt;</span>
@@ -880,7 +894,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;actionGroups</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;actionGroup</span> <span class="na">name=</span><span class="s">"LoginToAdminActionGroup"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;arguments&gt;</span>
             <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">"adminUser"</span> <span class="na">defaultValue=</span><span class="s">"_defaultAdmin"</span><span class="nt">/&gt;</span>
@@ -1011,6 +1025,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <td>string</td>
       <td>required</td>
       <td>Identifier of the action group.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">extends</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Identifies the action group to extend.</td>
     </tr>
   </tbody>
 </table>

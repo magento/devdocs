@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -694,13 +708,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
-<p>The MFTF allows you to merge test components defined in XML files such as <a href="./test.html">tests</a>, <a href="./page.html">pages</a>, <a href="./section.html">sections</a>, and <a href="./data.html">data</a>. You can create, delete, or update the component. It is useful for supporting rapid test creation for extensions and customizations.</p>
+<p>The MFTF allows you to merge test components defined in XML files, such as <a href="./test.html">tests</a>, <a href="./page.html">pages</a>, <a href="./section.html">sections</a>, and <a href="./data.html">data</a>.
+You can create, delete, or update the component.
+It is useful for supporting rapid test creation for extensions and customizations.</p>
 
 <p>You can specify needed changes to an existing file and merge them to produce a modification of the original that incorporates the specified changes (the “delta”).</p>
 
-<p>Merging operates at the XML tag level, triggered by our parser when there are two (or more) entities with the same name. Your update (XML node with changes) must have the same attribute <code class="highlighter-rouge">name</code> as its base node (target object to be changed).</p>
+<p>Merging operates at the XML tag level, triggered by our parser when there are two (or more) entities with the same name.
+Your update (XML node with changes) must have the same attribute <code class="highlighter-rouge">name</code> as its base node (the target object to be changed).</p>
 
 <p>For example:</p>
 <ul>
@@ -710,17 +727,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>All data entities with <code class="highlighter-rouge">&lt;entity name="sampleData" type="sample"&gt;</code> will be merged into one.</li>
 </ul>
 
-<p>Although a file name doesn’t influence merging, we recommend using the same file names in merging updates. This makes it easier to search later on.</p>
+<p>Although a file name doesn’t influence merging, we recommend using the same file names in merging updates.
+This makes it easier to search later on.</p>
 
 <h2 id="add-a-test">Add a test</h2>
 
-<p>You cannot add another <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a> using merging functionality. To add a <code class="highlighter-rouge">&lt;test&gt;</code>, create a new <code class="highlighter-rouge">*Test.xml</code> file or add a <code class="highlighter-rouge">&lt;test&gt;</code> node to an existing <code class="highlighter-rouge">*Test.xml</code> file.</p>
+<p>You cannot add another <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a> using merging functionality.
+To add a <code class="highlighter-rouge">&lt;test&gt;</code>, create a new <code class="highlighter-rouge">*Test.xml</code> file or add a <code class="highlighter-rouge">&lt;test&gt;</code> node to an existing <code class="highlighter-rouge">*Test.xml</code> file.</p>
 
 <h2 id="remove-a-test">Remove a test</h2>
 
-<p>Tests cannot be removed while merging. If a <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a> must be skipped due to a module completely invalidating a function, you can add the test to the <code class="highlighter-rouge">skip</code> group.</p>
+<p>Tests cannot be removed while merging.
+If a <a href="./test.html"><code class="highlighter-rouge">&lt;test&gt;</code></a> must be skipped due to a module completely invalidating a function, you can add the test to the <code class="highlighter-rouge">skip</code> group.</p>
 
-<p>Learn more about running tests with different options using <a href="./commands/robo.html#run-all-generated-tests">robo</a> or <a href="./commands/codeception.html">codecept</a> commands.</p>
+<p>Learn more about running tests with different options using <a href="./commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> or <a href="./commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> commands.</p>
 
 <p><strong>Example</strong></p>
 
@@ -753,7 +773,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"AdminLoginTest"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;annotations&gt;</span>
-                <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"skip"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;skip&gt;</span>
+                    <span class="nt">&lt;issueId</span> <span class="na">value=</span><span class="s">"Issue#"</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/skip&gt;</span>
             <span class="nt">&lt;/annotations&gt;</span>
     <span class="nt">&lt;/test&gt;</span>
 <span class="nt">&lt;/tests&gt;</span>
@@ -771,7 +793,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             <span class="nt">&lt;testCaseId</span> <span class="na">value=</span><span class="s">"MAGETWO-71572"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"example"</span><span class="nt">/&gt;</span>
             <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"login"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"skip"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;skip&gt;</span>
+                <span class="nt">&lt;issueId</span> <span class="na">value=</span><span class="s">"Issue#"</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/skip&gt;</span>
         <span class="nt">&lt;/annotations&gt;</span>
     <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"amOnAdminLoginPage"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
@@ -786,7 +810,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Any change must include information about where it should be inserted relative to other test steps in the scope of the test.</p>
 
-<p>This is done using the <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> element. See the previous examples.</p>
+<p>This is done using the <code class="highlighter-rouge">before</code> or <code class="highlighter-rouge">after</code> element.
+See the previous examples.</p>
 
 <h3 id="add-a-test-step">Add a test step</h3>
 
@@ -895,11 +920,50 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/test&gt;</span>
 </code></pre></div></div>
 
+<h3 id="insert-after">Add several test steps</h3>
+
+<p><strong>Use case</strong>: Add several actions after the <code class="highlighter-rouge">click</code> (<code class="highlighter-rouge">stepKey="clickLogin"</code>) in the <code class="highlighter-rouge">LogInAsAdminTest</code> test (in the <code class="highlighter-rouge">.../Backend/Test/LogInAsAdminTest.xml</code> file) while merging with the <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>Create the <code class="highlighter-rouge">.../Foo/Test/LogInAsAdminTest.xml</code> file:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;tests</span> <span class="err">...</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span> <span class="na">insertAfter=</span><span class="s">"clickLogin"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;checkOption</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"checkRememberMe"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"admin/admin/dashboard/"</span> <span class="na">stepKey=</span><span class="s">"seeAdminUrl"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/tests&gt;</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">LogInAsAdminTest</code> result corresponds to:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">"LogInAsAdminTest"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;amOnPage</span> <span class="na">url=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"navigateToAdmin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"admin"</span> <span class="na">stepKey=</span><span class="s">"fillUsername"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;fillField</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">userInput=</span><span class="s">"password"</span> <span class="na">stepKey=</span><span class="s">"fillPassword"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;click</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"clickLogin"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;checkOption</span> <span class="na">selector=</span><span class="s">""</span> <span class="na">stepKey=</span><span class="s">"checkRememberMe"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;seeInCurrentUrl</span> <span class="na">url=</span><span class="s">"admin/admin/dashboard/"</span> <span class="na">stepKey=</span><span class="s">"seeAdminUrl"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;see</span> <span class="na">userInput=</span><span class="s">"Lifetime Sales"</span> <span class="na">stepKey=</span><span class="s">"seeLifetimeSales"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/test&gt;</span>
+</code></pre></div></div>
+
 <h2 id="merge-pages">Merge pages</h2>
 
 <p>Use <a href="./page.html">page</a> merging to add or remove <a href="./section.html">sections</a> in your module.</p>
 
-<p>To merge <a href="./page.html">pages</a>, the <code class="highlighter-rouge">page name</code> must be the same as in base module. <code class="highlighter-rouge">page name</code> is set in the <code class="highlighter-rouge">module</code> attribute.</p>
+<p>To merge <a href="./page.html">pages</a>, the <code class="highlighter-rouge">page name</code> must be the same as in the base module.
+<code class="highlighter-rouge">page name</code> is set in the <code class="highlighter-rouge">module</code> attribute.</p>
 
 <h3 id="add-a-section">Add a section</h3>
 
@@ -958,13 +1022,14 @@ Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="h
 
 <h2 id="merge-sections">Merge sections</h2>
 
-<p>User merging to add, remove, or update <a href="././section.html#element-tag">elements</a> in sections.</p>
+<p>Use merging to add, remove, or update <a href="./section.html#element-tag">elements</a> in sections.</p>
 
 <p>All sections with the same <em>file name</em>, <em>section name</em>, and <em>element name</em> are merged during test generation.</p>
 
 <h3 id="add-an-element">Add an element</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires a new <code class="highlighter-rouge">mergeElement</code> element in the <code class="highlighter-rouge">AdminLoginFormSection</code>. Add <code class="highlighter-rouge">mergeElement</code> to the <code class="highlighter-rouge">AdminLoginFormSection</code>:</p>
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires a new <code class="highlighter-rouge">mergeElement</code> element in the <code class="highlighter-rouge">AdminLoginFormSection</code>.
+Add <code class="highlighter-rouge">mergeElement</code> to the <code class="highlighter-rouge">AdminLoginFormSection</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
@@ -996,7 +1061,8 @@ Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="h
 
 <h3 id="remove-an-element">Remove an element</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires deletion of <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>. Remove <code class="highlighter-rouge">username</code> from the <code class="highlighter-rouge">AdminLoginFormSection</code>:</p>
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires deletion of <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>.
+Remove <code class="highlighter-rouge">username</code> from the <code class="highlighter-rouge">AdminLoginFormSection</code>:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
@@ -1026,7 +1092,8 @@ Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="h
 
 <h3 id="update-an-element">Update an element</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires change of selector in <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>. Update <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code> (the <code class="highlighter-rouge">.../Backend/Section/AdminLoginFormSection.xml</code> file):</p>
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooBackend</code> module extends the <code class="highlighter-rouge">Backend</code> module and requires change of a selector in <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code>.
+Update <code class="highlighter-rouge">username</code> in the <code class="highlighter-rouge">AdminLoginFormSection</code> (the <code class="highlighter-rouge">.../Backend/Section/AdminLoginFormSection.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;sections</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"AdminLoginFormSection"</span><span class="nt">&gt;</span>
@@ -1057,13 +1124,15 @@ Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="h
 
 <h2 id="merge-data">Merge data</h2>
 
-<p>You can add or update <code class="highlighter-rouge">&lt;data&gt;</code> elements within an <code class="highlighter-rouge">&lt;entity&gt;</code>. Removal of individual <code class="highlighter-rouge">&lt;data&gt;</code> tags is not supported.</p>
+<p>You can add or update <code class="highlighter-rouge">&lt;data&gt;</code> elements within an <code class="highlighter-rouge">&lt;entity&gt;</code>.
+Removal of individual <code class="highlighter-rouge">&lt;data&gt;</code> tags is not supported.</p>
 
 <p>Entities and data with the same <em>file name</em>, <em>entity name and type</em>, and <em>data key</em> are merged during test generation.</p>
 
 <h3 id="add-data">Add data</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooSample</code> module extends the <code class="highlighter-rouge">Sample</code> module and requires a new data item <code class="highlighter-rouge">thirdField</code> in the <code class="highlighter-rouge">_defaultSample</code> entity. Add <code class="highlighter-rouge">&lt;data key="thirdField"&gt;field3&lt;/data&gt;</code> to the <code class="highlighter-rouge">_defaultSample</code> (the <code class="highlighter-rouge">.../Sample/Data/SampleData.xml</code> file):</p>
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooSample</code> module extends the <code class="highlighter-rouge">Sample</code> module and requires a new data item <code class="highlighter-rouge">thirdField</code> in the <code class="highlighter-rouge">_defaultSample</code> entity.
+Add <code class="highlighter-rouge">&lt;data key="thirdField"&gt;field3&lt;/data&gt;</code> to the <code class="highlighter-rouge">_defaultSample</code> (the <code class="highlighter-rouge">.../Sample/Data/SampleData.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entities</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
@@ -1093,7 +1162,8 @@ Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="h
 
 <h3 id="update-data">Update data</h3>
 
-<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooSample</code> module extends the <code class="highlighter-rouge">Sample</code> module and requires change of the <code class="highlighter-rouge">firstField</code> data item in the <code class="highlighter-rouge">_defaultSample</code> entity. Change <code class="highlighter-rouge">firstField</code> to <code class="highlighter-rouge">&lt;data key="firstField"&gt;overrideField&lt;/data&gt;</code> in the <code class="highlighter-rouge">_defaultSample</code> (the <code class="highlighter-rouge">.../Sample/Data/SampleData.xml</code> file):</p>
+<p><strong>Use case</strong>: The <code class="highlighter-rouge">FooSample</code> module extends the <code class="highlighter-rouge">Sample</code> module and requires changing the <code class="highlighter-rouge">firstField</code> data item in the <code class="highlighter-rouge">_defaultSample</code> entity.
+Change <code class="highlighter-rouge">firstField</code> to <code class="highlighter-rouge">&lt;data key="firstField"&gt;overrideField&lt;/data&gt;</code> in the <code class="highlighter-rouge">_defaultSample</code> (the <code class="highlighter-rouge">.../Sample/Data/SampleData.xml</code> file):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;entities</span> <span class="err">...</span><span class="nt">&gt;</span>
     <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultSample"</span> <span class="na">type=</span><span class="s">"testData"</span><span class="nt">&gt;</span>
@@ -1119,6 +1189,8 @@ Add <code class="highlighter-rouge">BaseBackendSection</code> and <code class="h
     <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"secondField"</span><span class="nt">&gt;</span>field2<span class="nt">&lt;/data&gt;</span>
 <span class="nt">&lt;/entity&gt;</span>
 </code></pre></div></div>
+
+<!-- Link definitions -->
 
 
 			

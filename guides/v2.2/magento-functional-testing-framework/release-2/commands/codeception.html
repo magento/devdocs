@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Codeception commands | Magento 2 Developer Documentation</title>
+	<title>CLI commands: vendor/bin/codecept
+ | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -523,6 +524,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -551,11 +566,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -930,35 +945,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Codeception commands</h1>
+	<h1 class="page-heading">CLI commands: vendor/bin/codecept
+</h1>
 
   
 
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
-All the Codeception commands you need are wrapped using Robo.</p>
-</div>
+<p class="bs-callout bs-callout-warning">We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
+All the Codeception commands you need are wrapped using the <code class="highlighter-rouge">mftf</code> tool.</p>
 
-<p>See the <a href="robo.html">list of Robo commands</a>. If you’d like to run the Codeception tests directly without using Robo, run:</p>
+<p>See the <a href="mftf.html">list of <code class="highlighter-rouge">mftf</code> commands</a>. If you’d like to run the Codeception tests directly, run:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional
 </code></pre></div></div>
 
 <h2 id="examples">Examples</h2>
 
-<p>Run all tests in <code class="highlighter-rouge">dev/tests/acceptance/tests/functional/Magento/FunctionalTest</code>:</p>
+<p>Run all tests in <code class="highlighter-rouge">app/code</code>:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional
 </code></pre></div></div>
 
-<p>Run all tests without the <code class="highlighter-rouge">&lt;group value="skpip"/&gt;</code> <a href="../test/annotations.html">annotation</a>:</p>
+<p>Run all tests without the <code class="highlighter-rouge">&lt;group value="skipThese"/&gt;</code> <a href="../test/annotations.html">annotation</a>:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional <span class="nt">--skip-group</span> skip
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run functional <span class="nt">--skip-group</span> skipThese
 </code></pre></div></div>
 
 <p>Run all tests with the <code class="highlighter-rouge">&lt;group value="example"/&gt;</code> <a href="../test/annotations.html">annotation</a> but with no <code class="highlighter-rouge">&lt;group value="skpip"/&gt;</code>:</p>

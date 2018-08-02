@@ -523,6 +523,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -551,11 +565,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -937,7 +951,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated after 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated after 2.3.1 MFTF release.</em></p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
@@ -951,10 +965,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver v2.33+</a></li>
 </ul>
 
-<h3 id="recommendations">Recommendations</h3>
-
-<p>We recommend using <a href="https://www.jetbrains.com/phpstorm/">PHPStorm 2017</a> for your integrated development environment (IDE).
-They recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
+<p class="bs-callout bs-callout-tip"><a href="https://www.jetbrains.com/phpstorm/">PhpStorm</a> recently added support for <a href="https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/">Codeception Test execution</a>, which is helpful when debugging.</p>
 
 <h2 id="prepare-magento">Prepare Magento</h2>
 
@@ -1003,26 +1014,37 @@ They recently added support for <a href="https://blog.jetbrains.com/phpstorm/201
 
 <h3 id="step-2-install-dependencies">Step 2. Install dependencies</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>magento2/dev/tests/acceptance
+<ol>
+  <li>
+    <p>Change directories to <code class="highlighter-rouge">magento2/</code> (the project root).</p>
+  </li>
+  <li>
+    <p>Run the <code class="highlighter-rouge">composer install</code> command.</p>
+  </li>
+  <li>
+    <p>Change directories to <code class="highlighter-rouge">dev/tests/acceptance/</code>.</p>
+  </li>
+  <li>
+    <p>Run the <code class="highlighter-rouge">composer install</code> command.</p>
+  </li>
+</ol>
+
+<h3 id="build-project">Step 3. Build the project</h3>
+
+<p>In <code class="highlighter-rouge">magento2/</code> project root, run the following commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf build:project
 </code></pre></div></div>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:urn-catalog
 </code></pre></div></div>
+<p>If the file does not exist, add the <code class="highlighter-rouge">-f</code> option to <code class="highlighter-rouge">generate:urn-catalog</code> to create it.</p>
 
-<h3 id="step-3-build-the-project">Step 3. Build the project</h3>
-
-<p>In <em>magento2/dev/tests/acceptance</em>, run the following command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo build:project
-</code></pre></div></div>
-
-<div class="bs-callout bs-callout-tip">
-  <p>To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
-When added, you should be able to run the <code class="highlighter-rouge">robo</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
-</div>
+<p class="bs-callout bs-callout-tip">To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
+When added, you should be able to run the <code class="highlighter-rouge">mftf</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
 
 <h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
 
-<p>In the <em>magento2/dev/tests/acceptance</em> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
 
 <ul>
   <li>
@@ -1051,36 +1073,39 @@ Example: <code class="highlighter-rouge">MAGENTO_ADMIN_PASSWORD=123123q</code></
 <span class="n">SELENIUM_PATH</span>=/<span class="n">wd</span>/<span class="n">hub</span>
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-  <p>Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
-</div>
+<p class="bs-callout bs-callout-warning">Only change or specify <code class="highlighter-rouge">SELENIUM_*</code> values if you are not running Selenium locally, or if you have changed your Selenium Server configuration.</p>
 
 <p>Your environment settings form the path to your running Selenium Server.
 Example:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
 </code></pre></div></div>
 
-<h3 id="step-5-make-commandphp-visible-in-the-magento-testing-environment">Step 5. Make <code class="highlighter-rouge">command.php</code> visible in the Magento testing environment</h3>
+<h3 id="step-5-optional-copy-commandphp-into-magento-installation">Step 5. [Optional] Copy <code class="highlighter-rouge">command.php</code> into Magento installation</h3>
 
-<p>In your Magento installation, navigate to the <em>magento2/dev/tests/acceptance</em> directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.</p>
+<p>If you are installing the MFTF not from your Magento installation, locate the <code class="highlighter-rouge">command.php</code> file in the MFTF:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp .htaccess.sample .htaccess
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento2-functional-testing-framework/etc/config/command.php
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-  <p>If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.</p>
-</div>
+<p>And copy it into your Magento installation under:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento2ce/dev/tests/acceptance/utils/command.php
+</code></pre></div></div>
+
+<p>If you are installing the MFTF from inside your Magento installation, this is automatically done when you <a href="#build-project">build the project</a>.</p>
+
+<p class="bs-callout bs-callout-tip">If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.</p>
 
 <h3 id="step-6-generate-existing-tests">Step 6. Generate existing tests</h3>
 
-<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to generate tests as PHP classes from XML files:</p>
+<p>In the <code class="highlighter-rouge">magento2/</code> root directory, run the following command to generate tests as PHP classes from XML files:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:tests
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
 </code></pre></div></div>
 
 <h3 id="step-7-run-tests">Step 7. Run tests</h3>
 
-<p>To run tests you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> with required parameters.</p>
+<p>To run tests, you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> with required parameters.</p>
 
 <h4 id="selenium-server">Run the Selenium server</h4>
 
@@ -1107,19 +1132,20 @@ Example:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/codecept run
 </code></pre></div></div>
 
-<p>See more commands in <a href="commands/robo.html"><code class="highlighter-rouge">robo</code></a> and <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
+<p>See more commands in <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> and <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
 
-<h3 id="allure">Step 8. Generate reports</h3>
+<h3 id="reports">Step 8. Generate reports</h3>
 
-<p>Install <a href="https://docs.qameta.io/allure/latest/">Allure</a>, a tool that generates testing reports in HTML.
-Testing reports are generated in a CLI during testing.</p>
+<p>The testing reports are generated in a CLI during testing.</p>
 
-<p>If you want to see the reports in a GUI, run:</p>
+<p>To generate the reports in HTML, use <a href="https://docs.qameta.io/allure/latest/">Allure</a>.
+For example, to generate the reports when you are in the <code class="highlighter-rouge">magento2 root directory</code>, run:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo allure2:report
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>allure generate dev/tests/acceptance/tests/_output/allure-results/ <span class="nt">--output</span> dev/tests/acceptance/tests/_output/allure-report/ <span class="nt">--clean</span>
 </code></pre></div></div>
 
-<p>See also <a href="commands/robo.html#allure-robo-commands">Allure <code class="highlighter-rouge">robo</code> commands</a> and <a href="https://docs.qameta.io/allure/latest/#_report_structure">Report structure</a>.</p>
+<!-- Link definitions -->
+
 
 			
 		</div>

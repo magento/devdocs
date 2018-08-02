@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -694,7 +708,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>Annotations are essentially comments in the code. In PHP, they all are marked by a preceding <code class="highlighter-rouge">@</code> symbol.</p>
 
@@ -710,22 +724,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>There is no distinction made in XML between Codeception annotations and Allure annotations.</li>
   <li>Each annotation contains only one value.
 If multiple annotation values are supported and required each value requires a separate annotation.</li>
+  <li>Tests must contain all of the following annotations: stories, title, description, severity.</li>
 </ul>
 
 <p>Recommended use cases of the annotation types:</p>
 <ul>
-  <li><a href="#features">features</a> - report grouping, a set of tests that verify a feature.</li>
   <li><a href="#stories">stories</a> - report grouping, a set of tests that verify a story.</li>
-  <li><a href="#group">group</a> - general functionality grouping.</li>
   <li><a href="#title">title</a> - description of the test purpose.</li>
+  <li><a href="#group">group</a> - general functionality grouping.</li>
   <li><a href="#description">description</a> - description of how the test achieves the purpose defined in the title.</li>
+  <li><a href="#skip">skip</a> - a label for the test to be skipped during generation (for example, an incomplete test blocked by an issue)</li>
 </ul>
 
 <h2 id="example">Example</h2>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;annotations&gt;</span>
-    <span class="nt">&lt;features</span> <span class="na">value=</span><span class="s">"Category Creation"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Category Creation"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Create a Category via Admin"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;description</span> <span class="na">value=</span><span class="s">"Test logs into admin backend and creates a category."</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;severity</span> <span class="na">value=</span><span class="s">"CRITICAL"</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;group</span> <span class="na">value=</span><span class="s">"category"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/annotations&gt;</span>
 </code></pre></div></div>
@@ -795,17 +812,9 @@ If multiple annotation values are supported and required each value requires a s
 Any test can be a part of multiple groups.
 The purpose of grouping is to create a set of test for a functionality or purpose, such as all cart tests or all slow tests and run them together locally.</p>
 
-<!-- Available note types: "info", "warning", "tip" -->
+<p class="bs-callout bs-callout-warning">Group values cannot collide with <a href="../suite.html">suite</a> names.</p>
 
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>Group values cannot collide with <a href="../suite.html">suite</a> names.</p>
-</div>
-
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-tip" id="tip">
-  <p>Add <code class="highlighter-rouge">&lt;group value="skip"/&gt;</code> to the test if you want to skip it during test run.</p>
-</div>
+<p class="bs-callout bs-callout-tip">Add <code class="highlighter-rouge">&lt;skip&gt;</code> to the test to skip it during test run.</p>
 
 <table>
   <thead>
@@ -886,6 +895,40 @@ It specifies what is returned from a test execution.</p>
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;severity</span> <span class="na">value=</span><span class="s">"CRITICAL"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
 
+<h3 id="skip">skip</h3>
+
+<p>Use the <code class="highlighter-rouge">&lt;skip&gt;</code> element to skip a test.
+It contains one or more child elements <code class="highlighter-rouge">&lt;issueId&gt;</code> to specify one or more issues that cause the test skipping.</p>
+
+<h5 id="issueid">issueId</h5>
+
+<p>This element under <code class="highlighter-rouge">&lt;skip&gt;</code> is required at least once and contains references to issues that cause the test to be skipped.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">value</code></td>
+      <td>string</td>
+      <td>required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="example-6">Example</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;skip&gt;</span>
+    <span class="nt">&lt;issueId</span> <span class="na">value=</span><span class="s">"#117"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;issueId</span> <span class="na">value=</span><span class="s">"MC-345"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/skip&gt;</span>
+</code></pre></div></div>
+
 <h3 id="stories">stories</h3>
 
 <p>The <code class="highlighter-rouge">&lt;stories&gt;</code> element is an implementation of a <a href="https://devhub.io/zh/repos/allure-framework-allure-phpunit#map-test-classes-and-test-methods-to-features-and-stories"><code class="highlighter-rouge">@Stories</code></a> Allure tag.
@@ -908,7 +951,7 @@ It has the same functionality as <a href="#features">features</a>, within the St
   </tbody>
 </table>
 
-<h4 id="example-6">Example</h4>
+<h4 id="example-7">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Add Catalog"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;stories</span> <span class="na">value=</span><span class="s">"Edit Catalog"</span><span class="nt">/&gt;</span>
@@ -939,7 +982,7 @@ It has the same functionality as <a href="#features">features</a>, within the St
   </tbody>
 </table>
 
-<h4 id="example-7">Example</h4>
+<h4 id="example-8">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;testCaseId</span> <span class="na">value=</span><span class="s">"#"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
@@ -965,7 +1008,7 @@ It has the same functionality as <a href="#features">features</a>, within the St
   </tbody>
 </table>
 
-<h4 id="example-8">Example</h4>
+<h4 id="example-9">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;title</span> <span class="na">value=</span><span class="s">"Add Catalog"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>
@@ -991,7 +1034,7 @@ It has the same functionality as <a href="#features">features</a>, within the St
   </tbody>
 </table>
 
-<h4 id="example-9">Example</h4>
+<h4 id="example-10">Example</h4>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;useCaseId</span> <span class="na">value=</span><span class="s">"USECASE-1"</span><span class="nt">/&gt;</span>
 </code></pre></div></div>

@@ -523,6 +523,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -551,11 +565,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -937,16 +951,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
-<p>Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as <a href="#test-tag"><code class="highlighter-rouge">&lt;tests&gt;</code></a>.
+<p>Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as <a href="#tests-tag"><code class="highlighter-rouge">&lt;tests&gt;</code></a>.
 <code class="highlighter-rouge">&lt;tests&gt;</code> is a <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception test container</a> that contains multiple individual tests with test metadata and before and after actions.</p>
 
 <p>MFTF <code class="highlighter-rouge">&lt;tests&gt;</code> is considered a sequence of actions with associated parameters.
 Any failed <a href="./test/assertions.html">assertion</a> within a test constitutes a failed test.</p>
 
+<!-- Available note types: "info", "warning", "tip" -->
+
 <div class="bs-callout bs-callout-info" id="info">
-  <p><code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="highlighter-rouge">&lt;tests&gt;</code> like in MFTF 1.0.
+  <p><code class="highlighter-rouge">&lt;before&gt;</code> and <code class="highlighter-rouge">&lt;after&gt;</code> hooks are not global within <code class="highlighter-rouge">&lt;tests&gt;</code>.
 They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in which they are declared.</p>
 
   <p>The steps in <code class="highlighter-rouge">&lt;after&gt;</code> are run in both successful <strong>and</strong> failed test runs.</p>
@@ -1205,8 +1221,8 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;tests</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-       <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">""</span><span class="nt">&gt;</span>
+       <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;test</span> <span class="na">name=</span><span class="s">""</span> <span class="na">insertBefore=</span><span class="s">""</span> <span class="na">insertAfter=</span><span class="s">""</span><span class="nt">&gt;</span>
             <span class="nt">&lt;annotations&gt;</span>
                 <span class="c">&lt;!-- TEST ANNOTATIONS --&gt;</span>
             <span class="nt">&lt;/annotations&gt;</span>
@@ -1230,11 +1246,12 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
   <li>All names within the framework are in the CamelCase format.</li>
   <li><code class="highlighter-rouge">&lt;test&gt;</code> name must be alphanumeric.</li>
   <li>Each action and action group has its own identifier <code class="highlighter-rouge">&lt;stepKey&gt;</code> for reference purposes.</li>
-  <li>A test may have any number of <a href="./test/assertions.html">assertions</a>, at any point within the <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
+  <li>A test may have any number of <a href="./test/assertions.html">assertions</a> at any point within the <code class="highlighter-rouge">&lt;test&gt;</code>.</li>
   <li>If <code class="highlighter-rouge">&lt;test&gt;</code> is included in <code class="highlighter-rouge">&lt;suite&gt;</code>, it <strong>cannot be generated in isolation</strong> to the rest of the contents of the suite (see <a href="./suite.html">suites</a> for details).</li>
 </ul>
 
-<p>Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.</test></test></test></p>
+<p>Multiple <code class="highlighter-rouge">&lt;test&gt;</code> tags per XML file can make it hard to find and organize tags.
+To simplify, we generate one <code class="highlighter-rouge">test.php</code> file per <code class="highlighter-rouge">&lt;test&gt;</code> tag provided, though we support both single and multiple <code class="highlighter-rouge">&lt;test&gt;</code> tags per XML file.</p>
 
 <h2 id="elements-reference">Elements reference</h2>
 
@@ -1264,13 +1281,31 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
       <td><code class="highlighter-rouge">name</code></td>
       <td>string</td>
       <td>optional</td>
-      <td>A test identifier used while merging.</td>
+      <td>The test identifier.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">remove</code></td>
       <td>boolean</td>
       <td>optional</td>
       <td>Set <code class="highlighter-rouge">true</code> to remove the test when merging.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">insertBefore</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>This option is used for <a href="./merging.html#insert-after">merging</a>. It enables you to add all test actions contained in the original test into a test with the same name BEFORE the test step with <code class="highlighter-rouge">stepKey</code> that you assigned in <code class="highlighter-rouge">insertBefore</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">insertAfter</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Set <code class="highlighter-rouge">stepKey</code> of the test step after which you want to insert the test when <a href="./merging.html#insert-after">merging</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">extends</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>A name of the parent test to <a href="extending.html">extend</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -1279,12 +1314,10 @@ They only apply to the <code class="highlighter-rouge">&lt;test&gt;</code> in wh
 
 <h3 id="annotations-tag">annotations</h3>
 
-<p>Annotations are supported by both <a href="http://codeception.com/docs/07-AdvancedUsage">Codeception</a> and <a href="https://github.com/allure-framework/">Allure</a>.</p>
+<p><a href="./test/annotations.html">Annotations</a> are supported by both <a href="https://codeception.com/docs/07-AdvancedUsage">Codeception</a> and <a href="https://github.com/allure-framework/">Allure</a>.</p>
 
 <p>Codeception annotations typically provide metadata and are able to influence test selection.
 Allure annotations provide metadata for reporting.</p>
-
-<p>See more about <a href="./test/annotations.html">Annotations</a>.</p>
 
 <h3 id="before-tag">before</h3>
 
@@ -1381,7 +1414,10 @@ The steps are run in both successful <strong>and</strong> failed test runs.</p>
   </tbody>
 </table>
 
-<p>See more about <a href="./test/action-groups.html">Action groups</a>.</p>
+<p>See <a href="./test/action-groups.html">Action groups</a> for more information.</p>
+
+<!-- Link definitions -->
+
 
 			
 		</div>

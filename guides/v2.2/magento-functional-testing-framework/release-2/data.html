@@ -523,6 +523,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -551,11 +565,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -937,7 +951,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.0.2 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>Tests require data to function properly.</p>
 
@@ -1075,15 +1089,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <hr />
+<h4 id="environmental-data">Environmental data</h4>
 
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}"
 </code></pre></div></div>
 
 <p>In this example:</p>
 
 <ul>
   <li><code class="highlighter-rouge">_ENV</code> is a reference to the <code class="highlighter-rouge">dev/tests/acceptance/.env</code> file, where basic environment variables are set.</li>
-  <li><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> is a name of an environment variable. The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+  <li><code class="highlighter-rouge">MAGENTO_ADMIN_USERNAME</code> is a name of an environment variable.
+The corresponding value will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+</ul>
+
+<h4 id="sensitive-data">Sensitive data</h4>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>userInput="{{_CREDS.MY_SECRET_TOKEN}}"
+</code></pre></div></div>
+
+<p>In this example:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">_CREDS</code> is a reference to the <code class="highlighter-rouge">dev/tests/acceptance/.credentials</code> file, where sensitive data and secrets are stored for use in a test.</li>
+  <li><code class="highlighter-rouge">MY_SECRET_TOKEN</code> is the name of a key in the credentials variable.
+The corresponding value of the credential will be assigned to <code class="highlighter-rouge">userInput</code> as a result.</li>
+  <li>Credential values are not generated into a test. Instead, they are dynamically retrieved, encrypted and decrypted when used by a specific action during the test’s execution.</li>
+  <li>References to credentials do not appear decrypted in the console, error logs or test reports, their values can only be seen decrypted in the .credentials file in which they are stored.</li>
 </ul>
 
 <h3 id="persist-a-data-entity-as-a-prerequisite-of-a-test">Persist a data entity as a prerequisite of a test</h3>
@@ -1149,7 +1180,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;entities</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/DataGenerator/etc/dataProfileSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">""</span> <span class="na">type=</span><span class="s">""</span><span class="nt">&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">""</span><span class="nt">&gt;&lt;/data&gt;</span>
     <span class="nt">&lt;/entity&gt;</span>
@@ -1177,7 +1208,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 
 <span class="nt">&lt;entities</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/DataGenerator/etc/dataProfileSchema.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:DataGenerator/etc/dataProfileSchema.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;entity</span> <span class="na">name=</span><span class="s">"_defaultCategory"</span> <span class="na">type=</span><span class="s">"category"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simpleCategory<span class="nt">&lt;/data&gt;</span>
         <span class="nt">&lt;data</span> <span class="na">key=</span><span class="s">"name_lwr"</span> <span class="na">unique=</span><span class="s">"suffix"</span><span class="nt">&gt;</span>simplecategory<span class="nt">&lt;/data&gt;</span>
@@ -1255,7 +1286,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </tbody>
 </table>
 
-<p><code class="highlighter-rouge">&lt;entity&gt;</code> may contain one or more <a href="#data-tag"><code class="highlighter-rouge">&lt;data&gt;</code></a>, <a href="#var-tag"><code class="highlighter-rouge">&lt;var&gt;</code></a>, <a href="#requiredentity-tag"><code class="highlighter-rouge">&lt;required-entities&gt;</code></a>, or <a href="#array-tag"><code class="highlighter-rouge">&lt;array&gt;</code></a> elements in any sequence.</p>
+<p><code class="highlighter-rouge">&lt;entity&gt;</code> may contain one or more <a href="#data-tag"><code class="highlighter-rouge">&lt;data&gt;</code></a>, <a href="#var-tag"><code class="highlighter-rouge">&lt;var&gt;</code></a>, <a href="#requiredentities-tag"><code class="highlighter-rouge">&lt;required-entities&gt;</code></a>, or <a href="#array-tag"><code class="highlighter-rouge">&lt;array&gt;</code></a> elements in any sequence.</p>
 
 <h3 id="data-tag">data</h3>
 

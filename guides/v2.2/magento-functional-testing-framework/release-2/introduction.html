@@ -523,6 +523,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.2/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -551,11 +565,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.2/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -937,7 +951,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>The latest MFTF release is <a href="https://github.com/magento/magento2-functional-testing-framework/releases/tag/2.2.0">2.2.0</a>.</em></p>
+			<p style="text-align: right"><em>The latest MFTF release is <a href="https://github.com/magento/magento2-functional-testing-framework/releases/tag/2.3.1">2.3.1</a>.</em></p>
+
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Availability in the Magento codebase:</p>
+  <ul>
+    <li>The latest release available in the Magento 2.2 codebase (the <code class="highlighter-rouge">2.2-develop</code> branch) is MFTF 2.2.0.</li>
+    <li>The latest release available in the Magento 2.3 codebase (the <code class="highlighter-rouge">2.3-develop</code> branch) is MFTF 2.3.0.</li>
+  </ul>
+
+</div>
 
 <p>The Magento Functional Testing Framework (MFTF) aims to replace the <a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing Framework</a> in future releases.
 MFTF will make test creation easier for developers and will improve:</p>
@@ -952,12 +977,8 @@ MFTF will make test creation easier for developers and will improve:</p>
 
 <p>Because MFTF tests are written in XML, you no longer need to learn PHP to write tests.</p>
 
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We are actively developing functional tests.
+<p class="bs-callout bs-callout-info">We are actively developing functional tests.
 Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code> for examples.</p>
-</div>
 
 <h2 id="audience">Audience</h2>
 
@@ -1000,7 +1021,7 @@ Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendo
         </span><span class="err">...</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/magento2-functional-testing-framework"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.3.0"</span><span class="p">,</span><span class="w">
             </span><span class="err">...</span><span class="w">
         </span><span class="p">}</span><span class="w">
         </span><span class="err">...</span><span class="w">
@@ -1046,7 +1067,7 @@ pre-install.php                 // Script that checks the environment on whether
 
 <p>All tests and test data from these locations are merged in the order indicated in the above list.</p>
 
-<p>The file structure under all three path cases is the same:</p>
+<p>The file structure under the both path cases is the same:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;Path&gt;
 ├── ActionGroup
 │   └── ...

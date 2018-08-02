@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -780,7 +794,7 @@ The given relative URI is declared in <code class="highlighter-rouge">Storefront
 <p>Source code (<code class="highlighter-rouge">StorefrontCustomerSignInPage.xml</code> ):</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Page/etc/PageObject.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;page</span> <span class="na">name=</span><span class="s">"StorefrontCustomerSignInPage"</span> <span class="na">url=</span><span class="s">"/customer/account/login/"</span> <span class="na">module=</span><span class="s">"Magento_Customer"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"StorefrontCustomerSignInFormSection"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/page&gt;</span>
@@ -807,7 +821,7 @@ A required selector is stored in the <code class="highlighter-rouge">emailField<
 <p id="section-code">This section is declared in <code class="highlighter-rouge">.../Customer/Section/StorefrontCustomerSignInFormSection.xml</code> file:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/SectionObject.xsd"</span><span class="nt">&gt;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:mftf:Page/etc/SectionObject.xsd"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;section</span> <span class="na">name=</span><span class="s">"StorefrontCustomerSignInFormSection"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"emailField"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#email"</span><span class="nt">/&gt;</span>
         <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"passwordField"</span> <span class="na">type=</span><span class="s">"input"</span> <span class="na">selector=</span><span class="s">"#pass"</span><span class="nt">/&gt;</span>
@@ -855,10 +869,10 @@ See the <code class="highlighter-rouge">StorefrontCustomerSignInPage.xml</code> 
 <p>The following test actions handle data entities using <a href="../metadata.html">metadata</a>:</p>
 
 <ul>
-  <li><a href="#createData">createData</a></li>
-  <li><a href="#deleteData">deleteData</a></li>
-  <li><a href="#updateData">updateData</a></li>
-  <li><a href="#getData">getData</a></li>
+  <li><a href="#createdata">createData</a></li>
+  <li><a href="#deletedata">deleteData</a></li>
+  <li><a href="#updatedata">updateData</a></li>
+  <li><a href="#getdata">getData</a></li>
 </ul>
 
 <p>Learn more in <a href="../metadata.html#rest-response">Handling a REST API response</a>.</p>
@@ -2747,6 +2761,57 @@ by indicating the relationship.</p>
   </tbody>
 </table>
 
+<h3 id="fillsecretfield">fillSecretField</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">selector</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">selectorArray</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userInput</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="formatmoney">formatMoney</h3>
 
 <table>
@@ -2770,6 +2835,59 @@ by indicating the relationship.</p>
       <td>string</td>
       <td>optional</td>
       <td> </td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stepKey</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>A unique identifier of the action.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">before</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of action that must be executed next.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">after</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td><code class="highlighter-rouge">stepKey</code> of preceding action.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="generatedate">generateDate</h3>
+
+<p>Generates a date for use in <code class="highlighter-rouge">{$stepKey}</code> format in other test actions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Type</th>
+      <th>Use</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">date</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Date input to parse. Uses the same functionality as the PHP <code class="highlighter-rouge">strtotime()</code> function.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">format</code></td>
+      <td>string</td>
+      <td>required</td>
+      <td>Format in which to save the given date. Uses the same formatting as the PHP <code class="highlighter-rouge">date()</code> function.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">timezone</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Timezone to use when generating date, defaults to <code class="highlighter-rouge">America/Los_Angeles</code>.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">stepKey</code></td>
@@ -3221,6 +3339,12 @@ by indicating the relationship.</p>
       <td>string</td>
       <td>optional</td>
       <td>CLI command to be executed in Magento environment.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">arguments</code></td>
+      <td>string</td>
+      <td>optional</td>
+      <td>Unescaped arguments to be passed in with the CLI command.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">stepKey</code></td>

@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -694,15 +708,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>Suites are essentially groups of tests that run in the specific conditions (preconditions and postconditions).
 They enable you including, excluding, and grouping tests for a customized test run when you need it.
 You can form suites using separate tests, groups, and modules.</p>
 
-<p>Each suite must be defined in the <em>&lt;magento 2 root&gt;/dev/tests/acceptance/tests/_suite/suite.xml</em> file.
-The generated tests for each suite go into a separate directory under <em>&lt;magento 2 root&gt;/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated</em>.
-By default, all generated tests are stored in the <em>default</em> suite under <em>…/Magento/FunctionalTest/_generated/default</em></p>
+<p>Each suite must be defined in the <code class="highlighter-rouge">&lt;magento 2 root&gt;/dev/tests/acceptance/tests/_suite/suite.xml</code> file.
+The generated tests for each suite go into a separate directory under <code class="highlighter-rouge">&lt;magento 2 root&gt;/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated/</code>.
+By default, all generated tests are stored in the <em>default</em> suite under <code class="highlighter-rouge">.../Magento/FunctionalTest/_generated/default/</code></p>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
@@ -744,7 +758,7 @@ By default, all generated tests are stored in the <em>default</em> suite under <
       <li>must not match any existing group value.
 For example, the suite <code class="highlighter-rouge">&lt;suite name="ExampleTest"&gt;</code> will fail during test run if any test contains in annotations <code class="highlighter-rouge">&lt;group value="ExampleTest"&gt;</code>.</li>
       <li>must not be <code class="highlighter-rouge">default</code> or <code class="highlighter-rouge">skip</code>. Tests that are not in any suite are generated under the <code class="highlighter-rouge">default</code> suite.
-The suite name <code class="highlighter-rouge">skip</code> is synonymous to including a test in the <code class="highlighter-rouge">&lt;group value="skip"/&gt;</code>.</li>
+The suite name <code class="highlighter-rouge">skip</code> is synonymous to including a test in the <code class="highlighter-rouge">&lt;group value="skip"/&gt;</code>, which will be deprecated in MFTF 3.0.0.</li>
       <li>can contain letters, numbers, and underscores.</li>
       <li>should be upper camel case.</li>
     </ul>
@@ -775,18 +789,18 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
 <p>There are several ways to generate and execute your new test in the context of a suite:</p>
 <ul>
   <li>Edit the appropriate <code class="highlighter-rouge">suite.xml</code> to include your test only and run:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group &lt;suiteName&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf group &lt;suiteName&gt;
 </code></pre></div>    </div>
   </li>
   <li>Temporarily add a group to your test like <code class="highlighter-rouge">&lt;group value="foo"&gt;</code> and run:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo group foo
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf group foo
 </code></pre></div>    </div>
   </li>
   <li>To limit generation to your suite/test combination, run in conjunction with the above:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/robo generate:suite &lt;suite&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:suite &lt;suite&gt;
 </code></pre></div>    </div>
   </li>
-  <li>To generate any combination of suites and tests, use <a href="commands/robo.html#generate"><code class="highlighter-rouge">generate:tests</code></a> with the <code class="highlighter-rouge">--tests</code> flag.</li>
+  <li>To generate any combination of suites and tests, use <a href="commands/mftf.html#generatetests"><code class="highlighter-rouge">generate:tests</code></a> with the <code class="highlighter-rouge">--tests</code> flag.</li>
 </ul>
 
 <h2 id="examples">Examples</h2>

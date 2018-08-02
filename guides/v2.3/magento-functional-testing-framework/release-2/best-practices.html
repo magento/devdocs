@@ -531,6 +531,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         
         
         
+        <li class="nav-level2  " id="extending">
+
+            
+
+            
+            <a href="/guides/v2.3/magento-functional-testing-framework/release-2/extending.html">Extending</a>
+            
+
+            
+        </li>
+        
+        
+        
+        
         <li class="nav-level2  " id="configuration">
 
             
@@ -559,11 +573,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
                 
                 
-                <li class="nav-level3  " id="robo">
+                <li class="nav-level3  " id="mftf">
                     
 
                     
-                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/robo.html">robo</a>
+                    <a  href="/guides/v2.3/magento-functional-testing-framework/release-2/commands/mftf.html">mftf</a>
                     
 
                     
@@ -694,7 +708,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>This topic was updated due to the 2.2.0 MFTF release.</em></p>
+			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
 <p>Check out our best practices below to ensure you’re getting the absolute most out of the Magento Functional Testing Framework.</p>
 
@@ -704,6 +718,37 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="test/action-groups.html">Action group</a> names should be sufficiently descriptive to inform a test writer of what the action group does and when it should be used.
  Add additional explanation in comments if needed.</li>
   <li>Provide default values for the arguments that apply to your most common case scenarios.</li>
+</ol>
+
+<h2 id="actiongroups-vs-extends"><code class="highlighter-rouge">actionGroups</code> vs <code class="highlighter-rouge">extends</code></h2>
+
+<p>Use an action group to wraps a set of actions to reuse them multiple times.</p>
+
+<p>Use an <a href="extending.html">extension</a> when a test or action group needs to be repeated with the exception of a few steps.</p>
+
+<h3 id="when-to-use-extends">When to use <code class="highlighter-rouge">extends</code></h3>
+
+<p>Use <code class="highlighter-rouge">extends</code> in your new test or action group when at least one of the following conditions is applicable to your case:</p>
+
+<ol>
+  <li>You want to keep the original test without any modifications.</li>
+  <li>You want to create a new test that follows the same path as the original test.</li>
+  <li>You want a new action group that behaves similarly to the existing action group, but you do not want to change the functionality of the original action group.</li>
+</ol>
+
+<h3 id="when-to-avoid-extends">When to avoid <code class="highlighter-rouge">extends</code></h3>
+
+<p>Do not use <code class="highlighter-rouge">extends</code> in the following conditions:</p>
+<ol>
+  <li>You want to change the functionality of the test or action group and do not need to run the original version.</li>
+  <li>You plan to merge the base test or action group.</li>
+</ol>
+
+<p>The following pattern is used when merging with <code class="highlighter-rouge">extends</code>:</p>
+<ol>
+  <li>The original test is merged.</li>
+  <li>The extended test is created from the merged original test.</li>
+  <li>The extended test is merged.</li>
 </ol>
 
 <h2 id="annotation">Annotation</h2>
