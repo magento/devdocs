@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Accordion widget
-menu_order: 1
-menu_title: Accordion widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_accordion.md
 redirect_from:
@@ -13,54 +11,40 @@ redirect_from:
 
 ## Overview
 
-Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
+Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the [Magento Tabs widget].
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
-The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
-
+The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/accordion.js].
+                                                                                                                  
 ## Initialize the accordion widget {#accordion_init}
 
 ### Initialize accordion in JS components
 
-#### Initialize accordion with <code>data-*</code> attributes specified
+#### Initialize accordion with `data-*` attributes specified
 Generally the accordion widget is instantiated like following:
-<pre>
+```javascript
 $("#element").accordion();
-</pre>
+```
 
 Where:
-<ul>
-<li><code>#element</code> is the selector of the element for accordion is initialized.</li>
-<li><code>#element</code> has children with the following attributes specified: 
-
-<ul>
-<li><code>data-role="title"</code>
-</li>
-<li><code>data-role="content"</code></li>
-</ul>
-</li>
-</ul>
+-   `#element` is the selector of the element for accordion is initialized.
+-   `#element` has children with the following attributes specified:
+    -   `data-role="title"`
+    -   `data-role="content"`
 
 Optionally, you can specify the following:
-<ul>
-<li>If you want the trigger to be different from the title, add the <code>data-role="content"</code> attribute for the element</li>
-
-<li>To have the content updated using Ajax, add the <code>data-ajax="true"</code> attribute for the element containing the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for request.
-</li>
-</ul>
+-   If you want the trigger to be different from the title, add the `data-role="content"` attribute for the element
+-   To have the content updated using Ajax, add the `data-ajax="true"` attribute for the element containing the URL for request.
 
 Accordions support arbitrary markup, but the following requirements should be kept:
 
-<ol>
-<li>Titles and contents are specified in the same order in DOM: first title, then contents.</li>
-
-<li>The header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
-</ol>
+1.  Titles and contents are specified in the same order in DOM: first title, then contents.
+2.  The header, trigger and content are specified, either by adding the `data-*` attributes for the corresponding children elements or by specifying these elements with selectors as options.
 
 Mark-up examples:
 
-{%highlight html%}
+```html
 <div id="element">
     <div data-role="collapsible">
         <div data-role="trigger">
@@ -91,36 +75,31 @@ Mark-up examples:
         $("#element").accordion();
     });
 </script>
-
-{%endhighlight%}
-
+```
 
 #### Initialize accordion with option
 You can specify the header, content, trigger as options when you initialize the widget.
 For example:
-<pre>
+```javascript
 $("#element").accordion({
     header : "#title-1",
     content : "#content-1",
     trigger : "#trigger-1",
     ajaxUrlElement: "a"
  });
-</pre>
+```
 
 ### Initialize accordion in a template
 
-The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
-
+The accordion widget can be initialized using the `data-mage-init` attribute or `<script>` element, as described in [JavaScript initialization].
 
 ## Options {#accordion_options}
-Accordion options coincide with <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
-<ul>
-<li><a href="#collaps_active">active</a></li>
-<li><a href="#collaps_multi">multipleCollapsible</a></li>
-<li><a href="#collaps_open">openOnFocus</a></li>
-</ul>
+Accordion options coincide with [Magento Tabs options], plus the following custom ones:
+-   [active]
+-   [multipleCollapsible]
+-   [openOnFocus]
 
-### <code>active</code> {#collaps_active}
+### `active` {#collaps_active}
 
 Defines which tab is active when the widget gets instantiated.
 
@@ -129,34 +108,33 @@ Defines which tab is active when the widget gets instantiated.
 **Default value**: `0`
 
 Example of the accordion initialization with the <code>active</code> option specified:
-<pre>
+```javascript
 $("#element").accordion({ active: "0 1"});
 $("#element").accordion({ active: [0,1]});
-</pre>
+```
 
-
-### <code>multipleCollapsible</code> {#collaps_multi}
+### `multipleCollapsible` {#collaps_multi}
 Defines if multiple panels can be expanded at the same time.
 
 **Type**: Boolean
 
 **Default value**: `false`
 
-Example of the accordion initialization with the <code>multipleCollapsible</code> option specified:
-<pre>
+Example of the accordion initialization with the `multipleCollapsible` option specified:
+```javascript
 $("#element").accordion({ multipleCollapsible: false});
-</pre>
-Get or set the <code>multipleCollapsible</code> option, after initialization:
-<pre>
+```
+
+Get or set the `multipleCollapsible` option, after initialization:
+```javascript
 //getter
 var multipleCollapsible = $("#element").accordion("option","multipleCollapsible");
 
 //setter
 $("#element").tabs("option","multipleCollapsible",false);
-</pre>
+```
 
-### <code>openOnFocus</code> {#collaps_open}
-
+### `openOnFocus` {#collaps_open}
 For keyboard navigation defines if the accordion expands when the title gets in focus.
 
 **Type**: Boolean
@@ -168,13 +146,10 @@ For keyboard navigation defines if the accordion expands when the title gets in 
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
 The custom accordion methods are the following:
+-   [activate()]
+-   [deactivate()]
 
-<ul>
-<li><a href="#meth_act">activate()</a></li>
-<li><a href="#meth_deact">deactivate()</a></li>
-</ul>
-
-### <code>activate(index)</code> {#meth_act}
+### `activate(index)` {#meth_act}
 Activate a tab with the specified `index`.
 
 **Type**: Number, Array.
@@ -182,15 +157,15 @@ Activate a tab with the specified `index`.
 If no `index` is passed, all panels are activated.
 
 Code examples:
-<pre>
+
+```javascript
 $( "#element" ).accordion( "activate" );
 $( "#element" ).accordion( "activate", 1 );
 $( "#element" ).accordion( "activate", [0,1]);
-</pre>
+```
 
-### <code>deactivate(index)</code> {#meth_deact}
+### `deactivate(index)` {#meth_deact}
 Deactivate a tab with the specified `index`.
-
 
 **Type**: Number, Array.
 
@@ -198,8 +173,18 @@ If no index is passed, all panels are deactivated.
 
 Code examples:
 
-<pre>
+```javascript
 $( "#element" ).accordion( "deactivate" );
 $( "#element" ).accordion( "deactivate", 1 );
 $( "#element" ).accordion( "deactivate", [0,1]);
-</pre>
+```
+
+[Magento Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
+[lib/web/mage/accordion.js]: {{site.mage2000url}}lib/web/mage/accordion.js
+[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init
+[Magento Tabs options]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options
+[active]: #collaps_active
+[multipleCollapsible]: #collaps_multi
+[openOnFocus]: #collaps_open
+[activate()]: #meth_act
+[deactivate()]: #meth_deact
