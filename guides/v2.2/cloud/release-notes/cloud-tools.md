@@ -57,11 +57,11 @@ to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain
 
 -  <!-- MAGECLOUD-2034 -->Fixed an issue when using SCD with multiple locales, which generated the same `js-translation.json` file for each locale.
 
-- <!-- MAGECLOUD-2033  -->Optimized the `support:db:dump` command to avoid locking tables and increase speed.
+- <!-- MAGECLOUD-2033  -->Optimized the `db:dump` command in the `ece-tools` package to avoid locking tables and increase speed.
 
 ## v2002.0.11
 
-{:.bs-callout .bs-callout-info}
+{:.bs-callout bs-callout-info}
 The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 #### New features
@@ -122,9 +122,8 @@ The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 ## v2002.0.9
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade-parent.html) to get this and all future updates.
-</div>
 
 #### New features
 -   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x.
@@ -151,9 +150,9 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 -   <!-- MAGECLOUD-1674 -->We added support for an earlier version of `symfony/yaml` to fix conflicts with some packages, which are not yet compatible with the latest version.
 
 ## v2002.0.8
-<div class="bs-callout bs-callout-info" markdown="1">
+
+{:.bs-callout .bs-callout-info}
 We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-patches.html) with `vendor/magento/ece-tools` in this release. You no longer need to update the `vendor/magento/ece-patches` package separately.
-</div>
 
 #### New features
 -   <!-- MAGECLOUD-1253 -MAGECLOUD-1495-->**Improved logging**
@@ -282,9 +281,9 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 -   <!--MAGECLOUD-1020-->We fixed an issue that was causing redirect loops due to disabled by default secure admin.
 
 ## v2002.0.0
-<div class="bs-callout bs-callout-warning" markdown="1">
+
+{:.bs-callout .bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
-</div>
 
 ### Initial release
 Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.

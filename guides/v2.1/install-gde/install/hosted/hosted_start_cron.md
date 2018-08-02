@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="newbie-db">Set up scheduled tasks (cron)</h2>
+## Set up scheduled tasks (cron) {#newbie-db}
 *cron* is the UNIX task scheduler. Magento requires cron for quite a few things, including reindexing, automated e-mails, newsletters, sitemap, and so on.
 
 To set up cron on your managed server:

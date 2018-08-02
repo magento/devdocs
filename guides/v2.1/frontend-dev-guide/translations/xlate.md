@@ -11,10 +11,10 @@ functional_areas:
   - Frontend
 ---
 
-<h2 id="m2devgde-xlate-intro">Overview of translations</h2>
+## Overview of translations {#m2devgde-xlate-intro}
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.
 
-<h3 id="translate_terms">Terms used</h3>
+### Terms used {#translate_terms}
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
 
 	"Add to Cart","Zum Warenkorb hinzufügen"
@@ -64,7 +64,7 @@ See one of the following sections for more information:
 *	<a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a>
 *	<a href="#m2devgde-xlate-languagepack">Language packages</a>
 
-<h2 id="m2devgde-xlate-themes">Why you might need to add a dictionary for a theme</h2>
+## Why you might need to add a dictionary for a theme {#m2devgde-xlate-themes}
 
 You might need to add a dictionary for the default language (en_US) in the following cases:
 
@@ -73,7 +73,7 @@ You might need to add a dictionary for the default language (en_US) in the follo
 
 For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.
 
-<h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
+## Manually translate words and phrases {#m2devgde-xlate-translating}
 Translating the names, titles and phrases used in Magento involves the following steps:
 
 1.	Generate a dictionary of your instance using the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">translation dictionary tool</a>.
@@ -86,7 +86,7 @@ Translating the names, titles and phrases used in Magento involves the following
 
 Anyone can submit translations on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the Text Editor. Changes made in the Text Editor are not recorded in an instance's dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.
 
-<h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
+## Translation dictionaries {#m2devgde-xlate-dictionaries}
 Magento translates words and phrases when all of the following conditions are met:
 
 *	The Magento code base has the necessary translation dictionaries for a language
@@ -104,10 +104,10 @@ The Magento application automatically assembles translation dictionaries located
 
 Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
-<h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
+### The dictionary generator tool {#m2devgde-xlate-generatortool}
 <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.
 
-<h2 id="m2devgde-xlate-languagepack">Language packages</h2>
+## Language packages {#m2devgde-xlate-languagepack}
 Magento enables you to create the following types of language packages:
 
 *	A set of .csv files for modules and themes. These packages files are intended to be deployed in modules. For example:

@@ -104,10 +104,9 @@ To set environment specific variables in the Project Web Interface:
 6. As needed, select options for **JSON value**, **Visible during build**, and **Visible during runtime**. If you do not have Super User access, you may only see the JSON value option.
 7. Click **Add Variable**. After you add the variable, the environment will deploy. Wait until deployment completes before more edits.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-If you're attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
+{:.bs-callout .bs-callout-warning}
+If you are attempting to [override Magento configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html), you must prepend the variable name with `env:`. For example:
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
-</div>
 
 ### Project variable {#project}
 To set project variables in the Project Web Interface:

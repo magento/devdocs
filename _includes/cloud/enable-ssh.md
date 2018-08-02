@@ -1,5 +1,3 @@
-<div markdown="1">
-
 You must create an SSH key pair on every machine and workspace you and your team expect to work with and access {{site.data.var.ece}} and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
 
 The SSH keys require the following:
@@ -138,4 +136,3 @@ To set variables, enter the following commands on every workspace:
 	git config --global user.email <your e-mail address>
 
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
-</div>

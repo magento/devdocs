@@ -159,9 +159,8 @@ The format for adding your mount to this list is as follows:
 -  `shared`—Shares a volume between your applications inside an environment.
 -  `disk`—Defines the size available for the shared volume.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
-</div>
 
 If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
 
@@ -208,7 +207,7 @@ hooks:
         php ./vendor/bin/ece-tools post-deploy
 ```
 
-Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files. 
+Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.
 
 ```yaml
 hooks:
@@ -288,12 +287,11 @@ You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```
 name: mymagento
-type: php:7.0
+type: php:7.1
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
-{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
-</div>
+{:.bs-callout .bs-callout-info}
+{{site.data.var.ece}} supports PHP 7.1 and later. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### PHP extensions
 You can define additional PHP extensions to enable or disable:

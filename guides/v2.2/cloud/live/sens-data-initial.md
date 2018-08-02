@@ -23,9 +23,9 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 	* To remove or edit existing configurations, manually edit the file.
 	* Commit and push to Git.
 
-<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
+<!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
-</div> -->
+-->
 For example, you may want to set the following settings:
 
 * Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment

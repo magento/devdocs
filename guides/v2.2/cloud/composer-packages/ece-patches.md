@@ -9,9 +9,8 @@ functional_areas:
   - Configuration
 ---
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
-</div>
 
 {% include cloud/ece-patches.md %}
 
@@ -45,9 +44,8 @@ Implemented version-based patching. Now the package is compatible with {{site.da
 <!--MAGECLOUD-1033-->* Removed patch; fixing bug in `colinmollenhour/credis` v1.6 to enable support for {{site.data.var.ece}} 2.2.1.
 
 ## v102.0.0
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
-</div>
 
 ### Initial release
 Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.

@@ -16,9 +16,8 @@ It provides the following benefits:
 *	Less time required to [build](#cloud-confman-scd-over) and deploy your project by moving static file deployment from the deploy to the build phase. Your site is in maintenance mode until deployment completes. For details, see [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 * Sensitive data is automatically added into an environment variables file (`/app/etc/env.php`). You can also manually add sensitive environment variables using the Project Web Interface, the CLI, or directly in the Magento Admin. For example, payment processor passwords and API keys.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
-</div>
 
 ## Feature availability {#release}
 To complete these configuration management tasks, you must have at a minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges.
@@ -31,9 +30,8 @@ After configuring your environment, generate the file using one of the following
 * `php bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only modified configuration settings
 * `php ./vendor/bin/ece-tools config:dump`: Exports every configuration setting, including modified and default settings
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 For {{site.data.var.ece}}, we **do not recommend** `app:config:dump` as this command pulls and locks all values as read-only. This will affect Fastly and other important modules. Specifically, this affects customizing your extensions across environments.
-</div>
 
 Any data that exports to the file becomes locked. The corresponding field in the Magento Admin becomes read-only. This ensures consistent configurations as you push the file across all environments.
 
@@ -53,9 +51,8 @@ This file can include all system configuration settings for stores, sites, exten
 
 Sensitive values are _not_ stored in `app/etc/config.local.php`. Any sensitive configurations should export to `app/etc/config.php` during the `scd-dump` process. You should create environment variables using CLI commands or the Project Web Interface.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You can set _any_ value using environment variables, but we recommend using environment variables for sensitive values.
-</div>
 
 For a list of configurable settings, see [Configuration settings you can change](#cloud-clp-settings) and [System settings reference]({{ page.baseurl }}/config-guide/prod/config-reference-var-name.html).
 
@@ -64,9 +61,8 @@ Depending on the size of your store, you may have a large amount of static conte
 
 If you generate `config.local.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
-</div>
 
 ## Configuration selection flow
 All system configurations are set during deployment according to the following override scheme:
@@ -204,8 +200,5 @@ This process **overwrites** the store configuration; only do the following if th
 
 1.  Push code changes to the remote.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-While you can manually edit the `config.local.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments.
-
-Never delete the `config.local.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.
-</div>
+{:.bs-callout .bs-callout-warning}
+While you can manually edit the `config.local.php` file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the `config.local.php` file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.

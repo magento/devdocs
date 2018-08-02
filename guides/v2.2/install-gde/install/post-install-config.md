@@ -22,7 +22,7 @@ cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day ope
 
 For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
-<h2 id="post-install-secy">Security settings</h2>
+## Security settings {#post-install-secy}
 After installation, we recommend the following:
 
 *	Make sure your file ownership and permissions are set properly
@@ -31,7 +31,7 @@ After installation, we recommend the following:
 *	Take precautions against cross-site scripting (XSS) by <a href="{{ page.baseurl }}/frontend-dev-guide/templates/template-security.html">securing your templates</a>
 <!-- Set up roles and restricted users (Admin) -->
 
-<h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
+## Enable Apache server rewrites {#post-install-rewrites}
 If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you'll see pages without styles and other issues.
 
 <a href="{{ page.baseurl }}/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a>
@@ -41,7 +41,7 @@ If you have multiple webnodes, you *cannot* use Magento's default file caching b
 
 Instead, use [Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html) for both the default {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and the page cache.
 
-<h2 id="post-install-server">Server settings</h2>
+## Server settings {#post-install-server}
 This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.
 
 #### Log rotation
@@ -79,7 +79,7 @@ Magento requires an e-mail server. We don't recommend a particular server but yo
 *	Postfix for CentOS (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-postfix-on-centos-6" target="_blank">digitalocean tutorial</a>, <a href="https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-email.html" target="_blank">CentOS documentation</a>)
 *	Postfix for Ubuntu (<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-setup-postfix-on-ubuntu-14-04" target="_blank">digitalocean tutorial</a>, <a href="https://help.ubuntu.com/community/MailServer" target="_blank">Ubuntu documentation</a>)
 
-<h2 id="post-install-ee">Settings for {{site.data.var.ee}} only</h2>
+## Settings for {{site.data.var.ee}} only {#post-install-ee}
 
 You can configure the following only if you use {{site.data.var.ee}}:
 

@@ -9,7 +9,7 @@ Web API is crucial for Magento because of the need to integrate with order manag
 
 There are many headless Magento installations in which a merchant partially uses Magento functionality, while the other pieces of an eCommerce website are provided by other systems.
 
-See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of web APIs in modern web applications.
+See [more details](https://en.wikipedia.org/wiki/Web_API) about the importance of web APIs in modern web applications.
 
 
 ### Components Dependencies

@@ -206,20 +206,6 @@ hooks:
         php ./vendor/bin/ece-tools post-deploy
 ```
 
-Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files. 
-
-```yaml
-hooks:
-    # We run build hooks before your application has been packaged.
-    build: |
-        php ./vendor/bin/ece-tools build:generate
-        # php /path/to/your/script
-        php ./vendor/bin/ece-tools build:transfer
-```
-
--  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
--  `build:transfer`—transfers generated code and static content to the final destination.
-
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
 #### To compile SASS files using grunt:
@@ -351,9 +337,8 @@ You can also create and push a `php.ini` file that is appended to the configurat
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 
-<div class="bs-callout bs-callout-warning" markdow="1">
+{:.bs-callout .bs-callout-warning}
 Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
-</div>
 
 For example, if you need to increase the PHP memory limit:
 

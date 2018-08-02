@@ -29,9 +29,8 @@ You can optionally set up multiple databases as well as multiple users with diff
 
 To set up multiple databases and users, you must specify multiple endpoints. An _endpoint_ is a user who has privileges you specify.
 
-<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-You can't use multiple _databases_ with {{site.data.var.ee}} at this time. You can, however, create multiple endpoints to restrict access to the `main` database.
-</div>
+{:.bs-callout .bs-callout-warning}
+You cannot use multiple _databases_ with {{site.data.var.ee}} at this time. You **can** create multiple endpoints to restrict access to the `main` database.
 
 To specify user access, use the `endpoints` nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.
 
@@ -75,25 +74,24 @@ In the preceding example, the endpoint (that is, user) `reporter` has `ro` privi
 ## Add MySQL in services.yaml and .magento.app.yaml {#settings}
 To enable MySQL, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
-{% highlight yaml %}
+```yaml
 mysql:
     type: mysql:10.0
     disk: 2048
-{% endhighlight %}
+```
 
 To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
 
-{% highlight yaml %}
+```yaml
 relationships:
     database: "mydatabase:mysql"
-{% endhighlight %}
+```
 
 Merge and deploy the code to set the configurations for Redis. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info}
 * If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
 * MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#disk).
-</div>
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
@@ -107,7 +105,7 @@ To verify this information used for configurations and settings:
 
 The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for MySQL:
 
-```
+```json
 {
   "database": [
     {
