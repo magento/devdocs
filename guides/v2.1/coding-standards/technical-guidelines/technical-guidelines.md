@@ -502,44 +502,6 @@ class SampleEventObserverThatModifiesInputs
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
-## 15. XML configuration
-15.1 Attribute MUST be used for the configuration values than will not be extended in future by adding child nodes or new attributes.
-15.2 Nodes of the same type that repeat multiple times MUST be wrapped in a grouping node.
-15.3 Unnecessary grouping nodes MUST be avoided.
-
-{% collapsible Examples: %}
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight xml %}
-<!-- This example assumes that the following configuration is in it's own file and `item` doesn't repeat multiple times in the file -->
-<config>
-    <items>
-        <item />
-    </items>
-<config>
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight xml %}
-<config>
-    <items>
-        <item />
-    </items>
-<config>
-{% endhighlight %}
-        </td>
-    </tr>
-</table>
-{% endcollapsible %}
----
-
-15.4 Schema MUST NOT allow to specify contradicting configuration (multiple attributes or nodes that are mutually exclusive for instance).
-
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
