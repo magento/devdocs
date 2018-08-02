@@ -12,7 +12,6 @@
 !/.github
 !/.github/**
 
-/*.yml
 !/_config.yml
 
 *.bat
