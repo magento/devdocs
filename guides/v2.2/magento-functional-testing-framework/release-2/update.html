@@ -953,11 +953,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<p style="text-align: right"><em>This topic was updated due to the 2.3.0 MFTF release.</em></p>
 
+<!-- Available note types: "info", "warning", "tip" -->
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Availability in the Magento codebase:</p>
+  <ul>
+    <li>The latest release available in the Magento 2.2 codebase (the <code class="highlighter-rouge">2.2-develop</code> branch) is MFTF 2.2.0.</li>
+    <li>The latest release available in the Magento 2.3 codebase (the <code class="highlighter-rouge">2.3-develop</code> branch) is MFTF 2.3.0.</li>
+  </ul>
+
+</div>
+
 <p>Magento tests and the framework are stored in different repositories.</p>
 
-<p>Magento tests are stored in the same repository as the Magento code base. When you pull changes in the Magento code, you’re potentially pulling corresponding tests as well.</p>
+<p>Magento tests are stored in the same repository as the Magento code base.
+When you pull changes in the Magento code, you’re potentially pulling corresponding tests as well.</p>
 
-<p>The MFTF is installed separately as a dependency using Composer. When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2</code> root directory. This ensures that the MFTF is up to date.</p>
+<p>The MFTF is installed separately as a dependency using Composer.
+When pulling the latest Magento code, update the corresponding Composer dependencies in the <code class="highlighter-rouge">magento2</code> root directory.
+This ensures that the MFTF is up to date.</p>
 
 <h2 id="update-the-mftf-to-230">Update the MFTF to 2.3.0</h2>
 
@@ -965,38 +979,42 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ol>
   <li>When you update Magento, verify that the Magento <a href="getting-started.html#wysiwyg-settings">WYSIWYG settings</a> and <a href="getting-started.html#security-settings">Security settings</a> are set appropriately.</li>
-  <li>
-    <p>Starting at the <code class="highlighter-rouge">magento2</code> root directory remove the vendor folder:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rm <span class="nt">-rf</span> vendor/
+  <li>Starting at the <code class="highlighter-rouge">magento2</code> root directory remove the vendor folder:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> vendor/
 </code></pre></div>    </div>
   </li>
-  <li>Run <code class="highlighter-rouge">composer update</code> to get the latest framework version:</li>
-  <li>
-    <p>Go to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">cd </span>dev/tests/acceptance
+  <li>Get the latest framework version:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
 </code></pre></div>    </div>
   </li>
-  <li>Remove the vendor folder <code class="highlighter-rouge">rm -rf vendor/</code></li>
-  <li>Run <code class="highlighter-rouge">composer update</code> to install dependencies at that level.</li>
+  <li>Go to the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>dev/tests/acceptance
+</code></pre></div>    </div>
+  </li>
+  <li>Remove the vendor folder:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm <span class="nt">-rf</span> vendor/
+</code></pre></div>    </div>
+  </li>
+  <li>Install dependencies at that level:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
+</code></pre></div>    </div>
+  </li>
   <li>Go back to the root magento folder
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="nb">cd</span> ../../..
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ../../..
 </code></pre></div>    </div>
   </li>
   <li>Run the <code class="highlighter-rouge">upgrade:tests</code> using the new command line tool:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/mftf upgrade:tests app
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf upgrade:tests app
 </code></pre></div>    </div>
   </li>
   <li>If you are using Phpstorm, update the urn catalog:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/mftf generate:urn-catalog
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:urn-catalog
 </code></pre></div>    </div>
   </li>
-  <li>Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version. Check details about backward incompatible changes and review new MFTF release documentation in the <a href="../changelog.html">Changelog</a>.</li>
-  <li>
-    <p>Generate newly pulled tests:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/mftf generate:tests
+  <li>Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version.
+Check details about backward incompatible changes and review new MFTF release documentation in the <a href="../changelog.html">Changelog</a>.</li>
+  <li>Generate newly pulled tests:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
 </code></pre></div>    </div>
   </li>
 </ol>
