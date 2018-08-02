@@ -207,7 +207,7 @@ hooks:
         php ./vendor/bin/ece-tools post-deploy
 ```
 
-Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files. 
+Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.
 
 ```yaml
 hooks:
@@ -287,11 +287,11 @@ You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```
 name: mymagento
-type: php:7.0
+type: php:7.1
 ```
 
 {:.bs-callout .bs-callout-info}
-{{site.data.var.ece}} supports PHP 7.0 and 7.1. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
+{{site.data.var.ece}} supports PHP 7.1 and later. For Pro projects **created before October 23, 2017**, you must open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to use PHP 7.1 on your Pro Staging and Production environments.
 
 ### PHP extensions
 You can define additional PHP extensions to enable or disable:
