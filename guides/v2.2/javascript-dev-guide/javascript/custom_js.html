@@ -726,7 +726,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.</p>
 
 <h2 id="add-a-custom-js-component">Add a custom JS component</h2>
-
 <p>To add a custom JS component (module), take the following steps:</p>
 
 <ol>
@@ -742,69 +741,51 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="js_replace">Replace a default JS component</h2>
 
-<p>To use a custom implementation of an existing Magento JS component:</p>
-<ol>
-  <li>
-    <p>Place the custom component source file in one of
-  the following locations:</p>
-    <ul>
-  <li>
-        <p>Your theme JS files: <code class="highlighter-rouge">/web/js</code> or <code class="highlighter-rouge">/_/web/js</code></p>
-      </li>
-  <li>Your module view JS files:
-  <code>&lt;module_dir&gt;/view/frontend/web/js</code>
-  </li>
-</ul>
-  </li>
-  <li>
-    <p>Create a RequireJS configuration file
-  <code>requirejs-config.js</code>, having specified the following:</p>
+<p>To use a custom implementation of an existing Magento JS component:
+Place the custom component source file in one of the following
+locations:</p>
 
-    <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> 
-<span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<ul>
+  <li>Your theme JS files: `/web/js` or `/_/web/js`</li>
+  <li>Your module view JS files: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend/web/js</code></li>
+</ul>
+
+<p>Create a RequireJS configuration file <code class="highlighter-rouge">requirejs-config.js</code>, having
+specified the following:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"map"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"&lt;default_component&gt;"</span><span class="p">:</span> <span class="s2">"&lt;custom_component&gt;"</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre></div></div>
 
-    <ul>
-  <li>
-    <code>&lt;default_component&gt;</code>: the name of the default
-    component you replace
-  </li>
-  <li>
-    <code>&lt;custom_component&gt;</code>: the name of the custom
-    component
-  </li>
+<ul>
+  <li><code class="highlighter-rouge">&lt;default_component&gt;</code>: the name of the default component you replace</li>
+  <li><code class="highlighter-rouge">&lt;custom_component&gt;</code>: the name of the custom component</li>
 </ul>
 
-    <p>For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets, your <code>requirejs-config.js</code> should contain the following:</p>
-
-    <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<p>For example, if you want to use custom <code class="highlighter-rouge">navigation-menu.js</code> script instead of the default menu widgets, your <code class="highlighter-rouge">requirejs-config.js</code> should contain the following:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">"map"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"*"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s2">"menu"</span><span class="p">:</span> <span class="s2">"js/navigation-menu"</span><span class="p">,</span>
       <span class="s2">"mage/backend/menu"</span><span class="p">:</span> <span class="s2">"js/navigation-menu"</span>
     <span class="p">}</span>
   <span class="p">}</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre></div></div>
 
-  </li>
-  <li>Place your <code>requirejs-config.js</code> file in one of
-  the following directories (according to the location of your
-  custom script, see step 1 of this procedure):
-    <ul>
-      <li>Your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
- files: <code>&lt;theme_dir&gt;</code>
-      </li>
-      <li>Your module view files:
-      <code>&lt;module_dir&gt;/view/frontend</code>
-      </li>
-    </ul>
-  </li>
-</ol>
+<p>Place your <code class="highlighter-rouge">requirejs-config.js</code> file in one of the following
+directories (according to the location of your custom script, see step 1
+of this procedure):</p>
+
+<ul>
+  <li>Your   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
+ files: <code class="highlighter-rouge">&lt;theme_dir&gt;</code></li>
+  <li>Your module view files: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend</code></li>
+</ul>
 
 <p>This way your custom JS component is used instead of the   <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span>
  in all entries all over the   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
@@ -818,7 +799,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To extend a default Magento   <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span>
  widget, create <code class="highlighter-rouge">&lt;your_widget_name&gt;.js</code> with the following contents:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
   <span class="s1">'jquery'</span><span class="p">,</span>
   <span class="s1">'jquery/ui'</span><span class="p">,</span>
   <span class="s1">'mage/&lt;widget.name&gt;'</span> <span class="c1">// usually widget can be found in /lib/web/mage dir</span>
@@ -827,21 +808,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <span class="nx">$</span><span class="p">.</span><span class="nx">widget</span><span class="p">(</span><span class="s1">'&lt;your_namespace&gt;.&lt;your_widget_name&gt;'</span><span class="p">,</span> <span class="nx">$</span><span class="p">.</span><span class="nx">mage</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">widget</span><span class="p">.</span><span class="nx">name</span><span class="o">&gt;</span><span class="p">,</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
  
   <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">your_namespace</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">your_widget_name</span><span class="o">&gt;</span><span class="p">;</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <p>Where the following notation is used:</p>
 <ul>
-  <li>
-    <code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> -
-    the name of your custom   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
+  <li><code class="highlighter-rouge">&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
 . According to the jQuery widgets naming
-    convention, must contain a   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
- and name.
-  </li>
-  <li>
-    <code>mage.&lt;widget.name&gt;</code> - the name of the Magento
-    widget that you extend.
-  </li>
+convention, must contain a   <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>
+ and name.</li>
+  <li><code class="highlighter-rouge">mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you
+extend.</li>
 </ul>
 
 <p>For information about how to initialize your custom widget in a <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.</p>
@@ -850,7 +827,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>To extend a default JS Ui component, your custom script must contain the following:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
   <span class="s1">'&lt;component_path&gt;'</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">component_alias</span><span class="o">&gt;</span><span class="p">){</span>
  
@@ -859,24 +836,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// properties with default values</span>
     <span class="p">...</span> <span class="c1">// methods of your component</span>
   <span class="p">});</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <p>Where the following notation is used:</p>
 
 <ul>
-  <li>
-    <code>&lt;component_path&gt;</code>: path to the default
-    component that you extend
-  </li>
-  <li>
-    <code>&lt;component_alias&gt;</code>: variable containing the
-    default component that you extend
-  </li>
+  <li><code class="highlighter-rouge">&lt;component_path&gt;</code>: path to the default component that you extend</li>
+  <li><code class="highlighter-rouge">&lt;component_alias&gt;</code>: variable containing the default component that you extend</li>
 </ul>
 
-<p>For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:</p>
+<p>For example, <code class="highlighter-rouge">Filters.js</code> script extends the default <code class="highlighter-rouge">filters.js</code>:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">define</span><span class="p">([</span>
   <span class="s1">'Magento_Ui/js/grid/filters/filters'</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Filters</span><span class="p">){</span>
  
@@ -885,34 +857,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="na">defaults</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">},</span> <span class="c1">// properties with default values</span>
     <span class="p">...</span> <span class="c1">// methods of your component</span>
   <span class="p">});</span>
-<span class="p">});</span></code></pre></figure>
-
-<p>For information about how to initialize your custom JS component in a <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.</p>
+<span class="p">});</span>
+</code></pre></div></div>
+<p>For information about how to initialize your custom JS component in a <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html">JavaScript initialization</a> topic.</p>
 
 <h2 id="disable_default_js">Disable default Magento JS</h2>
 
-<p>To disable the auto-loading of default Magento JS components and widget initialization:</p>
-<ol>
-  <li>Create a <code>requirejs-config.js</code> file with the
-  following content: 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">deps</span><span class="p">:</span> <span class="p">[</span> <span class="p">]</span> <span class="p">};</span> </code></pre></figure>
+<p>To disable the auto-loading of default Magento JS components and widget
+initialization:</p>
 
-  </li>
-  <li>Put the <code>requirejs-config.js</code> file in one of the
-  following locations:
+<ol>
+  <li>Create a <code class="highlighter-rouge">requirejs-config.js</code> file with the following content:</li>
+</ol>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span> <span class="na">deps</span><span class="p">:</span> <span class="err">\</span><span class="p">[</span> <span class="err">\</span><span class="p">]</span> <span class="p">};</span> </code></pre></figure>
+
+<ol>
+  <li>Put the <code class="highlighter-rouge">requirejs-config.js</code> file in one of the following
+locations:
     <ul>
-      <li>Your custom theme files: <code>&lt;theme_dir&gt;</code>
-      </li>
-      <li>Your custom module files:
-      <code>&lt;module_dir&gt;/view/frontend</code>
-      </li>
+      <li>Your custom theme files: <code class="highlighter-rouge">&lt;theme_dir&gt;</code></li>
+      <li>Your custom module files: <code class="highlighter-rouge">&lt;module_dir&gt;/view/frontend</code></li>
     </ul>
   </li>
 </ol>
+
 <p>If you need to enable the loading of default Magento JS components and widget initialization on a certain stage, add the following code in your JS script:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">mage</span><span class="p">.</span><span class="nx">apply</span><span class="p">);</span></code></pre></figure>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="nx">mage</span><span class="p">.</span><span class="nx">apply</span><span class="p">);</span>
+</code></pre></div></div>
 
 <h4 id="related-topic">Related topic</h4>
 

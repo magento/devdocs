@@ -731,11 +731,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.</p>
 
-<p>The alert   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/alert.js</code></a></p>
+<p>The alert widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/alert.js"><code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/alert.js</code></a>.</p>
 
 <p>The widget can be used for implementing alert windows for both Admin and   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
-. The design patterns for the pop-up modal windows in the Admin are described in the <a href="/guides/v2.3/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
+. The design patterns for the pop-up modal windows in the Admin are described in the <a href="/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
 
 <h2 id="alert_initialize">Initialize the alert widget</h2>
 
@@ -743,17 +742,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Example1</strong>: initialization on an element</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'#init_element'</span><span class="p">).</span><span class="nx">alert</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'#init_element'</span><span class="p">).</span><span class="nx">alert</span><span class="p">({</span>
     <span class="na">title</span><span class="p">:</span> <span class="s1">'Warning'</span><span class="p">,</span>
     <span class="na">content</span><span class="p">:</span> <span class="s1">'Warning content'</span><span class="p">,</span>
     <span class="na">actions</span><span class="p">:</span> <span class="p">{</span>
         <span class="na">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
     <span class="p">}</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <p><strong>Example2</strong>: standalone initialization</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">([</span>
     <span class="s1">'Magento_Ui/js/modal/alert'</span>
 <span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">alert</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `alert` function</span>
  
@@ -765,33 +764,33 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
         <span class="p">}</span>
     <span class="p">});</span>
  
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 
-<p>For details about how to initialize a widget in a<code class="highlighter-rouge">.phtml</code> template, refer to the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
+<p>For details about how to initialize a widget in a<code class="highlighter-rouge">.phtml</code> template, refer to the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html">Javascript initialization</a> topic.</p>
 
 <h2 id="alert_options">Options</h2>
 <p>The alert widget has the following options:</p>
 
 <ul>
-<li><a href="#alert_actions">actions</a></li>
-<li><a href="#alert_autoopen">autoOpen</a></li>
-<li><a href="#alert_clickableOverlay">clickableOverlay</a></li>
-<li><a href="#alert_content">content</a></li>
-<li><a href="#alert_focus">focus</a></li>
-<li><a href="#alert_title">title</a></li>
+  <li><a href="#alert_actions">actions</a></li>
+  <li><a href="#alert_autoopen">autoOpen</a></li>
+  <li><a href="#alert_clickableOverlay">clickableOverlay</a></li>
+  <li><a href="#alert_content">content</a></li>
+  <li><a href="#alert_focus">focus</a></li>
+  <li><a href="#alert_title">title</a></li>
 </ul>
 
-<h3 id="alert_actions"><code>actions</code></h3>
-
+<h3 id="alert_actions"><code class="highlighter-rouge">actions</code></h3>
 <p>Widget callbacks.</p>
 
 <p><strong>Type</strong>: Object.</p>
 
 <p><strong>Default value</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="p">:</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">actions</span><span class="p">:</span> <span class="p">{</span>
     <span class="nl">always</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="alert_autoopen">autoOpen</h3>
 <p>Automatically open the alert window when the widget is initialized.</p>
@@ -807,13 +806,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
-<h3 id="alert_content"><code>content</code></h3>
-
+<h3 id="alert_content"><code class="highlighter-rouge">content</code></h3>
 <p>The text displayed in the alert window.</p>
 
 <p><strong>Type</strong>: String.</p>
 
-<h3 id="alert_focus"><code>focus</code></h3>
+<h3 id="alert_focus"><code class="highlighter-rouge">focus</code></h3>
 <p>The selector of the element to be in focus when the alert window opens.
 If <code class="highlighter-rouge">focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code class="highlighter-rouge">focus</code> to <code class="highlighter-rouge">none</code>.</p>
 
@@ -821,7 +819,7 @@ If <code class="highlighter-rouge">focus</code> is not specified or set to empty
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
-<h3 id="alert_title"><code>title</code></h3>
+<h3 id="alert_title"><code class="highlighter-rouge">title</code></h3>
 <p>The title of the alert window.</p>
 
 <p><strong>Type</strong>: String.</p>
@@ -829,11 +827,11 @@ If <code class="highlighter-rouge">focus</code> is not specified or set to empty
 <p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
 <h2 id="alert_events">Events</h2>
-
 <p>The alert widget implements a single event: the <code class="highlighter-rouge">always</code> callback.</p>
 
 <h2 id="alert_key_navigation">Keyboard navigation</h2>
 <p>The keyboard navigation for the alert windows is similar to the <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.</p>
+
 
 			
 		</div>

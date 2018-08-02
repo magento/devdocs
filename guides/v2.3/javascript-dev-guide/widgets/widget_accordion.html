@@ -730,56 +730,49 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<h2 id="overview">Overview</h2>
 
 <p>Magento accordion widget is an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
- of the <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.</p>
+ of the <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html">Magento Tabs widget</a>.</p>
 
 <p>Accordions are generally used to break content into multiple sections that can be swapped to save space.</p>
 
 <p>The accordion   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.</p>
+ source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/accordion.js">lib/web/mage/accordion.js</a>.</p>
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 
 <h3 id="initialize-accordion-in-js-components">Initialize accordion in JS components</h3>
 
-<h4 id="initialize-accordion-with-data--attributes-specified">Initialize accordion with <code>data-*</code> attributes specified</h4>
+<h4 id="initialize-accordion-with-data--attributes-specified">Initialize accordion with <code class="highlighter-rouge">data-*</code> attributes specified</h4>
 <p>Generally the accordion widget is instantiated like following:</p>
-<pre>
-$("#element").accordion();
-</pre>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
+</code></pre></div></div>
 
 <p>Where:</p>
 <ul>
-<li><code>#element</code> is the selector of the element for accordion is initialized.</li>
-<li><code>#element</code> has children with the following attributes specified: 
-
-<ul>
-<li><code>data-role="title"</code>
-</li>
-<li><code>data-role="content"</code></li>
-</ul>
-</li>
+  <li><code class="highlighter-rouge">#element</code> is the selector of the element for accordion is initialized.</li>
+  <li><code class="highlighter-rouge">#element</code> has children with the following attributes specified:
+    <ul>
+      <li><code class="highlighter-rouge">data-role="title"</code></li>
+      <li><code class="highlighter-rouge">data-role="content"</code></li>
+    </ul>
+  </li>
 </ul>
 
 <p>Optionally, you can specify the following:</p>
 <ul>
-<li>If you want the trigger to be different from the title, add the <code>data-role="content"</code> attribute for the element</li>
-
-<li>To have the content updated using Ajax, add the <code>data-ajax="true"</code> attribute for the element containing the   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- for request.
-</li>
+  <li>If you want the trigger to be different from the title, add the <code class="highlighter-rouge">data-role="content"</code> attribute for the element</li>
+  <li>To have the content updated using Ajax, add the <code class="highlighter-rouge">data-ajax="true"</code> attribute for the element containing the URL for request.</li>
 </ul>
 
 <p>Accordions support arbitrary markup, but the following requirements should be kept:</p>
 
 <ol>
-<li>Titles and contents are specified in the same order in DOM: first title, then contents.</li>
-
-<li>The header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
+  <li>Titles and contents are specified in the same order in DOM: first title, then contents.</li>
+  <li>The header, trigger and content are specified, either by adding the <code class="highlighter-rouge">data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
 </ol>
 
 <p>Mark-up examples:</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"element"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"element"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"collapsible"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;div</span> <span class="na">data-role=</span><span class="s">"trigger"</span><span class="nt">&gt;</span>
             <span class="nt">&lt;span&gt;</span>Title 1<span class="nt">&lt;/span&gt;</span>
@@ -808,33 +801,33 @@ $("#element").accordion();
         <span class="s1">'accordion'</span><span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span>
     <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
 
 <h4 id="initialize-accordion-with-option">Initialize accordion with option</h4>
 <p>You can specify the header, content, trigger as options when you initialize the widget.
 For example:</p>
-<pre>
-$("#element").accordion({
-    header : "#title-1",
-    content : "#content-1",
-    trigger : "#trigger-1",
-    ajaxUrlElement: "a"
- });
-</pre>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span>
+    <span class="na">header</span> <span class="p">:</span> <span class="s2">"#title-1"</span><span class="p">,</span>
+    <span class="na">content</span> <span class="p">:</span> <span class="s2">"#content-1"</span><span class="p">,</span>
+    <span class="na">trigger</span> <span class="p">:</span> <span class="s2">"#trigger-1"</span><span class="p">,</span>
+    <span class="na">ajaxUrlElement</span><span class="p">:</span> <span class="s2">"a"</span>
+ <span class="p">});</span>
+</code></pre></div></div>
 
 <h3 id="initialize-accordion-in-a-template">Initialize accordion in a template</h3>
 
-<p>The accordion widget can be initialized using the <code>data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> element, as described in <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.</p>
+<p>The accordion widget can be initialized using the <code class="highlighter-rouge">data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> element, as described in <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html#data_mage_init">JavaScript initialization</a>.</p>
 
 <h2 id="accordion_options">Options</h2>
-<p>Accordion options coincide with <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:</p>
+<p>Accordion options coincide with <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options">Magento Tabs options</a>, plus the following custom ones:</p>
 <ul>
-<li><a href="#collaps_active">active</a></li>
-<li><a href="#collaps_multi">multipleCollapsible</a></li>
-<li><a href="#collaps_open">openOnFocus</a></li>
+  <li><a href="#collaps_active">active</a></li>
+  <li><a href="#collaps_multi">multipleCollapsible</a></li>
+  <li><a href="#collaps_open">openOnFocus</a></li>
 </ul>
 
-<h3 id="collaps_active"><code>active</code></h3>
+<h3 id="collaps_active"><code class="highlighter-rouge">active</code></h3>
 
 <p>Defines which tab is active when the widget gets instantiated.</p>
 
@@ -843,33 +836,30 @@ $("#element").accordion({
 <p><strong>Default value</strong>: <code class="highlighter-rouge">0</code></p>
 
 <p>Example of the accordion initialization with the <code>active</code> option specified:</p>
-<pre>
-$("#element").accordion({ active: "0 1"});
-$("#element").accordion({ active: [0,1]});
-</pre>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">active</span><span class="p">:</span> <span class="s2">"0 1"</span><span class="p">});</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">active</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]});</span>
+</code></pre></div></div>
 
-<h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
+<h3 id="collaps_multi"><code class="highlighter-rouge">multipleCollapsible</code></h3>
 <p>Defines if multiple panels can be expanded at the same time.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<p>Example of the accordion initialization with the <code>multipleCollapsible</code> option specified:</p>
-<pre>
-$("#element").accordion({ multipleCollapsible: false});
-</pre>
-<p>Get or set the <code>multipleCollapsible</code> option, after initialization:</p>
-<pre>
-//getter
-var multipleCollapsible = $("#element").accordion("option","multipleCollapsible");
+<p>Example of the accordion initialization with the <code class="highlighter-rouge">multipleCollapsible</code> option specified:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">({</span> <span class="na">multipleCollapsible</span><span class="p">:</span> <span class="kc">false</span><span class="p">});</span>
+</code></pre></div></div>
 
-//setter
-$("#element").tabs("option","multipleCollapsible",false);
-</pre>
+<p>Get or set the <code class="highlighter-rouge">multipleCollapsible</code> option, after initialization:</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//getter</span>
+<span class="kd">var</span> <span class="nx">multipleCollapsible</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">accordion</span><span class="p">(</span><span class="s2">"option"</span><span class="p">,</span><span class="s2">"multipleCollapsible"</span><span class="p">);</span>
 
-<h3 id="collaps_open"><code>openOnFocus</code></h3>
+<span class="c1">//setter</span>
+<span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">tabs</span><span class="p">(</span><span class="s2">"option"</span><span class="p">,</span><span class="s2">"multipleCollapsible"</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+</code></pre></div></div>
 
+<h3 id="collaps_open"><code class="highlighter-rouge">openOnFocus</code></h3>
 <p>For keyboard navigation defines if the accordion expands when the title gets in focus.</p>
 
 <p><strong>Type</strong>: Boolean</p>
@@ -880,13 +870,12 @@ $("#element").tabs("option","multipleCollapsible",false);
 <p>Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.</p>
 
 <p>The custom accordion methods are the following:</p>
-
 <ul>
-<li><a href="#meth_act">activate()</a></li>
-<li><a href="#meth_deact">deactivate()</a></li>
+  <li><a href="#meth_act">activate()</a></li>
+  <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3 id="meth_act"><code>activate(index)</code></h3>
+<h3 id="meth_act"><code class="highlighter-rouge">activate(index)</code></h3>
 <p>Activate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
@@ -894,13 +883,13 @@ $("#element").tabs("option","multipleCollapsible",false);
 <p>If no <code class="highlighter-rouge">index</code> is passed, all panels are activated.</p>
 
 <p>Code examples:</p>
-<pre>
-$( "#element" ).accordion( "activate" );
-$( "#element" ).accordion( "activate", 1 );
-$( "#element" ).accordion( "activate", [0,1]);
-</pre>
 
-<h3 id="meth_deact"><code>deactivate(index)</code></h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"activate"</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"activate"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"activate"</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<h3 id="meth_deact"><code class="highlighter-rouge">deactivate(index)</code></h3>
 <p>Deactivate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
@@ -909,11 +898,11 @@ $( "#element" ).accordion( "activate", [0,1]);
 
 <p>Code examples:</p>
 
-<pre>
-$( "#element" ).accordion( "deactivate" );
-$( "#element" ).accordion( "deactivate", 1 );
-$( "#element" ).accordion( "deactivate", [0,1]);
-</pre>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"deactivate"</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"deactivate"</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span> <span class="s2">"#element"</span> <span class="p">).</span><span class="nx">accordion</span><span class="p">(</span> <span class="s2">"deactivate"</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]);</span>
+</code></pre></div></div>
+
 
 			
 		</div>

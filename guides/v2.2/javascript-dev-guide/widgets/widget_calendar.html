@@ -721,22 +721,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>
 
-<p>The Calendar widget is a customized   <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span>
- <a href="http://api.jQueryui.com/datepicker/" target="_blank">Datepicker Widget</a> that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:</p>
+<p>The Calendar widget is a customized jQuery <a href="http://api.jqueryui.com/datepicker/">Datepicker Widget</a> that enables selecting a data using a pop-up or an in-line calendar. Calendar is also responsible for:</p>
 
 <ul>
-  <li>Merging the <a href="#fedg_calendar_config">global configuration</a> with the options that are passed from   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- when Calendar is initialized.</li>
+  <li>Merging the <a href="#fedg_calendar_config">global configuration</a> with the options that are passed from PHP when Calendar is initialized.</li>
   <li>Taking into account server time zone offset.</li>
   <li>Converting date and time formats to avoid inconsistency in Zend Date format and Datepicker format.</li>
   <li>Making the calendar initialization easier.</li>
-  <li>The Calendar   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/calendar.js" target="_blank">lib/web/mage/calendar.js</a>.</li>
+  <li>The Calendar widget source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/calendar.js">lib/web/mage/calendar.js</a>.</li>
 </ul>
 
 <h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
 
-<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
 
 <h2 id="fedg_calendar_config">Configure the calendar widget</h2>
 
@@ -753,19 +750,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Global configuration for calendar is stored in a jQuery object as a hash of properties. Having global configuration set enables specifying all translations and default options at once, and use it for all instances of calendar, and it enables usage of inline translation for the calendar. During initialization, the calendar widget merges the hash of options from the global configuration, and the options which are transferred from PHP, and then passes the merged options to datepicker.</p>
 
 <p>Example of setting global widget configuration follows:</p>
-<pre>require([
-  'jquery',
-  'mage/calendar'
-], function ( $ ) {
-  $.extend(true, $, {
-    calendarConfig: { ... }
-  });
-});
-</pre>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">require</span><span class="p">([</span>
+  <span class="s1">'jquery'</span><span class="p">,</span>
+  <span class="s1">'mage/calendar'</span>
+  <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">$</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="nx">$</span><span class="p">,</span> <span class="p">{</span>
+      <span class="na">calendarConfig</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h2 id="fedg_calendar_options">Options, methods, and events</h2>
-
-<p>Most options, methods, and events for the calendar widget correspond to the jQuery <a href="http://api.jqueryui.com/datepicker/" target="_blank">Datepicker Widget</a> options.</p>
+<p>Most options, methods, and events for the calendar widget correspond to the jQuery <a href="http://api.jqueryui.com/datepicker/">Datepicker Widget</a> options.</p>
 
 
 			

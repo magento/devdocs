@@ -731,39 +731,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento dropdownDialog   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  is a customization of the standard <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog</a>. As extra functionality it implements the following:</p>
 <ul>
-<li>triggering   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
+  <li>triggering   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
  for opening</li>
-<li>delaying to automatically close the drop-down on mouse out</li>
-<li>clicking outside the area closes the drop-down</li>
+  <li>delaying to automatically close the drop-down on mouse out</li>
+  <li>clicking outside the area closes the drop-down</li>
 </ul>
 
-<p>The dropdownDialog widget source is located in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.</p>
+<p>The dropdownDialog widget source is located in <a href="%7B%7B%20site.mage2000url%20%7D%7Dlib/web/mage/dropdown.js">lib/web/mage/dropdown.js</a>.</p>
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="%7B%7B%20page.baseurl%20%7D%7D/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
 
 <h2 id="dialog_options">Options</h2>
 
 <p>Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> options, plus several custom options:</p>
 <ul>
-<li><a href="#d_autoPosition">autoPosition</a></li>
-<li><a href="#d_autoSize">autoSize</a></li>
-<li><a href="#d_closeOnClickOutside">closeOnClickOutside</a></li>
-<li><a href="#d_closeOnMouseLeave">closeOnMouseLeave</a></li>
-<li><a href="#d_createTitleBar">createTitleBar</a></li>
-<li><a href="#d_defaultDialogClass">defaultDialogClass</a></li>
-<li><a href="#d_dialogContentClass">dialogContentClass</a></li>
-<li><a href="#d_parentClass">parentClass</a></li>
-<li><a href="#d_triggerClass">triggerClass</a></li>
-<li><a href="#d_triggerEvent">triggerEvent</a></li>
-<li><a href="#d_triggerTarget">triggerTarget</a></li>
+  <li><a href="#d_autoPosition">autoPosition</a></li>
+  <li><a href="#d_autoSize">autoSize</a></li>
+  <li><a href="#d_closeOnClickOutside">closeOnClickOutside</a></li>
+  <li><a href="#d_closeOnMouseLeave">closeOnMouseLeave</a></li>
+  <li><a href="#d_createTitleBar">createTitleBar</a></li>
+  <li><a href="#d_defaultDialogClass">defaultDialogClass</a></li>
+  <li><a href="#d_dialogContentClass">dialogContentClass</a></li>
+  <li><a href="#d_parentClass">parentClass</a></li>
+  <li><a href="#d_triggerClass">triggerClass</a></li>
+  <li><a href="#d_triggerEvent">triggerEvent</a></li>
+  <li><a href="#d_triggerTarget">triggerTarget</a></li>
 </ul>
 
 <p>Description of each option as follows below location.</p>
 
 <h3 id="d_autoPosition"><code>autoPosition</code></h3>
-<p>Specifies if the <a href="http://api.jqueryui.com/dialog/#option-position" target="_blank"><code>position</code></a> option is used for calculating the drop-down offset.</p>
+<p>Specifies if the <a href="http://api.jqueryui.com/dialog/#option-position"><code class="highlighter-rouge">position</code></a> option is used for calculating the drop-down offset.</p>
 
 <p>If set to <code class="highlighter-rouge">false</code> (default value), then <code class="highlighter-rouge">position</code> rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the <code class="highlighter-rouge">position</code> rules.</p>
 
@@ -771,84 +771,83 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h3 id="d_autoSize"><code>autoSize</code></h3>
+<h3 id="d_autoSize"><code class="highlighter-rouge">autoSize</code></h3>
 
-<p>Specifies if the size of the drop-down is defined by widget options (<a href="http://api.jqueryui.com/dialog/#option-height" target="_blank">height</a>, <a href="http://api.jqueryui.com/dialog/#option-width" target="_blank">width</a>, <a href="http://api.jqueryui.com/dialog/#option-minHeight" target="_blank">minHeight</a>, <a href="http://api.jqueryui.com/dialog/#option-minWidth" target="_blank">minWidth</a>).</p>
+<p>Specifies if the size of the drop-down is defined by widget options (<a href="http://api.jqueryui.com/dialog/#option-height">height</a>, <a href="http://api.jqueryui.com/dialog/#option-width">width</a>, <a href="http://api.jqueryui.com/dialog/#option-minHeight">minHeight</a>, <a href="http://api.jqueryui.com/dialog/#option-minWidth">minWidth</a>).</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h3 id="d_closeOnMouseLeave"><code>closeOnMouseLeave</code></h3>
+<h3 id="d_closeOnMouseLeave"><code class="highlighter-rouge">closeOnMouseLeave</code></h3>
 <p>Specifies if the drop-down is closed when mouse pointer is moved out.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
-<h3 id="d_closeOnClickOutside"><code>closeOnClickOutside</code></h3>
+<h3 id="d_closeOnClickOutside"><code class="highlighter-rouge">closeOnClickOutside</code></h3>
 <p>Specifies if the drop-down is closed on mouse click outside the drop-down.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
-<h3 id="d_createTitleBar"><code>createTitleBar</code></h3>
-<p>Defines if the <a href="http://api.jqueryui.com/dialog/#option-title" target="_blank">title</a> option is used for displaying the title bar.</p>
+<h3 id="d_createTitleBar"><code class="highlighter-rouge">createTitleBar</code></h3>
+<p>Defines if the <a href="http://api.jqueryui.com/dialog/#option-title">title</a> option is used for displaying the title bar.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h3 id="d_defaultDialogClass"><code>defaultDialogClass</code></h3>
+<h3 id="d_defaultDialogClass"><code class="highlighter-rouge">defaultDialogClass</code></h3>
 <p>Class that is added to the drop-down, when it gets initialized.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">mage-dropdown-dialog</code></p>
 
-<h3 id="d_dialogContentClass"><code>dialogContentClass</code></h3>
+<h3 id="d_dialogContentClass"><code class="highlighter-rouge">dialogContentClass</code></h3>
 <p>Class that is added/removed on drop-down content when it gets opened/closed.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="d_parentClass"><code>parentClass</code></h3>
+<h3 id="d_parentClass"><code class="highlighter-rouge">parentClass</code></h3>
 <p>Class that is added/removed for the dropdown parent, when the drop-down gets opened/closed.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="d_triggerClass"><code>triggerClass</code></h3>
+<h3 id="d_triggerClass"><code class="highlighter-rouge">triggerClass</code></h3>
 <p>Class that is added/removed on the trigger element when the drop-down gets opened/closed.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="d_triggerEvent"><code>triggerEvent</code></h3>
+<h3 id="d_triggerEvent"><code class="highlighter-rouge">triggerEvent</code></h3>
 <p>Name of the event that triggers the <code class="highlighter-rouge">open()</code> function for drop-down.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">click</code></p>
 
-<h3 id="d_triggerTarget"><code>triggerTarget</code></h3>
+<h3 id="d_triggerTarget"><code class="highlighter-rouge">triggerTarget</code></h3>
 <p>Element that triggers the drop-down.</p>
 
 <p><strong>Type</strong>:</p>
 
 <ul>
   <li>String</li>
-  <li><span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span>
- object</li>
+  <li>jQuery object</li>
 </ul>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="d_timeout"><code>timeout</code></h3>
+<h3 id="d_timeout"><code class="highlighter-rouge">timeout</code></h3>
 <p>The number of milliseconds until the dropdown is closed after mouse pointer moves out.</p>
 
 <p><strong>Type</strong>: Number</p>
@@ -856,18 +855,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><strong>Default value</strong>: 500</p>
 
 <h2 id="dialog_methods">Methods</h2>
-<p>Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">jQuery UI Dialog widget</a> methods, though some of them are customized.</p>
+<p>Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog widget</a> methods, though some of them are customized.</p>
 
 <p>Customized public methods:</p>
 <ul>
-<li><a href="#d_open">open()</a></li>
-<li><a href="#d_close">close()</a></li>
+  <li><a href="#d_open">open()</a></li>
+  <li><a href="#d_close">close()</a></li>
 </ul>
 
-<h3 id="d_open"><code>open()</code></h3>
+<h3 id="d_open"><code class="highlighter-rouge">open()</code></h3>
 <p>Beside default functionality, this method calls the <code class="highlighter-rouge">_mouseLeave()</code> and <code class="highlighter-rouge">_mouseEnter()</code> functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the <code class="highlighter-rouge">&lt;body&gt;</code> element.</p>
 
-<h3 id="d_close"><code>close()</code></h3>
+<h3 id="d_close"><code class="highlighter-rouge">close()</code></h3>
 <p>Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.</p>
 
 

@@ -711,8 +711,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="overview">Overview</h2>
 
-<p>This topic discusses   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
- modules and describes the role which RequireJS plays in Magento.</p>
+<p>This topic discusses JavaScript modules and describes the role which RequireJS plays in Magento.</p>
 
 <p>Magento uses AMD (asynchronous   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  definition) approach for JavaScript modules loading. Namely, Magento uses RequireJS and its <a href="http://requirejs.org/docs/api.html#config">standard syntax</a>.</p>
@@ -736,7 +735,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Lets look at an example, the Catalog module. In the <code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/base/requirejs-config.js</code> file we see the configuration variable:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
     <span class="na">map</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">'*'</span><span class="p">:</span> <span class="p">{</span>
             <span class="na">categoryForm</span><span class="p">:</span>       <span class="s1">'Magento_Catalog/catalog/category/form'</span><span class="p">,</span>
@@ -750,7 +749,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <span class="na">deps</span><span class="p">:</span> <span class="p">[</span>
         <span class="s1">'Magento_Catalog/catalog/product'</span>
     <span class="p">]</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">config</code> variable contains properties with the <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">deps</code> keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the <code class="highlighter-rouge">map</code> property contains an object with the keys that are aliases to files and values that are real paths to files.</p>
 
@@ -760,15 +760,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example of how aliases can be used. Open a browser console on any Magento page and type:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="nx">require</span><span class="p">([</span><span class="s1">'productGallery'</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">require</span><span class="p">([</span><span class="s1">'productGallery'</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
     <span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'productGallery'</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">gallery2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'Magento_Catalog/js/product-gallery'</span><span class="p">);</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span><span class="p">);</span> <span class="c1">// it does not return a simple type</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span> <span class="o">===</span> <span class="nx">gallery2</span><span class="p">);</span> <span class="c1">// they are the same</span></code></pre></figure>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span> <span class="o">===</span> <span class="nx">gallery2</span><span class="p">);</span> <span class="c1">// they are the same</span>
+</code></pre></div></div>
 
 <p>Tip: One more way that you can use <code class="highlighter-rouge">require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require.s.contexts._.config;
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> require.s.contexts._.config;</span>
 </code></pre></div></div>
 
 			

@@ -732,7 +732,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This topic describes the general concepts of how to work with   <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>
  components is organized in Magento.</p>
 
-<p>To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.</p>
+<p>To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library].</p>
 
 <p>RequireJS improves the perceived page load, time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.</p>
 
@@ -747,13 +747,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  level (<code class="highlighter-rouge">lib/web</code>). Resources located here are available in any place in Magento.</li>
   <li>Module level (<code class="highlighter-rouge">&lt;module_dir&gt;/view/&lt;areaname&gt;/web</code>). If the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  is enabled, resources added here are available in other modules and themes.</li>
-  <li>Theme level, for a particular module (<code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>). Resources added here are available for <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
-  <li>Theme level  (<code class="highlighter-rouge">&lt;theme_dir&gt;/web</code>). Resources added here are available for <a href="/guides/v2.3/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
+  <li>Theme level, for a particular module (<code class="highlighter-rouge">&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>). Resources added here are available for [inheriting] themes.</li>
+  <li>Theme level  (<code class="highlighter-rouge">&lt;theme_dir&gt;/web</code>). Resources added here are available for [inheriting] themes.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Library level can only contain core Magento resources. Do not put custom JS files in  the <code class="highlighter-rouge">lib/web</code> directory.</p>
-</div>
+<p class="bs-callout bs-callout-info">Library level can only contain core Magento resources. Do not put custom JS files in the `lib/web` directory.</p>
 
 <h3 id="specifying-js">Specifying JS</h3>
 <p>We recommend specifying JavaScript resources in the templates rather than in the   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
@@ -772,35 +770,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>File published to <code class="highlighter-rouge">pub/static</code>: <code class="highlighter-rouge">pub/static/frontend/Magento/&lt;theme&gt;/&lt;locale&gt;/Magento_Configurable/js/configurable.js</code>. Here <code class="highlighter-rouge">&lt;theme&gt;</code> and <code class="highlighter-rouge">&lt;locale&gt;</code> are the currently applied in your instance   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  and   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span>
 .</li>
-  <li>Called in script:</li>
+  <li>Called in script:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">require</span><span class="p">([</span><span class="s2">"Magento_ConfigurableProduct/js/configurable"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Configurable</span><span class="p">){</span>
+     <span class="p">});</span>
+</code></pre></div>    </div>
+
+    <div class="collapsible">
+  <b class="collapsible-title">Example 2 </b>
+  <div class="collapsible-content"><ul>
+<li>File actual location: <code class="highlighter-rouge">app/code/design/frontend/Magento/blank/web/js/theme.js</code></li>
+<li>File published to <code class="highlighter-rouge">pub/static</code>: <code class="highlighter-rouge">pub/static/frontend/Magento/&lt;theme&gt;/&lt;locale&gt;/js/theme.js</code></li>
+<li>Called in script:
+  <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">require</span><span class="p">([</span><span class="s2">"js/theme.js"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
+   <span class="p">});</span>
+</code></pre></div>    </div>
+</li>
+</ul></div></div>
+  </li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span><span class="s2">"Magento_ConfigurableProduct/js/configurable"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Configurable</span><span class="p">){</span>
-   <span class="p">});</span></code></pre></figure>
-
-<div class="collapsible">
-    <b class="collapsible-title">Example 2 </b>
-    <div class="collapsible-content"><ul>
-  <li>File actual location: <code class="highlighter-rouge">app/code/design/frontend/Magento/blank/web/js/theme.js</code></li>
-  <li>File published to <code class="highlighter-rouge">pub/static</code>: <code class="highlighter-rouge">pub/static/frontend/Magento/&lt;theme&gt;/&lt;locale&gt;/js/theme.js</code></li>
-  <li>Called in script:</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span><span class="s2">"js/theme.js"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(){</span>
-   <span class="p">});</span></code></pre></figure>
-</div>
-  </div>
+<p>&lt;/ul&gt;
+&lt;/div&gt;
+  &lt;/div&gt;</p>
 
 <div class="collapsible">
     <b class="collapsible-title">Example 3 </b>
     <div class="collapsible-content"><ul>
   <li>File actual location: <code class="highlighter-rouge">lib/web/jquery.js</code></li>
   <li>File published to <code class="highlighter-rouge">pub/static</code>: <code class="highlighter-rouge">pub/static/&lt;area&gt;/Magento/&lt;theme&gt;/&lt;locale&gt;/jquery.js</code></li>
-  <li>Called in script:</li>
+  <li>Called in script:
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">require</span><span class="p">([</span><span class="s2">"jquery"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+     <span class="p">});</span>
+</code></pre></div>    </div>
+  </li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span><span class="s2">"jquery"</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
-   <span class="p">});</span></code></pre></figure>
 </div>
   </div>
 
@@ -808,26 +810,28 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="m2devgde-js-resources-dependencies">Dependencies between JavaScript resources</h2>
 
-<p>To build a dependency on the third-party plugin, specify a <a href="http://requirejs.org/docs/api.html#config-shim" target="_blank">shim</a> in the following configuration files:</p>
-
+<p>To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:</p>
 <ul>
-  <li><code class="highlighter-rouge">requirejs-config.js</code></li>
+  <li>
+    <p><code class="highlighter-rouge">requirejs-config.js</code>
+     <code class="highlighter-rouge">javascript
+     var config = {
+       "shim": {
+         "3-rd-party-plugin": ["jquery"]
+       }
+     };
+    </code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&lt;third-party-plugin&gt;.js</code>
+     <code class="highlighter-rouge">javascript
+     !(function($){
+       // plugin code
+       // where $ == jQuery
+     })(jQuery);
+    </code></p>
+  </li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"shim"</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">"3-rd-party-plugin"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"jquery"</span><span class="p">]</span>
-  <span class="p">}</span>
-<span class="p">};</span></code></pre></figure>
-
-<ul>
-  <li><code class="highlighter-rouge">&lt;third-party-plugin&gt;.js</code></li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">!</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
-  <span class="c1">// plugin code</span>
-  <span class="c1">// where $ == jQuery</span>
-<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="requirejs-library">RequireJS library</h2>
 
@@ -840,42 +844,41 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>For the <code class="highlighter-rouge">adminhtml</code> <a href="/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>:</p>
 
     <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/view/adminhtml/layout/default.xml">app/code/Magento/Backend/view/adminhtml/layout/default.xml</a></p>
+    <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">layout=</span><span class="s">"admin-1column"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;head&gt;</span>
+         <span class="nt">&lt;title&gt;</span>Magento Admin<span class="nt">&lt;/title&gt;</span>
+         <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=1024"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"format-detection"</span> <span class="na">content=</span><span class="s">"telephone=no"</span><span class="nt">/&gt;</span>
+     <span class="c">&lt;!-- Here's the library included --&gt;</span>       
+     <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">"requirejs/require.js"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"extjs/resources/css/ext-all.css"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"extjs/resources/css/ytheme-magento.css"</span><span class="nt">/&gt;</span>
+     <span class="nt">&lt;/head&gt;</span>
+     <span class="nt">&lt;body&gt;</span>
+         <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">value=</span><span class="s">"html-body"</span><span class="nt">/&gt;</span>
+         <span class="c">&lt;!-- Here's the basic configuration file require_js.phtml specified --&gt;</span>   
+     <span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"require.js"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Block\Page\RequireJs"</span> <span class="na">template=</span><span class="s">"Magento_Backend::page/js/require_js.phtml"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"global.notices"</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Backend\Block\Page\Notices"</span> <span class="na">name=</span><span class="s">"global_notices"</span> <span class="na">as=</span><span class="s">"global_notices"</span> <span class="na">template=</span><span class="s">"page/notices.phtml"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/referenceContainer&gt;</span>
+         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"header"</span><span class="nt">&gt;</span>
+             ...
+     <span class="nt">&lt;/referenceContainer&gt;</span>
+         <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"after.body.start"</span><span class="nt">&gt;</span>
+             <span class="c">&lt;!-- Here's the main configuration file requirejs-config.js specified --&gt;</span>
+         <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\RequireJs\Block\Html\Head\Config"</span> <span class="na">name=</span><span class="s">"requirejs-config"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Translation\Block\Html\Head\Config"</span> <span class="na">name=</span><span class="s">"translate-config"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Translation\Block\Js"</span> <span class="na">name=</span><span class="s">"translate"</span> <span class="na">template=</span><span class="s">"Magento_Translation::translate.phtml"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Framework\View\Element\Js\Components"</span> <span class="na">name=</span><span class="s">"head.components"</span> <span class="na">as=</span><span class="s">"components"</span> <span class="na">template=</span><span class="s">"Magento_Backend::page/js/components.phtml"</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Framework\View\Element\Html\Calendar"</span> <span class="na">name=</span><span class="s">"head.calendar"</span> <span class="na">as=</span><span class="s">"calendar"</span> <span class="na">template=</span><span class="s">"Magento_Backend::page/js/calendar.phtml"</span><span class="nt">/&gt;</span>
+         <span class="nt">&lt;/referenceContainer&gt;</span>
+     <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/page&gt;</span>
+</code></pre></div>    </div>
   </li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">layout=</span><span class="s">"admin-1column"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:framework:View/Layout/etc/page_configuration.xsd"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;head&gt;</span>
-        <span class="nt">&lt;title&gt;</span>Magento Admin<span class="nt">&lt;/title&gt;</span>
-        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=1024"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"format-detection"</span> <span class="na">content=</span><span class="s">"telephone=no"</span><span class="nt">/&gt;</span>
-  	<span class="c">&lt;!-- Here's the library included --&gt;</span>       
-	<span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">"requirejs/require.js"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"extjs/resources/css/ext-all.css"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">"extjs/resources/css/ytheme-magento.css"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span>
-        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"id"</span> <span class="na">value=</span><span class="s">"html-body"</span><span class="nt">/&gt;</span>
-        <span class="c">&lt;!-- Here's the basic configuration file require_js.phtml specified --&gt;</span>   
-	<span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">"require.js"</span> <span class="na">class=</span><span class="s">"Magento\Backend\Block\Page\RequireJs"</span> <span class="na">template=</span><span class="s">"Magento_Backend::page/js/require_js.phtml"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"global.notices"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Backend\Block\Page\Notices"</span> <span class="na">name=</span><span class="s">"global_notices"</span> <span class="na">as=</span><span class="s">"global_notices"</span> <span class="na">template=</span><span class="s">"page/notices.phtml"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/referenceContainer&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"header"</span><span class="nt">&gt;</span>
-            ...
-	<span class="nt">&lt;/referenceContainer&gt;</span>
-        <span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">"after.body.start"</span><span class="nt">&gt;</span>
-            <span class="c">&lt;!-- Here's the main configuration file requirejs-config.js specified --&gt;</span>
-	    <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\RequireJs\Block\Html\Head\Config"</span> <span class="na">name=</span><span class="s">"requirejs-config"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Translation\Block\Html\Head\Config"</span> <span class="na">name=</span><span class="s">"translate-config"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Translation\Block\Js"</span> <span class="na">name=</span><span class="s">"translate"</span> <span class="na">template=</span><span class="s">"Magento_Translation::translate.phtml"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Framework\View\Element\Js\Components"</span> <span class="na">name=</span><span class="s">"head.components"</span> <span class="na">as=</span><span class="s">"components"</span> <span class="na">template=</span><span class="s">"Magento_Backend::page/js/components.phtml"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Framework\View\Element\Html\Calendar"</span> <span class="na">name=</span><span class="s">"head.calendar"</span> <span class="na">as=</span><span class="s">"calendar"</span> <span class="na">template=</span><span class="s">"Magento_Backend::page/js/calendar.phtml"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/referenceContainer&gt;</span>
-    <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/page&gt;</span></code></pre></figure>
-
-<ul>
-  <li>For the <code class="highlighter-rouge">frontend</code> area the similar configuration is located in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/layout/default.xml"><code class="highlighter-rouge">app/code/Magento/Theme/view/frontend/layout/default.xml</code></a>.</li>
+  <li>
+    <p>For the <code class="highlighter-rouge">frontend</code> area the similar configuration is located in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/layout/default.xml"><code class="highlighter-rouge">app/code/Magento/Theme/view/frontend/layout/default.xml</code></a>.</p>
+  </li>
 </ul>
 
 <h3 id="m2devgde-js-resources-mapping">Mapping JS resources</h3>
@@ -885,33 +888,27 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>All configurations are collected and executed in the following order:</p>
 
 <ol>
-<li>Library configurations.</li>
-
-<li>Configurations at the module level.</li>
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <p>Dependencies between the modules or themes are considered as well.</p>
-  </div>
-
-<li>Configurations at the theme module level for the ancestor themes.</li>
-
-<li>Configurations at the theme module level for a current theme.</li>
-
-<li>Configurations at the theme level for the ancestor themes.</li>
-
-<li>Configurations at the theme level for the current theme.</li>
+  <li>Library configurations.</li>
+  <li>Configurations at the module level.</li>
+  <li>Configurations at the theme module level for the ancestor themes.</li>
+  <li>Configurations at the theme module level for a current theme.</li>
+  <li>Configurations at the theme level for the ancestor themes.</li>
+  <li>Configurations at the theme level for the current theme.</li>
 </ol>
 
 <p>The <code class="highlighter-rouge">baseUrl</code> parameter for RequireJS is specified in the following files:</p>
 
 <ul>
-  <li>for the <code class="highlighter-rouge">frontend</code> area: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml">app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml</a></li>
-  <li>for the <code class="highlighter-rouge">adminhtml</code> area: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml">app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml</a></li>
+  <li>For the <code class="highlighter-rouge">frontend</code> area: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml">app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml</a></li>
+  <li>For the <code class="highlighter-rouge">adminhtml</code> area: <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml">app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml</a></li>
 </ul>
 
 <h2 id="related-reading">Related reading</h2>
 
-<p><a href="/guides/v2.3/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a></p>
+<p><a href="/guides/v2.3/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a>
+[RequireJS library]: http://requirejs.org
+[inheriting]: /guides/v2.3/frontend-dev-guide/themes/theme-inherit.html
+[shim]: http://requirejs.org/docs/api.html#config-shim</p>
 
 			
 		</div>

@@ -875,12 +875,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="logformatter">LogFormatter</h2>
 <p>The <code class="highlighter-rouge">LogFormatter</code> class is responsible for processing the message of the provided entry and for preparing its string representation that will be displayed by <code class="highlighter-rouge">LogOutputHandler</code>. It also verifies if the entry’s message is set in the template:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="p">{</span>
      <span class="nl">message</span><span class="p">:</span> <span class="s2">"Foo ${ $.property }"</span><span class="p">,</span>
      <span class="nx">data</span><span class="p">:</span> <span class="p">{</span>
          <span class="nl">property</span><span class="p">:</span> <span class="s2">"Bar"</span>
     <span class="p">}</span>
-<span class="p">}</span> <span class="c1">// =&gt; "Foo Bar"</span></code></pre></figure>
+<span class="p">}</span> <span class="c1">// =&gt; "Foo Bar"</span>
+</code></pre></div></div>
 
 <p><strong>Constructor:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/formatter.js</code> (<a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/logger/formatter.js">See on Github</a>)</p>
 
@@ -962,10 +963,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="consolelogger"><code class="highlighter-rouge">consoleLogger</code></h2>
 <p>An instance of the <code class="highlighter-rouge">Logger</code> class that is configured to display messages in the browser’s console with the default format. It also stores the last provided display level in <code class="highlighter-rouge">localStorage</code> and allows to work with a list of predefined messages instead of passing their text directly:</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">setDisplayLevel</span><span class="p">(</span><span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">levels</span><span class="p">.</span><span class="nx">ALL</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">setDisplayLevel</span><span class="p">(</span><span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">levels</span><span class="p">.</span><span class="nx">ALL</span><span class="p">);</span>
     <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">addMessage</span><span class="p">(</span><span class="s1">'VIRAL_MESSAGE'</span><span class="p">,</span> <span class="s1">'Hello World!'</span><span class="p">);</span>
     <span class="nx">consoleLogger</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">'VIRAL_MESSAGE'</span><span class="p">);</span>
-    <span class="c1">// console =&gt; [2017-04-07 01:36:24] [INFO] Hello World!</span></code></pre></figure>
+    <span class="c1">// console =&gt; [2017-04-07 01:36:24] [INFO] Hello World!</span>
+</code></pre></div></div>
 
 <p><strong>Path:</strong> <code class="highlighter-rouge">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/lib/logger/console-logger.js</code> (<a href="https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js">See on Github</a>)</p>
 
