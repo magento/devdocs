@@ -28,8 +28,8 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. This feature is available when you configure the following Static Content Deployment (SCD) settings in the `magento.env.yaml` configuration file.
 
-  -  [Enable static content deployment on the build phase]({{ page.baseurl }}/cloud/env/variables-build.html#skip_scd):  `SKIP_SCD=false`
-  -  [Enable on-demand static content generation]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand): `SCD_ON_DEMAND=true`
+   -  [Enable static content deployment on the build phase]({{ page.baseurl }}/cloud/env/variables-build.html#skip_scd):  `SKIP_SCD=false`
+   -  [Enable on-demand static content generation]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand): `SCD_ON_DEMAND=true`
 
 -  **Docker Compose for Cloud**—Improved the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process to launch a {{site.data.var.ece}} development environment in your local workspace. (Requires `ece-tools` version 2002.0.13 or later).
 
