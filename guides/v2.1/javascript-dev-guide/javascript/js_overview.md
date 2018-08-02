@@ -32,7 +32,7 @@ Terms used {#js_terms}
 | *Ui component*                        | JS component located in the `Magento_Ui` module, in the [app/code/Magento/Ui/view] directory. |
 | *jQuery UI widget*                    | A JS component/widget provided by [jQuery UI library used in Magento]. |
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget. |
-
+{:style="table-layout:auto"}
 
 [RequireJS file and module loader]: http://requirejs.org/
 [disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js
