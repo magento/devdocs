@@ -26,66 +26,69 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New in the `ece-tools` package
 
--  **Enable zero-downtime deployment**—<!--MAGECLOUD-2169-->Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. This feature is available when you configure the following Static Content Deployment (SCD) settings in the `magento.env.yaml` configuration file.
+-  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. This feature is available when you configure the following Static Content Deployment (SCD) settings in the `magento.env.yaml` configuration file.
 
-  -  [Enable static content deployment on the build phase]({{ page.baseurl }}/cloud/env/variables-build.html#skip_scdlink):  `SKIP_SCD=false`
+  -  [Enable static content deployment on the build phase]({{ page.baseurl }}/cloud/env/variables-build.html#skip_scd):  `SKIP_SCD=false`
   -  [Enable on-demand static content generation]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand): `SCD_ON_DEMAND=true`
 
 -  **Docker Compose for Cloud**—Improved the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process to launch a {{site.data.var.ece}} development environment in your local workspace. (Requires `ece-tools` version 2002.0.13 or later).
 
-   -  <!--MAGECLOUD-2356-->Added a command—`docker:config:convert` that converts PHP configuration files to Docker ENV files.
+   -  JIRA--MAGECLOUD-2359-->Added a command—`docker:config:convert` that converts PHP configuration files to Docker ENV files.
 
-   -  <!--MAGECLOUD--2357-->Split the {{site.data.var.ee}} installation process into separate build and deploy phases so that {{site.data.var.ece}} deploys to a read-only file system. During the build phase, the file system is writeable.
+   -  JIRA--MAGECLOUD--2357-->Split the {{site.data.var.ee}} installation process into separate build and deploy phases so that {{site.data.var.ece}} deploys to a read-only file system. During the build phase, the file system is writeable.
 
-- <!--MAGECLOUD-2363-->**Allow custom scripts in the build phase**—We split the build phase into two separate processes so that developers can use build hooks to update the generated content before packaging the {{site.data.var.ee}} application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* phase deploys the application. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+-  JIRA--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} support for third-party extensions**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file](({{ page.baseurl }}cloud//reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
 
--  **Cron scheduling improvements**—<!--MAGECLOUD-2445-->Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after the deploy phase completes.
+- JIRA--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ece}} application during the build phase**—We split the build phase into two separate processes so that you can apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* phase deploys the application. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+
+-  JIRA--MAGECLOUD-2445--> **Cron scheduling improvements**—Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after the deploy phase completes.
 
 -  **Environment configuration checks**—Improved validation of the environment configuration to proactively warn customers about version incompatibilities and configuration errors before building and deploying {{site.data.var.ece}}.
 
-   -  <!--MAGECLOUD-2183-->Added version-specific validation to identify unsupported or deprecated {{site.data.var.ece}} environment variables
-and values.
+   -  JIRA--MAGECLOUD-2183-->Added version-specific validation to identify unsupported or deprecated {{site.data.var.ece}} environment variables
+   and values.
 
-   -  <!--MAGECLOUD-2389-->Added an Elasticsearch compatibility check. Now, the deployment fails if the `.magento/services.yaml` file specifies an Elasticsearch version that is incompatible with the elasticsearch composer package used to install {{site.data.var.ee}} v2.1.4 and later. Previously, you could deploy with an unsupported version of the Elasticsearch service, which caused product catalog issues after site deployment. See [Setup Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
+   -  JIRA--MAGECLOUD-2389-->Added an Elasticsearch compatibility check. Now, the deployment fails if the `.magento/services.yaml` file specifies an Elasticsearch version that is incompatible with the elasticsearch composer package used to install {{site.data.var.ee}} v2.1.4 and later. Previously, you could deploy with an unsupported version of the Elasticsearch service, which caused product catalog issues after site deployment. See [Setup Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html).
 
-   -  <!--MAGECLOUD-2156-->Improved validation of environment variables to identify configuration settings that can cause conflicts during the {{site.data.var.ece}} build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static site content deployment conflicts with settings on the build or deploy phase.
+   -  JIRA--MAGECLOUD-2156-->Improved validation of environment variables to identify configuration settings that can cause conflicts during the {{site.data.var.ece}} build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static site content deployment conflicts with settings on the build or deploy phase.
 
 -  **Environment variable updates**—Changed the following environment variables:
 
-    -  <!--MAGECLOUD-2435-->**[SKIP_HTML_MINIFICATION global variable]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification)**—Changed the default value from `false` to `true` to enable the on-demand static content minification setting in the default environment configuration. This change decreases downtime significantly and is required for zero-downtime deployments. See [Global variables]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification).
+    -  JIRA--MAGECLOUD-2435-->**[SKIP_HTML_MINIFICATION global variable]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification)**—Changed the default value from `false` to `true` to enable the on-demand static content minification setting in the default environment configuration. This change decreases downtime significantly and is required for zero-downtime deployments. See [Global variables]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification).
 
-    -  <!--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Added the capability to clean static content files generated during the build phase and updated the default to clean static content by default (``CLEAN_STATIC_FILES=`true``). Previously, you could only clean static content files generated during the deploy phase.
+    -  JIRA--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Added the capability to clean static content files generated during the build phase and updated the default to clean static content by default (``CLEAN_STATIC_FILES=`true``). Previously, you could only clean static content files generated during the deploy phase.
 
 -  **Logging**-Made the following changes to improve log messages and reduce log size:
 
-   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures.
+   -  JIRA--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures.
 
-   -  <!--MAGECLOUD-2227-->Added logging for deployment failures that occur when the generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.
+   -  JIRA--MAGECLOUD-2209-->Added logging for deployment failures that occur when the generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.
 
-   -  <!--MAGECLOUD-2402-->Improved the deploy log to reduce log size and fix formatting issues caused by setup commands that used the interactive progress bar.
+   -  JIRA--MAGECLOUD-2402-->Improved the deploy log to reduce log size and fix formatting issues caused by setup commands that used the interactive progress bar.
 
-   -  <!--MAGECLOUD-2363-->Eliminated unnecessary verbosity and updated the priority levels for some log statements.
+   -  JIRA--MAGECLOUD-2227-->Eliminated unnecessary verbosity and updated the priority levels for some log statements.
 
 
 #### Resolved Issues
 
 -  **Cron-specific fixes**
 
-   -  <!--MAGECLOUD-2427-->Changed the default settings for cron job history lifetime from 3d to 1h to prevent performance issues and deployment failures that can occur when the cron queue fills too quickly.
+   -  JIRA--MAGECLOUD-2427-->Changed the default settings for cron job history lifetime from 3d to 1h to prevent performance issues and deployment failures that can occur when the cron queue fills too quickly.
 
-   -  <!--MAGECLOUD-2508-->Fixed an issue with the [`cron:unlock`]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) command so that it works in {{site.data.var.ee}} v2.1. Previously, the command was supported only in v2.2.
+   -  JIRA--MAGECLOUD-2508-->Fixed an issue with the [`cron:unlock`]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) command so that it works in {{site.data.var.ee}} v2.1. Previously, the command was supported only in v2.2.
 
--  <!--MAGECLOUD-2491-->Fixed a Sitemap processing issue in the `ece-tools` package that caused third-party extension conflicts after using the `ece-tools` package to apply recent patches that included Sitemap-related changes.
+-  JIRA--MAGECLOUD-2491-->Fixed a Sitemap processing issue in the `ece-tools` package that caused third-party extension conflicts after using the `ece-tools` package to apply recent patches that included Sitemap-related changes.
 
-- <!-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}cloud/env/variables-deploy.html#scd_compression_level) process (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
+- JIRA-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}cloud/env/variables-deploy.html#scd_compression_level) process (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
 
-- <!--MAGECLOUD-2097-->Fixed permission checks that caused `Missing write permissions` errors during the upgrade process.
+- JIRA--MAGECLOUD-2097-->Fixed permission checks that caused `Missing write permissions` errors during the upgrade process.
 
-- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified.
+- JIRA--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified.
 
--  <!--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if the updated `.magento.env.yaml` configuration file did not include the `engine` parameter value along with other updated values. Now, the merge operation correctly overwrites only the parameter values included in the updated `.magento.env.yaml` without requiring you to specify the `engine` parameter value.
+-  JIRA--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if the updated `.magento.env.yaml` configuration file did not include the `engine` parameter value along with other updated values. Now, the merge operation correctly overwrites only the parameter values included in the updated `.magento.env.yaml` without requiring you to specify the `engine` parameter value.
 
->>>>>>> Stashed changes
+-  JIRA-- MAGECLOUD-2515-->Fixed a Redis session locking issue that caused an Admin login delay. The fix is available for all versions of Magento v2.1 and v2.2.
+
 
 ## v2002.0.12
 
