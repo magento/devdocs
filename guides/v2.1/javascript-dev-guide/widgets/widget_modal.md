@@ -205,4 +205,4 @@ Called when the modal window is opened.
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
-[Javascript initialization]: %7B%7B%20page.baseurl%20%7D%7D/javascript-dev-guide/javascript/js_init.html
+[Javascript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
