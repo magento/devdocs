@@ -2,8 +2,6 @@
 group: jsdg
 subgroup: 3_Widgets
 title: Navigation widget
-menu_order: 11
-menu_title: Navigation widget
 version: 2.1
 github_link: javascript-dev-guide/widgets/widget_navigation.md
 redirect_from:
@@ -12,29 +10,27 @@ redirect_from:
 ---
 
 ## Overview
-Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento navigation extends the default functionality with the following:
-<ul>
-<li>Expanding all layers of the menu tree past the second layer.</li>
-<li>Limiting the maximum number of list items contained within the main navigation (overflow items are placed into a secondary navigation level).</li>
-<li>Method for handling the responsive {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the menu.</li>
-</ul>
+Magento navigation widget is a customized [jQuery UI Menu widget]. Magento navigation extends the default functionality with the following:
+-   Expanding all layers of the menu tree past the second layer.
+-   Limiting the maximum number of list items contained within the main
+    navigation (overflow items are placed into a secondary navigation
+    level).
+-   Method for handling the responsive layout of the menu.
 
-The navigation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
+The navigation widget source is [lib/web/mage/menu.js].
 
 ## Initialize the navigation widget {#navigation_init}
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 ## Options {#navigation_options}
 The navigation widget has the following options:
-<ul>
-<li><a href="#n_breakpoint">breakpoint</a></li>
-<li><a href="#n_container">container</a></li>
-<li><a href="#n_maxItems">maxItems</a></li>
-<li><a href="#n_moreText">moreText</a></li>
-<li><a href="#n_responsiveAction">responsiveAction</a></li>
-</ul>
+-   [breakpoint](#n_breakpoint)
+-   [container](#n_container)
+-   [maxItems](#n_maxItems)
+-   [moreText](#n_moreText)
+-   [responsiveAction](#n_responsiveAction)
 
-### <code>breakpoint</code> {#n_breakpoint}
+### `breakpoint` {#n_breakpoint}
 
 Width of user's window in px for which the menu switches between mobile view and desktop view.
 
@@ -42,7 +38,7 @@ Width of user's window in px for which the menu switches between mobile view and
 
 **Default value**: `768`
 
-### <code>container</code> {#n_container}
+### `container` {#n_container}
 
 Container to track the menu overflow on responsive navigation.
 
@@ -50,7 +46,7 @@ Container to track the menu overflow on responsive navigation.
 
 **Default value**: `#menu`
 
-### <code>maxItems</code> {#n_maxItems}
+### `maxItems` {#n_maxItems}
 
 The number of top level navigational items in main menu.
 
@@ -58,7 +54,7 @@ The number of top level navigational items in main menu.
 
 **Default value**: `null`
 
-### <code>moreText</code> {#n_moreText}
+### `moreText` {#n_moreText}
 
 Set the text for the overflow menu (i.e. more)
 
@@ -66,7 +62,7 @@ Set the text for the overflow menu (i.e. more)
 
 **Default value**: `more`
 
-### <code>responsiveAction</code> {#n_responsiveAction}
+### `responsiveAction` {#n_responsiveAction}
 
 The default responsive handler for the navigation widget.
 
@@ -78,14 +74,17 @@ The default responsive handler for the navigation widget.
 
 
 ## Methods {#navigation_methods}
-<ul>
-<li><a href="#nav_setMaxItems">setMaxItems()</a></li>
-<li><a href="#nav_setupMoreMenu">setupMoreMenu()</a></li>
-</ul>
+-   [setMaxItems()](#nav_setMaxItems)
+-   [setupMoreMenu()](#nav_setupMoreMenu)
 
 
-### <code>setMaxItems()</code> {#nav_setMaxItems}
+### `setMaxItems()` {#nav_setMaxItems}
 Moves the list items that are more than the total max item number set by the user option.
 
-### <code>setupMoreMenu()</code> {#nav_setupMoreMenu}
+### `setupMoreMenu()` {#nav_setupMoreMenu}
 Builds the more overflowing menu by cloning the main menu items.
+
+
+[jQuery UI Menu widget]: http://api.jqueryui.com/menu/
+[lib/web/mage/menu.js]: {{site.mage2000url}}lib/web/mage/menu.js
+[Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
