@@ -27,7 +27,7 @@ The `ece-tools` package provides a `docker:build` command to generate the Docker
 
 ## Launch Docker configuration
 
-You can use the `ece-tools` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
+You can use the `ece-tools` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
 -  If you use `ece tools` v2002.0.13 or later, {{site.data.var.ece}} deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
@@ -64,7 +64,7 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     cp docker/global.php.dist docker/global.php
     ```
 
-1. Convert Docker environment configuration files from the raw configs.
+1. Convert the PHP configuration files to Docker ENV files.
 
     ```bash
     vendor/bin/ece-tools docker:config:convert
@@ -95,7 +95,11 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     docker-compose run deploy cloud-deploy
     ```
 
-1.  Open the `http://localhost:8080` URL in a browser to access your local Magento Cloud template.
+1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+
+    -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
+
+    -  [`https://localhost`](https://localhost){:target="\_blank"}
 
 
 #### To launch Docker with `ece-tools` v2002.0.12 and later:
@@ -138,7 +142,11 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     docker-compose run cli magento-installer
     ```
 
-1.  Open the `http://localhost:8080` URL in a browser to access your local Magento Cloud template.
+1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+
+    -  [`http://localhost:8080`](http://localhost:8080){:target="\_blank"}
+
+    -  [`https://localhost`](https://localhost){:target="\_blank"}
 
 
 ## Stop and remove the Docker configuration
