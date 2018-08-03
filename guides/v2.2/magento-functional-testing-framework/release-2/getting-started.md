@@ -213,7 +213,7 @@ See more commands in [`mftf`] and [`codecept`].
 The testing reports are generated in a CLI during testing.
 
 To generate the reports in HTML, use [Allure].
-For example, to generate the reports when you are in the `magento2 root directory`, run:
+For example, to generate the reports when you are in the `magento2` project root, run:
 
 ```bash
 allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/tests/acceptance/tests/_output/allure-report/ --clean
