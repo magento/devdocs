@@ -30,7 +30,7 @@ To create an integration, follow these general steps:
 4. [Check the integration.](#check)
 5. [Integrate with your application.](#integrate)
 
-<h2 id="skeletal">Create a skeletal module</h2>
+## Create a skeletal module {#skeletal}
 
 To develop a module, you must:
 
@@ -192,7 +192,7 @@ The process for customizing your module includes
 * [Pre-configure the integration](#preconfig)
 
 
-<h3 id="resources">Define the required resources</h3>
+### Define the required resources {#resources}
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
 Also, you can define your own `etc/acl.xml` file with a custom resource.
 
@@ -209,7 +209,7 @@ Also, you can define your own `etc/acl.xml` file with a custom resource.
 </config> 
 ```
 
-<h3 id="preconfig">Pre-configure the integration</h3>
+### Pre-configure the integration {#preconfig}
 
 Your module can optionally provide a configuration file `integration.xml` so that the integration can be automatically pre-configured with default values.
 To enable this feature, create the `integration.xml` file in the `etc` directory.
@@ -271,7 +271,7 @@ In the following example, the test integration requires access to the following 
 <td>The name of specific resource like `Magento_Sales::reorder`</td>
 </tr>
 </table>
-<h2 id="install">Install your module</h2>
+## Install your module {#install}
 Use the following steps to install your module:
 
 1. Run the following command to update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data.
@@ -282,7 +282,7 @@ Use the following steps to install your module:
 
     <code>bin/magento setup:di:compile</code>
 
-<h2 id="check">Check your integration</h2>
+## Check your integration {#check}
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
 
 ## Integrate with your application {#integrate}

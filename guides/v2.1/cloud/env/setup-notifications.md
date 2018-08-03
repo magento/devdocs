@@ -47,9 +47,8 @@ To configure notifications:
           min_level: "notice"
     ```
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    {:.bs-callout .bs-callout-info}
     {{site.data.var.ece}} only sends emails during the deployment phase.
-    </div>
 
 1. Commit and push your changes to the remote server.
 
@@ -78,9 +77,8 @@ log:
 ### Example email configuration
 The following example shows an email-only configuration:
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 {{site.data.var.ece}} only sends emails during the deployment phase.
-</div>
 
 ```yaml
 log:

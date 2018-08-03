@@ -60,3 +60,11 @@ When you activate the **Enable Javascript Bundling** option, you allow Magento t
 * Activating the HTTP2 protocol can be a good alternative to using JS bundling. The protocol provides pretty much the same benefits.
 * We do not recommend using deprecated settings like merging JS and CSS files, as they were designed only for synchronously-loaded JS in the HEAD section of the page. Using this technique can cause bundling and requireJS logic to work incorrectly.
 </div>
+
+## Database maintenance schedule {#database}
+
+We recommend performing periodic database backups for your Staging and Production instances. Due to the I/O intensive nature of backup operations, you may encounter slower backups and potential issues. Running database processes for multiple environments at the same time may potentially run slower due to contention for available resources.
+
+For better performance, schedule your backups to run in succession, one at a time, at off-peak times. This method avoids I/O contention and reduces time to complete, especially for smaller instances, larger databases, and so on.
+
+For example, we recommend scheduling a backup of your Production database followed up by the Staging database when your stores encounter lower visits. 

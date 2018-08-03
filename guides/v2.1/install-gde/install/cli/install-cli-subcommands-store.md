@@ -13,7 +13,7 @@ functional_areas:
 ---
 
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
@@ -25,7 +25,7 @@ Before you run this command, you must do all of the following *or* you must <a h
 
 {% include install/fully-secure.md %}
 
-<h2 id="instgde-cli-storeconfig">Configure the store</h2>
+## Configure the store {#instgde-cli-storeconfig}
 Command usage:
 
 	magento setup:store-config:set [--<parameter_name>=<value>, ...]

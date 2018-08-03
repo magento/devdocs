@@ -14,7 +14,7 @@ redirect_from:
 ---
 
 
-<h2 id="wsdl">WSDL File</h2>
+## WSDL File {#wsdl}
 
 A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.
 
@@ -93,7 +93,7 @@ Service names use the following conventions:
 </tbody>
 </table>
 
-<h2 id="auth">Authentication</h2>
+## Authentication {#auth}
 
 Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 
@@ -115,7 +115,7 @@ $soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $con
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
 
-<h2 id="related">Related topics</h2>
+## Related topics {#related}
 * <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 * <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 * <a href="{{ page.baseurl }}/soap/bk-soap.html">SOAP Reference</a>

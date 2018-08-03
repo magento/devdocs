@@ -456,7 +456,7 @@ To do this, take the following steps:
 2.  Copy the exported files to the non-production code base.
 3.  Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
-<h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
+## Troubleshooting the static view files deployment tool {#view-file-trouble}
 <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:

@@ -17,9 +17,8 @@ All environments are in PaaS (Platform-as-a-Service) containers. These container
 
 You can use any development and branching methodology you like. We strongly recommend creating a Staging environment and branch as one of the Integration environments.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The following architecture information uses an architecture including Production, Staging, and Integration environments.
-</div>
 
 ![High-level view of Starter project]({{ site.baseurl }}/common/images/cloud_arch-starter.png)
 
@@ -39,9 +38,8 @@ Additional sections in this guide provide instructions and walk-throughs for fin
 
 We walk you through [deploying to Staging]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [testing your store(s)]({{ page.baseurl }}/cloud/live/stage-prod-test.html) requirements and processes.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning}
 We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html) and [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
-</div>
 
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test:
@@ -55,9 +53,8 @@ You have up to **two** active environments on a grid for **two** active Git bran
 
 You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info}
 The Integration environment does not support all services. For example, the Fastly CDN and New Relic is not accessible in an Integration environment.
-</div>
 
 The process for developing in Integration requires the following process:
 

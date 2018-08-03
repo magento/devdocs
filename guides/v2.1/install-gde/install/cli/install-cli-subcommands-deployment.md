@@ -13,14 +13,14 @@ functional_areas:
   - Deploy
 ---
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
+## Prerequisites {#instgde-cli-subcommands-configphp-prereq}
 There are no prerequisites for using this command.
 
-<h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
+## Create or update the Magento deployment configuration {#instgde-cli-subcommands-configphp}
 <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
 
 You can use this command if:
@@ -136,5 +136,5 @@ If applicable, continue your Magento software installation:
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">Command line installation</a>
 *	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard installation</a>
 
-<!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
+<!-- ## About enabling and disabling modules {#instgde-cli-subcommands-dep-config-enable-modules}
 {% include install/enable-disable-modules.html %} -->

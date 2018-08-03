@@ -43,7 +43,7 @@ See one of the following sections for more information:
 *	<a href="#fedg_rwd_js_nav">menu.js</a>
 
 
-<h2 id="fedg_rwd_js_resp">responsive.js</h2>
+## responsive.js {#fedg_rwd_js_resp}
 
 The <code>responsive.js</code> script implements specific responsive functions for the Blank and Luma themes. To manipulate JavaScript for the desktop or mobile view, <code>responsive.js</code> calls the <code>mediaCheck()</code> anonymous function from <code>matchMedia.js</code>.
 
@@ -74,7 +74,7 @@ For example, <code>responsive.js</code> changes the view of the {% glossarytoolt
 </ul>
 
 
-<h2 id="fedg_rwd_js_nav">menu.js</h2>
+## menu.js {#fedg_rwd_js_nav}
 
 
 In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
@@ -94,7 +94,7 @@ The following image illustrates the mobile-view navigation menu.
 <img style="border: 1px solid #ABABAB" src="{{ site.baseurl }}/common/images/js_rwd_menu.png">
 
 
-<h2 id="rwd_js_reuse">Re-using Magento scripts in your theme</h2>
+## Re-using Magento scripts in your theme {#rwd_js_reuse}
 
 You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 If your theme inherits from Blank or Luma, you do not even need to additionally include the script files in your theme.
