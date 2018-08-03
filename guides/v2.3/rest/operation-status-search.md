@@ -17,7 +17,7 @@ You can specify any of the following fields to filter on operation statuses:
  * `start_time` - The time that a bulk operation started.
  * `status` - The operation status:
    * `1` = Complete
-   * `2` = The operation failed, but you can try to perform it again 
+   * `2` = The operation failed, but you can try to perform it again.
    * `3` = The operation failed. You must change something to retry it.
    * `4` = Open
    * `5` = Rejected
@@ -27,7 +27,7 @@ You can specify any of the following fields to filter on operation statuses:
 
 **Sample usage**
 
-The following call returns bulk operations that contain a non-retriable error.
+The following call returns bulk operations that contain an error that cannot be retried.
 
 ``` 
 GET http://<magento_host>/rest/V1/bulk/?
