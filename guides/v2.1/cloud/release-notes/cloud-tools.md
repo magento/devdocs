@@ -26,20 +26,19 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. This feature is available when you configure the following Static Content Deployment (SCD) settings in the `magento.env.yaml` configuration file. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
+-  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
 
+-  **Docker Compose for Cloud**—Made the following improvements to the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process:
 
--  **Docker Compose for Cloud**—Improved the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process to launch a {{site.data.var.ece}} development environment in your local workspace. (Requires `ece-tools` version 2002.0.13 or later).
+   -  JIRA--MAGECLOUD-2359-->Added sample PHP configuration files and a command—`docker:config:convert` to simplify environment configuration. Now, you configure environment variables in the sample PHP configuration files and transform those files to Docker ENV files.
 
-   -  JIRA--MAGECLOUD-2359-->Now you can manage environment variables more easily by customizing sample PHP configuration files and transforming those files to Docker ENV files using the new `docker:config:convert` command.
+   -  JIRA--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
 
-   -  JIRA--MAGECLOUD--2357-->Now the {{site.data.var.ece}} installation process supports deploying to both read-only and  read-write file systems. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
+   -  JIRA--MAGECLOUD--2442-->Redis service support—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
 
-   -  JIRA--MAGECLOUD--2442-->Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
+   -  JIRA--MAGECLOUD--2358-->Varnish service support— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
 
-   -  JIRA--MAGECLOUD--2358-->Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
-
-   -  JIRA--MAGECLOUD--2360-->Added SSL support to access your local site and Admin panel.
+   -  JIRA--MAGECLOUD--2360-->Secure site access—Added SSL support to access your store {{site.data.var.ece}} and Admin panel.
 
 -  JIRA--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} support for third-party extensions**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
 
@@ -197,7 +196,7 @@ The ece-tools version 2002.0.11 now supports Magento 2.1.13.
 
 -  <!-- MAGECLOUD-982 -->We fixed an issue that involved a locally applied patch breaking the deployment on an instance. Now, ECE-Tools can detect that a patch has been applied.
 
--  <!-- MAGECLOUD-1735 -->Fixed a conflict between JavaScript bundling and GZIP functionality. Now these features work correctly together.
+-  <!-- MAGECLOUD-1735 -->Fixed a conflict between JavaScript bundling and Gzip functionality. Now these features work correctly together.
 
 -  <!-- MAGECLOUD-1744 -->Fixed an issue that caused ece-tools CLI commands to fail when using earlier PHP 7.0.x versions.
 
@@ -367,3 +366,4 @@ This package is no longer compatible with other versions of {{site.data.var.ece}
 
 ### Initial release
 Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
+ar.ece}} 2.2.0.

@@ -25,24 +25,24 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. This feature is available when you configure the following Static Content Deployment (SCD) settings in the `magento.env.yaml` configuration file. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
+-  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
 
--  **Docker Compose for Cloud**—Improved the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process to launch a {{site.data.var.ece}} development environment in your local workspace. (Requires `ece-tools` version 2002.0.13 or later).
+-  **Docker Compose for Cloud**—Made the following improvements to the [Docker setup and configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process:
 
-   -  JIRA--MAGECLOUD-2359-->Now you can manage environment variables more easily by customizing sample PHP configuration files and transforming those files to Docker ENV files using the new `docker:config:convert` command.
+   -  JIRA--MAGECLOUD-2359-->Added sample PHP configuration files and a command—`docker:config:convert` to simplify environment configuration. Now, you can configure environment variables in PHP configuration files, and then convert them to Docker ENV files.
 
-   -  JIRA--MAGECLOUD--2357-->Added the capability to deploy {{site.data.var.ee}} to a read-only file system. During the build phase, the file system is writeable. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
+   -  JIRA--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
 
-   -  JIRA--MAGECLOUD--2442-->Added a Redis image, which is deployed and configured automatically to work with your Docker installation.
+   -  JIRA--MAGECLOUD--2442-->Redis service support—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
 
-   -  JIRA--MAGECLOUD--2358-->Added a Varnish image, which is deployed automatically and can be manually configured following Magento best practices. See [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
+   -  JIRA--MAGECLOUD--2358-->Varnish service support— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html).
 
-   -  JIRA--MAGECLOUD--2360-->Added SSL support to access your local site and Admin panel.
+   -  JIRA--MAGECLOUD--2360-->Secure site access—Added SSL support to access your store {{site.data.var.ece}} and Admin panel.
 
 
 -  JIRA--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} support for third-party extensions**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
 
-- JIRA--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ece}} application during the build phase**—We split the build phase into two separate processes so that you can apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process deploys the application. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+- JIRA--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ece}} application during the build phase**—We split the build phase into two separate processes so that you can apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process deploys the application. See [Application hooks]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
 
 -  JIRA--MAGECLOUD-2445-->**Cron scheduling improvements**—Improved cron job management during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after the deploy phase completes.
 
@@ -58,7 +58,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
    -  JIRA--MAGECLOUD-2435-->**[SKIP_HTML_MINIFICATION global variable]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification)**—Changed the default value to `true` to enable on-demand HTML content minification, which minimizes downtime when deploying to Staging and Production environments. This configuration is required for zero-downtime deployments.
 
-   -  JIRA--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Added the capability to clean static content files generated during the build phase if the `CLEAN_STATIC_SITE` environment variable is enabled in the `deploy` section of the `.magento.env.yaml` file. Previously, this variable only affected static content files generated during the deploy phase.
+   -  JIRA--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Now you can disable the CLEAN_STATIC_SITE environment variable to prevent static content from being overwritten during the {{site.data.var.ece}} deployment. When `CLEAN_STATIC_FILES` is disabled, the deployment process only overwrites updates to existing files. Use this setting if you deploy static content using a separate process.
 
 -  **Logging**-Made the following changes to improve log messages and reduce log size:
 
@@ -81,7 +81,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 Now you can easily move your configuration files between environments. After updating to `ece-tools` v2002.0.13, regenerate
 older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
-- JIRA--MAGECLOUD-2556>Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from a ```www``` to an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain (also referred to as a *naked* domain).
+- JIRA--MAGECLOUD-2556>Fixed an issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from a www domain to an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain (also referred to as a *naked* domain).
 
 -  JIRA--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if you do not include the `engine` parameter in the updated `.magento.env.yaml` configuration file. Now, the merge operation correctly overwrites only the values you specify in the updated `.magento.env.yaml` without requiring you to set the `engine` parameter.
 
