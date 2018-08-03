@@ -671,24 +671,21 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
 <ul>
   <li><code class="highlighter-rouge">exampleadminnewpage</code> - This is the <code class="highlighter-rouge">frontName</code>. Because its purpose is to help route requests to the correct module, we give it the same name as the module, but this is not required.</li>
   <li><code class="highlighter-rouge">helloworld</code> - This specifies the name of the controller to use.</li>
-  <li>
-    <p><code class="highlighter-rouge">index</code> - In the XML file, since the action for the controller is not specified, Magento uses the default value <code class="highlighter-rouge">index</code>.</p>
-
-    <div class="collapsible">
-  <b class="collapsible-title">File content for menu.xml </b>
-  <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version="1.0"?&gt;</span>
-  <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Backend:etc/menu.xsd"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;menu&gt;</span>
-        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span> <span class="na">title=</span><span class="s">"Greetings"</span> <span class="na">translate=</span><span class="s">"title"</span> <span class="na">module=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">parent=</span><span class="s">"Magento_Backend::content"</span> <span class="na">sortOrder=</span><span class="s">"50"</span> <span class="na">dependsOnModule=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">resource=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings_helloworld"</span> <span class="na">title=</span><span class="s">"Hello World"</span> <span class="na">translate=</span><span class="s">"title"</span> <span class="na">module=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">parent=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">dependsOnModule=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">action=</span><span class="s">"exampleadminnewpage/helloworld"</span> <span class="na">resource=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/menu&gt;</span>
-  <span class="nt">&lt;/config&gt;</span>
-</code></pre></figure>
-</div></div>
-  </li>
+  <li><code class="highlighter-rouge">index</code> - In the XML file, since the action for the controller is not specified, Magento uses the default value <code class="highlighter-rouge">index</code>.</li>
 </ul>
-<p>&lt;/div&gt;
-  &lt;/div&gt;</p>
+
+<div class="collapsible">
+    <b class="collapsible-title">File content for menu.xml </b>
+    <div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="cp">&lt;?xml version="1.0"?&gt;</span>
+    <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">"urn:magento:module:Magento_Backend:etc/menu.xsd"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;menu&gt;</span>
+          <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span> <span class="na">title=</span><span class="s">"Greetings"</span> <span class="na">translate=</span><span class="s">"title"</span> <span class="na">module=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">parent=</span><span class="s">"Magento_Backend::content"</span> <span class="na">sortOrder=</span><span class="s">"50"</span> <span class="na">dependsOnModule=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">resource=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span><span class="nt">/&gt;</span>
+          <span class="nt">&lt;add</span> <span class="na">id=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings_helloworld"</span> <span class="na">title=</span><span class="s">"Hello World"</span> <span class="na">translate=</span><span class="s">"title"</span> <span class="na">module=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">parent=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span> <span class="na">sortOrder=</span><span class="s">"10"</span> <span class="na">dependsOnModule=</span><span class="s">"MyCompany_ExampleAdminNewPage"</span> <span class="na">action=</span><span class="s">"exampleadminnewpage/helloworld"</span> <span class="na">resource=</span><span class="s">"MyCompany_ExampleAdminNewPage::greetings"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/menu&gt;</span>
+    <span class="nt">&lt;/config&gt;</span>
+  </code></pre></figure>
+</div>
+  </div>
 
 <h4 class="no_toc" id="etcadminhtmlroutesxml"><code class="highlighter-rouge">etc/adminhtml/routes.xml</code></h4>
 <p>Under <code class="highlighter-rouge">etc/adminhtml</code> create the file <code class="highlighter-rouge">routes.xml</code>. The contents of this  XML file tells Magento to route requests that use the <code class="highlighter-rouge">frontName</code> <code class="highlighter-rouge">exampleadminnewpage</code> to this module.</p>
