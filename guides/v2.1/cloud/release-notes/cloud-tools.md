@@ -26,13 +26,13 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 #### New features
 
--  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now you can configure {{site.data.var.ece}} to queue requests with required database changes during deployment and apply the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
+-  JIRA--MAGECLOUD-2169-->**Enable zero-downtime deployment**—Now {{site.data.var.ece}} queues requests with required database changes during deployment and applies the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See [Static content deployment options to reduce deployment downtime on Cloud](https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud){:target="\_blank"}.
 
 -  **Docker Compose for Cloud**—Made the following improvements to the [Docker configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process:
 
    -  JIRA--MAGECLOUD-2359-->Added sample PHP configuration files and a command—`docker:config:convert` to simplify environment configuration. Now, you configure environment variables in the sample PHP configuration files and transform those files to Docker ENV files.
 
-   -  JIRA--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
+   -  JIRA--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems to more closely emulate the Cloud file system. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
 
    -  JIRA--MAGECLOUD--2442-->Redis service support—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.
 
@@ -42,7 +42,11 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  JIRA--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} support for third-party extensions**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
 
-- JIRA--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ece}} application during the build phase**—We split the build phase into two separate processes so that you can apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process deploys the application. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+- JIRA--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ece}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process deploys the application. If you have existing hooks, you need to update them to use the new functionality. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+
+  If you generated `config.php` files using earlier versions of the `ece-tools` package, update to `ece-tools` v2002.0.13 and regenerate the files using the improved command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
+
+.magento.app.yaml has new build and deploy hooks. As part of your upgrade, you should update the .magento.app.yaml file with new build and deploy hooks and a set of environment variables.
 
 -  JIRA--MAGECLOUD-2445--> **Cron scheduling improvements**—Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after deployment completes.
 
@@ -59,7 +63,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
    -  JIRA--MAGECLOUD-2435-->**[SKIP_HTML_MINIFICATION global variable]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification)**—Changed the default value to `true` to enable on-demand HTML content minification, which minimizes downtime when deploying to Staging and Production environments. This configuration is required for zero-downtime deployments.
 
-    -  JIRA--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Added the capability to clean static content files generated during the build phase if the `CLEAN_STATIC_SITE` environment variable is enabled in the `deploy` section of the `.magento.env.yaml` file. Previously, this variable only affected static content files generated during the deploy phase.
+   -  JIRA--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Added the capability to manage the clean static files processing for static content generated during the build phase based on the CLEAN_STATIC_FILES environment variable setting. Previously, static content files generated during the build phase were not cleaned, which can cause errors and performance issues after deploying content to your site.
 
 -  **Logging**-Made the following changes to improve log messages and reduce log size:
 
