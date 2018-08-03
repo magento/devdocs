@@ -21,7 +21,7 @@ This tutorial builds upon the workflow described in the [Order Processing with R
 
 For more information about MSI, see the [MSI wiki](https://github.com/magento-engcom/msi/wiki/Overview){:target="_blank"}.
 
-This **12-step tutorial** generally takes **1 hour**.
+This **13-step tutorial** generally takes **1 hour**.
 
 {:.bs-callout .bs-callout-info}
 Order Processing with MSI tutorial does not currently use the Luma sample store.

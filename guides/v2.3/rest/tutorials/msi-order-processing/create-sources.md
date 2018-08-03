@@ -17,6 +17,8 @@ functional_areas:
 
 **Sources** are the physical locations from which you manage product inventory and ship orders. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers. MSI leverages the quantities and salable quantities per stock and manages inventory amounts automatically for managed products and orders. Virtual and downloadable products can also be assigned to a source.
 
+For more information about sources, see the Wiki topic [Create sources](https://github.com/magento-engcom/msi/wiki/Create-Sources){:target="_blank"}.
+
 ## Create the first source
 
 The `POST V1/inventory/sources` endpoint creates a source. The `name`, `source_code`, `country_id`, and `postcode` attributes are required.

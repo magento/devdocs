@@ -17,6 +17,9 @@ functional_areas:
 
 **Stock** represents a virtual, aggregated inventory of products for sources of your sales channels. Each stock maps sales channels with sources to determine available inventories and salable quantities.
 
+For more information about stock, see the Wiki topic [Create stock](https://github.com/magento-engcom/msi/wiki/Create-Stock){:target="_blank"}.
+
+
 ## Create the stock for North America
 
 The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code`attributes are required.
