@@ -76,8 +76,7 @@ Optional, defaults to `false`. Specifies whether the path key should be interpre
 
 In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
 
-{% highlight yaml %}
-
+```yaml
 http://{default}/:
     type: upstream
     redirects:
@@ -85,7 +84,7 @@ http://{default}/:
           "/regexp/(.*)/match":
           to: "http://example.com/$1"
           regexp: true
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -96,7 +95,7 @@ Specifies whether or not to redirect both the path and all its children or just 
 
 For example,
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
        redirects:
@@ -104,7 +103,7 @@ http://{default}/:
           "/from":
           to: "http://{default}/to"
           partial: true
-{% endhighlight %}
+```
 
 In the preceding example, if `partial` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
 
@@ -119,7 +118,7 @@ Determines if the suffix is carried over with the redirect. Defaults to `true`, 
 
 For example,
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
     redirects:
@@ -127,7 +126,7 @@ http://{default}/:
           "/from":
           to: "http://{default}/to"
           append_suffix: false
-{% endhighlight %}
+```
 
 The preceding example results in `/from/path/suffix` redirecting to just `/to`.
 
@@ -141,7 +140,7 @@ Specifies the HTTP status code. Valid status codes are [`301` (Moved Permanently
 ### `expires` {#cloud-route-partial-expires}
 Optional, the duration the redirect will be cached. Defaults to the `expires` value defined directly under the `redirects` key, but at this level we can fine-tune the expiration of individual partial redirects:
 
-{% highlight yaml %}
+```yaml
 http://{default}/:
     type: upstream
     redirects:
@@ -149,6 +148,6 @@ http://{default}/:
        paths:
           "/from": { "to": "http://example.com/" }
           "/here": { "to": "http://example.com/there", "expires": "2w" }
-{% endhighlight %}
+```
 
 In the preceding example, redirects from `/from` expire in one day, but redirects from `/here` expire in two weeks.

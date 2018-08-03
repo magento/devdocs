@@ -1,17 +1,17 @@
 ---
 group: cloud
-title: Update ECE-tools version
+title: Update ece-tools version
 version: 2.1
 github_link: cloud/project/ece-tools-update.md
 functional_areas:
   - Cloud
   - Upgrade
 ---
-Typically, an _update_ includes patches and available hotfixes as part of the `magento-cloud-metapackage`. If you still use a version of {{site.data.var.ece}} that does not contain the `ece-tools` package, then your project requires an [upgrade]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
+Typically, an _update_ includes patches and available hotfixes as part of the `magento-cloud-metapackage`. If you still use a version of {{site.data.var.ece}} that does not contain the `{{site.data.var.ct}}` package, then your project requires an [upgrade]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
 
 {% include cloud/note-upgrade.md %}
 
-#### To update the `ece-tools` package:
+#### To update the `{{site.data.var.ct}}` package:
 
 1.  On your local workstation, perform an update using Composer.
 
@@ -20,7 +20,7 @@ Typically, an _update_ includes patches and available hotfixes as part of the `m
     ```
 
     {: .bs-callout .bs-callout-info}
-    If you cannot update beyond`ece-tools`version 2002.0.8, follow the [upgrade steps]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
+    If you cannot update beyond `{{site.data.var.ct}}` version 2002.0.8, follow the [upgrade steps]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html).
 
 1.  Add, commit, and push your code changes.
 

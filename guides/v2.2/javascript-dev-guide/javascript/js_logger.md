@@ -145,15 +145,14 @@ Displays multiple entries at once.
 ## LogFormatter
 The `LogFormatter` class is responsible for processing the message of the provided entry and for preparing its string representation that will be displayed by `LogOutputHandler`. It also verifies if the entry's message is set in the template:
 
-{%highlight javascript%}
+```javascript
  {
      message: "Foo ${ $.property }",
      data: {
          property: "Bar"
     }
 } // => "Foo Bar"
-
-{%endhighlight%}
+```
 
 **Constructor:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/formatter.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/formatter.js))
 
@@ -231,12 +230,12 @@ Checks whether a message with the provided code exists in the pool.
 ## `consoleLogger`
 An instance of the `Logger` class that is configured to display messages in the browser's console with the default format. It also stores the last provided display level in `localStorage` and allows to work with a list of predefined messages instead of passing their text directly:
 
-{%highlight javascript %}
+```javascript
     consoleLogger.setDisplayLevel(consoleLogger.levels.ALL);
     consoleLogger.messages.addMessage('VIRAL_MESSAGE', 'Hello World!');
     consoleLogger.info('VIRAL_MESSAGE');
     // console => [2017-04-07 01:36:24] [INFO] Hello World!
-{%endhighlight%}
+```
 
 **Path:** `<Magento_Ui_module_dir>/view/base/web/js/lib/logger/console-logger.js` ([See on Github]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/logger/console-logger.js))
 

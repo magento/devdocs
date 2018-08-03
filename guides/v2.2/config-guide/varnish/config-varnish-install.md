@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="config-varnish-install">Install Varnish</h2>
+## Install Varnish {#config-varnish-install}
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
 *	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a>
@@ -26,7 +26,7 @@ This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up
 If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html#saint) for more details.
 </div>
 
-<h2 id="config-varnish-version">Confirm your Varnish version</h2>
+## Confirm your Varnish version {#config-varnish-version}
 Enter the following command to display the version of Varnish you're running:
 
 	varnishd -V

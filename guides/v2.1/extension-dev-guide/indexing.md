@@ -90,7 +90,7 @@ Depending on whether an index data is up to date, an indexer status value is one
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel in **System > New Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
-<h3 id="m2devgde-indexing-modes">Indexing modes</h3>
+### Indexing modes {#m2devgde-indexing-modes}
 Reindexing can be performed in two modes:
 
 *	Update on Save - index tables are updated immediately after the dictionary data is changed.
@@ -116,7 +116,7 @@ You can reindex by:
 *	Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg), which is preferred because indexing runs every minute.
 *	Using the [`magento indexer:reindex [indexer]`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex) command, which reindexes selected indexers, or all indexers, one time only.
 
-<h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
+## Magento indexers {#m2devgde-indexing-outofbox}
 The Magento application implements the following indexers:
 
 <table>

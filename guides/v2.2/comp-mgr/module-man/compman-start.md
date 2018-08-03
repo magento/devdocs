@@ -11,7 +11,7 @@ functional_areas:
   - Upgrade
 ---
 
-<h2 id="compman-access">Start the Module Manager from the Magento Admin</h2>
+## Start the Module Manager from the Magento Admin {#compman-access}
 To run the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Manager:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.

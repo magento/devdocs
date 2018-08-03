@@ -109,10 +109,10 @@ Examples:
 * APIs:
   - Cover only an interface if it suggests a single active implementation (thus the active implementation will be used implicitly).
   - Cover each implementation if an interface suggests multiple implementations.
-* SPIs
+* SPIs:
   - Same as APIs.
   - We recommend creating tests with fake implementations and execution of methods that are using the SPI you’re covering to make sure the interface’s implementations can be swapped without breaking the application.
-* Models/Resource Models
+* Models/Resource Models:
   - Usually have numerous dependencies, interacting with resources (database, cache, file system, 3rd party systems etc.) and sometimes can substitute an API
 
 See: [Running Integration Tests][3].

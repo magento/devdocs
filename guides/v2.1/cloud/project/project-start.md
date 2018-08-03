@@ -15,7 +15,7 @@ File | Description
 `/.magento/services.yaml` | Configuration file that defines a MySQL instance, Redis, and ElasticSearch. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `/app` | The `code` folder is used for custom modules. The `design` folder is used for custom themes. See [Install a theme]({{ page.baseurl }}/cloud/howtos/custom-theme.html). The `etc` folder contains configuration files for Magento.
 `/m2-hotfixes` | Used for custom patches.
-`.gitignore` | Specify which files and directories to ignore. See [`.gitignore` reference](#ignoring files).
+`.gitignore` | Specify which files and directories to ignore. See [`.gitignore` reference](#ignoring-files).
 `.magento.app.yaml` | Configuration file that defines the properties to build your application. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `.magento.env.yaml` | Configuration file that defines actions for the build, deploy, and post-deploy phases. The ece-tools package includes a sample of this file with detailed descriptions for the available variables. See [Configure environments]({{ page.baseurl }}/cloud/env/environments.html).
 `composer.json` | Fetches the Magento Enterprise Edition and the necessary configuration scripts to prepare your application. See [Prepare your Magento install]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html).
@@ -87,7 +87,7 @@ Logs for all deployments that have occurred on this environment are appended to 
 
 The actual log output is highly verbose to allow troubleshooting. The following is a condensed example:
 
-{% highlight xml %}
+```xml
 [2016-10-11 22:15:38] Starting pre-deploy.
 ...
 [2016-10-11 22:15:39] Pre-deploy complete.
@@ -98,7 +98,7 @@ The actual log output is highly verbose to allow troubleshooting. The following 
 ... more ...
 
 [2016-10-11 22:15:46] Deployment complete.
-{% endhighlight %}
+```
 
 The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.

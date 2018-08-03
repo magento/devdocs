@@ -1,5 +1,3 @@
-<div markdown="1">
-
 1. Access your account. You can open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the _This project has no code yet_ link next to the Project name.
 
@@ -24,4 +22,3 @@
 	![Your sample Magento project]({{ site.baseurl }}/common/images/cloud_project_template2.png){:width="650px"}
 
 7. After the project deploys, **Success** displays next to the name of your project.
-</div>

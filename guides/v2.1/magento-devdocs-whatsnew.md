@@ -12,6 +12,12 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
+Added information on porting code contributions to [Code Contributions](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.x|Major update|Jul 30
+Added database maintenance scheduling information to the [Performance Best Practices for Configuration](https://devdocs.magento.com/guides/v2.2/performance-best-practices/configuration.html)|2.2.x, 2.3.x|Major update|Jul 30
+Reorganized and refreshed the [Cloud Upgrades and Patches section](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html).|2.1.x, 2.2.x, 2.3.x|Major update|Jul 26
+Added local file inclusion (LFI) and remote code execution (RCE) protection guidelines to the [Code Magento Standards](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).|2.2.x, 2.3.x|Major update|Jul 25
+Updated [Definition of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html) with examples and guidelines.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 25
+Consolidated and simplified the Composer [installation instructions](https://devdocs.magento.com/guides/v2.2/install-gde/composer.html) for Magento.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 23
 Consolidated and simplified the Composer [installation instructions](https://devdocs.magento.com/guides/v2.2/install-gde/composer.html) for Magento.|2.1.x, 2.2.x, 2.3.x|Major update|Jul 23
 Added the [CLI instructions](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html) for upgrading Magento to 2.3.|2.3.x|Major update|Jul 20
 Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html) for Commerce 2.3 Alpha.|2.3.x|Major update|Jul 20

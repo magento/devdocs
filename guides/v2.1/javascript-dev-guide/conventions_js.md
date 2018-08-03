@@ -29,4 +29,4 @@ Module directory. When talking about a particular Magento module, also notation 
 For Magento modules, the absolute path is usually one of the following:
 
  - `app/code/Magento/<Module>`
-  - `vendor/magento/module-<module>-<name>`
+ - `vendor/magento/module-<module>-<name>`

@@ -19,7 +19,7 @@ The prompt widget source is <a href="{{ site.mage2000url }}app/code/Magento/Ui/v
 
 The widget can be used for implementing prompt windows for both, Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the modal pop-up windows in the Admin are described in the <a href="{{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a>
 
-<h2 id="prompt_init">Initialize the prompt widget</h2>
+## Initialize the prompt widget {#prompt_init}
 
 The prompt widget can be initialized with or without binding to a certain element.
 
@@ -58,7 +58,7 @@ require([
 
 For details about how to initialize a widget in a `.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
-<h2 id="prompt_options">Options</h2>
+## Options {#prompt_options}
 
 <ul>
 <li><a href="#prompt_actions">actions</a></li>
@@ -69,7 +69,7 @@ For details about how to initialize a widget in a `.phtml` template, refer to th
 <li><a href="#prompt_title">title</a></li>
 </ul>
 
-<h3 id="prompt_actions"><code>actions</code></h3>
+### <code>actions</code> {#prompt_actions}
 Widget callbacks.
 
 **Type**: Object.
@@ -83,27 +83,27 @@ actions: {
 }
 {% endhighlight %}
 
-<h3 id="prompt_autoopen">autoOpen</h3>
+### autoOpen {#prompt_autoopen}
 Automatically open the prompt window when the widget is initialized.
 
 **Type**: Boolean
 
 **Default value**: `false`
 
-<h3 id="prompt_clickableOverlay">clickableOverlay</h3>
+### clickableOverlay {#prompt_clickableOverlay}
 Close the prompt window when a user clicks on the overlay.
 
 **Type**: Boolean
 
 **Default value**: `true`
 
-<h3 id="prompt_content"><code>content</code></h3>
+### <code>content</code> {#prompt_content}
 
 The prompt window content.
 
 **Type**: String.
 
-<h3 id="prompt_focus"><code>focus</code></h3>
+### <code>focus</code> {#prompt_focus}
 The selector of the element to be in focus when the prompt window opens.
 If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set `focus` to `none`.
 
@@ -111,7 +111,7 @@ If `focus` is not specified or set to empty string, the focus is on the close bu
 
 **Default value**: `''`
 
-<h3 id="prompt_title"><code>title</code></h3>
+### <code>title</code> {#prompt_title}
 The title of the prompt window.
 
 
@@ -119,7 +119,7 @@ The title of the prompt window.
 
 **Default value**: `''`
 
-<h2 id="prompt_events">Events</h2>
+## Events {#prompt_events}
 
 The prompt widget implements the following events:
 
@@ -128,5 +128,5 @@ The prompt widget implements the following events:
 - `always` callback.
 
 
-<h2 id="prompt_key_navigation">Keyboard navigation</h2>
+## Keyboard navigation {#prompt_key_navigation}
 The keyboard navigation for the alert windows is similar to the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.

@@ -23,7 +23,7 @@ Installing the Varnish software is beyond the scope of this guide. For more info
 	<p>This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.</p>
 </div>
 
-<h2 id="config-varnish-version">Confirm your Varnish version</h2>
+## Confirm your Varnish version {#config-varnish-version}
 Enter the following command to display the version of Varnish you're running:
 
 	varnishd -V

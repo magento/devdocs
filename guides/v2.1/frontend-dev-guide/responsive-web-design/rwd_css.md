@@ -26,7 +26,7 @@ The mobile and desktop styles are defined in separate files:
 <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
 </ul>
 
-<h2 id="fedg_rwd_css_break">Breakpoints</h2>
+## Breakpoints {#fedg_rwd_css_break}
 
 Breakpoints are used in the {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code to set up the screen width at which the design switches from the mobile to the desktop version.
 
@@ -42,7 +42,7 @@ The Blank and Luma themes use LESS variables to implement the following <a href=
 
 You can change these breakpoints and add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html) topic.
 
-<h2 id="lib_rwd">Media queries in Magento default themes</h2>
+## Media queries in Magento default themes {#lib_rwd}
 
 The Blank and Luma theme styles are based on the <a href="{{ page.baseurl }}/frontend-dev-guide//css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. The library uses <a href="http://en.wikipedia.org/wiki/Media_queries" target="_blank">CSS3 media queries</a>, an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <code>@media</code> rule, to adapt the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} to the screen width.
 

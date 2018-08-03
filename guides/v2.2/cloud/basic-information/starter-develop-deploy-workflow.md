@@ -29,9 +29,8 @@ The following diagram details the branch and environment relationships:
 
 You can manage all of your environments including Production and Staging directly through the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html), through the store and Admin panel using provided URLs, and using SSH and the [Magento Cloud command-line]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The following workflow and examples use a Production, Staging, and Integration architecture.
-</div>
 
 ## Starter environments and branches {#env-branches}
 For your environments, we recommend deploying and testing following a Development > Staging > Production workflow.
@@ -105,9 +104,8 @@ We recommend using a branching strategy with your development work. Using one br
 
 And so on until you have your store fully built, configured, and ready to go live. But keep reading, we have even better options for your store and code configuration!
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Do not complete any configurations on your local yet.
-</div>
 
 ![Develop code and push to deploy]({{ site.baseurl }}/common/images/cloud_workflow-push-code.png)
 
@@ -180,13 +178,11 @@ As you develop features, add extensions, and design themes, having real data to 
 
 ![Pull and sanitize production data]({{ site.baseurl }}/common/images/cloud_workflow-data-code-process.png)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Prior to pushing the data to another environment, you should consider sanitizing your data. You have a couple of options including [using support utilities]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-spt-util.html) or developing a script to scrub out customer data.
-</div>
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Important: We don't recommend pushing a database from an Integration or Staging environment. This data will overwrite your Production live data including sales, orders, new and updated customers, and much more.
-</div>
 
 ## Deployment workflow {#deploy}
 As we detailed in the architecture information, {{site.data.var.ece}} is Git driven. Deploying {{site.data.var.ece}} is part of your Git push processes for branches.

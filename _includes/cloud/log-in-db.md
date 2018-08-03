@@ -1,5 +1,5 @@
-<div markdown="1">
- 
+The following steps provide an example of accessing a database:
+
 1.  SSH to the integration environment.
 
         magento-cloud ssh
@@ -33,5 +33,3 @@
 
 
 	<pre class="no-copy">mysql --host=&lt;host> --user='&lt;database username>' --password='&lt;user password>' --port='&lt;port>' --database='&lt;path>'</pre>
-
-</div>
