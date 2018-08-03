@@ -1,28 +1,29 @@
 ---
 layout: tutorial
 group: rest
-title: Step 9. Create a customer for `test` and generate a customer token
-menu_title: Step 9. Create a customer for `test` and generate a customer token
-menu_order: 90
+title: Step 7. Create a customer and generate a customer token
+subtitle: Order processing with MSI
+menu_title: Step 7. Create a customer and generate a customer token
+menu_order: 70
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/9-create-customer.md
+github_link: rest/tutorials/msi-order-processing/create-customer.md
 functional_areas:
   - Integration
 ---
 
-Customer accounts are specific to a store view. We must create a customer for the UK store. We can use the same customer definition presented in [Create a customer and generate a customer token]({{ site.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only difference being the scope of the call. In this case, the endpoint path contains `test` instead of `default`.
+In this step, we will create a customer account that is tied to the `us` web view. We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only difference being the scope of the call. In this case, the endpoint path contains `us` instead of `default`.
 
 **Endpoint**
 
-`POST http://<host>/rest/uk/V1/customers`
+`POST http://<host>/rest/us/V1/customers`
 
 **Scope**
 
-`uk` store view
+`us` store view
 
 **Headers**
 
@@ -72,9 +73,9 @@ The customer `id` is `2`.
     "group_id": 1,
     "default_billing": "2",
     "default_shipping": "2",
-    "created_at": "2018-07-26 17:59:19",
-    "updated_at": "2018-07-26 17:59:20",
-    "created_in": "UK Store View",
+    "created_at": "2018-08-02 16:17:26",
+    "updated_at": "2018-08-02 16:17:27",
+    "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
     "lastname": "Doe",
@@ -109,6 +110,7 @@ The customer `id` is `2`.
     }
 }
 ```
+
 ## Generate the customer's access token {#get-token}
 
 To generate a customer's access token, you must specify the customer's username and password in the payload. You do not specify an admin {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
@@ -118,11 +120,11 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Endpoint**
 
-`POST http://<host>/rest/uk/V1/integration/customer/token`
+`POST http://<host>/rest/us/V1/integration/customer/token`
 
 **Scope**
 
-`uk` store view
+`us` store view
 
 **Headers**
 

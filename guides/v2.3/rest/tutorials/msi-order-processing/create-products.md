@@ -1,28 +1,29 @@
 ---
 layout: tutorial
 group: rest
-title: Step 7. Create products
-menu_title: Step 7. Create products
-menu_order: 70
+title: Step 5. Create products
+subtitle: Order processing with MSI
+menu_title: Step 5. Create products
+menu_order: 50
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
 version: 2.3
-github_link: rest/tutorials/msi-order-processing/7-create-products.md
+github_link: rest/tutorials/msi-order-processing/create-products.md
 functional_areas:
   - Integration
 ---
 
 
-We'll create two simple products and one virtual product.
+This step creates two simple products and one virtual product. Magento assigns these items to the default source.
 
 {:.bs-callout .bs-callout-tip}
-This step contain additional product types in the future.
+In later revisions of this topic, we'll migrate products already defined in the Luma store.
 
 ## Create a simple product
 
-We'll assign a quantity of 100 items to SKU `sp1`. Magento assigns these items to the default source.
+In a single-source inventory environment, you would use the `qty` field in the `stock_item` object to specify how many items are available for sale. In MSI, you manage quantities with a different call.
 
 **Endpoint**
 
@@ -43,20 +44,15 @@ Authorization: Bearer <admin_token>
 {
 	"product": {
     "name": "Simple Product 1",
-		"sku": "sp1",
-		"attribute_set_id": 4,
-		"price": 5,
-		"status": 1,
-		"visibility": 4,
-		"type_id": "simple",
-		"weight": 0.8,
-		"extension_attributes": {
-			"website_ids": ["1", "2", "3"],
-			"stock_item": {
-				"qty": 100,
-				"is_in_stock": true,
-				"is_qty_decimal": false
-			}
+    "sku": "sp1",
+    "attribute_set_id": 4,
+    "price": 5,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "weight": 0.8,
+    "extension_attributes": {
+      "website_ids": ["1", "2", "3"]
 		}
 	}
 }
@@ -75,8 +71,8 @@ Authorization: Bearer <admin_token>
     "status": 1,
     "visibility": 4,
     "type_id": "simple",
-    "created_at": "2018-07-26 15:41:05",
-    "updated_at": "2018-07-26 15:41:05",
+    "created_at": "2018-08-02 16:03:19",
+    "updated_at": "2018-08-02 16:03:19",
     "weight": 0.8,
     "extension_attributes": {
         "website_ids": [
@@ -88,8 +84,8 @@ Authorization: Bearer <admin_token>
             "item_id": 7,
             "product_id": 7,
             "stock_id": 1,
-            "qty": 100,
-            "is_in_stock": true,
+            "qty": null,
+            "is_in_stock": false,
             "is_qty_decimal": false,
             "show_default_notification_message": false,
             "use_config_min_qty": true,
@@ -148,7 +144,7 @@ Authorization: Bearer <admin_token>
 
 ## Create a second simple product
 
-Use the same endpoint to create the second product. This time, we'll create 150 items.
+Use the same endpoint to create the second simple product.
 
 **Payload**
 
@@ -164,12 +160,7 @@ Use the same endpoint to create the second product. This time, we'll create 150 
 		"type_id": "simple",
 		"weight": 0.8,
 		"extension_attributes": {
-			"website_ids": ["1", "2", "3"],
-			"stock_item": {
-				"qty": 150,
-				"is_in_stock": true,
-				"is_qty_decimal": false
-			}
+			"website_ids": ["1", "2", "3"]
 		}
 	}
 }
@@ -187,8 +178,8 @@ Use the same endpoint to create the second product. This time, we'll create 150 
     "status": 1,
     "visibility": 4,
     "type_id": "simple",
-    "created_at": "2018-07-26 15:42:51",
-    "updated_at": "2018-07-26 15:42:51",
+    "created_at": "2018-08-02 16:03:58",
+    "updated_at": "2018-08-02 16:03:58",
     "weight": 0.8,
     "extension_attributes": {
         "website_ids": [
@@ -200,8 +191,8 @@ Use the same endpoint to create the second product. This time, we'll create 150 
             "item_id": 8,
             "product_id": 8,
             "stock_id": 1,
-            "qty": 150,
-            "is_in_stock": true,
+            "qty": null,
+            "is_in_stock": false,
             "is_qty_decimal": false,
             "show_default_notification_message": false,
             "use_config_min_qty": true,
@@ -258,8 +249,9 @@ Use the same endpoint to create the second product. This time, we'll create 150 
 }
 ```
 
-
 ## Create a virtual product
+
+Virtual products do not require a shipment. We'll
 
 **Endpoint**
 
@@ -293,16 +285,16 @@ Authorization: Bearer <admin_token>
 
 ``` json
 {
-    "id": 19,
+    "id": 9,
     "sku": "vp1",
-    "name": "Gold Club",
+    "name": "Gold Club Membership",
     "attribute_set_id": 4,
     "price": 20,
     "status": 1,
     "visibility": 4,
     "type_id": "virtual",
-    "created_at": "2018-07-26 04:09:07",
-    "updated_at": "2018-07-26 04:09:07",
+    "created_at": "2018-08-02 16:05:29",
+    "updated_at": "2018-08-02 16:05:29",
     "extension_attributes": {
         "website_ids": [
             1,
@@ -310,8 +302,8 @@ Authorization: Bearer <admin_token>
             3
         ],
         "stock_item": {
-            "item_id": 19,
-            "product_id": 19,
+            "item_id": 9,
+            "product_id": 9,
             "stock_id": 1,
             "qty": null,
             "is_in_stock": false,
@@ -361,7 +353,7 @@ Authorization: Bearer <admin_token>
         },
         {
             "attribute_code": "url_key",
-            "value": "gold-club"
+            "value": "gold-club-membership"
         },
         {
             "attribute_code": "tax_class_id",
@@ -373,4 +365,4 @@ Authorization: Bearer <admin_token>
 
 ## Verify this step
 
-In Admin, click **Catalog** > **Products**.  The new products are displayed in the Catalog grid.
+In Admin, click **Catalog** > **Products**.  The new products are displayed in the Catalog grid. Note that the **Quantity Per Source** column contains the value **Default Source: 0** and the **Salable Quantity** column contains the value **Default Stock: 0**.
