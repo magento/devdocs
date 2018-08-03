@@ -98,7 +98,7 @@ If you generated `config.php` files using earlier versions of the `ece-tools` pa
 
 -  JIRA-- MAGECLOUD-2515-->Fixed a Redis configuration issue that incorrectly enabled session locking in {{site.data.var.ece}} v2.1.4 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default. The configuration error was introduced in v1.3.4 Redis session handler codebase-[php-redis-session-abstract](https://github.com/colinmollenhour/php-redis-session-abstract) when the default value for the `disable_locking` parameter was changed.
 
-- JIRA--MAGECLOUD-2464-->Fixed a compatibility issue in the `ece-tools` package that caused problems with cron queue management in {{site.data.var.ece}} versions 2.2 - 2.5.
+- JIRA--MAGECLOUD-2464-->Fixed a compatibility issue in the `ece-tools` package that caused problems with cron queue management in {{site.data.var.ece}} versions 2.2 to 2.5.
 
 
 ## v2002.0.12
