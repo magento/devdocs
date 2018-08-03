@@ -89,7 +89,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 - JIRA--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified.
 Now you can easily move your configuration files between environments.
 
-If you generated `config.php` files using earlier versions of the `ece-tools` package, upgrade to `ece-tools` v2002.0.13 and regenerate the files using the improved command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
+  If you generated `config.php` files using earlier versions of the `ece-tools` package, update to `ece-tools` v2002.0.13 and regenerate the files using the improved command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
 - JIRA--MAGECLOUD-2556>Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from a ```www``` to an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain (also referred to as a *naked* domain).
 
