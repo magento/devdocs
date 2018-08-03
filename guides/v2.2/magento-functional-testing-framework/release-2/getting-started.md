@@ -67,25 +67,53 @@ git clone git@github.com:magento/magento2.git
 
 ### Step 2. Install dependencies
 
-1. Change directories to `magento2/` (the project root).
+1. Change directory to the Magento project root.
 
-2. Run the `composer install` command.
+   ```bash
+   cd magento2/
+   ```
 
-3. Change directories to `dev/tests/acceptance/`.
+2. Install the Magento application.
 
-4. Run the `composer install` command. 
+   ```bash
+   composer install
+   ```
+
+3. Change directory to the acceptance tests area.
+
+   ```bash
+   cd dev/tests/acceptance/
+   ```
+
+4. Install the MFTF.
+
+    ```bash
+    composer install
+    ```
 
 ### Step 3. Build the project {#build-project}
 
-In `magento2/` project root, run the following commands:
+In the Magento project root, run:
 
 ```bash
 vendor/bin/mftf build:project
 ```
+
+{% include note.html
+type='tip'
+content='If you use PhpStorm, generate a URN catalog:
 ```bash
-vendor/bin/mftf generate:urn-catalog
+vendor/bin/mftf generate:urn-catalog .idea/
 ```
-If the file does not exist, add the `-f` option to `generate:urn-catalog` to create it.
+
+If the file does not exist, add the `--force` option to create it:
+
+```bash
+vendor/bin/mftf generate:urn-catalog --force .idea/
+```
+
+See [`generate:urn-catalog`] for more details.'
+%}
 
 {:.bs-callout .bs-callout-tip}
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
@@ -158,17 +186,19 @@ To run tests, you need a running Selenium server and a [`codecept`] or [`mftf`] 
 
 #### Run the Selenium server {#selenium-server}
 
+Run the Selenium server in terminal:
+
+```bash
+java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
+```
+
+If you do not have the Selenium server:
+
 1. [Download the latest Selenium Server].
 
 2. [Download a Selenium web driver for your web browser] into the same directory that contains the Selenium server.
 
 3. Add the directory with the web driver to `PATH`.
-
-4. Run the Selenium server in terminal (or other command line interface):
-
-```bash
-java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
-```
 
 #### Run all tests
 
@@ -204,3 +234,4 @@ allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/
 [PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
 [PHPStorm]: https://www.jetbrains.com/phpstorm/
 [Selenium Server Standalone v3.6.0+]: #selenium-server
+[`generate:urn-catalog`]: commands/mftf.html#generateurn-catalog
