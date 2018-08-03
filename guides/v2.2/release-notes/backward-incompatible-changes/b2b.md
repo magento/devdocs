@@ -8,15 +8,10 @@ redirect_from: /guides/v2.2/release-notes/changes/b2b_changes.html
 
 This topic provides details about backward incompatible changes related to {{site.data.var.b2b}} 1.0.
 
-All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
+The changes are generated automatically using the codebase that contains `b2b` modules only.
 
 {: .bs-callout .bs-callout-info }
-To track all changes in {{site.data.var.b2b}}, consider [changes in {{site.data.var.ce}}] and [changes in {{site.data.var.ee}}].
-
-The changes are aggregated into two tables:
-
-1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
-2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
+To track all changes in {{site.data.var.b2b}}, consider the [changes in {{site.data.var.ce}}] and the [changes in {{site.data.var.ee}}].
 
 ## 1.0.4 - 1.0.5 {#releases-1_0_4-1_0_5}
 
