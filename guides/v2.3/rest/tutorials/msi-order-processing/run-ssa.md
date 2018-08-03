@@ -98,7 +98,7 @@ The SSA recommends shipping from the following sources:
 
 Product | Source | Quantity
 --- | --- | ---
-`sp1` Baltimore | 20
+`sp1` | Baltimore | 20
 `sp2` | Baltimore | 25
 `sp2` | Reno | 35
 
