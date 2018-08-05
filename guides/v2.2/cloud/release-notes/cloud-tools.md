@@ -133,7 +133,7 @@ to add a `robots.txt` file and generate a `sitemap.xml` file for a single domain
 
 ## v2002.0.11
 
-{:.bs-callout bs-callout-info}
+{:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
 
 #### New features

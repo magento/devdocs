@@ -207,7 +207,11 @@ hooks:
         php ./vendor/bin/ece-tools post-deploy
 ```
 
+<<<<<<< HEAD
 Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.
+=======
+Also, you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files. 
+>>>>>>> parent of 897f37ddfa... Revert "Sync Cloud 2002.0.13 with master"
 
 ```yaml
 hooks:

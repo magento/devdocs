@@ -104,7 +104,7 @@ Now you can easily move your configuration files between environments.
 
 ## v2002.0.12
 
-{:.bs-callout bs-callout-info}
+{:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.12 now supports Magento 2.1.14.
 
 #### New features

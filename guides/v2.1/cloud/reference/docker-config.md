@@ -13,16 +13,17 @@ functional_areas:
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker){:target="\_blank"} contains build information for the following [Docker hub](https://hub.docker.com/r/magento/){:target="\_blank"} images:
 
--  PHP: magento/magento-cloud-docker-php
+- PHP: magento/magento-cloud-docker-php
     -  PHP-CLI - version 7 and later
     -  PHP-FPM - version 7 and later
--  NGINX:  magento/magento-cloud-docker-nginx
+- NGINX: magento/magento-cloud-docker-nginx
+- Varnish: magento/magento-cloud-docker-varnish
 
 The `ece-tools` package provides a `docker:build` command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:
 
--  PHP: `--php`
--  NGINX: `--nginx`
--  MariaDB: `--db`
+- PHP: `--php`
+- NGINX: `--nginx`
+- MariaDB: `--db`
 
 ## Launch Docker configuration
 
@@ -99,7 +100,7 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 
-1.  Add your credentials to `auth.json` file.
+1.  Add your credentials to the `auth.json` file.
 
 1.  Update the template dependencies.
 
@@ -107,32 +108,54 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     composer install
     ```
 
-1.  In your local environment, start the Docker configuration generator.
+    {: .bs-callout .bs-callout-info}
+    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
+
+1. In your local environment, start the Docker configuration generator.
 
     ```bash
     vendor/bin/ece-tools docker:build
     ```
 
-1.  Copy the configuration files.
+1. Copy the raw configuration files.
 
     ```bash
-	cp docker/config.env.dist docker/config.env
+    cp docker/config.php.dist docker/config.php
     ```
 
     ```bash
-	cp docker/global.env.dist docker/global.env
+    cp docker/global.php.dist docker/global.php
     ```
 
-1.  Build files to containers and run in the background.
+1. Convert Docker environment configuration files from the raw configs.
+
+    ```bash
+    vendor/bin/ece-tools docker:config:convert
+    ```
+
+    This converts your `.php` files to `.env` configuration files.
+
+    * `docker/config.env`
+    * `docker/global.env`
+
+1. Build files to containers and run Docker in the background.
 
     ```bash
     docker-compose up -d --build
     ```
 
-1.  Install Magento. This step may take some time to complete.
+1. Install Magento in your Docker environment.
+
+    * Build Magento in the Docker container:
 
     ```bash
-    docker-compose run cli magento-installer
+    docker-compose run build cloud-build
+    ```
+
+    * Deploy Magento in the Docker container:
+
+    ```bash
+    docker-compose run deploy cloud-deploy
     ```
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
@@ -149,8 +172,6 @@ Remove all components of your local Magento Cloud Docker instance including cont
 ```bash
 docker-compose down
 ```
-
-## Automate integration testing
 
 Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:
 
