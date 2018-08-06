@@ -514,7 +514,7 @@ Description  | Versions applied to  | New or Updated | Date
 | [Update performance test data]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"} | 2.x  | Updated  | Mar 21  |
 | [Versioning and compatibility]({{ page.baseurl }}/extension-dev-guide/versioning/index.html){:target="_blank"} | 2.x  |  New |  Mar 31 |
 | [How to test a block]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html){:target="_blank"}  | 2.x  |  Updated | Mar 24  |
-| [Tutorial: Order processing with REST APIs]({{ site.gdeurl21 }}get-started/order-tutorial/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  |
+| [Tutorial: Order processing]({{ site.gdeurl21 }}/rest/tutorials/orders/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  |
 | [Magento U video tutorials]({{ site.baseurl }}/videos){:target="_blank"}  | 2.x  | New  |  Mar 15 |
 | [Top quarterly devdocs contributors]({{ page.baseurl }}/contributor-guide/quarterly-contributors.html){:target="_blank"}  |  2.x | Updated  | Mar 15  |
 |  [Community contribution to adding attributes to an entity]({{ page.baseurl }}/extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"} | 2.x  |  Updated | March 15  |
