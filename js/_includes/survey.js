@@ -6,17 +6,17 @@ $(function() {
   if (typeof localStorage !== 'undefined') {
 
     // Only show if user didn't interact with the banner
-    if ( !localStorage.getItem("Survey done") ) {
+    if ( !localStorage.getItem("Navigation survey done") ) {
 
       // Build banner text
-      var $banner = $('<div class="bs-callout" style="display:none; text-align:left; max-width: 1024px;"><h2>New to Magento?</h2><p>If you are just starting or have been developing in Magento for 6 months or less, we want to talk to you. If you are interested in sharing your experiences with us, please fill out the short survey and we will schedule a time to chat.</p> <button data-href="https://www.surveymonkey.com/r/new2magento" class="btn btn-primary btn-large">OK, I will help</button> <button class="btn btn-large">No, thanks</button> </div>');
+      var $banner = $('<div class="bs-callout" style="display:none; text-align:left; max-width: 1024px;"><h2>Test and improve Magento navigation</h2><p>Help us evaluate the Magento admin navigation by taking a 10-15 min survey. Your input will help us learn how you navigate the Magento Admin Panel, and find ways to make it better.</p> <button data-href="https://2mtpk78k.optimalworkshop.com/treejack/m2nav-coreops?tag=devdocs" class="btn btn-primary btn-large">OK, I will help</button> <button class="btn btn-large">No, thanks</button> </div>');
 
       // Assign events
       $banner.find('a, button').on('click', function () {
 
         var $this = $(this);
 
-        localStorage.setItem("Survey done" , true);
+        localStorage.setItem("Navigation survey done" , true);
         $banner.delay(100).slideUp(400);
 
         if ( $this.data('href') ) {

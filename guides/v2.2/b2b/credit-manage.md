@@ -58,7 +58,7 @@ This call changes the company's credit limit to $1000. The `available_limit` par
 
 **Sample Usage**
 
-`PUT /V1/companyCredits/company/2`
+`PUT /V1/companyCredits/2`
 
 **Payload**
 

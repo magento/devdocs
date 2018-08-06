@@ -5,24 +5,26 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/test.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as [`<tests>`](#test-tag).
-`<tests>` is a [Codeception test container](https://codeception.com/docs/07-AdvancedUsage) that contains multiple individual tests with test metadata and before and after actions.
+Test cases in the Magento Functional Testing Framework (MFTF) are defined in XML as [`<tests>`].
+`<tests>` is a [Codeception test container][Codeception] that contains multiple individual tests with test metadata and before and after actions.
 
 MFTF `<tests>` is considered a sequence of actions with associated parameters.
-Any failed [assertion](./test/assertions.html) within a test constitutes a failed test.
+Any failed [assertion] within a test constitutes a failed test.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-`<before>` and `<after>` hooks are not global within `<tests>` like in MFTF 1.0.
+{%
+include note.html
+type = "info"
+content='`<before>` and `<after>` hooks are not global within `<tests>`.
 They only apply to the `<test>` in which they are declared.
 
-The steps in `<after>` are run in both successful **and** failed test runs.
-</div>
+The steps in `<after>` are run in both successful **and** failed test runs.'
+%}
 
 The following diagram shows the structure of an MFTF test case:
 
@@ -36,8 +38,8 @@ The format of `<tests>` is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="../../../../../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-        <test name="">
+       xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+        <test name="" insertBefore="" insertAfter="">
             <annotations>
                 <!-- TEST ANNOTATIONS -->
             </annotations>
@@ -60,10 +62,11 @@ The following conventions apply to MFTF tests:
 * All names within the framework are in the CamelCase format.
 * `<test>` name must be alphanumeric.
 * Each action and action group has its own identifier `<stepKey>` for reference purposes.
-* A test may have any number of [assertions](./test/assertions.html), at any point within the `<test>`.
-* If `<test>` is included in `<suite>`, it **cannot be generated in isolation** to the rest of the contents of the suite (see [suites](./suite.html) for details).
+* A test may have any number of [assertions][assertion] at any point within the `<test>`.
+* If `<test>` is included in `<suite>`, it **cannot be generated in isolation** to the rest of the contents of the suite (see [suites] for details).
 
-Multiple <test> tags per XML file can make it hard to find and organize tags. To simplify, we generate one `test.php` file per <test> tag provided, though we support both single and multiple <test> tags per XML file.
+Multiple `<test>` tags per XML file can make it hard to find and organize tags.
+To simplify, we generate one `test.php` file per `<test>` tag provided, though we support both single and multiple `<test>` tags per XML file.
 
 ## Elements reference
 
@@ -73,52 +76,53 @@ There are several XML elements that are used in `<tests>` in the MFTF.
 
 `<tests>` is a container for multiple tests. It is a group of test methods that define test flows within a test case.
 
-`<tests>` must contain at least one [`<test>`](#test-tag).
+`<tests>` must contain at least one [`<test>`].
 
 
 ### test {#test-tag}
 
-`<test>` is a set of steps, including [actions](./test/actions.html) and [assertions](./test/assertions.html). It is a sequence of test steps that define test flow within a test method.
+`<test>` is a set of steps, including [actions] and [assertions][assertion]. It is a sequence of test steps that define test flow within a test method.
 
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`name`|string|optional| A test identifier used while merging.
+`name`|string|optional|The test identifier.
 `remove`|boolean|optional|Set `true` to remove the test when merging.
+`insertBefore`|string|optional| This option is used for [merging]. It enables you to add all test actions contained in the original test into a test with the same name BEFORE the test step with `stepKey` that you assigned in `insertBefore`.
+`insertAfter`|string|optional| Set `stepKey` of the test step after which you want to insert the test when [merging].
+`extends`|string|optional|A name of the parent test to [extend].
 
-`<test>` may also contain [`<annotations>`](#annotations-tag), [`<before>`](#before-tag), [`<after>`](#after-tag), any [action](./test/actions.html), or [`<actionGroup>`](#actiongroup-tag).
+`<test>` may also contain [`<annotations>`], [`<before>`], [`<after>`], any [action][actions], or [`<actionGroup>`].
 
 ### annotations {#annotations-tag}
 
-Annotations are supported by both [Codeception](http://codeception.com/docs/07-AdvancedUsage) and [Allure](https://github.com/allure-framework/).
+[Annotations] are supported by both [Codeception] and [Allure].
 
 Codeception annotations typically provide metadata and are able to influence test selection.
 Allure annotations provide metadata for reporting.
 
-See more about [Annotations](./test/annotations.html).
-
 ### before {#before-tag}
 
-`<before>` wraps the steps to perform before the [`<test>`](#test-tag).
+`<before>` wraps the steps to perform before the [`<test>`].
 
 `<before>` may contain these child elements:
 
- * Any [`<action>`](./test/actions.html)
- * [`<actionGroup>`](#actiongroup-tag)
+ * Any [`<action>`][actions]
+ * [`<actionGroup>`]
 
 ### after {#after-tag}
 
-`<after>` wraps the steps to perform after the [`<test>`](#test-tag).
+`<after>` wraps the steps to perform after the [`<test>`].
 The steps are run in both successful **and** failed test runs.
 
 `<after>` may contain:
 
- * Any [`<action>`](./test/actions.html)
- * [`<actionGroup>`](#actiongroup-tag)
+ * Any [`<action>`][actions]
+ * [`<actionGroup>`]
 
 ### actionGroup {#actiongroup-tag}
 
-`<actionGroup>` calls a corresponding [action group](./test/action-groups.html).
+`<actionGroup>` calls a corresponding [action group].
 
 Attribute|Type|Use|Description
 ---|---|---|---
@@ -127,15 +131,34 @@ Attribute|Type|Use|Description
 `before`|string|optional| `<stepKey>` of an action or action group that must be executed next while merging.
 `after`|string|optional| `<stepKey>` of an action or action group that must be executed one step before the current one while merging.
 
-`<actionGroup>` may contain [`<argument>`](#argument-tag).
+`<actionGroup>` may contain [`<argument>`].
 
 ### argument {#argument-tag}
 
-`<argument>` sets an argument that is used in the parent [`<actionGroup>`](#actiongroup-tag).
+`<argument>` sets an argument that is used in the parent [`<actionGroup>`].
 
 Attribute|Type|Use
 ---|---|---
 `name`|string|optional| Name of the argument.
 `value`|string|optional| Value of the argument.
 
-See more about [Action groups](./test/action-groups.html).
+See [Action groups][action group] for more information.
+
+<!-- Link definitions -->
+
+[`<actionGroup>`]: #actiongroup-tag
+[`<after>`]: #after-tag
+[`<annotations>`]: #annotations-tag
+[`<argument>`]: #argument-tag
+[`<before>`]: #before-tag
+[`<test>`]: #test-tag
+[`<tests>`]: #tests-tag
+[action group]: ./test/action-groups.html
+[actions]: ./test/actions.html
+[Allure]: https://github.com/allure-framework/
+[Annotations]: ./test/annotations.html
+[assertion]: ./test/assertions.html
+[Codeception]: https://codeception.com/docs/07-AdvancedUsage
+[extend]: extending.html
+[merging]: ./merging.html#insert-after
+[suites]: ./suite.html
