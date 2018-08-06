@@ -6,8 +6,8 @@ menu_title: Step 1. Plan the product
 menu_order: 10
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
+  title: REST tutorials
+  url: rest/tutorials/index.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/plan-product.md
 functional_areas:

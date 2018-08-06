@@ -41,16 +41,27 @@ pages:
         - label: REST usage notes
           url: /rest/notes.html
 
-
-    - label: Order processing with REST tutorial
-      class: tutorial
-      url: /rest/tutorials/orders/order-intro.html
+    - label: Tutorials
+      url: /rest/tutorials/index.html
       versions: ["2.1", "2.2", "2.3"]
+      children:
 
-    - label: Create configurable products tutorial
-      class: tutorial
-      url: /rest/tutorials/configurable-product/config-product-intro.html
-      versions: ["2.2", "2.3"]
+      - label: Prerequisite tasks
+        versions: ["2.2", "2.3"]
+        children:
+
+          - label: Generate an admin token
+            url: /rest/tutorials/prerequisite-tasks/create-admin-token.html
+
+      - label: Order processing with REST tutorial
+        class: tutorial
+        url: /rest/tutorials/orders/order-intro.html
+        versions: ["2.1", "2.2", "2.3"]
+
+      - label: Create configurable products tutorial
+        class: tutorial
+        url: /rest/tutorials/configurable-product/config-product-intro.html
+        versions: ["2.2", "2.3"]
 
     - label: Modules
       children:

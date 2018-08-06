@@ -6,8 +6,8 @@ menu_title: Step 5. Create the personalization option
 menu_order: 50
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
+  title: REST tutorials
+  url: rest/tutorials/index.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-personalization-option.md
 functional_areas:

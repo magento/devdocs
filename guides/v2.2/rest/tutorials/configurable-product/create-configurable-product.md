@@ -6,8 +6,8 @@ menu_title: Step 2. Create the configurable product
 menu_order: 20
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
+  title: REST tutorials
+  url: rest/tutorials/index.html
 version: 2.2
 github_link: rest/tutorials/configurable-product/create-configurable-product.md
 functional_areas:
