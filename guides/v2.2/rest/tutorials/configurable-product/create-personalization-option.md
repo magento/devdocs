@@ -76,4 +76,4 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ## Related topics
 
-  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/get-started/order-tutorial/order-intro.html)
+  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

@@ -31,7 +31,7 @@ This **5-step tutorial** generally takes **45 minutes**.
 
 * Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
 
-* Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Step 2 of the Order Processing with REST APIs Tutorial]({{ page.baseurl }}/get-started/order-tutorial/order-admin-token.html) for more information.
+* Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See [Step 2 of the Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-admin-token.html) for more information.
 
 ### Other resources
 

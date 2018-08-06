@@ -3,19 +3,19 @@ pages:
     - label: Overview
       url: /rest/bk-rest.html
       children:
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.0"]
           url: http://devdocs.magento.com/swagger/index_20.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.1"]
           url: http://devdocs.magento.com/swagger/index_21.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.2"]
           url: http://devdocs.magento.com/swagger/index_22.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.3"]
           url: http://devdocs.magento.com/swagger/index_23.html
 
@@ -41,7 +41,13 @@ pages:
         - label: REST usage notes
           url: /rest/notes.html
 
-    - label: Create configurable products Tutorial
+
+    - label: Order processing with REST tutorial
+      class: tutorial
+      url: /rest/tutorials/orders/order-intro.html
+      versions: ["2.1", "2.2", "2.3"]
+
+    - label: Create configurable products tutorial
       class: tutorial
       url: /rest/tutorials/configurable-product/config-product-intro.html
       versions: ["2.2", "2.3"]
