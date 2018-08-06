@@ -12,7 +12,7 @@ redirect_from: /guides/v2.2/magento-functional-testing-framework/release-2/comma
 _This topic was updated after {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-## Prepare environment
+## Prepare environment  {#prepare-environment}
 
 Make sure that you've installed and set up the following software:
 
@@ -25,11 +25,11 @@ Make sure that you've installed and set up the following software:
 {:.bs-callout .bs-callout-tip}
 [PhpStorm] recently added support for [Codeception Test execution], which is helpful when debugging.
 
-## Prepare Magento
+## Prepare Magento  {#prepare-magento}
 
 Configure the following settings in Magento as described below.
 
-### WYSIWYG settings
+### WYSIWYG settings    {#wysiwyg-settings}
 
 A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}.
 
@@ -40,7 +40,7 @@ To disable the WYSIWYG and enable the web driver to process these fields as simp
 3. In the WYSIWYG Options section set the **Enable WYSIWYG Editor** option to **Disabled Completely**.
 4. Click **Save Config**.
 
-### Security settings
+### Security settings   {#security-settings}
 
 To enable the **Admin Account Sharing** setting, to avoid unpredictable logout during a testing session, and disable the **Add Secret Key in URLs** setting, to open pages using direct URLs:
 
@@ -49,11 +49,11 @@ To enable the **Admin Account Sharing** setting, to avoid unpredictable logout d
 3. Set **Add Secret Key to URLs** to **No**.
 4. Click **Save Config**.
 
-## Set up the framework
+## Set up the framework {#setup-framework}
 
 Follow these steps in a command line interface to set up the MFTF on your system.
 
-### Step 1. Clone the `magento2` source code repository
+### Step 1. Clone the `magento2` source code repository {#clone-magento}
 
 ```bash
 git clone https://github.com/magento/magento2.git
@@ -65,7 +65,7 @@ or
 git clone git@github.com:magento/magento2.git
 ```
 
-### Step 2. Install dependencies
+### Step 2. Install dependencies {#install-dependencies}
 
 1. Change directory to the Magento project root.
 
@@ -91,7 +91,7 @@ git clone git@github.com:magento/magento2.git
     composer install
     ```
 
-### Step 3. Build the project {#build-project}
+### Step 3. Build the project   {#build-project}
 
 In the Magento project root, run:
 
@@ -119,7 +119,7 @@ See [`generate:urn-catalog`] for more details.'
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
 When added, you should be able to run the `mftf`, `codecept`, and `phpunit` commands.
 
-### Step 4. Edit environment settings
+### Step 4. Edit environment settings   {#environment-settings}
 
 In the `magento2/dev/tests/acceptance/` directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
 
@@ -153,32 +153,30 @@ Example:
 http://127.0.0.1:4444/wd/hub
 ```
 
-### Step 5. [Optional] Copy `command.php` into Magento installation and make it visible
+### Step 5. (Optional) Copy `command.php` into Magento installation {#add-cli-commands}
 
 If you are installing the MFTF not from your Magento installation, locate the `command.php` file in the MFTF:
 
-```
-magento2-functional-testing-framework/etc/config/command.php
-```
+`magento2-functional-testing-framework/etc/config/command.php`
 
 And copy it into your Magento installation under: 
 
-```
-magento2ce/dev/tests/acceptance/utils/command.php
-```
+`magento2/dev/tests/acceptance/utils/command.php`
 
 If you are installing the MFTF from inside your Magento installation, this is automatically done when you [build the project].
 
-After copying the file or running `build:project`, navigate to the _magento2/dev/tests/acceptance_ directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
+{:.bs-callout .bs-callout-warning}
+If you do not have access to your Magento installation and cannot complete the step you will not be able to use the Magento CLI commands.
+
+### Step 6. Enable the Magento CLI commands
+
+In the `magento2/dev/tests/acceptance` directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.
 
  ```bash
 cp .htaccess.sample .htaccess
 ```
 
-{:.bs-callout .bs-callout-tip}
-If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
-
-### Step 6. Generate existing tests
+### Step 7. Generate existing tests     {#generate-tests}
 
 In the `magento2/` root directory, run the following command to generate tests as PHP classes from XML files:
 
@@ -186,11 +184,11 @@ In the `magento2/` root directory, run the following command to generate tests a
 vendor/bin/mftf generate:tests
 ```
 
-### Step 7. Run tests
+### Step 8. Run tests   {#run-tests}
 
 To run tests, you need a running Selenium server and a [`codecept`] or [`mftf`] with required parameters.
 
-#### Run the Selenium server {#selenium-server}
+#### Run the Selenium server    {#selenium-server}
 
 Run the Selenium server in terminal:
 
@@ -198,7 +196,7 @@ Run the Selenium server in terminal:
 java -jar <path_to_selenium_directory>/selenium-server-standalone-<version>.jar
 ```
 
-If you do not have the Selenium server:
+If you do not have the Selenium server yet:
 
 1. [Download the latest Selenium Server].
 
@@ -206,7 +204,7 @@ If you do not have the Selenium server:
 
 3. Add the directory with the web driver to `PATH`.
 
-#### Run all tests
+#### Run all tests {#run-all-tests}
 
 ```bash
 vendor/bin/codecept run
@@ -214,7 +212,7 @@ vendor/bin/codecept run
 
 See more commands in [`mftf`] and [`codecept`].
 
-### Step 8. Generate reports {#reports}
+### Step 9. Generate reports    {#reports}
 
 The testing reports are generated in a CLI during testing.
 
@@ -228,6 +226,7 @@ allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/
 <!-- Link definitions -->
 
 [`codecept`]: commands/codeception.html
+[`generate:urn-catalog`]: commands/mftf.html#generateurn-catalog
 [`mftf`]: commands/mftf.html
 [Allure]: https://docs.qameta.io/allure/latest/
 [build the project]: #build-project
@@ -236,8 +235,7 @@ allure generate dev/tests/acceptance/tests/_output/allure-results/ --output dev/
 [Composer v1.3.x+]: https://getcomposer.org/download/
 [Download a Selenium web driver for your web browser]: http://docs.seleniumhq.org/about/platforms.jsp
 [Download the latest Selenium Server]: http://www.seleniumhq.org/download/
-[Java v1.8.x+]: https://www.java.com/en/download/
+[Java v1.8.x+]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [PHP version supported by Magento instance under test]: {{ page.baseurl }}/install-gde/system-requirements-tech.html#php
 [PHPStorm]: https://www.jetbrains.com/phpstorm/
 [Selenium Server Standalone v3.6.0+]: #selenium-server
-[`generate:urn-catalog`]: commands/mftf.html#generateurn-catalog
