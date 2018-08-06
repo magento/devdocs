@@ -61,29 +61,32 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Cleans the [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action such as enabling or disabling a component. We recommend the default value _true_ in development. The supported values are `true` and `false`.
+Determines whether to clean the existing [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) before deploying updated static content generated during the build or deploy phase. We recommend the default value _true_ in development. When this variable is set to `false`, previously existing static content files are overwritten only if a newer version is being generated.
+
+If you create static content using another process outside of Magento, you might want to change the value to `false` to keep the content from getting deleted by Magento static content deployments.
 
 ```yaml
 stage:
   deploy:
-    CLEAN_STATIC_FILES: false
+    CLEAN_STATIC_FILES: true
 ```
 
-Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Failure to clean static view files before deploying can cause problems if you
+deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
 
 ### `CRON_CONSUMERS_RUNNER`
 
 -  **Default**—`cron_run = false`, `max_messages = 1000`
 -  **Version**—Magento 2.2.0 and later
 
-Use this environment variable to make sure message queues are running after a deployment. 
+Use this environment variable to make sure message queues are running after a deployment.
 
 -   `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -   `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
 -   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers. Refer to [List consumers]({{ page.baseurl }}/config-guide/mq/manage-mysql.html#list-consumers) for more information.
 
 ```yaml
-stage: 
+stage:
   deploy:
     CRON_CONSUMERS_RUNNER:
       cron_run: true
@@ -223,7 +226,7 @@ Themes can include numerous files. Set this variable to `true` if you want to sk
 ```yaml
 stage:
   deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
 ```
 
 ### `SCD_MATRIX`
@@ -276,7 +279,7 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**: 
+-  **Default**:
     -  `1`—Starter environments and Pro Integration environments
     -  `3`—Pro Staging and Production environments
 -  **Version**—Magento 2.1.4 and later
@@ -330,10 +333,10 @@ stage:
 Configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
 ```yaml
-stage: 
+stage:
   deploy:
-    SESSION_CONFIGURATION: 
-      redis: 
+    SESSION_CONFIGURATION:
+      redis:
         bot_first_lifetime: 100
         bot_lifetime: 10001
         database: 0
