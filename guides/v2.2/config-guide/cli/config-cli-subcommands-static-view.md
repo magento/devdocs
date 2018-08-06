@@ -101,7 +101,7 @@ The following table explains this command's parameters and values.
           default, with no option specified, is to generate files
           for all <a href=
           "http://www.loc.gov/standards/iso639-2/php/code_list.php"
-          target="\_blank">ISO-636</a> language codes. You can
+          target="\_blank">ISO-639</a> language codes. You can
           specify the name of one language code at a time.
         </p>
         <p>
