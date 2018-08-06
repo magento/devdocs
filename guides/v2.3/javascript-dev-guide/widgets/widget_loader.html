@@ -731,67 +731,62 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The Loader   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well.</p>
 
-<p>The Loader widget source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.</p>
+<p>The Loader widget source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/loader.js">lib/web/mage/loader.js</a>.</p>
 
 <h2 id="loader_init">Initialize the loader widget</h2>
-<p>The loader widget is initialized as described in <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.</p>
+<p>The loader widget is initialized as described in <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html">JavaScript initialization</a>.</p>
 
 <h2 id="loader_options">Options</h2>
 <p>The loader widget has the following options:</p>
 <ul>
-<li><a href="#l_icon">icon</a></li>
-<li><a href="#l_template">template</a></li>
-<li><a href="#l_texts">texts</a></li>
+  <li><a href="#l_icon">icon</a></li>
+  <li><a href="#l_template">template</a></li>
+  <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_icon"><code>icon</code></h3>
-<p>The   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
- to the loader image. This image is displayed when the widget is active; that is, between the <code class="highlighter-rouge">ajaxSend</code> and <code class="highlighter-rouge">ajaxComplete</code> events.</p>
+<h3 id="l_icon"><code class="highlighter-rouge">icon</code></h3>
+<p>The URL to the loader image. This image is displayed when the widget is active; that is, between the <code class="highlighter-rouge">ajaxSend</code> and <code class="highlighter-rouge">ajaxComplete</code> events.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: No image by default.</p>
 
-<h3 id="l_template"><code>template</code></h3>
-<p><span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
- wrapper for the output, or a DOM element selector.</p>
+<h3 id="l_template"><code class="highlighter-rouge">template</code></h3>
+<p>HTML wrapper for the output, or a DOM element selector.</p>
 
 <p><strong>Default value</strong>:</p>
-<pre>
-'&lt;div class=&quot;loading-mask&quot; data-role=&quot;loader&quot;&gt;' +
-    '&lt;div class=&quot;loader&quot;&gt;' +
-         '&lt;img alt=&quot;&lt;%- data.texts.imgAlt %&gt;&quot; src=&quot;&lt;%- data.icon %&gt;&quot;&gt;' +
-        '&lt;p&gt;&lt;%- data.texts.loaderText %&gt;&lt;/p&gt;' +
-    '&lt;/div&gt;' +
-'&lt;/div&gt;'
-</pre>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loading-mask"</span> <span class="na">data-role=</span><span class="s">"loader"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"loader"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">"&lt;%- data.texts.imgAlt %&gt;"</span> <span class="na">src=</span><span class="s">"&lt;%- data.icon %&gt;"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;</span><span class="err">%</span><span class="na">-</span> <span class="na">data</span><span class="err">.</span><span class="na">texts</span><span class="err">.</span><span class="na">loaderText</span> <span class="err">%</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
 
-<h3 id="l_texts"><code>texts</code></h3>
+<h3 id="l_texts"><code class="highlighter-rouge">texts</code></h3>
 
 <p>An object that contains translations for loader text:</p>
 <ul>
-<li><code>texts.loaderText</code>: 
-The text that is displayed under the loader image. <br />
-
-<b>Default value</b>: <i>'Please wait...'</i></li>
-
-<li><code>texts.imgAlt</code>: The text that is set as the <code>alt</code> attribute value of the loader image. <br />
-<b>Default value</b>: <i>'Loading...'</i></li>
+  <li><code class="highlighter-rouge">texts.loaderText</code>: The text that is displayed under the loader image.
+<strong>Default value</strong>: <em>‘Please wait…’</em></li>
+  <li><code class="highlighter-rouge">texts.imgAlt</code>: The text that is set as the <code class="highlighter-rouge">alt</code> attribute value of the loader image.
+<strong>Default value</strong>: <em>‘Loading…’</em></li>
 </ul>
 
 <h2 id="events">Events</h2>
 <p>Loader is subscribed to the following events:</p>
 <ul>
-<li><a href="#l_processStart">processStart</a></li>
-<li><a href="#l_processStop">processStop</a></li>
-<li><a href="#l_texts">texts</a></li>
+  <li><a href="#l_processStart">processStart</a></li>
+  <li><a href="#l_processStop">processStop</a></li>
+  <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_processStart"><code>processStart</code></h3>
+<h3 id="l_processStart"><code class="highlighter-rouge">processStart</code></h3>
 <p>Display the loader. Can be triggered on any page element.</p>
 
-<h3 id="l_processStop"><code>processStop</code></h3>
+<h3 id="l_processStop"><code class="highlighter-rouge">processStop</code></h3>
 <p>Hide the loader. Can be triggered on any page element.</p>
+
 
 			
 		</div>

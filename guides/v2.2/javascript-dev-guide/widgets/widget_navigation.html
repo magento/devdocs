@@ -720,31 +720,31 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="overview">Overview</h2>
-<p>Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento navigation extends the default functionality with the following:</p>
+<p>Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/">jQuery UI Menu widget</a>. Magento navigation extends the default functionality with the following:</p>
 <ul>
-<li>Expanding all layers of the menu tree past the second layer.</li>
-<li>Limiting the maximum number of list items contained within the main navigation (overflow items are placed into a secondary navigation level).</li>
-<li>Method for handling the responsive   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
- of the menu.</li>
+  <li>Expanding all layers of the menu tree past the second layer.</li>
+  <li>Limiting the maximum number of list items contained within the main
+navigation (overflow items are placed into a secondary navigation
+level).</li>
+  <li>Method for handling the responsive layout of the menu.</li>
 </ul>
 
-<p>The navigation   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a></p>
+<p>The navigation widget source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/menu.js">lib/web/mage/menu.js</a>.</p>
 
 <h2 id="navigation_init">Initialize the navigation widget</h2>
-<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
 
 <h2 id="navigation_options">Options</h2>
 <p>The navigation widget has the following options:</p>
 <ul>
-<li><a href="#n_breakpoint">breakpoint</a></li>
-<li><a href="#n_container">container</a></li>
-<li><a href="#n_maxItems">maxItems</a></li>
-<li><a href="#n_moreText">moreText</a></li>
-<li><a href="#n_responsiveAction">responsiveAction</a></li>
+  <li><a href="#n_breakpoint">breakpoint</a></li>
+  <li><a href="#n_container">container</a></li>
+  <li><a href="#n_maxItems">maxItems</a></li>
+  <li><a href="#n_moreText">moreText</a></li>
+  <li><a href="#n_responsiveAction">responsiveAction</a></li>
 </ul>
 
-<h3 id="n_breakpoint"><code>breakpoint</code></h3>
+<h3 id="n_breakpoint"><code class="highlighter-rouge">breakpoint</code></h3>
 
 <p>Width of user’s window in px for which the menu switches between mobile view and desktop view.</p>
 
@@ -752,7 +752,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">768</code></p>
 
-<h3 id="n_container"><code>container</code></h3>
+<h3 id="n_container"><code class="highlighter-rouge">container</code></h3>
 
 <p>Container to track the menu overflow on responsive navigation.</p>
 
@@ -760,7 +760,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">#menu</code></p>
 
-<h3 id="n_maxItems"><code>maxItems</code></h3>
+<h3 id="n_maxItems"><code class="highlighter-rouge">maxItems</code></h3>
 
 <p>The number of top level navigational items in main menu.</p>
 
@@ -768,7 +768,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="n_moreText"><code>moreText</code></h3>
+<h3 id="n_moreText"><code class="highlighter-rouge">moreText</code></h3>
 
 <p>Set the text for the overflow menu (i.e. more)</p>
 
@@ -776,7 +776,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">more</code></p>
 
-<h3 id="n_responsiveAction"><code>responsiveAction</code></h3>
+<h3 id="n_responsiveAction"><code class="highlighter-rouge">responsiveAction</code></h3>
 
 <p>The default responsive handler for the navigation widget.</p>
 
@@ -788,15 +788,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="navigation_methods">Methods</h2>
 <ul>
-<li><a href="#nav_setMaxItems">setMaxItems()</a></li>
-<li><a href="#nav_setupMoreMenu">setupMoreMenu()</a></li>
+  <li><a href="#nav_setMaxItems">setMaxItems()</a></li>
+  <li><a href="#nav_setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
-<h3 id="nav_setMaxItems"><code>setMaxItems()</code></h3>
+<h3 id="nav_setMaxItems"><code class="highlighter-rouge">setMaxItems()</code></h3>
 <p>Moves the list items that are more than the total max item number set by the user option.</p>
 
-<h3 id="nav_setupMoreMenu"><code>setupMoreMenu()</code></h3>
+<h3 id="nav_setupMoreMenu"><code class="highlighter-rouge">setupMoreMenu()</code></h3>
 <p>Builds the more overflowing menu by cloning the main menu items.</p>
+
 
 			
 		</div>

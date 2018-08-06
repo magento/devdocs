@@ -732,24 +732,24 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The quickSearch   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  is a custom autocomplete widget that populates a list of suggested search terms for a given field.</p>
 
-<p>The suggest widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank"><code>&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.</p>
+<p>The suggest widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Search/view/frontend/web/form-mini.js"><code class="highlighter-rouge">&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.</p>
 
 <h2 id="quicksearch_init">Initialize the quickSearch widget</h2>
-<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
 
 <h2 id="quicksearch_options">Options</h2>
 <ul>
-<li><a href="#q_autocomplete">autocomplete</a></li>
-<li><a href="#q_formSelector">formSelector</a></li>
-<li><a href="#q_minSearchLength">minSearchLength</a></li>
-<li><a href="#q_responseFieldElements">responseFieldElements</a></li>
-<li><a href="#q_searchLabel">searchLabel</a></li>
-<li><a href="#q_selectClass">selectClass</a></li>
-<li><a href="#q_submitBtn">submitBtn</a></li>
-<li><a href="#q_template">template</a></li>
+  <li><a href="#q_autocomplete">autocomplete</a></li>
+  <li><a href="#q_formSelector">formSelector</a></li>
+  <li><a href="#q_minSearchLength">minSearchLength</a></li>
+  <li><a href="#q_responseFieldElements">responseFieldElements</a></li>
+  <li><a href="#q_searchLabel">searchLabel</a></li>
+  <li><a href="#q_selectClass">selectClass</a></li>
+  <li><a href="#q_submitBtn">submitBtn</a></li>
+  <li><a href="#q_template">template</a></li>
 </ul>
 
-<h3 id="q_autocomplete"><code>autocomplete</code></h3>
+<h3 id="q_autocomplete"><code class="highlighter-rouge">autocomplete</code></h3>
 <p>Attaches the <code class="highlighter-rouge">autocomplete</code> attribute to the search field.</p>
 
 <p><strong>Type</strong>: String</p>
@@ -758,49 +758,49 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Accepted values</strong>: <code class="highlighter-rouge">off</code>, <code class="highlighter-rouge">on</code></p>
 
-<h3 id="q_formSelector"><code>formSelector</code></h3>
+<h3 id="q_formSelector"><code class="highlighter-rouge">formSelector</code></h3>
 <p>The form selector containing the search input field.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: No form by default.</p>
 
-<h3 id="q_minSearchLength"><code>minSearchLength</code></h3>
+<h3 id="q_minSearchLength"><code class="highlighter-rouge">minSearchLength</code></h3>
 <p>Minimum number of characters required before the auto suggest triggers.</p>
 
 <p><strong>Type</strong>: Integer</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">2</code></p>
 
-<h3 id="q_responseFieldElements"><code>responseFieldElements</code></h3>
+<h3 id="q_responseFieldElements"><code class="highlighter-rouge">responseFieldElements</code></h3>
 <p>Selector for the response elements.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default Value</strong>: <code class="highlighter-rouge">ul li</code></p>
 
-<h3 id="q_searchLabel"><code>searchLabel</code></h3>
+<h3 id="q_searchLabel"><code class="highlighter-rouge">searchLabel</code></h3>
 <p>Selector of a search input label.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=minisearch-label]</code></p>
 
-<h3 id="q_selectClass"><code>selectClass</code></h3>
+<h3 id="q_selectClass"><code class="highlighter-rouge">selectClass</code></h3>
 <p>Class assigned to the selected suggested term.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">selected</code></p>
 
-<h3 id="q_submitBtn"><code>submitBtn</code></h3>
+<h3 id="q_submitBtn"><code class="highlighter-rouge">submitBtn</code></h3>
 <p>Disable the submit button.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">button[type="submit"]</code></p>
 
-<h3 id="q_template"><code>template</code></h3>
+<h3 id="q_template"><code class="highlighter-rouge">template</code></h3>
 <p>Template responsible for rendering returned data (suggested terms).</p>
 
 <p><strong>Type</strong>: String</p>

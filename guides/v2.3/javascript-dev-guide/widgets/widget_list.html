@@ -733,92 +733,92 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 The content can be moved using buttons and links.</p>
 
 <p>The list   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- source file is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.</p>
+ source file is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/list.js">lib/web/mage/list.js</a>.</p>
 
 <h2 id="quicksearch_init">Initialize the list widget</h2>
-<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+<p>For information about how to initialize a widget in a JS component or <code class="highlighter-rouge">.phtml</code> template, see the <a href="/guides/v2.3/javascript-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.</p>
 
 <h2 id="list_options">Options</h2>
 <p>The list widget has the following options:</p>
 <ul>
-<li><a href="#l_addButton">addButton</a></li>
-<li><a href="#l_destinationSelector">destinationSelector</a></li>
-<li><a href="#l_itemCount">itemCount</a></li>
-<li><a href="#l_itemIndex">itemIndex</a></li>
-<li><a href="#l_maxItems">maxItems</a></li>
-<li><a href="#l_maxItemsAlert">maxItemsAlert</a></li>
-<li><a href="#l_removeButton">removeButton</a></li>
-<li><a href="#l_template">template</a></li>
-<li><a href="#l_templateClass">templateClass</a></li>
-<li><a href="#l_templateWrapper">templateWrapper</a></li>
+  <li><a href="#l_addButton">addButton</a></li>
+  <li><a href="#l_destinationSelector">destinationSelector</a></li>
+  <li><a href="#l_itemCount">itemCount</a></li>
+  <li><a href="#l_itemIndex">itemIndex</a></li>
+  <li><a href="#l_maxItems">maxItems</a></li>
+  <li><a href="#l_maxItemsAlert">maxItemsAlert</a></li>
+  <li><a href="#l_removeButton">removeButton</a></li>
+  <li><a href="#l_template">template</a></li>
+  <li><a href="#l_templateClass">templateClass</a></li>
+  <li><a href="#l_templateWrapper">templateWrapper</a></li>
 </ul>
 
 <p>Detailed description of each option follows.</p>
 
-<h3 id="l_addButton"><code>addButton</code></h3>
+<h3 id="l_addButton"><code class="highlighter-rouge">addButton</code></h3>
 <p>Selector for the element used for item adding.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-button=remove]</code></p>
 
-<h3 id="l_destinationSelector"><code>destinationSelector</code></h3>
+<h3 id="l_destinationSelector"><code class="highlighter-rouge">destinationSelector</code></h3>
 <p>Content destination selector.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=container]</code></p>
 
-<h3 id="l_itemCount"><code>itemCount</code></h3>
+<h3 id="l_itemCount"><code class="highlighter-rouge">itemCount</code></h3>
 <p>Number of total items.</p>
 
 <p><strong>Type</strong>: Integer</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">0</code></p>
 
-<h3 id="l_itemIndex"><code>itemIndex</code></h3>
+<h3 id="l_itemIndex"><code class="highlighter-rouge">itemIndex</code></h3>
 <p>Number of the current item.</p>
 
 <p><strong>Type</strong>: Integer</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">0</code></p>
 
-<h3 id="l_maxItems"><code>maxItems</code></h3>
+<h3 id="l_maxItems"><code class="highlighter-rouge">maxItems</code></h3>
 <p>Number of list items that can be added to the destination.</p>
 
 <p><strong>Type</strong>: Integer</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">null</code></p>
 
-<h3 id="l_maxItemsAlert"><code>maxItemsAlert</code></h3>
+<h3 id="l_maxItemsAlert"><code class="highlighter-rouge">maxItemsAlert</code></h3>
 <p>Alert message displayed when maximum limit is reached.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-button=remove]</code></p>
 
-<h3 id="l_removeButton"><code>removeButton</code></h3>
+<h3 id="l_removeButton"><code class="highlighter-rouge">removeButton</code></h3>
 <p>Selector for the element used for item removing.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-button=remove]</code></p>
 
-<h3 id="l_template"><code>template</code></h3>
+<h3 id="l_template"><code class="highlighter-rouge">template</code></h3>
 <p>Template for the added item.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=item]</code></p>
 
-<h3 id="l_templateClass"><code>templateClass</code></h3>
+<h3 id="l_templateClass"><code class="highlighter-rouge">templateClass</code></h3>
 <p>Class attached to the template wrapper.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">[data-role=container]</code></p>
 
-<h3 id="l_templateWrapper"><code>templateWrapper</code></h3>
+<h3 id="l_templateWrapper"><code class="highlighter-rouge">templateWrapper</code></h3>
 <p>Element holding the template.</p>
 
 <p><strong>Type</strong>: String</p>
@@ -829,22 +829,22 @@ The content can be moved using buttons and links.</p>
 
 <p>The list widget has the following methods:</p>
 <ul>
-<li><a href="#list_addItem">addItem</a></li>
-<li><a href="#list_checkLimit">checkLimit()</a></li>
-<li><a href="#list_handleAdd">handleAdd</a></li>
-<li><a href="#list_removeItem">removeItem()</a></li>
+  <li><a href="#list_addItem">addItem</a></li>
+  <li><a href="#list_checkLimit">checkLimit()</a></li>
+  <li><a href="#list_handleAdd">handleAdd</a></li>
+  <li><a href="#list_removeItem">removeItem()</a></li>
 </ul>
 
-<h3 id="list_addItem"><code>addItem()</code></h3>
+<h3 id="list_addItem"><code class="highlighter-rouge">addItem()</code></h3>
 <p>Adds item to the list in the specified order (defined by the index parameter).</p>
 
-<h3 id="list_handleAdd"><code>handleAdd()</code></h3>
+<h3 id="list_handleAdd"><code class="highlighter-rouge">handleAdd()</code></h3>
 <p>Adds item to the list.</p>
 
-<h3 id="list_checkLimit"><code>checkLimit()</code></h3>
+<h3 id="list_checkLimit"><code class="highlighter-rouge">checkLimit()</code></h3>
 <p>If the <code class="highlighter-rouge">maxItems</code> option is set, hides or displays the <strong>Add</strong> button.</p>
 
-<h3 id="list_removeItem"><code>removeItem()</code></h3>
+<h3 id="list_removeItem"><code class="highlighter-rouge">removeItem()</code></h3>
 <p>Removes an item from the list.</p>
 
 

@@ -729,13 +729,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 			<h2 id="overview">Overview</h2>
 
-<p>The gallery   <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span>
-   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
- implements a content area with images organized into preview and thumbnails blocks.</p>
+<p>The gallery jQuery widget implements a content area with images organized into preview and thumbnails blocks.</p>
 
 <p>The following picture is an illustration of image displaying on the product page using the gallery widget:</p>
 
-<p><img src="/common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails" /></p>
+<p><img src="/common/images/gallery_scr21.png" alt="A product page with preview and thumbnails" width="650px" /></p>
 
 <p>In addition, the <a href="/guides/v2.3/javascript-dev-guide/widgets/widget_gallery_mg.html">magnifier widget</a> can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.</p>
 
@@ -743,12 +741,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.</p>
 
-<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code class="highlighter-rouge">view.xml</code> configuration file of a   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
-.</p>
+<p>The important feature of the gallery widget implementation is the possibility to configure the widget options in the <code class="highlighter-rouge">view.xml</code> configuration file of a theme.</p>
 
-<p>The gallery widget source code is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a></p>
+<p>The gallery widget source code is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>.</p>
 
-<p>The gallery magnifier source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.</p>
+<p>The gallery magnifier source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/magnifier/magnify.js">lib/web/magnifier/magnify.js</a>.</p>
 
 <h3 id="contents">Contents</h3>
 
@@ -758,9 +755,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Example of declarative initialization:</p>
 
-<p><code class="highlighter-rouge">&lt;Magento_Catalog_module_dir&gt;/view/frontend/templates/product/view/gallery.phtml</code></p>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;Magento_Catalog_module_dir&gt;</span>/view/frontend/templates/product/view/gallery.phtml
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/x-magento-init"</span><span class="o">&gt;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"text/x-magento-init"</span><span class="o">&gt;</span>
     <span class="p">{</span>
          <span class="p">{</span>
         <span class="s2">"&lt;element_selector&gt;"</span><span class="p">:</span> <span class="p">{</span>
@@ -810,7 +808,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="o">&lt;</span><span class="sr">/script&gt;</span></code></pre></figure>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
 
 <h2 id="gallery_options">Options</h2>
 
@@ -831,13 +830,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Where <code class="highlighter-rouge">image</code> is an object with keys:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
     <span class="s2">"thumb"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
     <span class="s2">"img"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
     <span class="s2">"full"</span><span class="p">:</span> <span class="s2">"&lt;small_image_url&gt;"</span><span class="p">,</span>
     <span class="s2">"caption"</span><span class="p">:</span> <span class="s2">"&lt;message&gt;"</span><span class="p">,</span>
     <span class="s2">"isMain"</span><span class="p">:</span> <span class="s2">"&lt;true/false&gt;"</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">thumb</code>, <code class="highlighter-rouge">img</code>, and <code class="highlighter-rouge">full</code> are full paths to proper image files.</p>
 
@@ -846,7 +846,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Set the caption for a specific image in the <code class="highlighter-rouge">data</code> field.
 Example of the runtime initialization with the <code class="highlighter-rouge">caption</code> option specified:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">galleryInstance</span><span class="p">({</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">galleryInstance</span><span class="p">({</span>
     <span class="na">data</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="na">img</span><span class="p">:</span> <span class="s1">'preview_number_one.jpg'</span><span class="p">,</span>
@@ -854,7 +854,8 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
             <span class="na">caption</span><span class="p">:</span> <span class="s1">'T-Shirt Women side'</span>
         <span class="p">}</span>
     <span class="p">]</span>
-<span class="p">});</span></code></pre></figure>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h3 id="options"><code class="highlighter-rouge">options</code></h3>
 <p>Set of options available for the Preview region.</p>
@@ -1136,14 +1137,15 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 
 <p>Set as follows:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="s2">"breakpoints"</span><span class="p">:</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"breakpoints"</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">"%breakpoint_name%"</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">"conditions"</span><span class="p">:</span> <span class="p">{</span>
             <span class="p">...</span>
         <span class="p">}</span>
         <span class="s2">"options"</span><span class="p">:</span> <span class="p">{...}</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <p>Where the options are as follows:</p>
 
@@ -1158,15 +1160,16 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 
 <p>The general gallery options are set as follows:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"gallery"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
 ...
-<span class="nt">&lt;/var&gt;</span></code></pre></figure>
+<span class="nt">&lt;/var&gt;</span>
+</code></pre></div></div>
 
 <p>The fullscreen and breakpoints options are set in a similar way:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"fullscreen"</span><span class="nt">&gt;</span>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"fullscreen"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%fullscreen_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
 ...
@@ -1175,7 +1178,8 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option1%"</span><span class="nt">&gt;</span>%option1_value%<span class="nt">&lt;/var&gt;</span>
     <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">"%breakpoints_option2%"</span><span class="nt">&gt;</span>%option2_value%<span class="nt">&lt;/var&gt;</span>
 ...
-<span class="nt">&lt;/var&gt;</span></code></pre></figure>
+<span class="nt">&lt;/var&gt;</span>
+</code></pre></div></div>
 
 <p>For illustration of setting gallery option in <code class="highlighter-rouge">view.xml</code>, you can reference to the <a href="https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/blank/etc/view.xml#L184">view.xml of the Blank theme</a>.</p>
 
@@ -1183,11 +1187,12 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 
 <p>Gallery methods are placed in data storage of the <code class="highlighter-rouge">gallery</code> object. To initialize the API, on the gallery object, call the <code class="highlighter-rouge">data</code> method with <code class="highlighter-rouge">gallery</code> as argument. The illustration follows:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span><span class="o">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span>
 
-<span class="c1">//or
-</span>
-<span class="k">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="s1">'[data-gallery-role="gallery"]'</span><span class="p">)</span><span class="o">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span></code></pre></figure>
+<span class="c1">//or</span>
+
+<span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[data-gallery-role="gallery"]'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span>
+</code></pre></div></div>
 
 <p>This method returns JS object that contains   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  functions.</p>
@@ -1195,14 +1200,16 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 <p>To ensure that the gallery is fully formed, wrap your code with   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
  handler function and add it to the <code class="highlighter-rouge">gallery:loaded</code> event:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="err">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span><span class="o">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'gallery:loaded'</span><span class="p">,</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="err">$</span><span class="p">(</span><span class="nx">element</span><span class="p">)</span><span class="o">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span>
-        <span class="cm">/* api methods calls */</span>
-    <span class="p">});</span></code></pre></figure>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'gallery:loaded'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">element</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'gallery'</span><span class="p">);</span>
+    <span class="cm">/* api methods calls */</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <p>Then to call a method, use the following notation:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="nx">api</span><span class="o">.%</span><span class="nx">method_name</span><span class="o">%</span><span class="p">();</span></code></pre></figure>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">api</span><span class="o">.%</span><span class="nx">method_name</span><span class="o">%</span><span class="p">();</span>
+</code></pre></div></div>
 
 <p>All available methods are listed in the following paragraph.</p>
 
@@ -1268,21 +1275,21 @@ Example of the runtime initialization with the <code class="highlighter-rouge">c
 <p>Add new items to the gallery.</p>
 
 <p>Example:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">api</span><span class="o">.</span><span class="nx">updateData</span><span class="p">([{</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">api</span><span class="o">.</span><span class="nx">updateData</span><span class="p">([{</span>
     <span class="nx">img</span><span class="o">:</span> <span class="s1">'image1.jpg'</span><span class="p">,</span>
     <span class="nx">thumb</span><span class="o">:</span> <span class="s1">'thumb1.jpg'</span><span class="p">,</span>
     <span class="nx">caption</span><span class="o">:</span> <span class="s1">'caption'</span>
-<span class="p">}]);</span></code></pre></figure>
+<span class="p">}]);</span>
+</code></pre></div></div>
 
 <h4 id="gallery_updateOptions"><code class="highlighter-rouge">updateOptions()</code></h4>
 <p>Updates options of active breakpoint or default gallery options, if there is no active breakpoint.</p>
 
 <p>Example:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">api</span><span class="o">.</span><span class="nx">updateOptions</span><span class="p">([{</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">api</span><span class="o">.</span><span class="nx">updateOptions</span><span class="p">([{</span>
     <span class="nx">nav</span><span class="o">:</span> <span class="s1">'dots'</span>
-<span class="p">}]);</span></code></pre></figure>
+<span class="p">}]);</span>
+</code></pre></div></div>
 
 
 			
