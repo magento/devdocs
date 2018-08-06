@@ -61,9 +61,10 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Determines whether to clean the existing [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) before deploying updated static content generated during the build or deploy phase. We recommend the default value _true_ in development. When this variable is set to `false`, previously existing static content files are overwritten only if a newer version is being generated.
+Enables or disables cleaning [static content files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development. If you make modifications to static content through a separate process, set the value to _false_.
 
-If you create static content using another process outside of Magento, you might want to change the value to `false` to keep the content from getting deleted by Magento static content deployments.
+-   **`true`**—Removes all existing static content before deploying the updated static content.  content minification; does *not*
+-   **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
 
 ```yaml
 stage:
