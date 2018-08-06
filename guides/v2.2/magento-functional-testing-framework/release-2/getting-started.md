@@ -178,6 +178,14 @@ cp .htaccess.sample .htaccess
 {:.bs-callout .bs-callout-tip}
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
 
+### Step 6. Generate existing tests
+
+In the `magento2/` root directory, run the following command to generate tests as PHP classes from XML files:
+
+```bash
+vendor/bin/mftf generate:tests
+```
+
 ### Step 7. Run tests
 
 To run tests, you need a running Selenium server and a [`codecept`] or [`mftf`] with required parameters.
