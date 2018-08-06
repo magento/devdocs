@@ -3,19 +3,19 @@ pages:
     - label: Overview
       url: /rest/bk-rest.html
       children:
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.0"]
           url: http://devdocs.magento.com/swagger/index_20.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.1"]
           url: http://devdocs.magento.com/swagger/index_21.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.2"]
           url: http://devdocs.magento.com/swagger/index_22.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.3"]
           url: http://devdocs.magento.com/swagger/index_23.html
 
@@ -43,25 +43,25 @@ pages:
 
     - label: Tutorials
       url: /rest/tutorials/index.html
-      versions: ["2.3"]
+      versions: ["2.1", "2.2", "2.3"]
       children:
 
-        - label: Prerequisite tasks
-          children:
+      - label: Prerequisite tasks
+        versions: ["2.2", "2.3"]
+        children:
 
           - label: Generate an admin token
-            url: /rest/prerequisite-tasks/create-admin-token.html
+            url: /rest/tutorials/prerequisite-tasks/create-admin-token.html
 
-          - label: Create a customer and generate a customer token
-            url: /rest/prerequisite-tasks/create-customer.html
+      - label: Order processing
+        class: tutorial
+        url: /rest/tutorials/orders/order-intro.html
+        versions: ["2.1", "2.2", "2.3"]
 
-        - label: Create configurable products Tutorial
-          class: tutorial
-          url: /rest/tutorials/configurable-product/config-product-intro.html
-
-        - label: Order processing with MSI
-          class: tutorial
-          url: /rest/tutorials/msi-order-processing/index.html
+      - label: Create configurable products
+        class: tutorial
+        url: /rest/tutorials/configurable-product/config-product-intro.html
+        versions: ["2.2", "2.3"]
 
     - label: Modules
       children:
