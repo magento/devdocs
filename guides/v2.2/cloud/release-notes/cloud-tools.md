@@ -29,7 +29,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Docker Compose for Cloud**—Made the following improvements to the [Docker setup and configuration]({{ page.baseurl }}/cloud/reference/docker-config.html) process:
 
-   -  <!--MAGECLOUD-2359-->Added sample PHP configuration files and a command—`docker:config:convert` to simplify environment configuration. Now, you can configure environment variables in PHP configuration files, and then convert them to Docker ENV files.
+   -  <!--MAGECLOUD-2359-->Added sample PHP configuration files and a command—`docker:config:convert` to simplify environment configuration. Now, you configure environment variables in the sample PHP configuration files in the `docker/config.env.dist docker` directory and transform those files to Docker ENV files.
 
    -  <!--MAGECLOUD--2357-->The {{site.data.var.ece}} installation process now supports deploying to both read-only and  read-write file systems to more closely emulate the Cloud file system. See [Launch Docker]({{ page.baseurl }}/cloud/reference/docker-config.html#launch-docker-configuration).
 
@@ -82,14 +82,13 @@ Made the following changes to improve log messages and reduce log size:
 Now you can easily move your configuration files between environments. After updating to `ece-tools` v2002.0.13, regenerate
 older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
-- <!--MAGECLOUD-2556>Fixed an issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from a www domain to an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain (also referred to as a *naked* domain).
+- <!--MAGECLOUD-2556-->Fixed an  issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from a an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain (also referred to as a non-www or *naked* domain) to a www domain.
 
 -  <!--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if you do not include the `engine` parameter in the updated `.magento.env.yaml` configuration file. Now, the merge operation correctly overwrites only the values you specify in the updated `.magento.env.yaml` without requiring you to set the `engine` parameter.
 
+-  <!-- MAGECLOUD-2515-->Fixed a Redis configuration issue that incorrectly enabled session locking for {{site.data.var.ece}} v2.1.11+ and v2.2.1+, which can cause slow performance and timeouts. Now, session locking is disabled by default. The issue was caused by a change in the default behavior of the `disable_locking` parameter introduced in v1.3.4 of the Redis session handler package [colinmollenhour/php-redis-session-abstract package](https://github.com/colinmollenhour/php-redis-session-abstract).
 
--  <!-- MAGECLOUD-2515-->Fixed a Redis configuration issue that incorrectly enabled session locking in {{site.data.var.ece}} v2.1.4 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default in v2.1.4 and later. The error was caused by a change in the default behavior of the `disable_locking` parameter introduced in v1.3.4 of the Redis session handler—[php-redis-session-abstract](https://github.com/colinmollenhour/php-redis-session-abstract).
-
-- <!--MAGECLOUD-2464-->Fixed a compatibility issue in the `ece-tools` package that caused problems with cron queue management in {{site.data.var.ee}} versions 2.2 to 2.5.
+- <!--MAGECLOUD-2464-->Fixed an issue in the `ece-tools` package that caused problems with cron queue management in {{site.data.var.ee}} versions 2.2.0 to 2.2.5.
 
 
 ## v2002.0.12
