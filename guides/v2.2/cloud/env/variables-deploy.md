@@ -63,7 +63,7 @@ stage:
 
 Enables or disables cleaning [static content files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development. If you make modifications to static content through a separate process, set the value to _false_.
 
--   **`true`**—Removes all existing static content before deploying the updated static content.  content minification; does *not*
+-   **`true`**—Removes all existing static content before deploying the updated static content.
 -   **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
 
 ```yaml
