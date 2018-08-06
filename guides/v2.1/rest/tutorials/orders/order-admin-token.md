@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest
 title: Step 2. Get the admin token
-subtitle: Order processing with REST tutorial
+subtitle: Order processing tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html

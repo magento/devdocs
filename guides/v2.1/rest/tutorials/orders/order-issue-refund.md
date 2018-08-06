@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest
 title: Step 10. Issue a partial refund
-subtitle: Order processing with REST tutorial
+subtitle: Order processing tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html

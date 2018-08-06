@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest
 title: Step 4. Define configurable product options
+subtitle: Create a configurable product tutorial
 menu_title: Step 4. Define configurable product options
 menu_order: 40
 level3_subgroup: configurable-product-tutorial

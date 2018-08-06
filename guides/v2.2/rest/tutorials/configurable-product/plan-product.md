@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest
 title: Step 1. Plan the product
+subtitle: Create a configurable product tutorial
 menu_title: Step 1. Plan the product
 menu_order: 10
 level3_subgroup: configurable-product-tutorial

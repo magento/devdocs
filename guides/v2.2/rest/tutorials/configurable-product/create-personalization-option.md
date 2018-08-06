@@ -2,6 +2,7 @@
 layout: tutorial
 group: rest
 title: Step 5. Create the personalization option
+subtitle: Create a configurable product tutorial
 menu_title: Step 5. Create the personalization option
 menu_order: 50
 level3_subgroup: configurable-product-tutorial

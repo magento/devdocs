@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: rest
-title: Order processing with REST tutorial
+title: Order processing tutorial
 menu_title: Initial tasks
 return_to:
   title: REST tutorials

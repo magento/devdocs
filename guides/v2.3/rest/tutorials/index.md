@@ -11,9 +11,9 @@ functional_areas:
 
 The REST tutorials provide an introduction to Magento web APIs. In general, the tutorials guide you through commonly-performed complex tasks:
 
-* The **order processing** tutorial demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
+* The [**order processing** tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) demonstrates the lifecycle of an order. Major steps include creating a quote, converting it to an order, issuing an invoice, and shipping the order.
 
-* The **configurable product** tutorial helps you plan then create a configurable product and its component simple products.
+* The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
 
 * The **order processing with MSI** tutorial builds upon the original order processing tutorial. It also configures sources and stocks and other Multi Source Inventory features.
 
