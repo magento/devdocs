@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a configurable product with REST APIs tutorial | Magento 2 Developer Documentation</title>
+	<title>Create a configurable product tutorial | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 
@@ -244,10 +244,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
         
-        <li><a  data-proofer-ignore href="/guides/v2.2/get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
-        
-        
-        <li><a href="/guides/v2.2/rest/tutorials/configurable-product/config-product-intro.html">Create a configurable product with REST APIs</a></li>
+        <li><a  data-proofer-ignore href="/guides/v2.2/rest/tutorials/index.html">REST tutorials</a></li>
         
         
         <li><a  data-proofer-ignore href="/guides/v2.2/howdoi/customize_product.html">Customize Product Creation Form</a></li>
@@ -303,8 +300,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       
       <ul>
         <li class="level-0">
-          <a href="/guides/v2.2/rest/bk-rest.html">
-            &larr; REST API Reference
+          <a href="/guides/v2.2/rest/tutorials/index.html">
+            &larr; REST tutorials
           </a>
         </li>
       
@@ -348,22 +345,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 	
 
-	<h1 class="page-heading">Create a configurable product with REST APIs tutorial</h1>
+	<h1 class="page-heading">Create a configurable product tutorial</h1>
 
   
 
 
 </section>
 
-			<h3 class="tutorial-before" id="before-you-begin">Before you begin</h3>
-
-<p>This tutorial shows a system integrator how to use Magento REST APIs to create a <em>configurable product</em>. A configurable product is a parent product of multiple simple products. You define a configurable product so that the buyer must make one or more choices to select a product. For example, most clothing comes in a variety of colors and sizes. If you are offering a skirt in black, red, and blue colorways in sizes small, medium, and large, then you would create a configurable product with 9 simple products, one for each combination of color and size.</p>
+			<p>This tutorial shows a system integrator how to use Magento REST APIs to create a <em>configurable product</em>. A configurable product is a parent product of multiple simple products. You define a configurable product so that the buyer must make one or more choices to select a product. For example, most clothing comes in a variety of colors and sizes. If you are offering a skirt in black, red, and blue colorways in sizes small, medium, and large, then you would create a configurable product with 9 simple products, one for each combination of color and size.</p>
 
 <p>In this tutorial, we will create a gray t-shirt that comes in three sizes (small, medium, and large).  The configurable product defines basic characteristics of the t-shirt. Then we will create a simple product for each size and link each of them to the configurable product. Finally, we will add an option that allows the customer to specify text that can be added to the shirt.</p>
 
 <p>This <strong>5-step tutorial</strong> generally takes <strong>45 minutes</strong>.</p>
 
-<h3 id="complete-these-prerequisites">Complete these prerequisites</h3>
+<h3 class="tutorial-before" id="before-you-begin">Before you begin</h3>
 
 <ul>
   <li>
@@ -373,22 +368,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Install a REST client. You can use any REST client to send calls to Magento. <a href="https://www.getpostman.com/" target="_blank">Postman</a> is recommended.</p>
   </li>
   <li>
-    <p>Know how to construct a REST call in Magento. See <a href="/guides/v2.2/get-started/gs-web-api-request.html">Construct a request</a> for details.</p>
-  </li>
-  <li>
-    <p>Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See <a href="/guides/v2.2/get-started/order-tutorial/order-admin-token.html">Step 2 of the Order Processing with REST APIs Tutorial</a> for more information.</p>
+    <p>Obtain an admin authorization token. All calls in this tutorial require administrator privileges. See <a href="/guides/v2.2/rest/tutorials/prerequisite-tasks/create-admin-token.html">Generate the admin token</a> for more information.</p>
   </li>
 </ul>
 
 <h3 id="other-resources">Other resources</h3>
 
 <ul>
-  <li>
-    <p>Magento uses <a href="https://swagger.io/" target="_blank">Swagger</a> to provide REST API documentation. You can view the <a href="/swagger/" target="_blank">static REST API documentation on devdocs</a> or <a href="/guides/v2.2/rest/generate-local.html">generate a local API reference</a>.</p>
-  </li>
-  <li>
-    <p>Refer to <a href="http://docs.magento.com/m2/ce/user_guide/getting-started.html">Getting Started with Magento Open Source</a> for information about the Luma store that is created when you install Magento with the sample data.</p>
-  </li>
+  <li><a href="/guides/v2.2/rest/tutorials/index.html">REST Tutorials</a> provides additional information about completing any Magento REST tutorial.</li>
 </ul>
 
 
