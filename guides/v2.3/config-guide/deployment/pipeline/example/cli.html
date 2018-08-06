@@ -612,20 +612,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
                 </li>
                 
                 
-
-                
-                
-                <li class="nav-level3  " id="using-rsync">
-                    
-
-                    
-                    <a  href="/guides/v2.3/config-guide/deployment/pipeline/example/rsync.html">Using rsync</a>
-                    
-
-                    
-                </li>
-                
-                
             </ul>
             
         </li>
@@ -1900,20 +1886,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, <code class="highlighter-rouge">config.php</code>, and Magento CLI commands.</p>
+			<p>This example shows how to set shared, system-specific, and sensitive values in your development system, then deploy those values to your production system.
+This is done by using a combination of shared configurations, the <code class="highlighter-rouge">config.php</code> file, and Magento CLI command.</p>
 
-<p>These configuration settings can be shared between the development and production systems:</p>
-
-<p>VAT Number and Store Name from <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong></p>
-
-<p>These configuration settings are either system-specific or sensitive, as indicated:</p>
+<p>This example uses the following configuration settings:</p>
 
 <ul>
-  <li>Send Emails To (sensitive) from <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>Contacts</strong></li>
-  <li>Default Email Domain (system-specific) from <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; Customers &gt; <strong>Customer Configuration</strong> &gt; <strong>Create New Account Options</strong></li>
+  <li><strong>Vat Number</strong> and <strong>Store Name</strong> for the shared configuration settings.
+These are found under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>General</strong>.</li>
+  <li><strong>Send Emails To</strong> for the sensitive configuration value.
+This is found under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>Contacts</strong>.</li>
+  <li><strong>Default Email Domain</strong> for the system-specific configuration value.
+This is found under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; Customers &gt; <strong>Customer Configuration</strong> &gt; <strong>Create New Account Options</strong>.</li>
 </ul>
 
-<p>You can use the same procedure to configure any settings in the following references:</p>
+<p>You can use the same procedure shown in this example to configure any settings in the following references:</p>
 
 <ul>
   <li><a href="/guides/v2.3/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
@@ -1923,10 +1910,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="before-you-begin">Before you begin</h2>
+
 <p>Before you begin, set up file system permissions and ownership as discussed in <a href="/guides/v2.3/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq">Prerequisite for your development, build, and production systems</a>.</p>
 
 <h2 id="assumptions">Assumptions</h2>
-<p>This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.</p>
+
+<p>This topic provides an example of modifying the production system configuration.
+You can choose different configuration options if you wish.</p>
 
 <p>For the purposes of this example, we assume the following:</p>
 
@@ -1937,6 +1927,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="deploy-sens-setconfig">Step 1: Set the configuration in the development system</h2>
+
 <p>To set the default locale and weight units in your development system:</p>
 
 <ol>
@@ -1971,7 +1962,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="step-2-update-the-configuration">Step 2: Update the configuration</h2>
-<p>Now that you’ve changed the configuration in the Magento Admin, write the shared configuration to a file as discussed in this section.</p>
+
+<p>Now that you’ve changed the configuration in the Magento Admin, write the shared configuration to a file as using the following steps:</p>
 
 <div>
 
@@ -2021,10 +2013,12 @@ php bin/magento app:config:dump
     </li>
   </ol>
 
-  <p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
+  <p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control.
+You will create the same configuration settings on your production system later in this procedure.</p>
 
   <h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
-  <p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.</p>
+
+  <p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes into your build system, compile the code, and generate static files.</p>
 
   <div>
 
@@ -2065,6 +2059,7 @@ php bin/magento app:config:dump
     </ol>
 
     <h2 id="step-4-update-the-production-system">Step 4: Update the production system</h2>
+
     <p>The last step in the process is to update your production system. You must do it in two parts:</p>
 
     <ul>
@@ -2073,20 +2068,20 @@ php bin/magento app:config:dump
     </ul>
 
     <h3 id="config-split-verify-sens">Update the sensitive and system-specific settings</h3>
+
     <p>To set the sensitive and system-specific settings using environment variables, you must know the following:</p>
 
     <ul>
       <li>
         <p>Each setting’s scope</p>
 
-        <p>If you followed the instructions in <a href="#deploy-sens-setconfig">Step 1</a>, the scope for Send Emails To is website and the scope for Default Email Domain is global (that is, the Default Config scope).</p>
+        <p>If you followed the instructions in <a href="#deploy-sens-setconfig">Step 1</a>, the scope for <strong>Send Emails To</strong> is website and the scope for <strong>Default Email Domain</strong> is global (that is, the Default Config scope).</p>
 
-        <p>You must know the website’s code to set the Send Emails To configuration value. See <a href="/guides/v2.3/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a> for more information on finding it.</p>
+        <p>You need the website code to set the <strong>Send Emails To</strong> configuration value.
+For more information on finding this value, see: <a href="/guides/v2.3/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>.</p>
       </li>
       <li>
-        <p>Each setting’s configuration path</p>
-
-        <p>The configuration paths used in this example follow:</p>
+        <p>Configuration paths for the settings used in this example:</p>
 
         <table>
           <thead>
@@ -2107,34 +2102,36 @@ php bin/magento app:config:dump
           </tbody>
         </table>
 
-        <p>You can find all sensitive and system-specific configuration paths in <a href="/guides/v2.3/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a>.</p>
+        <p>For all sensitive and system-specific configuration paths, see: <a href="/guides/v2.3/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a>.</p>
       </li>
     </ul>
 
     <h3 id="set-the-variables-using-cli-commands">Set the variables using CLI commands</h3>
-    <p>This section discusses how to the following commands to set system-specific and sensitive configuration settings:</p>
+
+    <p>Use the following CLI commands to set system-specific and sensitive configuration settings:</p>
 
     <ul>
       <li><code class="highlighter-rouge">magento config:set</code> for system-specific settings</li>
       <li><code class="highlighter-rouge">magento config:sensitive:set</code> for sensitive settings</li>
     </ul>
 
-    <p>To set the system-specific setting Default Email Domain, which is in the default scope, the command to use is:</p>
+    <p>To set the system-specific setting <strong>Default Email Domain</strong>, which is in the default scope, use the following command:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:set customer/create_account/email_domain &lt;email domain&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:set customer/create_account/email_domain &lt;email domain&gt;
 </code></pre></div>    </div>
 
     <p>You don’t need to use the scope in the command because it’s the default scope.</p>
 
-    <p>To set values for Send Emails To, however, you must know the scope type (<code class="highlighter-rouge">website</code>) and the scope code (which is likely different on every site).</p>
+    <p>To set values for <strong>Send Emails To</strong>, however, you must know the scope type (<code class="highlighter-rouge">website</code>) and the scope code (which is likely different on every site).</p>
 
-    <p>An example follows:</p>
+    <p>Example:</p>
 
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=&lt;website code&gt; &lt;email address&gt;
-</code></pre></div>    </div>
+    <pre><code class="language-unix">php bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=&lt;website code&gt; &lt;email address&gt;
+</code></pre>
 
     <h3 id="config-split-verify-shared">Update the shared settings</h3>
-    <p>This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).</p>
+
+    <p>This section discusses how to pull all the changes you made on your development and build systems to a production environment, which updates the shared configuration settings (Store Name and VAT Number).</p>
 
     <div>
 
@@ -2182,7 +2179,6 @@ php bin/magento maintenance:enable
       </ol>
 
       <h3 id="verify-configuration-settings-in-the-magento-admin">Verify configuration settings in the Magento Admin</h3>
-      <p>This section discusses how you can verify the configuration settings in your production system Admin.</p>
 
       <p>To verify the configuration settings:</p>
 
