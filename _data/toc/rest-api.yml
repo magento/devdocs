@@ -53,12 +53,12 @@ pages:
           - label: Generate an admin token
             url: /rest/tutorials/prerequisite-tasks/create-admin-token.html
 
-      - label: Order processing with REST tutorial
+      - label: Order processing with REST
         class: tutorial
         url: /rest/tutorials/orders/order-intro.html
         versions: ["2.1", "2.2", "2.3"]
 
-      - label: Create configurable products tutorial
+      - label: Create configurable products
         class: tutorial
         url: /rest/tutorials/configurable-product/config-product-intro.html
         versions: ["2.2", "2.3"]
