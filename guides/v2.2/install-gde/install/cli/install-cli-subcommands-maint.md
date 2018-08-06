@@ -16,14 +16,14 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
+## Prerequisites {#instgde-cli-subcommands-maint-prereq}
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
-<h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
+## Enable or disable maintenance mode {#instgde-cli-maint}
 Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site.
 
 Magento detects maintenance mode as follows:
@@ -63,7 +63,7 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
   After you place Magento in maintenance mode, you must stop all message queue consumer processes. One way to find these processes is to run the `ps -ef | grep queue:consumer:start` command. Then run the `kill <process_id>` command for each consumer. In a multiple node environment, be sure to repeat this task on each node.
 </div>
 
-<h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
+## Maintain the list of exempt IP addresses {#instgde-cli-maint-exempt}
 To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
 	magento maintenance:allow-ips <ip address> .. <ip address> [--none]

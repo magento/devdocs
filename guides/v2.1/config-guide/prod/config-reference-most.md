@@ -272,7 +272,7 @@ Enable Qty Increments | `cataloginventory/item_options/enable_qty_increments` | 
 Qty Increments | `cataloginventory/item_options/qty_increments` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Automatically Return Credit Memo Item to Stock | `cataloginventory/item_options/auto_return` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
-### Visual Merchadiser paths
+### Visual Merchandiser paths
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Visual Merchandiser**.
 
 Name  | Config path | EE only? |

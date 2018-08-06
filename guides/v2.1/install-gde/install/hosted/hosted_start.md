@@ -26,7 +26,7 @@ If your hosted system is already set up, go to <a href="{{ page.baseurl }}/insta
 *	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html">Transfer the Magento software to your hosted system</a>
 *	<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install.html">Install the Magento software</a>
 
-<h2 id="newbie-verify">Verify the software on your system</h2>
+## Verify the software on your system {#newbie-verify}
 Magento requires the following software to run:
 
 *	Web server: Apache 2.2 or 2.4
@@ -42,7 +42,7 @@ For complete details, see <a href="{{ page.baseurl }}/install-gde/system-require
 #### Next step
 <a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html">Configure a database and a database user</a>
 
-<!-- <h2 id="newbie-cpanel">Start the cPanel configuration utility</h2>
+<!-- ## Start the cPanel configuration utility {#newbie-cpanel}
 To start configuring your hosted system:
 
 1.	Log in with your provided credentials.

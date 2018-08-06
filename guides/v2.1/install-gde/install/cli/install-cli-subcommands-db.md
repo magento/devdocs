@@ -12,14 +12,14 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
+## Prerequisites {#instgde-cli-subcommands-db-prereq}
 Before you run this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.
 
-<h2 id="instgde-cli-dbconfig">Configure the database and add data</h2>
+## Configure the database and add data {#instgde-cli-dbconfig}
 Command usage:
 
 	magento setup:db-schema:upgrade

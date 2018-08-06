@@ -101,7 +101,7 @@ The following table explains this command's parameters and values.
           default, with no option specified, is to generate files
           for all <a href=
           "http://www.loc.gov/standards/iso639-2/php/code_list.php"
-          target="\_blank">ISO-636</a> language codes. You can
+          target="\_blank">ISO-639</a> language codes. You can
           specify the name of one language code at a time.
         </p>
         <p>
@@ -456,7 +456,7 @@ To do this, take the following steps:
 2.  Copy the exported files to the non-production code base.
 3.  Run [`bin/magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
-<h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
+## Troubleshooting the static view files deployment tool {#view-file-trouble}
 <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:

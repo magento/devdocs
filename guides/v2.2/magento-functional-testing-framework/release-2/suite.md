@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/suite.md
 functional_areas:
  - Testing
-mftf-release: 2.2.0
+mftf-release: 2.3.0
 ---
 
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
@@ -15,9 +15,9 @@ Suites are essentially groups of tests that run in the specific conditions (prec
 They enable you including, excluding, and grouping tests for a customized test run when you need it.
 You can form suites using separate tests, groups, and modules.
 
-Each suite must be defined in the _\<magento 2 root\>/dev/tests/acceptance/tests/_suite/suite.xml_ file.
-The generated tests for each suite go into a separate directory under _\<magento 2 root\>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/\_generated_.
-By default, all generated tests are stored in the _default_ suite under _.../Magento/FunctionalTest/\_generated/default_
+Each suite must be defined in the `<magento 2 root>/dev/tests/acceptance/tests/_suite/suite.xml` file.
+The generated tests for each suite go into a separate directory under `<magento 2 root>/dev/tests/acceptance/tests/functional/Magento/FunctionalTest/_generated/`.
+By default, all generated tests are stored in the _default_ suite under `.../Magento/FunctionalTest/_generated/default/`
 
 {%
 include note.html
@@ -58,7 +58,7 @@ The format of a suite:
   - must not match any existing group value.
   For example, the suite `<suite name="ExampleTest">` will fail during test run if any test contains in annotations `<group value="ExampleTest">`.
   - must not be `default` or `skip`. Tests that are not in any suite are generated under the `default` suite.
-  The suite name `skip` is synonymous to including a test in the `<group value="skip"/>`.
+  The suite name `skip` is synonymous to including a test in the `<group value="skip"/>`, which will be deprecated in MFTF 3.0.0.
   - can contain letters, numbers, and underscores.
   - should be upper camel case.
 - A suite must contain at least one `<include>`, or one `<exclude>`, or both.
@@ -84,15 +84,15 @@ You cannot isolate this test from preconditions of the suite; it cannot be used 
 There are several ways to generate and execute your new test in the context of a suite:
 - Edit the appropriate `suite.xml` to include your test only and run:
   ```bash
-  vendor/bin/robo group <suiteName>
+  vendor/bin/mftf group <suiteName>
   ```
 - Temporarily add a group to your test like `<group value="foo">` and run:
   ```bash
-  vendor/bin/robo group foo
+  vendor/bin/mftf group foo
   ```
 - To limit generation to your suite/test combination, run in conjunction with the above:
   ```bash
-  vendor/bin/robo generate:suite <suite>
+  vendor/bin/mftf generate:suite <suite>
   ```
 - To generate any combination of suites and tests, use [`generate:tests`] with the `--tests` flag.
 
@@ -282,7 +282,7 @@ Attributes|Type|Use|Description
 [action groups]: test/action-groups.html
 [`<after>`]: #after-tag
 [`<before>`]: #before-tag
-[`generate:tests`]: commands/robo.html#generate
+[`generate:tests`]: commands/mftf.html#generatetests
 [test]: test.html
 [`<test>`]: #test-tag
 [`<group>`]: #group-tag

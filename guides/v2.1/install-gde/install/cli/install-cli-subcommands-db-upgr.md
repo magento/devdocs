@@ -9,11 +9,11 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-cli-before">First steps</h2>
+## First steps {#instgde-cli-before}
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
+## Prerequisites {#instgde-cli-subcommands-maint-prereq}
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 ## Upgrade the Magento database schema and data {#instgde-cli-db-upgr}
