@@ -11,8 +11,6 @@ version: 2.1
 github_link: install-gde/system-requirements_repo-tls1-2.md
 redirect_from:
   - guides/v2.1/install-gde/system-requirements-tls-parent.html
-  - guides/v2.2/install-gde/system-requirements-tls-parent.html
-  - guides/v2.3/install-gde/system-requirements-tls-parent.html
 functional_areas:
   - Install
   - System
