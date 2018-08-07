@@ -5,7 +5,7 @@ version: 2.2
 github_link: magento-functional-testing-framework/release-2/introduction.md
 functional_areas:
     - Testing
-mftf-release: 2.3.2
+mftf-release: 2.3.3
 ---
 
 _The latest MFTF release is [{{page.mftf-release}}]._
@@ -47,11 +47,10 @@ The purpose of MFTF is to:
 ## Scope
 
 MFTF will enable you to:
-
--   Test user interactions with web applications in testing.
--   Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
--   Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
--   Automate regression testing.
+-  Test user interactions with web applications in testing.
+-  Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
+-  Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
+-  Automate regression testing.
 
 ## Use cases
 
@@ -61,24 +60,22 @@ As a software engineer, perform regression testing before release to ensure that
 
 ## Find your MFTF version
 
-The MFTF is installed as a Composer dependency in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/composer.lock`.
+### Using the MFTF CLI
 
-Open the file and check the corresponding dependency:
+```bash
+cd <magento_root>/
+```
+```bash
+vebdor/bin/mftf --version
+```
 
-```json
-{
-    ...
-    "packages": [
-        ...
-        {
-            "name": "magento/magento2-functional-testing-framework",
-            "version": "2.3.0",
-            ...
-        }
-        ...
-    ]
-    ...
-}
+### Using the Composer CLI
+
+```bash
+cd <magento_root>/
+```
+```bash
+composer show magento/magento2-functional-testing-framework
 ```
 
 ## Contents of dev/tests/acceptance
@@ -87,16 +84,16 @@ Open the file and check the corresponding dependency:
 tests
     _data                       // Additional files required for tests (e.g. pictures, CSV files for import/export, etc.)
     _output                     // The directory is generated during test run. It contains testing reports.
-    _suite                      // Test suites
-    _bootstrap.php              // Script that executes essential initialization routines
-    functional.suite.dist.yml   // Codeception functional test suite configuration
-utils                           // Test running utilities
-.env.example                    // Example file with environmental settings
-.gitignore                      // List of files ignored by git
-.htaccess.sample                // Access settings for Apache web server to perform CLI commands on Magento application
-RoboFile.php                    // MFTF CLI commands configuration for Robo task runner
-codeception.dist.yml            // Codeception configuration
-pre-install.php                 // Script that checks the environment on whether pre-installation requirements are met
+    _suite                      // Test suites.
+    _bootstrap.php              // The script that executes essential initialization routines.
+    functional.suite.dist.yml   // The Codeception functional test suite configuration (generated while running 'bin/mftf build:project')
+utils                           // The test running utilities.
+.env.example                    // Example file for environmental settings.
+.credentials.example            // Example file for credentials to be used by the third party integrations (generated while running 'bin/mftf build:project', should be filled with the appropriate credentials into the corresponding sandboxes).
+.gitignore                      // List of files ignored by git.
+.htaccess.sample                // Access settings for the Apache web server to perform the Magento CLI commands.
+RoboFile.php                    // TO BE DEPRECATED SINCE MFTF 3.0. The MFTF CLI commands configuration for Robo task runner.
+codeception.dist.yml            // Codeception configuration (generated while running 'bin/mftf build:project')
 ```
 
 ## MFTF output
@@ -138,8 +135,7 @@ Follow the [MFTF project] and [contribute on Github].
 
 
 <!-- Link definitions -->
+[contribute on Github]: ../contribution-guidelines.html
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework
-[contribute on Github]: ../contribution-guidelines.html
-
 [{{page.mftf-release}}]: https://github.com/magento/magento2-functional-testing-framework/releases/tag/{{page.mftf-release}}
