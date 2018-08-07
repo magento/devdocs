@@ -34,7 +34,7 @@ ThumbnailColumn-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td><code>{[name: string]: boolean}</code></td>
     <td><code>{'data-grid-thumbnail-cell': true}</code></td>
   </tr>

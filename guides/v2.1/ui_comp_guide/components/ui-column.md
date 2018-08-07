@@ -61,7 +61,7 @@ Column-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{[name: String]: Boolean}</td>
     <td><code>''</code></td>
   </tr>

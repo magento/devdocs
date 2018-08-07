@@ -40,7 +40,7 @@ ActionsColumn-specific configuration:
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{[name: string]: Boolean}</td>
     <td><code>{'data-grid-actions-cell': true}</code></td>
   </tr>
