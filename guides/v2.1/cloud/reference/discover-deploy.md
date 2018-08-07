@@ -147,7 +147,7 @@ The last step runs a deployment script, which you can use to anonymize data in d
 If the `app/etc/config.php` file does not exist in the codebase, static files are compressed using `gzip` and deployed during this phase. This increases the length of your deploy phase and site maintenance.
 
 {:.bs-callout .bs-callout-info}
-Refer to [Magento deploy variables]({{ site.baseurl }}/guides/v2.1/cloud/env/environment-vars_magento.html#deploy) to learn about customizing or disabling file compression.
+Refer to [Magento deploy variables]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html) to learn about customizing or disabling file compression.
 
 There are two default deploy hooks. The `pre-deploy.php` hook completes necessary cleanup and retrieval of resources and code generated in the build hook. The `php ./vendor/bin/m2-ece-deploy` hook runs a series of commands and scripts:
 

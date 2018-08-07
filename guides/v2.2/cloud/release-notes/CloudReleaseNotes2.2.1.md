@@ -44,7 +44,7 @@ In general, we’ve removed serialize/unserialize from most the code to improve 
 <!--- MAGECLOUD-1057 -->* Magento Commerce (Cloud) supports scopes and [static content deployment strategies]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html). We have added the `–s` parameter with a default setting of quick for the static content deployment strategy. You can use the environment variable [SCD_STRATEGY]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html) to customize and use these strategies with your build and deploy actions. This variable supports the options standard quick, or compact. If you select compact, we override the `STATIC_CONTENT_THREADS` value with 1, which can slow deployment, especially in production environments.   
 
 
-* When you create a new project using the 30-day free trial, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html) and [What is autoprovisioning]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html#autoprovisioning).
+* When you create a new project, we automatically provision the project with the latest Magento Commerce (Cloud) code. The steps include cloning the latest code repository, adding an environment variable for `ADMIN_EMAIL` using the Project Owner’s email, setting a default randomized Magento Admin password, and sending emails to the Project Owner to access the project and reset the default Magento Admin password. For details, see [Onboarding tasks]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html).
 
 <!--- MAGECLOUD-1014, 1023 -->* We have created a new log file on environments to capture and compile build and deploy actions. The file is located in the `app/var/log/cloud.log` file inside the Magento root application directory.
 
@@ -76,7 +76,7 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 //...
 </code>
 
-* The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable  for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html#variables).
+* The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Change the Magento Admin URL, username, and password on master]({{ site.baseurl }}/guides/v2.2/cloud/before/before-setup-env-2_clone.html#setvariables).
 
 
 

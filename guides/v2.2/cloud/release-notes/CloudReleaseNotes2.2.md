@@ -94,7 +94,7 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * The command for generating `config.php` changed in 2.2 from `php bin/magento magento-cloud:scd-dump` to `php vendor/bin/m2-ece-scd-dump`.
 
-* `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html#magento-app-yaml). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
+* `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project//project-upgrade.html#update-the-magentoappyaml-file). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
 
 * The deploy variable `GENERATED_CODE_SYMLINK` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
 

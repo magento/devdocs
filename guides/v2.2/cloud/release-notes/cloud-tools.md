@@ -54,7 +54,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Environment variable updates**—Changed the following environment variables:
 
-   -  <!--MAGECLOUD-2435-->**[SKIP_HTML_MINIFICATION global variable]({{ page.baseurl }}/cloud/env/variables-intro.html##skip_html_minification)**—Changed the default value to `true` to enable on-demand HTML content minification, which minimizes downtime when deploying to Staging and Production environments. This configuration is required for zero-downtime deployments.
+   -  <!--MAGECLOUD-2435-->**[SKIP_HTML_MINIFICATION global variable]({{ page.baseurl }}/cloud/env/variables-intro.html#skip_html_minification)**—Changed the default value to `true` to enable on-demand HTML content minification, which minimizes downtime when deploying to Staging and Production environments. This configuration is required for zero-downtime deployments.
 
    -  <!--MAGECLOUD-1506-->**[CLEAN_STATIC_FILES deploy variable]({{ page.baseurl }}/cloud/env/variables-deploy.html#clean_static_files)**—Added the capability to manage the clean static files processing for static content generated during the build phase based on the CLEAN_STATIC_FILES environment variable setting. Previously, static content files generated during the build phase were always cleaned.
 
@@ -203,7 +203,7 @@ You must [upgrade the {{site.data.var.ece}} metapackage]({{ site.baseurl }}/guid
 #### New features
 -   <!-- MAGECLOUD-1086 -->**ece-tools**—The `ece-tools` package now supports Magento 2.1.x.
 
--   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis]({{ site.baseurl }}/guides/v2.2/cloud/env/working-with-variables.html#redis) page and default cache and Redis session storage using an environment variable.
+-   <!-- MAGECLOUD-1552 -->**Redis configuration**—You can now [configure Redis]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html#cache_configuration) page and default cache and Redis session storage using an environment variable.
 
 -   <!-- MAGECLOUD-1437 -->**Search, AMQP, and Redis service improvements**—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the `env.php` file to configure services is no longer supported. You must use environment variables or the `.magento.env.yaml` file instead.
 
@@ -244,7 +244,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -   <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
--   <!-- MAGECLOUD-1410 -->**New environment variables**—You can now use environment variables to connect custom [search]({{ site.baseurl }}/guides/v2.1/cloud/env/working-with-variables.html#search) and [AMQP-based]({{ site.baseurl }}/guides/v2.1/cloud/env/working-with-variables.html#queue) services to your site.
+-   <!-- MAGECLOUD-1410 -->**New environment variables**—You can now use environment variables to connect custom [search]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) and [AMQP-based]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) services to your site.
 
 -   <!--MAGECLOUD-1090-->We implemented smart patching. Now the package applies patches based not on {{site.data.var.ece}} version, but on patched package version.
 
@@ -293,7 +293,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -   **Build/deploy notifications**—We added a configuration file that you can use to [set up Slack and/or email notifications]({{ site.baseurl }}/guides/v2.2/cloud/env/setup-notifications.html) for build/deploy actions in all your environments.
 
--   **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) or [deploy variable]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#deploy). See the following topics for more information:
+-   **Static content compression**—We now compress static content using [gzip](https://www.gnu.org/software/gzip/){:target="\_blank"} during the build and deploy phases. This compression, coupled with Fastly compression, helps reduce the size of your store and increase deployment speed. If necessary, you can disable compression using a [build option]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) or [deploy variable]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html). See the following topics for more information:
 
     -   [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html)
     -   [Static content deployment performance]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)
