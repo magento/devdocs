@@ -408,6 +408,20 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 </div>
     </li>
+    <li>
+      <p>Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main <code class="highlighter-rouge">magento2</code> repository.</p>
+
+      <p>For example:</p>
+
+      <p>If you used the <code class="highlighter-rouge">2.2-develop</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2-develop</code>.</p>
+
+      <p>If you used the <code class="highlighter-rouge">2.2.5</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2.5</code>.</p>
+
+      <p>To checkout the correct branch, run the following command from the sample data repository’s root directory (assuming you need the <code class="highlighter-rouge">2.2.5</code> branch):</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout 2.2.5
+</code></pre></div>      </div>
+    </li>
     <li>Change to the <code class="highlighter-rouge">&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
@@ -448,6 +462,20 @@ fatal: The remote end hung up unexpectedly</pre>
 </code></pre></div>      </div>
     </li>
     <li>Wait for the repository to clone on your server.</li>
+    <li>
+      <p>Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main <code class="highlighter-rouge">magento2</code> repository.</p>
+
+      <p>For example:</p>
+
+      <p>If you used the <code class="highlighter-rouge">2.2-develop</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2-develop</code>.</p>
+
+      <p>If you used the <code class="highlighter-rouge">2.2.5</code> branch of the Magento 2 repository, the Sample Data branch should be <code class="highlighter-rouge">2.2.5</code>.</p>
+
+      <p>To checkout the correct branch, run the following command from the sample data repository’s root directory (assuming you need the <code class="highlighter-rouge">2.2.5</code> branch):</p>
+
+      <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout 2.2.5
+</code></pre></div>      </div>
+    </li>
     <li>Change to the <code class="highlighter-rouge">&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
     <li>
       <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
