@@ -1,7 +1,7 @@
 ---
 group: cloud
 title: Application
-version: 2.2
+version: 2.1
 github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
@@ -26,7 +26,8 @@ Use the following properties to build your application configuration file. The `
 
 The name is used in the [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file to define the HTTP upstream (by default, `php:http`). For example, if the value of `name` is `app`, you must use `app:http` in the upstream field. You can also use this name in multi-application relationships.
 
-{% include note.html type="info" content="Do not change the name of an application after it has been deployed." %}
+{:bs-callout bs-callout-info}
+Do not change the name of an application after it has been deployed.
 
 ### `type` and `build`
 The `type`  and `build` properties provide information about the base container image to build and run the project.
@@ -75,9 +76,9 @@ search: "searchengine:solr"
 See [Services]({{page.baseurl}}/cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
 ### `web`
-`web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
+The `web` property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
-`web` supports the following:
+You can specify the following attributes for the `web` property:
 
 -  `document_root`: The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
 -  `passthru`: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
@@ -136,7 +137,8 @@ Defines the persistent disk size of the application in MB.
 disk: 2048
 ```
 
-{% include note.html type="info" content="The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
+{:bs-callout bs-callout-info}
+The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
 An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
@@ -162,7 +164,7 @@ The format for adding your mount to this list is as follows:
 {:.bs-callout .bs-callout-warning}
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
 
-If you also want the mount web accessible, you must add it to the [`web`](#web) block of locations.
+You can make the mount web accessible by adding it to the [`web`](#web) block of locations.
 
 ### `dependencies`
 Enables you to specify dependencies that your application might need during the build process.
@@ -262,9 +264,9 @@ A sample Magento cron job follows:
 
 ```yaml
 crons:
-  cronrun:
-      spec: "*/5 * * * *"
-      cmd: "php bin/magento cron:run"
+    cronrun:
+        spec: "* * * * *"
+        cmd: "php bin/magento cron:run"
 ```
 
 For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.
@@ -365,14 +367,16 @@ Optional PHP extensions available to install:
 -  [xhprof](http://php.net/manual/en/book.xhprof.php){:target="\_blank"}
 -  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="\_blank"}
 
-{% include note.html type="info" content="Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube." %}
+{:.bs-callout .bs-callout-warning}
+PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
 
 ### Customize `php.ini` settings
 You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
 
-{% include note.html type="info" content="Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options." %}
+{:.bs-callout .bs-callout-info}
+Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.
 
 For example, if you need to increase the PHP memory limit:
 
@@ -383,39 +387,3 @@ For a list of recommended PHP configuration settings, see [Required PHP settings
 After pushing your file, you can check that the custom PHP configuration has been added to your environment by [creating an SSH tunnel]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
-
-## Workers
-
-You can define zero or multiple work instances for each application. A worker
-instance runs as a container, independent from the web instance and without
-a running Nginx instance. Additionally, you do not need to set up a web server on
-the worker instance (using Node.js or Go) because the router cannot direct public
-requests to the worker.
-
-A worker instance has the exact same code and compilation output as a web instance.
-The container image is built once and deployed multiple times if needed using the
-same `build` hook and `dependencies`. You can customize the container and
-allocated resources.
-
-Use worker instances for background tasks including:
-
--  Tasks like queue workers or updating indexes.
--  Tasks to run periodic reporting that are too long for a cron job.
--  Tasks should happen "now", but not block a web request.
--  Tasks are large enough that they risk blocking a deploy, even if they are subdivided.
--  The task in question is a continually running process rather than a stream of discrete units of work.
-
-A basic, common worker configuration could look like this:
-
-```
-workers:
-    queue:
-        size: S
-        commands:
-            start: |
-                php worker.php
-```
-
-This example defines a single worker named queue, with a "small" container, and runs the command `php worker.php` on startup. If `worker.php` exits, it is automatically restarted.
-
-For {{site.data.var.ece}} 2.1.X, you can use only [workers](#workers) and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and does not require additional configuration.

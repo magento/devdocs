@@ -74,10 +74,10 @@ return array(
    - `false` for earlier versions of `ece-tools`
 -  **Version**—Magento 2.1.4 and later
 
-Determines whether to copy static view files to the `<magento_root>/init/` directory at the end of the build stage and whether HTML minification of static content occurs during deployment or on request. Set this value to `true` to reduce downtime when deploying to Staging and Production environments.
+Enables or disables copying static view files to the `<magento_root>/init/` directory at the end of the build stage. If set to `true` files are not copied and HTML minification is available on request. Set this value to `true` to reduce downtime when deploying to Staging and Production environments.
 
 -   **`false`**—Copies the `view_preprocessed` directory to the `<magento_root>/init/` directory at the end of the build stage, and restores the directory in the `<magento_root>/var` directory at the beginning of the deployment stage.
--   **`true`**—Enables on-demand static content minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
+-   **`true`**—Enables on-demand HTML minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 

@@ -116,7 +116,7 @@ You generate the file in the Integration environment where you configured Magent
 
 **Important notes** on Configuration Management:
 
-* Any configuration setting included in the file generated from the `app:config:dump` command is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using `scd-dump`.
+* Any configuration setting included in the file generated from the `app:config:dump` command is locked from editing, or read-only, in the deployed environment. This is one reason we recommend using the `vendor/bin/m2-ece-scd-dump` command.
 
   For example, we will have you install a module for Fastly in your development environment. You can only configure this module in the Staging and Production environment. Using the `scd-dump` command keeps those default fields editable when you deploy your development changes to the Staging and Production environment.
 
