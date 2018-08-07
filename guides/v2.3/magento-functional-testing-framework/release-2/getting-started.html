@@ -707,7 +707,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <ul>
   <li><a href="/guides/v2.3/install-gde/system-requirements-tech.html#php">PHP version supported by Magento instance under test</a></li>
   <li><a href="https://getcomposer.org/download/">Composer v1.3.x+</a></li>
-  <li><a href="https://www.java.com/en/download/">Java v1.8.x+</a></li>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java v1.8.x+</a></li>
   <li><a href="#selenium-server">Selenium Server Standalone v3.6.0+</a></li>
   <li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">ChromeDriver v2.33+</a></li>
 </ul>
@@ -745,11 +745,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Click <strong>Save Config</strong>.</li>
 </ol>
 
-<h2 id="set-up-the-framework">Set up the framework</h2>
+<h2 id="setup-framework">Set up the framework</h2>
 
 <p>Follow these steps in a command line interface to set up the MFTF on your system.</p>
 
-<h3 id="step-1-clone-the-magento2-source-code-repository">Step 1. Clone the <code class="highlighter-rouge">magento2</code> source code repository</h3>
+<h3 id="clone-magento">Step 1. Clone the <code class="highlighter-rouge">magento2</code> source code repository</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/magento/magento2.git
 </code></pre></div></div>
@@ -759,7 +759,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
 </code></pre></div></div>
 
-<h3 id="step-2-install-dependencies">Step 2. Install dependencies</h3>
+<h3 id="install-dependencies">Step 2. Install dependencies</h3>
 
 <ol>
   <li>
@@ -813,7 +813,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-tip">To avoid typing <code class="highlighter-rouge">vendor/bin</code> every time, add your <code class="highlighter-rouge">&lt;absolute path to acceptance dir&gt;/vendor/bin</code> value to <code class="highlighter-rouge">PATH</code>.
 When added, you should be able to run the <code class="highlighter-rouge">mftf</code>, <code class="highlighter-rouge">codecept</code>, and <code class="highlighter-rouge">phpunit</code> commands.</p>
 
-<h3 id="step-4-edit-environment-settings">Step 4. Edit environment settings</h3>
+<h3 id="environment-settings">Step 4. Edit environment settings</h3>
 
 <p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance/</code> directory, edit the <code class="highlighter-rouge">.env</code> file to match your system. Use the following parameters, which are required to launch tests.</p>
 
@@ -851,30 +851,35 @@ Example:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:4444/wd/hub
 </code></pre></div></div>
 
-<h3 id="step-5-optional-copy-commandphp-into-magento-installation">Step 5. [Optional] Copy <code class="highlighter-rouge">command.php</code> into Magento installation</h3>
+<h3 id="add-cli-commands">Step 5. (Optional) Copy <code class="highlighter-rouge">command.php</code> into Magento installation</h3>
 
 <p>If you are installing the MFTF not from your Magento installation, locate the <code class="highlighter-rouge">command.php</code> file in the MFTF:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento2-functional-testing-framework/etc/config/command.php
-</code></pre></div></div>
+<p><code class="highlighter-rouge">magento2-functional-testing-framework/etc/config/command.php</code></p>
 
 <p>And copy it into your Magento installation under:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento2ce/dev/tests/acceptance/utils/command.php
-</code></pre></div></div>
+<p><code class="highlighter-rouge">magento2/dev/tests/acceptance/utils/command.php</code></p>
 
 <p>If you are installing the MFTF from inside your Magento installation, this is automatically done when you <a href="#build-project">build the project</a>.</p>
 
-<p class="bs-callout bs-callout-tip">If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.</p>
+<p class="bs-callout bs-callout-warning">If you do not have access to your Magento installation and cannot complete the step you will not be able to use the Magento CLI commands.</p>
 
-<h3 id="step-6-generate-existing-tests">Step 6. Generate existing tests</h3>
+<h3 id="step-6-enable-the-magento-cli-commands">Step 6. Enable the Magento CLI commands</h3>
+
+<p>In the <code class="highlighter-rouge">magento2/dev/tests/acceptance</code> directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp .htaccess.sample .htaccess
+</code></pre></div></div>
+
+<h3 id="generate-tests">Step 7. Generate existing tests</h3>
 
 <p>In the <code class="highlighter-rouge">magento2/</code> root directory, run the following command to generate tests as PHP classes from XML files:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/mftf generate:tests
 </code></pre></div></div>
 
-<h3 id="step-7-run-tests">Step 7. Run tests</h3>
+<h3 id="run-tests">Step 8. Run tests</h3>
 
 <p>To run tests, you need a running Selenium server and a <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a> or <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> with required parameters.</p>
 
@@ -885,7 +890,7 @@ Example:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-jar</span> &lt;path_to_selenium_directory&gt;/selenium-server-standalone-&lt;version&gt;.jar
 </code></pre></div></div>
 
-<p>If you do not have the Selenium server:</p>
+<p>If you do not have the Selenium server yet:</p>
 
 <ol>
   <li>
@@ -906,7 +911,7 @@ Example:</p>
 
 <p>See more commands in <a href="commands/mftf.html"><code class="highlighter-rouge">mftf</code></a> and <a href="commands/codeception.html"><code class="highlighter-rouge">codecept</code></a>.</p>
 
-<h3 id="reports">Step 8. Generate reports</h3>
+<h3 id="reports">Step 9. Generate reports</h3>
 
 <p>The testing reports are generated in a CLI during testing.</p>
 
