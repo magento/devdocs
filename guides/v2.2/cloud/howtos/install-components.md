@@ -57,7 +57,7 @@ To update `composer.json`:
     ```
 
     For example:
-    
+
     ```bash
     composer require pixlee/magento2:1.0.1 --no-update
     composer update
@@ -83,7 +83,7 @@ To verify the extension installed properly, you can check its functionality in t
 1.  Open a terminal.
 1.  [Checkout the branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
 1.  List all enabled modules:
-    
+
     ```bash
     php bin/magento module:status
     ```
@@ -130,7 +130,7 @@ Trying to enable and disable extensions not following this method can lead to pe
 1.  [Complete deployment]({{ page.baseurl }}/cloud/live/stage-prod-live.html) to Integration for testing, then Staging for testing, and finally Production.
 
 ### Modify configurations {#configure}
-You will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#update) for `config.php`.
+You will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.php`.
 
 ## Upgrade an extension {#update}
 You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:

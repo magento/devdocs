@@ -35,7 +35,7 @@ See the following instructions based on your {{site.data.var.ece}} version:
 
 * 2.0.x: Apply the [patch and test]({{ page.baseurl }}/cloud/project/project-patch.html) the deployment in your Integration environment.
 * 2.1.0 – 2.1.3: Apply the [patch and test]({{ page.baseurl }}/cloud/project/project-patch.html) the deployment in your Integration environment.
-* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}/cloud/reference/cloud-composer.html#magento-commerce-cloud-packages) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
+* 2.1.4 and later merchants: Upgrade [MCC]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to the latest version in your branch and deploy to your Integration environment. The MCC upgrade includes this patch. To upgrade a default unchanged MCC, you only need to run `composer update` in a terminal.
 
   If you hardcoded or modified your MCC, run `composer update` in a terminal. After the composer update completes, verify following `magento/magento-cloud-configuration` version displays in `composer.lock`:
 

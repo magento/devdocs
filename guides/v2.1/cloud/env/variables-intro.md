@@ -65,20 +65,22 @@ return array(
    ...
 );
 ```
-
 {% include note.html type="info" content="JS bundling and JS/CSS merging do not work with SCD on demand." %}
 
 ### `SKIP_HTML_MINIFICATION`
 
--  **Default**—`false`
+-  **Default**
+   - `true` for `ece-tools` 2002.0.13 and later
+   - `false` for earlier versions of `ece-tools`
 -  **Version**—Magento 2.1.4 and later
 
-Skip copying the static view files in the `var/view_preprocessed` directory to reduce downtime when deploying to the Staging and Production environments and generates minified HTML when requested.
+Enables or disables copying static view files to the `<magento_root>/init/` directory at the end of the build stage. If set to `true` files are not copied and HTML minification is available on request. Set this value to `true` to reduce downtime when deploying to Staging and Production environments.
 
 -   **`false`**—Copies the `view_preprocessed` directory to the `<magento_root>/init/` directory at the end of the build stage, and restores the directory in the `<magento_root>/var` directory at the beginning of the deployment stage.
--   **`true`**—Enables on-demand static content minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
+-   **`true`**—Enables on-demand HTML minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
+
 
 ```yaml
 stage:
