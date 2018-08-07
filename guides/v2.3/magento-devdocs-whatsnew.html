@@ -331,6 +331,24 @@ We exclude from this list proofreading, spelling checks, and all minor updates.<
   </thead>
   <tbody>
     <tr>
+      <td>Added Magento Cloud <a href="https://devdocs.magento.com/guides/v2.1/cloud/release-notes/cloud-tools.html">v2.1</a> and <a href="https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html">v2.2</a> release notes for <code class="highlighter-rouge">ece-tools</code> package v2002.0.13</td>
+      <td>2.1.x, 2.2.x, 2.3.x</td>
+      <td>Major update</td>
+      <td>Aug 04</td>
+    </tr>
+    <tr>
+      <td>Updated the <a href="https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html">Configure Docker</a> documentation to include instructions for deploying to a read-only file system.</td>
+      <td>2.2.x, 2.3.x</td>
+      <td>Technical changes</td>
+      <td>Aug 02</td>
+    </tr>
+    <tr>
+      <td>Added the capability to <a href="https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#clean_static_files">clean static files</a> generated during the build phase when deploying your site with Magento Commerce Cloud.</td>
+      <td>2.1.x, 2.2.x, 2.3.x</td>
+      <td>Technical changes</td>
+      <td>Jul 31</td>
+    </tr>
+    <tr>
       <td>Added information on porting code contributions to <a href="https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html">Code Contributions</a></td>
       <td>2.x</td>
       <td>Major update</td>
@@ -373,6 +391,12 @@ We exclude from this list proofreading, spelling checks, and all minor updates.<
       <td>Jul 23</td>
     </tr>
     <tr>
+      <td>Improved the Docker configuration process to set up a Magento Commerce Cloud development environment in your local workstation using ece-tools v2002.0.13 or later. Also added support for Redis, Varnish, and SSL services. See the <a href="https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html">Magento Commerce (Cloud) v2002.0.13 Release Notes</a>.</td>
+      <td>2.1.x, 2.2.x, 2.3.x</td>
+      <td>Technical changes</td>
+      <td>Jul 23</td>
+    </tr>
+    <tr>
       <td>Added the <a href="https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html">CLI instructions</a> for upgrading Magento to 2.3.</td>
       <td>2.3.x</td>
       <td>Major update</td>
@@ -397,6 +421,12 @@ We exclude from this list proofreading, spelling checks, and all minor updates.<
       <td>Jul 17</td>
     </tr>
     <tr>
+      <td>Changed the default value for the <a href="https://devdocs.magento.com/guides/v2.1/cloud/env/variables-intro.html##skip_html_minification">SKIP_HTML_MINIFICATION global variable</a> to <code class="highlighter-rouge">true</code> to minimize downtime during deployment.</td>
+      <td>v2.2.1, v2.2.x, v2.2.3</td>
+      <td>Technical changes</td>
+      <td>Jul 13</td>
+    </tr>
+    <tr>
       <td>Enhanced the <a href="https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks">hooks property</a> so that you can customize the build phase further by using the <code class="highlighter-rouge">generate</code> and <code class="highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</td>
       <td>2.1.x, 2.2.x</td>
       <td>Major update</td>
@@ -419,6 +449,12 @@ We exclude from this list proofreading, spelling checks, and all minor updates.<
       <td>2.2.x</td>
       <td>Major update</td>
       <td>Jul 06</td>
+    </tr>
+    <tr>
+      <td>We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The build:generate process generates code, applies patches, and generates static content. The build:transfer process deploys the application. See <a href="https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html">Application hooks</a>.</td>
+      <td>v2.1.4 and later, 2.2.x, 2.3.x</td>
+      <td>Jul 5</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
@@ -1038,7 +1074,7 @@ We exclude from this list proofreading, spelling checks, and all minor updates.<
       <td>Feb 23</td>
     </tr>
     <tr>
-      <td>Added reference and <a href="/guides/v2.2/cloud/env/working-with-variables.html#redis">examples</a> for two, new <a href="/guides/v2.2/cloud/env/environment-vars_magento.html#deploy">environment variables</a>—<code class="highlighter-rouge">CACHE_CONFIGURATION</code> and <code class="highlighter-rouge">SESSION_CONFIGURATION</code>—that help with customizing Redis storage and default caching configuration.</td>
+      <td>Added reference and <a href="/guides/v2.2/cloud/env/working-with-variables.html#redis">examples</a> for two, new <a href="/guides/v2.2/cloud/env/variables-deploy.html">environment variables</a>—<code class="highlighter-rouge">CACHE_CONFIGURATION</code> and <code class="highlighter-rouge">SESSION_CONFIGURATION</code>—that help with customizing Redis storage and default caching configuration.</td>
       <td>2.1.x, 2.2.x</td>
       <td>Updated</td>
       <td>Feb 20</td>

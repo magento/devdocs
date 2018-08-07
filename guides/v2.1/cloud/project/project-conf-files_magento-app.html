@@ -2035,11 +2035,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The name is used in the <a href="/guides/v2.1/cloud/project/project-conf-files_routes.html"><code class="highlighter-rouge">routes.yaml</code></a> file to define the HTTP upstream (by default, <code class="highlighter-rouge">php:http</code>). For example, if the value of <code class="highlighter-rouge">name</code> is <code class="highlighter-rouge">app</code>, you must use <code class="highlighter-rouge">app:http</code> in the upstream field. You can also use this name in multi-application relationships.</p>
 
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Do not change the name of an application after it has been deployed.</p>
-</div>
+<p>Do not change the name of an application after it has been deployed.</p>
 
 <h3 id="type-and-build"><code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">build</code></h3>
 <p>The <code class="highlighter-rouge">type</code>  and <code class="highlighter-rouge">build</code> properties provide information about the base container image to build and run the project.</p>
@@ -2047,7 +2043,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The supported <code class="highlighter-rouge">type</code> language is   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
 . Specify the PHP version as follows:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">php:7.0</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">type</span><span class="pi">:</span> <span class="s">php:7.1</span>
 </code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">build</code> property determines what happens by default when building the project. The <code class="highlighter-rouge">flavor</code> specifies a default set of build tasks to run. The supported flavor is <code class="highlighter-rouge">composer</code>.</p>
@@ -2072,7 +2068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h3 id="relationships"><code class="highlighter-rouge">relationships</code></h3>
-<p>Defines how services are mapped in your application.</p>
+<p>Defines the service mapping in your application.</p>
 
 <p>The left-hand side is the name of the relationship as it will be exposed to the application in the <code class="highlighter-rouge">MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable. The right-hand side is in the form <code class="highlighter-rouge">&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code class="highlighter-rouge">&lt;service name&gt;</code> comes from <code class="highlighter-rouge">.magento/services.yaml</code> and  <code class="highlighter-rouge">&lt;endpoint name&gt;</code> should be the same as the value of <code class="highlighter-rouge">type</code>  declared in that same file.</p>
 
@@ -2087,9 +2083,9 @@ search: "searchengine:solr"
 <p>See <a href="/guides/v2.1/cloud/project/project-conf-files_services.html">Services</a> for a full list of currently supported service types and endpoints.</p>
 
 <h3 id="web"><code class="highlighter-rouge">web</code></h3>
-<p>Defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code class="highlighter-rouge">index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code class="highlighter-rouge">index.php</code> file can be further down.</p>
+<p>The <code class="highlighter-rouge">web</code> property defines how your application is exposed to the web (in HTTP). It determines how the web application serves content— from the front-controller script to a non-static request to an <code class="highlighter-rouge">index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code class="highlighter-rouge">index.php</code> file can be further down.</p>
 
-<p>Supports the following:</p>
+<p>You can specify the following attributes for the <code class="highlighter-rouge">web</code> property:</p>
 
 <ul>
   <li><code class="highlighter-rouge">document_root</code>: The path relative to the root of the application that is exposed on the web. Typical values include <code class="highlighter-rouge">/public</code> and <code class="highlighter-rouge">/web</code>.</li>
@@ -2147,14 +2143,10 @@ search: "searchengine:solr"
 <h3 id="disk"><code class="highlighter-rouge">disk</code></h3>
 <p>Defines the persistent disk size of the application in MB.</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">disk</span><span class="pi">:</span> <span class="s">256</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">disk</span><span class="pi">:</span> <span class="s">2048</span>
 </code></pre></div></div>
 
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The minimal recommended disk size is 256MB. If you see the error <code class="highlighter-rouge">UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
-</div>
+<p>The minimal recommended disk size is 256MB. If you see the error <code class="highlighter-rouge">UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
 
 <h3 id="mounts"><code class="highlighter-rouge">mounts</code></h3>
 <p>An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the <code class="highlighter-rouge">magento.app.yaml</code> file using the <code class="highlighter-rouge">volume_id[/subpath]</code> syntax:</p>
@@ -2177,13 +2169,9 @@ search: "searchengine:solr"
   <li><code class="highlighter-rouge">disk</code>—Defines the size available for the shared volume.</li>
 </ul>
 
-<!-- Available note types: "info", "warning", "tip" -->
+<p class="bs-callout bs-callout-warning">Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.</p>
-</div>
-
-<p>Also, if you want the mount web accessible, you must add it to the <a href="#web"><code class="highlighter-rouge">web</code></a> block of locations.</p>
+<p>You can make the mount web accessible by adding it to the <a href="#web"><code class="highlighter-rouge">web</code></a> block of locations.</p>
 
 <h3 id="dependencies"><code class="highlighter-rouge">dependencies</code></h3>
 <p>Enables you to specify dependencies that your application might need during the build process.</p>
@@ -2230,15 +2218,30 @@ nodejs:
         <span class="no">php ./vendor/bin/ece-tools post-deploy</span>
 </code></pre></div></div>
 
+<p>Also, you can customize the build phase further by using the <code class="highlighter-rouge">generate</code> and <code class="highlighter-rouge">transfer</code> commands to perform additional actions when specifically building code or moving files.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">hooks</span><span class="pi">:</span>
+    <span class="c1"># We run build hooks before your application has been packaged.</span>
+    <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="no">php ./vendor/bin/ece-tools build:generate</span>
+        <span class="no"># php /path/to/your/script</span>
+        <span class="no">php ./vendor/bin/ece-tools build:transfer</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">build:generate</code>—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.</li>
+  <li><code class="highlighter-rouge">build:transfer</code>—transfers generated code and static content to the final destination.</li>
+</ul>
+
 <p>The commands run from the application (<code class="highlighter-rouge">/app</code>) directory. You can use the <code class="highlighter-rouge">cd</code> command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add <code class="highlighter-rouge">set -e</code> to the beginning of the hook.</p>
 
 <h4 id="to-compile-sass-files-using-grunt">To compile SASS files using grunt:</h4>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">dependencies</span><span class="pi">:</span>
     <span class="na">ruby</span><span class="pi">:</span>
-        <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4.7"</span>
+      <span class="na">sass</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.4.7"</span>
     <span class="na">nodejs</span><span class="pi">:</span>
-        <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.1.13"</span>
+      <span class="na">grunt-cli</span><span class="pi">:</span> <span class="s2">"</span><span class="s">~0.1.13"</span>
 
 <span class="na">hooks</span><span class="pi">:</span>
     <span class="na">build</span><span class="pi">:</span> <span class="pi">|</span>
@@ -2246,42 +2249,63 @@ nodejs:
         <span class="no">npm install</span>
         <span class="no">grunt</span>
         <span class="no">cd</span>
-        <span class="no">php ./bin/magento magento-cloud:build</span>
+        <span class="no">php ./vendor/bin/ece-tools</span>
 </code></pre></div></div>
 
 <p>You must compile SASS files using <code class="highlighter-rouge">grunt</code> before static content deployment, which happens during the build. Place the <code class="highlighter-rouge">grunt</code> command before the <code class="highlighter-rouge">build</code> command.</p>
 
 <h3 id="crons"><code class="highlighter-rouge">crons</code></h3>
-<p>Describes processes that are triggered on a schedule. We recommend you run cron as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code> or as the web server user.</p>
+<p>Describes processes that are triggered on a schedule. We recommend you run <code class="highlighter-rouge">cron</code> as the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>. Do <em>not</em> run cron as <code class="highlighter-rouge">root</code> or as the web server user.</p>
 
-<p>More information about crons:</p>
-
-<p><code class="highlighter-rouge">crons</code> supports the following:</p>
+<p><code class="highlighter-rouge">crons</code> support the following:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">spec</code>: The cron specification. The minimum interval is once per 5 minutes.</li>
-  <li><code class="highlighter-rouge">cmd</code>: The command to execute.</li>
+  <li><code class="highlighter-rouge">spec</code>—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete <a href="/guides/v2.1/cloud/configure/setup-cron-jobs.html#add-cron">additional configurations</a> for crons in those environments.</li>
+  <li><code class="highlighter-rouge">cmd</code>—The command to execute.</li>
+</ul>
+
+<p>A Cron job is well suited for the following tasks:</p>
+
+<ul>
+  <li>They need to happen on a fixed schedule, not continually.</li>
+  <li>The task itself is not especially long, as a running cron job will block a new deployment.</li>
+  <li>Or it is long, but can be easily divided into many small queued tasks.</li>
+  <li>A delay between when a task is registered and when it actually happens is acceptable.</li>
 </ul>
 
 <p>A sample Magento cron job follows:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">crons</span><span class="pi">:</span>
-  <span class="na">cronrun</span><span class="pi">:</span>
-    <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*/5</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
-    <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
+    <span class="na">cronrun</span><span class="pi">:</span>
+        <span class="na">spec</span><span class="pi">:</span> <span class="s2">"</span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*</span><span class="nv"> </span><span class="s">*"</span>
+        <span class="na">cmd</span><span class="pi">:</span> <span class="s2">"</span><span class="s">php</span><span class="nv"> </span><span class="s">bin/magento</span><span class="nv"> </span><span class="s">cron:run"</span>
+</code></pre></div></div>
+
+<p>For Magento Commerce (Cloud) 2.1.X, you can use only <a href="#workers">workers</a> and <a href="#crons">cron jobs</a>. For Magento Commerce (Cloud) 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.</p>
+
+<p>For more information, see <a href="/guides/v2.1/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
+
+<h2 id="variables">Variables</h2>
+<p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce (Cloud) 2.2.X.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">variables</span><span class="pi">:</span>
+  <span class="na">env</span><span class="pi">:</span>
+    <span class="na">CONFIG__DEFAULT__PAYPAL_ONBOARDING__MIDDLEMAN_DOMAIN</span><span class="pi">:</span> <span class="s1">'</span><span class="s">payment-broker.magento.com'</span>
+    <span class="na">CONFIG__STORES__DEFAULT__PAYMENT__BRAINTREE__CHANNEL</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud_BT'</span>
+    <span class="na">CONFIG__STORES__DEFAULT__PAYPAL__NOTATION_CODE</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Magento_Enterprise_Cloud'</span>
 </code></pre></div></div>
 
 <h2 id="configure-php-options">Configure PHP options</h2>
 <p>You can choose which version of PHP to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: myphpapp
-type: php:5.6
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: mymagento
+type: php:7.1
 </code></pre></div></div>
 
-<p>Magento Commerce (Cloud) supports PHP 5.5, 5.6, and 7.0.</p>
+<p class="bs-callout bs-callout-info">Magento Commerce (Cloud) supports PHP 7.1 and later. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.1/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
 
 <h3 id="php-extensions">PHP extensions</h3>
-<p>You can define additional PHP extensions you want to enable or disable. Example:</p>
+<p>You can define additional PHP extensions to enable or disable:</p>
 
 <blockquote>
   <p>.magento.app.yaml</p>
@@ -2296,7 +2320,7 @@ type: php:5.6
     <span class="pi">-</span> <span class="s">sqlite3</span>
 </code></pre></div></div>
 
-<p>To view the current list of PHP extensions:</p>
+<p>To view the current list of PHP extensions, SSH into your environment and enter the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php -m
 </code></pre></div></div>
@@ -2337,7 +2361,7 @@ type: php:5.6
 
 <p>In addition, we strongly recommend you enable <code class="highlighter-rouge">opcache</code>.</p>
 
-<p>Other PHP extensions you can optionally install:</p>
+<p>Optional PHP extensions available to install:</p>
 
 <ul>
   <li><a href="http://php.net/manual/en/book.apcu.php" target="\_blank">apcu</a></li>
@@ -2364,19 +2388,14 @@ type: php:5.6
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="\_blank">xmlrpc</a></li>
 </ul>
 
-<!-- Available note types: "info", "warning", "tip" -->
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
-</div>
+<p class="bs-callout bs-callout-warning">PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
 
 <h3 id="customize-phpini-settings">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
-
 <p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
 
 <p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
 
-<p class="bs-callout bs-callout-warning">Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
+<p class="bs-callout bs-callout-info">Configuring PHP settings improperly can cause issues. We recommend only advanced administrators set these options.</p>
 
 <p>For example, if you need to increase the PHP memory limit:</p>
 

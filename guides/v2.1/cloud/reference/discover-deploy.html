@@ -2035,11 +2035,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.1/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
 <h2 id="track">Track the process</h2>
+
 <p>You can track build and deploy actions in real-time using the terminal or the Project Web Interface. The status displays in-progress, pending, success, or failed. You can view the logs in the interface.</p>
 
 <p>If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow activity in their interface and in the Magento Commerce (Cloud) Project Web Interface.</p>
 
 <h2 id="cloud-deploy-conf">Project configuration</h2>
+
 <p>A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies. If you intend to make changes, modify the YAML files in your local branch. The build and deploy scripts access those files for specific settings.</p>
 
 <p>For all Starter environments and Pro Integration environments, pushing your Git branch updates all settings and configurations dependent on these files. For Pro Staging and Production environments, you will need to enter a <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a>. We will configure those environments using configurations from the Git files.</p>
@@ -2057,6 +2059,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="requiredfiles">Required files for your Git branch</h2>
+
 <p>Your Git branch must have the following files for building and deploying in your local environment and to Integration, Staging, and Production environments:</p>
 
 <ul>
@@ -2068,6 +2071,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="best-practices">Best practices for builds and deployment</h2>
+
 <p>We highly recommend the following best practices and considerations for your deployment process:</p>
 
 <ul>
@@ -2079,6 +2083,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="cloud-deploy-over-phases">Five phases of Integration build and deployment</h2>
+
 <p>The following phases occur in your local development environment and the Integration environment. For Pro plans, the code is not deployed to the Staging or Production environments in these initial phases. See <a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Deploy code to Staging and Production</a>.</p>
 
 <p>Integration build and deployment consists of the following phases:</p>
@@ -2093,6 +2098,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For detailed instructions, see <a href="#steps">Build and deploy full steps</a>.</p>
 
 <h3 id="cloud-deploy-over-phases-conf">Phase 1: Code and configuration validation</h3>
+
 <p>When you initially set up a project from a template, we retrieve the code from the <a href="https://github.com/magento/magento-cloud" target="\_blank">the Magento Commerce template</a>. This code repo is cloned to your project as the <code class="highlighter-rouge">master</code> branch.</p>
 
 <ul>
@@ -2108,8 +2114,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>This phase also runs <code class="highlighter-rouge">composer install</code> to retrieve dependencies.</p>
 
-<h3 id="cloud-deploy-over-phases-build" class="bs-callout bs-callout-info">Phase 2: Build</h3>
-<p>During the build phase, the site is not in maintenance mode and will not be brought down if errors or issues occur. We build only what has changed since the last build.</p>
+<h3 id="cloud-deploy-over-phases-build">Phase 2: Build</h3>
+
+<p class="bs-callout bs-callout-info">During the build phase, the site is not in maintenance mode and will not be brought down if errors or issues occur. We build only what has changed since the last build.</p>
 
 <p>This phase builds the codebase and runs hooks in the <code class="highlighter-rouge">build</code> section of <code class="highlighter-rouge">.magento.app.yaml</code>. The default Magento build hook is the <code class="highlighter-rouge">magento-cloud:build</code> command and performs the following:</p>
 
@@ -2118,7 +2125,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Regenerates code and the   <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>
  configuration (that is, the <code class="highlighter-rouge">var/generation</code> and <code class="highlighter-rouge">var/di</code> directories) using <code class="highlighter-rouge">bin/magento setup:di:compile</code>.</li>
   <li>
-    <p>Checks if the <a href="/guides/v2.1/cloud/live/sens-data-over.html"><code class="highlighter-rouge">app/etc/config.php</code></a> file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using <code class="highlighter-rouge">gzip</code>, and deploys the files, which reduces downtime in the deployment phase. Refer to <a href="/guides/v2.1/cloud/env/environment-vars_magento.html#build">Magento build options</a> to learn about customizing or disabling file compression.</p>
+    <p>Checks if the <a href="/guides/v2.1/cloud/live/sens-data-over.html"><code class="highlighter-rouge">app/etc/config.php</code></a> file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using <code class="highlighter-rouge">gzip</code>, and deploys the files, which reduces downtime in the deployment phase. Refer to <a href="/guides/v2.1/cloud/env/variables-build.html">Magento build options</a> to learn about customizing or disabling file compression.</p>
 
     <p class="bs-callout bs-callout-info">The <code class="highlighter-rouge">/app/etc/config.php</code> file includes a <em>scopes</em> setting that defines how static files deploy during the build phase. Magento Commerce (Cloud) 2.1 supports the <code class="highlighter-rouge">standard</code> strategy only. Static file deployment takes a long time to complete, so initiating it during the build phase helps to reduce deployment and site downtime.</p>
   </li>
@@ -2129,6 +2136,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>After the application builds, it is mounted on a <strong>read-only file system</strong>. You can configure specific mount points that are going to be read/write. You cannot FTP to the server and add modules. Instead, you must add code to your local repository and run <code class="highlighter-rouge">git push</code>, which builds and deploys the environment. For the project structure, see <a href="/guides/v2.1/cloud/project/project-start.html">Local project directory structure</a>.</p>
 
 <h3 id="cloud-deploy-over-phases-slug">Phase 3: Prepare the slug</h3>
+
 <p>The result of the build phase is a read-only file system referred to as a <em>slug</em>. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service did not change, it uses the slug from the archive.</p>
 
 <ul>
@@ -2148,6 +2156,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</h3>
+
 <p>Now we provision your applications and all of the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
  services you need:</p>
 
@@ -2159,14 +2168,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p class="bs-callout bs-callout-info">Make your changes in a Git branch after all build and deployment completes and push again. All environment file systems are <em>read-only</em>. A read-only system guarantees deterministic deployments and dramatically improves your site security because no process can write to the file system. It also works to ensure your code is identical in the Integration, Staging, and Production environments.</p>
 
-<h3 id="cloud-deploy-over-phases-hook" class="bs-callout bs-callout-info">Phase 5: Deployment hooks</h3>
-<p>This phase puts the application in maintenance mode until deployment is complete.</p>
+<h3 id="cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</h3>
+
+<p class="bs-callout bs-callout-info">This phase puts the application in maintenance mode until deployment is complete.</p>
 
 <p>The last step runs a deployment script, which you can use to anonymize data in development environments, clear caches, and ping external, continuous integration tools. When this script runs, you have access to all the services in your environment, such as Redis.</p>
 
 <p>If the <code class="highlighter-rouge">app/etc/config.php</code> file does not exist in the codebase, static files are compressed using <code class="highlighter-rouge">gzip</code> and deployed during this phase. This increases the length of your deploy phase and site maintenance.</p>
 
-<p class="bs-callout bs-callout-info">Refer to <a href="/guides/v2.1/cloud/env/environment-vars_magento.html#deploy">Magento deploy variables</a> to learn about customizing or disabling file compression.</p>
+<p class="bs-callout bs-callout-info">Refer to <a href="/guides/v2.1/cloud/env/variables-deploy.html">Magento deploy variables</a> to learn about customizing or disabling file compression.</p>
 
 <p>There are two default deploy hooks. The <code class="highlighter-rouge">pre-deploy.php</code> hook completes necessary cleanup and retrieval of resources and code generated in the build hook. The <code class="highlighter-rouge">php ./vendor/bin/m2-ece-deploy</code> hook runs a series of commands and scripts:</p>
 
@@ -2188,6 +2198,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">Our deploy script uses the values defined by configuration files in the <code class="highlighter-rouge">.magento</code> directory, then the script deletes the directory and its contents. Your local development environment is not affected.</p>
 
 <h3 id="cloud-deploy-over-phases-route">Post-deployment: configure routing</h3>
+
 <p>While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic arrives at your newly created cluster.</p>
 
 <p>Successful deployment removes the maintenance mode to allow for normal access and creates backup (BAK) files for the <code class="highlighter-rouge">app/etc/env.php</code> and the <code class="highlighter-rouge">app/etc/config.php</code> configuration files.</p>
@@ -2197,6 +2208,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To review build and deploy logs, see <a href="/guides/v2.1/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a>.</p>
 
 <h3 id="steps">Build and deploy full steps</h3>
+
 <p>With an understanding of the process, we provide the following instructions for build and deploy for your local, Integration, Staging, and finally Production environments:</p>
 
 <ul>

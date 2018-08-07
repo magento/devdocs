@@ -2032,7 +2032,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
       <li>PHP-FPM - version 7 and later</li>
     </ul>
   </li>
-  <li>NGINX:  magento/magento-cloud-docker-nginx</li>
+  <li>NGINX: magento/magento-cloud-docker-nginx</li>
+  <li>Varnish: magento/magento-cloud-docker-varnish</li>
 </ul>
 
 <p>The <code class="highlighter-rouge">ece-tools</code> package provides a <code class="highlighter-rouge">docker:build</code> command to generate the Docker Compose configuration. Also, you can specify a version using one of the following options:</p>
@@ -2043,11 +2044,103 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>MariaDB: <code class="highlighter-rouge">--db</code></li>
 </ul>
 
-<h4 id="to-launch-the-cloud-docker-environment">To launch the Cloud Docker environment:</h4>
+<h2 id="launch-docker-configuration">Launch Docker configuration</h2>
+
+<p>You can use the <code class="highlighter-rouge">ece-tools</code> package to generate the Docker compose configuration and deploy Magento Commerce (Cloud) in a Docker container.</p>
+
+<ul>
+  <li>
+    <p>If you use <code class="highlighter-rouge">ece tools</code> v2002.0.13 or later, Magento Commerce (Cloud) deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.</p>
+  </li>
+  <li>
+    <p>If you use <code class="highlighter-rouge">ece-tools</code> v2002.0.12, Magento Commerce (Cloud) deploys to a writeable file system in the Docker container. This version does not support the <code class="highlighter-rouge">docker:config:convert</code> command.</p>
+  </li>
+</ul>
+
+<h4 id="to-launch-docker-with-ece-tools-v2002013-and-later">To launch Docker with <code class="highlighter-rouge">ece-tools</code> v2002.0.13 and later:</h4>
 
 <ol>
   <li>Download a template from the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Cloud repository</a>.</li>
-  <li>Add your credentials to <code class="highlighter-rouge">auth.json</code> file.</li>
+  <li>Add your credentials to the <code class="highlighter-rouge">auth.json</code> file.</li>
+  <li>
+    <p>Update the template dependencies.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer install
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In your local environment, start the Docker configuration generator.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vendor/bin/ece-tools docker:build
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the raw configuration files.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cp docker/config.php.dist docker/config.php
+</code></pre></div>    </div>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp docker/global.php.dist docker/global.php
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Convert the PHP configuration files to Docker ENV files.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> vendor/bin/ece-tools docker:config:convert
+</code></pre></div>    </div>
+    <p>This command generate the following Docker ENV files:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">docker/config.env</code></li>
+      <li><code class="highlighter-rouge">docker/global.env</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Build files to containers and run in the background.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose up <span class="nt">-d</span> <span class="nt">--build</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Install Magento in your Docker environment.</p>
+
+    <ul>
+      <li>Build Magento in the Docker container:</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker-compose run build cloud-build
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Deploy Magento in the Docker container:</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker-compose run deploy cloud-deploy
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Access your local Magento Cloud template by opening one of the following secure URLs in a browser:</p>
+
+    <ul>
+      <li>
+        <p><a href="http://localhost:8080" target="\_blank"><code class="highlighter-rouge">http://localhost:8080</code></a></p>
+      </li>
+      <li>
+        <p><a href="https://localhost" target="\_blank"><code class="highlighter-rouge">https://localhost</code></a></p>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="to-launch-docker-with-ece-tools-v2002012-and-later">To launch Docker with <code class="highlighter-rouge">ece-tools</code> v2002.0.12 and later:</h4>
+
+<ol>
+  <li>
+    <p>Download a template from the <a href="https://github.com/magento/magento-cloud" target="\_blank">Magento Cloud repository</a>.</p>
+  </li>
+  <li>
+    <p>Add your credentials to <code class="highlighter-rouge">auth.json</code> file.</p>
+  </li>
   <li>
     <p>Update the template dependencies.</p>
 
@@ -2076,15 +2169,34 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div>    </div>
   </li>
   <li>
-    <p>Start the Magento installer. This step may take some time to complete.</p>
+    <p>Install Magento. This step may take some time to complete.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose run cli magento-installer
 </code></pre></div>    </div>
   </li>
-  <li>Open the <code class="highlighter-rouge">http://localhost:8080</code> URL in a browser to access your local Magento Cloud template.</li>
+  <li>
+    <p>Access your local Magento Cloud template by opening one of the following secure URLs in a browser:</p>
+
+    <ul>
+      <li>
+        <p><a href="http://localhost:8080" target="\_blank"><code class="highlighter-rouge">http://localhost:8080</code></a></p>
+      </li>
+      <li>
+        <p><a href="https://localhost" target="\_blank"><code class="highlighter-rouge">https://localhost</code></a></p>
+      </li>
+    </ul>
+  </li>
 </ol>
 
-<h3 id="integration-testing-with-ece-tools">Integration testing with ece-tools</h3>
+<h2 id="stop-and-remove-the-docker-configuration">Stop and remove the Docker configuration</h2>
+
+<p>Remove all components of your local Magento Cloud Docker instance including containers, networks, volumes, and images.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker-compose down
+</code></pre></div></div>
+
+<h2 id="automate-integration-testing">Automate integration testing</h2>
+
 <p>Installing Magento Commerce Cloud in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:</p>
 
 <ul>

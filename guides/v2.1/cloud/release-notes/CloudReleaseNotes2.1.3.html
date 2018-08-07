@@ -1106,7 +1106,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="required-update-to-magentoappyaml">Required update to <code class="highlighter-rouge">.magento.app.yaml</code></h2>
-<p>Before you <a href="/guides/v2.1/cloud/project/project-upgrade.html">upgrade</a> to version 2.1.3 or 2.0.11, you must add a rule to the <code class="highlighter-rouge">web</code> section of your <code class="highlighter-rouge">.magento.app.yaml</code> file. You must make the change in your local system, push it to your <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">integration server</a>, then, after upgrading, push the changes to <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> and <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">production</a>.</p>
+<p>Before you <a href="/guides/v2.1/cloud/project/project-upgrade.html">upgrade</a> to version 2.1.3 or 2.0.11, you must add a rule to the <code class="highlighter-rouge">web</code> section of your <code class="highlighter-rouge">.magento.app.yaml</code> file. You must make the change in your local system, push it to your integration environment, then, after upgrading, push the changes to the staging and production environments. See <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">Magento Commerce (Cloud) architecture</a>.</p>
 
 <h3 id="get-started">Get started</h3>
 
@@ -1205,13 +1205,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
 <h2 id="cloud-rn-213-es">Update your Elasticsearch configuration</h2>
-<p>This section discusses how to update your <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">integration</a> system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks.</p>
+<p>This section discusses how to update your <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">integration</a> system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks.</p>
 
 <p>Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.</p>
 
 <p>If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you don’t need to do this because Elasticsearch is already the default search engine.</p>
 
-<p>To use Elasticsearch on a <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">production</a> system, open a <a href="/guides/v2.1/cloud/welcome/get-help.html">Support ticket</a> and request Elasticsearch.</p>
+<p>To use Elasticsearch on a <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">staging</a> or <a href="/guides/v2.1/cloud/architecture/cloud-architecture.html">production</a> system, open a <a href="/guides/v2.1/cloud/welcome/get-help.html">Support ticket</a> and request Elasticsearch.</p>
 
 <p class="bs-callout bs-callout-warning">After installing Elasticsearch, you must do a full index of your fulltext index.
 This process can take a while if the index is large. The search functionality is unavailable until the process completes.</p>

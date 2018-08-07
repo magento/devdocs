@@ -2021,13 +2021,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p>If you use cron jobs—or some other external process manager—to manage message queues instead of <a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a>, you may need to use an environment variable to restart message queue consumers after every deployment.</p>
+			<p>If you use cron jobs—or some other external process manager—to manage message queues instead of <a href="/guides/v2.1/cloud/project/project-conf-files_services-rabbit.html">RabbitMQ</a>, you may need to use an environment variable to restart message queue consumers after every deployment. (Requires Magento Commerce (Cloud) version 2.2.0 or later.)</p>
 
 <h2 id="symptom">Symptom</h2>
 <p>Message queue consumers fail to restart after you deploy code to an environment.</p>
 
 <h2 id="solution">Solution</h2>
-<p>Use the <a href="/guides/v2.1/cloud/env/variables-deploy.html#cron_consumers_runner"><code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable</a> to ensure that consumers are retrieving messages from the message queue.</p>
+<p>Use the <a href="https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#cron_consumers_runner"><code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code> environment variable</a> to ensure that consumers are retrieving messages from the message queue.</p>
 
 			
 		</div>

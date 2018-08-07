@@ -2125,14 +2125,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><strong>Version</strong>—Magento 2.1.4 and later</li>
 </ul>
 
-<p>Cleans the <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a> when you perform an action such as enabling or disabling a component. We recommend the default value <em>true</em> in development. The supported values are <code class="highlighter-rouge">true</code> and <code class="highlighter-rouge">false</code>.</p>
+<p>Enables or disables cleaning <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static content files</a> generated during the build or deploy phase. We recommend the default value <em>true</em> in development.</p>
+
+<ul>
+  <li><strong><code class="highlighter-rouge">true</code></strong>—Removes all existing static content before deploying the updated static content.</li>
+  <li><strong><code class="highlighter-rouge">false</code></strong>—The deployment only overwrites existing static content files if the generated content contains a newer version.</li>
+</ul>
+
+<p>If you make modifications to static content through a separate process, set the value to <em>false</em>.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">deploy</span><span class="pi">:</span>
     <span class="na">CLEAN_STATIC_FILES</span><span class="pi">:</span> <span class="no">false</span>
 </code></pre></div></div>
 
-<p>Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code class="highlighter-rouge">logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+<p>Failure to clean static view files before deploying can cause problems if you
+deploy updates to existing files without removing the previous versions. Because of <a href="/guides/v2.3/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache">static file fallback</a> rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.</p>
 
 <h3 id="cron_consumers_runner"><code class="highlighter-rouge">CRON_CONSUMERS_RUNNER</code></h3>
 
@@ -2149,7 +2157,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><code class="highlighter-rouge">consumers</code>—An array of strings specifying which consumer(s) to run. An empty array runs <em>all</em> consumers. Refer to <a href="/guides/v2.3/config-guide/mq/manage-mysql.html#list-consumers">List consumers</a> for more information.</li>
 </ul>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span> 
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">deploy</span><span class="pi">:</span>
     <span class="na">CRON_CONSUMERS_RUNNER</span><span class="pi">:</span>
       <span class="na">cron_run</span><span class="pi">:</span> <span class="no">true</span>
@@ -2309,7 +2317,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">deploy</span><span class="pi">:</span>
-    <span class="na">SCD_EXCLUDE_THEMES</span><span class="pi">:</span> <span class="s2">"</span><span class="s">magento/luma,</span><span class="nv"> </span><span class="s">magento/my-theme"</span> 
+    <span class="na">SCD_EXCLUDE_THEMES</span><span class="pi">:</span> <span class="s2">"</span><span class="s">magento/luma,</span><span class="nv"> </span><span class="s">magento/my-theme"</span>
 </code></pre></div></div>
 
 <h3 id="scd_matrix"><code class="highlighter-rouge">SCD_MATRIX</code></h3>
@@ -2431,10 +2439,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Configure Redis session storage. You must specify the <code class="highlighter-rouge">save</code>, <code class="highlighter-rouge">redis</code>, <code class="highlighter-rouge">host</code>, <code class="highlighter-rouge">port</code>, and <code class="highlighter-rouge">database</code> options for the session storage variable. For example:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span> 
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>
   <span class="na">deploy</span><span class="pi">:</span>
-    <span class="na">SESSION_CONFIGURATION</span><span class="pi">:</span> 
-      <span class="na">redis</span><span class="pi">:</span> 
+    <span class="na">SESSION_CONFIGURATION</span><span class="pi">:</span>
+      <span class="na">redis</span><span class="pi">:</span>
         <span class="na">bot_first_lifetime</span><span class="pi">:</span> <span class="s">100</span>
         <span class="na">bot_lifetime</span><span class="pi">:</span> <span class="s">10001</span>
         <span class="na">database</span><span class="pi">:</span> <span class="s">0</span>
