@@ -17,9 +17,9 @@ Magento profiling enables you to:
 
 -   Enable a built-in profiler.
 
-	You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)
+	You can use a built-in profiler with Magento to perform tasks such as analyzing performance. The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML. When you enable the profiler, a `var/profiler.flag` file generates indicating the profiler is enabled and configurations. When disabled, this file is deleted.
 
--   Displays dependency graphs on a Magento page. A *dependency graph* is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.
+-   Display dependency graphs on a Magento page. A *dependency graph* is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.
 
 	You should be particularly interested in the list of *unused dependencies*, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.
 
@@ -53,17 +53,24 @@ You can enable or disable the profiler using CLI commands:
 -   `dev:profiler:enable <type>` enables the profiler with `type` of `html` (default) or `csvfile`. When enabled, a flagfile `var/profiler.flag` is created.
 -   `dev:profiler:disable` disables the profiler. When disabled, the flagfile `var/profiler.flag` is removed.
 
-To enable or diable the profiler:
+To enable dependency graphs, use the variable option.
 
-1. Use a terminal application to access your Magento instance.
-1. Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system.
-1. Navigate to the root directory of your Magento 2 installation.
-1. Enter `php bin/magento` with one of the commands to configure the profiler:
+To enable or disable the profiler:
 
-  To enable the profiler and create a flagfile:
+1. Log in to your Magento server.
+1. Change to your Magento installation directory.
+1. As the Magento file system owner, enter the following command to configure the profiler:
+
+  To enable the profiler using type `html` and create a flagfile:
 
   ```bash
-  php bin/magento dev:profiler:enable
+  php bin/magento dev:profiler:enable html
+  ```
+
+  To enable the profiler using type `csvfile` and create a flagfile:
+
+  ```bash
+  php bin/magento dev:profiler:enable csvfile
   ```
 
   To disable the profiler and remove the flagfile:
