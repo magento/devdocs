@@ -690,7 +690,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 </section>
 
-			<p style="text-align: right"><em>The latest MFTF release is <a href="https://github.com/magento/magento2-functional-testing-framework/releases/tag/2.3.2">2.3.2</a>.</em></p>
+			<p style="text-align: right"><em>The latest MFTF release is <a href="https://github.com/magento/magento2-functional-testing-framework/releases/tag/2.3.3">2.3.3</a>.</em></p>
 
 <!-- Available note types: "info", "warning", "tip" -->
 
@@ -734,7 +734,6 @@ Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendo
 <h2 id="scope">Scope</h2>
 
 <p>MFTF will enable you to:</p>
-
 <ul>
   <li>Test user interactions with web applications in testing.</li>
   <li>Write functional tests located in <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/</code>.</li>
@@ -750,40 +749,41 @@ Refer to <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendo
 
 <h2 id="find-your-mftf-version">Find your MFTF version</h2>
 
-<p>The MFTF is installed as a Composer dependency in <code class="highlighter-rouge">&lt;magento_root&gt;/app/code/&lt;vendor_name&gt;/&lt;module_name&gt;/Test/Mftf/composer.lock</code>.</p>
+<p>There are two options to find out your MFTF version:</p>
+<ul>
+  <li>using the MFTF CLI</li>
+  <li>using the Composer CLI</li>
+</ul>
 
-<p>Open the file and check the corresponding dependency:</p>
+<h3 id="mftf-cli">MFTF CLI</h3>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-    </span><span class="s2">"packages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"magento/magento2-functional-testing-framework"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.3.0"</span><span class="p">,</span><span class="w">
-            </span><span class="err">...</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-        </span><span class="err">...</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento_root&gt;/
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vebdor/bin/mftf <span class="nt">--version</span>
+</code></pre></div></div>
+
+<h3 id="composer-cli">Composer CLI</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> &lt;magento_root&gt;/
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer show magento/magento2-functional-testing-framework
+</code></pre></div></div>
 
 <h2 id="contents-of-devtestsacceptance">Contents of dev/tests/acceptance</h2>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tests
     _data                       // Additional files required for tests (e.g. pictures, CSV files for import/export, etc.)
     _output                     // The directory is generated during test run. It contains testing reports.
-    _suite                      // Test suites
-    _bootstrap.php              // Script that executes essential initialization routines
-    functional.suite.dist.yml   // Codeception functional test suite configuration
-utils                           // Test running utilities
-.env.example                    // Example file with environmental settings
-.gitignore                      // List of files ignored by git
-.htaccess.sample                // Access settings for Apache web server to perform CLI commands on Magento application
-RoboFile.php                    // MFTF CLI commands configuration for Robo task runner
-codeception.dist.yml            // Codeception configuration
-pre-install.php                 // Script that checks the environment on whether pre-installation requirements are met
+    _suite                      // Test suites.
+    _bootstrap.php              // The script that executes essential initialization routines.
+    functional.suite.dist.yml   // The Codeception functional test suite configuration (generated while running 'bin/mftf build:project')
+utils                           // The test-running utilities.
+.env.example                    // Example file for environmental settings.
+.credentials.example            // Example file for credentials to be used by the third party integrations (generated while running 'bin/mftf build:project'; should be filled with the appropriate credentials in the corresponding sandboxes).
+.gitignore                      // List of files ignored by git.
+.htaccess.sample                // Access settings for the Apache web server to perform the Magento CLI commands.
+RoboFile.php                    // TO BE DEPRECATED SINCE MFTF 3.0. The MFTF CLI commands configuration for Robo task runner.
+codeception.dist.yml            // Codeception configuration (generated while running 'bin/mftf build:project')
 </code></pre></div></div>
 
 <h2 id="mftf-output">MFTF output</h2>
@@ -827,7 +827,6 @@ pre-install.php                 // Script that checks the environment on whether
 <p>Follow the <a href="https://github.com/magento/magento2-functional-testing-framework">MFTF project</a> and <a href="../contribution-guidelines.html">contribute on Github</a>.</p>
 
 <!-- Link definitions -->
-
 
 			
 		</div>
