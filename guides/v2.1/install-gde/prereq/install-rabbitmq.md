@@ -93,34 +93,17 @@ Add the following command line parameters when you install {{site.data.var.ee}}:
 
 where:
 
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>amqp-host</td>
-<td>The hostname where RabbitMQ is installed.</td>
-</tr>
-<tr>
-<td>amqp-port</td>
-<td>The port to use to connect to RabbitMQ. The default is 5672.</td>
-</tr>
-<tr>
-<td>amqp-user</td>
-<td>The username for connecting to RabbitMQ. Do not use the default user `guest`. </td>
-</tr>
-<tr>
-<td>amqp-password</td>
-<td>The password for connecting to RabbitMQ. Do not use the default password `guest`. </td>
-</tr>
-<tr>
-<td>amqp-virtualhost</td>
-<td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
-<p>For additional information, see RabbitMQ documentation:</p>
-<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
-<li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
-</tr>
-</table>
+|Parameter|Description|
+|--- |--- |
+|amqp-host|The hostname where RabbitMQ is installed.|
+|amqp-port|The port to use to connect to RabbitMQ. The default is 5672.|
+|amqp-user|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
+|amqp-password|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
+|amqp-virtualhost|The virtual host for connecting to RabbitMQ. The default is /.
+For additional information, see RabbitMQ documentation:
+Virtual hosts
+Access control|
+{:style="table-layout:auto;"}
 
 ## Start the message queue consumers
 

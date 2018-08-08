@@ -76,26 +76,12 @@ To transfer the Magento software archive to your server:
 ## Extract the software on your server {#zip-extract}
 Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) and extract the software package in the web server docroot using one of the following commands:
 
-<table>
-<tbody>
-<tr> 
-	<th>File format</th>
-	<th>Command to extract</th>
-</tr>
-<tr> 
-	<td>.tar.gz</td>
-	<td><code>tar zxf &lt;filename></code></td>
-</tr>
-<tr> 
-	<td>.zip</td>
-	<td><code>unzip &lt;filename></code></td>
-</tr>
-<tr> 
-	<td>.tar.bz2</td>
-	<td><code>tar jxf &lt;filename></code></td>
-</tr>
-</tbody>
-</table>
+|File format|Command to extract|
+|--- |--- |
+|.tar.gz|tar zxf <filename>|
+|.zip|unzip <filename>|
+|.tar.bz2|tar jxf <filename>|
+{:style="table-layout:auto;"}
 
 The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.
 

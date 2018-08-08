@@ -75,16 +75,11 @@ However, in some situations (particularly, deploying Magento to production), you
 
 	magento setup:upgrade --keep-generated
 
-<div class="bs-callout bs-callout-warning">
-    <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
-    <p>Improper use of this optional parameter can cause errors during code execution.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+The optional `--keep-generated` option should be used _only_ in limited circumstances by experienced system integrators. This option should _never_ be used in a development environment. Improper use of this optional parameter can cause errors during code execution.
 
 
 6.	Install the Magento software:
 
 	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
 	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
-
-*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
-*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase

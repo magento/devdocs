@@ -16,12 +16,12 @@ functional_areas:
 This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento *web node* is the server on which you installed the Magento software and that runs your web server.)
 
 {:.bs-callout .bs-callout-info}
-  This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have `root` access to the file system and you must be able to log in to MySQL as `root`.
+This is an advanced topic that should be used only by an experienced network administrator or database administrator. You must have `root` access to the file system and you must be able to log in to MySQL as `root`.
 
 ### Prerequisites
 Before you begin, you must:
 
-*	[Install MySQL server]({{ page.baseurl }}/install-gde/prereq/mysql.html) on the database server 
+*	[Install MySQL server]({{ page.baseurl }}/install-gde/prereq/mysql.html) on the database server
 *	[Create a database instance]({{ page.baseurl }}/install-gde/prereq/mysql.html#instgde-prereq-mysql-config) on the database server
 *	Install the MySQL client on your Magento web node. Consult MySQL documentation for details.
 
@@ -31,7 +31,7 @@ Use the following guidelines to configure remote database connections if your we
 *	You must configure a connection for each web server node
 *	Typically, you configure a database connection to the database load balancer; however, database clustering can be complex and configuring it is up to you. Magento makes no specific recommendations for database clustering.
 
-	For more information, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html){:target="_blank"}.
+	For more information, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html).
 
 ### Resolving connection issues
 If you have issues connecting to either host, first ping the other host to make sure it's reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).
@@ -55,13 +55,13 @@ To create a remote connection:
 
 3.	Search the configuration file for `bind-address`.
 
-	If it exists, change the value as follows. 
+	If it exists, change the value as follows.
 
 	If it doesn't exist, add it anywhere except the `[mysqld]` section.
 
 		bind-address = <ip address of your Magento web node>
 
-	See [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html){:target="_blank"}, especially if you have a clustered web server.
+	See [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html), especially if you have a clustered web server.
 
 3.	Save your changes to the configuration file and exit the text editor.
 4.	Restart the MySQL service:
@@ -71,7 +71,7 @@ To create a remote connection:
 	Ubuntu: `service mysql restart`
 
 {:.bs-callout .bs-callout-info}
-  	If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address){:target="_blank"} or another authoritative source.
+  	If MySQL fails to start, look in syslog for the source of the issue. Resolve the issue using [MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_bind-address) or another authoritative source.
 
 ## Grant access to a database user {#instgde-prereq-mysql-remote-access}
 To enable your web node to connect to the database server, you must grant a web node database user access to the database on the remote server.

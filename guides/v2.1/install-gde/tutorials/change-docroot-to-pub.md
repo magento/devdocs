@@ -43,9 +43,8 @@ To complete this tutorial, you'll need access to a working Magento installation 
 -   PHP (5.6 or 7.0)
 -   Magento (2.0+)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.
-</div>
 
 ## 1. Edit your server configuration
 The name and location of your virtual host file depends on which version of Apache you're running. This example shows the name and location of the virtual host file on Apache v2.4.
@@ -120,7 +119,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
     The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-    <img src="{{ site.baseurl }}/common/images/install-success_store.png" width="450px" alt="Magento storefront which verifies a successful installation">
+    ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:.width="450px"}
 
     Refer to the [troubleshooting section]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
@@ -128,7 +127,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
     If you see a 404 or the "Access denied" message, you've successfully restricted access to the Magento file system.
 
-    <img src="{{ site.baseurl }}/common/images/access-denied.png" alt="Access denied">
+    ![Access denied]({{ site.baseurl }}/common/images/access-denied.png)
 
 ## Congratulations! You're finished.
 {:.no_toc}
