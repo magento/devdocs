@@ -358,6 +358,7 @@ We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this r
 -   <!--MAGECLOUD-1020-->We fixed an issue that was causing redirect loops due to disabled by default secure admin.
 
 ## v2002.0.0
+
 {:.bs-callout .bs-callout-warning}
 This package is no longer compatible with other versions of {{site.data.var.ece}} and **should not** be used.
 
