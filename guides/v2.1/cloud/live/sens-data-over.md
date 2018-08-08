@@ -62,7 +62,7 @@ Depending on the size of your store, you may have a large amount of static conte
 If you generate `config.local.php`, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
 {:.bs-callout .bs-callout-info}
-Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
+Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
 ## Configuration selection flow
 All system configurations are set during deployment according to the following override scheme:
@@ -114,7 +114,7 @@ The `config.local.php` file includes the following settings and configuration va
 </table>
 
 ## Recommended procedure to manage your settings {#cloud-config-specific-recomm}
-Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.local.php` file, which contains a number of configuration properties that you can adjust as needed. 
+Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the `config.local.php` file, which contains a number of configuration properties that you can adjust as needed.
 
 We **strongly recommend** using the `scd-dump` command to generate a `config.local.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
@@ -179,7 +179,7 @@ To complete extensive changes:
 ## Change locales
 You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
 
-You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.local.php` file with the new locale information, and copy the configuration file to the target environment. 
+You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.local.php` file with the new locale information, and copy the configuration file to the target environment.
 
 {: .bs-callout .bs-callout-warning}
 This process **overwrites** the store configuration; only do the following if the environments contain the same stores.

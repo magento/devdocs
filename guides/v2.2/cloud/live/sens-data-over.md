@@ -63,7 +63,7 @@ Depending on the size of your store, you may have a large amount of static conte
 If you generate a `config.php` file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.
 
 {:.bs-callout .bs-callout-info}
-Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#build) to learn about customizing or disabling file compression.
+Before deploying static files, the build and deploy phases compress static content using `gzip`. Compressing static files reduces server loads and increases site performance. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
 ## Configuration selection flow
 All system configurations are set during deployment according to the following override scheme:
@@ -157,7 +157,7 @@ Push the `config.php` file to Git. To push this file to the `master` Git branch,
 
     `git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master`
 
-When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html#deploy).
+When you add the `config.php` file to Git, all build and deploy processes move static content deployment (SCD) to the _build_ phase. The method for the deployment uses the scope. The default option is [`quick`]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick). You can change the strategy by setting an environment variable for [`SCD_STRATEGY`]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html).
 
 {: .bs-callout .bs-callout-info}
 Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.

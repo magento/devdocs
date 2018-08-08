@@ -12,7 +12,7 @@ The Upgrades and patches section contains detailed release notes for the `{{site
 -  [Upgrade project to use the {{site.data.var.ct}} package]({{ page.baseurl }}/cloud/project/ece-tools-upgrade-project.html)
 -  [Update the {{site.data.var.ct}} package]({{ page.baseurl }}/cloud/project/ece-tools-update.html)
 -  [Apply custom patches]({{ page.baseurl }}/cloud/project/project-patch.html)
--  [Upgrade Magento version]({{ page.baseurl }}/cloud/project.project-upgrade.html)
+-  [Upgrade Magento version]({{ page.baseurl }}/cloud/project/project-upgrade.html)
 
 {{site.data.var.ece}} checks for pending patches and updates whenever you push code changes to the remote environment.
 

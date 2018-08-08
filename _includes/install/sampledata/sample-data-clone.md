@@ -54,6 +54,17 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
     </div>
+7.  Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main `magento2` repository.
+    
+    For example:
+    
+    If you used the `2.2-develop` branch of the Magento 2 repository, the Sample Data branch should be `2.2-develop`.
+    
+    If you used the `2.2.5` branch of the Magento 2 repository, the Sample Data branch should be `2.2.5`.
+    
+    To checkout the correct branch, run the following command from the sample data repository's root directory (assuming you need the `2.2.5` branch):
+
+        git checkout 2.2.5
 7.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
@@ -81,6 +92,17 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 
         git clone https://github.com/magento/magento2-sample-data.git
 4.  Wait for the repository to clone on your server.
+7.  Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main `magento2` repository.
+    
+    For example:
+    
+    If you used the `2.2-develop` branch of the Magento 2 repository, the Sample Data branch should be `2.2-develop`.
+    
+    If you used the `2.2.5` branch of the Magento 2 repository, the Sample Data branch should be `2.2.5`.
+    
+    To checkout the correct branch, run the following command from the sample data repository's root directory (assuming you need the `2.2.5` branch):
+
+        git checkout 2.2.5
 5.  Change to the `<your Magento sample data clone dir>/dev/tools` directory.
 8.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
