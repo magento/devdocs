@@ -70,7 +70,7 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 `Content-Type`: `application/json`
 
-`Authorization`: `Bearer <customer_token>`
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
@@ -96,7 +96,7 @@ Use the same endpoint to check the quantity available for product `sp2`.
 
 `Content-Type`: `application/json`
 
-`Authorization`: `Bearer <customer_token>`
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
