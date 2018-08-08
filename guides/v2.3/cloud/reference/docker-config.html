@@ -2117,7 +2117,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Copy the raw configuration files.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  cp docker/config.php.dist docker/config.php
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp docker/config.php.dist docker/config.php
 </code></pre></div>    </div>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp docker/global.php.dist docker/global.php
@@ -2145,18 +2145,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Install Magento in your Docker environment.</p>
 
     <ul>
-      <li>Build Magento in the Docker container:</li>
+      <li>
+        <p>Build Magento in the Docker container:</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker-compose run build cloud-build
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Deploy Magento in the Docker container:</p>
+
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  docker-compose run deploy cloud-deploy
+</code></pre></div>        </div>
+      </li>
     </ul>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker-compose run build cloud-build
-</code></pre></div>    </div>
-
-    <ul>
-      <li>Deploy Magento in the Docker container:</li>
-    </ul>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> docker-compose run deploy cloud-deploy
-</code></pre></div>    </div>
   </li>
   <li>
     <p>Access your local Magento Cloud template by opening one of the following secure URLs in a browser:</p>
