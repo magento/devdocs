@@ -97,7 +97,7 @@ You can use the `ece-tools` package to generate the Docker compose configuration
     -  [`https://localhost`](https://localhost){:target="\_blank"}
 
 
-#### To launch Docker with `ece-tools` v2002.0.12 and later:
+#### To launch Docker with `ece-tools` v2002.0.12:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud){:target="\_blank"}.
 
