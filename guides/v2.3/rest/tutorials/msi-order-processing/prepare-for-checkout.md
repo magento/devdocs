@@ -33,9 +33,9 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization`: `Bearer <customer token>`
 
 **Payload**
 
@@ -99,9 +99,9 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <customer token>`
+`Authorization`: `Bearer <customer token>`
 
 **Payload**
 
@@ -290,6 +290,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} to the US store (http://<host>/us ) as the customer and go to the checkout page.
+{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} to the US store (`http://<host>/us`) as the customer and go to the checkout page.
 
-The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges have been calculated.
+The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges and shipping charges calculate and display.

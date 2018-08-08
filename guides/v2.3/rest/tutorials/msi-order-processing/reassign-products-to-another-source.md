@@ -15,11 +15,18 @@ functional_areas:
   - Integration
 ---
 
-Currently, Magento assigns any newly-created product to the default source. For this tutorial, we want to assign the new products to custom sources.
+
+When you initially install or upgrade Magento with MSI, MSI assigns all existing and newly created products to the default source. For this tutorial, we want to assign the new products to custom sources. As part of this process, we will unassign the products from the default source.
+
+{:.bs-callout .bs-callout-info}
+When you unassign a product from a source, Magento removes all quantity data saved for that source.
 
 ## Unassign products from the default source
 
 Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more products from the specified source. The `sku` and `source_code` attributes are required for each product.
+
+{:.bs-callout .bs-callout-warning}
+Unassigning a source clears all quantity data. For this example, this is OK, because the default source did not contain any quantity data. Reassigning a source that contains real quantity data can potentially cause havoc with pending orders with reservations and affect the salable quantity counts. See the [merchant documentation](https://github.com/magento-engcom/msi/wiki/Overview) for more details.
 
 **Endpoint**
 
@@ -31,9 +38,9 @@ Use the `POST V1/inventory/source-items-delete` endpoint to unassign one or more
 
 **Headers**
 
-`Content-Type application/json`
+`Content-Type`: `application/json`
 
-`Authorization: Bearer <admin_token>`
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
@@ -74,8 +81,8 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Headers**
 
-Content-Type application/json
-Authorization: Bearer <admin_token>
+`Content-Type`: `application/json`
+`Authorization`: `Bearer <admin_token>``
 
 **Payload**
 
@@ -158,4 +165,4 @@ Magento returns an empty array.
 
 ## Verify this step
 
-In Admin, click **Catalog** > **Products**.  Products `sp1`, `sp2`, and `vp1` are assigned to sources, and the quantities are calculated for each stock.
+In Admin, click **Catalog** > **Products**.  Products `sp1`, `sp2`, and `vp1` display quantities per assigned source in the **Quantity Per Source** column and an aggregated total of products per stock in the **Salable Quantity** column.

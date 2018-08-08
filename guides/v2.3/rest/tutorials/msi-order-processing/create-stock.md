@@ -15,14 +15,20 @@ functional_areas:
   - Integration
 ---
 
-**Stock** represents a virtual, aggregated inventory of products for sources of your sales channels. Each stock maps sales channels with sources to determine available inventories and salable quantities.
+This step guides through the process for creating **stock**. Stock represents a virtual, aggregated inventory of products for sources of your sales channels. Each stock maps sales channels with sources to determine available inventories and salable quantities.
+
+A sales channel can only be assigned to one stock.
+
+The `stock_id` of the default stock is `1`.  You cannot delete or add sources to the default stock, but you can perform these actions with custom stocks.
 
 For more information about stock, see the Wiki topic [Create stock](https://github.com/magento-engcom/msi/wiki/Create-Stock){:target="_blank"}.
 
 
 ## Create the stock for North America
 
-The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code`attributes are required.
+The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and `code`attributes are required. The `code` value cannot be changed.
+stocks can be created, modified, and deleted, but not enabled/disabled
+save the returned id, used in the next step
 
 **Endpoint**
 
@@ -34,9 +40,9 @@ The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and
 
 **Headers**
 
-Content-Type: application/json
+`Content-Type`: `application/json`
 
-Authorization: Bearer <admin_token>
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
@@ -61,7 +67,7 @@ The `name` attribute is required.
 
 **Response**
 
-Magento returns the `stock_id`, such as `2`,
+Magento returns the `stock_id`, such as `2`. The value will be used in subsequent steps. 
 
 
 ## Create the Europe stock

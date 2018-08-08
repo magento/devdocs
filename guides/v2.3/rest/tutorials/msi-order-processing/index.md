@@ -17,20 +17,20 @@ functional_areas:
 ### Before you begin
 {:.tutorial-before}
 
-This tutorial builds upon the workflow described in the [Order Processing with REST APIs tutorial]({{ page.baseurl }}/get-started/order-tutorial/order-intro.html). The Order Processing with Multi Source Inventory (MSI) tutorial contains additional steps that show how to create stocks and sources and assign products to a custom source. The tutorial also shows how to check the Source Selection Algorithm to determine the recommended shipping options.
+This tutorial builds upon the workflow described in the [Order Processing with REST APIs tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html). The Order Processing with Multi Source Inventory (MSI) tutorial provides additional steps that detail how to create stocks and sources, assign products to a custom source, and run the Source Selection Algorithm to recommend shipping options.
 
-For more information about MSI, see the [MSI wiki](https://github.com/magento-engcom/msi/wiki/Overview){:target="_blank"}.
+For more information about MSI, see the [MSI wiki](https://github.com/magento-engcom/msi/wiki/Overview).
 
 This **13-step tutorial** generally takes **1 hour**.
 
 {:.bs-callout .bs-callout-info}
-Order Processing with MSI tutorial does not currently use the Luma sample store.
+The Order Processing with MSI tutorial is a draft. It will be expanded to include more steps that show MSI functionality. This tutorial does not currently use the Luma sample store, but later versions will.
 
 ### Complete these prerequisites
 
-* Install the latest version of Magento 2.3 from the [MSI repository](https://github.com/magento-engcom/msi){:target="_blank"}. Additional information is available at [How to get the Magento software](https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html).
+* Install the latest version of Magento 2.3 Alpha from the [MSI repository](https://github.com/magento-engcom/msi). Additional information is available at [How to get the Magento software](https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html).
 
-* Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/){:target="_blank"} is recommended.
+* Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 
 * Know how to construct a REST call in Magento. See [Construct a request]({{ page.baseurl }}/get-started/gs-web-api-request.html) for details.
 
@@ -39,4 +39,4 @@ Order Processing with MSI tutorial does not currently use the Luma sample store.
 
 ### Other resources
 
-* Magento uses [Swagger](https://swagger.io) to provide REST API documentation. You can view the [static REST API documentation on devdocs]({{ site.baseurl }}/swagger/){:target="_blank"} or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
+* Magento uses [Swagger](https://swagger.io) to provide REST API documentation. You can view the [static REST API documentation]({{ site.baseurl }}/swagger/) or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).

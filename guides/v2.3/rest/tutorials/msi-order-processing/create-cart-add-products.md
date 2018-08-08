@@ -31,8 +31,9 @@ The call to create a cart and add items must contain the customer’s authorizat
 
 **Headers**
 
-Content-Type application/json
-Authorization: Bearer <customer_token>
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <customer_token>`
 
 **Payload**
 
@@ -67,9 +68,9 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <admin token>`
+`Authorization`: `Bearer <customer_token>`
 
 **Payload**
 
@@ -93,9 +94,9 @@ Use the same endpoint to check the quantity available for product `sp2`.
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <admin token>`
+`Authorization`: `Bearer <customer_token>`
 
 **Payload**
 
@@ -123,8 +124,9 @@ In this call, we'll add 20 `sp1` items. This portion of the order can be fulfill
 
 **Headers**
 
-Content-Type application/json
-Authorization: Bearer <customer_token>
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <customer_token>`
 
 **Payload**
 
@@ -212,4 +214,4 @@ Finally, we'll add a single instance of a virtual product to the cart.
 
 ## Verify this step {#verify-step}
 
-Sign in as the customer at `http:<host>/us` and click on the shopping cart . All the items you added are displayed.
+Sign in as the customer at `http:<host>/us` and click on the shopping cart. All the items you added display in the cart.

@@ -15,13 +15,14 @@ functional_areas:
   - Integration
 ---
 
-When you create a shipment with MSI, you could have many more options than are available with standard single-source shipments. One of the most significant parts of MSI is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping using order information for determining shipping costs, aggregated stock quantities, source location against destination, and additional configured settings. The algorithm also provides a list of source items with quantities to deduct per each source item.
+One of the most significant parts of MSI is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Link stocks and sources
+]({{ page.baseurl }}/rest/tutorials/msi-order-processing/order-intro.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
 
 For more information about shipping and SSAs, see the Wiki topic [Shipment and Order Management](https://github.com/magento-engcom/msi/wiki/Shipment-and-Order-Management){:target="_blank"}.
 
 ## Get the list of algorithms
 
-Currently, MSI supports only the default SSA. Third-party developers and future releases may add support for additional algorithms.
+Currently, MSI supports only the default SSA for priority. Third-party developers and future releases may add support for additional algorithms.
 
 **Endpoint**
 
@@ -57,7 +58,7 @@ Not appliable
 
 The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array.
 
-This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to ship all the items ordered (20 items of product `sp1` and 60 items of product `sp2`) immediately.
+This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (20 items of product `sp1` and 60 items of product `sp2`).
 
 **Endpoint**
 
@@ -69,9 +70,9 @@ This tutorial does not consider complications such selling out of products or ba
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <admin token>`
+`Authorization`: `Bearer <admin token>`
 
 **Payload**
 

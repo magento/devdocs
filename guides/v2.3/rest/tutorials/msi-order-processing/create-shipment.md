@@ -21,6 +21,8 @@ You can always override the SSA recommendations. It would be valid, for example,
 
 Fulfilling the order requires two partial shipments (unless you want to create a scenario that also involves the Austin warehouse). In this example, we'll follow the SSA recommendations.
 
+When you complete a partial or full shipment, Magento deducts the reserved products from corresponding sources.
+
 ## Ship from the Baltimore warehouse
 
 You must use the `POST V1/shipment` endpoint to create a shipment.
@@ -36,9 +38,9 @@ You must use the `POST V1/shipment` endpoint to create a shipment.
 **Headers**
 
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <admin token>`
+`Authorization`: `Bearer <admin token>`
 
 **Payload**
 
@@ -181,4 +183,5 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 
 ## Verify this step {#verify-step}
 
-Click **Sales** > **Shipments**. The two shipments for this order are displayed in the grid.
+1. Click **Sales** > **Shipments**. The two shipments for this order are displayed in the grid.
+2. Click **Catalog** > **Products** to verify **Quantity per Source** values for each product has been deducted according to the selections made at shipment. 

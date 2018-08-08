@@ -15,7 +15,7 @@ functional_areas:
   - Integration
 ---
 
-In this step, we will create a customer account that is tied to the `us` web view. We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only difference being the scope of the call. In this case, the endpoint path contains `us` instead of `default`.
+In this step, we will create a customer account that is tied to the `us` web view that we created in Step 1. We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only difference being the scope of the call. In this case, the endpoint path contains `us` instead of `default`.
 
 **Endpoint**
 
@@ -27,8 +27,9 @@ In this step, we will create a customer account that is tied to the `us` web vie
 
 **Headers**
 
-Content-Type application/json
-Authorization: Bearer <admin_token>
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
@@ -115,7 +116,7 @@ The customer `id` is `2`.
 
 To generate a customer's access token, you must specify the customer's username and password in the payload. You do not specify an admin {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
 
-By default, a customer token is valid for 1 hour. To change this value, log in to Admin and go to **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
+By default, a customer token is valid for 1 hour. To change this value, click **Configuration** > **Services** > **OAuth** > **Access Token Expiration**. Then enter a new value for **Customer Token Lifetime (hours)**.
 
 
 **Endpoint**
@@ -128,7 +129,7 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
 **Payload**
 

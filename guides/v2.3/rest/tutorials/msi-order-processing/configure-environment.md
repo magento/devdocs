@@ -25,12 +25,12 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 ### Create the North America website
 
-1. Log in to Admin and select **Stores** > **All Stores**. Click the **Create Website** button, then assign the following values:
+1. Log in to Admin and select **Stores** > **All Stores**. Click **Create Website**, then assign the following values:
 
    Field | Value
    --- | ---
    Name | North America Site
-   Code | na_site
+   Code | `na_site`
 
    Click **Save Web Site**.
 
@@ -40,7 +40,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Web Site | North America Site
    Name | North America Store
-   Code | na_store
+   Code | `na_store`
    Root Category | Default Category
 
    Click **Save Store**.
@@ -51,7 +51,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Store | US Store
    Name | US Store View
-   Code | us
+   Code | `us`
    Status | Enabled
 
    Click **Save Store View**.
@@ -63,7 +63,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Field | Value
    --- | ---
    Name | Europe Site
-   Code | eu_site
+   Code | `eu_site`
 
    Click **Save Web Site**.
 
@@ -73,7 +73,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Web Site | Europe Site
    Name | Europe Store
-   Code | eu_store
+   Code | `eu_store`
    Root Category | Default Category
 
    Click **Save Store**.
@@ -84,7 +84,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Store | Europe Store
    Name | Germany Store View
-   Code | de
+   Code | `de`
    Status | Enabled
 
    Click **Save Store View**.
@@ -111,7 +111,7 @@ For this tutorial, we'll assume that payment and shipping methods are configured
 
 ## Reindex and flush the cache
 
-Perform a full reindex and flush the cache. This is required!
+**Required:** Perform a full reindex and flush the cache.
 
 ``` bash
 php bin/magento indexer:reindex && php bin/magento cache:flush

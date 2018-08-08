@@ -15,6 +15,8 @@ functional_areas:
   - Integration
 ---
 
+This step links the sources we created in Step 2 with the stocks we created in Step 3.
+
 Each stock can be assigned one or more sources. MSI uses these associations to calculate the virtual aggregated inventory per product.
 
 {:.bs-callout .bs-callout-tip}
@@ -22,11 +24,11 @@ You must reindex and flush cache after performing this step.
 
 ## Assign the source
 
-To link a source to a stock, you must specify the `source_code`, `stock_id`, and `priority` attributes. The `priority` value indicates where the stock ranks in the list of stocks that can be used for fulfilling orders.
+To link a source to a stock, you must specify the `source_code`, `stock_id`, and `priority` attributes. The `priority` value indicates where the source ranks in descending order. The Source Selection Algorithm uses this priority order when recommending order fulfillment. All added sources display in prioritized order in the Admin.
 
 The `POST V1/inventory/stock-source-links` endpoint accepts an array of links, so we can link all the stocks and sources we created in the previous steps with a single call. The `stock_id` of "North America Stock" is `2`, and the `stock_id` of "Europe Stock" is `3`. The HQ source is assigned to both stocks.
 
-In this example, we are configuring the Baltimore warehouse to be the primary source for North America orders. Austin and Reno are the second- and third-choice sources. In Europe, Berlin is preferred, followed by Frankfurt. HQ is the last choice for both stocks.
+In this example, we configure the Baltimore warehouse to be the primary source for North America orders. Austin and Reno are the second- and third-choice sources. In Europe, Berlin is preferred, followed by Frankfurt. HQ is the last choice for both stocks.
 
 **Endpoint**
 
@@ -38,9 +40,9 @@ In this example, we are configuring the Baltimore warehouse to be the primary so
 
 **Headers**
 
-Content-Type application/json
+`Content-Type`: `application/json`
 
-Authorization: Bearer <admin_token>
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
@@ -93,7 +95,7 @@ Magento returns empty array.
 
 ## Reindex and flush cache
 
-After you have assigned a source to stock, use the following command to perform a full reindex and flush the cache. This is required!
+**Required:** After you have assigned a source to stock, use the following command to perform a full reindex and flush the cache. This is required!
 
 ``` bash
 php bin/magento indexer:reindex && php bin/magento cache:flush

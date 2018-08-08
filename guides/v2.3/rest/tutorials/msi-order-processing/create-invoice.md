@@ -17,7 +17,8 @@ functional_areas:
 
 You create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
 
-After you submit the invoice, Magento recalculates the salable quantity of stock of each product. Magento also adjusts the Quantity Per Source value for non-physical products.
+After you submit the invoice, Magento adjusts the Quantity per Source value for non-physical products.
+
 
 ## Capture payment {#capture-payment}
 
@@ -35,9 +36,9 @@ where `1` is the `orderid`
 
 **Headers**
 
-`Content-Type` `application/json`
+`Content-Type`: `application/json`
 
-`Authorization` `Bearer <admin token>`
+`Authorization`: `Bearer <admin token>`
 
 **Payload**
 
@@ -54,6 +55,6 @@ An invoice `id`, such as `3`.
 
 ## Verify this step {#verify-step}
 
-1. Click **Sales** > **Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales** > **Orders**. The status is Processing.
+1. Click **Sales** > **Invoices**. The invoice displays in the grid with a status of Paid. Then click **Sales** > **Orders**. The status is Processing.
 
-2. Click **Catalog** > **Products**. For `sp1`, the value of **North America stock** has decreased from 160 to 140. For `sp2`, this value has decreased from 75 to 15. Magento adjusted the value of **Quantity per Source** and **Salable Quantity** to 9998 for all sources and stocks.
+2. Click **Catalog** > **Products**. For `vp1`, Magento adjusted the value of **Quantity per Source** and **Salable Quantity** to 9998 for all sources and stocks.

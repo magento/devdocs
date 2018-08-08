@@ -35,8 +35,9 @@ In a single-source inventory environment, you would use the `qty` field in the `
 
 **Headers**
 
-Content-Type application/json
-Authorization: Bearer <admin_token>
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <admin_token>`
 
 **Payload**
 
@@ -251,7 +252,7 @@ Use the same endpoint to create the second simple product.
 
 ## Create a virtual product
 
-Virtual products do not require a shipment. We'll
+Virtual products do not require a shipment. We will create one just to show that the Source Selection Algorithm does not consider virtual products.
 
 **Endpoint**
 
@@ -365,4 +366,10 @@ Authorization: Bearer <admin_token>
 
 ## Verify this step
 
-In Admin, click **Catalog** > **Products**.  The new products are displayed in the Catalog grid. Note that the **Quantity Per Source** column contains the value **Default Source: 0** and the **Salable Quantity** column contains the value **Default Stock: 0**.
+In Admin, click **Catalog** > **Products**. With multiple sources added, the Product grid includes new columns:
+
+* The **Quantity** column is replaced with the **Quantity Per Source** column, which contains the assigned quantity value for an assigned source.
+
+* A new **Salable Quantity** column contains the aggregated quantity per stock value, calculated for all assigned sources.
+
+These new products display a **Quantity Per Source** value of **Default Source: 0** and **Salable Quantity** value of **Default Stock: 0**.

@@ -8,6 +8,8 @@ Flat rate | `flatrate` | Yes
 Table rate | `tablerate` | Yes
 Free shipping | `freeshipping` | No
 
-If you want to change which offline shipping methods are available, select **Stores** > **Configuration** > **Sales** > **Shipping Methods** in Admin. Enable or disable the shipping methods as desired, then click **Save**.
+To change which offline shipping methods are available:
 
-Upon clicking **Save**, a notification message states that the cache needs to be refreshed. Click the **Cache Management** link to refresh the cache.
+1. Select **Stores** > **Configuration** > **Sales** > **Shipping Methods** in Admin.
+2. Enable or disable the shipping methods as desired.
+3. Click **Save Config**.
