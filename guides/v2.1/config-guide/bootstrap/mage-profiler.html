@@ -1673,10 +1673,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Enable a built-in profiler.</p>
 
-    <p>You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)</p>
+    <p>You can use a built-in profiler with Magento to perform tasks such as analyzing performance. The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.</p>
   </li>
   <li>
-    <p>Displays dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
+    <p>Display dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
 
     <p>You should be particularly interested in the list of <em>unused dependencies</em>, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.</p>
   </li>
@@ -1684,7 +1684,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler.php" target="&#95;blank">Magento\Framework\Profiler</a>.</p>
 
-<h2 id="set-mage_profiler">Set MAGE_PROFILER</h2>
+<h2 id="variable">Set MAGE_PROFILER</h2>
+
 <p><code class="highlighter-rouge">MAGE_PROFILER</code> supports the following values:</p>
 
 <ul>

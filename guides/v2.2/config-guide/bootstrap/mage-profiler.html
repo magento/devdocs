@@ -1881,10 +1881,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Enable a built-in profiler.</p>
 
-    <p>You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)</p>
+    <p>You can use a built-in profiler with Magento to perform tasks such as analyzing performance. The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML. When you enable the profiler, a <code class="highlighter-rouge">var/profiler.flag</code> file generates indicating the profiler is enabled and configurations. When disabled, this file is deleted.</p>
   </li>
   <li>
-    <p>Displays dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
+    <p>Display dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
 
     <p>You should be particularly interested in the list of <em>unused dependencies</em>, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.</p>
   </li>
@@ -1892,7 +1892,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler.php" target="&#95;blank">Magento\Framework\Profiler</a>.</p>
 
-<h2 id="set-mage_profiler">Set MAGE_PROFILER</h2>
+<p>You can enable and configure the profiler using a <a href="#variable">MAGE_PROFILER</a> variable or the <a href="#cli">command line</a>.</p>
+
+<h2 id="variable">Set MAGE_PROFILER</h2>
+
+<p>You can set the value of <code class="highlighter-rouge">MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
+
 <p><code class="highlighter-rouge">MAGE_PROFILER</code> supports the following values:</p>
 
 <ul>
@@ -1915,7 +1920,39 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<p>You can set the value of <code class="highlighter-rouge">MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
+<h2 id="cli">CLI commands</h2>
+
+<p>You can enable or disable the profiler using CLI commands:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">dev:profiler:enable &lt;type&gt;</code> enables the profiler with <code class="highlighter-rouge">type</code> of <code class="highlighter-rouge">html</code> (default) or <code class="highlighter-rouge">csvfile</code>. When enabled, a flagfile <code class="highlighter-rouge">var/profiler.flag</code> is created.</li>
+  <li><code class="highlighter-rouge">dev:profiler:disable</code> disables the profiler. When disabled, the flagfile <code class="highlighter-rouge">var/profiler.flag</code> is removed.</li>
+</ul>
+
+<p>To enable dependency graphs, use the variable option.</p>
+
+<p>To enable or disable the profiler:</p>
+
+<ol>
+  <li>Log in to your Magento server.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>As the Magento file system owner, enter the following command to configure the profiler:</li>
+</ol>
+
+<p>To enable the profiler using type <code class="highlighter-rouge">html</code> and create a flagfile:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  php bin/magento dev:profiler:enable html
+</code></pre></div></div>
+
+<p>To enable the profiler using type <code class="highlighter-rouge">csvfile</code> and create a flagfile:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  php bin/magento dev:profiler:enable csvfile
+</code></pre></div></div>
+
+<p>To disable the profiler and remove the flagfile:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  php bin/magento dev:profiler:disable
+</code></pre></div></div>
 
 			
 		</div>
