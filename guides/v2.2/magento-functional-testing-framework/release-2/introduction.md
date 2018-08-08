@@ -60,7 +60,11 @@ As a software engineer, perform regression testing before release to ensure that
 
 ## Find your MFTF version
 
-### Using the MFTF CLI
+There are two options to find out your MFTF version:
+- using the MFTF CLI
+- using the Composer CLI
+
+### MFTF CLI
 
 ```bash
 cd <magento_root>/
@@ -69,7 +73,7 @@ cd <magento_root>/
 vebdor/bin/mftf --version
 ```
 
-### Using the Composer CLI
+### Composer CLI
 
 ```bash
 cd <magento_root>/
@@ -87,9 +91,9 @@ tests
     _suite                      // Test suites.
     _bootstrap.php              // The script that executes essential initialization routines.
     functional.suite.dist.yml   // The Codeception functional test suite configuration (generated while running 'bin/mftf build:project')
-utils                           // The test running utilities.
+utils                           // The test-running utilities.
 .env.example                    // Example file for environmental settings.
-.credentials.example            // Example file for credentials to be used by the third party integrations (generated while running 'bin/mftf build:project', should be filled with the appropriate credentials into the corresponding sandboxes).
+.credentials.example            // Example file for credentials to be used by the third party integrations (generated while running 'bin/mftf build:project'; should be filled with the appropriate credentials in the corresponding sandboxes).
 .gitignore                      // List of files ignored by git.
 .htaccess.sample                // Access settings for the Apache web server to perform the Magento CLI commands.
 RoboFile.php                    // TO BE DEPRECATED SINCE MFTF 3.0. The MFTF CLI commands configuration for Robo task runner.
