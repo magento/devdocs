@@ -70,7 +70,7 @@ There are two options to find out your MFTF version:
 cd <magento_root>/
 ```
 ```bash
-vebdor/bin/mftf --version
+vendor/bin/mftf --version
 ```
 
 ### Composer CLI
