@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Step 7. Create a customer and generate a customer token | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+
+	<link rel="stylesheet" href="/assets/css/app.css" />
+	<link rel="stylesheet" href="/assets/css/print.css" media="print"/>
+
+	<link rel="stylesheet" href="/common/css/devdocs.css" />
+<link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+	<script>
+  var baseUrl = "";
+  var algolia = {
+    id : "E642SEDTHL",
+    index:  "devdocs",
+    key:  "d2d0f33ab73e291ef8d88d8b565e754c"
+  };
+</script>
+
+
+
+<!-- Google Analytics -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-ML6GZCH':true});</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('require', 'GTM-ML6GZCH');
+    ga('send', 'pageview');
+</script>
+
+<!-- Hotjar Tracking Code for http://devdocs.magento.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:806243,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- heap analytics -->
+<script type="text/javascript">
+      window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+      heap.load("2619540280");
+</script>
+
+
+
+
+	<link rel="canonical" href="https://devdocs.magento.com/guides/v2.3/rest/tutorials/msi-order-processing/create-customer.html">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body class="layout-tutorial">
+
+	<header class="site-header">
+
+		<nav class="site-nav">
+
+  <div class="menu-btn">
+    <a id="menu-btn" class="menu-trigger menu-icon" href="#nav-main" aria-haspopup="true" aria-controls="nav-main"></a>
+  </div>
+
+  <div class="nav-container">
+
+    <a class="logo" href="/guides/v2.3/">
+      <img src="/assets/i/m-logo.svg" alt=""><img src="/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <span class="site-logo">DevDocs</span>
+    </a>
+
+    <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
+      
+<div class="version-switcher dropdown" data-version="2.3">
+	<button id="version-switcher-button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Magento 2.3 Alpha
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.0/rest/tutorials/msi-order-processing/create-customer.html">Magento 2.0</a></li>
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.1/rest/tutorials/msi-order-processing/create-customer.html">Magento 2.1</a></li>
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.2/rest/tutorials/msi-order-processing/create-customer.html">Magento 2.2</a></li>
+	
+    <li><a class="dropdown-item" data-proofer-ignore href="/guides/v2.3/rest/tutorials/msi-order-processing/create-customer.html">Magento 2.3 Alpha</a></li>
+	
+  </ul>
+
+</div>
+
+
+      <!-- Main Navigation -->
+<ul class="nav-main" role="menubar">
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Setup</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          <li><a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li><a href="/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li><a href="/guides/v2.3/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          
+          <li><a href="/guides/v2.3/performance-best-practices/index.html">Performance Best Practices</a></li>
+          
+          <li><a href="/guides/v2.3/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li><a href="/guides/v2.3/cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li><a href="/magento-release-information.html">Release Information</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Development</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+
+      <div class="nav-section">
+        <div class="nav-section-title">Backend</div>
+        <ul>
+          <li><a href="/guides/v2.3/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li><a href="/guides/v2.3/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li><a href="/guides/v2.3/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.3/mrg/intro.html">Module Reference Guide</a></li>
+          <li><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li><a href="/guides/v2.3/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title">Frontend</div>
+        <ul>
+          <li class=""><a href="/guides/v2.3/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li><a href="/guides/v2.3/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li><a href="/guides/v2.3/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li><a href="/guides/v2.3/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li><a href="/guides/v2.3/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          
+          <li><a href="/guides/v2.3/pwa/">PWA Studios</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="nav-section">
+        <div class="nav-section-title"><abbr>API</abbr></div>
+        <ul>
+          <li><a href="/guides/v2.3/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li><a href="/guides/v2.3/rest/bk-rest.html">REST API Reference</a></li>
+          <li><a href="/guides/v2.3/soap/bk-soap.html">SOAP API Reference</a></li>
+          
+          <li><a href="/guides/v2.3/graphql/index.html">GraphQL Developer Guide (New!)</a></li>
+          
+          
+          <li><a href="/guides/v2.3/marketplace/eqp/api.html">Marketplace EQP API Reference</a></li>
+          <li><a href="https://developers.rjmetrics.com/" target="_blank">Magento BI Import REST API</a></li>
+          
+        </ul>
+      </div>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Testing</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        <li><a href="/guides/v2.3/test/testing.html">Magento Testing Guide</a></li>
+        
+        <li><a href="/guides/v2.3/magento-functional-testing-framework/release-2/introduction.html">Functional Acceptance Testing (New!)</a></li>
+        
+        <li><a href="/guides/v2.3/mtf/mtf_introduction.html">Functional Testing</a></li>
+        <li><a href="/guides/v2.3/test/integration/integration_test_execution.html">Integration Testing</a></li>
+        <li><a href="/guides/v2.3/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+        <li><a href="/guides/v2.3/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+        <li><a href="/guides/v2.3/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-separator"></li>
+
+
+  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Functional Areas</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+          
+          <li class="leaf"><a href="/guides/v2.3/advanced-reporting/overview.html">Advanced Reporting</a></li>
+          
+        
+        <li class="leaf"><a href="/guides/v2.3/b2b/bk-b2b.html">B2B</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="http://omsdocs.magento.com/en/" target="_blank">Order Management</a></li>
+        <li><a href="/guides/v2.3/payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        
+          <li><a href="/guides/v2.3/extension-dev-guide/staging.html">Staging</a></li>
+        
+      </ul>
+    </div>
+
+  </li>
+
+
+  <li class="nav-main-item"  tabindex="0" role="menuitem" aria-haspopup="true">
+    <span tabindex="-1">Tutorials</span>
+
+    <div class="nav-popup" role="menu" aria-hidden="true">
+      <ul>
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/rest/tutorials/index.html">REST tutorials</a></li>
+        
+        
+        <li><a  data-proofer-ignore href="/guides/v2.3/howdoi/customize_product.html">Customize Product Creation Form</a></li>
+        
+        <li><a href="/guides/v2.3/howdoi/checkout/checkout_overview.html">Customize Checkout</a></li>
+        <li><a href="/community/resources/support.html">Magento Support</a></li>
+        <li><a href="/videos/">Video Tutorials</a></li>
+      </ul>
+    </div>
+
+  </li>
+
+</ul><!-- /.nav-main -->
+
+    </div>
+
+    <div class="search-btn">
+      <a class="search-trigger search-icon" href="#"></a>
+    </div>
+
+    <form class="quick-search" action="/guides/v2.3/search.html" method="get" novalidate="novalidate">
+      <input type="search" name="q" placeholder="Search" />
+      <a href="#" class="quick-search-close">&times;</a>
+    </form>
+
+  </div>
+
+</nav><!-- #site-nav -->
+<div class="nav-main-fader"></div>
+
+
+	</header>
+
+	<div class="global-wrapper">
+
+		
+
+
+<div class="message-banner">
+    This is the 2.3 Alpha release version of Magento documentation. Content in this version is subject to change.
+</div>
+
+
+
+		<div class="main-container">
+			<a id="main-content"></a>
+
+
+<div class="content-container">
+
+  <aside class="sidebar">
+  	<a href="#" data-proofer-ignore class="toc-toggler">Table of Contents</a>
+  	<div class="sidebar-wrapper">
+
+
+      
+      
+      <ul>
+        <li class="level-0">
+          <a href="/guides/v2.3/rest/tutorials/index.html">
+            &larr; REST Tutorials
+          </a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/">Initial tasks</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/configure-environment.html">Step 1. Configure your environment</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-sources.html">Step 2. Create sources</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-stock.html">Step 3. Create stocks</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/assign-source-to-stock.html">Step 4. Link stocks and sources</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-products.html">Step 5. Create products</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/reassign-products-to-another-source.html">Step 6. Reassign products to custom sources</a>
+        </li>
+      
+        <li class="level1  active">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-customer.html">Step 7. Create a customer and generate a customer token</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-cart-add-products.html">Step 8. Create a cart and add products to it</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/prepare-for-checkout.html">Step 9. Prepare for checkout</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-order.html">Step 10. Create an order</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-invoice.html">Step 11. Create an invoice</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/run-ssa.html">Step 12. Run the Source Selection Algorithm</a>
+        </li>
+      
+        <li class="level1">
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-shipment.html">Step 13. Create a shipment</a>
+        </li>
+      
+      </ul>
+
+    </div>
+  </aside>
+  <!-- /.sidebar -->
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+	
+
+	
+		<h1 class="page-subtitle">Order processing with MSI</h1>
+	
+
+	<h1 class="page-heading">Step 7. Create a customer and generate a customer token</h1>
+
+  
+
+
+</section>
+
+			<p>In this step, we will create a customer account that is tied to the <code class="highlighter-rouge">us</code> web view that we created in Step 1. We can use the same customer definition presented in <a href="/guides/v2.3/rest/tutorials/prerequisite-tasks/create-customer.html">Create a customer and generate a customer token</a>, with the only difference being the scope of the call. In this case, the endpoint path contains <code class="highlighter-rouge">us</code> instead of <code class="highlighter-rouge">default</code>.</p>
+
+<p><strong>Endpoint</strong></p>
+
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/customers</code></p>
+
+<p><strong>Scope</strong></p>
+
+<p><code class="highlighter-rouge">us</code> store view</p>
+
+<p><strong>Headers</strong></p>
+
+<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code></p>
+
+<p><code class="highlighter-rouge">Authorization</code>: <code class="highlighter-rouge">Bearer &lt;admin_token&gt;</code></p>
+
+<p><strong>Payload</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+   </span><span class="s2">"customer"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"lastname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"firstname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"addresses"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+         </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"defaultBilling"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"defaultShipping"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"firstname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lastname"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"region"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"regionCode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"regionId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+               </span><span class="s2">"region"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"countryId"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postcode"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"10755"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"street"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+               </span><span class="s2">"123 Oak Ave"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"telephone"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-1111"</span><span class="w">
+         </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="s2">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><strong>Response</strong></p>
+
+<p>The customer <code class="highlighter-rouge">id</code> is <code class="highlighter-rouge">2</code>.</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"group_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_shipping"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 16:17:26"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-02 16:17:27"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_in"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US Store View"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"store_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"website_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"addresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"customer_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"region_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NY"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"region_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"country_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"123 Oak Ave"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"512-555-1111"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10755"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Purchase"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jane"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_shipping"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"default_billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"disable_auto_group_change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"extension_attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"is_subscribed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="get-token">Generate the customer’s access token</h2>
+
+<p>To generate a customer’s access token, you must specify the customer’s username and password in the payload. You do not specify an admin   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>
+ token.</p>
+
+<p>By default, a customer token is valid for 1 hour. To change this value, click <strong>Configuration</strong> &gt; <strong>Services</strong> &gt; <strong>OAuth</strong> &gt; <strong>Access Token Expiration</strong>. Then enter a new value for <strong>Customer Token Lifetime (hours)</strong>.</p>
+
+<p><strong>Endpoint</strong></p>
+
+<p><code class="highlighter-rouge">POST http://&lt;host&gt;/rest/us/V1/integration/customer/token</code></p>
+
+<p><strong>Scope</strong></p>
+
+<p><code class="highlighter-rouge">us</code> store view</p>
+
+<p><strong>Headers</strong></p>
+
+<p><code class="highlighter-rouge">Content-Type</code>: <code class="highlighter-rouge">application/json</code></p>
+
+<p><strong>Payload</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</span><span class="s2">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jdoe@example.com"</span><span class="p">,</span><span class="w">
+</span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Password1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+<p><strong>Response</strong></p>
+
+<p>Magento returns the customer’s access token. Your integration must specify a customer token in the authorization header of every call customers make on their own behalf.</p>
+
+<p><code class="highlighter-rouge">fl0o0yr1xota4w88negpwfsle38807yb</code></p>
+
+<h2 id="verify-step">Verify this step</h2>
+
+<ol>
+  <li>Log in to the Test website using the email <code class="highlighter-rouge">jdoe@example.com</code> and password <code class="highlighter-rouge">Password1</code>.</li>
+  <li>Click the account name (Jane) in the upper right corner and select <strong>My Account</strong>.</li>
+  <li>Click <strong>Address Book</strong> to view the default billing and shipping addresses.</li>
+</ol>
+
+
+      <div class="horisontal-nav">
+        
+        
+          
+          
+
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/reassign-products-to-another-source.html" class="btn btn-large btn-secondary">Previous</a>
+          
+          <a href="/guides/v2.3/rest/tutorials/msi-order-processing/create-cart-add-products.html" class="btn btn-large btn-primary">Next</a>
+          
+
+        
+      </div>
+      <!-- /.horisontal-nav -->
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+
+  
+
+    <div class="github-link">
+      <a class="improve-page" href="https://github.com/magento/devdocs/blob/master/guides/v2.3/rest/tutorials/msi-order-processing/create-customer.md" target="_blank">
+        Edit this page on GitHub
+      </a>
+    </div>
+
+    <div class="new-issue">
+      <a href="https://github.com/magento/devdocs/issues/new?title=Feedback on page: /guides/v2.3/rest/tutorials/msi-order-processing/create-customer.html" target="_blank">
+        Give us feedback
+      </a>
+    </div>
+
+  
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.content-container -->
+
+
+	</div>
+	<!-- /.main-container -->
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div class="page-footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav footer-links">
+  <li><a href="/guides/v2.3/contributor-guide/contributing_docs.html">Become a Contributor</a>
+  <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+  <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+  <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+  <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+  <li><a href="/guides/v2.3/release-notes/bk-release-notes.html">Release Notes</a></li>
+  <li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+</ul>
+
+    </div>
+
+		<div class="copyright-date">&copy; 2018 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script src="/assets/js/app.min.js"></script>
+
+<script src="/common/js/devdocs.min.js"></script>
+
+
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+</body>
+</html>
+
