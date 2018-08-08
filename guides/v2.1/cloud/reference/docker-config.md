@@ -53,7 +53,7 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 1.  Copy the raw configuration files.
 
     ```bash
-	  cp docker/config.php.dist docker/config.php
+    cp docker/config.php.dist docker/config.php
     ```
 
     ```bash
@@ -80,15 +80,15 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 
     * Build Magento in the Docker container:
 
-    ```bash
-    docker-compose run build cloud-build
-    ```
+        ```bash
+        docker-compose run build cloud-build
+        ```
 
     * Deploy Magento in the Docker container:
 
-    ```bash
-    docker-compose run deploy cloud-deploy
-    ```
+        ```bash
+        docker-compose run deploy cloud-deploy
+        ```
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
@@ -118,11 +118,11 @@ You can use the `ece-tools` package to generate the Docker compose configuration
 1.  Copy the configuration files.
 
     ```bash
-	cp docker/config.env.dist docker/config.env
+    cp docker/config.env.dist docker/config.env
     ```
 
     ```bash
-	cp docker/global.env.dist docker/global.env
+    cp docker/global.env.dist docker/global.env
     ```
 
 1.  Build files to containers and run in the background.
