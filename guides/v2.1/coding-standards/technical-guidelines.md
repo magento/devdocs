@@ -697,6 +697,121 @@ class SampleEventObserverThatModifiesInputs
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
+## 15. XML configuration
+
+15.1 Attributes MUST be used for the configuration values that will not be extended in the future by adding child nodes or new attributes.
+
+15.2 Nodes of the same type that repeat multiple times MUST be wrapped in a grouping node.
+
+15.3 Unnecessarily grouping nodes MUST be avoided.
+
+{% collapsible Examples: %}
+<table>
+    <tr>
+        <th><span style="color: red">Not recommended</span></th>
+        <th><span style="color: green">Recommended</span></th>
+    </tr>
+    <tr>
+        <td>
+{% highlight xml %}
+<!-- This example assumes that the following configuration is in its own file and `item` doesn't repeat multiple times in the file -->
+<config>
+    <items>
+        <item />
+    </items>
+<config>
+{% endhighlight %}
+        </td>
+        <td>
+{% highlight xml %}
+<config>
+    <items>
+        <item />
+    </items>
+<config>
+{% endhighlight %}
+        </td>
+    </tr>
+</table>
+{% endcollapsible %}
+
+---
+
+15.4 The schema MUST NOT allow someone to specify contradicting configuration values (multiple attributes or nodes that are mutually exclusive, for instance).
+
+
+## 16. Security
+
+16.1. Use prepared statements for SQL queries.
+
+16.2. Broken Authentication protection.
+
+16.2.1. Where possible, implement multi-factor authentication to prevent automated, credential stuffing, brute force, and stolen credential re-use attacks.
+
+16.2.2. Do not ship or deploy with any default credentials, particularly for admin users.
+
+16.2.3. Implement weak-password checks, such as testing new or changed passwords against a list of the [top 10000 worst passwords](https://github.com/danielmiessler/SecLists/tree/master/Passwords).
+
+16.2.4. Align password length, complexity, and rotation policies with [NIST 800-63 B's guidelines in section 5.1.1 for Memorized Secrets](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) or other modern, evidence-based password policies.
+
+16.2.5. Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.
+
+16.2.6. Limit or increasingly delay failed login attempts. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.
+
+16.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
+
+16.3. Cross-Site Scripting (XSS) protection.
+
+16.3.1. Sanitize input; escape output.
+
+16.3.2. Follow [templates XSS security guidelines](https://{{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
+
+16.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
+
+16.3.4. Incoming string data length should be checked.
+
+16.3.5. Special characters, like null byte characters, should be dropped from Incoming string data.
+
+16.4. A module that introduces Admin Panel functionality should have ACL.
+
+16.5. Misconfiguration protection.
+
+16.5.1. Do not include/require unused libraries/frameworks.
+
+16.5.2. A segmented application architecture that provides effective, secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).
+
+16.5.3. Sending security directives to clients, e.g. [Security Headers](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project).
+
+16.6. Sensitive Data Exposure protection.
+
+16.6.1. Exceptions/Notices/Warnings should be caught and logged.
+
+16.6.2. No error output should be displayed to user, some standard message should appear instead.
+
+16.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
+
+16.7. Cross-Site Request Forgery (CSRF) protection.
+
+16.7.1. CSRF tokens mechanism should be utilized.
+
+16.7.2. All data manipulation requests should be made with POST requests.
+
+16.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
+
+16.9. Local File Inclusion (LFI) protection.
+
+16.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
+
+16.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
+
+16.10. Remote Code Execution (RCE) protection.
+
+16.10.1. SHOULD NOT use `eval()`, `passthru()`, `system()`, `shell_exec()`, `serialize()`, `unserialize()`, `md5()`, `srand()`, `mt_srand()`.
+
+16.10.2. SHOULD NOT directly pass user-submitted values to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
+
+16.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.
+
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
