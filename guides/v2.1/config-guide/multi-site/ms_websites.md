@@ -1,10 +1,6 @@
 ---
 group: config-guide
-subgroup: 11_sites
 title: Set up multiple websites, stores, and store views in the Admin
-menu_title: Set up multiple websites, stores, and store views in the Admin
-menu_order: 2
-menu_node:
 version: 2.1
 github_link: config-guide/multi-site/ms_websites.md
 functional_areas:
@@ -111,10 +107,10 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 {% endcollapsible %}
 
-## Step 5: Change a website's base URL
+## Step 5: Change a website base URL
 To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} like `http://french.magento.mg`, you must change the base URL for each site in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
-{% collapsible To change the website's base URL: %}
+{% collapsible To change the website base URL: %}
 
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click the name of one of your websites as the following figure shows.
@@ -127,10 +123,6 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 
 	![Set a base URL]({{ site.baseurl }}/common/images/config_multi-site_base-url.png){:width="650px"}
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're setting up a base URL for deployment {{site.data.var.ece}}, you must replace the first period with three dashes. For example, if your base URL is <code>french.branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</code>, enter <strong>http://french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud</strong>.</p>
-  		<p>If you're setting up a base URL for local testing, use a period.</p>
-	</div>
 5.	Click **Save Config**.
 6.	Repeat these tasks for other websites.
 
