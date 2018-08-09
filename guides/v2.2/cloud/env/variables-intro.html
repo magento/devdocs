@@ -2081,6 +2081,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 from the Project Web interface or using the Magento CLI. Other environment variables can be managed from the <a href="/guides/v2.1/cloud/project/magento-env-yaml.html"><code class="highlighter-rouge">.magento.env.yaml</code></a> file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.</p>
 
 <h2 id="global-variables">Global variables</h2>
+
 <p>The following <em>global</em> variables control actions in the build, deploy, and post-deploy stages of the <code class="highlighter-rouge">.magento.env.yaml</code> file. Because global variables impact every stage, you must set them in the <code class="highlighter-rouge">global</code> stage. Insert these variables in the <code class="highlighter-rouge">global</code> stage of the <code class="highlighter-rouge">.magento.env.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">stage</span><span class="pi">:</span>

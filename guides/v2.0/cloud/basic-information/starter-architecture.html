@@ -1760,6 +1760,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/cloud_arch-starter.png" alt="High-level view of Starter project" /></p>
 
 <h2 id="cloud-arch-prod">Production with a master branch</h2>
+
 <p>The Production environment is your live store(s) and site(s). The environment includes your <code class="highlighter-rouge">master</code> Git branch, a web server, database, and configured services to fully test your site.</p>
 
 <p>The Production environment runs your public-facing Magento single and multisite storefronts. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.</p>
@@ -1769,6 +1770,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We highly recommend fully testing in your Staging environment and branch prior to pushing to Production.</p>
 
 <h2 id="cloud-arch-stage">Staging branch and environment</h2>
+
 <p>We recommend creating a branch called <code class="highlighter-rouge">staging</code> from <code class="highlighter-rouge">master</code>. Use this Staging environment and Git branch as your pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment will receive all services to match Production including Fastly, New Relic, Blackfire, and search.</p>
 
 <p>Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.</p>
@@ -1778,6 +1780,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.</p>
 
 <h2 id="cloud-arch-int">Integration environment</h2>
+
 <p>Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. If you created a Staging environment, you have up to two active environments on a grid for two active Git branches. Each Integration environment matches the name of the branch and includes a web server, database, and configured services to fully test your site.</p>
 
 <p>You can have an unlimited number of inactive Git branches to store code. To access, view, and test inactive branches, you must activate them. This environment does not support all services. For example, Fastly is not accessible in Integration.</p>
@@ -1794,6 +1797,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Additional sections in this guide provide instructions and walk-throughs for setting up your <a href="/guides/v2.0/cloud/before/before-workspace.html">local workspace</a>, working with Git branches, and <a href="/guides/v2.0/cloud/live/stage-prod-live.html">deploying code</a>.</p>
 
 <h2 id="technology">Production and Staging technology stack</h2>
+
 <p>The Production and Staging environments include the following technologies. You can modify and configure these technologies through the <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml file</a>.</p>
 
 <ul>
@@ -1849,9 +1853,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="backup">Backup and disaster recovery</h3>
+
 <p>You can create a snapshot of your database and file system using the Project Web Interface or the CLI. The snapshot includes your deployed code, installed software and services, and data. See <a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and backup management</a>.</p>
 
 <h2 id="develop">Prepare for development</h2>
+
 <p>To branch and develop your Magento store:</p>
 
 <ul>

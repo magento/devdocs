@@ -2078,6 +2078,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We also include instructions for <a href="#update">updating extensions</a>.</p>
 
 <h2 id="getstarted">Create a branch for adding or updating the extension</h2>
+
 <p>We recommend using a branch for adding or updating, configuring, and testing your extension.</p>
 
 <ol>
@@ -2150,6 +2151,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="compose">Step 1: Get the extension’s Composer name and version</h3>
+
 <p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
 
 <p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
@@ -2189,6 +2191,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
+
 <p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.3/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages,  shared configuration settings. This file also includes <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> (Pipeline Deployment) values too.</p>
 
 <p>To update <code class="highlighter-rouge">composer.json</code>:</p>
@@ -2224,6 +2227,7 @@ git push magento &lt;environment ID&gt;
 <p class="bs-callout bs-callout-warning">When installing and adding the module, you must add the <code class="highlighter-rouge">composer.lock</code> to your Git branch for deployment. If the extension is not in the file, the extension won’t load in Magento Commerce Cloud. This ensures when the <code class="highlighter-rouge">composer install</code> command is used, the extension properly loads. This command uses the <code class="highlighter-rouge">composer.lock</code> file.</p>
 
 <h3 id="verify">Step 3: Verify the extension</h3>
+
 <p>To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
 <ol>
@@ -2241,9 +2245,11 @@ git push magento &lt;environment ID&gt;
 <p>The extension name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
 
 <h2 id="manage">Manage extensions</h2>
+
 <p>To manage your extensions, you can enable and disable or change settings per environment.</p>
 
 <h3 id="enable-disable">Enable and disable extensions</h3>
+
 <p>To enable or disable extensions, you must begin those changes on your local in a branch. You should never enable or disable extensions directly on your environments. These instructions assume you have <code class="highlighter-rouge">config.php</code> in your Git branch and implementation. If you do not use <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> or <code class="highlighter-rouge">config.php</code>, we strongly recommend you do.</p>
 
 <p>Trying to enable and disable extensions not following this method can lead to permissions and other issues.</p>
@@ -2280,9 +2286,11 @@ git push magento &lt;environment ID&gt;
 </ol>
 
 <h3 id="configure">Modify configurations</h3>
+
 <p>You will update configurations according to <a href="/guides/v2.2/cloud/live/sens-data-over.html#cloud-clp-settings">Configuration Management</a> for <code class="highlighter-rouge">config.php</code>.</p>
 
 <h2 id="update">Upgrade an extension</h2>
+
 <p>You should have a branch to work in when updating your extension. These instructions use composer to update the files. Before you continue, you must:</p>
 
 <ul>

@@ -1898,9 +1898,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="before-you-begin">Before you begin</h2>
+
 <p>Before you begin, set up file system permissions and ownership as discussed in <a href="/guides/v2.2/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq">Prerequisite for your development, build, and production systems</a>.</p>
 
 <h2 id="assumptions">Assumptions</h2>
+
 <p>This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.</p>
 
 <p>For the purposes of this example, we assume the following:</p>
@@ -1912,6 +1914,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="deploy-sens-setconfig">Step 1: Set the configuration in the development system</h2>
+
 <p>To set the default locale and weight units in your development system:</p>
 
 <ol>
@@ -1945,6 +1948,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="step-2-update-the-configuration">Step 2: Update the configuration</h2>
+
 <p>Now that you’ve changed the configuration in the Magento Admin, write the shared configuration to a file as discussed in this section.</p>
 
 <div>
@@ -1998,6 +2002,7 @@ php bin/magento app:config:dump
   <p>Note that even though <code class="highlighter-rouge">app/etc/env.php</code> (the system-specific configuration) was updated, don’t check it in to source control. You’ll create the same configuration settings on your production system later in this procedure.</p>
 
   <h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
+
   <p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.</p>
 
   <div>
@@ -2039,6 +2044,7 @@ php bin/magento app:config:dump
     </ol>
 
     <h2 id="step-4-update-the-production-system">Step 4: Update the production system</h2>
+
     <p>The last step in the process is to update your production system. You must do it in two parts:</p>
 
     <ul>
@@ -2047,6 +2053,7 @@ php bin/magento app:config:dump
     </ul>
 
     <h3 id="config-split-verify-sens">Update the sensitive and system-specific settings</h3>
+
     <p>To set the sensitive and system-specific settings using environment variables, you must know the following:</p>
 
     <ul>
@@ -2086,6 +2093,7 @@ php bin/magento app:config:dump
     </ul>
 
     <h4 id="convert-configuration-paths-to-variable-names">Convert configuration paths to variable names</h4>
+
     <p>As discussed in <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>, the format of variables is:</p>
 
     <pre class="no-copy">&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
@@ -2123,6 +2131,7 @@ php bin/magento app:config:dump
     </div>
 
     <h4 id="set-the-variables-using-environment-variables">Set the variables using environment variables</h4>
+
     <p>You can set the variable values in the Magento <code class="highlighter-rouge">index.php</code> using the following format:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$_ENV['VARIABLE'] = 'value';
@@ -2146,6 +2155,7 @@ $_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magen
     </ol>
 
     <h3 id="config-split-verify-shared">Update the shared settings</h3>
+
     <p>This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).</p>
 
     <div>
@@ -2194,6 +2204,7 @@ php bin/magento maintenance:enable
       </ol>
 
       <h3 id="verify-configuration-settings-in-the-magento-admin">Verify configuration settings in the Magento Admin</h3>
+
       <p>This section discusses how you can verify the configuration settings in your production system Admin.</p>
 
       <p>To verify the configuration settings:</p>

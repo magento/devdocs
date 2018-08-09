@@ -1876,6 +1876,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
+
 <p>To use the <a href="https://github.com/magento/magento2/blob/2.2/setup/performance-toolkit" target="\_blank">Magento Performance Toolkit</a> or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
 
 <p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
@@ -1925,6 +1926,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-perf-prof">About profiles</h2>
+
 <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
 <p>Profiles are located in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
@@ -2066,6 +2068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="config-cli-perf-run">Run the data generator</h3>
+
 <div class="bs-callout bs-callout-warning">
   <p>Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.</p>
 </div>
@@ -2135,9 +2138,11 @@ Generating simple products...  done in &lt;time&gt;
 </ul>
 
 <h2 id="detailed-information-about-fixtures">Detailed information about fixtures</h2>
+
 <p>The following sections discuss additional details about the performance fixtures.</p>
 
 <h3 id="config-cli-gen-admin">Admin users</h3>
+
 <p>Generates   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>
  users.   <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>
  profile node:</p>
@@ -2146,6 +2151,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;admin_users&gt;{int}&lt;/admin_users&gt;</pre>
 
 <h3 id="config-cli-gen-attrib">Attribute sets</h3>
+
 <p>Generates attribute sets with specified configuration. XML profile node:</p>
 
 <pre class="no-copy">&lt;!-- Number of product attribute sets --&gt;
@@ -2158,6 +2164,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;product_attribute_sets_attributes_values&gt;{int}&lt;/product_attribute_sets_attributes_values&gt;</pre>
 
 <h3 id="config-cli-gen-bundle">Bundle products</h3>
+
 <p>Generates bundle products. Generated bundle selections are not displayed individually in   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
 . Products will be uniformly distributed per categories and websites. If  <code class="highlighter-rouge">assign_entities_to_all_websites</code> from the profile is set to <code class="highlighter-rouge">1</code>. products will be assigned to all websites.</p>
 
@@ -2173,6 +2180,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;bundle_products_variation&gt;{int}&lt;/bundle_products_variation&gt;</pre>
 
 <h3 id="config-cli-gen-cartrules">Cart price rules</h3>
+
 <p>Generates cart price rules. XML profile node:</p>
 
 <pre class="no-copy">&lt;!-- Number of cart price rules --&gt;
@@ -2182,12 +2190,14 @@ Generating simple products...  done in &lt;time&gt;
 &lt;cart_price_rules_floor&gt;{int}&lt;/cart_price_rules_floor&gt;</pre>
 
 <h3 id="config-cli-gen-pricerules">Catalog price rules</h3>
+
 <p>Generates catalog price rules. XML profile node:</p>
 
 <pre class="no-copy">&lt;!-- Number of catalog price rules --&gt;
 &lt;catalog_price_rules&gt;{int}&lt;/catalog_price_rules&gt;</pre>
 
 <h3 id="config-cli-gen-cat">Categories</h3>
+
 <p>Generates categories. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">0</code>, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root   <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
 .</p>
 
@@ -2200,6 +2210,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;categories_nesting_level&gt;{int}&lt;/categories_nesting_level&gt;</pre>
 
 <h3 id="config-cli-gen-config">Configs</h3>
+
 <p>Sets values for config fields. XML profile node:</p>
 
 <pre class="no-copy">
@@ -2217,6 +2228,7 @@ Generating simple products...  done in &lt;time&gt;
 </pre>
 
 <h3 id="config-cli-gen-configprod">Configurable products</h3>
+
 <p>Generates Configurable products. Generated configurable options are not displayed individually in the catalog. Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products will be assigned to all websites.</p>
 
 <p>We support the following XML node formats:</p>
@@ -2321,6 +2333,7 @@ Generating simple products...  done in &lt;time&gt;
 </ul>
 
 <h3 id="config-cli-gen-cust">Customers</h3>
+
 <p>Generates customers. Customers have a normal distribution on all available websites. Each customer has the same data except customer email, customer group, and customer addresses.</p>
 
 <p>XML profile node:</p>
@@ -2336,6 +2349,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;/customer-config&gt;</pre>
 
 <h3 id="config-cli-gen-prodimg">Product images</h3>
+
 <p>Generates product images. Generation does not include resizing.</p>
 
 <p>XML profile node:</p>
@@ -2349,6 +2363,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;/product-images&gt;</pre>
 
 <h3 id="config-cli-gen-index">Indexers state</h3>
+
 <p>Updates indexers’ state. XML profile node:</p>
 
 <pre class="no-copy">&lt;indexer&gt;
@@ -2358,6 +2373,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;/indexer&gt;</pre>
 
 <h3 id="config-cli-gen-orders">Orders</h3>
+
 <p>Generates orders with configurable number of different types of order items. Optionally generates inactive quotes for generated orders.</p>
 
 <p>XML profile node:</p>
@@ -2387,6 +2403,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;orders&gt;{int}&lt;/orders&gt;</pre>
 
 <h3 id="config-cli-gen-simp">Simple products</h3>
+
 <p>Generates simple products. Products are distributed per default and pre-defined attribute sets. If extra attribute sets are specified in profile as: <code class="highlighter-rouge">&lt;product_attribute_sets&gt;{int}&lt;/product_attribute_sets&gt;</code>, products are also distributed per additional attribute sets.</p>
 
 <p>Products are uniformly distributed per categories and websites. If <code class="highlighter-rouge">assign_entities_to_all_websites</code> is set to <code class="highlighter-rouge">1</code>, products are assigned to all websites.</p>
@@ -2397,12 +2414,14 @@ Generating simple products...  done in &lt;time&gt;
 &lt;simple_products&gt;{int}&lt;/simple_products&gt;</pre>
 
 <h3 id="config-cli-gen-websites">Websites</h3>
+
 <p>Generates websites. XML profile node:</p>
 
 <pre class="no-copy">&lt;!-- Number of websites to be generated --&gt;
 &lt;websites&gt;{int}&lt;/websites&gt;</pre>
 
 <h3 id="config-cli-gen-stores">Store groups</h3>
+
 <p>Generates store groups (referred to in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  as <em>stores</em>). Store groups are distributed normally among websites.</p>
 
@@ -2412,6 +2431,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;store_groups&gt;{int}&lt;/store_groups&gt;</pre>
 
 <h3 id="config-cli-gen-storeview">Store views</h3>
+
 <p>Generates store views. Store views are distributed normally among store groups. XML profile node:</p>
 
 <pre class="no-copy">&lt;!-- Number of store views to be generated --&gt;
@@ -2421,6 +2441,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;assign_entities_to_all_websites&gt;{0|1}&lt;assign_entities_to_all_websites/&gt;</pre>
 
 <h3 id="config-cli-gen-taxrate">Tax rates</h3>
+
 <p>Generates tax rates. XML profile node:</p>
 
 <pre class="no-copy">&lt;!-- Accepts name of   <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">csv</span>
@@ -2428,6 +2449,7 @@ Generating simple products...  done in &lt;time&gt;
 &lt;tax_rates_file&gt;{csv file name}&lt;/tax_rates_file&gt;</pre>
 
 <h2 id="additional-information">Additional information</h2>
+
 <p>Additional configuration information:</p>
 
 <ul>
@@ -2455,6 +2477,7 @@ Generating simple products...  done in &lt;time&gt;
 </ul>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>

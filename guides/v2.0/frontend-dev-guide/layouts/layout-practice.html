@@ -1135,10 +1135,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
+
 <p>This article features a step-by-step illustration of how a real-life   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.</p>
 
 <h2 id="moving-customer-account-links">Moving customer account links</h2>
+
 <p>In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:</p>
 
 <div style="border: 1px solid #ABABAB">
@@ -1161,7 +1163,7 @@ The markup, that is needed for a drop-down:</p>
 <img src="/common/images/layout_code_after.png" />
 </div>
 
-<h4>Step 1: Define the blocks</h4>
+<h4 id="step-1-define-the-blocks">Step 1: Define the blocks</h4>
 
 <p>OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in <code class="highlighter-rouge">&lt;Magento_Customer_module_dir&gt;/view/frontend/layout/default.xml</code>:</p>
 
@@ -1181,7 +1183,7 @@ The markup, that is needed for a drop-down:</p>
     <span class="nt">&lt;/referenceBlock&gt;</span>
 ...</code></pre></figure>
 
-<h4>Step 2: Define the templates</h4>
+<h4 id="step-2-define-the-templates">Step 2: Define the templates</h4>
 
 <p>Similar to the way they defined the layout on the previous step, OrangeCo 
 defines the template which is used for rearranging the links:</p>
@@ -1226,7 +1228,7 @@ defines the template which is used for rearranging the links:</p>
     <span class="nt">&lt;/li&gt;</span>
 <span class="cp">&lt;?php endif; ?&gt;</span></code></pre></figure>
 
-<h4>Step 3: Extend the base layout to add a block</h4>
+<h4 id="step-3-extend-the-base-layout-to-add-a-block">Step 3: Extend the base layout to add a block</h4>
 
 <p>OrangeCo needs to create a new block, say, <code class="highlighter-rouge">header.links</code>, in the <code class="highlighter-rouge">header.panel</code> container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code class="highlighter-rouge">default.xml</code> page configuration of the <code class="highlighter-rouge">Magento_Theme</code>   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</p>
@@ -1248,7 +1250,7 @@ defines the template which is used for rearranging the links:</p>
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<h4>Step 4: Move links</h4>
+<h4 id="step-4-move-links">Step 4: Move links</h4>
 
 <p>To move the links to the <code class="highlighter-rouge">header.links</code> block, OrangeCo adds an extending layout:</p>
 

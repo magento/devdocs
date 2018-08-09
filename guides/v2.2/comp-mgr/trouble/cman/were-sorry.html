@@ -1088,21 +1088,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="not-auth">Problem: you’re not authenticated</h3>
+
 <p>You might not have entered your authentication keys in the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 .</p>
 
 <h4 id="solution">Solution</h4>
+
 <p>Enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a> in the   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 . Try your upgrade again.</p>
 
 <p>If that doesn’t work, try generating <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.</p>
 
 <h3 id="updater">Problem: the updater application isn’t initialized</h3>
+
 <p>In some cases (especially if you downloaded the Magento software from <a href="https://packagist.org/" target="_blank">packagist</a>), the updater application might not be initialized. (A common way for this to happen is to not specify our <code class="highlighter-rouge">https://repo.magento.com</code> repository in the <code class="highlighter-rouge">composer create-project</code> command.)</p>
 
 <p>The updater application uses a cron job to run the upgrade; if it’s not initialized, your update fails.</p>
 
 <h4 id="solution-1">Solution</h4>
+
 <p>Modify Magento’s <code class="highlighter-rouge">composer.json</code> to reference the <code class="highlighter-rouge">https://repo.magento.com</code> repository and run <code class="highlighter-rouge">composer install</code> in the updater’s root directory to resolve dependencies and initialize it as follows:</p>
 
 <ol>
@@ -1146,6 +1150,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="git-clone">You cloned the Magento GitHub repository</h3>
+
 <p>If you installed the Magento software by cloning the Magento repository, you cannot use the System Upgrade utility to upgrade it.</p>
 
 <p>Instead, see one of the options discussed in <a href="/guides/v2.2/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</p>

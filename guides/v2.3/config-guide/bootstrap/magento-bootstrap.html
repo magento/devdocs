@@ -1884,6 +1884,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-boot-overview">Overview of bootstrapping</h2>
+
 <p>To run the Magento application, the following actions are implemented in <a href="https://github.com/magento/magento2/blob/2.0/index.php" target="&#95;blank">index.php</a>:</p>
 
 <ul>
@@ -1930,6 +1931,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span></code></pre></figure>
 
 <h2 id="config-boot-exception">Default exception handling</h2>
+
 <p>The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:</p>
 
 <ul>
@@ -1940,6 +1942,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="config-boot-entry">Entry point applications</h2>
+
 <p>We have the following entry point applications (that is, applications defined by Magento that are used by the web server as a directory index):</p>
 
 <ul>
@@ -1997,6 +2000,7 @@ When the request is redirected to the entry point, the Magento application parse
 <p><code class="highlighter-rouge">\Magento\Core\App\Media</code> attempts to find the media file in the configured database storage and write it into the <code class="highlighter-rouge">pub/static</code> directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.</p>
 
 <h4 id="related-topics">Related topics</h4>
+
 <p>This topic discussed the basics of Magento application initialization and bootstrapping. To find out how to set bootstrap environment variables, see one of the following topics:</p>
 
 <ul>

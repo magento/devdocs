@@ -1896,6 +1896,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div>
 
   <h2 id="es-ws-secure-over">Overview of secure web server communication</h2>
+
   <p>This topic discusses an example of securing communication between your web server and Elasticsearch using a combination of Transport Layer Security (TLS) encryption and <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication. You can optionally configure other types of authentication as well; we provide references for that information.</p>
 
   <p>(An older term, Secure Sockets Layer (SSL), is frequently used interchangeably with TLS. In this topic, we refer to <em>TLS</em>.)</p>
@@ -1905,6 +1906,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
   <h3 id="recommendations">Recommendations</h3>
+
   <p>We recommend the following:</p>
 
   <ul>
@@ -1921,6 +1923,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h3 id="more-information-about-tls">More information about TLS</h3>
+
   <p>See one of the following resources:</p>
 
   <ul>
@@ -1946,6 +1949,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h2 id="es-apache-proxy">Set up a proxy</h2>
+
   <p>This section discusses how to configure Apache as an <em>unsecure</em> proxy so that Magento can use Elasticsearch running on this server. This section does not discuss setting up HTTP Basic authentication; that is discussed in <a href="#es-ws-secure-apache">Secure communication with Apache</a>.</p>
 
   <div class="bs-callout bs-callout-info" id="info">
@@ -1960,6 +1964,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h3 id="es-apache-proxy-24">Set up a proxy for Apache 2.4</h3>
+
   <p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
 
   <ol>
@@ -2017,6 +2022,7 @@ Connection: keep-alive
   </ol>
 
   <h3 id="es-apache-proxy-22">Set up a proxy for Apache 2.2</h3>
+
   <p>This section discusses how to configure an Elasticsearch proxy using a virtual host.</p>
 
   <ol>
@@ -2151,6 +2157,7 @@ Connection: keep-alive
 </table>
 
     <h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
+
     <p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.</p>
 
     <p>To refresh the cache using the Admin:</p>
@@ -2190,6 +2197,7 @@ Connection: keep-alive
 </div>
 
     <h2 id="es-ws-secure-apache">Secure communication with Apache</h2>
+
     <p>This section discusses how to secure communication between Apache and Elasticsearch using <a href="http://tools.ietf.org/html/rfc2617" target="_blank">HTTP Basic</a> authentication with Apache. For more options, consult one of the following resources:</p>
 
     <ul>
@@ -2234,6 +2242,7 @@ Connection: keep-alive
       </ol>
 
       <h4 id="create-a-password-file">Create a password file</h4>
+
       <p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
       <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p /usr/local/apache/password
@@ -2281,12 +2290,14 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
 </code></pre></div>      </div>
 
       <h4 id="add-additional-users">Add additional users</h4>
+
       <p>To add another user to your password file, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
       <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>htpasswd /usr/local/apache/password/.htpasswd &lt;username&gt;
 </code></pre></div>      </div>
 
       <h3 id="es-ws-secure-finish">Step 2: Secure communication with Apache</h3>
+
       <p>This section discusses how to set up <a href="https://httpd.apache.org/docs/2.2/howto/auth.html" target="_blank">HTTP Basic authentication</a>. Use of TLS and HTTP Basic authentication together prevents anyone from intercepting communication with Elasticsearch or with your Magento server.</p>
 
       <p>This section discusses how to specify who can access the Apache server.</p>
@@ -2333,6 +2344,7 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
       <div>
 
         <h2 id="es-ws-secure-verify">Verify communication is secure</h2>
+
         <p>This section discusses two ways to verify that HTTP Basic authentication is working:</p>
 
         <ul>
@@ -2341,6 +2353,7 @@ htpasswd -c /usr/local/apache/password/.htpasswd_elasticsearch magento_elasticse
         </ul>
 
         <h3 id="use-a-curl-command-to-verify-cluster-status">Use a <code class="highlighter-rouge">curl</code> command to verify cluster status</h3>
+
         <p>Enter the following command:</p>
 
         <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -i http://&lt;hostname, ip, or localhost&gt;:&lt;proxy port&gt;/_cluster/health
@@ -2364,6 +2377,7 @@ WWW-Authenticate: Basic realm="Restricted"
 <span class="nt">&lt;head&gt;&lt;title&gt;</span>401 Authorization Required<span class="nt">&lt;/title&gt;&lt;/head&gt;</span>
 <span class="nt">&lt;body</span> <span class="na">bgcolor=</span><span class="s">"white"</span><span class="nt">&gt;</span>
 <span class="nt">&lt;center&gt;&lt;h1&gt;</span>401 Authorization Required<span class="nt">&lt;/h1&gt;&lt;/center&gt;</span>
+
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
 </code></pre></div>        </div>
@@ -2390,6 +2404,7 @@ Connection: keep-alive
 </code></pre></div>        </div>
 
         <h3 id="configure-http-basic-authentication-in-the-magento-admin">Configure HTTP Basic authentication in the Magento Admin</h3>
+
         <p>Perform the same tasks as discussed in <a href="#elastic-m2-configure">Configure Magento to use Elasticsearch</a> <em>except</em> click <strong>Yes</strong> from the <strong>Enable Elasticsearch HTTP Auth</strong> list and enter your username and password in the provided fields.</p>
 
         <p>Click <strong>Test Connection</strong> to make sure it works and then click <strong>Save Config</strong>.</p>
@@ -2397,6 +2412,7 @@ Connection: keep-alive
         <p>You must flush the Magento cache and reindex before you continue.</p>
 
         <h4 id="next">Next</h4>
+
         <p><a href="/guides/v2.3/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></p>
       </div>
     </div>

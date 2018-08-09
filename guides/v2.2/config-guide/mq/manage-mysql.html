@@ -1878,6 +1878,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>If you don’t want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.</p>
 
 <h2 id="process-management">Process management</h2>
+
 <p>Cron jobs are the default mechanism to restart consumers. Processes started by <code class="highlighter-rouge">cron</code> consume the specified number of messages and then terminate. Re-running <code class="highlighter-rouge">cron</code> restarts the consumer.</p>
 
 <p>The following shows a <code class="highlighter-rouge">crontab</code> configuration for running consumers in our implementation, it is the example for understanding how it works:</p>
@@ -1934,6 +1935,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="command-line-interface">Command line interface</h2>
 
 <h3 id="start-consumers">Start consumers</h3>
+
 <p>Use the <code class="highlighter-rouge">magento</code> command to start message queue consumers. You can start multiple consumers simultaneously.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/magento queue:consumers:start [--max-messages=&lt;value&gt;] [--batch-size=&lt;value&gt;] [--pid-file-path=&lt;value&gt;] &lt;consumer_name&gt;
@@ -1959,12 +1961,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the <code class="highlighter-rouge">magento queue:consumers:start</code> command to process large message queues. For example, you can append <code class="highlighter-rouge">&amp;</code> to the command to run it in the background, return to a prompt, and continue running commands (e.g., <code class="highlighter-rouge">bin/magento queue:consumers:start &lt;consumer_name&gt; &amp;</code>).</p>
 
 <h3 id="list-consumers">List consumers</h3>
+
 <p>Use the following command to return a list of message queue consumers:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./bin/magento queue:consumers:list
 </code></pre></div></div>
 
 <h4 id="related-topics">Related Topics</h4>
+
 <ul>
   <li><a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a></li>
   <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>

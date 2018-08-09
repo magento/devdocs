@@ -1892,6 +1892,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="stopword-overview">What are stopwords?</h2>
+
 <p>In general, <em>stopwords</em> are a language’s most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.</p>
 
 <p>Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still use stopwords to improve performance.</p>
@@ -1908,6 +1909,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="config-stopwords">Configure stopwords</h2>
+
 <p>Elasticsearch stopwords are located in the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/vendor/magento/module-elasticsearch/etc/stopwords</code> directory. Magento ships with one <code class="highlighter-rouge">.csv</code> file containing stopwords for our default locales and an additional file, <code class="highlighter-rouge">stopwords.csv</code>, which has stopwords for any locale that is not represented by another <code class="highlighter-rouge">.csv</code> file.</p>
 
 <p>The default lifetime for stopwords file   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
@@ -1921,6 +1923,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="config-edit-stopwords">Edit stopwords for an existing locale</h3>
+
 <p>To edit stopwords:</p>
 
 <ol>
@@ -1956,6 +1959,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="config-create-stopwords">Create stopwords for a new locale</h3>
+
 <p>To add stopwords for a locale:</p>
 
 <ol>
@@ -1999,6 +2003,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="config-stopword-dir">Change the stopword directory</h2>
+
 <p>This section discusses how to optionally change the default stopword directory from one of the following:</p>
 
 <ul>

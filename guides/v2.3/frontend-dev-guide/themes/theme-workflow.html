@@ -1216,7 +1216,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"> </div>
 
 <div class="flow-block">
+
   <h3 id="create-basic-theme-files">Create basic theme files</h3>
+
   <p>In the <code class="highlighter-rouge">&lt;magento_root&gt;/app/design/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code> directory, create the following files:</p>
 
   <ul>
@@ -1231,6 +1233,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"> </div>
 
 <div class="flow-block">
+
   <h3 id="apply-the-theme">Apply the theme</h3>
 
   <ol>
@@ -1248,6 +1251,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-block">
 
   <h3 id="choose-less-compilation-mode">Choose .less compilation mode</h3>
+
 </div>
 <div class="flow-arrow"></div>
 
@@ -1255,6 +1259,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="flow-column">
 <div class="flow-block">
+
       <h4 id="grunt-recommended">Grunt (recommended)</h4>
 
       <ul>
@@ -1269,14 +1274,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="flow-column">
 <div class="flow-block">
+
       <h4 id="client-side-compilation">Client-side compilation</h4>
+
       <p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#client-side">CSS preprocessing#client-side compilation mode</a></p>
     </div>
 
 </div>
 <div class="flow-column">
 <div class="flow-block">
+
       <h4 id="server-side-compilation-default">Server-side compilation (default)</h4>
+
       <p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/css-preprocess.html#server-side">CSS preprocessing#server-side compilation mode</a></p>
     </div>
 
@@ -1284,7 +1293,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <div class="flow-column">
 <div class="flow-block">
+
       <h4 id="custom-preprocessor">Custom preprocessor</h4>
+
       <p>See <a href="/guides/v2.3/frontend-dev-guide/css-topics/custom-preprocess-parent.html">Using custom CSS preprocessor</a></p>
     </div>
 
@@ -1313,7 +1324,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"></div>
 
 <div class="flow-block">
+
   <h3 id="create-your-styles">Create your styles</h3>
+
   <p>See</p>
 
   <ul>
@@ -1324,7 +1337,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"></div>
 
 <div class="flow-block">
+
   <h3 id="debug">Debug</h3>
+
   <p>See:</p>
 
   <ul>
@@ -1336,6 +1351,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"></div>
 
 <div class="flow-block">
+
   <h3 id="clean-cache-andor-static-files-if-necessary">Clean cache and/or static files if necessary</h3>
 
   <ul>
@@ -1351,6 +1367,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"></div>
 
 <div class="flow-block flow-block-optional">
+
   <h3 id="make-sure-that-the-same-styles-are-delivered-to-production-optional">Make sure that the same styles are delivered to production (optional)</h3>
 
   <p>When you finish developing and your styles are ready to go to production, you can configure your Grunt/Gulp less compiler to minify compiled code, disable source maps generation and then copy the compiled files to <code class="highlighter-rouge">/app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css</code> directory next to source files. They will be used in static content deploy instead of running backend compilation (and static content deployment process will run faster).</p>
@@ -1358,6 +1375,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"></div>
 
 <div class="flow-block">
+
   <h3 id="switch-to-production-mode">Switch to production mode</h3>
 
   <p>In the Magento root directory, run:</p>
@@ -1369,6 +1387,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div class="flow-arrow"></div>
 
 <div class="flow-block">
+
   <h3 id="deploy-static-content">Deploy static content</h3>
 
   <p>To publish your static files to the <code class="highlighter-rouge">pub/static</code> directory when your Magento instance is set to production mode, <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html">run the static content deployment tool</a>.</p>

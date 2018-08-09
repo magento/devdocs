@@ -2072,6 +2072,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">For Pro projects <strong>created before October 23, 2017</strong>, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must <a href="/guides/v2.2/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</p>
 
 <h2 id="properties">Properties</h2>
+
 <p>Use the following properties to build your application configuration file. The <code class="highlighter-rouge">name</code>, <code class="highlighter-rouge">type</code>, <code class="highlighter-rouge">disk</code>, and one <code class="highlighter-rouge">web</code> or <code class="highlighter-rouge">worker</code> block is required.</p>
 
 <h3 id="name"><code class="highlighter-rouge">name</code></h3>
@@ -2330,6 +2331,7 @@ nodejs:
 <p>For more information, see <a href="/guides/v2.2/cloud/configure/setup-cron-jobs.html">Set up cron jobs</a>.</p>
 
 <h2 id="variables">Variables</h2>
+
 <p>The following environment variables are included in <code class="highlighter-rouge">.magento.app.yaml</code>. These are required for Magento Commerce Cloud 2.2.X.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">variables</span><span class="pi">:</span>
@@ -2340,6 +2342,7 @@ nodejs:
 </code></pre></div></div>
 
 <h2 id="configure-php-options">Configure PHP options</h2>
+
 <p>You can choose which version of PHP to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: mymagento
@@ -2349,6 +2352,7 @@ type: php:7.1
 <p class="bs-callout bs-callout-info">Magento Commerce Cloud supports PHP 7.1 and later. For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.2/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
 
 <h3 id="php-extensions">PHP extensions</h3>
+
 <p>You can define additional PHP extensions to enable or disable:</p>
 
 <blockquote>
@@ -2435,6 +2439,7 @@ type: php:7.1
 <p class="bs-callout bs-callout-warning">PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.</p>
 
 <h3 id="customize-phpini-settings">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
+
 <p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
 
 <p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>

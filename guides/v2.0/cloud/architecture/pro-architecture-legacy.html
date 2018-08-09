@@ -1805,6 +1805,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h2 id="cloud-arch-int">Integration environment</h2>
+
 <p>Developers use the Integration environment to develop, deploy, and test:</p>
 
 <ul>
@@ -1821,6 +1822,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h4 id="branches">Branches</h4>
+
 <p>You can have an unlimited number of <em>inactive</em> Git branches to store code, but to access, view, and test inactive branches you must activate them. Use the <code class="highlighter-rouge">magento-cloud environment:activate</code> command to activate the environment.</p>
 
 <p>When you update your project to manage the <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Staging and Production environments through the Project Web Interface</a>, all active and inactive branches continue as children of the <code class="highlighter-rouge">master</code> branch.</p>
@@ -1838,9 +1840,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="cloud-arch-stage">Staging environment</h2>
+
 <p>The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment, including Fastly, New Relic, Blackfire, and search, and shares the same dedicated IaaS hardware as the Production environment.</p>
 
 <h4 id="branches-1">Branches</h4>
+
 <p>The Staging environment contains a default <code class="highlighter-rouge">master</code> branch. You cannot branch from the Staging environment <code class="highlighter-rouge">master</code> branch. You must push code changes from the Integration environment <code class="highlighter-rouge">master</code> branch to Staging environment <code class="highlighter-rouge">master</code> branch.</p>
 
 <p>When you update your project to manage the <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="highlighter-rouge">master</code> branch called <code class="highlighter-rouge">staging</code> that contains all user access settings and environment variables for your Staging environment.</p>
@@ -1850,9 +1854,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="cloud-arch-prod">Production environment</h2>
+
 <p>The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.</p>
 
 <h4 id="branches-2">Branches</h4>
+
 <p>The Production environment contains a default <code class="highlighter-rouge">master</code> branch. You cannot branch from the Production environment <code class="highlighter-rouge">master</code> branch. You must push code changes from the Staging environment <code class="highlighter-rouge">master</code> branch to Production environment <code class="highlighter-rouge">master</code> branch.</p>
 
 <p>When you update your project to manage the <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Production and Staging environments through the Project Web Interface</a>, we create a branch from the Integration environment <code class="highlighter-rouge">master</code> branch called <code class="highlighter-rouge">production</code> that contains all user access settings and environment variables for your Production environment.</p>
@@ -1862,6 +1868,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="advantage-of-redundant-hardware">Advantage of redundant hardware</h3>
+
 <p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce Cloud runs a triple-redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
 
 <p>Because of our unique, triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to   <span term-uuid="34f8f61d-2b48-4628-be06-aaa6e32ddc1f" class="glossary-term" data-toggle="popover">whitelist</span>
@@ -1877,6 +1884,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="backup-and-disaster-recovery">Backup and disaster recovery</h3>
+
 <p>Each production system cluster can withstand the loss of an entire server and all services running on it. A backup of your production system occurs automatically every six hours.</p>
 
 <p>The coordinating agent that monitors your production system:</p>
@@ -1887,6 +1895,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="production-technology-stack">Production technology stack</h3>
+
 <p>The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:</p>
 
 <ul>
@@ -1969,6 +1978,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="develop">Prepare for development</h2>
+
 <p>To branch and develop your Magento store:</p>
 
 <ol>

@@ -682,6 +682,7 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 </ol>
 
 <h2 id="files">Create integration files</h2>
+
 <p>Magento provides the Integration module, which simplifies the process of defining your integration. This module automatically performs functions such as:</p>
 
 <ul>
@@ -701,6 +702,7 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 </ul>
 
 <h3 id="resources">Define the required resources</h3>
+
 <p>The <code class="highlighter-rouge">etc/integration/api.xml</code> file defines which   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
  resources the integration has access to.</p>
 
@@ -771,7 +773,9 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 <td>Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.</td>
 </tr>
 </table>
+
 <h2 id="install">Install your module</h2>
+
 <p>Use the following steps to install your module:</p>
 
 <ol>
@@ -789,6 +793,7 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 </ol>
 
 <h2 id="check">Check your integration</h2>
+
 <p>Log in to Magento and navigate to <strong>Settings &gt; Extensions &gt; Integrations</strong>. The integration should be displayed in the grid.</p>
 
 <h2 id="integrate">Integrate with your application</h2>
@@ -809,6 +814,7 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 <p>When a merchant clicks the <strong>Activate</strong> button in Admin, a pop-up login page for the third-party application displays. Magento sends values for <code class="highlighter-rouge">oauth_consumer_key</code> and <code class="highlighter-rouge">success_call_back</code> parameters. The application must store the value for<code class="highlighter-rouge">oauth_consumer_key</code> tie it to the login ID. Use the <code class="highlighter-rouge">success_call_back</code> parameter to return control back to Magento.</p>
 
 <h3 id="callback">Callback page</h3>
+
 <p>The callback page must be able to perform the following tasks:</p>
 
 <ul>
@@ -841,6 +847,7 @@ Change directories to your <code class="highlighter-rouge">Setup</code> director
 </ul>
 
 <h2 id="related-topics">Related Topics</h2>
+
 <ul>
   <li><a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication</a></li>
   <li><a href="/guides/v2.0/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>

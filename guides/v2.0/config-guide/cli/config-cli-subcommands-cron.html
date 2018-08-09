@@ -1526,6 +1526,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>To run cron in a web browser, see <a href="/guides/v2.0/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></p>
 
   <h2 id="config-cli-cron-group-run">Run cron from the command line</h2>
+
   <p>Command options:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento cron:run [--group="&lt;cron group name&gt;"]
@@ -1540,6 +1541,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
   <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
+
   <p>This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Open Source and Magento Commerce.</p>
 
   <p>Run Magento cron jobs as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
@@ -1547,6 +1549,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <div>
 
     <h3 id="prerequisites">Prerequisites</h3>
+
     <p>Magento uses cron for two sets of tasks, and for each, cron can run with a different configuration:</p>
 
     <ul>
@@ -1575,6 +1578,7 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
     </div>
 
     <h4 id="find-the-php-binary-and-phpini-path">Find the PHP binary and php.ini path</h4>
+
     <p>To display the path to your PHP binary, enter</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>which php

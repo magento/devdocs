@@ -1135,10 +1135,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="theme-structure-intro">What's in this topic</h2>
+
 <p>A <a href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
 .</p>
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
+
 <p><span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">Storefront</span>
  themes are conventionally located under <code class="highlighter-rouge">app/design/frontend/&lt;Vendor&gt;/</code>. Though technically they can reside in other directories. For example Magento built-in themes can be located under <code class="highlighter-rouge">vendor/magento/theme-frontend-&lt;theme_code&gt;</code> when a Magento instance is deployed from the   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  repository.</p>
@@ -1153,6 +1155,7 @@ app/design/frontend/&lt;Vendor&gt;/
 </pre>
 
 <h2 id="theme-structure-comp">Theme components</h2>
+
 <p>The structure of a Magento theme directory typically would be like following:</p>
 <pre>
 &lt;theme_dir&gt;/
@@ -1391,6 +1394,7 @@ app/design/frontend/&lt;Vendor&gt;/
 </ul>
 
 <h3 id="theme-structure-pub">Static view files</h3>
+
 <p>A set of theme files that are returned by the server to a browser as is, without any processing, are called the <em>static files</em> of a theme.</p>
 
 <p><span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">Static files</span>
@@ -1412,7 +1416,8 @@ app/design/frontend/&lt;Vendor&gt;/
   <p>To be actually accessible for browsers public static files are <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">published</a> to the <code>/pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 </div>
 
-<h3>Dynamic view files</h3>
+<h3 id="dynamic-view-files">Dynamic view files</h3>
+
 <p>View files that are processed or executed by the server in order to provide result to the client. These are: <code class="highlighter-rouge">.less</code> files, templates, and layouts.</p>
 
 <p>Dynamic view files are located in a theme directory as follows:</p>

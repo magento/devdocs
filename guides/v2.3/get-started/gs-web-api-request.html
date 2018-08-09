@@ -573,6 +573,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="endpoints">Endpoint</h3>
+
 <p>An endpoint is a combination of the <em>server</em> that fulfills a request, the web service, the store code, the resource against which the request is being made, and any template parameters.</p>
 
 <p>For example, in the <code class="highlighter-rouge">http://magento.ll/index.php/rest/default/V1/customerGroups/:id</code> endpoint, the server is <code class="highlighter-rouge">magento.ll/index.php/</code>, the web service is <code class="highlighter-rouge">rest</code>, the resource is <code class="highlighter-rouge">/V1/customerGroups</code>, and the template parameter is <code class="highlighter-rouge">id</code>.</p>
@@ -623,6 +624,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="payload">Call payload</h3>
+
 <p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both <em>required</em> and <em>optional</em> inputs.</p>
 
 <p>You specify input parameters in the URI. For example, in the <code class="highlighter-rouge">GET/V1/customers/:customerId</code> URI, you must specify the <code class="highlighter-rouge">customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
@@ -660,6 +662,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This JSON-formatted request body includes a <code class="highlighter-rouge">customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
 <h2 id="construct-request">Construct a request</h2>
+
 <p>This example shows you how to construct a REST web API call to create an account.</p>
 
 <ol><li>Open the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Magento/Customer/etc/webapi.xml</a> configuration file.</li>
@@ -691,6 +694,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="customers-search-api-request-example">Customers Search API request example</h3>
+
 <p>The following example builds a Customers Search request based on search criteria. It returns a list of customers that match given search criteria.</p>
 <ol>
 <li><p>Prepare <code>Authorization</code>, <code>Accept</code> and <code>Content-Type</code> headers to be passed to a request object. Use the   <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span>
@@ -734,6 +738,7 @@ $response = $client-&gt;send($request);
 </ol>
 
 <h2 id="next-step">Next step</h2>
+
 <p>Run the web API call through a <a href="/guides/v2.3/get-started/gs-curl.html">cURL command</a> or a REST client.</p>
 
 			

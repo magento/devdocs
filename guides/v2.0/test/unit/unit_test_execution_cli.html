@@ -524,6 +524,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h3 id="solutions-to-common-problems">Solutions to common problems</h3>
 
 <h4 id="permission-denied">Permission Denied</h4>
+
 <p>One possible reason for this to happen might be if you are trying to execute PHPUnit inside a Virtual Box VM with shared folders that don’t allow modifying permissions.</p>
 
 <p>Whatever the reason, if you encounter the <code class="highlighter-rouge">permission denied: vendor/bin/phpunit</code> error, you can prefix the command with the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
@@ -533,6 +534,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h4 id="use-the-correct-php-interpreter">Use the correct PHP interpreter</h4>
+
 <p>On many development systems, you might have more one PHP version installed. You must know the correct PHP interpreter to use for testing; that is, use the same version of PHP to run the unit tests you use to run Magento.</p>
 
 <p>Some examples follow:</p>
@@ -557,6 +559,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h4 id="memory-limit">Memory Limit</h4>
+
 <p>If you encounter an error similar to <code class="highlighter-rouge">Fatal error: Allowed memory size of 67108864 bytes exhausted</code>, follow these steps to resolve it.</p>
 
 <p>Copy the PHPUnit configuration file <code class="highlighter-rouge">dev/tests/unit/phpunit.xml.dist</code> to <code class="highlighter-rouge">dev/tests/unit/phpunit.xml</code></p>

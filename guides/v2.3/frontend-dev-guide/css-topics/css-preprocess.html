@@ -1191,6 +1191,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  developer needs to debug stylesheets effectively.</p>
 
 <h2 id="css_preprocess_terms">Terms used</h2>
+
 <table>
 <tr>
 <th>
@@ -1325,6 +1326,7 @@ variable @variable-x is undefined in file /var/www/magento2/var/view_preprocesse
 <p>See the <a href="/guides/v2.3/frontend-dev-guide/css-topics/css_debug.html">Compile LESS with Grunt</a> topic for details how to install, configure and use Grunt.</p>
 
 <h3 id="client-side">Client-side LESS compilation</h3>
+
 <p>The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:</p>
 
 <ul>
@@ -1346,6 +1348,7 @@ variable @variable-x is undefined in file /var/www/magento2/var/view_preprocesse
 <p>In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.</p>
 
 <h5 id="css_exception">When you need to clean static view files</h5>
+
 <p>There are certain types of changes, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">publication</a> processes anew.</p>
 
 <p>This is required in the following cases:</p>
@@ -1358,6 +1361,7 @@ variable @variable-x is undefined in file /var/www/magento2/var/view_preprocesse
 <p>To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.</p>
 
 <h2 id="fedg_css-import">The <code class="highlighter-rouge">@import</code> directive rules of usage</h2>
+
 <p>You can import local and remote <code class="highlighter-rouge">.less</code> and <code class="highlighter-rouge">.css</code> files in your <code class="highlighter-rouge">.less</code> Magento stylesheets by using the standard LESS <a href="http://lesscss.org/features/#import-directives-feature"><code class="highlighter-rouge">@import</code> directive</a>.
 According to the <code class="highlighter-rouge">@import</code> syntax, specifying the file extension for the imported file is not mandatory. For example, the following notation is allowed:</p>
 

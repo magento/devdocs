@@ -704,15 +704,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="overview">Overview</h2>
+
 <p>The Loader   <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well.</p>
 
 <p>The Loader widget source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.</p>
 
 <h2 id="loader_init">Initialize the loader widget</h2>
+
 <p>The loader widget is initialized as described in <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.</p>
 
 <h2 id="loader_options">Options</h2>
+
 <p>The loader widget has the following options:</p>
 <ul>
 <li><a href="#l_icon">icon</a></li>
@@ -720,7 +723,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_icon"><code>icon</code></h3>
+<h3 id="l_icon"><code class="highlighter-rouge">icon</code></h3>
+
 <p>The   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  to the loader image. This image is displayed when the widget is active; that is, between the <code class="highlighter-rouge">ajaxSend</code> and <code class="highlighter-rouge">ajaxComplete</code> events.</p>
 
@@ -728,7 +732,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p><strong>Default value</strong>: No image by default.</p>
 
-<h3 id="l_template"><code>template</code></h3>
+<h3 id="l_template"><code class="highlighter-rouge">template</code></h3>
+
 <p><span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
  wrapper for the output, or a DOM element selector.</p>
 
@@ -742,7 +747,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 '&lt;/div&gt;'
 </pre>
 
-<h3 id="l_texts"><code>texts</code></h3>
+<h3 id="l_texts"><code class="highlighter-rouge">texts</code></h3>
 
 <p>An object that contains translations for loader text:</p>
 <ul>
@@ -756,6 +761,7 @@ The text that is displayed under the loader image. <br />
 </ul>
 
 <h2 id="events">Events</h2>
+
 <p>Loader is subscribed to the following events:</p>
 <ul>
 <li><a href="#l_processStart">processStart</a></li>
@@ -763,10 +769,12 @@ The text that is displayed under the loader image. <br />
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="l_processStart"><code>processStart</code></h3>
+<h3 id="l_processStart"><code class="highlighter-rouge">processStart</code></h3>
+
 <p>Display the loader. Can be triggered on any page element.</p>
 
-<h3 id="l_processStop"><code>processStop</code></h3>
+<h3 id="l_processStop"><code class="highlighter-rouge">processStop</code></h3>
+
 <p>Hide the loader. Can be triggered on any page element.</p>
 
 			

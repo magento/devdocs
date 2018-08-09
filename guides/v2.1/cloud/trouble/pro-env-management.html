@@ -2032,6 +2032,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="new-features">New Features</h2>
+
 <p>The new Project Web Interface provides the following features for the Pro plan Staging and Production environments:</p>
 
 <ul>
@@ -2065,6 +2066,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="branching-hierarchy">Branching hierarchy</h3>
+
 <p>Before converting your project, the branches include a repository for Integration, Staging, and Production. Each repository has a <code class="highlighter-rouge">master</code> branch with deployment targets configured for Staging and Production.</p>
 
 <p>After converting your project, the hierarchical relationships appear in your Project Web Interface with three, main environment branches for Integration, Staging, and Production:</p>
@@ -2074,6 +2076,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For more information on each branch, see <a href="/guides/v2.1/cloud/architecture/pro-architecture.html">Pro architecture</a>.</p>
 
 <h2 id="before-you-upgrade">Before you upgrade</h2>
+
 <p>When we add Staging and Production access to the Project Web Interface, we leverage the user accounts, branch user permissions, and environment variables from your Integration <code class="highlighter-rouge">master</code> environment.</p>
 
 <p>To prepare, verify that your settings and environment variables are correct.</p>
@@ -2085,11 +2088,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="verify-code">Verify code</h3>
+
 <p>We strongly recommend working in your local development environment, deploying to Integration, deploying to Staging, and, finally, deploying to Production. All code should match 100% across each of these environments. Before submitting a ticket, make sure you sync your code. This process creates a new branch of code for Staging and Production environments.</p>
 
 <p>If you have additional code, such as new extensions in your Production environment without following this workflow, then deployments from Integration or Staging <strong>overwrite</strong> your Production code.</p>
 
 <h3 id="prep-user">Verify user account access</h3>
+
 <p>We recommend verifying your user account access and permissions set in the Integration environment. When adding Staging and Production to the Project Web Interface, the process includes all user accounts and settings. You can modify the settings and values for these environments after they are added.</p>
 
 <ol>
@@ -2101,6 +2106,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="prep-variables">Prepare variables</h3>
+
 <p>When we convert your project to the new Project Web Interface, we add variables from Integration environment to the Staging and Production environments. You can review, modify, and add variables through the current Project Web Interface prior to conversion.</p>
 
 <ol>
@@ -2115,6 +2121,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For environment-specific variables, including sensitive data and values, you can add those variables after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. You can add and manage these variables via SSH and CLI commands directly into the Staging and Production environments.</p>
 
 <h2 id="enable">Enter a ticket for updating the Project Web Interface</h2>
+
 <p>Enter a <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a> with the suggested title “Connect Stg / Prod to Project’s UI”. In the ticket, request to have your project enabled with Staging and Production in the UI.</p>
 
 <p>We will review the infrastructure and settings, create user and environment variables for Staging and Production environments, and update the ticket with results.</p>
@@ -2145,11 +2152,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can add environment-specific variables, including sensitive data and values, after we update your Project Web Interface. If you have environment variables in an <code class="highlighter-rouge">env.php</code> file, the file continues working after converting. See <a href="/guides/v2.1/cloud/env/environments.html">Configure environments</a>.</p>
 
 <h2 id="request-an-upgrade">Request an upgrade</h2>
+
 <p>Enter a <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a> with the suggested title “Connect Stg / Prod to Project’s UI”, and request to enable your project with Staging and Production in the UI.</p>
 
 <p>We review the infrastructure and settings, create user and environment variables for Staging and Production environments, and communicate updates in the ticket. When complete, access and review your project through the <a href="/guides/v2.1/cloud/project/projects.html">Project Web Interface</a>.</p>
 
 <h2 id="move-your-environment-variables">Move your environment variables</h2>
+
 <p>Optionally, after a successful conversion you can migrate specific environment variables into the Project Web Interface for Staging and Production. This is not required, but supported. See <a href="https://magento.zendesk.com/hc/en-us/articles/115002998873-Add-Staging-and-Production-to-Magento-Commerce-Cloud-Pro-projects-UI">Magento Help Center </a>.</p>
 
 			

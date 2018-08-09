@@ -1766,11 +1766,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="cloud-int-black">Get your Blackfire credentials</h2>
+
 <p>The Project Owner is the account owner. This account’s e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with Magento Commerce Cloud and to log into the Blackfire site. An invitation email is sent to the Project Owner’s e-mail address to complete activation.</p>
 
 <p>For information on setting up the account on Blackfire, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user" target="_blank">Accessing your Blackfire account as a Magento Cloud user</a>. You can also access your Blackfire license key through <a href="/guides/v2.0/cloud/project/projects.html#integrations">project details</a>.</p>
 
 <h2 id="collaborators">Add collaborator accounts</h2>
+
 <p>After you have accessed your Blackfire account, you can <a href="http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments" target="_blank">add additional collaborator accounts</a>.</p>
 
 <p>We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.</p>
@@ -1788,6 +1790,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="cloud-int-black-en">Enable Blackfire on your local</h2>
+
 <p>You need to install and configure Blackfire on your local workspace with your working Magento Commerce Cloud installation. You don’t need to run these installations directly on the hosted environments, only on your local.</p>
 
 <p>We recommend using their installation guide to walk you through the process:</p>
@@ -1801,6 +1804,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="dev">Integrate Blackfire in Integration</h2>
+
 <p>We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">their guide.</a>. You can integrate with Pro’s Integration environment and Starter’s development branches.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1834,6 +1838,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
+
 <p>By default, the Blackfire module is included in the <code class="highlighter-rouge">.magento.app.yaml</code> file as part of your Git branch.</p>
 
 <p>The following instructions provide additional instructions if the module is not added to <code class="highlighter-rouge">.magento.app.yaml</code>. To enable and integrate Blackfire into your code, you will modify the <code class="highlighter-rouge">.magento.app.yaml</code> file, push the file into your remote Git branch, merge, and deploy across all environments.</p>
@@ -1916,6 +1921,7 @@ git push origin
 </ol>
 
 <h3 id="variables">Add project variables</h3>
+
 <p>Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.</p>
 
 <ol>
@@ -1936,6 +1942,7 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
 </ol>
 
 <h3 id="integration">Add Blackfire integration to the project</h3>
+
 <p>Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the <a href="/guides/v2.0/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
@@ -1960,6 +1967,7 @@ magento-cloud project:variable:set env:BLACKFIRE_SERVER_TOKEN &lt;Blackfire Serv
 </ol>
 
 <h3 id="route">Add a default route</h3>
+
 <p>If you do not have a default route specified in <code class="highlighter-rouge">routes.yaml</code>, or want to define which route to use instead of the default route, you will add it to Blackfire and <code class="highlighter-rouge">routes.yaml</code>.</p>
 
 <p>Add route information on the Blackfire Magento Cloud integration page:</p>
@@ -2034,9 +2042,11 @@ git push origin
 </ol>
 
 <h3 id="save">Save changes in Blackfire</h3>
+
 <p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your Magento Commerce Cloud project. Continue to the next section to begin profiling your store to verify the integration.</p>
 
 <h2 id="profile">Profile your store</h2>
+
 <p>To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#resources">Blackfire’s resources</a>.</p>
 
 <div class="bs-callout bs-callout-info">
@@ -2097,6 +2107,7 @@ blackfire.log_file <span class="o">=&gt;</span> no value <span class="o">=&gt;</
 </ol>
 
 <h2 id="resources">Blackfire resources</h2>
+
 <p>Blackfire provides great information to better profile and investigate the results on their documentation site. Check out some resources:</p>
 
 <ul>

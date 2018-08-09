@@ -1108,6 +1108,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="get-the-extensions-composer-name-and-version">Get the extension’s Composer name and version</h2>
+
 <p>If you already know the extension’s Composer name and version, skip this step and continue with <a href="#update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</a>.</p>
 
 <p>To get the extension’s Composer name and version from the Magento Marketplace:</p>
@@ -1137,6 +1138,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="update-composer-json">Update your <code class="highlighter-rouge">composer.json</code> file</h2>
+
 <p>Add the extension’s name and version to your <code class="highlighter-rouge">composer.json</code> file:</p>
 
 <ol>
@@ -1167,6 +1169,7 @@ Generating autoload files
 </ol>
 
 <h2 id="verify-the-extension">Verify the extension</h2>
+
 <p>To verify that the extension installed properly, run the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento module:status
@@ -1183,6 +1186,7 @@ J2t_Payplug
 </div>
 
 <h2 id="enable-the-extension">Enable the extension</h2>
+
 <p>Some extensions won’t work properly unless you clear Magento-generated static view files first. Use the <code class="highlighter-rouge">--clear-static-content</code> option to clear static view files when you’re enabling an extension.</p>
 
 <ol>

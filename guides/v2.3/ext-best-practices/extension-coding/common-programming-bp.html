@@ -609,6 +609,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following list of best practices addresses commonly reported issues in third-party extensions.</p>
 
 <h3 id="follow-a-set-of-coding-standards">Follow a set of coding standards</h3>
+
 <p>Coding standards are a set of guidelines that describe how code should be written. These standards define coding practices that determine the style of the code. Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.</p>
 
 <p><a href="/guides/v2.3/coding-standards/bk-coding-standards.html">Magento’s Coding Standards</a> are based on the following:</p>
@@ -622,6 +623,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To help you stick to coding standards, we recommend using the <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank">PHP_CodeSniffer tool</a>.</p>
 
 <h3 id="write-and-utilize-reusable-code">Write and utilize reusable code</h3>
+
 <p>Avoid using redundant or duplicate code, which can be hard to maintain. Instead of copying and pasting the same code throughout your extension, create a single class or method and reference it when needed.</p>
 
 <p>As a general rule, reuse code as much as possible to prevent code duplication.</p>
@@ -629,11 +631,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The code you write should be small, focused, and provide a generic solution. This will help you reuse code in future development.</p>
 
 <h3 id="design-your-code-to-be-replaceable">Design your code to be replaceable</h3>
+
 <p>Designing and writing your code to be replaceable is just as important as making it reusable. Having a replaceable design means your code is modular and loosely coupled, which makes updates and improvements easier.</p>
 
 <p>It is common practice to replace parts of your codebase with newer and better pieces as bugs are found or newer strategies become available. Writing replaceable code in your codebase makes this practice easier and more efficient.</p>
 
 <h3 id="avoid-creating-helper-classes">Avoid creating helper classes</h3>
+
 <p>Helper or utility classes are classes filled with static methods that do not quite fit anywhere else. These classes are considered an anti-pattern and violate the principles of object-oriented programming.</p>
 
 <p>If you have <code class="highlighter-rouge">ClassA</code> and a <code class="highlighter-rouge">ClassAHelper</code> with static functions that work on <code class="highlighter-rouge">ClassA</code>, you should consider refactoring those functions into <code class="highlighter-rouge">ClassA</code>.</p>
@@ -641,6 +645,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>A helper class that functions as a catch-all for random methods violates the single responsibility principle because it is an attempt to solve multiple problems in a single class. You should refactor your code and move those functions into the appropriate classes.</p>
 
 <h3 id="be-consistent-with-case-and-naming-conventions">Be consistent with case and naming conventions</h3>
+
 <p>You should be consistent in your naming conventions for files, folder names, classes, and methods. Following standard conventions makes your code easier to read and look professional.</p>
 
 <p>Not following this practice is a code standards violation and impacts your extension’s readability and  maintainability.</p>
@@ -654,6 +659,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  development, we encourage the use of object composition over class inheritance. Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.</p>
 
 <h3 id="using-around-plugins">Using around plugins</h3>
+
 <p>Avoid using <a href="/guides/v2.3/extension-dev-guide/plugins.html">around method plugins</a> when they are not required because they increase stack traces and affect performance. The only use case for around method plugins is when you need to terminate the execution of all further plugins and original methods.</p>
 
 <div class="bs-callout bs-callout-info" id="info">

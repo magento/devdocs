@@ -1522,6 +1522,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="secure-cron-with-apache">Secure cron with Apache</h2>
+
 <p>This section discusses how to secure cron using <a href="http://tools.ietf.org/html/rfc2617&quot;" target="&#95;blank">HTTP Basic authentication</a> with Apache. These instructions are based on Apache 2.2 with CentOS 6. For more information, refer to one of the following resources:</p>
 
 <ul>
@@ -1530,6 +1531,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="create-a-password-file">Create a password file</h3>
+
 <p>For security reasons, you can locate the password file anywhere except your web server docroot. In this example, we’re storing the password file in a new directory.</p>
 
 <p>Enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
@@ -1548,6 +1550,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre></div></div>
 
 <h3 id="add-users-to-create-an-authorized-cron-group-optional">Add users to create an authorized cron group (optional)</h3>
+
 <p>You can also enable more than one user to run cron by adding these users to your password file as well as a group file.</p>
 
 <p>To add another user to your password file:</p>
@@ -1566,6 +1569,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </code></pre></div></div>
 
 <h3 id="secure-cron-in-htaccess">Secure cron in <code class="highlighter-rouge">.htaccess</code></h3>
+
 <p>To secure cron in Magento’s <code class="highlighter-rouge">.htaccess</code> file:</p>
 
 <ol>
@@ -1604,6 +1608,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </ol>
 
 <h2 id="secure-cron-with-nginx">Secure cron with nginx</h2>
+
 <p>This section discusses how to secure cron using the   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>
  web server. You must perform the following tasks:</p>
 
@@ -1613,6 +1618,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </ol>
 
 <h3 id="create-a-password-file-1">Create a password file</h3>
+
 <p>Consult one of the following resources to create a password file before continuing:</p>
 
 <ul>
@@ -1621,6 +1627,7 @@ htpasswd -c /usr/local/apache/password/passwords &lt;username&gt;
 </ul>
 
 <h3 id="secure-cron-in-nginxconfsample">Secure cron in <code class="highlighter-rouge">nginx.conf.sample</code></h3>
+
 <p>Magento provides an optimized sample nginx configuration file out of the box. We recommend modifying it to secure cron.</p>
 
 <ol>
@@ -1657,6 +1664,7 @@ location ~ cron<span class="se">\.</span>php<span class="nv">$ </span><span clas
 </ol>
 
 <h2 id="verify-cron-is-secure">Verify cron is secure</h2>
+
 <p>The easiest way to verify that <code class="highlighter-rouge">pub/cron.php</code> is secure is to verify that it’s creating rows in the <code class="highlighter-rouge">cron_schedule</code> Magento database table after you set up password authentication. This example uses SQL commands to check the database, but you can use whatever tool you like.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1737,6 +1745,7 @@ mysql&gt; SELECT <span class="k">*</span> from cron_schedule<span class="p">;</s
 </ol>
 
 <h2 id="run-cron-from-a-web-browser">Run cron from a web browser</h2>
+
 <p>You can run cron anytime using a web browser (e.g., during development).</p>
 
 <div class="bs-callout bs-callout-warning">

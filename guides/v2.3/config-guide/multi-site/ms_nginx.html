@@ -1884,10 +1884,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
+
 <p>This tutorial shows you step-by-step how to set up multiple websites using   <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>
 .</p>
 
 <h3 id="assumptions">Assumptions</h3>
+
 <p>We assume that:</p>
 
 <ul>
@@ -1917,6 +1919,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="roadmap-for-setting-up-multiple-websites-with-nginx">Roadmap for setting up multiple websites with nginx</h3>
+
 <p>To set up multiple stores:</p>
 
 <ol>
@@ -1944,6 +1947,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="ms-nginx-vhosts">Step 2: Create nginx virtual hosts</h2>
+
 <p>This section discusses how to load websites on the   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
 . You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code class="highlighter-rouge">sudo</code> privileges.</p>
 
@@ -2100,29 +2104,30 @@ location ~ (index|get|static|report|404|503|health_check)\.php$ {
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
      fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
 </code></pre></div>    </div>
-    <p>An example updated PHP entry point for the main application looks like:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># PHP entry point for main application
-location ~ (index|get|static|report|404|503|health_check)\.php$ {
- try_files $uri =404;
- fastcgi_pass   fastcgi_backend;
- fastcgi_buffers 1024 4k;
-
- fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
- fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
- fastcgi_read_timeout 600s;
- fastcgi_connect_timeout 600s;
-
- fastcgi_index  index.php;
- fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
- # START - Multisite customization
- fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
- fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
- # END - Multisite customization
- include        fastcgi_params;
-}
-</code></pre></div>    </div>
+    <p>An example updated PHP entry point for the main application looks like:
+```</p>
+    <h1 id="php-entry-point-for-main-application">PHP entry point for main application</h1>
   </li>
 </ol>
+
+<p>location ~ (index|get|static|report|404|503|health_check).php$ {
+    try_files $uri =404;
+    fastcgi_pass   fastcgi_backend;
+    fastcgi_buffers 1024 4k;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fastcgi_param  PHP_FLAG  "session.auto_start=off \n suhosin.session.cryptua=off";
+fastcgi_param  PHP_VALUE "memory_limit=756M \n max_execution_time=18000";
+fastcgi_read_timeout 600s;
+fastcgi_connect_timeout 600s;
+
+fastcgi_index  index.php;
+fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+# START - Multisite customization
+fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
+fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
+# END - Multisite customization
+include        fastcgi_params; } ```
+</code></pre></div></div>
 </div>
   </div>
 
@@ -2158,6 +2163,7 @@ http://german.mysite.mg/germanstoreview
 </div>
 
   <h3 id="troubleshooting">Troubleshooting</h3>
+
   <ul>
     <li>If your French and German sites return 404s but your Admin loads, make sure you completed <a href="/guides/v2.3/config-guide/multi-site/ms_websites.html#multi-storecode-baseurl">Step 6: Add the store code to the base URL</a>.</li>
     <li>If all URLs return 404s, make sure you restarted your web server.</li>

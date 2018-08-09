@@ -2125,12 +2125,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code class="highlighter-rouge">.magento</code> directory, then the script deletes the directory and its contents. Your local development environment is not affected.</p>
 
 <h2 id="ignoring-files">Ignoring files</h2>
+
 <p>We include a base <code class="highlighter-rouge">.gitignore</code> file with the Magento Commerce Cloud project repository. See <a href="https://github.com/magento/magento-cloud/blob/master/.gitignore" target="\_blank">.gitignore file</a>. You can add an ignored file when staging a commit by using the <code class="highlighter-rouge">-f</code> option:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;path/filename&gt; <span class="nt">-f</span>
 </code></pre></div></div>
 
 <h2 id="magento-application-root-directory">Magento application root directory</h2>
+
 <p>The Magento application root directory is located in different locations depending on the environment.</p>
 
 <p>For Starter:</p>
@@ -2149,6 +2151,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="write-dir">Writable directories</h2>
+
 <p>In Integration, Staging, and Production, <em>only</em> the following directories are writable due to security reasons:</p>
 
 <ul>
@@ -2162,6 +2165,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">In Production, each node in the three-node cluster has a <code class="highlighter-rouge">/tmp</code> directory that is not shared with the other nodes.</p>
 
 <h2 id="logs">Logs</h2>
+
 <p>Logs for all environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
 <p>For Pro, the deployment log for Staging and Production is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
@@ -2171,9 +2175,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-tip">You can also <a href="/guides/v2.2/cloud/env/setup-notifications.html">set up log-based Slack and email notifications</a>.</p>
 
 <h2 id="build-log">Build logs</h2>
+
 <p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
 <h3 id="deploy-log">Deploy logs</h3>
+
 <p>You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.</p>
 
 <p>Logs from the deploy hook are located on the server in the following locations:</p>
@@ -2210,6 +2216,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <code class="highlighter-rouge">Starting pre-deploy</code>, <code class="highlighter-rouge">Pre-deploy complete.</code>, <code class="highlighter-rouge">Start deploy.</code>, and <code class="highlighter-rouge">Deployment complete.</code>.</p>
 
 <h3 id="app-log">Application logs</h3>
+
 <p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/ProjectID</code>.</p>
 
 <p>For Pro plan Staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>

@@ -1177,9 +1177,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="m2devgde-xlate-intro">Overview of translations</h2>
+
 <p>The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.</p>
 
 <h3 id="translate_terms">Terms used</h3>
+
 <p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code class="highlighter-rouge">en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code class="highlighter-rouge">en_US</code>) to German (<code class="highlighter-rouge">de_DE</code>):</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Add to Cart","Zum Warenkorb hinzufügen"
@@ -1197,6 +1199,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="benefits">Benefits</h3>
+
 <p>Benefits include:</p>
 
 <ul>
@@ -1220,6 +1223,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.</p>
 
 <h3 id="changes-in-magento-2">Changes in Magento 2</h3>
+
 <p>Changes made:</p>
 
 <ul>
@@ -1230,11 +1234,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="programming-notes">Programming notes</h3>
+
 <ul>
   <li>It is recommended, but not enforced, that you do not place variables inside <code class="highlighter-rouge">__()</code> functions or <code class="highlighter-rouge">new Phrase()</code> calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the <code class="highlighter-rouge">__()</code> function or <code class="highlighter-rouge">new Phrase()</code> call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.</li>
 </ul>
 
 <h3 id="more-information">More information</h3>
+
 <p>See one of the following sections for more information:</p>
 
 <ul>
@@ -1257,6 +1263,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For practical illustration of creating a dictionary for a theme for both cases, see the <a href="/guides/v2.2/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.</p>
 
 <h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
+
 <p>Translating the names, titles and phrases used in Magento involves the following steps:</p>
 
 <ol>
@@ -1273,6 +1280,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  using the Text Editor. Changes made in the Text Editor are not recorded in an instance’s dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
 
 <h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
+
 <p>Magento translates words and phrases when all of the following conditions are met:</p>
 
 <ul>
@@ -1294,9 +1302,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Assembling the preceding <code class="highlighter-rouge">pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
+
 <p><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.</p>
 
 <h2 id="m2devgde-xlate-languagepack">Language packages</h2>
+
 <p>Magento enables you to create the following types of language packages:</p>
 
 <ul>

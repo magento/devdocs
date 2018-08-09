@@ -1159,6 +1159,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="security-enhancements">Security enhancements</h2>
+
 <p>Magento 2.0.17 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
 
 <p>See <a href="https://magento.com/security/patches/magento-221-2110-and-2017-security-update">Magento Security Center</a> for more information.</p>
@@ -1173,6 +1174,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="fixed-issues">Fixed issues</h2>
 
 <h3 id="cart">Cart</h3>
+
 <!--- 61066 -->
 <ul>
   <li>Magento now permits a customer to share a shopping cart between the store views of the same website, but not between store views of different websites. Previously, Magento did not clear the contents of a shopping cart  when the customer switched between store views on different websites.</li>
@@ -1218,6 +1220,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
+
 <!--- 62593 -->
 <ul>
   <li>Sorting configurable products by price now works as expected when a simple product has a special price. <a href="https://github.com/magento/magento2/issues/4778">GitHub-4778</a></li>
@@ -1239,6 +1242,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="framework">Framework</h3>
+
 <!--- 57816 -->
 <ul>
   <li>Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. <a href="https://github.com/magento/magento2/issues/4232">GitHub-4232</a> <em>Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9333" target="_blank">9333</a>.</em></li>
@@ -1312,6 +1316,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="importexport">Import/export</h3>
+
 <!--- 67343 -->
 <ul>
   <li>We’ve improved the performance of importing up to 100,000 products from the Admin.</li>
@@ -1333,18 +1338,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="order-management">Order management</h3>
+
 <!--- 63585 -->
 <ul>
   <li>Magento now uses the address template from the store-view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template for order e-mails.</li>
 </ul>
 
 <h3 id="shipping">Shipping</h3>
+
 <!--- 59249 -->
 <ul>
   <li>The Free Shipping rule now works correctly with the table shipping method. Previously, Magento displayed an error at checkout (<strong>This shipping method is not available. To use this shipping method, please contact us.</strong>) instead of assigning a $0 shipping rate. <a href="https://github.com/magento/magento2/issues/6346">GitHub-6346</a></li>
 </ul>
 
 <h3 id="targetrule">TargetRule</h3>
+
 <!--- 63831 -->
 <ul>
   <li>Magento now saves a new product rule when its SKU attribute is enabled for <strong>Use for Promo Rule Conditions</strong>. Previously, you could not save a new rule under these conditions. </li>
@@ -1377,12 +1385,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <!--- NOT NEEDED 58771  -->
 
 <h2 id="system-requirements">System requirements</h2>
+
 <p>Our technology stack is built on PHP and MySQL. For more information, see
 <a href="/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
+
   <p>See one of the following sections:</p>
 
   <ul>
@@ -1453,6 +1463,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ol>
 
     <h2 id="upgrade">Upgrade from an earlier version</h2>
+
     <p>To upgrade to version 2.0.x from an earlier version:</p>
 
     <ul>
@@ -1461,6 +1472,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
+
     <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
     <p>An updated version of this toolkit is typically available several days after the patch release.</p>

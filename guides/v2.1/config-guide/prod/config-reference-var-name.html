@@ -1698,6 +1698,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="variable-names">Variable names</h3>
+
 <p>The general format of system settings variable names follows:</p>
 
 <pre class="no-copy">&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
@@ -1748,6 +1749,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="deploy-system-vars-scopes">Step 1: Find the website or store view scope value</h2>
+
 <p>This section discusses how you can find and set system configuration values per <em>scope</em> (store view or website). To set global scope variables, see <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</p>
 
 <p>Scope values come from the <code class="highlighter-rouge">store</code>, <code class="highlighter-rouge">store_group</code>, and <code class="highlighter-rouge">store_website</code> tables.</p>
@@ -1782,6 +1784,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="find-a-website-or-store-view-scope-in-the-magento-admin">Find a website or store view scope in the Magento Admin</h3>
+
 <p>The following table summarizes how to find website or store view value in the Admin.</p>
 
 <table>
@@ -1823,6 +1826,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="cloud-vars-db">Find a website or store view scope in the database</h3>
+
 <p>To get these values from the database:</p>
 
 <ol>
@@ -1934,9 +1938,11 @@ SELECT * FROM STORE_WEBSITE;
 </table>
 
 <h2 id="cloud-system-vars-ex">Examples</h2>
+
 <p>This section shows how to find values of some sample variables.</p>
 
 <h3 id="elasticsearch-server-hostname">Elasticsearch server hostname</h3>
+
 <p>To find the variable name for global HTML minification:</p>
 
 <ol>
@@ -1953,6 +1959,7 @@ SELECT * FROM STORE_WEBSITE;
 <p><strong>Result</strong>: The variable name is <code class="highlighter-rouge">CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></p>
 
 <h3 id="shipping-country-origin">Shipping country origin</h3>
+
 <p>To find the variable name for the shipping country origin:</p>
 
 <ol>
@@ -1971,6 +1978,7 @@ SELECT * FROM STORE_WEBSITE;
 <p><strong>Result</strong>: The variable name is <code class="highlighter-rouge">CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID</code></p>
 
 <h2 id="how-to-use-environment-variables">How to use environment variables</h2>
+
 <p>Set configuration values as variables using PHP’s <a href="http://php.net/manual/en/reserved.variables.environment.php" target="\_blank"><code class="highlighter-rouge">$_ENV</code></a> associate array. You can set the values in any PHP script that runs when Magento runs, such as <code class="highlighter-rouge">index.php</code>.</p>
 
 <p>An example of setting two values follows:</p>
@@ -1990,6 +1998,7 @@ $_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '123
 </div>
 
 <h4 id="related-information">Related information</h4>
+
 <ul>
   <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html" target="_blank">Magento User Guide discussion of scope</a></li>
   <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html" target="_blank">Magento User Guide scope quick reference</a></li>

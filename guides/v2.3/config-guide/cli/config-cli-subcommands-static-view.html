@@ -1892,6 +1892,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
   <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
+
   <p>The static view files deployment command enables you to write   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  to the Magento file system when the Magento software is set for <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>.</p>
 
@@ -1922,6 +1923,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
   <h2 id="config-cli-subcommands-staticview">Deploy static view files</h2>
+
   <p>To deploy static view files:</p>
 
   <ol>
@@ -2293,9 +2295,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
   <h3 id="examples">Examples</h3>
+
   <p>Following are some example commands.</p>
 
   <h4 id="excluding-a-theme-and-html-minification">Excluding a theme and HTML minification</h4>
+
   <p>The following command deploys   <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span>
  for the US English (<code class="highlighter-rouge">en_US</code>) language, excludes the Luma   <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>
  provided with Magento, and does not minify   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
@@ -2323,6 +2327,7 @@ Successful: 1993 files; errors: 0
 </code></pre></div>  </div>
 
   <h4 id="generating-static-view-files-for-one-theme-and-one-area">Generating static view files for one theme and one area</h4>
+
   <p>The following command generates static view files for all languages, the   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  area only, the Magento Luma theme only, without generating fonts:</p>
 
@@ -2345,6 +2350,7 @@ New version of deployed files: 1466711110
 </code></pre></div>  </div>
 
   <h3 id="deploy_without_db">Deploy static view files without installing Magento</h3>
+
   <p>You might want to run the deployment process in a separate, non-production, environment, to avoid any build processes on sensitive production machines.</p>
 
   <p>To do this, take the following steps:</p>
@@ -2356,6 +2362,7 @@ New version of deployed files: 1466711110
   </ol>
 
   <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
+
   <p><a href="/guides/v2.3/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
 
   <p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
@@ -2390,6 +2397,7 @@ New version of deployed files: 1466711110
   </ol>
 
   <h2 id="tip-for-developers-customizing-the-static-content-deployment-tool">Tip for developers customizing the static content deployment tool</h2>
+
   <p>When creating a custom implementation of the static content deployment tool, use only <a href="https://en.wikipedia.org/wiki/Linearizability" target="\_blank">atomic</a> file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content.</p>
 
   <p>One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see <a href="http://php.net/manual/en/function.fwrite.php" target="\_blank">http://php.net/manual/en/function.fwrite.php</a>.</p>

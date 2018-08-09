@@ -1185,6 +1185,7 @@ Make note of this path because you will need it later when you configure this ne
 </ol>
 
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
+
 <p>Every frontend email template includes a header and footer template using these two directives: <code class="highlighter-rouge">{{template config_path="design/email/header_template"}}</code> and <code class="highlighter-rouge">{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
 
 <ul>
@@ -1195,6 +1196,7 @@ Make note of this path because you will need it later when you configure this ne
 <p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
 
 <h3 id="customize-content">Customize email content</h3>
+
 <p>To add the store and sales related information to a template, use system variables.</p>
 
 <p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code class="highlighter-rouge">{{var store_hours}}</code> variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong> section.</p>
@@ -1261,6 +1263,7 @@ Make note of this path because you will need it later when you configure this ne
 <p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code class="highlighter-rouge">css</code> directive first looks for an <code class="highlighter-rouge">email.less</code> file in <code class="highlighter-rouge">&lt;Magento_Luma_theme_dir&gt;/web/css</code>. However, because the file doesn’t exist there, it falls back to <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/email.less</code>. The contents of that file are compiled and its contents output in the <code class="highlighter-rouge">&lt;style&gt;</code> tag.</p>
 
 <h4 id="template-specific-non-inline-styles">Template-specific non-inline styles</h4>
+
 <p>As mentioned in the preceding section, the <code class="highlighter-rouge">header.html</code> file outputs the <code class="highlighter-rouge">{{var template_styles|raw}}</code> variable.</p>
 
 <p>The value of that variable comes from any of the following:</p>
@@ -1367,6 +1370,7 @@ Make note of this path because you will need it later when you configure this ne
 <p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code> and <code class="highlighter-rouge">&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
 
 <h3 id="custom-fonts">Custom fonts</h3>
+
 <p>Emails inherit the custom fonts that are defined by the   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code class="highlighter-rouge">@font-face</code> rules are used to include web fonts.</p>
 
@@ -1403,6 +1407,7 @@ Make note of this path because you will need it later when you configure this ne
 <p>If you don’t have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px × 100px, specify <code class="highlighter-rouge">200</code> for the width and <code class="highlighter-rouge">100</code> for the height.</p>
 
 <h3 id="customize-logo-theme">Customize the email logo using a theme</h3>
+
 <p>To customize your logo using a theme:</p>
 
 <ol>

@@ -1434,6 +1434,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>By default, all pages in Magento are cacheable, but you can disable caching if necessary (e.g., payment method return page, debug page, or AJAX data source).</p>
 
 <h2 id="disable-caching">Disable caching</h2>
+
 <p>To disable caching, add a <code class="highlighter-rouge">cacheable="false"</code> attribute to any block in your layout.</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">"Magento\Paypal\Block\Payflow\Link\Iframe"</span> <span class="na">template=</span><span class="s">"payflowlink/redirect.phtml"</span> <span class="na">cacheable=</span><span class="s">"false"</span><span class="nt">/&gt;</span>
@@ -1472,6 +1473,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="define-caching-policy">Define caching policy</h2>
+
 <p>You can use the Admin to define caching policies or you can define them programmatically in a controller:</p>
 
 <div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">DynamicController</span> <span class="k">extends</span> <span class="nx">\Magento\Framework\App\Action\Action</span>
@@ -1512,6 +1514,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="configure-page-variations">Configure page variations</h2>
+
 <p>Most caching servers and proxies use a   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
  as a key for cache records; however, Magento URLs are not unique <em>enough</em> to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:</p>
 
@@ -1577,6 +1580,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 <p>For another example of a context class, see <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http/Context.php" target="&#95;blank">Magento/Framework/App/Http/Context</a>.</p>
 
 <h2 id="invalidate-public-content">Invalidate public content</h2>
+
 <p>You can clear cached content immediately after a entity changes. Magento uses  <code class="highlighter-rouge">IdentityInterface</code> to link entities in the application with cached content and to know what cache to clear when an   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
  changes.</p>
 
@@ -1627,6 +1631,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 </div>
 
 <h2 id="cacheable-page-checklist">Cacheable page checklist</h2>
+
 <ul>
   <li>
     <p>Pages use GET requests</p>
@@ -1649,6 +1654,7 @@ hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
 </ul>
 
 <h2 id="non-cacheable-page-checklist">Non-cacheable page checklist</h2>
+
 <ul>
   <li>
     <p>Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)</p>

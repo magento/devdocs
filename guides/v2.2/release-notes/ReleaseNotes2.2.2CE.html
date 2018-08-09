@@ -751,6 +751,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="fixed-issues">Fixed issues</h2>
 <h3 id="installation-setup-and-deployment">Installation, setup, and deployment</h3>
+
 <!--- MAGETWO-82747 -->
 <ul>
   <li>We’ve increased the <code class="highlighter-rouge">memory_limit</code> of the <code class="highlighter-rouge">.user.ini</code> files to 2GB. <a href="https://github.com/magento/magento2/issues/11322">GitHub-11322</a></li>
@@ -832,6 +833,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="catalog">Catalog</h3>
+
 <!--- MAGETWO-83498 -->
 <ul>
   <li>You can now enter strings that exceed 255 characters in Admin or frontend input fields. Previously, Magento  saved only the first 255 characters of a long input string. <a href="https://github.com/magento/magento2/issues/6238">GitHub-6238</a></li>
@@ -908,6 +910,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="cart-and-checkout">Cart and checkout</h3>
+
 <!--- MAGETWO-81665 -->
 <ul>
   <li>The default shipping-save-processor now has a payload extender. This feature allows third party extensions to modify the payload for the shipping address selection process. As a result, developers can now add <code class="highlighter-rouge">extension_attributes</code> while minimizing potential extension conflicts. <em>Fix submitted by <a href="https://github.com/navarr">Navarr Barnier</a> in pull request 11249</em>.</li>
@@ -959,12 +962,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
+
 <!--- MAGETWO-83489 -->
 <ul>
   <li><code class="highlighter-rouge">Magento\ConfigurableProduct\Model\Product\Type\Configurable:::loadUsedProducts</code> no longer ignores array keys that are returned by product collections. <a href="https://github.com/magento/magento2/issues/11880">GitHub-11880</a></li>
 </ul>
 
 <h3 id="frameworks">Frameworks</h3>
+
 <!--- MAGETWO-82675 -->
 <ul>
   <li>The NGINX configuration sample now contains a health check. <em>Fix submitted by <a href="https://github.com/andrewhowdencom">Andrew Howden</a> in pull request 11690</em>. <a href="https://github.com/magento/magento2/issues/11157">GitHub-11157</a></li>
@@ -1028,6 +1033,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="configuration-framework">Configuration framework</h4>
+
 <!--- MAGETWO-82887 -->
 <ul>
   <li>The X-Magento-Tags header can now contain  white space. <em>Fix submitted by <a href="https://github.com/nmalevanec">Malyovanets Nickolas</a> in pull request 11767</em>. <a href="https://github.com/magento/magento2/issues/7640">GitHub-7640</a>, <a href="https://github.com/magento/magento2/issues/7640">GitHub-7640</a></li>
@@ -1039,6 +1045,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="javascript-framework">JavaScript framework</h4>
+
 <!--- MAGETWO-80207 -->
 <ul>
   <li>Magento no longer incorrectly overly encodes UTF-8 files when JavaScript Bundling is enabled. Previously, this issue resulted in poor character encoding on the storefront. <a href="https://github.com/magento/magento2/issues/10562">GitHub-10562</a>, <a href="https://github.com/magento/magento2/issues/6733">GitHub-6733</a></li>
@@ -1055,6 +1062,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="session-framework">Session framework</h4>
+
 <!--- MAGETWO-84106 -->
 <ul>
   <li>We’ve removed the 30-second timeout limit for the session locking mechanism when Redis is used for session storage.</li>
@@ -1066,6 +1074,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="web-api-framework">Web API framework</h4>
+
 <!--- MAGETWO-83095 -->
 <ul>
   <li>The <code class="highlighter-rouge">customerAccountManagementV1</code> interface now provides the <code class="highlighter-rouge">POST /V1/customers/resetPassword</code> endpoint.</li>
@@ -1239,6 +1248,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="importexport">Import/export</h3>
+
 <!--- MAGETWO-83322 -->
 <ul>
   <li>To improve performance, Magento now loads all relations  using one query per bunch. Previously, Magento loaded relations one by one (multiple times for multiple attributes types). <a href="https://github.com/magento/magento2/issues/10920">GitHub-10920</a></li>
@@ -1265,6 +1275,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="indexing">Indexing</h3>
+
 <!--- MAGETWO-80188 -->
 <ul>
   <li>Magento no longer re-indexes entities if they are unchanged, which improves the performance of the refresh index cron job without any loss of functionality. <a href="https://github.com/magento/magento2/issues/4893">GitHub-4893</a></li>
@@ -1276,6 +1287,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="infrastructure">Infrastructure</h3>
+
 <!--- MAGETWO-82273 -->
 <ul>
   <li>New static block tests  now detect blocks without a name attribute. We’ve also added a missing block name to allow block customization, and added a name for the order items grid default renderer block. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 11235</em>. <a href="https://github.com/magento/magento2/issues/10824">GitHub-10824</a></li>
@@ -1302,6 +1314,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="newsletters">Newsletters</h3>
+
 <!--- MAGETWO-83257 -->
 <ul>
   <li>Newsletter subscriptions now work as expected. Previously, Magento did not set the <code class="highlighter-rouge">create-date</code> field, and the <code class="highlighter-rouge">change_status_at</code> was broken. <a href="https://github.com/magento/magento2/issues/4004">GitHub-4004</a></li>
@@ -1375,6 +1388,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
+
 <!--- MAGETWO-82732 -->
 <ul>
   <li>Magento PayPal integration now supports the Indian Rupee currency (INR).</li>
@@ -1430,6 +1444,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="search">Search</h3>
+
 <!--- MAGETWO-82904 -->
 <ul>
   <li>The search template now uses the custom URL specified in  <code class="highlighter-rouge">Magento\Search\Helper\getSuggestUrl()</code> instead of the default. <a href="https://github.com/magento/magento2/issues/6802">GitHub-6802</a></li>
@@ -1441,6 +1456,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="shipping">Shipping</h3>
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>can find Magento Shipping-specific release notes in <a href="/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html">Magento Shipping Release Notes</a>.</p>
 </div>
@@ -1486,12 +1502,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="taxes">Taxes</h3>
+
 <!--- MAGETWO-82753 -->
 <ul>
   <li>We’ve fixed a problem with the <strong>Ignore this notification</strong> setting. <em>Fix submitted by <a href="https://github.com/crissanclick">Cristian Sanclemente</a> in pull request 11410</em>. <a href="https://github.com/magento/magento2/issues/11365">GitHub-11365</a></li>
 </ul>
 
 <h3 id="translations">Translations</h3>
+
 <!--- MAGETWO-72352 -->
 <ul>
   <li>You can now implement translations from themes (in contrast to translations from modules).</li>
@@ -1513,6 +1531,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="varnish">Varnish</h3>
+
 <!--- MAGETWO-83152 -->
 <ul>
   <li>Cache headers for documents now factor in the cookie for the store code as expected.</li>
@@ -1527,6 +1546,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><strong>Workaround</strong>: Use the static Swagger site at /swagger to navigate to the REST call you want to use, then copy the payload structure to your Swagger instance.</p>
 
 <h3 id="magento-shipping-issues">Magento Shipping issues</h3>
+
 <p>We’ve identified the following unresolved issues with this version of Magento Shipping:</p>
 
 <p><strong>Issue</strong>: Merchants should not use Magento Shipping to connect with FedEx at this time. This option will be removed by Friday, December 15, and any existing shipping options tied to FedEx will no longer work at that time. We will be re-enabling FedEx integration through Magento Shipping at a future date.</p>
@@ -2217,6 +2237,7 @@ MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->
 </table>
 
 <h3 id="system-requirements">System requirements</h3>
+
 <p>Our technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a></p>
 
 <p>For more information, <a href="/magento-system-requirements.html">System Requirements</a>.</p>
@@ -2226,6 +2247,7 @@ MAGETWO-82420 MAGETWO-80736 MAGETWO-72441 MAGETWO-81342-->
 <p>See <a href="/guides/v2.2/install-gde/bk-install-guide.html">How to get the Magento software</a> for complete installation and upgrade information.</p>
 
 <h2 id="migration-toolkits">Migration toolkits</h2>
+
 <p>The <a href="/guides/v2.2/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.2/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
 <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>

@@ -1768,6 +1768,7 @@ persistent data from all running services (for example, your MySQL database, Red
 </ul>
 
 <h2 id="create-snapshot">Create a snapshot</h2>
+
 <p>To create an environment snapshot using the Magento Web Interface:</p>
 
 <ol>
@@ -1799,6 +1800,7 @@ persistent data from all running services (for example, your MySQL database, Red
 </ol>
 
 <h2 id="restore-snapshot">Restore a snapshot</h2>
+
 <p>To restore an environment’s snapshot using the Magento Web Interface:</p>
 
 <ol>
@@ -1843,6 +1845,7 @@ persistent data from all running services (for example, your MySQL database, Red
 </ol>
 
 <h2 id="db-dump">Dump your database</h2>
+
 <p>To create a copy of your database, you dump the data from the database to a file on your local.</p>
 
 <ol>
@@ -1884,6 +1887,7 @@ persistent data from all running services (for example, your MySQL database, Red
 <p>If you want to push this data into an environment, see <a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate data and static files</a>.</p>
 
 <h2 id="rollback-code">Rollbacks to remove code</h2>
+
 <p>We recommend creating a snapshot of the environment and a backup of the database prior to deployments.</p>
 
 <p>If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.</p>
@@ -1891,6 +1895,7 @@ persistent data from all running services (for example, your MySQL database, Red
 <p>Specifically for code, you should investigate <a href="https://git-scm.com/docs/git-revert">reverting code</a> changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the <a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment Process</a>.</p>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage environments (branches)</a></li>

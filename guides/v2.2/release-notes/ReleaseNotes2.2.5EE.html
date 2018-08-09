@@ -718,6 +718,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Looking for more information on these new features as well as many others? Check out <a href="http://devdocs.magento.com/guides/v2.2/">Magento 2.2.x Developer Documentation</a> and the <a href="http://docs.magento.com/m2/ee/user_guide/getting-started.html">Magento Commerce User Guide</a>.</p>
 
 <h3 id="core-code-highlights">Core code highlights</h3>
+
 <p>This release includes significant performance improvements to the core Magento code:</p>
 
 <ul>
@@ -736,6 +737,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="community-contribution-highlights">Community contribution highlights</h3>
+
 <p>Highlights of community contributions include  fixes that improve checkout flow and the sorting of simple products:</p>
 
 <ul>
@@ -758,6 +760,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="highlights-magento-shipping">Highlights (Magento Shipping)</h3>
+
 <p>This release of Magento Shipping adds the following new capabilities:</p>
 
 <p>• With core returns, merchants can select carriers to use for returns and send a return label along with forward fulfillment.</p>
@@ -769,6 +772,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This release of Magento Shipping also includes additional minor enhancements, such as pagination to improve the Admin experience and multiversion API.</p>
 
 <h2 id="fixes">Fixes</h2>
+
 <p>In addition to security enhancements, this release contains the following functional fixes.</p>
 
 <h3 id="installation-setup-and-deployment">Installation, setup, and deployment</h3>
@@ -779,6 +783,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="bundle-products">Bundle products</h3>
+
 <!--- MAGETWO-86354 -->
 <ul>
   <li>You can now successfully delete an option from a bundle product.</li>
@@ -790,6 +795,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="catalog">Catalog</h3>
+
 <!--- MAGETWO-88808 -->
 <ul>
   <li>Merchants can now run the catalog search full text indexer and category product indexer in parallel mode by store view.</li>
@@ -826,6 +832,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="cms-content">CMS content</h3>
+
 <!--- MAGETWO-89281 -->
 <ul>
   <li>When working in the media gallery, you can now successfully delete  any files and folders that are symlinked in <code class="highlighter-rouge">pub/media</code>. Previously, any files or folders that were symlinked inside the <code class="highlighter-rouge">pub/media</code> directory could not be deleted because there was a validation check that used <code class="highlighter-rouge">realpath</code> to test whether the file was outside the media directory base path. Since <code class="highlighter-rouge">realpath</code> resolved symlinks to actual paths, this check would fail if the actual path were outside  the base path, and would prevent action from being completed.</li>
@@ -854,12 +861,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="frameworks">Frameworks</h3>
+
 <!--- MAGETWO-87964 -->
 <ul>
   <li>We’ve bumped the required minimal PHP version to 7.0.13.</li>
 </ul>
 
 <h3 id="general">General</h3>
+
 <!--- MAGETWO-85296 -->
 <ul>
   <li>The product repository now uses <code class="highlighter-rouge">store_id</code> (if set)  when saving attributes for an existing product. Previously, Magento always saved attribute values for an existing product at the default store level. <em>Fix submitted by <a href="https://github.com/p-bystritsky">p-bystritsky</a> in pull request 967</em>. <a href="https://github.com/magento/magento2/issues/7720">GitHub-7720</a>, <a href="https://github.com/magento/magento2/issues/12395">GitHub-12395</a>, <a href="https://github.com/magento/magento2/issues/12186">GitHub-12186</a></li>
@@ -876,12 +885,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="gift-card">Gift card</h3>
+
 <!--- MAGETWO-85536 -->
 <ul>
   <li>Magento now displays the correct subtotal when a customer adds multiple gift cards of different amounts to his cart.</li>
 </ul>
 
 <h3 id="importexport">Import/export</h3>
+
 <!--- MAGETWO-88265 -->
 <ul>
   <li>The data check on imported customer information now completes as expected. Previously, when you clicked <strong>Check Data</strong> on a large CSV file created by <strong>System</strong> &gt; <strong>Data Transfer</strong> &gt; <strong>Import</strong>, the request failed, and Magento displayed the timeout spinner.</li>
@@ -893,12 +904,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="indexing">Indexing</h3>
+
 <!--- MAGETWO-80789 -->
 <ul>
   <li>The search indexer is now scoped and multithreaded, which improves  layered navigation, search and indexing actions for complex sites with multiple store views and shared catalogs.</li>
 </ul>
 
 <h3 id="orders">Orders</h3>
+
 <!--- MAGETWO-87197 -->
 <ul>
   <li>Magento now filters recent orders by store on the customer account page  as expected. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 13257</em>.</li>
@@ -910,18 +923,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
+
 <!--- MAGETWO-87832 -->
 <ul>
   <li>In multistore environments, Magento now retrieves the correct PayPal Payflow Pro credentials. Previously, Magento always retrieved the credentials that are configured for the default store.</li>
 </ul>
 
 <h3 id="performance">Performance</h3>
+
 <!--- MAGETWO-86745 -->
 <ul>
   <li>We’ve removed the <code class="highlighter-rouge">count()</code> method from the condition section for some loops in a small subset of backend files. When this method is used in a loop condition,  it will be executed at every iteration, which can degrade performance. <em>Fix submitted by <a href="https://github.com/Coderimus">Alexander Shkurko</a> in pull request 13173</em>.</li>
 </ul>
 
 <h3 id="search">Search</h3>
+
 <!--- MAGETWO-81901 -->
 <ul>
   <li>Out-of-stock options for configurable products no longer show up in search and layered navigation results.</li>
@@ -933,6 +949,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="shipping">Shipping</h3>
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>You can find Magento Shipping-specific release notes in <a href="/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html">Magento Shipping Release Notes</a>.</p>
 </div>
@@ -955,18 +972,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="swagger">Swagger</h3>
+
 <!--- MAGETWO-84921 -->
 <ul>
   <li>Swagger now displays the text area that contains the payload structure of all POST and PUT operations.</li>
 </ul>
 
 <h3 id="swatches">Swatches</h3>
+
 <!--- MAGETWO-86332 -->
 <ul>
   <li>You can now use JavaScript mixins to extend swatch functionality in all supported browsers. <em>Fix submitted by <a href="https://github.com/srenon">Renon Stewart</a> in pull request 12929</em>. <a href="https://github.com/magento/magento2/issues/10559">GitHub-10559</a></li>
 </ul>
 
 <h3 id="testing">Testing</h3>
+
 <!--- MAGETWO-88291 -->
 <ul>
   <li>You can now use REST to update the <code class="highlighter-rouge">available_payment_methods</code> company extension attribute. Previously, Magento set to null whatever  value you passed to the database  <code class="highlighter-rouge">company_payment</code> table.</li>
@@ -983,12 +1003,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="url-rewrites">URL rewrites</h3>
+
 <!--- MAGETWO-86554 -->
 <ul>
   <li>Magento no longer throws a 404 error when a customer navigates from the Catalog page of the default store to a custom Catalog page on a different store.</li>
 </ul>
 
 <h3 id="vertex">Vertex</h3>
+
 <!--- BUNDLE-841 -->
 <ul>
   <li>The correct tax amount is now included as expected in the Order Total that is listed under the Order Summary section of the Orders page. Previously, the <strong>Tax amount</strong> field was missing from the Order Summary section, which resulted in an incorrect Order Total.</li>
@@ -1098,6 +1120,7 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 </ul>
 
 <h3 id="dotmailer-known-issues">dotmailer known issues</h3>
+
 <p>The following Dotmailer behaviors have been observed when Magento Commerce for B2B is deployed with split databases:</p>
 
 <!-- BUNDLE--1390 -->
@@ -1126,6 +1149,7 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 </ul>
 
 <h3 id="magento-shipping-known-issues">Magento Shipping known issues</h3>
+
 <!-- BUNDLE--1448 -->
 <ul>
   <li>A merchant can create multiple return shipments for an already shipped return.</li>
@@ -1830,6 +1854,7 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 </table>
 
 <h3 id="system-requirements">System requirements</h3>
+
 <p>Our technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a></p>
 
 <h3 id="installation-and-upgrade-instructions">Installation and upgrade instructions</h3>
@@ -1837,6 +1862,7 @@ MAGETWO-86046 MAGETWO-90074 MAGETWO-62150 MAGETWO-89547 MAGETWO-45775 MAGETWO-91
 <p>See <a href="http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html">How to get the Magento software</a> for complete installation and upgrade information.</p>
 
 <h2 id="migration-toolkits">Migration toolkits</h2>
+
 <p>The <a href="/guides/v2.2/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.2/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
 <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>

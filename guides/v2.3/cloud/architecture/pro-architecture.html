@@ -2132,6 +2132,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/cloud_pro-branch-architecture-wings.png" alt="High-level view of Pro Environment architecture" /></p>
 
 <h2 id="cloud-arch-int">Integration environment</h2>
+
 <p>Developers use the Integration environment to develop, deploy, and test:</p>
 
 <ul>
@@ -2146,11 +2147,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">The Integration environment does not support all services. For example, the Fastly CDN is not accessible in an Integration environment.</p>
 
 <h3 id="global-master">Global Master</h3>
+
 <p>The Global Master branch is a part of the Integration environment. You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.</p>
 
 <p>Do <strong>not</strong> create a branch from Global Master. Use the Integration environment branch to create new, active branches.</p>
 
 <h2 id="cloud-arch-stage">Staging environment</h2>
+
 <p>The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment—including Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.</p>
 
 <p>You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.</p>
@@ -2158,11 +2161,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">We highly recommend testing every merchant and customer interaction in the Staging environment prior to deploying to the Production environment. See <a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy your store</a> and <a href="/guides/v2.3/cloud/live/stage-prod-test.html">Test deployment</a>.</p>
 
 <h2 id="cloud-arch-prod">Production environment</h2>
+
 <p>The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.</p>
 
 <p>You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.</p>
 
 <h3 id="redundant-hardware">Redundant hardware</h3>
+
 <p>Rather than running a traditional, active-passive master or a master-slave setup, Magento Commerce Cloud runs a triple-redundant architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.</p>
 
 <p>Because of our unique, triple-redundant hardware, we can provide you with three gateway servers. Most external services enable you to   <span term-uuid="34f8f61d-2b48-4628-be06-aaa6e32ddc1f" class="glossary-term" data-toggle="popover">whitelist</span>
@@ -2178,6 +2183,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="backup-and-disaster-recovery">Backup and disaster recovery</h3>
+
 <p>Your Pro plan backup and recovery approach uses a high-availability architecture combined with full-system backups. We replicate each Project—all data, code, and assets—across three separate AWS Availability Zones, each zone with a separate data center.</p>
 
 <p>In addition to the redundancy of the high-availability architecture, Magento Commerce Cloud provides
@@ -2226,6 +2232,7 @@ EBS volumes take more time to restore.</li>
 </ul>
 
 <h3 id="production-technology-stack">Production technology stack</h3>
+
 <p>The Production environment has three virtual machines (VMs) behind an Elastic Load Balancer managed by an HAProxy per VM. Each VM includes the following technologies:</p>
 
 <ul>

@@ -2062,9 +2062,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="incorrect-credentials">Incorrect credentials</h2>
+
 <p>This topic discusses how to resolve issues with incorrect credentials in your <code class="highlighter-rouge">auth.json</code>. You might have entered Magento Open Source credentials or shared keys for Magento Commerce.</p>
 
 <h3 id="symptom">Symptom</h3>
+
 <p>The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
@@ -2082,11 +2084,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="solution">Solution</h3>
+
 <p>To resolve this issue, you must clone the project locally and update <code class="highlighter-rouge">auth.json</code> with the correct Magento Commerce <a href="/guides/v2.3/install-gde/prereq/connect-auth.html">authorization keys</a> and run <code class="highlighter-rouge">composer update</code> to update project dependencies. After that, you can deploy your project successfully and get started with your development.</p>
 
 <p>Make sure you’re using your own keys, and <em>not</em> <a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">shared account keys</a>.</p>
 
 <h4 id="get-started">Get started</h4>
+
 <p>To get started:</p>
 
 <ol>
@@ -2117,6 +2121,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h4 id="update-authjson-and-redeploy-the-environment">Update <code class="highlighter-rouge">auth.json</code> and redeploy the environment</h4>
+
 <p>To resolve the issue with credentials:</p>
 
 <ol>
@@ -2217,6 +2222,7 @@ To aqf7hrijhl52o@git.us.magento.cloud:aqf7hrijhl52o.git
   </div>
 
 <h4 id="verify-the-deployment">Verify the deployment</h4>
+
 <p>To verify the deployment was successful, enter one of the URLs displayed under <code class="highlighter-rouge">Environment routes:</code> in a web browser.</p>
 
 <p class="bs-callout bs-callout-warning">For security reasons, we strongly recommend you change your Magento Admin URI, administrator username, and administrator password. For step-by-step details, see <a href="/guides/v2.3/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>

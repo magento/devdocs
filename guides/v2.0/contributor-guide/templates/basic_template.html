@@ -470,6 +470,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="overview">Overview</h2>
+
 <p>Introductory text that gives an overview of the topic you will be writing about.</p>
 
 <p>The purpose of this page is to provide you with a pre-formatted template and useful   <span term-uuid="a5ef9041-976f-4eb3-826e-bf836027d8c3" class="glossary-term" data-toggle="popover">markdown</span>
@@ -479,6 +480,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.</p>
 
 <h2 id="basic">Basic Markdown Syntax</h2>
+
 <p>Below are some basic examples of what you can do with markdown.</p>
 
 <h3 id="text">Text Effects</h3>
@@ -515,6 +517,7 @@ print "Hello World!";
 <p>For more examples of basic markdown please follow this <a href="https://daringfireball.net/projects/markdown/syntax" target="_blank">link</a>.</p>
 
 <h3 id="lists">Lists</h3>
+
 <p>Lists are useful for organizing and displaying related items. Below are examples of a bulleted list and an ordered list.</p>
 
 <p><strong>Bulleted List:</strong></p>
@@ -548,6 +551,7 @@ print "Hello World!";
 </ol>
 
 <h3 id="images">Images</h3>
+
 <p>Please add any images you may need to the <a href="https://GitHub.com/magento/devdocs/tree/develop/common/images" target="_blank"><code class="highlighter-rouge">common/images</code></a> directory.</p>
 
 <p>Once the image is added, you can use it in your documentation:</p>
@@ -567,6 +571,7 @@ print "Hello World!";
 <p><img src="/common/images/install_cygwin.png" alt="Scaled Image Example" width="446" height="246" /></p>
 
 <h3 id="tables">Tables</h3>
+
 <p>Tables can be useful for displaying different kinds of data in an organized way.</p>
 
 <p><em>Example:</em></p>
@@ -624,7 +629,10 @@ print "Hello World!";
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">```html
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/h4&gt;</span>
+
+#### Title
+{: .title}
+
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Paragraph content.<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
@@ -634,7 +642,10 @@ print "Hello World!";
 <p><em>Output:</em></p>
 
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"title"</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/h4&gt;</span>
+
+#### Title
+{: .title}
+
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;p&gt;</span>Paragraph content.<span class="nt">&lt;/p&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
@@ -694,6 +705,7 @@ print "Hello World!";
 </div>
 
 <h3 id="collapsible">Collapsible content</h3>
+
 <p>You can use the collapsible content tag for large code samples in your content. Any content in a collapse is blocked from searching on page.</p>
 
 <div class="bs-callout bs-callout-info">

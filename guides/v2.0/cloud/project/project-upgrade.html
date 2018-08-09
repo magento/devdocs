@@ -1760,9 +1760,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your Integration, Staging, and Production environments.</p>
 
 <h2 id="variable">Verify or set the ADMIN_EMAIL variable</h2>
+
 <p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce Cloud. See <a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
 
 <h2 id="backup-db">Back up the database</h2>
+
 <p>Back up your integration system database and code:</p>
 
 <ol>
@@ -1801,6 +1803,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="verify-changes">Verify other changes</h2>
+
 <p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
 
 <ol>
@@ -1851,6 +1854,7 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h2 id="upgrade-verify">Verify your upgrade</h2>
+
 <p>This section discusses how to verify your upgrade and to troubleshoot any issues you might find.</p>
 
 <p>To verify the upgrade in your integration, staging, or production system:</p>
@@ -1866,6 +1870,7 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h2 id="extensions">Verify and upgrade your extensions</h2>
+
 <p>You may need to upgrade any third-party extensions and modules that supports v2.2. We recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce Cloud v2.2.</p>
 
 <p>We recommend <a href="/guides/v2.0/cloud/project/project-webint-snap.html#db-dump">backing up your database</a> prior to installing a number of extensions on your local and Integration environments.</p>
@@ -1883,6 +1888,7 @@ git push origin &lt;branch name&gt;
 <p>Include the extensions in your going live steps to Production only after fully upgrading Production to v2.2. We strongly recommend fully upgrading your Production environment before including upgraded extensions.</p>
 
 <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
+
 <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
@@ -1891,12 +1897,14 @@ Exception printing is disabled by default for security reasons.
 </code></pre></div></div>
 
 <h3 id="view-error-details-on-the-server">View error details on the server</h3>
+
 <p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
 </code></pre></div></div>
 
 <h3 id="resolve-the-error">Resolve the error</h3>
+
 <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
@@ -1920,6 +1928,7 @@ Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 </ol>
 
 <h4 id="related-topic">Related topic</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer</a></li>
   <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a></li>

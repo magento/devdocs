@@ -539,6 +539,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="system-config-data">Access the system config data</h3>
+
 <p>Your payment method might need to get data that cannot be defined in   <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>
  configuration, JS components or templates directly, for example, data from the Magento system config.
 This configuration is stored in the <code class="highlighter-rouge">window.checkoutConfig</code> variable that is defined in root checkout template.</p>
@@ -577,9 +578,11 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
 </code></pre></div></div>
 
 <h3 id="payment-features">Add other payment-related features</h3>
+
 <p>You can also add payment-related features (like reward points, gift registry, an so on) to the Review and Payment Information checkout step. They must be implemented as UI components as well, and can be displayed before or after the list of payment methods. This is configured in the <a href="#layout">checkout page layout file correspondingly</a>.</p>
 
 <h2 id="register">Step 2: Create the .js component that registers the renderer</h2>
+
 <p>In your custom module directory create the <code class="highlighter-rouge">.js</code> UI component that registers the payment method renderer in the renderers list. It must be located under the <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory. For example in the Magento modules, the payment methods renderers are stored in the <code class="highlighter-rouge">&lt;Magento_module_dir&gt;/view/frontend/web/js/view/payment/</code> directory.</p>
 
 <p>The file content must be similar to the following:</p>
@@ -611,6 +614,7 @@ This configuration is stored in the <code class="highlighter-rouge">window.check
  adds several payment methods, you can register all payment methods renderers in one file.</p>
 
 <h2 id="template">Step 3: Create the template for the payment method component</h2>
+
 <p>In your custom module directory create a new <code class="highlighter-rouge">&lt;your_module_dir&gt;/view/frontend/web/template/&lt;your_template&gt;.html</code> file. The template can use <a href="http://knockoutjs.com/">Knockout JS</a> syntax. You can find a sample <code class="highlighter-rouge">.html</code> template in any module implementing payment methods, for example the Magento_Authorizenet module.</p>
 
 <p>The template for rendering the Authorize.Net payment method in checkout is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html"><code class="highlighter-rouge">&lt;Magento_Authorizenet_module_dir&gt;/view/frontend/web/template/payment/authorizenet-directpost.html</code></a>.</p>

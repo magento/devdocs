@@ -1670,6 +1670,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>This topic discusses the basics of using Varnish as a web caching accelerator for Magento.</p>
 
 <h2 id="use-varnish-magento-purge">Varnish purging</h2>
+
 <p>According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, “A <em>purge</em> is what happens when you pick out an object from the   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and discard it along with its variants.” A Varnish purge is very similar to a Magento cache clean command (or clicking <strong>Flush Magento Cache</strong> in the Magento Admin).</p>
 
@@ -1705,6 +1706,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="use-varnish-magento-purge">Configure Magento to purge Varnish</h2>
+
 <p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-deployment.html"><code class="highlighter-rouge">magento setup:config:set</code></a> command.</p>
 
 <p>You can use the optional parameter <code class="highlighter-rouge">--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)</p>

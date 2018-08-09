@@ -2070,6 +2070,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">For Pro projects <strong>created before October 23, 2017</strong>, the architecture is slightly different. See <a href="/guides/v2.3/cloud/architecture/pro-architecture-legacy.html">Pro architecture (legacy)</a>.</p>
 
 <h2 id="develop">Development workflow</h2>
+
 <p>The Integration environment provides a single, base <code class="highlighter-rouge">integration</code> branch containing your Magento Commerce Cloud code. You can create up to four additional branches for developing your custom code, extensions, and third party integrations. This allows for a maximum of five <em>active</em> branches deployed to Platform-as-a-Service (PaaS) containers.</p>
 
 <p>The Magento Commerce Cloud environments support a flexible, continuous integration process. Begin by cloning the <code class="highlighter-rouge">integration</code> branch to your local project folder. Create a new branch, or multiple branches, to develop new features, configure changes, add extensions, and deploy updates:</p>
@@ -2091,6 +2092,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="deploy">Deployment workflow</h2>
+
 <p>Every time you push code from your local workstation to the remote environment or merge code to a base environment branch, the build and deploy scripts generate new Magento code and provision configured services to the remote environment.</p>
 
 <p>Build script actions:</p>
@@ -2116,14 +2118,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>After the build and deploy process, your store comes back online with your latest code changes and configurations. See <a href="/guides/v2.3/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
 
 <h3 id="merge-to-integration">Merge to Integration</h3>
+
 <p>Combine all verified code changes by merging your Active development branch into the base <code class="highlighter-rouge">integration</code> branch. You can test all your changes on the <code class="highlighter-rouge">integration</code> branch before promoting changes to the Staging environment.</p>
 
 <h3 id="merge-to-staging">Merge to Staging</h3>
+
 <p>Staging is a pre-production environment that provides all services and settings as close to the Production environment as possible. You should always push your code changes in iterations to your Staging environment for full testing that includes all services. The first time you use the Staging environment, you must configure services, such as <a href="/guides/v2.3/cloud/basic-information/cloud-fastly.html">Fastly CDN</a>, <a href="/guides/v2.3/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>, and <a href="/guides/v2.3/cloud/project/new-relic.html">New Relic APM</a>. Also, we recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.</p>
 
 <p>It is best to thoroughly test every service, verify your performance testing tools, and perform UAT testing as an administrator and as a customer, until you feel that your store is ready for the Production environment. See <a href="/guides/v2.3/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
 
 <h3 id="merge-to-production">Merge to Production</h3>
+
 <p>After thorough testing in the Staging environment, merge to the Production environment and thoroughly test using live credentials. The moment you go live, customers must be able to complete purchases and administrators must be able to manage the live store. We provide a detailed, clear walk-through for deploying your store and going live:</p>
 
 <ul>
@@ -2132,6 +2137,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="merge-to-global-master">Merge to Global Master</h3>
+
 <p>You should always push a copy of the Production code to the Global Master in case there is an emergent need to debug the Production environment without interrupting services.</p>
 
 <p>Do <strong>not</strong> create a branch from Global Master. Use the <code class="highlighter-rouge">integration</code> branch to create new, active branches for development and fixes.</p>

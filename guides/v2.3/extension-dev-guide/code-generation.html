@@ -1535,6 +1535,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="codegen-over">Overview of code generation</h2>
+
 <p>The Magento application generates code to create non-existent classes. As an example, look at the <a target="_blank" href="https://github.com/magento/magento2/blob/2.0//app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php">Magento/Customer/Model/Resource/AddressRepository</a> constructor. A snippet follows:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
@@ -1548,6 +1549,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug the code.</p>
 
 <h3 id="codegen-over-when">When is code generated?</h3>
+
 <p>Provided the Magento application is not set for <a href="/guides/v2.3/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
 
 <p>In particular,</p>
@@ -1568,11 +1570,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  optimizations.</p>
 
 <h3 id="codegen-over-why">Why should you regenerate code?</h3>
+
 <p>Suppose a Factory or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Factory or Proxy exists on the file system, it is not regenerated. However, the Factory or Proxy implementation is now incomplete because it does not have the new methods. In this case, you must regenerate the Factory or Proxy class.</p>
 
 <p>If the code generator implementation itself is changed, you must regenerate all the classes. This is rare, however.</p>
 
 <h3 id="codegen-over-adv">Advantages of generating code</h3>
+
 <p>Code generation is required in Magento 2. Generating code assures you of the following:</p>
 
 <ul>
@@ -1586,6 +1590,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
+
 <p>When code changes as discussed in the preceding section, the Object Manager compiles it.</p>
 
 <p>The code compiler creates <code class="highlighter-rouge">generated/metadata/global.php</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code class="highlighter-rouge">di.xml</code> is the dependency injection configuration. There is a global <code class="highlighter-rouge">app/etc/di.xml</code> and there can one defined for every   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>

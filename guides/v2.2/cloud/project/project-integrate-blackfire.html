@@ -2086,11 +2086,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="get-your-blackfire-credentials">Get your Blackfire credentials</h2>
+
 <p>The Project Owner is the account owner, and their e-mail address is part of the credentials required for accessing Blackfire for your project. You can only use the Project Owner credentials to integrate Blackfire with Magento Commerce Cloud and to log in to the Blackfire website. An invitation email is sent to the Project Owner’s e-mail address to complete activation.</p>
 
 <p>For information on setting up an account on Blackfire, see <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user" target="_blank">Accessing your Blackfire account as a Magento Cloud user</a>. You can access your Blackfire license key through <a href="/guides/v2.2/cloud/project/projects.html#integrations">project details</a>.</p>
 
 <h2 id="collaborators">Add collaborator accounts</h2>
+
 <p>After you access your Blackfire account, you can <a href="http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments" target="_blank">add additional collaborator accounts</a>.</p>
 
 <p>We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.</p>
@@ -2108,6 +2110,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="enable-blackfire-on-local-workspace">Enable Blackfire on local workspace</h2>
+
 <p>You need to install and configure Blackfire on your local workspace with your working Magento Commerce Cloud installation. You do <em>not</em> need to run these installations directly on the hosted environments; only on your local.</p>
 
 <p>We recommend using the Blackfire installation guide to walk you through the process:</p>
@@ -2121,6 +2124,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="dev">Integrate Blackfire</h2>
+
 <p>We recommend enabling Blackfire in all of your active environments, including the Integration environment. See <a href="https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud" target="_blank">Configure the server credentials &amp; the integration with Magento Cloud</a>. You can integrate with the Pro Integration environment and Starter development branches.</p>
 
 <!-- Available note types: "info", "warning", "tip" -->
@@ -2148,6 +2152,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="magentoappyaml">Add Blackfire to .magento.app.yaml</h3>
+
 <p>By default, the <code class="highlighter-rouge">.magento.app.yaml</code> file includes the Blackfire module. If the module is not present, use the following instructions to update your <code class="highlighter-rouge">.magento.app.yaml</code> file, push the updated file to your remote branch, merge, and deploy across all environments.</p>
 
 <ul>
@@ -2229,6 +2234,7 @@ git push origin
 </ol>
 
 <h3 id="variables">Add project variables</h3>
+
 <p>Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.</p>
 
 <ol>
@@ -2246,6 +2252,7 @@ git push origin
 </ol>
 
 <h3 id="integration">Add Blackfire integration to the project</h3>
+
 <p>Using the Magento Cloud CLI, enter an integration command to connect Blackfire with the project. This command requires using an account with superuser access. Make sure your Cloud Project account has the <a href="/guides/v2.2/cloud/project/user-admin.html#cloud-user-webinterface">super user option</a> in the Project through the Project Web Interface.</p>
 
 <ol>
@@ -2263,12 +2270,15 @@ git push origin
 </ol>
 
 <h3 id="route">Default route</h3>
+
 <p>If you need to specify a different route to use instead of the default route, change the route in the Blackfire <em>Magento Cloud Integration</em> page (step 5) and update the route in your project <code class="highlighter-rouge">routes.yaml</code> file.</p>
 
 <h3 id="save">Save changes in Blackfire</h3>
+
 <p>With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your Magento Commerce Cloud project. Continue to the next section to begin profiling your store to verify the integration.</p>
 
 <h2 id="profile">Profile your store</h2>
+
 <p>You can verify that Blackfire works using a browser extension or the CLI. For extensive CLI profiling options and better understanding the profiles, see <a href="#blackfire-resources">Blackfire resources</a>.</p>
 
 <!-- Available note types: "info", "warning", "tip" -->
@@ -2311,6 +2321,7 @@ git push origin
 </ol>
 
 <h2 id="automate-performance-testing">Automate performance testing</h2>
+
 <p>After completing the <a href="#dev">Blackfire Integration</a>, you can define events for the Staging and Production environments that enable Blackfire to execute polling requests automatically. An event example is whenever a commit deploys in the Integration environment, or when activating the integration between Blackfire and New Relic.</p>
 
 <p>By simply defining a set of key requests for Blackfire to profile— <code class="highlighter-rouge">/home</code>, <code class="highlighter-rouge">/checkout</code>, <code class="highlighter-rouge">/checkout/payment</code>—Blackfire can notify you if your code complies with established <a href="https://blackfire.io/docs/reference-guide/recommendations" target="_blank">code performance recommendations</a>. The following is a sample build report with recommendations:</p>
@@ -2318,6 +2329,7 @@ git push origin
 <p><img src="/common/images/cloud_blackfire-recommendations.png" alt="Blackfire build report" /></p>
 
 <h3 id="writing-your-first-automated-tests-and-scenarios">Writing your first automated tests and scenarios</h3>
+
 <p>You can easily write tests and scenarios for Blackfire to execute. Create a <code class="highlighter-rouge">.blackfire.yml</code> file and store it at your project root directory.</p>
 
 <p>Try adding the following scenarios in the file:</p>
@@ -2340,6 +2352,7 @@ git push origin
 <p>See the Blackfire documentation on <a href="https://blackfire.io/docs/cookbooks/tests" target="_blank">Writing tests</a> and <a href="https://blackfire.io/docs/cookbooks/scenarios" target="_blank">Writing scenarios</a>.</p>
 
 <h3 id="running-your-tests-automatically">Running your tests automatically</h3>
+
 <p>Once you create and deploy your <code class="highlighter-rouge">.blackfire.yml</code> file, you can enable Blackfire to run your tests automatically in various ways:</p>
 
 <ul>
@@ -2349,14 +2362,17 @@ git push origin
 </ul>
 
 <h3 id="blackfire-notifications">Blackfire notifications</h3>
+
 <p>When you configure at least one way of triggering builds with Blackfire, you can be notified whenever a build report is available. Blackfire supports an integration with Slack, GitHub, BitBucket, email, and more. See <a href="https://blackfire.io/docs/reference-guide/notification-channels" target="_blank">Scenario notification channels</a>.</p>
 
 <h2 id="blackfire-troubleshooting">Blackfire troubleshooting</h2>
 
 <h3 id="bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn">Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)</h3>
+
 <p>If you use a reverse proxy, cache, or CDN, you must grant Blackfire access to your servers. See <a href="https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn">Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)</a> for an in-depth explanation.</p>
 
 <h3 id="http-cache-configuration">HTTP Cache configuration</h3>
+
 <p>If you use the HTTP cache with <code class="highlighter-rouge">cookies</code>, update your <code class="highlighter-rouge">.magento.app.yaml</code> file to allow the <code class="highlighter-rouge">__blackfire</code> cookie name to pass through the cache. For example:</p>
 
 <blockquote>
@@ -2369,6 +2385,7 @@ git push origin
 </code></pre></div></div>
 
 <h2 id="blackfire-support">Blackfire support</h2>
+
 <p>If you continue to experience problems, you can contact Blackfire support and provide output from the following:</p>
 
 <ol>
@@ -2412,6 +2429,7 @@ git push origin
 </code></pre></div></div>
 
 <h2 id="blackfire-resources">Blackfire resources</h2>
+
 <p>Blackfire provides great information to better profile and investigate the results on their documentation site:</p>
 
 <ul>

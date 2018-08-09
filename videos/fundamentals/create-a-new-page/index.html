@@ -424,6 +424,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Let’s go through each step.</p>
 
 <h2 id="create-a-new-module">Create a new module</h2>
+
 <p>We will create a new module called <code class="highlighter-rouge">Learning_HelloPage</code></p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code
@@ -459,6 +460,7 @@ Learning/HelloPage/etc/module.xml</span></code></pre></figure>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="add-a-routesxml-file">Add a routes.xml file</h2>
+
 <p>Before we create the file, let’s take a brief look at how routing works in Magento 2. Each area (in our case, frontend and adminhtml) has a corresponding merged <code class="highlighter-rouge">routes.xml</code> file, which is merged from the <code class="highlighter-rouge">etc/&amp;lt;area&amp;gt;/routes.xml</code> file from every module. That <code class="highlighter-rouge">routes.xml</code> file contains information about all registered routes and frontNames. Recall that a frontName is the first part of a route.</p>
 
 <p>So, we should register it in the <code class="highlighter-rouge">routes.xml</code> file and associate it with a module. It is possible to have multiple modules associated with one route, so we can create pages under the catalog <code class="highlighter-rouge">frontName</code>.</p>
@@ -485,6 +487,7 @@ When Magento 2 sees a URL like <code class="highlighter-rouge">test/chunk2/chunk
 <p>Our route will be <code class="highlighter-rouge">test/page/view</code>.</p>
 
 <h2 id="add-a-controller-action-file">Add a controller (action) file</h2>
+
 <p>Let’s add the controller now.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd &lt;magento2_root&gt;/app/code/Learning/HelloPage

@@ -463,6 +463,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="introduction">Introduction</h2>
+
 <p>Bundling JavaScript modules for better performance is about reducing two things:</p>
 
 <ol>
@@ -475,11 +476,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="images/noBundling.png" alt="noBundling" /></p>
 
 <h3 id="magento-merging-and-bundling">Magento merging and bundling</h3>
+
 <p>Out of the box, Magento provides two ways to reduce the number of server requests: merging and bundling. These settings are turned off by default. You can turn them on within Magento’s Admin UI in <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Developer</strong> &gt; <strong>JavaScript Settings</strong>, or from the command line.</p>
 
 <p><img src="images/bundlingImage.png" alt="bundlingImage" /></p>
 
 <h4 id="basic-bundling">Basic bundling</h4>
+
 <p>To enable Magento’s built-in bundling from the command line:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-f</span> bin/magento config:set dev/js/enable_js_bundling 1
@@ -494,6 +497,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento bundling reduces the number of connections per page, but for each page request it loads all bundles, even when the requested page may only depend on files within one or two of the bundles. Performance improves after the browser caches the bundles. But, because the browser loads these bundles synchronously, the user’s first visit to a Magento storefront could take a while to render and hurt the user experience.</p>
 
 <h4 id="basic-merging">Basic merging</h4>
+
 <p>To enable Magento’s built-in merging from the command line:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php <span class="nt">-f</span> bin/magento config:set dev/js/merge_files 1
@@ -504,6 +508,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="images/magentoMergingDevWorld.png" alt="magentoMergingRealWorld" /></p>
 
 <h3 id="real-world-render-times">Real-world render times</h3>
+
 <p>The previous bundled and merged load times look great in a development environment. But in the real world, many things can slow down rendering: slow connections, large connection thresholds, limited networks. In addition, mobile devices do not render as fast as desktops.</p>
 
 <p>To test and prepare your storefront deployment for the real world, we recommend you test with Chrome’s native throttling profile of “Slow 3G.” With Slow 3G, our previous bundled output times now reflect many users’ connection realities:</p>
@@ -519,6 +524,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>With a more advanced approach to JavaScript bundling, we can improve these load times.</p>
 
 <h2 id="advanced-bundling">Advanced bundling</h2>
+
 <p>Remember, the goal of JavaScript bundling is to reduce the number and size of requested assets for each page loaded in the browser. To do that, we want to build our bundles so that each page in our store will only need to download a common bundle and a page-specific bundle for each page accessed.</p>
 
 <p>One way to achieve this is to define your bundles by page types. You can categorize Magento’s pages into several page types, including Category, Product, CMS, Customer, Cart, and Checkout. Each page categorized into one of these page types has a different set of RequireJS module dependencies. When you bundle your RequireJS modules by page type, you will end up with only a handful of bundles that cover the dependencies of any page in your store.</p>
@@ -850,6 +856,7 @@ drwxr-xr-x 70 root root    4096 Mar 28 11:24 ../
 </span></code></pre></div></div>
 
 <h4 id="4-configure-requirejs-to-use-bundles">4. Configure RequireJS to use bundles</h4>
+
 <p>To get RequireJS to use your bundles, add a <code class="highlighter-rouge">onModuleBundleComplete</code>callback after the <code class="highlighter-rouge">modules</code> node in the <code class="highlighter-rouge">build.js</code> file:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span>
     <span class="p">{</span>

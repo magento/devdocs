@@ -1340,6 +1340,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="handler-element">handler element</h3>
+
 <p>The <code class="highlighter-rouge">handler</code> element specifies the class where the logic for handling messages exists and the method it executes.</p>
 
 <table>
@@ -1370,6 +1371,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="sample-communicationxml-file">Sample <code class="highlighter-rouge">communication.xml</code> file</h3>
+
 <p>The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
@@ -1383,9 +1385,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="create-the-queuexml-file">Create the <code class="highlighter-rouge">queue.xml</code> file</h2>
+
 <p>The <code class="highlighter-rouge">queue.xml</code> file defines the broker that processes topics.  It also specifies the queue each topic will be sent to.</p>
 
 <h3 id="broker-element">broker element</h3>
+
 <p>The <code class="highlighter-rouge">broker</code> element also contains <code class="highlighter-rouge">queue</code> elements.</p>
 
 <table>
@@ -1412,6 +1416,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="queue-element">queue element</h3>
+
 <p>The <code class="highlighter-rouge">queue</code> element defines the module’s queues.</p>
 
 <table>
@@ -1457,6 +1462,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h4 id="related-topics">Related Topics</h4>
+
 <ul>
   <li><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a></li>
   <li><a href="/guides/v2.1/extension-dev-guide/message-queues/queue-migration.html">Migrate message queue configuration</a></li>

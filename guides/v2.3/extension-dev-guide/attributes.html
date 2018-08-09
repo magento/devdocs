@@ -1794,6 +1794,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/extension_attributes&gt;</span></code></pre></figure>
 
 <h3 id="troubleshooting">Troubleshoot EAV attributes</h3>
+
 <p>If you have issues when using <code class="highlighter-rouge">setup:upgrade</code>, verify <code class="highlighter-rouge">__construct</code> uses the method <code class="highlighter-rouge">EavSetupFactory</code> not <code class="highlighter-rouge">EavSetup</code>. You should not directly inject <code class="highlighter-rouge">EavSetup</code> in extension code. Check your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.</p>
 
 			

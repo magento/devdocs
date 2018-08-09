@@ -1750,12 +1750,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Prior to entering your ticket to go live and switching the DNS, you should complete this checklist and all tests for your deployed site/store. Deploy your <code class="highlighter-rouge">master</code> branch to the Production environment.</p>
 
 <h2 id="test">Completely test in Production</h2>
+
 <p>See <a href="/guides/v2.0/cloud/live/stage-prod-test.html">Test deployment</a> for testing all aspects of your sites, stores, and environments. These tests include verifying Fastly, User Acceptance Tests (UAT), and performance testing.</p>
 
 <h2 id="call">Go Live Prep call with support</h2>
+
 <p>Contact Support to schedule a Go Live Preparation call. We walk through the Go Live process, verify your readiness with a checklist, and discuss the final steps.</p>
 
 <h2 id="domainticket">Enter a ticket with domain names</h2>
+
 <p>You may <a href="/guides/v2.0/cloud/live/live.html#goliveinfo">need information</a> for this ticket.</p>
 
 <ol>
@@ -1767,6 +1770,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="dns">DNS configurations</h2>
+
 <p>You need to complete configurations for your DNS including:</p>
 
 <ul>
@@ -1804,11 +1808,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="fastly-tls">TLS and Fastly</h3>
+
 <p>If you use TLS with Fastly enabled in your environment, you must provide your DNS provider with a TXT record from Fastly. We provide a Domain Validated SSL certificate with Subject Alternative Name enabled, issued by GLobalSign. When entering your <a href="#dns">Support ticket</a> for DNS information and going live, let us know you are using TLS, provide your domain names and request the TXT record. You can then send this record to your DNS provider. The domain validation process is executed by Fastly.</p>
 
 <p>For details on this TXT record, see Fastly’s <a href="https://docs.fastly.com/guides/securing-communications/domain-validation-for-tls-certificates#dns-text-record-verification" target="_blank">DNS TXT record validation</a>.</p>
 
 <h2 id="verify-production-configurations">Verify Production configurations</h2>
+
 <p>Make a final pass for any Production configurations in the store(s). If you need to make changes to configurations, you can modify in Production. If settings are read-only, you may need to SSH and CLI commands to modify, or make configuration changes in your local and deploy across.</p>
 
 <p>The following are recommended changes and checks:</p>
@@ -1826,6 +1832,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="verifyfastly">Verify Fastly caching</h2>
+
 <p>Test and verify Fastly caching is correctly working in Production. For detailed tests and checks, see <a href="/guides/v2.0/cloud/live/stage-prod-test.html#fastly">Fastly testing</a>.</p>
 
 <ul>
@@ -1835,6 +1842,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="performance">Performance testing</h2>
+
 <p>We recommend that you review the <a href="https://github.com/magento/magento2/blob/2.0/setup/performance-toolkit" target="_blank">Magento Performance Toolkit</a> options as part of your pre-launch readiness process.</p>
 
 <p>You can also test using the following 3rd party options:</p>

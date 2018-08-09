@@ -1264,6 +1264,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  must be configured as such. If you want a module to use the MQF, create a <code class="highlighter-rouge">&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
 
 <h2 id="edit-the-queuexml-file">Edit the <code>queue.xml</code> file</h2>
+
 <p>The <code class="highlighter-rouge">queue.xml</code> file can contain the following elements:</p>
 
 <ul>
@@ -1273,7 +1274,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>bind</li>
 </ul>
 
-<h3>Required elements</h3>
+<h3 id="required-elements">Required elements</h3>
 
 <p>Each <code class="highlighter-rouge">queue.xml</code> file must contain the following lines:</p>
 
@@ -1285,7 +1286,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 .
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<h3>publisher element</h3>
+<h3 id="publisher-element">publisher element</h3>
+
 <p>The <code class="highlighter-rouge">publisher</code> element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.</p>
 <table>
 <tr>
@@ -1306,7 +1308,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tr>
 </table>
 
-<h3>topic element</h3>
+<h3 id="topic-element">topic element</h3>
+
 <p>Configuring the <code class="highlighter-rouge">topic</code> element defines the interface that processes the message and assigns a publisher.</p>
 <table>
 <tr>
@@ -1332,7 +1335,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tr>
 </table>
 
-<h3>consumer element</h3>
+<h3 id="consumer-element">consumer element</h3>
+
 <p>Each <code class="highlighter-rouge">consumer</code> elements maps the receiver of a message to a specific queue. The <code class="highlighter-rouge">class</code> and <code class="highlighter-rouge">method</code> parameters indicate what receives and processes the message.</p>
 <table>
 <tr>
@@ -1364,7 +1368,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tr>
 </table>
 
-<h3>bind element</h3>
+<h3 id="bind-element">bind element</h3>
+
 <p>The <code class="highlighter-rouge">bind</code> elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.</p>
 
 <table>
@@ -1399,6 +1404,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h4 id="related-topics">Related Topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a></li>
   <li><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">Manage message queues</a></li>

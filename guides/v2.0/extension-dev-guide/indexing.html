@@ -1255,6 +1255,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h4 id="contents">Contents</h4>
+
 <ul>
   <li><a href="#m2devgde-indexing-intro">Introduction to indexing</a></li>
   <li><a href="#m2devgde-indexing-implementation">How Magento implements indexing</a></li>
@@ -1263,6 +1264,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
+
 <p><em>Indexing</em> is how Magento transforms data such as products, categories, and so on, to improve the performance of your   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
 . As data changes, the transformed data must be updated—or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
  data, prices, users, stores, and so on) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.</p>
@@ -1293,6 +1295,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This topic provides a high level description of how indexing is implemented from a developer’s point of view, and practical advice of how to add your own indexer.</p>
 
 <h2 id="m2devgde-indexing-implementation">How Magento implements indexing</h2>
+
 <p>The following components are involved in the indexing process:</p>
 
 <table>
@@ -1348,6 +1351,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/index_indexers_flow.png" alt="Partial indexing workflow" width="300px" /></p>
 
 <h3 id="m2devgde-indexing-status">Indexer status</h3>
+
 <p>Depending on whether an index data is up to date, an indexer status value is one of the following:</p>
 
 <ul>
@@ -1360,6 +1364,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  panel under <strong>System &gt; New Index Management</strong> or manually using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status">command line</a>.</p>
 
 <h3 id="m2devgde-indexing-modes">Indexing modes</h3>
+
 <p>Reindexing can be performed in two modes:</p>
 
 <ul>
@@ -1385,6 +1390,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/index_index-modes.png" alt="Changing indexer modes" width="600px" /></p>
 
 <h3 id="m2devgde-indexing-how">How to reindex</h3>
+
 <p>You can reindex in any of the following ways:</p>
 
 <ul>
@@ -1393,6 +1399,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
+
 <p>The Magento application implements the following indexers:</p>
 
 <table>

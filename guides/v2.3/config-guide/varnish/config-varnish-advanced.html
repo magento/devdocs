@@ -1889,6 +1889,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>See the <a href="https://www.varnish-cache.org/docs/4.1/reference/index.html">Varnish Reference Manual</a> for details about using the Varnish Configuration Language.</p>
 
 <h2 id="health">Health check</h2>
+
 <p>Varnish’s health check feature polls the Magento server to determine whether it is responding in a timely manner. If it is responding normally, fresh content will be regenerated after the Time to Live (TTL) period has expired. If not, Varnish always serves stale content.</p>
 
 <p>Magento defines the following default health check:</p>
@@ -1944,6 +1945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Saint mode can also be used when Magento instances are individually taken offline to perform maintenance and upgrade tasks without affecting the availability of the Magento site.</p>
 
 <h3 id="saint-prereq">Saint mode prerequisites</h3>
+
 <p>You should designate one machine as the primary installation. On this machine, install the main instance of Magento, mySQL database, and Varnish.</p>
 
 <p>On all other machines, the Magento instance must have access the primary machine’s mySQL database. The secondary machines should also have access to the files of the primary Magento instance.</p>
@@ -2053,6 +2055,7 @@ make check   <span class="c"># optional</span>
   </div>
 
 <h4 id="final-step">Final step</h4>
+
 <p><a href="/guides/v2.3/config-guide/varnish/config-varnish-final.html">Final verification</a></p>
 
 			

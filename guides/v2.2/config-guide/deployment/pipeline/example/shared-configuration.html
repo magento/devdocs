@@ -1893,9 +1893,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="before-you-begin">Before you begin</h2>
+
 <p>Before you begin, set up file system permissions and ownership as discussed in <a href="/guides/v2.2/config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq">Prerequisite for your development, build, and production systems</a>.</p>
 
 <h2 id="assumptions">Assumptions</h2>
+
 <p>This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.</p>
 
 <p>For the purposes of this example, we assume the following:</p>
@@ -1907,6 +1909,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="step-1-set-the-configuration-in-the-development-system">Step 1: Set the configuration in the development system</h2>
+
 <p>To set the timezone and weight units in your development system:</p>
 
 <ol>
@@ -1927,6 +1930,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="step-2-update-the-shared-configuration">Step 2: Update the shared configuration</h2>
+
 <p>Generate the shared configuration file, <code class="highlighter-rouge">app/etc/config.php</code>, in your development system and transfer it using source control to your build system as discussed in this section.</p>
 
 <div>
@@ -1978,6 +1982,7 @@ php bin/magento app:config:dump
   </ol>
 
   <h2 id="step-3-update-your-build-system-and-generate-files">Step 3: Update your build system and generate files</h2>
+
   <p>Now that you’ve committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system. As a result, your production system’s configuration will match your development system.</p>
 
   <div>
@@ -2019,6 +2024,7 @@ php bin/magento app:config:dump
     </ol>
 
     <h2 id="step-4-update-the-production-system">Step 4: Update the production system</h2>
+
     <p>The last step in the process is to update your production system from source control. This pulls all the changes you made on your development and build systems, which means your production system is completely up-to-date.</p>
 
     <div>
@@ -2067,6 +2073,7 @@ php bin/magento maintenance:enable
       </ol>
 
       <h3 id="verify-the-changes-in-the-magento-admin">Verify the changes in the Magento Admin</h3>
+
       <p>To verify these settings are not editable in the Magento Admin:</p>
 
       <ol>

@@ -1774,6 +1774,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="env-branches">Starter environments and branches</h2>
+
 <p>For your environments, we recommend deploying and testing following a Development &gt; Staging &gt; Production workflow.</p>
 
 <ul>
@@ -1789,6 +1790,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For detailed information, see <a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a>.</p>
 
 <h2 id="development">Development workflow</h2>
+
 <p>Development and deployment on Starter plans begin with your initial project. You create your project with the “blank site”, which is a Magento Commerce Cloud template code repo with a fully prepared store. This creates a <code class="highlighter-rouge">master</code> branch of Git code in your Production environment.</p>
 
 <p>The full process involves:</p>
@@ -1813,6 +1815,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This process assumes you would have your <a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">local developer workspace</a> set up. Feel free to read over this process even if your local isn’t ready.</p>
 
 <h3 id="clone-branch">Clone and branch</h3>
+
 <p>When you created your project, a <code class="highlighter-rouge">master</code> branch was cloned using the Magento Commerce Cloud Git repository. To start branching and working with code, you will need to clone the <code class="highlighter-rouge">master</code> to your local.</p>
 
 <p>The format of the Git clone command is:</p>
@@ -1840,6 +1843,7 @@ git pull origin &lt;environment ID&gt;
 <p><img src="/common/images/cloud_workflow-branching.png" alt="Branch from Master" /></p>
 
 <h3 id="dev-code">Develop code</h3>
+
 <p>It’s the time you have been waiting for…writing code. Using this base branch of Magento Commerce Cloud code, you can start installing extensions, developing custom code, adding themes, and much more.</p>
 
 <p>We recommend using a branching strategy with your development work. Using one branch to do all of your work all at once might make testing difficult. For example, you could follow continuous integration and sprint methodologies to work:</p>
@@ -1862,6 +1866,7 @@ git pull origin &lt;environment ID&gt;
 <p><img src="/common/images/cloud_workflow-push-code.png" alt="Develop code and push to deploy" /></p>
 
 <h3 id="configure-store">Configure store</h3>
+
 <p>When you are ready to configure your store, have all code pushed to your Integration environment and access the Magento Admin. You should fully configure all store settings in the Integration environment Admin, not on your local. If you need the URL, see the Project Web Interface. The Store Admin URL is located on the branch page.</p>
 
 <p>For the best information on configurations, we recommend reviewing Magento Commerce and your extension documentation. Here are some links and ideas to help you get kickstarted:</p>
@@ -1879,6 +1884,7 @@ git pull origin &lt;environment ID&gt;
 <p>Now you need to get these settings into your code. We have a helpful command to do this, keep reading.</p>
 
 <h3 id="config-management">Generate configuration management files</h3>
+
 <p>If you are familiar with Magento, you may be concerned about how to get your configuration settings from your database in development to Staging and Production. Previously, you had to copy down on paper or a file all of your configuration settings to enter them manually in another environment. Or you may have dumped your database and push that data to another environment.</p>
 
 <p>Magento Commerce Cloud provides a set of two <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a> commands that export configuration settings from your environment into a file. These commands are only available for <strong>Magento Commerce Cloud 2.1.4 and later</strong> (not 2.2).</p>
@@ -1919,6 +1925,7 @@ git pull origin &lt;environment ID&gt;
 <p>For more information, see <a href="/guides/v2.1/cloud/live/sens-data-over.html">Configuration Management</a>.</p>
 
 <h3 id="push-code">Push code and test</h3>
+
 <p>At this point, you should have a developed code branch with a configuration file (<code class="highlighter-rouge">config.local.php</code> or <code class="highlighter-rouge">config.php</code>) ready to test.</p>
 
 <p>Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.</p>
@@ -1928,6 +1935,7 @@ git pull origin &lt;environment ID&gt;
 <p>For more information, see <a href="#deploy">Deployment workflow</a>.</p>
 
 <h3 id="sample-data">Optional: Install sample data</h3>
+
 <p>If you need some example data when developing your store, you can install our sample data. This data simulates an active Magento store, including customers, products, and other data. This sample data works best with a “blank site” Magento Commerce Cloud template installation when creating your project.</p>
 
 <p>We recommend installing sample data in your local installation and Integration environments. If you use this data in Staging or Production, make sure to clear out the information and products before going live.</p>
@@ -1937,6 +1945,7 @@ git pull origin &lt;environment ID&gt;
 <p><img src="/common/images/cloud_workflow-sample-data.png" alt="Install optional sample data" /></p>
 
 <h3 id="prod-data">Optional: Pull production data</h3>
+
 <p>We recommend adding all of your products, catalogs, site content, and so on (not configurations) directly in Production. By adding this data in Production, you immediately update prices, coupons, inventory stock, strategize your sales and future offerings, and much more for your customers. This data does not include extension configurations. You will set those in your development branch on your local.</p>
 
 <p>As you develop features, add extensions, and design themes, having real data to work with is helpful. At any time, you can create a database dump from Production and push that to your Staging environment, and possibly Integration environments as you like.</p>
@@ -1961,6 +1970,7 @@ git pull origin &lt;environment ID&gt;
 </div>
 
 <h2 id="deploy">Deployment workflow</h2>
+
 <p>As we detailed in the architecture information, Magento Commerce Cloud is Git driven. Deploying Magento Commerce Cloud is part of your Git push processes for branches.</p>
 
 <p>When you push branched code from your local to the remote Git branch, a series of build and deploy scripts begin.</p>
@@ -1990,6 +2000,7 @@ git pull origin &lt;environment ID&gt;
 <p>To learn more, see <a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a>.</p>
 
 <h3 id="staging">Push to Staging and test</h3>
+
 <p>You should always push all of your code in iterations to your Staging environment for full testing. The first time you use this environment, you will need to configure a few services including <a href="/guides/v2.0/cloud/basic-information/cloud-fastly.html">Fastly</a>, <a href="/guides/v2.0/cloud/project/project-integrate-blackfire.html">Blackfire Profiler</a>, and <a href="/guides/v2.0/cloud/project/new-relic.html">New Relic APM</a>. We also recommend configuring payment gateways, shipping, notifications, and other vital services with sandbox or testing credentials.</p>
 
 <p>Staging is a pre-production environment, providing all services and settings as close to Production as possible. Thoroughly test every service, verify your performance testing tools, perform UAT testing as an administrator and customers, until you feel your store is ready for Production.</p>
@@ -1997,16 +2008,19 @@ git pull origin &lt;environment ID&gt;
 <p>To learn more, see <a href="/guides/v2.0/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
 
 <h3 id="pro">Push to Master / Production</h3>
+
 <p>When you push to the <code class="highlighter-rouge">master</code> branch, you are pushing to Production. Treat configuration and testing of Production much as your Staging environment. The important difference in this environment is using live credentials. The moment you go live and launch, customers must be able to complete purchases and administrators should be able to manage your live store.</p>
 
 <p>To learn more, see <a href="/guides/v2.0/cloud/live/stage-prod-live.html">Deploy your store</a>.</p>
 
 <h3 id="go-live">Go live</h3>
+
 <p>We provide a clear walk-through for going live and launching. It requires more steps than pressing a button. But when complete, your store can serve up products in your customized theme for sale immediately.</p>
 
 <p>To learn more, check out <a href="/guides/v2.0/cloud/live/live.html">Go live and launch</a>.</p>
 
 <h2 id="continuous-integration">Continuous integration</h2>
+
 <p>Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.</p>
 
 <p>Magento Commerce Cloud environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.</p>
@@ -2021,6 +2035,7 @@ git pull origin &lt;environment ID&gt;
 <p>For more information, see <a href="/guides/v2.0/cloud/deploy/continuous-deployment.html">Continuous integration</a>.</p>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local environment setup</a></li>
   <li><a href="/guides/v2.0/cloud/basic-information/starter-architecture.html">Starter architecture</a></li>

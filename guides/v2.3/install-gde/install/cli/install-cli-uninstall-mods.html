@@ -2279,9 +2279,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>
+
 <p>Before you use this command, you must <a href="/guides/v2.3/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
 
 <h2 id="instgde-cli-uninst-mod-over">Overview of uninstalling modules</h2>
+
 <p>This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules’ code, database schema, and database data. You can create backups first so you can recover the data at a later time.</p>
 
 <p>You should uninstall a module only if you’re certain you won’t use it. Instead of uninstalling a module, you can disable it as discussed in <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
@@ -2329,6 +2331,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
+
 <p>Command usage:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
@@ -2453,6 +2456,7 @@ Disabling maintenance mode
 <p class="bs-callout bs-callout-info">Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p>
 
 <h2 id="instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</h2>
+
 <p>To restore the Magento codebase to the state at which you backed it up, use the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:rollback [-c|--code-file="&lt;filename&gt;"] [-m|--media-file="&lt;filename&gt;"] [-d|--db-file="&lt;filename&gt;"]

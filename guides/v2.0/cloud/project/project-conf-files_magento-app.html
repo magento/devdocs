@@ -1841,6 +1841,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following displays the default set of web accessible locations associated with an entry in <a href="#cloud-yaml-platform-mounts"><code class="highlighter-rouge">mounts</code></a>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The configuration of app when it is exposed to the web.</span>
+
 <span class="na">web</span><span class="pi">:</span>
 <span class="na">locations</span><span class="pi">:</span>
     <span class="s2">"</span><span class="s">/"</span><span class="pi">:</span>
@@ -1887,6 +1888,7 @@ application in MB.</p>
 <p>The following is a default list of mounts configured in <code class="highlighter-rouge">magento.app.yaml</code>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># The mounts that will be performed when the package is deployed.</span>
+
 <span class="na">mounts</span><span class="pi">:</span>
     <span class="s2">"</span><span class="s">var"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/var"</span>
     <span class="s2">"</span><span class="s">app/etc"</span><span class="pi">:</span> <span class="s2">"</span><span class="s">shared:files/etc"</span>
@@ -1998,6 +2000,7 @@ languages:</p>
 </code></pre></div></div>
 
 <h2 id="cloud-yaml-platform-php">Configure PHP options</h2>
+
 <p>You can choose which version of PHP to run in your <code class="highlighter-rouge">.magento.app.yaml</code> file:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">name</span><span class="pi">:</span> <span class="s">myphpapp</span>
@@ -2007,6 +2010,7 @@ languages:</p>
 <p>Magento Commerce Cloud supports PHP 5.5, 5.6, and 7.0.</p>
 
 <h3 id="cloud-yaml-platform-php-ext">PHP extensions</h3>
+
 <p>You can define additional PHP extensions you want to enable or disable. Example:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .magento.app.yaml</span>
@@ -2092,6 +2096,7 @@ languages:</p>
 </div>
 
 <h3 id="cloud-yaml-platform-php-set">Customize <code class="highlighter-rouge">php.ini</code> settings</h3>
+
 <p>You can also create and push a <code class="highlighter-rouge">php.ini</code> file that is appended to the configuration maintained by Magento Commerce.</p>
 
 <p>In your repository, the <code class="highlighter-rouge">php.ini</code> file should be added to the root of the application (the repository root).</p>
@@ -2113,6 +2118,7 @@ Configuring PHP settings improperly can cause issues. We recommend only advanced
 </code></pre></div></div>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html">routes.yaml</a></li>

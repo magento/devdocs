@@ -1496,6 +1496,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-varnish-cache-over">Overview of Varnish caching</h2>
+
 <p>This topic discusses how Varnish caching works with Magento using:</p>
 
 <ul>
@@ -1517,10 +1518,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>More detail is provided in the sections that follow.</p>
 
 <h2 id="config-varnish-cache-browser">Caching by browser request</h2>
+
 <p>This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser’s local   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
 .</p>
 
 <h3 id="config-varnish-cache-browser-first">First browser request</h3>
+
 <p><code class="highlighter-rouge">nginx.conf.sample</code> and <code class="highlighter-rouge">.htaccess</code> provide options for client caching. When the first request is made from a browser for a cacheable object, Varnish delivers it to the client.</p>
 
 <p>The following figure shows an example using a browser inspector.</p>
@@ -1537,6 +1540,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="config-varnish-cache-browser-second">Second browser request</h3>
+
 <p>If the same browser requests the same page again, these assets are delivered from the local browser cache, as the following figure shows.</p>
 
 <p><img src="/common/images/varnish_apache_second_visit.png" alt="The next time the same object is requested, assets load from the local browser cache" /></p>
@@ -1544,6 +1548,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Note the difference in response time between the first and second request. Again, static assets have a 200 (OK) response code because they’re delivered from local cache for the first time.</p>
 
 <h2 id="config-varnish-cache-etag">How Magento uses Etag</h2>
+
 <p>The following example shows response headers for a particular static asset.</p>
 
 <p><img src="/common/images/varnish_etag.png" alt="The ETag makes it easier to determine whether a static asset has changed or not" /></p>

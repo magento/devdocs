@@ -2283,6 +2283,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento requires Apache 2.2.x or 2.4.x.</p>
 
 <h2 id="apache-help-beginner">Help if you’re just starting out</h2>
+
 <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
 <ul>
@@ -2293,6 +2294,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
+
 <p>This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="&#95;blank">distributed configuration file, <code class="highlighter-rouge">.htaccess</code></a>.</p>
 
 <p>Magento uses server rewrites and <code class="highlighter-rouge">.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.</p>
@@ -2403,6 +2405,7 @@ Allow from all
 <p class="bs-callout bs-callout-info">Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p>
 
 <h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
+
 <p>To verify the Apache version you’re currently running, enter:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apache2 -v
@@ -2426,6 +2429,7 @@ Server built: Jul 22 2014 14:35:32
 </ul>
 
 <h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
+
 <p>The following sections discusses how to install or upgrade Apache:</p>
 
 <ul>
@@ -2560,6 +2564,7 @@ Allow from all
 </div>
 
 <h4 id="next-steps">Next steps</h4>
+
 <ul>
   <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
   <li>Continue with the next prerequisite (<a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP Ubuntu</a>)</li>
@@ -2646,6 +2651,7 @@ Server built: Jul 22 2014 22:46:25
 </div>
 
 <h4 id="next-steps">Next steps</h4>
+
 <ul>
   <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
   <li>Continue with the next prerequisite (<a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP Ubuntu</a>)</li>
@@ -2663,6 +2669,7 @@ Server built: Jul 22 2014 22:46:25
 <p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code class="highlighter-rouge">.htaccess</code> directives.</p>
 
 <h3 id="apache-install-centos">Installing Apache</h3>
+
 <ol>
   <li>
     <p>Install Apache 2 if you haven’t already done so.</p>
@@ -2754,6 +2761,7 @@ Allow from all
 </div>
 
 <h4 id="next-steps">Next steps</h4>
+
 <ul>
   <li><a href="#403-apache">Solving 403 (Forbidden) errors</a></li>
   <li>Continue with the next prerequisite (<a href="/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP Ubuntu</a>)</li>
@@ -2774,6 +2782,7 @@ Allow from all
 </ul>
 
 <h4 id="solving-403-forbidden-errors-for-apache-24-install-apache-403_24">Solving 403 Forbidden errors for Apache 2.4 {#install-apache-403_2.4}</h4>
+
 <p>To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="&#95;blank">Require directives</a>.</p>
 
 <p>For example:</p>
@@ -2789,6 +2798,7 @@ Allow from all
 <p class="bs-callout bs-callout-info">The preceding values for <code class="highlighter-rouge">Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="&#95;blank">Apache documentation</a>.</p>
 
 <h4 id="solving-403-forbidden-errors-for-apache-22-install-apache-403_22">Solving 403 Forbidden errors for Apache 2.2 {#install-apache-403_2.2}</h4>
+
 <p>To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="&#95;blank">Allow directive</a>.</p>
 
 <p>For example:</p>

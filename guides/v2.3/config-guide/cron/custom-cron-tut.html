@@ -1899,6 +1899,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="cron-tut-get">Step 1: Get a sample module</h2>
+
 <p>To set up a custom cron job, you need a sample module. We suggest the <code class="highlighter-rouge">magento-module-minimal</code> module.</p>
 
 <p>If you already have a sample module, you can use it; skip this step and the next step and continue with <a href="#cron-tut-class">Step 3: Create a class to run cron</a>.</p>
@@ -1961,6 +1962,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   </div>
 
 <h2 id="cron-tut-verify">Step 2: Verify the sample module</h2>
+
 <p>Before you continue, make sure the sample module is registered and enabled.</p>
 
 <div class="collapsible">
@@ -1980,6 +1982,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   </div>
 
 <h2 id="cron-tut-class">Step 3: Create a class to run cron</h2>
+
 <p>This step shows a simple class to create a cron job. The class only writes a row to the <code class="highlighter-rouge">cron_schedule</code> table that confirms it’s set up successfully.</p>
 
 <div class="collapsible">
@@ -2044,6 +2047,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   </div>
 
 <h2 id="cron-tut-cronver">Step 5: Verify the cron job</h2>
+
 <p>This step shows how to verify the custom cron job successfully using a SQL query on the <code class="highlighter-rouge">cron_schedule</code> database table.</p>
 
 <div class="collapsible">
@@ -2105,6 +2109,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   </div>
 
 <h2 id="step-6-optional-set-up-a-custom-cron-group">Step 6 (optional): Set up a custom cron group</h2>
+
 <p>This step shows how to optionally set up a custom cron group. You should set up a custom cron group you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.</p>
 
 <div class="collapsible">
@@ -2134,6 +2139,7 @@ drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
   </div>
 
 <h2 id="step-7-optional-verify-your-custom-cron-group">Step 7 (optional): Verify your custom cron group</h2>
+
 <p>This step shows how to verify your custom cron group using the   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
 .</p>
 

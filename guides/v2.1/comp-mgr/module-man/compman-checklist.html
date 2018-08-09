@@ -1003,6 +1003,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="compman-overview">Overview of the Component Manager</h2>
+
 <p>This section discusses how to start the Component Manager, which updates or uninstalls Magento components:</p>
 
 <ul>
@@ -1015,6 +1016,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">If you installed the Magento application by <a href="/guides/v2.1/install-gde/prereq/dev_install.html">cloning the GitHub repository</a>, you <em>cannot</em> use the Component Manager utility to update components. Instead, you must <a href="/guides/v2.1/install-gde/install/cli/dev_options.html">update them manually</a>.</p>
 
 <h2 id="compman-prereq">Prerequisites</h2>
+
 <p>Before continuing, complete all tasks discussed in <a href="/guides/v2.1/comp-mgr/prereq/prereq_compman.html">Prerequisites</a>.</p>
 
 <h2 id="component-manager-checklist">Component Manager checklist</h2>
@@ -1033,9 +1035,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
   <h3 id="magento-owner-group">Magento file system owner and group</h3>
+
   <p>The <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> group must have write access to Magento directories and files.</p>
 
   <h3 id="magento-cron">Cron jobs are running</h3>
+
   <p>Magento requires three cron jobs, all running as the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
 
   <p>To verify your cron jobs are set up properly, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
@@ -1066,6 +1070,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>For details, see <a href="/guides/v2.1/install-gde/install/post-install-config.html#post-install-cron">Set up cron</a>.</p>
 
   <h3 id="perms">File system permissions</h3>
+
   <p>For security reasons, Magento requires certain permissions on the file system. Permissions are different from <a href="#magento-owner-group"><em>ownership</em></a>. Ownership determines <em>who</em> can perform actions on the file system; permissions determine <em>what</em> the user can do.</p>
 
   <p>Directories in the Magento file system must be writable by the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner’s</a> group.</p>

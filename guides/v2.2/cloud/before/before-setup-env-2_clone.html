@@ -2137,6 +2137,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="setvariables">Change the Magento Admin URL, username, and password on master</h2>
+
 <p>We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned <code class="highlighter-rouge">master</code>. If you change the variables in the <code class="highlighter-rouge">master</code> branch, you only have to make these changes once. All branches inherit the variables from <code class="highlighter-rouge">master</code>.</p>
 
 <ul>
@@ -2153,6 +2154,7 @@ need to contact the Project Owner for the updated password.</li>
 the command line and when you verify the installation.</p>
 
 <h3 id="variablelist">List and review variables</h3>
+
 <p>If you’re not sure whether or not the <code class="highlighter-rouge">master</code> branch has all Magento Admin variables and settings configured, open a terminal, login to the Magento Cloud CLI, and enter the following command. This command lists any configured and available variables.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud variable:get -e &lt;environment ID&gt;
@@ -2168,6 +2170,7 @@ the command line and when you verify the installation.</p>
 <p class="bs-callout bs-callout-warning">Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.</p>
 
 <h3 id="cli">Add variables using the CLI</h3>
+
 <p>To set variables using the CLI (with example values used):</p>
 
 <ol>
@@ -2224,6 +2227,7 @@ Environment routes:
 </ol>
 
 <h3 id="web">Add variables using the Project Web Interface</h3>
+
 <p>To set variables using the Project Web Interface:</p>
 
 <ol>
@@ -2252,6 +2256,7 @@ Environment routes:
 </ul>
 
 <h2 id="branch">Branch an environment</h2>
+
 <p>With your project cloned and Magento administrator account configured, you can branch for development.</p>
 
 <ul>

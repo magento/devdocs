@@ -2264,6 +2264,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="instgde-prereq-mysql-remote-over">When to set up a remote database connection</h2>
+
 <p>This topic discusses how to set up a connection from your Magento web node to a MySQL server on another host. If you have a separate database host, you must perform the tasks discussed in this topic to install and use the Magento software. (The Magento <em>web node</em> is the server on which you installed the Magento software and that runs your web server.)</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -2271,6 +2272,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="prerequisites">Prerequisites</h3>
+
 <p>Before you begin, you must:</p>
 
 <ul>
@@ -2280,6 +2282,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="high-availability">High availability</h3>
+
 <p>Use the following guidelines to configure remote database connections if your web server or database server are clustered:</p>
 
 <ul>
@@ -2292,9 +2295,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="resolving-connection-issues">Resolving connection issues</h3>
+
 <p>If you have issues connecting to either host, first ping the other host to make sure it’s reachable. You also might need to allow connections from one host to another by modifying firewall and SELinux rules (if you use SELinux).</p>
 
 <h2 id="instgde-prereq-mysql-remote-create">Create the remote connection</h2>
+
 <p>To create a remote connection:</p>
 
 <ol>
@@ -2343,6 +2348,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="instgde-prereq-mysql-remote-access">Grant access to a database user</h2>
+
 <p>To enable your web node to connect to the database server, you must grant a web node database user access to the database on the remote server.</p>
 
 <p>This example grants the <code class="highlighter-rouge">root</code> database user full access to the database on the remote host.</p>
@@ -2370,6 +2376,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="instgde-prereq-mysql-remote-verify">Verify database access</h2>
+
 <p>On your web node host, enter the following command to verify the connection works:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u &lt;local database username&gt; -h &lt;database server ip address&gt; -p
@@ -2393,6 +2400,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 <p>If your web server is clustered, enter the command on each web server host.</p>
 
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
+
 <p>When you install the Magento software using either the command line or Setup Wizard, you must specify the following:</p>
 
 <ul>

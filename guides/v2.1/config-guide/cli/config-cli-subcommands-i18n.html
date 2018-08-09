@@ -1676,6 +1676,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
   <h2 id="overview-of-translations">Overview of translations</h2>
+
   <p>Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced the amount of code coupling and duplication.</p>
 
   <p>This topic discusses how to generate:</p>
@@ -1690,6 +1691,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>For more information, see <a href="/guides/v2.1/frontend-dev-guide/translations/xlate.html">Translation</a>.</p>
 
   <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
+
   <p>You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a   <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span>
 . See one of the following sections:</p>
 
@@ -1699,6 +1701,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h3 id="config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</h3>
+
   <p>To translate words and phrases, you must:</p>
 
   <ol>
@@ -1763,6 +1766,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
   <h3 id="config-cli-subcommands-xlate-dict-trans">Translation guidelines</h3>
+
   <p>Use the following guidelines when translating words and phrases:</p>
 
   <ul>
@@ -1787,6 +1791,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   </ul>
 
   <h2 id="config-cli-subcommands-xlate-pack">Create a language package</h2>
+
   <p>As opposed to a translation dictionary, you can translate any or all words and phrases in the Magento application using a language package. (You can translate a particular component—like a module or a theme—using a translation dictionary.) <a href="/guides/v2.1/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">Learn more about language packages</a>.</p>
 
   <p>This section discusses how to create a language package, which writes <code class="highlighter-rouge">.csv</code> files to modules and themes. To create a language package, you must perform the tasks discussed in the following sections:</p>
@@ -1803,6 +1808,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   </ol>
 
   <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
+
   <p>Command usage:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;locale&gt;
@@ -1855,6 +1861,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 </table>
 
   <h3 id="m2devgde-xlate-files">Create directories and files</h3>
+
   <p>A language package is a directory under <code class="highlighter-rouge">app/i18n/&lt;VendorName&gt;</code> in the Magento file system with the following contents:</p>
 
   <ul>
@@ -1885,6 +1892,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   </ol>
 
   <h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
+
   <p>When declaring a language package in the <code class="highlighter-rouge">language.xml</code> configuration file, you must specify the sequence of the language inheritance for this package.</p>
 
   <p>Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the <em>parent</em>). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used instead. If a child translation lacks a phrase or a word, this phrase or word is taken from the parent   <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span>
@@ -1915,6 +1923,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   <p>If necessary, you can specify several parent packages. The parent packages are applied on a first listed, first used basis.</p>
 
   <h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
+
   <p>Suppose a language package descends from two other packages, and that those packages also have parent and “grandparent” packages.</p>
 
   <p>If a language package descends from two packages, its <code class="highlighter-rouge">language.xml</code> might look like the following:</p>
@@ -1950,11 +1959,13 @@ Product 'Multimeter-2000' has been added to shopping cart.
   <p>Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="\_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
 
   <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
+
   <p>To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single package from all packages that are available for a language.</p>
 
   <p>To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package’s <code class="highlighter-rouge">language.xml</code> meta-information file as discussed in the next section.</p>
 
   <h2 id="examples-of-using-translation-commands">Examples of using translation commands</h2>
+
   <p>The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:</p>
 
   <ul>
@@ -1963,6 +1974,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   </ul>
 
   <h3 id="config-cli-subcommands-xlate-example1">Example: Create a translation dictionary for a module or theme</h3>
+
   <p>To add a German translation to a module or theme that you want to distribute to other merchants:</p>
 
   <ol>
@@ -1981,6 +1993,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   </ol>
 
   <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
+
   <p>Similar to the preceding example, generate a .csv file, but instead of specifying a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.</p>
 
   <ol>

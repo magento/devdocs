@@ -2070,6 +2070,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Composer manages required libraries and dependencies for your project and installs them in the <code class="highlighter-rouge">vendor</code> directory.</p>
 
 <h2 id="files">Composer files</h2>
+
 <p>For Magento Commerce Cloud, we use the <code class="highlighter-rouge">composer.json</code> and <code class="highlighter-rouge">composer.lock</code> files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.</p>
 
 <p>Magento extension and module developers use the <code class="highlighter-rouge">composer.json</code> file to manage product installations and upgrades. See <a href="/guides/v2.2/cloud/howtos/install-components.html">Install, manage, and upgrade extensions</a>.</p>
@@ -2109,6 +2110,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>During the <a href="/guides/v2.2/cloud/reference/discover-deploy.html">build phase</a>, the Cloud environment runs <code class="highlighter-rouge">composer install</code> on a fresh clone of your Git branch to retrieve the latest dependencies.</p>
 
 <h2 id="cloud-composer-cloudmeta">magento/magento-cloud-metapackage</h2>
+
 <p>The <code class="highlighter-rouge">vendor/magento/magento-cloud-metapackage</code> should be the only package in the <code class="highlighter-rouge">require</code> section of your <code class="highlighter-rouge">composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type" target="\_blank"><em>metapackage</em></a> and does not contain any code.</p>
 
 <p>The metapackage depends on the appropriate versions of <code class="highlighter-rouge">vendor/magento/ece-patches</code>, <a href="#ece-tools"><code class="highlighter-rouge">vendor/magento/ece-tools</code></a>, and <a href="#cloud-composer-prodee"><code class="highlighter-rouge">vendor/magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code class="highlighter-rouge">magento/product-enterprise-edition</code>. For example, to use Magento Commerce version 2.2.0, for example, <code class="highlighter-rouge">composer.json</code> must specify a requirement for <code class="highlighter-rouge">magento/magento-cloud-metapackage</code> version 2.2.0.</p>
@@ -2116,13 +2118,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This package depends on a floating version of <code class="highlighter-rouge">vendor/magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento Commerce version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code class="highlighter-rouge">composer update</code>.</p>
 
 <h2 id="ece-tools">vendor/magento/ece-tools</h2>
+
 <p>The <code class="highlighter-rouge">ece-tools</code> package is compatible with Magento Commerce version 2.1.4 and later to provide a rich set of features you can use to manage your Magento Commerce Cloud project. It contains scripts and Magento Commerce Cloud commands designed to help manage your code and automatically build and deploy your projects.</p>
 
 <h2 id="cloud-composer-prodee">vendor/magento/product-enterprise-edition</h2>
+
 <p>This   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
  requires Magento application components, including modules, frameworks, themes, and so on.</p>
 
 <h2 id="base-packages-and-file-marshalling">Base packages and file marshalling</h2>
+
 <p>Magento contains two base packages: <code class="highlighter-rouge">magento/magento2-base</code> and <code class="highlighter-rouge">magento/magento2-ee-base</code>. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files,   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  entry points, and so on.</p>
 

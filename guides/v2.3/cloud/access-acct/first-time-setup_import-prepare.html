@@ -2078,6 +2078,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="required-files">Prepare and add required files</h2>
+
 <p>To import Magento Commerce code to a Magento Commerce Cloud project, you need to add a directory and the following files to your existing code.</p>
 
 <ul>
@@ -2153,6 +2154,7 @@ mkdir .magento
 <p>When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.</p>
 
 <h2 id="auth-json">Add or update <code class="highlighter-rouge">auth.json</code> with Magento Authentication keys</h2>
+
 <p>To enable install and update commands for Magento Commerce Cloud, you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento Commerce <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a> for Magento Commerce Cloud.</p>
 
 <p>In some cases, you might already have <code class="highlighter-rouge">auth.json</code>. Verify if you have the file and add your authentication credentials before you create a new one. It’s located in your Magento root directory. You can also <a href="https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample" target="\_blank">get a sample <code class="highlighter-rouge">auth.json</code></a>.</p>
@@ -2181,6 +2183,7 @@ mkdir .magento
 </ol>
 
 <h2 id="composer-json">Edit <code class="highlighter-rouge">composer.json</code></h2>
+
 <p>Before you push code to the Magento Commerce Cloud Git repository, modify your <code class="highlighter-rouge">composer.json</code> for Cloud. You can also <a href="https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json" target="\_blank">view a sample <code class="highlighter-rouge">composer.json</code></a>.</p>
 
 <p>To edit <code class="highlighter-rouge">composer.json</code>:</p>
@@ -2230,6 +2233,7 @@ mkdir .magento
 </ol>
 
 <h2 id="media">Back up and transfer media files</h2>
+
 <p>Use the command <a href="/guides/v2.3/install-gde/install/cli/install-cli-backup.html"><code class="highlighter-rouge">magento setup:backup --media</code></a> to back up media files:</p>
 
 <ol>
@@ -2256,6 +2260,7 @@ mkdir .magento
 </ol>
 
 <h2 id="encryption-key">Copy the encryption key</h2>
+
 <p>To be able to decrypt encrypted data from your imported database, copy your encryption from your existing <code class="highlighter-rouge">env.php</code> file. Every environment inIntegration, Staging, and Production has an <code class="highlighter-rouge">env.php</code> of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.</p>
 
 <ol>
@@ -2267,6 +2272,7 @@ mkdir .magento
 <p>You must paste the encryption key into your Magento Commerce Cloud <code class="highlighter-rouge">env.php</code> file in each environment in a <a href="/guides/v2.3/cloud/access-acct/first-time-setup_import-import.html#encryption-key">later step</a>.</p>
 
 <h2 id="migrate-db">Migrate Magento Commerce data</h2>
+
 <p>Create a database dump and transfer the data from an existing database. You will import this data to your Magento Commerce Cloud database.</p>
 
 <p>The following command example compresses the dump so it doesn’t significantly interfere with traffic from in live site. The dump file is named <code class="highlighter-rouge">db.sql.gz</code>. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.</p>

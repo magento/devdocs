@@ -2026,6 +2026,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To verify the Fastly extension is working or to debug the Fastly extension, you can use the <code class="highlighter-rouge">curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly. You can further investigate issues based on the values of headers and caching behavior.</p>
 
 <h2 id="errors">Errors from Fastly</h2>
+
 <p>If you receive the following errors with Fastly, check the following:</p>
 
 <ul>
@@ -2034,6 +2035,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="timeouts">503 timeouts</h3>
+
 <p>If you receive a 503 error, check the following logs and information to better troubleshoot the issue.</p>
 
 <p>First, check your <a href="/guides/v2.1/cloud/trouble/environments-logs.html">error log</a> on your Production or Staging environment: <code class="highlighter-rouge">/var/log/platform/&lt;project_ID&gt;/error.log</code>.  The log will include possible errors from the application or PHP engine. For example: <code class="highlighter-rouge">memory_limit</code> or <code class="highlighter-rouge">max_execution_time exceeded</code></p>
@@ -2063,6 +2065,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="domains">Apex and subdomains already in Fastly</h3>
+
 <p>If your apex domain and subdomains are already managed by a Fastly account with an assigned Service ID, you cannot launch until you do the following:</p>
 
 <ul>
@@ -2075,6 +2078,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For details, review your Fastly accounts and <a href="https://docs.fastly.com/">documentation</a> to remove the domains. This may include removing and updating CNAME records and more.</p>
 
 <h2 id="service-id">Locate Service ID</h2>
+
 <p>You can contact us for your Service ID for Staging and Production. For developers and advanced VCL users, you can also make a call using the Fastly variable <code class="highlighter-rouge">req.service_id</code>. This variable will return the Fastly <code class="highlighter-rouge">service_id</code>.</p>
 
 <p>For example, you can add this to custom logging to capture the value. If you are using a custom logging format in your VCL, you can set the call to your format:</p>
@@ -2085,6 +2089,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can then use the same vcl within different services.</p>
 
 <h2 id="curl-live">Test your live site</h2>
+
 <p>First, check your live site to verify the response headers with <code class="highlighter-rouge">curl</code>. The command goes through the Fastly extension to receive responses. If you don’t receive the correct headers, then you should test the <a href="#cloud-test-stage">origin servers directly</a>. This command returns the values of the <code class="highlighter-rouge">Fastly-Magento-VCL-Uploaded</code> and <code class="highlighter-rouge">X-Cache</code> headers.</p>
 
 <p>If you don’t have a live site set up with DNS, you can use either a static route or you can use the optional <code class="highlighter-rouge">--resolve</code> flag, which bypasses DNS name resolution.</p>
@@ -2111,6 +2116,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="cloud-test-stage">Test your Staging and Production sites</h3>
+
 <p>The command format differs for Staging and Production.</p>
 
 <p>For more information on these commands, you bypass Fastly when you inject <code class="highlighter-rouge">-H "host:URL"</code>, replace with origin to connecting location (CNAME information from your OneDrive Spreadsheet), <code class="highlighter-rouge">-k</code> ignores SSL, and <code class="highlighter-rouge">-v</code> provides verbose responses. If headers display correctly, check the live site and verify headers again.</p>
@@ -2148,6 +2154,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h3 id="response-headers">Check response headers</h3>
+
 <p>For detailed information on hits and misses, see Fastly’s <a href="https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services" target="\_blank">Understanding cache HIT and MISS headers with shielded services</a>.</p>
 
 <p>Check the returned response headers and values:</p>
@@ -2199,6 +2206,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="vcl-uploaded">Determine if VCL is not uploaded</h2>
+
 <p>To determine if the default VCL snippets are not uploaded, check the following:</p>
 
 <ul>
@@ -2208,9 +2216,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="curl">Resolve errors found by cURL</h2>
+
 <p>This section provides suggestions for resolving errors you might find using the <code class="highlighter-rouge">curl</code> command.</p>
 
 <h3 id="no-module">Fastly-Module-Enabled is not present</h3>
+
 <p>If you don’t receive a “yes” for the <code class="highlighter-rouge">Fastly-Module-Enabled</code> in the response headers, you need to verify the Fastly module is installed and selected.</p>
 
 <p>To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:</p>
@@ -2246,9 +2256,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See <a href="/guides/v2.1/cloud/access-acct/fastly.html">Set up Fastly</a> for instructions.</p>
 
 <h3 id="no-VCL">Fastly-Magento-VCL-Uploaded is not present</h3>
+
 <p>During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see <a href="/guides/v2.1/cloud/access-acct/fastly.html#upload-vcl-snippets">Upload Fastly VCL snippets</a>.</p>
 
 <h3 id="xcache-miss">X-Cache includes MISS</h3>
+
 <p>If <code class="highlighter-rouge">X-Cache</code> is either <code class="highlighter-rouge">HIT, MISS</code> or <code class="highlighter-rouge">MISS, MISS</code>, enter the same <code class="highlighter-rouge">curl</code> command again to make sure the page wasn’t recently evicted from the cache.</p>
 
 <p>If you get the same result, use the <a href="#curl"><code class="highlighter-rouge">curl</code> commands</a> and verify the <a href="#response-headers">response headers</a>:</p>
@@ -2276,9 +2288,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.</p>
 
 <h2 id="purge">Purges do not process</h2>
+
 <p>If you attempt to use a Fastly purge option, and it does not process, you may have incorrect Fastly credentials in your environment or may have encountered an issue. You may receive the error: “The purge request was not processed successfully.”</p>
 
 <h3 id="creds">Check Fastly credentials</h3>
+
 <p>Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.</p>
 
 <ol>
@@ -2289,6 +2303,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="snippets">Check VCL snippets</h3>
+
 <p>If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET -s https://api.fastly.com/service/&lt;FASTLY_SERVICE_ID&gt;/version/&lt;Editable Version #&gt;/snippet/ -H "Fastly-Key: &lt;FASTLY_API_TOKEN&gt;"
@@ -2297,6 +2312,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the <a href="https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets" target="\_blank">Fastly default VCLs</a>. For editing your custom VCLs, see <a href="/guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h2 id="activate">Activating a deactivated version</h2>
+
 <p>Using <code class="highlighter-rouge">curl</code> commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.</p>
 
 <ol>

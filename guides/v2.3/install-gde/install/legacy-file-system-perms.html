@@ -2279,15 +2279,18 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="appendix-over">Overview: Magento file system ownership and appendix (legacy)</h2>
+
 <p>This topic is provided for convenience for anyone using Magento Open Source or Magento Commerce versions 2.0.0–2.0.5.</p>
 
 <p>In versions <em>before</em> 2.0.6, Magento explicitly set file system permissions when we created files, such as   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see <a href="/guides/v2.3/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>.</p>
 
 <h2 id="appendix-summary">Summary of file system permissions</h2>
+
 <p>This section summarizes the permissions Magento uses when creating files in the file system.</p>
 
 <h3 id="developer-mode-permissions">Developer mode permissions</h3>
+
 <p>In developer mode, Magento sets permissions as follows:</p>
 
 <ul>
@@ -2304,6 +2307,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="production-mode-permissions">Production mode permissions</h3>
+
 <p>Changing modes affects permissions and ownership the following subdirectories in your Magento installation:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var/view_preprocessed
@@ -2327,6 +2331,7 @@ var/di
 </ul>
 
 <h2 id="appendix-install">Set permissions before installing the Magento software</h2>
+
 <p>Use the following steps:</p>
 
 <ol>

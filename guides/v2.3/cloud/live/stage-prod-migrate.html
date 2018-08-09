@@ -2075,9 +2075,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated <code class="highlighter-rouge">master</code> branch again. See instructions in the <a href="/guides/v2.3/cloud/live/stage-prod-migrate.html">previous step</a>.</p>
 
 <h2 id="code">Deploy code to Staging and Production</h2>
+
 <p>You can also use the <a href="#interface">Project Web Interface</a> or <a href="#ssh">SSH and CLI commands</a> to deploy your code to Staging and Production.</p>
 
 <h3 id="interface">Deploy code with the Project Web Interface</h3>
+
 <p>The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans.</p>
 
 <p>For Pro projects created <strong>after October 23, 2017</strong> or <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">updated</a>, deploy the Integration <code class="highlighter-rouge">master</code> branch you created to Staging and Production:</p>
@@ -2105,6 +2107,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/cloud_project-merge.png" alt="Use the merge option to deploy" /></p>
 
 <h3 id="ssh">Deploy code with SSH and CLI</h3>
+
 <p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="highlighter-rouge">master</code> branch.</p>
 
 <p>You’ll need the SSH and Git access information for your project.</p>
@@ -2137,6 +2140,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="classic">Deploy to Pro: updated or created after October 23, 2017</h4>
+
 <p>To deploy to Pro projects <strong>created after October 23, 2017</strong> or <a href="/guides/v2.3/cloud/trouble/pro-env-management.html">updated</a>:</p>
 
 <ol>
@@ -2166,6 +2170,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h4 id="classic">Deploy to Pro: created before October 23, 2017</h4>
+
 <p>For these environments, you are pushing code from repository to repository: Integration <code class="highlighter-rouge">master</code> to Staging or Production <code class="highlighter-rouge">master</code>. Due to these being <code class="highlighter-rouge">master</code> branches in different repositories, you cannot merge as if branch to branch. You should have completed all <a href="/guides/v2.3/cloud/live/stage-prod-migrate-prereq.html">prerequisites</a> prior to deployment.</p>
 
 <ol>
@@ -2189,6 +2194,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="cloud-live-migrate-static">Migrate static files</h2>
+
 <p>You will migrate   <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span>
  from your <code class="highlighter-rouge">pub/media</code> directory to Staging or Production.</p>
 
@@ -2306,6 +2312,7 @@ P partial progress
 </ol>
 
 <h3 id="troubleshooting-the-database-migration">Troubleshooting the database migration</h3>
+
 <p>If you encounter the following error, you can try to create a database dump with the DEFINER replaced:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ERROR 1277 (42000) at line &lt;number&gt;: Access denied; you need (at least one of) the SUPER privilege(s) for this operation

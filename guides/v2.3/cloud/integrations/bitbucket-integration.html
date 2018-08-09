@@ -2078,6 +2078,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="prepare-your-repository">Prepare your repository</h2>
+
 <p>You need to clone your Magento Commerce Cloud project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.</p>
 
 <ol>
@@ -2138,6 +2139,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </ol>
 
 <h2 id="create-an-oauth-consumer">Create an OAuth consumer</h2>
+
 <p>The Bitbucket integration requires an <a href="https://confluence.atlassian.com/x/pwIwDg" target="\_blank">OAuth consumer</a>. You need the OAuth <code class="highlighter-rouge">key</code> and <code class="highlighter-rouge">secret</code> from this consumer to complete the next section.</p>
 
 <h4 id="to-create-an-oauth-consumer-in-bitbucket">To create an OAuth consumer in Bitbucket:</h4>
@@ -2214,6 +2216,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </ol>
 
 <h2 id="test-the-integration">Test the integration</h2>
+
 <p>After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.</p>
 
 <ol>
@@ -2237,6 +2240,7 @@ origin git@bitbucket.org:&lt;user-name&gt;/&lt;repo-name&gt;.git (push)
 </ol>
 
 <h2 id="create-a-new-cloud-branch">Create a new Cloud branch</h2>
+
 <p>The Bitbucket integration cannot activate new environments in your Magento Commerce Cloud project. If you create an environment with Bitbucket, you must activate the environment manually. To avoid this extra step, it is best practice to create environments using the <code class="highlighter-rouge">magento-cloud</code> CLI tool or the Project Web UI.</p>
 
 <h4 id="to-activate-a-branch-created-with-bitbucket">To activate a branch created with Bitbucket:</h4>
@@ -2276,6 +2280,7 @@ Parent environment [master]: integration
 <p>After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.</p>
 
 <h2 id="remove-the-integration">Remove the integration</h2>
+
 <p>You can safely remove the Bitbucket integration from your project without affecting your code.</p>
 
 <h4 id="to-remove-the-bitbucket-integration">To remove the Bitbucket integration:</h4>

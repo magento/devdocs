@@ -1092,6 +1092,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
 <h2 id="manually-clear-directories">Manually clear directories</h2>
+
 <p>After the upgrade completes, manually clear <code class="highlighter-rouge">var</code> subdirectories:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf &lt;Magento install dir&gt;/var/cache/*
@@ -1100,6 +1101,7 @@ rm -rf &lt;Magento install dir&gt;/generated/code/*
 </code></pre></div></div>
 
 <h2 id="restart-varnish">Restart Varnish</h2>
+
 <p>After the upgrade completes, restart Varnish if you use it for page caching.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service varnish restart
@@ -1109,6 +1111,7 @@ rm -rf &lt;Magento install dir&gt;/generated/code/*
  and verify everything is working properly.</p>
 
 <h2 id="errors-after-upgrade">Errors after upgrade</h2>
+
 <p>After you finish your upgrade, errors might display.</p>
 
 <ul>
@@ -1181,6 +1184,7 @@ Failure to do so will cause your upgrade to fail.</p>
 <!-- Link definitions -->
 
 <h3 id="clear-var-and-generated-directories">Clear <code class="highlighter-rouge">var</code> and <code class="highlighter-rouge">generated</code> directories</h3>
+
 <p>Clear the <code class="highlighter-rouge">var/cache</code>, 	<code class="highlighter-rouge">var/page_cache</code>, <code class="highlighter-rouge">generated/code</code></p>
 
 <p>A sample command follows:</p>
@@ -1189,6 +1193,7 @@ Failure to do so will cause your upgrade to fail.</p>
 </code></pre></div></div>
 
 <h3 id="access-your-storefront-again">Access your storefront again</h3>
+
 <p>After performing the preceding tasks, access your storefront again. If necessary, press Control+R to force the page to reload.</p>
 
 			

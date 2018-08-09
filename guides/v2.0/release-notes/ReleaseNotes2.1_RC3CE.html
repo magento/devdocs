@@ -1156,7 +1156,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.1/release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.</p>
 
-<h3>Highlights</h3>
+<h3 id="highlights">Highlights</h3>
 
 <p>Magento Open Source 2.1 includes several new and exciting features:</p>
 
@@ -1180,9 +1180,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3>Fixed issues</h3>
+<h3 id="fixed-issues">Fixed issues</h3>
 
-<h4>Security enhancement</h4>
+<h4 id="security-enhancement">Security enhancement</h4>
 
 <!--- 52867-->
 <ul>
@@ -1190,7 +1190,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  has been requested.</li>
 </ul>
 
-<h4>Performance enhancements</h4>
+<h4 id="performance-enhancements">Performance enhancements</h4>
+
 <!--- 53530-->
 <ul>
   <li><span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span>
@@ -1203,14 +1204,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a></li>
 </ul>
 
-<h4>Import/Export</h4>
+<h4 id="importexport">Import/Export</h4>
 
 <!--- 54200-->
 <ul>
   <li>Magento now successfully imports products with  a “gift_message_available” parameter. Previously, Magento exported the wrong “gift_message_available” parameter, which resulted in a validation error.</li>
 </ul>
 
-<h4>Cache</h4>
+<h4 id="cache">Cache</h4>
 
 <!--- 52923-->
 <ul>
@@ -1234,7 +1235,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface.</li>
 </ul>
 
-<h4>Messages and documentation</h4>
+<h4 id="messages-and-documentation">Messages and documentation</h4>
+
 <!--- 52993-->
 <ul>
   <li>Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a></li>
@@ -1251,7 +1253,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Magento now displays enhanced messages for cache management exceptions.</li>
 </ul>
 
-<h4>Payment methods</h4>
+<h4 id="payment-methods">Payment methods</h4>
 
 <!--- 53238-->
 <ul>
@@ -1269,7 +1271,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled.</li>
 </ul>
 
-<h4>Miscellaneous</h4>
+<h4 id="miscellaneous">Miscellaneous</h4>
 
 <!--- 51753-->
 <ul>
@@ -1391,7 +1393,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- 53293 internal only-->
 
-<h3>Known issues</h3>
+<h3 id="known-issues">Known issues</h3>
+
 <p>Magento Community Edition 2.1, Release Candidate 3 includes the following known issues:</p>
 
 <!--- 54445-->
@@ -1418,7 +1421,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>The Category page displays the former price instead of the current price during scheduled updates.</li>
 </ul>
 
-<h3>Technology stack</h3>
+<h3 id="technology-stack">Technology stack</h3>
 
 <p>Our technology stack is built on   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  and MySQL. Magento 2.1 RC3 supports:</p>
@@ -1433,6 +1436,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We do not support PHP 5.5.x or 7.0.5.</p>
 
 <h2 id="installation-and-upgrade-instructions">Installation and upgrade instructions</h2>
+
 <p>You can install Magento Community Edition 2.1 Release Candidate 3 (RC3) from either Github or by using   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
 . 
 This Release Candidate is for test purposes only. Do not install it in a production environment.</p>
@@ -1513,6 +1517,7 @@ This Release Candidate is for test purposes only. Do not install it in a product
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
+
     <p>See the following sections for more information.</p>
 
     <h3 id="upgrade-github" class="no_toc">Upgrade an existing installation from the GitHub repository</h3>
@@ -1533,6 +1538,7 @@ This Release Candidate is for test purposes only. Do not install it in a product
     <p>Other types of upgrades are discussed in <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h3 id="upgrade-an-existing-installation-from-the-github-repository">Upgrade an existing installation from the GitHub repository</h3>
+
     <p>Developers who contribute to the CE codebase can <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.</p>
 
     <ol>
@@ -1545,9 +1551,11 @@ This Release Candidate is for test purposes only. Do not install it in a product
     </ol>
 
     <h3 id="other-upgrades">Other upgrades</h3>
+
     <p>Other types of upgrades are discussed in <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
+
     <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
   </div>
 </div>

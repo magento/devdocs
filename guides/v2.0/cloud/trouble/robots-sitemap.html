@@ -1804,9 +1804,11 @@ Path "/app/pub/static/sitemap.xml" is protected and cannot be used.
 </ol>
 
 <h2 id="rewrite-using-fastly-vcl-snippet">Rewrite using Fastly VCL snippet</h2>
+
 <p>You can generate the <code class="highlighter-rouge">sitemap.xml</code> file in the Magento Admin panel as described above, but you can avoid a Support ticket by creating a custom Fastly VCL snippet to manage the redirect. See <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 <h4 id="to-use-a-fastly-vcl-snippet-for-redirect">To use a Fastly VCL snippet for redirect:</h4>
+
 <p>Create a custom VCL snippet to rewrite the path for <code class="highlighter-rouge">sitemap.xml</code> to <code class="highlighter-rouge">/media/sitemap.xml</code> using the <code class="highlighter-rouge">type</code> and <code class="highlighter-rouge">content</code> key and value pairs.</p>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> 

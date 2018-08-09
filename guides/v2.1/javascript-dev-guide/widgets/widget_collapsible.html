@@ -709,6 +709,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="overview">Overview</h2>
+
 <p>The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.</p>
 
 <p>Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.</p>
@@ -720,6 +721,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The collapsible widget source is <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage/collapsible.js">lib/web/mage/collapsible.js</a>.</p>
 
 <h2 id="collaps_init_js">Initialize collapsible in JS</h2>
+
 <p>Generally the collapsible widget is instantiated like following:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#element"</span><span class="p">).</span><span class="nx">collapsible</span><span class="p">();</span>
@@ -734,14 +736,17 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements’ attributes or passed as widget options. See <a href="/guides/v2.1/javascript-dev-guide/widgets/widget_accordion.html#accordion_init">Accordion widget initialization</a> for details.</p>
 
 <h3 id="initialize-collapsible-with-header-only">Initialize collapsible with header only</h3>
+
 <p>You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:</p>
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s2">"#header"</span><span class="p">).</span><span class="nx">collapsible</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h2 id="initialize-collapsible-in-a-template">Initialize collapsible in a template</h2>
+
 <p>The collapsible widget can be initialized using the <code class="highlighter-rouge">data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> tag, as described in <a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html#data_mage_init">JavaScript initialization</a>.</p>
 
 <h2 id="options">Options</h2>
+
 <p>The collapsible widget has the following options:</p>
 <ul>
   <li><a href="#fedg_collaps_active">active</a></li>

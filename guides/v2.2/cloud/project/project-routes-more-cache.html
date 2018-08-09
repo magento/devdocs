@@ -2068,6 +2068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Magento Commerce enables you to use caching in your environment. If you disable caching, Magento Commerce directly serves the files.</p>
 
 <h2 id="cloud-cache-setup">Set up caching</h2>
+
 <p>Enable caching in your Magento application’s <code class="highlighter-rouge">.magento/routes.yaml</code> as follows:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">http://{default}/</span><span class="pi">:</span>
@@ -2081,6 +2082,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="cloud-cache-route">Route-based caching</h2>
+
 <p>If you need fine-grained caching, you can set up caching rules for several routes separately as the following example shows:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">http://{default}/</span><span class="pi">:</span>
@@ -2120,9 +2122,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">Regular expressions in routes are <strong>not</strong> supported.</p>
 
 <h2 id="cloud-cache-ttl">Cache duration</h2>
+
 <p>The cache duration is determined by the <code class="highlighter-rouge">Cache-Control</code> response header value. If no <code class="highlighter-rouge">Cache-Control</code> header is in the response, we use the <code class="highlighter-rouge">default_ttl</code> key.</p>
 
 <h2 id="cloud-cache-key">Cache key</h2>
+
 <p>To decide how to   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  a response, Magento Commerce builds a cache key depending on several factors and store the response associated with this key. When a request comes with the same cache key, the response is reused. Its purpose is similar to the HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44" target="_blank"><code class="highlighter-rouge">Vary</code> header</a>.</p>
 
@@ -2138,6 +2142,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="cloud-cache-attrib">Cache attributes</h2>
+
 <p>We support the following attributes:</p>
 
 <ul>

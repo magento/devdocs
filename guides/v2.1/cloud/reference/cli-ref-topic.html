@@ -2057,6 +2057,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The <code class="highlighter-rouge">magento-cloud environment:list</code> command displays environment hierarchies, whereas <code class="highlighter-rouge">git branch</code> does not. If you have any nested environments, use the <code class="highlighter-rouge">magento-cloud environment:list</code> command.</p>
 
 <h2 id="git-commands">Git commands</h2>
+
 <p>You may notice that some of these commands are similar to Git commands. The <code class="highlighter-rouge">magento-cloud</code> Git commands directly connect to the Magento Git-based Cloud project with additional features. For example, when you push a Git branch, it is not activated until you access GitHub. The Magento CLI command includes activation.</p>
 
 <h4 id="to-push-an-empty-commit-and-force-a-redeployment">To push an empty commit and force a redeployment:</h4>
@@ -2072,6 +2073,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="environment-commands">Environment commands</h2>
+
 <p>The environment <em>name</em> is different from the environment <em>ID</em> only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.</p>
 
 <p>An environment name <em>cannot</em> include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (<code class="highlighter-rouge">{ }</code>), parentheses, asterisk (<code class="highlighter-rouge">*</code>), angle brackets (<code class="highlighter-rouge">&lt; &gt;</code>), ampersand (<code class="highlighter-rouge">&amp;</code>), percent (<code class="highlighter-rouge">%</code>), and other characters.</p>
@@ -2082,6 +2084,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h4 id="to-redeploy-the-environment">To redeploy the environment:</h4>
+
 <p>Trigger a redeployment without using a push. You must verify and confirm the environment to redeploy. Do not use redeploy if there is a build in a pending state.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud environment:redeploy
@@ -2109,6 +2112,7 @@ Are you sure you want to redeploy the environment &lt;environment_name&gt;? <spa
 </code></pre></div></div>
 
 <h2 id="common-commands">Common commands</h2>
+
 <p>The listed commands are for Magento Cloud CLI version 1.11.1 and later.</p>
 
 <table>
@@ -2195,6 +2199,7 @@ Help:
 </code></pre></div></div>
 
 <h2 id="update-magento-cloud-cli">Update Magento Cloud CLI</h2>
+
 <p>The Magento Cloud CLI checks for available updates upon login, but you can also check for updates using the <code class="highlighter-rouge">self:update</code> command. If there is an update available, follow the instructions and enter <code class="highlighter-rouge">Y</code> for <em>yes</em> to update the CLI.</p>
 
 <p>If your Magento Cloud CLI is up to date, you see the following response:</p>

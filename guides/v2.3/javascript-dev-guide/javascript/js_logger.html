@@ -754,6 +754,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <code class="highlighter-rouge">criteria: Function</code>: A function that accepts instance of the <code class="highlighter-rouge">LogEntry</code> and returns a Boolean value.</p>
 
 <h3 id="removedisplaycriteriacriteria">removeDisplayCriteria(criteria)</h3>
+
 <p>Removes the previously added display criteria.</p>
 
 <p><strong>Parameters</strong>
@@ -858,18 +859,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <code class="highlighter-rouge">formatter: LogFormatter</code>: An instance of <code class="highlighter-rouge">LogFormatter</code> that will be used to create a display message for the  provided entries.</p>
 
 <h3 id="showentry">show(entry)</h3>
+
 <p>Displays the provided entry.</p>
 
 <p><strong>Parameters</strong>
 <code class="highlighter-rouge">entry: LogEntry</code>: The entry to be displayed.</p>
 
 <h3 id="dumpentries">dump(entries)</h3>
+
 <p>Displays multiple entries at once.</p>
 
 <p><strong>Parameters</strong>
 <code class="highlighter-rouge">entries: Array&lt;LogEntry&gt;</code>: An array of the <code class="highlighter-rouge">LogEntry</code> instances to be displayed.</p>
 
 <h2 id="logformatter">LogFormatter</h2>
+
 <p>The <code class="highlighter-rouge">LogFormatter</code> class is responsible for processing the message of the provided entry and for preparing its string representation that will be displayed by <code class="highlighter-rouge">LogOutputHandler</code>. It also verifies if the entry’s message is set in the template:</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="p">{</span>
@@ -975,6 +979,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="usages-in-magento">Usages in Magento</h3>
+
 <p>By default, Magento uses <code class="highlighter-rouge">consoleLogger</code> to display logs in browser console.</p>
 
 <p>Example:</p>

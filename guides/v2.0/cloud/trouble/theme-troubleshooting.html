@@ -1750,6 +1750,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>This information helps you troubleshoot issues with themes added to your Magento Commerce Cloud sites and stores.</p>
 
 <h2 id="images">Lost images on deployment</h2>
+
 <p>When using a theme in your stores that resizes images, the images may not display or disappear from catalog pages when deployed. This may occur due to loading the images from the cache. If this happens, you can use Magento command to regenerate the image cache and properly display the images.</p>
 
 <p>This issue can occur in all environments during any deployment.</p>
@@ -1769,6 +1770,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="uncache">Locate blocks in themes that make them uncacheable</h2>
+
 <p>When debugging your themes, you may need to locate blocks in themes that make the pages uncacheable. Use the following command to locate these blocks.</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find ./app -type f -name "*.xml" | xargs grep -l cacheable | xargs grep -l false

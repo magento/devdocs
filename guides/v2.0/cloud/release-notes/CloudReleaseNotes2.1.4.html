@@ -1141,12 +1141,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.4 and 2.0.12.</p>
 
 <h2 id="changes-in-this-release">Changes in this release</h2>
+
 <ul>
   <li>Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise Edition 2.1.4.</li>
   <li>Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>.</li>
 </ul>
 
 <h2 id="fixes-in-this-release">Fixes in this release</h2>
+
 <!--MAGECLOUD-1427-->
 <ul>
   <li>We fixed an issue that was causing the wrong products to be indexed in 2.1.4. Previously, the <code class="highlighter-rouge">mview.xml</code> configuration used <code class="highlighter-rouge">row_id</code>  instead of <code class="highlighter-rouge">entity_id</code> when collecting information from changelogs.</li>

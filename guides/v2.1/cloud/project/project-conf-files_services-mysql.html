@@ -2033,6 +2033,7 @@ following command:</p>
 </code></pre></div></div>
 
 <h2 id="cloud-appyaml-mysqlusers">Set up multiple database users</h2>
+
 <p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code class="highlighter-rouge">mysql</code> that has administrator access to all defined databases.</p>
 
 <p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
@@ -2082,6 +2083,7 @@ following command:</p>
 </ul>
 
 <h2 id="settings">Add MySQL in services.yaml and .magento.app.yaml</h2>
+
 <p>To enable MySQL, add the following code with your installed version and allocated disk space in MB to <code class="highlighter-rouge">.magento/services.yaml</code>.</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mysql</span><span class="pi">:</span>
@@ -2103,6 +2105,7 @@ following command:</p>
 </ul>
 
 <h2 id="cloud-es-config-mg">Verify environment-related relationships</h2>
+
 <p>We use the Magento Commerce Cloud environment variable <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code></a>, a JSON object, to retrieve environment-related relationships.</p>
 
 <p>To verify this information used for configurations and settings:</p>

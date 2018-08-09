@@ -2287,6 +2287,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<div>
 
   <h2 id="file-permissions-readiness-check-issues">File permissions readiness check issues</h2>
+
   <p>Directories in the Magento file system must be writable by the web server user and the Magento file system owner, if applicable. An error similar to the following displays in the Web Setup Wizard if your permissions are not set properly:</p>
 
   <p><img src="/common/images/install_rc_file-perms.png" alt="Magento checks file permissions before you install" /></p>
@@ -2299,6 +2300,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h3 id="one-user-resolution">One-user resolution</h3>
+
   <p>If you have command-line access, enter the following command assuming Magento is installed in <code class="highlighter-rouge">/var/www/html/magento2</code>:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; &amp;&amp; chmod u+x bin/magento

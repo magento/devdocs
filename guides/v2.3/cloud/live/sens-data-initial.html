@@ -2100,6 +2100,7 @@ This example shows how you can set and lock configuration values for everything 
  templates.</p>
 
 <h2 id="prereqs">Prerequisites</h2>
+
 <p>To complete these configuration management tasks, you need the following:</p>
 
 <ul>
@@ -2148,6 +2149,7 @@ This example shows how you can set and lock configuration values for everything 
 </ol>
 
 <h2 id="export">Export values and transfer config.php to your local system</h2>
+
 <p>This step creates and transfers the <code class="highlighter-rouge">config.php</code> configuration file on the Integration environment using a command you run on your local machine.</p>
 
 <p>This procedure corresponds to step 2 in the <a href="/guides/v2.3/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>. After you create <code class="highlighter-rouge">config.php</code>, transfer it to your local system so you can add it to Git.</p>
@@ -2217,6 +2219,7 @@ This example shows how you can set and lock configuration values for everything 
 </pre>
 
 <h2 id="deploy">Push and deploy config.php to environments</h2>
+
 <p>Now that you’ve created <code class="highlighter-rouge">config.php</code> and transferred it to your local system, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the <a href="/guides/v2.3/cloud/live/sens-data-over.html#cloud-config-specific-recomm">recommended procedure</a>.</p>
 
 <p>The following command adds, commits, and pushes to master:</p>
@@ -2229,6 +2232,7 @@ This example shows how you can set and lock configuration values for everything 
 <p>Wait for deployment to complete in all environments.</p>
 
 <h2 id="cloud-set-verify">Verify your configuration changes</h2>
+
 <p>After you push <code class="highlighter-rouge">config.php</code> to your environments, any values you changed should be read-only in the Magento Admin. In this example, the modified default locale and static file optimization settings should not be editable in the Magento Admin. These configuration settings are set in <code class="highlighter-rouge">config.php</code>.</p>
 
 <p>To verify your configuration changes:</p>
@@ -2256,6 +2260,7 @@ This example shows how you can set and lock configuration values for everything 
 </ol>
 
 <h2 id="modify">Change and update system-specific configuration settings</h2>
+
 <p>If you need to modify any of these settings and update <code class="highlighter-rouge">config.php</code>, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git following the previous steps.</p>
 
 <p>To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.</p>
@@ -2265,6 +2270,7 @@ This example shows how you can set and lock configuration values for everything 
 <p>For this example, we’ll modify static file optimization settings and add a new setting for JavaScript.</p>
 
 <h3 id="change-settings">Add new configurations in Integration</h3>
+
 <p>To add additional configuration values in the Integration environment Magento Admin. For this example, we are merging JavaScript files.</p>
 
 <ol>
@@ -2283,6 +2289,7 @@ This example shows how you can set and lock configuration values for everything 
 </ol>
 
 <h3 id="regenerate">Run the config.php command</h3>
+
 <p>By running the command again for <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code>, the new configuration is appended to the file.</p>
 
 <ol>
@@ -2313,6 +2320,7 @@ This example shows how you can set and lock configuration values for everything 
 </ol>
 
 <h3 id="change-config">Edit config.php with new settings</h3>
+
 <p>On your local, use a text editor to edit the updated <code class="highlighter-rouge">app/etc/config.php</code> file. We will edit these settings to enable minifying for JavaScript, HTML, and CSS files.</p>
 
 <pre class="no-copy">
@@ -2366,6 +2374,7 @@ This example shows how you can set and lock configuration values for everything 
 <p>Save the changes to the file.</p>
 
 <h3 id="push-again">Push the changes to Git</h3>
+
 <p>To push your changes, enter the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add app/etc/config.php &amp;&amp; git commit -m "Add system-specific configuration and edit settings" &amp;&amp; git push origin master

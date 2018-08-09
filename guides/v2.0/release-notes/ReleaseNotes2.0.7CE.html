@@ -1142,20 +1142,22 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
 
-<h3>Fixed issue</h3>
+<h3 id="fixed-issue">Fixed issue</h3>
 
 <p>The   <span term-uuid="5b963536-8f03-45c4-963b-688021f4eea7" class="glossary-term" data-toggle="popover">payment gateway</span>
  now works as expected in a Magento installation running   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the   <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>
  page would become unresponsive, and the transaction would not appear in the payment gateway. <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.</p>
 
-<h3>System requirements</h3>
+<h3 id="system-requirements">System requirements</h3>
+
 <p>Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
 
-<h3>Installation instructions</h3>
+<h3 id="installation-instructions">Installation instructions</h3>
 
-<h4>New installations</h4>
+<h4 id="new-installations">New installations</h4>
+
 <p>New users can now complete a full installation of Magento Open Source 2.0.7 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.</p>
 
 <h5 id="download-a-new-installation"><b>Download a new installation</b></h5>
@@ -1187,7 +1189,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<h4><b>Upgrade existing installations</b></h4>
+<h4 id="upgrade-existing-installations"><strong>Upgrade existing installations</strong></h4>
 
 <p>This section discusses how to upgrade to 2.0.7.</p>
 
@@ -1255,7 +1257,8 @@ composer update
   </li>
 </ol>
 
-<h3>Migration toolkits</h3>
+<h3 id="migration-toolkits">Migration toolkits</h3>
+
 <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
 <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>

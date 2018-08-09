@@ -1886,6 +1886,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Now that you’re using the <code class="highlighter-rouge">default.vcl</code> generated for you by Magento, you can perform some final verifications to make sure Varnish is working.</p>
 
 <h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
+
 <p>Use <code class="highlighter-rouge">curl</code> or another utility to view HTTP response headers when you visit any Magento page in a web browser.</p>
 
 <p>First, make sure you are using Magento’s <a href="/guides/v2.3/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change">developer mode</a>; otherwise, you won’t see the headers.</p>
@@ -1907,6 +1908,7 @@ X-Magento-Cache-Debug: MISS
 </div>
 
 <h3 id="config-varnish-final-response">Check page load times</h3>
+
 <p>If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
    <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span>
  pages.</p>
@@ -1938,6 +1940,7 @@ X-Magento-Cache-Debug: MISS
 </ol>
 
 <h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
+
 <p>Make sure the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/var/page_cache</code> directory is empty:</p>
 
 <ol>
@@ -1963,6 +1966,7 @@ X-Magento-Cache-Debug: MISS
 </div>
 
 <h4 id="next-steps">Next steps</h4>
+
 <ul>
   <li><a href="/guides/v2.3/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
   <li><a href="/guides/v2.3/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>

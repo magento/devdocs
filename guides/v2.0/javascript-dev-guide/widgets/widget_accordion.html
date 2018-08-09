@@ -715,9 +715,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 
-<h3>Initialize accordion in JS components</h3>
+<h3 id="initialize-accordion-in-js-components">Initialize accordion in JS components</h3>
 
-<h4>Initialize accordion with <code>data-*</code> attributes specified</h4>
+<h4 id="initialize-accordion-with-data--attributes-specified">Initialize accordion with <code class="highlighter-rouge">data-*</code> attributes specified</h4>
+
 <p>Generally the accordion widget is instantiated like following:</p>
 <pre>
 $("#element").accordion();
@@ -786,7 +787,8 @@ $("#element").accordion();
     <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
-<h4>Initialize accordion with option</h4>
+<h4 id="initialize-accordion-with-option">Initialize accordion with option</h4>
+
 <p>You can specify the header, content, trigger as options when you initialize the widget.
 For example:</p>
 <pre>
@@ -798,11 +800,12 @@ $("#element").accordion({
  });
 </pre>
 
-<h3>Initialize accordion in a template</h3>
+<h3 id="initialize-accordion-in-a-template">Initialize accordion in a template</h3>
 
 <p>The accordion widget can be initialized using the <code>data-mage-init</code> attribute or <code class="highlighter-rouge">&lt;script&gt;</code> element, as described in <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.</p>
 
 <h2 id="accordion_options">Options</h2>
+
 <p>Accordion options coincide with <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:</p>
 <ul>
 <li><a href="#collaps_active">active</a></li>
@@ -810,7 +813,7 @@ $("#element").accordion({
 <li><a href="#collaps_open">openOnFocus</a></li>
 </ul>
 
-<h3 id="collaps_active"><code>active</code></h3>
+<h3 id="collaps_active"><code class="highlighter-rouge">active</code></h3>
 
 <p>Defines which tab is active when the widget gets instantiated.</p>
 
@@ -824,7 +827,8 @@ $("#element").accordion({ active: "0 1"});
 $("#element").accordion({ active: [0,1]});
 </pre>
 
-<h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
+<h3 id="collaps_multi"><code class="highlighter-rouge">multipleCollapsible</code></h3>
+
 <p>Defines if multiple panels can be expanded at the same time.</p>
 
 <p><strong>Type</strong>: Boolean</p>
@@ -844,7 +848,7 @@ var multipleCollapsible = $("#element").accordion("option","multipleCollapsible"
 $("#element").tabs("option","multipleCollapsible",false);
 </pre>
 
-<h3 id="collaps_open"><code>openOnFocus</code></h3>
+<h3 id="collaps_open"><code class="highlighter-rouge">openOnFocus</code></h3>
 
 <p>For keyboard navigation defines if the accordion expands when the title gets in focus.</p>
 
@@ -853,6 +857,7 @@ $("#element").tabs("option","multipleCollapsible",false);
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
 <h2 id="accordion_methods">Methods</h2>
+
 <p>Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.</p>
 
 <p>The custom accordion methods are the following:</p>
@@ -862,7 +867,8 @@ $("#element").tabs("option","multipleCollapsible",false);
 <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3 id="meth_act"><code>activate(index)</code></h3>
+<h3 id="meth_act"><code class="highlighter-rouge">activate(index)</code></h3>
+
 <p>Activate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>
@@ -876,7 +882,8 @@ $( "#element" ).accordion( "activate", 1 );
 $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
-<h3 id="meth_deact"><code>deactivate(index)</code></h3>
+<h3 id="meth_deact"><code class="highlighter-rouge">deactivate(index)</code></h3>
+
 <p>Deactivate a tab with the specified <code class="highlighter-rouge">index</code>.</p>
 
 <p><strong>Type</strong>: Number, Array.</p>

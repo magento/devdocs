@@ -1878,6 +1878,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-ee-multidb-manual-over">Overview of manual split database configuration</h2>
+
 <p>If the Magento application is already in production or if you’ve already installed custom code or components, you might need to configure split databases manually. Before continuing, contact Magento Support to see if this is necessary in your case.</p>
 
 <p>Manually splitting databases involves:</p>
@@ -1922,6 +1923,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="config-ee-multidb-backup">Back up the Magento system</h2>
+
 <p>We strongly recommend you back up your current database and file system so you can restore it later in the   <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span>
  of issues during the process.</p>
 
@@ -1943,6 +1945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </div>
 
 <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
+
 <p>This section discusses how to create database instances for sales and   <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span>
  tables.</p>
 
@@ -1995,6 +1998,7 @@ exit
   </div>
 
 <h2 id="config-ee-multidb-oms">Configure the sales database</h2>
+
 <p>This section discusses how to create and run SQL scripts that alter quote database tables and back up data from those tables.</p>
 
 <p>Sales database table names start with:</p>
@@ -2024,6 +2028,7 @@ exit
     <div class="collapsible-content"><p>Create the following SQL scripts in a location that is accessible by the user as whom you log in to your Magento server. For example, if you log in or run commands as <code class="highlighter-rouge">root</code>, you can create the scripts in the <code class="highlighter-rouge">/root/sql-scripts</code> directory.</p>
 
 <h4 id="remove-foreign-keys">Remove foreign keys</h4>
+
 <p>This script removes foreign keys that refer to non-sales tables from the sales database.</p>
 
 <p>Create the following script and give it a name like <code class="highlighter-rouge">1_foreign-sales.sql</code>. Replace <code class="highlighter-rouge">&lt;your main Magento DB name&gt;</code> with the name of your Magento database.</p>
@@ -2076,6 +2081,7 @@ exit
 <span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">paypal_billing_agreement_order</span> <span class="k">DROP</span> <span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="n">PAYPAL_BILLING_AGREEMENT_ORDER_ORDER_ID_SALES_ORDER_ENTITY_ID</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="config-ee-multidb-sql-oms-run">Configure the sales database</h3>
+
 <p>Run the preceding script:</p>
 
 <ol>
@@ -2104,6 +2110,7 @@ exit
   </div>
 
 <h3 id="sales-backup">Back up sales data</h3>
+
 <p>This section discusses how to back up sales tables from the main Magento database so you can restore them in the separate sales database.</p>
 
 <div class="collapsible">
@@ -2136,9 +2143,11 @@ exit
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">your</span> <span class="k">database</span> <span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="n">sequence_creditmemo_0</span> <span class="n">sequence_creditmemo_1</span> <span class="n">sequence_invoice_0</span> <span class="n">sequence_invoice_1</span> <span class="n">sequence_order_0</span> <span class="n">sequence_order_1</span> <span class="n">sequence_rma_item_0</span> <span class="n">sequence_rma_item_1</span> <span class="n">sequence_shipment_0</span> <span class="n">sequence_shipment_1</span> <span class="o">&gt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sequence</span><span class="p">.</span><span class="k">sql</span></code></pre></figure>
 
 <h3 id="sql-sales-restore">Restore sales data</h3>
+
 <p>This script restores sales data in your quote database.</p>
 
 <h4 id="ndb-requirement">NDB requirement</h4>
+
 <p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
 
 <ol>
@@ -2154,6 +2163,7 @@ exit
 </ol>
 
 <h4 id="restore-the-data">Restore the data</h4>
+
 <p>Run the following commands:</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">mysql</span> <span class="o">-</span><span class="n">u</span> <span class="o">&lt;</span><span class="n">root</span> <span class="n">username</span><span class="o">&gt;</span> <span class="o">-</span><span class="n">p</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">sales</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span> <span class="o">&lt;</span> <span class="o">/&lt;</span><span class="n">path</span><span class="o">&gt;/</span><span class="n">sales</span><span class="p">.</span><span class="k">sql</span>
@@ -2177,6 +2187,7 @@ exit
   </div>
 
 <h2 id="config-ee-multidb-checkout">Configure the quote database</h2>
+
 <p>This section discusses tasks required to drop foreign keys from sales database tables and move tables to the sales database.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -2186,6 +2197,7 @@ exit
 <p>Quote database table names start with <code class="highlighter-rouge">quote</code>. The <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote</code> and <code class="highlighter-rouge">magento_customercustomattributes_sales_flat_quote_address</code> tables are also affected</p>
 
 <h3 id="drop-foreign-keys-from-quote-tables">Drop foreign keys from quote tables</h3>
+
 <p>This script removes foreign keys that refer to non-quote tables from quote tables. Replace <your main="" magento="" DB="" name=""> with the name of your Magento database.</your></p>
 
 <div class="collapsible">
@@ -2223,6 +2235,7 @@ For example,</script></path></p>
   </div>
 
 <h3 id="back-up-quote-tables">Back up quote tables</h3>
+
 <p>This section discusses how to back up quote tables from the main Magento database and restore them in your quote database.</p>
 
 <div class="collapsible">
@@ -2233,6 +2246,7 @@ For example,</script></path></p>
 </code></pre></div></div>
 
 <h3 id="ndb-requirement">NDB requirement</h3>
+
 <p>If you are using a <a href="http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html" target="_blank">Network Database (NDB)</a> cluster:</p>
 
 <ol>
@@ -2255,6 +2269,7 @@ For example,</script></path></p>
   </div>
 
 <h2 id="config-ee-multidb-drop">Drop sales and quote tables from the Magento database</h2>
+
 <p>This script sales and quote tables from the Magento database. Replace <your main="" magento="" DB="" name=""> with the name of your Magento database.</your></p>
 
 <div class="collapsible">
@@ -2357,6 +2372,7 @@ For example,</script></path></p>
   </div>
 
 <h2 id="config-ee-multidb-config">Update your deployment configuration</h2>
+
 <p>The final step in manually splitting databases is to add connection and resource information to Magento’s deployment configuration, <code class="highlighter-rouge">env.php</code>.</p>
 
 <div class="collapsible">
@@ -2412,6 +2428,7 @@ For example,</script></path></p>
     <span class="p">),</span></code></pre></figure>
 
 <h3 id="update-resources">Update resources</h3>
+
 <p>Locate the block starting with <code class="highlighter-rouge">'resource'</code> and add <code class="highlighter-rouge">'checkout'</code> and <code class="highlighter-rouge">'sales'</code> sections to it as follows:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'resource'</span> <span class="o">=&gt;</span> 
@@ -2432,6 +2449,7 @@ For example,</script></path></p>
   </div>
 
 <h2 id="split-db-ref">Reference scripts</h2>
+
 <p>This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento   <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span>
 .</p>
 
@@ -2457,6 +2475,7 @@ For example,</script></path></p>
 </ol>
 
 <h3 id="remove-foreign-keys-sales-tables">Remove foreign keys (sales tables)</h3>
+
 <p>This script is the removes foreign keys that refer to non-sales tables from the sales database.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
@@ -2483,6 +2502,7 @@ For example,</script></path></p>
 <span class="p">;</span></code></pre></figure>
 
 <h3 id="remove-foreign-keys-quote-tables">Remove foreign keys (quote tables)</h3>
+
 <p>This script removes foreign keys that refer to non-quote tables from quote tables.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">select</span> <span class="n">concat</span><span class="p">(</span>
@@ -2520,6 +2540,7 @@ For example,</script></path></p>
 <span class="p">;</span></code></pre></figure>
 
 <h3 id="drop-sales-tables">Drop sales tables</h3>
+
 <p>This script drops sales tables from the Magento database.</p>
 
 <figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="n">use</span> <span class="o">&lt;</span><span class="n">your</span> <span class="n">main</span> <span class="n">magento</span> <span class="n">DB</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">;</span>
@@ -2552,11 +2573,13 @@ For example,</script></path></p>
 <span class="k">select</span> <span class="s1">'SET foreign_key_checks = 1;'</span><span class="p">;</span></code></pre></figure>
 
 <h3 id="drop-quote-tables">Drop quote tables</h3>
+
 <p>Drop all tables that start with <code class="highlighter-rouge">quote_</code>.</p>
 </div>
   </div>
 
 <h4 id="next-step">Next step</h4>
+
 <p><a href="/guides/v2.2/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
 
 			

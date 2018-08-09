@@ -1878,6 +1878,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-ee-multidb-master-over">Overview of master databases</h2>
+
 <p>This topic discusses how to get started with the split database solution by:</p>
 
 <ol>
@@ -1893,11 +1894,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="config-ee-multidb-master-install">Install the Magento Commerce software</h2>
+
 <p>You can enable split databases at any time after you install the Magento Commerce software; in other words, you can add split databases to a Magento Commerce system that already has checkout and order data. Use the instructions in the Magento Commerce README or the <a href="/guides/v2.2/install-gde/bk-install-guide.html">installation guide</a> to install the Magento Commerce software using a single master database.</p>
 
 <div>
 
   <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
+
   <p>Create checkout and OMS master databases as follows:</p>
 
   <ol>
@@ -1942,6 +1945,7 @@ exit
   </ol>
 
   <h2 id="config-ee-multidb-master-cli">Configure Magento Commerce to use the master databases</h2>
+
   <p>After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)</p>
 
   <h3 id="first-steps">First steps</h3>
@@ -1984,6 +1988,7 @@ exit
   </div>
 
   <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
+
   <p>Command syntax:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
@@ -2000,6 +2005,7 @@ exit
 </code></pre></div>  </div>
 
   <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
+
   <p>Command syntax:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
@@ -2016,6 +2022,7 @@ exit
 </code></pre></div>  </div>
 
   <h4 id="next-step">Next step</h4>
+
   <p><a href="/guides/v2.2/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
 </div>
 

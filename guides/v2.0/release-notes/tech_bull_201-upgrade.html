@@ -1146,6 +1146,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="gitignore">Issue: Upgrade failures</h3>
+
 <p>Magento Open Source (formerly Community Edition) and Commerce (formerly Enterprise Edition) upgrades failed in any of the following circumstances:</p>
 
 <ul>
@@ -1200,6 +1201,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h4 id="detail">Detail</h4>
+
 <p>Our compressed archives for Open Source and Commerce were missing <code class="highlighter-rouge">.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code class="highlighter-rouge">magento/magento-composer-installer</code> component so it reports missing files instead of throwing an   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
  with no details about what was wrong.</p>
 
@@ -1215,6 +1217,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="resolution4">PHP 7 patch</h3>
+
 <p>If your Magento server runs PHP 7, you must apply a patch first.</p>
 
 <p>To apply the patch:</p>
@@ -1297,6 +1300,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h4 id="resolution1">Resolution 1 (using version 2.0.0 or 2.0.1)</h4>
+
 <p>To resolve the missing <code class="highlighter-rouge">.gitignore</code> files issue using this method, all of the following must be true:</p>
 
 <ul>
@@ -1344,6 +1348,7 @@ composer update
 </ol>
 
 <h4 id="resolution2">Resolution 2 (upgrade to 2.0.1 or 2.0.2 has failed)</h4>
+
 <p>To resolve the missing <code class="highlighter-rouge">.gitignore</code> files issue using this method, all of the following must be true:</p>
 
 <ul>
@@ -1407,9 +1412,11 @@ Source /var/www/html/magento2/vendor/magento/magento2-base/dev/tests/integration
 </ol>
 
 <h4 id="resolution3">Resolution 3 (does not require command line access)</h4>
+
 <p>To resolve the missing <code class="highlighter-rouge">.gitignore</code> files issue if you have no command-line access to your Magento server, <a href="/guides/v2.0/install-gde/bk-install-guide.html">install version 2.0.2</a> on a local machine and transfer the Magento codebase to your Magento server using FTP or a utility provided by your shared hosting service.</p>
 
 <h3 id="sorry">Error during upgrade: “We’re sorry, we can’t take that action right now”</h3>
+
 <p>If this message displays during your upgrade, it can mean any of the following:</p>
 
 <ul>

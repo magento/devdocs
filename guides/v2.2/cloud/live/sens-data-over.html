@@ -2080,6 +2080,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">For extended technical information, see <a href="/guides/v2.2/config-guide/deployment/pipeline/">Pipeline Deployment</a>. When configuring and using these features, follow this topic specifically. Magento Commerce Cloud provides the build server, build and deploy scripts, and deployment environments. You only need to configure settings, generate the file, and deploy.</p>
 
 <h2 id="cloud-confman-over">How it works</h2>
+
 <p>The database contains default configurations for your Magento store. When you update the configurations in the Integration, Staging, and Production environments using the Magento Admin, you generate a file of all Magento configuration settings into a single text file: <code class="highlighter-rouge">app/etc/config.php</code>.</p>
 
 <p>To generate the file, use one of the following:</p>
@@ -2098,6 +2099,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If sensitive data is found in your configurations, it is generated as environment variables to <code class="highlighter-rouge">env.php</code>. This file remains in the environment and should not be added to your Git environment.</p>
 
 <h3 id="commands">Switching between commands</h3>
+
 <p>Can you switch between using <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> and <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>? Only in one specific way.</p>
 
 <p>In 2.2 and later, you cannot delete the <code class="highlighter-rouge">config.php</code> file to regenerate it. You can only edit the file to change or remove a value. This file includes more information than just configuration values.</p>
@@ -2105,6 +2107,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If you use <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> to generate the file, you can switch to <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>. Once switched, you cannot switch back. Using the command will append the file with all configured values (default and modified) not currently captured in the file. Any modified values must be entered by editing the file.</p>
 
 <h3 id="data">Configuration data</h3>
+
 <p>System settings refer to the configurations in the Magento Admin in <strong>Stores</strong> &gt; <strong>Settings</strong> &gt; <strong>Configuration</strong>. Depending on the command used, all or just modified system configurations save to the file.</p>
 
 <p>This file can include all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to static content deployment (for example, static file optimization) are also stored in <code class="highlighter-rouge">app/etc/config.php</code>. <em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.</p>
@@ -2116,6 +2119,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For a list of configurable settings, see <a href="#cloud-clp-settings">Configuration settings you can change</a> and <a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">System settings reference</a>.</p>
 
 <h3 id="cloud-confman-scd-over">Static content deployment performance</h3>
+
 <p>Depending on the size of your store, you may have a large amount of static content files to deploy. Normally, static content deploys during the <a href="/guides/v2.2/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook">deploy phase</a>, which is in Maintenance mode. To move the deployment of static content to the <a href="/guides/v2.2/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a>, generate the configuration file.</p>
 
 <p>If you generate a <code class="highlighter-rouge">config.php</code> file, the build and deploy hooks identify the file and deploy all static files during the build phase. This helps reduce the time spent in Maintenance mode during the deploy phase.</p>
@@ -2123,6 +2127,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">Before deploying static files, the build and deploy phases compress static content using <code class="highlighter-rouge">gzip</code>. Compressing static files reduces server loads and increases site performance. Refer to <a href="/guides/v2.2/cloud/env/variables-build.html">Magento build options</a> to learn about customizing or disabling file compression.</p>
 
 <h2 id="configuration-selection-flow">Configuration selection flow</h2>
+
 <p>All system configurations are set during deployment according to the following override scheme:</p>
 
 <ol>
@@ -2132,6 +2137,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="cloud-clp-settings">Configuration settings you can change</h2>
+
 <p>The following table shows the configuration settings affected by the <code class="highlighter-rouge">php vendor/bin/m2-ece-scd-dump</code> command. These are the configuration settings that you can manage in Git. If you use <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code>, all settings are exported including default and modified settings.</p>
 
 <p>The <code class="highlighter-rouge">config.php</code> file includes the following settings and configuration values:</p>
@@ -2180,6 +2186,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h2 id="cloud-config-specific-recomm">Recommended procedure to manage your settings</h2>
+
 <p>Managing store configuration is a complex task mostly up to you. What locales do you want to use? What custom themes do you need? Instead of making these changes in every environment, you can use the <code class="highlighter-rouge">config.php</code> file, which contains a number of configuration properties that you can adjust as needed.</p>
 
 <p>We <strong>strongly recommend</strong> using the <code class="highlighter-rouge">scd-dump</code> command to generate a <code class="highlighter-rouge">config.php</code> file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.</p>
@@ -2195,6 +2202,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/cloud_configmgmt-pro-2-2.png" alt="Overview of Pro configuration management" /></p>
 
 <h3 id="config-store">Step 1: Configure your store</h3>
+
 <p>Complete all configurations for your stores in the Admin console:</p>
 
 <ol>
@@ -2215,6 +2223,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="transfer-file">Step 2: Transfer and add the file to Git</h3>
+
 <p>Push the <code class="highlighter-rouge">config.php</code> file to Git. To push this file to the <code class="highlighter-rouge">master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</p>
 
 <ol>
@@ -2235,6 +2244,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">Once you add this file to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.</p>
 
 <h3 id="push-git">Step 3 &amp; 4: Push Git branch to Staging and Production</h3>
+
 <p>Log in to the Magento Admin panel in those environments to verify the settings. Only configured settings display when you use the <code class="highlighter-rouge">scd-dump</code> command. Continue configuring the environment, if needed.</p>
 
 <p>For Starter, when you push, the updated code pushes to the active environment. Merge the branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
@@ -2242,6 +2252,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For Pro, when you push to the Git branch, the Integration <code class="highlighter-rouge">master</code> environment updates. Deploy this branch to Staging and Production. Complete any additional configurations in Staging and Production as needed.</p>
 
 <h2 id="update-configurations">Update configurations</h2>
+
 <p>If you need to modify or remove any existing configuration settings in the <code class="highlighter-rouge">config.php</code> file, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git to update.</p>
 
 <p>To add new configurations, modify your environment through the Magento Admin panel and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git to update.</p>
@@ -2249,6 +2260,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">While you can manually edit the <code class="highlighter-rouge">config.php</code> file in the Staging and Production environments, we do not recommend it. The file helps to keep all configurations consistent across all environments. Never delete the <code class="highlighter-rouge">config.php</code> file to rebuild it. Deleting the file can remove specific configurations and settings required for build and deploy processes.</p>
 
 <h2 id="migrate-configurations">Migrate configurations</h2>
+
 <p>If you upgrade to Magento Commerce Cloud 2.2 or later, you may want to migrate settings from the <code class="highlighter-rouge">config.local.php</code> file to your new <code class="highlighter-rouge">config.php</code> file. If the configuration settings in your Magento Admin panel match the contents of the file, follow the instructions to generate and add the <code class="highlighter-rouge">config.php</code> file.</p>
 
 <p>If they differ, you can append content from the <code class="highlighter-rouge">config.local.php</code> file to your new <code class="highlighter-rouge">config.php</code> file:</p>
@@ -2264,6 +2276,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You only need to complete this migration once. When you need to update the file, always update the <code class="highlighter-rouge">config.php</code> file.</p>
 
 <h2 id="change-locales">Change locales</h2>
+
 <p>You can change your store locales without following a complex configuration import and export process, <em>if</em> you have <a href="/guides/v2.2/cloud/env/variables-intro.html#scd_on_demand">SCD_ON_DEMAND</a> enabled. You can update the locales using the Admin panel.</p>
 
 <p>You can add another locale to the Staging or Production environment by enabling <code class="highlighter-rouge">SCD_ON_DEMAND</code> in an Integration branch, generate an updated <code class="highlighter-rouge">config.php</code> file with the new locale information, and copy the configuration file to the target environment.</p>

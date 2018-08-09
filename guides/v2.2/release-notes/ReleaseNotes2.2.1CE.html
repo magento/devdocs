@@ -714,6 +714,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Looking for more information on these new features as well as many others? Check out  <a href="/guides/v2.2/">Magento 2.2 Developer Documentation</a>.</p>
 
 <h2 id="security-enhancements">Security enhancements</h2>
+
 <p>Magento 2.2.1 includes multiple security enhancements. Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.</p>
 
 <p>See <a href="https://magento.com/security/patches/magento-221-2110-and-2017-security-update">Magento Security Center</a> for more information.</p>
@@ -760,6 +761,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="configurable-products">Configurable products</h3>
+
 <!--- 72582 -->
 <ul>
   <li>Magento no longer displays the inappropriate  product price when a configurable product has two price options. Previously, Magento displayed the  out-of-stock price of a configurable product when both an out-of-stock and in-stock price were configured.</li>
@@ -818,6 +820,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="general">General</h3>
+
 <!--- 80096 -->
 <ul>
   <li>We’ve fixed JavaScript date validation on the storefront. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. <em>Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.</em></li>
@@ -884,12 +887,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="indexing">Indexing</h3>
+
 <!--- 72866 -->
 <ul>
   <li>We’ve fixed multiple issues where indexes were invalidated as a result of typical import, scheduled import, and catalog permission tasks.</li>
 </ul>
 
 <h3 id="orders">Orders</h3>
+
 <!--- 77966 -->
 <ul>
   <li>You can now use PayPal Express Checkout  to place an order in a split-database environment.</li>
@@ -942,6 +947,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="community-contributions">Community contributions</h2>
+
 <p>We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.</p>
 
 <p>The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.</p>
@@ -1140,6 +1146,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="system-requirements">System requirements</h3>
+
 <p>Our technology stack is built on PHP and MySQL. For details, see <a href="/guides/v2.2/install-gde/system-requirements-tech.html">Technology stack requirements</a></p>
 
 <p>For more information, <a href="/magento-system-requirements.html">System Requirements</a>.</p>
@@ -1224,6 +1231,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
+
     <p>See the following sections for more information.</p>
 
     <h3 id="upgrade-github" class="no_toc">Upgrade an existing installation from the GitHub repository</h3>
@@ -1244,6 +1252,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>Other types of upgrades are discussed in <a href="http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
+
     <p>The <a href="/guides/v2.2/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.2/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
     <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>

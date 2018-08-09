@@ -2077,6 +2077,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.</p>
 
 <h2 id="vm">Virtual machine or container (host)</h2>
+
 <p>To best develop and manage your host, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.</p>
 
 <p>For your VM, we recommend installing one of the following:</p>
@@ -2089,6 +2090,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>When using Vagrant, we also recommend the package <a href="https://github.com/devopsgroup-io/vagrant-hostmanager" target="_blank">hostmanager</a> and using <a href="https://www.virtualbox.org/wiki/Documentation" target="_blank">VirtualBox</a> to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.</p>
 
 <h2 id="devtools">Development tools</h2>
+
 <ul>
   <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a> - Provides code branching and management for accessing Magento Commerce and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
   For more information, see <a href="/guides/v2.2/cloud/reference/git-integration.html">How Cloud uses Git</a>.</li>
@@ -2097,9 +2099,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="webserver">Web server (local)</h2>
+
 <p>We strongly recommend installing <a href="/guides/v2.2/install-gde/prereq/nginx.html">Nginx</a> for your web server on your local. While Magento Commerce supports <a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a>, Magento Commerce Cloud uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.</p>
 
 <h2 id="php">PHP (local)</h2>
+
 <p>Install   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for <a href="/guides/v2.2/install-gde/prereq/php-centos.html">CentOS</a> and <a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">Ubuntu</a>. For instructions for another OS, see the <a href="http://php.net/manual/en/install.php" target="_blank">PHP documentation</a>.</p>
 
@@ -2121,6 +2125,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="cloud-first-php">Set up PHP memory limit</h3>
+
 <p>When you’re working with the Magento Cloud CLI, local environment settings come from the machine on which you’re working, not from Magento Commerce. For example, certain actions (like debugging) require a larger PHP <code class="highlighter-rouge">memory_limit</code> than most PHP distributions provide by default.</p>
 
 <p>To set <code class="highlighter-rouge">memory_limit</code>:</p>
@@ -2195,6 +2200,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="cloud-mysql">Pro: Set up the auto-increment for MariaDB</h3>
+
 <p>You need to set an auto-increment value for the MariaDB installation.</p>
 
 <ol>
@@ -2204,6 +2210,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="cloud-mysql">Pro: Set up the auto-increment for MySQL</h3>
+
 <p>The MySQL configuration parameter <a href="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html" target="_blank"><code class="highlighter-rouge">auto_increment_increment</code></a> is set to <code class="highlighter-rouge">1</code> by default in a local MySQL installation. You need to change this value to <code class="highlighter-rouge">3</code>.  The Magento Commerce database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.</p>
 
 <p>To avoid issues, we recommend you set <code class="highlighter-rouge">auto_increment_increment=3</code>.</p>
@@ -2238,6 +2245,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="cloud-ssh-cli-cli-install">Magento Cloud CLI (local)</h2>
+
 <p>The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on Magento Commerce Cloud. For a list of available commands, see <a href="/guides/v2.2/cloud/reference/cli-ref-topic.html">Common Magento CLI commands</a>.</p>
 
 <p>These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using <a href="https://www.cygwin.com/" target="_blank">Cygwin</a> or Git Bash.</p>
@@ -2284,6 +2292,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="commerce">Additional requirements for Magento Commerce</h2>
+
 <p>The requirements listed in this topic are specific to Magento Commerce Cloud environments. You will also install Magento Commerce on your VM or Docker container. For that installation, you should also review the following:</p>
 
 <ul>
@@ -2292,6 +2301,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="additional-options">Additional options</h2>
+
 <p>You can also install additional <a href="/guides/v2.2/install-gde/prereq/optional.html">optional software</a>. These packages should be installed on the local VM.</p>
 
 <h4 id="next-step">Next step:</h4>

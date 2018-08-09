@@ -563,6 +563,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 The following list of best practices addresses commonly reported issues found in third party extensions.</p>
 
 <h3 id="follow-a-set-of-coding-standards">Follow a set of coding standards</h3>
+
 <p>Coding standards are a set of guidelines that describe how code should be written.
 These standards define coding practices that determine the style of the code.
 Whether you are a solo developer or part of a team, following a set of coding standards will help make your code consistent and maintainable.</p>
@@ -578,6 +579,7 @@ Whether you are a solo developer or part of a team, following a set of coding st
 <p>To help you stick to coding standards, we recommend using the <a href="https://github.com/squizlabs/PHP_CodeSniffer" target="_blank">PHP_CodeSniffer tool</a>.</p>
 
 <h3 id="write-and-utilize-re-usable-code">Write and utilize re-usable code</h3>
+
 <p>Avoid using redundant or duplicate code, which can be hard to maintain.
 Instead of copying and pasting the same code throughout application, create a single class or method and reference it when needed.
 As a general rule of thumb, be sure to reuse code as much as possible to save yourself the from the costs of duplication.</p>
@@ -586,6 +588,7 @@ As a general rule of thumb, be sure to reuse code as much as possible to save yo
 This will let you re-use these pieces again in future development.</p>
 
 <h3 id="design-your-code-to-be-replaceable">Design your code to be replaceable</h3>
+
 <p>Designing and writing your code to be replaceable is just as important as making it re-usable.
 Having a replaceable design means your code is modular and loosely coupled, therefore allowing easy updates and improvements in the future.</p>
 
@@ -593,6 +596,7 @@ Having a replaceable design means your code is modular and loosely coupled, ther
 Writing replaceable code in your codebase makes this practice easier and more efficient.</p>
 
 <h3 id="avoid-creating-helper-classes">Avoid creating helper classes</h3>
+
 <p>Helper or utility classes are classes filled with static methods that do not quite fit anywhere else.
 These classes are considered an antipattern and go against the principles of object oriented programming.
 If you have <code class="highlighter-rouge">ClassA</code> and a <code class="highlighter-rouge">ClassAHelper</code> with static functions that work on <code class="highlighter-rouge">ClassA</code>, you should consider refactoring those functions into <code class="highlighter-rouge">ClassA</code>.</p>
@@ -601,6 +605,7 @@ If you have <code class="highlighter-rouge">ClassA</code> and a <code class="hig
 You should refactor your code and move those functions into the appropriate classes they work on.</p>
 
 <h3 id="be-consistent-with-case-and-naming-conventions">Be consistent with case and naming conventions</h3>
+
 <p>You should be consistent in your naming conventions for files, folder names, Classes, and Methods.
 Following standard conventions will make your code look professional and easy to read.</p>
 
@@ -618,6 +623,7 @@ The classes and data types are used together to produce a desired functionality.
 Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.</p>
 
 <h3 id="using-around-plugins">Using around plugins</h3>
+
 <p>Avoid using <a href="/guides/v2.0/extension-dev-guide/plugins.html">around method plugins</a> when they are not required because they increase stack traces and affect performance.</p>
 
 <p>The only use case for around method plugins is when the execution of all further plugins and original methods need termination.</p>

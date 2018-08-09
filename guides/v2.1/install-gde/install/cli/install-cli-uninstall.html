@@ -2324,9 +2324,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-install-magento-prereq">Prerequisites</h2>
+
 <p>Before you use this command, you must <a href="/guides/v2.1/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.</p>
 
 <h2 id="instgde-install-magento-update">Update the Magento software</h2>
+
 <p>To update the Magento software:</p>
 
 <ul>
@@ -2335,6 +2337,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
+
 <p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
 
 <p>The way you reinstall the Magento application from the command line depends on your role:</p>
@@ -2345,6 +2348,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
+
 <p>To reinstall the Magento software as a system integrator:</p>
 
 <ol>
@@ -2375,6 +2379,7 @@ php bin/magento setup:uninstall
 </ol>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
+
 <p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code class="highlighter-rouge">var</code>.</p>
 
 <p>To uninstall the Magento software, enter the following command:</p>
@@ -2388,6 +2393,7 @@ php bin/magento setup:uninstall
 </code></pre></div></div>
 
 <h2 id="instgde-install-keep">Optionally keeping generated files</h2>
+
 <p>By default, <code class="highlighter-rouge">magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code class="highlighter-rouge">magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
 
 <p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>

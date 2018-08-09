@@ -1668,6 +1668,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="mage-owner">Overview of development and production file system ownership and permissions</h2>
+
 <p>This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Overview of file system ownership and permissions</a>.</p>
 
 <p>This topic focuses on Magento development and production systems. If you’re installing Magento, see <a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>.</p>
@@ -1702,6 +1703,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Because having one file system owner is less secure, we recommend you deploy Magento in production on a private server instead of on shared hosting, if possible.</p>
 
 <h3 id="mage-owner-one-devel">Set up one owner for default or developer mode</h3>
+
 <p>In default or developer mode, the following directories must be writable by the user:</p>
 
 <ul>
@@ -1718,6 +1720,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You can set these permissions using either the command line or a file manager application provided by your shared hosting provider.</p>
 
 <h3 id="mage-owner-one-prod">Set up one owner for production mode</h3>
+
 <p>When you’re ready to deploy your site to production, you should remove write access from files in the following directories for improved security:</p>
 
 <ul>
@@ -1734,6 +1737,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.</p>
 
 <h4 id="make-code-files-and-directories-read-only">Make code files and directories read-only</h4>
+
 <p>To remove writable permissions to files and directories from the web server user’s group:</p>
 
 <ol>
@@ -1754,6 +1758,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h4 id="make-code-files-and-directories-writable">Make code files and directories writable:</h4>
+
 <p>To make files and directories writable so you can update components and upgrade the Magento software:</p>
 
 <ol>
@@ -1851,6 +1856,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="mage-owner-two-devel">Set up two owners for default or developer mode</h3>
+
 <p>Files in the following directories must be writable by both users in developer and default mode:</p>
 
 <ul>
@@ -1869,6 +1875,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.</p>
 
 <h4 id="set-permissions-and-setgid">Set permissions and <code class="highlighter-rouge">setgid</code></h4>
+
 <p>To set <code class="highlighter-rouge">setgid</code> and permissions for developer mode:</p>
 
 <ol>
@@ -1884,6 +1891,7 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 </ol>
 
 <h3 id="mage-owner-two-prod">Two Magento file system owners in production mode</h3>
+
 <p>When you’re ready to deploy your site to production, you should remove write access from files in the following directories for improved security:</p>
 
 <ul>
@@ -1899,6 +1907,7 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 </ul>
 
 <h4 id="make-code-files-and-directories-read-only">Make code files and directories read-only</h4>
+
 <p>To remove writable permissions to files and directories from the web server user’s group:</p>
 
 <ol>
@@ -1919,6 +1928,7 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 </ol>
 
 <h4 id="make-code-files-and-directories-writable">Make code files and directories writable:</h4>
+
 <p>To make files and directories writable so you can update components and upgrade the Magento software:</p>
 
 <ol>

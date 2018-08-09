@@ -857,6 +857,7 @@ specify the   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glos
  will render vault payments and all depending JS components will be created.</p>
 
 <h2 id="specific-vault-configuration-for-admin">Specific vault configuration for Admin</h2>
+
 <p>You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the <code class="highlighter-rouge">adminhtml</code> <a href="/guides/v2.3/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a> in <code class="highlighter-rouge">%module_dir%/etc/adminhtml/di.xml</code>.</p>
 
 <p>Example from the <code class="highlighter-rouge">app/code/Magento/Braintree/etc/adminhtml/di.xml</code>:</p>

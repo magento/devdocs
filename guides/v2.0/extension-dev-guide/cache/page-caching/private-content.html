@@ -1262,6 +1262,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This example shows a customer’s name on a cacheable page.</p>
 
 <h2 id="config-cache-priv-how-source">Create a section source</h2>
+
 <p>The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the <code class="highlighter-rouge">Vendor/ModuleName/CustomerData</code> namespace. Your classes must implement the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php" target=" &#95;blank"><code class="highlighter-rouge">Magento\Customer\CustomerData\SectionSourceInterface</code></a> interface.</p>
 
 <p>The public method <code class="highlighter-rouge">getSectionData</code> must return an array with data for private block.</p>
@@ -1281,6 +1282,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="config-cache-priv-how-block">Create a block and template</h2>
+
 <p>To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the   <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>
 .</p>
 
@@ -1301,6 +1303,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48" target="&#95;blank">Example</a></p>
 
 <h2 id="config-cache-priv-how-ui">Configure a UI component</h2>
+
 <p>The UI component renders block data on the Magento   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
 . To initialize the UI component, you must call the initialization method <code class="highlighter-rouge">_super()</code>.</p>
 
@@ -1311,6 +1314,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22" target="&#95;blank">Example of defining a UI component in a layout</a></p>
 
 <h2 id="invalidate-private-content">Invalidate private content</h2>
+
 <p>Specify actions that trigger cache invalidation for private content blocks in a <code class="highlighter-rouge">sections.xml</code> configuration file in the <code class="highlighter-rouge">Vendor/ModuleName/etc/frontend</code> directory. Magento invalidates the cache on a POST or PUT request.</p>
 
 <p>The following example adds comments to <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/frontend/sections.xml" target="&#95;blank">app/code/Magento/Catalog/etc/frontend/sections.xml</a> to show you what the code is doing.</p>
@@ -1356,6 +1360,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="config-priv-vers">Version private content</h2>
+
 <p>Private content, which is stored in the browser local storage, uses the <code class="highlighter-rouge">private_content_version</code> cookie to store the version.</p>
 
 <p>Versioning works as follows:</p>
@@ -1374,6 +1379,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="cacheable-page-checklist">Cacheable page checklist</h2>
+
 <ul>
   <li>
     <p>Pages use GET requests</p>
@@ -1396,6 +1402,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="non-cacheable-page-checklist">Non-cacheable page checklist</h2>
+
 <ul>
   <li>
     <p>Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)</p>

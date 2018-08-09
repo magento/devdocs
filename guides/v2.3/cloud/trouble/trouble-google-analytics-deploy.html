@@ -2062,9 +2062,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="resolve-issues-with-google-analytics-during-deployment">Resolve issues with Google Analytics during deployment</h2>
+
 <p>This topic discusses solutions to typical issues you might experience with Google Analytics during deployments from Integration to Staging to Production.</p>
 
 <h3 id="google-analytics-disables-when-deployed">Google Analytics disables when deployed</h3>
+
 <p>When deploying your code across environments, the build and deploy scripts verify the <code class="highlighter-rouge">master</code> branch is deployed to keep Google Analytics enabled. When deploying develop (or child) branches of master to developer environments (Integration), the deploy script disables Google Analytics. This is a working as intended feature to ensure developer data and interactions are not sent to or tracked by Google Analytics.</p>
 
 <p>For technical details, the deploy script checks the <code class="highlighter-rouge">MAGENTO_CLOUD_ENVIRONMENT</code> variable for the string branch name of <code class="highlighter-rouge">master</code> (case sensitive comparison) defined for <code class="highlighter-rouge">GIT_MASTER_BRANCH</code>. This variables cannot be directly modified. If the deploy script verifies the deployed branch is Master, Google Analytics remains enabled. If a different branch is deployed (not Master), the deploy script will disable Google Analytics.</p>

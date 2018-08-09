@@ -1496,6 +1496,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="overview">Overview</h2>
+
 <p>To help prevent <a href="https://www.owasp.org/index.php/Clickjacking" target="_blank">clickjacking</a> exploits, we added an option to use the <a href="https://tools.ietf.org/html/rfc7034" target="_blank">X-Frame-Options</a> HTTP request header in requests to your   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
 .</p>
 
@@ -1512,6 +1513,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="implement-x-frame-options">Implement <code class="highlighter-rouge">X-Frame-Options</code></h2>
+
 <p>Set a value for <code class="highlighter-rouge">X-Frame-Options</code> in <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code>. Following is the default value:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  'x-frame-options' =&gt; 'SAMEORIGIN',
@@ -1521,6 +1523,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 .</p>
 
 <h2 id="verify-your-setting-for-x-frame-options">Verify your setting for <code class="highlighter-rouge">X-Frame-Options</code></h2>
+
 <p>To verify your setting, view HTTP headers on any storefront page. There are several ways to do this, including using a web browser inspector.</p>
 
 <p>The following example uses curl, which you can run from any machine that can connect to your Magento server over the HTTP protocol.</p>
@@ -1533,6 +1536,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Look for the <code class="highlighter-rouge">X-Frame-Options</code> value in the headers.</p>
 
 <h2 id="for-more-information">For more information</h2>
+
 <ul>
   <li><a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank">mozilla.org</a></li>
   <li><a href="http://security.stackexchange.com/questions/67889/why-do-browsers-enforce-the-same-origin-security-policy-on-iframes" target="_blank">security.stackexchange.com</a></li>

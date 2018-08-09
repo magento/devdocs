@@ -706,13 +706,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>All <a href="/guides/v2.1/payments-integrations/payment-gateway/gateway-command.html">gateway commands</a> implemented for a particular payment provider, should be added to a command pool for this provider. A command pool is a set of gateway commands available for integration with a particular payment provider. The pool is added to the configuration of the payment provider using <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection</a>.</p>
 
 <h2 id="interface">Interface</h2>
+
 <p>The basic interface for a command pool is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Command/CommandPoolInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\Command\CommandPoolInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Creational/Pool/README.html">Pool pattern</a></p>
 
 <h2 id="default-implementation">Default implementation</h2>
+
 <p>The <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/Command/CommandPool.php">default CommandPool</a>
 implements <code class="highlighter-rouge">CommandPoolInterface</code> and takes a list of commands as an optional argument for the constructor.</p>
 
 <h2 id="command-pool-configuration-for-a-particular-provider">Command pool configuration for a particular provider</h2>
+
 <p>Following is an example of the command pool configuring for the Braintree payment provider, and adding it to the provider’s   <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>
  configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml"><code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml</code></a>).</p>
 

@@ -1102,6 +1102,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6.</p>
 
 <h3 id="who-needs-this-information">Who needs this information?</h3>
+
 <p>You need to read this bulletin if you’ve upgraded to Magento 2.1.6 (Open Source or Commerce) and are experiencing any of the following issues:</p>
 
 <ul>
@@ -1122,9 +1123,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>If your custom theme doesn’t include the <code class="highlighter-rouge">frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code class="highlighter-rouge">product_image_white_borders</code> option in the Catalog module for the value of the <code class="highlighter-rouge">frame</code> option. The <code class="highlighter-rouge">product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
 
 <h3 id="action">Action</h3>
+
 <p>We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only.</p>
 
 <h4 id="magento-21x-ce">Magento 2.1.x CE</h4>
+
 <p>You can fix this issue with image resizing by downloading  and installing the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
 <p>To download this patch,</p>
@@ -1134,6 +1137,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>2) Select the <code class="highlighter-rouge">CE-MAGETWO-67805.patch</code> hot fix.</p>
 
 <h4 id="magento-21x-ee">Magento 2.1.x EE</h4>
+
 <p>You can fix this issue with image resizing by downloading and installing the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
 <p>To download this patch,</p>
@@ -1145,6 +1149,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>3) Select and install the <code class="highlighter-rouge">EE-MAGETWO-67805.patch</code> hot fix.</p>
 
 <h4 id="magento-commerce-cloud">Magento Commerce (Cloud)</h4>
+
 <p>General Magento Commerce (Cloud) patches are provided for all Magento Commerce (Cloud) customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code class="highlighter-rouge">magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
 
 <p>See <a href="/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code class="highlighter-rouge">composer update</code> to upgrade your Cloud extension.</p>
@@ -1154,6 +1159,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For further discussion of this issue, see <a href="https://github.com/magento/magento2/issues/9385" target="_blank">GITHUB-9385</a> and <a href="https://github.com/magento/magento2/issues/9395" target="_blank">GITHUB-9395</a></p>
 
 <h2 id="credits">Credits</h2>
+
 <p>Dear community members, thank you for your prompt identification of this issue.</p>
 
 

@@ -1752,6 +1752,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To manage the branches and environments with the Project Web Interface, see <a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a>.</p>
 
 <h2 id="env-start-comm">Common Magento CLI commands</h2>
+
 <p>The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the <code class="highlighter-rouge">-p &lt;project ID&gt;</code> parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The <code class="highlighter-rouge">magento-cloud</code> versions directly connect with Magento Git, the Magento ECE project, and provide Git features.</p>
 
 <p>All commands are shown with required options only. Get help for any <code class="highlighter-rouge">magento-cloud</code> command by appending <code class="highlighter-rouge">--help</code>.</p>
@@ -1791,6 +1792,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For a full list of Magento cloud CLI commands, see the Magento cloud <a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></p>
 
 <h2 id="getstarted">Get started creating branches</h2>
+
 <p>To begin, you’ll need a branch to work in.</p>
 
 <ol>
@@ -1852,6 +1854,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="merge">Merge a branch</h2>
+
 <p>After completing development, you can merge this branch to the parent. The following instructions provide an example.</p>
 
 <ol>
@@ -1880,6 +1883,7 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h2 id="env-delete">Optionally delete the environment</h2>
+
 <p>Before you delete an environment, make sure you don’t need it anymore. You cannot recover a deleted environment later.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1957,6 +1961,7 @@ git push origin &lt;branch name&gt;
 </div>
 
 <h2 id="ipaddress">Integration environment IP addresses</h2>
+
 <p>The following table lists incoming and outgoing IP addresses used by Magento Commerce Cloud <a href="/guides/v2.0/cloud/architecture/pro-architecture.html#cloud-arch-int">Integration environments</a>.These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.</p>
 
 <p>If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.</p>
@@ -1997,6 +2002,7 @@ git push origin &lt;branch name&gt;
 </table>
 
 <h2 id="commands">Interact with environments via CLI</h2>
+
 <p>After setting up your <a href="/guides/v2.0/cloud/env/environments-ssh.html">set up SSH</a>, you can interact with services and modify settings through your local to a remote environment.</p>
 
 <p>The following steps provide an example of accessing a database:</p>
@@ -2069,6 +2075,7 @@ magento-cloud apps
 <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
 
 <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
+
 <p>Use the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
@@ -2092,12 +2099,14 @@ Close tunnels with: magento-cloud tunnel:close
 </code></pre></div></div>
 
 <h3 id="tunnel-info">Get tunnel information</h3>
+
 <p>To display information about your tunnel, enter:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
 </code></pre></div></div>
 
 <h3 id="tunnel-services">Connect to services</h3>
+
 <p>Now you can connect to services as if they were running locally.</p>
 
 <p>For example, to connect to the database, use the following command:</p>
@@ -2108,6 +2117,7 @@ Close tunnels with: magento-cloud tunnel:close
 <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches with the Project Web Interface</a></li>
   <li><a href="/guides/v2.0/cloud/reference/cli-ref-topic.html">Magento Cloud CLI reference</a></li>

@@ -1750,6 +1750,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>When you create your project, you receive a cloned repository of Magento Commerce Cloud code.</p>
 
 <h2 id="cloud-structure-local">Local project directory structure</h2>
+
 <p>Not including the Magento application itself, your local project has the following structure:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">├── .git
@@ -1775,6 +1776,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We include a base <code class="highlighter-rouge">.gitignore</code> file with the project repository. For a review of the Magento Commerce Cloud file, see <a href="https://github.com/magento/magento-cloud/blob/master/.gitignore" target="\_blank">.gitignore file</a>. You can review the recommended files for your file in the <a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html"><code class="highlighter-rouge">.gitignore</code> reference</a>.</p>
 
 <h2 id="rootdir">Magento application root directory</h2>
+
 <p>The Magento application root directory is located in different locations depending on the environment.</p>
 
 <p>For Starter:</p>
@@ -1793,6 +1795,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="write-dir">Writable directories</h2>
+
 <p>In Integration, Staging, and Production, <em>only</em> the following directories are writable due to security reasons:</p>
 
 <ul>
@@ -1808,6 +1811,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="logs">Logs</h2>
+
 <p>Logs for all environments are located under the <code class="highlighter-rouge">/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code class="highlighter-rouge">magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
 
 <p>For Pro, the deployment log for Staging and Production is located in <code class="highlighter-rouge">/var/log/platform/&lt;project ID&gt;</code>.</p>
@@ -1815,9 +1819,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Magento logs are located in the <code class="highlighter-rouge">&lt;magento root dir&gt;/var/log</code> directory.</p>
 
 <h2 id="build-log">Build logs</h2>
+
 <p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code class="highlighter-rouge">git push</code>, so you can observe them in the terminal or capture them (along with error messages) with <code class="highlighter-rouge">git push &gt; build.log 2&gt;&amp;1</code>.</p>
 
 <h3 id="deploy-log">Deploy logs</h3>
+
 <p>You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.</p>
 
 <p>Logs from the deploy hook are located on the server in the following locations:</p>
@@ -1853,6 +1859,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <code class="highlighter-rouge">Starting pre-deploy</code>, <code class="highlighter-rouge">Pre-deploy complete.</code>, <code class="highlighter-rouge">Start deploy.</code>, and <code class="highlighter-rouge">Deployment complete.</code>.</p>
 
 <h3 id="app-log">Application logs</h3>
+
 <p>To review other application logs in Staging or Production, you can access and review those logs in <code class="highlighter-rouge">/var/log/platform/ProjectID</code>.</p>
 
 <p>For Pro plan Staging, the project ID has <code class="highlighter-rouge">_stg</code> at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in <code class="highlighter-rouge">/var/log/platform/ProjectID_stg</code>.</p>
@@ -1860,6 +1867,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For Pro plan Production, you have three nodes to check for logs.</p>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/env/environments-start.html">Get started with an environment</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a></li>

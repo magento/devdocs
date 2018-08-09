@@ -331,6 +331,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In Magento, data interfaces, data models, and models all represent entities.</p>
 
 <h4 id="data-interfaces">Data Interfaces</h4>
+
 <p>A data interface is the interface for an   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
  that reveals the data it contains to clients. For example, the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Api/Data/CustomerInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Customer\Api\Data\CustomerInterface</code></a> class contains get and set functions for customer entity-related data such as names and email.</p>
 
@@ -339,6 +340,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To allow the use of <a href="/guides/v2.1/extension-dev-guide/attributes.html">extension attributes</a> on your entity, your data interface must extend the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php" target="_blank"><code class="highlighter-rouge">\Magento\Framework\Api\ExtensibleDataInterface</code></a> class. We recommend using this approach when you define the data interface for your entity.</p>
 
 <h4 id="data-models">Data Models</h4>
+
 <p>A data model is a class that implements a data interface and contains data that is accessible using setter and getter methods. <a href="#repositories">Repositories</a> use data models and resource models for entity persistence. We recommend you put data model classes in the <code class="highlighter-rouge">Model/Data</code> directory inside your module’s root directory.</p>
 
 <p>An example of a data model is the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/Model/Data/Customer.php" target="_blank"><code class="highlighter-rouge">\Magento\Customer\Model\Data\Customer</code></a> class.</p>

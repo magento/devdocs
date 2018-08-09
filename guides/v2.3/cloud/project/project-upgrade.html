@@ -2090,6 +2090,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">For Pro projects <strong>created before October 23, 2017</strong>, you must open a <a href="/guides/v2.3/cloud/trouble/trouble.html">support ticket</a> to use PHP 7.1 on your Pro Staging and Production environments.</p>
 
 <h3 id="configuration-management">Configuration management</h3>
+
 <p>If you are upgrading from 2.1.4 or later to 2.2.X and use Configuration Management, you need to migrate the <code class="highlighter-rouge">config.local.php</code> file. Previous versions with Configuration Management used a <code class="highlighter-rouge">config.local.php</code> file for Configuration Management. Starting with 2.2.0, <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management</a> uses the <code class="highlighter-rouge">config.php</code> file.</p>
 
 <h4 id="to-create-a-temporary-configphp-file">To create a temporary <code class="highlighter-rouge">config.php</code> file:</h4>
@@ -2107,6 +2108,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">You can only delete this file to replace it this one time. After generating a correct <code class="highlighter-rouge">config.php</code> file, you cannot delete the file to generate a new one. For more information, see <a href="/guides/v2.2/cloud/live/sens-data-over.html">Configuration Management and Pipeline Deployment</a>.</p>
 
 <h3 id="update-the-magentoappyaml-file">Update the .magento.app.yaml file</h3>
+
 <p>If you are upgrading to 2.2.X, you need to also update your <a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a> or you may encounter errors. Magento Commerce Cloud 2.2.X has new settings in the file.</p>
 
 <ol>
@@ -2225,6 +2227,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="create-a-new-configphp-file">Create a new config.php file</h2>
+
 <p>After upgrading, you need to create an updated <code class="highlighter-rouge">config.php</code> file. Complete any additional configuration changes through the Magento Admin in your Integration environment.</p>
 
 <ol>
@@ -2258,6 +2261,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">For an upgrade, you delete the <code class="highlighter-rouge">config.php</code> file. Once this file is added to your code, you should not delete it. If you need to remove or edit settings, you must manually edit the file to make changes.</p>
 
 <h2 id="extensions">Verify and upgrade your extensions</h2>
+
 <p>If you need to upgrade any third-party extensions and modules that support version 2.2, we recommend working in a new Integration branch with your extensions disabled. Review your third-party extension and module pages in Marketplace or other company sites to verify support for Magento Commerce and Magento Commerce Cloud version 2.2.</p>
 
 <ol>
@@ -2276,6 +2280,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We strongly recommend upgrading your Fastly module to v1.2.33 or later for Magento Commerce Cloud 2.2.</p>
 
 <h2 id="troubleshoot-upgrade">Troubleshoot upgrade</h2>
+
 <p>If the upgrade failed, you receive an error message in the browser indicating you cannot access your storefront or the Magento Admin pane:</p>
 
 <div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">There has been an error processing your request

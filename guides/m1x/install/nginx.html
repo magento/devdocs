@@ -17,6 +17,7 @@
 
 	<div id="content">
 		<h2 id="instgde-pre-nginx-install">Install nginx</h2>
+
 <p>We support nginx version 1.7.x. Installing the nginx software is beyond the scope of this guide. You can refer to a resource like the following:</p>
 
 <ul>
@@ -26,6 +27,7 @@
 </ul>
 
 <h2 id="inst-pre-nginx-secy">nginx security setting</h2>
+
 <p><a href="https://www.byte.nl/" target="_blank">Byte.nl</a> recently reported that some misconfigured Magento sites using the nginx web server software are vulnerable to attacks. The misconfiguration allows outside access to Magento cache files. The cache files have predictable names and can contain sensitive information, including Magento database passwords. This information can be used to obtain access to an installation and customer information.</p>
 
 <p>To avoid this issue, you can use <a href="https://gist.github.com/gwillem/cd5ae6845fa33aa0d481" target="_blank">this nginx configuration</a> provided by Willem de Groot.</p>

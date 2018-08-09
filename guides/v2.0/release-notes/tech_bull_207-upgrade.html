@@ -1154,7 +1154,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Patch <code class="highlighter-rouge">MDVA-449</code> supplies the fix for this potential upgrade issue.</p>
 
-<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
+<h3 id="issue-upgrade-failure-from-magento-installations-running-php-55x-and-updater-application-1001">Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
 
 <p>Magento Open Source  and Commerce upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.</p>
 
@@ -1197,7 +1197,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </tbody>
 </table>
 
-<h4>How to determine which version of Updater application you are running</h4>
+<h4 id="how-to-determine-which-version-of-updater-application-you-are-running">How to determine which version of Updater application you are running</h4>
+
 <ol>
   <li>
     <p>Log in to your Magento server as, or switch to, the   <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>
@@ -1220,10 +1221,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<h4>Details</h4>
+<h4 id="details">Details</h4>
+
 <p>The Setup application  that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install patch <code class="highlighter-rouge">MDVA-449</code>.</p>
 
-<h4>Download and install patch MDVA-449</h4>
+<h4 id="download-and-install-patch-mdva-449">Download and install patch MDVA-449</h4>
+
 <p>If your Magento server runs PHP 5.5.x and Setup application  10.0.1,  apply patch <code class="highlighter-rouge">MDVA-449</code>.</p>
 
 <p>To apply this patch:</p>

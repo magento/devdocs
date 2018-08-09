@@ -1535,6 +1535,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="mage-cache-db-over">Overview of database caching</h2>
+
 <p>This topic discusses how to use the Magento 2 database for caching. After you complete these tasks, cached objects are stored in the <code class="highlighter-rouge">cache</code> and <code class="highlighter-rouge">cache_tag</code> Magento 2 database tables. Nothing is stored <code class="highlighter-rouge">var/cache</code> or <code class="highlighter-rouge">var/page_cache</code>.</p>
 
 <p>This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:</p>
@@ -1549,12 +1550,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 Varnish is designed to accelerate the HTTP protocol.</p>
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
+
 <p>Before you continue, if you’re using your own frontend cache, make sure you <a href="/guides/v2.3/config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you’re using the <code class="highlighter-rouge">default</code>   <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>
  cache, you don’t have to do that.</p>
 
 <p>We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.</p>
 
 <h2 id="mage-cache-db-di">Database caching using the <code class="highlighter-rouge">default</code> cache frontend</h2>
+
 <p>To enable database caching using the <code class="highlighter-rouge">default</code> frontend, you must modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/di.xml</code>, which is the global deployment injection configuration for the Magento application.</p>
 
 <p>To modify <code class="highlighter-rouge">di.xml</code>:</p>
@@ -1628,6 +1631,7 @@ cp di.xml di.xml.bak
 </ol>
 
 <h2 id="mage-cache-db-env">Database caching using a custom cache frontend</h2>
+
 <p>This section discusses how to set up database caching with a custom   <span term-uuid="ca5ad9ac-9d39-45b5-80b1-e90d192f20d0" class="glossary-term" data-toggle="popover">cache frontend</span>
 .</p>
 
@@ -1673,6 +1677,7 @@ cp env.php env.php.bak
 </ol>
 
 <h2 id="mage-cache-db-verify">Verify database caching is working</h2>
+
 <p>To verify database caching is working, clear the current cache directories, go to any cacheable page in a web browser, and verify that data is written to the database and not to the file system.</p>
 
 <p>Use the following steps:</p>
@@ -1718,6 +1723,7 @@ If you use the <code class="highlighter-rouge">default</code> cache frontend, yo
 </ol>
 
 <h2 id="mage-cache-db-config">Configuration examples</h2>
+
 <p>This section contains code sample snippets to refer to when configuring database caching.</p>
 
 <h3 id="mage-cache-db-config-default">Sample <code class="highlighter-rouge">di.xml</code> for the default cache frontend</h3>

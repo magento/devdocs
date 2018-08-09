@@ -2264,11 +2264,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="install-optional-intro">Magento optional software</h2>
+
 <p>We strongly recommend you install NTP because otherwise, cron-related tasks might not perform properly. (Server dates could be in the past or future, for example.)</p>
 
 <p>The other optional utilities discussed in this topic might assist you with your installation; however, they are not required to install or use Magento.</p>
 
 <h2 id="install-optional-ntp">Installing and Configuring Network Time Protocol (NTP)</h2>
+
 <p><a href="http://www.ntp.org" target="_blank">NTP</a> enables servers to synchronize their system clocks using <a href="http://www.pool.ntp.org/en" target="_blank">globally available pool servers</a>. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.</p>
 
 <p>If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.</p>
@@ -2319,6 +2321,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="install-optional-ntp-servers">Use NTP pool servers</h3>
+
 <p>Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="_blank">pool servers</a> that are close to your servers’ time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="_blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.</p>
 
 <ol>
@@ -2364,6 +2367,7 @@ server 2.us.pool.ntp.org</pre>
 </ol>
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
+
 <p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  and its extensions.</p>
 
@@ -2399,6 +2403,7 @@ phpinfo();</pre>
 </ul>
 
 <h2 id="install-optional-phpmyadmin">Install phpmyadmin</h2>
+
 <p><code class="highlighter-rouge">phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code>phpmyadmin</code> as the MySQL database administrative user.</p>
 
 <p>For more information about <code class="highlighter-rouge">phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
@@ -2410,6 +2415,7 @@ phpinfo();</pre>
 </div>
 
 <h2 id="install-optional-phpmyadmin-ubuntu">Install phpmyadmin on Ubuntu</h2>
+
 <p>To install phpmyadmin on Ubuntu:</p>
 
 <ol>
@@ -2434,6 +2440,7 @@ phpinfo();</pre>
 </ol>
 
 <h2 id="install-optional-phpmyadmin-centos">Install phpmyadmin on CentOS</h2>
+
 <p>To install phpmyadmin on CentOS:</p>
 
 <ol>

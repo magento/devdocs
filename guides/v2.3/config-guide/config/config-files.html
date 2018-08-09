@@ -1884,6 +1884,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-files-overview">Overview of module configuration files</h2>
+
 <p>The responsibilities of the <code class="highlighter-rouge">config.xml</code> configuration file used in earlier versions of Magento is now divided between several files, located in various   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
  directories. Magento’s multiple configuration files load on demand only when a module requests a specific configuration type.</p>
 
@@ -1903,9 +1904,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </dl>
 
 <h2 id="config-files-loadmerge">Configuration load and merge</h2>
+
 <p>This section discusses how configuration files are loaded and merged.</p>
 
 <h3 id="config-files-load">How Magento loads configuration files</h3>
+
 <p>Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):</p>
 
 <ul>
@@ -1944,6 +1947,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="config-files-load-merge-merge">Configuration file merge</h3>
+
 <p>Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in <code class="highlighter-rouge">$idAttributes</code> array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.</p>
 
 <p>Magento’s merge algorithm follows:</p>
@@ -1957,6 +1961,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>After configuration files are merged, the resulting document contains all nodes from the original files.</p>
 
 <h2 id="config-files-classes">Configuration types, objects, and interfaces</h2>
+
 <p>The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:</p>
 
 <ul>
@@ -1965,6 +1970,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="config-files-classes-objects">Configuration types and objects</h3>
+
 <p>The following table shows each configuration type and the Magento configuration object to which it relates.</p>
 
 <table>
@@ -2014,6 +2020,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h3 id="config-files-classes-int">Configuration interfaces</h3>
+
 <p>You can interact with configuration files using interfaces under <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.</p>
 
 <p><code class="highlighter-rouge">Magento\Framework\Config</code> provides the following interfaces:</p>

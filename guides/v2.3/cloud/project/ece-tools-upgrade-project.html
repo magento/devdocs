@@ -2068,6 +2068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Before beginning an upgrade or a patching process, create an active branch from the Integration environment and checkout the new branch to your local workstation. Dedicating a branch to the upgrade or the patch process helps to avoid interference with your work in progress.</p>
 
 <h2 id="remove-deprecated-packages">Remove deprecated packages</h2>
+
 <p>Before performing an upgrade to use the <code class="highlighter-rouge">ece-tools</code> package, check the <code class="highlighter-rouge">composer.lock</code> file for the following deprecated packages:</p>
 
 <ul>
@@ -2076,6 +2077,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="metapackage">Update the metapackage</h2>
+
 <p>Each Magento Commerce version requires a different constraint based on the following:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt;=current_version &lt;next_version

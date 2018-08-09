@@ -1668,6 +1668,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="config-varnish-config-web">Configure your web server</h2>
+
 <p>Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.</p>
 
 <p>In the sections that follow, we use port 8080 as an example.</p>
@@ -1693,6 +1694,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
+
 <p>To modify the Varnish system configuration:</p>
 
 <ol>
@@ -1727,6 +1729,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
+
 <p>This section discusses how to provide minimal configuration so Varnish returns HTTP response headers. This enables you to verify Varnish works before you configure Magento to use Varnish.</p>
 
 <p>To minimally configure Varnish:</p>
@@ -1796,6 +1799,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="config-varnish-verify">Verify Varnish is working</h2>
+
 <p>The following sections discuss how you can verify that Varnish is working but <em>without</em> configuring Magento to use it. You should try this before you configure Magento.</p>
 
 <p>Perform the tasks discussed in the following sections in the order shown:</p>
@@ -1806,6 +1810,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="config-varnish-verify-start">Start Varnish</h3>
+
 <p>Enter <code class="highlighter-rouge">service varnish start</code></p>
 
 <p>If Varnish fails to start as a service, start it from the command line as follows:</p>
@@ -1834,6 +1839,7 @@ Child (29805) said Child starts
 </ol>
 
 <h3 id="config-varnish-verify-netstat">netstat</h3>
+
 <p>Log in to the Varnish server and enter the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>netstat -tulpn
@@ -1854,6 +1860,7 @@ tcp        0      0 ::1:48509                   :::*                        LIST
 <p><a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a></p>
 
 <h2 id="config-varnish-install">Install the Magento 2 software</h2>
+
 <p>Install the Magento 2 software if you haven’t already done so. When prompted for a Base URL, use the Varnish host and port 80 (for Varnish) because Varnish receives all incoming HTTP requests.</p>
 
 <p>Possible error installing Magento:</p>
@@ -1874,15 +1881,18 @@ Varnish cache server
 </code></pre></div></div>
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
+
 <p>Now you can verify that Varnish is serving pages by looking at   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
  response headers returned from any Magento page.</p>
 
 <p>Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify <code class="highlighter-rouge">.htaccess</code> in the Magento 2 root. You can also use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html"><code class="highlighter-rouge">magento deploy:mode:set</code></a> command.</p>
 
 <h4 id="set-magento-for-developer-mode">Set Magento for developer mode</h4>
+
 <p>To set Magento for developer mode, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change"><code class="highlighter-rouge">magento deploy:mode:set</code></a> command.</p>
 
 <h4 id="look-at-the-varnish-log">Look at the Varnish log</h4>
+
 <p>Make sure Varnish is running then enter the following command on the Varnish server:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>varnishlog
@@ -1909,6 +1919,7 @@ Varnish cache server
 <p>If headers like these do <em>not</em> display, stop Varnish, check your <code class="highlighter-rouge">default.vcl</code>, and try again.</p>
 
 <h4 id="look-at-html-response-headers">Look at HTML response headers</h4>
+
 <p>There are several ways to look at response headers, including using a browser   <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span>
  like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.</p>
 
@@ -1932,6 +1943,7 @@ X-Magento-Cache-Debug: HIT
 </code></pre></div></div>
 
 <h4 id="next-step">Next step</h4>
+
 <p><a href="/guides/v2.1/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></p>
 
 			

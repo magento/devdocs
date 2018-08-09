@@ -1681,6 +1681,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="overview">Overview of Elasticsearch</h2>
+
 <p>In Magento 2.1 for the first time, you can use <a href="https://www.elastic.co" target="_blank">Elasticsearch</a> for searching your   <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span>
 .</p>
 
@@ -1712,6 +1713,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We also support version 1.7 but recommend you use a later version.</p>
 
 <h3 id="es-arch">Recommended configuration</h3>
+
 <p>The following figure shows our recommended configuration. All of the tasks we discuss assume you’ve configured your system this way.</p>
 
 <p><img src="/common/images/elastic_config.png" width="500px" /></p>
@@ -1755,6 +1757,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="es-prereq">Install prerequisites and Elasticsearch</h2>
+
 <p>The tasks discussed in this section require the following:</p>
 
 <ul>
@@ -1767,9 +1770,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div>
 
   <h3 id="firewall-selinux">Firewall and SELinux</h3>
+
   <p>Please take into account that security-related software (iptables, SELinux, AppArmor etc.) may be configured by default to block communication between subsystems. It may be a good idea to check them in case of problems.</p>
 
   <h4 id="set-up-rules-for-iptables-and-selinux">Set up rules for iptables and SELinux</h4>
+
   <p>To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:</p>
 
   <ul>
@@ -1783,6 +1788,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <div>
 
     <h3 id="prereq-java">Install the Java Software Development Kit (JDK)</h3>
+
     <p>To determine if Java is already installed, enter the following command:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java -version
@@ -1798,6 +1804,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ul>
 
     <h4 id="install-prereq-java-centos">Install the JDK on CentOS</h4>
+
     <p>See <a href="https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8" target="_blank">this article on digitalocean</a>.</p>
 
     <p>Be sure to install the JDK and <em>not</em> the JRE.</p>
@@ -1810,6 +1817,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
     <h4 id="install-prereq-java-ubuntu">Install the JDK on Ubuntu</h4>
+
     <p>To install JDK 1.8 on Ubuntu, enter the following commands as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add-apt-repository -y ppa:webupd8team/java
@@ -1820,6 +1828,7 @@ apt-get install -y oracle-java8-installer
     <p>For other options, see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">Oracle documentation</a>.</p>
 
     <h3 id="es-install-es">Install Elasticsearch</h3>
+
     <p>This section discusses how to install the latest 2.x version of Elasticsearch from their repository.</p>
 
     <p>To install older versions, see the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/index.html" target="_blank">Elasticsearch reference</a> (for example, the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/index.html" target="_blank">2.0 reference</a>).</p>
@@ -1901,6 +1910,7 @@ cd elasticsearch-2.4.4/bin
     </ol>
 
     <h2 id="es-resources">Additional resources</h2>
+
     <p>For additional information, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html" target="_blank">Elasticsearch documentation</a></p>
 
     <h4 id="next">Next</h4>

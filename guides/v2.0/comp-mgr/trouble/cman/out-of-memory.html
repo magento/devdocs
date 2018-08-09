@@ -959,6 +959,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Sometimes when you attempt to install or update, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.</p>
 
 <h3 id="symptom">Symptom</h3>
+
 <p>When installing or updating the Magento application or components like extensions, themes, or language packages, an error similar to the following displays:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Could not complete update {"components":[
@@ -969,10 +970,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The error <code class="highlighter-rouge">proc_open(): fork failed - Cannot allocate memory</code> can also display on the command line.</p>
 
 <h3 id="description">Description</h3>
+
 <p>We recommend you allocate 2GB of memory to   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  to make sure your installation or upgrade succeeds. The error might mean you have exhausted the physical memory in your machine and your system has no swap file available. At minimum, we recommend you have at least 2GB of RAM and an enabled swap file.</p>
 
 <h3 id="solution">Solution</h3>
+
 <p>First, make sure you allocated <a href="/guides/v2.0/install-gde/prereq/php-settings.html">2GB of memory to PHP</a>; otherwise, your installation or upgrade might still run out of memory.</p>
 
 <p>If you’ve already done that, create a swap file on your machine. A Linux machine uses <em>swap space</em> if it needs more memory resources and the RAM is full. The swap space is used for inactive pages in memory.</p>
@@ -980,6 +983,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The following are suggestions only; other options might be available. Consult a network administrator or another knowledgeable resource before you continue. You must run the commands to create a swap file as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
 <h4 id="swap-file-on-ubuntu">Swap file on Ubuntu</h4>
+
 <p>Use the <code class="highlighter-rouge">fallocate</code> command as discussed in these references:</p>
 
 <ul>
@@ -989,6 +993,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="swap-file-on-centos">Swap file on CentOS</h4>
+
 <p>Use the <code class="highlighter-rouge">mkswap</code> command as discussed in these references:</p>
 
 <ul>

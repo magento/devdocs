@@ -1758,9 +1758,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="required-information">Required information</h2>
+
 <p>Before you continue, make sure you have the <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html">encryption key</a> from your Magento Commerce system.</p>
 
 <h2 id="cloud-import-ref">Create a remote Git reference</h2>
+
 <p>This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento Commerce installation is located.</p>
 
 <p>Before you continue, make sure you know the SSH or HTTPS   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
@@ -1819,6 +1821,7 @@ git branch -u cloud-project/master
 </ol>
 
 <h2 id="cloud-import-imp">Import your Magento Commerce code to your Cloud project</h2>
+
 <p>Before you continue, make sure you’ve completed all tasks discussed in the preceding section.</p>
 
 <p>To import your Magento Commerce code to Cloud:</p>
@@ -1859,6 +1862,7 @@ Environment routes:
 </ol>
 
 <h2 id="cloud-import-db">Import the Magento database</h2>
+
 <p>Before you can use your existing Magento Commerce code in Magento Commerce Cloud, you must import the database.</p>
 
 <p>To import the Magento database in Magento Commerce Cloud, you must know:</p>
@@ -1916,6 +1920,7 @@ Environment routes:
 </ol>
 
 <h3 id="baseurl">Update base URLs</h3>
+
 <p>Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the <code class="highlighter-rouge">core_config_data</code> table.</p>
 
 <p>The following example shows how to change <em>only</em> the insecure URL but you can use the same procedure to change secure URLs as well.</p>
@@ -1968,6 +1973,7 @@ Environment routes:
 </div>
 
 <h2 id="encryption-key">Add the Magento encryption key</h2>
+
 <p>The Magento Commerce encryption key is required as an environment variable in <code class="highlighter-rouge">env.php</code> for Integration, Staging, and Production environments. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code class="highlighter-rouge">env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
 
 <p>You copied the key in a <a href="/guides/v2.0/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key">previous step</a>.</p>
@@ -2003,6 +2009,7 @@ Environment routes:
 </ol>
 
 <h2 id="media">Import media</h2>
+
 <p>To import media files into your Cloud environment:</p>
 
 <ol>
@@ -2027,6 +2034,7 @@ Environment routes:
 </ol>
 
 <h2 id="cache">Clear the cache</h2>
+
 <p>On the Cloud environment, enter the following commands in the order shown:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento setup:upgrade
@@ -2038,6 +2046,7 @@ bin/magento cache:clean
  flushes, enter <code class="highlighter-rouge">exit</code> to close the SSH tunnel.</p>
 
 <h2 id="verify">Verify the import</h2>
+
 <p>To verify everything imported properly, perform the following tasks in your local Cloud development environment:</p>
 
 <ol>

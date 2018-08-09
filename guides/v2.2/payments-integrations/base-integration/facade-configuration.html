@@ -789,6 +789,7 @@ process payment actions between Magento Sales Management and payment processor.<
 </table>
 
 <h4 id="value_handlers_pool">Value handlers pool</h4>
+
 <p>Let’s look closer at the value handlers pool of a payment method. This pool enables you to set payment configuration that is based on certain conditions.</p>
 
 <p>For example, the <code class="highlighter-rouge">can_void</code> configuration option might depend on payment transaction status or paid amount. The following sample shows how to set the corresponding configuration (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L296">app/code/Magento/Braintree/etc/di.xml#L296</a>):</p>

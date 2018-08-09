@@ -704,6 +704,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="practice_overview">Overview</h2>
+
 <p>This topic features a step-by-step illustration of how to customize a   <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span>
    <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>
  and how to use a custom widget instead the default Magento one.</p>
@@ -765,6 +766,7 @@ define([
 </pre>
 
 <h3 id="config1">Step 3: Update the RequireJS configuration</h3>
+
 <p>OrangeCo adds the custom <code class="highlighter-rouge">app/design/OrangeCo/orange/requirejs-config.js</code> with the following content:</p>
 <pre>
 var config = {
@@ -779,6 +781,7 @@ var config = {
 <p>The new behavior is applied once the store pages are reloaded.</p>
 
 <h2 id="use_custom_widget">Add and use a custom widget (jCarousel)</h2>
+
 <p>OrangeCo wants to use the <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel widget</a> to display product images on product pages.
 The high level steps for this task are the following:</p>
 
@@ -789,10 +792,11 @@ The high level steps for this task are the following:</p>
 </ol>
 
 <p>Let’s look at each step in more detail.</p>
-<h3>Step 1: Define what is the default implementation</h3>
+<h3 id="step-1-define-what-is-the-default-implementation">Step 1: Define what is the default implementation</h3>
+
 <p>Using the approach described in the previous section, OrangeCo defines that the product images are displayed by <code class="highlighter-rouge">gallery.js</code>, and the configuration path for it is <code class="highlighter-rouge">mage/gallery</code>.</p>
 
-<h3>Step 2: Add the custom script to the file system</h3>
+<h3 id="step-2-add-the-custom-script-to-the-file-system">Step 2: Add the custom script to the file system</h3>
 
 <p>For the jCarousel widget to be able to use the configuration passed to the gallery widget,
 OrangeCo needs to add a “wrapper” script.</p>
@@ -820,7 +824,8 @@ define([
 </li>
 </ul>
 
-<h3>Step 3: Update RequireJS configuration</h3>
+<h3 id="step-3-update-requirejs-configuration">Step 3: Update RequireJS configuration</h3>
+
 <p>In the <code class="highlighter-rouge">app/design/OrangeCo/orange</code> directory OrangeCo adds <code class="highlighter-rouge">requirejs-config.js</code> with the following content:</p>
 
 <pre>
@@ -837,6 +842,7 @@ var config = {
 </pre>
 
 <h2 id="recommended-reading">Recommended reading</h2>
+
 <p><a href="/guides/v2.0/javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a></p>
 
 			

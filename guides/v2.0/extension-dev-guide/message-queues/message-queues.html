@@ -1278,13 +1278,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The procedure for instantiating a consumer differs, depending on which message queue system is being used.</p>
 
-<h3>RabbitMQ</h3>
+<h3 id="rabbitmq">RabbitMQ</h3>
+
 <p>This instantiates a consumer that is defined in a <code class="highlighter-rouge">queue.xml</code> file. The consumer (<code class="highlighter-rouge">customer_created_listener</code>)listens to the queue and receives all new messages. For every message, it invokes <code class="highlighter-rouge">Magento\Some\Class::processMessage($message)</code></p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">consumerFactory</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">'customer_created_listener'</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">process</span><span class="p">();</span></code></pre></figure>
 
-<h3>MySQL adapter</h3>
+<h3 id="mysql-adapter">MySQL adapter</h3>
 
 <p>Implement <code class="highlighter-rouge">\Magento\Framework\MessageQueue\ConsumerInterface::process($maxNumberOfMessages)</code> to instantiate a consumer.</p>
 
@@ -1298,6 +1299,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="override-topic-configuration">Override topic configuration</h2>
+
 <p>The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="s1">'queue'</span> <span class="o">=&gt;</span>

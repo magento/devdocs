@@ -1783,9 +1783,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Our patches are Composer driven. For more information on Composer, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer in Cloud</a>. When you perform a Magento Commerce Cloud upgrade, you automatically upgrade with patches and hotfixes through the <code class="highlighter-rouge">composer update</code> command.</p>
 
 <h2 id="variable">Verify or set the ADMIN_EMAIL variable</h2>
+
 <p>The environment variable <code class="highlighter-rouge">ADMIN_EMAIL</code> is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating Magento Commerce Cloud. See <a href="/guides/v2.0/cloud/project/project-webint-basic.html#project-conf-env-var">Set environment and project variables</a>.</p>
 
 <h2 id="backup-db">Back up the database</h2>
+
 <p>Back up your Integration environment database and code:</p>
 
 <ol>
@@ -1824,6 +1826,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="verify-changes">Verify other changes</h2>
+
 <p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
 
 <ol>
@@ -1838,6 +1841,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="patch">Apply the patch</h2>
+
 <p>To apply the patch, you run the <code class="highlighter-rouge">composer update</code> command. The command uses <code class="highlighter-rouge">composer.json</code> to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.</p>
 
 <p>If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.</p>
@@ -1869,9 +1873,11 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h2 id="cloud-patch-gen">Test general patches</h2>
+
 <p><em>General patches</em> are provided for all Magento Commerce customers in a repository referenced in your <code class="highlighter-rouge">composer.json</code>. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.</p>
 
 <h3 id="gen-getstarted">Get started</h3>
+
 <p>We recommend testing patches in an active branch, prior to deploying to Staging and Production environments.</p>
 
 <ol>
@@ -1971,6 +1977,7 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h3 id="gen-pushpatch">Push a general patch to Staging or Production environments</h3>
+
 <p>After you’ve successfully tested a patch locally and on your integration environment, you can push the patch to Staging or Production environment:</p>
 
 <ol>
@@ -2013,9 +2020,11 @@ git push origin master
 </ol>
 
 <h2 id="cloud-patch-custom">Test custom patches</h2>
+
 <p><em>Custom patches</em> are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.</p>
 
 <h3 id="custom-getstarted">Get started</h3>
+
 <p>We recommend you test a patch locally in an active branch. After completing testing, you can push the branch to Staging and Production.</p>
 
 <ol>
@@ -2177,6 +2186,7 @@ git push origin &lt;branch name&gt;
 </ol>
 
 <h4 id="related-topic">Related topic</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer</a></li>
 </ul>

@@ -1255,11 +1255,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="register-overview">Registration overview</h2>
+
 <p>Magento components, including modules, themes, and language packages, must be registered in the Magento system through the Magento <code class="highlighter-rouge">ComponentRegistrar</code> class.</p>
 
 <p>Each component must have a file called <code class="highlighter-rouge">registration.php</code> in its root directory. For example, here is the <code class="highlighter-rouge">registration.php</code> file for Magento’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/AdminNotification/registration.php">AdminNotification module</a>. Depending on the type of component, registration is performed through <code class="highlighter-rouge">registration.php</code> by adding to it as follows:</p>
 
 <h2 id="register-modules">Register modules</h2>
+
 <p>Register modules with:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::MODULE, '&lt;VendorName_ModuleName&gt;', __DIR__);
@@ -1276,6 +1278,7 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 </code></pre></div></div>
 
 <h2 id="register-themes">Register themes</h2>
+
 <p>Register themes with:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::THEME, '&lt;area&gt;/&lt;vendor&gt;/&lt;theme name&gt;', __DIR__);
@@ -1291,6 +1294,7 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 <p>&nbsp;</p>
 
 <h2 id="register-lagpacks">Register language packages</h2>
+
 <p>Register language packages with:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ComponentRegistrar::register(ComponentRegistrar::LANGUAGE, '&lt;VendorName&gt;_&lt;packageName&gt;', __DIR__);
@@ -1305,6 +1309,7 @@ ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Magento_AdminNotificat
 <p>&nbsp;</p>
 
 <h2 id="register-autoload">Invoke <code class="highlighter-rouge">registration.php</code> in <code class="highlighter-rouge">composer.json</code> with autoload</h2>
+
 <p>After you create your <code class="highlighter-rouge">registration.php</code> file and you are creating <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">your component’s composer.json file</a>, invoke your <code class="highlighter-rouge">registration.php</code> file in the <code class="highlighter-rouge">autoload</code> section of <code class="highlighter-rouge">composer.json</code>:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {

@@ -1141,6 +1141,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We are pleased to present Magento Open Source  2.1.11. This release includes both new features and many improvements. Check out the many community-contributed fixes!</p>
 
 <h2 id="highlights">Highlights</h2>
+
 <p>Look for the following highlights in this release:</p>
 
 <h3 id="new-features">New features</h3>
@@ -1183,6 +1184,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="fixed-issues">Fixed issues</h2>
 
 <h3 id="setup">Setup</h3>
+
 <!--- MAGETWO-82780 -->
 <ul>
   <li>The  <code class="highlighter-rouge">/.user.ini</code> and <code class="highlighter-rouge">/pub/.user.ini</code> files now specify a <code class="highlighter-rouge">memory_limit</code> value of at least 1G to 2G for debugging purposes. <em>Fix submitted by <a href="https://github.com/lewisvoncken">Mr. Lewis</a> in pull request 11761</em>. <a href="https://github.com/magento/magento2/issues/11322">GitHub-11322</a></li>
@@ -1194,12 +1196,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="cache">Cache</h3>
+
 <!--- MAGETWO-72798 -->
 <ul>
   <li>We’ve resolved an issue where store websites do not work when Redis cache is installed and the PhpRedis extension is enabled.</li>
 </ul>
 
 <h3 id="catalog">Catalog</h3>
+
 <!--- MAGETWO-70373 -->
 <ul>
   <li>A user who does not have permission to view a category (based on category permissions) can no longer view it in the menu even if it were cached.</li>
@@ -1307,6 +1311,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="general">General</h3>
+
 <!--- MAGETWO-83760 -->
 <ul>
   <li>The  <strong>Stores &gt; Configuration &gt; General &gt; Design</strong> page now displays as expected. <a href="https://github.com/magento/magento2/issues/5256">GitHub-5256</a></li>
@@ -1440,6 +1445,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="index">Index</h3>
+
 <!--- MAGETWO-84444 -->
 <ul>
   <li>We’ve fixed an issue that lead to wrong products being indexed. Previously, the <code class="highlighter-rouge">mview.xml</code> configuration used <code class="highlighter-rouge">row_id</code>  instead of <code class="highlighter-rouge">entity_id</code> when collecting information from changelogs.</li>
@@ -1453,6 +1459,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
+
 <!--- MAGETWO-83149 -->
 <ul>
   <li>Magento PayPal integration now supports the Indian Rupee currency (INR).</li>
@@ -1474,6 +1481,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="performance">Performance</h3>
+
 <!--- MAGETWO-82527 -->
 <ul>
   <li>We’ve improved the performance of Web API calls that are used to access checkout payment information or place orders. <em>Fix submitted by <a href="https://github.com/nmalevanec">Malyovanets Nickolas</a> in pull request 11640</em>. <a href="https://github.com/magento/magento2/issues/9007">GitHub-9007</a></li>
@@ -1487,6 +1495,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="salesrule">SalesRule</h3>
+
 <!--- MAGETWO-64066 -->
 <ul>
   <li>Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the Cart Price rule.</li>
@@ -1503,18 +1512,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="search">Search</h3>
+
 <!--- MAGETWO-71569 -->
 <ul>
   <li>The Elasticsearch indexer search-by-attribute functionality now works as expected.</li>
 </ul>
 
 <h3 id="shipping">Shipping</h3>
+
 <!--- MAGETWO-83429 -->
 <ul>
   <li>Magento no longer throws an error (<code class="highlighter-rouge">Undefined variable: responseAjax</code>) when you try to save a shipment package. <em>Fix submitted by <a href="https://github.com/lazyguru">Joe Constant</a> in pull request 12092</em>.</li>
 </ul>
 
 <h3 id="tax">Tax</h3>
+
 <!--- MAGETWO-72280 -->
 <ul>
   <li>Magento now correctly calculates the tier price percentage when displayed prices include tax. <a href="https://github.com/magento/magento2/issues/8833">GitHub-8833</a></li>
@@ -1526,18 +1538,21 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="translations">Translations</h3>
+
 <!--- MAGETWO-71591 -->
 <ul>
   <li>You can now implement translations from themes (in contrast to translations from modules).</li>
 </ul>
 
 <h3 id="visual-merchandiser">Visual Merchandiser</h3>
+
 <!--- MAGETWO-70287 -->
 <ul>
   <li>We’ve improved the performance of editing or saving products in large categories (more than 18,000 products per category).</li>
 </ul>
 
 <h2 id="known-issue">Known issue</h2>
+
 <!--- MAGETWO-85164 -->
 <p><strong>Issue</strong>: In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure.</p>
 
@@ -1747,11 +1762,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
 <h2 id="system-requirements">System requirements</h2>
+
 <p>Our technology stack is built on PHP and MySQL. For more information, see <a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
+
   <p>See one of the following sections:</p>
 
   <ul>
@@ -1824,9 +1841,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
+
     <p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
+
     <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
     <p>An updated version of this toolkit is typically available several days after the patch release.</p>
@@ -1834,6 +1853,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
 
     <h2 id="credits">Credits</h2>
+
     <p>Dear community members, thank you for your suggestions and bug reports.</p>
 
   </div>

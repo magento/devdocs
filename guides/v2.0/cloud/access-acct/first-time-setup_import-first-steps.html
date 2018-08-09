@@ -1750,6 +1750,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>You can create a Magento Commerce Cloud project from a blank template or by importing existing code. We recommend starting with a blank template first, and then importing existing Magento code on top of it.</p>
 
 <h2 id="prereqs">Prerequisites for importing code</h2>
+
 <p>Before you begin, do the following:</p>
 
 <ul>
@@ -1766,6 +1767,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="ssh">SSH access to cloud environments</h3>
+
 <p>To transfer the database dump and files to Magento Commerce Cloud, you must know the SSH access link. You can locate the SSH access link using the [<code class="highlighter-rouge">magento-cloud</code>] CLI tool(/guides/v2.0/cloud/reference/cli-ref-topic.html):</p>
 
 <p>magento-cloud environment:ssh –pipe</p>
@@ -1775,6 +1777,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="db-creds">Database credentials</h3>
+
 <p>You need your Magento Commerce Cloud database name and credentials so that you can import your Magento Commerce data. You can find the name and credentials for your Magento Commerce Cloud database in the <code class="highlighter-rouge">$MAGENTO_CLOUD_RELATIONSHIPS</code> environment variable.</p>
 
 <p>To find Magento Commerce Cloud database access information:</p>
@@ -1812,6 +1815,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In the previous example, the database name is <code class="highlighter-rouge">main</code>, the listen port is <code class="highlighter-rouge">3306</code>, the hostname is <code class="highlighter-rouge">database.internal</code>, the root username is <code class="highlighter-rouge">user</code>, and the user has no password.</p>
 
 <h3 id="cloud-unsecure-base-url">Cloud unsecure base URL</h3>
+
 <p>After you import the Magento Commerce database into Magento Commerce Cloud, you must change the base URL so you can access the Magento Admin and storefront.</p>
 
 <p>Use the magento-cloud CLI tool to locate the base URL:</p>
@@ -1820,6 +1824,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h2 id="import">Import workflow for existing code</h2>
+
 <p>The complete workflow for importing existing code includes the following steps:</p>
 
 <ol>

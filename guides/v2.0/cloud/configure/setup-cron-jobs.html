@@ -1750,6 +1750,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Magento uses cron jobs for numerous features to schedule activities. You can add cron jobs to <code class="highlighter-rouge">.magento.app.yaml</code> and push it to your branches for deployment. For specific information for configuring and setting up cron in Magento, see <a href="#croninfo">Magento Commerce cron information</a>. The following information is specific to creating and deploying cron jobs in Magento Commerce Cloud.</p>
 
 <h2 id="croninfo">Magento Commerce cron information</h2>
+
 <p>The following links provide more information on crons for Magento Commerce. You can use this information for setting up and understanding cron jobs in Magento. When you want to add cron jobs for Magento Commerce Cloud, you manage all crons through <code class="highlighter-rouge">.magento.app.yaml</code>. For more information, review this topic.</p>
 
 <ul>
@@ -1759,6 +1760,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="build">Build a cron job</h2>
+
 <p>A cron job includes the specification for scheduling and timing and the command to run at that time. For example, the general format is:</p>
 
 <p><code class="highlighter-rouge">* * * * * &lt;command&gt;</code></p>
@@ -1825,6 +1827,7 @@ crons:
 </ul>
 
 <h2 id="admin">Configure cron settings in the Magento Admin</h2>
+
 <p>Due to the minimum allowed frequency of <strong>five minutes for Starter environments and Pro Integration environments</strong>, you need to change the cron settings defaulted at two minutes in the Magento Admin. If you don’t change the settings, crons will never run.</p>
 
 <p>You do not need to set this for Pro Staging and Production environments.</p>
@@ -1844,6 +1847,7 @@ crons:
 </ol>
 
 <h2 id="add-cron">Add cron jobs to .magento.app.yaml</h2>
+
 <p>You should add all cron jobs to your <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code class="highlighter-rouge">.magento.app.yaml</code></a> file in the <code class="highlighter-rouge">crons</code> section. We include a default cron job for Magento in the default file:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Default Magento 2 cron jobs
@@ -1873,6 +1877,7 @@ crons:
 </ol>
 
 <h2 id="env">Add cron jobs to environments</h2>
+
 <p>When you push the code, the cron jobs will be added to and run in the following environments:</p>
 
 <ul>
@@ -1885,6 +1890,7 @@ crons:
 <p>We manage cron jobs on Pro plan Staging and Production environments using Jenkins. These cron jobs do not run precisely against the system clock. If Jenkins encounters lag, the cron jobs may run occasionally late.</p>
 
 <h2 id="update">Update cron jobs</h2>
+
 <p>If you need to change or update your cron jobs, update the crons section in your <code class="highlighter-rouge">.magento.app.yaml</code> file. Push the file to your Git branch and deploy across environments.</p>
 
 <p>For Pro plan Staging and Production environments, please <a href="/guides/v2.0/cloud/trouble/trouble.html">enter a ticket to Support</a> to review, remove, or modify these cron jobs. To update a cron job, we recommend pushing the updates through to the Integration <code class="highlighter-rouge">master</code> branch in the <code class="highlighter-rouge">.magento.app.yaml</code> file. Cron jobs for Pro plan Staging and Production environments are not available through a Cron tab.</p>

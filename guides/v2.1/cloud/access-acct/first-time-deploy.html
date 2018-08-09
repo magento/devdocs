@@ -2042,6 +2042,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="prereqs">Prerequisites</h2>
+
 <p>To deploy, you need the following:</p>
 
 <ul>
@@ -2051,6 +2052,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="ticket">Enter a ticket</h2>
+
 <p>If you need environments provisioned and SSH access, enter a <a href="/guides/v2.1/cloud/trouble/trouble.html">Support ticket</a>.</p>
 
 <p>To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.</p>
@@ -2058,6 +2060,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.</p>
 
 <h2 id="deploy">Deploy to Staging and Production</h2>
+
 <p>The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans. You can also use SSH and CLI commands to complete these process. Previously for Pro plans, you could only use SSH and CLI commands for Staging and Production.</p>
 
 <p>For the Pro plan, deploy the branch you created to Staging and Production.</p>
@@ -2073,6 +2076,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p><img src="/common/images/cloud_project-merge.png" alt="Use the merge option to deploy" /></p>
 
 <h2 id="ssh">Deploy using SSH</h2>
+
 <p>If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the <code class="highlighter-rouge">master</code> branch.</p>
 
 <p>You’ll need the SSH and Git with your project ID. The formats are as follows:</p>
@@ -2106,6 +2110,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>After that is set up, you can SSH into the environment and use Git commands to push the branches.</p>
 
 <h3 id="cloud-live-migrate-git">Set up remote Git repositories</h3>
+
 <p>When you know your Git URLs, you must set them up as remote upstream repositories so you can push code to them.</p>
 
 <p>Command syntax:</p>
@@ -2120,6 +2125,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 </code></pre></div></div>
 
 <h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
+
 <p>You can use any SSH client you prefer or see our <a href="/guides/v2.1/cloud/before/before-workspace.html#recommended-tools">Recommended tools</a>. For these examples, we use the OpenSSH client.</p>
 
 <p>The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.</p>
@@ -2192,6 +2198,7 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 </ol>
 
 <h2 id="code">You’re ready to code!</h2>
+
 <p>When this code is fully deployed to those environments, you can begin development, add extensions, and more!</p>
 
 			

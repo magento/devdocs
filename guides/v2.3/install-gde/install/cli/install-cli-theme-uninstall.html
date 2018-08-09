@@ -2279,6 +2279,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
+
 <p>Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/design/&lt;area name&gt;</code>. You must specify the path to the theme starting with the area, which is either <code class="highlighter-rouge">frontend</code> (for storefront themes) or <code class="highlighter-rouge">adminhtml</code> (for   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  themes).</p>
 
@@ -2288,6 +2289,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>For more information about themes, see <a href="/guides/v2.3/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.</p>
 
 <h2 id="instgde-install-uninst-theme-over">Overview of uninstalling themes</h2>
+
 <p>This section discusses how to uninstall one or more themes, optionally including the themes’ code from the file system. You can create backups first so you can restore the data at a later time.</p>
 
 <p>This command uninstalls <em>only</em> themes that are specified in <code class="highlighter-rouge">composer.json</code>; in other words, themes that are provided as   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
@@ -2342,6 +2344,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
+
 <p>Command usage:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}

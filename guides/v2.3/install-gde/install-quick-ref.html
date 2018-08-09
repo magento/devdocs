@@ -2306,11 +2306,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We’ve broken the installation process into three main parts: getting started, installing, and post-installation. We hope that what follows helps you; if you’d like to suggest improvements, click <strong>Edit this page on GitHub</strong> at the top of this page and let us know.</p>
 
 <h2 id="precondition-how-advanced-are-you">Precondition: How advanced are you?</h2>
+
 <p>Do you know what a “terminal” application is? Do you know what operating system your server runs? Do you know what Apache is?</p>
 
 <p>If not, see the <a href="/guides/v2.3/install-gde/bk-install-guide.html">Installation overview</a>.</p>
 
 <h2 id="installation-part-1-getting-started">Installation part 1: Getting started</h2>
+
 <ol>
   <li>See the <a href="/magento-system-requirements.html">system requirements</a>.</li>
   <li>
@@ -2329,6 +2331,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="get-the-magento-software">Get the Magento software</h3>
+
 <p>When all prerequisites have been met, get the Magento software using   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  as follows:</p>
 
@@ -2343,6 +2346,7 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 <div>
 
   <h2 id="perms-over">Set pre-installation file system ownership and permissions</h2>
+
   <p>This topic discusses how to set read-write permissions for the web server group before you install the Magento software. This is necessary so the Setup Wizard or command line can write files to the Magento file system.</p>
 
   <p>The procedure you use is different, depending on whether you use <a href="#perms-shared">shared hosting</a> and have one user or if you use a <a href="#perms-private">private server</a> and have two users.</p>
@@ -2352,6 +2356,7 @@ composer create-project --repository-url=https://repo.magento.com/ magento/proje
 </div>
 
   <h2 id="perms-shared">Set permissions for shared hosting (one user)</h2>
+
   <p>This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.</p>
 
   <div class="collapsible">
@@ -2413,6 +2418,7 @@ chmod u+x bin/magento
   </div>
 
   <h2 id="perms-private">Set ownership and permissions for two users</h2>
+
   <p>This section discusses how to set ownership and permissions for your own server or a private hosting setup. In this type of setup, you typically <em>cannot</em> log in as, or switch to, the web server user. You typically log in as one user and run the web server as a different user.</p>
 
   <div class="collapsible">
@@ -2429,6 +2435,7 @@ chmod u+x bin/magento
 </ul>
 
 <h3 id="mage-owner-about-group">About the shared group</h3>
+
 <p>To enable the web server to write files and directories in the Magento file system but to also maintain <em>ownership</em> by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the Magento Admin or other web-based utilities).</p>
 
 <p>This section discusses how to create a new Magento file system owner and put that user in the web server’s group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.</p>
@@ -2438,6 +2445,7 @@ chmod u+x bin/magento
 </div>
 
 <h3 id="mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</h3>
+
 <p>This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the <em>command-line user</em>.)</p>
 
 <p>To create a user on CentOS or Ubuntu, enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
@@ -2467,6 +2475,7 @@ sudo passwd magento_user
 </div>
 
 <h3 id="install-update-depend-user-findgroup">Step 2: Find the web server user’s group</h3>
+
 <p>To find the web server user’s group:</p>
 
 <ul>
@@ -2483,6 +2492,7 @@ sudo passwd magento_user
 </ul>
 
 <h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</h3>
+
 <p>To put the Magento file system owner in the web server’s primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code class="highlighter-rouge">root</code> privileges:</p>
 
 <ul>
@@ -2521,6 +2531,7 @@ sudo passwd magento_user
 </ul>
 
 <h3 id="perms-get-software">Step 4: Get the Magento software</h3>
+
 <p>If you haven’t done so already, get the Magento software in one of the following ways:</p>
 
 <ul>
@@ -2530,6 +2541,7 @@ sudo passwd magento_user
 </ul>
 
 <h3 id="perms-set-two-users">Step 5: Set ownership and permissions for the shared group</h3>
+
 <p>To set ownership and permissions before you install the Magento software:</p>
 
 <ol>
@@ -2560,6 +2572,7 @@ chmod u+x bin/magento
 </div>
 
 <h3 id="next-step">Next step</h3>
+
 <p>After you have set file system ownership and permissions, continue with any of the following:</p>
 
 <ul>
@@ -2570,6 +2583,7 @@ chmod u+x bin/magento
   </div>
 
   <h2 id="install-update-depend-user-switch">Switch to the Magento file system owner</h2>
+
   <p>After you’ve performed the other tasks in this topic, enter one of the following commands to switch to that user:</p>
 
   <ul>
@@ -2584,6 +2598,7 @@ chmod u+x bin/magento
 </div>
 
 <h2 id="installation-part-2-installing-the-magento-software">Installation part 2: Installing the Magento software</h2>
+
 <p>You can choose to install the Magento software using either a <a href="/guides/v2.3/install-gde/install/web/install-web.html&quot;&gt;web-based Setup Wizard&lt;/a&gt; or using the &lt;a href=&quot;/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a>.</p>
 
 <h4 id="command-line-installation">Command line installation</h4>
@@ -2719,6 +2734,7 @@ php magento deploy:mode:set developer
   </div>
 
 <h2 id="installation-part-3-post-installation">Installation part 3: Post-installation</h2>
+
 <ul>
   <li><a href="/guides/v2.3/install-gde/install/verify.html">Verify the installation</a> was successful.</li>
   <li>Learn about the <a href="/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade</a> for future updates.</li>

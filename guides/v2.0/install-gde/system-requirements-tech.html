@@ -2268,6 +2268,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on</p>
 
 <h3 id="memory-requirement">Memory requirement</h3>
+
 <p>Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a <a href="/guides/v2.0/comp-mgr/trouble/cman/out-of-memory.html">swap file</a>; otherwise, your upgrade might fail.</p>
 
 <h3 id="composer-latest-stable-version">Composer (latest stable version)</h3>
@@ -2275,6 +2276,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions</p>
 
 <h3 id="web-servers">Web servers</h3>
+
 <ul>
   <li>
     <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
@@ -2354,16 +2356,19 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h4 id="php-opcache">PHP OPcache</h4>
+
 <p>We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="/guides/v2.0/install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.</p>
 
 <p>If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
 
 <h4 id="php-settings">PHP settings</h4>
+
 <p>We recommend particular PHP configuration settings, such as <code class="highlighter-rouge">memory_limit</code>, that can avoid common problems when using Magento.</p>
 
 <p>For more information, see our <a href="/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
 <h3 id="ssl">SSL</h3>
+
 <ul>
   <li>A valid   <span term-uuid="363d6806-6a7d-4cb6-bc47-efc62bc26a1c" class="glossary-term" data-toggle="popover">security certificate</span>
  is required for HTTPS.</li>
@@ -2385,9 +2390,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="mail-server">Mail server</h3>
+
 <p>Mail Transfer Agent (MTA) or an SMTP server</p>
 
 <h3 id="magento-can-utilize-the-following-technologies">Magento can utilize the following technologies:</h3>
+
 <ul>
   <li><a href="/guides/v2.0/config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)</li>
   <li><a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish</a> version 3.0.5 or latest stable 4.x version for page caching</li>

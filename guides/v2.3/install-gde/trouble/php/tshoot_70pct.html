@@ -2290,6 +2290,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="solution">Solution:</h3>
+
 <p>Set all of the following as appropriate.</p>
 
 <h4 id="all-web-servers-and-varnish">All web servers and Varnish</h4>
@@ -2313,6 +2314,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h4 id="nginx-only">nginx only</h4>
+
 <p>If you use nginx, use our included <code class="highlighter-rouge">nginx.conf.sample</code> or add a timeout settings in the nginx host configuration file to the <code class="highlighter-rouge">location ~ ^/setup/index.php</code> section as follows:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>location ~ ^/setup/index.php {
@@ -2325,6 +2327,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>Restart nginx: <code class="highlighter-rouge">service nginx restart</code></p>
 
 <h4 id="varnish-only">Varnish only</h4>
+
 <p>If you use Varnish, edit <code class="highlighter-rouge">default.vcl</code> and add a timeout limit value to the <code class="highlighter-rouge">backend</code> stanza as follows:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>backend default {

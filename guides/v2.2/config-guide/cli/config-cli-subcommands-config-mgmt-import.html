@@ -1946,6 +1946,7 @@ You define backend modules in <code class="highlighter-rouge">&lt;module_name&gt
   <p>When we import backend models, we don’t save the configuration values.</p>
 
   <h3 id="websites-stores-and-store-groups-configuration">Websites, stores, and store groups configuration</h3>
+
   <p>We import the following types of configurations.
 (These configurations are under the <code class="highlighter-rouge">scopes</code> array in <code class="highlighter-rouge">config.php</code>.)</p>
 
@@ -1971,10 +1972,12 @@ You must associate a root category with a store using the Magento   <span term-u
   </div>
 
   <h3 id="theme-configuration">Theme configuration</h3>
+
   <p>Theme configuration includes all themes registered in your Magento system; the data comes directly from the <code class="highlighter-rouge">theme</code> database table.
 (Theme configuration is in the <code class="highlighter-rouge">themes</code> array in <code class="highlighter-rouge">config.php</code>.)</p>
 
   <h4 id="structure-of-theme-data">Structure of theme data</h4>
+
   <p>The key of array is full theme path: <code class="highlighter-rouge">area</code> + <code class="highlighter-rouge">theme path</code></p>
 
   <p>For example, <code class="highlighter-rouge">frontend/Magento/luma</code>.
@@ -2005,6 +2008,7 @@ You must associate a root category with a store using the Magento   <span term-u
   </div>
 
   <h4 id="for-more-information">For more information</h4>
+
   <ul>
     <li><a href="/guides/v2.2/config-guide/deployment/pipeline/">Deployment general overview</a></li>
     <li><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">bin/magento app:config:dump</code></a></li>

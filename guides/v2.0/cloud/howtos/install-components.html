@@ -1762,6 +1762,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>These instructions walk through module installation purchased from Magento Marketplace. You can use the same procedure to install any module with the module’s Composer name. To find it, open the module’s <code class="highlighter-rouge">composer.json</code> file and note the values for <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
 
 <h2 id="getstarted">Create a branch for adding or updating the module</h2>
+
 <p>We recommend using a branch for adding or updating, configuring, and testing your module.</p>
 
 <ol>
@@ -1834,6 +1835,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="compose">Step 1: Get the module’s Composer name and version</h3>
+
 <p>If you already know the module’s Composer name and version, skip this step and continue with <a href="#update">Update Magento’s <code class="highlighter-rouge">composer.json</code></a>.</p>
 
 <p>This section discusses how to get a module’s Composer name and its version from Magento Marketplace. Alternatively, you can find the name and version of <em>any</em> module (whether or not you purchased it on Marketplace) in the module’s <code class="highlighter-rouge">composer.json</code> file. Open <code class="highlighter-rouge">composer.json</code> in a text editor and write down the values of <code class="highlighter-rouge">"name"</code> and <code class="highlighter-rouge">"version"</code>.</p>
@@ -1873,6 +1875,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="update">Step 2: Update Magento’s <code class="highlighter-rouge">composer.json</code></h3>
+
 <p>When adding the module to <code class="highlighter-rouge">composer.json</code>, the file <a href="/guides/v2.0/config-guide/config/config-php.html"><code class="highlighter-rouge">app/etc/config.php</code></a> will also be updated. This file includes a list of installed modules, themes, and language packages, and shared configuration settings.</p>
 
 <p>To update <code class="highlighter-rouge">composer.json</code>:</p>
@@ -1910,6 +1913,7 @@ When installing and adding the module, you must add the `composer.lock` to your 
 </div>
 
 <h3 id="verify">Step 3: Verify the module</h3>
+
 <p>To verify the module installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:</p>
 
 <ol>
@@ -1927,9 +1931,11 @@ When installing and adding the module, you must add the `composer.lock` to your 
 <p>The module name is in the format <code class="highlighter-rouge">&lt;VendorName&gt;_&lt;ComponentName&gt;</code>. It will not be in the same format as the Composer name.</p>
 
 <h2 id="manage">Manage modules</h2>
+
 <p>To manage your modules, you can enable and disable or change settings per environment.</p>
 
 <h3 id="enable-disable">Enable and disable modules</h3>
+
 <p>You can use CLI commands or directly edit <code class="highlighter-rouge">app/etc/config.php</code> to enable or disable modules. After updating this file, push your changes from your local to the remote Git and deploy across all environments.</p>
 
 <ol>
@@ -1996,9 +2002,11 @@ git push origin &lt;environment ID&gt;
 </ol>
 
 <h3 id="configure">Modify configurations</h3>
+
 <p>To change settings for your modules and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an module or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.</p>
 
 <h2 id="update">Upgrade an module</h2>
+
 <p>You should have a branch to work in when updating your module. These instructions use composer to update the files. Before you continue, you must:</p>
 
 <ul>

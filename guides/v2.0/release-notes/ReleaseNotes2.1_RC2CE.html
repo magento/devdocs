@@ -1156,7 +1156,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.1/release-notes/backward-incompatible-changes/index.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.</p>
 
-<h3>Highlights</h3>
+<h3 id="highlights">Highlights</h3>
 
 <p>Magento Open Source (formerly Community Edition) 2.1 includes several new and exciting features:</p>
 
@@ -1180,7 +1180,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3>Known issues</h3>
+<h3 id="known-issues">Known issues</h3>
+
 <p>Magento Open Source 2.1, Release Candidate 2 includes the following known issues:</p>
 
 <!--- 53169 -->
@@ -1195,10 +1196,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>You cannot update from Magento 2.0.x to Magento 2.1.x with Sample Data.</li>
 </ul>
 
-<h3>Fixed issues</h3>
+<h3 id="fixed-issues">Fixed issues</h3>
 
 <!--- P0 issues -->
-<h4>Checkout</h4>
+
+<h4 id="checkout">Checkout</h4>
+
 <!--- 53193 -->
 <ul>
   <li>Several address-related issues associated with Checkout have been resolved.</li>
@@ -1225,7 +1228,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Checkout now works as expected when purchasing products during a persisted session.</li>
 </ul>
 
-<h4>Bundle products</h4>
+<h4 id="bundle-products">Bundle products</h4>
 
 <!--- 51194 -->
 <ul>
@@ -1238,7 +1241,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Quotation marks can now be included in Bundle product names. <a href="https://github.com/magento/magento2/issues/4414" target="_blank"> (GITHUB-4414)</a></li>
 </ul>
 
-<h4>Miscellaneous</h4>
+<h4 id="miscellaneous">Miscellaneous</h4>
+
 <!--- 50755 -->
 <ul>
   <li>Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s   <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span>
@@ -1404,7 +1408,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>The <code class="highlighter-rouge">getPassword()</code> and <code class="highlighter-rouge">getPasswordConfirm()</code> methods now return the <code class="highlighter-rouge">password</code> and <code class="highlighter-rouge">passwordconfirm</code> parameters as strings. <a href="https://github.com/magento/magento2/issues/4355" target="_blank"> (GITHUB-4355)</a></li>
 </ul>
 
-<h4>Messages and documentation</h4>
+<h4 id="messages-and-documentation">Messages and documentation</h4>
 
 <!--- 52340 -->
 <ul>
@@ -1426,7 +1430,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Message serialization now complies with AMPQ specifications.</li>
 </ul>
 
-<h3>Technology stack</h3>
+<h3 id="technology-stack">Technology stack</h3>
 
 <p>Our technology stack is built on   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  and MySQL. Magento 2.1 RC3 supports:</p>
@@ -1441,6 +1445,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We do not support PHP 5.5.x or 7.0.5.</p>
 
 <h2 id="installation-and-upgrade-instructions">Installation and upgrade instructions</h2>
+
 <p>You can install Magento Open Source 2.1 Release Candidate 1 (RC1) from either Github or by using   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
 .
 This Release Candidate is for test purposes only. Do not install it in a production environment.</p>
@@ -1455,6 +1460,7 @@ This Release Candidate is for test purposes only. Do not install it in a product
 </ul>
 
 <h3 id="install-rc-gh">Install from GitHub</h3>
+
 <p>Before proceeding, please familiarize yourself with these prerequisites, then run</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone git@github.com:magento/magento2.git
@@ -1463,6 +1469,7 @@ git checkout tags/2.1.0-rc2 [-b 2.1.0-rc2]
 </code></pre></div></div>
 
 <h3 id="install-rc-composer">Install using Composer</h3>
+
 <p>This Release Candidate is available from <code class="highlighter-rouge">repo.magento.com</code>. Before installing this Release Candidate using Composer,  familiarize yourself with the Composer   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
   <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
 
@@ -1470,6 +1477,7 @@ git checkout tags/2.1.0-rc2 [-b 2.1.0-rc2]
 </code></pre></div></div>
 
 <h2 id="upgrade-rc-nosamp">Upgrade existing installations</h2>
+
 <p>This section discusses how to upgrade to a Release Candidate.</p>
 
 <div class="bs-callout bs-callout-warning">
@@ -1477,6 +1485,7 @@ git checkout tags/2.1.0-rc2 [-b 2.1.0-rc2]
 </div>
 
 <h3 id="upgrade-rc-samp">Upgrade an existing installation from the GitHub repository</h3>
+
 <p>Developers who contribute to the Open Source codebase can <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.</p>
 
 <ol>
@@ -1489,9 +1498,11 @@ git checkout tags/2.1.0-rc2 [-b 2.1.0-rc2]
 </ol>
 
 <h3 id="other-upgrades">Other upgrades</h3>
+
 <p>Other types of upgrades are discussed in <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
 <h2 id="migration-toolkits">Migration toolkits</h2>
+
 <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
 			

@@ -1167,7 +1167,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.1 Backward Incompatible Changes</a>.</p>
 
-<h3>Highlights</h3>
+<h3 id="highlights">Highlights</h3>
 
 <p>Magento Enterprise Edition 2.1 includes several new and exciting features:</p>
 
@@ -1197,9 +1197,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ul>
 
-<h3>Fixed issues</h3>
+<h3 id="fixed-issues">Fixed issues</h3>
 
-<h4>Security enhancement</h4>
+<h4 id="security-enhancement">Security enhancement</h4>
 
 <!--- 52867-->
 <ul>
@@ -1207,7 +1207,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  has been requested.</li>
 </ul>
 
-<h4>Performance enhancements</h4>
+<h4 id="performance-enhancements">Performance enhancements</h4>
+
 <!--- 53530-->
 <ul>
   <li><span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span>
@@ -1220,7 +1221,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  Files option to Yes no longer reduces product performance. <a href="https://github.com/magento/magento2/issues/4710" target="_blank">(GITHUB-4710)</a></li>
 </ul>
 
-<h4>Staging</h4>
+<h4 id="staging">Staging</h4>
 
 <!--- 53424 -->
 <p>Changing the update start or end time on one   <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>
@@ -1236,7 +1237,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>You can now filter products by Category ID as expected.</li>
 </ul>
 
-<h4>Google Tag Manager</h4>
+<h4 id="google-tag-manager">Google Tag Manager</h4>
 
 <!--- 53170-->
 <ul>
@@ -1244,14 +1245,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  now correctly observes add or remove cart actions.</li>
 </ul>
 
-<h4>Import/Export</h4>
+<h4 id="importexport">Import/Export</h4>
 
 <!--- 54200-->
 <ul>
   <li>Magento now successfully imports products with a “gift_message_available” parameter. Previously, Magento exported the wrong “gift_message_available” parameter, which resulted in a validation error. (54200)</li>
 </ul>
 
-<h4>Cache</h4>
+<h4 id="cache">Cache</h4>
 
 <!--- 52923-->
 <ul>
@@ -1275,7 +1276,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Magento no longer disables all cache types after you use the command-line interface to enable or disable modules. Previously, all cache types were disabled after you disabled or enabled  modules through the command line interface.</li>
 </ul>
 
-<h4>Messages and documentation</h4>
+<h4 id="messages-and-documentation">Messages and documentation</h4>
+
 <!--- 52993-->
 <ul>
   <li>Media Uploader error messages now make it clear the SVG file format is not supported. <a href="https://github.com/magento/magento2/issues/2958" target="_blank">(GITHUB-2958)</a></li>
@@ -1292,7 +1294,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>Magento now displays enhanced messages for cache management exceptions.</li>
 </ul>
 
-<h4>Payment methods</h4>
+<h4 id="payment-methods">Payment methods</h4>
 
 <!--- 53238-->
 <ul>
@@ -1310,7 +1312,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>You can now place an order using the Braintree Credit card as the payment method when 3D Secure Verification is enabled.</li>
 </ul>
 
-<h4>Miscellaneous</h4>
+<h4 id="miscellaneous">Miscellaneous</h4>
 
 <!--- 51753-->
 <ul>
@@ -1439,7 +1441,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <!--- 54211 DUPLICATE-->
 
-<h3>Known issues</h3>
+<h3 id="known-issues">Known issues</h3>
+
 <p>Magento Commerce 2.1, Release Candidate 3 includes the following known issues:</p>
 
 <!--- 54445-->
@@ -1466,7 +1469,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>The Category page displays the former price instead of the current price during scheduled updates.</li>
 </ul>
 
-<h3>Technology stack</h3>
+<h3 id="technology-stack">Technology stack</h3>
 
 <p>Our technology stack is built on   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
  and MySQL. Magento 2.1 RC3 supports:</p>
@@ -1490,6 +1493,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
+
   <p>See one of the following sections:</p>
 
   <ul>
@@ -1562,12 +1566,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
+
     <p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h3 id="upgrades">Upgrades</h3>
+
     <p>To upgrade to Magento 2.1 (including a Release Candidate), see <a href="/guides/v2.0/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
+
     <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
   </div>
 </div>

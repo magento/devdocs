@@ -2076,9 +2076,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-warning">We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.</p>
 
 <h2 id="composer">Update composer if you add extensions</h2>
+
 <p>If you modified your <code class="highlighter-rouge">composer.json</code> file to add modules, we recommend running the <code class="highlighter-rouge">composer update</code> command in a terminal. This command updates any dependencies in the <code class="highlighter-rouge">composer.lock</code>. During the build phase, we run <code class="highlighter-rouge">composer install</code> on a fresh clone of your Git branch of code to retrieve the latest dependencies.</p>
 
 <h2 id="files">Verify all required files in Git</h2>
+
 <p>Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:</p>
 
 <ul>
@@ -2091,6 +2093,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="test-build">Test build your code locally before pushing</h2>
+
 <p>Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do <strong>NOT</strong> push the generated build files from this test to your remote Git branch. This is a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.</p>
 
 <ol>
@@ -2112,6 +2115,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To remove these test builds, you can use the <code class="highlighter-rouge">magento-cloud local:clean</code> command. For details, enter <code class="highlighter-rouge">magento-cloud local:clean --help</code>.</p>
 
 <h2 id="push">Push code to Git and Integration</h2>
+
 <p>Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.</p>
 
 <h4 id="to-prepare-your-code-and-branch">To prepare your code and branch:</h4>
@@ -2191,6 +2195,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="build">Build phase</h2>
+
 <p>During the <a href="/guides/v2.3/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a>, we perform the following tasks:</p>
 
 <ul>
@@ -2280,6 +2285,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>We strongly recommend you complete your testing in an Integration or Staging environment only, and <em>not</em> in a Production environment.</p>
 
 <h2 id="deploy">Deploy phase</h2>
+
 <p>We highly recommend having Magento already installed prior to deployment. During the <a href="/guides/v2.3/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook">deployment phase</a>, we perform the following tasks:</p>
 
 <ul>

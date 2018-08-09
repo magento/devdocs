@@ -745,6 +745,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.</p>
 
 <h2 id="interface">Interface</h2>
+
 <p>Basic interface for a gateway command is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Payment/Gateway/CommandInterface.php"><code class="highlighter-rouge">\Magento\Payment\Gateway\CommandInterface</code></a>. It implements the <a href="http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html">Command design pattern</a>.</p>
 
 <h2 id="basic-implementation">Basic implementation</h2>
@@ -752,6 +753,7 @@ For each operation (authorization, capture and so on) of a certain payment provi
 <p>The <code class="highlighter-rouge">\Magento\Payment\Gateway\Command\GatewayCommand</code> class is the default <code class="highlighter-rouge">CommandInterface</code> implementation. It allows performing most of the operations implemented in the <a href="/guides/v2.3/payments-integrations/payment-gateway/payment-gateway-intro.html#terms">Magento sales management</a>.</p>
 
 <h2 id="adding-gateway-commands">Adding gateway commands</h2>
+
 <p>For each particular integration with a payment provider, gateway commands are added using virtual types in <a href="/guides/v2.3/extension-dev-guide/depend-inj.html">dependency injection (DI)</a> configuration.</p>
 
 <p>In the following example the <code class="highlighter-rouge">BraintreeAuthorizeCommand</code> gateway command is added. The command implements the “authorize” operation for the Braintree payment provider (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/etc/di.xml#L131"><code class="highlighter-rouge">app/code/Magento/Braintree/etc/di.xml#131</code></a>):</p>

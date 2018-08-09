@@ -1301,6 +1301,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="general">General</h3>
+
 <!--- 63816 -->
 <ul>
   <li>We’ve fixed an issue with session behavior that resulted in different customer sessions being shared between different customers on two websites.</li>
@@ -1391,6 +1392,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="google">Google</h3>
+
 <!--- 70892 -->
 <ul>
   <li>We’ve fixed an Ajax issue that prevented Add to Cart and Remove from Cart events from firing in Google Tag Manager as expected.</li>
@@ -1414,6 +1416,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="order-management">Order management</h3>
+
 <!--- 71051 -->
 <ul>
   <li>Magento now completes order processing  if the customer needs to re-enter credit card information during the order process. Previously, Magento returned this error, <code class="highlighter-rouge">No such entity with customerId = 0</code>, and the order did not complete.</li>
@@ -1425,6 +1428,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="payment-methods">Payment methods</h3>
+
 <!--- 69089 -->
 <ul>
   <li>In orders with separate billing and shipping addresses, when you change the billing address but neglect to click <strong>Update</strong> before clicking <strong>Place order</strong>, Magento will not place the order until you click <strong>Update</strong>. Previously, under these conditions, Magento replaced the  edited billing address with the shipping address.</li>
@@ -1446,6 +1450,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="shipping">Shipping</h3>
+
 <!--- 69898 -->
 <ul>
   <li>Magento now handles tracking for FedEx shipments with valid tracking numbers as expected. Previously, Magento displayed an error when you clicked <strong>Track this Shipment</strong>, even when the tracking number was valid.</li>
@@ -1462,6 +1467,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="search">Search</h3>
+
 <!--- 72106 -->
 <ul>
   <li>Search synonyms in a group now can declare several words as synonyms. For example, “Elon Musk,tesla” is a valid synonym group, and a search on the phrase “Elon Musk” will also show results for the “tesla” keyword. Previously, you could declare synonyms for each word (for example, “Elon,Musk,Tesla”), but these words didn’t work as a phrase. Synonyms are also now case-insensitive.</li>
@@ -1485,6 +1491,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="staging">Staging</h3>
+
 <!--- 64924 -->
 <ul>
   <li>The <strong>Set Product as New</strong> checkbox now works as expected.</li>
@@ -1523,6 +1530,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="url-rewrites">URL rewrites</h3>
+
 <!--- 70505 -->
 <ul>
   <li>Slash as category URL suffix gives 404 error on all category pages. Multiple URLs causes duplicated content. Product URL Suffix “/” results in 404 error . Custom URL Rewrite where the request path ends with a forward slash is not matched. <em>Fix submitted by <a href="https://github.com/ihor-sviziev">Ihor Sviziev</a> in pull request 10164</em>. <a href="https://github.com/magento/magento2/issues/3872">GitHub-3872</a>, <a href="https://github.com/magento/magento2/issues/1980">GitHub-1980</a>, <a href="https://github.com/magento/magento2/issues/4660">GitHub-4660</a>, <a href="https://github.com/magento/magento2/issues/4876">GitHub-4876</a>, <a href="https://github.com/magento/magento2/issues/8264">GitHub-8264</a></li>
@@ -1534,6 +1542,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="visual-merchandiser">Visual Merchandiser</h3>
+
 <!--- 57613 -->
 <ul>
   <li>Visual Merchandiser now retains page view options and position after you remove a product. Previously, when you removed a product from a category, and you weren’t on the first page, Magento returned you to the first page.</li>
@@ -1545,6 +1554,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="wishlist">Wishlist</h3>
+
 <!--- 70991 -->
 <ul>
   <li>Unconfigured bundle products that are included on a wishlist can now be edited or added to a cart. Previously, Magento displayed a 503  error when you either tried to edit or add to the cart any bundle products that were on a wishlist.</li>
@@ -1819,11 +1829,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  </table>
 
 <h2 id="system-requirements">System requirements</h2>
+
 <p>Our technology stack is built on PHP and MySQL. For more information, see <a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
   <h2 id="install-the-magento-software">Install the Magento software</h2>
+
   <p>See one of the following sections:</p>
 
   <ul>
@@ -1896,9 +1908,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     </ol>
 
     <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
+
     <p>To upgrade to Magento Commerce 2.1 from an earlier version, see <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
 
     <h2 id="migration-toolkits">Migration toolkits</h2>
+
     <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
     <p>An updated version of this toolkit is typically available several days after the patch release.</p>
@@ -1906,6 +1920,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
     <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
 
     <h2 id="credits">Credits</h2>
+
     <p>Dear community members, thank you for your suggestions and bug reports.</p>
   </div>
 </div>

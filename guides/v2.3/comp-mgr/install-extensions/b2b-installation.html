@@ -1090,6 +1090,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="installation">Installation</h2>
+
 <ol>
   <li>
     <p>Change to your Magento installation directory and enter the following command to update your <code class="highlighter-rouge">composer.json</code> file and install the Magento Commerce for B2B extension:</p>
@@ -1129,9 +1130,11 @@ bin/magento setup:static-content:deploy -f
 </div>
 
 <h2 id="configure-b2b">Post-installation</h2>
+
 <p>After installing the Magento Commerce for B2B extension, follow these instructions to launch Magento Commerce for B2B.</p>
 
 <h3 id="start-message-consumers">Start message consumers</h3>
+
 <p>The Magento Commerce for B2B extension uses MySQL for message queue management. If you want to enable the B2B <strong>Shared Catalog</strong> feature, you must start the corresponding message consumers after installation.</p>
 
 <ol>
@@ -1167,12 +1170,14 @@ sharedCatalogUpdateCategoryPermissions
 <p>Refer to <a href="/guides/v2.3/config-guide/mq/manage-mysql.html">Manage message queues</a> for more information.</p>
 
 <h3 id="add-message-consumers-to-cron">Add message consumers to cron</h3>
+
 <p>You may also add these two message consumers to the cron job (optional). For this, add these lines in your <code class="highlighter-rouge">crontab.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice <span class="err">&amp;</span></code></pre></figure>
 
 <h3 id="specify-parameters-for-message-consumers">Specify parameters for message consumers</h3>
+
 <p>Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:</p>
 
 <ul>
@@ -1185,6 +1190,7 @@ sharedCatalogUpdateCategoryPermissions
 </ul>
 
 <h3 id="enable-b2b-features-in-magento-admin">Enable B2B features in Magento Admin</h3>
+
 <p>After installing the Magento Commerce for B2B extension and starting message consumers (if you want to enable the <strong>Shared Catalog</strong> module), you must also enable B2B modules in Magento Admin.</p>
 
 <div class="bs-callout bs-callout-info">

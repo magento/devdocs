@@ -2295,11 +2295,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>Now that you’ve finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.</p>
 
 <h2 id="post-install-cron">Set up cron</h2>
+
 <p>cron—the UNIX task scheduler—is critical to Magento’s day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A <em>crontab</em> is a cron configuration.</p>
 
 <div>
 
   <h3 id="create-the-magento-crontab">Create the Magento crontab</h3>
+
   <p>Starting with version 2.2, Magento creates a crontab for you. We add the Magento crontab to any configured crontab for the Magento file system owner. In other words, if you already set up crontabs for other extensions or applications, we add the Magento crontab to it.</p>
 
   <p>The Magento crontab is inside <code class="highlighter-rouge">#~ MAGENTO START</code> and <code class="highlighter-rouge">#~ MAGENTO END</code> comments in your crontab.</p>
@@ -2343,6 +2345,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>For more information about cron, including how to remove a crontab and run cron from the command line, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>.</p>
 
   <h2 id="post-install-secy">Security settings</h2>
+
   <p>After installation, we recommend the following:</p>
 
   <ul>
@@ -2354,17 +2357,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h2 id="post-install-rewrites">Enable Apache server rewrites</h2>
+
   <p>If you use the Apache web server, you must enable server rewrites for pages to display properly. Otherwise, you’ll see pages without styles and other issues.</p>
 
   <p><a href="/guides/v2.2/install-gde/prereq/apache.html#apache-help-rewrite">Section on Apache server rewrites</a></p>
 
   <h2 id="config-redis">Caching in a multi-webnode environment</h2>
+
   <p>If you have multiple webnodes, you <em>cannot</em> use Magento’s default file caching because there is no synchronization between webnodes. In other words, activity on one webnode is written to that webnode’s file system only. Subsequent activity, if performed on another webnode, can result in unnecessary files being written or can result in errors.</p>
 
   <p>Instead, use <a href="/guides/v2.2/config-guide/redis/config-redis.html">Redis</a> for both the default   <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>
  and the page cache.</p>
 
   <h2 id="post-install-server">Server settings</h2>
+
   <p>This section briefly discusses settings we recommend you consider for the server on which Magento runs. Some of these settings are not directly related to Magento; these are provided as suggestions only.</p>
 
   <h4 id="log-rotation">Log rotation</h4>

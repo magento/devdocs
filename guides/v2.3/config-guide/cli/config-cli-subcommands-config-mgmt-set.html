@@ -1932,6 +1932,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h2 id="prerequisites">Prerequisites</h2>
+
   <p>To set a configuration value, you must know at least one of the following:</p>
 
   <ul>
@@ -1944,6 +1945,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h3 id="find-the-configuration-path">Find the configuration path</h3>
+
   <p>See the following references:</p>
 
   <ul>
@@ -1954,6 +1956,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </ul>
 
   <h3 id="find-the-scope-code">Find the scope code</h3>
+
   <p>You can find the scope code either in the Magento database or in the Magento   <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>
 . See one of the following sections for more information.</p>
 
@@ -2093,6 +2096,7 @@ SELECT * FROM store_website;
   </ul>
 
   <h3 id="config-cli-config-set-edit">Set configuration values that can be edited in the Magento Admin</h3>
+
   <p>Use <code class="highlighter-rouge">bin/magento config:set</code> <em>without</em> <code class="highlighter-rouge">--lock-env</code> or <code class="highlighter-rouge">--lock-config</code> to write the value to the database. Values you set this way can be edited in the Magento Admin.</p>
 
   <p>Some examples for setting a store base   <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>
@@ -2114,6 +2118,7 @@ SELECT * FROM store_website;
 </code></pre></div>  </div>
 
   <h3 id="config-cli-config-file">Set configuration values that cannot be edited in the Magento Admin</h3>
+
   <p>If you use the <code class="highlighter-rouge">--lock-env</code>  option as follows, the command saves the configuration value in <code class="highlighter-rouge">&lt;Magento base dir&gt;/app/etc/env.php</code> and disables the field for editing this value in Admin.</p>
 
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:set <span class="nt">--lock-env</span> <span class="nt">--scope</span><span class="o">=</span>stores <span class="nt">--scope-code</span><span class="o">=</span>default web/unsecure/base_url http://example3.com
@@ -2137,6 +2142,7 @@ SELECT * FROM store_website;
   </div>
 
   <h2 id="config-cli-config-show">Display the value of configuration settings</h2>
+
   <p>Command options:</p>
 
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bin/magento config:show <span class="o">[</span><span class="nt">--scope</span><span class="o">[=</span><span class="s2">"..."</span><span class="o">]]</span> <span class="o">[</span><span class="nt">--scope-code</span><span class="o">[=</span><span class="s2">"..."</span><span class="o">]]</span> path

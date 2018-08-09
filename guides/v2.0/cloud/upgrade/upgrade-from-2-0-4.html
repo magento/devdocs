@@ -1750,6 +1750,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>This section discusses steps to upgrade <em>only</em> if your current Magento Commerce Cloud version is 2.0.4. When upgrading only from this version, follow these instructions.</p>
 
 <h2 id="create-an-authorization-file">Create an authorization file</h2>
+
 <p>To enable you to install and update the Magento software, you must have an <code class="highlighter-rouge">auth.json</code> file in your project’s root directory. <code class="highlighter-rouge">auth.json</code> contains your Magento Commerce <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a>.</p>
 
 <p>In some cases, you might already have <code class="highlighter-rouge">auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one.</p>
@@ -1773,6 +1774,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span></code></pre></div></div>
 
 <h2 id="update-magentoappyaml-and-composerjson">Update .magento.app.yaml and composer.json</h2>
+
 <p>This section discusses how to update:</p>
 
 <ul>
@@ -1843,6 +1845,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 checked in to git.</p>
 
 <h2 id="repository-structure">Repository structure</h2>
+
 <p>Here are the specific files for this example to work on Magento Commerce:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.magento/
@@ -1864,6 +1867,7 @@ php.ini
 <p>Verify your upgrade as discussed in the next section.</p>
 
 <h2 id="upgrade-verify">Verify your upgrade</h2>
+
 <p>This section discusses how to verify your upgrade and to troubleshoot any issues you might find.</p>
 
 <p>To verify the upgrade in your integration, staging, or production system:</p>
@@ -1879,6 +1883,7 @@ php.ini
 </ol>
 
 <h2 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h2>
+
 <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There has been an error processing your request
@@ -1887,12 +1892,14 @@ Exception printing is disabled by default for security reasons.
 </code></pre></div></div>
 
 <h3 id="view-error-details-on-the-server">View error details on the server</h3>
+
 <p>To view the error in your integration system, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vi /app/var/report/&lt;error number&gt;
 </code></pre></div></div>
 
 <h3 id="resolve-the-error">Resolve the error</h3>
+
 <p>One possible error occurs when the deployment hook failed, and therefore the database has not yet been fully upgraded. If so, an error similar to the following is displayed:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
@@ -1916,6 +1923,7 @@ Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 </ol>
 
 <h4 id="related-topic">Related topic</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/reference/cloud-composer.html">Composer</a></li>
   <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install, manage, and upgrade modules</a></li>

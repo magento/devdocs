@@ -2068,6 +2068,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info">For Pro projects, the changes you make using this YAML file affects your Integration environment only. To make these changes in a Staging or Production environment, you must create a <a href="http://support.magento.com" target="_blank">Support ticket</a>.</p>
 
 <h2 id="howitworks">How this file works</h2>
+
 <p>The <code class="highlighter-rouge">.magento.app.yaml</code> and <code class="highlighter-rouge">services.yaml</code> files set the services, applications, and configurations to build and include in an environment. If you add services with specific versions, the initial push and deployment of your branches with these updated files directs the PaaS environment to provision the environment with those services. When you make changes to the services, the environment updates.</p>
 
 <p>This affects the following environments:</p>
@@ -2080,6 +2081,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To install and update services in Pro Staging and Production environments (IaaS), you must enter a <a href="/guides/v2.3/cloud/trouble/trouble.html">Support ticket</a>. Indicate the service changes needed and your updated <code class="highlighter-rouge">.magento.app.yaml</code> and <code class="highlighter-rouge">services.yaml</code> files in the ticket.</p>
 
 <h2 id="cloud-yaml-services-default">Default and supported services</h2>
+
 <p>Your Git branch includes the following default <code class="highlighter-rouge">services.yaml</code> file:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql:
@@ -2093,6 +2095,7 @@ redis:
 <p>Modify this file to use specific and additional services in your deployment. See the <a href="#cloud-yaml-services-type"><code class="highlighter-rouge">type</code></a> section to see the services we support and deploy for you if you add them to the file.</p>
 
 <h2 id="services">Service values</h2>
+
 <p>To add a service, you add the following data to services.yaml:</p>
 
 <p>name:
@@ -2142,6 +2145,7 @@ redis:
 <p>For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.</p>
 
 <h2 id="using-the-services">Using the services</h2>
+
 <p>For services to be available to an application in your project, you must specify <a href="/guides/v2.3/cloud/project/project-conf-files_magento-app.html#relationships"><em>relationships</em></a> between applications and services in <code class="highlighter-rouge">.magento.app.yaml</code>.</p>
 
 			

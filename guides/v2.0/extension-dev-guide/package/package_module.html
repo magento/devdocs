@@ -1255,6 +1255,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h4 id="contents">Contents</h4>
+
 <ul>
   <li><a href="#package-over">Overview of packaging</a></li>
   <li><a href="#composer">Create a Magento Composer file</a></li>
@@ -1262,6 +1263,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="package-over">Overview of packaging</h2>
+
 <p>The Magento application uses   <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>
  packages to distribute, install, and upgrade components in an application instance.</p>
 
@@ -1278,6 +1280,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="composer">Create a Magento Composer file</h2>
+
 <p>The Magento <code class="highlighter-rouge">composer.json</code> file defines the name, requirements, version, and other basic information about the component. This file must be placed in the root directory of the   <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>
 .</p>
 
@@ -1342,6 +1345,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </table>
 
   <h3 id="package-metapackage">Using metapackages</h3>
+
   <p>Metapackages allow you to group an   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
  that consists of multiple packages into a cohesive unit. This works exactly as described in standard <a href="https://getcomposer.org/doc/04-schema.md#type">composer.json documentation</a>. If you have an extension that uses more than one package you must use a   <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>
  as the <em>root package</em>. Otherwise you should not use metapackage. A metapackage that you submit to Magento Marketplace should be a .zip file containing only the metapackage <code class="highlighter-rouge">composer.json</code> file.</p>
@@ -1351,6 +1355,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
   <h4 id="metapackage-example">Metapackage example</h4>
+
   <p>The following example is a <code class="highlighter-rouge">composer.json</code> for a metapackage:</p>
 
   <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
@@ -1393,6 +1398,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span><span class="p">}</span></code></pre></figure>
 
   <h3 id="sample-composerjson-file">Sample composer.json file</h3>
+
   <p>The following example is a <code class="highlighter-rouge">composer.json</code> file for a module:</p>
 
   <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
@@ -1417,6 +1423,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </span><span class="p">}</span></code></pre></figure>
 
   <h2 id="packaging">Package and publish your extension</h2>
+
   <p>Create a package of your extension by performing a zip operation on the directory with your extension (excluding unnecessary directories). For example:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>zip -r vendor-name_package-name-1.0.0.zip package-path/ -x 'package-path/.git/*'
@@ -1435,6 +1442,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
   <h3 id="hosting">Hosting on GitHub and Packagist</h3>
+
   <p>Prerequisite: git must be set up on your machine.</p>
 
   <ol>

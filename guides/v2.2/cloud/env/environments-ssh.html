@@ -2083,6 +2083,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="work">How SSH keys work</h2>
+
 <p>When you enter an SSH command to connect your client to the remote host, the host and your workspace begin tests back and forth to verify and allow access. These tests use the public and private keys you generated. Your entered command initiates SSH key authentication to request access to the server, indicating the public key to use. The server checks for authorized keys in its list for your public key. When found, it generates a message string and encrypts it with the public key the host has for you. Your system receives the message, decrypts it using your local private key, and merges the message with a session ID. Your system generates an MD5 of the message and session ID, sending it back to the host. If everything checks out, this passes the connection test and completes full SSH access to the host.</p>
 
 <p>You must create an SSH key pair on every machine and workspace you and your team expect to work with and access Magento Commerce Cloud and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.</p>
@@ -2103,6 +2104,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="existing">Locate an existing SSH key pair</h2>
+
 <p>An existing SSH key pair is typically located in the <code class="highlighter-rouge">.ssh</code> subdirectory of the user’s home directory. This folder is hidden and may not display in the file manager or finder unless configured to display hidden files and folders.</p>
 
 <p>You can quickly verify if you have SSH keys by entering commands using terminal access.</p>
@@ -2126,6 +2128,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="ssh-create-new-key-pair">Create a new SSH key pair</h2>
+
 <p>Use the <code class="highlighter-rouge">ssh-keygen</code> command to create an SSH key pair. <code class="highlighter-rouge">ssh-keygen</code> is typically installed on Linux systems.</p>
 
 <p>To create an SSH key pair:</p>
@@ -2202,6 +2205,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="ssh-add-to-account">Add a public SSH key to your Magento account</h2>
+
 <p>You can add SSH keys to your account in any of the following ways:</p>
 
 <ul>
@@ -2210,6 +2214,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="add-key-cli">Add a key using the CLI</h3>
+
 <p>To add an SSH key using the CLI:</p>
 
 <ol>
@@ -2232,6 +2237,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h4 id="add-key-web">Add a key using the Project Web Interface</h4>
+
 <p>You will select and add your SSH public key to each environment in your account.</p>
 
 <ul>
@@ -2262,6 +2268,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h2 id="set-global-git-variables">Set global Git variables</h2>
+
 <p>Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.</p>
 
 <p>To set variables, enter the following commands on every workspace:</p>
@@ -2273,6 +2280,7 @@ git config --global user.email &lt;your e-mail address&gt;
 <p>For more information, see <a href="https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time" target="_blank">First-Time Git Setup</a></p>
 
 <h2 id="ssh">SSH to an environment</h2>
+
 <p>You can connect using SSH in any of the following ways:</p>
 
 <ul>
@@ -2282,6 +2290,7 @@ git config --global user.email &lt;your e-mail address&gt;
 </ul>
 
 <h3 id="magento-cli">SSH using Magento Cloud CLI</h3>
+
 <p>Magento Cloud CLI commands can only be used in environments with the software installed. These environments include:</p>
 
 <ul>
@@ -2319,6 +2328,7 @@ git config --global user.email &lt;your e-mail address&gt;
 </ol>
 
 <h3 id="web-interface">Locate the SSH command in the Project Web Interface</h3>
+
 <p>You can locate the SSH command for all Starter environments and Pro Integration environments through the Project Web Interface.</p>
 
 <p>To copy the SSH command:</p>
@@ -2341,6 +2351,7 @@ git config --global user.email &lt;your e-mail address&gt;
 </code></pre></div></div>
 
 <h3 id="pro">SSH commands for Pro Staging and Production</h3>
+
 <p>You can not use the Magento Cloud CLI to log in with SSH to the Pro Staging and Production environments, which are not added into the Project Web Interface. You can log in with SSH to those environments and use Linux/Unix commands for managing the system.</p>
 
 <p>With your SSH keys added to those servers, you can use a terminal application, the SSH command, and the URL to access the server.</p>
@@ -2378,6 +2389,7 @@ magento-cloud apps
 <p>For information on the command, you can enter <code class="highlighter-rouge">magento-cloud apps --help</code>.</p>
 
 <h3 id="tunnel-setup">Set up the SSH tunnel</h3>
+
 <p>Use the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:open -e &lt;environment ID&gt; --app &lt;app name&gt;
@@ -2401,12 +2413,14 @@ Close tunnels with: magento-cloud tunnel:close
 </code></pre></div></div>
 
 <h3 id="tunnel-info">Get tunnel information</h3>
+
 <p>To display information about your tunnel, enter:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento-cloud tunnel:info -e &lt;environment ID&gt;
 </code></pre></div></div>
 
 <h3 id="tunnel-services">Connect to services</h3>
+
 <p>Now you can connect to services as if they were running locally.</p>
 
 <p>For example, to connect to the database, use the following command:</p>
@@ -2417,6 +2431,7 @@ Close tunnels with: magento-cloud tunnel:close
 <p>Details about the service display if you use the <code class="highlighter-rouge">magento-cloud tunnel:info</code> command.</p>
 
 <h2 id="sftp">sFTP to environments</h2>
+
 <p>Typically, you want to use SSH for secure access to your environments and <a href="/guides/v2.2/cloud/live/stage-prod-migrate.html">migrate files</a> with <code class="highlighter-rouge">rsync</code> commands. We also support accessing your environments using sFTP (secure FTP) with SSH authentication.</p>
 
 <p>You need the following requirements to sFTP into cloud environments:</p>

@@ -1496,9 +1496,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="about-the-database-profiler">About the database profiler</h2>
+
 <p>The Magento database profiler displays all queries executed on a page, including the time for each query and what parameters were executed.</p>
 
 <h2 id="step-1-modify-the-deployment-configuration">Step 1: Modify the deployment configuration</h2>
+
 <p>Modify <code class="highlighter-rouge">&lt;your Magento install dir&gt;/app/etc/env.php</code> to add the following reference to the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DB/Profiler.php" target="_blank">database profiler class</a>:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="s1">'profiler'</span> <span class="o">=&gt;</span> <span class="p">[</span>
@@ -1533,6 +1535,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </code></pre></figure>
 
 <h2 id="step-2-configure-the-output">Step 2: Configure the output</h2>
+
 <p>Configure the output in your Magento application boostrap file; this might be <code class="highlighter-rouge">&lt;your Magento install dir&gt;/index.php</code> or it could be located in a web server virtual host configuration.</p>
 
 <p>The following example displays results in a three-column table:</p>
@@ -1566,6 +1569,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="k">echo</span> <span class="s2">"&lt;/table&gt;"</span><span class="p">;</span></code></pre></figure>
 
 <h2 id="step-3-view-the-results">Step 3: View the results</h2>
+
 <p>Go to any page in your   <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>
  or   <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>
  to view the results. A sample follows:</p>

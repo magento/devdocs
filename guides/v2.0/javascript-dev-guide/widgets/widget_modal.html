@@ -739,6 +739,7 @@ $('#modal_content').modal({
 <p>For details about how to initialize the widget in a<code class="highlighter-rouge">.phtml</code> template, refer to the <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
 
 <h2 id="modal_options">Options</h2>
+
 <p>The modal widget has the following options:</p>
 <ul>
 <li><a href="#modal_autoopen">autoOpen</a></li>
@@ -754,13 +755,15 @@ $('#modal_content').modal({
 </ul>
 
 <h3 id="modal_autoopen">autoOpen</h3>
+
 <p>Automatically open the modal window when the widget is initialized.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h3 id="modal_buttons"><code>buttons</code></h3>
+<h3 id="modal_buttons"><code class="highlighter-rouge">buttons</code></h3>
+
 <p>Array of buttons for action pane.</p>
 
 <p><strong>Type</strong>: Array</p>
@@ -786,55 +789,62 @@ buttons: [{
 </pre>
 
 <h3 id="modal_clickableOverlay">clickableOverlay</h3>
+
 <p>Close the modal window when a user clicks on the overlay.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">true</code></p>
 
-<h3 id="modal_focus"><code>focus</code></h3>
+<h3 id="modal_focus"><code class="highlighter-rouge">focus</code></h3>
+
 <p>Selector to focusing when a modal window opens or ‘none’ if focusing is not necessary.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">''</code></p>
 
-<h3 id="modal_innerScroll"><code>innerScroll</code></h3>
+<h3 id="modal_innerScroll"><code class="highlighter-rouge">innerScroll</code></h3>
+
 <p>Modal scroll position.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h3 id="modal_modalClass"><code>modalClass</code></h3>
+<h3 id="modal_modalClass"><code class="highlighter-rouge">modalClass</code></h3>
+
 <p>Custom classes for modal window.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: empty</p>
 
-<h3 id="modal_modalLeftMargin"><code>modalLeftMargin</code></h3>
+<h3 id="modal_modalLeftMargin"><code class="highlighter-rouge">modalLeftMargin</code></h3>
+
 <p>Sets a margin between slide modal windows.</p>
 
 <p><strong>Type</strong>: Number</p>
 
 <p><strong>Default value</strong>: 45</p>
 
-<h3 id="modal_responsive"><code>responsive</code></h3>
+<h3 id="modal_responsive"><code class="highlighter-rouge">responsive</code></h3>
+
 <p>Turn popup modal window to slide panel on small screens. Available if the <code class="highlighter-rouge">type</code> option is set to <code class="highlighter-rouge">modal</code>.</p>
 
 <p><strong>Type</strong>: Boolean</p>
 
 <p><strong>Default value</strong>: <code class="highlighter-rouge">false</code></p>
 
-<h3 id="modal_title"><code>title</code></h3>
+<h3 id="modal_title"><code class="highlighter-rouge">title</code></h3>
+
 <p>Translated title for popup window.</p>
 
 <p><strong>Type</strong>: String</p>
 
 <p><strong>Default value</strong>: empty</p>
 
-<h3 id="modal_type"><code>type</code></h3>
+<h3 id="modal_type"><code class="highlighter-rouge">type</code></h3>
 
 <p>The type of window: popup or slide.</p>
 
@@ -843,16 +853,19 @@ buttons: [{
 <p><strong>Default value</strong>: <code class="highlighter-rouge">popup</code></p>
 
 <h2 id="modal_methods">Methods</h2>
+
 <p>The modal widget has the following methods:</p>
 <ul>
 <li><a href="#modal_close">closeModal()</a></li>
 <li><a href="#modal_open">openModal()</a></li>
 </ul>
 
-<h3 id="modal_open"><code>openModal()</code></h3>
+<h3 id="modal_open"><code class="highlighter-rouge">openModal()</code></h3>
+
 <p>Open the modal window.</p>
 
-<h3 id="modal_close"><code>closeModal()</code></h3>
+<h3 id="modal_close"><code class="highlighter-rouge">closeModal()</code></h3>
+
 <p>Close the modal window.</p>
 
 <h2 id="modal_events">Events</h2>
@@ -863,16 +876,20 @@ buttons: [{
 <li><a href="#modal_opened">opened</a></li>
 </ul>
 
-<h3 id="modal_closed"><code>closed</code></h3>
+<h3 id="modal_closed"><code class="highlighter-rouge">closed</code></h3>
+
 <p>Called when the modal window is closed.</p>
 
-<h3 id="modal_opened"><code>opened</code></h3>
+<h3 id="modal_opened"><code class="highlighter-rouge">opened</code></h3>
+
 <p>Called when the modal window is opened.</p>
 
-<h3 id="modal_opened"><code>always</code></h3>
+<h3 id="modal_opened"><code class="highlighter-rouge">always</code></h3>
+
 <p>….</p>
 
 <h2 id="key_navigation">Keyboard navigation</h2>
+
 <ul>
   <li>the ESC key: close the current modal window</li>
   <li>the TAB key: set focus to the next focusable element (looped inside the modal window)</li>

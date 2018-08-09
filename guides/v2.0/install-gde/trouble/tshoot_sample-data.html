@@ -2266,6 +2266,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p>This topic discusses solutions to errors you might encounter installing optional sample data.</p>
 
 <h4 id="contents">Contents</h4>
+
 <ul>
   <li><a href="#trouble-samp-perms">Symptom (file system permissions)</a></li>
   <li><a href="#trouble-samp-prod">Symptom (production mode)</a></li>
@@ -2275,6 +2276,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="trouble-samp-perms">Symptom (file system permissions)</h3>
+
 <p>Error in the console log during sample data installation using the Setup Wizard:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Module 'Magento_CatalogRuleSampleData':
@@ -2290,15 +2292,18 @@ Next exception 'ReflectionException' with message 'Class Magento\CatalogRule\Mod
 <p>These exceptions result from file system permissions settings.</p>
 
 <h4 id="solution">Solution</h4>
+
 <p><a href="/guides/v2.0/install-gde/install/web/install-web-sample-data.html#samp-data-perms">Set file system ownership and permissions again</a> as a user with <code class="highlighter-rouge">root</code> privileges.</p>
 
 <h3 id="trouble-samp-prod">Symptom (production mode)</h3>
+
 <p>If you’re currently set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#production-mode">production mode</a>, sample data installation fails if you use the <a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-composer.html"><code class="highlighter-rouge">magento sampledata:deploy</code></a> command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PHP Fatal error: Uncaught TypeError: Argument 1 passed to Symfony\Component\Console\Input\ArrayInput::__construct() must be of the type array, object given, called in /&lt;path&gt;/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 97 and defined in /&lt;path&gt;/vendor/symfony/console/Symfony/Component/Console/Input/ArrayInput.php:37
 </code></pre></div></div>
 
 <h4 id="solution-1">Solution</h4>
+
 <p>Don’t install sample data in production mode. Switch to developer mode and clear some <code class="highlighter-rouge">var</code> directories and try again.</p>
 
 <p>Enter the following commands in the order shown as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>:</p>
@@ -2326,6 +2331,7 @@ php bin/magento sampledata:deploy
 </ul>
 
 <h3 id="trouble-samp-dev">Symptom (develop branch)</h3>
+
 <p>Other errors display, such as:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist

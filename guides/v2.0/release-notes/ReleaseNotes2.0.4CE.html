@@ -1142,9 +1142,10 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
 
-<h3>Fixed issues</h3>
+<h3 id="fixed-issues">Fixed issues</h3>
 
-<h4> Upgrade and Installation</h4>
+<h4 id="upgrade-and-installation">Upgrade and Installation</h4>
+
 <!-- 50224 -->
 <ul>
   <li>Magento no longer creates store data inconsistently during installation.</li>
@@ -1155,13 +1156,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>During upgrade, the <code class="highlighter-rouge">setup:config:set</code> script no longer deletes values in the <code class="highlighter-rouge">env.php</code> file.</li>
 </ul>
 
-<h4>Import</h4>
+<h4 id="import">Import</h4>
+
 <!-- 50255 -->
 <ul>
   <li>Magento now successfully imports existing products as well as products that use custom URLs.</li>
 </ul>
 
-<h4>APIs</h4>
+<h4 id="apis">APIs</h4>
+
 <!-- 46720 -->
 <ul>
   <li>The Orders   <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>
@@ -1173,13 +1176,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>The SOAP API now returns attributes of type “text swatch” and “visual swatch” when you use the API to add attribute options. Previously, this feature did not work for these attribute types.</li>
 </ul>
 
-<h4>PHP</h4>
+<h4 id="php">PHP</h4>
+
 <!-- 50500 -->
 <ul>
   <li>Magento now allows you to use arguments of <code class="highlighter-rouge">url</code> type in nested arrays. Previously, you could pass route parameters only if the <code class="highlighter-rouge">url</code> argument was declared at the top level.</li>
 </ul>
 
-<h4>Miscellaneous</h4>
+<h4 id="miscellaneous">Miscellaneous</h4>
+
 <!-- 47704 -->
 <ul>
   <li>Magento no longer displays   <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>
@@ -1203,7 +1208,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
  refresh.</li>
 </ul>
 
-<h4>Security enhancements</h4>
+<h4 id="security-enhancements">Security enhancements</h4>
+
 <p>This release includes several enhancements to improve the security of your Magento 2.0 installation. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento 2.0 installation to the latest version as soon as possible.</p>
 
 <p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security" target="_blank">Magento Security Center</a>.</p>
@@ -1246,13 +1252,15 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>We recommend that you review Magento’s <a href="http://merch.docs.magento.com/ce/user_guide/magento/magento-security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.</p>
 
-<h3>System requirements</h3>
+<h3 id="system-requirements">System requirements</h3>
+
 <p>Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
 
-<h3>Installation instructions</h3>
+<h3 id="installation-instructions">Installation instructions</h3>
 
-<h4>New installations</h4>
+<h4 id="new-installations">New installations</h4>
+
 <p>New users can now complete a full installation of Magento Open Source 2.0.4 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.</p>
 
 <h5 id="download-a-new-installation"><b>Download a new installation</b></h5>
@@ -1284,7 +1292,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   </li>
 </ol>
 
-<h4><b>Upgrade existing installations</b></h4>
+<h4 id="upgrade-existing-installations"><strong>Upgrade existing installations</strong></h4>
+
 <p>If you installed Magento Open Source 2.0.0 from an archive, you must perform some additional tasks before you can upgrade your installation. Current users of Magento 2.0.0/2.0.1/2.0.2/2.0.3 must first update the installer from the command line. Then, update the installation from the <a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html" target="_blank">Web Setup Wizard</a> or command line. For detailed instructions, see the <a href="/guides/v2.0/release-notes/tech_bull_201-upgrade.html" target="_blank">technical bulletin</a>.</p>
 
 <h5 id="upgrade-an-existing-installation-from-the-setup-wizard"><b>Upgrade an existing installation from the Setup Wizard</b></h5>

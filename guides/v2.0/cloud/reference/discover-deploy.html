@@ -1763,11 +1763,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p class="bs-callout bs-callout-info"><strong>Updating your Pro project</strong>: These sections include instructions for Pro projects with Staging and Production available in the Project Web Interface. To add Staging and Production to your interface, see <a href="/guides/v2.0/cloud/trouble/pro-env-management.html">Add Staging and Production to Pro projects UI</a>. If you do not request this update, you must submit tickets to modify settings, variables, routes, and more for Pro plan Staging and Production environments.</p>
 
 <h2 id="track">Track the process</h2>
+
 <p>You can track the ongoing build and deploy actions in your terminal and the Project Web Interface in real-time. the status displays in-progress, pending, success, or failed. Logs are available to review through the interface.</p>
 
 <p>If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow what’s happening in their interface and in the Magento Commerce Cloud Project Web Interface.</p>
 
 <h2 id="cloud-deploy-conf">Project configuration</h2>
+
 <p>A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies.</p>
 
 <p>If you intend to make changes, modify the YAML files in your Git branch of code. The build and deploy scripts access those files for specifics.</p>
@@ -1779,6 +1781,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="requiredfiles">Required files for your Git branch</h2>
+
 <p>Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:</p>
 
 <ul>
@@ -1789,6 +1792,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="best-practices">Best practices for builds and deployment</h2>
+
 <p>We highly recommend the following best practices and considerations for your deployment process:</p>
 
 <ul>
@@ -1800,6 +1804,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h2 id="cloud-deploy-over-phases">Five phases of Integration build and deployment</h2>
+
 <p>The following phases occur on your local development environment and the Integration environment. The code is not deployed to Staging or Production for Pro plan in these initial phases.</p>
 
 <p>Integration build and deployment consists of the following phases:</p>
@@ -1814,6 +1819,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ol>
 
 <h3 id="cloud-deploy-over-phases-conf">Phase 1: Code and configuration validation</h3>
+
 <p>When you initially set up a project from a template, we retrieve the code from the <a href="https://github.com/magento/magento-cloud" target="_blank">the Magento Commerce template</a>. This code repo is cloned to your project as the <code class="highlighter-rouge">master</code> branch.</p>
 
 <ul>
@@ -1828,6 +1834,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This phase also runs <code class="highlighter-rouge">composer install</code> to retrieve dependencies.</p>
 
 <h3 id="cloud-deploy-over-phases-build">Phase 2: Build</h3>
+
 <p><strong>Helpful Note:</strong> During this phase, the site is not in maintenance mode and will not be brought down if errors or issues occur.</p>
 
 <p>We build only what has changed since the last build.</p>
@@ -1850,6 +1857,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>The build checks if the <a href="/guides/v2.1/cloud/live/sens-data-over.html"><code class="highlighter-rouge">config.local.php</code> file</a> exists in the codebase and has information about scopes (for details see <a href="/guides/v2.2/cloud/env/environment-vars_magento.html"><code class="highlighter-rouge">SCD_STRATEGY</code></a>). If so, static files are deployed during this phase, reducing the downtime in the deployment phase.</p>
 
 <h3 id="cloud-deploy-over-phases-slug">Phase 3: Prepare the slug</h3>
+
 <p>The result of the build phase is a read-only file system we refer to as a <em>slug</em>. In this phase, we create an archive and put the slug in permanent storage. The next time you push code, if a service didn’t change, we reuse the slug from the archive.</p>
 
 <ul>
@@ -1869,6 +1877,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h3 id="cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</h3>
+
 <p>Now we provision your applications and all the   <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>
  services you need:</p>
 
@@ -1883,6 +1892,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="cloud-deploy-over-phases-hook">Phase 5: Deployment hooks</h3>
+
 <p><strong>Helpful Note:</strong> During this phase, the site is in maintenance mode until the deploy completes.</p>
 
 <p>The last step runs a deployment script. You can use this for example to anonymize data in development environments, clear caches, ping external continuous integration tools, and so on.</p>
@@ -1914,6 +1924,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h3 id="cloud-deploy-over-phases-route">Post-deployment: configure routing</h3>
+
 <p>While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic will arrive at your newly created cluster.</p>
 
 <p>If deployment completes without issues or errors, the maintenance mode is removed to allow for normal access.</p>
@@ -1921,6 +1932,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>To review build and deploy logs, see <a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a>.</p>
 
 <h4 id="steps">Build and deploy full steps</h4>
+
 <p>With an understanding of the process, we provide the following instructions for build and deploy for your local, Integration, Staging, and finally Production:</p>
 
 <ul>
@@ -1932,6 +1944,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </ul>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/access-acct/trouble.html">Deployment troubleshooting</a></li>
   <li><a href="/guides/v2.0/cloud/project/project-start.html">Get started with a project</a></li>

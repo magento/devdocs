@@ -1761,6 +1761,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="edge-acl">Create Edge ACL for allowing client IPs</h2>
+
 <p>Edge ACLs create IP lists for managing access for your VCL snippet. For this example, create an Edge ACL of IPs to block from accessing your site. Then create a custom VCL snippet to manage access.</p>
 
 <p>If you want to allow access to Staging and Production, create the Edge ACL in both Magento Admins with the same name. You can have different IPs in the two environments. The VCL snippet code will apply to both environments.</p>
@@ -1777,6 +1778,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You will use the Edge ACL by name in your VCL snippet code.</p>
 
 <h2 id="vcl">Create blocklist.json</h2>
+
 <p>To block blacklisted IPs from access to Staging and Production environments, you can use the same VCL snippet file without edits.</p>
 
 <p>Create an <code class="highlighter-rouge">blocklist.json</code> file with the following JSON content:</p>
@@ -1803,6 +1805,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </div>
 
 <h2 id="complete">Finish adding the VCL</h2>
+
 <p>When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see <a href="/guides/v2.0/cloud/configure/cloud-vcl-custom-snippets.html">Custom Fastly VCL snippets</a>.</p>
 
 			

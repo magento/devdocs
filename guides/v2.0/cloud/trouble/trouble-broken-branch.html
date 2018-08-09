@@ -1748,11 +1748,13 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="resolve-issues-with-broken-git-branches">Resolve issues with broken Git branches</h2>
+
 <p>This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">branches and commits</a> to effectively fix your branch. Additional information is linked as needed to help understand Git and Magento Commerce Cloud builds and deployments.</p>
 
 <p>To review logs, see <a href="/guides/v2.0/cloud/access-acct/trouble.html">Troubleshoot your deployment</a>.</p>
 
 <h2 id="patches">Issues with installing patches</h2>
+
 <p>When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git apply &lt;path to patch&gt;
@@ -1763,6 +1765,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You should apply patches in your local on your Git branch then push to the remote for normal build and deploy scripts to run. For full instructions, see <a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a>.</p>
 
 <h2 id="compile">Code compile issues</h2>
+
 <p>If you receive build errors due to compilation of your code, you may have disabled modules that are not correctly enabling for the compile commands.</p>
 
 <p>To enable all modules:</p>
@@ -1781,6 +1784,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.</p>
 
 <h2 id="cli-build">Broken build trying to force build using the Magento Cloud CLI</h2>
+
 <p>When we initially provision your project, you receive a cloned <code class="highlighter-rouge">master</code> branch. You should clone the <code class="highlighter-rouge">master</code> to your local workspace and create a branch from it to complete all of your development.</p>
 
 <p>When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.</p>
@@ -1828,6 +1832,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.</p>
 
 <h4 id="related-topics">Related topics</h4>
+
 <ul>
   <li><a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time local environment setup</a></li>
   <li><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy on local</a></li>

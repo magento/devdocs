@@ -1106,9 +1106,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <p>For details, see <a href="http://blog.pcisecuritystandards.org/migrating-from-ssl-and-early-tls" target="_blank">Date Change for Migrating from SSL and Early TLS</a>.</p>
 
   <h3 id="symptoms">Symptoms</h3>
+
   <p>If you have an earlier version of TLS, you’ll see the errors discussed in this section.</p>
 
   <h4 id="downloading-a-magento-metapackage">Downloading a Magento metapackage</h4>
+
   <p>The following error displays if you attempt to run <code class="highlighter-rouge">composer create-project</code> to get a Magento metapackage:</p>
 
   <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Composer\Downloader\TransportException]                                           
@@ -1117,12 +1119,14 @@ failed to open stream: operation failed
 </code></pre></div>  </div>
 
   <h3 id="using-the-web-setup-wizard">Using the Web Setup Wizard</h3>
+
   <p>Actions like saving your authentication credentials or synchronizing with Magento Marketplace fail with the following error:</p>
 
   <p><img src="/common/images/install_ssl-connect-error.png" alt="SSL connect error" /></p>
 </div>
 
 <h3 id="solution">Solution</h3>
+
 <p>The solution to this issue depends on how your operating system packages TLS. See one of the following sections for more information:</p>
 
 <ul>
@@ -1132,6 +1136,7 @@ failed to open stream: operation failed
 </ul>
 
 <h4 id="solution-ubuntu">Ubuntu</h4>
+
 <p>Make sure you’re using <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a>. <code class="highlighter-rouge">libcurl</code> versions 7.34 or later; these versions use TLS 1.2 by default.</p>
 
 <p>To determine your <code class="highlighter-rouge">libcurl</code> version, enter the following command:</p>
@@ -1140,6 +1145,7 @@ failed to open stream: operation failed
 </code></pre></div></div>
 
 <h4 id="solution-centos">CentOS</h4>
+
 <p>The source of the issue is that the <a href="https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html" target="_blank"><code class="highlighter-rouge">libcurl</code></a>   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
  packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default.</p>
 
@@ -1153,6 +1159,7 @@ failed to open stream: operation failed
 <p>(CentOS 7 has a newer version of <code class="highlighter-rouge">libcurl</code> that also defaults to TLS 1.2.)</p>
 
 <h4 id="solution-macos">Mac OS</h4>
+
 <p>Recent updates to the <a href="http://php-osx.liip.ch" target="_blank">OS X liip package</a> should resolve the issue.</p>
 
 			

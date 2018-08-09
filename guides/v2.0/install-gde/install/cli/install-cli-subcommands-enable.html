@@ -2264,6 +2264,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="instgde-cli-before">First steps</h2>
+
 <div>
 
   <ol>
@@ -2303,9 +2304,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
+
 <p>This command has no prerequisites.</p>
 
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
+
 <p>To enable or disable available modules, use the following command:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt;
@@ -2341,12 +2344,14 @@ magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;modu
 <p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
 
 <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
+
 <p>If you enabled one or more modules, run the following command to update the database:</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:upgrade
 </code></pre></div></div>
 
 <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
+
 <p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>
 <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
 <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>

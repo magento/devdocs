@@ -525,6 +525,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="semantics">Semantics</h2>
 
 <h3 id="for-attribute-names-and-values-you-must-use-meaningful-unabbreviated-lowercase-words-comprised-of-latin-characters-concatenated-with-a-hyphen--">For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (<code class="highlighter-rouge">-</code>)</h3>
+
 <ul>
    <li>Helps simplify and unify naming conventions that are used to apply visual styles to page elements.</li>
 </ul>
@@ -550,6 +551,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#some_id"</span><span class="nt">&gt;</span>Scroll to text<span class="nt">&lt;/a&gt;</span></code></pre></figure>
 
 <h3 id="semantic-representation-may-rely-on-id-attribute">Semantic representation may rely on ID attribute</h3>
+
 <ul>
    <li>Forces engineers to think about reusable page components instead of unique singleton components.</li>
    <li>Reduces long-term maintenance efforts.</li>
@@ -667,6 +669,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 [role="</span><span class="nt">menu</span><span class="o">]</span> <span class="o">[</span><span class="nt">role</span><span class="o">=</span><span class="s1">"menuitem"</span><span class="o">]</span><span class="nc">.active</span> <span class="p">{</span> <span class="err">...</span> <span class="p">}</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-css-styles-in-javascript-files">You must not hard-code CSS styles in JavaScript files</h3>
+
 <div class="bs-callout bs-callout-info" id="info">
    <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
 </div>
@@ -704,6 +707,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="p">});</span></code></pre></figure>
 
 <h3 id="you-must-not-use-inline-css-styles-inside-html-tags">You must not use inline CSS styles inside HTML tags</h3>
+
 <ul>
 <li>Improves style extensibility allowing engineers to overload styles easier by toggling classes.</li>
 <li>Enforces clean, strict separation between visual presentation and markup.</li>
@@ -775,6 +779,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sales-report hidden"</span><span class="nt">&gt;</span>Content<span class="nt">&lt;/div&gt;</span></code></pre></figure>
 
 <h3 id="you-must-not-select-dom-elements-based-on-html-structure">You must not select DOM elements based on HTML structure</h3>
+
 <ul>
 <li>Allows frontend teams to modify markup and themes without affecting business logic.</li></ul>
 
@@ -789,12 +794,14 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="k">this</span><span class="p">.</span><span class="nx">element</span><span class="p">.</span><span class="nx">parent</span><span class="p">().</span><span class="nx">find</span><span class="p">(</span><span class="s1">'[data-action="edit"]'</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">'entity_id'</span><span class="p">);</span></code></pre></figure>
 
 <h3 id="you-must-use-jquery-templates-to-insert-recurring-markup-into-dom-structure">You must use jQuery templates to insert recurring markup into DOM structure</h3>
+
 <ul>
 <li>Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.</li>
 <li>Reduces long-term maintenance efforts by having markup code stored in one place.</li>
 <li>Simplifies frontend debugging efforts.</li></ul>
 
 <h3 id="you-must-not-hard-code-inline-javascript-in-php-classes">You must not hard-code inline JavaScript in PHP classes</h3>
+
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -847,6 +854,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <h2 id="phtml-templates-and-php-files">PHTML templates and PHP files</h2>
 
 <h3 id="you-must-not-hard-code-inline-css-styles-in-php-classes">You must not hard-code inline CSS styles in PHP classes</h3>
+
 <ul>
 <li>Reduces long-term maintenance efforts by having styles stored in one place.</li>
 <li>Simplifies debugging and reduces number of files to be modified.</li>
@@ -875,6 +883,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <span class="o">...</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-inline-javascript-in-php-classes-1">You must not hard-code inline JavaScript in PHP classes</h3>
+
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -910,6 +919,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getAfterElementHtml</span><span class="p">();</span> <span class="cp">?&gt;</span></code></pre></figure>
 
 <h3 id="you-must-not-hard-code-html-markup-used-in-the-body-tag-in-php-classes">You must not hard-code HTML markup (used in the <code class="highlighter-rouge">&lt;body&gt;</code> tag) in PHP classes</h3>
+
 <ul>
 <li>Reduces long-term maintenance efforts by having markup stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
