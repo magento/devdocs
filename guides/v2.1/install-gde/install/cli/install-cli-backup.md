@@ -43,9 +43,9 @@ The command performs the following tasks:
 
     |Option|Meaning|Backup file name and location|
     |--- |--- |--- |
-    |--code|Backs up the Magento file system (excluding var and pub/static directories).|var/backups/<timestamp>\_filesystem.tgz|
-    |--media|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
-    |--db|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
+    |`--code`|Backs up the Magento file system (excluding var and pub/static directories).|var/backups/<timestamp>\_filesystem.tgz|
+    |`--media`|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
+    |`--db`|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
     {:style="table-layout:auto;"}
 
 3.	Takes the store out of maintenance mode.

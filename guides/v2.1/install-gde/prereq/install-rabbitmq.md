@@ -95,14 +95,11 @@ where:
 
 |Parameter|Description|
 |--- |--- |
-|amqp-host|The hostname where RabbitMQ is installed.|
-|amqp-port|The port to use to connect to RabbitMQ. The default is 5672.|
-|amqp-user|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
-|amqp-password|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
-|amqp-virtualhost|The virtual host for connecting to RabbitMQ. The default is /.
-For additional information, see RabbitMQ documentation:
-Virtual hosts
-Access control|
+|`amqp-host`|The hostname where RabbitMQ is installed.|
+|`amqp-por`t|The port to use to connect to RabbitMQ. The default is `5672`.|
+|`amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
+|`amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
+|`amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
 {:style="table-layout:auto;"}
 
 ## Start the message queue consumers
