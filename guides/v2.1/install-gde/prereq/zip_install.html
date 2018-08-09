@@ -2416,25 +2416,27 @@ mkdir magento2ee
 <h2 id="zip-extract">Extract the software on your server</h2>
 <p>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:</p>
 
-<table>
-<tbody>
-<tr> 
-	<th>File format</th>
-	<th>Command to extract</th>
-</tr>
-<tr> 
-	<td>.tar.gz</td>
-	<td><code>tar zxf &lt;filename&gt;</code></td>
-</tr>
-<tr> 
-	<td>.zip</td>
-	<td><code>unzip &lt;filename&gt;</code></td>
-</tr>
-<tr> 
-	<td>.tar.bz2</td>
-	<td><code>tar jxf &lt;filename&gt;</code></td>
-</tr>
-</tbody>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>File format</th>
+      <th>Command to extract</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">.tar.gz</code></td>
+      <td><code class="highlighter-rouge">tar zxf &lt;filename&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.zip</code></td>
+      <td><code class="highlighter-rouge">unzip &lt;filename&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">.tar.bz2</code></td>
+      <td><code class="highlighter-rouge">tar jxf &lt;filename&gt;</code></td>
+    </tr>
+  </tbody>
 </table>
 
 <p>The Magento software extracts to the directory you created. After the file has extracted, either delete the Magento archive or move it to another directory.</p>

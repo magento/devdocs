@@ -2279,9 +2279,9 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </section>
 
 			<h2 id="install-prereq-selinux">SELinux</h2>
-<p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you’re using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
+<p><a href="http://selinuxproject.org/page/Main_Page">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you’re using SELinux *and* Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
 
-<p class="bs-callout bs-callout-info">Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">the CentOS wiki</a> to set up rules to enable communication.</p>
+<p class="bs-callout bs-callout-info">Magento has no recommendation about using SELinux; you can use it for enhanced security if you wish. If you use SELinux, you must configure it properly or the Magento application will function unpredictably. If you choose to use SELinux, consult a resource like <a href="http://wiki.centos.org/HowTos/SELinux">the CentOS wiki</a> to set up rules to enable communication.</p>
 
 <h3 id="suggestion-for-installing-the-magento-software-with-apache">Suggestion for installing the Magento software with Apache</h3>
 <p>If you choose to enable SELinux, you might have issues running the installer unless you change the <em>security context</em> of some directories as follows:</p>
@@ -2295,8 +2295,8 @@ chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/stat
 <p>The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don’t guarantee these commands work in all situations. For more information, see:</p>
 
 <ul>
-  <li><a href="http://linux.die.net/man/8/httpd_selinux" target="_blank">man page</a></li>
-  <li><a href="http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/" target="_blank">serverlab</a></li>
+  <li><a href="http://linux.die.net/man/8/httpd_selinux">man page</a></li>
+  <li><a href="http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/">serverlab</a></li>
 </ul>
 
 <h3 id="enable-inter-server-communication">Enable inter-server communication</h3>
@@ -2326,8 +2326,8 @@ chcon -R --type httpd_sys_rw_content_t &lt;your Magento install dir&gt;/pub/stat
 <p>Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:</p>
 
 <ul>
-  <li>Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.</li>
-  <li>CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html" target="_blank">CentOS reference page</a>.</li>
+  <li>Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo">Ubuntu documentation page</a></li>
+  <li>CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html">CentOS reference page</a>.</li>
 </ul>
 
 <h4 id="related-topics">Related topics:</h4>

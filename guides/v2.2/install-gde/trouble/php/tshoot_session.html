@@ -2295,17 +2295,12 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<p><strong>Symptom</strong>: At the last step of installing Magento 2, the following   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
  displays:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"> 
-<span class="nx">exception</span> <span class="s1">'Exception'</span> <span class="nx">with</span> <span class="nx">message</span> <span class="s1">'Warning: SessionHandler::read():
-open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74'</span> 
-<span class="nx">in</span> <span class="o">../</span><span class="nx">magento2</span><span class="o">/</span><span class="nx">lib</span><span class="o">/</span><span class="nx">internal</span><span class="o">/</span><span class="nx">Magento</span><span class="o">/</span><span class="nx">Framework</span><span class="o">/</span><span class="nx">App</span><span class="o">/</span><span class="nx">ErrorHandler</span><span class="o">.</span><span class="nx">php</span><span class="o">:</span><span class="mi">67</span></code></pre></figure>
+<pre><code class="language-temrinal">exception 'Exception' with message 'Warning: SessionHandler::read():
+open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/Framework/Session/SaveHandler.php on line 74'
+in ../magento2/lib/internal/Magento/Framework/App/ErrorHandler.php:67
+</code></pre>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-	<p>This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur.</p>
-	<p>For more information about configuration options for Redis, see <a href="/guides/v2.2/config-guide/redis/config-redis.html">Configure Redis</a>.</p>
-	<p>For more information about specifying Redis using the command-line installer, see the <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">installation topic</a> or the <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp">deployment configuration topic</a>.</p></span>
-</div>
+<p class="bs-callout bs-callout-info">This error occurs only in code versions earlier than September 28, 2015. If you installed code dated September 29 or later, this error should not occur. For more information about configuration options for Redis, see <a href="/guides/v2.2/config-guide/redis/config-redis.html">Configure Redis</a>. For more information about specifying Redis using the command-line installer, see the <a href="/guides/v2.2/install-gde/install/cli/install-cli-install.html">installation topic</a> or the <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-deployment.html#instgde-cli-subcommands-configphp">deployment configuration</a> topic.</p>
 
 <h3 id="solution">Solution:</h3>
 
@@ -2354,7 +2349,6 @@ open(..) failed: No such file or directory (2) ../magento2/lib/internal/Magento/
     </ul>
   </li>
 </ol>
-
 
 			
 		</div>

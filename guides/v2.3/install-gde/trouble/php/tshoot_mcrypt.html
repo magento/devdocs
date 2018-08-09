@@ -2282,22 +2282,25 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Errors can include the following:</p>
 
-<pre>exception 'Exception' with message 'PHP Warning:   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- Startup: Unable to load dynamic   <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>
- '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory</pre>
-<pre>Installing data fixtures:
-/usr/bin/php -f '/Users/username/www/magento/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/Users/username/www/magento' 2&gt;&amp;1
-[ERROR]   <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>
- 'Exception' with message '
-Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP   <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>
- that is not loaded.'
-</pre>
-<pre>======================================================================
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">exception 'Exception' with message 'PHP Warning:   &lt;span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover"&gt;</span>PHP&lt;/span&gt;
+<span class="gp"> Startup: Unable to load dynamic   &lt;span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover"&gt;</span>library&lt;/span&gt;
+<span class="go"> '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory
+</span></code></pre></div></div>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Installing data fixtures:
+</span><span class="gp">/usr/bin/php -f '/Users/username/www/magento/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/Users/username/www/magento' 2&gt;</span>&amp;1
+<span class="gp">[ERROR]   &lt;span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover"&gt;</span>exception&lt;/span&gt;
+<span class="go"> 'Exception' with message '
+</span><span class="gp">Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' depends on 'mcrypt' PHP   &lt;span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover"&gt;</span>extension&lt;/span&gt;
+<span class="go"> that is not loaded.'
+</span></code></pre></div></div>
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">======================================================================
    The application has thrown an exception!
 ======================================================================
  Magento\Framework\Exception
  Command returned non-zero exit code:
-`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;&amp;1`</pre>
+</span><span class="gp">`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;</span>&amp;1<span class="sb">`</span>
+</code></pre></div></div>
 
 <h3 id="description">Description</h3>
 
@@ -2310,20 +2313,20 @@ Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' 
 <p>Determine if the mcrypt extension is loaded in any of the following ways:</p>
 
 <ul>
-  <li>Set up a <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs" target="_blank">phpinfo.php</a> file in the web server’s root directory and examine the output in a web browser.</li>
-  <li>
-    <p>Run the following command:</p>
-
-    <pre>php -r "phpinfo();" | grep mcrypt</pre>
-
-    <p>If mycrypt is <em>not</em> installed, messages similar to the following display:</p>
-
-    <pre>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0</pre>
-  </li>
+  <li>Set up a <a href="http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs">phpinfo.php</a> file in the web server’s root directory and examine the output in a web browser.</li>
+  <li>Run the following command:</li>
 </ul>
 
-<p>In some cases, you might need to install the Magento software from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a> and specify the full path to the LAMP stack that has mcrypt installed.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  php <span class="nt">-r</span> <span class="s2">"phpinfo();"</span> | <span class="nb">grep </span>mcrypt
+</code></pre></div></div>
 
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If mycrypt is *not* installed, messages similar to the following display:
+</code></pre></div></div>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">  PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0
+</span></code></pre></div></div>
+
+<p>In some cases, you might need to install the Magento software from the <a href="/guides/v2.3/install-gde/install/cli/install-cli.html">command line</a> and specify the full path to the LAMP stack that has mcrypt installed.</p>
 
 			
 		</div>

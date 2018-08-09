@@ -2302,7 +2302,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <h3 id="solution">Solution</h3>
 
-<p>Review your setting for <code class="highlighter-rouge">open_basedir</code> in <code class="highlighter-rouge">php.ini</code>. The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to get the value of the temporary directory. If <a href="http://php.net/manual/en/ini.core.php#ini.open-basedir" target="_blank">open_basedir</a> is set to refuse connections to a directory specified by <code class="highlighter-rouge">sys_get_temp_dir</code>, the installation fails.</p>
+<p>Review your setting for <code class="highlighter-rouge">open_basedir</code> in <code class="highlighter-rouge">php.ini</code>. The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php">sys_get_temp_dir ( void )</a> PHP call to get the value of the temporary directory. If <a href="http://php.net/manual/en/ini.core.php#ini.open-basedir">open_basedir</a> is set to refuse connections to a directory specified by <code class="highlighter-rouge">sys_get_temp_dir</code>, the installation fails.</p>
 
 <p>To resolve the issue, change the value of <code class="highlighter-rouge">open_basedir</code> and restart the web server.</p>
 
@@ -2321,12 +2321,11 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
     <p><code class="highlighter-rouge">php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
   </li>
-  <li>As a user with <code>root</code> privileges, open <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
+  <li>As a user with root privileges, open <code class="highlighter-rouge">php.ini</code> in a text editor.</li>
   <li>Locate the value of <code class="highlighter-rouge">open_basedir</code> and change it.</li>
   <li>Save your changes to <code class="highlighter-rouge">php.ini</code>.</li>
   <li>Restart the web server.</li>
 </ol>
-
 
 			
 		</div>

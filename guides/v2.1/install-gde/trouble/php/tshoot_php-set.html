@@ -2287,7 +2287,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 			<h3 id="trouble-php-always">always_populate_raw_post_data error</h3>
 <p>If you’re upgrading the Magento 2 software, the following error can display during the readiness check:</p>
 
-<p><img src="/common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
+<p><img src="/common/images/upgr_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step" /></p>
 
 <p>To resolve the error:</p>
 
@@ -2363,15 +2363,16 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 </code></pre></div></div>
 
 <h4 id="solution-set-asp_tags--off-in-phpini">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
-<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code class="highlighter-rouge">&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml" target="_blank">template</a> for displaying a product image:</p>
+<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in <code class="highlighter-rouge">&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml">template</a> for displaying a product image:</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;img</span>
-    <span class="na">class=</span><span class="s">"product-image"</span>
-    <span class="na">src=</span><span class="s">"&lt;%- data.url %&gt;"</span>
-    <span class="na">data-position=</span><span class="s">"&lt;%- data.position %&gt;"</span>
-    <span class="na">alt=</span><span class="s">"&lt;%- data.label %&gt;"</span> <span class="nt">/&gt;</span></code></pre></figure>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">img</span>
+    <span class="k">class</span><span class="err">="</span><span class="nc">product</span><span class="o">-</span><span class="nx">image</span><span class="s2">"
+    src="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">url</span> <span class="o">%&gt;</span><span class="s2">"
+    data-position="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">position</span> <span class="o">%&gt;</span><span class="s2">"
+    alt="</span><span class="o">&lt;%-</span> <span class="nx">data</span><span class="o">.</span><span class="nx">label</span> <span class="o">%&gt;</span><span class="s2">" /&gt;
+</span></code></pre></div></div>
 
-<p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>.</p>
+<p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags">asp_tags</a>.</p>
 
 <p>Edit <code class="highlighter-rouge">php.ini</code> and set <code class="highlighter-rouge">asp_tags = off</code>. For more information, see <a href="/guides/v2.1/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 

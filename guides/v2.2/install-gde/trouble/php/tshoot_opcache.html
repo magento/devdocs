@@ -2300,10 +2300,10 @@ Modifier/AdvancedInventory.php on line 87
 </code></pre></div></div>
 
 <h3 id="detail">Detail</h3>
-<p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73" target="_blank"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
+<p>Magento 2.1 and later use PHP code comments in the <code class="highlighter-rouge">getDocComment</code> validation call in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73"><code class="highlighter-rouge">getExtensionAttributes</code></a> method in <code class="highlighter-rouge">Magento\Framework\Api\ExtensionAttributesFactory.php</code>.</p>
 
 <p>If you enabled the   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- OPcache (which we recommend), this error displays because by default, the OPcache setting <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments" target="_blank"><code class="highlighter-rouge">opcache.save_comments</code></a> is disabled.</p>
+ OPcache (which we recommend), this error displays because by default, the OPcache setting <a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments"><code class="highlighter-rouge">opcache.save_comments</code></a> is disabled.</p>
 
 <h3 id="workaround">Workaround</h3>
 <p>To solve the issue, locate your OPcache configuration settings and enable <code class="highlighter-rouge">opcache.save_comments</code> as follows:</p>

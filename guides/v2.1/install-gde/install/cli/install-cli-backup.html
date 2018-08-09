@@ -2288,8 +2288,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <p>This command enables you to back up:</p>
 
 <ul>
-  <li>The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)</li>
-  <li>The <code>pub/media</code> directory</li>
+  <li>The Magento file system (excluding <code class="highlighter-rouge">var</code> and <code class="highlighter-rouge">pub/static</code> directories)</li>
+  <li>The <code class="highlighter-rouge">pub/media</code> directory</li>
   <li>The Magento 2 database</li>
 </ul>
 
@@ -2394,38 +2394,32 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li>
     <p>Executes one of the following command options.</p>
 
-    <table>
-<col width="25%" />
-<col width="40%" />
-<col width="35%" />
-<tbody>
-    <tr>
-        <th>Option</th>
-        <th>Meaning</th>
-        <th>Backup file name and location</th>
-    </tr>
-		
-<tr>
-    <td><p>--code</p></td>
-    <td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
-    <td><p>var/backups/&lt;timestamp&gt;_filesystem.tgz</p></td>
-</tr>
-<tr>
-    <td><p>--media</p></td>
-    <td><p>Back up the <code>pub/media</code> directory.</p></td>
-    <td><p>var/backups/&lt;timestamp&gt;_filesystem_media.tgz</p></td>
-</tr>
-<tr>
-<tr>
-    <td><p>--db</p></td>
-    <td><p>Back up the Magento 2 database.</p></td>
-    <td><p>var/backups/&lt;timestamp&gt;_db.sql</p></td>
-</tr>
-<tr>
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-</tr></tr></tbody></table>
+    <table style="table-layout:auto;">
+      <thead>
+        <tr>
+          <th>Option</th>
+          <th>Meaning</th>
+          <th>Backup file name and location</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="highlighter-rouge">--code</code></td>
+          <td>Backs up the Magento file system (excluding var and pub/static directories).</td>
+          <td>var/backups/<timestamp>\_filesystem.tgz</timestamp></td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">--media</code></td>
+          <td>Back up the pub/media directory.</td>
+          <td>var/backups/<timestamp>\_filesystem_media.tgz</timestamp></td>
+        </tr>
+        <tr>
+          <td><code class="highlighter-rouge">--db</code></td>
+          <td>Back up the Magento 2 database.</td>
+          <td>var/backups/<timestamp>\_db.sql</timestamp></td>
+        </tr>
+      </tbody>
+    </table>
   </li>
   <li>Takes the store out of maintenance mode.</li>
 </ol>
@@ -2476,9 +2470,7 @@ Please set file permission of bin/magento to executable
 Disabling maintenance mode
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If the command results in a <code>Segmentation fault</code> message, see <a href="/guides/v2.1/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
-</div>
+<p class="bs-callout bs-callout-info">If the command results in a <code class="highlighter-rouge">Segmentation fault</code> message, see <a href="/guides/v2.1/install-gde/trouble/tshoot_segfault.html">Segmentation fault during rollback</a>.</p>
 
 			
 		</div>

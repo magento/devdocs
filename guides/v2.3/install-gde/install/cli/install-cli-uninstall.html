@@ -2325,7 +2325,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>If you installed the software from an archive or if you used ‘composer-create-project’, use the Component Manager or System Upgrade utilities.</li>
-  <li>If you are a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you used <code class="highlighter-rouge">git clone</code>), see <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+  <li>If you are a contributing developer (that is, you used <code class="highlighter-rouge">git clone</code>), see <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
 </ul>
 
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
@@ -2335,7 +2335,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <ul>
   <li>If you installed the software from an archive or if you used ‘composer-create-project’, see <a href="#instgde-install-reinst-update-sys">Reinstall as a system integrator</a>.</li>
-  <li>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> (that is, you started using <code class="highlighter-rouge">composer clone</code>), see <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
+  <li>If you’re a contributing developer (that is, you started using <code class="highlighter-rouge">composer clone</code>), see <a href="/guides/v2.3/install-gde/install/cli/dev_options.html">Contributing developers—update, reinstall Magento</a>.</li>
 </ul>
 
 <h3 id="instgde-install-reinst-update-sys">Reinstall as a system integrator</h3>
@@ -2391,10 +2391,7 @@ php bin/magento setup:uninstall
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>magento setup:upgrade --keep-generated
 </code></pre></div></div>
 
-<div class="bs-callout bs-callout-warning">
-    <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
-    <p>Improper use of this optional parameter can cause errors during code execution.</p>
-</div>
+<p class="bs-callout bs-callout-warning">The optional <code class="highlighter-rouge">--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. This option should <em>never</em> be used in a development environment. Improper use of this optional parameter can cause errors during code execution.</p>
 
 <ol>
   <li>
@@ -2406,7 +2403,6 @@ php bin/magento setup:uninstall
     </ul>
   </li>
 </ol>
-
 
 			
 		</div>

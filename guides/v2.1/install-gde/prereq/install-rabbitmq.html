@@ -2369,33 +2369,35 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>where:</p>
 
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>amqp-host</td>
-<td>The hostname where RabbitMQ is installed.</td>
-</tr>
-<tr>
-<td>amqp-port</td>
-<td>The port to use to connect to RabbitMQ. The default is 5672.</td>
-</tr>
-<tr>
-<td>amqp-user</td>
-<td>The username for connecting to RabbitMQ. Do not use the default user `guest`. </td>
-</tr>
-<tr>
-<td>amqp-password</td>
-<td>The password for connecting to RabbitMQ. Do not use the default password `guest`. </td>
-</tr>
-<tr>
-<td>amqp-virtualhost</td>
-<td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
-<p>For additional information, see RabbitMQ documentation:</p>
-<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
-<li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
-</tr>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">amqp-host</code></td>
+      <td>The hostname where RabbitMQ is installed.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">amqp-por</code>t</td>
+      <td>The port to use to connect to RabbitMQ. The default is <code class="highlighter-rouge">5672</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">amqp-user</code></td>
+      <td>The username for connecting to RabbitMQ. Do not use the default user <code class="highlighter-rouge">guest</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">amqp-password</code></td>
+      <td>The password for connecting to RabbitMQ. Do not use the default password <code class="highlighter-rouge">guest</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">amqp-virtualhost</code></td>
+      <td>The virtual host for connecting to RabbitMQ. The default is <code class="highlighter-rouge">/</code>.</td>
+    </tr>
+  </tbody>
 </table>
 
 <h2 id="start-the-message-queue-consumers">Start the message queue consumers</h2>

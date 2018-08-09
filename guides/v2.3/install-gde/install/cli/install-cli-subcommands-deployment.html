@@ -2338,99 +2338,66 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>The following table discusses the meanings of installation parameters and values.</p>
 
-<table>
-	<col width="25%" />
-	<col width="65%" />
-	<col width="10%" />
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-
-	<tr>
-		<td><p>--backend-frontname</p></td>
-		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin.</p>
-			<p>To prevent exploits, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--db-host</p></td>
-		<td><p>Use any of the following:</p>
-		<ul><li>The database server's fully qualified hostname or IP address.</li>
-		<li><code>localhost</code> (default) or <code>127.0.0.1</code> if your database server is on the same host as your web server.<br /><code>localhost</code> means the MySQL client library uses UNIX sockets to connect to the database. <code>127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PHP <code>PDO_MYSQL</code> documentation</a>.</li></ul>
-		<p><strong>Note</strong>: You can optionally specify the database server port in its hostname like <code>www.example.com:9000</code></p>
-</td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--db-name</p></td>
-		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
-			<p>Default is <code>magento2</code>.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--db-user</p></td>
-		<td><p>Username of the Magento database instance owner.</p>
-			<p>Default is <code>root</code>.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--db-password</p></td>
-		<td><p>Magento database instance owner's password.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--db-prefix</p></td>
-		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
-		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
-		<p>The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.</p>
-		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--session-save</p></td>
-		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="/guides/v2.3/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-
-    <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.</li>
-
-    <li><code>redis</code> to store session data in <a href="/guides/v2.3/config-guide/redis/config-redis.html">Redis</a>. If you will be using Redis for default or page caching, Redis must be already installed. See <a href="/guides/v2.3/config-guide/redis/redis-session.html">Use Redis for session storage</a> for additional information about configuring support for Redis. </li>
-	</ul></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--key</p></td>
-		<td><p>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don't have one, Magento generates one for you.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<!-- <tr>
-		<td>enable_modules=&lt;list></td>
-		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>disable_modules=&lt;list></td>
-		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
-		<td>No</td>
-	</tr> -->
-	<tr>
-		<td><p>--db-init-statements</p></td>
-		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.</p>
-			<p>Default is <code>SET NAMES utf8;</code>.</p>
-			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--http-cache-hosts</p></td>
-		<td><p>Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) Use this parameter to specify the host or hosts to purge in the same request. (It doesn't matter if you have only one host or many hosts.)</p>
-			<p>Format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it's port 80. For example, <code>--http-cache-hosts=192.0.2.100,192.0.2.155:6081</code>. Do not separate hosts with a space character.</p> </td>
-		<td><p>No</p></td>
-	</tr>
-	</tbody>
+<table style="table-layout:auto;">
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Value</th>
+      <th>Required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">--backend-frontname</code></td>
+      <td>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2">URI</a>) to access the Magento Admin.<br /><br />To prevent exploits, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code class="highlighter-rouge">_</code>) only.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--db-host</code></td>
+      <td>Use any of the following:<br /><br />- The database server’s fully qualified hostname or IP address.<br /><br />- <code class="highlighter-rouge">localhost</code> (default) or <code class="highlighter-rouge">127.0.0.1</code> if your database server is on the same host as your web server. localhost means the MySQL client library uses UNIX sockets to connect to the database. <code class="highlighter-rouge">127.0.0.1</code> causes the client library to use the TCP protocol. For more information about sockets, see the <a href="http://php.net/manual/en/ref.pdo-mysql.php">PHP PDO_MYSQL documentation</a>.<br /><br /><strong>Note:</strong> You can optionally specify the database server port in its hostname like <code class="highlighter-rouge">www.example.com:9000</code></td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--db-name</code></td>
+      <td>Name of the Magento database instance in which you want to install the Magento database tables.<br /><br />Default is <code class="highlighter-rouge">magento2</code>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--db-user</code></td>
+      <td>Username of the Magento database instance owner.<br /><br />Default is <code class="highlighter-rouge">root</code>.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--db-password</code></td>
+      <td>Magento database instance owner’s password.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--db-prefix</code></td>
+      <td>Use only if you’re installing the Magento database tables in a database instance that has Magento tables in it already.<br /><br />In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.<br /><br />The prefix can be a maximum of five characters in length. It must begin with a letter and can include only letters, numbers, and underscore characters.<br /><br />This option enables those customers to share the database server with more than one Magento installation.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--session-save</code></td>
+      <td>Use any of the following:<br /><br />- <code class="highlighter-rouge">db</code> to store session data in the <a href="/guides/v2.3/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.<br /><br />- <code class="highlighter-rouge">files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.<br /><br />- <code class="highlighter-rouge">redis</code> to store session data in [Use Redis for session storage](/guides/v2.3/config-guide/redis/config-redis.html”&gt;Redis. If you will be using Redis for default or page caching, Redis must be already installed.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--key</code></td>
+      <td>If you have one, specify a key to encrypt <a href="#sens-data">sensitive data</a> in the Magento database. If you don’t have one, Magento generates one for you.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--db-init-statements</code></td>
+      <td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.<br /><br />Default is <code class="highlighter-rouge">SET NAMES utf8;</code>.<br /><br />Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html">this one</a> before you set any values.</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">--http-cache-hosts</code></td>
+      <td>Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) Use this parameter to specify the host or hosts to purge in the same request. (It doesn’t matter if you have only one host or many hosts.)<br /><br />Format must be <code class="highlighter-rouge">&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code class="highlighter-rouge">&lt;listen port&gt;</code> if it’s port 80. For example, <code class="highlighter-rouge">--http-cache-hosts=192.0.2.100,192.0.2.155:6081</code>. Do not separate hosts with a space character.</td>
+      <td>No</td>
+    </tr>
+  </tbody>
 </table>
 
 <div>
@@ -2460,31 +2427,6 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.3/install-gde/install/cli/install-cli-install.html">Command line installation</a></li>
   <li><a href="/guides/v2.3/install-gde/install/web/install-web.html">Setup Wizard installation</a></li>
 </ul>
-
-<!-- ## About enabling and disabling modules {#instgde-cli-subcommands-dep-config-enable-modules}
-<p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module that is currently available.</p>
-<p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
-<p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
-<p>Examples:</p>
-<ul><li>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</li>
-	<li>Module A depends on Module B, both of which are disabled. You must enable module B before you can enable module A.</li>
-	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</li></ul>
-
-<p>Dependencies are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
-<ul><li><code>A->B</code> means module A depends on module B.</li>
-	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A->B->C</code>.</li></ul>
-<p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>It's possible that module A's <code>composer.json</code> declares a conflict with module B but not vice versa.</p></span>
-</div>
-
-<p><em>Command line <a href="/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional <code>--force</code> argument.</p>
-
-<div class="bs-callout bs-callout-warning">
-    <p>Using <code>--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
-</div>
- -->
 
 <h4 id="related-topics">Related topics</h4>
 

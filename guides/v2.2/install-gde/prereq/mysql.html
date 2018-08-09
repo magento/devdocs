@@ -2302,12 +2302,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.2/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
 </ul>
 
-<h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento application requires MySQL 5.6.x.</p>
-  <p>Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
-  <p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.</p>
-</div>
+<h2 id="instgde-prereq-mysql-intro" class="bs-callout bs-callout-info">General guidelines</h2>
+<p>The Magento application requires MySQL 5.6.x. Magento versions 2.1.2 and later are compatible with MySQL 5.7.x. Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.</p>
 
 <p>Magento <em>strongly</em> recommends you observe the following standard when you set up your Magento database:</p>
 
@@ -2697,18 +2693,7 @@ flush privileges;
   <li>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="/guides/v2.2/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:</p>
-
-  <ul>
-    <li>
-      <p>Indexers require higher <code class="highlighter-rouge">tmp_table_size</code> and <code class="highlighter-rouge">max_heap_table_size</code> values (e.g., 64M). If you configure the <code class="highlighter-rouge">batch_size</code> parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  <a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a> for more information.</p>
-    </li>
-    <li>
-      <p>For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure <code class="highlighter-rouge">innodb_buffer_pool_size</code>).</p>
-    </li>
-  </ul>
-</div>
+<p class="bs-callout bs-callout-info">We recommend you configure your database instance as appropriate for your business. When configuring your database, remember that indexers require higher <code class="highlighter-rouge">tmp_table_size</code> and <code class="highlighter-rouge">max_heap_table_size</code> values, for example, 64M. If you configure the <code class="highlighter-rouge">batch_size</code> parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to  <a href="/guides/v2.2/performance-best-practices/index.html">Performance Best Practices</a> for more information. sure all MySQL and Magento index tables can be kept in memory, for example, configure <code class="highlighter-rouge">innodb_buffer_pool_size</code>.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

@@ -2294,11 +2294,8 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
   <li><a href="/guides/v2.1/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
 </ul>
 
-<h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento application requires MySQL 5.6.x.</p>
-  <p>Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
-</div>
+<h2 id="instgde-prereq-mysql-intro" class="bs-callout bs-callout-info">General guidelines</h2>
+<p>The Magento application requires MySQL 5.6.x. Magento versions 2.1.2 and later are compatible with MySQL 5.7.x.</p>
 
 <p>Magento <em>strongly</em> recommends you observe the following standard when you set up your Magento database:</p>
 
@@ -2685,6 +2682,8 @@ yum -y localinstall mysql57-community-release-el6-7.noarch.rpm
   </li>
   <li>If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see <a href="/guides/v2.1/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a>.</li>
 </ol>
+
+<!-- Available note types: "info", "warning", "tip" -->
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:</p>

@@ -2289,18 +2289,20 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 
 <p>Errors similar to the following display when you run the Web Setup Wizard:</p>
 
-<pre> Magento\Framework\Exception
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Magento\Framework\Exception
  Command returned non-zero exit code:
-`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;&amp;1`
+</span><span class="gp">`/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2&gt;</span>&amp;1<span class="sb">`</span>
+</code></pre></div></div>
 
-[other errors]
+<p>[other errors]</p>
 
-  <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span>
+<p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span></p>
 
-   <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
- Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
+<p><span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span>
+ Fatal error:  Class ‘Magento\Framework\Stdlib\DateTime\TimezoneInterface’ not found in /var/www/magento2/app/bootstrap.php on line 56&lt;/pre&gt;</p>
 
-<pre>Dependencies not installed. Please run 'composer install' under /setup directory.</pre>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dependencies not installed. Please run 'composer install' under /setup directory.
+</code></pre></div></div>
 
 <pre>Whoops, it looks like setup tool dependencies are not installed.</pre>
 
@@ -2308,11 +2310,7 @@ h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
 <pre> Exception
  PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/html/magento2/app/bootstrap.php on line 56</pre>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the <code>&lt;your Magento install dir&gt;/setup</code> directory.</p>
-  <p>The entire message is <code>Installation is incomplete. Check the console log for errors before trying again.</code></p></span>
-</div>
+<p class="bs-callout bs-callout-info">If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the <code class="highlighter-rouge">&lt;your Magento install dir&gt;/setup</code> directory. The entire message is <code class="highlighter-rouge">Installation is incomplete. Check the console log for errors before trying again.</code></p>
 
 <h3 id="description">Description</h3>
 
